@@ -1,0 +1,18 @@
+{
+  "ESCA": {
+    "report+case": 146,
+    "report+slide": 146,
+    "report+slide adenocarcinoma": 88
+  },
+  "STAD": {
+    "report+case": 361,
+    "report+slide": 361,
+    "report+slide adenocarcinoma": 329
+  },
+  "ESCA+STAD": {
+    "report+case": 507,
+    "report+slide": 507,
+    "report+slide adenocarcinoma": 417
+  },
+  "pan_cancer_report+slide": 9517
+}

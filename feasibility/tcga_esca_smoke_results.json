@@ -1,0 +1,15 @@
+{
+  "esca_slide_files_total": 396,
+  "oac_diagnostic_slides": 65,
+  "oac_diagnostic_cases": 65,
+  "oac_diagnostic_GB": 83.9,
+  "oac_all_slides": 192,
+  "oac_all_GB": 104.8,
+  "smoke_download": {
+    "file": "TCGA-V5-A7RE-01Z-00-DX1.71360DC3-F66C-4C4D-86CA-7964D56974FB.svs",
+    "MB": 53.4,
+    "seconds": 13.6,
+    "MB_per_s": 3.9,
+    "est_full_hours": 5.93
+  }
+}
