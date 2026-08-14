@@ -25,6 +25,14 @@ Canonical implementation: `phd/occams_multimodal/`
 Known benign race: two jobs in simultaneous stale-lock reclaim can both pass the
 retry; harmless if tasks are idempotent and write to task-scoped output dirs.
 
+## Job-granularity convention (Rehan's preference, 2026-08-14)
+Break campaigns into the **smallest independent unit** and submit each as its own
+race-to-run task (own done-marker + lock): one slide per feature-extraction task,
+one file per download task, one config per training task. Benefits: maximum
+parallelism across partitions, failures cost one unit, resubmission is idempotent
+(done markers skip finished units). Prefer many small jobs over one long job;
+use short --time per unit so the scheduler backfills them.
+
 ## Usage guidance for thesis gates
 - OCCAMS H&E+genomics fusion first-pass (Ch2): epyc fan-out (features precomputed → CPU).
 - ERIN + TCGA feature extraction (Ch3/Ch4/Ch2): `PARTITIONS=cuda,h200` only (CUDA
