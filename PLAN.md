@@ -70,6 +70,12 @@ evaluating histology models, and does report-supervision replicate across cohort
 ---
 
 ## Changelog
+- 2026-08-14 (PM): four feasibility gates run as cluster jobs (see GAPS.md + feasibility/):
+  Ch4 TCGA-Reports PASSED (146 ESCA / 507 ESCA+STAD / 9,517 pan-cancer report+slide);
+  Ch2 TCGA download PASSED (65 OAC DX slides, 84 GB — note 65/87, not 87);
+  Ch3/Ch4 ERIN extraction PASSED on L40S (~84 s/slide, ~25 GPU-h campaign);
+  Ch2 OCCAMS fusion first-pass WEAK (no fusion benefit with mean-pool + crude
+  endpoint) → redesigned second pass required (ABMIL, vital status, richer CN).
 - 2026-08-14: v2 created. Added Ch4 (histology+text). Statuses reconciled against
   cluster state: SWG final numbers from PROJECT_STATE; ERIN feasibility gate marked
   PASSED (2026-08-10 report); occams_multimodal noted as clinical-only baselines.

@@ -1,0 +1,73 @@
+{
+  "env": {
+    "torch": "2.0.1+cu117",
+    "cuda": true,
+    "device_name": "NVIDIA L40S",
+    "reader": "openslide",
+    "missing_keys": 0,
+    "unexpected_keys": 0,
+    "slide_dirs_found": 2281
+  },
+  "slides": [
+    {
+      "slide": "/mnt/scratche/fast/fmlab/datasets/imaging/ERIN/slides/0026e2c8-2c3f-4fae-b206-9e3cf2c9e54d/065e77ef-c081-4968-aa98-02dcb7fc5f99.tiff",
+      "tiles": 512,
+      "feat_shape": [
+        512,
+        1536
+      ],
+      "seconds": 33.5
+    },
+    {
+      "slide": "/mnt/scratche/fast/fmlab/datasets/imaging/ERIN/slides/00271944-abca-4c84-a6b0-14b5ea243518/2dd8af0c-e898-4bfa-93d0-878d3b6d2ec5.tiff",
+      "tiles": 512,
+      "feat_shape": [
+        512,
+        1536
+      ],
+      "seconds": 19.8
+    },
+    {
+      "slide": "/mnt/scratche/fast/fmlab/datasets/imaging/ERIN/slides/009bfc11-b1bc-47db-8f5f-0c2590c0c81b/e0c27b08-29dc-489e-8fa6-c34d4537e60d.tiff",
+      "tiles": 512,
+      "feat_shape": [
+        512,
+        1536
+      ],
+      "seconds": 66.2
+    },
+    {
+      "slide": "/mnt/scratche/fast/fmlab/datasets/imaging/ERIN/slides/00cc4d4b-98ea-483e-8cdc-78e469f80be1/04d9e2d5-c04a-4ee8-8535-f0cc2c48d5d2.tiff",
+      "tiles": 512,
+      "feat_shape": [
+        512,
+        1536
+      ],
+      "seconds": 61.7
+    },
+    {
+      "slide": "/mnt/scratche/fast/fmlab/datasets/imaging/ERIN/slides/00e321d9-9881-40f8-8c12-e177e7015bed/c1a1df0a-c53a-40fd-b737-865b8a86a729.tiff",
+      "tiles": 407,
+      "feat_shape": [
+        407,
+        1536
+      ],
+      "seconds": 162.0
+    },
+    {
+      "slide": "/mnt/scratche/fast/fmlab/datasets/imaging/ERIN/slides/00e786c9-7844-4ccf-a00a-82e4a1bb4b9c/12d1b0ed-d17e-4f43-9edd-4a097705229e.tiff",
+      "tiles": 324,
+      "feat_shape": [
+        324,
+        1536
+      ],
+      "seconds": 163.1
+    }
+  ],
+  "errors": [],
+  "estimate": {
+    "mean_sec_per_slide_capped": 84.4,
+    "campaign_1045_slides_hours_capped": 24.5,
+    "campaign_guardrail_x4_hours": 98.0
+  }
+}

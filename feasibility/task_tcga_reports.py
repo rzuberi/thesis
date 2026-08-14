@@ -16,7 +16,7 @@ target = None
 for f in listing:
     name = f.get("filename", "")
     print(" -", name, f.get("size"))
-    if name.endswith(".csv"):
+    if name.endswith((".csv", ".csv.zip")):
         target = f
 assert target, "no CSV found in dataset listing"
 url = target["content_details"]["download_url"]
@@ -25,6 +25,11 @@ local = os.path.join(OUT, target["filename"])
 open(local, "wb").write(raw)
 print("downloaded", local, len(raw), "bytes")
 
+if local.endswith(".zip"):
+    import zipfile
+    with zipfile.ZipFile(local) as z:
+        member = next(n for n in z.namelist() if n.endswith(".csv") and not n.startswith("__MACOSX"))
+        local = z.extract(member, OUT)
 rep = pd.read_csv(local)
 print("report rows:", len(rep), "| columns:", list(rep.columns)[:10])
 # patient_filename like TCGA-XX-XXXX.<suffix>; derive 12-char barcode
