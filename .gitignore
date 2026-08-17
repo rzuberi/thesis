@@ -1,0 +1,6 @@
+data/TCGA_Reports.csv.zip
+data/TCGA-CDR.xlsx
+data/absolute_ploidy.txt
+labeller/tcga_validation_per_case.csv
+__pycache__/
+*.pyc
