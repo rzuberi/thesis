@@ -1,0 +1,30 @@
+{
+  "n_reports": 507,
+  "histologic_type": {
+    "coverage": 0.98,
+    "accuracy_vs_gdc": 1.0,
+    "n_compared": 464
+  },
+  "grade": {
+    "coverage": 0.769,
+    "accuracy_vs_cbioportal": 0.965,
+    "n_compared": 375
+  },
+  "grade_confusion": {
+    "G1": {
+      "G1": 17,
+      "G2": 0,
+      "G3": 2
+    },
+    "G2": {
+      "G1": 1,
+      "G2": 151,
+      "G3": 7
+    },
+    "G3": {
+      "G1": 1,
+      "G2": 2,
+      "G3": 194
+    }
+  }
+}
