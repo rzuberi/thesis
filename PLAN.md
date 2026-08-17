@@ -52,7 +52,10 @@ Status key: ✅ done · 🟡 partial/exists-needs-work · ❌ not started · **[
 Question: can free-text pathology reports substitute for expert labels in training and
 evaluating histology models, and does report-supervision replicate across cohorts?
 - ✅ ERIN report→label extraction working end-to-end (seed of the chapter)
-- ❌ Formalise + NAME the labeller/weak-supervision pipeline; release it — **this is the thesis's named artifact**
+- 🟡 Labeller built + NAMED: **pathladder** (`labeller/`, schema-driven, negation-aware,
+  10 unit tests). Validated on TCGA reports 2026-08-15: histologic type 98% coverage /
+  100% accuracy vs GDC (n=464); grade 77% coverage / 96.5% accuracy vs cBioPortal
+  (n=375). Remaining: ERIN schema application + packaging/release.
 - ❌ Validate report-derived labels vs expert grades (ERIN manual grades = ground truth; inputs all exist)
 - ❌ Report-weak-supervision vs gold-label supervision on same H&E task (needs ERIN features — same GPU job as Ch3)
 - ❌ **[GATE]** TCGA arm: download TCGA-Reports (9,523 machine-readable reports,
@@ -70,6 +73,12 @@ evaluating histology models, and does report-supervision replicate across cohort
 ---
 
 ## Changelog
+- 2026-08-15: cluster in maintenance until Wed 19th ~17:00 — offline work session.
+  Built + validated **pathladder** (Ch4 named artifact) on TCGA reports; built
+  Ch2 TCGA-OAC label table (`data/tcga_oac_labels.csv`: 88 cases with CDR survival
+  + TP53 (69 mut), 78 with ABSOLUTE ploidy/WGD (47 WGD+)); drafted four Ch1
+  sections (`chapters/ch1/`); pre-registered OCCAMS v2 interpretation
+  (`docs/occams_v2_decision_tree.md`).
 - 2026-08-14 (PM): four feasibility gates run as cluster jobs (see GAPS.md + feasibility/):
   Ch4 TCGA-Reports PASSED (146 ESCA / 507 ESCA+STAD / 9,517 pan-cancer report+slide);
   Ch2 TCGA download PASSED (65 OAC DX slides, 84 GB — note 65/87, not 87);
