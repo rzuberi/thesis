@@ -1,0 +1,23 @@
+{
+  "n": 485,
+  "pathladder (report-derived)": {
+    "n": 368,
+    "n_G3": 199,
+    "logrank_p": 0.01141,
+    "cox_hr_G3_vs_G12": 1.499,
+    "hr_95ci": [
+      1.093,
+      2.054
+    ]
+  },
+  "clinical record": {
+    "n": 437,
+    "n_G3": 236,
+    "logrank_p": 0.00733,
+    "cox_hr_G3_vs_G12": 1.484,
+    "hr_95ci": [
+      1.11,
+      1.983
+    ]
+  }
+}
