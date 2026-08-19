@@ -54,10 +54,12 @@ PARKED list until jointly promoted.
 ### Requires Rehan (R)
 - [x] R.1 `huggingface-cli login` *(done 2026-08-19; token relocated to modern path; Virchow2+GigaPath downloaded)* on cluster + accept Virchow2/GigaPath gated terms
       → unblocks encoder sweep extraction.
-- [ ] R.2 Decision: TCGA-STAD/GEJ acquisition (~382 cases, ~400GB) for a resolvable
-      TCGA fusion delta — yes/no.
-- [ ] R.3 Decision: is there an expert-graded ERIN subset beyond the report-derived
-      labels (for Ch4 gold-label arm)?
+- [x] R.2 APPROVED 2026-08-19 (Rehan): acquire TCGA-STAD/GEJ pool as pre-registered
+      extension (primary claim stays OAC-only).
+- [x] R.3 RESOLVED 2026-08-19 (Rehan): no expert-graded subset exists. Adopted
+      instead: consensus soft labels (graders agree -> confident label; disagree ->
+      intermediate/uncertain class, flagged to the model), plus Rehan adjudicating
+      the exported disagreement samples via document + transcribed yes/no.
 
 ## Phase 2 — blocked on Phase 0/1
 
@@ -71,6 +73,13 @@ PARKED list until jointly promoted.
 - [ ] 2.6 SWG clinical arm rerun under final protocol (needs SWG repo Phase-8 unblock
       or fresh feature index — investigate as part of 1.12).
 - [ ] 2.7 LLM-vs-pathladder comparison using TCGA-Reports benchmarks (needs 1.3 final patterns).
+
+### Added by 2026-08-19 joint amendment
+- [ ] 2.8 TCGA-STAD/GEJ acquisition: manifest -> per-slide downloads -> extraction.
+- [ ] 2.9 STAD labels table (CDR + TP53 + ABSOLUTE), mirroring tcga_oac_labels.
+- [ ] 2.10 ERIN consensus soft labels (pathladder x feasibility grader + adjudications).
+- [ ] 2.11 Adjudication pack for Rehan + transcript ingest tool.
+- [ ] 2.12 ERIN progression-label rebuild from consensus grades (pre-Ch3 gate).
 
 ## Phase 3 — writing blocked on results
 
@@ -99,3 +108,10 @@ PARKED list until jointly promoted.
 
 - 2026-08-19: plan frozen (Rehan + Claude).
 - 2026-08-19 (late): 1.1, 1.2, R.1 done with evidence; 1.3 mostly done. No scope changes.
+- 2026-08-19 (joint amendments, Rehan decisions): (a) R.2 approved -> new items 2.8
+  STAD acquisition + 2.9 STAD labels table; (b) ERIN label source changed to
+  pathladder+feasibility CONSENSUS soft labels with Rehan adjudication of
+  disagreements -> new items 2.10 consensus labels, 2.11 adjudication pack/ingest;
+  (c) ERIN progression labels to be REBUILT from consensus grades before any Ch3
+  model trains (amends erin_ch3_preregistration.md; reason: audit v2 showed the
+  feasibility grader over-calls CANCER 4,029 vs 1,314).
