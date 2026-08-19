@@ -1,0 +1,126 @@
+{
+  "n_reports": 7149,
+  "full_text": {
+    "n_both_labelled": 6359,
+    "agreement": 0.5568,
+    "confusion_pathladder_rows": {
+      "CANCER": {
+        "CANCER": 1079,
+        "HGD": 142,
+        "IND": 87,
+        "LGD": 123,
+        "NDBE": 2226
+      },
+      "HGD": {
+        "CANCER": 89,
+        "HGD": 222,
+        "IND": 2,
+        "LGD": 6,
+        "NDBE": 0
+      },
+      "IND": {
+        "CANCER": 1,
+        "HGD": 1,
+        "IND": 107,
+        "LGD": 0,
+        "NDBE": 0
+      },
+      "LGD": {
+        "CANCER": 12,
+        "HGD": 0,
+        "IND": 0,
+        "LGD": 163,
+        "NDBE": 0
+      },
+      "NDBE": {
+        "CANCER": 123,
+        "HGD": 2,
+        "IND": 4,
+        "LGD": 0,
+        "NDBE": 1970
+      }
+    },
+    "pathladder_dist": {
+      "NDBE": 4197,
+      "CANCER": 1314,
+      "null": 778,
+      "HGD": 367,
+      "LGD": 292,
+      "IND": 201
+    },
+    "feasibility_dist": {
+      "CANCER": 4029,
+      "NDBE": 2351,
+      "HGD": 319,
+      "LGD": 175,
+      "null": 166,
+      "IND": 109
+    }
+  },
+  "core_text": {
+    "n_both_labelled": 6338,
+    "agreement": 0.5565,
+    "confusion_pathladder_rows": {
+      "CANCER": {
+        "CANCER": 1072,
+        "HGD": 139,
+        "IND": 88,
+        "LGD": 120,
+        "NDBE": 2228
+      },
+      "HGD": {
+        "CANCER": 86,
+        "HGD": 221,
+        "IND": 2,
+        "LGD": 5,
+        "NDBE": 0
+      },
+      "IND": {
+        "CANCER": 1,
+        "HGD": 1,
+        "IND": 106,
+        "LGD": 0,
+        "NDBE": 0
+      },
+      "LGD": {
+        "CANCER": 12,
+        "HGD": 0,
+        "IND": 0,
+        "LGD": 165,
+        "NDBE": 0
+      },
+      "NDBE": {
+        "CANCER": 123,
+        "HGD": 2,
+        "IND": 4,
+        "LGD": 0,
+        "NDBE": 1963
+      }
+    },
+    "pathladder_dist": {
+      "NDBE": 4192,
+      "CANCER": 1304,
+      "null": 799,
+      "HGD": 363,
+      "LGD": 290,
+      "IND": 201
+    },
+    "feasibility_dist": {
+      "CANCER": 4020,
+      "NDBE": 2342,
+      "HGD": 314,
+      "null": 188,
+      "LGD": 177,
+      "IND": 108
+    }
+  },
+  "pathladder_cancer_not_feas": {
+    "n": 235,
+    "negation_context": 198,
+    "history_mention": 21,
+    "resection_specimen": 160
+  },
+  "feas_cancer_not_pathladder": {
+    "n": 2950
+  }
+}
