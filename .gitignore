@@ -6,3 +6,11 @@ __pycache__/
 *.pyc
 labeller/pathladder.egg-info/
 campaigns/slurm/
+labeller/adjudication_pack.md
+labeller/adjudication_index.csv
+labeller/adjudications.csv
+labeller/erin_consensus_labels.csv
+labeller/erin_progression_cohort_v2.csv
+labeller/audit_*.csv
+labeller/erin_pathladder_labels.csv
+labeller/cancer_audit_sample.csv

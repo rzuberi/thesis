@@ -75,11 +75,11 @@ PARKED list until jointly promoted.
 - [ ] 2.7 LLM-vs-pathladder comparison using TCGA-Reports benchmarks (needs 1.3 final patterns).
 
 ### Added by 2026-08-19 joint amendment
-- [ ] 2.8 TCGA-STAD/GEJ acquisition: manifest -> per-slide downloads -> extraction.
+- [~] 2.8 TCGA-STAD/GEJ acquisition *(launched 2026-08-19: 381 slides/356 cases/305GB, dl+extract chained)*
 - [ ] 2.9 STAD labels table (CDR + TP53 + ABSOLUTE), mirroring tcga_oac_labels.
-- [ ] 2.10 ERIN consensus soft labels (pathladder x feasibility grader + adjudications).
-- [ ] 2.11 Adjudication pack for Rehan + transcript ingest tool.
-- [ ] 2.12 ERIN progression-label rebuild from consensus grades (pre-Ch3 gate).
+- [~] 2.10 ERIN consensus soft labels *(v1 built: 3,541 confident / 2,818 uncertain / 636 single-grader; rerun after adjudications)*
+- [x] 2.11 Adjudication pack (80 cases) delivered to Rehan + parse_adjudication.py ready *(2026-08-19)*
+- [~] 2.12 progression cohort v2 built *(1,201 patients, 279 confident-HGD+ progressors; finalise post-adjudication)*
 
 ## Phase 3 — writing blocked on results
 
