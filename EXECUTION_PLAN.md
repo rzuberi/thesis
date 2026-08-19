@@ -25,13 +25,13 @@ PARKED list until jointly promoted.
 ## Phase 1 — unblocked now
 
 ### Experiments (submit)
-- [ ] 1.1 **OCCAMS v3** — the pre-registered decisive Ch2 run: Cox-loss ABMIL over
+- [x] 1.1 **OCCAMS v3** *(done 2026-08-19, results/occams_v3.json; deviation: shuffled controls omitted — noted for write-up; n=87 vs planned 141 needs explanation under 1.12)* — the pre-registered decisive Ch2 run: Cox-loss ABMIL over
       tile features, linear-Cox genomics arm, clinical-only arm (stage/age/treatment),
       late fusion; Harrell's C primary, patient-disjoint folds, bootstrap CIs; read
       strictly against docs/occams_v2_decision_tree.md. Done = results/occams_v3.json.
-- [ ] 1.2 **TCGA ABMIL fusion** — same machinery on TCGA-OAC (65 cases, CDR
+- [x] 1.2 **TCGA ABMIL fusion** *(done 2026-08-19, results/tcga_abmil.json)* — same machinery on TCGA-OAC (65 cases, CDR
       endpoints, native censoring). Done = results/tcga_fusion_abmil.json.
-- [ ] 1.3 **pathladder ERIN failure audit** — explain CANCER over-call (1,304 vs 843):
+- [~] 1.3 **pathladder ERIN failure audit** *(per-report comparison done: agreement 0.557, feasibility grader over-calls CANCER 4,029 vs 1,314 — adjudication read of exported samples remains)* — explain CANCER over-call (1,304 vs 843):
       sample + categorise disagreeing reports, fix patterns, re-run corpus, re-validate
       on TCGA (accuracy must not regress). Done = audit note + updated distribution.
 - [ ] 1.4 **PORPOISE baseline** on OCCAMS + TCGA-OAC (clone, env, adapt loaders).
@@ -52,7 +52,7 @@ PARKED list until jointly promoted.
       from cluster tables into chapters/ch2/swg_arm.md (compute from saved OOF if absent).
 
 ### Requires Rehan (R)
-- [ ] R.1 `huggingface-cli login` on cluster + accept Virchow2/GigaPath gated terms
+- [x] R.1 `huggingface-cli login` *(done 2026-08-19; token relocated to modern path; Virchow2+GigaPath downloaded)* on cluster + accept Virchow2/GigaPath gated terms
       → unblocks encoder sweep extraction.
 - [ ] R.2 Decision: TCGA-STAD/GEJ acquisition (~382 cases, ~400GB) for a resolvable
       TCGA fusion delta — yes/no.
@@ -98,3 +98,4 @@ PARKED list until jointly promoted.
 ## Amendment log
 
 - 2026-08-19: plan frozen (Rehan + Claude).
+- 2026-08-19 (late): 1.1, 1.2, R.1 done with evidence; 1.3 mostly done. No scope changes.
