@@ -19,6 +19,27 @@
    Production note: precompute low-mag tissue masks (background scanning dominates
    sparse slides: 163 s for 324 tiles vs 20 s for 512).
 
+
+## Results 2026-08-19 evening (cluster back; see results/)
+
+- **TCGA probe (Ch2 Part A): NEGATIVE REPLICATED.** TP53 AUC 0.355, WGD 0.429
+  (n=65/58, mean-pooled UNI2) — no signal, matching OCCAMS (0.48/0.41).
+  "Genotype not visible in pooled H&E features" is now a two-cohort finding.
+- **OCCAMS v2 fusion: null again** (n=84 after censoring exclusions; hist 0.567,
+  gen 0.480, fusion deltas span zero). CAVEAT: v2 predates the pre-registration —
+  it used mean+max+std pooling, binary 2-yr endpoint, no clinical arm. The
+  pre-registered analysis (ABMIL, Harrell's C, clinical-only arm) = **v3, still to
+  run**; v2 counts as a second first-pass. Also investigate n=84 vs expected ~141
+  (master coverage after ID canonicalisation).
+- **ERIN pathladder full corpus:** 7,149 reports labelled in seconds. LGD (290 vs
+  291) and IND (201 vs 201) match the hand-built extraction; CANCER over-called
+  (1,304 vs 843) — suspected history/resection mentions; NDBE 4,194 vs 4,804.
+  Next: per-report agreement join (feasibility file is patient-level) + failure
+  audit of the CANCER boundary.
+- **ERIN UNI2 extraction:** passed 778/2,281 within the first evening hour.
+- tcga_fusion (PCA cap), encoder_prep (HF auth check), h200 UNI2 test (cu128 env):
+  resubmitted after mechanical fixes.
+
 ## Next steps
 1. **OCCAMS second pass (redesigned):** find vital status in
    `~/occams_work/occams_master_20260511.csv` (or master OCCAMS export) → proper
