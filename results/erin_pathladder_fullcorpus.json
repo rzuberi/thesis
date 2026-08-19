@@ -1,0 +1,12 @@
+{
+  "n_reports": 7149,
+  "distribution": {
+    "NDBE": 4194,
+    "CANCER": 1304,
+    "None": 797,
+    "HGD": 363,
+    "LGD": 290,
+    "IND": 201
+  },
+  "vs_feasibility_labels": "join not automatic; key=None gcol=None \u2014 inspect manually"
+}

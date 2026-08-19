@@ -1,0 +1,46 @@
+{
+  "hist_only": {
+    "auc": 0.567283950617284,
+    "auc_sd": 0.060382866236867436,
+    "brier": 0.3277944811601846,
+    "shuffled_auc": 0.45740740740740743
+  },
+  "gen_only": {
+    "auc": 0.48012345679012347,
+    "auc_sd": 0.06748966174845072,
+    "brier": 0.2722081976833107,
+    "shuffled_auc": 0.5806172839506173
+  },
+  "early_fusion": {
+    "auc": 0.5806172839506173,
+    "auc_sd": 0.0783212445312058,
+    "brier": 0.2765972676007603,
+    "shuffled_auc": 0.504074074074074,
+    "delta_auc_vs_hist": {
+      "mean": 0.033847367543794665,
+      "ci": [
+        -0.09856505102040809,
+        0.16263976851391798
+      ]
+    }
+  },
+  "late_fusion": {
+    "auc": 0.5339506172839505,
+    "brier": 0.2535960386937334,
+    "delta_auc_vs_hist": {
+      "mean": -0.02884016764806515,
+      "ci": [
+        -0.0895098978288634,
+        0.029013532763532645
+      ]
+    }
+  },
+  "_meta": {
+    "n": 84,
+    "pos": 54,
+    "endpoint": "OS>=730d censored-aware",
+    "early_censored_excluded": 257,
+    "pooling": "mean+max+std tile-level",
+    "genomics": "TP53x4+ploidy+WGD+HER2amp+CCNE1amp"
+  }
+}

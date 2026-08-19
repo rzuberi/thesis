@@ -1,0 +1,39 @@
+{
+  "hist": {
+    "auc": 0.707,
+    "brier": 0.253,
+    "shuffled_auc": 0.542
+  },
+  "gen": {
+    "auc": 0.67,
+    "brier": 0.228,
+    "shuffled_auc": 0.476
+  },
+  "early": {
+    "auc": 0.705,
+    "brier": 0.255,
+    "shuffled_auc": 0.543,
+    "delta_auc_vs_hist": {
+      "mean": -0.002,
+      "ci": [
+        -0.011,
+        0.0
+      ]
+    }
+  },
+  "late": {
+    "auc": 0.745,
+    "brier": 0.207,
+    "delta_auc_vs_hist": {
+      "mean": 0.007,
+      "ci": [
+        -0.092,
+        0.091
+      ]
+    }
+  },
+  "_meta": {
+    "n": 48,
+    "endpoint": "OS>=730d, early-censored excluded"
+  }
+}
