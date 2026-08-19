@@ -39,3 +39,10 @@ use short --time per unit so the scheduler backfills them.
   pipelines); read WSIs from the **fast** pool copies (see DATASETS.md).
 - TCGA TP53/WGD probe (Ch2 Part A): epyc, minutes.
 - Monitoring helper: `~/slurm_eta_watch.sh`.
+
+## Download throughput (measured 2026-08-20)
+GDC API: 40 parallel streams from epyc sustained ~234 MB/s aggregate (305 GB in
+~30 min) with 1/381 transient failure. Single-stream is ~4-6 MB/s — always
+parallelise GDC pulls; the %40 array throttle did not bind. The ceiling was never
+hit; raise beyond 40 only if a campaign needs it, since a rate-limit block on the
+shared cluster IP stalls everyone.
