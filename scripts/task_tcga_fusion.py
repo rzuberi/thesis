@@ -46,7 +46,7 @@ print(f"n={len(y)} pos(2yr-survivor)={int(y.sum())} H={H.shape} G={G.shape}")
 def oof_probs(Xi, yy, seed, pca=None):
     oof = np.zeros(len(yy))
     steps = [("s", StandardScaler())]
-    if pca: steps.append(("p", PCA(min(pca, Xi.shape[1], len(yy) - 1))))
+    if pca: steps.append(("p", PCA(min(pca, Xi.shape[1], int(len(yy) * 0.8) - 2))))
     steps.append(("l", LogisticRegression(C=0.5, class_weight="balanced", max_iter=4000)))
     for tr, te in StratifiedKFold(5, shuffle=True, random_state=seed).split(Xi, yy):
         p = Pipeline(steps); p.fit(Xi[tr], yy[tr]); oof[te] = p.predict_proba(Xi[te])[:, 1]
