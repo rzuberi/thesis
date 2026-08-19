@@ -24,7 +24,11 @@ MASTER = "/home/zuberi01/occams_work/occams_master_20260511.csv"
 OUT = os.environ.get("OUTDIR", ".")
 CUT_DAYS = 730
 
-def norm_id(s): return str(s).strip().upper().replace("/", "-")
+import re as _re
+def norm_id(s):
+    s = str(s).strip().upper().replace("/", "-")
+    m = _re.search(r"(?:OCCAMS|OC)[-_ ]?([A-Z]{2})[-_ ]?0*([0-9]+)", s)
+    return f"{m.group(1)}{int(m.group(2)):04d}" if m else s
 
 # --- endpoint from master (proper censoring) ---
 mast = pd.read_csv(MASTER, dtype=str, low_memory=False)

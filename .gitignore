@@ -5,3 +5,4 @@ labeller/tcga_validation_per_case.csv
 __pycache__/
 *.pyc
 labeller/pathladder.egg-info/
+campaigns/slurm/
