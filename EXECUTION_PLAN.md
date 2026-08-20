@@ -116,6 +116,12 @@ PARKED list until jointly promoted.
 - 2026-08-19: plan frozen (Rehan + Claude).
 - 2026-08-19 (late): 1.1, 1.2, R.1 done with evidence; 1.3 mostly done. No scope changes.
 - 2026-08-20: 2.7 extended to on-cluster local-LLM grading of ERIN (Rehan proposal).
+- 2026-08-20 (joint, Rehan proposal): 2.7 further extended to an LLM JURY — ~10
+  diverse local models grade the corpus with an identical prompt; jury majority ->
+  candidate labels, jury entropy -> per-report uncertainty, inter-model agreement
+  (Fleiss kappa, pairwise) studied as Ch4 content. Membership gated on parse
+  viability (>=95% on adjudicated-80 smoke) ONLY — never on agreement, to avoid
+  homogenising the jury. Human anchor remains the adjudicated 80 + Rehan spot-check.
 - 2026-08-20: adjudication performed by Claude per Rehan's delegation, with Rehan
   spot-check to follow (10 flagged cases); independence caveat recorded for write-up.
 - 2026-08-19 (joint amendments, Rehan decisions): (a) R.2 approved -> new items 2.8
