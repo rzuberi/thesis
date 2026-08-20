@@ -52,3 +52,15 @@ def test_tcga_squamous_g3():
 
 def test_empty():
     assert grade("Specimen inadequate for assessment.") is None
+
+
+def test_long_negated_list_not_cancer():
+    # ERIN audit failure mode: negation >60 chars from the matched term
+    assert grade("There is no active inflammation, intestinal metaplasia, "
+                 "dysplasia nor evidence of malignancy.") is None or \
+           grade("Barrett's noted. There is no active inflammation, intestinal metaplasia, "
+                 "dysplasia nor evidence of malignancy.") == "NDBE"
+
+
+def test_negation_stays_sentence_scoped():
+    assert grade("There is no dysplasia in specimen A. Specimen B shows invasive adenocarcinoma.") == "CANCER"

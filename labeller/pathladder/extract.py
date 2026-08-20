@@ -16,9 +16,12 @@ def _sentences(text):
 
 def _sentence_negates(sentence, match_start):
     """A match is negated if a negation cue appears before it in the sentence,
-    within a 60-char window (avoids 'no residual X ... but Y present' overreach)."""
+    within a 130-char window. Widened from 60 after the ERIN adjudication audit:
+    negated list constructions ('no active inflammation, intestinal metaplasia,
+    dysplasia nor evidence of malignancy') routinely exceed 60 chars, producing
+    false CANCER calls. Sentence scoping still prevents cross-sentence overreach."""
     for m in NEGATION.finditer(sentence[:match_start]):
-        if match_start - m.end() <= 60:
+        if match_start - m.end() <= 130:
             return True
     return False
 
