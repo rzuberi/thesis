@@ -77,9 +77,12 @@ PARKED list until jointly promoted.
       prompt), as (a) third grader for agreement analysis, (b) Ch4 rules-vs-LLM
       numbers, (c) candidate disagreement-resolver. Smoke on the 80 adjudicated
       cases first (adjudicated truth available), then full corpus + TCGA replication.
-      *SMOKE PASSED 2026-08-20: qwen3:14b vs adjudicated truth = 78/78 (100%) on the
-      cancer boundary, 0 parse failures after think-mode fix. Full 8-shard corpus
-      run launched. TCGA-side prompt (type/grade schema) still to design.*
+      *JURY SMOKE COMPLETE 2026-08-20: 9/10 scored (llama3.3:70b pending). Five models
+      at 100% vs adjudicated truth (qwen3 14b/32b, gemma3 12b/27b, phi4); deepseek +
+      mistral 98.7%; llama3.1:8b 84.4% (retained — gate is parse-only); granite3.3:8b
+      EXCLUDED by pre-registered parse gate (93.7% < 95%). Unanimity 72% on hard cases;
+      disagreement concentrates in the 8B tier. qwen3:14b full corpus 8/8 shards done;
+      7 further jurors x 8 shards (56 jobs) launched. TCGA-side prompt still to design.*
 
 ### Added by 2026-08-19 joint amendment
 - [x] 2.8 TCGA-STAD/GEJ acquisition *(COMPLETE 2026-08-20: 381/381 slides, 381/381 features, overnight)*
