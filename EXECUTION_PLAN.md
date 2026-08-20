@@ -48,7 +48,7 @@ PARKED list until jointly promoted.
 - [ ] 1.9 **Ch1 main introduction** — motivation, hypothesis, contributions, outline.
 - [ ] 1.10 **Ch1 per-cohort dataset descriptions** with final verified numbers.
 - [ ] 1.11 **Thesis skeleton** (LaTeX, Cambridge format) with all drafted sections placed.
-- [ ] 1.12 **SWG [TO FILL] slots** — pull histology-only baseline + fusion-vs-hist delta
+- [~] 1.12 **SWG [TO FILL] slots** *(filled 2026-08-20 from lgd2_final_pre_event_model_comparison.md; remaining: paired fusion-vs-histology bootstrap CI from saved OOF preds)* — pull histology-only baseline + fusion-vs-hist delta
       from cluster tables into chapters/ch2/swg_arm.md (compute from saved OOF if absent).
 
 ### Requires Rehan (R)
