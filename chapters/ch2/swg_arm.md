@@ -18,9 +18,11 @@ diagnosis it is asked to anticipate.
 
 ## Models
 
-Six model families run under the Chapter 1 protocol on identical frozen
+Seven model families run under the Chapter 1 protocol on identical frozen
 patient-disjoint folds. The copy-number baseline follows the published sWGS
 approach for this cohort: imputation, scaling, 64-component PCA, random forest.
+Alongside the families below, a co-attention fusion variant was evaluated and is
+reported with the others.
 The histology model is attention-based multiple-instance learning (ABMIL) over
 UNI2-h tile features. Early fusion concatenates the modalities before a single
 classifier; intermediate fusion merges learned representations; late fusion
@@ -40,14 +42,24 @@ gains are therefore individually supported, and the AUPRC gain is directionally
 consistent but not resolved at n=150 — the claim this chapter makes is a likely
 multimodal benefit, not a definitive one, and the external arms exist to test it.
 
-Histology alone reaches [TO FILL: ABMIL-only AUPRC/AUC/Brier], placing the
-unimodal arms [TO FILL: ordering]. The histology-anchored contrast (fusion minus
-histology-only) is [TO FILL: delta and CI] — this is the delta the thesis
-hypothesis names, and the copy-number-anchored contrast above is its complement.
+Histology alone (ABMIL over UNI2) reaches AUPRC 0.557, ROC AUC 0.731, Brier
+0.245 — both unimodal arms rank below every fusion family on AUPRC (histology 4th
+and copy number 6th of seven families). The histology-anchored contrast (late-mean
+fusion minus histology-only) is +0.073 AUPRC, +0.043 AUC, and −0.061 Brier as
+point differences; this is the delta the thesis hypothesis names, and the
+copy-number-anchored contrast above is its complement. [pending: paired bootstrap
+CI for this specific contrast, computable from the saved out-of-fold predictions —
+the released tables carry CIs only for the fusion-vs-CNV contrast.]
 
-Early and intermediate fusion [TO FILL: their metrics] did not overtake late
-fusion, consistent with the small-cohort expectation set out in the Chapter 1
-taxonomy. The shuffled-label controls sat at chance for all families.
+Early fusion (AUPRC 0.590, AUC 0.738) and intermediate fusion (0.567, 0.741)
+did not overtake late-mean fusion on AUPRC, and neither did a co-attention
+variant (0.548, 0.739) — consistent with the small-cohort expectation set out in
+the Chapter 1 taxonomy. The shuffled-label controls sat at chance for all
+families. One provenance note: an earlier, less strict evaluation round (155
+patients, before the pre-event hardening) produced substantially higher absolute
+numbers across all families; only the strict pre-event release reported here is
+citable, and the earlier table is retained solely as an illustration of how much
+evaluation leakage inflates this task.
 
 ## Interpretation available
 
