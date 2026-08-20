@@ -31,7 +31,7 @@ PARKED list until jointly promoted.
       strictly against docs/occams_v2_decision_tree.md. Done = results/occams_v3.json.
 - [x] 1.2 **TCGA ABMIL fusion** *(done 2026-08-19, results/tcga_abmil.json)* — same machinery on TCGA-OAC (65 cases, CDR
       endpoints, native censoring). Done = results/tcga_fusion_abmil.json.
-- [~] 1.3 **pathladder ERIN failure audit** *(per-report comparison done: agreement 0.557, feasibility grader over-calls CANCER 4,029 vs 1,314 — adjudication read of exported samples remains)* — explain CANCER over-call (1,304 vs 843):
+- [x] 1.3 **pathladder ERIN failure audit** *(DONE 2026-08-20: 80 cases adjudicated by Claude — 29 yes/50 no/1 unsure; pathladder negation window widened 60->130 (10 false CANCERs fixed, TCGA validation unchanged, 12 tests pass); feasibility grader 40/40 wrong on its side. Rehan spot-check of 10 flagged cases pending)* — explain CANCER over-call (1,304 vs 843):
       sample + categorise disagreeing reports, fix patterns, re-run corpus, re-validate
       on TCGA (accuracy must not regress). Done = audit note + updated distribution.
 - [ ] 1.4 **PORPOISE baseline** on OCCAMS + TCGA-OAC (clone, env, adapt loaders).
@@ -77,9 +77,9 @@ PARKED list until jointly promoted.
 ### Added by 2026-08-19 joint amendment
 - [x] 2.8 TCGA-STAD/GEJ acquisition *(COMPLETE 2026-08-20: 381/381 slides, 381/381 features, overnight)*
 - [ ] 2.9 STAD labels table (CDR + TP53 + ABSOLUTE), mirroring tcga_oac_labels.
-- [~] 2.10 ERIN consensus soft labels *(v1 built: 3,541 confident / 2,818 uncertain / 636 single-grader; rerun after adjudications)*
+- [x] 2.10 ERIN consensus soft labels *(FINAL 2026-08-20: 3,350 confident / 2,860 uncertain / 706 single-grader / 79 adjudicated; false confident-CANCERs correctly demoted to uncertain)*
 - [x] 2.11 Adjudication pack (80 cases) delivered to Rehan + parse_adjudication.py ready *(2026-08-19)*
-- [~] 2.12 progression cohort v2 built *(1,201 patients, 279 confident-HGD+ progressors; finalise post-adjudication)*
+- [x] 2.12 progression cohort FINAL *(2026-08-20: 1,218 patients, 197 progressors — the old grader had inflated progression events ~30% via false CANCER calls)*
 
 ## Phase 3 — writing blocked on results
 
@@ -108,6 +108,8 @@ PARKED list until jointly promoted.
 
 - 2026-08-19: plan frozen (Rehan + Claude).
 - 2026-08-19 (late): 1.1, 1.2, R.1 done with evidence; 1.3 mostly done. No scope changes.
+- 2026-08-20: adjudication performed by Claude per Rehan's delegation, with Rehan
+  spot-check to follow (10 flagged cases); independence caveat recorded for write-up.
 - 2026-08-19 (joint amendments, Rehan decisions): (a) R.2 approved -> new items 2.8
   STAD acquisition + 2.9 STAD labels table; (b) ERIN label source changed to
   pathladder+feasibility CONSENSUS soft labels with Rehan adjudication of
