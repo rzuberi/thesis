@@ -22,11 +22,15 @@ TEXT = ["FinalDiagnosis_redacted", "MicroscopicDescription_redacted",
 os.environ.setdefault("OLLAMA_MODELS", "/mnt/scratche/slow/fmlab/zuberi01/ollama-models")
 CONC = int(os.environ.get("CONC", "6"))
 os.environ.setdefault("OLLAMA_NUM_PARALLEL", str(CONC))
+# unique port per job: multiple jobs can share a node; colliding on 11434 cross-wires servers
+PORT = 20000 + int(os.environ.get("SLURM_JOB_ID", "0")) % 20000
+os.environ["OLLAMA_HOST"] = f"127.0.0.1:{PORT}"
+BASE = f"http://127.0.0.1:{PORT}"
 srv = subprocess.Popen([os.path.expanduser("~/.local/bin/ollama"), "serve"],
                        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 for _ in range(60):
     try:
-        urllib.request.urlopen("http://127.0.0.1:11434/api/tags", timeout=3); break
+        urllib.request.urlopen(BASE + "/api/tags", timeout=3); break
     except Exception: time.sleep(2)
 subprocess.run([os.path.expanduser("~/.local/bin/ollama"), "pull", MODEL], check=True)
 
@@ -52,7 +56,7 @@ def grade(text):
     body = json.dumps({"model": MODEL, "prompt": PROMPT + text[:6000] + "\n/no_think",
                        "stream": False, "format": "json", "think": False,
                        "options": {"temperature": 0, "num_predict": 200}}).encode()
-    r = urllib.request.Request("http://127.0.0.1:11434/api/generate", data=body,
+    r = urllib.request.Request(BASE + "/api/generate", data=body,
                                headers={"Content-Type": "application/json"})
     resp = json.loads(urllib.request.urlopen(r, timeout=300).read())["response"]
     grades = ("NDBE", "IND", "LGD", "HGD", "CANCER", "NA")
