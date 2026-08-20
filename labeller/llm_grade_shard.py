@@ -20,6 +20,8 @@ TEXT = ["FinalDiagnosis_redacted", "MicroscopicDescription_redacted",
         "Addendum1_redacted", "Addendum2_redacted", "Addendum3_redacted"]
 
 os.environ.setdefault("OLLAMA_MODELS", "/mnt/scratche/slow/fmlab/zuberi01/ollama-models")
+CONC = int(os.environ.get("CONC", "6"))
+os.environ.setdefault("OLLAMA_NUM_PARALLEL", str(CONC))
 srv = subprocess.Popen([os.path.expanduser("~/.local/bin/ollama"), "serve"],
                        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 for _ in range(60):
@@ -72,15 +74,29 @@ rep = rep.reset_index(drop=True)
 rep = rep[rep.index % N_SHARDS == SHARD]
 print(f"model={MODEL} shard={SHARD}/{N_SHARDS} reports={len(rep)}", flush=True)
 
-rows, t0 = [], time.time()
-for i, (_, r) in enumerate(rep.iterrows()):
-    g, raw = grade(r["_text"])
-    rows.append({"CaseName": r["CaseName"], "llm_grade": g})
-    if i < 3:
-        print(f"RAW[{i}]: {raw[:300]!r}", flush=True)
-    if i % 25 == 0:
-        print(f"{i}/{len(rep)} elapsed={time.time()-t0:.0f}s", flush=True)
 out = os.path.join(OUT, f"llm_grades_{MODEL.replace(':','_').replace('/','_')}_shard{SHARD}.csv")
-pd.DataFrame(rows).to_csv(out, index=False)
-print("wrote", out, f"({(time.time()-t0)/max(len(rep),1):.1f}s/report)")
+done = set()
+if os.path.exists(out):  # resume after preemption
+    done = set(pd.read_csv(out)["CaseName"])
+    print(f"resuming: {len(done)} already graded", flush=True)
+todo = [(r["CaseName"], r["_text"]) for _, r in rep.iterrows() if r["CaseName"] not in done]
+
+from concurrent.futures import ThreadPoolExecutor
+import threading
+lock = threading.Lock()
+t0, count = time.time(), 0
+if not os.path.exists(out):
+    open(out, "w").write("CaseName,llm_grade\n")
+def work(item):
+    global count
+    name, text = item
+    g, raw = grade(text)
+    with lock:
+        open(out, "a").write(f"{name},{g}\n")
+        count += 1
+        if count <= 3: print(f"RAW: {raw[:200]!r}", flush=True)
+        if count % 50 == 0: print(f"{count}/{len(todo)} elapsed={time.time()-t0:.0f}s", flush=True)
+with ThreadPoolExecutor(max_workers=CONC) as ex:
+    list(ex.map(work, todo))
+print("wrote", out, f"({(time.time()-t0)/max(len(todo),1):.2f}s/report at CONC={CONC})")
 srv.terminate()
