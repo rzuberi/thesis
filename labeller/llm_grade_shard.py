@@ -26,13 +26,20 @@ os.environ.setdefault("OLLAMA_NUM_PARALLEL", str(CONC))
 PORT = 20000 + int(os.environ.get("SLURM_JOB_ID", "0")) % 20000
 os.environ["OLLAMA_HOST"] = f"127.0.0.1:{PORT}"
 BASE = f"http://127.0.0.1:{PORT}"
+_slog = open(os.path.join(os.environ.get("OUTDIR", "."), f"ollama_server_{os.environ.get('SLURM_JOB_ID','x')}.log"), "w")
 srv = subprocess.Popen([os.path.expanduser("~/.local/bin/ollama"), "serve"],
-                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                       stdout=_slog, stderr=_slog)
 for _ in range(60):
     try:
         urllib.request.urlopen(BASE + "/api/tags", timeout=3); break
     except Exception: time.sleep(2)
-subprocess.run([os.path.expanduser("~/.local/bin/ollama"), "pull", MODEL], check=True)
+pull = subprocess.run([os.path.expanduser("~/.local/bin/ollama"), "pull", MODEL])
+if pull.returncode != 0:  # offline node: proceed if weights already cached
+    have = subprocess.run([os.path.expanduser("~/.local/bin/ollama"), "list"],
+                          capture_output=True, text=True).stdout
+    if MODEL.split(":")[0] not in have:
+        raise SystemExit(f"pull failed and {MODEL} not in local cache")
+    print(f"pull failed (offline node?) but {MODEL} cached — continuing", flush=True)
 
 PROMPT = """You grade UK oesophageal surveillance pathology reports.
 Consider ONLY findings in the oesophagus or gastro-oesophageal junction (GOJ/cardia).
@@ -76,6 +83,7 @@ if SMOKE == "adjudicated":
     rep = rep[rep["CaseName"].isin(idx["CaseName"])]
 rep = rep.reset_index(drop=True)
 rep = rep[rep.index % N_SHARDS == SHARD]
+if os.environ.get("LIMIT"): rep = rep.head(int(os.environ["LIMIT"]))
 print(f"model={MODEL} shard={SHARD}/{N_SHARDS} reports={len(rep)}", flush=True)
 
 out = os.path.join(OUT, f"llm_grades_{MODEL.replace(':','_').replace('/','_')}_shard{SHARD}.csv")
