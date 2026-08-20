@@ -72,7 +72,11 @@ PARKED list until jointly promoted.
 - [ ] 2.5 Encoder sweep execution (needs R.1 + 1.7; Trident for extraction).
 - [ ] 2.6 SWG clinical arm rerun under final protocol (needs SWG repo Phase-8 unblock
       or fresh feature index — investigate as part of 1.12).
-- [ ] 2.7 LLM-vs-pathladder comparison using TCGA-Reports benchmarks (needs 1.3 final patterns).
+- [ ] 2.7 LLM-vs-pathladder comparison — EXTENDED by joint decision 2026-08-20:
+      local-LLM grading of ERIN report text on-cluster (ollama, site-scoped ladder
+      prompt), as (a) third grader for agreement analysis, (b) Ch4 rules-vs-LLM
+      numbers, (c) candidate disagreement-resolver. Smoke on the 80 adjudicated
+      cases first (adjudicated truth available), then full corpus + TCGA replication.
 
 ### Added by 2026-08-19 joint amendment
 - [x] 2.8 TCGA-STAD/GEJ acquisition *(COMPLETE 2026-08-20: 381/381 slides, 381/381 features, overnight)*
@@ -108,6 +112,7 @@ PARKED list until jointly promoted.
 
 - 2026-08-19: plan frozen (Rehan + Claude).
 - 2026-08-19 (late): 1.1, 1.2, R.1 done with evidence; 1.3 mostly done. No scope changes.
+- 2026-08-20: 2.7 extended to on-cluster local-LLM grading of ERIN (Rehan proposal).
 - 2026-08-20: adjudication performed by Claude per Rehan's delegation, with Rehan
   spot-check to follow (10 flagged cases); independence caveat recorded for write-up.
 - 2026-08-19 (joint amendments, Rehan decisions): (a) R.2 approved -> new items 2.8
