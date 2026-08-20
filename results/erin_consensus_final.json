@@ -1,0 +1,12 @@
+{
+  "reports": 7149,
+  "confidence_dist": {
+    "confident": 3350,
+    "uncertain": 2860,
+    "single_grader": 706,
+    "unlabelled": 154,
+    "adjudicated": 79
+  },
+  "progression_cohort_n": 1218,
+  "progressors": 197
+}
