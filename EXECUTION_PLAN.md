@@ -18,8 +18,8 @@ PARKED list until jointly promoted.
 
 ## Phase 0 — in flight (wait, monitor, don't touch)
 
-- [ ] 0.1 ERIN UNI2 extraction, 2,281 slides, cuda+h200 race — done when h5 count = 2,281
-      (last checked: 783, 2026-08-19 evening)
+- [~] 0.1 ERIN UNI2 extraction — 2,276/2,281 (2026-08-20 morning); 5 stragglers
+      resubmitted on both GPU partitions (elements 619, 865, 1260, 1870, 1990)
 - [ ] 0.2 SWG paper hardening work (Rehan's own track; Claude only assists on request)
 
 ## Phase 1 — unblocked now
@@ -40,9 +40,9 @@ PARKED list until jointly promoted.
       barretts_training docs). Done = annotated importance table.
 
 ### Writing (no dependencies)
-- [ ] 1.6 **ERIN Ch3 pre-registration** — primary endpoint (grade vs progressed_to_HGDplus),
+- [x] 1.6 **ERIN Ch3 pre-registration** *(docs/erin_ch3_preregistration.md, 2026-08-19; amended by consensus-label decision)* — primary endpoint (grade vs progressed_to_HGDplus),
       arms, metrics, thresholds; same discipline as the OCCAMS decision tree.
-- [ ] 1.7 **Encoder-sweep pre-registration** — grid (UNI2/Virchow2/GigaPath + gated
+- [x] 1.7 **Encoder-sweep pre-registration** *(docs/encoder_sweep_preregistration.md, 2026-08-19)* — grid (UNI2/Virchow2/GigaPath + gated
       additions), invariance question, full-distribution reporting rule, GPU budget.
 - [ ] 1.8 **Ch2 Part A prose** — the two-cohort genotype-from-H&E negative (all numbers exist).
 - [ ] 1.9 **Ch1 main introduction** — motivation, hypothesis, contributions, outline.
@@ -75,7 +75,7 @@ PARKED list until jointly promoted.
 - [ ] 2.7 LLM-vs-pathladder comparison using TCGA-Reports benchmarks (needs 1.3 final patterns).
 
 ### Added by 2026-08-19 joint amendment
-- [~] 2.8 TCGA-STAD/GEJ acquisition *(launched 2026-08-19: 381 slides/356 cases/305GB, dl+extract chained)*
+- [x] 2.8 TCGA-STAD/GEJ acquisition *(COMPLETE 2026-08-20: 381/381 slides, 381/381 features, overnight)*
 - [ ] 2.9 STAD labels table (CDR + TP53 + ABSOLUTE), mirroring tcga_oac_labels.
 - [~] 2.10 ERIN consensus soft labels *(v1 built: 3,541 confident / 2,818 uncertain / 636 single-grader; rerun after adjudications)*
 - [x] 2.11 Adjudication pack (80 cases) delivered to Rehan + parse_adjudication.py ready *(2026-08-19)*
