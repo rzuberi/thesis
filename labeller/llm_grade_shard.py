@@ -47,17 +47,21 @@ REPORT:
 """
 
 def grade(text):
-    body = json.dumps({"model": MODEL, "prompt": PROMPT + text[:6000],
-                       "stream": False, "format": "json",
-                       "options": {"temperature": 0}}).encode()
+    body = json.dumps({"model": MODEL, "prompt": PROMPT + text[:6000] + "\n/no_think",
+                       "stream": False, "format": "json", "think": False,
+                       "options": {"temperature": 0, "num_predict": 200}}).encode()
     r = urllib.request.Request("http://127.0.0.1:11434/api/generate", data=body,
                                headers={"Content-Type": "application/json"})
     resp = json.loads(urllib.request.urlopen(r, timeout=300).read())["response"]
+    grades = ("NDBE", "IND", "LGD", "HGD", "CANCER", "NA")
     try:
-        g = json.loads(resp).get("grade", "PARSE_FAIL")
-        return g if g in ("NDBE", "IND", "LGD", "HGD", "CANCER", "NA") else "PARSE_FAIL"
+        g = json.loads(resp).get("grade", "")
+        if g in grades: return g, resp
     except Exception:
-        return "PARSE_FAIL"
+        pass
+    import re as _re
+    hits = [g for g in grades if _re.search(rf'\b{g}\b', resp)]
+    return (hits[0] if len(hits) == 1 else "PARSE_FAIL"), resp
 
 rep = pd.read_csv(ERIN, dtype=str, low_memory=False).fillna("")
 rep["_text"] = rep[TEXT].agg(" ".join, axis=1)
@@ -70,7 +74,10 @@ print(f"model={MODEL} shard={SHARD}/{N_SHARDS} reports={len(rep)}", flush=True)
 
 rows, t0 = [], time.time()
 for i, (_, r) in enumerate(rep.iterrows()):
-    rows.append({"CaseName": r["CaseName"], "llm_grade": grade(r["_text"])})
+    g, raw = grade(r["_text"])
+    rows.append({"CaseName": r["CaseName"], "llm_grade": g})
+    if i < 3:
+        print(f"RAW[{i}]: {raw[:300]!r}", flush=True)
     if i % 25 == 0:
         print(f"{i}/{len(rep)} elapsed={time.time()-t0:.0f}s", flush=True)
 out = os.path.join(OUT, f"llm_grades_{MODEL.replace(':','_').replace('/','_')}_shard{SHARD}.csv")
