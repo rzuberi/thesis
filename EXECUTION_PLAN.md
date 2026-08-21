@@ -82,7 +82,11 @@ PARKED list until jointly promoted.
       mistral 98.7%; llama3.1:8b 84.4% (retained — gate is parse-only); granite3.3:8b
       EXCLUDED by pre-registered parse gate (93.7% < 95%). Unanimity 72% on hard cases;
       disagreement concentrates in the 8B tier. qwen3:14b full corpus 8/8 shards done;
-      7 further jurors x 8 shards (56 jobs) launched. TCGA-side prompt still to design.*
+      CORPUS COMPLETE 2026-08-20 evening: 8 jurors x 7,149 reports. Fleiss kappa 0.900;
+      unanimity 85.5%; jury >=6/8 majority on 6,899/7,101 (97.2%) — only ~200 reports
+      remain genuinely uncertain (vs 2,860 under 2-grader consensus). Results in
+      results/jury_corpus_analysis.json + jury_votes.csv. OPEN JOINT DECISION:
+      adopt jury-vote + entropy as Ch3/Ch4 label source. TCGA-side prompt still to design.*
 
 ### Added by 2026-08-19 joint amendment
 - [x] 2.8 TCGA-STAD/GEJ acquisition *(COMPLETE 2026-08-20: 381/381 slides, 381/381 features, overnight)*
