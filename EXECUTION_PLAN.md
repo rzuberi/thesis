@@ -128,8 +128,25 @@ PARKED list until jointly promoted.
 - Genomics England application
 - Multitask MoE thread (multitask_moe_20260721)
 
+## Leave-week campaign (launched 2026-08-21, Rehan away until ~2026-09-01)
+
+All results land in feasibility/runs/<task>/output/results.json unless noted.
+1. Specimen jury completion: h200 shards + cuda insurance (12+12 jobs) ->
+   barretts_db_export/jury_specimen/ + swg_label_audit_specimen.csv
+2. STAD labels (2.9) -> data/tcga_stad_labels.csv, then POOLED OAC+GEJ fusion
+   (the R.2 powered Ch2 test, n~446) + necessity probes (2.17) on the pool
+3. ERIN join (2.1) -> labeller/erin_master.csv, then Ch3 arm (2.2) and Ch4
+   label-source experiment (2.3), each duplicated cuda+h200
+4. Encoder sweep extraction (2.5): Virchow2 (cuda) + GigaPath (h200) over
+   ERIN 2,281 + ESCA 65 + STAD 381 -> features_virchow2/ features_gigapath/
+On return: read results against pre-registrations; deviations to log: none yet.
+
 ## Amendment log
 
+- 2026-08-21 (joint, Rehan proposal): added 2.17 necessity-triangle probes —
+  for each chapter's modality X, report (i) hist-only, (ii) hist+X fusion,
+  (iii) X-predicted-from-histology, as one repeated figure. First instance
+  launched on the TCGA pool (tp53/wgd/stage/age from H&E).
 - 2026-08-19: plan frozen (Rehan + Claude).
 - 2026-08-19 (late): 1.1, 1.2, R.1 done with evidence; 1.3 mostly done. No scope changes.
 - 2026-08-20 (Rehan decisions): (a) ADOPTED jury-vote + entropy as Ch3/Ch4 label
