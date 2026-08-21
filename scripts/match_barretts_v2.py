@@ -28,8 +28,8 @@ pt = fetch("view_patient_pathology_text_normalised")
 pt.to_csv(os.path.join(OUTD, "view_patient_pathology_full.csv"), index=False)
 os.chmod(os.path.join(OUTD, "view_patient_pathology_full.csv"), 0o600)
 
-PS = re.compile(r"\bPS\s?(\d{2})[.\-/ ]?(\d{3,6})\b", re.I)
-HN = re.compile(r"\b(\d{2})H(\d{5,10})\b", re.I)
+PS = re.compile(r"PS\s?(\d{2})[.\-/ ]?(\d{3,6})(?!\d)", re.I)
+HN = re.compile(r"(?<!\d)(\d{2})H(\d{5,10})(?!\d)", re.I)
 def keys_from(s):
     s = str(s)
     out = {("PS", y, int(n)) for y, n in PS.findall(s)}
