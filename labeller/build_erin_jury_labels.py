@@ -44,7 +44,7 @@ df[df["label_status"] == "unsure_held_out"].to_csv(
 
 # progression cohort v3: train-eligible grades only
 lab = df[df["label_status"] != "unsure_held_out"].copy()
-lab["date"] = pd.to_datetime(lab["CollectedOrOrdered"], errors="coerce")
+lab["date"] = pd.to_datetime(lab["CollectedOrOrdered"], errors="coerce", dayfirst=True)
 lab["num"] = lab["final_label"].map(NUM)
 lab = lab.dropna(subset=["date", "num"])
 rows = []
