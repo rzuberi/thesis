@@ -92,9 +92,10 @@ PARKED list until jointly promoted.
 - [x] 2.13 Barretts-database free-text acquisition (READ-ONLY): all 13,645 pathology
       reports exported to secured cluster dir; SWG matching via specimen numbers ->
       643/771 Path IDs (83%), 74/88 patients, 327 report rows *(2026-08-20)*
-- [~] 2.14 LLM jury on matched SWG reports (8 jurors launched) -> label audit of the
-      SWG cohort's grades + Ch4 third cohort
-- [ ] 2.15 OCCAMS-side lead: same DB exposes view_masterpath_patient (2,754 OC/AH
+- [~] 2.14 LLM jury on matched SWG reports (rerun on clean parquet after CR-corruption fix) -> label audit + Ch4 third cohort
+- [ ] 2.16 Final ERIN jury labels (majority >=6/8 = train-eligible; below bar = "unsure",
+      excluded from training, retained in a held-aside file) + progression cohort v3
+- [~] 2.15 OCCAMS-side pull (approved, running): same DB exposes view_masterpath_patient (2,754 OC/AH
       patients) — candidate source for OCCAMS report text / n=87-vs-141 investigation
 
 ### Added by 2026-08-19 joint amendment
@@ -131,6 +132,12 @@ PARKED list until jointly promoted.
 
 - 2026-08-19: plan frozen (Rehan + Claude).
 - 2026-08-19 (late): 1.1, 1.2, R.1 done with evidence; 1.3 mostly done. No scope changes.
+- 2026-08-20 (Rehan decisions): (a) ADOPTED jury-vote + entropy as Ch3/Ch4 label
+  source, with the conservative rule that any report below the confidence bar
+  (jury majority < 6/8) or otherwise ambiguous is labelled "unsure", HELD OUT of
+  all training, and reported as such — deliberate caution, shown not hidden.
+  -> new item 2.16 (final ERIN jury labels + progression cohort v3).
+  (b) OCCAMS-side text pull from the Barretts DB approved (2.15 -> active).
 - 2026-08-20 (late, Rehan-directed): Barretts database (Fitzgerald group) accessed
   read-only with Rehan's viewer token -> items 2.13-2.15. Token expires 2026-08-21
   ~18:00 UTC; all report text stored in chmod-700 cluster dir, never in git.
