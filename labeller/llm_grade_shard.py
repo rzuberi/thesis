@@ -65,7 +65,7 @@ def grade(text):
                        "options": {"temperature": 0, "num_predict": 200}}).encode()
     r = urllib.request.Request(BASE + "/api/generate", data=body,
                                headers={"Content-Type": "application/json"})
-    resp = json.loads(urllib.request.urlopen(r, timeout=300).read())["response"]
+    resp = json.loads(urllib.request.urlopen(r, timeout=int(os.environ.get("REQ_TIMEOUT", "600"))).read())["response"]
     grades = ("NDBE", "IND", "LGD", "HGD", "CANCER", "NA")
     try:
         g = json.loads(resp).get("grade", "")
