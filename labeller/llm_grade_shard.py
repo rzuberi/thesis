@@ -41,6 +41,24 @@ if pull.returncode != 0:  # offline node: proceed if weights already cached
         raise SystemExit(f"pull failed and {MODEL} not in local cache")
     print(f"pull failed (offline node?) but {MODEL} cached — continuing", flush=True)
 
+SPECIMEN_PROMPT = """You grade UK oesophageal surveillance pathology reports.
+The text begins with a SPECIMEN OF INTEREST header naming one laboratory sample
+(its suffix denotes the specimen/block, e.g. B1 ~ specimen B, block 1). Reports
+list specimens as lettered sections (A., B., C., ...). Grade ONLY the findings of
+the section corresponding to the specimen of interest. If the report does not
+distinguish specimens, grade the report as a whole. All other rules below apply.
+
+Consider ONLY findings in the oesophagus or gastro-oesophageal junction (GOJ/cardia).
+Ignore other-site findings, historical mentions, and negated findings.
+
+Grade on this ladder, choosing the WORST current finding FOR THAT SPECIMEN:
+NDBE, IND, LGD, HGD, CANCER, or NA (not gradeable / specimen not oesophageal).
+
+Reply with ONLY a JSON object: {"grade":"NDBE|IND|LGD|HGD|CANCER|NA"}
+
+REPORT:
+"""
+
 PROMPT = """You grade UK oesophageal surveillance pathology reports.
 Consider ONLY findings in the oesophagus or gastro-oesophageal junction (GOJ/cardia).
 Ignore stomach-body, duodenal, colorectal or other-site findings entirely.
@@ -59,8 +77,10 @@ Reply with ONLY a JSON object: {"grade":"NDBE|IND|LGD|HGD|CANCER|NA"}
 REPORT:
 """
 
+ACTIVE_PROMPT = SPECIMEN_PROMPT if os.environ.get("PROMPT_MODE") == "specimen" else PROMPT
+
 def grade(text):
-    body = json.dumps({"model": MODEL, "prompt": PROMPT + text[:6000] + "\n/no_think",
+    body = json.dumps({"model": MODEL, "prompt": ACTIVE_PROMPT + text[:6000] + "\n/no_think",
                        "stream": False, "format": "json", "think": False,
                        "options": {"temperature": 0, "num_predict": 200}}).encode()
     r = urllib.request.Request(BASE + "/api/generate", data=body,
