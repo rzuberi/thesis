@@ -88,6 +88,15 @@ PARKED list until jointly promoted.
       results/jury_corpus_analysis.json + jury_votes.csv. OPEN JOINT DECISION:
       adopt jury-vote + entropy as Ch3/Ch4 label source. TCGA-side prompt still to design.*
 
+### Added by 2026-08-20 joint amendment (Rehan-directed, Barretts database)
+- [x] 2.13 Barretts-database free-text acquisition (READ-ONLY): all 13,645 pathology
+      reports exported to secured cluster dir; SWG matching via specimen numbers ->
+      643/771 Path IDs (83%), 74/88 patients, 327 report rows *(2026-08-20)*
+- [~] 2.14 LLM jury on matched SWG reports (8 jurors launched) -> label audit of the
+      SWG cohort's grades + Ch4 third cohort
+- [ ] 2.15 OCCAMS-side lead: same DB exposes view_masterpath_patient (2,754 OC/AH
+      patients) — candidate source for OCCAMS report text / n=87-vs-141 investigation
+
 ### Added by 2026-08-19 joint amendment
 - [x] 2.8 TCGA-STAD/GEJ acquisition *(COMPLETE 2026-08-20: 381/381 slides, 381/381 features, overnight)*
 - [ ] 2.9 STAD labels table (CDR + TP53 + ABSOLUTE), mirroring tcga_oac_labels.
@@ -122,6 +131,9 @@ PARKED list until jointly promoted.
 
 - 2026-08-19: plan frozen (Rehan + Claude).
 - 2026-08-19 (late): 1.1, 1.2, R.1 done with evidence; 1.3 mostly done. No scope changes.
+- 2026-08-20 (late, Rehan-directed): Barretts database (Fitzgerald group) accessed
+  read-only with Rehan's viewer token -> items 2.13-2.15. Token expires 2026-08-21
+  ~18:00 UTC; all report text stored in chmod-700 cluster dir, never in git.
 - 2026-08-20: 2.7 extended to on-cluster local-LLM grading of ERIN (Rehan proposal).
 - 2026-08-20 (joint, Rehan proposal): 2.7 further extended to an LLM JURY — ~10
   diverse local models grade the corpus with an identical prompt; jury majority ->
