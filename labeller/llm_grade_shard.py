@@ -132,7 +132,9 @@ def work(item):
     name, text = item
     g, raw = grade(text)
     with lock:
-        open(out, "a").write(f"{name},{g}\n")
+        import csv as _csv
+        with open(out, "a", newline="") as fh:
+            _csv.writer(fh).writerow([name, g])
         count += 1
         if count <= 3: print(f"RAW: {raw[:200]!r}", flush=True)
         if count % 50 == 0: print(f"{count}/{len(todo)} elapsed={time.time()-t0:.0f}s", flush=True)
