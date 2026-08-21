@@ -143,6 +143,13 @@ On return: read results against pre-registrations; deviations to log: none yet.
 
 ## Amendment log
 
+- 2026-08-21 (FINDING, flagged for joint discussion on return): necessity probes
+  at n=446 (pooled OAC+GEJ) show TP53 AUC 0.678 and WGD 0.703 from H&E (shuffled
+  ~0.50) — genomics IS partially visible at adequate n. The earlier two-cohort
+  negatives (n=65-140, AUC 0.36-0.48) stand as honest small-n results, but Ch2
+  Part A's claim must be revised from "not recoverable" to "partially recoverable
+  at scale; the fusion question becomes complementarity beyond what is visible."
+  Stage from H&E: 0.644. Age: 0.569.
 - 2026-08-21 (joint, Rehan proposals, pre-leave): added 2.18 jury expansion —
   (a) big-model axis (llama3.3:70b retry, gpt-oss:120b) + domain-tuned axis
   (medgemma if pullable), self-gating smoke->corpus jobs; (b) disagreement-driver
