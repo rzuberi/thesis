@@ -1,0 +1,126 @@
+{
+  "n_reports": 7101,
+  "models": {
+    "deepseek-r1_14b": {
+      "parse_rate": 1.0,
+      "dist": {
+        "NDBE": 4145,
+        "CANCER": 633,
+        "HGD": 405,
+        "LGD": 233,
+        "IND": 167
+      }
+    },
+    "gemma3_12b": {
+      "parse_rate": 1.0,
+      "dist": {
+        "NDBE": 5057,
+        "CANCER": 889,
+        "HGD": 410,
+        "IND": 382,
+        "LGD": 285
+      }
+    },
+    "gemma3_27b": {
+      "parse_rate": 1.0,
+      "dist": {
+        "NDBE": 5066,
+        "CANCER": 900,
+        "HGD": 413,
+        "IND": 336,
+        "LGD": 296
+      }
+    },
+    "llama3.1_8b": {
+      "parse_rate": 0.9828,
+      "dist": {
+        "NDBE": 4764,
+        "CANCER": 664,
+        "LGD": 595,
+        "HGD": 524,
+        "IND": 387,
+        "PARSE_FAIL": 122
+      }
+    },
+    "mistral-small3.2": {
+      "parse_rate": 1.0,
+      "dist": {
+        "NDBE": 4976,
+        "CANCER": 878,
+        "HGD": 412,
+        "LGD": 277,
+        "IND": 269
+      }
+    },
+    "phi4_14b": {
+      "parse_rate": 1.0,
+      "dist": {
+        "NDBE": 5166,
+        "CANCER": 895,
+        "HGD": 458,
+        "LGD": 270,
+        "IND": 236
+      }
+    },
+    "qwen3_14b": {
+      "parse_rate": 1.0,
+      "dist": {
+        "NDBE": 5218,
+        "CANCER": 837,
+        "HGD": 439,
+        "LGD": 269,
+        "IND": 261
+      }
+    },
+    "qwen3_32b": {
+      "parse_rate": 1.0,
+      "dist": {
+        "NDBE": 2831,
+        "CANCER": 486,
+        "HGD": 241,
+        "IND": 206,
+        "LGD": 147
+      }
+    }
+  },
+  "pairwise_agreement": {
+    "deepseek-r1_14b|gemma3_12b": 0.9594,
+    "deepseek-r1_14b|gemma3_27b": 0.9607,
+    "deepseek-r1_14b|llama3.1_8b": 0.9081,
+    "deepseek-r1_14b|mistral-small3.2": 0.9754,
+    "deepseek-r1_14b|phi4_14b": 0.9681,
+    "deepseek-r1_14b|qwen3_14b": 0.9785,
+    "deepseek-r1_14b|qwen3_32b": 0.9614,
+    "gemma3_12b|gemma3_27b": 0.9743,
+    "gemma3_12b|llama3.1_8b": 0.8981,
+    "gemma3_12b|mistral-small3.2": 0.9771,
+    "gemma3_12b|phi4_14b": 0.9669,
+    "gemma3_12b|qwen3_14b": 0.9669,
+    "gemma3_12b|qwen3_32b": 0.9718,
+    "gemma3_27b|llama3.1_8b": 0.8978,
+    "gemma3_27b|mistral-small3.2": 0.9787,
+    "gemma3_27b|phi4_14b": 0.973,
+    "gemma3_27b|qwen3_14b": 0.9682,
+    "gemma3_27b|qwen3_32b": 0.9729,
+    "llama3.1_8b|mistral-small3.2": 0.9021,
+    "llama3.1_8b|phi4_14b": 0.8966,
+    "llama3.1_8b|qwen3_14b": 0.9026,
+    "llama3.1_8b|qwen3_32b": 0.898,
+    "mistral-small3.2|phi4_14b": 0.9811,
+    "mistral-small3.2|qwen3_14b": 0.985,
+    "mistral-small3.2|qwen3_32b": 0.9785,
+    "phi4_14b|qwen3_14b": 0.9743,
+    "phi4_14b|qwen3_32b": 0.967,
+    "qwen3_14b|qwen3_32b": 0.9736
+  },
+  "fleiss_kappa": 0.8964,
+  "n_fully_rated": 2377,
+  "jury_label_dist": {
+    "NDBE": 5200,
+    "CANCER": 872,
+    "HGD": 433,
+    "LGD": 280,
+    "IND": 275
+  },
+  "unanimous_frac": 0.8597
+}
