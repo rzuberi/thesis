@@ -76,8 +76,15 @@ def grade(text):
     hits = [g for g in grades if _re.search(rf'\b{g}\b', resp)]
     return (hits[0] if len(hits) == 1 else "PARSE_FAIL"), resp
 
-rep = pd.read_csv(ERIN, dtype=str, low_memory=False).fillna("")
-rep["_text"] = rep[TEXT].agg(" ".join, axis=1)
+INPUT = os.environ.get("INPUT", "erin")
+if INPUT == "erin":
+    rep = pd.read_csv(ERIN, dtype=str, low_memory=False).fillna("")
+    rep["_text"] = rep[TEXT].agg(" ".join, axis=1)
+else:  # a CSV with CaseName + reporttext columns (e.g. barretts db export)
+    rep = pd.read_csv(INPUT, dtype=str, low_memory=False).fillna("")
+    if "CaseName" not in rep.columns:
+        rep["CaseName"] = rep["pathology_text_id"]
+    rep["_text"] = rep["reporttext"]
 if SMOKE == "adjudicated":
     idx = pd.read_csv(IDX)
     rep = rep[rep["CaseName"].isin(idx["CaseName"])]
