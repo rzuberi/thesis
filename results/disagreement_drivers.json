@@ -1,0 +1,44 @@
+{
+  "n": 7107,
+  "disagree_rate": 0.1404,
+  "model_auc_cv": 0.752,
+  "std_logistic_coefs": {
+    "len_chars": 0.768,
+    "negation_cues": -0.087,
+    "has_addendum": 0.036,
+    "n_specimens": 0.065,
+    "year": 0.0,
+    "upper_frac": -0.087,
+    "hedging": 0.353
+  },
+  "univariate": {
+    "len_chars": {
+      "disagree_rate_above_median": 0.219,
+      "below_median": 0.062
+    },
+    "negation_cues": {
+      "disagree_rate_above_median": 0.2,
+      "below_median": 0.097
+    },
+    "has_addendum": {
+      "disagree_rate_above_median": 0.226,
+      "below_median": 0.13
+    },
+    "n_specimens": {
+      "disagree_rate_above_median": 0.184,
+      "below_median": 0.124
+    },
+    "year": {
+      "disagree_rate_above_median": 0.143,
+      "below_median": 0.138
+    },
+    "upper_frac": {
+      "disagree_rate_above_median": 0.123,
+      "below_median": 0.158
+    },
+    "hedging": {
+      "disagree_rate_above_median": 0.345,
+      "below_median": 0.116
+    }
+  }
+}
