@@ -143,6 +143,15 @@ On return: read results against pre-registrations; deviations to log: none yet.
 
 ## Amendment log
 
+- 2026-08-21 (joint, Rehan proposals, pre-leave): added 2.18 jury expansion —
+  (a) big-model axis (llama3.3:70b retry, gpt-oss:120b) + domain-tuned axis
+  (medgemma if pullable), self-gating smoke->corpus jobs; (b) disagreement-driver
+  analysis on existing votes (report length/negation/addenda/specimens);
+  (c) placement decision: jury work stays INSIDE Ch4; standalone methods paper
+  post-thesis. Added 2.19 pan-cancer jury validation on TCGA-Reports (3-4 cancer
+  types vs structured grade truth; zero new data). Encoder grid extended per its
+  own pre-reg clause: +H-Optimus-0, +Phikon-v2 (both ungated); grid now closed at 5.
+  PARKED: external-domain datasets (radiology notes etc.), HANCOCK (reaffirmed).
 - 2026-08-21 (joint, Rehan proposal): added 2.17 necessity-triangle probes —
   for each chapter's modality X, report (i) hist-only, (ii) hist+X fusion,
   (iii) X-predicted-from-histology, as one repeated figure. First instance
