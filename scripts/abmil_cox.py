@@ -69,7 +69,8 @@ def _bag(bags, key, rng):
 
 
 def train_abmil_fold(bags, keys_tr, keys_te, time, event, seed, epochs=30,
-                     lr=1e-4, mb=32, device="cpu"):
+                     lr=1e-4, mb=32, device=None):
+    device = device or ("cuda" if torch.cuda.is_available() else "cpu")
     rng = RNG(seed)
     torch.manual_seed(seed)
     model = ABMIL(d_in=next(iter(bags.values())).shape[1]).to(device)

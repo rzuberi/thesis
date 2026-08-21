@@ -13,7 +13,8 @@ def _bag(bags, key, rng):
 
 
 def train_abmil_clf_fold(bags, keys_tr, keys_te, y, seed, epochs=25, lr=1e-4,
-                         mb=32, device="cpu"):
+                         mb=32, device=None):
+    device = device or ("cuda" if torch.cuda.is_available() else "cpu")
     rng = RNG(seed); torch.manual_seed(seed)
     model = ABMIL(d_in=next(iter(bags.values())).shape[1]).to(device)
     opt = torch.optim.Adam(model.parameters(), lr=lr, weight_decay=1e-5)
