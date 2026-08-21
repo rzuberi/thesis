@@ -25,6 +25,9 @@ def fetch(table, page=1000):
     return pd.DataFrame(rows)
 
 pt = fetch("view_patient_pathology_text_normalised")
+# old-LIMS reports embed \r, which corrupts CSV round-trips: sanitize before saving
+pt["reporttext"] = (pt["reporttext"].fillna("").astype(str)
+                    .str.replace("\r\n", "\n").str.replace("\r", "\n"))
 pt.to_csv(os.path.join(OUTD, "view_patient_pathology_full.csv"), index=False)
 os.chmod(os.path.join(OUTD, "view_patient_pathology_full.csv"), 0o600)
 
@@ -48,8 +51,10 @@ for _, r in swg.iterrows():
 pt["swg_hits"] = pt["keys"].map(lambda ks: sorted({p for k in ks for p in key2paths.get(k, ())}))
 matched = pt[pt["swg_hits"].str.len() > 0].copy()
 matched["swg_path_ids"] = matched["swg_hits"].map(";".join)
-matched.drop(columns=["keys", "swg_hits"]).to_csv(os.path.join(OUTD, "swg_matched_reports_v2.csv"), index=False)
-os.chmod(os.path.join(OUTD, "swg_matched_reports_v2.csv"), 0o600)
+out_df = matched.drop(columns=["keys", "swg_hits"])
+out_df.to_csv(os.path.join(OUTD, "swg_matched_reports_v2.csv"), index=False)
+out_df.to_parquet(os.path.join(OUTD, "swg_matched_reports_v2.parquet"), index=False)
+os.chmod(os.path.join(OUTD, "swg_matched_reports_v2.csv"), 0o600); os.chmod(os.path.join(OUTD, "swg_matched_reports_v2.parquet"), 0o600)
 
 hit_paths = {p for h in matched["swg_hits"] for p in h}
 swg["matched"] = swg["Path ID"].isin(hit_paths)
