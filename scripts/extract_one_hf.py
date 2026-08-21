@@ -41,12 +41,23 @@ if ENC == "virchow2":
 elif ENC == "gigapath":
     model = timm.create_model("hf_hub:prov-gigapath/prov-gigapath", pretrained=True)
     def embed(x): return model(x)          # (B, 1536)
+elif ENC == "hoptimus0":
+    model = timm.create_model("hf-hub:bioptimus/H-optimus-0", pretrained=True,
+                              init_values=1e-5, dynamic_img_size=False)
+    def embed(x): return model(x)          # (B, 1536)
+elif ENC == "phikon2":
+    from transformers import AutoModel
+    model = AutoModel.from_pretrained("owkin/phikon-v2")
+    def embed(x): return model(pixel_values=x).last_hidden_state[:, 0]  # (B, 1024)
 else:
     sys.exit(f"unknown ENCODER {ENC}")
 dev = "cuda" if torch.cuda.is_available() else "cpu"
 model.eval().to(dev)
-cfg = timm.data.resolve_data_config({}, model=model)
-MEAN = np.array(cfg["mean"]); STD = np.array(cfg["std"])
+if ENC == "phikon2":
+    MEAN = np.array([0.485, 0.456, 0.406]); STD = np.array([0.229, 0.224, 0.225])
+else:
+    cfg = timm.data.resolve_data_config({}, model=model)
+    MEAN = np.array(cfg["mean"]); STD = np.array(cfg["std"])
 
 import openslide
 sl = openslide.OpenSlide(path)
@@ -74,7 +85,8 @@ for yy in range(0, H - TILE, TILE):
 if batch:
     with torch.inference_mode():
         feats.append(embed(torch.tensor(np.stack(batch), dtype=torch.float32, device=dev)).cpu().numpy())
-F = np.vstack(feats) if feats else np.zeros((0, 2560 if ENC == "virchow2" else 1536), dtype=np.float32)
+DIMS = {"virchow2": 2560, "gigapath": 1536, "hoptimus0": 1536, "phikon2": 1024}
+F = np.vstack(feats) if feats else np.zeros((0, DIMS[ENC]), dtype=np.float32)
 tmp = out + ".tmp"
 with h5py.File(tmp, "w") as h:
     h.create_dataset("features", data=F.astype(np.float32))
