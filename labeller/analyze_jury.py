@@ -15,7 +15,15 @@ GRADES = ["NDBE", "IND", "LGD", "HGD", "CANCER", "NA"]
 frames = {}
 for f in sorted(glob.glob(os.path.join(D, "llm_grades_*.csv"))):
     model = os.path.basename(f).replace("llm_grades_", "").rsplit("_shard", 1)[0]
-    df = pd.read_csv(f).drop_duplicates("CaseName")
+    try:
+        df = pd.read_csv(f).drop_duplicates("CaseName")
+    except Exception:  # legacy unquoted rows where the id itself contains a comma
+        recs = []
+        for line in open(f).read().splitlines()[1:]:
+            if "," in line:
+                name, g = line.rsplit(",", 1)
+                recs.append({"CaseName": name.strip('"'), "llm_grade": g})
+        df = pd.DataFrame(recs).drop_duplicates("CaseName")
     frames.setdefault(model, []).append(df)
 jury = {m: pd.concat(fs).drop_duplicates("CaseName").set_index("CaseName")["llm_grade"]
         for m, fs in frames.items()}
