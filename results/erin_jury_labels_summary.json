@@ -1,0 +1,19 @@
+{
+  "reports": 7149,
+  "status_dist": {
+    "train_eligible": 6867,
+    "unsure_held_out": 204,
+    "adjudicated": 78
+  },
+  "label_dist_train_eligible": {
+    "NDBE": 5151,
+    "CANCER": 863,
+    "HGD": 405,
+    "LGD": 269,
+    "IND": 257
+  },
+  "progression_v3": {
+    "patients": 1266,
+    "progressors": 181
+  }
+}
