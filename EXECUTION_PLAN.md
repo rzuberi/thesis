@@ -157,7 +157,11 @@ On return: read results against pre-registrations; deviations to log: none yet.
   (c) placement decision: jury work stays INSIDE Ch4; standalone methods paper
   post-thesis. Added 2.19 pan-cancer jury validation on TCGA-Reports (3-4 cancer
   types vs structured grade truth; zero new data). Encoder grid extended per its
-  own pre-reg clause: +H-Optimus-0, +Phikon-v2 (both ungated); grid now closed at 5.
+  own pre-reg clause: +H-Optimus-0, +Phikon-v2; grid now closed at 5.
+- 2026-08-21 (joint, Rehan): grid extended once more to SIX with H-Optimus-1 (the
+  current SOTA generation, Mar 2025) — rationale: keep older models as benchmarks,
+  always include latest. Access awaiting Bioptimus manual review; self-healing
+  retry + chained extraction installed. Grid FINAL at 6.
   PARKED: external-domain datasets (radiology notes etc.), HANCOCK (reaffirmed).
 - 2026-08-21 (joint, Rehan proposal): added 2.17 necessity-triangle probes —
   for each chapter's modality X, report (i) hist-only, (ii) hist+X fusion,

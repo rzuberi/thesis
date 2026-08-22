@@ -45,6 +45,10 @@ elif ENC == "hoptimus0":
     model = timm.create_model("hf-hub:bioptimus/H-optimus-0", pretrained=True,
                               init_values=1e-5, dynamic_img_size=False)
     def embed(x): return model(x)          # (B, 1536)
+elif ENC == "hoptimus1":
+    model = timm.create_model("hf-hub:bioptimus/H-optimus-1", pretrained=True,
+                              init_values=1e-5, dynamic_img_size=False)
+    def embed(x): return model(x)          # (B, 1536)
 elif ENC == "phikon2":
     from transformers import AutoModel
     model = AutoModel.from_pretrained("owkin/phikon-v2")
@@ -85,7 +89,7 @@ for yy in range(0, H - TILE, TILE):
 if batch:
     with torch.inference_mode():
         feats.append(embed(torch.tensor(np.stack(batch), dtype=torch.float32, device=dev)).cpu().numpy())
-DIMS = {"virchow2": 2560, "gigapath": 1536, "hoptimus0": 1536, "phikon2": 1024}
+DIMS = {"virchow2": 2560, "gigapath": 1536, "hoptimus0": 1536, "hoptimus1": 1536, "phikon2": 1024}
 F = np.vstack(feats) if feats else np.zeros((0, DIMS[ENC]), dtype=np.float32)
 tmp = out + ".tmp"
 with h5py.File(tmp, "w") as h:
