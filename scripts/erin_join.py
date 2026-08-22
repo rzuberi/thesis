@@ -15,13 +15,12 @@ OUT = os.environ.get("OUTDIR", os.path.dirname(LBL))
 mans = glob.glob(ERIN + "/slides/WSIExport_Result*.csv") + glob.glob(ERIN + "/raw/WSIExport_Result*.csv")
 wx = pd.concat([pd.read_csv(f, dtype=str) for f in mans], ignore_index=True)
 wx.columns = [c.strip() for c in wx.columns]
-folder_col = next(c for c in wx.columns if "Folder" in c)
-case_col = next(c for c in wx.columns if "Identifier" in c)
-wx = wx[[folder_col, case_col]].dropna().drop_duplicates()
+wx = wx[["Case Folder Name", "Case Identifier"]].dropna().drop_duplicates()
 wx.columns = ["uuid", "case_id"]
 wx["uuid"] = wx["uuid"].str.strip().str.lower()
-conf = wx.groupby("uuid")["case_id"].nunique()
-print(f"uuids mapping to >1 case: {(conf > 1).sum()} (excluded as ambiguous)")
+wx["case_norm"] = wx["case_id"].str.extract(r"([A-Za-z]{2}\s?\d{2}[.\-/]?\d{3,6})")[0].str.upper()
+conf = wx.groupby("uuid")["case_norm"].nunique()
+print(f"uuids mapping to >1 normalised case: {(conf > 1).sum()} (excluded)")
 wx = wx[~wx["uuid"].isin(conf[conf > 1].index)].drop_duplicates("uuid")
 print(f"manifest rows: {len(wx)}")
 
