@@ -84,8 +84,8 @@ def train_abmil_fold(bags, keys_tr, keys_te, time, event, seed, epochs=30,
                 continue
             risks = torch.stack([model(_bag(bags, k, rng).to(device))[0] for k in chunk])
             loss = cox_loss(risks,
-                            torch.tensor([t[k] for k in chunk], dtype=torch.float32),
-                            torch.tensor([float(e[k]) for k in chunk]))
+                            torch.tensor([t[k] for k in chunk], dtype=torch.float32, device=device),
+                            torch.tensor([float(e[k]) for k in chunk], device=device))
             opt.zero_grad(); loss.backward(); opt.step()
     model.eval()
     with torch.inference_mode():

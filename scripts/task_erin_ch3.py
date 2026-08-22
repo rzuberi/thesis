@@ -48,6 +48,12 @@ for _, r in m.iterrows():
     with h5py.File(r["h5"]) as h:
         bags[r["h5"]] = np.asarray(h["features"])
 y = dict(zip(m["h5"], m["y"]))
+if os.environ.get("SHUFFLE"):  # pre-registered control: patient-wise label permutation
+    import numpy as _np
+    rng = _np.random.RandomState(0)
+    pats = m.groupby("anon_id")["y"].max()
+    perm = pd.Series(rng.permutation(pats.values), index=pats.index)
+    y = {r["h5"]: int(perm[r["anon_id"]]) for _, r in m.iterrows()}
 pat = dict(zip(m["h5"], m["anon_id"]))
 keys = sorted(bags)
 print(f"slides={len(keys)} patients={m['anon_id'].nunique()} pos={sum(y.values())}", flush=True)

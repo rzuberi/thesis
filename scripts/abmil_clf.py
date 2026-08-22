@@ -19,13 +19,13 @@ def train_abmil_clf_fold(bags, keys_tr, keys_te, y, seed, epochs=25, lr=1e-4,
     model = ABMIL(d_in=next(iter(bags.values())).shape[1]).to(device)
     opt = torch.optim.Adam(model.parameters(), lr=lr, weight_decay=1e-5)
     pos = sum(y[k] for k in keys_tr); w = (len(keys_tr) - pos) / max(pos, 1)
-    lossf = nn.BCEWithLogitsLoss(pos_weight=torch.tensor(float(w)))
+    lossf = nn.BCEWithLogitsLoss(pos_weight=torch.tensor(float(w), device=device))
     for ep in range(epochs):
         order = rng.permutation(keys_tr)
         for i in range(0, len(order), mb):
             chunk = order[i:i + mb]
             logits = torch.stack([model(_bag(bags, k, rng).to(device))[0] for k in chunk])
-            loss = lossf(logits, torch.tensor([float(y[k]) for k in chunk]))
+            loss = lossf(logits, torch.tensor([float(y[k]) for k in chunk], device=device))
             opt.zero_grad(); loss.backward(); opt.step()
     model.eval()
     with torch.inference_mode():

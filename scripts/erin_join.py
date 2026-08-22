@@ -20,6 +20,9 @@ case_col = next(c for c in wx.columns if "Identifier" in c)
 wx = wx[[folder_col, case_col]].dropna().drop_duplicates()
 wx.columns = ["uuid", "case_id"]
 wx["uuid"] = wx["uuid"].str.strip().str.lower()
+conf = wx.groupby("uuid")["case_id"].nunique()
+print(f"uuids mapping to >1 case: {(conf > 1).sum()} (excluded as ambiguous)")
+wx = wx[~wx["uuid"].isin(conf[conf > 1].index)].drop_duplicates("uuid")
 print(f"manifest rows: {len(wx)}")
 
 feats = pd.DataFrame({"h5": sorted(glob.glob(os.path.join(FEAT, "*.h5")))})
@@ -34,7 +37,8 @@ wx["case_key"] = wx["case_id"].map(norm_case)
 
 m = feats.merge(wx, on="uuid", how="left").merge(
     lab[["case_key", "anon_id", "CaseName", "CollectedOrOrdered",
-         "final_label", "label_status", "jury_frac"]], on="case_key", how="left")
+         "final_label", "label_status", "jury_frac"]].drop_duplicates("case_key"), on="case_key", how="left")
+assert len(m) == len(feats), f"join inflated: {len(m)} vs {len(feats)}"
 m.to_csv(os.path.join(OUT, "erin_master.csv"), index=False)
 print(f"slides: {len(feats)} | with case link: {m['case_id'].notna().sum()} | "
       f"with label: {m['final_label'].notna().sum()} | "
