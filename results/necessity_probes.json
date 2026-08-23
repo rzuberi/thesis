@@ -1,0 +1,30 @@
+{
+  "tp53_from_hist": {
+    "n": 446,
+    "pos": 232,
+    "auc": 0.678,
+    "auc_sd": 0.014,
+    "shuffled": 0.504
+  },
+  "wgd_from_hist": {
+    "n": 428,
+    "pos": 190,
+    "auc": 0.703,
+    "auc_sd": 0.011,
+    "shuffled": 0.51
+  },
+  "stage_from_hist": {
+    "n": 407,
+    "pos": 218,
+    "auc": 0.644,
+    "auc_sd": 0.017,
+    "shuffled": 0.485
+  },
+  "age_from_hist": {
+    "n": 446,
+    "pos": 213,
+    "auc": 0.569,
+    "auc_sd": 0.018,
+    "shuffled": 0.492
+  }
+}
