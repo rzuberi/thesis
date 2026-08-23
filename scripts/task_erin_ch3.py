@@ -21,6 +21,10 @@ SEEDS = [0, 1, 2]
 NUM = {"NDBE": 0, "IND": 1, "LGD": 2, "HGD": 3, "CANCER": 4}
 
 m = pd.read_csv(MASTER, dtype=str)
+FEAT_SUB = os.environ.get("FEAT_SUB", "")  # e.g. features_virchow2 for the encoder sweep
+if FEAT_SUB:
+    m["h5"] = m["h5"].str.replace("features_uni_v2", FEAT_SUB, regex=False)
+    m = m[m["h5"].map(os.path.exists)]
 m = m[m["label_status"].isin(["train_eligible", "adjudicated"])]
 m = m[m["final_label"].isin(["NDBE", "LGD", "HGD", "CANCER"])]  # IND excluded (pre-reg)
 m["date"] = pd.to_datetime(m["CollectedOrOrdered"], errors="coerce", dayfirst=True)

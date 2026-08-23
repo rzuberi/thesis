@@ -46,7 +46,13 @@ for target in ["tp53", "wgd", "stage_hi"]:
     yy_all, X_all = y[mask].astype(int).values, X[mask]
     curve = {}
     for n in NS:
-        if n > len(yy_all): n = len(yy_all)
+        if n >= len(yy_all):  # full-n: evaluate directly, same protocol as the probes task
+            aucs_f = [auc_at(X_all, yy_all, s) for s in range(5)]
+            curve[str(len(yy_all))] = {"auc_mean": round(float(np.mean(aucs_f)), 3),
+                                       "auc_sd": round(float(np.std(aucs_f)), 3),
+                                       "resamples": 5, "mode": "full"}
+            print(target, "full", curve[str(len(yy_all))], flush=True)
+            break
         aucs = []
         for s in range(10):
             rng = np.random.RandomState(s)
