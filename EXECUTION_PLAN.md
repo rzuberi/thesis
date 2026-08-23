@@ -150,6 +150,12 @@ On return: read results against pre-registrations; deviations to log: none yet.
   Part A's claim must be revised from "not recoverable" to "partially recoverable
   at scale; the fusion question becomes complementarity beyond what is visible."
   Stage from H&E: 0.644. Age: 0.569.
+- 2026-08-23 (joint, Rehan proposal): added 2.20 attention-shift study — does
+  conditioning histologic attention on genomics change where the model looks?
+  Conditional-ABMIL vs plain vs permuted-genomics control on the TCGA pool;
+  note recorded that late fusion cannot shift attention by construction.
+  Also: attribution work package (pathladder explain mode DONE, ABMIL attention
+  export DONE, coefficient export pending) under existing items.
 - 2026-08-21 (joint, Rehan proposals, pre-leave): added 2.18 jury expansion —
   (a) big-model axis (llama3.3:70b retry, gpt-oss:120b) + domain-tuned axis
   (medgemma if pullable), self-gating smoke->corpus jobs; (b) disagreement-driver
