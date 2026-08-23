@@ -1,3 +1,4 @@
+import os
 """Shared ABMIL binary-classification machinery for Ch3/Ch4 (mirrors abmil_cox)."""
 import numpy as np
 import torch
@@ -28,9 +29,25 @@ def train_abmil_clf_fold(bags, keys_tr, keys_te, y, seed, epochs=25, lr=1e-4,
             loss = lossf(logits, torch.tensor([float(y[k]) for k in chunk], device=device))
             opt.zero_grad(); loss.backward(); opt.step()
     model.eval()
+    out = {}
+    attn_store = {}
     with torch.inference_mode():
-        return {k: float(torch.sigmoid(model(_bag(bags, k, RNG(0)).to(device))[0]))
-                for k in keys_te}
+        for k in keys_te:
+            logit, attn = model(_bag(bags, k, RNG(0)).to(device))
+            out[k] = float(torch.sigmoid(logit))
+            if os.environ.get("SAVE_INTERP"):
+                a = attn.cpu().numpy()
+                top = a.argsort()[-10:][::-1]
+                attn_store[k] = {"top_tile_idx": top.tolist(),
+                                 "top_tile_attn": a[top].round(5).tolist()}
+    if attn_store:
+        import json as _json
+        d = os.environ.get("OUTDIR", ".")
+        fn = os.path.join(d, f"attention_seed{seed}.jsonl")
+        with open(fn, "a") as fh:
+            for k, v in attn_store.items():
+                fh.write(_json.dumps({"key": k, **v}) + "\n")
+    return out
 
 
 def bootstrap_auc(prob_a, y, n_boot=2000, prob_b=None, seed=0):

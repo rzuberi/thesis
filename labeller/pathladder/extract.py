@@ -26,9 +26,11 @@ def _sentence_negates(sentence, match_start):
     return False
 
 
-def label_report(text, schema):
-    """Return {field_name: label or None} for one report under a schema."""
+def label_report(text, schema, explain=False):
+    """Return {field_name: label or None}; with explain=True also
+    {field_name+"_evidence": (label, pattern, sentence)} for the winning rung."""
     out = {}
+    evidence = {}
     text = str(text)
     sentences = _sentences(text)
     for f in schema.fields:
@@ -39,16 +41,24 @@ def label_report(text, schema):
                 for sent in sentences:
                     for m in rx.finditer(sent):
                         if not _sentence_negates(sent, m.start()):
-                            hits.append((li, label))
+                            hits.append((li, label, pat, sent))
         if not hits:
             out[f.name] = None
         elif f.ladder:
-            out[f.name] = max(hits)[1]  # highest rung wins
+            win = max(hits, key=lambda h: h[0])
+            out[f.name] = win[1]
+            evidence[f.name + "_evidence"] = {"label": win[1], "pattern": win[2],
+                                              "sentence": win[3].strip()[:300]}
         else:
             counts = {}
-            for li, label in hits:
+            for li, label, pat, sent in hits:
                 counts[label] = counts.get(label, 0) + 1
             out[f.name] = max(counts.items(), key=lambda kv: (kv[1], -[l for l, _ in f.levels].index(kv[0])))[0]
+            win = next(h for h in hits if h[1] == out[f.name])
+            evidence[f.name + "_evidence"] = {"label": win[1], "pattern": win[2],
+                                              "sentence": win[3].strip()[:300]}
+    if explain:
+        out.update(evidence)
     return out
 
 
