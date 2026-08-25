@@ -150,6 +150,12 @@ families + 4 local models.
 9. **Clinical-arm label leakage risk** (Qwen sev-3/4): prior-grade-history
    features and grade labels derive from the same report stream. FIX: ablation
    dropping prior-grade from the clinical arm. Queued as 1.23.
+   DONE 2026-08-25 (results/erin_prog_ablation.json, ERIN progression n=153):
+   the criticism was materially right. Clinical arm with index-date report
+   0.564; landmarked strictly-pre-index 0.480 (chance); no-grade-history 0.527.
+   All fusion deltas over histology (0.819) cross zero in every variant. On the
+   reframed Ch3 primary, report-derived clinical adds nothing once leakage is
+   removed — reported as a clean negative.
 
 ## Wave-2 verdict
 
