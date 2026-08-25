@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Independent dual-pathologist anchor for report-derived labels",
+    "type": "improve_existing",
+    "chapter": "Ch4",
+    "design": "Draw a stratified 250-report sample from ERIN: 100 jury/pathladder agreement cases, 100 disagreements enriched for negation/history/addenda, and all available unsure cases; preserve prevalence weights for population estimates. Two gastrointestinal pathologists independently abstract the target grade from de-identified report text, blinded to pathladder, jury votes, and each other; adjudicate only discordant human pairs. Readouts are per-class accuracy, weighted kappa, calibration of jury entropy against human error, and subgroup-specific error rates for pathladder and the jury.",
+    "decisive_result": "If the jury substantially exceeds pathladder against independent human abstraction, especially in the disagreement and unsure strata, Ch4 gains a defensible validation anchor; if both fail similarly or jury confidence is poorly calibrated, the thesis must restrict claims to machine-consensus reproducibility rather than label validity.",
+    "compute": "CPU-hours",
+    "impact": 5
+  },
+  {
+    "title": "Paired report-abstraction versus blinded WSI-review validation",
+    "type": "new_experiment",
+    "chapter": "Ch4",
+    "design": "For a nested 80-100 ERIN cases spanning NDBE, LGD, HGD, cancer, and unsure labels, have pathologists review the paired diagnostic WSI independently and separately abstract the report grade, with washout and blinded machine labels. Compare report-derived jury/pathladder labels to report-human truth, then quantify report-human versus WSI-human discordance and whether disagreement concentrates in multifocal, treated, resection, or history-dominant reports. This distinguishes extraction error from the irreducible fact that a report may summarize tissue not represented in the imaged slide.",
+    "decisive_result": "High jury-to-report-human agreement but appreciable report-to-WSI discordance would explain limits of slide-supervised learning without invalidating extraction; low agreement on both targets would show that report labels are not an adequate surrogate for slide-level truth.",
+    "compute": "CPU-hours",
+    "impact": 5
+  },
+  {
+    "title": "Strict temporal-leakage and clinical-leakage ablation for ERIN progression",
+    "type": "improve_existing",
+    "chapter": "Ch3",
+    "design": "Rebuild the progression analysis using a landmarked index-biopsy design: retain only information timestamped strictly before the index specimen, exclude same-episode report text and prior-grade-history variables in successive ablations, and require a fixed minimum future observation window. Run histology-only, clinical-only, and late-fusion Cox models on identical patient folds, with IPCW sensitivity analysis for differential follow-up and a patient-level bootstrap for fusion-minus-best-unimodal C-index and Brier score.",
+    "decisive_result": "If fusion remains beneficial after removing prior-grade and same-episode proxies, Ch3 can claim genuinely prospective complementary information; if the apparent clinical/fusion signal disappears, the thesis gains a concrete demonstration that temporal label leakage, not multimodal biology, generated the original improvement.",
+    "compute": "CPU-hours",
+    "impact": 5
+  },
+  {
+    "title": "SWGCohort-to-ERIN histology transfer and recalibration study",
+    "type": "new_experiment",
+    "chapter": "Ch3",
+    "design": "Train the frozen SWGCohort UNI2-ABMIL histology model on its strict pre-event endpoint, map ERIN index biopsies to the closest compatible NDBE/LGD progression-risk population, and evaluate direct transfer before any ERIN fitting. Compare direct transfer, intercept-only recalibration, and ERIN-trained internal CV using time-dependent AUC/C-index, calibration slope, Brier score, and risk-stratified Kaplan-Meier curves; exclude the six overlapping patients throughout.",
+    "decisive_result": "Usable discrimination with poor calibration repaired by simple recalibration would support transferable morphology but population-specific baseline risk; chance-level transfer despite strong internal performance would make domain shift a central explanation for failed Barrett's replication.",
+    "compute": "CPU-hours",
+    "impact": 4
+  },
+  {
+    "title": "Residual-complementarity test: does genomics add prognostic information after histology?",
+    "type": "new_experiment",
+    "chapter": "Ch2",
+    "design": "Using only frozen out-of-fold predictions, fit nested survival meta-models in SWG, OCCAMS, TCGA-OAC, and the pooled TCGA cohort: histology risk alone; genomics alone; histology plus genomics; and histology plus permuted genomics. Estimate the conditional genomic coefficient, out-of-fold C-index/Brier change, and calibration change, with cohort-specific estimates followed by a random-effects meta-analysis rather than pooling patients across populations.",
+    "decisive_result": "A reproducibly non-zero conditional genomic contribution would show that failed fusion reflects inadequate architecture or power rather than complete redundancy; null conditional effects alongside measurable genotype-from-H&E visibility would strongly support the thesis's redundancy/complementarity explanation.",
+    "compute": "CPU-hours",
+    "impact": 4
+  },
+  {
+    "title": "Population-heterogeneity and leave-domain-out fusion analysis in TCGA",
+    "type": "improve_existing",
+    "chapter": "Ch2",
+    "design": "Replace the single pooled OAC+GEJ+STAD headline with pre-specified domain analyses: OAC, GEJ, STAD, OAC+GEJ, and pooled; report subtype-specific event counts and modality performance. Train on each domain combination and test on the held-out domain, with and without simple site/subtype intercept recalibration, for histology, genomics, clinical, and fusion arms; quantify heterogeneity of fusion deltas using interaction terms and bootstrap confidence intervals.",
+    "decisive_result": "If genomic visibility or fusion benefit occurs only in gastric/GEJ disease and fails leave-domain-out transfer, the pooled positive visibility result becomes a population-specific finding rather than evidence for OAC; consistent effects across held-out domains would materially strengthen generalisability.",
+    "compute": "CPU-hours",
+    "impact": 4
+  },
+  {
+    "title": "Causal attention-shift test for intermediate fusion",
+    "type": "new_experiment",
+    "chapter": "Ch2",
+    "design": "Run conditional ABMIL on the TCGA pool with true genomic features, feature-wise permuted genomics, and a matched-dimensional random-vector control, alongside plain ABMIL and late fusion. Export tile attention maps and quantify within-slide attention redistribution using rank correlation, Jensen-Shannon divergence, top-k tile overlap, and enrichment of shifted tiles for tumour/stroma/necrosis using a lightweight tissue classifier or pathologist review of a small blinded tile set; report whether attention shifts improve held-out survival performance.",
+    "decisive_result": "Attention changes only with true genomics plus an accompanying predictive gain would provide evidence of biologically meaningful intermediate integration; attention shifts with permuted/random genomics, or no performance gain despite shifts, would demonstrate that visually persuasive fusion attention is not evidence of useful complementarity.",
+    "compute": "GPU-hours estimate 40-80",
+    "impact": 4
+  },
+  {
+    "title": "Published multimodal baseline and architecture-capacity check",
+    "type": "improve_existing",
+    "chapter": "Ch2",
+    "design": "Complete PORPOISE on OCCAMS and TCGA-OAC using the identical patient folds, survival endpoint, genomic feature availability mask, and out-of-fold evaluation contract as ABMIL fusion. If loader adaptation permits, add one modern pathway/intermediate-fusion baseline such as SurvPath only on TCGA, where sample size is less prohibitive; compare against best unimodal and late-fusion models, not histology alone.",
+    "decisive_result": "If PORPOISE/SurvPath also fail to beat the best unimodal arm, the negative fusion conclusion becomes architecture-robust; if a published intermediate model succeeds under identical splits, the thesis must revise its conclusion from fusion failure to failure of the tested late/early implementations.",
+    "compute": "GPU-hours estimate 30-100",
+    "impact": 4
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "target": "The central claim reframe in the 2026-08-25 amendment log: \"no cohort shows fusion beating the best unimodal arm\" and the new working framing \"WHERE AND WHY multimodal fusion fails to replicate\".",
+    "flaw": "This reframe is based on a review of the thesis's own results, which are largely null, and then uses those null results to justify a new thesis about failure to replicate. This is a classic self-validation loop: the absence of evidence for the original hypothesis is converted into evidence for a new hypothesis without a pre-registered design to test it. The new claim risks being unfalsifiable because any future null result can be absorbed as further evidence for 'why fusion fails'.",
+    "fix": "Pre-register the new 'failure to replicate' hypothesis with specific, falsifiable predictions (e.g., 'fusion benefit will be absent in all cohorts with n<200 but present in pooled n>400') and test it on a held-out cohort or a prospective design. Alternatively, frame the thesis as a descriptive audit of the original pre-registered hypothesis, not a new confirmatory claim.",
+    "severity": 5
+  },
+  {
+    "target": "The ERIN Ch3 primary endpoint in erin_ch3_preregistration.md: \"Primary: current-biopsy grade classification \u2014 NDBE vs {LGD, HGD, CANCER}\" and the later reframe in the amendment log: \"Ch3 = progression as primary estimand (grade-classification moves to Ch4)\".",
+    "flaw": "The pre-registration explicitly fixes grade classification as the primary endpoint and progression as secondary, but the 2026-08-25 reframe silently swaps them. This is a post-hoc endpoint change after results were seen (the grade classification results in erin_encoder_sweep.json show AUC 0.93 for histology, which may have motivated the shift). The pre-registration states 'Not allowed post hoc: endpoint swaps... Deviations are reported as deviations', but the reframe is presented as a joint decision, not a deviation.",
+    "fix": "Report the original pre-registered primary endpoint (grade classification) as the primary result in Ch3, with the progression endpoint as secondary. If the reframe is retained, it must be explicitly labelled as a post-hoc deviation from the pre-registration, with the original results reported alongside.",
+    "severity": 5
+  },
+  {
+    "target": "The ERIN encoder sweep results in erin_encoder_sweep.json: hist_abmil AUC 0.9255 for UNI2, 0.9116 for Virchow2, 0.9164 for GigaPath, with late_fusion deltas of +0.0059, +0.0124, +0.0111 respectively.",
+    "flaw": "The histology-only model achieves AUC >0.91 for grade classification, leaving almost no room for fusion to improve. The late fusion deltas are tiny (0.006-0.012) and the CIs barely exclude zero. This is a ceiling effect: the endpoint is so easy for histology alone that fusion cannot show a meaningful benefit. The pre-registration's 'No signal in histology at n\u22482,280 -> pipeline bug' clause is satisfied, but the design did not anticipate that signal would be so strong as to make the fusion question unanswerable.",
+    "fix": "Report the fusion delta as a proportion of the achievable improvement (e.g., 1 - histology AUC) or use a harder endpoint (e.g., IND vs LGD, or progression) where histology alone has more room to improve. Alternatively, pre-register a minimum histology AUC below which fusion is tested, and a maximum above which fusion is declared uninformative.",
+    "severity": 5
+  },
+  {
+    "target": "The OCCAMS v3 result in occams_v3.json: n=87 vs planned n=141, with the execution plan noting \"n=87 vs planned 141 needs explanation under 1.12\".",
+    "flaw": "The pre-registered OCCAMS v3 analysis specified n\u2248141 patients, but the actual result has n=87. This is a 38% attrition with no explanation provided in the results digest. The decision tree's Outcome C ('No signal in any arm') is interpreted as a negative fusion result, but with n=87 the power to detect a clinically meaningful fusion benefit is severely reduced. The attrition may be non-random (e.g., patients with missing genomics or follow-up), which could bias the result.",
+    "fix": "Provide a full attrition flow diagram from 141 to 87, with reasons for exclusion. Conduct a sensitivity analysis on the excluded patients (e.g., compare their baseline characteristics to included patients). If attrition is non-random, the OCCAMS arm should be reported as underpowered and potentially biased, not as a clean negative.",
+    "severity": 5
+  },
+  {
+    "target": "The necessity probes in necessity_probes.json and the amendment log: \"necessity probes at n=446 (pooled OAC+GEJ) show TP53 AUC 0.678 and WGD 0.703 from H&E (shuffled ~0.50) \u2014 genomics IS partially visible at adequate n. The earlier two-cohort negatives (n=65-140, AUC 0.36-0.48) stand as honest small-n results, but Ch2 Part A's claim must be revised from 'not recoverable' to 'partially recoverable at scale'.\"",
+    "flaw": "The pooled n=446 result is presented as a sample-size effect, but the amendment log itself notes 'the pooled gain arrives with a population change'. The pooled cohort includes TCGA-STAD/GEJ (gastric/GEJ), which is a different disease population from OAC. The improvement from AUC 0.36-0.48 to 0.678-0.703 could be due to population differences (e.g., different mutation prevalence, different histology) rather than sample size alone. The claim 'partially recoverable at scale' conflates scale with population.",
+    "fix": "Report the OAC-only subgroup result at n=65 (tcga_probe.json shows TP53 AUC 0.355, WGD 0.429) alongside the pooled result, and test whether the improvement is due to sample size or population by comparing OAC-only vs pooled at matched sample sizes (e.g., bootstrap subsampling). The claim should be 'partially recoverable in a pooled OAC+GEJ population, but not demonstrated in OAC alone'.",
+    "severity": 5
+  },
+  {
+    "target": "The SWG arm result in swg_arm.md: \"Late-mean fusion is the best family: AUPRC 0.630, ROC AUC 0.774... The paired bootstrap puts the late-mean advantage over copy number at +0.111 AUC (95% CI 0.002 to 0.219)\" and \"late-mean was selected as the best of seven families on this same data, so the contrast carries winner's-curse exposure\".",
+    "flaw": "The primary contrast (late-mean vs CNV) has a CI that barely excludes zero (0.002 to 0.219), and the AUPRC difference crosses zero. The thesis acknowledges winner's-curse exposure but does not correct for it. The multiplicity plan (multiplicity_plan.md) declares this as a confirmatory contrast with Holm correction, but the Holm-adjusted significance is not reported in the results digest. The claim 'likely multimodal benefit, not a definitive one' is appropriate, but the thesis still uses this as the strongest fusion contrast.",
+    "fix": "Report the Holm-adjusted p-value or confidence interval for the SWG fusion-vs-CNV contrast, accounting for the seven-family selection. If the adjusted interval crosses zero, the claim must be downgraded to 'exploratory' and the thesis's central fusion claim must rest on other cohorts (which are null).",
+    "severity": 5
+  },
+  {
+    "target": "The TCGA pooled fusion result in tcga_pool_fusion.json: late_hist_clin delta_mean 0.0614 with CI [0.0273, 0.0953], while late_hist_gen delta_mean 0.0144 with CI [-0.023, 0.0511].",
+    "flaw": "The pooled TCGA analysis (n=399) shows a significant fusion benefit for histology+clinical (delta CI excludes zero) but not for histology+genomics. However, the clinical variables include stage, which is known to be predictable from histology (necessity_probes.json shows stage_from_hist AUC 0.644). This raises the possibility that the clinical fusion benefit is circular: stage is partially encoded in the histology, and the clinical arm is adding information that is already available in the image. The pre-registration for OCCAMS v3 included clinical-only as a reference arm, but the pooled analysis does not appear to have a pre-registered interpretation for clinical fusion benefit.",
+    "fix": "Report the correlation between clinical variables and histology predictions, and test whether the clinical fusion benefit persists after adjusting for histology-predicted stage. If the benefit is driven by stage, it should be reported as a stage-fusion benefit, not a general clinical fusion benefit.",
+    "severity": 4
+  },
+  {
+    "target": "The ERIN jury labels in erin_jury_labels_summary.json: train_eligible 6867, unsure_held_out 204, adjudicated 78, with label_dist_train_eligible showing NDBE 5151, CANCER 863, HGD 405, LGD 269, IND 257.",
+    "flaw": "The jury labels are used as the gold standard for training and evaluation, but the jury is composed of local LLMs whose agreement with human adjudication is only validated on 79-80 cases (jury_smoke_analysis.json). The full-corpus agreement between pathladder and jury is only 0.8168 (negation_revalidation.json), with 321 cases where pathladder says CANCER but jury says NDBE. The jury is not a human pathologist, and its errors are likely correlated with the errors of the pathladder system (both are text-based). Using jury labels as ground truth for Ch4 risks circular validation: the model is trained on LLM-derived labels and evaluated on LLM-derived labels.",
+    "fix": "The R.4 pathologist ground-truth sample (~250 reports) is listed as REQUIRED in the amendment log but does not appear in the results digest. This must be completed before Ch4 can claim validation. Until then, all Ch4 results should be labelled 'interim' and the jury labels should be treated as a candidate label source, not a gold standard.",
+    "severity": 4
+  },
+  {
+    "target": "The encoder sweep pre-registration amendment: \"if any swept encoder's fusion delta flips sign relative to the primary config's, the chapter's claim is DOWNGRADED to encoder-conditional\" and the SWG result: \"against the strongest swept encoder the discrimination advantage is directionally consistent and unresolved at n=150, and only calibration is decisively better\".",
+    "flaw": "The SWG fusion delta vs GigaPath histology-only crosses zero for AUPRC and AUC (latemean_vs_gigapath_paired.json: \u0394AUPRC CI [-0.064, 0.104], \u0394AUC CI [-0.020, 0.103]). According to the pre-registered amendment, this should trigger a downgrade to 'encoder-conditional'. The swg_arm.md text does state this, but the thesis's central claim (as reframed) still relies on the SWG fusion benefit as the strongest positive result. The encoder-conditional caveat is buried in the limitations rather than being reflected in the headline claim.",
+    "fix": "The SWG fusion claim must be explicitly labelled 'encoder-conditional' in the abstract, chapter summary, and any headline statement. The thesis's central claim should be revised to acknowledge that the only positive fusion result is encoder-dependent and not robust.",
+    "severity": 4
+  },
+  {
+    "target": "The OCCAMS v2 result in occams_fusion_v2.json: gen_only shuffled_auc 0.5806, hist_only shuffled_auc 0.4574, early_fusion shuffled_auc 0.5041.",
+    "flaw": "The shuffled-label controls are not at 0.5. The genomics-only shuffled AUC is 0.58, which is above chance, and the histology-only shuffled AUC is 0.46, which is below chance. The evaluation_protocol.md states 'a control AUC away from 0.5 invalidates the pipeline, not the hypothesis'. The OCCAMS v2 results should therefore be considered invalid, but the execution plan lists them as 'done' and the decision tree's Outcome D ('Signal but implausible... Pipeline bug until proven otherwise') is not triggered.",
+    "fix": "Debug the OCCAMS v2 pipeline to identify why shuffled controls deviate from 0.5 (e.g., label leakage, fold contamination, or a bug in the shuffling procedure). Re-run the analysis with corrected controls. If the controls remain off-chance, the OCCAMS v2 results must be discarded entirely.",
+    "severity": 4
+  },
+  {
+    "target": "The TCGA first-pass result in tcga_fusion_firstpass.json: hist shuffled_auc 0.542, early shuffled_auc 0.543, with n=48.",
+    "flaw": "The shuffled-label controls for TCGA first-pass are also away from 0.5 (0.542-0.543), which should invalidate the pipeline according to the evaluation protocol. The TCGA ABMIL result (tcga_abmil.json) does not report shuffled controls at all. The thesis uses TCGA as a replication cohort, but if the controls are invalid, the TCGA results cannot be interpreted as evidence for or against fusion.",
+    "fix": "Report shuffled-label controls for all TCGA analyses (first-pass, ABMIL, pooled). If controls are off-chance, debug the pipeline before any TCGA result is cited. The TCGA results should be held until controls pass.",
+    "severity": 4
+  },
+  {
+    "target": "The ERIN Ch3 pre-registration's circularity mitigation: \"probable label leakage: grade is itself report-derived \u2014 this is the known circularity risk, mitigated by using only PRIOR-timepoint clinical variables in arm 2\".",
+    "flaw": "The clinical arm uses report-derived variables (age, surveillance interval, prior-grade history, cancer-pathway flag), but the primary endpoint (current-biopsy grade) is also report-derived. The 'prior-timepoint' mitigation is insufficient because prior-grade history is itself report-derived and may be correlated with current grade through the same reporting patterns. The clinical-only AUC of 0.7562 (erin_encoder_sweep.json) suggests the clinical arm is learning report-derived signal, not independent clinical signal. The fusion benefit (late_fusion delta +0.0059, CI [-0.005, 0.0175]) is null, which is consistent with the circularity concern.",
+    "fix": "Report the correlation between clinical variables and the report-derived grade label, and test whether the clinical arm's performance is driven by prior-grade history (which is report-derived). If so, the clinical arm should be redefined to exclude report-derived variables, or the circularity should be explicitly acknowledged as a limitation that prevents interpretation of the fusion null.",
+    "severity": 4
+  }
+]

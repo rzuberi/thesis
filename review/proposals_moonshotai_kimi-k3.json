@@ -1,0 +1,74 @@
+[
+  {
+    "title": "OAC-only genotype visibility at scale: deconfound the n=446 'reversal'",
+    "type": "improve_existing",
+    "chapter": "Ch2",
+    "design": "The pooled n=446 probes (TP53 0.678, WGD 0.703) mix OAC/GEJ/STAD, so the gain may be population-mixture signal (site-of-origin visible in H&E), not within-OAC visibility. Run the identical probe on (a) STAD/GEJ alone (n~381), (b) OAC alone with site regressed out, (c) pooled with a site-indicator control arm, plus 50-perm nulls each. Readout: per-stratum AUC with CIs and the site-adjusted delta.",
+    "decisive_result": "If OAC-only TP53/WGD stays at null-percentile levels while GEJ/STAD carries the signal, the 'partially recoverable at scale' claim is shown to be a population artefact and Ch1/Ch2's conditional story becomes precise: visibility tracks population heterogeneity, not n. If OAC-only rises with n, the learning-curve story is real and the fusion question genuinely becomes complementarity.",
+    "compute": "~40 GPU-hours (features already extracted; probes are CPU-cheap; nulls on CPU)",
+    "impact": 5
+  },
+  {
+    "title": "Finish PORPOISE + SurvPath-style intermediate fusion on the TCGA pool (n=399)",
+    "type": "improve_existing",
+    "chapter": "Ch2",
+    "design": "Complete the stalled PORPOISE loader (omics via their Preprocessing.ipynb + signatures.csv) and run PORPOISE late/intermediate fusion on the pooled OAC+GEJ/STAD cohort where clinical-only currently beats everything (C 0.623) and late_hist_clin shows the thesis's only CI-positive external delta (+0.061). Add a pathway-level genomics representation (SurvPath-style) instead of the 6 coarse features. Readout: C-index with paired deltas vs hist-only and clin-only under frozen folds.",
+    "decisive_result": "If published intermediate-fusion machinery also fails to beat clinical-only at n=399, the Ch2 null is attributable to the modality pairing, not our implementation \u2014 the strongest possible defence of the in-house nulls. If PORPOISE-style fusion DOES win where ours didn't, the thesis gains a positive mechanistic result: fusion architecture, not data, was the bottleneck.",
+    "compute": "~80 GPU-hours (one session loader work + ~20 runs)",
+    "impact": 5
+  },
+  {
+    "title": "R.4 pathologist truth set: maximally-informative 250-report sampling design + full re-scoring harness",
+    "type": "improve_existing",
+    "chapter": "Ch4",
+    "design": "Rehan must do the grading, but everything else can be built now: stratify the 250-sample on jury entropy (all ~200 unsure reports + 50 confident across grades/sites/years), generate the blinded grading pack and ingest parser, and pre-build the harness that re-scores every Ch4 claim against human truth the moment grades land \u2014 jury-vs-human kappa, pathladder-vs-human, and re-run of the cross-evaluation matrix with human labels as eval. Readout: the multiplicity plan's confirmatory contrast #4 (jury-trained vs pathladder-trained on human-truth eval).",
+    "decisive_result": "This is the single thesis-threatening unblock (flagged severity-5 by 8/8 review families). If jury labels agree with the pathologist at kappa>0.8 including the unsure stratum, the self-validation loop is broken and Ch4 becomes the methodological core as framed. If the unsure stratum disagrees systematically, the unsure-holdout policy is vindicated and quantified.",
+    "compute": "laptop (design + harness); grading is human time",
+    "impact": 5
+  },
+  {
+    "title": "Unsure-holdout sensitivity + deployment-population scoring (item 1.22 executed)",
+    "type": "improve_existing",
+    "chapter": "Ch4",
+    "design": "Score the trained Ch3/Ch4 models on the 206 held-out unsure reports' matched slides and compare AUC, calibration, and error modes against the train-eligible population; additionally train a label-smoothing variant that keeps unsure cases with jury-entropy soft labels instead of excluding them. Readout: AUC delta (eligible-only vs full-population scoring) and soft-label vs hard-exclusion comparison, both with bootstrap CIs.",
+    "decisive_result": "Quantifies the selection bias Gemini flagged: if performance drops >0.05 AUC on unsure cases, the thesis can state the deployment cost of the conservative labelling policy honestly and show soft labels recover part of it \u2014 converting a criticism into a measured design trade-off. If the drop is small, the holdout policy is shown to be nearly free.",
+    "compute": "~30 GPU-hours (features exist; heads are CPU)",
+    "impact": 4
+  },
+  {
+    "title": "Clinical-arm leakage ablation + necessity triangle for ERIN progression (items 1.23 + 2.17)",
+    "type": "improve_existing",
+    "chapter": "Ch3",
+    "design": "Re-run the ERIN progression arm with the clinical-only and fusion arms rebuilt WITHOUT prior-grade-history features (age, interval, pathway flag only), since prior grade and the label derive from the same report stream. Then produce the necessity-triangle figure for Ch3: hist-only, hist+clinical fusion, and clinical-predicted-from-histology (prior-dysplasia-from-hist already at 0.748 in erin_probes.json \u2014 quantify how much of the clinical arm's value is already visible in the slide). Readout: paired fusion-vs-histology delta pre/post ablation.",
+    "decisive_result": "If the fusion delta on progression collapses without prior-grade features, the ERIN fusion result is relabelled as partially circular and the 'where fusion fails' taxonomy gains a concrete failure mode (leakage through report-derived covariates). If it survives, Ch3's fusion claim is substantially hardened against the strongest remaining confound.",
+    "compute": "~20 GPU-hours (heads only; features exist)",
+    "impact": 4
+  },
+  {
+    "title": "Conditional-attention shift study: does genomics redirect where the model looks? (2.20 executed)",
+    "type": "new_experiment",
+    "chapter": "Ch2",
+    "design": "Train conditional-ABMIL (genomic vector gates the attention network) vs plain ABMIL vs permuted-genomics control on the TCGA pool and SWG, exporting per-tile attention. Readout: (a) attention-entropy and top-1% tile overlap (Dice) between conditional and plain models on identical slides; (b) whether attention shifts toward tumour vs stroma tiles (simple nuclei-density/morphology proxy) when TP53/WGD status flips; (c) downstream C delta. Permuted control must show no shift.",
+    "decisive_result": "Either outcome is a result: measurable genomic-conditioned attention shift is direct mechanistic evidence of cross-modal interaction (the 'why' in where-and-why); a null shift with matched performance shows late fusion's nulls are structural \u2014 the modalities never interact \u2014 which is itself a clean explanatory finding for Ch5. This is the thesis's only planned mechanism-level experiment.",
+    "compute": "~120 GPU-hours (3 conditions x 2 cohorts x 3 seeds, ABMIL-scale)",
+    "impact": 4
+  },
+  {
+    "title": "SWG report-text jury labels: a third independent label source for the thesis's only positive fusion cohort",
+    "type": "new_experiment",
+    "chapter": "Ch4",
+    "design": "Item 2.14 is already running the jury on 327 matched SWG report rows; extend it into an analysis: compare jury-extracted SWG grades against the cohort's curated LGD2+ endpoint labels, quantify label noise in the thesis's flagship positive result, and re-run the headline late-mean-vs-histology contrast restricted to jury-confirmed labels. Readout: label agreement table + the SWG paired delta (\u0394AUPRC/\u0394AUC/\u0394Brier) on the cleaned subset vs the full 150.",
+    "decisive_result": "The SWG fusion win is the thesis's only positive result and rests on single-source curated labels. If the contrast survives (or strengthens) on jury-confirmed labels, the positive result is robust to label noise and the winner's-curse critique weakens materially. If it collapses, that must be known before submission \u2014 it changes Ch2's headline and Ch5's explanation of the single-cohort win.",
+    "compute": "~15 GPU-hours (jury inference mostly done; re-run is CPU)",
+    "impact": 4
+  },
+  {
+    "title": "Pan-cancer jury validation on TCGA-Reports: does report-derived supervision transfer beyond Barrett's? (2.19 executed)",
+    "type": "new_chapter",
+    "chapter": "new",
+    "design": "Run the 8-juror pipeline (site-adapted prompts) on TCGA-Reports for 3 cancer types with structured ground truth (e.g. BRCA grade, LUAD subtype, COAD MSI-relevant text), score against TCGA's curated clinical annotations, and compare jury vs pathladder-style rules vs the published TCGA-Reports LLM benchmarks. Zero new imaging data; text + existing structured labels only. Readout: per-cancer accuracy/kappa vs structured truth, jury entropy calibration, and a transfer-gap table (ERIN kappa 0.90 vs other cancers).",
+    "decisive_result": "Converts Ch4 from a Barrett's-specific engineering result into a general claim about when LLM-jury supervision is trustworthy \u2014 directly answering the 'jury homogeneity' and 'TCGA-scoped accuracy' critiques (findings 8-9). If agreement degrades predictably with report structure/hedging (linking to disagreement_drivers.json), the thesis delivers a validated, transferable supervision methodology; this is also the standalone methods paper.",
+    "compute": "~60 GPU-hours (text-only inference on L40S, ~10k reports)",
+    "impact": 4
+  }
+]
