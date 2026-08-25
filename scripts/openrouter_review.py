@@ -10,14 +10,18 @@ T = os.environ.get("THESIS", "/Users/zuberi01/Documents/thesis")
 OUT = os.path.join(T, "review")
 os.makedirs(OUT, exist_ok=True)
 KEY = os.environ.get("OPENROUTER_KEY") or open(os.path.expanduser("~/.openrouter_key")).read().strip()
-MODELS = ["openai/gpt-5.6-terra-pro", "x-ai/grok-4.6",
-          "google/gemini-3.1-pro", "google/gemini-3-pro",
-          "deepseek/deepseek-v3.2", "moonshotai/kimi-k2.7"]
-MAX_REVIEWERS = 3
+# wave 2 (2026-08-25): five families unused in wave 1; wave-1 findings doc is
+# excluded from the pack so this wave is blind to prior conclusions.
+MODELS = ["deepseek/deepseek-v4-pro-0813", "moonshotai/kimi-k3", "z-ai/glm-5.3",
+          "qwen/qwen3.8-max", "google/gemini-3.7-flash"]
+MAX_REVIEWERS = 5
+BLIND = ("review_findings",)
 
 sections = []
 for f in ([T + "/EXECUTION_PLAN.md"] + sorted(glob.glob(T + "/docs/*.md"))
           + sorted(glob.glob(T + "/chapters/*/*.md"))):
+    if any(b in f for b in BLIND):
+        continue
     sections.append(f"\n===== FILE: {os.path.basename(f)} =====\n" + open(f).read())
 digest = [f"{os.path.basename(f)}: {json.dumps(json.load(open(f)))[:1500]}"
           for f in sorted(glob.glob(T + "/results/*.json"))]
@@ -64,7 +68,7 @@ for m in MODELS:
         crits = json.loads(txt[start:end])
     except Exception:
         crits = [{"raw": txt}]
-    json.dump(crits, open(os.path.join(OUT, f"review_frontier_{tag}.json"), "w"), indent=2)
+    json.dump(crits, open(os.path.join(OUT, f"review_frontier_w2_{tag}.json"), "w"), indent=2)
     print(f"{m}: {len(crits)} criticisms | tokens {usage.get('prompt_tokens')}+{usage.get('completion_tokens')}")
     done += 1
 print(f"reviewers completed: {done}")
