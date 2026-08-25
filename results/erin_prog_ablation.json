@@ -1,0 +1,83 @@
+{
+  "_meta": {
+    "n_slides": 153,
+    "n_patients": 153,
+    "progressor_patients": 28,
+    "endpoint": "progressed_to_HGDplus",
+    "seeds": [
+      0,
+      1,
+      2
+    ]
+  },
+  "hist_abmil": {
+    "auc": 0.8191,
+    "auc_ci": [
+      0.7234,
+      0.8998
+    ]
+  },
+  "clin_only": {
+    "auc": 0.5643,
+    "auc_ci": [
+      0.4343,
+      0.6901
+    ]
+  },
+  "clin_strict_pre": {
+    "auc": 0.48,
+    "auc_ci": [
+      0.3623,
+      0.6017
+    ]
+  },
+  "clin_noprior": {
+    "auc": 0.5266,
+    "auc_ci": [
+      0.4001,
+      0.6478
+    ]
+  },
+  "late_fusion": {
+    "auc": 0.8229,
+    "auc_ci": [
+      0.7306,
+      0.9017
+    ],
+    "delta_vs_ref": {
+      "mean": 0.004,
+      "ci": [
+        -0.0466,
+        0.0537
+      ]
+    }
+  },
+  "late_fusion_strict_pre": {
+    "auc": 0.8,
+    "auc_ci": [
+      0.6912,
+      0.8941
+    ],
+    "delta_vs_ref": {
+      "mean": -0.0192,
+      "ci": [
+        -0.0576,
+        0.012
+      ]
+    }
+  },
+  "late_fusion_noprior": {
+    "auc": 0.8191,
+    "auc_ci": [
+      0.72,
+      0.903
+    ],
+    "delta_vs_ref": {
+      "mean": -0.0003,
+      "ci": [
+        -0.0443,
+        0.0414
+      ]
+    }
+  }
+}
