@@ -45,11 +45,21 @@ multimodal benefit, not a definitive one, and the external arms exist to test it
 Histology alone (ABMIL over UNI2) reaches AUPRC 0.557, ROC AUC 0.731, Brier
 0.245 — both unimodal arms rank below every fusion family on AUPRC (histology 4th
 and copy number 6th of seven families). The histology-anchored contrast (late-mean
-fusion minus histology-only) is +0.073 AUPRC, +0.043 AUC, and −0.061 Brier as
-point differences; this is the delta the thesis hypothesis names, and the
-copy-number-anchored contrast above is its complement. [pending: paired bootstrap
-CI for this specific contrast, computable from the saved out-of-fold predictions —
-the released tables carry CIs only for the fusion-vs-CNV contrast.]
+fusion minus histology-only) — the delta the thesis hypothesis names — is
+supported on all three metrics by the released paired bootstrap
+(`lgd2_final_pre_event_paired_differences.csv`, 150 patients, 5,000 resamples):
++0.073 AUPRC (95% CI 0.006 to 0.125), +0.043 AUC (0.015 to 0.071), −0.061 Brier
+(−0.095 to −0.027). None of the three intervals crosses zero, making this the
+strongest fusion contrast in the release — stronger than the copy-number-anchored
+one above, whose AUPRC interval crosses zero. Two caveats bound the claim. First,
+late-mean was selected as the best of seven families on this same data, so the
+contrast carries winner's-curse exposure; it is reported alongside the
+pre-registered fusion-vs-CNV primary, not in place of it. Second, in the encoder
+sensitivity check GigaPath histology-alone is the best unimodal arm by point
+estimate (AUPRC 0.609 vs UNI2's 0.557); GigaPath late-mean fusion is statistically
+indistinguishable from the UNI2 headline (ΔAUPRC −0.006, CI −0.075 to 0.067), but
+the direct fusion-versus-GigaPath-histology paired contrast has not been run and
+is the one residual computation for this table.
 
 Early fusion (AUPRC 0.590, AUC 0.738) and intermediate fusion (0.567, 0.741)
 did not overtake late-mean fusion on AUPRC, and neither did a co-attention
