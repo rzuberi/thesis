@@ -1,0 +1,26 @@
+{
+  "_meta": {
+    "encoders": [
+      "features_uni_v2",
+      "features_virchow2",
+      "features_gigapath",
+      "features_phikon2",
+      "features_hoptimus0"
+    ],
+    "n_slides": 2280,
+    "n_eligible": 2153,
+    "n_unsure": 59
+  },
+  "disagreement_vs_jury_entropy": {
+    "spearman": 0.0422,
+    "p": 0.04715882945392767,
+    "n": 2208
+  },
+  "flag_unsure_auc_disagreement": 0.5193,
+  "flag_unsure_auc_confidence": 0.5553,
+  "ind_enrichment": {
+    "disagree_mean_IND": NaN,
+    "disagree_mean_other": 0.0615
+  },
+  "progression_auc_of_disagreement": 0.5197
+}
