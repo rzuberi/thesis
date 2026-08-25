@@ -1,0 +1,74 @@
+[
+  {
+    "title": "External validation of SWG fusion on ERIN progression cohort",
+    "type": "improve_existing",
+    "chapter": "Ch2",
+    "design": "Train the pre-registered late-mean fusion (UNI2+ABMIL histology + sWGS genomics) on SWGCohort (n=150) and evaluate it on ERIN's progression cohort (n=1,218 patients, 197 progressors) without any fine-tuning, using the same endpoint definition (progressed_to_HGDplus) and the already-extracted UNI2 features. Compare against a histology-only ABMIL trained on SWG and evaluated on ERIN; report paired bootstrap CIs for the fusion-minus-histology delta in AUC/C-index.",
+    "decisive_result": "If the fusion delta CI excludes zero and is positive on ERIN, the SWG fusion benefit is externally replicated; if it crosses zero or is negative, the replication-failure narrative is strengthened by showing the SWG win does not transfer to a 16x-larger independent Barrett's cohort.",
+    "compute": "1 GPU-hour",
+    "impact": 5
+  },
+  {
+    "title": "Subgroup analysis of fusion benefit across biological and clinical strata",
+    "type": "improve_existing",
+    "chapter": "Ch2",
+    "design": "On SWG (n=150) and TCGA pool (n=399), partition patients by TP53 mutation status, whole-genome doubling, stage (T1-2 vs T3-4), and age (<60 vs \u226560). For each stratum, compute the paired fusion-minus-histology delta (C-index for survival, AUC for binary) with bootstrap CIs, using the same late-mean vs histology-only contrast. Report a forest plot of the deltas.",
+    "decisive_result": "If fusion benefit concentrates in specific strata (e.g., TP53-wt or early-stage) while the pooled delta is null, the thesis can claim a conditional fusion benefit and attribute the replication failure to population-composition differences across cohorts.",
+    "compute": "2 CPU-hours + 1 GPU-hour",
+    "impact": 5
+  },
+  {
+    "title": "Attention-shift study with conditional genomics",
+    "type": "new_experiment",
+    "chapter": "Ch2",
+    "design": "On the TCGA pool (n=399) and SWG (n=150), train a conditional-ABMIL where the attention module receives genomics features (TP53, WGD) as additional input, alongside a plain ABMIL. For each patient, compute the cosine distance between the tile-level attention maps of the two models, and also against a permutation control (genomics shuffled). Relate the attention shift to whether the fusion changes the predicted risk.",
+    "decisive_result": "If attention shifts substantially but fusion does not improve performance, it suggests the genomic information is redundant with histology features; if attention shifts are small, it implies the fusion is not exploiting the conditioning signal. Either outcome clarifies the mechanism behind fusion failure.",
+    "compute": "25 GPU-hours",
+    "impact": 4
+  },
+  {
+    "title": "Uncertainty-weighted fusion to exploit conditional benefits",
+    "type": "new_experiment",
+    "chapter": "Ch2",
+    "design": "On SWG (n=150) and TCGA pool (n=399), train ABMIL with MC dropout to obtain per-patient predictive entropy. Combine histology and genomics predictions with a weight that increases the genomics contribution when histology entropy is high (e.g., weight = sigmoid(entropy)). Compare this uncertainty-weighted fusion against unweighted late fusion and the best unimodal on the same test folds.",
+    "decisive_result": "If uncertainty-weighted fusion outperforms unweighted fusion and beats the best unimodal, it demonstrates that fusion is beneficial in the uncertainty regime, explaining why average fusion fails (histology is often confident). If it does not, it rules out uncertainty as the missing factor.",
+    "compute": "30 GPU-hours",
+    "impact": 4
+  },
+  {
+    "title": "Robustness of report-derived labels to training-set noise",
+    "type": "improve_existing",
+    "chapter": "Ch4",
+    "design": "On ERIN, train the histology-only and late-fusion models on (a) the confident subset (n=3,350) only, and (b) the full train-eligible set (n=6,867, including majority-vote labels with noise). Evaluate both on the held-out test set (the 204 unsure cases plus a disjoint test split) and compare AUC and calibration.",
+    "decisive_result": "If the confident-only model is not worse than the full-data model, label noise is not degrading the model; if the full-data model is better, the majority-vote noise is handled well, strengthening the validity of report-derived supervision.",
+    "compute": "5 GPU-hours",
+    "impact": 4
+  },
+  {
+    "title": "Simulation of fusion failure modes across cohort size and effect size",
+    "type": "new_chapter",
+    "chapter": "new",
+    "design": "Build a synthetic data generator sampling histology features (e.g., 50-dim) and genomics features (e.g., 6-dim) with known predictive effects on a survival or binary outcome. Vary n (50, 100, 200, 400, 1000), effect sizes, and the correlation between modality-specific signals. Apply the same late-fusion pipeline (ABMIL + Cox) and record the fusion delta. Fit a regression/heatmap of the delta as a function of n and effect-size ratio.",
+    "decisive_result": "If the simulation reproduces the observed null at n\u2248100-150 and positive at n>400, it provides a theoretical power-based explanation for the replication failure and suggests the sample size required for a detectable fusion benefit.",
+    "compute": "100 CPU-hours",
+    "impact": 5
+  },
+  {
+    "title": "PORPOISE baseline replication on TCGA and OCCAMS",
+    "type": "improve_existing",
+    "chapter": "Ch2",
+    "design": "Run the published PORPOISE fusion method on the TCGA pool (n=399) and OCCAMS (n=87) using their provided code and our pre-extracted features, with the same endpoints and patient-disjoint splits. Compare its C-index to our late fusion and histology-only baselines.",
+    "decisive_result": "If PORPOISE does not beat our histology-only baseline, the null fusion result is strengthened against a published method; if PORPOISE outperforms our fusion, we must reconcile the discrepancy and possibly revise our fusion implementation.",
+    "compute": "15 GPU-hours",
+    "impact": 4
+  },
+  {
+    "title": "Cross-cohort label transfer for report-derived supervision",
+    "type": "new_experiment",
+    "chapter": "Ch4",
+    "design": "Train a grade classifier (ABMIL over UNI2) on TCGA-ESCA/STAD reports (using jury labels generated from the LLM jury) and evaluate on ERIN slides (and vice versa). Use the same endpoint (grade classification) and frozen features. Report AUC and calibration on the target cohort.",
+    "decisive_result": "If cross-cohort AUC is high (e.g., >0.7), the report-derived labels are robust across cohorts and not overfit to a single centre; if AUC is low, it reveals cohort-specific biases in report language or grade definitions, informing the validation framework.",
+    "compute": "5 GPU-hours",
+    "impact": 4
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Stratified pathologist ground-truth sample (R.4) \u2014 the thesis-critical unblock",
+    "type": "improve_existing",
+    "chapter": "Ch4",
+    "design": "Export a 250-report stratified sample from ERIN: ~100 confident-jury, ~60 unsure, ~50 pathladder-vs-jury disagreements (the 321 fresh plad=CANCER/jury=NDBE confusions), ~40 adjudicated-80 holdovers as calibration. Two GI pathologists grade blind to all machine labels; readout is pathologist-vs-jury and pathologist-vs-pathladder agreement with kappa, and a re-scored Ch4 cross-evaluation matrix using human truth as eval labels.",
+    "decisive_result": "If pathologist-jury agreement \u22650.9, the self-validation loop critique collapses and Ch4's label infrastructure becomes the thesis's strongest contribution; if agreement is materially lower (e.g. <0.8 on the unsure/negation strata), the jury's limits are quantified rather than suspected \u2014 either way the severity-5 finding is resolved with data.",
+    "compute": "CPU-hours (labelling is human; analysis is trivial)",
+    "impact": 5
+  },
+  {
+    "title": "PORPOISE published-baseline arm on OCCAMS + TCGA-OAC",
+    "type": "improve_existing",
+    "chapter": "Ch2",
+    "design": "Finish the loader adaptation (item 1.4): build ESCA/STAD-compatible omics tables via their Preprocessing.ipynb + signatures.csv, run PORPOISE's own WSI+omics fusion on OCCAMS (n=87 triple-complete) and TCGA-OAC under its native splits plus our frozen patient-disjoint folds. Readout: PORPOISE C-index vs our ABMIL-Cox arms, same bootstrap.",
+    "decisive_result": "If PORPOISE also fails to beat histology-only at these n, the in-house nulls are attributable to the data regime, not our architecture \u2014 the 'why fusion fails to replicate' claim gains a published-method control. If PORPOISE succeeds where we fail, Ch2 must say so and diagnose why.",
+    "compute": "~30-60 GPU-hours",
+    "impact": 4
+  },
+  {
+    "title": "Genotype-visibility learning curve: disentangle n from population",
+    "type": "new_experiment",
+    "chapter": "Ch2",
+    "design": "On the pooled n=446 TCGA set, subsample OAC-only, GEJ-only, STAD-only, and mixed cohorts at matched n = 65/100/150/250/350; retrain TP53/WGD-from-H&E probes at each point with 50-perm nulls. Plot AUC vs n per population. This isolates whether the 0.68-0.77 visibility came from scale or from adding gastric/GEJ histology.",
+    "decisive_result": "If mixed-population curves sit above OAC-only curves at every n, the 'population, not power' story is proven with a figure \u2014 the cleanest possible Ch2/Ch1 mechanism result. If curves converge at n\u2248250, the claim reverts to sample-size and Ch1 text changes again.",
+    "compute": "~20 GPU-hours (features already extracted; heads are light)",
+    "impact": 5
+  },
+  {
+    "title": "ERIN Ch3 primary: progression on jury-label cohort v3",
+    "type": "improve_existing",
+    "chapter": "Ch3",
+    "design": "Run the pre-registered arm set (histology ABMIL / clinical-only prior-timepoint / late fusion / early fusion) on progression cohort v3 (1,266 patients, 181 progressors) with Harrell's C, frozen patient-disjoint folds, shuffled controls, and the clinical-arm leakage ablation (1.23) folded in. This is the reframed primary estimand and the confirmatory contrast #3 in the multiplicity plan.",
+    "decisive_result": "A CI-positive fusion-vs-histology delta would be the thesis's only externally-replicated fusion win and would soften the reframe; a clean null at n=1,266 with working histology signal (C>0.6) is the strongest 'fusion fails to replicate even at scale, with good labels' data point Ch5 could have.",
+    "compute": "~40 GPU-hours (features done; heads + CV cheap)",
+    "impact": 5
+  },
+  {
+    "title": "Leave-one-family-out jury: correlated-LLM-error stress test",
+    "type": "new_experiment",
+    "chapter": "Ch4",
+    "design": "Recompute jury majority labels 8 times, each time dropping one model family (e.g. all Gemma variants together, all Qwen together), then retrain the Ch4 label-source model on each perturbed label set and measure (a) label flip rate, (b) downstream AUC change, (c) which reports flip (cross-reference disagreement_drivers features). Directly answers the kappa-inflation/correlated-errors severity-4 finding.",
+    "decisive_result": "If labels flip <2% and downstream AUC moves <0.005, jury robustness is demonstrated, not assumed; if a single family drives the labels, the jury is a hidden single-model and Ch4 must report effective jury size honestly.",
+    "compute": "~25 GPU-hours (retraining 8 label-source models on existing features)",
+    "impact": 4
+  },
+  {
+    "title": "Power map for fusion nulls: minimum detectable delta per cohort",
+    "type": "new_chapter",
+    "chapter": "Ch5",
+    "design": "Simulation: for each cohort's n and event count (SWG 150/~40 events, OCCAMS 87/58, TCGA-OAC 65/36, TCGA-pool 399/176, ERIN 1,266/181), inject fusion benefits of +0.01 to +0.10 AUC/C into the saved OOF predictions and compute the fraction of bootstrap runs where the paired CI excludes zero. Produces the Ch5 figure: 'what fusion effect could each cohort have detected'.",
+    "decisive_result": "If OCCAMS/TCGA-OAC could only detect deltas \u22650.10, the external nulls are uninformative about small benefits and Ch5's claim sharpens from 'fusion fails to replicate' to 'fails to replicate where powered, and the nulls are underpowered to detect modest gains' \u2014 a materially more defensible thesis sentence. If they were powered for +0.04, the nulls are decisive.",
+    "compute": "CPU-hours (<10; pure resampling on saved predictions)",
+    "impact": 5
+  },
+  {
+    "title": "SWG winner's-curse quantification: selection stability under bootstrap",
+    "type": "improve_existing",
+    "chapter": "Ch2",
+    "design": "Re-run the 7-family comparison on ~200 patient-level bootstrap resamples of SWGCohort (frozen folds, saved OOF predictions make this cheap), recording how often late-mean wins and the distribution of the winning family's fusion-vs-histology delta. Yields a selection-induced optimism estimate for the headline contrast.",
+    "decisive_result": "If late-mean wins >70% of resamples, selection is stable and the winner's-curse caveat shrinks to a footnote; if it wins ~30%, the headline contrast gets a quantified optimism correction \u2014 either number is currently asserted, not known, and reviewers flagged it twice.",
+    "compute": "CPU-hours (~20; heads are cheap, predictions reusable)",
+    "impact": 4
+  },
+  {
+    "title": "Unsure-holdout deployment-realism sensitivity (1.22), executed",
+    "type": "improve_existing",
+    "chapter": "Ch4",
+    "design": "Score the trained Ch4 label-source models on the 206 held-out unsure reports using (a) jury-plurality as a proxy reference, (b) the R.4 pathologist grades for the unsure stratum once available. Report AUC/accuracy on unsure vs train-eligible, plus calibration degradation. Also fold in the Holm recomputation over the four confirmatory contrast sign-probabilities (trivial once CIs exist).",
+    "decisive_result": "If performance drops <0.05 on unsure cases, the holdout policy is shown costless and the selection-bias critique closes; a large drop quantifies the deployment penalty of excluding hard reports and becomes a headline Ch4 finding about where report-derived supervision breaks.",
+    "compute": "CPU-hours (<5)",
+    "impact": 3
+  }
+]

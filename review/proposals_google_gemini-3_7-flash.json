@@ -1,0 +1,74 @@
+[
+  {
+    "title": "50-Permutation Empirical Null Distribution for All Shuffled Baseline Contrasts",
+    "type": "improve_existing",
+    "chapter": "Ch2",
+    "design": "Run 50-fold permutation shuffles across all survival and classification tasks in OCCAMS v3 (n=87), TCGA-OAC (n=65), and Pooled TCGA (n=399) across histology ABMIL, genomics Cox, and fusion arms. Calculate exact empirical null percentile thresholds and p-values for all reported point metrics. Readout: table of empirical null means, SDs, and true-vs-null percentiles replacing noisy 1-to-5 shuffle controls.",
+    "decisive_result": "Satisfies pre-registered Outcome D checks, proving off-0.5 controls (e.g. OCCAMS shuffled C=0.5738) are expected finite-sample variance rather than systemic pipeline or survival-censoring leakage.",
+    "compute": "120 CPU-hours",
+    "impact": 5
+  },
+  {
+    "title": "Clinical-Arm Prior-Grade History Leakage Ablation on ERIN",
+    "type": "improve_existing",
+    "chapter": "Ch3",
+    "design": "Train and evaluate ERIN clinical-only and late-fusion progression models (n=1,266, 181 events) under two feature regimes: full clinical features vs. clinical features strictly stripped of prior-grade history and pathway flags (retaining only age, sex, and surveillance interval). Readout: paired \u0394C-index and \u0394AUC between histology-only and clean-clinical fusion.",
+    "decisive_result": "Directly resolves the wave-2 red-team label-leakage critique by determining whether report-derived clinical fusion benefit is authentic or an artifact of multi-timepoint lexical label leakage.",
+    "compute": "10 GPU-hours (L40S)",
+    "impact": 5
+  },
+  {
+    "title": "Standardized PORPOISE Benchmark on OCCAMS and TCGA-OAC",
+    "type": "improve_existing",
+    "chapter": "Ch2",
+    "design": "Implement the official PORPOISE architecture (AMIL histology + SNN molecular branch with co-attention) using the extracted UNI2/Virchow2 tile features and identical 5-fold CV splits on OCCAMS (n=87) and TCGA-OAC (n=65). Readout: out-of-fold Harrell's C and Brier scores compared directly against in-house early, intermediate, and late fusion.",
+    "decisive_result": "Proves that negative multimodal fusion in established OAC is an intrinsic characteristic of the data/biology rather than suboptimal in-house fusion architectures.",
+    "compute": "15 GPU-hours (L40S)",
+    "impact": 4
+  },
+  {
+    "title": "Genomic Necessity-Triangle Progression Probes on SWGCohort",
+    "type": "new_experiment",
+    "chapter": "Ch2",
+    "design": "Run linear probes and ABMIL heads on SWGCohort WSIs (n=150, 707 biopsies) to predict the top 64 sWGS principal components and high-leverage canonical CNV loci (chr20p, chr11q, chr17p/TP53) directly from H&E. Readout: cross-validated R2/AUROC of H&E predicting sWGS features, closing the necessity triangle (Histology -> CNV -> Progression).",
+    "decisive_result": "Demonstrates why late-mean fusion succeeds on SWGCohort: sWGS CNV features capture non-redundant genomic signals that histology foundation models cannot resolve in pre-malignant tissue.",
+    "compute": "25 GPU-hours (L40S)",
+    "impact": 4
+  },
+  {
+    "title": "Evaluation of Downstream Classifiers on Unsure/High-Entropy Report Holdouts",
+    "type": "new_experiment",
+    "chapter": "Ch4",
+    "design": "Evaluate image-only models trained on confident jury labels (majority >=6/8) on the excluded 'unsure' ERIN holdout set (n=204 WSIs, jury entropy mean 1.11, hedging 0.52) using the 78 adjudicated samples as ground truth. Readout: comparative error distribution, classification confidence, and Brier score on confident vs. unsure strata.",
+    "decisive_result": "Quantifies the real-world performance degradation and selection bias introduced by automated label-cleaning pipelines in deployment settings.",
+    "compute": "5 GPU-hours (L40S)",
+    "impact": 4
+  },
+  {
+    "title": "Genomics-Conditioned Attention Shift Analysis on SWGCohort and OCCAMS",
+    "type": "new_experiment",
+    "chapter": "Ch2",
+    "design": "Extract tile-level ABMIL attention heatmaps across SWGCohort (n=150) and OCCAMS (n=87) under unimodal ABMIL vs. Co-Attention/Intermediate Fusion conditioned on true genomics vs. permuted genomics. Quantify spatial attention displacement using Jensen-Shannon divergence between attention weight distributions. Readout: distribution of attention shifts on true vs. permuted genomics.",
+    "decisive_result": "Establishes mechanistic evidence of whether multimodal architectures actively redirect histological attention to biologically distinct morphology or merely act as parallel ensembles.",
+    "compute": "40 GPU-hours (H200)",
+    "impact": 4
+  },
+  {
+    "title": "Progression Cohort V2 vs V3 Longitudinal Reconciliation Analysis",
+    "type": "improve_existing",
+    "chapter": "Ch3",
+    "design": "Perform an automated audit reconciling patient-level event delta between progression v2 (n=1,218, 197 events) and v3 (n=1,266, 181 events) across all 7,149 ERIN reports. Generate a per-patient transition table tracing false CANCER drops vs. newly linked surveillance intervals. Readout: Kaplan-Meier curves and censor-time histograms of the 16 removed event cases vs. 48 added patients.",
+    "decisive_result": "Eliminates reviewer vulnerability regarding event-rate discrepancies and proves v3 progression definitions reflect true biological endpoint refinement rather than selective cohort trimming.",
+    "compute": "laptop",
+    "impact": 3
+  },
+  {
+    "title": "Cross-Cohort Population Stratification Decomposition in Pooled Survival",
+    "type": "new_chapter",
+    "chapter": "new",
+    "design": "Conduct an empirical decomposition of the pooled TCGA-ESCA/STAD/GEJ survival cohort (n=399) by fitting histology ABMIL and Cox fusion models under three settings: (i) native pooled, (ii) batch/organ-standardized embeddings, and (iii) stratified by anatomical subsite (pure OAC vs GEJ vs pure Gastric STAD). Readout: Harrell's C across subsites and cross-site transfer delta.",
+    "decisive_result": "Transforms Chapter 5 into an empirical dissection of the 'pooling paradox', proving apparent multimodal signal in pooled cohorts is driven by cross-organ population stratification rather than shared biological synergy.",
+    "compute": "35 GPU-hours (L40S)",
+    "impact": 5
+  }
+]

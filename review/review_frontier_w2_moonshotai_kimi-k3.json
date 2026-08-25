@@ -1,0 +1,74 @@
+[
+  {
+    "target": "EXECUTION_PLAN 1.3 / amendment 2026-08-20: 'adjudication performed by Claude per Rehan's delegation' \u2014 80 cases adjudicated by Claude, then jury smoke validated as '100% vs adjudicated truth' (jury_smoke_analysis.json)",
+    "flaw": "The LLM that co-designed pathladder adjudicated the audit of pathladder's errors, and that adjudication then became the ground truth against which the LLM jury was validated and selected. This is a closed self-validation loop: agreement with Claude's own labels is treated as accuracy, so correlated LLM failure modes are invisible.",
+    "fix": "Rehan (or an independent pathologist) must re-adjudicate the full 80, not spot-check 10; report Claude-vs-human agreement on the adjudication itself before any jury number is cited against 'truth'.",
+    "severity": 5
+  },
+  {
+    "target": "Amendment 2026-08-25: central claim REVISED to 'WHERE AND WHY multimodal fusion fails to replicate' after all fusion results (occams_v3, tcga_abmil, tcga_pool, SWG) were already known",
+    "flaw": "The thesis's central hypothesis was rewritten post hoc to match the observed nulls \u2014 textbook HARKing. A claim chosen because the data showed it cannot then be confirmed by the same data; the 'five independent reviewers converged' framing launders a results-driven pivot into a principled one.",
+    "fix": "State explicitly in Ch1/Ch5 that the reframed question is post hoc and hypothesis-generating; reserve confirmatory language for contrasts pre-registered before 2026-08-19 (OCCAMS v3 tree, ERIN Ch3) and label everything else exploratory.",
+    "severity": 5
+  },
+  {
+    "target": "R.4 'pathologist ground-truth sample (~250 reports) \u2014 REQUIRED' still pending, while jury-vote labels are already ADOPTED as Ch3/Ch4 label source (amendment 2026-08-20) and 6,867 reports are train-eligible (erin_jury_labels_summary.json)",
+    "flaw": "The entire ERIN label infrastructure \u2014 and therefore Ch3 and Ch4 \u2014 rests on LLM-generated labels anchored only to 79 Claude-adjudicated cases. The one independent human anchor that could break the circularity is declared REQUIRED but absent, and the confirmatory Ch4 contrast in the multiplicity plan is admittedly blocked on it.",
+    "fix": "No Ch3/Ch4 model should be trained on jury labels until R.4 exists; report jury-vs-pathologist kappa on the 250-report sample as the gate, with a pre-registered minimum agreement for proceeding.",
+    "severity": 5
+  },
+  {
+    "target": "occams_v3.json / EXECUTION_PLAN 1.1: 'shuffled controls omitted \u2014 noted for write-up'; n=87 vs planned 141; and occams_fusion_v2.json gen_only shuffled_auc=0.5806",
+    "flaw": "The evaluation protocol states a shuffled control away from 0.5 'invalidates the pipeline', yet the v2 genomics arm's control was at 0.58 (Outcome D territory) and the pre-registered decisive v3 run simply omitted controls entirely while also losing 38% of the planned sample without explanation. The 'decisive' Ch2 run is therefore uninterpretable by the thesis's own rules.",
+    "fix": "Run the shuffled controls for v3 before interpreting anything; debug the v2 genomics control failure; document the 141\u219287 attrition flow (item 1.14) with per-exclusion counts.",
+    "severity": 5
+  },
+  {
+    "target": "multiplicity_plan.md, written 2026-08-25, declaring the confirmatory set after results exist \u2014 e.g. contrast 1 cites the already-known CI [0.015, 0.071]",
+    "flaw": "A multiplicity correction plan whose confirmatory contrasts are selected after seeing which CIs exclude zero is not a correction; it is a post hoc endorsement. Choosing the SWG late-mean-vs-histology contrast (known significant) as confirmatory while known-null contrasts are demoted to exploratory inverts the logic of pre-registration.",
+    "fix": "Reconstruct the confirmatory set from documents dated before results were read (occams_v2_decision_tree, erin_ch3_preregistration); anything first named on 2026-08-25 is exploratory regardless of what the plan calls it.",
+    "severity": 4
+  },
+  {
+    "target": "swg_arm.md: 'The histology-anchored contrast (late-mean fusion minus histology-only) \u2014 the delta the thesis hypothesis names' \u2014 supported by lgd2_final_pre_event_paired_differences.csv, but late-mean was 'selected as the best of seven families on this same data'",
+    "flaw": "The headline SWG contrast is winner's-cursed: the family was chosen as best on the same 150 patients used to estimate its advantage, and the claim that the hypothesis 'names' this contrast is retrospective \u2014 the pre-registered primary was fusion-vs-CNV, whose AUPRC CI crosses zero (\u22120.036 to 0.219). The strongest-sounding result in the thesis is the one most inflated by selection.",
+    "fix": "Demote late-mean-vs-histology to exploratory with explicit selection disclosure in the abstract-level claims; make the pre-registered fusion-vs-CNV contrast (with its crossing AUPRC interval) the headline, and rely on external arms as the unbiased check.",
+    "severity": 4
+  },
+  {
+    "target": "erin_ch3_preregistration.md circularity mitigation vs erin_encoder_sweep.json: hist_abmil AUC 0.9255 predicting 'NDBE vs LGD+' where labels are pathladder/jury report-derived grades",
+    "flaw": "The primary endpoint's labels are extracted from the same reports that supply the clinical arm, and the histology model is evaluated on its ability to reproduce a rule-based/LLM reading of text, not true dysplasia \u2014 grade_from_hist AUC 0.896 (erin_probes.json) likely measures how well H&E predicts what a pathologist wrote, including their use of clinical context. The 'prior-timepoint only' mitigation is asserted, not verified, and nothing tests whether the clinical arm leaks the current report.",
+    "fix": "Evaluate against R.4 pathologist grades as truth; audit arm-2 features for any field derived from the index report; report performance on the jury-unsure held-out set separately as a label-quality stress test.",
+    "severity": 4
+  },
+  {
+    "target": "necessity_probes.json / amendment 2026-08-21: 'genomics IS partially visible at adequate n' \u2014 TP53 AUC 0.678, WGD 0.703 at n=446 pooled OAC+GEJ, vs tcga_probe.json OAC-only TP53 AUC 0.355 (null percentile 0.2)",
+    "flaw": "The pooled gain coincides with a population change (gastric/GEJ admixture), so 'at adequate n' attributes to sample size an effect that may be entirely between-cohort signal \u2014 and the evaluation_protocol itself concedes the OAC-only replication's shuffled control failed, meaning the decisive test currently 'invalidates the pipeline rather than deciding the question'. The amendment's confident revision of Ch2 Part A outruns this evidence.",
+    "fix": "Run the within-population learning curve (OAC-only at matched n with valid controls; GEJ-only separately) and a cohort-label probe; only if OAC-only signal emerges at n\u224865\u2013140 may 'at adequate n' be claimed.",
+    "severity": 4
+  },
+  {
+    "target": "EXECUTION_PLAN 1.4 PORPOISE baseline still [~] ('loader adaptation is a full-session task') while the revised central claim is about where fusion fails",
+    "flaw": "The thesis claims fusion fails to replicate but never runs the published state-of-the-art fusion method (PORPOISE, explicitly planned as the Ch2 comparison arm) on any cohort. All 'fusion fails' conclusions rest on the authors' own late/early fusion implementations, leaving the alternative explanation \u2014 weak fusion machinery, not weak fusion \u2014 untested.",
+    "fix": "Complete 1.4 on at least TCGA-OAC and the pooled cohort before any Ch2/Ch5 claim about fusion failing; if infeasible, the claim must be scoped to 'simple fusion schemes'.",
+    "severity": 4
+  },
+  {
+    "target": "negation_revalidation.json: fresh_all agreement pathladder-vs-jury 0.8168 with 321 plad=CANCER|jury=NDBE confusions, treated as jury correcting pathladder",
+    "flaw": "After the negation-window fix, 321 reports where pathladder says CANCER and the jury says NDBE are resolved in the jury's favour with no human anchor \u2014 but the jury was never validated on negation-bearing cancer reports specifically, and the smoke set contained only ~29 cancers adjudicated by Claude. The label-correction direction is assumed, not demonstrated, and could be demoting true cancers en masse.",
+    "fix": "Stratify R.4 pathologist sampling to oversample exactly this confusion cell (plad=CANCER|jury=NDBE); report per-cell accuracy of each label source before choosing the training labels.",
+    "severity": 4
+  },
+  {
+    "target": "Inconsistent 'final' progression cohorts: EXECUTION_PLAN 2.12 'progression cohort FINAL (1,218 patients, 197 progressors)' vs erin_jury_labels_summary.json progression_v3 (1,266 patients, 181 progressors)",
+    "flaw": "Two artefacts both designated final disagree on both cohort size and event count (48 patients, 16 events), with no recorded reconciliation. Since the event definition was already found to be ~30% inflated once, an unresolved discrepancy in the endpoint cohort undermines every downstream Ch3 number.",
+    "fix": "Produce a single versioned cohort artefact with a diff against the superseded one (who entered/left and why), and assert it in the out-of-fold contract the evaluation protocol already mandates.",
+    "severity": 3
+  },
+  {
+    "target": "encoder_sweep_preregistration.md: 'No further additions mid-sweep' \u2014 then grid extended to 5 (2026-08-21) and again to 6 with H-Optimus-1, while erin_encoder_sweep.json already contains results for 4+ encoders",
+    "flaw": "The grid was extended twice after sweep results existed, violating the pre-registration's own 'not allowed post hoc' clause ('adding encoders because results disappoint'). The 'grid FINAL at 6' declaration cannot be verified as results-independent, and the rationale ('always include latest') would justify perpetual extension.",
+    "fix": "Freeze the grid at the four encoders with pre-result justification; treat H-Optimus-0/1 as a clearly-labelled post hoc extension cohort, and record both extensions as deviations in the thesis text per the plan's own rule.",
+    "severity": 3
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Inter-modality Representational Overlap Analysis",
+    "type": "improve_existing",
+    "chapter": "Ch2",
+    "design": "Extract patient-level embeddings from UNI2 and GigaPath for SWG and TCGA pools. Compute Maximum Mean Discrepancy (MMD), Pearson/Mutual Information matrices, and variance partitioning across modalities. Plot fusion delta against inter-modality correlation strength.",
+    "decisive_result": "A strong inverse correlation between fusion gain and inter-modality redundancy proves that replication failure is caused by representational overlap (modalities encoding the same visual features) rather than missing biological signal, directly explaining the UNI2-vs-GigaPath sign flip.",
+    "compute": "~8 GPU-hours (feature loading + scipy/sklearn linear algebra)",
+    "impact": 5
+  },
+  {
+    "title": "Entropy-Weighted Training for Label Ambiguity",
+    "type": "improve_existing",
+    "chapter": "Ch3",
+    "design": "Retrain ERIN progression ABMIL models using cross-entropy weighted by 1-max(probability) or jury-reported entropy, instead of uniform loss. Evaluate performance separately on confident vs held-out unsure cases, and report calibration slope/Brier score.",
+    "decisive_result": "Entropy-weighted training improves Harrell\u2019s C-index on the unsure holdout by \u22650.05 without degrading confident-case performance, proving that explicit uncertainty modeling converts discarded label noise into measurable predictive utility.",
+    "compute": "~3 GPU-hours (standard MIL retraining with modified loss)",
+    "impact": 4
+  },
+  {
+    "title": "Attention-to-Molecular Attribution Mapping",
+    "type": "new_experiment",
+    "chapter": "Ch2",
+    "design": "Export final-fold ABMIL attention weights per tile. Bin tiles into high/low attention, extract corresponding sWGS coverage/mutation calls for SWG patients. Predict TP53/WGD status from high-attention region features and compare against randomly sampled tile sets matched for area.",
+    "decisive_result": "High-attention regions significantly outperform random tiles (\u0394AUC > 0.10, p<0.01) in genotype prediction, providing a quantitative, visually-grounded mechanism linking morphological phenotype to molecular drivers and strengthening Ch2\u2019s biological plausibility.",
+    "compute": "~5 GPU-hours (attention re-export + lightweight tabular classification)",
+    "impact": 5
+  },
+  {
+    "title": "Clinical-Leakage Quantification via Temporal Ablation",
+    "type": "improve_existing",
+    "chapter": "Ch3",
+    "design": "Train clinical-only Cox models on ERIN progression with three configurations: (a) full clinical including prior-grade, (b) prior-grade dropped, (c) synthetic lagged prior-grade from historical cohorts. Compare C-index drops and run permutation tests to isolate the leakage component.",
+    "decisive_result": "Dropping prior-grade reduces clinical arm C-index by <0.02, confirming that temporal leakage drove most of the clinical signal. This formally isolates histology as the only non-leaky predictor, sharpening the thesis argument on why unimodal fusion remains necessary.",
+    "compute": "~1 GPU-hour (tabular Cox/logistic training)",
+    "impact": 4
+  },
+  {
+    "title": "Disagreement-Ranked Active Annotation Simulation",
+    "type": "new_chapter",
+    "chapter": "new",
+    "design": "Rank all ERIN reports by jury entropy \u00d7 pairwise disagreement rate. Simulate an active-learning loop: sequentially query top-k uncertain reports, assign ground truth via adjudication availability or controlled noise injection, retrain models, and plot validation AUC gain per annotated sample against random/baseline sampling.",
+    "decisive_result": "Entropy-disagreement ranking yields >40% faster convergence to target AUC versus random sampling, establishing LLM disagreement metrics as optimal guides for expert annotation and opening a standalone methods chapter on scalable supervision validation.",
+    "compute": "~4 GPU-hours (model retraining loops + simulation orchestration)",
+    "impact": 5
+  },
+  {
+    "title": "Randomized Cross-Modal Connection Baseline",
+    "type": "new_experiment",
+    "chapter": "Ch1",
+    "design": "Implement three structurally identical ABMIL-fusion networks with frozen histology features but randomized initial fusion weights and shuffled cross-modal connectivity tensors. Train for 2 epochs and record OOF predictions across all cohorts to establish a structural null distribution.",
+    "decisive_result": "Learned models consistently exceed randomized architecture baselines by >0.10 AUC/C-index across all tasks, formally ruling out architectural overfitting and confirming that multimodal integration captures genuine cross-modal signal rather than spurious parameter correlations.",
+    "compute": "~6 GPU-hours (trivial weight init, fast early-stopping convergence)",
+    "impact": 3
+  },
+  {
+    "title": "Projection Alignment to Recover Collapsed Fusion",
+    "type": "improve_existing",
+    "chapter": "Ch2",
+    "design": "Apply orthogonal Procrustes alignment or a lightweight contrastive projector to map GigaPath embeddings into the UNI2 latent space. Retrain late-fusion heads on aligned embeddings and recompute paired bootstrap deltas against histology-only baselines.",
+    "decisive_result": "Post-alignment fusion delta recovers a positive sign with excluded-zero CIs, proving that representation incompatibility\u2014not biological irrelevance\u2014causes replication failure, and providing a fixable protocol for future encoder swaps.",
+    "compute": "~12 GPU-hours (alignment head training + fusion retest)",
+    "impact": 5
+  },
+  {
+    "title": "Time-Dependent Decision-Curve Utility for Surveillance",
+    "type": "new_experiment",
+    "chapter": "Ch3",
+    "design": "Re-evaluate ERIN progression models using time-dependent AUC at 1, 2, and 3 years. Generate decision-curve analysis calibrated to UK surveillance guidelines (e.g., immediate biopsy if predicted risk >5%, 2-year repeat otherwise). Compare net benefit of histology-only vs histology+clinical at these thresholds.",
+    "decisive_result": "Fusion achieves statistically significant net benefit only at short-interval surveillance thresholds (<10% risk), while pure histology maintains benefit across broader ranges, precisely quantifying when clinical context aids decision-making and when it degrades calibration.",
+    "compute": "~2 GPU-hours (time-dependent survival evaluation + decision curve package)",
+    "impact": 4
+  }
+]

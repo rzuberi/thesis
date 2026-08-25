@@ -1,0 +1,74 @@
+[
+  {
+    "target": "OCCAMS v3 primary result (1.1, occams_v3.json) claims n=87 vs planned 141, with no explanation or correction for the 38% sample loss.",
+    "flaw": "A major deviation from the pre-registered cohort size (141) is reported as a footnote without investigation. This sample loss could introduce severe selection bias, invalidating the pre-registered decision tree's interpretation which assumed a fixed n. The results (e.g., hist_abmil C=0.6272) are presented without acknowledging this fundamental change to the experimental unit.",
+    "fix": "Conduct a missingness analysis: compare characteristics (stage, survival, genomics) of the 87 included vs. 54 excluded patients. Report the analysis and, if bias is found, re-run the pre-registered decision tree with a corrected cohort or state that the OCCAMS arm is invalid due to unplanned exclusion.",
+    "severity": 5
+  },
+  {
+    "target": "ERIN Ch3 pre-registration (erin_ch3_preregistration.md) primary endpoint uses 'report-derived grade' as the target, while Arm 2 uses 'report-derived structured variables'.",
+    "flaw": "This creates a severe circularity/leakage risk: the target (grade) is extracted from the same report text that provides the 'clinical' features for the fusion arm. The pre-registration acknowledges this risk but only mitigates it by using 'PRIOR-timepoint clinical variables'\u2014however, for the primary endpoint of current-biopsy grade, prior variables may still be highly correlated with or leak the current grade label.",
+    "fix": "For the primary grade classification endpoint, Arm 2 must use clinical variables sourced independently of the pathology report used for grading (e.g., from linked EHR). If not possible, the primary endpoint must be changed to the progression endpoint where prior variables are legitimate, or the circularity must be stated as a fatal design flaw limiting causal inference.",
+    "severity": 5
+  },
+  {
+    "target": "Amendment log 2026-08-21 finding: 'necessity probes at n=446 show TP53 AUC 0.678... The earlier two-cohort negatives (n=65-140, AUC 0.36-0.48) stand as honest small-n results, but Ch2 Part A's claim must be revised.'",
+    "flaw": "This reveals a critical inconsistency: the thesis's foundational 'negative' result (genomics not predictable from H&E) is contradicted by a later, larger experiment. The original claim ('not recoverable') in Ch2 Part A is now false, but the plan only suggests revising the claim, not re-evaluating all conclusions drawn from it. This is a claim outrunning evidence that undermines the thesis's core narrative.",
+    "fix": "Retract the original 'negative' claim entirely. Re-frame Ch2 Part A as a power analysis demonstrating that genomics-from-H&E prediction requires larger n. Re-run all downstream analyses that might have been conditioned on the assumption of no signal (e.g., interpretation of fusion benefits).",
+    "severity": 5
+  },
+  {
+    "target": "Execution Plan Phase 0: '0.2 SWG paper hardening work (Rehan's own track; Claude only assists on request)'.",
+    "flaw": "The core SWGCohort result (swg_arm.md), which forms the primary positive finding of Chapter 2, is described as coming from a separate, opaque 'hardening' track. Its methods, model selection, and evaluation details are not integrated into the thesis's pre-registered protocol, creating a self-validation loop where the best result is sourced from an uncontrolled process.",
+    "fix": "Fully document the SWG 'hardening' process within the thesis framework: pre-register its design, apply the standard evaluation protocol (patient-disjoint CV, bootstrap CIs), and report all model families tested, not just the winning one. The result must be reproducible from the thesis materials.",
+    "severity": 4
+  },
+  {
+    "target": "ERIN label source evolution: Plan shows label source changed from pathladder+feasibility (2.10) to LLM jury consensus (2.16, jury_corpus_analysis.json), adopted as Ch3/Ch4 label source.",
+    "flaw": "The ground truth for a major cohort is dynamically redefined post-audit based on an LLM jury, a method not pre-registered. This introduces a self-validation loop: the LLM jury's performance is validated against an 'adjudicated' set where the adjudicator (Claude) is the same type of system used in the jury. There is no independent human gold standard.",
+    "fix": "Establish a fixed, human-expert-verified gold standard subset for validation. The LLM jury can be used as a novel label source, but its agreement with the human standard must be reported, and all model performance must be evaluated against that human standard, not the jury consensus.",
+    "severity": 4
+  },
+  {
+    "target": "Encoder sweep pre-registration states: 'The headline result of every chapter remains its pre-registered primary config (UNI2 + ABMIL). The sweep contextualises; it never replaces.'",
+    "flaw": "This design intentionally insulates the primary claims from falsification by the sensitivity analysis. If the sweep shows that fusion deltas are not encoder-invariant (i.e., sign changes with different encoders), the primary claim is still reported as the headline, which is a form of cherry-picking. The claim of 'multimodal benefit' becomes contingent on a specific, arbitrary encoder choice.",
+    "fix": "Pre-register a decision rule: if the fusion delta sign is not invariant across a majority of encoders (e.g., 4/6), the primary claim must be downgraded to 'encoder-specific' and the discussion must focus on this sensitivity as a key finding.",
+    "severity": 4
+  },
+  {
+    "target": "swg_arm.md results: 'The paired bootstrap puts the late-mean advantage over copy number at +0.111 AUC (95% CI 0.002 to 0.219)... The AUPRC difference, +0.091, has an interval crossing zero (-0.036 to 0.219).'",
+    "flaw": "The claimed 'multimodal benefit' is based on an AUC CI that barely excludes zero (lower bound 0.002) and an AUPRC CI that includes zero. This is extremely weak evidence, especially for a primary thesis finding. Presenting this as a positive result without emphasizing the fragility is a case of claims outrunning evidence.",
+    "fix": "Report the result unequivocally as inconclusive. State that the AUC benefit is statistically marginal and the AUPRC benefit is not statistically significant. The thesis's central hypothesis should be framed as partially supported but requiring validation in the external arms.",
+    "severity": 4
+  },
+  {
+    "target": "tcga_abmil.json results show late_hist_gen delta_ci [-0.11, 0.0545] crossing zero, and late_hist_clin delta_ci [-0.0443, 0.0708] crossing zero.",
+    "flaw": "These are the replication results for the OCCAMS fusion hypothesis. Both confidence intervals for the fusion delta include zero, meaning there is no statistically significant fusion benefit. However, the execution plan and pre-registrations do not specify how such a null replication affects the overall thesis claim. This risks selectively emphasizing the positive SWGCohort result while downplaying null replications.",
+    "fix": "Pre-register an integration rule: if the primary replication cohort (TCGA-OAC) shows no significant fusion benefit, the overall claim must be revised to 'context-dependent' or 'cohort-specific', and the discussion must focus on explaining the discrepancy (e.g., data quality, endpoint differences).",
+    "severity": 4
+  },
+  {
+    "target": "Evaluation protocol states 'shuffled-label control run through the identical pipeline; a control AUC away from 0.5 invalidates the pipeline'. occams_fusion_v2.json shows shuffled_auc values of 0.457 and 0.580.",
+    "flaw": "Multiple shuffled-label controls are far from 0.5 (e.g., 0.457, 0.580), which according to the protocol 'invalidates the pipeline'. Yet these results are reported without any pipeline invalidation, investigation, or correction. This suggests the control is not being used as a sanity check, allowing potentially buggy results to stand.",
+    "fix": "For every experiment where shuffled control AUC is outside a pre-defined range (e.g., 0.45-0.55), halt and debug the pipeline. Document the cause and re-run. Do not report results from runs with invalid controls.",
+    "severity": 3
+  },
+  {
+    "target": "Plan item 1.12: 'remaining: paired fusion-vs-histology bootstrap CI from saved OOF preds' for SWG arm.",
+    "flaw": "The key contrast for the thesis hypothesis\u2014fusion vs. histology-only\u2014is missing its confidence interval in the reported results. The available CI is only for fusion vs. copy-number. Reporting point estimates without uncertainty for the primary contrast is a major omission that flatters the hypothesis.",
+    "fix": "Compute and report the paired bootstrap CI for (late-mean fusion - histology-only) for all metrics (AUC, AUPRC, Brier) before any claim is made. The claim must be based on whether this CI excludes zero.",
+    "severity": 3
+  },
+  {
+    "target": "fusion_taxonomy.md and execution plan reference 'intermediate fusion' and 'co-attention' models, but swg_arm.md results show they underperformed.",
+    "flaw": "The taxonomy sets up intermediate fusion as 'the most expressive option', but the results show it performed worse than simple late fusion. There is no analysis or discussion of why this theoretically superior method failed\u2014a missing baseline explanation. This could indicate implementation bugs, overfitting, or that the hypothesis about interaction benefits is wrong.",
+    "fix": "Add a dedicated analysis: compare the learned representations/attention of late vs. intermediate fusion to diagnose why intermediate fusion failed. Is it due to modality imbalance, overfitting, or lack of interactivity? This is a crucial negative result that should inform the thesis's theoretical contribution.",
+    "severity": 3
+  },
+  {
+    "target": "disagreement_drivers.json analysis uses 'model_auc_cv' of 0.752 to predict disagreement, where the model is presumably trained on the same label source.",
+    "flaw": "This is a circular analysis: using a model's performance to explain disagreements in the labels used to train it. The 'model' here is part of the system being audited. This creates a self-referential loop that cannot identify true label noise independent of the model's own biases.",
+    "fix": "Use a held-out, independent label source (e.g., the adjudicated set, or a separate human review) to identify true label errors. Then, analyze the characteristics of reports where the pathladder/feasibility labels deviated from this independent standard.",
+    "severity": 3
+  }
+]

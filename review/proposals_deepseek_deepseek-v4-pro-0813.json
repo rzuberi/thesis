@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Independent pathologist ground-truth sample for ERIN report labels (R.4 operationalization)",
+    "type": "new_experiment",
+    "chapter": "Ch4",
+    "design": "Stratified sample of 250 ERIN reports: 80 previously adjudicated, 70 from the unsure stratum, and 100 confident jury-majority cases. Two GI pathologists independently grade from report text; disagreements adjudicated. Readout: agreement (kappa) of jury majority and pathladder vs pathologist, plus downstream ABMIL AUC on the human-truth subset.",
+    "decisive_result": "If jury/pathladder agreement with pathologist exceeds 0.85 and model AUC on human truth remains above 0.90, the LLM self-validation loop is broken and Ch4 label-source claims are externally anchored. If agreement drops below 0.70, report-derived supervision is not a valid substitute and Ch4 must be reframed as a cautionary study.",
+    "compute": "CPU-hours (no new GPU training; inference on 250 slides ~10 GPU-hours)",
+    "impact": 5
+  },
+  {
+    "title": "PORPOISE published-baseline replication on OCCAMS and TCGA",
+    "type": "improve_existing",
+    "chapter": "Ch2",
+    "design": "Run PORPOISE (Chen et al. 2022) with its own preprocessing and omics signatures on OCCAMS n=87 and TCGA-OAC n=65, using the same patient-disjoint folds as occams_v3 and tcga_abmil. Readout: Harrell's C for PORPOISE fusion vs our ABMIL late fusion and histology-only.",
+    "decisive_result": "If PORPOISE also shows no fusion benefit (delta CI includes zero), the null is architecture-independent and strengthens the 'fusion fails to replicate' claim. If PORPOISE shows significant benefit, our fusion implementation is deficient and Ch2 conclusions must be revised.",
+    "compute": "~40 GPU-hours (feature extraction already done; PORPOISE training/inference on two cohorts)",
+    "impact": 5
+  },
+  {
+    "title": "Learning-curve/power analysis for fusion deltas using ERIN n=2,280",
+    "type": "new_experiment",
+    "chapter": "Ch5",
+    "design": "Using the ERIN grade endpoint, repeatedly subsample patients at n=150, 300, 600, 1200, 2000. For each n, run histology-only, clinical-only, and late fusion with 5-fold CV and compute paired fusion-minus-histology delta CIs. Repeat 20 times per n to estimate variance and fit a power curve.",
+    "decisive_result": "If the fusion delta at n=150 is small and CI includes zero but becomes consistently positive only at n>1000, this quantifies that SWG's positive result may be winner's curse and external nulls are expected under power. If delta remains zero at all n, fusion has no real effect for this endpoint and the reframe is further supported.",
+    "compute": "~200 GPU-hours (many ABMIL runs; can use mean-pool for initial speed)",
+    "impact": 5
+  },
+  {
+    "title": "50-permutation empirical nulls for all off-0.5 shuffled controls (Item 1.20)",
+    "type": "improve_existing",
+    "chapter": "Ch2",
+    "design": "For every reported control with shuffled AUC/C-index outside 0.48-0.52 (OCCAMS v2 gen 0.58, TCGA first-pass hist 0.542, necessity probes), run 50 independent label permutations through the identical pipeline. Compute empirical null mean/sd and percentile of the real metric. Record Outcome D verdict per pre-registration.",
+    "decisive_result": "If all real metrics fall within null percentiles 2.5-97.5, pipeline validity is confirmed and the negative results stand. If any real metric exceeds the null, that analysis is invalidated and must be debugged or retracted.",
+    "compute": "~120 GPU-hours (50 permutations x 3 models x small cohorts; parallelizable)",
+    "impact": 4
+  },
+  {
+    "title": "Attention-shift study: conditional ABMIL vs plain ABMIL on TCGA pool",
+    "type": "new_experiment",
+    "chapter": "Ch2",
+    "design": "On TCGA pooled OAC+GEJ+STAD (n=446), train conditional ABMIL where genomics features gate tile attention, plain ABMIL, and a permuted-genomics control. Compare attention maps (top-decile tile overlap, entropy) and survival C-index. Readout: does real genomics shift attention to different tiles compared with permuted?",
+    "decisive_result": "If real genomics shifts attention significantly more than permuted, it suggests a mechanistic route for fusion benefit at larger n. If no shift, late fusion's failure to exploit interactions is explained and intermediate fusion is unlikely to help at this sample size.",
+    "compute": "~80 GPU-hours (3 models x 5-fold x seeds)",
+    "impact": 4
+  },
+  {
+    "title": "Unsure-holdout sensitivity and abstention modeling for ERIN report labels",
+    "type": "new_experiment",
+    "chapter": "Ch4",
+    "design": "Using the 206 unsure reports held out, score them with the jury-trained and pathladder-trained models. Report AUC and calibration compared with train-eligible cases. Additionally, train a model with an abstention option (reject if predictive entropy high) and evaluate net benefit at a 20% threshold.",
+    "decisive_result": "If model performance on unsure reports is significantly worse than on train-eligible, exclusion bias is quantified and the thesis must report deployment performance as a range. If abstention recovers most of the loss, a practical deployment strategy is demonstrated.",
+    "compute": "~20 GPU-hours (inference plus one training run)",
+    "impact": 4
+  },
+  {
+    "title": "Progression cohort v2-vs-v3 reconciliation and sensitivity analysis (Item 1.21)",
+    "type": "improve_existing",
+    "chapter": "Ch3",
+    "design": "Reconstruct both progression cohorts from raw report labels; identify the 48 patient / 16 event differences and categorize by source (false CANCER calls, label changes, missing follow-up). Rerun the Ch3 progression primary analysis on both cohorts and report side-by-side with CIs.",
+    "decisive_result": "If the progression model AUC/C-index changes by less than 0.03 between v2 and v3, the label revision is immaterial and Ch3 results are stable. If it changes by more than 0.05, the endpoint is label-sensitive and Ch3 claims must be tempered.",
+    "compute": "CPU-hours (no new model training; use existing OOF predictions if available, else ~10 GPU-hours)",
+    "impact": 3
+  },
+  {
+    "title": "Encoder-sweep sign-flip formal test with bootstrap sign probabilities",
+    "type": "improve_existing",
+    "chapter": "Ch2/Ch3/Ch4",
+    "design": "For each chapter's primary fusion contrast (SWG \u0394AUC, ERIN grade \u0394AUC, ERIN progression \u0394C), compute the paired bootstrap sign probability (fraction of resamples where fusion > histology) for every encoder in the sweep. Apply the amended sign-flip rule: if any encoder's sign probability is <0.025 or >0.975 opposite to the primary config, downgrade the claim to encoder-conditional.",
+    "decisive_result": "If all encoders' sign probabilities agree in direction with the primary config, the claim is encoder-invariant and the sweep supports robustness. If any encoder flips, the claim is explicitly downgraded and the thesis reports encoder-conditional conclusions.",
+    "compute": "CPU-hours (bootstrap on existing OOF predictions; no GPU)",
+    "impact": 3
+  }
+]

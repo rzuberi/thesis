@@ -1,0 +1,74 @@
+[
+  {
+    "title": "R.4 human-truth eval of jury vs pathladder (Ch4 confirmatory)",
+    "type": "improve_existing",
+    "chapter": "Ch4",
+    "design": "Stratified sample of 250 ERIN reports (train-eligible, unsure, CANCER/NDBE confusions, negation-bearing) graded by a pathologist blind to machine labels. Score pathladder, 8-LLM majority, entropy, and ABMIL trained on each label source against this human set; report kappa, CANCER PPV/NPV, and Holm contrast 4.",
+    "decisive_result": "If jury-trained AUC on human truth exceeds pathladder-trained with CI excluding 0, Ch4's confirmatory claim stands; if they tie or pathladder wins, the thesis must treat the jury as interchangeable cheap annotation, not superior supervision.",
+    "compute": "laptop",
+    "impact": 5
+  },
+  {
+    "title": "PORPOISE on OCCAMS n=87 and TCGA-OAC/pool",
+    "type": "improve_existing",
+    "chapter": "Ch2",
+    "design": "Finish the cloned PORPOISE loader: build ESCA/STAD omics via their Preprocessing.ipynb + signatures.csv, reuse frozen patient-disjoint splits, run published Cox-fusion vs our late-hist-gen on OCCAMS v3 (n=87) and TCGA-OAC (n=65) plus the n=399 pool. Readout: Harrell C and paired \u0394 vs histology.",
+    "decisive_result": "If PORPOISE also fails to beat histology/clinical, the replication-failure claim is architecture-agnostic; if it wins, Ch2's null is method-specific and the reframe must be narrowed.",
+    "compute": "GPU-hours estimate",
+    "impact": 5
+  },
+  {
+    "title": "ERIN progression Ch3 arm with prior-grade ablation",
+    "type": "improve_existing",
+    "chapter": "Ch3",
+    "design": "On progression cohort v3 (1266/181), run pre-registered hist ABMIL, clinical-only, late/early fusion under frozen patient folds; duplicate clinical arm with prior-grade dropped (1.23). Primary metric Harrell C / AUROC with 2000-bootstrap paired \u0394 vs hist; include shuffled 50-perm nulls.",
+    "decisive_result": "Fusion \u0394 CI excluding 0 on progression (not grade) is the only result that could restore a clinical-prediction fusion claim; a null plus leakage ablation showing prior-grade drove clinical AUC locks the 'fusion fails to replicate' story.",
+    "compute": "GPU-hours estimate",
+    "impact": 5
+  },
+  {
+    "title": "Unsure-holdout sensitivity + entropy-as-weight",
+    "type": "improve_existing",
+    "chapter": "Ch4",
+    "design": "Score existing UNI2 ABMIL OOF on the 204 unsure reports (no retraining) vs train-eligible; then retrain with (a) include-unsure as extra class, (b) sample-weight = 1-entropy. Readout: AUC on human/R.4 subset and on jury-eligible, plus calibration on unsure.",
+    "decisive_result": "A large drop on unsure (or gain from entropy weights) shows reported 0.92 is a selected-easy population and must be caveated; a flat curve lets Ch4 keep the headline.",
+    "compute": "GPU-hours estimate",
+    "impact": 4
+  },
+  {
+    "title": "50-permutation nulls for every off-0.5 shuffle (1.20)",
+    "type": "improve_existing",
+    "chapter": "Ch2",
+    "design": "Reuse saved OOF pipelines: 50 label shuffles for OCCAMS v2 gen (0.58), v3 shuffle job, TCGA first-pass (0.54), and probes. Report empirical null mean/sd and percentile of the real statistic; no new feature extraction.",
+    "decisive_result": "If real C/AUC sit inside the 50-perm null, Outcome-D is cleared and small-n nulls become trustworthy; if not, those arms are invalidated and must be dropped from Ch2.",
+    "compute": "CPU-hours",
+    "impact": 4
+  },
+  {
+    "title": "OAC-only vs STAD/GEJ visibility learning curve",
+    "type": "new_experiment",
+    "chapter": "Ch2",
+    "design": "Subsample the n=446 pool by histology (OAC vs STAD/GEJ) at n=65,141,200,300,446; predict TP53/WGD/stage from UNI2 ABMIL with 50-perm nulls. One figure: AUC vs n, faceted by population.",
+    "decisive_result": "If OAC-only stays ~0.4\u20130.5 at all n while STAD drives 0.70, genotype-from-H&E is a population effect not a power effect \u2014 the exact Ch1 rewrite reviewers demanded.",
+    "compute": "GPU-hours estimate",
+    "impact": 4
+  },
+  {
+    "title": "Conditional-ABMIL attention-shift vs permuted genomics",
+    "type": "new_experiment",
+    "chapter": "Ch2",
+    "design": "On TCGA pool, train gated ABMIL that attends tiles conditioned on TP53/WGD vs plain ABMIL vs permuted-genomics control; export attention mass, top-k tile overlap, and spatial entropy. Late fusion cannot shift attention \u2014 this is the only test of whether genomics changes where histology looks.",
+    "decisive_result": "A real-vs-permuted shift that localises to known driver morphology supports complementarity-beyond-visibility; no shift explains why late fusion never beats unimodal.",
+    "compute": "GPU-hours estimate",
+    "impact": 3
+  },
+  {
+    "title": "TCGA-Reports pathladder vs jury vs structured grade (2.19)",
+    "type": "new_chapter",
+    "chapter": "new",
+    "design": "Run the frozen ERIN ladder prompt and a TCGA-adapted prompt on TCGA-Reports ESCA/STAD (plus 2 extra types already in the corpus) against structured grade/diagnosis. Zero new slides; CPU/LLM only. Readout: accuracy, negation-error rate, organ-transfer drop vs ERIN 0.82.",
+    "decisive_result": "If ERIN-tuned pathladder collapses off-organ, Ch4's extractor is Barrett-specific (honest methods claim); if it holds, you gain a short methods-paper chapter with DOI-ready numbers at almost no GPU cost.",
+    "compute": "CPU-hours",
+    "impact": 4
+  }
+]

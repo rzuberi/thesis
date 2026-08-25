@@ -1,0 +1,74 @@
+[
+  {
+    "target": "EXECUTION_PLAN.md 1.3 & 2.7 / jury_smoke_analysis.json",
+    "flaw": "The 80 ground-truth adjudication cases were evaluated and resolved by Claude itself rather than a human pathologist, and subsequent LLM jurors were validated against this Claude-generated reference (achieving circular 100% agreement). This creates a closed self-validation loop where synthetic LLM extractions are graded against LLM judgements without clinical ground truth.",
+    "fix": "Execute R.4 immediately: have an independent panel of consultant gastrointestinal pathologists independently review and annotate the 80 audit cases and an unselected validation cohort before evaluating extractor accuracy.",
+    "severity": 5
+  },
+  {
+    "target": "evaluation_protocol.md / tcga_probe.json ('tp53: auc 0.355', 'wgd: auc 0.429')",
+    "flaw": "The OAC single-cohort genotype probes produced severe sub-chance discrimination (AUC 0.355 for TP53, AUC 0.429 for WGD), which indicates an uncorrected pipeline bug such as inverted label indexing or reversed loss optimization. Rather than resolving this fatal defect, the text rationalises the reversal by pooling with gastric/STAD cases (n=446) and claiming a biological 'population change' effect.",
+    "fix": "Audit and fix the label-encoding and probability-direction handling in tcga_probe.py to resolve the inverted ROC curves before drawing any conclusions about genotype visibility.",
+    "severity": 5
+  },
+  {
+    "target": "EXECUTION_PLAN.md 1.1 / occams_v3.json ('n=87 vs planned 141')",
+    "flaw": "The patient cohort in the pre-registered OCCAMS v3 survival run experienced severe, unexplained attrition from n=141 down to n=87 (58 events). Without formal accounting, this undocumented drop introduces selection bias and severely depresses statistical power for survival Cox models.",
+    "fix": "Include a STROBE/CONSORT sample attrition diagram detailing every inclusion and exclusion step from the master cohort to the final 87 patients, verifying that missingness is completely at random.",
+    "severity": 4
+  },
+  {
+    "target": "EXECUTION_PLAN.md 1.1 / evaluation_protocol.md ('shuffled controls omitted \u2014 noted for write-up')",
+    "flaw": "Evaluation_protocol.md explicitly mandates that every prediction task must be accompanied by a shuffled-label control where deviations from 0.5 invalidate the pipeline. Omitting this mandatory control from the decisive OCCAMS v3 run violates the pre-registered protocol and leaves open whether observed C-indices (0.52\u20130.62) reflect true signal or pipeline leakage.",
+    "fix": "Execute 1,000-iteration shuffled-label permutation controls across all unimodal and fusion arms in OCCAMS v3 and verify that the empirical null distributions center at C=0.50.",
+    "severity": 4
+  },
+  {
+    "target": "erin_ch3_preregistration.md ('Clinical only: report-derived structured variables... cancer-pathway flag')",
+    "flaw": "The clinical arm incorporates 'cancer-pathway flag' and surveillance interval to classify current-biopsy grade, which introduces direct workflow circularity because urgent 2-week-wait cancer referral pathways are initiated based on suspected cancer symptoms or endoscopic macroscopic lesions. This inflates clinical-arm performance (AUC 0.756) via diagnostic leakage rather than independent prognostic information.",
+    "fix": "Ablate all referral-pathway and episode-derived suspicion indicators, restricting clinical features strictly to pre-index patient demographics and historical surveillance interval.",
+    "severity": 4
+  },
+  {
+    "target": "swg_arm.md / latemean_vs_gigapath_paired.json ('\u0394AUPRC +0.020 [\u22120.064, 0.104] and \u0394AUC +0.041 [\u22120.020, 0.103]')",
+    "flaw": "The central claim that multimodal fusion outperforms unimodal histology in SWG collapses when evaluated against the strongest histology foundation model (GigaPath), where both \u0394AUC and \u0394AUPRC 95% bootstrap confidence intervals cross zero. Claiming a general fusion benefit when the effect is non-significant against modern foundation models outruns the empirical evidence.",
+    "fix": "Downgrade the SWG claim in Chapter 2 to strictly state that multimodal fusion does not provide a statistically significant discrimination advantage over state-of-the-art single-modality vision models (GigaPath).",
+    "severity": 4
+  },
+  {
+    "target": "EXECUTION_PLAN.md 2.16 / unsure_characterization.json ('unsure_held_out: 204')",
+    "flaw": "Excluding 204 high-entropy, high-hedging reports from training and evaluation prunes the most diagnostically difficult borderline cases (which are heavily enriched for dysplasias: 37 HGD, 21 IND, 13 LGD). This introduces survivorship bias, inflating both downstream training labels and apparent test-set discrimination.",
+    "fix": "Perform an intention-to-diagnose sensitivity analysis that evaluates models on the full uncurated corpus including the 204 excluded unsure cases, using expert panel consensus as reference.",
+    "severity": 4
+  },
+  {
+    "target": "occams_v2_decision_tree.md / occams_v3.json ('gen_cox: c 0.5205', 'clin_cox: c 0.5358')",
+    "flaw": "The pre-registered decision tree defines Outcome C (null cohort/labels, prohibiting fusion conclusions) if no unimodal arm achieves a bootstrap lower CI > 0.55. In OCCAMS v3, neither genomics (0.434\u20130.602) nor clinical (0.458\u20130.624) demonstrated signal, yet the chapter continues to analyze late-fusion deltas rather than formally declaring the dataset non-informative.",
+    "fix": "Strictly implement pre-registered Outcome C: designate the OCCAMS survival labels as uninformative in Chapter 2 and abstain from interpreting multimodal interaction deltas on this cohort.",
+    "severity": 4
+  },
+  {
+    "target": "EXECUTION_PLAN.md 2026-08-25 JOINT REFRAME vs erin_ch3_preregistration.md",
+    "flaw": "The ERIN pre-registration explicitly established current-biopsy grade classification as the primary endpoint and prohibited post-hoc endpoint swaps. Swapping the primary estimand to future progression after finding near-ceiling unimodal histology performance (AUC 0.926) and a null fusion delta (\u0394AUC CI [-0.005, 0.018]) represents post-hoc hypothesis shopping.",
+    "fix": "Retain grade classification as the primary registered endpoint in Chapter 3, report the null fusion delta transparently as a primary negative result, and present progression strictly as a secondary exploratory analysis.",
+    "severity": 4
+  },
+  {
+    "target": "negation_revalidation.json ('plad=CANCER|jury=NDBE: 300')",
+    "flaw": "Even after widening the regex negation window to 130 characters, pathladder still misclassifies 300 negation-bearing NDBE reports as CANCER in the fresh evaluation corpus. This persistent 5.5% cancer over-call error corrupts weakly supervised downstream training sets and artificially inflates progression event labels.",
+    "fix": "Deprecate the windowed regex heuristics and replace pathladder's negation module with a dependency-parsed or transformer-based clinical negation detector, validated against expert annotations.",
+    "severity": 3
+  },
+  {
+    "target": "tcga_pool_fusion.json / necessity_probes_pool.json ('n=399... oac_subgroup_hist_c: 0.6822', 'hist_abmil: c 0.5473')",
+    "flaw": "Pooling TCGA-ESCA (OAC) with TCGA-STAD (gastric/GEJ) conflates anatomical tumor subsite with molecular subtype, reducing overall histology C-index from 0.682 (OAC alone) to 0.547. The observed TP53/WGD visibility in the pooled set (AUC ~0.70) is likely confounded by gastric vs oesophageal morphological subsite differences rather than true cell-intrinsic genotype visibility.",
+    "fix": "Perform subsite-stratified necessity probes and include anatomical tumor location as a blocking covariate in all pooled STAD/ESCA survival and visibility models.",
+    "severity": 3
+  },
+  {
+    "target": "multiplicity_plan.md / swg_arm.md ('Late-mean fusion is the best family... +0.073 AUPRC')",
+    "flaw": "In SWGCohort (n=150), late-mean fusion was selected post-hoc as the winner across seven model families on the entire evaluation set, and the same data was used to compute the headline paired contrast against histology. Disclosing winner's curse without applying nested cross-validation or bootstrap optimism correction leaves the reported p-values and effect sizes positively biased.",
+    "fix": "Implement nested cross-validation (selecting the winning fusion family in inner folds only) or calculate a formal bootstrap optimism correction penalty on the n=150 SWG delta metrics.",
+    "severity": 3
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "target": "R.3 \u2018no expert-graded subset exists\u2019 + 1.3 \u201880 cases adjudicated by Claude\u2019 + 2026-08-20 adoption of \u2018jury-vote + entropy as Ch3/Ch4 label source\u2019 (human anchor = those 80 + a still-pending Rehan spot-check of 10)",
+    "flaw": "The entire ERIN grade/progression ontology is a closed LLM loop: the same class of model designed pathladder, judged the audit, wrote the jury prompt, and then became the training labels. High Fleiss \u03ba (0.900) among 8 local LLMs sharing one prompt is homogenisation, not validity; related_work.md\u2019s claim that \u2018report-labels [are] validated against expert grades\u2019 is simply false.",
+    "fix": "Freeze a pathologist-adjudicated gold set (hundreds of reports, not 10) drawn before seeing jury votes; report jury vs expert \u03ba/accuracy by class; train Ch3/Ch4 only on expert or expert-verified labels, and treat jury labels as a sensitivity arm.",
+    "severity": 5
+  },
+  {
+    "target": "erin_ch3_preregistration.md primary endpoint \u2018current-biopsy grade classification\u2019 with report-derived labels, and the pre-registered reading \u2018Fusion benefit on primary \u2192 Ch3\u2019s claim replicates externally at 16\u00d7 scale\u2019",
+    "flaw": "The primary task is reconstructing the pathologist\u2019s write-up of the same H&E the model sees. That is Campanella-style diagnosis-from-slide, not a replication of SWGCohort\u2019s future-progression fusion estimand; the preregistration itself flags \u2018probable label leakage: grade is itself report-derived\u2019. A fusion win here cannot underwrite Chapter 2\u2019s multimodal-biology claim.",
+    "fix": "Make future progression (prior-timepoint clinical only, index slides strictly pre-event) the sole confirmatory endpoint; report same-slide grade as a methods/QC task, not as external replication of SWG fusion.",
+    "severity": 5
+  },
+  {
+    "target": "occams_v3.json hist_abmil C=0.6272 [0.5394, 0.7109], clin_cox C=0.5358 [0.4578, 0.6235], late_hist_gen \u0394=\u22120.0396; plan note \u2018shuffled controls omitted\u2019; occams_fusion_v2 gen_only shuffled_auc=0.5806",
+    "flaw": "By occams_v2_decision_tree.md, \u2018signal\u2019 requires lower 95% CI >0.55 and outcome C says if clinical-only is also null \u2018no fusion conclusion of either sign can be drawn\u2019. Histology misses that bar, stage-rich clinical is null (implausible if labels/follow-up are intact), and the control that already failed in v2 was dropped in v3 \u2014 exactly the post-hoc move the tree forbids (outcome D).",
+    "fix": "Restore shuffled-label controls; audit weeks-survival and staging columns against the May 2026 clinical-only baselines; if clinical remains ~0.54, apply outcome C and remove OCCAMS from any fusion claim.",
+    "severity": 5
+  },
+  {
+    "target": "swg_arm.md late-mean vs CNV +0.111 AUC (0.002\u20130.219) but AUPRC +0.091 (\u22120.036\u20130.219); \u2018[pending: paired bootstrap CI]\u2019 for late-mean minus histology (+0.043 AUC / +0.073 AUPRC point estimates)",
+    "flaw": "evaluation_protocol.md makes AUPRC the rare-class metric and the \u2018question in every chapter\u2019 the paired fusion\u2212histology delta. The only CI that excludes zero is a barely-supported contrast against the weaker unimodal arm; the hypothesis-named contrast has no interval, and AUPRC \u2014 the pre-declared metric \u2014 is unresolved at n=150.",
+    "fix": "Compute the patient-level bootstrap CI for fusion\u2212histology on the saved OOF preds before any prose is frozen; headline AUPRC; apply a multiplicity adjustment across the seven families + co-attention, or pre-declare a single primary contrast.",
+    "severity": 5
+  },
+  {
+    "target": "2026-08-21 FINDING: necessity probes n=446 TP53 AUC 0.678 / WGD 0.703 \u2018Ch2 Part A\u2019s claim must be revised from \u201cnot recoverable\u201d to \u201cpartially recoverable at scale\u201d\u2019 vs evaluation_protocol.md \u2018TP53 and WGD are not predictable from H&E in OCCAMS (AUC 0.48 and 0.41)\u2019 and R.2 \u2018primary claim stays OAC-only\u2019; tcga_probe.json OAC-only TP53 AUC=0.355",
+    "flaw": "The two-cohort negative was pre-committed, then reversed by pooling OAC with STAD/GEJ (a different disease) after seeing the numbers. OAC-only TP53 is anti-predictive (0.355); the \u2018visibility\u2019 result is therefore a change of population, not a scale-up of the registered claim.",
+    "fix": "Keep Part A as the pre-registered OAC-only negative; report the STAD+OAC pool as a labelled exploratory extension with disease-stratified AUCs and a test of whether the signal is STAD-driven.",
+    "severity": 4
+  },
+  {
+    "target": "tcga_pool_fusion.json late_hist_clin C=0.6083, \u0394 vs hist +0.0614 [0.0273, 0.0953] while clin_cox alone is 0.6226 and hist_abmil is 0.5473 [0.5009, 0.595]; oac_subgroup_hist_c=0.6822",
+    "flaw": "Fusion is sold as a benefit against a histology arm that collapses on pooling, while adding histology to clinical hurts (0.608 < 0.623). That is the flattering comparator the protocol warned against; the \u2018powered\u2019 n\u2248399 test actually shows clinical dominance and no genomic complementarity (late_hist_gen \u0394 0.0144, CI crosses 0).",
+    "fix": "Report the full triangle (hist, clin, gen, each fusion) with paired deltas vs the best unimodal; do not claim fusion benefit when fusion < clinical-only; stratify OAC vs STAD/GEJ throughout.",
+    "severity": 4
+  },
+  {
+    "target": "jury_corpus_analysis.json pairwise agreements ~0.90\u20130.98 and \u2018unanimity 85.5%\u2019 vs jury_specimen_analysis.json pairwise ~0.61\u20130.78; membership gated on \u226595% parse vs the Claude-adjudicated 80 (five models at 100% cancer agreement)",
+    "flaw": "Near-perfect report-level agreement is inflated by the NDBE majority (5,151/6,867) and by selecting models that already cloned the Claude/pathladder rule set. When the unit is a specimen the jury fragments, so entropy is not a calibrated uncertainty measure and \u2018train_eligible\u2019 (6,867) is not a clean gold set.",
+    "fix": "Re-gate models on expert agreement, not parse rate or Claude-match; report class-balanced \u03ba and specimen-level labels; hold out all non-unanimous and all long/negation-heavy reports (disagreement_drivers.json: hedging 0.345 vs 0.116) from training.",
+    "severity": 4
+  },
+  {
+    "target": "encoder_sweep_preregistration.md \u2018No further additions mid-sweep\u2019 / \u2018Adding encoders because results disappoint\u2019 vs amendments that grew the grid UNI2/Virchow2/GigaPath \u2192 +H-Optimus-0 +Phikon-v2 \u2192 H-Optimus-1 (\u2018Grid FINAL at 6\u2019) before any sweep result exists",
+    "flaw": "The only pre-registered invariance rule (\u2018all encoders\u2019 fusion deltas agree in sign with UNI2+ABMIL\u2019) becomes cheaper to satisfy or to abandon as the grid is expanded after the protocol was frozen. This is the exact post-hoc behaviour the document forbids.",
+    "fix": "Analyse the original three-encoder grid as the confirmatory sweep; treat H-Optimus/Phikon as a clearly marked add-on. Do not drop cohorts or promote a non-UNI2 encoder to the headline.",
+    "severity": 3
+  },
+  {
+    "target": "Phase-1 item 1.4 PORPOISE baseline still unchecked; related_work.md \u2018Run as comparison arm on OCCAMS + TCGA-OAC\u2019; 3.1 writing blocked on 1.4",
+    "flaw": "Every fusion number in the digest is an in-house ABMIL/Cox variant. Without PORPOISE (or SurvPath/PathOmics) it is impossible to tell whether late-mean \u2018wins\u2019 because the pairing is real or because the published multimodal baselines were never run at these n.",
+    "fix": "Run the pre-registered PORPOISE adaptation on the same frozen OCCAMS n=87 and TCGA-OAC n=65 splits and put those C-indices in the primary table before Chapter 2 is drafted.",
+    "severity": 4
+  },
+  {
+    "target": "OCCAMS n: planned 141 vs occams_v3 n=87 vs v2 n=84; TCGA-OAC: decision tree \u2018n=78\u2019, related_work \u201888 adenocarcinomas\u2019, tcga_fusion_firstpass n=48, tcga_abmil n=65; ERIN progression 1,218/197 then jury v3 1,266/181; SWG 155\u2192150",
+    "flaw": "Sample-size churn after seeing audits and endpoint redesigns (binary OS\u2265730d with 257 early-censored dropped \u2192 Cox; progression rebuilt after \u2018false CANCER calls\u2019) means it is unclear which cohort is the registered analysis set. Silent row changes violate evaluation_protocol.md\u2019s OOF contract rule.",
+    "fix": "Publish a single locked manifest (IDs, inclusion rule, endpoint, n/events) per arm; explain the 141\u219287 OCCAMS loss under item 1.12; recompute every primary metric on that manifest only.",
+    "severity": 4
+  },
+  {
+    "target": "pathladder negation window \u201860\u2192130 (10 false CANCERs fixed, TCGA validation unchanged)\u2019 after Claude review of disagreeing reports; feasibility grader \u201840/40 wrong on its side\u2019; progression events cut \u2018~30% via false CANCER calls\u2019",
+    "flaw": "The extractor was edited on the same error sample used to declare the competing grader systematically wrong, then the revised labels rebuilt the Ch3 progression cohort (197\u2192181 progressors). That is target leakage into the label function, not an independent audit.",
+    "fix": "Split a pre-touch confirmation set of reports (plus TCGA-Reports structured grade) that never informed the window change; freeze pathladder; rebuild progression v3 only after that confirmation, and pre-register the event definition.",
+    "severity": 4
+  },
+  {
+    "target": "SWG seven families + co-attention + three encoders; OCCAMS/TCGA multiple late fusions; necessity probes on TP53/WGD/stage/age; 0.55 \u2018signal\u2019 threshold; SWG headline AUC rather than AUPRC",
+    "flaw": "Dozens of correlated tests were run and the interval that just clears zero (+0.111 AUC, lower bound 0.002) is the one written up, while AUPRC, hist-anchored deltas, OCCAMS C-index lower bounds, and clinical-vs-fusion comparisons that fail are pending, omitted, or secondary. This is metric- and contrast-shopping around a hypothesis that the pre-registrations were meant to protect.",
+    "fix": "One primary contrast and metric per chapter, stated before unblinding; everything else in a single multiplicity-aware appendix; do not invoke the 0.55 rule only when it is met.",
+    "severity": 3
+  }
+]

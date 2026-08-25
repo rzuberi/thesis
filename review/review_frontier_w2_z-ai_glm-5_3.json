@@ -1,0 +1,74 @@
+[
+  {
+    "target": "Execution plan 1.3 / amendment log 2026-08-20: 'adjudication performed by Claude per Rehan's delegation, with Rehan spot-check to follow (10 flagged cases)'",
+    "flaw": "The adjudicated-80 'human anchor' that gates jury membership, validates the negation fix, and anchors all Ch4 label-quality claims was produced by an LLM (Claude), not a pathologist. Rehan's 10-case spot-check is still 'pending', so the entire label ground-truth chain is LLM-self-referential \u2014 the classic self-validation loop of LLM-assisted research.",
+    "fix": "Complete R.4 before any Ch4 claim: have a pathologist (Rehan or colleague) grade the full 80-case adjudication set plus the required ~250-report sample blind to all model outputs; recompute every agreement/kappa against this human truth; report Claude-adjudicator vs human agreement as a result in itself.",
+    "severity": 5
+  },
+  {
+    "target": "Jury smoke: 'Five models at 100% vs adjudicated truth (qwen3 14b/32b, gemma3 12b/27b, phi4)' used to validate the jury",
+    "flaw": "The 'truth' the jury is validated against is Claude's own adjudication of the same reports \u2014 near-perfect scores likely reflect convergence of similar LLM reasoning on the same text, not label correctness. Perfect agreement with a non-human reference is being presented as validation evidence.",
+    "fix": "Validate the jury only against independent human grades (R.4); report jury-vs-pathologist agreement as the primary validation statistic; drop or heavily caveat all jury-vs-adjudicated-80 numbers until then.",
+    "severity": 5
+  },
+  {
+    "target": "2026-08-25 'JOINT REFRAME': central claim REVISED from 'adding a second modality improves prediction' to 'WHERE AND WHY multimodal fusion fails to replicate'",
+    "flaw": "The thesis hypothesis was inverted after all fusion results were known (OCCAMS null, TCGA null, ERIN delta CI crossing zero). This is textbook post-hoc hypothesis revision: the pre-registrations were written to test a positive claim, and the negative outcomes are now retroactively framed as the intended contribution, which no pre-registration ever specified.",
+    "fix": "State explicitly in Ch1 and every chapter that the original pre-registered hypothesis was fusion benefit, that it failed, and that the reframe is a post-hoc deviation with a date; do not present the 'why fusion fails' framing as if it were the designed question.",
+    "severity": 5
+  },
+  {
+    "target": "Ch3 pre-registration primary endpoint swap: 'Ch3 = progression as primary estimand (grade-classification moves to Ch4)' in the 2026-08-25 reframe",
+    "flaw": "erin_ch3_preregistration.md fixed grade classification as primary ('Chosen as primary because every imaged case contributes') and forbids 'endpoint swaps'; the endpoint was moved only after results existed. Moreover the original choice of the grade endpoint itself flattered the hypothesis (largest n, and the label is report-derived, inflating histology AUC to 0.9255).",
+    "fix": "Report both endpoints under the original pre-registration with the swap flagged as a deviation; for the grade task, quantify label circularity by evaluating against the R.4 human-graded sample rather than report-derived labels.",
+    "severity": 4
+  },
+  {
+    "target": "SWG confirmatory contrast #1 in multiplicity_plan.md: 'late-mean fusion vs histology-only... Released CI [0.015, 0.071]' with Holm correction",
+    "flaw": "The multiplicity plan was written 2026-08-25, after all SWG results were known, and its 'confirmatory' contrast is the winner of a seven-family comparison on the same data (acknowledged winner's-curse exposure) whose CI barely excludes zero and which does not survive against the best swept encoder (GigaPath deltas cross zero). A post-hoc 'confirmatory set' cannot be confirmatory.",
+    "fix": "Label the SWG contrast exploratory with winner's-curse disclosure; the only defensible confirmatory claim is the pre-registered fusion-vs-CNV contrast (whose AUPRC CI crosses zero); consider a bias-corrected bootstrap or leave-one-family-out selection to quantify selection optimism.",
+    "severity": 4
+  },
+  {
+    "target": "occams_v2.json gen_only shuffled_auc = 0.5806 and tcga_probe.json tp53 AUC 0.355 with failed null (null_pctile_of_real 0.2)",
+    "flaw": "The pre-registered decision tree's Outcome D says 'shuffled-label control away from 0.5... pipeline bug until proven otherwise', yet the genomics-arm control failure (0.58) and the TCGA probe control failure were never debugged before building the pooled n=446 necessity-probe positives on top of the same pipelines. The evaluation_protocol itself admits 'its shuffled control failed, so it currently invalidates the pipeline' \u2014 but the 0.678/0.703 pooled findings are still cited as the amendment's key positive finding.",
+    "fix": "Debug the genomics-arm and TCGA-probe pipelines (item 1.17) and rerun the shuffled controls before citing any necessity-probe or visibility number; if controls still fail, withdraw the pooled visibility claims.",
+    "severity": 4
+  },
+  {
+    "target": "Amendment 2026-08-21: 'necessity probes at n=446 (pooled OAC+GEJ) show TP53 AUC 0.678 and WGD 0.703... genomics IS partially visible at adequate n'",
+    "flaw": "The n=446 pool mixes OAC, GEJ and STAD populations; the gain over the OAC-only null (0.36-0.48) could be entirely population/label confounding (class prevalence and histologic subtype differences), not sample size \u2014 the protocol itself concedes 'the pooled gain arrives with a population change'. Also the numbers are internally inconsistent: evaluation_protocol cites 'AUC 0.703 and 0.771' for the pooled analysis, but no results file contains 0.771 at n=446 (visibility_ceiling.json has WGD 0.7705 at n=403, a different analysis).",
+    "fix": "Run the visibility probes OAC-only at matched n, and stratified by subtype, with working shuffled controls; reconcile the 0.703/0.771/0.7705 WGD figures and state exactly which n and cohort each comes from; report prevalence per stratum.",
+    "severity": 4
+  },
+  {
+    "target": "Encoder sweep pre-registration: 'No further additions mid-sweep' vs amendment log extending the grid 3\u21925\u21926 encoders (H-Optimus-0, Phikon-v2, H-Optimus-1) on 2026-08-21",
+    "flaw": "The pre-registration's own 'not allowed post hoc' rule (adding encoders because results disappoint) was violated twice within two days of freezing, with the rationale 'always include latest' \u2014 a rule that licenses unlimited additions. The 2026-08-25 amendment adding the sign-flip downgrade rule was likewise made after the GigaPath sign-flip was observed.",
+    "fix": "Log both grid extensions and the analysis-rule amendment as deviations in the thesis; freeze the grid now; report per-encoder deltas for all six encoders including any added late, with the addition date visible in the table.",
+    "severity": 3
+  },
+  {
+    "target": "Execution plan 1.1: 'n=87 vs planned 141 needs explanation' \u2014 occams_v3.json n=87, events 58; also TCGA-OAC n=65 vs '88 adenocarcinomas' in replication_ceiling.md and 'n=78 complete labels' in the decision tree",
+    "flaw": "The pre-registered OCCAMS analysis ran on 62% of the planned cohort with no attrition flow (item 1.14 still open), and the TCGA-OAC n has drifted 88\u219278\u219265 across documents without reconciliation. Silent attrition on the decisive pre-registered run undermines the decision-tree interpretation whichever outcome applied.",
+    "fix": "Produce the attrition flow diagram (1.14) accounting for every excluded patient from 141\u219287 and 88\u219265; rerun or sensitivity-check the v3 analysis on the maximal label-complete set; reconcile all cohort counts across chapters.",
+    "severity": 3
+  },
+  {
+    "target": "negation_revalidation.json: pathladder-vs-jury agreement 0.8168 on 6,867 reports presented as the validation of the negation-window fix (item 1.19)",
+    "flaw": "The 'fresh sample' revalidation compares the fixed pathladder against jury consensus labels \u2014 another LLM-derived reference, not human truth \u2014 so the fix is validated by the same class of system that motivated it. The dominant residual confusion (321 pathladder=CANCER vs jury=NDBE) is left unexplained.",
+    "fix": "Validate the negation fix on the R.4 pathologist-graded sample; manually review a stratified sample of the 321 residual CANCER-vs-NDBE disagreements and report the adjudicated error direction.",
+    "severity": 3
+  },
+  {
+    "target": "Jury generalisation: Fleiss kappa 0.900 and 'unanimity 85.5%' on ERIN vs jury_specimen_analysis.json pairwise agreement of only 0.61-0.78 on the 658 SWG matched reports",
+    "flaw": "The jury's headline agreement statistics come from the easy ERIN corpus; on the SWG specimen reports the same jury agrees far less (0.61-0.78), yet 2.14 proposes using it as a 'label audit + Ch4 third cohort'. The high-kappa claim does not transfer, and the discrepancy is not discussed anywhere.",
+    "fix": "Report the specimen-corpus kappa alongside the ERIN kappa wherever the jury is described; characterise why agreement collapses (report style, IND prevalence) before using jury labels on SWG; gate the Ch4 third-cohort use on human-graded validation of that corpus.",
+    "severity": 3
+  },
+  {
+    "target": "Related work / plan 1.4: 'Run PORPOISE as comparison arm on OCCAMS + TCGA-OAC (Ch2)' \u2014 still incomplete ('loader adaptation is a full-session task, next up')",
+    "flaw": "The only published external multimodal-fusion baseline for Ch2 was promised, never run, and the thesis's central 'fusion fails to replicate' claim rests entirely on bespoke late-fusion ABMIL heads; a stronger published method might have succeeded where the simple heads failed, so the negative claim outruns the evidence.",
+    "fix": "Either complete the PORPOISE (and ideally SurvPath) baselines on OCCAMS/TCGA before submission, or explicitly scope the negative claim to 'simple late/early fusion under our protocol', not multimodal fusion generally.",
+    "severity": 3
+  }
+]

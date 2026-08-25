@@ -1,0 +1,74 @@
+[
+  {
+    "title": "PORPOISE baseline on TCGA pool and OCCAMS",
+    "type": "improve_existing",
+    "chapter": "Ch2",
+    "design": "Complete the PORPOISE loader adaptation (Preprocessing.ipynb + signatures.csv for ESCA/STAD), then run their MCAT/SNNF fusion on the n=399 TCGA pool and n=87 OCCAMS under their published hyperparameters. Report their C-index alongside our ABMIL-Cox numbers on identical folds. Readout: does a published intermediate-fusion method also fail to beat histology-only at these cohort sizes, or does it succeed where our late fusion does not?",
+    "decisive_result": "If PORPOISE also shows null/negative fusion delta at n=87\u2013399, the thesis claim 'fusion fails to replicate at this scale' is method-independent and the nulls are attributable to sample size, not architecture. If PORPOISE succeeds where ours fails, the thesis must concede an architecture gap and the reframe weakens to 'our fusion fails' rather than 'fusion fails'.",
+    "compute": "GPU-hours: ~8 (feature extraction already done; MCAT training is lightweight). Main cost is the loader adaptation session (~4h human).",
+    "impact": 5
+  },
+  {
+    "title": "50-permutation empirical nulls for all off-0.5 shuffled controls",
+    "type": "improve_existing",
+    "chapter": "Ch2",
+    "design": "For every arm where the shuffled control deviated from 0.5 (OCCAMS v2 gen_only 0.58, TCGA first-pass hist 0.542, OCCAMS v3 gen_cox shuffle 0.44, clin_cox shuffle 0.40), run 50 label-permutation replicates through the identical pipeline. Compute the empirical null distribution and report where the real metric falls within it. Readout: percentile of real AUC/C within the null; any real metric below the 5th or above the 95th percentile of its own null is flagged.",
+    "decisive_result": "If all real metrics fall within the 5th\u201395th percentile of their permutation nulls, the Outcome-D concerns dissolve \u2014 the off-0.5 shuffles were sampling noise at small n, and the pipeline is valid. If any real metric is anti-predictive relative to its null (below 5th percentile), that specific arm has a systematic bug requiring investigation before the chapter is written.",
+    "compute": "CPU-hours: ~200 (50 perms \u00d7 5 arms \u00d7 3 seeds, each a fast linear-Cox or mean-pool logistic fit). No GPU needed.",
+    "impact": 4
+  },
+  {
+    "title": "Learning curve for genotype visibility from H&E",
+    "type": "new_experiment",
+    "chapter": "Ch2",
+    "design": "On the TCGA pool (n=446, TP53 AUC 0.678, WGD AUC 0.703), subsample without replacement at n = 50, 75, 100, 150, 200, 300, 446 (20 replicates per n, fixed seed per replicate). Train the same linear probe on UNI2 mean-pooled features. Plot AUC vs n with 95% CI bands for each target. Overlay the OCCAMS (n=87) and TCGA-OAC-only (n=65) point estimates as external reference points.",
+    "decisive_result": "If the curve shows a clear inflection (e.g., AUC crosses 0.60 only above n\u2248200), the thesis can state a quantitative visibility threshold: 'genotype is partially recoverable above ~200 cases but not below ~100', converting the confusing OCCAMS-negative/TCGA-positive contradiction into a single coherent size-conditional claim. If the curve is flat, the population-change explanation (OAC vs mixed) gains support over the sample-size explanation.",
+    "compute": "GPU-hours: ~4 (feature extraction done; probe training is CPU but 20 reps \u00d7 7 sizes \u00d7 2 targets \u00d7 3 seeds = 840 fits, trivially parallelisable).",
+    "impact": 4
+  },
+  {
+    "title": "Calibration-first cross-cohort fusion analysis",
+    "type": "new_experiment",
+    "chapter": "Ch5",
+    "design": "Across all four cohorts (SWG, OCCAMS, TCGA-OAC, TCGA pool), compute expected calibration error (ECE, 15 bins), calibration-in-the-large, and reliability diagrams for histology-only vs late-fusion. The SWG Brier delta (\u22120.061, CI excludes zero) is the single most robust fusion finding in the thesis; test whether calibration improvement replicates even when discrimination does not. Report a 2\u00d72 table: discrimination-benefit \u00d7 calibration-benefit per cohort.",
+    "decisive_result": "If calibration improves with fusion in \u22653/4 cohorts while discrimination improves in \u22641/4, the thesis gains a novel, defensible claim: 'fusion's replicable benefit is calibration, not discrimination \u2014 it makes models more honest about their uncertainty even when it does not make them more accurate.' This would be a genuinely new contribution to the multimodal literature and reframes the null discrimination results as expected rather than disappointing.",
+    "compute": "CPU-hours: ~2 (all OOF predictions already saved; ECE computation is trivial).",
+    "impact": 5
+  },
+  {
+    "title": "Unsure-holdout scoring and prior-grade leakage ablation",
+    "type": "improve_existing",
+    "chapter": "Ch3",
+    "design": "Two bundled quick wins. (A) Score the 206 held-out 'unsure' reports through the trained ERIN grade model (trained on the 6,867 train-eligible cases); report AUC and calibration on this harder subpopulation vs the train-eligible test set. (B) Retrain the Ch3 clinical arm dropping prior-grade-history features; recompute the fusion delta. Readout: (A) quantifies the selection bias from excluding uncertain cases; (B) tests whether the clinical arm's signal is genuine or leaks from the same report stream that generates the label.",
+    "decisive_result": "(A) If AUC drops substantially on unsure cases (e.g., from 0.93 to <0.80), the thesis must report that the model is overconfident on exactly the cases where labels are uncertain \u2014 a deployment-relevant finding. (B) If the fusion delta collapses to zero after dropping prior-grade, the clinical arm's contribution is confirmed as label leakage, and the honest claim is 'histology alone is sufficient; report-derived clinical features add nothing beyond what they share with the label'.",
+    "compute": "GPU-hours: ~3 (retrain clinical arm without prior-grade, 3 seeds \u00d7 5 folds; unsure scoring is a single forward pass).",
+    "impact": 4
+  },
+  {
+    "title": "Specimen-level jury disagreement decomposition",
+    "type": "new_experiment",
+    "chapter": "Ch4",
+    "design": "The jury kappa collapses from 0.90 (report-level) to 0.60 (specimen-level). Decompose this: for the 658 specimen-level reports, stratify disagreement by (a) specimen type (biopsy vs resection vs cytology), (b) number of specimens per report, (c) whether the report contains multiple anatomical sites, (d) presence of 'consistent with' / 'favour' hedging. Fit a logistic model predicting specimen-level disagreement from these features. Compare the feature importances to the report-level drivers (where length and hedging dominate).",
+    "decisive_result": "If specimen-type is the dominant driver (e.g., resection specimens have 3\u00d7 the disagreement rate of biopsies), the thesis can argue that LLM jury grading is reliable for the common case (biopsies) but breaks on complex specimens \u2014 a precise, actionable boundary condition for the method. If no single feature explains the collapse, the finding is that specimen-level grading is inherently harder, and the report-level kappa was an artefact of aggregation.",
+    "compute": "CPU-hours: ~1 (logistic regression on 658 rows; no model training needed).",
+    "impact": 4
+  },
+  {
+    "title": "Intermediate-fusion attention-shift experiment on TCGA pool",
+    "type": "new_chapter",
+    "chapter": "Ch5",
+    "design": "Train a co-attention intermediate-fusion model (e.g., MCAT-style cross-attention between tile embeddings and a genomics vector) on the TCGA pool (n=399, TP53/WGD/stage as auxiliary targets). Export tile-level attention weights under three conditions: (i) genomics present, (ii) genomics zeroed/masked, (iii) genomics shuffled. Compute the per-tile attention shift (cosine distance between condition-i and condition-ii attention vectors). Overlay on H&E thumbnails for the top-shifted cases. Readout: does conditioning on genomics change WHERE the model looks, and do shifted regions correspond to known histologic correlates of the genomic target (e.g., TP53-mutant morphology)?",
+    "decisive_result": "If attention shifts are spatially coherent and concentrate in morphologically distinct regions (e.g., TP53-shifted attention highlights areas of nuclear atypia), this provides the first mechanistic evidence that intermediate fusion can exploit genomics to redirect histologic attention \u2014 a positive result that contrasts with the late-fusion null and directly answers 'why does fusion architecture matter'. If attention does not shift, the thesis can state definitively that even intermediate fusion cannot leverage genomics to change histologic interpretation at this scale.",
+    "compute": "GPU-hours: ~40 (co-attention model training on 399 cases \u00d7 3 seeds \u00d7 5 folds, plus attention export passes on H200).",
+    "impact": 5
+  },
+  {
+    "title": "Prospective entropy triage: jury uncertainty as a real-time quality gate",
+    "type": "new_chapter",
+    "chapter": "Ch4",
+    "design": "Train a lightweight meta-classifier (logistic regression or small MLP) on report surface features (length, negation-cue count, hedging fraction, addendum presence, specimen count, year) to predict jury entropy (binarised at the 6/8 majority threshold). Evaluate via 5-fold CV on the 7,101 scored reports. Then simulate a prospective deployment: at what false-positive rate (flagging a report as 'needs human review') does the meta-classifier catch 90% of the truly-unsure reports? Compare against the current post-hoc exclusion rule. Readout: could jury entropy have been predicted BEFORE running the jury, enabling a two-stage pipeline (cheap features \u2192 flag \u2192 run jury only on flagged)?",
+    "decisive_result": "If the meta-classifier achieves >85% sensitivity for unsure reports at <20% flag rate, the thesis gains a practical contribution: a prospective triage rule that reduces jury compute by 80% while maintaining label quality \u2014 directly relevant to the 'how to validate report-derived supervision' question. If it fails (AUC <0.70), the finding is that uncertainty is not predictable from surface features, and the jury must be run on every report \u2014 still a useful negative for deployment planning.",
+    "compute": "CPU-hours: ~1 (logistic regression on 7,101 \u00d7 ~8 features; no GPU needed).",
+    "impact": 4
+  }
+]

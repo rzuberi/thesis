@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Independent pathologist anchor and label-source transport test",
+    "type": "new_chapter",
+    "chapter": "Ch4",
+    "design": "Have two independent oesophageal pathologists, blinded to all machine outputs and jury votes, grade a stratified sample of approximately 250 ERIN reports: confident NDBE, LGD, HGD, CANCER, jury-disagreement/unsure, negation-heavy, addendum, and multi-specimen cases. Measure inter-pathologist agreement, jury/pathladder agreement against the consensus reference, and evaluate frozen histology models trained on jury versus pathladder labels on this independent reference set; report class-wise sensitivity, specificity, AUROC, calibration, and abstention performance.",
+    "decisive_result": "If the jury matches the independent reference substantially better than pathladder and its advantage persists in model evaluation, the thesis can make a defensible claim about validated report-derived supervision; if both perform similarly, the claim becomes that cheap pathladder supervision is adequate despite imperfect textual agreement; if the jury is poor, the current Ch4 conclusions must be substantially downgraded.",
+    "compute": "CPU-hours plus 20-40 GPU-hours",
+    "impact": 5
+  },
+  {
+    "title": "Learning curves separating sample-size failure from population shift",
+    "type": "new_experiment",
+    "chapter": "Ch2",
+    "design": "Using the frozen TCGA-OAC, TCGA-GEJ/STAD, OCCAMS, and pooled datasets, train identical histology-only, genomics-only, clinical-only, and late-fusion heads at repeated patient-level training sizes (approximately 50, 75, 100, 150, 250, and 350 where available), with 50 label permutations at each size. Plot performance and fusion-minus-best-unimodal deltas against sample size, separately for OAC-only and mixed-population pools, while preserving an untouched test fold within each repetition.",
+    "decisive_result": "A smooth improvement in fusion only with increasing n would support a power/variance explanation; a gain appearing only after adding STAD/GEJ would establish population shift as the dominant mechanism; persistent null deltas would strengthen the claim that modality complementarity is genuinely weak for survival.",
+    "compute": "CPU-hours, approximately 80-150 GPU-hours for repeated ABMIL heads",
+    "impact": 5
+  },
+  {
+    "title": "Nested cross-cohort transfer matrix for fusion failure",
+    "type": "new_chapter",
+    "chapter": "Ch5",
+    "design": "Train the same frozen-encoder histology, genomics, clinical, and late-fusion models in SWGCohort, OCCAMS, TCGA-OAC, and pooled TCGA, then evaluate without recalibration on every permissible external cohort and with a separately fitted calibration layer. Report absolute performance, paired fusion deltas, calibration drift, modality availability, and error overlap; use cohort-stratified bootstrap intervals and explicitly separate within-cohort CV from external transfer.",
+    "decisive_result": "If fusion gains disappear specifically under external transfer while unimodal histology remains stable, this provides direct evidence for non-transferable complementarity; if fusion transfers, the thesis's central failure-to-replicate framing must be narrowed; if calibration rather than ranking collapses, the mechanism becomes distribution shift rather than absent biological complementarity.",
+    "compute": "CPU-hours plus 20-40 GPU-hours",
+    "impact": 5
+  },
+  {
+    "title": "Oracle and missing-modality analysis of late fusion",
+    "type": "improve_existing",
+    "chapter": "Ch2",
+    "design": "On SWG, OCCAMS, and TCGA, compare fixed late fusion with modality dropout, histology-only fallback, genomics/clinical-only fallback, and an oracle selector that chooses the modality with the best inner-validation risk for each patient or cohort. Quantify performance by modality availability, uncertainty, histology attention quality, and whether rescued cases are reproducible across folds rather than selected post hoc.",
+    "decisive_result": "If adaptive or oracle selection improves mainly by avoiding harmful second-modality predictions, it explains why nominal fusion fails and motivates deployment-aware selective fusion; if no selector helps, the failure is not merely poor fusion weighting but lack of complementary information.",
+    "compute": "CPU-hours",
+    "impact": 4
+  },
+  {
+    "title": "Conditional-attention mechanism study with modality permutation controls",
+    "type": "new_experiment",
+    "chapter": "Ch5",
+    "design": "On the pooled TCGA cohort and SWGCohort, compare plain ABMIL, conditional ABMIL receiving genomics/clinical embeddings, and conditional ABMIL with patient-shuffled second modalities. Freeze tile encoders, export attention maps and tile-level predictions, and quantify attention divergence, tissue-region enrichment, attribution stability across seeds, and survival performance relative to late fusion.",
+    "decisive_result": "A real performance gain accompanied by stable, biologically plausible attention shifts would show that intermediate fusion can exploit interactions when the second modality changes where the model looks; unchanged attention and null gains would support the taxonomy's claim that the failure is data-limited rather than an implementation defect.",
+    "compute": "Approximately 30-60 GPU-hours",
+    "impact": 4
+  },
+  {
+    "title": "Label-noise phase diagram using independent synthetic corruption",
+    "type": "new_experiment",
+    "chapter": "Ch4",
+    "design": "Start from the independent pathologist-anchored subset or high-confidence jury labels and inject controlled, class-dependent corruption matching observed ERIN errors: random flips, CANCER-overcall, negation-triggered errors, and specimen-level correlated errors at rates from 0% to 40%. Train the same histology models under each corruption regime and evaluate on clean labels, reporting AUROC, macro-F1, calibration, and the point at which label-source differences become practically invisible.",
+    "decisive_result": "If the observed jury/pathladder model equivalence lies on the predicted noise plateau, it explains why downstream cross-evaluation cannot distinguish the sources despite textual disagreement; if structured corruption causes large degradation unlike the observed results, the thesis must seek another explanation such as label selection or task ceiling.",
+    "compute": "CPU-hours plus 10-25 GPU-hours",
+    "impact": 4
+  },
+  {
+    "title": "Unsure-case deployment and abstention evaluation",
+    "type": "improve_existing",
+    "chapter": "Ch3",
+    "design": "Evaluate ERIN models on the 204-206 held-out unsure reports rather than only on train-eligible cases, using jury entropy, model uncertainty, and disagreement-driver strata as predefined groups. Compare forced prediction with abstention/selective prediction, and report risk-coverage curves, subgroup AUROC/AUPRC, calibration, and progression prediction when uncertain index cases are retained.",
+    "decisive_result": "A sharp performance or calibration collapse on unsure cases would demonstrate that current headline results describe an easier selected population and make uncertainty-aware deployment a substantive thesis finding; stable performance would validate exclusion as a conservative training choice rather than hidden selection bias.",
+    "compute": "CPU-hours",
+    "impact": 4
+  },
+  {
+    "title": "Specimen-level versus report-level supervision robustness",
+    "type": "new_experiment",
+    "chapter": "Ch4",
+    "design": "For the matched Barrett's database and ERIN, construct labels at report, specimen, patient, and longitudinal-episode levels, including majority, entropy-weighted, and worst-grade aggregation. Train and evaluate identical slide models under each unit using patient-disjoint splits, and test whether multiple specimens from one episode create optimistic leakage or merely reduce label uncertainty.",
+    "decisive_result": "If specimen-level aggregation materially changes AUROC, progression estimates, or jury agreement, supervision granularity is a previously unrecognised source of replication failure and deserves a dedicated methodological section; negligible differences would strengthen the portability of the current report-level protocol.",
+    "compute": "CPU-hours plus 15-30 GPU-hours",
+    "impact": 4
+  }
+]
