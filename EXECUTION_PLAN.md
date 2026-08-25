@@ -169,6 +169,15 @@ On return: read results against pre-registrations; deviations to log: none yet.
   Part A's claim must be revised from "not recoverable" to "partially recoverable
   at scale; the fusion question becomes complementarity beyond what is visible."
   Stage from H&E: 0.644. Age: 0.569.
+- 2026-08-25 night (joint, Rehan: "apart from the chapter 4 rebuild I think we
+  could implement all of this"): PROMOTED from the blank-slate parked list —
+  2.24 longitudinal trajectory modelling; 2.25 predicted-WGD teacher transfer
+  (2.25b SWG side deferred pending paths); 2.26 Barrett's-DB natural history +
+  jury-at-scale validation vs structured grades; 2.27 cross-FM disagreement
+  biomarker. Implementation designs frozen in
+  docs/blankslate_implementation_plan.md BEFORE execution. VLM/contrastive
+  Ch4 rebuild stays PARKED per Rehan. Destination: appendix/papers unless
+  results earn chapter status.
 - 2026-08-25 late (joint, Rehan): PROMOTED from the consultation's parked list:
   2.22 genotype-visibility learning curve, n x population disentangled
   (TCGA-OAC / OCCAMS-OAC / OAC-combined / STAD-GEJ / mixed strata, matched-n
