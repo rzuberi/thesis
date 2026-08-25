@@ -5,6 +5,7 @@ are 'obvious given the data' vs which are choices, and surfaces directions we
 never considered. Log-only: nothing is promoted from here without joint decision.
 """
 import json, os, urllib.request
+from concurrent.futures import ThreadPoolExecutor
 
 T = os.environ.get("THESIS", "/Users/zuberi01/Documents/thesis")
 OUT = os.path.join(T, "review")
@@ -61,12 +62,11 @@ Reply with ONLY a JSON array:
 INVENTORY:
 """ + INVENTORY
 
-done = 0
-for m in MODELS:
+def run_one(m):
     tag = m.replace("/", "_").replace(".", "_").replace(":", "_")
     path = os.path.join(OUT, f"blankslate_{tag}.json")
     if os.path.exists(path):
-        print(f"{m}: already done"); done += 1; continue
+        print(f"{m}: already done", flush=True); return 1
     body = json.dumps({"model": m, "max_tokens": 16000, "temperature": 0.9,
                        "reasoning": {"effort": "low"},
                        "messages": [{"role": "user", "content": PROMPT}]}).encode()
@@ -79,10 +79,9 @@ for m in MODELS:
         txt = msg.get("content") or msg.get("reasoning_content") or msg.get("reasoning") or ""
         usage = r.get("usage", {})
     except Exception as e:
-        print(f"{m}: SKIP ({type(e).__name__}: {str(e)[:120]})")
-        continue
+        print(f"{m}: SKIP ({type(e).__name__}: {str(e)[:120]})", flush=True); return 0
     if not txt.strip():
-        print(f"{m}: SKIP (empty content)"); continue
+        print(f"{m}: SKIP (empty content)", flush=True); return 0
     start, end = txt.find("["), txt.rfind("]") + 1
     try:
         ideas = json.loads(txt[start:end])
@@ -93,6 +92,9 @@ for m in MODELS:
         except Exception:
             ideas = [{"raw": txt}]
     json.dump(ideas, open(path, "w"), indent=2)
-    print(f"{m}: {len(ideas)} ideas | tokens {usage.get('prompt_tokens')}+{usage.get('completion_tokens')}")
-    done += 1
-print(f"models completed: {done}/{len(MODELS)}")
+    print(f"{m}: {len(ideas)} ideas | tokens {usage.get('prompt_tokens')}+{usage.get('completion_tokens')}", flush=True)
+    return 1
+
+with ThreadPoolExecutor(max_workers=10) as ex:
+    done = sum(ex.map(run_one, MODELS))
+print(f"models completed: {done}/{len(MODELS)}", flush=True)
