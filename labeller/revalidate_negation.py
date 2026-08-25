@@ -19,7 +19,7 @@ rep = pd.read_csv("/mnt/scratche/fast/fmlab/datasets/imaging/ERIN/data/Pathology
                   dtype=str, low_memory=False).fillna("")
 rep["_text"] = rep[["FinalDiagnosis_redacted", "MicroscopicDescription_redacted"]].agg(" ".join, axis=1)
 
-pcol = next(c for c in ("pathladder_label", "plad", "label", "grade") if c in plad.columns)
+pcol = "pathladder_grade"
 df = lab.merge(plad[["CaseName", pcol]].drop_duplicates("CaseName"), on="CaseName", how="inner")
 df = df.merge(rep[["CaseName", "_text"]].drop_duplicates("CaseName"), on="CaseName", how="left")
 audited = set(adj["CaseName"]) if "CaseName" in adj.columns else set()
