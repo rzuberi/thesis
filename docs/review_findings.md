@@ -55,6 +55,13 @@ families is treated as established).
    change), OAC-only TP53 was anti-predictive with a failing shuffled control.
    FIX: rewrite Part A around the learning-curve + population story; debug the
    failed probe control.
+   PROBE DEBUG DONE (2026-08-25, results/tcga_probe.json): a 50-permutation
+   empirical null shows the earlier "failing control" (0.557 from 5 shuffles)
+   was sampling noise — null is 0.474±0.13 (TP53) / 0.517±0.08 (WGD) at
+   n=65/58. Real AUCs sit at the 20th/14th null percentile: no signal, pipeline
+   valid, the TCGA-OAC negative stands and replicates the OCCAMS n=141 probe.
+   Ch1 text rewritten (evaluation_protocol.md) to the conditional
+   size-and-population story.
 7. PORPOISE (published baseline) never run — in-house nulls can't be attributed.
 8. Jury kappa 0.90 inflated by NDBE base rate; specimen-level collapse (0.60)
    shows fragility; correlated-LLM-errors caveat mandatory.
