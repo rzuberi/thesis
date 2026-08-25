@@ -37,8 +37,9 @@ lab_all = pd.read_csv(T + "/labeller/erin_labels_jury_final.csv", dtype=str)
 lab_all["date"] = pd.to_datetime(lab_all["CollectedOrOrdered"], errors="coerce", dayfirst=True)
 lab_all["num"] = lab_all["final_label"].map(NUM)
 rep_meta = pd.read_csv("/mnt/scratche/fast/fmlab/datasets/imaging/ERIN/data/PathologyReport_AnonIds.csv",
-                       dtype=str, low_memory=False)[["CaseName", "AgeAtInvestigation"]]
+                       dtype=str, low_memory=False)[["CaseName", "AgeAtInvestigation"]].drop_duplicates("CaseName")
 m = m.merge(rep_meta, on="CaseName", how="left")
+assert len(m) == len(X), f"row/feature mismatch after merge: {len(m)} vs {len(X)}"
 prog = pd.read_csv(T + "/labeller/erin_progression_cohort_v3.csv", dtype=str)
 prog_map = dict(zip(prog["anon_id"], prog["progressed_to_HGDplus"] == "True"))
 
