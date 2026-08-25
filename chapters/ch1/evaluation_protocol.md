@@ -34,10 +34,18 @@ degrades calibration is reported as exactly that.
 **Controls and negatives.** Every prediction task is accompanied by a
 shuffled-label control run through the identical pipeline; a control AUC away from
 0.5 invalidates the pipeline, not the hypothesis. Negative results are retained and
-reported with the same detail as positive ones. Two are already fixed: TP53 and
-whole-genome doubling are not predictable from H&E in OCCAMS (AUC 0.48 and 0.41),
-and the first-pass OCCAMS fusion showed no benefit — the redesigned analysis and
-its pre-registered interpretation are described in Chapter 2.
+reported with the same detail as positive ones — including when later work
+complicates them. The genotype-visibility question is the worked example: the
+first OCCAMS probe found TP53 and whole-genome doubling not predictable from H&E
+(AUC 0.48 and 0.41 at n=141), but a larger pooled analysis (n=446, adding TCGA
+gastric/GEJ cases) reached AUC 0.703 and 0.771 for the same targets. The
+reversal is not a simple sample-size effect: the pooled gain arrives with a
+population change, and the OAC-only replication at comparable n remains
+unresolved (its shuffled control failed, so it currently invalidates the
+pipeline rather than deciding the question). Chapter 2 therefore reports
+genotype visibility as conditional — on cohort size and on population — rather
+than as a settled negative or positive, and the first-pass OCCAMS fusion null
+with its pre-registered interpretation is described there.
 
 **Reproducibility.** Splits, seeds, and model configurations are versioned
 artefacts. Each final run writes an out-of-fold contract (row count, patient count,
