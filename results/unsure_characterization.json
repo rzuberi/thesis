@@ -1,0 +1,33 @@
+{
+  "train_eligible": {
+    "n": 7041,
+    "hedging_mean": 0.16,
+    "length_mean": 724.0,
+    "addendum_rate": 0.103,
+    "year_median": 2021.0,
+    "jury_entropy_mean": 0.073,
+    "jury_top_label_dist": {
+      "NDBE": 5187,
+      "CANCER": 905,
+      "HGD": 411,
+      "LGD": 271,
+      "IND": 267
+    }
+  },
+  "unsure": {
+    "n": 206,
+    "hedging_mean": 0.52,
+    "length_mean": 779.0,
+    "addendum_rate": 0.184,
+    "year_median": 2020.0,
+    "jury_entropy_mean": 1.11,
+    "jury_top_label_dist": {
+      "NDBE": 69,
+      "HGD": 37,
+      "CANCER": 22,
+      "IND": 21,
+      "LGD": 13
+    }
+  },
+  "unsure_ind_involved": 21
+}
