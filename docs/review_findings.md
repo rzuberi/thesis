@@ -19,6 +19,20 @@ families is treated as established).
    contrast) was never computed. FIX: compute it (top priority); adopt
    fusion-vs-best-unimodal as the decisive contrast everywhere; reframe (done —
    see amendment).
+   **RESOLUTION (2026-08-25): the SWG CI existed all along.** The strict
+   pre-event release table `lgd2_final_pre_event_paired_differences.csv`
+   (barretts_training, 150 patients, 5,000 paired bootstraps) carries
+   late_mean − image_only: ΔAUPRC +0.073 [0.006, 0.125], ΔAUC +0.043
+   [0.015, 0.071], ΔBrier −0.061 [−0.095, −0.027] — all three exclude zero.
+   It was computed in the 2026-07-13 release but never transcribed into the
+   chapter, so no reviewer saw it. This softens the finding: SWG does show
+   fusion beating histology (and UNI2 histology is the stronger unimodal arm
+   there), internally, on the pre-registered protocol. It does not overturn the
+   reframe — the win is single-cohort, internal-CV, winner's-curse-exposed
+   (late-mean chosen among 7 families), and every external arm is null — which
+   is exactly the "where and why fusion fails to replicate" story. Residual:
+   the paired contrast against GigaPath histology (best unimodal by point,
+   AUPRC 0.609) has not been run; transcription into swg_arm.md is done.
 3. **Ch3 primary endpoint circularity.** Current-grade classification reconstructs
    the pathologist's reading of the same slide — recognition, not prediction.
    FIX: progression becomes Ch3's primary estimand; grade classification moves to
