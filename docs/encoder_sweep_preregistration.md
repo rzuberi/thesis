@@ -23,6 +23,11 @@ changing the histology representation.
 
 - The headline result of every chapter remains its pre-registered primary config
   (UNI2 + ABMIL). The sweep contextualises; it never replaces.
+- AMENDED 2026-08-25 (review finding, DeepSeek; joint reframe session): the rule
+  above insulated headline claims from falsification. New rule: if any swept
+  encoder's fusion delta flips sign relative to the primary config's, the
+  chapter's claim is DOWNGRADED to encoder-conditional and must say so wherever
+  the headline number is cited. The headline number itself still does not change.
 - Report the FULL distribution of per-encoder fusion deltas (table + dot plot),
   never a best-of. No per-encoder significance claims; the estimand is the range.
 - Encoder mixes: after single-encoder results only, top-2 concat + ensemble; four
