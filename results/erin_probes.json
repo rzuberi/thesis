@@ -1,0 +1,26 @@
+{
+  "grade_from_hist": {
+    "n": 2221,
+    "pos": 528,
+    "auc": 0.896,
+    "auc_sd": 0.0
+  },
+  "prior_dysplasia_from_hist": {
+    "n": 1445,
+    "pos": 760,
+    "auc": 0.748,
+    "auc_sd": 0.001
+  },
+  "age_from_hist": {
+    "n": 2280,
+    "pos": 1109,
+    "auc": 0.585,
+    "auc_sd": 0.0
+  },
+  "progression_from_hist": {
+    "n": 1462,
+    "pos": 358,
+    "auc": 0.689,
+    "auc_sd": 0.002
+  }
+}
