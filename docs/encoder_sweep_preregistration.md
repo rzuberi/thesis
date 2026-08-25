@@ -41,6 +41,14 @@ Extraction is the only real cost: ~25 GPU-h per encoder per 1,000-slide cohort
 (measured, UNI2/L40S, 512-tile cap). Grid ceiling ~200 GPU-h across cuda+h200 as
 per-slide race-to-run jobs. Downstream heads are CPU.
 
+## Deviations recorded
+
+- 2026-08-25 (wave-2 review): the grid gained H-Optimus-0 (pre-declared,
+  conditional on access — arguably compliant) and Phikon-v2 (NOT pre-declared —
+  a deviation). Both additions were made before their results existed, for
+  coverage, not because results disappointed; but the freeze rule was violated
+  and the sweep must be described as "extended grid" wherever cited.
+
 ## Not allowed post hoc
 
 Adding encoders because results disappoint; promoting a non-primary encoder to

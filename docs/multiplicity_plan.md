@@ -4,6 +4,13 @@ Written 2026-08-25 in response to the converged review finding (severity 4):
 many paired contrasts are reported, none corrected, and the SWG family-winner
 selection carries winner's-curse exposure.
 
+## Status honesty (added 2026-08-25 after wave-2 review)
+
+This plan was written AFTER the results existed. It is a reporting discipline —
+one honest headline per chapter, everything else labelled exploratory — not a
+pre-registration, and it must never be cited as if it were one. The only truly
+pre-registered contrasts are those in the original pre-reg documents.
+
 ## Principle
 
 One confirmatory contrast per chapter, declared here; everything else is

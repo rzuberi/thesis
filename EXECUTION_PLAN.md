@@ -154,6 +154,14 @@ On return: read results against pre-registrations; deviations to log: none yet.
   Part A's claim must be revised from "not recoverable" to "partially recoverable
   at scale; the fusion question becomes complementarity beyond what is visible."
   Stage from H&E: 0.644. Age: 0.569.
+- 2026-08-25 evening (wave-2 review, 5 blind frontier families — see
+  docs/review_findings.md addendum): reframe survives blind review but must be
+  presented as hypothesis-generating (HARKing defence = amendment trail). New
+  items: 1.20 50-perm nulls for every off-0.5 shuffled control (OCCAMS v2,
+  TCGA first-pass, probes); 1.21 progression cohort v2-vs-v3 reconciliation;
+  1.22 unsure-holdout sensitivity analysis; 1.23 clinical-arm leakage ablation
+  (drop prior-grade). ERIN pre-reg deviation note added; multiplicity plan
+  relabelled post-hoc; encoder-sweep grid extension recorded as deviation.
 - 2026-08-25 (JOINT REFRAME, Rehan's conditional approval executed on convergence
   evidence): central claim REVISED. Old: "adding a second modality improves
   prediction and the benefit replicates." New working framing: "WHERE AND WHY

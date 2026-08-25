@@ -94,3 +94,67 @@ families is treated as established).
 All reviewers independently converge with the fresh-context agent's verdict: the
 scaffolding is strong, the positive-replication claim is not supported, and the
 honest, stronger thesis is the reframe recorded in the amendment log.
+
+
+---
+
+# Wave 2 addendum (2026-08-25, evening)
+
+Five additional frontier families reviewed the CURRENT repo state (post-reframe,
+post-fixes), BLIND to this findings document: DeepSeek-V4-Pro, Kimi-K3, GLM-5.3,
+Qwen3.8-Max, Gemini-3.7-Flash. With wave 1 that makes 8 independent model
+families + 4 local models.
+
+## Blind convergence with wave 1 (validates the original findings)
+
+- Self-validation loop / Claude-as-adjudicator: 5/5 wave-2 families, most as
+  severity 5. R.4 (pathologist sample) is confirmed as THE critical unblock.
+- SWG winner's curse + GigaPath collapse of the headline contrast: 4/5.
+- Pooled-visibility population confound (n=446 mixes OAC/GEJ/STAD): 4/5.
+- Grade-endpoint circularity: 4/5 (now addressed by the reframe swap).
+- Jury homogeneity (agreement among similar LLMs ≠ truth): 3/5.
+- PORPOISE still missing: 2/5.
+
+## New findings unique to wave 2
+
+1. **The reframe itself is flagged as post-hoc hypothesis revision (HARKing)**
+   (Kimi sev-5, GLM sev-5, DeepSeek sev-5). Response adopted: the thesis must
+   present the reframe as hypothesis-GENERATING, defended by the dated amendment
+   trail (results known, reasons stated, nothing hidden), and the reframed claim
+   must not be presented as confirmed by the same data that motivated it.
+   External confirmation = the pre-registered OCCAMS/TCGA arms and R.4.
+2. **ERIN pre-reg endpoint swap was silent** (DeepSeek sev-5, GLM/Gemini sev-4,
+   Qwen sev-5). FIXED same day: explicit dated deviation note added to
+   erin_ch3_preregistration.md; the swap demotes the flattering endpoint.
+3. **multiplicity_plan.md is itself post hoc** (Kimi sev-4, GLM sev-4, Qwen
+   sev-3): "confirmatory" contrasts chosen after CIs were known. Amended: the
+   plan now states it is a reporting discipline, not pre-registration.
+4. **Own Outcome-D rule ignored for off-0.5 shuffled controls** in OCCAMS v2
+   (gen 0.58), TCGA first-pass (0.54), and probes (5/5 families flag some form).
+   FIX: apply the 1.17 lesson (5-shuffle controls are noise) — recompute proper
+   50-permutation nulls for every flagged control, or formally annotate
+   Outcome D. Queued as 1.20.
+5. **Progression cohort v2-vs-v3 unreconciled** (Kimi sev-3, Qwen sev-3): the
+   two "final" cohorts differ by 48 patients / −16 progressors with no recorded
+   reconciliation, and the direction (fewer events after removing false
+   CANCERs) needs explaining. Queued as 1.21.
+6. **Encoder-sweep grid extended twice post-freeze** (Kimi/GLM sev-3):
+   H-Optimus-0 was pre-declared conditional on access, but Phikon-v2 was not in
+   the frozen grid. Deviation now recorded in the pre-reg.
+7. **Ceiling effect** (DeepSeek sev-5): ERIN grade histology is at 0.91-0.93,
+   so CI-positive fusion deltas of +0.01 ride a ceiling; claims must be framed
+   as "measurable at ceiling", clinical relevance unargued.
+8. **Unsure-holdout selection bias** (Gemini sev-4): excluding the 206 hardest
+   reports makes the reported population easier than deployment. FIX: sensitivity
+   analysis scoring held-out unsure cases. Queued as 1.22.
+9. **Clinical-arm label leakage risk** (Qwen sev-3/4): prior-grade-history
+   features and grade labels derive from the same report stream. FIX: ablation
+   dropping prior-grade from the clinical arm. Queued as 1.23.
+
+## Wave-2 verdict
+
+No wave-2 reviewer found a NEW thesis-threatening flaw outside the wave-1 set —
+the severity-5 mass concentrates on the same two structural issues (human
+anchor R.4; post-hoc claims must be labelled as such). The reframe survives
+blind review as the honest reading of the results, PROVIDED it is presented as
+hypothesis-generating with the amendment trail as its provenance.
