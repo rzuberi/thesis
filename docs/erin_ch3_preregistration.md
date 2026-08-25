@@ -21,6 +21,22 @@ post-audit patterns) and, for the progression endpoint, the feasibility cohort's
   timepoints, progressed_to_HGDplus as event. Smaller n, closer to SWGCohort's
   question; reported with the same machinery, powered or not.
 
+**DEVIATION, recorded 2026-08-25 (joint reframe; flagged independently by two
+blind wave-2 reviewers as needing explicit acknowledgement).** The thesis
+reframe promotes progression to Ch3's primary estimand and reassigns grade
+classification to Ch4 as an annotation-replacement result. This is a post-hoc
+endpoint swap relative to this pre-registration, made for a reason discovered
+in review, not in the data: grade classification reconstructs the pathologist's
+reading of the same slide (recognition, not prediction — the report text that
+generates the label describes the very slide the model sees), so it cannot
+carry a clinical-prediction claim regardless of its AUC. Both endpoints are
+still reported with full results; nothing is hidden. The grade numbers keep
+their pre-registered status WITHIN Ch4's annotation-replacement question; only
+the clinical-prediction claim moves to progression. Any accusation of
+result-driven swapping can be checked against the record: the grade results
+were strong (AUC 0.93), the progression results weaker (0.819 at n=153) — the
+swap demotes the flattering endpoint, not the unflattering one.
+
 ## Arms (fixed)
 
 1. Histology only: ABMIL over UNI2 tile features.
