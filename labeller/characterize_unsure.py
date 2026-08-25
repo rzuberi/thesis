@@ -16,7 +16,7 @@ rep = pd.read_csv("/mnt/scratche/fast/fmlab/datasets/imaging/ERIN/data/Pathology
 TEXT = ["FinalDiagnosis_redacted", "MicroscopicDescription_redacted"]
 rep["_text"] = rep[TEXT].agg(" ".join, axis=1)
 df = lab.merge(rep[["CaseName", "_text", "Addendum1_redacted"]], on="CaseName", how="left")
-df = df.merge(votes, left_on="CaseName", right_index=True, how="left")
+df = df.merge(votes, left_on="CaseName", right_index=True, how="left", suffixes=("", "_votes"))
 df["unsure"] = df["label_status"] == "unsure_held_out"
 
 t = df["_text"].fillna("")
