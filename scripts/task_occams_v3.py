@@ -59,6 +59,18 @@ def code(col):
 
 cases = sorted(set(bags) & set(mast.index) & set(th.index))
 print(f"final case set n={len(cases)} events={sum(event[c] for c in cases)}")
+attrition = {"h5_bags": len(bags), "master_with_survival": len(mast),
+             "genomics_tsv": len(th),
+             "bags_and_master": len(set(bags) & set(mast.index)),
+             "bags_and_genomics": len(set(bags) & set(th.index)),
+             "master_and_genomics": len(set(mast.index) & set(th.index)),
+             "all_three_final": len(cases)}
+print("attrition:", attrition)
+SHUFFLE = bool(os.environ.get("SHUFFLE"))
+if SHUFFLE:  # label-permutation control: same cases, survival pairs reassigned
+    perm = np.random.RandomState(0).permutation(cases)
+    time = {**time, **{c: time[p] for c, p in zip(cases, perm)}}
+    event = {**event, **{c: int(event[p]) for c, p in zip(cases, perm)}}
 G = {"keys": cases, "X": np.nan_to_num(np.column_stack(
     [fl(th.loc[cases]["TP53_SNV"]), fl(th.loc[cases]["TP53_indel"]),
      fl(th.loc[cases]["TP53_deletion"]), fl(th.loc[cases]["TP53_knockout"]),
@@ -88,7 +100,8 @@ oof["late_hist_gen"] = {k: (z["hist_abmil"][k] + z["gen_cox"][k]) / 2 for k in c
 oof["late_hist_clin"] = {k: (z["hist_abmil"][k] + z["clin_cox"][k]) / 2 for k in cases}
 
 res = {"_meta": {"n": len(cases), "events": int(sum(event[c] for c in cases)),
-                 "seeds": SEEDS, "clinical_cols": clin_cols,
+                 "seeds": SEEDS, "clinical_cols": clin_cols, "shuffle": SHUFFLE,
+                 "attrition": attrition,
                  "design": "pre-registered v3: ABMIL-Cox / linear-Cox / Harrell C"}}
 for name, o in oof.items():
     ref = oof["hist_abmil"] if name.startswith("late") else None
