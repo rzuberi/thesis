@@ -125,7 +125,14 @@ PARKED list until jointly promoted.
 - [ ] 4.3 Abstract, conclusions, full assembly, reference sweep.
 - [ ] 4.4 Publications map final (SWG paper, pathladder paper, thesis).
 
-## PARKED (not in plan; promote only jointly)
+## PARKED
+
+- 2026-08-25: 80 proposals from a 10-model consultation logged in
+  docs/proposals_multimodel.md (raw: review/proposals_*.json). All are PARKED
+  candidates pending joint promotion; top clusters: visibility learning curve
+  (7/10 models), power map, winner's-curse bootstrap, leave-one-family-out
+  jury, R.4 sample-pack prep, TCGA-pool attention-shift replication.
+ (not in plan; promote only jointly)
 
 - TCGA pan-cancer pathladder extension beyond ESCA/STAD
 - HANCOCK out-of-organ methods check
