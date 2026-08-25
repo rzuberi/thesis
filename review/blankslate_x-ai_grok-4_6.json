@@ -1,0 +1,110 @@
+[
+  {
+    "title": "Cross-modal CNV prediction from H&E in Barrett's with longitudinal progression readout",
+    "idea": "Train a multi-FM MIL model on SWGCohort H&E to predict shallow-WGS copy-number features, then test whether predicted CNV burden/chromothripsis-like patterns add independent progression risk beyond pathologist grade.",
+    "data_used": [
+      "SWGCohort",
+      "tile embeddings (all 5 FMs)"
+    ],
+    "design": "Slide-level regression/classification of genome-wide CNV summaries and selected arm-level events from UNI2-h/Virchow2/etc. embeddings via attention MIL; nested CV by patient. Readout: AUROC/MAE vs held-out WGS, C-index/HR for HGD-cancer vs grade-only Cox, calibration of predicted CNV-risk over surveillance time.",
+    "why_this_data": "Only SWGCohort pairs per-biopsy H&E with shallow WGS and true longitudinal Barrett's progression\u2014not available in TCGA resections.",
+    "impact": 5,
+    "compute": "GPU-hours estimate"
+  },
+  {
+    "title": "LLM-jury structured Barrett's phenotypes from 13k reports, weakly supervising ERIN WSIs",
+    "idea": "Use the 8-model local-LLM jury plus rule labeller to extract dysplasia grade, IM extent, inflammation, and sampling quality from Barrett's specialist reports and ERIN reports, then train MIL on ERIN slides to recover those labels and forecast next-visit upgrades.",
+    "data_used": [
+      "ERIN",
+      "Barrett's specialist database",
+      "tile embeddings"
+    ],
+    "design": "Run jury on-cluster on all 7,149+13,645 reports; consensus labels with inter-LLM kappa. Train multi-task MIL on ERIN WSIs; temporal split: predict labels at t+1 from WSI at t. Readout: extraction F1 vs pathologist subset, next-visit dysplasia AUROC, comparison of 5 FMs.",
+    "why_this_data": "Huge unmatched report corpus plus matched report\u2013WSI longitudinal pairs is rare; jury tooling already exists and data cannot leave the cluster.",
+    "impact": 4,
+    "compute": "GPU-hours estimate"
+  },
+  {
+    "title": "Foundation-model agreement maps as a biopsy adequacy and hidden-progression detector",
+    "idea": "Treat disagreement among five FMs' tile embeddings as a signal of morphologic ambiguity; relate disagreement to pathologist grade, CNV complexity, and missed progressors in SWGCohort/ERIN.",
+    "data_used": [
+      "SWGCohort",
+      "ERIN",
+      "all 5 FM embeddings"
+    ],
+    "design": "Per-tile cosine/JS divergence across FMs, slide-level entropy maps. Correlate with grade, CNV burden, and progression. Readout: whether high-disagreement tiles enrich for subsequent HGD and whether FM-ensemble uncertainty beats single-model attention for triage of 'indefinite for dysplasia'.",
+    "why_this_data": "Five heterogeneous FMs precomputed on the same Barrett's WSIs plus molecular and outcome labels makes ensemble-disagreement biology testable without re-inference.",
+    "impact": 4,
+    "compute": "CPU"
+  },
+  {
+    "title": "TP53/WGD morphology transfer: OCCAMS full-WGS teachers, SWGCohort surveillance students",
+    "idea": "Learn H&E predictors of TP53 status, ploidy and WGD on OCCAMS resections, transfer to Barrett's biopsies, and ask if predicted genome-doubling in non-dysplastic mucosa precedes progression.",
+    "data_used": [
+      "OCCAMS",
+      "SWGCohort",
+      "TCGA-ESCA",
+      "tile embeddings"
+    ],
+    "design": "MIL classifiers on OCCAMS+TCGA for TP53/WGD/ploidy; domain-adapt to SWGCohort (optional CNV pseudo-labels). Readout: AUROC on held-out OCCAMS, association of transferred WGD-score in ND/LGD biopsies with time-to-HGD (Cox, competing risks), spatial attention vs tumour vs background.",
+    "why_this_data": "Resection-grade WGS phenotypes plus surveillance CNV and outcomes uniquely allow testing whether 'cancer genomes' are morphologically visible years earlier.",
+    "impact": 5,
+    "compute": "GPU-hours estimate"
+  },
+  {
+    "title": "Pan-GI report\u2013slide contrastive pretraining then oesophageal survival",
+    "idea": "Contrastively align 9,517 pan-cancer plus GI report embeddings (local LLM) with slide-level FM bags, then fine-tune Cox MIL on OCCAMS/TCGA-ESCA/STAD survival.",
+    "data_used": [
+      "TCGA-ESCA",
+      "TCGA-STAD",
+      "OCCAMS",
+      "pan-cancer report+slide pairs",
+      "embeddings"
+    ],
+    "design": "Frozen FM bags + report encoder; InfoNCE then survival head. Readout: C-index vs image-only and vs stage, attention-word co-occurrence (e.g. 'poorly cohesive' vs STAD embeddings), ablation of pan-cancer vs GI-only pretraining.",
+    "why_this_data": "Machine-readable reports exist at pan-cancer scale together with GI outcome cohorts and on-cluster LLMs\u2014external CLIP-style models cannot see these slides.",
+    "impact": 3,
+    "compute": "GPU-hours estimate"
+  },
+  {
+    "title": "Patient-level trajectory embeddings for Barrett's: from serial ERIN WSIs to progression risk",
+    "idea": "Model each patient's sequence of biopsy bags as a temporal set, predicting upgrade/cancer using ERIN weakly labelled courses and validating on SWGCohort hard outcomes.",
+    "data_used": [
+      "ERIN",
+      "SWGCohort",
+      "embeddings"
+    ],
+    "design": "Transformer-over-MIL or gated recurrent attention on ordered slide bags; time-aware positional encodings from report dates. Train on ERIN (LLM grades), evaluate C-index/time-dependent AUC on SWGCohort progression. Readout: gain over last-biopsy-only, identification of 'stable high-risk' morphology.",
+    "why_this_data": "ERIN supplies dense serial imaging without structured labels; SWGCohort supplies sparse but gold outcomes and CNV\u2014complementary longitudinal designs.",
+    "impact": 5,
+    "compute": "GPU-hours estimate"
+  },
+  {
+    "title": "Does predicted inflammation/IM from reports confound CNV\u2013morphology links?",
+    "idea": "Extract inflammatory and metaplasia scores from reports, residualize FM embeddings, and re-estimate CNV and progression models to test whether copy-number morphology is inflammation-independent.",
+    "data_used": [
+      "SWGCohort",
+      "ERIN",
+      "Barrett's reports",
+      "embeddings"
+    ],
+    "design": "LLM/rule scores for active oesophagitis and IM extent; linear residualization or adversarial MIL. Readout: change in CNV AUROC and progression HR after residualization; spatial overlap of CNV-attention vs inflammation-attention.",
+    "why_this_data": "Paired H&E\u2013WGS plus contemporaneous free-text inflammation language is almost unique to this Barrett's inventory.",
+    "impact": 3,
+    "compute": "GPU-hours estimate"
+  },
+  {
+    "title": "On-cluster 120B LLM as a slide-report consistency auditor for occult missed dysplasia",
+    "idea": "Generate visuo-linguistic explanations from FM attention hotspots, have a local 70\u2013120B LLM judge consistency with the signed-out report, and flag serial ERIN cases where image evidence exceeds text\u2014then check SWGCohort-style outcomes where available.",
+    "data_used": [
+      "ERIN",
+      "SWGCohort",
+      "embeddings",
+      "reports"
+    ],
+    "design": "Top-k attended tiles captioned by a smaller VLM-style prompt or template; 120B jury scores under-calling. Manual review of top discordant cases. Readout: positive predictive value for subsequent HGD among 'image>text' flags vs matched controls; inter-LLM agreement.",
+    "why_this_data": "Longitudinal report\u2013WSI pairs plus a cluster-local 120B model (data cannot leave) enable a privacy-preserving diagnostic-safety study no public API could run.",
+    "impact": 4,
+    "compute": "GPU-hours estimate"
+  }
+]

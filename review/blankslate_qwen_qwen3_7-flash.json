@@ -1,0 +1,103 @@
+[
+  {
+    "title": "Model Disagreement as a Progression Signal in Barrett\u2019s",
+    "idea": "Aggregate tile embeddings from five foundation models to quantify inter-model uncertainty at the slide level, treating disagreement not as noise but as a biological marker of emerging neoplasia. This leverages ensemble diversity to flag high-risk biopsies before pathologists or single models detect dysplasia.",
+    "data_used": [
+      "SWGCohort",
+      "ERIN",
+      "Precomputed embeddings"
+    ],
+    "design": "Compute pairwise cosine similarity and entropy across the five tile-level embeddings for every biopsy slide. Feed aggregated features into the existing attention-based MIL classifier trained on SWGCohort progression outcomes. Read out the calibration error, decision boundary proximity, and hazard ratios associated with high-disagreement slides, comparing against single-model baselines.",
+    "why_this_data": "Simultaneous access to five distinct foundation model outputs on the same longitudinal biopsy cohort enables rigorous uncertainty quantification rarely possible outside academic consortia.",
+    "impact": 4,
+    "compute": "~150 GPU-hours"
+  },
+  {
+    "title": "Cross-Modal Alignment of Shallow CNV Profiles and Histomorphology",
+    "idea": "Learn a joint embedding space that simultaneously represents shallow whole-genome sequencing copy-number alterations and H&E-derived morphological features to predict Barrett\u2019s progression. The goal is to discover whether early clonal expansion leaves predictable visual signatures captured by deep learning.",
+    "data_used": [
+      "SWGCohort",
+      "Precomputed embeddings"
+    ],
+    "design": "Project shallow WGS CNV vectors through a lightweight neural mapper and align them with slide-level MIL features using a contrastive loss. Finetune the shared encoder on time-to-HGD/cancer using the Cox survival head. Read out concordance between genomic and morphological clusters, plus the incremental C-index gain when both modalities are fused versus either alone.",
+    "why_this_data": "Biopsy-level shallow WGS paired with matched H&E and longitudinal outcomes is exceptionally rare, providing a direct window into molecular-to-morphological transformation during carcinogenesis.",
+    "impact": 5,
+    "compute": "~300 GPU-hours"
+  },
+  {
+    "title": "Longitudinal Trajectory Inference via Report-Slide Fusion",
+    "idea": "Construct patient-level disease trajectories by structuring thousands of unannotated pathology reports, then condition slide embeddings on these temporal text narratives to forecast progression timing. This transforms passive surveillance archives into predictive chronometers.",
+    "data_used": [
+      "ERIN",
+      "Barrett specialist database"
+    ],
+    "design": "Extract longitudinal progression states from ERIN and Barrett specialist reports using the 8-model LLM jury pipeline. Align sequential text states with corresponding WSIs, then train a temporal attention network over precomputed embeddings gated by extracted labels. Read out next-state prediction accuracy, median absolute error in time-to-progression, and attention heatmaps highlighting histological transitions that precede textual documentation.",
+    "why_this_data": "The unmatched volume of longitudinal free-text reports combined with imaged ERIN cases and existing LLM extraction tooling creates a rare opportunity to model clinical evolution purely from real-world documentation.",
+    "impact": 4,
+    "compute": "~250 GPU-hours"
+  },
+  {
+    "title": "Morphological Proxies for Whole-Genome Doubling and Ploidy",
+    "idea": "Predict whole-genome doubling, ploidy, and TP53 status directly from routine H&E resection slides, establishing non-invasive morphological surrogates for aggressive genomic events. These proxies could stratify resected patients for adjuvant therapy decisions.",
+    "data_used": [
+      "OCCAMS",
+      "Precomputed embeddings"
+    ],
+    "design": "Train supervised classifiers on slide-level embeddings from the best-performing foundation model to predict WGD, ploidy, and TP53 status. Apply gradient-based attribution to localize morphological drivers, then integrate predictions into the existing Cox survival model. Read out ROC-AUC for each genomic endpoint, survival hazard ratios, and spatial consistency of attributed patches across independent validation folds.",
+    "why_this_data": "Full WGS metrics including WGD and ploidy linked to resection-quality H&E and survival outcomes are scarce in GI oncology, making direct phenotype-to-genotype mapping highly novel and clinically urgent.",
+    "impact": 4,
+    "compute": "~120 GPU-hours"
+  },
+  {
+    "title": "Foundation Model Generalization and Domain Adaptation in Esophagogastric Cancer",
+    "idea": "Systematically benchmark how five foundation models transfer across pan-cancer TCGA tissue types versus specialized GI cohorts, identifying architectural brittleness and optimal adaptation strategies for esophageal and gastric applications.",
+    "data_used": [
+      "TCGA-ESCA+STAD",
+      "SWGCohort",
+      "OCCAMS",
+      "Precomputed embeddings"
+    ],
+    "design": "Deploy precomputed embeddings across TCGA-ESCA/STAD diagnosis and survival tasks, then measure performance decay relative to GI-trained baselines. Apply parameter-efficient fine-tuning to bridge the gap, comparing gradient-based versus prompt-tuning approaches. Read out cross-domain accuracy deltas, feature collapse rates, and the minimal data budget required to restore GI-native performance.",
+    "why_this_data": "The juxtaposition of 9,517 pan-cancer report-slide pairs with deeply curated GI cohorts provides an unprecedented testbed for evaluating foundation model scope limitations and adaptation economics.",
+    "impact": 3,
+    "compute": "~200 GPU-hours"
+  },
+  {
+    "title": "Self-Supervised Multi-Omic Representation Discovery for Molecular Subtyping",
+    "idea": "Replace supervised classification with masked-modality contrastive learning to discover intrinsic molecular subtypes of esophagogastric cancer directly from paired H&E and multi-omics, without relying on predefined labels.",
+    "data_used": [
+      "TCGA-ESCA+STAD",
+      "Precomputed embeddings"
+    ],
+    "design": "Mask expression, mutation, or CNV vectors during pretraining while conditioning the encoder on corresponding H&E embeddings, forcing cross-modal reconstruction. After pretraining, attach the Cox survival head and evaluate clustering purity against known molecular classifications. Read out unsupervised silhouette scores, survival separation log-rank p-values, and feature importance contributions per omic layer.",
+    "why_this_data": "TCGA\u2019s comprehensive multi-omics paired with diagnostic WSIs and foundation embeddings enables rigorous self-supervised fusion that bypasses label scarcity and annotation bias inherent in clinical cohorts.",
+    "impact": 4,
+    "compute": "~400 GPU-hours"
+  },
+  {
+    "title": "Uncertainty-Guided Active Learning from Massive Text Repositories",
+    "idea": "Leverage 13,645 unimaged Barrett reports to generate weak progression labels, then deploy an active learning loop that selectively queries high-uncertainty slides from SWG/ERIN for ground-truth labels, maximizing annotation efficiency.",
+    "data_used": [
+      "Barrett specialist database",
+      "SWGCohort",
+      "ERIN"
+    ],
+    "design": "Run the LLM jury on the Barrett specialist reports to construct pseudo-label timelines, then score slide embeddings using the existing MIL uncertainty estimator. Iteratively select the most ambiguous cases, annotate them, and retrain the classifier. Read out label efficiency curves accuracy versus number of annotated slides, final C-index, and qualitative audits of LLM-generated versus expert-reviewed progression endpoints.",
+    "why_this_data": "Pairing a massive text-only surveillance archive with modest but richly phenotyped imaging cohorts creates a rare ecosystem for testing scalable, low-cost AI labeling workflows in gastroenterology.",
+    "impact": 3,
+    "compute": "~80 GPU-hours"
+  },
+  {
+    "title": "Temporal Embedding Drift as a Marker of Clonal Expansion",
+    "idea": "Track how foundation model tile distributions evolve across serial biopsy series from the same patients, using statistical change-point detection to identify morphological tipping points that precede histological grading upgrades.",
+    "data_used": [
+      "SWGCohort",
+      "ERIN",
+      "Precomputed embeddings"
+    ],
+    "design": "Compute intra-patient embedding variance, mean shift, and manifold curvature across longitudinal biopsy series. Apply Bayesian change-point algorithms to detect abrupt distributional shifts, then correlate these inflection points with pathologist grade transitions and progression outcomes. Read out temporal alignment metrics lead time before clinical upgrade, model-specific drift sensitivity, and correspondence with underlying CNV acquisition.",
+    "why_this_data": "Longitudinal biopsy embeddings from a dedicated surveillance cohort enable the first systematic characterization of foundation model stability versus true biological evolution in Barrett\u2019s progression.",
+    "impact": 4,
+    "compute": "~100 GPU-hours"
+  }
+]

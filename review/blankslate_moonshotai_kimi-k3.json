@@ -1,0 +1,107 @@
+[
+  {
+    "title": "Morphology-to-CNA foundation model pretraining for Barrett's risk",
+    "idea": "Train a slide encoder to predict sample-level copy-number profiles (and complexity metrics like segment count) from H&E in SWGCohort, then use learned embeddings + CNA-derived features in a Cox model for progression to HGD/cancer. Tests whether morphology-visible chromosomal instability adds prognostic signal beyond pathologist grade.",
+    "data_used": [
+      "SWGCohort",
+      "precomputed FM embeddings"
+    ],
+    "design": "Multi-task MIL head predicting per-chromosome arm-level CNA calls from tile embeddings; cross-validated C-index for progression vs. grade-only baseline; ablate with/without true CNA features. Readout: C-index, calibration, and attention-map correlation with dysplasia regions.",
+    "why_this_data": "Paired WSI + shallow WGS + longitudinal progression on surveillance biopsies is a rare combination; SWGCohort is essentially purpose-built for image-genomics risk stratification in Barrett's.",
+    "impact": 5,
+    "compute": "GPU ~200-400 h"
+  },
+  {
+    "title": "Cross-foundation-model consensus atlas of Barrett's-to-EAC continuum",
+    "idea": "Systematically compare all five precomputed FM embedding spaces on the same slides: clustering, retrieval, and agreement on dysplasia grading across SWGCohort, ERIN, and OCCAMS. Identify where models agree (robust morphology) and disagree (model-specific artifacts), and which FM best predicts grade and progression.",
+    "data_used": [
+      "SWGCohort",
+      "ERIN",
+      "OCCAMS",
+      "precomputed FM embeddings"
+    ],
+    "design": "Per-model MIL for grade classification and progression Cox; inter-model embedding-space alignment via Procrustes/CKA; consensus-vs-single-model prognostic comparison. Readout: benchmark table across 5 FMs x 3 cohorts, plus a public 'which FM for GI pathology' recommendation.",
+    "why_this_data": "Five FM embeddings precomputed for every slide across three complementary GI cohorts is exactly what's needed for the definitive GI FM bake-off \u2014 nearly free since features exist.",
+    "impact": 4,
+    "compute": "GPU ~100-200 h"
+  },
+  {
+    "title": "LLM-jury longitudinal phenotyping of 21k GI pathology reports",
+    "idea": "Apply the 8-model local LLM jury to ERIN + Barrett's specialist database reports (21k reports) to extract structured diagnoses, dysplasia grades, and timestamps, then reconstruct population-scale longitudinal disease trajectories. Validate against rule-based labels and SWGCohort pathologist grades.",
+    "data_used": [
+      "ERIN",
+      "Barrett's specialist database",
+      "SWGCohort"
+    ],
+    "design": "Run jury extraction with inter-LLM agreement as a confidence score; audit a stratified sample manually; build per-patient timelines and estimate transition rates (e.g., LGD->HGD dwell times). Readout: extraction accuracy vs rule-based baseline and a longitudinal atlas of Barrett's natural history at unprecedented scale.",
+    "why_this_data": "The jury pipeline exists, reports are on-cluster (no data leaves), and 21k longitudinal free-text reports are unusable by conventional means \u2014 LLM extraction is the unlock.",
+    "impact": 4,
+    "compute": "GPU ~300-500 h (inference-heavy)"
+  },
+  {
+    "title": "Predicting TP53 mutation and whole-genome doubling from H&E in EAC",
+    "idea": "Train MIL classifiers on OCCAMS resections to predict TP53 status, ploidy, and WGD from morphology, externally validated on TCGA-ESCA. Establish which genomic drivers of EAC are morphologically visible and whether image-predicted genomics stratify survival.",
+    "data_used": [
+      "OCCAMS",
+      "TCGA-ESCA",
+      "precomputed FM embeddings"
+    ],
+    "design": "Per-FM MIL for each genomic label; OCCAMS train -> TCGA-ESCA external test; Cox models of survival using image-predicted vs true genomic features. Readout: external AUCs and survival stratification (log-rank, C-index).",
+    "why_this_data": "OCCAMS full WGS gives gold-standard WGD/ploidy labels rarely available with WSIs; TCGA-ESCA provides a natural external validation set with matched omics.",
+    "impact": 4,
+    "compute": "GPU ~150-300 h"
+  },
+  {
+    "title": "Morphomic progression score: does histology encode future CNA evolution?",
+    "idea": "In SWGCohort, ask whether baseline biopsy morphology predicts not just progression but the *future copy-number landscape* at progression, by linking serial samples per patient. A bold test of whether chromosomal instability trajectories are pre-visible in H&E.",
+    "data_used": [
+      "SWGCohort"
+    ],
+    "design": "For patients with serial biopsies, train MIL to predict future-sample CNA burden from baseline WSI; compare against baseline CNA features alone. Readout: prediction accuracy of future CNA burden and progression C-index gains over grade+baseline-CNA.",
+    "why_this_data": "Longitudinal paired WSI+WGS per patient within a surveillance cohort is almost unique \u2014 this question is unanswerable in cross-sectional cohorts like TCGA.",
+    "impact": 5,
+    "compute": "GPU ~200-400 h"
+  },
+  {
+    "title": "Report-conditioned slide retrieval and virtual re-review for ERIN",
+    "idea": "Build a text-image retrieval system aligning ERIN WSIs with their pathology reports using FM embeddings + local LLM embeddings, enabling semantic search ('find slides resembling this report') and flagging potential report-slide discordances for pathologist re-review.",
+    "data_used": [
+      "ERIN",
+      "precomputed FM embeddings",
+      "local LLMs"
+    ],
+    "design": "Contrastive or distillation alignment between report embeddings and slide embeddings (no extra GPU pretraining needed \u2014 fine-tune lightweight projector); evaluate retrieval R@k on held-out pairs; flag lowest-agreement pairs for audit. Readout: retrieval metrics plus yield of clinically meaningful discordances in audited subset.",
+    "why_this_data": "2,280 WSI-report pairs plus on-cluster 120B LLMs that legally can't leave the cluster \u2014 this dataset+constraint combo makes local vision-language alignment the only viable route, and it's novel.",
+    "impact": 4,
+    "compute": "GPU ~300-600 h"
+  },
+  {
+    "title": "Pan-cancer report-slide distillation with GI specialist evaluation",
+    "idea": "Use the 9,517 pan-cancer report+slide pairs from TCGA to train a general report-to-slide model, then evaluate whether generalist training helps or hurts on the specialised GI tasks (grade, progression, TP53). Quantifies the specialist-vs-generalist trade-off in pathology FMs.",
+    "data_used": [
+      "TCGA pan-cancer pairs",
+      "TCGA-ESCA/STAD",
+      "SWGCohort",
+      "OCCAMS"
+    ],
+    "design": "Train MIL/report-aligned model on pan-cancer data; fine-tune vs train-from-scratch on GI tasks; compare against each FM's frozen embeddings. Readout: task performance delta from pan-cancer pretraining across all GI endpoints.",
+    "why_this_data": "Few groups hold both 9.5k pan-cancer pairs AND deep GI-specific labelled cohorts to serve as the specialist testbed \u2014 the inventory covers both ends of the question.",
+    "impact": 3,
+    "compute": "GPU ~400-800 h"
+  },
+  {
+    "title": "Cross-cohort domain shift study and harmonisation for GI WSI foundation features",
+    "idea": "Characterise batch/site effects across SWGCohort, ERIN, OCCAMS, and TCGA GI slides in each of the five FM embedding spaces, and develop lightweight harmonisation (e.g., feature-space normalisation) that preserves biology (grade, CNA, outcome) while removing site.",
+    "data_used": [
+      "SWGCohort",
+      "ERIN",
+      "OCCAMS",
+      "TCGA-ESCA/STAD",
+      "precomputed FM embeddings"
+    ],
+    "design": "Train site classifiers on embeddings (domain shift magnitude); apply ComBat-style/adversarial harmonisation; verify biological labels remain predictable and cross-cohort models improve. Readout: site-classification AUC drop vs. biology-AUC retention, and cross-cohort generalisation gains.",
+    "why_this_data": "Four independent GI cohorts with identical five-model feature extractions is an ideal natural experiment for domain-shift science \u2014 a methodological contribution others can reuse.",
+    "impact": 3,
+    "compute": "GPU ~100-200 h"
+  }
+]

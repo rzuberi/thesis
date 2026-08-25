@@ -1,0 +1,107 @@
+[
+  {
+    "title": "Histology-to-Copy-Number Prediction in Barrett's Surveillance",
+    "idea": "Train attention-based MIL models to predict copy number alteration profiles (from shallow WGS) directly from H&E tiles in Barrett's biopsies, identifying which morphological features carry genomic signal before progression.",
+    "data_used": [
+      "SWGCohort"
+    ],
+    "design": "For each of the 707 biopsies, compute a summary CNA vector (arm-level gains/losses, genome-wide fraction altered) from the sWGS. Train five separate MIL classifiers (one per foundation model embedding) to predict binarized CNA events and a continuous genome-wide instability score. Readout: per-CNA-event AUC, correlation between predicted and observed instability scores, and attention-map overlay to localize morphologically informative regions. Validate by testing whether predicted CNA score adds prognostic value beyond pathologist grade for progression.",
+    "why_this_data": "SWGCohort is one of the very few datasets worldwide with matched H&E WSI and genome-wide copy number at the individual biopsy level in a Barrett's surveillance setting. Most histology-genomics studies use resection specimens or TCGA; this biopsy-level pairing in a pre-cancer context is essentially unique.",
+    "impact": 5,
+    "compute": "GPU-hours estimate: ~200 H200-hours (5 models \u00d7 5-fold CV \u00d7 CNA targets)"
+  },
+  {
+    "title": "LLM-Jury Pseudo-Labeling for Weakly-Supervised Progression Prediction",
+    "idea": "Use the 8-model LLM jury to extract structured progression-relevant labels (dysplasia grade, intestinal metaplasia extent, inflammation) from 7,149 ERIN reports, then train MIL classifiers on the resulting pseudo-labels, quantifying label noise and its effect on downstream model quality.",
+    "data_used": [
+      "ERIN",
+      "Barrett's specialist database",
+      "Tooling: LLM jury pipeline"
+    ],
+    "design": "Run the 8-model jury on all ERIN and Barrett's DB reports to extract structured fields (dysplasia grade, IM, inflammation, indefinite for dysplasia). Measure inter-model agreement (Fleiss' kappa) per field. Train attention-based MIL classifiers on the pseudo-labeled ERIN WSIs using only high-agreement labels as a clean subset and all labels as a noisy subset. Readout: classifier AUC on a held-out manually-annotated subset (if available) or on SWGCohort as external validation; ablation showing performance as a function of jury agreement threshold.",
+    "why_this_data": "The combination of a large WSI cohort (ERIN) with free-text reports and a ready-made multi-LLM jury pipeline is rare. The Barrett's specialist DB adds 13,645 more reports for jury calibration. Most weakly-supervised pathology studies use single-LLM extraction or rule-based methods; the jury approach with disagreement quantification is methodologically novel.",
+    "impact": 4,
+    "compute": "~50 H200-hours for jury inference (CPU-bound LLM serving on 120B models) + ~100 GPU-hours for MIL training"
+  },
+  {
+    "title": "Foundation Model Disagreement as an Uncertainty Biomarker for Barrett's Progression",
+    "idea": "Exploit the fact that five different pathology foundation models have already extracted embeddings for every slide: measure inter-model embedding disagreement per tile and per slide, and test whether high disagreement identifies biologically ambiguous or high-risk regions that predict progression.",
+    "data_used": [
+      "SWGCohort",
+      "ERIN",
+      "Precomputed features (all 5 models)"
+    ],
+    "design": "For each tile, compute pairwise cosine distances between the five embedding vectors and aggregate into a per-slide disagreement score. Test three hypotheses: (1) disagreement score is higher in progressors vs. non-progressors (SWGCohort, logistic regression + Cox); (2) high-disagreement tiles are enriched for specific histological patterns (overlay on attention maps); (3) a MIL model that uses disagreement as an additional feature outperforms any single-model MIL model. Readout: AUC, hazard ratios, calibration plots, and qualitative tile inspection.",
+    "why_this_data": "Having five different foundation model embeddings pre-extracted for the same slides is extremely uncommon \u2014 most studies use one model. The longitudinal progression labels in SWGCohort provide the clinical endpoint needed to test whether disagreement is prognostically meaningful, not just a technical artifact.",
+    "impact": 4,
+    "compute": "laptop|CPU \u2014 mostly distance computations and lightweight statistical models; ~10 GPU-hours for the augmented MIL experiment"
+  },
+  {
+    "title": "Predicting Whole-Genome Doubling from H&E in Oesophageal Adenocarcinoma",
+    "idea": "Whole-genome doubling (WGD) is a pivotal evolutionary event linked to therapy resistance and poor prognosis, yet it requires genomic assays to detect. Train MIL models to predict WGD status from diagnostic H&E slides, potentially enabling genomic stratification from routine pathology.",
+    "data_used": [
+      "OCCAMS",
+      "TCGA-ESCA",
+      "TCGA-STAD"
+    ],
+    "design": "Label OCCAMS cases as WGD+ or WGD\u2212 from the WGS-derived ploidy estimates. Train attention-based MIL classifiers on each of the five foundation model embeddings with 5-fold CV. Externally validate on TCGA-ESCA/STAD cases where WGD can be inferred from CNV data (using published thresholds on ASCAT/ABSOLUTE outputs). Readout: AUC on internal CV and external validation, attention heatmap analysis to identify morphological correlates of WGD (e.g., nuclear atypia patterns), and comparison against TP53 mutation status as a co-predictor.",
+    "why_this_data": "OCCAMS is one of the only oesophageal cohorts with full WGS (not just targeted panels) providing definitive WGD calls linked to diagnostic WSIs. TCGA provides external validation with independent WGD inference. This combination is not available for most cancer types at this scale.",
+    "impact": 5,
+    "compute": "~150 GPU-hours (5 models \u00d7 5-fold \u00d7 2 cohorts)"
+  },
+  {
+    "title": "Longitudinal Histological Trajectory Modeling in Barrett's Oesophagus",
+    "idea": "Leverage ERIN's multi-timepoint design (median 3.75-year span) to model how histological feature distributions evolve within individual patients over time, and identify trajectory signatures that precede progression.",
+    "data_used": [
+      "ERIN",
+      "SWGCohort",
+      "Precomputed features"
+    ],
+    "design": "For each patient with \u22652 timepoints, compute per-slide summary statistics (mean embedding, tile-level feature variance, attention-weighted prototypes) at each visit. Fit a mixed-effects model or a simple neural ODE to capture within-patient trajectories. Test whether the slope or curvature of specific embedding dimensions predicts progression (using SWGCohort progression labels where patients overlap, or ERIN report-extracted progression via the LLM jury). Readout: trajectory-based progression AUC vs. single-timepoint AUC; visualization of embedding-space trajectories for progressors vs. stable patients.",
+    "why_this_data": "ERIN's longitudinal design with multiple WSIs per patient over years is rare in computational pathology, where most datasets are cross-sectional. The pre-extracted embeddings make it feasible to compute trajectory features without reprocessing slides. SWGCohort provides ground-truth progression labels for validation.",
+    "impact": 5,
+    "compute": "~80 GPU-hours for embedding summarization + trajectory model training"
+  },
+  {
+    "title": "Pan-Cancer Report\u2013Slide Contrastive Pretraining for GI Transfer",
+    "idea": "Use the 9,517 pan-cancer TCGA report+slide pairs to pretrain a contrastive vision-language model that aligns pathology report text with WSI embeddings, then transfer the learned alignment to oesophageal tasks where paired data is scarcer.",
+    "data_used": [
+      "TCGA-ESCA",
+      "TCGA-STAD",
+      "TCGA pan-cancer report+slide pairs",
+      "ERIN",
+      "Precomputed features"
+    ],
+    "design": "Pretrain a lightweight projection head that maps pre-extracted WSI embeddings (from one or more foundation models) into a shared space with text embeddings from a local LLM (e.g., a 70B model encoding report text). Use InfoNCE or SigLIP-style contrastive loss on the 9,517 pairs. Downstream: freeze the vision encoder, fine-tune the projection head on ERIN (using LLM-jury-extracted labels as text anchors) for dysplasia grading. Readout: zero-shot and few-shot classification AUC on ERIN and SWGCohort compared to training from scratch; linear probe on the aligned embeddings.",
+    "why_this_data": "The 9,517 pan-cancer report+slide pairs are a massive and underused resource for contrastive pretraining in pathology. Most vision-language pathology models train on small curated datasets. The local LLM capability (up to 120B on-cluster) makes it feasible to generate high-quality text embeddings without sending data externally.",
+    "impact": 4,
+    "compute": "~300 H200-hours (pretraining on 9,517 pairs is moderate; LLM text encoding is the bottleneck)"
+  },
+  {
+    "title": "Text-Only Progression Risk Stratification in Barrett's: A Baseline and Complement to Histology",
+    "idea": "Build a progression risk model using only the 13,645 longitudinal free-text Barrett's pathology reports (no images), establishing how much prognostic information is captured in text alone, and then test whether adding histology (on the ERIN subset with images) provides additive value.",
+    "data_used": [
+      "Barrett's specialist database",
+      "ERIN",
+      "Tooling: LLM jury, rule-based labeller"
+    ],
+    "design": "Extract structured features from all 13,645 reports using the LLM jury and rule-based labeller (dysplasia grade, IM extent, inflammation, biopsy site, number of biopsies). Train a time-to-event model (Cox or discrete-time survival) on the text features alone. On the ERIN subset where both reports and WSIs exist, train a combined model (text features + MIL slide embedding) and compare concordance index. Readout: C-index for text-only vs. image-only vs. combined; calibration curves; identification of which text features carry the most prognostic weight.",
+    "why_this_data": "The 13,645-report Barrett's specialist database is a uniquely large longitudinal text corpus for this disease. Most Barrett's progression models use histology; this study quantifies the ceiling of text-only models and the marginal value of adding images, which is directly relevant to screening programs where reports exist but images may not be digitized.",
+    "impact": 3,
+    "compute": "laptop|CPU \u2014 LLM inference for label extraction (~20 H200-hours), then standard survival modeling on CPU"
+  },
+  {
+    "title": "Multi-Modal Histology\u2013Genomics Fusion for Survival Prediction in Oesophageal Adenocarcinoma",
+    "idea": "Fuse H&E WSI embeddings with full WGS-derived features (TP53 status, ploidy, WGD, mutational signatures, TMB) in a multi-modal attention model to predict overall survival in OCCAMS, testing whether the combination outperforms either modality alone and whether histology can act as a proxy for missing genomic data.",
+    "data_used": [
+      "OCCAMS",
+      "TCGA-ESCA",
+      "TCGA-STAD",
+      "Precomputed features"
+    ],
+    "design": "For OCCAMS, construct a genomic feature vector per case (TP53 mutant/WT, ploidy class, WGD status, TMB, selected mutational signatures). Concatenate or cross-attend with the MIL slide embedding. Train Cox models: (a) genomics-only, (b) histology-only, (c) fused. Validate on TCGA-ESCA/STAD with available multi-omics. Readout: concordance index, likelihood ratio tests for additive value, and a 'genomics imputation' experiment where histology embeddings predict missing genomic features to test robustness. Attention maps reveal which histological regions drive survival signal.",
+    "why_this_data": "OCCAMS provides full WGS (not panel sequencing), enabling rich genomic features like WGD, ploidy, and mutational signatures alongside WSIs \u2014 a combination available in very few oesophageal cohorts. TCGA adds external validation with independent multi-omics. The pre-extracted embeddings from five models allow testing whether fusion benefits depend on the choice of foundation model.",
+    "impact": 5,
+    "compute": "~200 GPU-hours (multi-modal model training across 5 embedding types \u00d7 5-fold \u00d7 2 cohorts)"
+  }
+]

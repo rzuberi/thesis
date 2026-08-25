@@ -1,0 +1,110 @@
+[
+  {
+    "title": "Foundation model ensemble disagreement as a cheap molecular proxy in oesophageal adenocarcinoma",
+    "idea": "Test whether disagreement (or complementarity) across five pathology foundation models predicts TP53 status, ploidy, and whole-genome doubling from H&E alone \u2014 and whether a consensus/ensemble MIL beats any single backbone. The key novelty is treating model disagreement as an uncertainty signal linked to genome-level chaos.",
+    "data_used": [
+      "OCCAMS",
+      "TCGA-ESCA",
+      "TCGA-STAD",
+      "precomputed embeddings x5"
+    ],
+    "design": "Train attention-MIL heads for TP53 mutation, WGD, and ploidy class per backbone (5x) on OCCAMS+TCGA pooled; evaluate per-backbone AUROC, then (a) late-fusion ensemble, (b) train a meta-learner on concatenated embeddings, (c) use inter-model prediction variance as an explicit feature/readout. Readout: AUROC/AUPRC per molecular target, calibration, and whether high-disagreement cases are enriched for subclonal complexity or poor survival.",
+    "why_this_data": "OCCAMS is one of very few cohorts with matched WGS (not panel) + WSIs for OAC; combined with TCGA it gives enough WGD/TP53 positives for multi-backbone benchmarking, and the embeddings are already computed so the whole study is head-training only.",
+    "impact": 4,
+    "compute": "GPU: ~200-400 GPU-hours on L40S (small attention heads)"
+  },
+  {
+    "title": "Morphological evolution of Barrett's: predicting progression from copy-number-aware longitudinal MIL",
+    "idea": "In SWGCohort, model the trajectory from non-dysplastic Barrett's to HGD/cancer using longitudinal biopsy images plus shallow WGS copy-number states, asking whether image-derived features anticipate copy-number acquisition before histology does.",
+    "data_used": [
+      "SWGCohort",
+      "precomputed embeddings"
+    ],
+    "design": "For each patient, order biopsies by time; train (a) standard MIL for progression within X years on baseline biopsies, (b) a trajectory model (recurrent attention over visit-level slide embeddings) using all timepoints, (c) multimodal variant concatenating shallow-seq CN burden features. Readout: time-dependent AUROC/C-index for progression; secondary analysis correlating MIL attention heatmaps with CN-altered regions and pathologist grade.",
+    "why_this_data": "Very few Barrett's cohorts anywhere have per-biopsy shallow WGS + WSI + outcome with 150 patients of longitudinal surveillance; the per-sample (not per-patient) genomic matching is the rare asset.",
+    "impact": 5,
+    "compute": "GPU: ~100-200 GPU-hours; trajectory models are small"
+  },
+  {
+    "title": "LLM-jury label extraction at scale: 13k Barrett's reports to a structured natural-history dataset",
+    "idea": "Use the 8-model local-LLM jury to convert 13,645 longitudinal Barrett's reports (plus ERIN's 7,149) into a structured dataset of dysplasia grade, intestinal metaplasia, segment length, and follow-up \u2014 then quantify LLM jury vs rule-based label agreement, abstention, and drift over report eras.",
+    "data_used": [
+      "Barrett's specialist database",
+      "ERIN reports",
+      "local LLM jury pipeline",
+      "rule-based labeller"
+    ],
+    "design": "Define a label schema; run jury and rules on all reports; measure inter-jury agreement, jury-vs-rules agreement, and spot-validate against a pathologist-annotated gold set (~300 reports). Then publish the derived cohort-level natural history (e.g., progression rates by baseline state). Readout: extraction F1 vs gold standard, plus epidemiological curves.",
+    "why_this_data": "13,645 longitudinal text-only reports with no images is exactly the regime where label extraction is the bottleneck; having both an LLM jury and a rule engine on the same corpus enables a rigorous methods comparison few groups can run (and no data can leave cluster, which ollama satisfies).",
+    "impact": 3,
+    "compute": "GPU: ~50-150 GPU-hours of local LLM inference"
+  },
+  {
+    "title": "Text-to-slide grounding: do pathology foundation models encode report language concepts?",
+    "idea": "Train a lightweight alignment between tile embeddings and LLM-extracted structured concepts from matched ERIN report+slide pairs (e.g., 'high-grade dysplasia', 'intestinal metaplasia', 'ulcer'), creating zero-shot concept localisation on WSIs without any manual annotation.",
+    "data_used": [
+      "ERIN",
+      "precomputed embeddings x5",
+      "local LLM jury pipeline"
+    ],
+    "design": "Extract concept labels per case via jury; train a linear/attention mapping from slide-level pooled embeddings to multi-label concepts (weak supervision); then back-project to tiles to produce concept heatmaps. Validate heatmap localisation on a small pathologist-marked set and on SWGCohort/OCCAMS where grade/genotype gives external anchors. Readout: slide-level multi-label AUROC + tile-level localisation IoU/AUC vs pathologist marks.",
+    "why_this_data": "ERIN's 2,280 matched slide+report pairs plus 9,517 pan-cancer pairs is an unusually large weakly-supervised corpus; five backbones precomputed lets you compare which foundation model's embedding space is most language-concept-aligned.",
+    "impact": 4,
+    "compute": "GPU: ~100 GPU-hours"
+  },
+  {
+    "title": "Cross-cohort generalisation stress test of progression prediction: SWGCohort vs text-derived ERIN labels",
+    "idea": "Train a Barrett's dysplasia/progression classifier on SWGCohort (gold pathology grade + outcomes) and test whether it transfers to ERIN cases labelled only by LLM-extracted report labels \u2014 quantifying the compounding error of text-derived labels and domain shift in a clinically realistic deployment simulation.",
+    "data_used": [
+      "SWGCohort",
+      "ERIN",
+      "LLM jury labels",
+      "precomputed embeddings"
+    ],
+    "design": "Train MIL for HGD vs NDBE on SWGCohort; evaluate internally, then externally on ERIN cases with jury-derived HGD labels, stratifying by jury confidence. Also train on ERIN labels and test on SWGCohort gold labels. Readout: AUROC drop matrix (train-source x test-source x jury-confidence), identifying whether label noise or image domain shift dominates.",
+    "why_this_data": "Having one cohort with gold labels and one large cohort with only report text, same organ, same embedding pipeline, is a natural experiment for label-noise and shift methodology \u2014 a methods contribution beyond oesophagus.",
+    "impact": 4,
+    "compute": "GPU: ~100 GPU-hours"
+  },
+  {
+    "title": "Morphological signatures of whole-genome doubling and aneuploidy across five backbones",
+    "idea": "Beyond binary TP53: use OCCAMS WGS to derive continuous genome-instability metrics (fraction genome altered, LOH burden, subclonal fraction) and regress them from morphology, testing whether deep CNN features capture quantitative genomic disarray rather than just canonical mutations.",
+    "data_used": [
+      "OCCAMS",
+      "TCGA-ESCA/STAD",
+      "precomputed embeddings x5"
+    ],
+    "design": "Compute instability metrics from WGS/CNV; train MIL regression heads per backbone; readout is Spearman correlation per metric, plus survival analysis testing whether morphology-predicted instability adds prognostic value over stage. Compare backbones to see if any (e.g., GigaPath's pretrained tile graph) is distinctly better at genomic trait regression.",
+    "why_this_data": "Full WGS with subclonal deconvolution is rare; most morphology-genomics studies use panel/mutation binaries. Continuous traits change the question from 'can AI spot TP53' to 'can AI read genome structure'.",
+    "impact": 4,
+    "compute": "GPU: ~150 GPU-hours"
+  },
+  {
+    "title": "Multimodal vs unimodal survival in OAC: does WSI add to genomics, or genomics to WSI?",
+    "idea": "On OCCAMS+TCGA, systematically compare Cox-MIL on image only, WGS-derived features only, clinical only, and fused (late and attention-based early fusion), with proper cross-validation, to give a definitive answer on complementarity of morphology and genomics for oesophageal/gastric cancer prognosis.",
+    "data_used": [
+      "OCCAMS",
+      "TCGA-ESCA",
+      "TCGA-STAD",
+      "precomputed embeddings"
+    ],
+    "design": "Fit Cox attention-MIL per modality and fusion variants; readout: C-index and time-AUC with bootstrap CIs, plus a subgroup analysis (e.g., does image add most in genomically quiet / WGD-negative tumours?). Use the 9,517 pan-cancer pairs for a scaling check: does adding more report+slide data via weak labels improve the image-only model?",
+    "why_this_data": "OCCAMS WGS+survival+WSI is a uniquely deep single-disease cohort; TCGA adds two cancer types for generality; existing Cox-MIL code makes this executable immediately.",
+    "impact": 4,
+    "compute": "GPU: ~150-250 GPU-hours"
+  },
+  {
+    "title": "Foundation-model atlas of premalignancy-to-cancer: embedding space geometry across the oesophageal disease continuum",
+    "idea": "Embed all slides (Barrett's NDBE\u2192LGD\u2192HGD\u2192OAC from SWGCohort, ERIN, OCCAMS) in each of the five foundation-model spaces and study whether disease progression follows a low-dimensional manifold \u2014 a 'morphological trajectory' \u2014 and where backbones disagree about the geometry.",
+    "data_used": [
+      "SWGCohort",
+      "ERIN",
+      "OCCAMS",
+      "precomputed embeddings x5"
+    ],
+    "design": "Pool slide-level embeddings, harmonise with batch correction across cohorts, fit UMAP/parametric trajectories (e.g., diffusion pseudotime) ordered by disease stage; readout: correlation of image-space pseudotime with grade, CN burden, and progression risk; test whether patients who progress sit 'ahead' on the trajectory at baseline. Cross-backbone comparison of trajectory consistency.",
+    "why_this_data": "Few groups hold the full premalignant-to-invasive continuum for one organ with genomic anchors at both ends; precomputed embeddings make this an analysis-only project with high conceptual payoff.",
+    "impact": 3,
+    "compute": "CPU: days on CPU partition; minimal GPU"
+  }
+]

@@ -127,6 +127,14 @@ PARKED list until jointly promoted.
 
 ## PARKED
 
+- 2026-08-25 (blank-slate round): 80 further ideas from the same 10 models
+  given ONLY the data+compute inventory (no thesis framing) — synthesis in
+  docs/blankslate_ideas.md, raw in review/blankslate_*.json. Headline: 9/10
+  unprimed models converge on longitudinal trajectory modelling (which we do
+  not do); only 2/10 pose the fusion question at all — independent
+  corroboration of the reframe. Top unplanned candidates: trajectory
+  modelling, predicted-WGD-in-Barrett's as progression marker, Barrett's-DB
+  natural-history extraction, cross-FM disagreement biomarker. ALL PARKED.
 - 2026-08-25: 80 proposals from a 10-model consultation logged in
   docs/proposals_multimodel.md (raw: review/proposals_*.json). All are PARKED
   candidates pending joint promotion; top clusters: visibility learning curve

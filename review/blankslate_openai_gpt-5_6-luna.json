@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Morphology-to-genome maps of Barrett's progression",
+    "idea": "Learn whether routine H&E morphology contains spatially resolved signatures of copy-number evolution before high-grade dysplasia or cancer. The central question is whether histology can identify genomically unstable, high-risk Barrett's biopsies even when conventional grade is low.",
+    "data_used": [
+      "SWGCohort H&E WSIs",
+      "SWGCohort shallow whole-genome sequencing and copy-number profiles",
+      "SWGCohort pathologist grades and longitudinal progression outcomes",
+      "Five precomputed pathology foundation-model embeddings"
+    ],
+    "design": "Train tile-level and attention-MIL models to predict sample-level CNV burden, recurrent arm-level events, and genome-doubling-like patterns, using patient-level splits and leave-one-patient-out temporal validation. Compare embedding models and test whether adding morphology-derived genomic risk to pathologist grade improves progression prediction with Cox models, time-dependent AUC, calibration, and decision curves. Use attention maps and matched biopsy-level CNV profiles to test whether the signal is focal or diffuse.",
+    "why_this_data": "The paired H&E, shallow sequencing, grade, and longitudinal surveillance design is unusually well suited to studying non-invasive morphology-based genomic risk in premalignant tissue. Most pathology cohorts have either genomic data without serial biopsies or images without patient-specific copy-number measurements.",
+    "impact": 5,
+    "compute": "GPU-hours estimate: 300-600"
+  },
+  {
+    "title": "Report-supervised weak labels for longitudinal Barrett's risk",
+    "idea": "Turn thousands of free-text Barrett's reports into a scalable, temporally structured phenotype of dysplasia, inflammation, sampling adequacy, and progression. Use this phenotype to discover whether image models trained without manual annotation can predict future escalation and identify clinically meaningful subgroups.",
+    "data_used": [
+      "ERIN H&E WSIs and linked pathology reports",
+      "Barrett's specialist database longitudinal free-text reports",
+      "SWGCohort as an externally richer validation set",
+      "Local 8-model LLM jury and rule-based report labeller",
+      "Five precomputed pathology foundation-model embeddings"
+    ],
+    "design": "Run the LLM jury and rules over reports, quantify label agreement, adjudicate disagreement, and construct patient-timepoint labels with explicit uncertainty. Train weakly supervised MIL models for current grade, inflammation, and future dysplasia, then evaluate prospective temporal prediction and subgroup performance against extracted labels and SWGCohort outcomes. Compare report-only, image-only, and multimodal models, with calibration and error review focused on discordant cases.",
+    "why_this_data": "The combination of a large image-report corpus, a much larger longitudinal report-only Barrett's archive, and a paired genomics/outcome cohort enables label scaling plus clinically grounded validation. The local LLM jury makes nuanced phenotype extraction feasible without exporting sensitive reports.",
+    "impact": 5,
+    "compute": "GPU-hours estimate: 500-900"
+  },
+  {
+    "title": "Does whole-genome doubling leave a histological fingerprint?",
+    "idea": "Determine whether whole-genome doubling and ploidy in oesophageal adenocarcinoma are visually detectable on routine H&E. A successful model could provide a cheap proxy for aggressive evolutionary state and reveal which tumour compartments express that state morphologically.",
+    "data_used": [
+      "OCCAMS H&E WSIs",
+      "OCCAMS full WGS, TP53 status, ploidy, and whole-genome-doubling status",
+      "OCCAMS stage, treatment, and survival",
+      "TCGA-ESCA diagnostic WSIs and multi-omics",
+      "Five precomputed pathology foundation-model embeddings"
+    ],
+    "design": "Train attention-MIL classifiers for WGD, ploidy category, and TP53 status, using nested patient-level cross-validation and a TCGA external test where compatible labels can be derived. Test whether predicted WGD adds survival information beyond stage and treatment, and use attention plus tile-level clustering to distinguish tumour morphology from stroma, necrosis, or artefact. Perform ablations across foundation models and assess robustness to site and scanner shifts.",
+    "why_this_data": "OCCAMS uniquely combines resection morphology, full WGS-derived evolutionary variables, and outcomes, while TCGA supplies an independent molecularly annotated cohort. The question is both biologically consequential and unusually testable from existing features without new sequencing or tile extraction.",
+    "impact": 5,
+    "compute": "GPU-hours estimate: 250-500"
+  },
+  {
+    "title": "A pathology foundation-model benchmark for domain and label shift",
+    "idea": "Establish which pathology foundation model transfers best across Barrett's surveillance biopsies, oesophageal resections, gastric cancers, and pan-cancer reports. Rather than reporting one aggregate score, characterize when embeddings fail because of specimen type, institution, tumour biology, or label provenance.",
+    "data_used": [
+      "SWGCohort",
+      "ERIN",
+      "OCCAMS",
+      "TCGA-ESCA and TCGA-STAD",
+      "TCGA pan-cancer report-plus-slide pairs",
+      "UNI2-h, Virchow2, GigaPath, Phikon-v2, and H-Optimus-0 embeddings"
+    ],
+    "design": "Build a common suite of frozen-embedding MIL tasks: grade and progression, report-derived phenotype, molecular status, and survival. Use strict institution-, patient-, and disease-level holdouts, evaluate discrimination, calibration, subgroup robustness, and representation similarity, then test lightweight domain adaptation and model ensembling. The primary readout is a transfer matrix identifying models and adaptation strategies that generalize rather than merely win in-distribution.",
+    "why_this_data": "Few resources combine five strong pathology representations with matched small-cohort genomics, longitudinal reports, and a broad pan-cancer slide-report extension. The inventory supports a rigorous benchmark of clinical and biological transfer without the confounding of different feature-extraction pipelines.",
+    "impact": 4,
+    "compute": "GPU-hours estimate: 150-350"
+  },
+  {
+    "title": "The surveillance timeline as a patient-specific digital phenotype",
+    "idea": "Model Barrett's surveillance as a trajectory rather than a collection of independent biopsies. The aim is to discover visual and textual trajectory patterns\u2014stable, fluctuating, or steadily worsening\u2014that predict progression better than the latest biopsy grade.",
+    "data_used": [
+      "ERIN longitudinal H&E WSIs",
+      "ERIN linked pathology reports",
+      "Barrett's specialist database longitudinal reports",
+      "SWGCohort serial biopsies and progression outcomes",
+      "Five precomputed pathology foundation-model embeddings",
+      "Local LLM jury and rule-based report labeller"
+    ],
+    "design": "Create patient-level sequences of image embeddings, extracted report phenotypes, sampling intervals, and uncertainty, then compare last-observation, pooled-MIL, recurrent/transformer, and time-to-event models. Evaluate future dysplasia or cancer prediction using patient-level temporal splits, time-dependent C-index/AUC, calibration, and net reclassification over current grade. Cluster learned trajectories and validate whether clusters differ in progression, biopsy burden, or apparent sampling instability.",
+    "why_this_data": "Repeated observations over several years are available at unusually large scale, while SWGCohort provides a smaller but outcome- and genomics-anchored test bed. Combining image and report trajectories can separate true biological change from reporting variation and biopsy sampling noise.",
+    "impact": 5,
+    "compute": "GPU-hours estimate: 400-800"
+  },
+  {
+    "title": "Learning what pathologists say is visible but not structured",
+    "idea": "Quantify which report concepts are recoverable from H&E alone and which require clinical context or microscopic interpretation beyond current image models. This creates an empirical map from narrative diagnostic language to visual evidence rather than treating reports as a single noisy label.",
+    "data_used": [
+      "ERIN H&E WSIs and free-text reports",
+      "Barrett's specialist database reports",
+      "TCGA-ESCA, TCGA-STAD, and pan-cancer report-plus-slide pairs",
+      "Local 8-model LLM jury and rule-based report labeller",
+      "Five precomputed pathology foundation-model embeddings"
+    ],
+    "design": "Extract a controlled ontology of morphology, diagnosis, grade, margins, inflammation, treatment effect, and uncertainty, retaining sentence-level provenance and jury disagreement. Train separate MIL models per concept, compare image-only performance with report-language baselines, and measure concept transfer across oesophageal, gastric, and pan-cancer domains. Inspect attention and counterfactual tile retrieval for high-confidence predictions, with the main readout being a calibrated visibility-versus-contextibility profile.",
+    "why_this_data": "The linked reports are rich enough to support fine-grained concepts, while the pan-cancer extension tests whether apparent visual associations are disease-specific or generic. Multiple labelers and rule-based extraction permit direct study of label uncertainty, a neglected issue in report-supervised computational pathology.",
+    "impact": 4,
+    "compute": "GPU-hours estimate: 300-700"
+  },
+  {
+    "title": "Genomic instability as a bridge between premalignant and invasive disease",
+    "idea": "Test whether a common morphology-to-genome axis links Barrett's progression biopsies to aggressive oesophageal adenocarcinoma. This could reveal a continuous visual signature of instability spanning disease stages rather than separate classifiers for Barrett's and cancer.",
+    "data_used": [
+      "SWGCohort H&E, shallow WGS, grades, and outcomes",
+      "OCCAMS H&E, WGS, WGD, ploidy, TP53, and outcomes",
+      "TCGA-ESCA H&E and multi-omics",
+      "Five precomputed pathology foundation-model embeddings"
+    ],
+    "design": "Learn a shared embedding or ordinal risk axis using CNV burden and WGD/ploidy targets, with cohort-specific heads and strict cohort holdouts. Test monotonicity across normal-appearing/low-grade/high-grade Barrett's and invasive tumours, then assess whether the axis predicts progression or survival after grade/stage adjustment. Use domain-adversarial or harmonization baselines to determine whether shared biology survives differences in biopsy versus resection material.",
+    "why_this_data": "Only this inventory places premalignant serial biopsies with CNV and progression beside WGS-characterized invasive cancers and independent TCGA material. The unusual cross-stage pairing enables a biological continuity question that cannot be answered from a single cancer cohort.",
+    "impact": 5,
+    "compute": "GPU-hours estimate: 500-1000"
+  },
+  {
+    "title": "Uncertainty-aware pathology AI for ambiguous dysplasia",
+    "idea": "Use disagreement among rules, multiple local LLMs, pathologist grades, longitudinal evidence, and genomic risk as a measurable phenotype rather than simply filtering uncertain labels. Study whether cases that confuse both humans and models are enriched for real biological risk or for sampling and reporting artefacts.",
+    "data_used": [
+      "SWGCohort pathologist grades, H&E, CNV, and progression outcomes",
+      "ERIN H&E and linked reports",
+      "Barrett's specialist database reports",
+      "LLM jury outputs and rule-based labels",
+      "Five precomputed pathology foundation-model embeddings"
+    ],
+    "design": "Construct several uncertainty measures: inter-LLM disagreement, rule-versus-LLM disagreement, model predictive entropy, temporal label instability, and image-report discordance. Train calibrated models that predict both progression and disagreement, then test whether uncertainty strata have distinct CNV burden, biopsy repeat patterns, and outcomes after adjusting for grade. Evaluate selective prediction, abstention curves, and whether adding uncertainty improves triage compared with confidence alone.",
+    "why_this_data": "This resource uniquely contains multiple independent sources of ambiguity plus a genomically measured surveillance cohort with outcomes. It supports studying uncertainty as clinically informative heterogeneity, not merely as a nuisance caused by incomplete annotation.",
+    "impact": 4,
+    "compute": "GPU-hours estimate: 250-550"
+  }
+]
