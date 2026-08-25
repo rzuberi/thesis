@@ -50,24 +50,35 @@ MATERIALS:
 done = 0
 for m in MODELS:
     if done >= MAX_REVIEWERS: break
-    body = json.dumps({"model": m, "max_tokens": 6000, "temperature": 0.3,
+    body = json.dumps({"model": m, "max_tokens": 16000, "temperature": 0.3,
+                       "reasoning": {"effort": "low"},
                        "messages": [{"role": "user", "content": PROMPT}]}).encode()
     req = urllib.request.Request("https://openrouter.ai/api/v1/chat/completions",
                                  data=body, headers={"Authorization": f"Bearer {KEY}",
                                                      "Content-Type": "application/json"})
+    tag = m.replace("/", "_").replace(".", "_").replace(":", "_")
+    if glob.glob(os.path.join(OUT, f"review_frontier_w2_{tag}.json")):
+        print(f"{m}: already done"); done += 1; continue
     try:
         r = json.loads(urllib.request.urlopen(req, timeout=900).read())
-        txt = r["choices"][0]["message"]["content"]
+        msg = r["choices"][0]["message"]
+        txt = msg.get("content") or msg.get("reasoning_content") or msg.get("reasoning") or ""
         usage = r.get("usage", {})
     except Exception as e:
         print(f"{m}: SKIP ({type(e).__name__}: {str(e)[:120]})")
         continue
-    tag = m.replace("/", "_").replace(".", "_").replace(":", "_")
+    if not txt.strip():
+        print(f"{m}: SKIP (empty content; keys={list(msg)})"); continue
     start, end = txt.find("["), txt.rfind("]") + 1
     try:
         crits = json.loads(txt[start:end])
     except Exception:
-        crits = [{"raw": txt}]
+        # salvage a truncated array: keep up to the last complete object
+        cut = txt.rfind("}")
+        try:
+            crits = json.loads(txt[start:cut + 1] + "]")
+        except Exception:
+            crits = [{"raw": txt}]
     json.dump(crits, open(os.path.join(OUT, f"review_frontier_w2_{tag}.json"), "w"), indent=2)
     print(f"{m}: {len(crits)} criticisms | tokens {usage.get('prompt_tokens')}+{usage.get('completion_tokens')}")
     done += 1
