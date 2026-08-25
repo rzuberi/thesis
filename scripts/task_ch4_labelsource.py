@@ -54,5 +54,20 @@ for src, ytr in sources.items():
     ref = oof.get("jury") if src != "jury" else None
     res[src] = bootstrap_auc(oof[src], y_eval, prob_b=ref)
     print(src, res[src], flush=True)
+
+# 1.15 cross-evaluation matrix: every trained model scored against every label
+# source (restricted to slides that source labels), so no single source is both
+# teacher and judge unchallenged.
+res["cross_eval"] = {}
+for esrc, ye in sources.items():
+    ek = [k for k in keys if k in ye]
+    for tsrc in oof:
+        sub_o = {k: oof[tsrc][k] for k in ek}
+        res["cross_eval"][f"train_{tsrc}_eval_{esrc}"] = bootstrap_auc(sub_o, ye)
+        print(f"train={tsrc} eval={esrc} n={len(ek)}",
+              res["cross_eval"][f"train_{tsrc}_eval_{esrc}"], flush=True)
+np.savez(os.path.join(OUT, "oof_preds.npz"),
+         **{s: np.array([oof[s][k] for k in keys]) for s in oof},
+         keys=np.array(keys))
 json.dump(res, open(os.path.join(OUT, "results.json"), "w"), indent=2)
 print("wrote results.json")
