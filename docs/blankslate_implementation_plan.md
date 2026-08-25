@@ -4,6 +4,11 @@
 Destination honesty: these are appendix/paper candidates unless results earn
 chapter status. Each item: design, data, script, jobs, decisive readout.
 The report-slide contrastive/VLM cluster stays PARKED (excluded by Rehan).
+Selection rule (Rehan, same day): implement NOVEL ideas as signal/feasibility
+tests; skip reinventions of completed work unless they HARDEN it — 2.26 is
+retained under the hardening clause (jury validated against structured truth
+at 13k scale), all other retained items are novel; fusion re-runs, basic
+probes, and encoder benchmarks were excluded as reinventions.
 
 ## 2.24 Longitudinal trajectory modelling (9/10 unprimed convergence)
 
