@@ -1,0 +1,52 @@
+{
+  "audit_sample": {
+    "n": 78,
+    "agreement": 0.8205,
+    "top_confusions": {
+      "plad=CANCER|jury=NDBE": 9,
+      "plad=LGD|jury=NDBE": 2,
+      "plad=CANCER|jury=LGD": 1
+    }
+  },
+  "fresh_all": {
+    "n": 6867,
+    "agreement": 0.8168,
+    "top_confusions": {
+      "plad=CANCER|jury=NDBE": 321,
+      "plad=CANCER|jury=HGD": 37,
+      "plad=LGD|jury=NDBE": 35,
+      "plad=NDBE|jury=IND": 22,
+      "plad=NDBE|jury=LGD": 18,
+      "plad=CANCER|jury=LGD": 15
+    }
+  },
+  "fresh_negation_bearing": {
+    "n": 5406,
+    "agreement": 0.8444,
+    "top_confusions": {
+      "plad=CANCER|jury=NDBE": 300,
+      "plad=LGD|jury=NDBE": 34,
+      "plad=CANCER|jury=HGD": 29,
+      "plad=NDBE|jury=IND": 15,
+      "plad=CANCER|jury=LGD": 14,
+      "plad=NDBE|jury=LGD": 13
+    }
+  },
+  "fresh_non_negation": {
+    "n": 1461,
+    "agreement": 0.7146,
+    "top_confusions": {
+      "plad=CANCER|jury=NDBE": 21,
+      "plad=CANCER|jury=HGD": 8,
+      "plad=NDBE|jury=IND": 7,
+      "plad=NDBE|jury=LGD": 5,
+      "plad=LGD|jury=IND": 3,
+      "plad=NDBE|jury=HGD": 2
+    }
+  },
+  "_meta": {
+    "n_audited_excluded": 79,
+    "pathladder_col": "pathladder_grade",
+    "target": "jury consensus (train-eligible/adjudicated only)"
+  }
+}
