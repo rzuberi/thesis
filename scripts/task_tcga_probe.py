@@ -42,9 +42,16 @@ def probe(name, y_series):
             p.fit(X[tr], yy[tr]); oof[te] = p.predict_proba(X[te])[:, 1]
         return roc_auc_score(yy, oof)
     aucs = [run(y, s) for s in range(5)]
-    shuf = [run(np.random.RandomState(s).permutation(y), s) for s in range(5)]
-    r = {"n": len(cases), "pos": int(y.sum()), "auc": round(float(np.mean(aucs)), 3),
-         "auc_sd": round(float(np.std(aucs)), 3), "shuffled_auc": round(float(np.mean(shuf)), 3)}
+    # 50-permutation empirical null: at n<=65 with heavy class imbalance the
+    # shuffled AUC has sd ~0.1, so a 5-replicate "control" cannot be read as a
+    # pipeline check — report the null distribution and the real AUC's percentile.
+    null = [run(np.random.RandomState(s).permutation(y), s) for s in range(50)]
+    real = float(np.mean(aucs))
+    r = {"n": len(cases), "pos": int(y.sum()), "auc": round(real, 3),
+         "auc_sd": round(float(np.std(aucs)), 3),
+         "null_mean": round(float(np.mean(null)), 3),
+         "null_sd": round(float(np.std(null)), 3),
+         "null_pctile_of_real": round(float(np.mean([n_ <= real for n_ in null])), 3)}
     print(name, r)
     return r
 
