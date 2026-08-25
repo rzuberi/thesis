@@ -30,9 +30,15 @@ families is treated as established).
    there), internally, on the pre-registered protocol. It does not overturn the
    reframe — the win is single-cohort, internal-CV, winner's-curse-exposed
    (late-mean chosen among 7 families), and every external arm is null — which
-   is exactly the "where and why fusion fails to replicate" story. Residual:
-   the paired contrast against GigaPath histology (best unimodal by point,
-   AUPRC 0.609) has not been run; transcription into swg_arm.md is done.
+   is exactly the "where and why fusion fails to replicate" story. Residual
+   RESOLVED (1.13b, reproduction-gated recomputation, `results/
+   latemean_vs_gigapath_paired.json`): against GigaPath histology — the
+   strongest unimodal arm by point — ΔAUPRC +0.020 [−0.064, 0.104] and ΔAUC
+   +0.041 [−0.020, 0.103] cross zero; only ΔBrier −0.048 [−0.085, −0.011]
+   excludes it. Net verdict: fusion > histology is decisive under the
+   pre-registered primary encoder, encoder-conditional under the sweep (the
+   amended sign-flip rule applies — claim downgraded to encoder-conditional),
+   and unreplicated externally. Transcribed into swg_arm.md.
 3. **Ch3 primary endpoint circularity.** Current-grade classification reconstructs
    the pathologist's reading of the same slide — recognition, not prediction.
    FIX: progression becomes Ch3's primary estimand; grade classification moves to
