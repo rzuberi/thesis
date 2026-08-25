@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "teacher_cases": 562,
+    "erin_index_slides": 153,
+    "gates": {
+      "wgd": 0.68,
+      "tp53_mut": 0.62
+    },
+    "seeds": [
+      0,
+      1,
+      2
+    ]
+  },
+  "wgd": {
+    "teacher_cv": {
+      "n": 544,
+      "pos": 266,
+      "auc": 0.7304,
+      "auc_ci": [
+        0.6891,
+        0.7732
+      ]
+    },
+    "transfer": {
+      "n_patients": 153,
+      "progressors": 28,
+      "progression_auc_of_predicted": 0.3154,
+      "score_mean_prog": 0.3634,
+      "score_mean_nonprog": 0.5578
+    }
+  },
+  "tp53_mut": {
+    "teacher_cv": {
+      "n": 562,
+      "pos": 335,
+      "auc": 0.7635,
+      "auc_ci": [
+        0.7217,
+        0.803
+      ]
+    },
+    "transfer": {
+      "n_patients": 153,
+      "progressors": 28,
+      "progression_auc_of_predicted": 0.4486,
+      "score_mean_prog": 0.6037,
+      "score_mean_nonprog": 0.6679
+    }
+  }
+}
