@@ -56,22 +56,44 @@ def make_binary(rng, n, pos, base_auc, delta_auc, rho):
     b = z2 + mu_b * y
     return y, a, b
 
-def make_survival(rng, n, events, base_c, delta_c, rho):
-    """Exponential times; hazard = exp(beta*score); beta tuned so C≈target."""
-    z1 = rng.normal(size=n); z2 = rho * z1 + np.sqrt(1 - rho**2) * rng.normal(size=n)
-    def beta_for(c):  # empirical monotone map, tuned per draw
-        lo, hi = 0.0, 3.0
-        for _ in range(12):
-            mid = (lo + hi) / 2
-            t = rng.exponential(1 / np.exp(mid * z1[:200] if n >= 200 else mid * z1))
-            lo, hi = (mid, hi) if cindex(z1[:len(t)], t, np.ones(len(t), bool)) < c else (lo, mid)
-        return (lo + hi) / 2
-    ba, bb = beta_for(base_c), beta_for(min(base_c + delta_c, 0.99))
-    t_lat = rng.exponential(np.exp(-(ba * z1)))
-    cens = np.quantile(t_lat, events / n)
+_ALPHA_CACHE = {}
+def _alpha_for_c(target_c, events_frac):
+    """Calibrate corr(score, true risk) needed to reach target C under this
+    censoring level, on one large reference draw (deterministic seed)."""
+    key = (round(target_c, 4), round(events_frac, 3))
+    if key in _ALPHA_CACHE: return _ALPHA_CACHE[key]
+    r = np.random.RandomState(12345)
+    N = 20000
+    u = r.normal(size=N)
+    t_lat = r.exponential(np.exp(-1.5 * u))
+    cens = np.quantile(t_lat, events_frac)
     time = np.minimum(t_lat, cens); event = t_lat <= cens
-    # risk scores: a = true risk driver z1; b = z2 blended toward z1's signal more strongly
-    return time, event, z1, (bb / max(ba, 1e-6)) * (rho * z1) + np.sqrt(1 - rho**2) * z2 + (bb - ba) * z1
+    sub = r.choice(N, 3000, replace=False)
+    noise = r.normal(size=N)
+    lo, hi = 0.0, 1.0
+    for _ in range(14):
+        mid = (lo + hi) / 2
+        s_ = mid * u + np.sqrt(1 - mid**2) * noise
+        c = cindex(s_[sub], time[sub], event[sub])
+        lo, hi = (mid, hi) if c < target_c else (lo, mid)
+    _ALPHA_CACHE[key] = (lo + hi) / 2
+    return _ALPHA_CACHE[key]
+
+def make_survival(rng, n, events, base_c, delta_c, rho):
+    """True risk u drives exponential times; arm scores are noisy views of u
+    whose fidelity (alpha) is calibrated so C(a)=base, C(b)=base+delta; the two
+    arms' noise components are correlated at rho."""
+    ef = events / n
+    aa = _alpha_for_c(base_c, ef)
+    ab = _alpha_for_c(min(base_c + delta_c, 0.99), ef)
+    u = rng.normal(size=n)
+    e1 = rng.normal(size=n); e2 = rho * e1 + np.sqrt(1 - rho**2) * rng.normal(size=n)
+    a = aa * u + np.sqrt(1 - aa**2) * e1
+    b = ab * u + np.sqrt(1 - ab**2) * e2
+    t_lat = rng.exponential(np.exp(-1.5 * u))
+    cens = np.quantile(t_lat, ef)
+    time = np.minimum(t_lat, cens); event = t_lat <= cens
+    return time, event, a, b
 
 res = {"_meta": {"reps": REPS, "n_boot": N_BOOT, "deltas": DELTAS, "rhos": RHOS,
                  "cohorts": COHORTS}}
