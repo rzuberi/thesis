@@ -34,7 +34,10 @@ PARKED list until jointly promoted.
 - [x] 1.3 **pathladder ERIN failure audit** *(DONE 2026-08-20: 80 cases adjudicated by Claude — 29 yes/50 no/1 unsure; pathladder negation window widened 60->130 (10 false CANCERs fixed, TCGA validation unchanged, 12 tests pass); feasibility grader 40/40 wrong on its side. Rehan spot-check of 10 flagged cases pending)* — explain CANCER over-call (1,304 vs 843):
       sample + categorise disagreeing reports, fix patterns, re-run corpus, re-validate
       on TCGA (accuracy must not regress). Done = audit note + updated distribution.
-- [ ] 1.4 **PORPOISE baseline** on OCCAMS + TCGA-OAC (clone, env, adapt loaders).
+- [~] 1.4 **PORPOISE baseline** on OCCAMS + TCGA-OAC *(2026-08-25: repo cloned to
+      phd/mahmood_lab/PORPOISE; ships splits for 5 cancer types only — no ESCA/
+      STAD — so omics tables must be built via their Preprocessing.ipynb +
+      signatures.csv; loader adaptation is a full-session task, next up)*.
       Done = results/porpoise_baselines.json.
 - [x] 1.5 **CNV window→gene map** *(RESOLVED 2026-08-25: found already computed
       in release — lgd2_cnv_feature_gene_annotation.csv, 633 features with
