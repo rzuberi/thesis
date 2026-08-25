@@ -182,7 +182,15 @@ On return: read results against pre-registrations; deviations to log: none yet.
   transcribed into swg_arm.md + review_findings.md; 1.13b DONE 2026-08-25:
   latemean vs gigapath ΔAUPRC/ΔAUC cross zero, ΔBrier excludes; claim is
   encoder-conditional — results/latemean_vs_gigapath_paired.json); 1.14
-  OCCAMS shuffled controls + attrition flow; 1.15 Ch4 cross-evaluation matrix;
+  OCCAMS shuffled controls + attrition flow (DONE 2026-08-25,
+  results/occams_v3_shuffle.json: attrition explained — 276 h5 bags, 145 with
+  survival, 141 with genomics, 87 with all three; single-perm controls show no
+  systematic inflation but proper 50-perm nulls folded into 1.20); 1.15 Ch4 cross-evaluation matrix (DONE 2026-08-25,
+  results/ch4_labelsource_xeval.json: jury-trained and pathladder-trained models
+  interchangeable — 0.921 both on jury eval, 0.877/0.882 on pathladder eval;
+  feas-grader-trained worse everywhere, 0.848; and NO model predicts feas-grader
+  labels well, not even its own, 0.668 — label noise is asymmetric and localised
+  in the old grader, answering the circularity critique from the models' side);
   1.16 Ch1/Part A rewrite around learning-curve + population story; 1.17 TCGA
   probe control-failure debug; 1.18 multiplicity plan (Holm over one confirmatory
   contrast per chapter); 1.19 pathladder negation-fix revalidation on fresh
