@@ -36,8 +36,9 @@ PARKED list until jointly promoted.
       on TCGA (accuracy must not regress). Done = audit note + updated distribution.
 - [ ] 1.4 **PORPOISE baseline** on OCCAMS + TCGA-OAC (clone, env, adapt loaders).
       Done = results/porpoise_baselines.json.
-- [ ] 1.5 **CNV window→gene map** for SWG Fig 1.5 (commands referenced in
-      barretts_training docs). Done = annotated importance table.
+- [x] 1.5 **CNV window→gene map** *(RESOLVED 2026-08-25: found already computed
+      in release — lgd2_cnv_feature_gene_annotation.csv, 633 features with
+      cancer-gene annotation; copied to data/, transcribed into swg_arm.md)*
 
 ### Writing (no dependencies)
 - [x] 1.6 **ERIN Ch3 pre-registration** *(docs/erin_ch3_preregistration.md, 2026-08-19; amended by consensus-label decision)* — primary endpoint (grade vs progressed_to_HGDplus),

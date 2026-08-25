@@ -82,9 +82,12 @@ Attention maps exist for eight selected cases (true positives, false negatives,
 and one copy-number-rescue case where histology missed and CNV caught the
 progressor), regenerated from the final fold checkpoints [TO CHECK: regeneration
 from final checkpoints was listed as pending in PROJECT_STATE]. Per-fold
-copy-number feature importances are exported and aggregated; the window-to-gene
-annotation map is still to be built, so regional importance is currently reported
-in genomic coordinates rather than gene names.
+copy-number feature importances are exported and aggregated, and the
+window-to-gene annotation map exists in the release
+(`data/lgd2_cnv_feature_gene_annotation.csv`, 633 features): the top-ranked
+importance regions annotate to canonical oesophageal drivers — chr20p
+(CDC25B, FOXA2), chr11q (CCND1, ATM, FGF3/4/19), chr7p (EGFR), and chr17p
+(TP53) — so regional importance is reportable in gene terms.
 
 ## Limitations
 
