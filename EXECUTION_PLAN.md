@@ -186,6 +186,13 @@ On return: read results against pre-registrations; deviations to log: none yet.
   (results/fm_disagreement.json — disagreement ~uncorrelated with jury entropy
   (rho 0.04), flags unsure at 0.52 AUC, progression 0.52; appendix negative).
   Both were cheap signal tests; correctly killed.
+  2.28 promoted 2026-08-26 (joint, Rehan: "Maybe you should still implement
+  the VLM rebuild then"): report-slide vision-language alignment, un-parked.
+  Signal test first per the standing rule: lightweight projection from pooled
+  slide embeddings into a text-embedding space trained contrastively on ERIN
+  slide-report pairs; readouts = slide->report retrieval vs chance and
+  zero-shot grading vs the supervised probe. Full contrastive pretraining on
+  the 9,517 TCGA pairs only if the signal test passes.
   2.24b promoted same night (joint, Rehan: "The Barrett's (image+cnv) dataset
   is a good candidate for the trajectory idea"): SWG joint morphology+CNV
   trajectories on the strict pre-event cohort with FROZEN release folds —
