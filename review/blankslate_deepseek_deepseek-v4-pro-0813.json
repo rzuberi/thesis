@@ -1,0 +1,106 @@
+[
+  {
+    "title": "Multi-Foundation Embedding Ensemble for Barrett\u2019s Progression Risk from Surveillance Biopsies",
+    "idea": "Exploit five precomputed pathology foundation model embeddings for the same SWG biopsies to build an ensemble attention-MIL classifier that predicts progression to HGD/cancer, integrating shallow WGS copy-number features. The diversity of embeddings may capture complementary morphological cues that no single model captures.",
+    "data_used": [
+      "SWGCohort"
+    ],
+    "design": "For each of the five embedding sets, train an attention-MIL model on SWG biopsies with progression outcome as binary/censored target using 5-fold cross-validation; fuse slide-level predictions via stacking or late averaging. Add arm-level copy-number features from shallow WGS as auxiliary inputs. Readout: time-dependent AUC, C-index, and comparison with pathologist grade.",
+    "why_this_data": "SWGCohort uniquely pairs WSIs, shallow WGS copy-number, longitudinal progression outcomes, and pathologist grade in Barrett\u2019s surveillance, with all five foundation embeddings already extracted.",
+    "impact": 4,
+    "compute": "GPU: ~300 H200-hours"
+  },
+  {
+    "title": "Longitudinal Weak-Supervision from Free-Text Reports to Train Dynamic WSI Progression Models",
+    "idea": "Use the local 8-model LLM jury to extract longitudinal dysplasia grades and progression endpoints from ERIN reports, then train a time-dependent attention-MIL survival model on the corresponding WSIs. This unlocks a large imaged cohort with no structured labels.",
+    "data_used": [
+      "ERIN",
+      "Barrett's specialist database",
+      "SWGCohort"
+    ],
+    "design": "Run the LLM jury on ERIN reports to produce per-biopsy diagnoses (non-dysplastic, indefinite, low-grade, high-grade, cancer) and dates; validate against SWG pathologist labels on overlapping patterns. Train attention-MIL with Cox loss on ERIN slide sequences, treating grade changes as time-varying covariates. Readout: time-dependent AUC and concordance on held-out ERIN and external SWG.",
+    "why_this_data": "ERIN provides 2,280 imaged cases with longitudinal free-text reports but no structured labels; the local LLM jury can extract labels without data leaving the cluster, and SWG offers a validation anchor.",
+    "impact": 5,
+    "compute": "GPU: ~500 H200-hours; CPU: ~2,000 CPU-hours for LLM inference"
+  },
+  {
+    "title": "Histological Imputation of Copy-Number Alterations and Whole-Genome Doubling for Unlabelled Oesophageal Cohorts",
+    "idea": "Train a model to predict TP53 status, whole-genome doubling, ploidy, and arm-level copy-number alterations directly from WSI embeddings, then apply it to the large ERIN cohort to infer molecular events and link them to report-derived progression.",
+    "data_used": [
+      "OCCAMS",
+      "SWGCohort",
+      "TCGA-ESCA + TCGA-STAD",
+      "ERIN"
+    ],
+    "design": "Train attention-MIL multi-task heads on paired WSI+WGS/shallow WGS data from OCCAMS, SWG, and TCGA to predict TP53 mutation, WGD, and selected arm-level CNAs. Validate on held-out OCCAMS, then deploy on ERIN WSIs. Correlate inferred molecular events with LLM-extracted progression endpoints. Readout: AUROC for molecular events, correlation with known CNAs, hazard ratios for progression.",
+    "why_this_data": "Paired molecular data exist only for limited cohorts, while ERIN offers a huge imaged cohort with longitudinal text; this combination enables molecular epidemiology without new sequencing.",
+    "impact": 5,
+    "compute": "GPU: ~600 H200-hours"
+  },
+  {
+    "title": "Benchmarking and Fusing Five Pathology Foundation Models Across the Oesophageal Neoplastic Spectrum",
+    "idea": "Systematically compare the five precomputed foundation model embeddings on the same oesophageal tasks\u2014dysplasia grading, molecular subtype prediction, and survival\u2014using linear probing and MIL, then test fusion strategies to identify complementary strengths.",
+    "data_used": [
+      "SWGCohort",
+      "OCCAMS",
+      "TCGA-ESCA + TCGA-STAD"
+    ],
+    "design": "For each embedding set, train linear probes or lightweight MIL heads for SWG path grade, OCCAMS TP53/WGD, TCGA molecular subtypes, and Cox survival in OCCAMS/TCGA. Evaluate zero-shot kNN and linear probing performance. Fuse embeddings via concatenation or late fusion. Readout: balanced accuracy, C-index, and embedding similarity analyses.",
+    "why_this_data": "The same WSIs already have five different foundation embeddings across Barrett\u2019s, EAC, and gastric cancer, enabling a controlled comparison rarely possible elsewhere.",
+    "impact": 3,
+    "compute": "GPU: ~200 H200-hours"
+  },
+  {
+    "title": "Report-Aligned Vision-Language Features for Zero-Shot Barrett\u2019s Dysplasia Grading",
+    "idea": "Use paired WSI\u2013free-text report data from ERIN and TCGA to train a contrastive alignment between slide embeddings and local LLM embeddings of reports, then perform zero-shot classification of Barrett\u2019s dysplasia using text prompts.",
+    "data_used": [
+      "ERIN",
+      "TCGA-ESCA + TCGA-STAD",
+      "SWGCohort"
+    ],
+    "design": "Encode reports with a local LLM (e.g., 8B or 70B) to obtain text embeddings; aggregate WSI tile embeddings via attention-MIL; train InfoNCE contrastive loss between slide and report embeddings. Evaluate zero-shot retrieval and classification on SWG patch/slide level using prompts like 'high-grade dysplasia'. Readout: zero-shot accuracy, retrieval precision, attention maps.",
+    "why_this_data": "Large paired image-report corpus in oesophageal pathology plus local LLM allows secure language supervision, enabling text-promptable histology without manual labels.",
+    "impact": 4,
+    "compute": "GPU: ~800 H200-hours; CPU/GPU: ~1,000 hours for LLM text embedding"
+  },
+  {
+    "title": "Pan-Cancer Slide-Report Pre-training for Oesophageal and Gastric Risk Stratification",
+    "idea": "Leverage the 9,517 TCGA pan-cancer report+slide pairs to pretrain a general slide-level model using report-derived labels, then fine-tune on oesophageal/gastric tasks to improve sample efficiency and performance.",
+    "data_used": [
+      "TCGA pan-cancer report+slide pairs",
+      "SWGCohort",
+      "OCCAMS",
+      "ERIN"
+    ],
+    "design": "Pretrain an attention-MIL model on pan-cancer WSIs to predict cancer type, grade, and stage from foundation embeddings using report-derived labels. Fine-tune on SWG progression, OCCAMS survival, and ERIN weak labels. Compare with training from scratch. Readout: target-task AUC/C-index and transfer learning benefit.",
+    "why_this_data": "Access to 9,517 pan-cancer pairs plus focused oesophageal/gastric cohorts is unusual; pretraining on diverse cancers may learn general morphological features transferable to Barrett\u2019s and EAC.",
+    "impact": 4,
+    "compute": "GPU: ~1,000 H200-hours"
+  },
+  {
+    "title": "Multi-Modal Trajectory Transformer for Barrett\u2019s Progression Integrating Serial Biopsy CNAs and WSIs",
+    "idea": "Build a sequence-to-event model for Barrett\u2019s patients using serial SWG biopsies, where each biopsy is encoded by WSI embeddings plus copy-number features, to predict time to HGD/cancer with a transformer over irregularly sampled timepoints.",
+    "data_used": [
+      "SWGCohort",
+      "ERIN"
+    ],
+    "design": "Encode each SWG biopsy as a multimodal vector (attention-MIL WSI embedding + arm-level CN features). Train a transformer with time-aware positional encoding on patient sequences to predict time-to-progression under Cox loss. Validate on ERIN using LLM-extracted longitudinal grades as noisy endpoints. Readout: dynamic AUC, C-index, and comparison to single-biopsy baseline.",
+    "why_this_data": "SWG uniquely provides serial biopsies per patient with both WSI and copy-number data plus progression outcomes; ERIN adds a larger longitudinal imaging cohort for weak validation.",
+    "impact": 5,
+    "compute": "GPU: ~400 H200-hours"
+  },
+  {
+    "title": "Morphological Mapping of TP53, Ploidy and Expression Subtypes in Oesophageal Adenocarcinoma",
+    "idea": "Train MIL models to predict TP53 mutation, whole-genome doubling, ploidy, and expression subtypes from WSIs, then use attention heatmaps and local LLM report analysis to discover morphological correlates and estimate their prevalence in ERIN.",
+    "data_used": [
+      "OCCAMS",
+      "TCGA-ESCA + TCGA-STAD",
+      "ERIN",
+      "Barrett's specialist database"
+    ],
+    "design": "Train attention-MIL on OCCAMS/TCGA WSIs to predict molecular events (TP53, WGD, expression subtype). Extract high-attention tiles and cluster visual patterns; use local LLM to identify pathologist descriptors in reports associated with molecular subtypes. Apply the model to ERIN to estimate prevalence. Readout: attention maps, correlation with text descriptors, prevalence estimates.",
+    "why_this_data": "Full multi-omics plus WSIs and reports in the same tumour type, together with a large external cohort for prevalence estimation, enables a digital molecular-morphological atlas.",
+    "impact": 4,
+    "compute": "GPU: ~500 H200-hours"
+  }
+]

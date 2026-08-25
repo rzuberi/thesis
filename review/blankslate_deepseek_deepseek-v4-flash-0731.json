@@ -1,0 +1,112 @@
+[
+  {
+    "title": "Early cancer risk from longitudinal Barrett biopsies: sequence matching with copy-number fusion",
+    "idea": "Use the longitudinal surveillance cohort to train a deep survival model on the sequence of slide-level tissue representations, integrating shallow whole-genome copy-number features. This can directly predict progression to high-grade dysplasia/cancer and reveal when histology alone is not enough.",
+    "data_used": [
+      "SWGCohort (707 biopsy slides + shallow CNV)",
+      "SWGCohort outcomes",
+      "SWGCohort pathologist grade"
+    ],
+    "design": "Pool five tile-level embedding sets per biopsy to obtain one biopsy vector, then apply a temporal cross-attention (Transformer) over biopsy sequences per patient, concatenated with CNV segment-features. Train Cox coefficients on progression time with strict cross-val (LOSO or patient-group CV). Report c-index, DCA, and Kaplan\u2013Meier separation.",
+    "why_this_data": "SWGCohort is unique: it has high repetition of Barrett surveillance with a molecular phenotype and outcome labels, allowing sequence modelling with a short-time-step and hard pathology\u2014not just cross-sectional survival.",
+    "impact": 5,
+    "compute": "500 H200 GPU-hours for embedding-pool training"
+  },
+  {
+    "title": "Slide-to-Test: Contrastive stance from ERIN reports to generate weak surveillance labels",
+    "idea": "Match ERIN\u2019s H&E WSIs to traceable free-text pathology reports in a contrastive learning scheme, using LLM-extracted key phrases as text-side anchors. This can produce a slide-level representation tuned to surveillance wording applied to Barrett-grade detection.",
+    "data_used": [
+      "ERIN (2,280 WSIs)",
+      "about 7,149 ERIN pathology reports",
+      "TCGA-ESCA / TCGA-STAD reports",
+      "SWGCohort (validation reference)"
+    ],
+    "design": "Use the local LLM jury to parse each report into target attributes (e.g., 'dysplasia', 'glandular', 'atypia'), produce text encodings, slide encodings from the mean-pooled WIL array., train a contrastive projector (Image/Text). Then use the resulting embedding to classify report-level label from ERIN; evaluate in held-out ERIN and transfer to SWGCohort to predict pathologist grade.",
+    "why_this_data": "The free-text reports plus images in the same local cohort (ERIN) + TCGA text make a naturally bilingual slide-report vocabulary without needing hand-annotated slide classifications; no other cohort has such a broad survey of 7k reports.",
+    "impact": 4,
+    "compute": "GPU 300-500 (H200) hours for contrastive spots"
+  },
+  {
+    "title": "Image-based detection of whole-genome doubling in esophageal chinese from H&E",
+    "description": "Demonstrate can be inferred purely from H&E slides using OCCAMS whole-genomic labelled data, and validate at clinical genomic triage for Barrett\u2019s progression in SWCohort.",
+    "data_used": [
+      "OCCAMS H&E diagnoses",
+      "OCCAMS tail: WGD",
+      "TP53",
+      "TCGA-ESCA",
+      "SWCohort for external exploration"
+    ],
+    "design": "Train attention-based multiple-instance MIL on OCCAMS WGD / TP53 labels using all five embedding sets + dropout to predict whether WGD present; evaluate in 10-fold CV. Then apply model to SWCohort and compare derived WGD-estimate to shallow CNV copy number (e.g., GC-burden void).",
+    "why_this_unusual": "OCCAMS is the only cohort with full WGS plus resection-grade H&E; SWCohort has shallow CN to allow an independent, non-outcome-based biological correlation and error analysis.",
+    "impact": 4,
+    "compute": "100 H200 GPU-hours for MIL WGD training"
+  },
+  {
+    "title": "Genomically informed tumor architecture: which latent histo-picture segment genes",
+    "description": "Decompose H&E tile embeddings of adenocarcinomas into clusters of morphological clones, then correlate abundances with copy-number events and expression pathways from TCGA and OCCAMS.",
+    "data_used": [
+      "OCCAMS  H&E + CNV + WGD",
+      "TCGA-ESCA/TCGA-STAD (expression + mutations)",
+      "SWGCohort when feasible"
+    ],
+    "design": "Perform unsupervised clustering on each slide-treasure pool (per each foundation model), create cell-fraction exponentials (topic) per specimen. Then regress clatal fractions against genomic PCovs, TP53, PPmt, ploidy; also do GSVA pathways pan-cancer cross-cohort with expression; report pathway-enrichment overlap across levers.",
+    "why": "Figuring connectomics cross-scale: small-segment latent pathology to molecular and genomic copy\u2014 not possible with any other trio of cohorts.",
+    "impact": 4,
+    "compute": "CPU-large for clustering in memory, 30 H200 GPU-hours for MADs"
+  },
+  {
+    "title": "Detection: uncertainty from five foundation models turns into a trust signal for the clinician",
+    "description": "Use these five foundation models as sort-of an *ensemble of tumor*; measure pathologist-level disagreement among Beirut of dysplastic blocks. Predict which VHS call is most \u2018in-between\u2019.",
+    "data_used": [
+      "SWGCohort",
+      "TCGA-ESCA/TCGA-STAD",
+      "OCCAMS subset",
+      "reshuffle no outcome"
+    ],
+    "design": "For each WSI trained with a lightweight MIL one vector per tumor, ensemble CE to obtain disagreements and risk AUCs. SWCohort labels=grade; then test epense that high disagreement regions on SWGCohort are the factories of overt change to progression; derive mislabelling AUC.",
+    "why_unique": "A roster of 5 distinct precomputed features is rare; attention-based consensus means you can directly calibrate the shape of low-confidence histology.",
+    "impact": 3,
+    "compute": "cpu 10 h + 200 GPU-hours from tuning small model each"
+  },
+  {
+    "title": "Doctor-speak: the text signature of biopsy when images fail",
+    "description": "Juxtapose longitudinal text alone in Barrett\u2019s specialist database (13k reports) with slide-stage survival of SWCohort; find NLPs of report-keywords that add predictive jump to image-only model.",
+    "data_used": [
+      "Barrett\u2019s specialist database text (12,745)",
+      "ERIN (725 report/slides)",
+      "SWGCohort"
+    ],
+    "design": "Build a transformer over sentence-borrowed keywords from Barrett text-only (TM-mean of report-composed). Then merge with slide embeddings derived from image side from SWCohort (BRPP-s). Use Cox regressions with text tokens vs image representations, and do level-1 stage: text-only, image-only, hybrid. Perform likelihood and C-index on progression.",
+    "why_this_unique": "Nearly all imaging cohorts lack a text historian; the Barrett\u2019s specialist 13k longitudinal reports offer a large-only source to anchor a \u201ctext-only latent\u201d that can be fused with ERIN to the same institution.",
+    "impact": 4,
+    "compute": "CPU/GPU hours ~200 H200 for text memo median token tuning"
+  },
+  {
+    "title": "Live-on 9,517 report\u2013slide pairs: transfer of pathology language\u2013slide pre-training to esophageal area",
+    "description": "Use the large TCGA pan-cancer report+slide set (with all endable WSI and machine reports) to fine-tune a projection between path foundation-features and LLM token space: a domain-adaptive \u201cpath decoder\u201d of text. Then left it transfer to EURIN / TCGA-ESCA for transfer the between GI/adeno.",
+    "data_used": [
+      "TCGA pan-cancer reports + slides (9,517 pairs)",
+      "TCGA-ESCA/TCGA-STAD",
+      "ERIN pairs",
+      "SWGCohort (label reference)"
+    ],
+    "design": "Extract15* all slides with the given embeddings; train a 0-layer logistic projector from image embedding to a 512-d text embedding (using report paraphr // encoder). Then test cross-cop-out: on training on TCGA-STAD/ ACCA to ERIN, or on ERIN to SWC resolution; measure retrieval (TLN) agreement + a dysprofile AUC.",
+    "why": "This is one of the few feasible cases to scope generalist foundation model against broad pan GI, while keeping both image report language common across organs.",
+    "impact": 5,
+    "compute": "H200 80\u2013120 hr batch large"
+  },
+  {
+    "title": "Composite of whole-genome doubling and ploidy and histology shapea: from foundation to freeOS",
+    "description": "Build a diagnos of pathology where tumour content of morphological latent features is (fully mechanistic) that also achieves high electron microscopy sex, with direct assessment on treatment.",
+    "data_used": [
+      "OCCAMS",
+      "TCGA-STAD",
+      "ERIN",
+      "SWGCohort"
+    ],
+    "design": "Train a basic MIL-NN with a \u201cability split\u201d to predict transformation (WGD) plus survival, using: H&E embeddings + stage & reported. To measure from SHAP which latent drives WGD-author. Run feature attribution to OCCAMS CNV, isolate pathway spotting.",
+    "why": "This integration uses all of OCC visual-genomic-linked then expands to slides with text endpoint; enables conv neural expression in both biological and molecular axes.",
+    "impact": 4,
+    "compute": "GPU 400 H200 hr"
+  }
+]

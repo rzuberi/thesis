@@ -1,0 +1,133 @@
+[
+  {
+    "title": "Histological trajectories that anticipate Barrett's progression",
+    "idea": "Learn patient-level visual trajectories across serial Barrett's biopsies and test whether trajectory shape predicts future high-grade dysplasia or cancer beyond the latest pathologist grade. The central hypothesis is that subtle, cumulative morphological change is visible before a discrete diagnostic transition.",
+    "data_used": [
+      "SWGCohort",
+      "tile embeddings from all five foundation models",
+      "copy-number profiles",
+      "longitudinal progression outcomes",
+      "pathologist grades"
+    ],
+    "design": "Train temporal MIL models that aggregate biopsies within an endoscopy episode and then model serial episodes using a transformer, landmark Cox model, or recurrent survival model. Compare static latest-biopsy prediction, grade-only prediction, image-only temporal prediction, CNV-only prediction, and fused image-CNV temporal prediction using patient-level, time-aware splits. Readouts are time-dependent C-index, dynamic AUC for progression within 1/2/3 years, calibration, and visual/CNV patterns associated with high-risk trajectories.",
+    "why_this_data": "SWGCohort unusually provides matched serial H&E, sample-level copy-number information, expert grades, and progression follow-up in a surveillance setting. This enables asking whether morphology captures evolutionary risk rather than merely reproducing contemporaneous dysplasia grading.",
+    "impact": 5,
+    "compute": "GPU, 200-500 H200 GPU-hours"
+  },
+  {
+    "title": "Can H&E infer chromosomal instability evolution in Barrett's oesophagus?",
+    "idea": "Develop interpretable slide-based predictors of copy-number burden and specific chromosomal instability patterns in Barrett's surveillance biopsies, then test whether image-derived instability adds prognostic value for progression. This could establish a low-cost morphological surrogate for genomic risk stratification.",
+    "data_used": [
+      "SWGCohort",
+      "H&E WSIs",
+      "shallow whole-genome sequencing copy-number profiles",
+      "progression outcomes",
+      "five foundation-model embedding sets"
+    ],
+    "design": "Define genomic targets including genome-wide CNV burden, focal versus arm-level alteration burden, aneuploidy-like scores, and recurrently altered regions where adequately powered. Train ordinal/regression MIL models on biopsy-level images with grouped patient cross-validation, then prospectively mimic use at the earliest available surveillance timepoint. Readouts are Pearson/Spearman correlation, AUROC for high-instability states, spatial attention maps, and incremental progression prediction over grade and measured CNV.",
+    "why_this_data": "Matched shallow WGS and H&E from 707 individual Barrett's samples is uncommon, especially with longitudinal clinical endpoints. Multiple pretrained embedding families make it possible to determine whether any apparent genotype-phenotype signal is robust to representation choice.",
+    "impact": 4,
+    "compute": "GPU, 150-350 H200 GPU-hours"
+  },
+  {
+    "title": "Weakly supervised extraction of the natural history of Barrett's dysplasia from 13,645 reports",
+    "idea": "Use the local LLM jury to turn unstructured specialist reports into a longitudinal disease-state dataset, then estimate real-world transitions among non-dysplastic Barrett's, indefinite dysplasia, low-grade dysplasia, high-grade dysplasia, cancer, and post-treatment states. The project is both a clinically useful phenotyping resource and a methodological study of uncertainty-aware LLM extraction in pathology.",
+    "data_used": [
+      "Barrett's specialist database",
+      "ERIN pathology reports",
+      "ERIN longitudinal patient links",
+      "8-model local-LLM jury pipeline",
+      "rule-based report labeller"
+    ],
+    "design": "Create a schema capturing diagnosis, dysplasia grade, specimen site, certainty, treatment, surveillance recommendation, and whether a statement refers to current versus prior disease. Audit a stratified expert-labelled subset, use jury disagreement as a confidence measure, and fit multi-state survival models with interval censoring to estimate transition rates and dwell times. Readouts are extraction accuracy/F1 against adjudicated labels, calibration of uncertainty, transition matrices, and patient subgroups with distinct trajectories.",
+    "why_this_data": "The specialist database supplies unusually large Barrett's-specific longitudinal text, while ERIN offers an image-linked external setting for validation. Running a diverse LLM jury entirely on-cluster permits clinically sensitive report mining without data export.",
+    "impact": 4,
+    "compute": "CPU, 30,000-80,000 CPU-hours"
+  },
+  {
+    "title": "Report-supervised learning of oesophageal histology at scale without manual annotation",
+    "idea": "Create weak labels from ERIN pathology reports and train WSI models for clinically meaningful findings such as intestinal metaplasia, dysplasia grade, ulceration, carcinoma, treatment effect, and margin involvement. Evaluate whether report-derived supervision can produce transferable slide representations despite noisy and temporally ambiguous labels.",
+    "data_used": [
+      "ERIN",
+      "ERIN pathology reports",
+      "TCGA-ESCA",
+      "TCGA-STAD",
+      "pan-cancer report-slide pairs",
+      "five foundation-model embedding sets",
+      "local LLM jury pipeline"
+    ],
+    "design": "Link reports to slides and extract finding-specific labels with certainty and specimen-context fields; retain only high-confidence labels initially, then compare robust-loss and positive-unlabelled learning methods that incorporate low-confidence cases. Train multi-task MIL models on ERIN and test transfer to TCGA and manually reviewed subsets, including comparisons across all five embedding backbones. Readouts are AUROC/AUPRC, external-domain performance, label-efficiency curves, failure modes from report-slide mismatch, and attention localization reviewed by a pathologist.",
+    "why_this_data": "ERIN is unusually large for longitudinal oesophageal report-slide linkage, and the broader TCGA/pan-cancer corpus enables systematic study of whether report supervision generalizes across institutions and organs. Existing embeddings remove the otherwise prohibitive cost of tile-level training.",
+    "impact": 4,
+    "compute": "GPU, 300-800 H200 GPU-hours"
+  },
+  {
+    "title": "Morphological signatures of genome doubling and ploidy in oesophageal adenocarcinoma",
+    "idea": "Test whether whole-genome doubling, ploidy, TP53 disruption, and chromosomal instability leave reproducible architectural signatures in resection H&E. A stronger version asks whether these image-derived genomic phenotypes stratify survival independently of stage and treatment.",
+    "data_used": [
+      "OCCAMS",
+      "OCCAMS H&E WSIs",
+      "OCCAMS WGS including TP53, ploidy and whole-genome doubling",
+      "OCCAMS clinical outcomes",
+      "TCGA-ESCA",
+      "TCGA-STAD",
+      "five foundation-model embedding sets"
+    ],
+    "design": "Train separate and multi-task MIL models for whole-genome doubling, high ploidy, TP53 status, and CNV burden in OCCAMS using repeated patient-level cross-validation; use TCGA as an external validation cohort for harmonized targets where possible. Fit clinical survival models containing stage, treatment, image-derived genomic score, and measured genomics to distinguish prognostic association from genomic proxying. Readouts are AUROC, calibration, external validation performance, C-index, likelihood-ratio improvement over clinical covariates, and interpretable histological regions enriched in genome-doubled tumours.",
+    "why_this_data": "OCCAMS combines high-quality resection histology with WGS-derived genome doubling and ploidy, labels rarely available in pathology-image cohorts. TCGA adds multi-omic replication potential rather than leaving the project as a small single-cohort association study.",
+    "impact": 5,
+    "compute": "GPU, 250-600 H200 GPU-hours"
+  },
+  {
+    "title": "Cross-scale prediction of oesophagogastric tumour biology from H&E",
+    "idea": "Build a hierarchy of H&E predictors for molecular phenotypes spanning mutations, copy-number burden, gene-expression programmes, immune activity, and histological subtype across oesophageal and gastric cancers. Rather than chasing isolated biomarkers, identify which biological axes are consistently image-visible across cohorts and foundation models.",
+    "data_used": [
+      "TCGA-ESCA",
+      "TCGA-STAD",
+      "OCCAMS",
+      "TCGA multi-omics",
+      "OCCAMS WGS",
+      "five foundation-model embedding sets"
+    ],
+    "design": "Pre-register a compact panel of biologically motivated targets, for example chromosomal instability, proliferation, epithelial-mesenchymal transition, immune infiltration/exhaustion, TP53 alteration, ERBB2 pathway activity, and major molecular subtypes. Train multi-task and single-task MIL models in TCGA with nested patient-level validation, then test compatible genomic targets in OCCAMS and compare representation backbones. Readouts are target-wise AUROC/correlation, cross-cohort replication, performance stability across backbones, and a ranked atlas of image-visible versus non-image-visible molecular programmes.",
+    "why_this_data": "The combination of TCGA's broad multi-omics with OCCAMS's disease-specific WGS makes it possible to separate robust phenotype-genotype links from cohort-specific artifacts. Having five independent pathology foundation embeddings is particularly valuable for claims about reproducibility of morphology-biology associations.",
+    "impact": 4,
+    "compute": "GPU, 500-1,200 H200 GPU-hours"
+  },
+  {
+    "title": "Foundation-model agreement as a pathology uncertainty signal",
+    "idea": "Investigate whether disagreement among five independently pretrained pathology foundation models identifies ambiguous histology, report-label noise, out-of-distribution slides, or biologically heterogeneous tumours. This reframes model diversity from an engineering detail into a clinically actionable uncertainty measure.",
+    "data_used": [
+      "SWGCohort",
+      "ERIN",
+      "OCCAMS",
+      "TCGA-ESCA",
+      "TCGA-STAD",
+      "all five foundation-model embedding sets",
+      "pathologist grades",
+      "report-derived labels",
+      "multi-omics labels"
+    ],
+    "design": "For shared tasks such as dysplasia grade, carcinoma detection, TP53 status, and survival risk, train matched MIL heads on each embedding family under identical splits. Quantify disagreement in predictions, slide embeddings, selected tiles, and attention distributions; then test associations with inter-grade boundaries, LLM-jury disagreement, low tumour purity proxies, and external-cohort failure. Readouts are ensemble accuracy, risk-coverage curves, out-of-distribution detection AUROC, calibration, and enrichment of discordant cases for pathology review.",
+    "why_this_data": "Most studies compare one foundation model at a time; this inventory uniquely has five embeddings for every slide across several related datasets. The availability of independent labels from genomic assays, reports, grades, and outcomes allows uncertainty to be validated rather than merely visualized.",
+    "impact": 4,
+    "compute": "GPU, 250-700 H200 GPU-hours"
+  },
+  {
+    "title": "A multimodal digital-twin model for future oesophageal pathology reports",
+    "idea": "Predict the next clinically documented disease state from a patient's prior slide history, prior report text, and timing of surveillance. The goal is not autonomous diagnosis, but identifying patients whose future reports are likely to show worsening disease or cancer-related findings.",
+    "data_used": [
+      "ERIN",
+      "ERIN longitudinal WSIs",
+      "ERIN free-text pathology reports",
+      "Barrett's specialist database",
+      "SWGCohort progression outcomes",
+      "five foundation-model embedding sets",
+      "local LLM jury pipeline"
+    ],
+    "design": "Extract structured states and event dates from reports, represent each historical WSI with frozen foundation embeddings plus MIL pooling, and train a temporal multimodal model to predict the next report state or progression-related event within fixed horizons. Use strict chronological patient-level splits and compare text-only, image-only, recency-only, and fused models; externally test the progression-oriented component in SWGCohort where labels permit. Readouts are horizon-specific AUROC/AUPRC, time-dependent C-index, calibration, net benefit, and ablations showing whether images add information beyond prior textual diagnosis.",
+    "why_this_data": "ERIN uniquely combines repeated slides and reports over years, while the specialist database provides a much larger text-only longitudinal substrate and SWGCohort provides a cleaner progression endpoint. This creates a rare opportunity to model pathology as a sequence of observations rather than independent slides.",
+    "impact": 5,
+    "compute": "GPU, 400-1,000 H200 GPU-hours"
+  }
+]

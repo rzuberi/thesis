@@ -1,0 +1,105 @@
+[
+  {
+    "title": "Cross-Modality Distillation: Learning Pre-Malignant Copy Number Aberrations from Routine H&E",
+    "idea": "Use matched shallow WGS and H&E tile embeddings to train an attention MIL model that predicts genome-wide copy number alteration (CNA) burden and specific driver aneuploidies directly from routine Barrett's biopsies. Evaluate whether image-predicted genomic instability matches or outperforms pathologist grading in forecasting neoplastic progression.",
+    "data_used": [
+      "SWGCohort",
+      "OCCAMS",
+      "TCGA-ESCA + TCGA-STAD"
+    ],
+    "design": "Train MIL heads on tile embeddings (UNI2-h, Virchow2) to regress sWGS-derived CNA metrics (e.g., genome-altered fraction, recurrent amplifications) in SWGCohort. Benchmark across foundation model backbones and validate the genomic surrogate on OCCAMS/TCGA for TP53/WGD prediction. Readout is Pearson r / AUC for CNA detection and C-index/hazard ratios for progression-free survival against baseline pathologist grades.",
+    "why_this_data": "Matched sWGS and longitudinal WSI in early pre-malignant Barrett's (SWGCohort) is exceptionally rare; OCCAMS provides gold-standard WGS for late-stage anchoring across the full evolutionary continuum.",
+    "impact": 5,
+    "compute": "50-100 L40S GPU-hours"
+  },
+  {
+    "title": "Self-Supervised Longitudinal Trajectory Modeling of Barrett's Carcinogenesis",
+    "idea": "Model longitudinal WSI series per patient as morphological trajectories in embedding space to quantify patient-specific velocity toward high-grade dysplasia (HGD) and oesophageal adenocarcinoma (OAC). Transition beyond single-slide static risk estimation by capturing sub-visual, multi-year epithelial remodeling.",
+    "data_used": [
+      "ERIN",
+      "SWGCohort",
+      "Barrett's specialist database"
+    ],
+    "design": "Extract longitudinal slide pairs/triplets across ERIN and SWGCohort; train a temporal Transformer or continuous-time neural ODE over slide-level pooled embeddings to predict future morphological drift and risk of HGD/OAC. Validate downstream on SWGCohort progression endpoints and evaluate risk stratification against standard surveillance intervals. Readout is trajectory divergence separation (t-test) and time-to-progression C-index.",
+    "why_this_data": "ERIN provides thousands of longitudinal surveillance timepoints spanning nearly 4 years, while SWGCohort supplies precise ground-truth molecular and histological progression outcomes.",
+    "impact": 5,
+    "compute": "150-250 L40S GPU-hours"
+  },
+  {
+    "title": "Weakly Supervised Multi-Label Phenotyping via LLM-Report Distillation Across 5 Vision Foundation Models",
+    "idea": "Leverage an ensemble of local ~70B/120B LLMs to extract fine-grained clinical/histopathological labels (e.g., intestinal metaplasia, ulceration, dysplasia grade, architectural atypia) from 7,000+ unstructured reports, creating an automated pseudo-label engine for WSI training. Systematically benchmark feature representations across UNI2-h, Virchow2, GigaPath, Phikon-v2, and H-Optimus-0 under extreme label noise.",
+    "data_used": [
+      "ERIN",
+      "Barrett's specialist database",
+      "TCGA-ESCA + TCGA-STAD"
+    ],
+    "design": "Execute the 8-model LLM jury on ERIN reports to extract structured ontology labels with consensus confidence scores. Train multi-label MIL classifiers across all five FM embeddings; benchmark zero-shot and linear-probe transfer on TCGA expert annotations. Readouts are macro F1 scores, label-noise robustness curves, and foundation model feature-ranking leaderboards.",
+    "why_this_data": "Massive uncurated clinical text paired with WSIs in ERIN, supported by on-cluster H200s capable of hosting 70B-120B open-weights LLMs without violating data governance.",
+    "impact": 4,
+    "compute": "300-500 H200/L40S GPU-hours"
+  },
+  {
+    "title": "Histology-to-Genomics Transfer: Virtual TP53 Mutation and Whole-Genome Doubling Triage in OAC",
+    "idea": "Develop a slide-level biomarker screening tool that detects TP53 loss, whole-genome doubling (WGD), and ploidy directly from standard diagnostic resection and biopsy H&E images. Evaluate its diagnostic utility as an initial triaging tool for stratifying high-risk oesophageal and gastric cancer patients.",
+    "data_used": [
+      "OCCAMS",
+      "TCGA-ESCA + TCGA-STAD",
+      "SWGCohort"
+    ],
+    "design": "Train attention-MIL classifiers on OCCAMS and TCGA using precomputed embeddings to classify TP53 mutation status and WGD status (derived from WGS). Perform cross-cohort zero-shot testing (train on OCCAMS, test on TCGA, and vice-versa) and evaluate sensitivity in pre-malignant samples from SWGCohort. Readout is AUROC, AUPRC, and decision-curve net benefit analysis across clinical operating thresholds.",
+    "why_this_data": "OCCAMS and TCGA together provide hundreds of full WGS-characterized OAC cases with unambiguous ground truth for complex structural/aneuploidy events like WGD and TP53 inactivation.",
+    "impact": 4,
+    "compute": "80-120 L40S GPU-hours"
+  },
+  {
+    "title": "Comparative Stress-Testing of Pathology Foundation Models on Atypical Gastrointestinal Morphology",
+    "idea": "Conduct a definitive comparative benchmark of five leading pathology foundation models (UNI2-h, Virchow2, GigaPath, Phikon-v2, H-Optimus-0) across diverse tasks: pre-malignant dysplasia grading, genomic alteration prediction, and long-term patient survival. Identify domain-specific failure modes, embedding geometry collapses, and context-window advantages.",
+    "data_used": [
+      "SWGCohort",
+      "ERIN",
+      "OCCAMS",
+      "TCGA-ESCA + TCGA-STAD"
+    ],
+    "design": "Standardize linear probe, k-NN, and attention-MIL protocols across all 5 extracted feature sets on identical downstream tasks (dysplasia vs non-dysplasia, survival C-index in OCCAMS/TCGA, report keyword retrieval in ERIN). Probe slide representations for token-length scaling (evaluating GigaPath long-context vs local-aggregation models). Readouts are rank correlation matrices, task-specific macro F1/AUC, and spatial attention heatmaps.",
+    "why_this_data": "All 5 state-of-the-art foundation model embeddings are already precomputed across the entire multi-cohort gastrointestinal spectrum, saving hundreds of GPU hours of inference.",
+    "impact": 3,
+    "compute": "50-80 CPU/L40S GPU-hours"
+  },
+  {
+    "title": "Text-Guided Morphological Subtyping via Latent Report-Slide Alignment",
+    "idea": "Align slide-level representations directly with structured pathology descriptions from free-text reports using a contrastive vision-language formulation, enabling zero-shot retrieval of rare histological patterns in Barrett's surveillance (e.g., buried metaplasia, subtle foveolar dysplasia).",
+    "data_used": [
+      "ERIN",
+      "Barrett's specialist database",
+      "TCGA-ESCA + TCGA-STAD"
+    ],
+    "design": "Encode report text summaries (generated via local LLM jury) using medical text encoders and align them with aggregated WSI embeddings using a slide-level contrastive loss (InfoNCE). Test zero-shot classification and text-query tile retrieval on unseen TCGA/ERIN test sets. Readouts are retrieval top-k accuracy, zero-shot AUROC for rare sub-pathologies, and qualitative inspection of top-attended tiles.",
+    "why_this_data": "ERIN and the Barrett's database offer over 20,000 domain-specific reports paired with thousands of WSIs, providing an ideal substrate for text-supervision without manual box annotations.",
+    "impact": 4,
+    "compute": "100-150 L40S GPU-hours"
+  },
+  {
+    "title": "Survival-Aware Multi-Task MIL: Disentangling Prognostic Stromal Signals from Intrinsic Tumour Grades",
+    "idea": "Disentangle the prognostic contributions of microenvironmental stroma versus epithelial atypia in oesophageal adenocarcinoma using multi-task Cox-MIL with morphological attention clustering. Determine if spatial stroma-to-epithelium feature ratios predict post-resection recurrence better than standard TNM staging.",
+    "data_used": [
+      "OCCAMS",
+      "TCGA-ESCA + TCGA-STAD"
+    ],
+    "design": "Cluster precomputed tile embeddings into morphologically distinct sub-concepts (epithelial, immune, reactive stroma) using unsupervised tile-clustering. Train an attention MIL Cox model with concept-level sparsity constraints to regress overall and disease-specific survival. Readout is concordance index (C-index), calibration curves, and hazard ratios in multivariable Cox models adjusted for stage, margin status, and adjuvant therapy.",
+    "why_this_data": "OCCAMS and TCGA provide curated surgical resection specimens with complete clinical staging, treatment, and long-term overall survival outcomes.",
+    "impact": 4,
+    "compute": "40-60 L40S GPU-hours"
+  },
+  {
+    "title": "Spatial-Genomic Evolutionary Trajectory Reconstruction in Barrett's Neoplasia",
+    "idea": "Construct a slide-level spatial clonal heterogeneity index by mapping sWGS-derived subclonal CNA diversity back onto spatial H&E tile embeddings. Test whether high morphological-genomic discordance within a single biopsy predicts accelerated progression to high-grade dysplasia.",
+    "data_used": [
+      "SWGCohort",
+      "OCCAMS"
+    ],
+    "design": "Compute localized morphological entropy across tile embeddings within each WSI in SWGCohort and correlate with sample-level genomic clone counts from shallow WGS. Train an attention MIL model regularized to identify intra-slide phenotypic variance and evaluate its predictive power for neoplastic progression in prospective surveillance. Readout is odds ratios for 3-year progression, correlation between phenotypic variance and genomic subclonal architecture, and Kaplan-Meier separation.",
+    "why_this_data": "SWGCohort provides biopsy-level paired shallow WGS and histology with definitive progression tracking, enabling direct correlation between spatial phenotypic variance and clonal architecture.",
+    "impact": 5,
+    "compute": "60-100 L40S GPU-hours"
+  }
+]
