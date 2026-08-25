@@ -150,6 +150,10 @@ On return: read results against pre-registrations; deviations to log: none yet.
   Part A's claim must be revised from "not recoverable" to "partially recoverable
   at scale; the fusion question becomes complementarity beyond what is visible."
   Stage from H&E: 0.644. Age: 0.569.
+- 2026-08-25 (joint, Rehan proposal): added 2.21 thesis red-team review — local
+  model jury (4 models) + one fresh-context Claude agent critique the plan, drafts,
+  pre-registrations and results digest; criticisms must cite specific claims;
+  cross-model convergence ranks severity. Complements, never replaces, human review.
 - 2026-08-23 (joint, Rehan proposal): added 2.20 attention-shift study — does
   conditioning histologic attention on genomics change where the model looks?
   Conditional-ABMIL vs plain vs permuted-genomics control on the TCGA pool;
