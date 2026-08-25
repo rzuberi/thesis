@@ -67,6 +67,15 @@ families is treated as established).
 - (Grok) pathladder's negation fix was derived from the same error sample used to
   declare the competing grader wrong — label-function leakage; revalidate the
   widened window on a fresh sample.
+  DONE 2026-08-25 (results/negation_revalidation.json): on 6,867 fresh
+  confident-jury reports, pathladder-vs-jury agreement is 0.817 (audit sample:
+  0.821 — no optimism gap, so the 80-case audit was not flattering), but the
+  CANCER over-call persists: 321 fresh plad=CANCER vs jury=NDBE confusions,
+  300 of them negation-bearing. The widened window generalises only partially;
+  Grok's concern was material. Consequence for Ch4: pathladder is a strong
+  cheap baseline (~82% vs jury), not a substitute — which the label-source
+  experiment already showed at the model level (jury-trained = pathladder-
+  trained downstream AUC).
 - (DeepSeek) the encoder-sweep pre-reg's "headline stays the primary config" rule
   insulates claims from falsification — amend: a sign flip in the sweep DOWNGRADES
   the claim.
