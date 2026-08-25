@@ -133,234 +133,234 @@
   },
   "occams_v3": {
     "rho0.6_d0.01": {
-      "power": 0.02,
+      "power": 0.03,
       "runs": 200
     },
     "rho0.6_d0.02": {
-      "power": 0.01,
+      "power": 0.065,
       "runs": 200
     },
     "rho0.6_d0.03": {
-      "power": 0.015,
+      "power": 0.145,
       "runs": 200
     },
     "rho0.6_d0.05": {
-      "power": 0.0,
+      "power": 0.315,
       "runs": 200
     },
     "rho0.6_d0.075": {
-      "power": 0.005,
+      "power": 0.495,
       "runs": 200
     },
     "rho0.6_d0.1": {
-      "power": 0.005,
+      "power": 0.845,
       "runs": 200
     },
-    "rho0.6_min_detectable_80": null,
+    "rho0.6_min_detectable_80": 0.1,
     "rho0.8_d0.01": {
-      "power": 0.01,
+      "power": 0.07,
       "runs": 200
     },
     "rho0.8_d0.02": {
-      "power": 0.0,
+      "power": 0.085,
       "runs": 200
     },
     "rho0.8_d0.03": {
-      "power": 0.0,
+      "power": 0.23,
       "runs": 200
     },
     "rho0.8_d0.05": {
-      "power": 0.01,
+      "power": 0.485,
       "runs": 200
     },
     "rho0.8_d0.075": {
-      "power": 0.01,
+      "power": 0.79,
       "runs": 200
     },
     "rho0.8_d0.1": {
-      "power": 0.0,
+      "power": 0.93,
       "runs": 200
     },
-    "rho0.8_min_detectable_80": null,
+    "rho0.8_min_detectable_80": 0.1,
     "rho0.9_d0.01": {
-      "power": 0.0,
+      "power": 0.06,
       "runs": 200
     },
     "rho0.9_d0.02": {
-      "power": 0.0,
+      "power": 0.205,
       "runs": 200
     },
     "rho0.9_d0.03": {
-      "power": 0.0,
+      "power": 0.38,
       "runs": 200
     },
     "rho0.9_d0.05": {
-      "power": 0.025,
+      "power": 0.645,
       "runs": 200
     },
     "rho0.9_d0.075": {
-      "power": 0.01,
+      "power": 0.945,
       "runs": 200
     },
     "rho0.9_d0.1": {
-      "power": 0.01,
+      "power": 0.965,
       "runs": 200
     },
-    "rho0.9_min_detectable_80": null
+    "rho0.9_min_detectable_80": 0.075
   },
   "tcga_oac": {
     "rho0.6_d0.01": {
-      "power": 0.015,
-      "runs": 200
-    },
-    "rho0.6_d0.02": {
-      "power": 0.005,
-      "runs": 200
-    },
-    "rho0.6_d0.03": {
       "power": 0.01,
       "runs": 200
     },
+    "rho0.6_d0.02": {
+      "power": 0.075,
+      "runs": 200
+    },
+    "rho0.6_d0.03": {
+      "power": 0.13,
+      "runs": 200
+    },
     "rho0.6_d0.05": {
-      "power": 0.03,
+      "power": 0.24,
       "runs": 200
     },
     "rho0.6_d0.075": {
-      "power": 0.02,
+      "power": 0.415,
       "runs": 200
     },
     "rho0.6_d0.1": {
-      "power": 0.015,
+      "power": 0.59,
       "runs": 200
     },
     "rho0.6_min_detectable_80": null,
     "rho0.8_d0.01": {
-      "power": 0.01,
+      "power": 0.055,
       "runs": 200
     },
     "rho0.8_d0.02": {
-      "power": 0.03,
+      "power": 0.11,
       "runs": 200
     },
     "rho0.8_d0.03": {
-      "power": 0.03,
+      "power": 0.15,
       "runs": 200
     },
     "rho0.8_d0.05": {
-      "power": 0.005,
+      "power": 0.31,
       "runs": 200
     },
     "rho0.8_d0.075": {
-      "power": 0.015,
+      "power": 0.56,
       "runs": 200
     },
     "rho0.8_d0.1": {
-      "power": 0.005,
+      "power": 0.86,
       "runs": 200
     },
-    "rho0.8_min_detectable_80": null,
+    "rho0.8_min_detectable_80": 0.1,
     "rho0.9_d0.01": {
-      "power": 0.015,
+      "power": 0.07,
       "runs": 200
     },
     "rho0.9_d0.02": {
-      "power": 0.02,
+      "power": 0.1,
       "runs": 200
     },
     "rho0.9_d0.03": {
-      "power": 0.02,
+      "power": 0.21,
       "runs": 200
     },
     "rho0.9_d0.05": {
-      "power": 0.0,
+      "power": 0.53,
       "runs": 200
     },
     "rho0.9_d0.075": {
-      "power": 0.01,
+      "power": 0.82,
       "runs": 200
     },
     "rho0.9_d0.1": {
-      "power": 0.01,
+      "power": 0.935,
       "runs": 200
     },
-    "rho0.9_min_detectable_80": null
+    "rho0.9_min_detectable_80": 0.075
   },
   "tcga_pool": {
     "rho0.6_d0.01": {
-      "power": 0.005,
+      "power": 0.1,
       "runs": 200
     },
     "rho0.6_d0.02": {
-      "power": 0.0,
+      "power": 0.195,
       "runs": 200
     },
     "rho0.6_d0.03": {
-      "power": 0.0,
+      "power": 0.355,
       "runs": 200
     },
     "rho0.6_d0.05": {
-      "power": 0.005,
+      "power": 0.815,
       "runs": 200
     },
     "rho0.6_d0.075": {
-      "power": 0.0,
+      "power": 1.0,
       "runs": 200
     },
     "rho0.6_d0.1": {
-      "power": 0.0,
+      "power": 1.0,
       "runs": 200
     },
-    "rho0.6_min_detectable_80": null,
+    "rho0.6_min_detectable_80": 0.05,
     "rho0.8_d0.01": {
-      "power": 0.005,
+      "power": 0.12,
       "runs": 200
     },
     "rho0.8_d0.02": {
-      "power": 0.015,
+      "power": 0.395,
       "runs": 200
     },
     "rho0.8_d0.03": {
-      "power": 0.015,
+      "power": 0.67,
       "runs": 200
     },
     "rho0.8_d0.05": {
-      "power": 0.01,
+      "power": 0.965,
       "runs": 200
     },
     "rho0.8_d0.075": {
-      "power": 0.005,
+      "power": 1.0,
       "runs": 200
     },
     "rho0.8_d0.1": {
-      "power": 0.02,
+      "power": 1.0,
       "runs": 200
     },
-    "rho0.8_min_detectable_80": null,
+    "rho0.8_min_detectable_80": 0.05,
     "rho0.9_d0.01": {
-      "power": 0.015,
+      "power": 0.23,
       "runs": 200
     },
     "rho0.9_d0.02": {
-      "power": 0.005,
+      "power": 0.59,
       "runs": 200
     },
     "rho0.9_d0.03": {
-      "power": 0.02,
+      "power": 0.925,
       "runs": 200
     },
     "rho0.9_d0.05": {
-      "power": 0.025,
+      "power": 1.0,
       "runs": 200
     },
     "rho0.9_d0.075": {
-      "power": 0.01,
+      "power": 1.0,
       "runs": 200
     },
     "rho0.9_d0.1": {
-      "power": 0.025,
+      "power": 1.0,
       "runs": 200
     },
-    "rho0.9_min_detectable_80": null
+    "rho0.9_min_detectable_80": 0.03
   },
   "erin_grade": {
     "rho0.6_d0.01": {
