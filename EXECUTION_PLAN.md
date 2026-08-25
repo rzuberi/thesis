@@ -178,6 +178,14 @@ On return: read results against pre-registrations; deviations to log: none yet.
   docs/blankslate_implementation_plan.md BEFORE execution. VLM/contrastive
   Ch4 rebuild stays PARKED per Rehan. Destination: appendix/papers unless
   results earn chapter status.
+  OUTCOMES same night: 2.24 NO SIGNAL (results/erin_trajectory.json — naive
+  trajectory features significantly WORSE than snapshot, -0.070 [-0.123,
+  -0.018]; GRU merely matches; root cause: only 32/153 progression patients
+  have >=2 imaged timepoints — an acquisition gap, not a modelling verdict;
+  appendix negative + data-collection recommendation). 2.27 NULL
+  (results/fm_disagreement.json — disagreement ~uncorrelated with jury entropy
+  (rho 0.04), flags unsure at 0.52 AUC, progression 0.52; appendix negative).
+  Both were cheap signal tests; correctly killed.
 - 2026-08-25 late (joint, Rehan): PROMOTED from the consultation's parked list:
   2.22 genotype-visibility learning curve, n x population disentangled
   (TCGA-OAC / OCCAMS-OAC / OAC-combined / STAD-GEJ / mixed strata, matched-n
