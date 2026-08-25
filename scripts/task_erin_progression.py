@@ -40,12 +40,20 @@ labels_all = pd.read_csv(T + "/labeller/erin_labels_jury_final.csv", dtype=str)
 labels_all["date"] = pd.to_datetime(labels_all["CollectedOrOrdered"], errors="coerce", dayfirst=True)
 labels_all["num"] = labels_all["final_label"].map(NUM)
 hist = labels_all.dropna(subset=["date"]).sort_values("date")
-clin = {}
+# 1.23 leakage ablation: three clinical variants.
+#   full       — reports up to and including the index date (original arm)
+#   strict_pre — landmarked: strictly before the index date (Terra-Pro design)
+#   noprior    — grade history dropped entirely (count + duration only)
+clin_variants = {"full": {}, "strict_pre": {}, "noprior": {}}
 for _, r in idx.iterrows():
-    pri = hist[(hist["anon_id"] == r["anon_id"]) & (hist["date"] <= r["index_date"])]
-    pn = pri["num"].dropna()
-    clin[r["h5"]] = [float(pn.max()) if len(pn) else -1.0, float(len(pri)),
-                     float((r["index_date"] - pri["date"].min()).days) if len(pri) else -1.0]
+    upto = hist[(hist["anon_id"] == r["anon_id"]) & (hist["date"] <= r["index_date"])]
+    before = upto[upto["date"] < r["index_date"]]
+    for vname, pri in (("full", upto), ("strict_pre", before)):
+        pn = pri["num"].dropna()
+        clin_variants[vname][r["h5"]] = [float(pn.max()) if len(pn) else -1.0, float(len(pri)),
+                                         float((r["index_date"] - pri["date"].min()).days) if len(pri) else -1.0]
+    clin_variants["noprior"][r["h5"]] = clin_variants["full"][r["h5"]][1:]
+clin = clin_variants["full"]
 
 bags = {}
 for _, r in idx.iterrows():
@@ -55,16 +63,21 @@ y = dict(zip(idx["h5"], idx["y"].astype(int)))
 pat = dict(zip(idx["h5"], idx["anon_id"]))
 keys = sorted(bags)
 folds = patient_folds(keys, pat, y, 5, seed=0)
-C = np.array([clin[k] for k in keys]); Ck = {k: i for i, k in enumerate(keys)}
+Ck = {k: i for i, k in enumerate(keys)}
 
-def clin_fold(tr, te, seed):
-    sc = StandardScaler().fit(C[[Ck[k] for k in tr]])
-    lr = LogisticRegression(max_iter=2000, class_weight="balanced")
-    lr.fit(sc.transform(C[[Ck[k] for k in tr]]), [y[k] for k in tr])
-    return dict(zip(te, map(float, lr.predict_proba(sc.transform(C[[Ck[k] for k in te]]))[:, 1])))
+def make_clin_fold(vname):
+    Cv = np.array([clin_variants[vname][k] for k in keys])
+    def clin_fold(tr, te, seed):
+        sc = StandardScaler().fit(Cv[[Ck[k] for k in tr]])
+        lr = LogisticRegression(max_iter=2000, class_weight="balanced")
+        lr.fit(sc.transform(Cv[[Ck[k] for k in tr]]), [y[k] for k in tr])
+        return dict(zip(te, map(float, lr.predict_proba(sc.transform(Cv[[Ck[k] for k in te]]))[:, 1])))
+    return clin_fold
 
 arms = {"hist_abmil": lambda tr, te, s: train_abmil_clf_fold(bags, tr, te, y, s),
-        "clin_only": clin_fold}
+        "clin_only": make_clin_fold("full"),
+        "clin_strict_pre": make_clin_fold("strict_pre"),
+        "clin_noprior": make_clin_fold("noprior")}
 oof = {}
 for name, fn in arms.items():
     per = []
@@ -76,12 +89,14 @@ for name, fn in arms.items():
         per.append(o); print(name, "seed", s, "done", flush=True)
     oof[name] = {k: float(np.mean([p[k] for p in per])) for k in keys}
 oof["late_fusion"] = {k: (oof["hist_abmil"][k] + oof["clin_only"][k]) / 2 for k in keys}
+oof["late_fusion_strict_pre"] = {k: (oof["hist_abmil"][k] + oof["clin_strict_pre"][k]) / 2 for k in keys}
+oof["late_fusion_noprior"] = {k: (oof["hist_abmil"][k] + oof["clin_noprior"][k]) / 2 for k in keys}
 
 res = {"_meta": {"n_slides": len(keys), "n_patients": int(idx["anon_id"].nunique()),
                  "progressor_patients": int(idx.groupby("anon_id")["y"].max().sum()),
                  "endpoint": "progressed_to_HGDplus", "seeds": SEEDS}}
 for name, o in oof.items():
-    ref = oof["hist_abmil"] if name == "late_fusion" else None
+    ref = oof["hist_abmil"] if name.startswith("late_fusion") else None
     res[name] = bootstrap_auc(o, y, prob_b=ref)
     print(name, res[name], flush=True)
 json.dump(res, open(os.path.join(OUT, "results.json"), "w"), indent=2)
