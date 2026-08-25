@@ -4,13 +4,17 @@
     "pos": 54,
     "auc": 0.355,
     "auc_sd": 0.083,
-    "shuffled_auc": 0.557
+    "null_mean": 0.474,
+    "null_sd": 0.13,
+    "null_pctile_of_real": 0.2
   },
   "wgd": {
     "n": 58,
     "pos": 36,
     "auc": 0.429,
     "auc_sd": 0.037,
-    "shuffled_auc": 0.505
+    "null_mean": 0.517,
+    "null_sd": 0.08,
+    "null_pctile_of_real": 0.14
   }
 }
