@@ -191,6 +191,14 @@ On return: read results against pre-registrations; deviations to log: none yet.
   trajectories on the strict pre-event cohort with FROZEN release folds —
   snapshot vs trajectory vs GRU, plus Kimi's future-CNV-from-current-H&E
   secondary. scripts/task_swg_trajectory.py.
+  2.25 OUTCOME (results/wgd_transfer.json): teachers PASSED in-domain gates
+  (WGD CV 0.730, TP53 0.764, n=544-562 resections) but transfer to ERIN
+  surveillance biopsies INVERTED — predicted-WGD scores progression at AUC
+  0.315 (progressors score LOWER). Verdict: specimen-type domain shift defeats
+  in-domain-validated genotype predictors; 'virtual biomarker' claims do not
+  survive resection->biopsy transfer. Strong cautionary negative for Ch2/Ch5;
+  2.25b (SWG side with measured CNV as ground truth) still worthwhile to test
+  whether the inversion is a calibration or a ranking failure.
 - 2026-08-25 late (joint, Rehan): PROMOTED from the consultation's parked list:
   2.22 genotype-visibility learning curve, n x population disentangled
   (TCGA-OAC / OCCAMS-OAC / OAC-combined / STAD-GEJ / mixed strata, matched-n
