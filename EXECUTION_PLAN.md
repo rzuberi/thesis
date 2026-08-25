@@ -161,6 +161,13 @@ On return: read results against pre-registrations; deviations to log: none yet.
   Part A's claim must be revised from "not recoverable" to "partially recoverable
   at scale; the fusion question becomes complementarity beyond what is visible."
   Stage from H&E: 0.644. Age: 0.569.
+- 2026-08-25 late (joint, Rehan): PROMOTED from the consultation's parked list:
+  2.22 genotype-visibility learning curve, n x population disentangled
+  (TCGA-OAC / OCCAMS-OAC / OAC-combined / STAD-GEJ / mixed strata, matched-n
+  subsampling, permutation nulls) — scripts/task_visibility_curve.py;
+  2.23 power map, minimum detectable fusion delta per cohort (semi-synthetic
+  injection, paired-bootstrap detection probability, MDD at 80% power) —
+  scripts/task_power_map.py. Both submitted to epyc same day.
 - 2026-08-25 evening (wave-2 review, 5 blind frontier families — see
   docs/review_findings.md addendum): reframe survives blind review but must be
   presented as hypothesis-generating (HARKing defence = amendment trail). New
