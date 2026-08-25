@@ -186,6 +186,11 @@ On return: read results against pre-registrations; deviations to log: none yet.
   (results/fm_disagreement.json — disagreement ~uncorrelated with jury entropy
   (rho 0.04), flags unsure at 0.52 AUC, progression 0.52; appendix negative).
   Both were cheap signal tests; correctly killed.
+  2.24b promoted same night (joint, Rehan: "The Barrett's (image+cnv) dataset
+  is a good candidate for the trajectory idea"): SWG joint morphology+CNV
+  trajectories on the strict pre-event cohort with FROZEN release folds —
+  snapshot vs trajectory vs GRU, plus Kimi's future-CNV-from-current-H&E
+  secondary. scripts/task_swg_trajectory.py.
 - 2026-08-25 late (joint, Rehan): PROMOTED from the consultation's parked list:
   2.22 genotype-visibility learning curve, n x population disentangled
   (TCGA-OAC / OCCAMS-OAC / OAC-combined / STAD-GEJ / mixed strata, matched-n
