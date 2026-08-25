@@ -1,7 +1,9 @@
 # Thesis plan v2 — status-annotated (2026-08-14)
 
-**Central hypothesis:** adding a second modality to a histology model improves a
-clinically useful prediction, and the benefit replicates across independent cohorts.
+**Central question (reframed 2026-08-25, joint — see EXECUTION_PLAN amendment):**
+where and why does adding a second modality to a histology model fail to replicate
+across cohorts in oesophageal cancer — and how should the report-derived
+supervision such studies depend on be validated?
 **Secondary claim:** genomic state is not recoverable from H&E alone, so fusion is
 necessary, not a convenience.
 

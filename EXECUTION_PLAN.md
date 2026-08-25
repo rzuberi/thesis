@@ -150,6 +150,26 @@ On return: read results against pre-registrations; deviations to log: none yet.
   Part A's claim must be revised from "not recoverable" to "partially recoverable
   at scale; the fusion question becomes complementarity beyond what is visible."
   Stage from H&E: 0.644. Age: 0.569.
+- 2026-08-25 (JOINT REFRAME, Rehan's conditional approval executed on convergence
+  evidence): central claim REVISED. Old: "adding a second modality improves
+  prediction and the benefit replicates." New working framing: "WHERE AND WHY
+  multimodal fusion fails to replicate in oesophageal cancer, and how to validate
+  report-derived supervision." Basis: docs/review_findings.md — five independent
+  reviewers across four model families converged that no cohort shows fusion
+  beating the best unimodal arm, while the negatives, the label-quality
+  infrastructure, and the visibility/attention analyses are the defensible
+  contributions. Chapters keep their experiments; their QUESTIONS are recast:
+  Ch2 = when does genomics help histology and when not (SWG vs OCCAMS/TCGA);
+  Ch3 = progression as primary estimand (grade-classification moves to Ch4);
+  Ch4 = validating report-derived supervision (now the methodological core);
+  Ch5 = why fusion fails to replicate: labels, power, population, comparators.
+  New fix items from the review: R.4 pathologist ground-truth sample (~250
+  reports) — REQUIRED; 1.13 SWG fusion-vs-histology CI (TOP PRIORITY); 1.14
+  OCCAMS shuffled controls + attrition flow; 1.15 Ch4 cross-evaluation matrix;
+  1.16 Ch1/Part A rewrite around learning-curve + population story; 1.17 TCGA
+  probe control-failure debug; 1.18 multiplicity plan (Holm over one confirmatory
+  contrast per chapter); 1.19 pathladder negation-fix revalidation on fresh
+  sample; encoder-sweep pre-reg amended: a sign flip downgrades the claim.
 - 2026-08-25 (joint, Rehan proposal): added 2.21 thesis red-team review — local
   model jury (4 models) + one fresh-context Claude agent critique the plan, drafts,
   pre-registrations and results digest; criticisms must cite specific claims;
