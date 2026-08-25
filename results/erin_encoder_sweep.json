@@ -1,0 +1,332 @@
+{
+  "uni2": {
+    "_meta": {
+      "n_slides": 2153,
+      "n_patients": 1574,
+      "pos": 528,
+      "endpoint": "NDBE vs LGD+",
+      "seeds": [
+        0,
+        1,
+        2
+      ]
+    },
+    "hist_abmil": {
+      "auc": 0.9255,
+      "auc_ci": [
+        0.9082,
+        0.94
+      ]
+    },
+    "clin_only": {
+      "auc": 0.7562,
+      "auc_ci": [
+        0.7329,
+        0.779
+      ]
+    },
+    "early_fusion": {
+      "auc": 0.8928,
+      "auc_ci": [
+        0.8747,
+        0.9107
+      ],
+      "delta_vs_ref": {
+        "mean": -0.0321,
+        "ci": [
+          -0.0466,
+          -0.0174
+        ]
+      }
+    },
+    "late_fusion": {
+      "auc": 0.9312,
+      "auc_ci": [
+        0.917,
+        0.9443
+      ],
+      "delta_vs_ref": {
+        "mean": 0.0059,
+        "ci": [
+          -0.005,
+          0.0175
+        ]
+      }
+    }
+  },
+  "virchow2": {
+    "_meta": {
+      "n_slides": 2153,
+      "n_patients": 1574,
+      "pos": 528,
+      "endpoint": "NDBE vs LGD+",
+      "seeds": [
+        0,
+        1,
+        2
+      ]
+    },
+    "hist_abmil": {
+      "auc": 0.9116,
+      "auc_ci": [
+        0.8931,
+        0.9282
+      ]
+    },
+    "clin_only": {
+      "auc": 0.7562,
+      "auc_ci": [
+        0.7329,
+        0.779
+      ]
+    },
+    "early_fusion": {
+      "auc": 0.8633,
+      "auc_ci": [
+        0.8419,
+        0.8836
+      ],
+      "delta_vs_ref": {
+        "mean": -0.048,
+        "ci": [
+          -0.0655,
+          -0.0304
+        ]
+      }
+    },
+    "late_fusion": {
+      "auc": 0.924,
+      "auc_ci": [
+        0.9089,
+        0.9388
+      ],
+      "delta_vs_ref": {
+        "mean": 0.0124,
+        "ci": [
+          0.0014,
+          0.0246
+        ]
+      }
+    }
+  },
+  "gigapath": {
+    "_meta": {
+      "n_slides": 2153,
+      "n_patients": 1574,
+      "pos": 528,
+      "endpoint": "NDBE vs LGD+",
+      "seeds": [
+        0,
+        1,
+        2
+      ]
+    },
+    "hist_abmil": {
+      "auc": 0.9164,
+      "auc_ci": [
+        0.8995,
+        0.932
+      ]
+    },
+    "clin_only": {
+      "auc": 0.7562,
+      "auc_ci": [
+        0.7329,
+        0.779
+      ]
+    },
+    "early_fusion": {
+      "auc": 0.8628,
+      "auc_ci": [
+        0.8414,
+        0.8831
+      ],
+      "delta_vs_ref": {
+        "mean": -0.0536,
+        "ci": [
+          -0.0701,
+          -0.037
+        ]
+      }
+    },
+    "late_fusion": {
+      "auc": 0.9275,
+      "auc_ci": [
+        0.9124,
+        0.9415
+      ],
+      "delta_vs_ref": {
+        "mean": 0.0111,
+        "ci": [
+          0.001,
+          0.0224
+        ]
+      }
+    }
+  },
+  "phikon2": {
+    "_meta": {
+      "n_slides": 2153,
+      "n_patients": 1574,
+      "pos": 528,
+      "endpoint": "NDBE vs LGD+",
+      "seeds": [
+        0,
+        1,
+        2
+      ]
+    },
+    "hist_abmil": {
+      "auc": 0.9041,
+      "auc_ci": [
+        0.8855,
+        0.9212
+      ]
+    },
+    "clin_only": {
+      "auc": 0.7562,
+      "auc_ci": [
+        0.7329,
+        0.779
+      ]
+    },
+    "early_fusion": {
+      "auc": 0.8694,
+      "auc_ci": [
+        0.8487,
+        0.8912
+      ],
+      "delta_vs_ref": {
+        "mean": -0.0345,
+        "ci": [
+          -0.0514,
+          -0.0187
+        ]
+      }
+    },
+    "late_fusion": {
+      "auc": 0.9195,
+      "auc_ci": [
+        0.904,
+        0.9341
+      ],
+      "delta_vs_ref": {
+        "mean": 0.0154,
+        "ci": [
+          0.0046,
+          0.0278
+        ]
+      }
+    }
+  },
+  "hoptimus0": {
+    "_meta": {
+      "n_slides": 2153,
+      "n_patients": 1574,
+      "pos": 528,
+      "endpoint": "NDBE vs LGD+",
+      "seeds": [
+        0,
+        1,
+        2
+      ]
+    },
+    "hist_abmil": {
+      "auc": 0.9073,
+      "auc_ci": [
+        0.8885,
+        0.9245
+      ]
+    },
+    "clin_only": {
+      "auc": 0.7562,
+      "auc_ci": [
+        0.7329,
+        0.779
+      ]
+    },
+    "early_fusion": {
+      "auc": 0.8658,
+      "auc_ci": [
+        0.845,
+        0.8865
+      ],
+      "delta_vs_ref": {
+        "mean": -0.0412,
+        "ci": [
+          -0.0578,
+          -0.0245
+        ]
+      }
+    },
+    "late_fusion": {
+      "auc": 0.9226,
+      "auc_ci": [
+        0.9072,
+        0.9366
+      ],
+      "delta_vs_ref": {
+        "mean": 0.0154,
+        "ci": [
+          0.0043,
+          0.0277
+        ]
+      }
+    }
+  },
+  "shuffle": {
+    "_meta": {
+      "n_slides": 2153,
+      "n_patients": 1574,
+      "pos": 493,
+      "endpoint": "NDBE vs LGD+",
+      "seeds": [
+        0,
+        1,
+        2
+      ]
+    },
+    "hist_abmil": {
+      "auc": 0.4785,
+      "auc_ci": [
+        0.4496,
+        0.5089
+      ]
+    },
+    "clin_only": {
+      "auc": 0.5284,
+      "auc_ci": [
+        0.4989,
+        0.5583
+      ]
+    },
+    "early_fusion": {
+      "auc": 0.4627,
+      "auc_ci": [
+        0.4329,
+        0.4924
+      ],
+      "delta_vs_ref": {
+        "mean": -0.016,
+        "ci": [
+          -0.0498,
+          0.0166
+        ]
+      }
+    },
+    "late_fusion": {
+      "auc": 0.4828,
+      "auc_ci": [
+        0.4543,
+        0.5134
+      ],
+      "delta_vs_ref": {
+        "mean": 0.0043,
+        "ci": [
+          -0.0028,
+          0.0117
+        ]
+      }
+    }
+  }
+}
