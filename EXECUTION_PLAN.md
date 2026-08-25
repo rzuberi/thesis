@@ -185,6 +185,12 @@ On return: read results against pre-registrations; deviations to log: none yet.
   2.23 power map, minimum detectable fusion delta per cohort (semi-synthetic
   injection, paired-bootstrap detection probability, MDD at 80% power) —
   scripts/task_power_map.py. Both submitted to epyc same day.
+  2.23 DONE 2026-08-25 (v2 after survival-arm fix; results/power_map.json):
+  MDD80 at rho 0.8 — SWG 0.075, OCCAMS 0.10, TCGA-OAC 0.10, TCGA-pool 0.05,
+  ERIN-grade 0.02, ERIN-prog 0.075. Since measured fusion deltas where power
+  exists are +0.01..0.04, every external null (OCCAMS, TCGA-OAC) sat in a
+  cohort structurally unable to detect a plausible effect — the Ch5
+  quantitative core: 'failure to replicate' is largely 'failure to power'.
 - 2026-08-25 evening (wave-2 review, 5 blind frontier families — see
   docs/review_findings.md addendum): reframe survives blind review but must be
   presented as hypothesis-generating (HARKing defence = amendment trail). New
