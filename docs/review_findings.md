@@ -147,6 +147,14 @@ families + 4 local models.
 8. **Unsure-holdout selection bias** (Gemini sev-4): excluding the 206 hardest
    reports makes the reported population easier than deployment. FIX: sensitivity
    analysis scoring held-out unsure cases. Queued as 1.22.
+   DONE 2026-08-25 (results/unsure_scoring.json): confirmed and sharpened. On
+   the 59 unsure reports with imaged slides, model-vs-jury-plurality drops to
+   0.697 [0.544, 0.839] from 0.926 on train-eligible (proxy reference, not
+   truth — R.4 will replace it). Critically, model confidence barely drops on
+   the hard stratum (63% vs 73% highly-confident), so prediction confidence is
+   NOT a safe triage signal on ambiguous cases; abstention only helps on the
+   easy population (0.926 -> 0.945 deferring 20%). Chapter text must state
+   grade-model performance is population-dependent and quote both numbers.
 9. **Clinical-arm label leakage risk** (Qwen sev-3/4): prior-grade-history
    features and grade labels derive from the same report stream. FIX: ablation
    dropping prior-grade from the clinical arm. Queued as 1.23.
