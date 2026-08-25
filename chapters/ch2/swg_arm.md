@@ -56,10 +56,15 @@ late-mean was selected as the best of seven families on this same data, so the
 contrast carries winner's-curse exposure; it is reported alongside the
 pre-registered fusion-vs-CNV primary, not in place of it. Second, in the encoder
 sensitivity check GigaPath histology-alone is the best unimodal arm by point
-estimate (AUPRC 0.609 vs UNI2's 0.557); GigaPath late-mean fusion is statistically
-indistinguishable from the UNI2 headline (ΔAUPRC −0.006, CI −0.075 to 0.067), but
-the direct fusion-versus-GigaPath-histology paired contrast has not been run and
-is the one residual computation for this table.
+estimate (AUPRC 0.609 vs UNI2's 0.557), and against it the fusion advantage
+narrows: the paired bootstrap (`latemean_vs_gigapath_paired.json`, same
+methodology, reproduction-gated) gives ΔAUPRC +0.020 (95% CI −0.064 to 0.104)
+and ΔAUC +0.041 (−0.020 to 0.103), both crossing zero, with only the
+calibration gain surviving (ΔBrier −0.048, CI −0.085 to −0.011). The honest
+statement is therefore encoder-conditional: fusion beats histology-only
+decisively under the pre-registered primary encoder, but against the strongest
+swept encoder the discrimination advantage is directionally consistent and
+unresolved at n=150, and only calibration is decisively better.
 
 Early fusion (AUPRC 0.590, AUC 0.738) and intermediate fusion (0.567, 0.741)
 did not overtake late-mean fusion on AUPRC, and neither did a co-attention

@@ -167,8 +167,9 @@ On return: read results against pre-registrations; deviations to log: none yet.
   reports) — REQUIRED; 1.13 SWG fusion-vs-histology CI (TOP PRIORITY —
   RESOLVED 2026-08-25: found already computed in the strict release table
   lgd2_final_pre_event_paired_differences.csv; all three CIs exclude zero;
-  transcribed into swg_arm.md + review_findings.md; residual sub-item 1.13b:
-  paired contrast late_mean vs gigapath_image, needs cluster); 1.14
+  transcribed into swg_arm.md + review_findings.md; 1.13b DONE 2026-08-25:
+  latemean vs gigapath ΔAUPRC/ΔAUC cross zero, ΔBrier excludes; claim is
+  encoder-conditional — results/latemean_vs_gigapath_paired.json); 1.14
   OCCAMS shuffled controls + attrition flow; 1.15 Ch4 cross-evaluation matrix;
   1.16 Ch1/Part A rewrite around learning-curve + population story; 1.17 TCGA
   probe control-failure debug; 1.18 multiplicity plan (Holm over one confirmatory
