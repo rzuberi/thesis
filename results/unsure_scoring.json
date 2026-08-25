@@ -1,0 +1,54 @@
+{
+  "_meta": {
+    "n_train_eligible": 2153,
+    "n_unsure": 59,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "unsure_reference": "jury plurality (PROXY, not truth)"
+  },
+  "train_eligible_oof": {
+    "auc": 0.9255,
+    "auc_ci": [
+      0.9082,
+      0.94
+    ]
+  },
+  "pred_distribution": {
+    "train_eligible": {
+      "mean": 0.299,
+      "frac_confident": 0.732
+    },
+    "unsure": {
+      "mean": 0.404,
+      "frac_confident": 0.627
+    }
+  },
+  "unsure_vs_jury_proxy": {
+    "auc": 0.6973,
+    "auc_ci": [
+      0.544,
+      0.8386
+    ]
+  },
+  "abstention_curve": {
+    "defer_0pct": {
+      "n": 2153,
+      "auc": 0.9255
+    },
+    "defer_5pct": {
+      "n": 2045,
+      "auc": 0.9312
+    },
+    "defer_10pct": {
+      "n": 1937,
+      "auc": 0.9364
+    },
+    "defer_20pct": {
+      "n": 1722,
+      "auc": 0.9449
+    }
+  }
+}
