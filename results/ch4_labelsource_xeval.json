@@ -1,0 +1,110 @@
+{
+  "_meta": {
+    "n": 2153,
+    "endpoint": "NDBE vs LGD+ (eval labels = jury)",
+    "seeds": [
+      0,
+      1
+    ]
+  },
+  "jury": {
+    "auc": 0.9209,
+    "auc_ci": [
+      0.9038,
+      0.9357
+    ]
+  },
+  "pathladder": {
+    "auc": 0.9211,
+    "auc_ci": [
+      0.9044,
+      0.9366
+    ],
+    "delta_vs_ref": {
+      "mean": 0.0003,
+      "ci": [
+        -0.0081,
+        0.009
+      ]
+    }
+  },
+  "feas_grader": {
+    "auc": 0.8476,
+    "auc_ci": [
+      0.8251,
+      0.8691
+    ],
+    "delta_vs_ref": {
+      "mean": -0.073,
+      "ci": [
+        -0.0941,
+        -0.0525
+      ]
+    }
+  },
+  "cross_eval": {
+    "train_jury_eval_jury": {
+      "auc": 0.9209,
+      "auc_ci": [
+        0.9038,
+        0.9357
+      ]
+    },
+    "train_pathladder_eval_jury": {
+      "auc": 0.9211,
+      "auc_ci": [
+        0.9044,
+        0.9366
+      ]
+    },
+    "train_feas_grader_eval_jury": {
+      "auc": 0.8476,
+      "auc_ci": [
+        0.8251,
+        0.8691
+      ]
+    },
+    "train_jury_eval_pathladder": {
+      "auc": 0.8774,
+      "auc_ci": [
+        0.8575,
+        0.8957
+      ]
+    },
+    "train_pathladder_eval_pathladder": {
+      "auc": 0.882,
+      "auc_ci": [
+        0.8631,
+        0.9004
+      ]
+    },
+    "train_feas_grader_eval_pathladder": {
+      "auc": 0.8095,
+      "auc_ci": [
+        0.7862,
+        0.8322
+      ]
+    },
+    "train_jury_eval_feas_grader": {
+      "auc": 0.5944,
+      "auc_ci": [
+        0.5695,
+        0.6181
+      ]
+    },
+    "train_pathladder_eval_feas_grader": {
+      "auc": 0.6061,
+      "auc_ci": [
+        0.5821,
+        0.63
+      ]
+    },
+    "train_feas_grader_eval_feas_grader": {
+      "auc": 0.6683,
+      "auc_ci": [
+        0.6444,
+        0.6914
+      ]
+    }
+  }
+}

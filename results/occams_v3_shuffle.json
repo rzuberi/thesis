@@ -1,0 +1,76 @@
+{
+  "_meta": {
+    "n": 87,
+    "events": 58,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "clinical_cols": [
+      "age_at_diagnosis",
+      "ps_tstage_primary_tumour_final_pretreatment_staging",
+      "nstage_primary_tumour_final_pretreatment_staging_tnm7",
+      "mstage_primary_tumour_final_pretreatment_staging",
+      "ps7_mstage_location_of_distant_metastasis_final_pretreatment_staging",
+      "pre_treatment_performance_status",
+      "charlson_comorbidity_index"
+    ],
+    "shuffle": true,
+    "attrition": {
+      "h5_bags": 276,
+      "master_with_survival": 2247,
+      "genomics_tsv": 383,
+      "bags_and_master": 145,
+      "bags_and_genomics": 141,
+      "master_and_genomics": 225,
+      "all_three_final": 87
+    },
+    "design": "pre-registered v3: ABMIL-Cox / linear-Cox / Harrell C"
+  },
+  "hist_abmil": {
+    "c": 0.5738,
+    "c_ci": [
+      0.4997,
+      0.6475
+    ]
+  },
+  "gen_cox": {
+    "c": 0.4447,
+    "c_ci": [
+      0.3552,
+      0.5369
+    ]
+  },
+  "clin_cox": {
+    "c": 0.4031,
+    "c_ci": [
+      0.3222,
+      0.4807
+    ]
+  },
+  "late_hist_gen": {
+    "c": 0.5823,
+    "c_ci": [
+      0.5043,
+      0.6595
+    ],
+    "delta_ci": [
+      -0.0307,
+      0.0507
+    ],
+    "delta_mean": 0.0086
+  },
+  "late_hist_clin": {
+    "c": 0.5368,
+    "c_ci": [
+      0.4646,
+      0.6054
+    ],
+    "delta_ci": [
+      -0.0793,
+      0.0153
+    ],
+    "delta_mean": -0.0362
+  }
+}
