@@ -40,14 +40,18 @@ cx_val = {r[key]: pd.to_numeric(r[num_cols], errors="coerce").mean()
           for _, r in cx.iterrows()}
 print("cx cols:", num_cols[:5], flush=True)
 
+uidx = pd.read_csv(F + "/feature_views/uni2/uni2_index.csv", dtype=str)
+uidx = uidx[uidx["status"] == "ok"]
+npz_of = dict(zip(uidx["sample_id"], uidx["npz_path"]))
 emb = {}
-for i, r in enumerate(coh.itertuples()):
+for i, sid in enumerate(coh["SampleID"]):
+    if sid not in npz_of: continue
     try:
-        with h5py.File(r.ImageAbsPath) as h:
-            emb[r.SampleID] = np.asarray(h["features"]).mean(0)
+        z = np.load(npz_of[sid])
+        emb[sid] = np.asarray(z["slide_embedding_mean"])
     except Exception as e:
-        print("skip", r.SampleID, e, flush=True)
-    if i % 100 == 0: print("pooled", i, flush=True)
+        print("skip", sid, e, flush=True)
+    if i % 100 == 0: print("loaded", i, flush=True)
 coh = coh[coh["SampleID"].isin(emb)]
 print(f"pooled samples={len(coh)}", flush=True)
 
