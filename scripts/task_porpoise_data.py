@@ -20,16 +20,19 @@ WORK = os.path.join(OUT, "cbioportal")
 os.makedirs(WORK, exist_ok=True)
 STUDIES = ["esca_tcga_pan_can_atlas_2018", "stad_tcga_pan_can_atlas_2018"]
 
+FILES = ["data_clinical_patient.txt", "data_mrna_seq_v2_rsem_zscores_ref_all_samples.txt",
+         "data_mrna_seq_v2_rsem.txt", "data_cna.txt", "data_mutations.txt"]
 for st in STUDIES:
-    tgz = os.path.join(WORK, st + ".tar.gz")
-    if not os.path.exists(os.path.join(WORK, st)):
-        if not os.path.exists(tgz):
-            url = f"https://cbioportal-datahub.s3.amazonaws.com/{st}.tar.gz"
-            print("downloading", url, flush=True)
-            subprocess.run(["curl", "-sL", "-o", tgz, url], check=True)
-        with tarfile.open(tgz) as t:
-            t.extractall(WORK)
-        print("extracted", st, flush=True)
+    d = os.path.join(WORK, st); os.makedirs(d, exist_ok=True)
+    for fn in FILES:
+        dst = os.path.join(d, fn)
+        if os.path.exists(dst) and os.path.getsize(dst) > 1000: continue
+        url = f"https://media.githubusercontent.com/media/cBioPortal/datahub/master/public/{st}/{fn}"
+        print("downloading", st, fn, flush=True)
+        r = subprocess.run(["curl", "-sfL", "-o", dst, url])
+        if r.returncode != 0 or (os.path.exists(dst) and os.path.getsize(dst) < 1000):
+            print("  unavailable:", fn, flush=True)
+            if os.path.exists(dst): os.remove(dst)
 
 sig = pd.read_csv(os.path.join(P, "datasets_csv/signatures.csv"))
 genes = sorted(set(sig.values.ravel()) - {np.nan}
