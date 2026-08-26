@@ -176,7 +176,13 @@ On return: read results against pre-registrations; deviations to log: none yet.
   progression, OCCAMS<->TCGA survival landmark, ERIN->SWG grade); 2.33
   pan-cancer jury validation on TCGA-Reports vs cBioPortal structured grades
   (ESCA/STAD + KIRC + BLCA; the top-5 pre-registered jurors) — the
-  human-independent Ch4 external check. GATE: once these + PORPOISE land,
+  human-independent Ch4 external check.
+  2.32 DONE 2026-08-26 (results/transfer_matrix.json): asymmetric — the one
+  real generalisation is SWG->ERIN progression (0.744 within -> 0.640 across,
+  research cohort to routine NHS cohort, the direction that matters); all
+  other cells collapse (ERIN->SWG prog 0.54, grade 0.56, TCGA->OCCAMS 0.49) or
+  carry no signal to transfer (OCCAMS->TCGA 0.60->0.60).
+  GATE: once these + PORPOISE land,
   a wave-3 multi-LLM GAP REVIEW of the complete results corpus decides
   whether compute is done; writing starts only after that gate.
 - 2026-08-26 (joint, Rehan: full VLM pretraining + PORPOISE build + the four
