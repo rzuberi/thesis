@@ -1,0 +1,53 @@
+{
+  "_meta": {
+    "jurors": [
+      "deepseek-r1_14b",
+      "gemma3_12b",
+      "gemma3_27b",
+      "llama3.1_8b",
+      "mistral-small3.2",
+      "phi4_14b",
+      "qwen3_14b",
+      "qwen3_32b"
+    ],
+    "n_labelled": 12780,
+    "n_confident": 12255
+  },
+  "structured_value_counts": {},
+  "natural_history": {
+    "n_patients_with_sequences": 2092,
+    "transitions": {
+      "NDBE->NDBE": 5080,
+      "NDBE->IND": 326,
+      "NDBE->LGD": 279,
+      "NDBE->HGD": 114,
+      "NDBE->CANCER": 81,
+      "IND->NDBE": 474,
+      "IND->IND": 158,
+      "IND->LGD": 113,
+      "IND->HGD": 26,
+      "IND->CANCER": 16,
+      "LGD->NDBE": 408,
+      "LGD->IND": 128,
+      "LGD->LGD": 318,
+      "LGD->HGD": 63,
+      "LGD->CANCER": 31,
+      "HGD->NDBE": 201,
+      "HGD->IND": 39,
+      "HGD->LGD": 67,
+      "HGD->HGD": 157,
+      "HGD->CANCER": 97,
+      "CANCER->NDBE": 238,
+      "CANCER->IND": 23,
+      "CANCER->LGD": 38,
+      "CANCER->HGD": 82,
+      "CANCER->CANCER": 273
+    },
+    "median_years_ndbe_to_first_dysplasia": 1.06
+  },
+  "text_only_progression": {
+    "n": 8830,
+    "pos": 1573,
+    "auc": 0.6957
+  }
+}
