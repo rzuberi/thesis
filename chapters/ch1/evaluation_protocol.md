@@ -39,13 +39,14 @@ complicates them. The genotype-visibility question is the worked example: the
 first OCCAMS probe found TP53 and whole-genome doubling not predictable from H&E
 (AUC 0.48 and 0.41 at n=141), but a larger pooled analysis (n=446, adding TCGA
 gastric/GEJ cases) reached AUC 0.703 and 0.771 for the same targets. The
-reversal is not a simple sample-size effect: the pooled gain arrives with a
-population change, and the OAC-only replication at comparable n remains
-unresolved (its shuffled control failed, so it currently invalidates the
-pipeline rather than deciding the question). Chapter 2 therefore reports
-genotype visibility as conditional — on cohort size and on population — rather
-than as a settled negative or positive, and the first-pass OCCAMS fusion null
-with its pre-registered interpretation is described there.
+reversal was resolved by a matched-n learning curve across population strata
+(2026-08-26): oesophageal adenocarcinoma stays at chance at every tested n in
+two independent cohorts, while the gastric/GEJ stratum shows real signal that
+grows with n — the pooled "visibility" was a population effect, not a
+sample-size effect. Chapter 2 therefore reports genotype visibility as
+population-specific: absent in OAC (a clean two-cohort negative), present in
+gastric/GEJ; the first-pass OCCAMS fusion null with its pre-registered
+interpretation is described there.
 
 **Reproducibility.** Splits, seeds, and model configurations are versioned
 artefacts. Each final run writes an out-of-fold contract (row count, patient count,

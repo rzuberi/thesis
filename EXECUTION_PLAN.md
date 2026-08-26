@@ -210,6 +210,14 @@ On return: read results against pre-registrations; deviations to log: none yet.
   2.22 genotype-visibility learning curve, n x population disentangled
   (TCGA-OAC / OCCAMS-OAC / OAC-combined / STAD-GEJ / mixed strata, matched-n
   subsampling, permutation nulls) — scripts/task_visibility_curve.py;
+  2.22 DONE 2026-08-26 (results/visibility_curve.json): DECISIVE — visibility
+  is a POPULATION property, not a sample-size effect. OAC at chance at every n
+  (TCGA-OAC 0.36-0.45; OCCAMS flat ~0.50 to n=141; combined DECLINES to 0.42
+  at n=206) while STAD/GEJ rises with n (TP53 0.54->0.64, WGD 0.62->0.74,
+  clean nulls). Matched-n cell: at n=65, STAD 0.57/0.65 vs OAC 0.36/0.45. The
+  2026-08-21 amendment's "partially recoverable at adequate n" claim is
+  FALSIFIED and replaced: recoverable in gastric/GEJ, not in OAC. Ch2 Part A
+  reverts to a clean two-cohort OAC negative plus a population contrast.
   2.23 power map, minimum detectable fusion delta per cohort (semi-synthetic
   injection, paired-bootstrap detection probability, MDD at 80% power) —
   scripts/task_power_map.py. Both submitted to epyc same day.
