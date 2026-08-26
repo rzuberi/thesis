@@ -169,6 +169,16 @@ On return: read results against pre-registrations; deviations to log: none yet.
   Part A's claim must be revised from "not recoverable" to "partially recoverable
   at scale; the fusion question becomes complementarity beyond what is visible."
   Stage from H&E: 0.644. Age: 0.569.
+- 2026-08-26 PM (joint, Rehan): final compute closure before writing —
+  2.25b WGD teacher scored on SWG biopsies with MEASURED CNV complexity as
+  ground truth (diagnoses whether the ERIN transfer inversion is ranking or
+  calibration failure); 2.32 cross-cohort transfer matrix (SWG<->ERIN
+  progression, OCCAMS<->TCGA survival landmark, ERIN->SWG grade); 2.33
+  pan-cancer jury validation on TCGA-Reports vs cBioPortal structured grades
+  (ESCA/STAD + KIRC + BLCA; the top-5 pre-registered jurors) — the
+  human-independent Ch4 external check. GATE: once these + PORPOISE land,
+  a wave-3 multi-LLM GAP REVIEW of the complete results corpus decides
+  whether compute is done; writing starts only after that gate.
 - 2026-08-26 (joint, Rehan: full VLM pretraining + PORPOISE build + the four
   cheap analyses approved; R.4 pack deferred, no pathologist on hand):
   2.28b VLM full build = CLIP-style ERIN training with zero-shot TCGA transfer
