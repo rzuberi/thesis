@@ -1,0 +1,24 @@
+{
+  "_meta": {
+    "n": 87,
+    "seeds": [
+      0,
+      1
+    ]
+  },
+  "cindex_A": 0.5761,
+  "cindex_B": 0.569,
+  "cindex_C": 0.5758,
+  "attn_AvsB": {
+    "spearman_mean": 0.984,
+    "jaccard10_mean": 0.709
+  },
+  "attn_AvsC": {
+    "spearman_mean": 0.984,
+    "jaccard10_mean": 0.699
+  },
+  "shift_by_wgd": {
+    "spearman_wgd_pos": 0.984,
+    "spearman_wgd_neg": 0.983
+  }
+}

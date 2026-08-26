@@ -1,0 +1,22 @@
+{
+  "_meta": {
+    "n_train": 1281,
+    "n_val": 449,
+    "n_test": 423,
+    "epochs_ran": 7,
+    "max_tiles": 192
+  },
+  "erin_test": {
+    "recall_at_1": 0.0284,
+    "recall_at_5": 0.1229,
+    "chance_at_1": 0.00236,
+    "zeroshot_grade_auc": 0.8887
+  },
+  "tcga_transfer": {
+    "n_pairs": 350,
+    "recall_at_1": 0.0,
+    "recall_at_5": 0.0171,
+    "chance_at_1": 0.00286,
+    "zeroshot_site_auc": 0.7819
+  }
+}
