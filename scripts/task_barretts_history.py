@@ -54,46 +54,35 @@ rep["num"] = rep["jury_grade"].map(NUM)
 res = {"_meta": {"jurors": sorted(votes), "n_labelled": len(jury),
                  "n_confident": int((jury["jury_frac"] >= 0.75).sum())}}
 
-# (i) validation vs structured grading
-try:
-    dg = pd.read_parquet(EXP + "/dysplasiagradehistory.parquet")
-    print("dysplasiagradehistory columns:", list(dg.columns), dg.shape, flush=True)
-    res["structured_table_columns"] = list(dg.columns)
-    grade_col = next((c for c in dg.columns if "grade" in c.lower() or "dyspla" in c.lower()), None)
-    dgp = next((c for c in dg.columns if "patient" in c.lower() or "participant" in c.lower()), None)
-    dgd = next((c for c in dg.columns if "date" in c.lower() or "time" in c.lower()), None)
-    if grade_col and dgp and dgd and pid_col:
-        MAP = {"no dysplasia": "NDBE", "negative": "NDBE", "indefinite": "IND", "ind": "IND",
-               "low": "LGD", "lgd": "LGD", "high": "HGD", "hgd": "HGD",
-               "imc": "CANCER", "cancer": "CANCER", "adenocarcinoma": "CANCER", "oac": "CANCER"}
-        def map_grade(v):
-            v = str(v).lower()
-            for k, g in MAP.items():
-                if k in v: return g
-            return None
-        dg["_g"] = dg[grade_col].map(map_grade)
-        dg["_d"] = pd.to_datetime(dg[dgd], errors="coerce")
-        dgv = dg.dropna(subset=["_g", "_d"])
-        # match jury report to nearest structured grade within 30 days, same patient
-        rj = rep.dropna(subset=["date"])
-        merged = rj.merge(dgv, left_on=pid_col, right_on=dgp, suffixes=("", "_s"))
-        merged["gap"] = (merged["date"] - merged["_d"]).abs().dt.days
-        near = merged[merged["gap"] <= 30].sort_values("gap").drop_duplicates("pathology_text_id")
-        if len(near) > 100:
-            agree = (near["jury_grade"] == near["_g"]).mean()
-            conf = near[near["jury_frac"] >= 0.75]
-            res["jury_vs_structured"] = {
-                "n_matched_30d": len(near), "agreement": round(float(agree), 4),
-                "agreement_confident": round(float((conf["jury_grade"] == conf["_g"]).mean()), 4),
-                "n_confident": len(conf),
-                "confusions": {f"jury={a}|struct={b}": int(n) for (a, b), n in
-                               near[near["jury_grade"] != near["_g"]]
-                               .groupby(["jury_grade", "_g"]).size()
-                               .sort_values(ascending=False).head(8).items()}}
-        else:
-            res["jury_vs_structured"] = f"only {len(near)} matched within 30d"
-except Exception as e:
-    res["jury_vs_structured"] = f"ERROR {type(e).__name__}: {e}"
+# (i) validation vs the corpus's OWN per-report structured grade columns
+GMAP = {"0": "NDBE", "1": "IND", "2": "LGD", "3": "HGD", "4": "CANCER",
+        "ndbe": "NDBE", "no dysplasia": "NDBE", "negative": "NDBE",
+        "indefinite": "IND", "ind": "IND", "lgd": "LGD", "low": "LGD",
+        "hgd": "HGD", "high": "HGD", "imc": "CANCER", "cancer": "CANCER",
+        "adenocarcinoma": "CANCER", "oac": "CANCER", "ac": "CANCER"}
+def map_struct(v):
+    v = str(v).strip().lower()
+    if v in GMAP: return GMAP[v]
+    for k, g in GMAP.items():
+        if len(k) > 2 and k in v: return g
+    return None
+scol = next((c for c in ("highestgradedysconfirmed", "highestgradedys")
+             if c in rep.columns), None)
+if scol:
+    res["structured_value_counts"] = rep[scol].value_counts().head(10).to_dict()
+    rep["_struct"] = rep[scol].map(map_struct)
+    both = rep.dropna(subset=["_struct"])
+    conf = both[both["jury_frac"] >= 0.75]
+    if len(both) > 200:
+        res["jury_vs_structured"] = {
+            "source_column": scol, "n_matched": len(both),
+            "agreement": round(float((both["jury_grade"] == both["_struct"]).mean()), 4),
+            "n_confident": len(conf),
+            "agreement_confident": round(float((conf["jury_grade"] == conf["_struct"]).mean()), 4),
+            "confusions": {f"jury={a}|struct={b}": int(n) for (a, b), n in
+                           both[both["jury_grade"] != both["_struct"]]
+                           .groupby(["jury_grade", "_struct"]).size()
+                           .sort_values(ascending=False).head(8).items()}}
 
 # (ii) transition matrix on confident labels
 if pid_col and date_col:
