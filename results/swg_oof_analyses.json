@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "n_patients": 150,
+    "pos": 50,
+    "n_boot": 500
+  },
+  "full_sample_auprc": {
+    "cnv_only": 0.5385,
+    "coattention_fusion": 0.5482,
+    "early_fusion": 0.5896,
+    "image_only": 0.557,
+    "intermediate_fusion": 0.5675,
+    "late_mean": 0.6296,
+    "late_stack_logit": 0.5303
+  },
+  "winners_curse": {
+    "win_rate": {
+      "cnv_only": 0.066,
+      "coattention_fusion": 0.046,
+      "early_fusion": 0.13,
+      "image_only": 0.012,
+      "intermediate_fusion": 0.018,
+      "late_mean": 0.728,
+      "late_stack_logit": 0.0
+    },
+    "late_mean_win_rate": 0.728,
+    "mean_winner_optimism_auprc": 0.0272
+  },
+  "complementarity": {
+    "cnv_adds_to_hist": {
+      "lrt_chi2": 7.188,
+      "lrt_p": 0.007337970006865497,
+      "auc_base": 0.7312,
+      "auc_full": 0.7584,
+      "delta_auc_ci": [
+        -0.0178,
+        0.075
+      ]
+    },
+    "hist_adds_to_cnv": {
+      "lrt_chi2": 17.71,
+      "lrt_p": 2.573198834480812e-05,
+      "auc_base": 0.663,
+      "auc_full": 0.7584,
+      "delta_auc_ci": [
+        0.0092,
+        0.1873
+      ]
+    }
+  }
+}
