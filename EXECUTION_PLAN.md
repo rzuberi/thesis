@@ -198,6 +198,17 @@ On return: read results against pre-registrations; deviations to log: none yet.
   trajectories on the strict pre-event cohort with FROZEN release folds —
   snapshot vs trajectory vs GRU, plus Kimi's future-CNV-from-current-H&E
   secondary. scripts/task_swg_trajectory.py.
+  2.24b OUTCOME 2026-08-26 (results/swg_trajectory.json, 124/150 multi-sample,
+  frozen folds): snapshot sufficiency CONFIRMED on suitable data — latest
+  biopsy 0.786, trajectory features -0.058 (trend worse), GRU matches
+  snapshot, CNV adds nothing at snapshot (+0.002). Twice-replicated negative.
+  POSITIVE secondary: current H&E predicts NEXT biopsy CNV complexity,
+  Spearman 0.161, p=1.3e-4, n=557 — morphology weakly anticipates genomic
+  evolution (appendix/paper seed).
+  2.26 STATUS: natural history + text-only baseline (0.696, n=8,830) DONE;
+  jury-vs-structured validation BLOCKED by the database export (structured
+  grade columns empty; dysplasiagradehistory 0x0; grading_sequence codes
+  unmapped) -> NEW R.5: ask Leanne for the code map or a re-export.
   2.25 OUTCOME (results/wgd_transfer.json): teachers PASSED in-domain gates
   (WGD CV 0.730, TP53 0.764, n=544-562 resections) but transfer to ERIN
   surveillance biopsies INVERTED — predicted-WGD scores progression at AUC
