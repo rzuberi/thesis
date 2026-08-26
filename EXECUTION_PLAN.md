@@ -179,6 +179,20 @@ On return: read results against pre-registrations; deviations to log: none yet.
   complementarity on release OOF (task_swg_oof_analyses.py); 2.30 leave-one-
   family-out jury (task_lofo_jury.py); 2.31 attention-shift OCCAMS replication
   (COHORT=occams branch added to task_attention_shift.py).
+  2.31 DONE 2026-08-26 (results/attn_shift_occams.json): attention shift does
+  NOT replicate on OCCAMS — A-vs-B Spearman 0.984 = A-vs-C 0.984 (noise
+  floor), C-index B<=A. COHERENT with the visibility story: conditioning
+  shifts attention only where genomics carries signal (TCGA pool) and not
+  where it is invisible (OCCAMS OAC). Report the pair as one finding.
+  2.28b DONE (results/vlm_pretrain.json): ERIN zero-shot grading 0.889 —
+  within 4 points of supervised (0.926) with NO labels; retrieval 12x chance.
+  TCGA transfer: verbatim slide-report retrieval FAILS (report style shift)
+  but prompt-based zero-shot site classification transfers at 0.782. The
+  semantics transfer; the literal pairing does not. Ch4-adjacent method
+  contribution.
+  1.4 STEP 1 DONE (results/porpoise_data.json): 439 slides / 414 cases /
+  8,827 omics columns over 3,047 signature genes + pt features + frozen
+  splits. Step 2 (patched training run) is the remaining piece of 1.4.
   2.29 DONE 2026-08-26 (results/swg_oof_analyses.json): winner's-curse DEFUSED
   with a number — late-mean wins 72.8% of 500 bootstrap replays, winner
   optimism only +0.027 AUPRC; the family selection is stable. Complementarity:
