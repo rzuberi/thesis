@@ -1,0 +1,25 @@
+{
+  "_meta": {
+    "n_pairs": 2153,
+    "emb_model": "nomic-embed-text",
+    "text_dim": 768,
+    "slide_dim": 1536
+  },
+  "retrieval": {
+    "recall_at_1": 0.0367,
+    "recall_at_5": 0.1322,
+    "chance_at_1": 0.00232
+  },
+  "zeroshot_grade": {
+    "auc": 0.8229,
+    "per_fold": [
+      0.7983,
+      0.8447,
+      0.7981,
+      0.808,
+      0.8618
+    ],
+    "supervised_probe_reference": 0.9
+  },
+  "signal_test": "PASS"
+}
