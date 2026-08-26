@@ -1,0 +1,35 @@
+{
+  "_meta": {
+    "machinery": "pooled UNI2 + scaler/PCA64/logistic everywhere"
+  },
+  "prog_SWG_to_ERIN": {
+    "within_train_cohort_cv": 0.7448,
+    "transfer_auc": 0.6403,
+    "n_train": 707,
+    "n_test": 153
+  },
+  "prog_ERIN_to_SWG": {
+    "within_train_cohort_cv": 0.79,
+    "transfer_auc": 0.5436,
+    "n_train": 153,
+    "n_test": 707
+  },
+  "grade_ERIN_to_SWG": {
+    "within_train_cohort_cv": 0.8975,
+    "transfer_auc": 0.5649,
+    "n_train": 2153,
+    "n_test": 707
+  },
+  "surv24_OCCAMS_to_TCGA": {
+    "within_train_cohort_cv": 0.5979,
+    "transfer_auc": 0.6031,
+    "n_train": 140,
+    "n_test": 264
+  },
+  "surv24_TCGA_to_OCCAMS": {
+    "within_train_cohort_cv": 0.6205,
+    "transfer_auc": 0.4888,
+    "n_train": 264,
+    "n_test": 140
+  }
+}
