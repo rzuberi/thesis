@@ -26,7 +26,10 @@ SEEDS = [0, 1, 2]
 
 man = pd.read_csv(F + "/training_manifest.csv", dtype=str)
 coh = pd.read_csv(F + "/pre_event_cohort.csv", dtype=str)
-coh = coh[coh["SampleID"].isin(man["sample_id"])].copy()
+# pre_event_cohort.PatientID is an integer index; the manifest's patient_id is
+# the real ID space — merge on sample_id and use the manifest columns throughout
+coh = coh.merge(man, left_on="SampleID", right_on="sample_id", how="inner")
+coh["PatientID"] = coh["patient_id"]
 coh["Date"] = pd.to_datetime(coh["Date"], errors="coerce")
 fold_of = dict(zip(man["patient_id"], man["fold_id_rep01"].astype(int)))
 y_of = dict(zip(man["patient_id"], man["y_progressor"].astype(int)))
