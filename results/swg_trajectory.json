@@ -1,0 +1,81 @@
+{
+  "_meta": {
+    "n_patients": 150,
+    "progressors": 49,
+    "multi_sample_patients": 124,
+    "folds": "frozen fold_id_rep01",
+    "seeds": [
+      0,
+      1,
+      2
+    ]
+  },
+  "hist_last": {
+    "auc": 0.7858,
+    "auc_ci": [
+      0.7037,
+      0.8579
+    ]
+  },
+  "joint_last": {
+    "auc": 0.7876,
+    "auc_ci": [
+      0.7044,
+      0.8589
+    ],
+    "delta_vs_ref": {
+      "mean": 0.0018,
+      "ci": [
+        -0.0059,
+        0.0099
+      ]
+    }
+  },
+  "traj_hist": {
+    "auc": 0.73,
+    "auc_ci": [
+      0.6375,
+      0.8133
+    ],
+    "delta_vs_ref": {
+      "mean": -0.0579,
+      "ci": [
+        -0.1232,
+        0.0028
+      ]
+    }
+  },
+  "traj_joint": {
+    "auc": 0.7317,
+    "auc_ci": [
+      0.6403,
+      0.8148
+    ],
+    "delta_vs_ref": {
+      "mean": -0.0564,
+      "ci": [
+        -0.1211,
+        0.005
+      ]
+    }
+  },
+  "gru_joint": {
+    "auc": 0.7846,
+    "auc_ci": [
+      0.7088,
+      0.8554
+    ],
+    "delta_vs_ref": {
+      "mean": -0.0022,
+      "ci": [
+        -0.0841,
+        0.0823
+      ]
+    }
+  },
+  "future_cnv_from_hist": {
+    "n_transitions": 557,
+    "spearman": 0.1611,
+    "p": 0.00013486050536462837
+  }
+}
