@@ -169,6 +169,16 @@ On return: read results against pre-registrations; deviations to log: none yet.
   Part A's claim must be revised from "not recoverable" to "partially recoverable
   at scale; the fusion question becomes complementarity beyond what is visible."
   Stage from H&E: 0.644. Age: 0.569.
+- 2026-08-26 (joint, Rehan: full VLM pretraining + PORPOISE build + the four
+  cheap analyses approved; R.4 pack deferred, no pathologist on hand):
+  2.28b VLM full build = CLIP-style ERIN training with zero-shot TCGA transfer
+  (446 pairs; the 9,517-pan-cancer version is infeasible without terabyte-
+  scale slide downloads — recorded honestly); 1.4 step 1 = cBioPortal omics
+  build + feature conversion + frozen splits (task_porpoise_data.py), step 2 =
+  training run after data lands; 2.29 winner's-curse bootstrap + residual
+  complementarity on release OOF (task_swg_oof_analyses.py); 2.30 leave-one-
+  family-out jury (task_lofo_jury.py); 2.31 attention-shift OCCAMS replication
+  (COHORT=occams branch added to task_attention_shift.py).
 - 2026-08-25 night (joint, Rehan: "apart from the chapter 4 rebuild I think we
   could implement all of this"): PROMOTED from the blank-slate parked list —
   2.24 longitudinal trajectory modelling; 2.25 predicted-WGD teacher transfer

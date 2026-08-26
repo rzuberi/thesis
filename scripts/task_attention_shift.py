@@ -39,7 +39,38 @@ class CondABMIL(ABMIL):
         return self.head(z).squeeze(), a.squeeze()
 
 
+COHORT = os.environ.get("COHORT", "tcga_pool")
 bags, G, time_, event = {}, {}, {}, {}
+if COHORT == "occams":
+    OCC_FEAT = "/mnt/scratche/slow/fmlab/datasets/imaging/occams/wsi_data/slides/features/20x_224px/features_uni_v2"
+    OCC_TSV = "/mnt/scratche/slow/fmlab/datasets/imaging/occams/wsi_data/genomics/clinical_data_wgs_cases_therapy_tp53status_ploidy_wgd_status.tsv"
+    MASTER = "/home/zuberi01/occams_work/occams_master_20260511.csv"
+    def norm_occ(x):
+        x = str(x).strip().upper().replace("/", "-")
+        mm = re.search(r"(?:OCCAMS|OC)[-_ ]?([A-Z]{2})[-_ ]?0*([0-9]+)", x)
+        return f"{mm.group(1)}{int(mm.group(2)):04d}" if mm else x
+    th = pd.read_csv(OCC_TSV, sep="\t", dtype=str)
+    th["cid"] = th["OCCAMS_ID"].map(norm_occ)
+    th = th.drop_duplicates("cid").set_index("cid")
+    mast = pd.read_csv(MASTER, dtype=str, low_memory=False)
+    mast["cid"] = mast["occams_id"].map(norm_occ)
+    dsd = pd.to_numeric(mast["deceased_survival_days"], errors="coerce")
+    lkd = pd.to_numeric(mast["last_known_survival_days"], errors="coerce")
+    mast["time"] = dsd.fillna(lkd); mast["event"] = dsd.notna().astype(int)
+    mast = mast[mast["time"] > 0].drop_duplicates("cid").set_index("cid")
+    def fl(v): return float(str(v).strip().lower() in ("1", "true", "yes", "y"))
+    for f in sorted(glob.glob(os.path.join(OCC_FEAT, "*.h5"))):
+        c = norm_occ(os.path.basename(f).split("_")[0])
+        if c in bags or c not in th.index or c not in mast.index: continue
+        with h5py.File(f) as h:
+            bags[c] = np.asarray(h["features"])
+        r = th.loc[c]
+        tp53 = max(fl(r["TP53_SNV"]), fl(r["TP53_indel"]), fl(r["TP53_deletion"]), fl(r["TP53_knockout"]))
+        G[c] = np.array([tp53,
+                         (float(r["ploidy"]) - 2.0) if pd.notna(r["ploidy"]) else 0.0,
+                         fl(r["WGD"]) if pd.notna(r["WGD"]) else 0.0], dtype=np.float32)
+        time_[c] = float(mast.loc[c, "time"]); event[c] = int(mast.loc[c, "event"])
+    FEATS = {}
 for grp, fd in FEATS.items():
     lab = pd.read_csv(LABELS[grp])
     lab = lab[lab["os_days"] > 0].drop_duplicates("barcode").set_index("barcode")
