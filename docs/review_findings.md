@@ -55,6 +55,10 @@ families is treated as established).
    change), OAC-only TP53 was anti-predictive with a failing shuffled control.
    FIX: rewrite Part A around the learning-curve + population story; debug the
    failed probe control.
+   LEARNING CURVE DONE (2026-08-26, results/visibility_curve.json): Grok's
+   sharpening fully vindicated — OAC flat at chance from n=50 to n=206 across
+   two cohorts, STAD/GEJ rising to 0.64/0.74; visibility is population-driven,
+   the "adequate n" reading is dead. Part A is again a clean OAC negative.
    PROBE DEBUG DONE (2026-08-25, results/tcga_probe.json): a 50-permutation
    empirical null shows the earlier "failing control" (0.557 from 5 shuffles)
    was sampling noise — null is 0.474±0.13 (TP53) / 0.517±0.08 (WGD) at
