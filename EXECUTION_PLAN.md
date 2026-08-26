@@ -179,6 +179,16 @@ On return: read results against pre-registrations; deviations to log: none yet.
   complementarity on release OOF (task_swg_oof_analyses.py); 2.30 leave-one-
   family-out jury (task_lofo_jury.py); 2.31 attention-shift OCCAMS replication
   (COHORT=occams branch added to task_attention_shift.py).
+  2.29 DONE 2026-08-26 (results/swg_oof_analyses.json): winner's-curse DEFUSED
+  with a number — late-mean wins 72.8% of 500 bootstrap replays, winner
+  optimism only +0.027 AUPRC; the family selection is stable. Complementarity:
+  hist adds to CNV decisively (LRT p=2.6e-5, dAUC +0.095 [0.009, 0.187]); CNV
+  adds information beyond hist by LRT (p=0.007) but dAUC crosses zero at n=150
+  — a real-but-underpowered effect, exactly as the power map predicts.
+  2.30 DONE (results/lofo_jury.json): no single LLM family is load-bearing —
+  max label flip 0.5% (gemma3), eligible-set Jaccard >=0.98 across all six
+  drops. Caveat kept: rules out single-family dependence, not all-LLM shared
+  bias (that remains R.4).
 - 2026-08-25 night (joint, Rehan: "apart from the chapter 4 rebuild I think we
   could implement all of this"): PROMOTED from the blank-slate parked list —
   2.24 longitudinal trajectory modelling; 2.25 predicted-WGD teacher transfer
