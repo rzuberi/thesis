@@ -47,8 +47,9 @@ def load_study(st):
         if not os.path.exists(f): return None
         df = pd.read_csv(f, sep="\t", low_memory=False)
         return df
-    rna = table("data_mrna_seq_v2_rsem_zscores_ref_all_samples.txt") \
-        or table("data_mrna_seq_v2_rsem.txt")
+    rna = table("data_mrna_seq_v2_rsem_zscores_ref_all_samples.txt")
+    if rna is None:
+        rna = table("data_mrna_seq_v2_rsem.txt")
     cna = table("data_cna.txt")
     mut = table("data_mutations.txt")
     clin = pd.read_csv(os.path.join(d, "data_clinical_patient.txt"), sep="\t", comment="#")
