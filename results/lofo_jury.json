@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "models": [
+      "deepseek-r1_14b",
+      "gemma3_12b",
+      "gemma3_27b",
+      "llama3.1_8b",
+      "mistral-small3.2",
+      "phi4_14b",
+      "qwen3_14b",
+      "qwen3_32b"
+    ],
+    "n_reports": 7003,
+    "full_train_eligible": 6847
+  },
+  "drop_qwen3": {
+    "n_jurors_left": 6,
+    "n_common": 7003,
+    "label_flip_rate": 0.0043,
+    "eligible_change": -82,
+    "eligible_jaccard": 0.9837
+  },
+  "drop_gemma3": {
+    "n_jurors_left": 6,
+    "n_common": 7003,
+    "label_flip_rate": 0.005,
+    "eligible_change": -42,
+    "eligible_jaccard": 0.9829
+  },
+  "drop_phi4": {
+    "n_jurors_left": 7,
+    "n_common": 7003,
+    "label_flip_rate": 0.0033,
+    "eligible_change": -123,
+    "eligible_jaccard": 0.9815
+  },
+  "drop_mistral": {
+    "n_jurors_left": 7,
+    "n_common": 7003,
+    "label_flip_rate": 0.0037,
+    "eligible_change": -137,
+    "eligible_jaccard": 0.9787
+  },
+  "drop_deepseek": {
+    "n_jurors_left": 7,
+    "n_common": 7003,
+    "label_flip_rate": 0.002,
+    "eligible_change": -96,
+    "eligible_jaccard": 0.9835
+  },
+  "drop_llama": {
+    "n_jurors_left": 7,
+    "n_common": 7003,
+    "label_flip_rate": 0.0016,
+    "eligible_change": -40,
+    "eligible_jaccard": 0.993
+  },
+  "verdict": {
+    "max_flip_rate": 0.005,
+    "most_load_bearing_family": "gemma3"
+  }
+}
