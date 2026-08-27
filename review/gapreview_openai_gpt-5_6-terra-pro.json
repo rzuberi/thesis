@@ -1,0 +1,37 @@
+[
+  {
+    "gap": "ERIN grade and Ch4 label-source results appear to be scored at slide level despite the frozen protocol requiring patient-level primary metrics.",
+    "claim_at_risk": "Ch4 claims that report-derived supervision supports high-performing histology models and that jury- and pathladder-derived training are interchangeable; ERIN grade/fusion numbers used as supporting evidence.",
+    "what_to_run": "From frozen OOF predictions, aggregate all ERIN grade-task predictions to one prediction per patient using the pre-specified aggregation rule, then recompute AUROC, paired fusion-minus-histology CIs, and the full jury/pathladder/feasibility cross-evaluation matrix at patient level. If existing folds or OOF predictions are slide-level, rerun patient-disjoint CV with all slides from each patient retained within the same fold.",
+    "blocking": true,
+    "severity": 5
+  },
+  {
+    "gap": "Final-pipeline shuffled-label/permutation controls are not evidenced for the final TCGA ABMIL-Cox survival task or ERIN grade/progression tasks; OCCAMS v3 shows only a single shuffled realization rather than the promised empirical null.",
+    "claim_at_risk": "Validity of the OCCAMS and TCGA external fusion-null claims, and the ERIN histology/clinical/fusion claims, under the thesis-wide pipeline-invalidation rule.",
+    "what_to_run": "Run patient-level label permutations through the identical final CV, preprocessing, model-selection, and OOF pipeline for: OCCAMS v3 Cox arms, TCGA ABMIL-Cox arms, ERIN patient-level grade arms, and ERIN progression arms. Use 50 permutations where an observed/single-shuffle control is materially away from chance, and report the observed metric's percentile in each empirical null; investigate/rerun any outlying null rather than treating it as a hypothesis result.",
+    "blocking": true,
+    "severity": 4
+  },
+  {
+    "gap": "The ERIN progression cohort has unresolved incompatible 'final' versions and event counts (for example 1,218/197, 1,266/181, and the analysed 153/28 subset).",
+    "claim_at_risk": "Ch3's progression endpoint, its reported histology AUROC of 0.819, the clinical-leakage conclusion, and all ERIN-to/SWG-to-ERIN progression-transfer interpretations.",
+    "what_to_run": "Produce a patient-level v2-to-v3 reconciliation table with deterministic inclusion/exclusion reasons, label-source changes, index-date selection, follow-up eligibility, and event-status changes. Freeze one versioned progression manifest; verify that the 153-patient modelling subset is derived from it without post-index leakage; rerun progression OOF analyses if any outcome, index date, or eligibility field differs from the currently analysed manifest.",
+    "blocking": true,
+    "severity": 4
+  },
+  {
+    "gap": "The encoder-sweep protocol is incomplete for the chapter tasks: results are evidenced for ERIN grade and a limited SWG comparison, but not the prescribed full encoder distribution across SWG progression, OCCAMS survival, and TCGA-OAC survival.",
+    "claim_at_risk": "Any thesis claim that fusion failure/benefit is encoder-conditional or robust to representation choice, especially the Ch2 contrast between an internal SWG benefit and external OCCAMS/TCGA nulls.",
+    "what_to_run": "Complete the frozen extended-grid downstream sweep on extracted features for each required task and encoder using both mean pooling and ABMIL: SWG progression, OCCAMS v3 survival, TCGA-OAC survival, and ERIN grade. Compute the paired fusion-minus-histology delta per encoder from matched OOF predictions, applying the registered sign-flip downgrade rule. Do not infer encoder sensitivity for an unswept cohort from ERIN or GigaPath-only results.",
+    "blocking": true,
+    "severity": 4
+  },
+  {
+    "gap": "Central paired bootstrap claims do not incorporate training-seed/model-fit uncertainty; the reported CIs appear to resample fixed OOF predictions.",
+    "claim_at_risk": "The claimed SWG primary-encoder fusion advantage and the precision of the small-cohort OCCAMS, TCGA, and ERIN progression fusion conclusions.",
+    "what_to_run": "For the central contrasts, train independent repetitions on the same frozen patient folds with multiple random seeds and retain OOF predictions for every seed. Estimate paired deltas using a hierarchical resampling analysis over patients and seed-specific fits (or report seed-level deltas plus a combined interval): at minimum SWG late-mean versus UNI2 histology, OCCAMS histology+genomics versus histology, TCGA histology+genomics versus histology, and ERIN progression fusion versus histology.",
+    "blocking": true,
+    "severity": 4
+  }
+]

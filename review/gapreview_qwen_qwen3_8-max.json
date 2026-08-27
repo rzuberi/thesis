@@ -1,0 +1,9 @@
+[
+  {
+    "gap": "Progression cohort v2-vs-v3 reconciliation (plan item 1.21) is unresolved: erin_consensus_final.json reports 1,218 patients / 197 progressors while erin_jury_labels_summary.json reports 1,266 / 181. No recorded explanation of the +48 patients / \u221216 progressors shift between the two label-source definitions.",
+    "claim_at_risk": "Ch3 cohort description and progression results (n=153 imaged subset is drawn from one of these two parent cohorts; the thesis must state which and why the numbers differ)",
+    "what_to_run": "Join the two progression-cohort definitions on patient ID; categorise the 48 gained and 16 lost progressors by the label change that moved them (jury reclassification of CANCER/HGD reports that consensus had flagged uncertain, or vice versa); produce a one-table reconciliation note",
+    "blocking": true,
+    "severity": 3
+  }
+]

@@ -194,6 +194,12 @@ On return: read results against pre-registrations; deviations to log: none yet.
   its clinical system); ~1,280 reports, four cancer types, fully outside the
   self-validation loop — the strongest available answer to the sev-5
   criticism short of R.4 itself.
+  WAVE-3 VERDICT 2026-08-27 (docs/gap_review_wave3.md): gate NOT passed —
+  finite closure list: 1.21 reconciliation, encoder sweep on OCCAMS/TCGA
+  (extraction + downstream = 2.34), 1.20 remaining perm controls + final-
+  pipeline controls (= 2.35), Holm computation (1.18 execution), patient-level
+  ERIN grade aggregation (= 2.36, Terra sev-5). All submitted same day;
+  writing gate re-evaluates when they land.
   GATE: once these + PORPOISE land,
   a wave-3 multi-LLM GAP REVIEW of the complete results corpus decides
   whether compute is done; writing starts only after that gate.
