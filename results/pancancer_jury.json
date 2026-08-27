@@ -9,16 +9,32 @@
     ],
     "n_graded": 1294
   },
-  "esca_tcga_pan_can_atlas_2018": {
-    "skip": "no grade column; cols=['PATIENT_ID', 'SUBTYPE', 'CANCER_TYPE_ACRONYM', 'OTHER_PATIENT_ID', 'AGE', 'SEX', 'AJCC_PATHOLOGIC_TUMOR_STAGE', 'AJCC_STAGING_EDITION', 'DAYS_LAST_FOLLOWUP', 'DAYS_TO_BIRTH']"
+  "esca_tcga": {
+    "n": 102,
+    "exact_agreement": 0.9804,
+    "two_tier_agreement": 0.9804,
+    "n_confident": 98,
+    "two_tier_agreement_confident": 0.9898
   },
-  "stad_tcga_pan_can_atlas_2018": {
-    "skip": "no grade column; cols=['PATIENT_ID', 'SUBTYPE', 'CANCER_TYPE_ACRONYM', 'OTHER_PATIENT_ID', 'AGE', 'SEX', 'AJCC_PATHOLOGIC_TUMOR_STAGE', 'AJCC_STAGING_EDITION', 'DAYS_LAST_FOLLOWUP', 'DAYS_TO_BIRTH']"
+  "stad_tcga": {
+    "n": 335,
+    "exact_agreement": 0.9642,
+    "two_tier_agreement": 0.9731,
+    "n_confident": 327,
+    "two_tier_agreement_confident": 0.9817
   },
-  "kirc_tcga_pan_can_atlas_2018": {
-    "skip": "no grade column; cols=['PATIENT_ID', 'SUBTYPE', 'CANCER_TYPE_ACRONYM', 'OTHER_PATIENT_ID', 'AGE', 'SEX', 'AJCC_PATHOLOGIC_TUMOR_STAGE', 'AJCC_STAGING_EDITION', 'DAYS_LAST_FOLLOWUP', 'DAYS_TO_BIRTH']"
+  "kirc_tcga": {
+    "n": 477,
+    "exact_agreement": 0.9518,
+    "two_tier_agreement": 0.9665,
+    "n_confident": 468,
+    "two_tier_agreement_confident": 0.9744
   },
-  "blca_tcga_pan_can_atlas_2018": {
-    "skip": "no grade column; cols=['PATIENT_ID', 'SUBTYPE', 'CANCER_TYPE_ACRONYM', 'OTHER_PATIENT_ID', 'AGE', 'SEX', 'AJCC_PATHOLOGIC_TUMOR_STAGE', 'AJCC_STAGING_EDITION', 'DAYS_LAST_FOLLOWUP', 'DAYS_TO_BIRTH']"
+  "blca_tcga": {
+    "n": 366,
+    "exact_agreement": 0.5792,
+    "two_tier_agreement": 0.9863,
+    "n_confident": 309,
+    "two_tier_agreement_confident": 0.9903
   }
 }
