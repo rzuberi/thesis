@@ -1,0 +1,24 @@
+{
+  "_meta": {
+    "jurors": [
+      "gemma3_12b",
+      "gemma3_27b",
+      "phi4_14b",
+      "qwen3_14b",
+      "qwen3_32b"
+    ],
+    "n_graded": 1294
+  },
+  "esca_tcga_pan_can_atlas_2018": {
+    "skip": "no grade column; cols=['PATIENT_ID', 'SUBTYPE', 'CANCER_TYPE_ACRONYM', 'OTHER_PATIENT_ID', 'AGE', 'SEX', 'AJCC_PATHOLOGIC_TUMOR_STAGE', 'AJCC_STAGING_EDITION', 'DAYS_LAST_FOLLOWUP', 'DAYS_TO_BIRTH']"
+  },
+  "stad_tcga_pan_can_atlas_2018": {
+    "skip": "no grade column; cols=['PATIENT_ID', 'SUBTYPE', 'CANCER_TYPE_ACRONYM', 'OTHER_PATIENT_ID', 'AGE', 'SEX', 'AJCC_PATHOLOGIC_TUMOR_STAGE', 'AJCC_STAGING_EDITION', 'DAYS_LAST_FOLLOWUP', 'DAYS_TO_BIRTH']"
+  },
+  "kirc_tcga_pan_can_atlas_2018": {
+    "skip": "no grade column; cols=['PATIENT_ID', 'SUBTYPE', 'CANCER_TYPE_ACRONYM', 'OTHER_PATIENT_ID', 'AGE', 'SEX', 'AJCC_PATHOLOGIC_TUMOR_STAGE', 'AJCC_STAGING_EDITION', 'DAYS_LAST_FOLLOWUP', 'DAYS_TO_BIRTH']"
+  },
+  "blca_tcga_pan_can_atlas_2018": {
+    "skip": "no grade column; cols=['PATIENT_ID', 'SUBTYPE', 'CANCER_TYPE_ACRONYM', 'OTHER_PATIENT_ID', 'AGE', 'SEX', 'AJCC_PATHOLOGIC_TUMOR_STAGE', 'AJCC_STAGING_EDITION', 'DAYS_LAST_FOLLOWUP', 'DAYS_TO_BIRTH']"
+  }
+}

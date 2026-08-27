@@ -1,0 +1,26 @@
+{
+  "_meta": {
+    "n_slides": 439,
+    "omic_dim": 8827,
+    "events": 182,
+    "seeds": [
+      0,
+      1
+    ],
+    "bins": 4,
+    "note": "published PORPOISE classes + nll_loss, frozen splits"
+  },
+  "amil": {
+    "cindex": 0.5663
+  },
+  "mmf": {
+    "cindex": 0.5449
+  },
+  "mmf_minus_amil": {
+    "delta_c": -0.0213,
+    "ci": [
+      -0.0811,
+      0.0349
+    ]
+  }
+}
