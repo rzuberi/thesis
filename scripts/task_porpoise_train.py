@@ -77,8 +77,16 @@ def run_arm(kind, seed):
             net = PorpoiseMMF(omic_input_dim=len(omic_cols), path_input_dim=1536,
                               fusion="bilinear", n_classes=N_BINS).to(DEV)
         else:
-            net = PorpoiseAMIL(n_classes=N_BINS).to(DEV)
-            net.size_dict = None
+            net = PorpoiseAMIL(n_classes=N_BINS)
+            # their AMIL hard-codes 1024-dim path input; swap the first Linear
+            # for our 1536-dim features (weights re-init, architecture intact)
+            for name, mod in net.named_children():
+                if isinstance(mod, torch.nn.Sequential):
+                    for j, layer in enumerate(mod):
+                        if isinstance(layer, torch.nn.Linear) and layer.in_features == 1024:
+                            mod[j] = torch.nn.Linear(1536, layer.out_features)
+                            break
+            net = net.to(DEV)
         opt = torch.optim.Adam(net.parameters(), lr=2e-4, weight_decay=1e-5)
         for ep in range(EPOCHS):
             net.train()
