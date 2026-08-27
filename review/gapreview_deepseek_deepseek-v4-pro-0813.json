@@ -1,0 +1,51 @@
+[
+  {
+    "gap": "No 50-permutation null distributions for the previously flagged off-0.5 shuffled controls (OCCAMS v2 gen-only 0.581; TCGA first-pass hist 0.542 / early 0.543), and only a single shuffled run for OCCAMS v3 rather than a permutation null.",
+    "claim_at_risk": "Ch1 pipeline-validity rule and any statement that the OCCAMS/TCGA first-pass or v3 negatives are trustworthy rather than pipeline artefacts.",
+    "what_to_run": "Run 50 independent label permutations through the identical pipelines for each flagged arm; report empirical null mean/sd and percentile of the real AUC/C-index; extend OCCAMS v3 shuffled controls to a 50-perm null.",
+    "blocking": true,
+    "severity": 4
+  },
+  {
+    "gap": "No shuffled-label controls are reported for the pre-registered TCGA-OAC ABMIL survival run (tcga_abmil, n=65) or the TCGA pooled fusion run (tcga_pool_fusion, n=399).",
+    "claim_at_risk": "TCGA-OAC and pooled TCGA null/replication claims depend on controls to rule out pipeline inflation or leakage.",
+    "what_to_run": "Run patient-disjoint label-permutation controls for histology, genomics, clinical and fusion arms in tcga_abmil and tcga_pool_fusion; report null C-index distributions and percentile of observed values.",
+    "blocking": true,
+    "severity": 5
+  },
+  {
+    "gap": "No shuffled-label controls are reported for the ERIN progression primary analysis (n=153, histology AUC 0.819) or the ERIN grade models, despite the pre-registration requiring controls for every arm.",
+    "claim_at_risk": "Ch3 primary claim that H&E histology predicts future progression, and the interpretation that clinical fusion adds nothing after leakage ablation.",
+    "what_to_run": "Run shuffled-label controls through the identical ABMIL progression pipeline, ideally 50 permutations given the small event count, and report the null AUC/C-index distribution for histology-only and fusion arms.",
+    "blocking": true,
+    "severity": 5
+  },
+  {
+    "gap": "The encoder sweep has only been analysed for the ERIN grade task; the pre-registered OCCAMS v3 and TCGA-OAC survival sweep tasks are missing, and SWG has only partial paired GigaPath sensitivity.",
+    "claim_at_risk": "Encoder-invariance/sensitivity statements for Ch2 survival fusion deltas and the pre-registration's full-distribution reporting rule.",
+    "what_to_run": "Run the same six-encoder histology-only and late-fusion arms on OCCAMS v3 and TCGA-OAC using the already-extracted features; report per-encoder fusion deltas, CIs, and the pre-registered sign-flip check.",
+    "blocking": true,
+    "severity": 4
+  },
+  {
+    "gap": "Progression cohort v2 (erin_consensus_final: n=1218, 197 progressors) and progression cohort v3 (erin_jury_labels_summary: n=1266, 181 progressors) remain unreconciled.",
+    "claim_at_risk": "Ch3 cohort size and event count, and any claim that the false-CANCER correction or jury-label adoption explains the progression cohort.",
+    "what_to_run": "Patient-level reconciliation between the two cohort builds: join IDs, enumerate patient gains/losses and progression-status changes, document causes, and freeze a single progression_v3 table with an audit trail.",
+    "blocking": true,
+    "severity": 4
+  },
+  {
+    "gap": "The LLM jury on matched SWG reports after the CR-corruption fix (item 2.14) is incomplete; only the specimen-level 658-report analysis is available.",
+    "claim_at_risk": "Ch4 third-cohort label audit/validation on SWG and any claim that jury-labelled SWG reports validate pathladder or support report-derived supervision across cohorts.",
+    "what_to_run": "Rerun the pre-registered 8-juror grading on the clean SWG matched-report parquet, compute majority labels and entropy, compare against available structured SWG grades, and produce the label-audit table.",
+    "blocking": true,
+    "severity": 3
+  },
+  {
+    "gap": "Planned report\u2013slide disagreement analysis (execution plan 2.4) has no result file or summary in the corpus.",
+    "claim_at_risk": "Ch4 discussion of report-derived label quality and how slide-based predictions disagree with report-derived labels.",
+    "what_to_run": "Compare ABMIL slide predictions with jury/pathladder report labels on ERIN and TCGA, characterize disagreement by report features (negation, length, hedging, addenda, specimen count), and quantify whether model errors concentrate in report-uncertain cases.",
+    "blocking": false,
+    "severity": 2
+  }
+]

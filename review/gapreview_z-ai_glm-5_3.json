@@ -1,0 +1,44 @@
+[
+  {
+    "gap": "Holm-corrected verdicts for the four confirmatory contrasts are declared in multiplicity_plan.md but never computed",
+    "claim_at_risk": "Every chapter's 'one confirmatory contrast, Holm-adjusted verdict' claim (multiplicity_plan.md items 1-4); Ch2/SWG explicitly says 'Holm-adjusted significance to be recomputed from the bootstrap sign probabilities'",
+    "what_to_run": "One cheap CPU script: collect the four bootstrap sign probabilities (SWG late-mean vs histology from lgd2_final_pre_event_paired_differences.csv / latemean files; OCCAMS v3 delta; ERIN progression fusion delta from erin_prog_ablation.json; Ch4 contrast is R.4-blocked and must be marked pending) and apply Holm-Bonferroni; write results/holm_confirmatory.json",
+    "blocking": true,
+    "severity": 4
+  },
+  {
+    "gap": "Encoder sweep (2.5 / pre-registered grid) was only executed on the ERIN grade task; the pre-registration names SWG progression, OCCAMS v3, and TCGA-OAC as swept tasks and 3.4 promises encoder-sensitivity sections per chapter",
+    "claim_at_risk": "Ch2's fusion-null claims (OCCAMS, TCGA-OAC) and the SWG fusion>histology claim being stated as (non-)encoder-conditional; the amended sign-flip downgrade rule cannot be applied where the sweep never ran",
+    "what_to_run": "Run the frozen encoder grid (Virchow2/GigaPath/Phikon-v2/H-Optimus-0 histology arms + late fusion) on OCCAMS v3 survival, TCGA-OAC survival, and SWG progression using the already-extracted features; or record a formal deviation narrowing the sweep to ERIN",
+    "blocking": true,
+    "severity": 4
+  },
+  {
+    "gap": "Item 1.20 (50-permutation nulls for every off-0.5 shuffled control) is queued but not done for OCCAMS v2 (gen shuffled 0.58) and the TCGA first-pass (0.542/0.543); only the probes and a single-perm OCCAMS v3 shuffle have proper nulls",
+    "claim_at_risk": "Ch2/OCCAMS and TCGA null results being interpretable as valid negatives rather than pipeline artifacts (the thesis's own Outcome-D rule); the evaluation-protocol claim that '50-perm nulls resolved two false alarms' implies the discipline applies everywhere",
+    "what_to_run": "50-permutation empirical nulls for the OCCAMS v2 genomics arm and the TCGA first-pass hist/early arms (cheap, saved pipelines); or formally annotate Outcome-D dispositions for those runs in the chapter text",
+    "blocking": true,
+    "severity": 3
+  },
+  {
+    "gap": "ERIN pre-registered protocol elements missing from results: shuffled-label controls per arm, calibration (Brier/calibration curves), and net-benefit/decision-curve reporting for both the grade and progression endpoints",
+    "claim_at_risk": "Ch3/Ch4 ERIN headline numbers (0.926 grade, 0.819 progression) are stated under a pre-registration that mandates these accompaniments; without them the pre-reg compliance claim and the calibration side of the SWG-style story are unsupported",
+    "what_to_run": "Post-hoc compute on saved OOF predictions: per-arm shuffled-label controls, Brier + calibration curves, decision-curve net benefit at pre-declared thresholds for ERIN grade and progression; label as post-hoc-if-late but they are pre-registered deliverables",
+    "blocking": true,
+    "severity": 3
+  },
+  {
+    "gap": "Item 1.21 progression-cohort v2-vs-v3 reconciliation never ran, and the corpus contains three mutually inconsistent 'final' progression cohorts (consensus 1,218/197; jury v3 1,266/181; ablation n=153/28) with no documented mapping",
+    "claim_at_risk": "Ch3's progression-cohort definition and event count (the reframed primary estimand), and any Ch5 statement about false-CANCER-driven event inflation",
+    "what_to_run": "Reconciliation table: patient-level join of the v2 consensus, v3 jury, and analysis cohorts; explain each exclusion step and the \u221216/+16 event differences; write results/prog_cohort_reconciliation.json and fix the cohort numbers cited in chapters",
+    "blocking": true,
+    "severity": 3
+  },
+  {
+    "gap": "Encoder-sweep pre-reg's encoder-mix stage (top-2 concat + ensemble, four runs max) and the full-distribution fusion-delta table across all six encoders on non-ERIN tasks are absent, while the sweep is cited as 'extended grid' evidence",
+    "claim_at_risk": "The 'encoder-invariant / encoder-conditional' characterisation of fusion deltas (Ch2/Ch4 sensitivity sections) rests on single-encoder runs only",
+    "what_to_run": "Either run the four pre-registered mix runs on ERIN (features exist, CPU-cheap) or record the mix stage as a dropped pre-registered element in the deviation log before writing",
+    "blocking": false,
+    "severity": 2
+  }
+]

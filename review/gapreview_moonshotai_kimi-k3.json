@@ -1,0 +1,37 @@
+[
+  {
+    "gap": "Encoder sweep was pre-registered on four tasks (SWG progression, OCCAMS v3 survival, TCGA-OAC survival, ERIN grade), but results exist only for ERIN grade and (partially, 3-encoder late-fusion) SWG. No multi-encoder results exist for the two survival tasks.",
+    "claim_at_risk": "The encoder-invariance/encoder-conditional framing of Ch2's external nulls (OCCAMS + TCGA-OAC fusion deltas) and the amended sign-flip downgrade rule \u2014 the sweep pre-reg says fusion deltas must be reported across encoders for exactly these tasks; sections 3.4 depend on it.",
+    "what_to_run": "Extract/run Virchow2 + GigaPath (+ Phikon2/H-Optimus per extended grid) ABMIL-Cox on OCCAMS n=87 and TCGA-OAC n=65 under the v3 protocol (features for Virchow2/GigaPath already extracted per leave-week item 4); report per-encoder fusion-delta distributions, no per-encoder significance claims.",
+    "blocking": true,
+    "severity": 4
+  },
+  {
+    "gap": "50-permutation nulls were mandated (item 1.20) for every off-0.5 shuffled control, but only tcga_probe and occams_v3 have them. The OCCAMS v2 controls (gen_only shuffled AUC 0.581, hist shuffled 0.457) and TCGA first-pass controls (0.542/0.476) remain single- or 5-shuffle values.",
+    "claim_at_risk": "Pipeline-validity claims for the OCCAMS v2 first-pass negative and TCGA first-pass results cited in Ch2/Ch1; wave-2 reviewers flagged this as the thesis ignoring its own Outcome-D rule.",
+    "what_to_run": "Run 50-perm nulls through the identical v2/first-pass pipelines for the flagged arms (CPU, features exist); annotate each control as within-null or trigger the Outcome-D debug path.",
+    "blocking": true,
+    "severity": 3
+  },
+  {
+    "gap": "Holm-adjusted significance for the confirmatory family was declared but never computed: multiplicity_plan.md says the SWG Holm-adjusted verdict is 'to be recomputed from the bootstrap sign probabilities', and no results file contains the adjusted family verdict.",
+    "claim_at_risk": "The single confirmatory positive claim of the thesis (SWG late-mean fusion vs histology) \u2014 it must be reported with its Holm-adjusted status within the 4-contrast family wherever cited.",
+    "what_to_run": "Compute Holm-Bonferroni over the four bootstrap sign probabilities (SWG delta from lgd2 paired differences, OCCAMS v3 delta from occams_v3.json, ERIN progression delta from erin_prog_ablation.json, Ch4 contrast pending R.4 \u2014 mark as pending); write results/multiplicity_holm.json.",
+    "blocking": true,
+    "severity": 3
+  },
+  {
+    "gap": "Progression cohort v2-vs-v3 reconciliation (item 1.21) is still queued: 2.12 reports 1,218 patients/197 progressors while erin_jury_labels_summary progression_v3 reports 1,266/181, with no recorded reconciliation of the 48-patient/\u221216-progressor discrepancy.",
+    "claim_at_risk": "Every Ch3/Ch4 number that quotes the progression cohort (n, event count, which cohort trained the models) \u2014 two unreconciled 'final' cohorts is a data-provenance hole a reader can find.",
+    "what_to_run": "Diff the two cohort manifests (patient IDs, event flags, exclusion reasons), produce a reconciliation table attributing every difference to the false-CANCER demotion, label-source change, or join change; assert which cohort each results file actually used.",
+    "blocking": true,
+    "severity": 3
+  },
+  {
+    "gap": "The Ch4 label-source experiment (item 2.3) is pre-registered to be replicated on TCGA ('features ready'), and the digest contains only the ERIN cross-evaluation matrix \u2014 no TCGA-side jury-vs-pathladder-vs-structured-grade training comparison exists.",
+    "claim_at_risk": "Ch4's claim that report-derived supervision transports beyond the home corpus (the pan-cancer jury validates label EXTRACTION at 95-98%, but not that models trained on jury vs rules labels are interchangeable on TCGA tissue).",
+    "what_to_run": "Train grade classifiers on TCGA-ESCA (and/or STAD) slides under each label source (pathladder vs jury vs cBioPortal structured grade) with the cross-evaluation matrix design of ch4_labelsource_xeval; report paired deltas.",
+    "blocking": false,
+    "severity": 2
+  }
+]
