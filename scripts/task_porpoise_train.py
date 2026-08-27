@@ -15,7 +15,23 @@ D = "/mnt/scratche/slow/fmlab/zuberi01/phd/thesis/feasibility/runs/porpoise_data
 OUT = os.environ.get("OUTDIR", ".")
 sys.path.insert(0, P)
 from models.model_porpoise import PorpoiseMMF, PorpoiseAMIL  # noqa: E402
-from utils.utils import nll_loss  # noqa: E402
+
+def nll_loss(hazards, S, Y, c, alpha=0.4, eps=1e-7):
+    """Verbatim from PORPOISE utils/utils.py (Chen et al. 2022, MIT licence) —
+    vendored because their utils module imports torch_geometric, which the
+    erin env does not carry and the loss does not need."""
+    batch_size = len(Y)
+    Y = Y.view(batch_size, 1)
+    c = c.view(batch_size, 1).float()
+    if S is None:
+        S = torch.cumprod(1 - hazards, dim=1)
+    S_padded = torch.cat([torch.ones_like(c), S], 1)
+    uncensored_loss = -(1 - c) * (
+        torch.log(torch.gather(S_padded, 1, Y).clamp(min=eps))
+        + torch.log(torch.gather(hazards, 1, Y).clamp(min=eps)))
+    censored_loss = -c * torch.log(torch.gather(S_padded, 1, Y + 1).clamp(min=eps))
+    neg_l = censored_loss + uncensored_loss
+    return ((1 - alpha) * neg_l + alpha * uncensored_loss).mean()
 
 DEV = "cuda" if torch.cuda.is_available() else "cpu"
 SEEDS = [0, 1]
