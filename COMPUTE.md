@@ -46,3 +46,17 @@ GDC API: 40 parallel streams from epyc sustained ~234 MB/s aggregate (305 GB in
 parallelise GDC pulls; the %40 array throttle did not bind. The ceiling was never
 hit; raise beyond 40 only if a campaign needs it, since a rate-limit block on the
 shared cluster IP stalls everyone.
+
+## Hard-won submission rules (2026-08-27)
+
+- **h200 is preemptible — never h200 alone.** Other groups hold priority on the
+  H200 partition (QoS `h200_preempt`) and can cancel our RUNNING jobs. Every
+  h200 submission must have a cuda (or epyc) twin of the same task. Workers
+  must be resume-capable; after a preemption or scancel expect a STALE LOCK
+  (`rm -rf feasibility/runs/<task>/.lock` before resubmitting — a killed job's
+  exit trap may not fire).
+- **Env × partition:** `erin` (torch 2.0.1+cu117) has no sm_90 kernels — torch
+  jobs on h200 need `CONDA_ENV=virchow2` (torch 2.9.1+cu128). `erin` is fine on
+  cuda/L40S. ollama jobs carry their own CUDA runtime and run anywhere.
+- **Backfill:** request realistic walltimes (3h, not 12h) — short jobs slot
+  into scheduler gaps; long ones queue behind Priority for a day or more.
