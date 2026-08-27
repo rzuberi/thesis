@@ -182,6 +182,18 @@ On return: read results against pre-registrations; deviations to log: none yet.
   research cohort to routine NHS cohort, the direction that matters); all
   other cells collapse (ERIN->SWG prog 0.54, grade 0.56, TCGA->OCCAMS 0.49) or
   carry no signal to transfer (OCCAMS->TCGA 0.60->0.60).
+  CLOSURE OUTCOMES 2026-08-27: 1.4 DONE (results/porpoise_baselines.json) —
+  published PORPOISE fusion FAILS to beat its own unimodal arm on our pool
+  (MMF 0.545 vs AMIL 0.566, delta -0.021 [-0.081, +0.035]); the architecture
+  escape hatch is closed. 2.25b DONE (results/wgd_swg.json) — the transfer
+  inversion is a RANKING failure, replicated: predicted-WGD vs measured cx
+  rho=-0.10 (p=0.005, n=707), progression AUC 0.397; virtual genomic
+  biomarkers do not survive resection->biopsy shift, two cohorts. 2.33 DONE
+  (results/pancancer_jury.json) — jury vs HUMAN-RECORDED structured grades:
+  ESCA 98.0%, STAD 96.4%, KIRC 95.2% exact; BLCA 98.6% two-tier (two-tier is
+  its clinical system); ~1,280 reports, four cancer types, fully outside the
+  self-validation loop — the strongest available answer to the sev-5
+  criticism short of R.4 itself.
   GATE: once these + PORPOISE land,
   a wave-3 multi-LLM GAP REVIEW of the complete results corpus decides
   whether compute is done; writing starts only after that gate.
