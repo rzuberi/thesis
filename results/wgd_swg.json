@@ -1,0 +1,27 @@
+{
+  "_meta": {
+    "teacher_cases": 562,
+    "swg_samples": 707,
+    "seeds": [
+      0,
+      1,
+      2
+    ]
+  },
+  "wgd": {
+    "pred_vs_measured_cx": {
+      "spearman": -0.1046,
+      "p": 0.005359415112137046,
+      "n": 707
+    },
+    "progression_auc_of_predicted": 0.397
+  },
+  "tp53_mut": {
+    "pred_vs_measured_cx": {
+      "spearman": 0.032,
+      "p": 0.39508376965449543,
+      "n": 707
+    },
+    "progression_auc_of_predicted": 0.4526
+  }
+}
