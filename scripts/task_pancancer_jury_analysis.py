@@ -9,8 +9,8 @@ T = "/mnt/scratche/slow/fmlab/zuberi01/phd/thesis"
 PREP = T + "/data/pancancer"
 OUT = os.environ.get("OUTDIR", ".")
 VALID = {"G1", "G2", "G3", "G4", "HIGH", "LOW"}
-STUDIES = ["esca_tcga_pan_can_atlas_2018", "stad_tcga_pan_can_atlas_2018",
-           "kirc_tcga_pan_can_atlas_2018", "blca_tcga_pan_can_atlas_2018"]
+# provisional studies carry GRADE; pan_can_atlas files do not
+STUDIES = ["esca_tcga", "stad_tcga", "kirc_tcga", "blca_tcga"]
 NUMMAP = {"G1": "G1", "G2": "G2", "G3": "G3", "G4": "G4",
           "HIGH GRADE": "HIGH", "LOW GRADE": "LOW", "HIGH": "HIGH", "LOW": "LOW"}
 TWO_TIER = {"G1": "LOW", "G2": "LOW", "G3": "HIGH", "G4": "HIGH",
@@ -34,7 +34,7 @@ for cid in set.union(*(set(v) for v in votes.values())):
 res = {"_meta": {"jurors": sorted(votes), "n_graded": len(maj)}}
 for st in STUDIES:
     cp = os.path.join(PREP, st + "_clinical.txt")
-    rp = os.path.join(PREP, st + "_reports.csv")
+    rp = os.path.join(PREP, st + "_pan_can_atlas_2018_reports.csv")
     if not (os.path.exists(cp) and os.path.exists(rp)): continue
     clin = pd.read_csv(cp, sep="\t", comment="#")
     gcol = next((c for c in clin.columns if c.upper() in ("GRADE", "NEOPLASM_HISTOLOGIC_GRADE",
