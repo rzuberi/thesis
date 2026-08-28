@@ -200,6 +200,16 @@ On return: read results against pre-registrations; deviations to log: none yet.
   pipeline controls (= 2.35), Holm computation (1.18 execution), patient-level
   ERIN grade aggregation (= 2.36, Terra sev-5). All submitted same day;
   writing gate re-evaluates when they land.
+  CLOSURE PROGRESS 2026-08-27 (results/closure_cpu.json): 1.18 Holm DONE —
+  only the SWG fusion win survives correction (p_holm=0.0096); OCCAMS, ERIN-
+  prog fusion, Ch4 label-source all null after Holm; the corrected table
+  matches the thesis narrative exactly. 2.36 DONE — patient-level ERIN grade
+  0.960 vs slide-level 0.921; protocol-correct metric is STRONGER (Terra
+  sev-5 resolved favourably). 1.21 DONE — v2 (1,218/197) vs v3 (1,266/181):
+  75 gained (jury labels reports consensus could not), 27 lost (unsure
+  exclusions), 103 event flips, 61 pos->neg consistent with the documented
+  consensus-era CANCER over-call. Remaining gate compute: perm controls
+  (queued) + OCCAMS extraction (~2,540 h5s) -> downstream encoder sweep.
   GATE: once these + PORPOISE land,
   a wave-3 multi-LLM GAP REVIEW of the complete results corpus decides
   whether compute is done; writing starts only after that gate.
