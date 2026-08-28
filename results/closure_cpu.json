@@ -1,0 +1,36 @@
+{
+  "reconciliation": {
+    "error": "no v2 cohort file found",
+    "candidates": [
+      "erin_progression_cohort_v3.csv"
+    ]
+  },
+  "holm_confirmatory": {
+    "ch2_swg_latemean_vs_hist_auc": {
+      "p_raw": 0.0024,
+      "p_holm": 0.0096,
+      "significant_at_0.05": true
+    },
+    "ch2_occams_fusion_vs_hist_c": {
+      "p_raw": 0.23064,
+      "p_holm": 0.69193,
+      "significant_at_0.05": false
+    },
+    "ch3_erin_prog_fusion_vs_hist_auc": {
+      "p_raw": 0.87577,
+      "p_holm": 1.0,
+      "significant_at_0.05": false
+    },
+    "ch4_pathladder_vs_jury_trained_auc": {
+      "p_raw": 0.94517,
+      "p_holm": 0.94517,
+      "significant_at_0.05": false
+    }
+  },
+  "erin_grade_patient_level": {
+    "n_slides": 2153,
+    "n_patients": 1574,
+    "slide_level_auc_reference": 0.9209,
+    "patient_level_auc": 0.9598
+  }
+}
