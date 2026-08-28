@@ -1,9 +1,22 @@
 {
   "reconciliation": {
-    "error": "no v2 cohort file found",
-    "candidates": [
-      "erin_progression_cohort_v3.csv"
-    ]
+    "v2": {
+      "n": 1218,
+      "progressors": 197
+    },
+    "v3": {
+      "n": 1266,
+      "progressors": 181
+    },
+    "gained_in_v3": 75,
+    "lost_in_v3": 27,
+    "flips": 103,
+    "flips_pos_to_neg": 61,
+    "flips_neg_to_pos": 42,
+    "progressors_among_gained": 11,
+    "progressors_among_lost": 8,
+    "v2_file": "feasibility/runs/consensus2/output/erin_progression_cohort_v2.csv",
+    "note": "v2 built from 2-grader consensus labels; v3 from jury labels with unsure exclusion"
   },
   "holm_confirmatory": {
     "ch2_swg_latemean_vs_hist_auc": {
