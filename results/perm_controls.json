@@ -1,0 +1,18 @@
+{
+  "erin_prog": {
+    "n_perm": 75,
+    "null_mean": 0.5016,
+    "null_sd": 0.0947,
+    "real": 0.8191,
+    "empirical_p": 0.0133,
+    "null_95pct": 0.6691
+  },
+  "tcga_abmil": {
+    "n_perm": 50,
+    "null_mean": 0.487,
+    "null_sd": 0.0643,
+    "real": null,
+    "empirical_p": null,
+    "null_95pct": 0.5801
+  }
+}
