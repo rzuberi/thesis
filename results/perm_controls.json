@@ -11,8 +11,9 @@
     "n_perm": 50,
     "null_mean": 0.487,
     "null_sd": 0.0643,
-    "real": null,
-    "empirical_p": null,
-    "null_95pct": 0.5801
+    "real": 0.6792,
+    "empirical_p": 0.02,
+    "null_95pct": 0.5801,
+    "note": "real 0.6792 (hist_abmil); max null draw below real -> p < 0.02"
   }
 }
