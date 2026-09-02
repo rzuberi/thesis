@@ -19,11 +19,12 @@ CASES = json.load(open(H + "/cases.json"))
 CORE = [c for c in CASES if c["block"] == "core"]
 POOL = [c for c in CASES if c["block"] == "pool"]
 BY_CASE = {c["case"]: c for c in CASES}
-GRADES = ["NDBE", "IND", "LGD", "HGD", "CANCER", "CANT_GRADE"]
+GRADES = ["NDBE", "IND", "LGD", "HGD", "CANCER", "NORMAL_OTHER", "CANT_GRADE"]
+SUBTYPES = ["adenocarcinoma", "squamous", "signet_ring", "post_neoadjuvant_tx_effect", "other_cancer"]
 
 db = sqlite3.connect(H + "/grading.db", check_same_thread=False)
 db.execute("""CREATE TABLE IF NOT EXISTS labels
-  (grader TEXT, case_name TEXT, grade TEXT, note TEXT,
+  (grader TEXT, case_name TEXT, payload TEXT, note TEXT,
    ts DATETIME DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (grader, case_name))""")
 db.execute("""CREATE TABLE IF NOT EXISTS assignments
   (grader TEXT, case_name TEXT, ord INTEGER, PRIMARY KEY (grader, case_name))""")
@@ -58,12 +59,13 @@ input,textarea{padding:8px;border:1px solid #d1d5db;border-radius:8px;font-size:
 </style>
 <div class="wrap" id="app"></div>
 <script>
-const GRADES=["NDBE","IND","LGD","HGD","CANCER","CANT_GRADE"];
-const KEY={"1":0,"2":1,"3":2,"4":3,"5":4,"0":5};
-let S={name:localStorage.getItem("g_name")||"",pw:localStorage.getItem("g_pw")||"",cases:[],labels:{},idx:0};
+const GRADES=["NDBE","IND","LGD","HGD","CANCER","NORMAL_OTHER","CANT_GRADE"];
+const SUBTYPES=["adenocarcinoma","squamous","signet_ring","post_neoadjuvant_tx_effect","other_cancer"];
+const SECTIONS=["A","B","C","D","E","F","G","H","whole_report"];
+let S={name:localStorage.getItem("g_name")||"",pw:localStorage.getItem("g_pw")||"",cases:[],labels:{},idx:0,rows:[]};
 const app=document.getElementById("app");
-function login(){app.innerHTML=`<div class="card"><h2>ERIN report grading</h2>
-<p class="mut">Grade the worst finding in each report. Your progress saves on every click and you can stop and resume any time.</p>
+function login(){app.innerHTML=`<div class="card"><h2>ERIN report grading (per section)</h2>
+<p class="mut">Reports contain lettered specimen sections (A, B, C...). For EACH section, tick every grade present (a section can have several, e.g. NDBE + LGD). If CANCER is present, also tick its subtype(s). Use "whole report" only when the report has no lettered sections. Progress saves on every Save.</p>
 <p><input id="nm" placeholder="Your name" value="${S.name}"> <input id="pw" type="password" placeholder="Lab passphrase" value="${S.pw}"> <button onclick="start()">Start / Resume</button></p>
 <p class="mut" id="err"></p></div>`}
 async function start(){
@@ -73,28 +75,44 @@ async function start(){
   if(!r.ok){document.getElementById("err").textContent="Wrong passphrase";return}
   localStorage.setItem("g_name",S.name);localStorage.setItem("g_pw",S.pw);
   const d=await r.json();S.cases=d.cases;S.labels=d.labels;
-  S.idx=S.cases.findIndex(c=>!(c.case in S.labels));if(S.idx<0)S.idx=0;render()}
+  S.idx=S.cases.findIndex(c=>!(c.case in S.labels));if(S.idx<0)S.idx=0;load();render()}
+function load(){
+  const c=S.cases[S.idx];
+  S.rows=(S.labels[c.case]&&JSON.parse(JSON.stringify(S.labels[c.case])))||[{section:"A",grades:[],subtypes:[]}];}
+function rowHtml(r,i){
+  const cancer=r.grades.includes("CANCER");
+  return `<div style="border:1px solid #e5e7eb;border-radius:8px;padding:10px;margin:8px 0">
+  <b>Section</b> <select onchange="S.rows[${i}].section=this.value">${SECTIONS.map(x=>`<option ${r.section===x?"selected":""}>${x}</option>`).join("")}</select>
+  <button style="float:right;color:#b91c1c" onclick="S.rows.splice(${i},1);render()">remove</button><br>
+  ${GRADES.map(g=>`<label style="margin-right:10px"><input type="checkbox" ${r.grades.includes(g)?"checked":""}
+    onchange="tog(${i},'grades','${g}',this.checked)"> ${g.replace(/_/g," ")}</label>`).join("")}
+  ${cancer?`<div style="margin-top:6px"><i>cancer subtype(s):</i> ${SUBTYPES.map(t=>`<label style="margin-right:10px"><input type="checkbox" ${r.subtypes.includes(t)?"checked":""}
+    onchange="tog(${i},'subtypes','${t}',this.checked)"> ${t.replace(/_/g," ")}</label>`).join("")}</div>`:""}
+  </div>`}
+function tog(i,f,v,on){const a=S.rows[i][f];const j=a.indexOf(v);if(on&&j<0)a.push(v);if(!on&&j>=0)a.splice(j,1);render()}
 function render(){
   const c=S.cases[S.idx],done=Object.keys(S.labels).length;
   app.innerHTML=`<div class="card">
-  <div class="mut">${S.name} &middot; report ${S.idx+1}/${S.cases.length} (${c.case}) &middot; keys 1-5, 0=can't grade</div>
+  <div class="mut">${S.name} &middot; report ${S.idx+1}/${S.cases.length} (${c.case})</div>
   <div class="bar"><div class="fill" style="width:${100*done/S.cases.length}%"></div></div>
   <pre>${c.text.replace(/</g,"&lt;")}</pre>
-  <div>${GRADES.map((g,j)=>`<button class="${S.labels[c.case]===g?"sel":""}" onclick="grade('${g}')">${j<5?j+1:0} ${g.replace("_"," ")}</button>`).join("")}</div>
+  <div id="rows">${S.rows.map(rowHtml).join("")}</div>
+  <button onclick="S.rows.push({section:'A',grades:[],subtypes:[]});render()">+ add section</button>
   <textarea id="note" placeholder="optional note" style="width:100%;box-sizing:border-box;margin-top:8px"></textarea>
-  <p><button onclick="move(-1)">&larr; Prev</button> <button onclick="move(1)">Next &rarr;</button>
-  <span class="mut">${done}/${S.cases.length} graded${done>=S.cases.length?" — all done, thank you!":""}</span></p></div>`}
-async function grade(g){
-  const c=S.cases[S.idx],note=document.getElementById("note").value;
-  S.labels[c.case]=g;
-  await fetch("/label",{method:"POST",headers:{"Content-Type":"application/json"},
-    body:JSON.stringify({name:S.name,pw:S.pw,case:c.case,grade:g,note:note})});
-  if(S.idx<S.cases.length-1)S.idx++;render()}
-function move(d){S.idx=Math.min(S.cases.length-1,Math.max(0,S.idx+d));render()}
-document.addEventListener("keydown",e=>{
-  if(e.target.tagName==="TEXTAREA"||e.target.tagName==="INPUT")return;
-  if(e.key in KEY)grade(GRADES[KEY[e.key]]);
-  else if(e.key==="ArrowLeft")move(-1);else if(e.key==="ArrowRight")move(1)});
+  <p><button onclick="move(-1)">&larr; Prev</button>
+  <button style="background:#059669;color:#fff;border-color:#059669" onclick="saveNext()">Save &amp; next &rarr;</button>
+  <button onclick="move(1)">skip &rarr;</button>
+  <span class="mut">${done}/${S.cases.length} saved${done>=S.cases.length?" — all done, thank you!":""}</span></p></div>`}
+async function saveNext(){
+  const c=S.cases[S.idx];
+  const rows=S.rows.filter(r=>r.grades.length>0);
+  if(!rows.length){alert("Tick at least one grade in at least one section.");return}
+  const r=await fetch("/label",{method:"POST",headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({name:S.name,pw:S.pw,case:c.case,sections:rows,note:document.getElementById("note").value})});
+  if(!r.ok){alert("save failed — retry");return}
+  S.labels[c.case]=rows;
+  if(S.idx<S.cases.length-1)S.idx++;load();render()}
+function move(d){S.idx=Math.min(S.cases.length-1,Math.max(0,S.idx+d));load();render()}
 login();
 </script>"""
 
@@ -118,13 +136,13 @@ class Handler(BaseHTTPRequestHandler):
             name = q.get("name", "").strip().lower()
             if not name: return self._json({"err": "no name"}, 400)
             order = assign(name)
-            labels = dict(db.execute(
-                "SELECT case_name, grade FROM labels WHERE grader=?", (name,)).fetchall())
+            labels = {c: json.loads(pl) for c, pl in db.execute(
+                "SELECT case_name, payload FROM labels WHERE grader=?", (name,)).fetchall()}
             self._json({"cases": [{"case": c, "text": BY_CASE[c]["text"]} for c in order],
                         "labels": labels})
         elif u.path == "/export":
             if q.get("pw") != PASS: return self._json({"err": "bad pw"}, 403)
-            rows = db.execute("SELECT grader, case_name, grade, note, ts FROM labels").fetchall()
+            rows = db.execute("SELECT grader, case_name, payload, note, ts FROM labels").fetchall()
             self._json({"n": len(rows), "labels": rows})
         else:
             self._json({"err": "not found"}, 404)
@@ -133,11 +151,18 @@ class Handler(BaseHTTPRequestHandler):
         n = int(self.headers.get("Content-Length", 0))
         d = json.loads(self.rfile.read(n))
         if d.get("pw") != PASS: return self._json({"err": "bad pw"}, 403)
-        g = d.get("grade")
-        if g not in GRADES or d.get("case") not in BY_CASE: return self._json({"err": "bad"}, 400)
+        secs = d.get("sections")
+        if d.get("case") not in BY_CASE or not isinstance(secs, list) or not secs:
+            return self._json({"err": "bad"}, 400)
+        for sec in secs:
+            if not isinstance(sec.get("grades"), list) or \
+               any(g not in GRADES for g in sec["grades"]) or \
+               any(t not in SUBTYPES for t in sec.get("subtypes", [])):
+                return self._json({"err": "bad section"}, 400)
         with lock:
-            db.execute("INSERT OR REPLACE INTO labels (grader, case_name, grade, note) VALUES (?,?,?,?)",
-                       (d["name"].strip().lower(), d["case"], g, str(d.get("note", ""))[:500]))
+            db.execute("INSERT OR REPLACE INTO labels (grader, case_name, payload, note) VALUES (?,?,?,?)",
+                       (d["name"].strip().lower(), d["case"],
+                        json.dumps(secs), str(d.get("note", ""))[:500]))
             db.commit()
         self._json({"ok": True})
 
