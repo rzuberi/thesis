@@ -169,6 +169,18 @@ On return: read results against pre-registrations; deviations to log: none yet.
   Part A's claim must be revised from "not recoverable" to "partially recoverable
   at scale; the fusion question becomes complementarity beyond what is visible."
   Stage from H&E: 0.644. Age: 0.569.
+- 2026-09-02 (joint, Rehan): the ERIN LLM-labelling work is to become an
+  ARXIV PAPER. Missing piece = human hand labels; Rehan will grade 100 blinded
+  reports himself via a local self-contained HTML tool (delivered; report text
+  kept off external services per governance — no artifact publish). Sample:
+  60 random train-eligible + 20 unsure-holdout + 20 pathladder-vs-jury
+  disagreements, all distinct patients, shuffled, stratum key held back at
+  labeller/handlabel_sample_key.csv (cluster only). On return of the CSV:
+  human-vs-jury / human-vs-pathladder agreement overall and per stratum, and
+  whether the unsure quarantine is where humans also struggle. Honesty note
+  for the paper: Rehan is a computational researcher, not a pathologist —
+  labels are a domain-expert human anchor; the pathologist sample (R.4)
+  remains the gold anchor if ever available.
 - 2026-09-02 (Rehan-directed side quests): SQ.1 EoE finder — keyword screen
   found 796/7,149 reports (640 patients) mentioning eosinophils, 116 with
   explicit EoE phrases; 3-juror LLM adjudication over all 791 keyword-positives
