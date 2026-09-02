@@ -169,6 +169,14 @@ On return: read results against pre-registrations; deviations to log: none yet.
   Part A's claim must be revised from "not recoverable" to "partially recoverable
   at scale; the fusion question becomes complementarity beyond what is visible."
   Stage from H&E: 0.644. Age: 0.569.
+- 2026-09-02 evening (joint, Rehan; Shiv left the lab — credit, don't ask):
+  2.37 per-section jury over the FULL 7,149-report corpus (top-5 jurors,
+  multi-grade + subtype per section; labeller/llm_grade_sections.py) — via
+  Shiv's slide<->section table this regenerates ERIN supervision at SLIDE
+  level. 2.38 the payoff: retrain grade classifier slide-level vs case-max on
+  identical folds — quantifies the label noise of the standard case-level
+  shortcut (planned once 2.37 lands). Human per-section comparison joins the
+  app labels to the same structure.
 - 2026-09-02 later (joint, Rehan): label-space CORRECTION — reports contain
   lettered specimen sections with potentially different/multiple grades each,
   and cancer subtype matters (adenocarcinoma / squamous / signet ring /
