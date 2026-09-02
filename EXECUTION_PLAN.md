@@ -169,6 +169,15 @@ On return: read results against pre-registrations; deviations to log: none yet.
   Part A's claim must be revised from "not recoverable" to "partially recoverable
   at scale; the fusion question becomes complementarity beyond what is visible."
   Stage from H&E: 0.644. Age: 0.569.
+- 2026-09-02 (Rehan-directed side quests): SQ.1 EoE finder — keyword screen
+  found 796/7,149 reports (640 patients) mentioning eosinophils, 116 with
+  explicit EoE phrases; 3-juror LLM adjudication over all 791 keyword-positives
+  + 100 random keyword-negative controls running (labeller/llm_eoe_shard.py).
+  SQ.2 ERIN MDT — published-pattern panel deliberation (MDTeamGPT/MDAT shape:
+  independent reads -> rebuttal round -> chair synthesis; 3 consultants +
+  qwen3:32b chair) over the 80 adjudicated (binary truth) + 201 unsure
+  reports; measures deliberation-vs-voting accuracy AND conformity flips
+  (labeller/llm_mdt.py). Both are Ch4-extension candidates.
 - 2026-08-26 PM (joint, Rehan): final compute closure before writing —
   2.25b WGD teacher scored on SWG biopsies with MEASURED CNV complexity as
   ground truth (diagnoses whether the ERIN transfer inversion is ranking or
