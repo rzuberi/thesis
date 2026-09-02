@@ -1,0 +1,300 @@
+{
+  "_meta": {
+    "encoders_attempted": [
+      "virchow2",
+      "gigapath",
+      "phikon2",
+      "hoptimus0"
+    ],
+    "min_frac": 0.95,
+    "seeds": [
+      0,
+      1,
+      2
+    ]
+  },
+  "virchow2": {
+    "occams": {
+      "hist": {
+        "c": 0.5647,
+        "c_ci": [
+          0.4825,
+          0.6395
+        ]
+      },
+      "late_fusion": {
+        "c": 0.5712,
+        "c_ci": [
+          0.4863,
+          0.6414
+        ],
+        "delta_ci": [
+          -0.0529,
+          0.0661
+        ],
+        "delta_mean": 0.0056
+      },
+      "n": 87,
+      "missing_features": 0
+    },
+    "tcga_pool": {
+      "hist": {
+        "c": 0.5234,
+        "c_ci": [
+          0.4778,
+          0.5725
+        ]
+      },
+      "late_fusion": {
+        "c": 0.5467,
+        "c_ci": [
+          0.4982,
+          0.5989
+        ],
+        "delta_ci": [
+          -0.0156,
+          0.0598
+        ],
+        "delta_mean": 0.0225
+      },
+      "n": 399,
+      "missing_features": 0
+    },
+    "tcga_oac": {
+      "hist": {
+        "c": 0.6733,
+        "c_ci": [
+          0.5707,
+          0.7708
+        ]
+      },
+      "late_fusion": {
+        "c": 0.6364,
+        "c_ci": [
+          0.5317,
+          0.7417
+        ],
+        "delta_ci": [
+          -0.1258,
+          0.0546
+        ],
+        "delta_mean": -0.0373
+      },
+      "n": 65,
+      "missing_features": 0
+    }
+  },
+  "gigapath": {
+    "occams": {
+      "hist": {
+        "c": 0.4902,
+        "c_ci": [
+          0.4026,
+          0.5742
+        ]
+      },
+      "late_fusion": {
+        "c": 0.5228,
+        "c_ci": [
+          0.4337,
+          0.6097
+        ],
+        "delta_ci": [
+          -0.0371,
+          0.095
+        ],
+        "delta_mean": 0.0308
+      },
+      "n": 87,
+      "missing_features": 0
+    },
+    "tcga_pool": {
+      "hist": {
+        "c": 0.5242,
+        "c_ci": [
+          0.4749,
+          0.5752
+        ]
+      },
+      "late_fusion": {
+        "c": 0.5444,
+        "c_ci": [
+          0.4946,
+          0.5942
+        ],
+        "delta_ci": [
+          -0.0195,
+          0.0588
+        ],
+        "delta_mean": 0.02
+      },
+      "n": 399,
+      "missing_features": 0
+    },
+    "tcga_oac": {
+      "hist": {
+        "c": 0.6748,
+        "c_ci": [
+          0.5654,
+          0.7675
+        ]
+      },
+      "late_fusion": {
+        "c": 0.626,
+        "c_ci": [
+          0.5138,
+          0.7283
+        ],
+        "delta_ci": [
+          -0.1235,
+          0.0273
+        ],
+        "delta_mean": -0.0482
+      },
+      "n": 65,
+      "missing_features": 0
+    }
+  },
+  "phikon2": {
+    "occams": {
+      "hist": {
+        "c": 0.4922,
+        "c_ci": [
+          0.4059,
+          0.5758
+        ]
+      },
+      "late_fusion": {
+        "c": 0.5329,
+        "c_ci": [
+          0.4423,
+          0.6093
+        ],
+        "delta_ci": [
+          -0.0334,
+          0.1074
+        ],
+        "delta_mean": 0.0389
+      },
+      "n": 87,
+      "missing_features": 0
+    },
+    "tcga_pool": {
+      "hist": {
+        "c": 0.5727,
+        "c_ci": [
+          0.5255,
+          0.6212
+        ]
+      },
+      "late_fusion": {
+        "c": 0.581,
+        "c_ci": [
+          0.5314,
+          0.6321
+        ],
+        "delta_ci": [
+          -0.0322,
+          0.0472
+        ],
+        "delta_mean": 0.0077
+      },
+      "n": 399,
+      "missing_features": 0
+    },
+    "tcga_oac": {
+      "hist": {
+        "c": 0.6659,
+        "c_ci": [
+          0.5672,
+          0.7591
+        ]
+      },
+      "late_fusion": {
+        "c": 0.6364,
+        "c_ci": [
+          0.5371,
+          0.7407
+        ],
+        "delta_ci": [
+          -0.1228,
+          0.0594
+        ],
+        "delta_mean": -0.0296
+      },
+      "n": 65,
+      "missing_features": 0
+    }
+  },
+  "hoptimus0": {
+    "occams": {
+      "hist": {
+        "c": 0.4906,
+        "c_ci": [
+          0.4038,
+          0.5796
+        ]
+      },
+      "late_fusion": {
+        "c": 0.5215,
+        "c_ci": [
+          0.4343,
+          0.6059
+        ],
+        "delta_ci": [
+          -0.0421,
+          0.0964
+        ],
+        "delta_mean": 0.0285
+      },
+      "n": 87,
+      "missing_features": 0
+    },
+    "tcga_pool": {
+      "hist": {
+        "c": 0.5161,
+        "c_ci": [
+          0.4666,
+          0.5694
+        ]
+      },
+      "late_fusion": {
+        "c": 0.5379,
+        "c_ci": [
+          0.4875,
+          0.5916
+        ],
+        "delta_ci": [
+          -0.0164,
+          0.0573
+        ],
+        "delta_mean": 0.0216
+      },
+      "n": 399,
+      "missing_features": 0
+    },
+    "tcga_oac": {
+      "hist": {
+        "c": 0.6615,
+        "c_ci": [
+          0.5547,
+          0.7584
+        ]
+      },
+      "late_fusion": {
+        "c": 0.6349,
+        "c_ci": [
+          0.5337,
+          0.7387
+        ],
+        "delta_ci": [
+          -0.1071,
+          0.0489
+        ],
+        "delta_mean": -0.027
+      },
+      "n": 65,
+      "missing_features": 0
+    }
+  }
+}
