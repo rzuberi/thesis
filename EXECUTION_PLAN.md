@@ -169,6 +169,19 @@ On return: read results against pre-registrations; deviations to log: none yet.
   Part A's claim must be revised from "not recoverable" to "partially recoverable
   at scale; the fusion question becomes complementarity beyond what is visible."
   Stage from H&E: 0.644. Age: 0.569.
+- 2026-09-02 later (joint, Rehan): label-space CORRECTION — reports contain
+  lettered specimen sections with potentially different/multiple grades each,
+  and cancer subtype matters (adenocarcinoma / squamous / signet ring /
+  post-neoadjuvant treatment effect). Grading app rebuilt as v2: per-section
+  multi-grade + subtype tags (scripts/grading_app.py; DB reset pre-launch, no
+  labels lost). KEY FIND (Rehan pointer): Shiv Sakthivel's
+  fmlab/sakthi01/erin/data/matched_image_pathology.csv (12,468 rows) maps each
+  SLIDE to its report Section + tissue type — joining per-section human/LLM
+  labels through it upgrades ERIN supervision from case-max to SLIDE-LEVEL.
+  Rehan's earlier case-level local tool is superseded; he grades in the app.
+  Follow-on (planned, not yet run): per-section LLM extraction prompt so the
+  jury emits section-wise grades for the human comparison; slide-level label
+  regeneration through Shiv's table.
 - 2026-09-02 (joint, Rehan): the ERIN LLM-labelling work is to become an
   ARXIV PAPER. Missing piece = human hand labels; Rehan will grade 100 blinded
   reports himself via a local self-contained HTML tool (delivered; report text
