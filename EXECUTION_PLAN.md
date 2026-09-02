@@ -169,6 +169,19 @@ On return: read results against pre-registrations; deviations to log: none yet.
   Part A's claim must be revised from "not recoverable" to "partially recoverable
   at scale; the fusion question becomes complementarity beyond what is visible."
   Stage from H&E: 0.644. Age: 0.569.
+- 2026-09-02 night (joint, Rehan): PAPER TRACKS formalised. P1 labelling
+  paper (in motion; human anchor = registry validation, lab grading optional
+  via verification mode). P2 fusion-replication paper REFRAMED constructively:
+  not "fusion fails" but "gains are small/conditional + HERE IS THE PROTOCOL"
+  (power-first checklist: MDD before claims, paired bootstrap, encoder
+  sensitivity, population decomposition, published-baseline anchor,
+  pre-registered effect size) — each rule evidenced by one of our experiments;
+  strengthen-later: calibration/net-benefit (cheap), non-GI cohort (journal
+  revision). P3 open-vocabulary phenotype discovery via LLMs (Rehan's
+  "discovery of bio through LLM"): enumerate all findings across 20k reports,
+  atlas + association mining, stats-validated; EoE side quest = pilot
+  precedent; SQ.3 pilot (1 juror x 1,000 reports) submitted
+  (labeller/llm_phenotype_pilot.py).
 - 2026-09-02 evening (joint, Rehan; Shiv left the lab — credit, don't ask):
   2.37 per-section jury over the FULL 7,149-report corpus (top-5 jurors,
   multi-grade + subtype per section; labeller/llm_grade_sections.py) — via
