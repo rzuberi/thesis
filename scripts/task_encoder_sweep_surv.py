@@ -101,7 +101,8 @@ def run_cohort(name, cases, enc):
     keys = sorted(bags)
     t = {k: cases[k]["time"] for k in keys}
     e = {k: cases[k]["event"] for k in keys}
-    G = {k: cases[k]["gen"] for k in keys}
+    import numpy as _np
+    G = {"keys": keys, "X": _np.stack([cases[k]["gen"] for k in keys])}
     folds = stratified_folds(keys, e, 5, seed=0)
     def cv(train_fn):
         per = []
