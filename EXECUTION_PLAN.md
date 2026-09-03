@@ -169,6 +169,11 @@ On return: read results against pre-registrations; deviations to log: none yet.
   Part A's claim must be revised from "not recoverable" to "partially recoverable
   at scale; the fusion question becomes complementarity beyond what is visible."
   Stage from H&E: 0.644. Age: 0.569.
+- 2026-09-03 (joint, Rehan): 2.28c VLM zero-shot on SWG — ERIN-trained CLIP
+  evaluated on SWG slides paired with Barrett's-DB matched reports (specimen-
+  number join); readouts: retrieval vs chance + zero-shot grading vs the
+  release PATHOLOGIST grades (human truth, third cohort). Surfaced by Rehan's
+  question: DB text had never been joined with SWG images.
 - 2026-09-03 (Rehan): SQ.4 slide QC — blur/focus screen over all 2,281 ERIN
   WSIs (variance-of-Laplacian + tenengrad + brightness at stored tile coords;
   scripts/qc_blur_shard.py; 32 epyc shards). Thresholds set from corpus
