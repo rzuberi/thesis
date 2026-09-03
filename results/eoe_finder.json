@@ -1,0 +1,21 @@
+{
+  "n_adjudicated": 71,
+  "kw_pos_classes": {
+    "ABSENT": 39,
+    "NEGATED_OR_INCIDENTAL": 17,
+    "SUSPECTED": 5,
+    "DIAGNOSED": 2
+  },
+  "control_classes": {
+    "ABSENT": 8
+  },
+  "diagnosed": {
+    "reports": 2,
+    "patients": 2,
+    "unanimous": 2
+  },
+  "suspected": {
+    "reports": 5,
+    "patients": 5
+  }
+}
