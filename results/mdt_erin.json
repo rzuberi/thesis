@@ -1,0 +1,24 @@
+{
+  "n_cases": 280,
+  "adjudicated": {
+    "n": 78,
+    "mdt_chair_cancer_accuracy": 0.9872,
+    "r1_independent_majority_accuracy": 0.9744,
+    "conformity_losses_vs_truth": 0
+  },
+  "deliberation": {
+    "cases_with_r1_disagreement": 124,
+    "converged_unanimous_by_r2": 85
+  },
+  "unsure": {
+    "n": 201,
+    "chair_conf_ge_0.7": 200,
+    "chair_grades": {
+      "CANCER": 80,
+      "IND": 71,
+      "LGD": 24,
+      "HGD": 15,
+      "NDBE": 11
+    }
+  }
+}

@@ -1,21 +1,23 @@
 {
-  "n_adjudicated": 71,
-  "kw_pos_classes": {
-    "ABSENT": 39,
-    "NEGATED_OR_INCIDENTAL": 17,
-    "SUSPECTED": 5,
-    "DIAGNOSED": 2
+  "n_adjudicated": 891,
+  "parse_fail_rows_remaining": 0,
+  "kw_pos": {
+    "NEGATED_OR_INCIDENTAL": 404,
+    "ABSENT": 284,
+    "SUSPECTED": 77,
+    "DIAGNOSED": 26
   },
-  "control_classes": {
-    "ABSENT": 8
+  "controls": {
+    "ABSENT": 83,
+    "NEGATED_OR_INCIDENTAL": 17
   },
   "diagnosed": {
-    "reports": 2,
-    "patients": 2,
-    "unanimous": 2
+    "reports": 26,
+    "patients": 17,
+    "unanimous": 13
   },
   "suspected": {
-    "reports": 5,
-    "patients": 5
+    "reports": 77,
+    "patients": 66
   }
 }
