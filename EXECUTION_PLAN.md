@@ -169,6 +169,14 @@ On return: read results against pre-registrations; deviations to log: none yet.
   Part A's claim must be revised from "not recoverable" to "partially recoverable
   at scale; the fusion question becomes complementarity beyond what is visible."
   Stage from H&E: 0.644. Age: 0.569.
+- 2026-09-03 (Rehan): SQ.4 slide QC — blur/focus screen over all 2,281 ERIN
+  WSIs (variance-of-Laplacian + tenengrad + brightness at stored tile coords;
+  scripts/qc_blur_shard.py; 32 epyc shards). Thresholds set from corpus
+  distribution at analysis; follow-up = correlate quality with model errors /
+  confidence / unsure stratum (P1 paragraph). Extendable to SWG/OCCAMS/TCGA.
+  Also 2026-09-03: tcga_esca, tcga_stad, SWGCohort moved fast->slow with
+  per-file verification and symlink swaps; fast pool 22.72T -> 22.11T
+  (still settling toward ~-1.3T).
 - 2026-09-02 night (joint, Rehan): PAPER TRACKS formalised. P1 labelling
   paper (in motion; human anchor = registry validation, lab grading optional
   via verification mode). P2 fusion-replication paper REFRAMED constructively:
