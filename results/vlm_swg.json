@@ -1,0 +1,16 @@
+{
+  "_meta": {
+    "n_pairs": 227,
+    "checkpoint": "/mnt/scratche/slow/fmlab/zuberi01/phd/thesis/feasibility/runs/vlm_pretrain/output/vlm_best.pt",
+    "graded": 227
+  },
+  "retrieval": {
+    "recall_at_1": 0.0132,
+    "recall_at_5": 0.0485,
+    "chance_at_1": 0.00441
+  },
+  "zeroshot_grade_vs_pathologist": {
+    "auc_ndbe_vs_lgdplus": 0.6144,
+    "n_pos": 19
+  }
+}
