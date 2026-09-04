@@ -1,0 +1,17 @@
+{
+  "section_rows": 18691,
+  "reports_with_consensus": 7031,
+  "shiv_rows": 12467,
+  "joined_rows": 9092,
+  "slides_labelled": 1538,
+  "slides_where_section_differs_from_case_max": 0.3199,
+  "grade_dist": {
+    "NORMAL_OTHER": 685,
+    "NDBE": 589,
+    "LGD": 82,
+    "CANCER": 81,
+    "HGD": 66,
+    "IND": 35
+  },
+  "subtype_any": 88
+}
