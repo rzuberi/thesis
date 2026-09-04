@@ -39,6 +39,22 @@ y_slide = dict(zip(keys, lab["y_slide"].astype(int)))
 y_case = dict(zip(keys, lab["y_case"].astype(int)))
 folds = patient_folds(keys, pat, y_slide, 5, seed=0)
 
+# ---- UNIT mode: train exactly one (arm, seed, fold) and save its test preds ----
+UNIT = os.environ.get("UNIT", "")
+if UNIT:
+    arm, seed, fold = UNIT.split("_")
+    seed, fold = int(seed), int(fold)
+    ydict = y_case if arm == "case" else y_slide
+    te = folds[fold]; tr = [k for j, f in enumerate(folds) if j != fold for k in f]
+    o = train_abmil_clf_fold(bags, tr, te, ydict, seed)
+    ud = T + "/feasibility/svc_units"
+    os.makedirs(ud, exist_ok=True)
+    np.savez(os.path.join(ud, f"{arm}_{seed}_{fold}.npz"),
+             keys=np.array(list(o.keys())), preds=np.array(list(o.values())))
+    json.dump({"unit": UNIT, "n_test": len(o)}, open(os.path.join(OUT, "results.json"), "w"))
+    print("unit done", UNIT, flush=True)
+    raise SystemExit(0)
+
 def run(train_labels):
     per = []
     for s in SEEDS:
