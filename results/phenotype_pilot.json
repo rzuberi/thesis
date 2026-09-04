@@ -1,0 +1,207 @@
+{
+  "n_reports": 1000,
+  "distinct_terms": 844,
+  "top_50": [
+    [
+      "intestinal metaplasia",
+      646
+    ],
+    [
+      "barrett's oesophagus",
+      611
+    ],
+    [
+      "chronic inflammation",
+      581
+    ],
+    [
+      "squamous mucosa",
+      253
+    ],
+    [
+      "reactive change",
+      137
+    ],
+    [
+      "high grade dysplasia",
+      129
+    ],
+    [
+      "gastric mucosa",
+      125
+    ],
+    [
+      "low grade dysplasia",
+      106
+    ],
+    [
+      "acute inflammation",
+      102
+    ],
+    [
+      "active inflammation",
+      102
+    ],
+    [
+      "squamous epithelium",
+      87
+    ],
+    [
+      "gastric metaplasia",
+      85
+    ],
+    [
+      "columnar mucosa",
+      82
+    ],
+    [
+      "adenocarcinoma",
+      73
+    ],
+    [
+      "ulceration",
+      66
+    ],
+    [
+      "glandular mucosa",
+      58
+    ],
+    [
+      "foveolar hyperplasia",
+      53
+    ],
+    [
+      "inflammation",
+      49
+    ],
+    [
+      "squamocolumnar mucosa",
+      46
+    ],
+    [
+      "granulation tissue",
+      44
+    ],
+    [
+      "fundic gland polyp",
+      42
+    ],
+    [
+      "hyperplastic polyp",
+      42
+    ],
+    [
+      "gastritis",
+      38
+    ],
+    [
+      "dysplasia",
+      35
+    ],
+    [
+      "p53 overexpression",
+      34
+    ],
+    [
+      "squamoglandular mucosa",
+      33
+    ],
+    [
+      "reactive gastropathy",
+      32
+    ],
+    [
+      "intramucosal adenocarcinoma",
+      32
+    ],
+    [
+      "fibrosis",
+      31
+    ],
+    [
+      "reactive atypia",
+      31
+    ],
+    [
+      "lymphovascular space invasion",
+      30
+    ],
+    [
+      "oedema",
+      27
+    ],
+    [
+      "regenerative change",
+      27
+    ],
+    [
+      "reflux oesophagitis",
+      26
+    ],
+    [
+      "atypia",
+      25
+    ],
+    [
+      "chemical gastropathy",
+      24
+    ],
+    [
+      "indefinite for dysplasia",
+      22
+    ],
+    [
+      "erosion",
+      22
+    ],
+    [
+      "plasma cell infiltrate",
+      20
+    ],
+    [
+      "active chronic inflammation",
+      17
+    ],
+    [
+      "lymphoplasmacytic inflammation",
+      17
+    ],
+    [
+      "p53 staining",
+      17
+    ],
+    [
+      "tumour regression",
+      16
+    ],
+    [
+      "basal hyperplasia",
+      16
+    ],
+    [
+      "reactive changes",
+      16
+    ],
+    [
+      "squamous cell carcinoma",
+      16
+    ],
+    [
+      "ulcer",
+      16
+    ],
+    [
+      "reactive epithelial change",
+      16
+    ],
+    [
+      "columnar epithelium",
+      15
+    ],
+    [
+      "oesophagitis",
+      15
+    ]
+  ],
+  "n_singletons": 518
+}
