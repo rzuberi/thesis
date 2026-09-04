@@ -169,6 +169,14 @@ On return: read results against pre-registrations; deviations to log: none yet.
   Part A's claim must be revised from "not recoverable" to "partially recoverable
   at scale; the fusion question becomes complementarity beyond what is visible."
   Stage from H&E: 0.644. Age: 0.569.
+- 2026-09-04: per-section jury COMPLETE (40/40, 0.3% parse-fail; mean 2.36
+  sections/report). Slide-label build (results/slide_labels_v2.json): 7,031/
+  7,149 reports reached section consensus; 1,538 feature slides dual-labelled
+  via Shiv join; HEADLINE: 32% of slides carry a different grade than their
+  case-max label — the label-noise stat motivating 2.38 (submitted: identical
+  ABMIL under case-max vs slide-level supervision, both evaluated on slide
+  truth, paired bootstrap). Phenotype pilot (results/phenotype_pilot.json):
+  1,000/1,000 parsed, 844 distinct findings — full-corpus atlas (P3) viable.
 - 2026-09-03 (joint, Rehan): 2.28c VLM zero-shot on SWG — ERIN-trained CLIP
   evaluated on SWG slides paired with Barrett's-DB matched reports (specimen-
   number join); readouts: retrieval vs chance + zero-shot grading vs the
