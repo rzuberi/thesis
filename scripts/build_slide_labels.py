@@ -69,12 +69,12 @@ joined = shiv.merge(sec_df, left_on=["CaseName", "sec_norm"], right_on=["CaseNam
 joined["h5"] = joined["uuid"].map(uuid2h5)
 slide = joined[joined["h5"].notna()].drop_duplicates(["h5"])[
     ["h5", "CaseName", "section", "grades", "worst_grade", "cancer_subtypes"]]
-slide.to_csv(T + "/labeller/erin_slide_labels_v2.csv", index=False)
-
-# ---- diagnostics + contrast with case-max ----
+# case-max = worst grade across ALL consensus sections of the report,
+# computed BEFORE saving so the training contrast can read it
 case_worst = sec_df.groupby("CaseName")["worst_grade"].agg(
     lambda g: max(g, key=lambda x: GRADE_ORD[x]))
 slide["case_max"] = slide["CaseName"].map(case_worst)
+slide.to_csv(T + "/labeller/erin_slide_labels_v2.csv", index=False)
 diff = (slide["worst_grade"] != slide["case_max"]).mean()
 res = {"section_rows": len(sec_df), "reports_with_consensus": int(sec_df["CaseName"].nunique()),
        "shiv_rows": len(shiv), "joined_rows": int(len(joined)),
