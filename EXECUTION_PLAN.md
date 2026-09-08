@@ -169,6 +169,16 @@ On return: read results against pre-registrations; deviations to log: none yet.
   Part A's claim must be revised from "not recoverable" to "partially recoverable
   at scale; the fusion question becomes complementarity beyond what is visible."
   Stage from H&E: 0.644. Age: 0.569.
+- 2026-09-08 (joint, Rehan: "add the natural follow-up"): 2.38b — the
+  five-class slide-vs-casemax contrast (NORMAL_OTHER<NDBE<IND<LGD<HGD<CANCER;
+  macro-AUC + quadratic-weighted kappa, paired bootstrap), where the 32%
+  disagreement actually lives. Context: 2.38 binary result
+  (results/slide_vs_casemax.json) was a NULL — case-max supervision loses
+  nothing at binary screening (delta -0.010 [-0.028, +0.009]) despite 32%
+  five-class label disagreement; the paper claim becomes "the shortcut is
+  robust for screening; section resolution matters for fine-grained tasks",
+  with 2.38b testing that second half. 30 units + aggregator
+  (scripts/task_svc_5class.py).
 - 2026-09-04: per-section jury COMPLETE (40/40, 0.3% parse-fail; mean 2.36
   sections/report). Slide-label build (results/slide_labels_v2.json): 7,031/
   7,149 reports reached section consensus; 1,538 feature slides dual-labelled
