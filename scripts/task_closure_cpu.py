@@ -72,10 +72,11 @@ if "pathladder" in ch4 and "delta_vs_ref" in ch4.get("pathladder", {}):
 ps = sorted(contrasts.items(), key=lambda kv: kv[1])
 holm = {}
 k = len(ps)
+run_max = 0.0  # Holm step-down requires monotone non-decreasing adjusted p
 for i, (name, p_) in enumerate(ps):
-    adj = min(1.0, (k - i) * p_)
-    holm[name] = {"p_raw": round(p_, 5), "p_holm": round(adj, 5),
-                  "significant_at_0.05": bool(adj < 0.05)}
+    run_max = max(run_max, min(1.0, (k - i) * p_))
+    holm[name] = {"p_raw": round(p_, 5), "p_holm": round(run_max, 5),
+                  "significant_at_0.05": bool(run_max < 0.05)}
 res["holm_confirmatory"] = holm
 print("holm:", holm, flush=True)
 

@@ -26,7 +26,7 @@
     },
     "ch2_occams_fusion_vs_hist_c": {
       "p_raw": 0.23064,
-      "p_holm": 0.69193,
+      "p_holm": 0.69192,
       "significant_at_0.05": false
     },
     "ch3_erin_prog_fusion_vs_hist_auc": {
@@ -36,7 +36,7 @@
     },
     "ch4_pathladder_vs_jury_trained_auc": {
       "p_raw": 0.94517,
-      "p_holm": 0.94517,
+      "p_holm": 1.0,
       "significant_at_0.05": false
     }
   },
