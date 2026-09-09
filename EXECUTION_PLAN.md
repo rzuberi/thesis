@@ -162,6 +162,20 @@ On return: read results against pre-registrations; deviations to log: none yet.
 
 ## Amendment log
 
+- 2026-09-09 (joint, Rehan: "Queue the selection-adjusted SWG test"): 2.39 —
+  selection-adjusted inference for C1 (Astra wave-4 finding A1: late_mean was
+  selected among competing arm families on the same OOF data; Holm over 4
+  contrasts does not account for that selection). Two analyses on the frozen
+  release OOF, no retraining (scripts/task_swg_selection_adjusted.py):
+  (a) max-over-arms permutation test — T = max_k [AUC(arm_k) −
+  AUC(image_only)], null from 20,000 patient-level label permutations with
+  predictions fixed (arm correlations preserved), candidate sets fusion-only
+  and all-but-histology; AUPRC secondary; (b) selection-honest effect size —
+  2,000 bootstraps selecting the best arm IN-BAG and evaluating its delta
+  OUT-OF-BAG. Pre-registered interpretation: if p_selection_adjusted < 0.05
+  and OOB delta CI excludes 0, C1 stands with the adjusted p replacing the
+  naive one; if either fails, C1 is demoted to exploratory and the thesis
+  reports the winner's-curse-corrected estimate. Task swg_seladj (epyc+cuda).
 - 2026-08-21 (FINDING, flagged for joint discussion on return): necessity probes
   at n=446 (pooled OAC+GEJ) show TP53 AUC 0.678 and WGD 0.703 from H&E (shuffled
   ~0.50) — genomics IS partially visible at adequate n. The earlier two-cohort
