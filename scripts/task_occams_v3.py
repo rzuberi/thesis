@@ -34,13 +34,15 @@ mast = mast[mast["time"] > 0].drop_duplicates("cid").set_index("cid")
 time = mast["time"].to_dict(); event = mast["event"].to_dict()
 
 # --- histology bags (tile-level, RES-preferred, per case) ---
-bags = {}
+bags, bag_spec = {}, {}
 for f in sorted(glob.glob(os.path.join(FEAT, "*.h5"))):
-    c = norm_id(os.path.basename(f).split("_")[0])
-    if c in bags and "_RES" not in os.path.basename(f):
+    b = os.path.basename(f)
+    c = norm_id(b.split("_")[0])
+    if c in bags and "_RES" not in b:
         continue
     with h5py.File(f) as h:
         bags[c] = np.asarray(h["features"])
+    bag_spec[c] = "RES" if "_RES" in b.upper() else ("OGD" if "_OGD" in b.upper() else "OTHER")
 print(f"bags={len(bags)} master_labelled={len(mast)}")
 
 # --- genomics arm ---
@@ -58,7 +60,17 @@ def code(col):
     return pd.to_numeric(v, errors="coerce")
 
 cases = sorted(set(bags) & set(mast.index) & set(th.index))
-print(f"final case set n={len(cases)} events={sum(event[c] for c in cases)}")
+# 2026-09-09 audit: the RES-preference rule only fires when a RES slide EXISTS,
+# so OGD-only cases enter the cohort as biopsies. SPECIMEN=res_only restricts to
+# true resections; SPECIMEN=ogd_only is the complement. Default: unchanged.
+SPECIMEN = os.environ.get("SPECIMEN", "all")
+spec_mix = {t: sum(1 for c in cases if bag_spec.get(c) == t) for t in ("RES", "OGD", "OTHER")}
+print("specimen mix in cohort:", spec_mix)
+if SPECIMEN == "res_only":
+    cases = [c for c in cases if bag_spec.get(c) == "RES"]
+elif SPECIMEN == "ogd_only":
+    cases = [c for c in cases if bag_spec.get(c) == "OGD"]
+print(f"final case set n={len(cases)} events={sum(event[c] for c in cases)} specimen={SPECIMEN}")
 attrition = {"h5_bags": len(bags), "master_with_survival": len(mast),
              "genomics_tsv": len(th),
              "bags_and_master": len(set(bags) & set(mast.index)),
@@ -101,12 +113,13 @@ oof["late_hist_clin"] = {k: (z["hist_abmil"][k] + z["clin_cox"][k]) / 2 for k in
 
 res = {"_meta": {"n": len(cases), "events": int(sum(event[c] for c in cases)),
                  "seeds": SEEDS, "clinical_cols": clin_cols, "shuffle": SHUFFLE,
-                 "attrition": attrition,
+                 "attrition": attrition, "specimen": SPECIMEN, "specimen_mix": spec_mix,
                  "design": "pre-registered v3: ABMIL-Cox / linear-Cox / Harrell C"}}
 for name, o in oof.items():
     ref = oof["hist_abmil"] if name.startswith("late") else None
     res[name] = bootstrap_c(o, time, event, risk_b=ref)
     print(name, res[name], flush=True)
 
-json.dump(res, open(os.path.join(OUT, "results.json"), "w"), indent=2)
-print("wrote results.json")
+fn = "results.json" if SPECIMEN == "all" else f"results_{SPECIMEN}.json"
+json.dump(res, open(os.path.join(OUT, fn), "w"), indent=2)
+print("wrote", fn)
