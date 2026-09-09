@@ -1,0 +1,38 @@
+{
+  "_meta": {
+    "units": 30,
+    "n_slides": 1538,
+    "classes": [
+      "NORMAL_OTHER",
+      "NDBE",
+      "IND",
+      "LGD",
+      "HGD",
+      "CANCER"
+    ]
+  },
+  "trained_case": {
+    "macro_auc": 0.7639,
+    "qwk_vs_slide_truth": 0.5235
+  },
+  "trained_slide": {
+    "macro_auc": 0.7216,
+    "qwk_vs_slide_truth": 0.5148
+  },
+  "delta_slide_minus_case": {
+    "macro_auc": {
+      "mean": -0.0423,
+      "ci": [
+        -0.066,
+        -0.0193
+      ]
+    },
+    "qwk": {
+      "mean": -0.0093,
+      "ci": [
+        -0.0655,
+        0.0467
+      ]
+    }
+  }
+}
