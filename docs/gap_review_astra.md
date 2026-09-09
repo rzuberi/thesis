@@ -43,12 +43,12 @@ all 53 results JSONs). Script: `scripts/openai_gapreview.py`; raw outputs in
   bootstraps resample slides/rows, not patients. Recompute headline CIs
   (2.38, 2.38b, grade AUC, SWG correlations) resampling whole patients;
   patient-aware permutation for the trajectory rho. CPU-hours.
-- **A1 (labelled blocker): selection history for C1.** Reconstruct the
-  timestamped arm-selection history from git (fully reconstructable — every
-  promotion is a dated commit/amendment); pair with selection-aware
-  permutation (rerun full arm-selection inside each permutation) so the SWG
-  headline carries a selection-adjusted p. Partially overlaps the quantified
-  winner's curse (+0.027), but the pre-registration-status point is fair.
+- **A1 (labelled blocker): selection history for C1 — ACTIONED 2026-09-09
+  as 2.39, and the finding was RIGHT.** Max-over-arms permutation +
+  OOB-selection bootstrap on the frozen OOF
+  (results/swg_selection_adjusted.json): adjusted p=0.253 (naive 0.0013),
+  honest delta +0.016 [−0.106, +0.080]. C1 demoted to exploratory per the
+  pre-registered rule. This was the review's highest-value finding.
 - **A8:** pooled-vs-within-fold C-index check on survival cohorts. CPU.
 - **A9:** power map recalibration — fair catch that baseline 0.926 + delta
   0.10 exceeds 1.0; redo on a bounded/realistic effect scale with MC error

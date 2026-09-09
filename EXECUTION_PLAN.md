@@ -176,6 +176,21 @@ On return: read results against pre-registrations; deviations to log: none yet.
   and OOB delta CI excludes 0, C1 stands with the adjusted p replacing the
   naive one; if either fails, C1 is demoted to exploratory and the thesis
   reports the winner's-curse-corrected estimate. Task swg_seladj (epyc+cuda).
+  OUTCOME (2026-09-09, results/swg_selection_adjusted.json): BOTH criteria
+  FAILED — C1 IS DEMOTED TO EXPLORATORY per the pre-registered rule. Primary
+  (AUC, fusion arms): naive delta +0.043 (unadjusted perm p=0.0013) collapses
+  to p_selection_adjusted=0.253 once the max over 5 fusion arms is accounted
+  for (null 95th percentile of the best arm's advantage is 0.079 — nearly
+  twice the observed 0.043). Selection-honest OOB delta: +0.016
+  [−0.106, +0.080], CI includes 0; observed-minus-honest optimism 0.027
+  matches the earlier winner's-curse estimate exactly. AUPRC secondary was
+  marginal (0.040 fusion-only) but fails the all-but-histology sensitivity
+  set (0.099) and is not primary. Consequence: NO confirmatory fusion result
+  survives in any cohort — the thesis's fusion-replication chapter is now
+  uniformly null once selection is priced in, which sharpens (not weakens)
+  the P2 protocol paper: selection-adjusted inference becomes checklist rule
+  #1, with 2.39 as its worked example. Holm family updated: the SWG entry's
+  naive p no longer licenses a confirmatory claim.
 - 2026-08-21 (FINDING, flagged for joint discussion on return): necessity probes
   at n=446 (pooled OAC+GEJ) show TP53 AUC 0.678 and WGD 0.703 from H&E (shuffled
   ~0.50) — genomics IS partially visible at adequate n. The earlier two-cohort

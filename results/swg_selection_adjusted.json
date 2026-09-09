@@ -1,0 +1,119 @@
+{
+  "_meta": {
+    "n_patients": 150,
+    "pos": 50,
+    "families": [
+      "cnv_only",
+      "coattention_fusion",
+      "early_fusion",
+      "image_only",
+      "intermediate_fusion",
+      "late_mean",
+      "late_stack_logit"
+    ],
+    "comparator": "image_only",
+    "n_perm": 20000,
+    "n_boot": 2000,
+    "candidate_sets": {
+      "fusion_arms": [
+        "coattention_fusion",
+        "early_fusion",
+        "intermediate_fusion",
+        "late_mean",
+        "late_stack_logit"
+      ],
+      "all_but_histology": [
+        "cnv_only",
+        "coattention_fusion",
+        "early_fusion",
+        "intermediate_fusion",
+        "late_mean",
+        "late_stack_logit"
+      ]
+    }
+  },
+  "auc": {
+    "observed": {
+      "cnv_only": 0.663,
+      "coattention_fusion": 0.7392,
+      "early_fusion": 0.7384,
+      "image_only": 0.7312,
+      "intermediate_fusion": 0.7414,
+      "late_mean": 0.7742,
+      "late_stack_logit": 0.7366
+    },
+    "observed_delta_vs_hist": {
+      "cnv_only": -0.0682,
+      "coattention_fusion": 0.008,
+      "early_fusion": 0.0072,
+      "image_only": 0.0,
+      "intermediate_fusion": 0.0102,
+      "late_mean": 0.043,
+      "late_stack_logit": 0.0054
+    },
+    "fusion_arms": {
+      "selected_arm": "late_mean",
+      "t_obs": 0.043,
+      "p_selection_adjusted": 0.25329,
+      "p_selected_arm_unadjusted": 0.0013,
+      "null_t_q95": 0.0788
+    },
+    "all_but_histology": {
+      "selected_arm": "late_mean",
+      "t_obs": 0.043,
+      "p_selection_adjusted": 0.36813,
+      "p_selected_arm_unadjusted": 0.0013,
+      "null_t_q95": 0.1074
+    }
+  },
+  "auprc": {
+    "observed": {
+      "cnv_only": 0.5385,
+      "coattention_fusion": 0.5482,
+      "early_fusion": 0.5896,
+      "image_only": 0.557,
+      "intermediate_fusion": 0.5675,
+      "late_mean": 0.6296,
+      "late_stack_logit": 0.5303
+    },
+    "observed_delta_vs_hist": {
+      "cnv_only": -0.0186,
+      "coattention_fusion": -0.0088,
+      "early_fusion": 0.0326,
+      "image_only": 0.0,
+      "intermediate_fusion": 0.0104,
+      "late_mean": 0.0726,
+      "late_stack_logit": -0.0267
+    },
+    "fusion_arms": {
+      "selected_arm": "late_mean",
+      "t_obs": 0.0726,
+      "p_selection_adjusted": 0.04005,
+      "p_selected_arm_unadjusted": 0.00105,
+      "null_t_q95": 0.0691
+    },
+    "all_but_histology": {
+      "selected_arm": "late_mean",
+      "t_obs": 0.0726,
+      "p_selection_adjusted": 0.0993,
+      "p_selected_arm_unadjusted": 0.00105,
+      "null_t_q95": 0.0885
+    }
+  },
+  "selection_honest_delta_auc": {
+    "mean_oob_delta_of_selected_arm": 0.016,
+    "ci": [
+      -0.1063,
+      0.0799
+    ],
+    "frac_oob_delta_gt_0": 0.723,
+    "in_bag_selection_rate": {
+      "coattention_fusion": 0.166,
+      "early_fusion": 0.072,
+      "intermediate_fusion": 0.069,
+      "late_mean": 0.692,
+      "late_stack_logit": 0.002
+    },
+    "naive_full_sample_late_mean_delta": 0.043
+  }
+}

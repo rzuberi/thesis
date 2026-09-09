@@ -7,10 +7,15 @@ results JSONs are ground truth; any mismatch is a finding.
 
 ## Chapter 2 — multimodal fusion in Barrett's/OAC (replication)
 
-- **C1.** In the SWG Barrett's cohort (image+CNV), late-mean fusion beats
-  histology alone for progression (pre-registered confirmatory test;
-  p_holm=0.0096, the ONLY confirmatory test surviving Holm).
-  [results/closure_cpu.json, results/latemean_vs_gigapath_paired.json]
+- **C1 (DEMOTED TO EXPLORATORY, 2026-09-09).** In the SWG Barrett's cohort
+  (image+CNV), late-mean fusion shows a naive AUC advantage over histology of
+  +0.043 (naive p_holm=0.0096), but late_mean was selected among 5 fusion
+  arms on the same OOF data: the selection-adjusted permutation p is 0.253
+  and the selection-honest out-of-bag delta is +0.016 [−0.106, +0.080].
+  Per the pre-registered 2.39 rule, this claim is exploratory: "fusion shows
+  a positive but selection-unadjusted-only advantage in SWG."
+  [results/swg_selection_adjusted.json, results/closure_cpu.json,
+  results/latemean_vs_gigapath_paired.json]
 - **C2.** In OCCAMS (survival), fusion does not beat histology alone
   (p_holm=0.69). [results/closure_cpu.json, results/occams_v3.json]
 - **C3.** In ERIN progression, fusion does not beat histology alone
