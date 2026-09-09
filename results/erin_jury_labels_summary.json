@@ -6,6 +6,13 @@
     "adjudicated": 78
   },
   "label_dist_train_eligible": {
+    "NDBE": 5105,
+    "CANCER": 834,
+    "HGD": 404,
+    "LGD": 268,
+    "IND": 256
+  },
+  "label_dist_usable_incl_adjudicated": {
     "NDBE": 5151,
     "CANCER": 863,
     "HGD": 405,
