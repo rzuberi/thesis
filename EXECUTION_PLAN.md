@@ -179,6 +179,21 @@ On return: read results against pre-registrations; deviations to log: none yet.
   robust for screening; section resolution matters for fine-grained tasks",
   with 2.38b testing that second half. 30 units + aggregator
   (scripts/task_svc_5class.py).
+  OUTCOME (2026-09-09, results/svc_5class.json): the prediction INVERTED.
+  Case-max is significantly BETTER at six classes on macro one-vs-rest AUC
+  (0.764 vs 0.722; delta slide-minus-case -0.042 [-0.066, -0.019], CI excludes
+  zero); QWK is null (0.524 vs 0.515, delta -0.009 [-0.066, +0.047]). Reading:
+  with rare-class counts of 35 (IND) / 66 (HGD) / 82 (LGD) slides, section-
+  resolved labels starve the tail classes — case-max propagates the report's
+  worst grade to every slide of the case, which is 32% "wrong" per slide but
+  supplies several times more positive examples per rare class, and that wins
+  at this cohort size. The paper claim is now stronger and simpler: report-
+  level (case-max) weak supervision is robust for binary screening AND does
+  not lose to section-resolved labels even on fine-grained grading at n~1.5k;
+  the 32% label disagreement is real but the noise-vs-sample-size tradeoff
+  favours the noisy-but-plentiful shortcut. Honest caveat for the paper:
+  this could invert on a cohort with hundreds of slides per rare class;
+  framed as a testable scaling prediction, not a universal claim.
 - 2026-09-04: per-section jury COMPLETE (40/40, 0.3% parse-fail; mean 2.36
   sections/report). Slide-label build (results/slide_labels_v2.json): 7,031/
   7,149 reports reached section consensus; 1,538 feature slides dual-labelled
