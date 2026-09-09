@@ -158,9 +158,14 @@ prior ERIN work (Shiv left the lab — credited, not consulted).
   −0.010 [−0.028, +0.009]. Case-max is *robust for binary screening*.
 - **2.38b five/six-class contrast** (`scripts/task_svc_5class.py`, classes
   NORMAL_OTHER<NDBE<IND<LGD<HGD<CANCER, macro-AUC + quadratic-weighted kappa,
-  60 units, aggregator job 57370480): submitted 2026-09-08, **results pending**
-  → will land as `results/svc_5class.json`. Tests whether section resolution
-  pays off where the 32% disagreement actually lives.
+  60 units, aggregator job 57370480; `results/svc_5class.json`): the
+  prediction **inverted** — case-max is significantly *better* on macro-AUC
+  (0.764 vs 0.722, delta −0.042 [−0.066, −0.019]); QWK null. With only 35–82
+  slides in the rare classes, section-resolved labels starve the tail while
+  case-max propagates worst-grade positives to every slide of the case:
+  noisy-but-plentiful beats clean-but-scarce at this cohort size. Paper claim:
+  report-level weak supervision is robust for screening *and* fine-grained
+  grading at n≈1.5k, with the reversal at scale left as a testable prediction.
 
 ## 6. Human grading (the comparison arm for the paper)
 
@@ -229,9 +234,8 @@ NHS-sensitive → **no Vercel/Supabase/claude.ai hosting**. Two tools built:
 
 ## 10. Open items
 
-- 2.38b five-class results (aggregator 57370480) → commit + interpret.
 - Lab grader uptake on the app; verification mode if wanted.
 - P1 paper skeleton: jury design → robustness (LOFO, unsure) → external
   validation (pan-cancer) → MDT ≥ voting → section rebuild → 32% disagreement
-  → binary null + five-class result → human comparison arm.
+  → binary null + five-class inversion (case-max wins) → human comparison arm.
 - Credit: Shiv Sakthivel (section↔slide matching table).
