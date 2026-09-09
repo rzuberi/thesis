@@ -65,8 +65,10 @@ coh.to_csv(os.path.join(OUT, "erin_progression_cohort_v3.csv"), index=False)
 
 summary = {"reports": int(len(df)),
            "status_dist": df["label_status"].value_counts().to_dict(),
-           "label_dist_train_eligible": df.loc[df.label_status != "unsure_held_out",
+           "label_dist_train_eligible": df.loc[df.label_status == "train_eligible",
                                                "final_label"].value_counts().to_dict(),
+           "label_dist_usable_incl_adjudicated": df.loc[df.label_status != "unsure_held_out",
+                                                        "final_label"].value_counts().to_dict(),
            "progression_v3": {"patients": int(len(coh)),
                               "progressors": int(coh["progressed_to_HGDplus"].sum()) if len(coh) else 0}}
 json.dump(summary, open(os.path.join(OUT, "erin_jury_labels_summary.json"), "w"), indent=2)
