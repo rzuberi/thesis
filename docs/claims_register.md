@@ -28,8 +28,21 @@ results JSONs are ground truth; any mismatch is a finding.
   −0.021) — the published-architecture escape hatch is closed.
   [results/porpoise_baselines.json]
 - **C6.** Failure to replicate is largely failure to power: minimum detectable
-  deltas are 0.075–0.10 while observed real deltas are +0.01–0.04.
-  [results/power_map.json]
+  deltas at 80% power are 0.075–0.10 (0.10 under the Holm worst-case alpha)
+  in every fusion cohort, while observed real deltas are +0.01–0.04; the
+  detection rule's type-I error at zero effect is 1–4.5%. Infeasible
+  (base+delta > 0.99) cells are reported as infeasible, not clipped.
+  [results/power_map_v2.json (canonical), results/power_map.json (v1)]
+- **C6b (REVISED 2026-09-14).** Genotype visibility from H&E: within OAC
+  (TCGA-OAC, OCCAMS-OAC, combined) TP53 and WGD are NOT recoverable under
+  prevalence-balanced sampling (AUC 0.42–0.52, below permutation q95).
+  STAD/GEJ shows a modest WGD signal (0.63–0.69, above null from n=100) and
+  marginal TP53 (0.56–0.61). The pooled-cohort probes that suggested
+  "partially recoverable at scale" (TP53 0.678, WGD 0.703 at n=446) are
+  matched by a cohort-identity-only predictor (0.63–0.65 for TP53) — they
+  were largely learning cohort membership via differing prevalence.
+  [results/visibility_matched.json (canonical), results/necessity_probes*.json,
+  results/visibility_curve.json (confounded, superseded)]
 - **C7.** The pipeline is sound: permutation nulls land at 0.502/0.487 while
   real labels give 0.819 (p<0.014) and 0.679 (p<0.02).
   [results/perm_controls.json]

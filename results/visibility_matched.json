@@ -1,0 +1,368 @@
+{
+  "_meta": {
+    "grid": [
+      40,
+      50,
+      65,
+      100,
+      141,
+      200
+    ],
+    "reps": 20,
+    "design": "balanced n/2 pos + n/2 neg per draw",
+    "counts": {
+      "stad_gej": 356,
+      "occams_oac": 141,
+      "tcga_oac": 65
+    }
+  },
+  "tp53": {
+    "tcga_oac": {
+      "n_available": 65,
+      "pos": 54,
+      "neg": 11,
+      "prevalence": 0.831,
+      "curve": {}
+    },
+    "occams_oac": {
+      "n_available": 141,
+      "pos": 117,
+      "neg": 24,
+      "prevalence": 0.83,
+      "curve": {
+        "40": {
+          "auc_mean": 0.5121,
+          "auc_sd": 0.1138,
+          "null_mean": 0.5054,
+          "null_q95": 0.6926,
+          "cohort_identity_only_auc": null
+        }
+      }
+    },
+    "oac_combined": {
+      "n_available": 206,
+      "pos": 171,
+      "neg": 35,
+      "prevalence": 0.83,
+      "curve": {
+        "40": {
+          "auc_mean": 0.464,
+          "auc_sd": 0.119,
+          "null_mean": 0.4798,
+          "null_q95": 0.6955,
+          "cohort_identity_only_auc": 0.424
+        },
+        "50": {
+          "auc_mean": 0.423,
+          "auc_sd": 0.0866,
+          "null_mean": 0.4705,
+          "null_q95": 0.638,
+          "cohort_identity_only_auc": 0.4158
+        },
+        "65": {
+          "auc_mean": 0.4861,
+          "auc_sd": 0.0878,
+          "null_mean": 0.4906,
+          "null_q95": 0.632,
+          "cohort_identity_only_auc": 0.42
+        }
+      }
+    },
+    "stad_gej": {
+      "n_available": 356,
+      "pos": 164,
+      "neg": 192,
+      "prevalence": 0.461,
+      "curve": {
+        "40": {
+          "auc_mean": 0.558,
+          "auc_sd": 0.0944,
+          "null_mean": 0.4856,
+          "null_q95": 0.6606,
+          "cohort_identity_only_auc": null
+        },
+        "50": {
+          "auc_mean": 0.5966,
+          "auc_sd": 0.1204,
+          "null_mean": 0.5068,
+          "null_q95": 0.7022,
+          "cohort_identity_only_auc": null
+        },
+        "65": {
+          "auc_mean": 0.5638,
+          "auc_sd": 0.0734,
+          "null_mean": 0.5156,
+          "null_q95": 0.6611,
+          "cohort_identity_only_auc": null
+        },
+        "100": {
+          "auc_mean": 0.6117,
+          "auc_sd": 0.0744,
+          "null_mean": 0.5015,
+          "null_q95": 0.6256,
+          "cohort_identity_only_auc": null
+        },
+        "141": {
+          "auc_mean": 0.5867,
+          "auc_sd": 0.0557,
+          "null_mean": 0.5048,
+          "null_q95": 0.6053,
+          "cohort_identity_only_auc": null
+        },
+        "200": {
+          "auc_mean": 0.6005,
+          "auc_sd": 0.0438,
+          "null_mean": 0.4974,
+          "null_q95": 0.5992,
+          "cohort_identity_only_auc": null
+        }
+      }
+    },
+    "mixed_all": {
+      "n_available": 562,
+      "pos": 335,
+      "neg": 227,
+      "prevalence": 0.596,
+      "curve": {
+        "40": {
+          "auc_mean": 0.6349,
+          "auc_sd": 0.1009,
+          "null_mean": 0.5955,
+          "null_q95": 0.7686,
+          "cohort_identity_only_auc": 0.6334
+        },
+        "50": {
+          "auc_mean": 0.6048,
+          "auc_sd": 0.1253,
+          "null_mean": 0.5751,
+          "null_q95": 0.7526,
+          "cohort_identity_only_auc": 0.6073
+        },
+        "65": {
+          "auc_mean": 0.5929,
+          "auc_sd": 0.1028,
+          "null_mean": 0.5823,
+          "null_q95": 0.7247,
+          "cohort_identity_only_auc": 0.6245
+        },
+        "100": {
+          "auc_mean": 0.6483,
+          "auc_sd": 0.0827,
+          "null_mean": 0.5664,
+          "null_q95": 0.671,
+          "cohort_identity_only_auc": 0.6352
+        },
+        "141": {
+          "auc_mean": 0.6747,
+          "auc_sd": 0.0503,
+          "null_mean": 0.5819,
+          "null_q95": 0.6848,
+          "cohort_identity_only_auc": 0.6397
+        },
+        "200": {
+          "auc_mean": 0.6694,
+          "auc_sd": 0.041,
+          "null_mean": 0.5986,
+          "null_q95": 0.6896,
+          "cohort_identity_only_auc": 0.6509
+        }
+      }
+    }
+  },
+  "wgd": {
+    "tcga_oac": {
+      "n_available": 58,
+      "pos": 36,
+      "neg": 22,
+      "prevalence": 0.621,
+      "curve": {
+        "40": {
+          "auc_mean": 0.4921,
+          "auc_sd": 0.0988,
+          "null_mean": 0.4913,
+          "null_q95": 0.6517,
+          "cohort_identity_only_auc": null
+        }
+      }
+    },
+    "occams_oac": {
+      "n_available": 141,
+      "pos": 85,
+      "neg": 56,
+      "prevalence": 0.603,
+      "curve": {
+        "40": {
+          "auc_mean": 0.4935,
+          "auc_sd": 0.1285,
+          "null_mean": 0.503,
+          "null_q95": 0.723,
+          "cohort_identity_only_auc": null
+        },
+        "50": {
+          "auc_mean": 0.5054,
+          "auc_sd": 0.09,
+          "null_mean": 0.4934,
+          "null_q95": 0.6818,
+          "cohort_identity_only_auc": null
+        },
+        "65": {
+          "auc_mean": 0.4876,
+          "auc_sd": 0.0792,
+          "null_mean": 0.5294,
+          "null_q95": 0.6565,
+          "cohort_identity_only_auc": null
+        },
+        "100": {
+          "auc_mean": 0.4809,
+          "auc_sd": 0.0588,
+          "null_mean": 0.5128,
+          "null_q95": 0.6185,
+          "cohort_identity_only_auc": null
+        }
+      }
+    },
+    "oac_combined": {
+      "n_available": 199,
+      "pos": 121,
+      "neg": 78,
+      "prevalence": 0.608,
+      "curve": {
+        "40": {
+          "auc_mean": 0.4625,
+          "auc_sd": 0.151,
+          "null_mean": 0.5194,
+          "null_q95": 0.7052,
+          "cohort_identity_only_auc": 0.4423
+        },
+        "50": {
+          "auc_mean": 0.452,
+          "auc_sd": 0.1129,
+          "null_mean": 0.4825,
+          "null_q95": 0.6209,
+          "cohort_identity_only_auc": 0.4276
+        },
+        "65": {
+          "auc_mean": 0.5195,
+          "auc_sd": 0.0831,
+          "null_mean": 0.5035,
+          "null_q95": 0.6557,
+          "cohort_identity_only_auc": 0.4614
+        },
+        "100": {
+          "auc_mean": 0.4739,
+          "auc_sd": 0.0624,
+          "null_mean": 0.4965,
+          "null_q95": 0.6084,
+          "cohort_identity_only_auc": 0.4412
+        },
+        "141": {
+          "auc_mean": 0.4381,
+          "auc_sd": 0.0622,
+          "null_mean": 0.4964,
+          "null_q95": 0.6065,
+          "cohort_identity_only_auc": 0.4567
+        }
+      }
+    },
+    "stad_gej": {
+      "n_available": 345,
+      "pos": 145,
+      "neg": 200,
+      "prevalence": 0.42,
+      "curve": {
+        "40": {
+          "auc_mean": 0.6646,
+          "auc_sd": 0.0997,
+          "null_mean": 0.4937,
+          "null_q95": 0.6714,
+          "cohort_identity_only_auc": null
+        },
+        "50": {
+          "auc_mean": 0.6321,
+          "auc_sd": 0.0821,
+          "null_mean": 0.4925,
+          "null_q95": 0.6779,
+          "cohort_identity_only_auc": null
+        },
+        "65": {
+          "auc_mean": 0.657,
+          "auc_sd": 0.0759,
+          "null_mean": 0.5036,
+          "null_q95": 0.6651,
+          "cohort_identity_only_auc": null
+        },
+        "100": {
+          "auc_mean": 0.6688,
+          "auc_sd": 0.0755,
+          "null_mean": 0.5079,
+          "null_q95": 0.6278,
+          "cohort_identity_only_auc": null
+        },
+        "141": {
+          "auc_mean": 0.6878,
+          "auc_sd": 0.0574,
+          "null_mean": 0.4949,
+          "null_q95": 0.5968,
+          "cohort_identity_only_auc": null
+        },
+        "200": {
+          "auc_mean": 0.693,
+          "auc_sd": 0.0409,
+          "null_mean": 0.4973,
+          "null_q95": 0.5936,
+          "cohort_identity_only_auc": null
+        }
+      }
+    },
+    "mixed_all": {
+      "n_available": 544,
+      "pos": 266,
+      "neg": 278,
+      "prevalence": 0.489,
+      "curve": {
+        "40": {
+          "auc_mean": 0.594,
+          "auc_sd": 0.1316,
+          "null_mean": 0.5089,
+          "null_q95": 0.7585,
+          "cohort_identity_only_auc": 0.4651
+        },
+        "50": {
+          "auc_mean": 0.5698,
+          "auc_sd": 0.0807,
+          "null_mean": 0.5253,
+          "null_q95": 0.7016,
+          "cohort_identity_only_auc": 0.5007
+        },
+        "65": {
+          "auc_mean": 0.6087,
+          "auc_sd": 0.0931,
+          "null_mean": 0.5208,
+          "null_q95": 0.6493,
+          "cohort_identity_only_auc": 0.5286
+        },
+        "100": {
+          "auc_mean": 0.5921,
+          "auc_sd": 0.0864,
+          "null_mean": 0.5157,
+          "null_q95": 0.6356,
+          "cohort_identity_only_auc": 0.5372
+        },
+        "141": {
+          "auc_mean": 0.6338,
+          "auc_sd": 0.0491,
+          "null_mean": 0.503,
+          "null_q95": 0.6027,
+          "cohort_identity_only_auc": 0.5212
+        },
+        "200": {
+          "auc_mean": 0.646,
+          "auc_sd": 0.046,
+          "null_mean": 0.5169,
+          "null_q95": 0.5849,
+          "cohort_identity_only_auc": 0.5616
+        }
+      }
+    }
+  }
+}
