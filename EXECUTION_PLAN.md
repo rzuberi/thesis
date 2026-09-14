@@ -215,6 +215,16 @@ On return: read results against pre-registrations; deviations to log: none yet.
   transfer fails; the excl file is now the canonical one for those cells.
   (OCCAMS↔TCGA cells moved by ≤0.011 between runs despite no exclusion —
   residual nondeterminism in the pooled-probe pipeline; report to 2 d.p.)
+  → vlm_swg_excl DONE (results/vlm_swg_excl.json): C23's SWG HALF COLLAPSES.
+  Excluding the 54 overlapping patients removes 105 of the 227 slide-report
+  pairs (the DB-matched pairs were concentrated in exactly the patients
+  shared with ERIN). On the 122 clean pairs: retrieval R@1 0.0082 = chance
+  (1/122) exactly; R@5 0.074 vs 0.041 chance; zero-shot NDBE-vs-LGD+ AUC
+  0.579 on 9 positives. The earlier "3× chance retrieval, AUC 0.614" was
+  overlap. Revised claim: the ERIN-trained VLM shows no demonstrated
+  transfer to SWG; the TCGA half of C23 (site 0.782, retrieval fails) is
+  unaffected by this audit. Ch4's cross-cohort story is now "fails in both
+  external cohorts", which is consistent with the transfer matrix.
   2.41 (results/clustered_cis.json): every conclusion unchanged; clustered/iid
   CI width ratios 1.01 (2.38 binary), 1.00 (2.38b macro-AUC), 1.10 (QWK);
   1,155 patients for 1,538 slides. 2.38b's macro-AUC advantage for case-max

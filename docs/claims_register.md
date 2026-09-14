@@ -91,12 +91,15 @@ results JSONs are ground truth; any mismatch is a finding.
 
 - **C22.** CLIP-style report-slide alignment trains: retrieval R@1 16× chance;
   zero-shot grading 0.889 on ERIN test. [results/vlm_pretrain.json]
-- **C23 (SWG HALF UNDER REVISION, 2026-09-14).** VLM transfer: TCGA site
-  classification 0.782 but retrieval fails; SWG zero-shot vs pathologist
-  grades 0.614 with retrieval 3× chance. The overlap audit found 36% of SWG
-  patients are ERIN patients (28 in VLM train/val), so SWG is not a clean
-  third cohort; the numbers are being replaced by the overlap-excluded rerun.
-  [results/vlm_swg.json, results/overlap_audit.json]
+- **C23 (SWG HALF DEMOTED, 2026-09-14).** VLM transfer: TCGA site
+  classification 0.782 but retrieval fails. SWG: after excluding the 54
+  patients shared with ERIN (which held 105 of the 227 matched pairs),
+  retrieval R@1 equals chance exactly (0.0082 on 122 pairs) and zero-shot
+  grading is 0.579 on 9 positives — no demonstrated transfer. The original
+  "3× chance, AUC 0.614" was patient overlap. Claim now: the ERIN-trained
+  VLM does not transfer to either external cohort.
+  [results/vlm_swg_excl.json (canonical), results/vlm_swg.json (superseded),
+  results/overlap_audit.json]
 - **C24.** LLM case-finding works: EoE finder returns 26 diagnosed reports
   (17 patients) + 77 suspected (66 patients), 0 false EoE in 100
   keyword-negative controls. [results/eoe_finder.json]
