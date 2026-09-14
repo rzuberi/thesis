@@ -1,0 +1,383 @@
+{
+  "pancancer": {
+    "_jurors": [
+      "gemma3_12b",
+      "gemma3_27b",
+      "phi4_14b",
+      "qwen3_14b",
+      "qwen3_32b"
+    ],
+    "n_graded": 1294,
+    "esca_tcga": {
+      "n_with_registry_grade": 107,
+      "n_jury_graded": 102,
+      "coverage": 0.9533,
+      "registry_value_dist": {
+        "G3": 37,
+        "G2": 53,
+        "G1": 12
+      },
+      "jury_value_dist": {
+        "G2": 54,
+        "G3": 36,
+        "G1": 12
+      },
+      "registry_raw_values": {
+        "G2": 77,
+        "G3": 49,
+        "G1": 19
+      },
+      "exact_confusion": {
+        "labels": [
+          "G1",
+          "G2",
+          "G3"
+        ],
+        "matrix": [
+          [
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            52,
+            1
+          ],
+          [
+            0,
+            2,
+            35
+          ]
+        ]
+      },
+      "two_tier": {
+        "agreement": 0.9706,
+        "wilson95": [
+          0.9171,
+          0.9899
+        ],
+        "majority_class": "LOW",
+        "majority_class_baseline_agreement": 0.6373,
+        "balanced_accuracy": 0.9653,
+        "macro_f1": 0.968,
+        "minority_class_recall": 0.9459
+      },
+      "exact": {
+        "agreement": 0.9706,
+        "macro_f1": 0.977
+      },
+      "mapping_note": "exact agreement compares raw values; registry may code HIGH/LOW while jury emits G1-G4 (or vice versa) \u2014 see registry_value_dist vs jury_value_dist"
+    },
+    "stad_tcga": {
+      "n_with_registry_grade": 351,
+      "n_jury_graded": 335,
+      "coverage": 0.9544,
+      "registry_value_dist": {
+        "G3": 200,
+        "G2": 127,
+        "G1": 8
+      },
+      "jury_value_dist": {
+        "G3": 198,
+        "G2": 128,
+        "G1": 7,
+        "G4": 2
+      },
+      "registry_raw_values": {
+        "G3": 263,
+        "G2": 159,
+        "G1": 12
+      },
+      "exact_confusion": {
+        "labels": [
+          "G1",
+          "G2",
+          "G3",
+          "G4"
+        ],
+        "matrix": [
+          [
+            6,
+            0,
+            2,
+            0
+          ],
+          [
+            1,
+            122,
+            4,
+            0
+          ],
+          [
+            0,
+            6,
+            192,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "two_tier": {
+        "agreement": 0.9642,
+        "wilson95": [
+          0.9384,
+          0.9794
+        ],
+        "majority_class": "HIGH",
+        "majority_class_baseline_agreement": 0.597,
+        "balanced_accuracy": 0.9628,
+        "macro_f1": 0.9628,
+        "minority_class_recall": 0.9556
+      },
+      "exact": {
+        "agreement": 0.9552,
+        "macro_f1": 0.6804
+      },
+      "mapping_note": "exact agreement compares raw values; registry may code HIGH/LOW while jury emits G1-G4 (or vice versa) \u2014 see registry_value_dist vs jury_value_dist"
+    },
+    "kirc_tcga": {
+      "n_with_registry_grade": 492,
+      "n_jury_graded": 477,
+      "coverage": 0.9695,
+      "registry_value_dist": {
+        "G2": 201,
+        "G3": 193,
+        "G4": 74,
+        "G1": 9
+      },
+      "jury_value_dist": {
+        "G2": 212,
+        "G3": 186,
+        "G4": 67,
+        "G1": 10,
+        "LOW": 1,
+        "HIGH": 1
+      },
+      "registry_raw_values": {
+        "G2": 230,
+        "G3": 207,
+        "G4": 78,
+        "G1": 14
+      },
+      "exact_confusion": {
+        "labels": [
+          "G1",
+          "G2",
+          "G3",
+          "G4",
+          "HIGH",
+          "LOW"
+        ],
+        "matrix": [
+          [
+            9,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            197,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            12,
+            181,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            4,
+            66,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "two_tier": {
+        "agreement": 0.9644,
+        "wilson95": [
+          0.9437,
+          0.9776
+        ],
+        "majority_class": "HIGH",
+        "majority_class_baseline_agreement": 0.5597,
+        "balanced_accuracy": 0.9671,
+        "macro_f1": 0.9641,
+        "minority_class_recall": 0.9905
+      },
+      "exact": {
+        "agreement": 0.9497,
+        "macro_f1": 0.6321
+      },
+      "mapping_note": "exact agreement compares raw values; registry may code HIGH/LOW while jury emits G1-G4 (or vice versa) \u2014 see registry_value_dist vs jury_value_dist"
+    },
+    "blca_tcga": {
+      "n_with_registry_grade": 375,
+      "n_jury_graded": 366,
+      "coverage": 0.976,
+      "registry_value_dist": {
+        "HIGH": 358,
+        "LOW": 8
+      },
+      "jury_value_dist": {
+        "G2": 12,
+        "HIGH": 207,
+        "G3": 129,
+        "G4": 17,
+        "G1": 1
+      },
+      "registry_raw_values": {
+        "HIGH GRADE": 388,
+        "LOW GRADE": 21
+      },
+      "exact_confusion": {
+        "labels": [
+          "G1",
+          "G2",
+          "G3",
+          "G4",
+          "HIGH",
+          "LOW"
+        ],
+        "matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            4,
+            129,
+            17,
+            207,
+            0
+          ],
+          [
+            0,
+            8,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "two_tier": {
+        "agreement": 0.9863,
+        "wilson95": [
+          0.9684,
+          0.9942
+        ],
+        "majority_class": "HIGH",
+        "majority_class_baseline_agreement": 0.9781,
+        "balanced_accuracy": 0.993,
+        "macro_f1": 0.8774,
+        "minority_class_recall": 1.0
+      },
+      "exact": {
+        "agreement": 0.5656,
+        "macro_f1": 0.1221
+      },
+      "mapping_note": "exact agreement compares raw values; registry may code HIGH/LOW while jury emits G1-G4 (or vice versa) \u2014 see registry_value_dist vs jury_value_dist"
+    }
+  },
+  "erin_juror_replay": {
+    "eight_jurors": [
+      "deepseek-r1_14b",
+      "gemma3_12b",
+      "gemma3_27b",
+      "llama3.1_8b",
+      "mistral-small3.2",
+      "phi4_14b",
+      "qwen3_14b",
+      "qwen3_32b"
+    ],
+    "five_jurors": [
+      "gemma3_12b",
+      "gemma3_27b",
+      "phi4_14b",
+      "qwen3_14b",
+      "qwen3_32b"
+    ],
+    "n_common_reports": 10550,
+    "label_agreement_8_vs_5": 0.9884,
+    "eligible_8": 10243,
+    "eligible_5": 10142,
+    "eligible_jaccard": 0.9807,
+    "label_agreement_on_both_eligible": 1.0,
+    "label_dist_8": {
+      "NDBE": 7349,
+      "IND": 855,
+      "CANCER": 545,
+      "HGD": 544,
+      "LGD": 950
+    },
+    "label_dist_5": {
+      "NDBE": 7223,
+      "IND": 870,
+      "CANCER": 563,
+      "HGD": 545,
+      "LGD": 941
+    }
+  }
+}

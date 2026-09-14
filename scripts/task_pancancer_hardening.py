@@ -83,31 +83,38 @@ for st in STUDIES:
                         "(or vice versa) — see registry_value_dist vs jury_value_dist"}
     print(st, res["pancancer"][st]["two_tier"], flush=True)
 
-# ---------------- (b) ERIN juror-count replay ----------------
-ev = {}
-for f in glob.glob(T + "/feasibility/runs/jury_full_*/output/llm_grades_*.csv"):
-    model = os.path.basename(f).replace("llm_grades_", "").rsplit("_shard", 1)[0]
-    d = pd.read_csv(f, dtype=str)
-    d = d[d["llm_grade"].isin(["NDBE", "IND", "LGD", "HGD", "CANCER"])]
-    ev.setdefault(model, {}).update(dict(zip(d["CaseName"], d["llm_grade"])))
-def rule(models):
-    lab, fr = {}, {}
-    common = set.intersection(*(set(ev[m]) for m in models))
-    for c in common:
-        vs = [ev[m][c] for m in models]
-        top = max(set(vs), key=vs.count); lab[c] = top; fr[c] = vs.count(top) / len(vs)
-    return lab, fr
-eight = sorted(ev); five = [m for m in FIVE if m in ev]
-l8, f8 = rule(eight); l5, f5 = rule(five)
-common = sorted(set(l8) & set(l5))
-e8 = {c for c in common if f8[c] >= 0.75}; e5 = {c for c in common if f5[c] >= 0.75}
-res["erin_juror_replay"] = {
-    "eight_jurors": eight, "five_jurors": five, "n_common_reports": len(common),
-    "label_agreement_8_vs_5": round(float(np.mean([l8[c] == l5[c] for c in common])), 4),
-    "eligible_8": len(e8), "eligible_5": len(e5),
-    "eligible_jaccard": round(len(e8 & e5) / max(len(e8 | e5), 1), 4),
-    "label_agreement_on_both_eligible": round(float(np.mean([l8[c] == l5[c] for c in e8 & e5])), 4) if e8 & e5 else None,
-    "label_dist_8": dict(Counter(l8[c] for c in e8)), "label_dist_5": dict(Counter(l5[c] for c in e5))}
-print("replay", res["erin_juror_replay"], flush=True)
+# ---------------- (b) juror-count replay: 8-juror deployed rule vs 5-juror TCGA subset ----------------
+# ERIN per-model votes live in labeller/llm_full/ (accession CaseNames);
+# feasibility/runs/jury_full_* is the SEPARATE Barrett's-DB corpus jury (integer ids) — replayed too, labelled as such.
+def replay(pattern, tag):
+    ev = {}
+    for f in glob.glob(pattern):
+        model = os.path.basename(f).replace("llm_grades_", "").rsplit("_shard", 1)[0]
+        d = pd.read_csv(f, dtype=str)
+        d = d[d["llm_grade"].isin(["NDBE", "IND", "LGD", "HGD", "CANCER"])]
+        ev.setdefault(model, {}).update(dict(zip(d["CaseName"], d["llm_grade"])))
+    if not ev: return {"error": "no vote files for " + pattern}
+    def rule(models):
+        lab, fr = {}, {}
+        common = set.intersection(*(set(ev[m]) for m in models))
+        for c in common:
+            vs = [ev[m][c] for m in models]
+            top = max(set(vs), key=vs.count); lab[c] = top; fr[c] = vs.count(top) / len(vs)
+        return lab, fr
+    eight = sorted(ev); five = [m for m in FIVE if m in ev]
+    l8, f8 = rule(eight); l5, f5 = rule(five)
+    common = sorted(set(l8) & set(l5))
+    e8 = {c for c in common if f8[c] >= 0.75}; e5 = {c for c in common if f5[c] >= 0.75}
+    out = {"corpus": tag, "all_jurors": eight, "five_jurors": five, "n_common_reports": len(common),
+           "label_agreement_all_vs_5": round(float(np.mean([l8[c] == l5[c] for c in common])), 4),
+           "eligible_all": len(e8), "eligible_5": len(e5),
+           "eligible_jaccard": round(len(e8 & e5) / max(len(e8 | e5), 1), 4),
+           "label_agreement_on_both_eligible": round(float(np.mean([l8[c] == l5[c] for c in e8 & e5])), 4) if e8 & e5 else None,
+           "label_dist_all": dict(Counter(l8[c] for c in e8)), "label_dist_5": dict(Counter(l5[c] for c in e5))}
+    print("replay", tag, out, flush=True)
+    return out
+res["erin_juror_replay"] = replay(T + "/labeller/llm_full/llm_grades_*.csv", "ERIN (7,149 reports)")
+res["barretts_db_juror_replay"] = replay(T + "/feasibility/runs/jury_full_*/output/llm_grades_*.csv",
+                                         "Barrett's-DB export corpus (13,645 reports; NOT ERIN)")
 json.dump(res, open(os.path.join(OUT, "results.json"), "w"), indent=2)
 print("wrote results.json")
