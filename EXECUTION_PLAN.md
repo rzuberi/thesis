@@ -280,6 +280,20 @@ On return: read results against pre-registrations; deviations to log: none yet.
   Ch2 Part A claim reverts toward the original: genotype is NOT recoverable
   from H&E within OAC at available n; the apparent recovery at scale was
   population mixture. Complementarity framing stands, more strongly.
+  2.46 (results/occams_withinfold.json; OOF rerun reproduced v3 to 4 d.p.,
+  first attempt OOM at 32G → 64G): Astra A8 was RIGHT IN DIRECTION, SMALL IN
+  SIZE, and changes no conclusion. Fold-specific ABMIL-Cox risk offsets
+  differ (fold risk means −1.12 to −0.15), so pooling OOF risks understates
+  histology's concordance: pooled 0.627 vs within-fold 0.655 (+0.028);
+  fusion arms move similarly (0.589→0.598, 0.613→0.632). Late fusion with
+  FOLD-LOCAL z-scoring: hist+genomics C 0.600, delta vs histology −0.029
+  [−0.095, +0.036]; hist+clinical 0.629, delta +0.002 [−0.059, +0.062] —
+  fusion still does not beat histology (C2 holds). Per-fold C spans
+  0.54–0.79 at n=87: the small-n instability the power map predicts.
+  Reporting rule for the thesis: quote within-fold C alongside pooled C for
+  every survival arm, and use fold-local normalisation for late fusion.
+  === TIER-1/TIER-2 BATCH COMPLETE (10/10). Compute is closed. Writing is
+  the critical path; next LLM review is of a DRAFT, not of result tables. ===
 - 2026-09-09 (joint, Rehan: "Queue the selection-adjusted SWG test"): 2.39 —
   selection-adjusted inference for C1 (Astra wave-4 finding A1: late_mean was
   selected among competing arm families on the same OOF data; Holm over 4

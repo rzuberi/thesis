@@ -59,7 +59,9 @@ all 53 results JSONs). Script: `scripts/openai_gapreview.py`; raw outputs in
   (results/swg_selection_adjusted.json): adjusted p=0.253 (naive 0.0013),
   honest delta +0.016 [−0.106, +0.080]. C1 demoted to exploratory per the
   pre-registered rule. This was the review's highest-value finding.
-- **A8:** pooled-vs-within-fold C-index check on survival cohorts. CPU.
+- **A8 — DONE 2026-09-14 (2.46, results/occams_withinfold.json): right in
+  direction, no conclusion change.** Pooling understates histology C by
+  0.028 (0.627→0.655); fold-local-normalised fusion still ≤ histology.
 - **A9 — DONE 2026-09-14 (2.43, results/power_map_v2.json): C6 survives.**
   Type-I 1–4.5% at zero effect; MDD80 0.075–0.10 (0.10 at Holm alpha) across
   fusion cohorts with corrected baselines; infeasible cells reported.
@@ -85,7 +87,7 @@ all 53 results JSONs). Script: `scripts/openai_gapreview.py`; raw outputs in
   pipelines (current controls cover ERIN + TCGA; OCCAMS has single-shuffle
   only). GPU-hours (the one non-trivial item).
 
-## Assessment
+## Assessment (written 2026-09-09, before the recompute batch)
 
 No finding overturns a result; two were real bugs (both fixed, neither
 changed a conclusion); the rest split into wording discipline for the
@@ -93,3 +95,20 @@ writing phase and a recomputation queue that is almost entirely
 saved-artefact CPU work. The most consequential items are A6
 (patient-clustered CIs — could widen headline intervals) and A1/A15
 (selection-adjusted inference for the single surviving confirmatory claim).
+
+## Final tally (2026-09-14, batch complete — 10/10 tasks)
+
+The pre-batch assessment above was WRONG in one important way: three
+findings did overturn results once run.
+- **Conclusions changed (3):** A1 — SWG fusion headline demoted
+  (selection-adjusted p 0.253); A14 — VLM→SWG transfer collapses to chance
+  after removing the 36% patient overlap; A12 — OAC genotype visibility
+  withdrawn (pooled signal was cohort identity). Plus A10, our own Tier-1
+  pick: C10 trajectory demoted.
+- **Hardened, unchanged (4):** A6 clustered CIs; A9 power map; A13
+  pan-cancer (now with baselines); A8 within-fold C.
+- **Bugs fixed (2):** A2 Holm monotonicity; A7 count-conservation key.
+- **Wording only (4):** A3, A4, A5, A11 — applied at writing time.
+- **Deferred (1):** A15 OCCAMS repeated permutations.
+Lesson recorded: an expert reviewer's "blocker" on a positive headline
+result deserves a compute test before it is filed as "partially known".

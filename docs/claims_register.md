@@ -17,7 +17,10 @@ results JSONs are ground truth; any mismatch is a finding.
   [results/swg_selection_adjusted.json, results/closure_cpu.json,
   results/latemean_vs_gigapath_paired.json]
 - **C2.** In OCCAMS (survival), fusion does not beat histology alone
-  (p_holm=0.69). [results/closure_cpu.json, results/occams_v3.json]
+  (p_holm=0.69). Holds under within-fold concordance and fold-local fusion
+  normalisation: histology C 0.655 within-fold (0.627 pooled); hist+genomics
+  delta −0.029 [−0.095, +0.036], hist+clinical +0.002 [−0.059, +0.062].
+  [results/closure_cpu.json, results/occams_v3.json, results/occams_withinfold.json]
 - **C3.** In ERIN progression, fusion does not beat histology alone
   (p_holm=1.0). [results/closure_cpu.json]
 - **C4.** The fusion nulls are not an artefact of encoder choice: under all 4
