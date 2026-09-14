@@ -1,0 +1,70 @@
+\chapter{Execution plan and amendment log (summary)}
+\label{app:plan}
+
+The full plan is \texttt{EXECUTION\_PLAN.md} in the public repository, with a dated amendment log of every promotion, deviation and outcome. This appendix summarises the experiments by number as they are cited in the text, and reproduces the decision rules that were applied to demote claims.
+
+\section{Numbered experiments}
+
+\begin{small}
+\begin{longtable}{@{}p{1.2cm}p{6.6cm}p{6.4cm}@{}}
+\toprule
+Item & Experiment & Outcome \\
+\midrule
+\endhead
+1.1 & OCCAMS pre-registered fusion (ABMIL-Cox, linear Cox, late fusion) & Fusion $-0.040$ vs histology; null \\
+1.20 & 50-permutation controls for anomalous shuffles (OCCAMS, TCGA) & Anomalies inside null spread; ``5 shuffles are not a control'' \\
+2.14 & SWG jury re-run (optional) & Unclaimed \\
+2.22 & Genotype-visibility learning curve, matched $n$ & Superseded by 2.45 (prevalence confound) \\
+2.23 & Power map v1 & Superseded by 2.43 \\
+2.24 & ERIN trajectory arms & Index slide $\ge$ trajectory features; GRU matches \\
+2.24b & SWG trajectory arms + next-CNV secondary & Snapshot sufficient; secondary superseded by 2.42 \\
+2.25/25b & WGD/TP53 teacher transfer to ERIN and SWG & Inverse association with progression; weak negative with CNV \\
+2.26 & Foundation-model disagreement as uncertainty & Null \\
+2.27 & Leave-one-family-out jury & Max 0.5\% flips \\
+2.28 & VLM signal test, pre-training, TCGA transfer & Zero-shot 0.889 ERIN; TCGA site 0.782, retrieval fails \\
+2.28c & VLM zero-shot on SWG & Superseded by overlap-excluded rerun (chance) \\
+2.29 & SWG winner's curse + complementarity & 72.8\% win rate, +0.027 optimism; CNV adds (LRT $p$=0.007) \\
+2.30 & Encoder sweep, three survival cohorts $\times$ four encoders & All twelve fusion intervals span zero \\
+2.31 & Attention shift under genomic conditioning (OCCAMS) & No shift (Spearman 0.984) \\
+2.32 & Cross-cohort transfer matrix & Transfer 0.53--0.62 vs within 0.71--0.90 (post-exclusion) \\
+2.33 & Pan-cancer jury vs registry grade & 0.96--0.97 two-tier; hardened in 2.44 \\
+2.34 & PORPOISE published baseline & MMF $-0.021$ vs AMIL \\
+2.35 & Closure: Holm, patient-level AUC, v2/v3 reconciliation & Holm family as Table~\ref{tab:holm}; 103 patient flips documented \\
+2.36 & Final-pipeline permutation controls & Nulls 0.502 / 0.487 vs real 0.819 / 0.679 \\
+2.37 & Per-section jury over full corpus & 0.3\% parse-fail; 32\% slide-vs-case-max disagreement \\
+2.38 & Slide-level vs case-max supervision, binary & $-0.010$ [$-0.028$, +0.009]; null \\
+2.38b & Same, six classes & Case-max better on macro-AUC ($-0.042$); QWK null \\
+2.39 & Selection-adjusted SWG inference & $p$ 0.253; OOB +0.016; C1 demoted \\
+2.40 & Cross-cohort identity crosswalk & 54/150 SWG patients in ERIN; two reruns \\
+2.41 & Patient-clustered CIs & Width ratio 1.00--1.10; no change \\
+2.42 & Trajectory persistence baselines & Histology adds $-0.100$; C10 demoted \\
+2.43 & Power map v2 (type-I, Holm alpha, feasibility) & MDD 0.075--0.10; C6 survives \\
+2.44 & Pan-cancer hardening + juror-count replay & Above majority baselines; 99.4\% rule agreement \\
+2.45 & Prevalence-matched visibility & OAC at chance; pooled signal = cohort identity \\
+2.46 & Within-fold concordance, fold-local fusion & Histology 0.627$\to$0.655; fusion still null \\
+SQ.1 & Eosinophilic oesophagitis case-finder & 26 diagnosed / 77 suspected reports (LLM-classified) \\
+SQ.2 & MDT-style deliberation & 98.7\% vs 97.4\%; 0 conformity losses \\
+SQ.3 & Phenotype pilot & 844 terms / 1,000 reports \\
+SQ.4 & Slide blur screen & Quality-control metrics stored per slide \\
+\bottomrule
+\end{longtable}
+\end{small}
+
+\section{Decision rules that were applied}
+
+\paragraph{2.39 (selection-adjusted SWG).} ``If $p_{\text{selection-adjusted}} < 0.05$ and the out-of-bag delta CI excludes 0, C1 stands with the adjusted $p$ replacing the naive one; if either fails, C1 is demoted to exploratory and the thesis reports the winner's-curse-corrected estimate.'' Both failed.
+
+\paragraph{2.40 (overlap).} ``If more than 5\% of SWG patients overlap ERIN, the VLM-SWG transfer numbers are replaced by the exclusion run.'' 36\% overlapped.
+
+\paragraph{2.42 (trajectory baselines).} ``The 2.24b secondary claim survives only if the increment of histology over the persistence-plus-grade baseline has a patient-clustered CI excluding 0.'' The increment was $-0.100$ [$-0.216$, +0.016].
+
+\paragraph{2.41 (clustered CIs).} ``A conclusion changes only if zero-exclusion flips.'' None flipped.
+
+\section{Amendments that changed a conclusion}
+
+\begin{description}
+\item[21 August 2026] Pooled necessity probes recorded as ``genotype partially recoverable at adequate $n$''; Ch2 Part A claim revised from ``not recoverable'' to ``partially recoverable at scale''. \emph{Reverted 14 September 2026} by 2.45.
+\item[9 September 2026] 2.38b prediction inverted: case-max labels better at six classes. Paper claim simplified to ``report-level supervision is robust for screening and does not lose at fine-grained grading at $n\approx1.5$k''.
+\item[9 September 2026] 2.39: C1 demoted. No confirmatory fusion result survives in any cohort.
+\item[14 September 2026] 2.40: SWG is not independent of ERIN; VLM-SWG transfer at chance after exclusion. 2.42: C10 demoted. 2.45: C6b revised.
+\end{description}

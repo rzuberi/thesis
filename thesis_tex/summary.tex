@@ -1,0 +1,58 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=20mm]{geometry}
+\usepackage{microtype}
+
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parskip}{5pt}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\begin{document}
+{\Large\bfseries What this thesis did, in two pages}\\[2pt]
+{\small Plain-language companion to \emph{Histology-anchored multimodal deep learning in oesophageal cancer: where and why fusion fails to replicate, and how to validate report-derived supervision}. Rehan Zuberi, PhD candidate, Cancer Research UK Cambridge Institute, University of Cambridge; supervisor Florian Markowetz. Draft of 15 September 2026.}
+
+\section*{The question}
+Oesophageal cancer is usually fatal by the time it is found, and it grows out of a common, mostly harmless condition called Barrett's oesophagus that is watched by regular biopsies. Every biopsy produces a stained glass slide and a written pathology report. Recent work suggested that computer models reading the slides could predict who will progress to cancer, and that adding a second kind of data, such as DNA copy-number measurements from the same biopsy or the patient's clinical record, should make those predictions better still. This ``multimodal fusion'' has been reported to work across many cancer types. The thesis asked whether it works in oesophageal cancer.
+
+\section*{The short answer}
+It could not be shown to. Across four patient cohorts, seven ways of combining the data, five different image-encoding models and one published multimodal architecture, adding a second modality never reliably beat using the slide images alone. More importantly, the thesis found out \emph{why} such comparisons so often look positive when they are not, and each reason was caught in its own results first:
+
+\begin{itemize}
+\item \textbf{Picking the winner and then testing it.} One result had looked solid: in a 150-patient Barrett's cohort, one fusion method beat images alone by a margin that passed a strict pre-registered statistical test. But that method had been chosen as the best of five candidates on the same data. Tested against how well the \emph{best of five} would do by luck alone, the result was not significant ($p$ went from 0.01 to 0.25), and its realistic benefit was tiny and uncertain. The claim was withdrawn.
+\item \textbf{Cohorts that were not really separate.} Two cohorts believed to share 6 patients actually shared 54 (a third of one of them), because the check had used anonymised IDs that the two datasets do not share. A result that had looked like the model generalising to a new hospital cohort disappeared when the shared patients were removed.
+\item \textbf{Mixing populations.} Pooling cohorts with different mutation rates let a model appear to ``see'' a mutation in the tissue image when it was really just recognising which cohort the slide came from. A model told only the cohort name did just as well.
+\item \textbf{Too few patients to see a small effect.} A simulation showed that none of the available cohorts could detect a fusion benefit smaller than about 0.075 in AUC (a standard accuracy score), while the benefits actually observed were between 0.01 and 0.04. So the honest conclusion is not ``fusion does not help'' but ``no cohort of this size can show that it does''.
+\end{itemize}
+
+These lessons were written into a six-point checklist that anyone claiming a multimodal gain should be able to pass, and they form the basis of one of the two papers drafted from the thesis.
+
+\section*{The second half: getting labels out of pathology reports}
+Computer models need many labelled slides, and no pathologist can re-read tens of thousands of them. The labels have to come from the reports. The thesis built a way to do this that runs entirely inside the hospital network (no patient text ever leaves): eight different open-source language models each read every one of 7,149 reports and vote on the diagnosis grade. Reports on which they disagree are set aside as ``unsure'' rather than forced into a label, and the hardest disagreements were resolved by hand.
+
+Then it checked the labels every way it could. No single model was doing the work (removing any one changes under 1\% of labels). The ``unsure'' reports really were the ambiguous ones (three times more hedging language). On cancer types the models had never seen, using US public data where a human registry grade exists, the labels agreed with the humans 96 to 97\% of the time, against a trivial baseline of about 60\%. A simple keyword-based extractor turned out to train image models just as well as the eight-model jury for the coarse task.
+
+One finding here was new. A single report usually grades several biopsy sites, and the standard shortcut in the field gives every slide from a case the \emph{worst} grade in the report. Re-reading reports section by section showed that this shortcut mislabels 32\% of slides. Surprisingly, models trained on the shortcut were no worse for screening and actually \emph{better} at fine-grained grading, because the shortcut supplies more examples of the rare grades even though a third of them are wrong. At today's cohort sizes, the shortcut everyone uses is safe.
+
+Finally, the report--slide pairs were used to train a model that grades slides by matching them to text descriptions, with no labels at all; it reached a grading accuracy of 0.889 on held-out slides (a fully supervised model gets 0.926) but did not transfer to other hospitals' data. The labelling machinery was also used to find candidate cases of a rare condition (eosinophilic oesophagitis) in a day, and to catalogue 844 distinct tissue findings from a thousand reports as the seed of a future ``phenotype atlas''.
+
+\section*{How the work was done}
+Every experiment was written down, with its decision rule, before it was run, in a public plan with a dated log of every change. The results were then attacked, four times, by panels of independent language models acting as hostile reviewers. The last review, costing under two dollars, found two arithmetic bugs (fixed the same day, no conclusions affected) and prompted the ten follow-up analyses described above, three of which reversed a conclusion the author had believed. All of those reversals are recorded in the thesis rather than removed from it.
+
+\section*{Where things stand}
+Computation is complete and the full thesis draft exists with all figures generated from the committed result files. The main missing piece is a pathologist re-grading a sample of slides, for which a grading tool is already running inside the hospital network. Two papers are drafted: one on validating report-derived labels, one on the checklist for multimodal claims.
+
+\begin{center}\small
+\begin{tabular}{@{}p{2.6cm}p{13.5cm}@{}}
+\toprule
+Cohorts & Cambridge Barrett's progression (150 patients), ERIN reports and slides (2,537 patients), OCCAMS (87), TCGA (65 and 399) \\
+Headline & No reproducible fusion gain; a checklist of six checks that removed three false positives in the author's own work \\
+Labels & 7,149 reports labelled by an eight-model local jury; 96--97\% agreement with human grades on unseen cancer types \\
+Code and results & \url{https://github.com/rzuberi/thesis} (no patient data) \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{document}

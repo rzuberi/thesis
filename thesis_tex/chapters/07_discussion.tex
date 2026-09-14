@@ -1,0 +1,45 @@
+\chapter{Discussion}
+\label{ch:discussion}
+
+\section{What was found}
+
+The thesis set out to add a second modality to H\&E in oesophageal cancer and ended up documenting, in some detail, why the field's positive results in this area should be read cautiously. Four cohorts, seven fusion families, five encoders and a published architecture produced no fusion gain that survives three checks: selection-adjusted inference, a patient-overlap audit and prevalence-matched comparison. Each check removed a result that had looked real. Selection removed the SWG headline, which had passed a pre-registered Holm-corrected test and had a measured winner's curse filed as ``small''; the honest effect is +0.016 AUC with an interval from $-0.11$ to +0.08. The overlap audit removed the vision-language model's SWG transfer, which was carried by the third of SWG patients who are also ERIN patients. Prevalence matching removed the finding that genotype is visible in H\&E at pooled scale, which a cohort-identity predictor reproduced. A power map explains the rest: the cohorts that exist for this disease cannot see gains below 0.075, and the observed gains are smaller.
+
+On the supervision side the findings are positive and specific. A jury of eight local language models labels surveillance reports in a way that does not depend on any one model, whose uncertainty tracks hedged text, and that agrees with human registry grades at 0.96 to 0.97 in three cancer types it never saw. A deterministic keyword ladder trains models as good as the jury does for coarse grade. Re-labelling at the section level showed the standard case-max shortcut mislabels 32\% of slides, and then showed the shortcut is no worse for screening and better for six-class grading at this cohort size, because the extra positives it propagates outweigh the noise. A contrastive slide-report model grades held-out ERIN slides at 0.889 with no labels and does not transfer.
+
+\section{A protocol for claiming a fusion gain}
+\label{sec:protocol}
+
+Every rule below is motivated by a specific failure in this thesis. Appendix~\ref{app:p2} develops them as a paper.
+
+\begin{enumerate}
+\item \textbf{Adjust for arm selection before reporting the best fusion arm.} Report the max-over-arms permutation $p$ and the out-of-bag delta of the selected arm. The SWG result went from $p=0.0096$ to $p=0.25$ (Section~\ref{sec:swg_result}).
+\item \textbf{Audit patient overlap across every pair of cohorts treated as independent}, using identifiers that actually travel between them (here, accession numbers), not anonymised study IDs. A ``6 of 1,992'' overlap was 54 of 150 (Section~\ref{sec:independence}).
+\item \textbf{Match prevalence when comparing populations or pooling cohorts}, and always fit a cohort-identity-only baseline for any pooled model (Section~\ref{sec:visibility}).
+\item \textbf{Report the minimum detectable gain for your cohort before interpreting a null}, and refuse to write ``fusion does not help'' when the interval merely fails to exclude zero (Section~\ref{sec:power}).
+\item \textbf{Use patient-clustered bootstraps, within-fold concordance and fold-local normalisation for late fusion.} In this thesis these changed no conclusion, which is the reason to run them: they cost minutes and remove a class of objection (Sections~\ref{sec:clustered}, \ref{sec:withinfold}).
+\item \textbf{Pre-register the confirmatory family and record every promotion and demotion with a date.} Three conclusions in this thesis changed after pre-registered decision rules were applied to new tests; the rules were written before the results existed, so none of the changes could be argued away (Appendix~\ref{app:plan}).
+\end{enumerate}
+
+The protocol does not say fusion fails. It says what a fusion claim has to survive, and it notes that several claims in the literature have not been asked to.
+
+\section{Limitations}
+\label{sec:limitations}
+
+\begin{itemize}
+\item No pathologist re-graded slides. All ERIN labels are report-derived; the external anchors are TCGA registry grades and 78 human-adjudicated reports. A grading application is live and a pathologist arm is the first item of future work.
+\item Rare-class counts are small (35 IND, 66 HGD, 82 LGD slides), so the six-class result of Section~\ref{sec:sections} is a statement about this cohort size, with the reversal at larger $n$ stated as a prediction.
+\item Jury labels and section labels share provenance, and the models that evaluate them are trained on them; the circularity is broken only where external anchors exist.
+\item ERIN is a single site; SWG is 150 patients; OCCAMS attrition to 87 is data-availability, not selection, but it is still 87.
+\item The chair's confidence in the deliberation experiment is uncalibrated; the vision-language model is trained and validated on one site; the WGD-teacher result is an association, not a measured ranking failure.
+\item Cross-cohort probes showed residual run-to-run nondeterminism of up to 0.011, so transfer numbers are reported to two decimals.
+\item A residual winner's curse of +0.027 on arm selection is now quantified and adjusted for, but the confirmatory family itself was chosen by the author.
+\end{itemize}
+
+\section{Future work}
+
+Three items follow directly. First, the pathologist arm: 20 common and 20 unique reports per grader on the cluster-internal tool, giving inter-rater agreement to set beside the jury's. Second, the scaling test of the six-class result: a cohort with hundreds of slides per rare class would decide whether section-resolved labels overtake case-max, and the ERIN feature set can be extended to the remaining imaged cases to approach that. Third, repeated patient-level permutations through the final OCCAMS pipelines, deferred because they harden a null at GPU cost. Beyond these, the phenotype atlas (Section~\ref{ch:vlm}) and the Barrett's natural-history sequences, once the database's grade codes are mapped, are the two report-derived resources most likely to produce new biology rather than new methodology.
+
+\section{Conclusion}
+
+Multimodal fusion did not replicate in oesophageal cancer at the cohort sizes that exist, and when it appeared to, the appearance had a cause that was not fusion. The thesis's contribution is to have caught those causes with pre-registered tests, to have measured the power ceiling that makes the nulls uninformative about the underlying effect, and to have written down what a fusion claim must survive. Its second contribution is a validated route from free-text reports to slide-level supervision that runs inside a hospital network, together with the first measurement of what the standard shortcut costs and the finding that, at present scales, it costs nothing.

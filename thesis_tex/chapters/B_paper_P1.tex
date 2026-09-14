@@ -1,0 +1,32 @@
+\chapter{Paper draft P1: a validated language-model jury for pathology-report supervision}
+\label{app:p1}
+
+\noindent\emph{Target: arXiv (cs.CL / q-bio), then a medical-informatics journal. Draft of 15 September 2026; author list and affiliations to be finalised. Shiv Sakthivel to be credited for the section-to-slide matching table.}
+
+\section*{Abstract}
+Weak supervision from pathology reports is how computational pathology reaches the slide volumes at which it works, but the extraction step is rarely validated and never audited for the noise it introduces. We label 7,149 Barrett's surveillance reports with a jury of eight open-weight language models run entirely inside the hospital network, hold out an explicit unsure class, and adjudicate the hardest cases by hand. The labels do not depend on any single model family (at most 0.5\% change when one is removed), their uncertainty concentrates in reports with three times the hedging language, and the same pipeline agrees with human registry grades at 0.96 to 0.97 in three TCGA cancer types it never saw, against majority-class baselines of 0.56 to 0.64. A deterministic keyword ladder trains downstream image models as well as the jury does for coarse grade. Re-labelling at the level of individual specimen sections shows that the standard shortcut of assigning a report's worst grade to every slide of the case mislabels 32\% of slides; yet image models trained on the shortcut are no worse for binary screening ($\Delta$AUC $-0.010$ [$-0.028$, +0.009]) and better for six-class grading (macro-AUC $-0.042$ [$-0.066$, $-0.019$] for section labels) at 1,538 slides, because the shortcut supplies several times more positives per rare class. Deliberation among models in a multidisciplinary-team format matched majority voting on adjudicated cases with no conformity losses. We release the extractor, the jury code and the aggregate results; no report text leaves the institution.
+
+\section{Introduction}
+Campanella et al.\ showed that whole-slide models trained on 44,732 slides labelled only from their reports reach clinical-grade performance \citep{campanella2019}. Almost every large computational-pathology dataset since has relied on report-derived labels, and almost none has reported how the labels were validated or what fraction of slides they mislabel. Two features of pathology reports make this a live problem: they hedge (``indefinite for dysplasia'', ``cannot exclude''), and they grade several specimens per report. A model trained on ``the worst grade in the report'' is trained on a label that, for a slide of benign tissue in a case with dysplasia elsewhere, is wrong.
+
+We present a labelling pipeline designed to be audited rather than trusted, and we use it to measure the noise of the shortcut for the first time.
+
+\section{Methods}
+\paragraph{Corpus.} 7,149 Barrett's surveillance reports (2,537 patients) from one UK centre, with 2,153 imaged slides carrying UNI2 tile features. Report text was pre-redacted by the provider and never left the institutional network.
+
+\paragraph{Jury.} Eight open-weight models (qwen3 14B/32B, gemma3 12B/27B, phi4 14B, mistral-small 3.2, deepseek-r1 14B, llama3.1 8B) served locally, one report per request, strict JSON schema on the ladder NDBE $<$ IND $<$ LGD $<$ HGD $<$ CANCER. Majority label accepted; near-splits held out as unsure; 78 hardest disagreements adjudicated from the full text. CPU inference was excluded after it produced timeouts that resembled progress.
+
+\paragraph{Per-section schema.} A second pass returned, for each lettered section, a set of grades and cancer subtypes; a grade is accepted with at least three of five jurors and a section counts if a majority of jurors saw it. Sections were linked to slides through an existing section-to-slide table.
+
+\paragraph{Baselines and validation.} A deterministic keyword ladder (\texttt{pathladder}) with windowed negation; an earlier single-model labelling; TCGA reports in four cancer types with cBioPortal registry grade; a leave-one-family-out re-vote; hedging-rate characterisation of unsure reports; an MDT-style three-consultant/chair deliberation on the 280 hardest cases.
+
+\paragraph{Downstream contrast.} Gated-attention MIL classifiers trained on identical patient-disjoint folds under case-max and section-resolved labels, evaluated on section-resolved truth, binary and six-class; 2,000-replicate paired bootstraps, slide- and patient-resampled.
+
+\section{Results}
+Label distribution, robustness, uncertainty, cross-source interchangeability, external validation, deliberation, section-level noise and the training contrast are those of Chapter~\ref{ch:labels}, Figures~\ref{fig:jury} to \ref{fig:svc}; the paper will reproduce them as its Figures 1 to 5 with the numbers unchanged.
+
+\section{Discussion}
+The pipeline's value is not that language models can read pathology reports, which is unsurprising, but that its failure modes are measured: which model matters (none individually), which reports it cannot label (the hedged ones), and how it does on human-graded external data (0.96 to 0.97 above baselines of about 0.6). The section-level result gives the field a number it lacked, 32\%, and then the reassuring finding that at present cohort sizes the noise does not cost downstream performance, with a stated prediction of where it would. The main limitation is the absence of a pathologist re-grading arm, which a live grading tool is designed to supply; the external anchors are registry grades and 78 adjudicated reports.
+
+\section*{Reproducibility}
+Code, schemas, and aggregate JSON results at \url{https://github.com/rzuberi/thesis}. Report text and per-case labels are not released.

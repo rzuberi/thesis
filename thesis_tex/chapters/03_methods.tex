@@ -1,0 +1,58 @@
+\chapter{Shared methods and evaluation contract}
+\label{ch:methods}
+
+Every experiment in Chapters~\ref{ch:fusion} to \ref{ch:vlm} uses the machinery in this chapter. Fixing it once, and in advance, is the point: most of the failures catalogued in this thesis are failures of evaluation rather than of modelling, and several of them were found by running a stricter version of a procedure described here against an earlier result.
+
+\section{Multiple-instance learning on tile features}
+
+Whole-slide images are represented as bags of tile embeddings from a frozen pathology foundation model, extracted at 20$\times$ over 224-pixel tiles. The primary encoder is UNI2 (1,536-dimensional) \citep{chen2024uni}; Virchow2 \citep{vorontsov2024virchow}, GigaPath \citep{xu2024gigapath}, Phikon-v2 \citep{filiot2023phikon} and H-Optimus-0 \citep{saillard2024hoptimus} were extracted over the same slides for the encoder sweep. Slide-level models are gated-attention multiple-instance learners \citep{ilse2018abmil, lu2021clam}: a linear embedding to 512 dimensions with GELU and dropout, a gated attention branch ($\tanh \times \sigma$) producing one weight per tile, and a linear head on the attention-weighted mean. Classification heads use cross-entropy (class-weighted by inverse square-root frequency for the six-class run); survival heads use a Cox partial-likelihood loss and are evaluated by Harrell's concordance \citep{harrell1982}. Bags larger than 2,000 tiles are subsampled per epoch. Optimisation is Adam at $10^{-4}$ for 30 epochs; three seeds are averaged unless stated.
+
+Genomic and clinical arms are linear Cox or logistic models on the tabular features. \emph{Late fusion} averages the z-scored out-of-fold risk of two arms; \emph{early fusion} concatenates tabular features to each tile embedding before the MIL model; the SWG release additionally carries intermediate, co-attention and stacked-logit fusion families built in the laboratory's Barrett's project.
+
+\section{Folds, out-of-fold predictions and the bootstrap}
+\label{sec:folds}
+
+All cross-validation is patient-disjoint and five-fold, stratified on the endpoint where feasible, with the fold assignment frozen per cohort (a permutation of patient identifiers under seed 0) and shared by every arm that is contrasted, so that paired comparisons are paired at the patient level. Models are trained on four folds and predict the fifth; the concatenated out-of-fold (OOF) predictions are the object every metric is computed on. Uncertainty is a 1,000- or 2,000-replicate paired bootstrap \citep{efron1993}: both arms are resampled on the same indices and the metric difference is recorded, giving a percentile 95\% interval on the delta. Where slides nest in patients, the bootstrap resamples patients and takes all their slides (Section~\ref{sec:clustered}); the effect of ignoring this was measured and is reported.
+
+\label{sec:withinfold}Two subtleties surfaced during review and are now part of the contract. First, pooling OOF Cox risks from five independently fitted models and computing one concordance mixes five risk scales; the within-fold concordance, which only compares pairs from the same fold, is reported alongside the pooled value for every survival arm (Section~\ref{sec:withinfold}). Second, late fusion z-scores each arm's risks; the original implementation used the pooled OOF distribution for this, which includes every fold's test risks. Fold-local z-scoring is now the default.
+
+\section{Controls}
+\label{sec:controls}
+
+Every positive result is accompanied by a shuffled-label control run through the same pipeline. An early lesson, recorded as a finding in its own right, is that five shuffles are not a control: two apparent anomalies (a shuffled-label concordance of 0.574 in OCCAMS and a TCGA probe) were resolved only by 50-permutation nulls that showed the single shuffles sat inside the legitimate null spread. Final-pipeline permutation controls for the two slide-level positive results give null means of 0.502 (ERIN progression, 75 permutations) and 0.487 (TCGA histology, 50 permutations) against real values of 0.819 and 0.679, with empirical $p$ of 0.013 and $<0.02$ \claim{C7}.
+
+\section{Multiplicity and pre-registration}
+\label{sec:prereg}
+
+Four contrasts were designated confirmatory before their results were known: SWG late-mean fusion versus histology (AUC), OCCAMS fusion versus histology (concordance), ERIN progression fusion versus histology (AUC), and keyword-derived versus jury-derived training labels (AUC). They are tested under Holm's step-down procedure \citep{holm1979} at family-wise $\alpha = 0.05$; everything else is labelled exploratory. A monotonicity bug in the Holm implementation (the cumulative-maximum step was missing, so the largest adjusted $p$ was reported as 0.945 instead of 1.0) was found by an external reviewer and fixed; it changed no decision.
+
+The execution plan (\texttt{EXECUTION\_PLAN.md} in the repository; summarised in Appendix~\ref{app:plan}) is the pre-registration document. Each numbered experiment states its design, its decision rule and its promotion criterion before it runs; outcomes and deviations are appended to a dated amendment log, and amendments require a recorded joint decision. Where a decision rule was applied to demote a claim, the rule is quoted in the results chapter.
+
+\section{Selection-adjusted inference}
+\label{sec:selection_method}
+
+When the best of $K$ candidate arms is reported, its advantage over a comparator is biased upward and its nominal $p$-value is too small \citep{nosek2018prereg}. Two remedies are used. The \emph{max-over-arms permutation test} takes as statistic $T = \max_k [\text{metric}(\text{arm}_k) - \text{metric}(\text{comparator})]$ and builds its null from patient-level label permutations with all predictions held fixed, so the correlation structure among arms is preserved and the null already reflects picking the best; $p = (1 + \#\{T_b \ge T_{\text{obs}}\})/(B+1)$ with $B = 20{,}000$. The \emph{selection-honest effect size} resamples patients with replacement, selects the best arm in-bag, and records that arm's advantage on the out-of-bag patients; the mean and percentile interval over 2,000 resamples estimate the gain a user would actually obtain after selecting.
+
+\section{Patient-clustered bootstrap}
+\label{sec:clustered}
+
+For slide-level contrasts in ERIN (1,538 dual-labelled slides from 1,155 patients), the paired bootstrap was re-run resampling whole patients. The clustered intervals were 1.00 to 1.10 times the width of the slide-resampled ones and no conclusion changed \claim{C18, C19}; the thesis nevertheless reports clustered intervals where they exist.
+
+\section{Power map}
+\label{sec:power_method}
+
+For each cohort's $n$, event count and observed unimodal performance, paired arm scores are simulated with a controlled true difference and a controlled correlation ($\rho \in \{0.6, 0.8, 0.9\}$): a bi-Gaussian model for binary endpoints (separation set from the target AUC) and a latent-risk exponential-time model for survival, with the score-to-risk fidelity calibrated to the target concordance under the observed censoring. Detection means the paired-bootstrap 95\% interval on the delta excludes zero; power is the detection rate over 200 replicates, with a Wilson interval, and is also computed at the Holm worst-case threshold $\alpha/4$. A zero-effect row gives the empirical type-I error; deltas that would push the true metric above 0.99 are reported as infeasible rather than clipped. Baselines are the final unimodal results of each cohort.
+
+\section{Cross-cohort identity crosswalk}
+\label{sec:overlap_method}
+
+Accession numbers in ERIN (\texttt{CaseName}), SWG (\texttt{BiopsyID\_real}) and the Barrett's database (\texttt{specimennumber}) are parsed to (prefix, year, integer) and intersected; the database's participant identifier bridges accessions of the same patient across the two cohorts. The crosswalk produces the list of overlapping patients used by the exclusion re-runs.
+
+\section{Language-model jury}
+\label{sec:jury_method}
+
+Report labelling runs on the cluster's GPUs with open-weight models served by \texttt{ollama}: qwen3 (14B and 32B), gemma3 (12B and 27B), phi4 (14B), mistral-small 3.2, deepseek-r1 (14B) and llama3.1 (8B). Each model receives one report at a time with a fixed JSON schema and returns a grade on the five-rung ladder (later, per section, a set of grades plus cancer subtypes). Labels are accepted when a clear majority of jurors agree; near-splits are held out as \emph{unsure}; the hardest disagreements were adjudicated by a reviewer reading the full text on the cluster. CPU inference was abandoned after it produced timeouts that masqueraded as progress (Appendix~\ref{app:review}); all reported labels come from GPU runs. Validation of the jury, and the deterministic keyword ladder it is compared against, are in Chapter~\ref{ch:labels}.
+
+\section{Compute}
+
+Jobs ran on the Institute's Slurm cluster (L40S and H200 GPU partitions, an EPYC CPU partition) under a race-to-run pattern: each task is submitted to two partitions, the first to start takes an atomic lock and writes a completion marker, and the twin exits on finding it. H200 jobs are preemptible by other groups and were always paired with a non-preemptible twin. Campaigns were split into per-item jobs with short wall-times to exploit backfill; a dozen operational lessons that cost real time are recorded in the repository's \texttt{COMPUTE.md}.

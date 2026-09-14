@@ -1,0 +1,85 @@
+\chapter{Cohorts and data}
+\label{ch:cohorts}
+
+Five data sources were used. Table~\ref{tab:cohorts} summarises them; the sections below give the detail a reader needs to judge each result, including the attrition from slides on disk to analysable cases and the independence audit that changed one conclusion.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Cohorts. ``Analysis n'' is the number entering the main model of that cohort, after the attrition described in the text.}
+\label{tab:cohorts}
+\begin{tabular}{@{}p{2.6cm}p{3.1cm}p{2.9cm}p{2.8cm}p{2.6cm}@{}}
+\toprule
+Cohort & Histology & Second modality & Endpoint & Analysis n \\
+\midrule
+SWG Barrett's & 1,028 H\&E biopsy slides, 707 with paired sWGS & copy-number (sWGS) & progression to LGD (two reads) or worse & 150 patients, 50 progressors \\
+ERIN & 2,280 imaged Barrett's cases (UNI2 features on 2,153 eligible slides) & free-text reports (7,149); clinical from reports & dysplasia grade; progression & 2,153 slides / 1,574 patients (grade); 153 / 28 (progression) \\
+OCCAMS & 276 resection slide bags & WGS: TP53, ploidy, WGD; 7 clinical fields & overall survival & 87 cases, 58 events \\
+TCGA-ESCA (OAC) & diagnostic slides & TP53, WGD; clinical & overall survival & 65, 36 events \\
+TCGA gastro-oesophageal pool & diagnostic slides & as above & overall survival & 399, 176 events \\
+TCGA reports (ESCA, STAD, KIRC, BLCA) & -- & free-text reports + registry grade & external check of report labelling & 1,280 reports \\
+Barrett's database export & -- & 13,645 reports & natural history & 12,780 labelled \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{The SWG Barrett's progression cohort}
+\label{sec:swg}
+
+The SWG cohort is a Cambridge Barrett's surveillance cohort in which each biopsy has both an H\&E whole-slide image and shallow whole-genome sequencing, assembled around the copy-number progression work of \citet{killcoyne2020}. The version used here is a frozen release (\texttt{chapter1\_lgd2\_final\_pre\_event}) built in the laboratory's multimodal Barrett's project: 150 patients, 707 biopsy samples with usable image features and sequencing, a median of about 4.7 samples per patient, and a strict pre-event design in which only samples taken before the first LGD-or-worse diagnosis (confirmed on two reads) enter. Fifty patients progressed. Patient-level folds (\texttt{fold\_id\_rep01}) were frozen with the release and are used unchanged by every SWG analysis in this thesis, so that results from different chapters sit on identical splits.
+
+Per sample, the image side is a bag of UNI2 tile features \citep{chen2024uni} with a stored mean embedding; the genomic side is a copy-number complexity summary and per-arm copy-number features. The slide collection on disk is larger than the analysis set: 1,028 \texttt{.ndpi} files (567~GB) across 171 patients, of which 1,005 could be attributed to a patient and 959 carry a pathology grade in the release manifest (NDBE 619, LGD 159, HGD 77, IND 67, intramucosal cancer 37). Twenty-six slides could not be attributed and are excluded.
+
+\section{ERIN}
+\label{sec:erin}
+
+ERIN is a histopathology corpus from the Cambridge Barrett's surveillance service: 7,149 pathology reports from 2,537 patients, with the microscopic description and final diagnosis fields already redacted of identifiers by the data provider, and whole-slide images for 2,280 imaged cases. Every label used for ERIN in this thesis is derived from the report text by the pipeline of Chapter~\ref{ch:labels}; no pathologist re-read slides for this work. The imaging side is UNI2 tile features at 20$\times$ and 224-pixel tiles.
+
+Two endpoints are used. \emph{Grade} is NDBE versus LGD-or-worse on the report attached to the slide; 2,153 slides from 1,574 patients have a jury label confident enough to train on, 528 of them positive. \emph{Progression} follows a patient from an index NDBE (or IND) report to any later report of HGD or cancer; at the report level this gives 1,266 patients and 181 progressors (cohort v3), and at the slide level, where an index slide with features is required, 153 index slides and 28 progressors. The slide-level progression cohort is small, and Section~\ref{sec:power} quantifies what that costs.
+
+Reports contain lettered specimen sections (A, B, C, \ldots), one per biopsy site, and a single report often grades them differently. The consequence for slide labelling is the subject of Section~\ref{sec:sections}. Section-to-slide correspondence uses a table built earlier in the laboratory by Shiv Sakthivel (12,467 rows linking slide identifiers to report sections), which is credited here and reused without modification.
+
+\section{OCCAMS}
+\label{sec:occams}
+
+OCCAMS (Oesophageal Cancer Clinical and Molecular Stratification) is a UK multi-centre oesophageal adenocarcinoma consortium \citep{frankell2019}. The slice available here is a resection cohort: surgical specimens, not surveillance biopsies. Per case the cluster holds H\&E slides (276 feature bags across resection and some endoscopy slides; UNI2 and four other encoders' features), WGS-derived genomics (TP53 status as SNV, indel, deletion and knockout flags, ploidy and whole-genome-doubling status) and a clinical master table with survival, TNM stage, age, performance status, comorbidity and treatment.
+
+The analysis cohort is 87 cases with 58 deaths, and the attrition from 276 slide bags deserves a table because reviewers asked for it (Table~\ref{tab:occams_attrition}). The binding constraint is the intersection of imaging and genomics: most imaged cases lack WGS and most WGS cases lack digitised slides. This is a data-availability fact rather than a selection choice. The specimen mix of the 87 is 66 resections and 21 endoscopy slides; a switch to restrict to resections only was added after review and left at its default for the pre-registered analyses.
+
+\begin{table}[htbp]
+\centering\small
+\caption{OCCAMS attrition to the fusion analysis cohort.}
+\label{tab:occams_attrition}
+\begin{tabular}{@{}lr@{}}
+\toprule
+Stage & n \\
+\midrule
+Slide feature bags on disk & 276 \\
+Master rows with usable survival & 2,247 \\
+Genomics cases & 383 \\
+Bags $\cap$ survival & 145 \\
+Bags $\cap$ genomics & 141 \\
+Survival $\cap$ genomics & 225 \\
+All three (analysis cohort) & 87 (58 events) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{TCGA}
+\label{sec:tcga}
+
+Two TCGA slices provide open, US-based cohorts independent of all Cambridge data. TCGA-ESCA contributes 88 oesophageal adenocarcinomas, of which 65 have diagnostic slides, survival and the genomic fields used here (36 deaths). A gastro-oesophageal pool adds TCGA-STAD to reach 399 cases with 176 deaths; TP53 mutation prevalence differs sharply between the two (about 83\% in the OAC slice versus 46\% in STAD/GEJ), a fact that matters in Section~\ref{sec:visibility}. TCGA diagnostic slides were downloaded from the GDC and featurised with the same encoders as the local cohorts. TCGA pathology reports, cleaned by \citet{kefeli2024tcgareports}, and the structured registry grade from cBioPortal provisional studies (ESCA, STAD, KIRC, BLCA) provide the human-graded external check for the report-labelling pipeline (Section~\ref{sec:pancancer}). The PORPOISE baseline (Section~\ref{sec:porpoise}) uses 439 TCGA slides with the published gene-signature molecular input.
+
+\section{Barrett's database export}
+
+A separate export of 13,645 pathology reports from the Cambridge Barrett's research database, keyed by an internal report identifier rather than by accession number, was labelled by the same jury to build the natural-history transition matrix of Section~\ref{sec:natural_history} (12,780 labelled, 12,255 with a confident label, 2,092 patients with report sequences). This corpus overlaps ERIN in patients but not in identifiers; it is not used for any model that is evaluated on ERIN.
+
+\section{Independence audit}
+\label{sec:independence}
+
+The plan file recorded on 14 August 2026 that ERIN and SWG shared 6 of 1,992 patients and were ``genuinely independent''. That statement was wrong, and the way it was found is instructive. ERIN reports, SWG biopsies and the Barrett's database all carry hospital accession numbers of the form PS\emph{yy}-\emph{nnnnn}. Normalising and intersecting them (Section~\ref{sec:overlap_method}) found 10 accessions shared directly between ERIN and SWG and, bridging through the database's participant identifier, 52 further patient pairs: in total 54 of the 150 SWG patients (36\%) are also ERIN patients. Because only 40\% of ERIN patients could be bridged to the database, 36\% is a lower bound. The original figure came from matching on anonymised patient identifiers that the two cohorts do not share.
+
+The audit also verified what was clean. The vision-language model's train/validation/test split is patient- and report-disjoint (1,333/452/436 slides), no slide appears twice in the master table, no accession maps to two patients, and the 79 adjudicated and 100 hand-label-sample reports overlap the VLM test fold by only 4 and 5 cases respectively (a provenance note, not leakage, since those cases were labelled by humans rather than used to train a model). Two results were re-run with the 54 shared patients excluded; both are reported in Chapters~\ref{ch:fusion} and \ref{ch:vlm}, and one of them changed.
+
+\section{Governance}
+
+All report text and slide data stayed on the Institute's cluster throughout. Language-model labelling used open-weight models served locally; no report text was sent to any external service. The public repository holds code and aggregate JSON results only. SWG slides are pseudonymised rather than anonymised (accession numbers appear in file names and scanner metadata), which constrains any future sharing to an explicit anonymisation pass under the data custodian's sign-off.

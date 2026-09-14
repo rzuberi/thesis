@@ -1,0 +1,56 @@
+\documentclass[11pt,a4paper,twoside,openany]{report}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=25mm]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{microtype}
+\usepackage{setspace}
+
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+\captionsetup{font=small,labelfont=bf}
+\graphicspath{{figures/}}
+\setlength{\parskip}{4pt}
+\onehalfspacing
+\newcommand{\claim}[1]{\textbf{[#1]}}
+\newcommand{\resfile}[1]{\texttt{\small #1}}
+
+\title{Histology-anchored multimodal deep learning in oesophageal cancer:\\
+where and why fusion fails to replicate, and how to validate report-derived supervision}
+\author{Rehan Zuberi\\[4pt]
+\normalsize Cancer Research UK Cambridge Institute\\
+\normalsize University of Cambridge}
+\date{Working draft, 15 September 2026}
+
+\begin{document}
+\maketitle
+\input{chapters/00_frontmatter}
+\tableofcontents
+\listoffigures
+\listoftables
+
+\input{chapters/01_introduction}
+\input{chapters/02_cohorts}
+\input{chapters/03_methods}
+\input{chapters/04_fusion}
+\input{chapters/05_labels}
+\input{chapters/06_vlm_discovery}
+\input{chapters/07_discussion}
+
+\appendix
+\input{chapters/A_execution_plan}
+\input{chapters/B_paper_P1}
+\input{chapters/C_paper_P2}
+\input{chapters/D_review_process}
+\input{chapters/E_claims_register}
+
+\bibliographystyle{unsrtnat}
+\bibliography{refs}
+\end{document}
