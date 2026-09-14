@@ -19,17 +19,29 @@ from scipy.stats import norm
 
 OUT = os.environ.get("OUTDIR", ".")
 REPS, N_BOOT = 200, 500
-DELTAS = [0.01, 0.02, 0.03, 0.05, 0.075, 0.10]
+# v2 (Astra A9, 2026-09-14): d=0 added for a type-I check; baselines updated to
+# the FINAL unimodal results; erin_grade uses the patient-level baseline that
+# matches its patient n; deltas that would push the true AUC/C above CAP are
+# reported as infeasible instead of being silently clipped.
+DELTAS = [0.0, 0.01, 0.02, 0.03, 0.05, 0.075, 0.10]
 RHOS = [0.6, 0.8, 0.9]
+CAP = 0.99
+ALPHA_HOLM = 0.05 / 4   # worst-case Holm threshold for the 4 confirmatory contrasts
 
 COHORTS = {
     "swg":        {"kind": "binary",   "n": 150,  "pos": 50,  "base": 0.731},
-    "occams_v3":  {"kind": "survival", "n": 87,   "events": 58,  "base": 0.55},
-    "tcga_oac":   {"kind": "survival", "n": 65,   "events": 36,  "base": 0.55},
-    "tcga_pool":  {"kind": "survival", "n": 399,  "events": 176, "base": 0.615},
-    "erin_grade": {"kind": "binary",   "n": 1574, "pos": 528, "base": 0.926},
+    "occams_v3":  {"kind": "survival", "n": 87,   "events": 58,  "base": 0.627},
+    "tcga_oac":   {"kind": "survival", "n": 65,   "events": 36,  "base": 0.679},
+    "tcga_pool":  {"kind": "survival", "n": 399,  "events": 176, "base": 0.547},
+    "erin_grade": {"kind": "binary",   "n": 1574, "pos": 528, "base": 0.960},
     "erin_prog":  {"kind": "binary",   "n": 153,  "pos": 28,  "base": 0.819},
 }
+
+def wilson(k, n, z=1.96):
+    if n == 0: return [None, None]
+    p = k / n; d = 1 + z * z / n
+    c = (p + z * z / (2 * n)) / d; h = z * np.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / d
+    return [round(float(c - h), 3), round(float(c + h), 3)]
 
 def cindex(risk, time, event):
     order = np.argsort(time)
@@ -101,7 +113,11 @@ for cname, c in COHORTS.items():
     res[cname] = {}
     for rho in RHOS:
         for d in DELTAS:
-            detect = 0; runs = 0
+            if c["base"] + d > CAP:
+                res[cname][f"rho{rho}_d{d}"] = {"infeasible": True,
+                                                "reason": f"base {c['base']} + delta {d} > cap {CAP}"}
+                continue
+            detect = 0; detect_holm = 0; runs = 0
             for rep in range(REPS):
                 rng = np.random.RandomState(rep * 7919 + int(d * 1000) + int(rho * 100))
                 if c["kind"] == "binary":
@@ -121,13 +137,20 @@ for cname, c in COHORTS.items():
                                      - cindex(a[idx], time[idx], event[idx]))
                 if len(stats) < 50: continue
                 lo = np.percentile(stats, 2.5)
-                runs += 1; detect += int(lo > 0)
+                lo_h = np.percentile(stats, 100 * ALPHA_HOLM / 2)
+                runs += 1; detect += int(lo > 0); detect_holm += int(lo_h > 0)
             if runs:
-                res[cname][f"rho{rho}_d{d}"] = {"power": round(detect / runs, 3), "runs": runs}
-        # minimum detectable delta at 80% power for this rho
-        mdd = next((d for d in DELTAS
-                    if res[cname].get(f"rho{rho}_d{d}", {}).get("power", 0) >= 0.8), None)
-        res[cname][f"rho{rho}_min_detectable_80"] = mdd
-        print(cname, "rho", rho, "MDD80:", mdd, flush=True)
+                res[cname][f"rho{rho}_d{d}"] = {
+                    "power": round(detect / runs, 3), "power_ci95": wilson(detect, runs),
+                    "power_holm_alpha": round(detect_holm / runs, 3), "runs": runs,
+                    "is_type1_check": d == 0.0}
+        # minimum detectable delta at 80% power for this rho (nominal and Holm-alpha)
+        for tag, fld in (("", "power"), ("_holm", "power_holm_alpha")):
+            mdd = next((d for d in DELTAS if d > 0 and
+                        res[cname].get(f"rho{rho}_d{d}", {}).get(fld, 0) >= 0.8), None)
+            res[cname][f"rho{rho}_min_detectable_80{tag}"] = mdd
+        t1 = res[cname].get(f"rho{rho}_d0.0", {}).get("power")
+        print(cname, "rho", rho, "typeI:", t1, "MDD80:", res[cname][f"rho{rho}_min_detectable_80"],
+              "MDD80_holm:", res[cname][f"rho{rho}_min_detectable_80_holm"], flush=True)
 json.dump(res, open(os.path.join(OUT, "results.json"), "w"), indent=2)
 print("wrote results.json")
