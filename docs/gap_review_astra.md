@@ -60,9 +60,14 @@ all 53 results JSONs). Script: `scripts/openai_gapreview.py`; raw outputs in
   honest delta +0.016 [−0.106, +0.080]. C1 demoted to exploratory per the
   pre-registered rule. This was the review's highest-value finding.
 - **A8:** pooled-vs-within-fold C-index check on survival cohorts. CPU.
-- **A9:** power map recalibration — fair catch that baseline 0.926 + delta
-  0.10 exceeds 1.0; redo on a bounded/realistic effect scale with MC error
-  bars and a type-I check at zero effect. CPU.
+- **A9 — DONE 2026-09-14 (2.43, results/power_map_v2.json): C6 survives.**
+  Type-I 1–4.5% at zero effect; MDD80 0.075–0.10 (0.10 at Holm alpha) across
+  fusion cohorts with corrected baselines; infeasible cells reported.
+- **A12 — DONE 2026-09-14 (2.45, results/visibility_matched.json):
+  CONCLUSION REVISED.** With prevalence-balanced draws, genotype is not
+  visible within OAC (AUC 0.42–0.52); the pooled "recoverable at scale"
+  probes are matched by a cohort-identity-only predictor. Only STAD/GEJ WGD
+  retains a modest signal. Third conclusion-changing finding of the review.
 - **A10:** SWG trajectory needs the current-CNV-persistence + elapsed-time
   baseline before "anticipates future CNV" survives. CPU.
 - **A12:** visibility curves with prevalence-matched sampling (TP53 ~83% OAC

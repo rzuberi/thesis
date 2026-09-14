@@ -255,6 +255,31 @@ On return: read results against pre-registrations; deviations to log: none yet.
   reports, eligibility Jaccard 0.991, 100% label agreement on reports both
   rules accept — the 5-juror TCGA procedure is a faithful proxy for the
   deployed ERIN rule (A13's procedural objection is closed).
+  2.43 (results/power_map_v2.json): C6 SURVIVES with corrected numbers.
+  Type-I error at zero effect 1.0–4.5% across all cells (nominal 2.5%
+  one-sided; Wilson ±3% at 200 reps) — the detection rule is not anti-
+  conservative in any meaningful way. Minimum detectable deltas at 80% power
+  (rho 0.8): SWG 0.075, OCCAMS 0.075 (v1 said 0.10 at the stale 0.55
+  baseline), TCGA-OAC 0.10, TCGA-pool 0.05, ERIN-prog 0.075; at the Holm
+  worst-case alpha they step up to 0.10 for SWG/OCCAMS/TCGA-OAC/ERIN-prog.
+  erin_grade: 9 cells infeasible (0.960 + delta > 0.99) and reported as such;
+  feasible MDD 0.01–0.02. Thesis wording becomes "MDD 0.075–0.10 (0.10 under
+  Holm) vs observed fusion deltas +0.01–0.04": unchanged in substance.
+  2.45 (results/visibility_matched.json): the 2026-08-21 "genomics partially
+  recoverable at scale" finding is LARGELY A COHORT-IDENTITY CONFOUND. With
+  balanced n/2+n/2 draws: OAC strata (TCGA-OAC, OCCAMS-OAC, combined) give
+  TP53 and WGD AUC 0.42–0.52, at or below chance and below every
+  permutation q95 — nothing visible within OAC (caveat: OAC has ~17% TP53-
+  wild-type, so balanced n is capped at 65). STAD/GEJ: TP53 0.56–0.61 (only
+  marginally above null q95 at n≥141), WGD 0.63–0.69, clearing null q95 from
+  n=100 — a modest real signal. MIXED-ALL TP53 0.63–0.67 is matched by a
+  cohort-identity-ONLY predictor at 0.63–0.65: the pooled n=446 probes
+  (TP53 0.678, WGD 0.703) were mostly learning which cohort a slide came
+  from (TP53 prevalence 83% OAC vs 46% STAD). WGD mixed 0.59–0.65 vs
+  identity-only 0.47–0.56 retains some signal, consistent with STAD WGD.
+  Ch2 Part A claim reverts toward the original: genotype is NOT recoverable
+  from H&E within OAC at available n; the apparent recovery at scale was
+  population mixture. Complementarity framing stands, more strongly.
 - 2026-09-09 (joint, Rehan: "Queue the selection-adjusted SWG test"): 2.39 —
   selection-adjusted inference for C1 (Astra wave-4 finding A1: late_mean was
   selected among competing arm families on the same OOF data; Holm over 4
