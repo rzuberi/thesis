@@ -1,0 +1,38 @@
+{
+  "_meta": {
+    "machinery": "pooled UNI2 + scaler/PCA64/logistic everywhere",
+    "swg_samples_excluded_for_erin_overlap": 279,
+    "exclude_file": "/mnt/scratche/slow/fmlab/zuberi01/phd/thesis/feasibility/runs/overlap_audit/output/swg_overlap_patients.txt",
+    "swg_patients_used": 96
+  },
+  "prog_SWG_to_ERIN": {
+    "within_train_cohort_cv": 0.7113,
+    "transfer_auc": 0.6226,
+    "n_train": 428,
+    "n_test": 153
+  },
+  "prog_ERIN_to_SWG": {
+    "within_train_cohort_cv": 0.7891,
+    "transfer_auc": 0.5974,
+    "n_train": 153,
+    "n_test": 428
+  },
+  "grade_ERIN_to_SWG": {
+    "within_train_cohort_cv": 0.8973,
+    "transfer_auc": 0.5334,
+    "n_train": 2153,
+    "n_test": 428
+  },
+  "surv24_OCCAMS_to_TCGA": {
+    "within_train_cohort_cv": 0.6066,
+    "transfer_auc": 0.6136,
+    "n_train": 140,
+    "n_test": 264
+  },
+  "surv24_TCGA_to_OCCAMS": {
+    "within_train_cohort_cv": 0.6199,
+    "transfer_auc": 0.4814,
+    "n_train": 264,
+    "n_test": 140
+  }
+}
