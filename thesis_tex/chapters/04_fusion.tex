@@ -1,0 +1,143 @@
+\chapter{Where and why multimodal fusion fails to replicate}
+\label{ch:fusion}
+
+This chapter reports every attempt in the thesis to show that adding a second modality to H\&E improves prediction, and the checks that removed the one apparent success. Figure~\ref{fig:forest} is the summary: 21 fusion-minus-unimodal contrasts across four cohorts and four encoders, none of whose 95\% intervals excludes zero once the selected SWG arm is evaluated out-of-bag. Table~\ref{tab:holm} gives the pre-registered family.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{fig_fusion_forest}
+\caption{Every fusion-versus-best-unimodal contrast in the thesis, as the paired-bootstrap difference in AUC or concordance. The shaded band is the smallest difference any of these cohorts can detect at 80\% power (Section~\ref{sec:power}). The first SWG row is the naive full-sample difference behind the original headline; the second is the same arm's difference when it is selected in-bag and evaluated out-of-bag.}
+\label{fig:forest}
+\end{figure}
+
+\begin{table}[htbp]
+\centering\small
+\caption{Pre-registered confirmatory family under Holm's procedure. The SWG contrast survives Holm but not the selection adjustment of Section~\ref{sec:swg_result}, and is demoted to exploratory by the rule pre-registered for that test.}
+\label{tab:holm}
+\begin{tabular}{@{}llrrl@{}}
+\toprule
+Contrast & Metric & $p$ raw & $p$ Holm & Status \\
+\midrule
+SWG late-mean fusion vs histology & AUC & 0.0024 & 0.0096 & demoted (selection-adjusted $p$ = 0.25) \\
+OCCAMS fusion vs histology & C & 0.231 & 0.692 & null \\
+ERIN progression fusion vs histology & AUC & 0.876 & 1.0 & null \\
+Keyword vs jury training labels & AUC & 0.945 & 1.0 & indistinguishable \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Part A: is genotype visible in H\&E at all?}
+\label{sec:visibility}
+
+Fusion can only help if the second modality carries information the image does not already contain, and the converse question, whether the image already contains the genotype, was tested first. Pooled probes over 446 OAC and gastro-oesophageal cases (mean-pooled UNI2 features, PCA to 64 dimensions, logistic regression) predicted TP53 mutation at AUC 0.678 and whole-genome doubling at 0.703, against shuffled-label values of 0.50 and 0.51; stage reached 0.644 and age 0.569. An amendment of 21 August 2026 recorded this as evidence that genotype is ``partially recoverable at adequate $n$'', and a matched-$n$ learning curve was run to separate sample size from population.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{fig_visibility_matched}
+\caption{Genotype visibility with class prevalence matched: every draw contains $n/2$ positives and $n/2$ negatives. Solid lines are probe AUC (20 draws), dotted lines the 95th percentile of within-cohort label permutations, dashed lines a predictor given only cohort identity. OAC strata sit at or below chance; the mixed-cohort TP53 curve is matched by cohort identity alone.}
+\label{fig:visibility}
+\end{figure}
+
+The matched curve initially appeared to support a population effect: OAC at chance at every $n$, gastric/GEJ rising. An external reviewer pointed out that the curves matched total $n$ but not prevalence, and that TP53 mutation is present in about 83\% of the OAC slice and 46\% of STAD/GEJ. Re-running with balanced draws (Figure~\ref{fig:visibility}) settled the question in a way the earlier version could not. Within OAC (TCGA-OAC, OCCAMS-OAC and their union) TP53 and WGD probes score 0.42 to 0.52, below every permutation 95th percentile; the OAC strata have so few TP53-wild-type cases that balanced draws cap at $n=65$, which is stated as a limit rather than hidden. STAD/GEJ shows a modest real WGD signal, 0.63 to 0.69, clearing its permutation null from $n=100$, and marginal TP53 (0.56 to 0.61). The mixed-cohort TP53 curve at 0.63 to 0.67 is matched by a logistic model whose only input is cohort membership (0.63 to 0.65): the pooled probes were learning which cohort a slide came from. For WGD the identity-only baseline is 0.47 to 0.56 against 0.59 to 0.65, so some signal survives, consistent with the STAD result.
+
+The conclusion of the 21 August amendment is therefore withdrawn \claim{C6b}. Genotype is not recoverable from H\&E within oesophageal adenocarcinoma at the sample sizes available, and the apparent recovery at scale was population mixture. A companion experiment on OCCAMS conditioned the attention module on genomic status and found the attention maps essentially unchanged (Spearman 0.984 between conditioned and unconditioned attention, concordance 0.576 versus 0.569), the same message from a different direction. The fusion question is therefore one of complementarity beyond what is visible, which is what the rest of the chapter tests.
+
+\section{The SWG Barrett's cohort: a result that survived Holm and not selection}
+\label{sec:swg_result}
+
+The SWG release compares seven arm families on frozen patient folds: image-only, CNV-only, early fusion, intermediate fusion, co-attention fusion, late-mean fusion and a stacked-logit late fusion. Late-mean fusion was best on every metric (AUPRC 0.630, AUC 0.774) against image-only (AUPRC 0.557, AUC 0.731) and CNV-only (AUC 0.663). The pre-registered contrast, late-mean minus image-only AUC, gave +0.043 with a raw $p$ of 0.0024 and Holm-adjusted 0.0096, the only confirmatory test in the thesis to reject. Complementarity analyses supported it: in nested logistic models on the patient-level OOF risks, CNV risk added to histology risk (likelihood-ratio $p = 0.007$) and histology to CNV ($p = 3\times10^{-5}$).
+
+Two things were known to qualify this. The winner's curse had been measured: late-mean won 72.8\% of 500 bootstrap re-selections, with an optimism of +0.027 AUPRC between its in-resample and full-sample scores. Against a GigaPath-encoded histology arm rather than the UNI2 one, only the Brier-score difference excluded zero ($-0.048$, [$-0.085$, $-0.011$]); AUC (+0.041, [$-0.020$, +0.103]) and AUPRC did not, so the gain was already known to be encoder-conditional. The plan filed the selection issue as ``partially known'' on this basis. An external review of the complete results (Appendix~\ref{app:review}) rated it a blocker, and the selection-adjusted test of Section~\ref{sec:selection_method} was pre-registered with a decision rule: the claim stands if the adjusted $p$ is below 0.05 \emph{and} the out-of-bag delta's interval excludes zero; otherwise it is demoted to exploratory.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{fig_selection_adjusted}
+\caption{Selection-adjusted inference for the SWG headline. Left: each arm's observed AUC advantage over image-only; the dashed line is the 95th percentile of the \emph{best} arm's advantage under 20,000 patient-level label permutations. Right: the late-mean gain as reported (naive) and as obtained when the arm is selected in-bag and evaluated out-of-bag (2,000 resamples).}
+\label{fig:selection}
+\end{figure}
+
+Both criteria failed (Figure~\ref{fig:selection}). The 95th percentile of the best fusion arm's advantage under no signal is 0.079, almost twice the observed 0.043; the adjusted $p$ is 0.253 over the five fusion arms and 0.368 if CNV-only is allowed into the candidate set, against an unadjusted single-arm permutation $p$ of 0.0013. The selection-honest delta is +0.016 with interval [$-0.106$, +0.080]; late-mean is selected in 69\% of resamples and its out-of-bag delta is positive in 72\% of them. The gap between the naive 0.043 and the honest 0.016 is 0.027, the same optimism the winner's-curse analysis had estimated independently. AUPRC was marginal (adjusted $p$ 0.040 for fusion arms only, 0.099 for all arms) and was not the pre-registered metric. Claim C1 is demoted \claim{C1}: the thesis reports SWG fusion as a positive but selection-unadjusted advantage of uncertain size, and the honest estimate of the effect a user would obtain after selecting is +0.016 AUC.
+
+Two further SWG analyses belong here. The GigaPath contrast's Brier result is reported as a Brier improvement, not as evidence of better calibration, since the Brier score mixes calibration with discrimination and no reliability analysis was run. And the SWG cohort's 36\% patient overlap with ERIN (Section~\ref{sec:independence}) does not affect any within-SWG result, because no SWG model was trained on ERIN.
+
+\section{OCCAMS: fusion trends harmful}
+\label{sec:occams_result}
+
+On 87 OCCAMS resection cases with 58 deaths, the histology arm reaches concordance 0.627 [0.539, 0.711]; WGS-derived genomics (TP53 flags, ploidy, WGD) 0.521 [0.434, 0.602]; seven clinical fields 0.536 [0.458, 0.624]. Late fusion of histology with genomics gives 0.589, a difference of $-0.040$ [$-0.104$, +0.026] against histology; with clinical, 0.613 ($-0.015$ [$-0.070$, +0.038]). The pre-registered contrast has Holm $p$ 0.69 \claim{C2}.
+
+A reviewer asked whether pooling five folds' Cox risks understated the concordance. It does, slightly: fold-specific risk offsets range from $-1.12$ to $-0.15$, and the within-fold concordance of histology is 0.655 against the pooled 0.627 (Section~\ref{sec:withinfold}). Re-computing late fusion with fold-local z-scoring gives hist+genomics 0.600 ($-0.029$ [$-0.095$, +0.036] against histology) and hist+clinical 0.629 (+0.002 [$-0.059$, +0.062]). Per-fold concordance spans 0.54 to 0.79, the instability the power map predicts at $n=87$. Fifty-permutation controls place the shuffled-label concordance of 0.574 from an early run inside the legitimate null spread.
+
+\section{ERIN: the clinical arm's signal was leakage}
+\label{sec:erin_result}
+
+ERIN slide-level progression (153 index slides, 28 progressors) is predicted from histology at AUC 0.819 [0.723, 0.900]. The clinical arm built from report-derived fields scores 0.564; late fusion 0.823 (+0.004 [$-0.047$, +0.054]). An ablation restricting clinical fields to those strictly available before the index date drops the clinical arm to 0.480 and fusion to 0.800 ($-0.019$ [$-0.058$, +0.012]): what signal the clinical arm had came from fields that encode the index date itself. The pre-registered contrast has Holm $p$ 1.0 \claim{C3}. The permutation control for the histology arm (75 permutations) gives a null mean of 0.502 and empirical $p$ of 0.013.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{fig_erin_encoders}
+\caption{ERIN dysplasia grade (NDBE vs LGD+, 2,153 slides) across five tile encoders. Left: histology-only AUC. Right: late and early fusion of report-derived clinical fields with histology, as paired differences against histology.}
+\label{fig:erin_encoders}
+\end{figure}
+
+On the easier grade endpoint (Figure~\ref{fig:erin_encoders}) histology alone is near ceiling: 0.926 [0.908, 0.940] with UNI2, 0.912 to 0.916 with the other encoders. Late fusion with clinical fields adds +0.006 [$-0.005$, +0.018] on UNI2 and +0.011 to +0.015 with intervals excluding zero on four of the other encoders; early fusion hurts on every encoder ($-0.032$ to $-0.054$). The late-fusion gains are real but an order of magnitude below the minimum detectable delta for any of the survival cohorts, and they sit on top of a 0.93 baseline; they are reported as exploratory.
+
+\section{TCGA}
+\label{sec:tcga_result}
+
+TCGA-OAC (65 cases, 36 deaths): histology 0.679 [0.567, 0.776], genomics 0.537, clinical 0.597; hist+genomics 0.651 ($-0.028$ [$-0.110$, +0.055]); hist+clinical 0.688. The gastro-oesophageal pool (399, 176 deaths): histology 0.547 [0.501, 0.595], genomics 0.540, clinical 0.623; hist+genomics 0.562 (+0.014 [$-0.023$, +0.051]). Hist+clinical in the pool is the one contrast in the thesis whose interval excludes zero in fusion's favour (+0.061 [+0.027, +0.095]), and it is not a genomics result: the clinical arm alone (0.623) beats histology (0.547) in this pool because stage is in the clinical table. The OAC subgroup's histology concordance within the pooled model is 0.682, close to the OAC-only model, so pooling neither helps nor harms the OAC cases. The pooled histology concordance is low because STAD and OAC survival differ and a single histology model is being asked to rank across them.
+
+\section{Encoder sweep and a published architecture}
+\label{sec:porpoise}
+
+The encoder escape hatch (``fusion would have worked with a better image representation'') was closed by repeating the three survival fusion analyses with Virchow2, GigaPath, Phikon-v2 and H-Optimus-0 features. All twelve late-fusion contrasts have intervals spanning zero (Figure~\ref{fig:forest}, lower rows) \claim{C4}. Histology-only concordance varies with encoder (OCCAMS 0.49 to 0.63), consistent with published reports that no encoder dominates across tasks, and no encoder makes fusion win.
+
+The architecture escape hatch was closed with PORPOISE \citep{chen2022porpoise}, run from its published classes and loss on 439 TCGA slides with the published gene-signature molecular input (8,827 features) and frozen splits, with only the first linear layer widened from 1,024 to 1,536 to accept UNI2 features. Its multimodal model (MMF) reached concordance 0.545 against its own attention-MIL unimodal baseline at 0.566, a difference of $-0.021$ [$-0.081$, +0.035] \claim{C5}. The interval permits a gain of up to +0.035; what it rules out is the gain of roughly 0.05 to 0.10 that the published pan-cancer results would predict.
+
+\section{The power map}
+\label{sec:power}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{fig_power_map}
+\caption{Simulated power to detect a true fusion gain (paired-bootstrap interval excluding zero) as a function of the gain and the correlation between the two arms' scores, for each cohort's $n$, events and observed baseline. ``n/a'' marks gains that would push the true metric above 0.99.}
+\label{fig:power}
+\end{figure}
+
+Figure~\ref{fig:power} is the thesis's explanation of its own nulls. At an arm correlation of 0.8, the smallest gain detectable at 80\% power is 0.075 in SWG, OCCAMS and ERIN progression, 0.10 in TCGA-OAC and 0.05 in the 399-case TCGA pool; at the Holm worst-case threshold these step up to 0.10. The observed fusion differences (Figure~\ref{fig:forest}) run from $-0.04$ to +0.04. Type-I error at zero effect is 1.0 to 4.5\% across cells (nominal 2.5\% one-sided, Wilson half-width about 3\% at 200 replicates), so the detection rule is not anti-conservative. An earlier version of this map paired the ERIN grade cohort's patient count with a slide-level baseline and silently clipped gains that exceeded 1.0; both were fixed after review and neither changed the fusion-cohort numbers by more than one grid step \claim{C6}.
+
+The map licenses one sentence and forbids another. It licenses: ``no available oesophageal cohort can detect a fusion gain below 0.075; the observed gains are smaller than that.'' It forbids: ``fusion does not help.'' The thesis uses the first.
+
+\section{Cross-cohort transfer}
+\label{sec:transfer}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{fig_transfer_matrix}
+\caption{Pooled-feature probes trained in one cohort and evaluated in another, with the 54 SWG patients shared with ERIN removed. Within-cohort cross-validated AUC is shown for comparison.}
+\label{fig:transfer}
+\end{figure}
+
+A pooled-feature probe (mean UNI2, PCA, logistic) trained in one cohort and applied to another loses most of its performance (Figure~\ref{fig:transfer}). After removing the 54 overlapping patients, SWG-to-ERIN progression transfers at 0.62 (within-cohort 0.71), ERIN-to-SWG at 0.60 (within 0.79), ERIN grade to SWG pathologist grade at 0.53 (within 0.90); OCCAMS-to-TCGA 24-month survival at 0.61 and TCGA-to-OCCAMS at 0.48. Removing the overlap moved the three Barrett's cells by at most 0.05 and did not change the conclusion; the pre-overlap numbers (0.64, 0.54, 0.56) are superseded.
+
+\section{Distilling a molecular teacher}
+\label{sec:wgd}
+
+An attention-MIL teacher trained on 562 resection cases with WGS labels predicts WGD at AUC 0.730 [0.689, 0.773] and TP53 mutation at 0.764 [0.722, 0.803] in-domain. Applied to ERIN surveillance biopsies, the predicted-WGD score is \emph{inversely} associated with progression (AUC 0.315; mean score 0.36 in progressors, 0.56 in non-progressors), and in SWG it correlates weakly negatively with measured copy-number complexity (Spearman $-0.10$, $p=0.005$). Neither cohort measures WGD directly, so these are stated as they are: an inverse association with progression and a weak negative association with CNV complexity, not a demonstration that the teacher mis-ranks true WGD \claim{C9}. The plausible reading is a specimen-type shift between resections and biopsies, and the practical one is that a resection-validated ``virtual biomarker'' should not be assumed to carry over to surveillance material.
+
+\section{Longitudinal trajectories}
+\label{sec:trajectory}
+
+Two cohorts allow a trajectory model. In ERIN (153 patients, 32 with more than one time point) hand-built trajectory features underperform the index slide alone (0.710 versus 0.780, $-0.070$ [$-0.123$, $-0.018$]) and a GRU over the sequence matches it (+0.010 [$-0.054$, +0.073]). In SWG, with about 4.7 samples per patient, no trajectory arm beat the last-sample snapshot on the frozen folds (\resfile{results/swg\_trajectory.json}). A secondary observation that current H\&E predicts the next biopsy's copy-number complexity (Spearman 0.161, $p=1.3\times10^{-4}$) prompted a follow-up with baselines it had lacked.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{fig_trajectory_baselines}
+\caption{Predicting the next biopsy's CNV complexity in SWG (557 transitions, 124 patients). Persistence of the current CNV state, with elapsed time and current grade, outperforms histology, and adding histology to persistence does not help.}
+\label{fig:trajectory}
+\end{figure}
+
+Current CNV complexity and elapsed time alone predict the next value at Spearman 0.259 (0.269 with the current grade added); histology alone 0.160; histology added to the persistence baseline 0.168 (Figure~\ref{fig:trajectory}). The increment from histology is $-0.100$ with a patient-clustered interval of [$-0.216$, +0.016]. The reading ``images anticipate genomic evolution'' is withdrawn \claim{C10}; histology was recovering part of the current CNV state, which the current CNV measurement recovers better.
+
+\section{What this chapter licenses}
+
+Seven fusion families, four encoders, a published architecture and four cohorts produced no fusion gain whose interval excludes zero after selection is priced in, and the one that appeared to was explained by selection. Three mechanisms that would have produced a false positive in a conventional analysis were caught: selecting the best arm on the evaluation data, sharing patients across cohorts, and pooling populations with different prevalence. The power map says the true gain, if any, is below what these cohorts can see. Chapter~\ref{ch:discussion} turns these into a protocol.

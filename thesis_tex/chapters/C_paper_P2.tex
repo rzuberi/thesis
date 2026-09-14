@@ -1,0 +1,29 @@
+\chapter{Paper draft P2: what a multimodal fusion claim has to survive}
+\label{app:p2}
+
+\noindent\emph{Target: a methods venue (MIDL, MICCAI workshop, or a medical-AI journal). Draft of 15 September 2026.}
+
+\section*{Abstract}
+Adding genomic or clinical data to H\&E histology is widely reported to improve prediction. We attempted to replicate that gain in oesophageal cancer and Barrett's oesophagus across four cohorts (150 to 399 patients), seven fusion families, five tile encoders and a published multimodal architecture, under pre-registered contrasts with paired bootstraps and Holm correction. One contrast rejected. It did not survive selection-adjusted inference: tested against the distribution of the \emph{best} of five fusion arms under the null, its $p$ rose from 0.0096 to 0.25, and the arm's out-of-bag gain was +0.016 AUC [$-0.106$, +0.080]. Two further results that had appeared positive were removed by a patient-overlap audit (36\% of one cohort's patients were in another) and by prevalence-matched comparison (a cohort-identity predictor matched pooled genotype probes). A simulation-based power map shows these cohorts cannot detect gains below 0.075 to 0.10 at 80\% power, while observed gains run +0.01 to +0.04. We propose six checks that a fusion claim should pass, each motivated by a specific false positive we caught in our own work, and note that most published comparisons report none of them.
+
+\section{Introduction}
+The pan-cancer multimodal literature reports concordance gains from fusing histology with molecular data \citep{chen2022porpoise}. These studies typically (i) select the best fusion configuration on the same data used to report it, (ii) treat cohorts as independent without checking patient identity, (iii) pool populations with different label prevalence, and (iv) interpret a null as absence of effect without a power analysis. None of these is a criticism of any particular paper; they are defaults of the field. We show what happens when each is replaced.
+
+\section{The replication}
+Cohorts, arms and results are those of Chapter~\ref{ch:fusion}. The paper will present Figure~\ref{fig:forest} (all 21 contrasts), Figure~\ref{fig:selection} (selection adjustment), Figure~\ref{fig:visibility} (prevalence matching) and Figure~\ref{fig:power} (power map) as its four main figures, with Table~\ref{tab:holm} as its pre-registered family.
+
+\section{Six checks}
+\begin{enumerate}
+\item \textbf{Selection.} If $K$ arms were compared, report the max-over-arms permutation $p$ and the in-bag-selected, out-of-bag-evaluated gain. Our headline went from $p=0.0096$ to $0.25$ and from +0.043 to +0.016.
+\item \textbf{Overlap.} Intersect cohorts on identifiers that travel between them (accession numbers, specimen IDs), not on anonymised study IDs. Our ``6 of 1,992'' was 54 of 150.
+\item \textbf{Prevalence.} Balance classes when comparing populations; fit a cohort-identity baseline for every pooled model. Ours matched the pooled probe.
+\item \textbf{Power.} Simulate the minimum detectable gain for your $n$, events and arm correlation before interpreting a null. Ours is 0.075 to 0.10.
+\item \textbf{Dependence.} Patient-clustered bootstraps; within-fold concordance next to pooled; fold-local normalisation for late fusion. These changed nothing for us, which is the point of running them.
+\item \textbf{Pre-registration with decision rules.} Write the demotion rule before the test. Three of our conclusions changed under rules written in advance; none could be argued away afterwards.
+\end{enumerate}
+
+\section{What the checks do not say}
+They do not say fusion fails. Under check 4 the honest sentence is that no cohort of this size can show that it works, and under check 1 the honest effect size in our best cohort is small and uncertain. A calibration or net-benefit analysis from the saved out-of-fold predictions, and a replication in a non-gastrointestinal cohort, are the two additions a journal reviewer is most likely to ask for and are planned.
+
+\section*{Reproducibility}
+All contrasts, nulls and the power simulation are reproducible from the public repository's result files and scripts; the SWG release folds are frozen and shared across every analysis.

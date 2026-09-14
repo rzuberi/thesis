@@ -1,0 +1,94 @@
+\chapter{Report-derived supervision and how to validate it}
+\label{ch:labels}
+
+Histology models reach clinical-grade performance at tens of thousands of slides \citep{campanella2019}, and no pathologist will re-grade tens of thousands of slides for a research project. The labels have to come from the reports that already exist. This chapter builds three ways of extracting them, validates them against each other and against human registry grades, and then measures something the report-derived-label literature has not measured: how wrong the standard shortcut of assigning a report's worst grade to every slide of the case actually is, and whether it matters.
+
+\section{Three label sources}
+
+\paragraph{Keyword ladder.} \texttt{pathladder} is a deterministic extractor: sentence splitting, windowed negation, and worst-finding-wins over the ordinal ladder NDBE $<$ IND $<$ LGD $<$ HGD $<$ CANCER; a second schema covers TCGA resection reports. On 507 TCGA ESCA and STAD reports it recovers histologic type with 98\% coverage and 100\% accuracy against GDC coding, and grade with 77\% coverage and 96.5\% accuracy against the cBioPortal clinical record.
+
+\paragraph{Feasibility grader.} An earlier, single-model labelling from the project's feasibility phase, retained as a third source because it is known to be noisy and therefore useful for asking whether label noise propagates.
+
+\paragraph{Language-model jury.} Eight open-weight models (Section~\ref{sec:jury_method}) each grade every report; a label is accepted when a clear majority agree, near-splits become \emph{unsure}, and the hardest 78 disagreements were adjudicated by a reviewer reading the full text on the cluster. Over 7,149 reports the jury produced 6,867 train-eligible labels (NDBE 5,151, CANCER 863, HGD 405, LGD 269, IND 257), 204 unsure and 78 adjudicated (Figure~\ref{fig:jury}). Parse rates were 100\% for every model except llama3.1-8B at 98.3\%.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{fig_jury}
+\caption{The ERIN jury. Left: label distribution of the 6,867 train-eligible reports. Middle: fraction of labels that change when one model family is removed from the jury. Right: rate of hedging language in reports the jury labels confidently versus those it holds out as unsure.}
+\label{fig:jury}
+\end{figure}
+
+\section{Is the jury robust, and does its uncertainty mean anything?}
+
+Removing any one model family and re-voting flips at most 0.5\% of labels (gemma3 is the most load-bearing family) and changes the eligible set with Jaccard at least 0.979 \claim{C12}. The unsure reports are not random: they carry hedging language at 3.3 times the rate of confident reports (0.52 versus 0.16 per report) and more addenda \claim{C13}. A grade model trained on the eligible slides scores 0.926 on them and only 0.697 against the jury's plurality on the 59 unsure slides, while its own confidence fails to flag them (62.7\% ``confident'' predictions on unsure slides versus 73.2\% on eligible). Deferring the model's least confident 5, 10 and 20\% of slides raises AUC from 0.926 to 0.931, 0.936 and 0.945. Holding the unsure reports out of training is therefore justified twice over: they are ambiguous in the text, and the image model cannot tell.
+
+\section{Do label sources matter downstream?}
+\label{sec:labelsource}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.55\textwidth]{fig_labelsource_xeval}
+\caption{Grade models trained on each label source, evaluated against each label source (AUC, 2,153 ERIN slides). Jury- and keyword-trained models are interchangeable; the noisy feasibility grader is not.}
+\label{fig:xeval}
+\end{figure}
+
+Models trained on jury labels and on keyword-ladder labels are indistinguishable when both are evaluated against jury labels (0.921 versus 0.921, difference +0.0003 [$-0.008$, +0.009]; Holm $p$ 0.945, the fourth confirmatory contrast) \claim{C16}, and against keyword labels (0.877 versus 0.882). The feasibility grader's model trails by 0.073 [$-0.094$, $-0.053$] and no model predicts the feasibility grader's own labels well (0.59 to 0.67), which locates the noise in that labeller rather than in the images (Figure~\ref{fig:xeval}). The practical reading is that a validated keyword extractor is sufficient supervision for coarse grade, and that a jury earns its cost on the harder tasks below. Where the two disagree on ERIN (agreement 81.7\% on 6,867 reports), the dominant confusion is the ladder calling CANCER where the jury says NDBE (321 cases), almost all in reports that mention cancer in a negated or historical context.
+
+\section{External validation against human grades}
+\label{sec:pancancer}
+
+The jury had never seen a TCGA report or a non-Barrett's cancer. The same pipeline, with the five jurors available at the time and a G1--G4/high/low schema, graded 1,294 TCGA reports in four cancer types with registry grades from cBioPortal.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{fig_pancancer}
+\caption{Agreement between jury grade and the human registry grade (two-tier low/high), with Wilson 95\% intervals, against the agreement an always-majority-class labeller would achieve.}
+\label{fig:pancancer}
+\end{figure}
+
+Two-tier agreement is 0.971 in ESCA ($n=102$), 0.964 in STAD (335) and 0.964 in KIRC (477), against always-majority-class baselines of 0.637, 0.597 and 0.560; balanced accuracy is 0.963 to 0.967, macro-F1 0.963 to 0.968 and minority-class recall 0.946 to 0.991 (Figure~\ref{fig:pancancer}) \claim{C14}. BLCA's exact agreement of 0.579 puzzled an early draft; the registry codes only high/low (358/8) while the jury emitted G2, G3, G4 and high, so the mismatch was a coding scheme, and after mapping all 8 low-grade cases are recovered. Its two-tier figure of 0.986 is barely above the 0.978 majority baseline and is reported as uninformative beyond minority recall. Replaying the five-juror rule on the saved ERIN votes agrees with the deployed eight-juror rule on 99.4\% of 6,657 common reports (eligibility Jaccard 0.991), so the TCGA procedure is a faithful proxy for the ERIN one.
+
+\section{Deliberation versus voting}
+
+Published frameworks run language models as a multidisciplinary team meeting rather than a vote \citep{mdteamgpt2025, nussinov2024mdt}. On the 280 hardest ERIN cases (adjudicated plus unsure), three consultant models gave independent first-round opinions with quoted evidence, saw each other's opinions and could rebut, and a chair model issued a verdict. On the 78 adjudicated cases the chair was right on 77 (98.7\%) against 76 for the first-round majority (97.4\%), with no case in which deliberation talked a correct majority out of the right answer; 85 of 124 first-round disagreements converged to unanimity (Figure~\ref{fig:mdt}). That is one additional correct decision on a development benchmark, not a demonstration of superiority. On the 201 unsure cases the chair claimed confidence at or above 0.7 on 200, which is not credible for reports the jury found ambiguous; chair confidence is treated as uncalibrated \claim{C15}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.5\textwidth]{fig_mdt}
+\caption{Multidisciplinary-team-style deliberation against independent majority vote on the 78 adjudicated ERIN cases.}
+\label{fig:mdt}
+\end{figure}
+
+\section{Sections, slides and the case-max shortcut}
+\label{sec:sections}
+
+A Barrett's surveillance report grades several biopsy sites, one lettered section each, and the sections often disagree. The report-level label of the previous sections assigns the worst grade in the report (``case-max'') to every slide from that case, which is the shortcut used in almost all report-supervised pathology work. To measure what it costs, the jury was re-run per section with a schema that returns a set of grades and cancer subtypes (adenocarcinoma, squamous, signet-ring, post-neoadjuvant treatment effect) for each lettered section. Parse failure was 0.3\%; reports averaged 2.36 sections; 18,691 section-level consensus rows were obtained over 7,031 reports, a section counting only if seen by a majority of jurors and a grade only if at least three of five listed it. Shiv Sakthivel's section-to-slide table then linked 1,538 feature slides to their own section.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{fig_slide_vs_casemax}
+\caption{Left: section-resolved slide grades for the 1,538 dual-labelled slides. Right: models trained on section-resolved labels minus models trained on case-max labels, evaluated on section-resolved truth, with slide-resampled and patient-clustered bootstrap intervals.}
+\label{fig:svc}
+\end{figure}
+
+\textbf{32.0\% of slides carry a different grade from their case-max label} (Figure~\ref{fig:svc}, left) \claim{C17}. Most of the difference is benign tissue in a case that contained dysplasia elsewhere: 685 of the 1,538 slides are graded normal-or-other tissue by their own section and 589 NDBE, against 82 LGD, 66 HGD, 81 cancer and 35 IND.
+
+Whether that noise matters was tested with identical gated-attention models on identical patient-disjoint folds, trained once on case-max labels and once on section-resolved labels, and evaluated against section-resolved truth. For binary screening (LGD or worse) the answer is no: case-max-trained 0.871 [0.841, 0.898], section-trained 0.860 [0.829, 0.891], difference $-0.010$ [$-0.028$, +0.009] \claim{C18}. The natural follow-up asked whether the noise bites where it lives, at six-class grading (normal $<$ NDBE $<$ IND $<$ LGD $<$ HGD $<$ cancer), and the prediction was that section labels would win there. They lost: case-max-trained macro one-vs-rest AUC 0.764 against 0.722, difference $-0.042$ [$-0.066$, $-0.019$], quadratic-weighted kappa 0.524 against 0.515 (difference $-0.009$ [$-0.066$, +0.047]) \claim{C19}. Patient-clustered intervals (1,155 patients) are 1.00 to 1.10 times as wide and change nothing (Figure~\ref{fig:svc}, right).
+
+The reading is a trade between label noise and sample size. With 35 IND, 66 HGD and 82 LGD slides, section-resolved labels starve the rare classes; case-max propagates the report's worst grade to every slide of the case, which is wrong for a third of slides individually but supplies several times more positive examples per rare class. At this cohort size the noisy-but-plentiful labels win. This could invert in a cohort with hundreds of slides per rare class, and the thesis states that as a testable prediction rather than a universal claim. For anyone training on report labels today, the result is reassuring: the shortcut everyone uses is safe for screening and not worse for grading at the scale most groups have.
+
+\section{A human comparison arm}
+
+Because the report text cannot leave the hospital network, a cluster-internal grading application was built (a standard-library HTTP server over SQLite, per-section grade and subtype check-boxes mirroring the jury schema) so that four or five laboratory members can each grade a common core of 20 reports plus 20 unique ones, giving inter-rater agreement and coverage. It is live; grading had not begun when this draft was frozen, and a pathologist arm remains the thesis's main unmet validation (Section~\ref{sec:limitations}).
+
+\section{Barrett's natural history from labelled reports}
+\label{sec:natural_history}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.6\textwidth]{fig_natural_history}
+\caption{Grade-to-grade transitions between consecutive reports of the same patient, from jury-labelled reports in the Barrett's database export (row-normalised; counts in parentheses).}
+\label{fig:nathist}
+\end{figure}
+
+Labelling the 13,645-report database export with the same jury (12,780 labelled, 12,255 confidently) gives grade sequences for 2,092 patients (Figure~\ref{fig:nathist}). Most NDBE reports are followed by NDBE (5,080 of 5,880 transitions); the median time from NDBE to a first dysplastic report is 1.06 years; and transitions from cancer back to NDBE (238) record post-treatment surveillance rather than regression. A text-only progression model on 8,830 reports reaches AUC 0.696. Structured-truth validation of these sequences is blocked on the database's grade-code map and is listed as pending.

@@ -1,0 +1,40 @@
+\chapter{Claims register}
+\label{app:claims}
+
+Every numbered claim in the text, its current status, and the result file in the public repository that backs it. Numbers in the chapters are transcriptions of these files.
+
+\begin{small}
+\begin{longtable}{@{}p{0.9cm}p{8.6cm}p{2.2cm}p{3.3cm}@{}}
+\toprule
+Claim & Statement & Status & Evidence \\
+\midrule
+\endhead
+C1 & SWG late-mean fusion beats histology (+0.043 AUC, Holm $p$ 0.0096); selection-adjusted $p$ 0.253, OOB +0.016 [$-0.106$, +0.080] & demoted & swg\_selection\_adjusted, closure\_cpu \\
+C2 & OCCAMS fusion does not beat histology (Holm $p$ 0.69); holds within-fold and fold-local & null & occams\_v3, occams\_withinfold \\
+C3 & ERIN progression fusion does not beat histology (Holm $p$ 1.0) & null & closure\_cpu, erin\_prog\_ablation \\
+C4 & Fusion null under all four alternative encoders & holds & encoder\_sweep\_surv \\
+C5 & PORPOISE MMF trails its AMIL baseline ($-0.021$ [$-0.081$, +0.035]) & holds & porpoise\_baselines \\
+C6 & Minimum detectable fusion delta 0.075--0.10 (0.10 at Holm alpha); observed +0.01--0.04; type-I 1--4.5\% & holds & power\_map\_v2 \\
+C6b & Genotype not visible within OAC under balanced draws; pooled signal matched by cohort identity & revised & visibility\_matched \\
+C7 & Permutation nulls 0.502 / 0.487 vs real 0.819 / 0.679 & holds & perm\_controls \\
+C8 & Winner's curse quantified: 72.8\% win rate, +0.027 optimism & holds & swg\_oof\_analyses \\
+C9 & Predicted-WGD score inversely associated with ERIN progression (0.315) and weakly negatively with SWG CNV ($\rho=-0.10$) & reworded & wgd\_transfer \\
+C10 & Histology adds nothing over CNV persistence for next-biopsy CNV ($-0.100$ [$-0.216$, +0.016]) & demoted & swg\_trajectory\_baselines \\
+C11 & Jury labels 7,149 reports: 6,867 eligible, 204 unsure, 78 adjudicated & holds & erin\_jury\_labels\_summary \\
+C12 & Leave-one-family-out flips $\le$0.5\% & holds & lofo\_jury \\
+C13 & Unsure reports have 3.3$\times$ hedging rate & holds & unsure\_characterization \\
+C14 & Registry agreement 0.96--0.97 vs majority baselines 0.56--0.64; 5-vs-8 juror rule 99.4\% & hardened & pancancer\_jury, pancancer\_hardening \\
+C15 & MDT chair 98.7\% vs majority 97.4\%; 0 conformity losses; chair confidence uncalibrated & holds (one decision) & mdt\_erin \\
+C16 & Keyword-ladder and jury training labels indistinguishable downstream (Holm $p$ 0.945) & holds & closure\_cpu, ch4\_labelsource\_xeval \\
+C17 & 32.0\% of slides differ from case-max & holds & slide\_labels\_v2 \\
+C18 & Binary: case-max vs slide labels $-0.010$ [$-0.028$, +0.009]; clustered same & null & slide\_vs\_casemax, clustered\_cis \\
+C19 & Six-class: case-max better, macro-AUC $-0.042$ [$-0.066$, $-0.019$]; QWK null & holds & svc\_5class, clustered\_cis \\
+C20 & Grade AUC 0.921 slide, 0.960 patient & holds & closure\_cpu \\
+C21 & Label generation v2$\to$v3 flips 103 patients & holds & closure\_cpu \\
+C22 & VLM: retrieval 12--16$\times$ chance; zero-shot grade 0.889 & holds & vlm\_alignment, vlm\_pretrain \\
+C23 & VLM transfer: TCGA site 0.782, retrieval fails; SWG at chance after overlap exclusion & SWG half demoted & vlm\_pretrain, vlm\_swg\_excl \\
+C24 & EoE finder: 26 diagnosed / 77 suspected reports (LLM-classified); 0/100 controls & reworded & eoe\_finder \\
+C25 & Phenotype pilot: 844 terms / 1,000 reports & holds & phenotype\_pilot \\
+\bottomrule
+\end{longtable}
+\end{small}

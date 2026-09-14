@@ -1,0 +1,26 @@
+\chapter{The review process}
+\label{app:review}
+
+This thesis was produced with a large language model acting as research engineer under the author's direction, and it was reviewed, at four points, by panels of other language models acting as adversarial referees. Both roles are disclosed here because the second changed the thesis's conclusions and the first shaped its process.
+
+\section{Engineering assistance}
+
+All code in the repository was written with model assistance and reviewed by the author; every experiment was specified in the execution plan before it ran, and every result file is committed with the script that produced it. The operational record in \texttt{COMPUTE.md} lists the mistakes that cost time, including two days of CPU-based language-model inference that produced parse failures at exactly the request-timeout cadence and looked like progress until the first rows were read. The rule that followed, to check the content of the first twenty rows of any new labelling campaign, is the kind of lesson the record exists to keep.
+
+\section{Adversarial review waves}
+
+\begin{description}
+\item[Waves 1--2 (August 2026).] Two blind red-team rounds with eight frontier model families and four local models produced 96 criticisms; a ten-model consultation then proposed improvements and a ten-model blank-slate ideation produced about 160 proposals (27 distinct), of which 14 were implemented as signal or feasibility tests. These waves produced the thesis's reframe from ``multimodal fusion for oesophageal cancer'' to ``where and why fusion fails to replicate'', the pre-registration discipline and the amendment log.
+\item[Wave 3 (early September 2026).] A gap review of the near-complete results, which gated the closure computations of Section~\ref{sec:prereg}.
+\item[Wave 4 (9 September 2026).] Three adversarial passes (statistics, missing computation, claim-evidence audit) by a single frontier model over a dossier of every result file, the plan and a 25-claim register, followed by a synthesis pass. Cost \$1.93. Fifteen findings.
+\end{description}
+
+\section{What wave 4 found}
+
+Two findings were arithmetic errors in our outputs, both confirmed by hand within the hour and fixed the same day: a Holm implementation without the monotonicity step, and a summary key that counted adjudicated cases under ``train-eligible'' (the underlying label files were byte-identical after regeneration; only the summary was wrong). Four findings were wording: nulls written as equivalences, an association written as a ranking failure, model classifications written as verified diagnoses, a Brier improvement written as calibration. Nine findings asked for computation, and the author's triage rated one of them (patient-clustered intervals) as the main remaining threat and the reviewer's ``blocker'' (arm selection) as ``partially known''.
+
+The triage was wrong. Ten tasks were run in two tiers over 14 and 15 September. The clustered intervals changed nothing. The selection test demoted the thesis's only surviving confirmatory result. The overlap audit, rated second-tier, found 54 shared patients and collapsed a transfer result to chance. The prevalence-matched curves reverted a chapter-level claim. Three conclusions changed; four results were hardened; two were fixed; one is deferred. The lesson recorded in the plan is that an expert reviewer's blocker on a \emph{positive} headline result deserves a compute test before it is filed as known.
+
+\section{Stopping rule}
+
+After wave 4 the author set a rule: no further reviews of result tables; the next review is of a draft. A review of prose finds a different class of error (argument structure, over-claiming, missing related work) than a review of numbers, and the yield of the latter had fallen from ``reframe the thesis'' in wave 1 to ``three demotions and two bug fixes'' in wave 4, which is still a great deal but is the point at which a draft should exist.

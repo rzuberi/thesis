@@ -1,0 +1,29 @@
+\chapter{Vision-language alignment and discovery from reports}
+\label{ch:vlm}
+
+The report-slide pairs of Chapter~\ref{ch:labels} allow a second use beyond labelling: training an image model to agree with the report's text directly, so that grading needs no labels at all. This chapter reports that model and where it does and does not transfer, and closes with two uses of the labelling machinery for case-finding and phenotype discovery.
+
+\section{A contrastive slide-report model}
+
+Report text was embedded with a local sentence encoder (\texttt{nomic-embed-text}, 768-dimensional) and slides with a gated-attention tower over UNI2 tiles (512 to 768 dimensions); the two were trained CLIP-style \citep{radford2021clip} to place each slide near its own report. A signal test on 2,153 pairs with a linear text projection gave slide-to-report recall@1 of 0.037 against a chance of 0.0023 (16 times chance) and zero-shot grading, by comparing each slide to two prompt embeddings (``negative for dysplasia'' versus ``dysplasia or worse''), at AUC 0.823 against a supervised reference of 0.90. Full training on a patient-disjoint split (1,333 train, 452 validation, 436 test slides) reached recall@1 of 0.028 (12 times chance) and recall@5 of 0.123 on the ERIN test fold, and zero-shot grade AUC 0.889 \claim{C22}. The supervised model on the same task scores 0.926; the vision-language model gets to 0.889 with no labels.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{fig_vlm}
+\caption{The slide-report model within ERIN and on two external cohorts. Left: slide-to-report retrieval against chance. Right: zero-shot AUC for grade (ERIN, SWG) or tissue site (TCGA). The SWG result is shown before and after removing the 54 SWG patients who are also ERIN patients.}
+\label{fig:vlm}
+\end{figure}
+
+\section{Transfer}
+
+On 350 TCGA slide-report pairs, retrieval collapses (recall@1 of 0.0, recall@5 of 0.017) while a zero-shot site classification (oesophagus versus stomach) still reaches 0.782: the semantics carry, the literal report style does not \claim{C23}. SWG initially looked like a partial success: on 227 SWG slides matched to Barrett's-database reports by accession number, retrieval was three times chance and zero-shot grading against the pathologist's grade scored 0.614. The overlap audit (Section~\ref{sec:independence}) then showed that 105 of those 227 pairs came from the 54 patients shared with ERIN, exactly the patients most likely to have a matching database report. On the 122 clean pairs, recall@1 is 0.0082, which is $1/122$, and zero-shot AUC is 0.579 on 9 positives (Figure~\ref{fig:vlm}). The SWG half of the claim is demoted: the ERIN-trained model shows no demonstrated transfer to either external cohort. Within ERIN it remains a label-free grader at 0.889.
+
+A separate test asked whether disagreement among five foundation-model encoders on the same slide carries information: it does not correlate with jury entropy (Spearman 0.042), does not flag unsure reports (AUC 0.52) and does not predict progression (0.52). Encoder disagreement is not a usable uncertainty signal here.
+
+\section{Case-finding: eosinophilic oesophagitis}
+
+Eosinophilic oesophagitis is coded inconsistently and hides in surveillance corpora. A keyword screen followed by a five-model jury with a four-way schema (diagnosed, suspected, negated or incidental, absent) and eosinophil-count extraction classified 26 reports from 17 patients as diagnosed (13 unanimously) and 77 reports from 66 patients as suspected, with the remaining 688 keyword-positive reports negated or incidental; none of 100 keyword-negative control reports was classified as either \claim{C24}. These are language-model classifications, not verified diagnoses, and the 0 of 100 is on sampled keyword-negative controls whose true status was not independently established; the output is a candidate list for a clinician, delivered in a day from 7,149 reports.
+
+\section{Open-vocabulary phenotypes}
+
+A pilot asked the jury to list every histological finding in a report without a fixed schema. Over 1,000 reports it returned 844 distinct terms; the fifty most frequent are the expected surveillance vocabulary (intestinal metaplasia 646, Barrett's oesophagus 611, chronic inflammation 581, squamous mucosa 253, high-grade dysplasia 129, low-grade dysplasia 106, adenocarcinoma 73) with a long tail (p53 over-expression 34, lymphovascular space invasion 30, fundic gland polyp 42) \claim{C25}. The pilot establishes feasibility for a full-corpus phenotype atlas, which is planned as a separate paper and was not run for this thesis.
