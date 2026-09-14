@@ -64,9 +64,12 @@ all 53 results JSONs). Script: `scripts/openai_gapreview.py`; raw outputs in
   baseline before "anticipates future CNV" survives. CPU.
 - **A12:** visibility curves with prevalence-matched sampling (TP53 ~83% OAC
   vs ~46% STAD) + cohort-identity-only baseline. CPU/GPU-light.
-- **A13:** pan-cancer jury — add confusion matrices, macro-F1,
-  majority-class baseline, tier-mapping audit for BLCA, and replay the
-  5-juror rule on saved ERIN votes vs the deployed 8. CPU (saved votes).
+- **A13 — DONE 2026-09-14 (2.44, results/pancancer_hardening.json): C14
+  HARDENED.** Agreement far above majority-class baselines (ESCA 0.971 vs
+  0.637, STAD 0.964 vs 0.597, KIRC 0.964 vs 0.560), balanced accuracy and
+  macro-F1 ≥0.96, minority recall ≥0.95. BLCA's 0.58 exact agreement was a
+  HIGH/LOW-vs-G1–G4 coding mismatch (all 8 LOW cases recovered). 5-juror
+  vs 8-juror rule: 99.4% label agreement on ERIN, eligibility Jaccard 0.991.
 - **A14:** cross-cohort identity crosswalk (ERIN↔SWG via Barrett's DB) —
   audit patient/report overlap across every train/eval set incl.
   adjudication samples; document the VLM single-split exception. CPU.

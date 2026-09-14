@@ -342,7 +342,48 @@
     }
   },
   "erin_juror_replay": {
-    "eight_jurors": [
+    "corpus": "ERIN (7,149 reports)",
+    "all_jurors": [
+      "deepseek-r1_14b",
+      "gemma3_12b",
+      "gemma3_27b",
+      "llama3.1_8b",
+      "mistral-small3.2",
+      "phi4_14b",
+      "qwen3_14b",
+      "qwen3_32b"
+    ],
+    "five_jurors": [
+      "gemma3_12b",
+      "gemma3_27b",
+      "phi4_14b",
+      "qwen3_14b",
+      "qwen3_32b"
+    ],
+    "n_common_reports": 6657,
+    "label_agreement_all_vs_5": 0.9944,
+    "eligible_all": 6528,
+    "eligible_5": 6518,
+    "eligible_jaccard": 0.9908,
+    "label_agreement_on_both_eligible": 1.0,
+    "label_dist_all": {
+      "NDBE": 4882,
+      "LGD": 259,
+      "HGD": 389,
+      "CANCER": 756,
+      "IND": 242
+    },
+    "label_dist_5": {
+      "NDBE": 4861,
+      "LGD": 256,
+      "HGD": 387,
+      "CANCER": 766,
+      "IND": 248
+    }
+  },
+  "barretts_db_juror_replay": {
+    "corpus": "Barrett's-DB export corpus (13,645 reports; NOT ERIN)",
+    "all_jurors": [
       "deepseek-r1_14b",
       "gemma3_12b",
       "gemma3_27b",
@@ -360,24 +401,24 @@
       "qwen3_32b"
     ],
     "n_common_reports": 10550,
-    "label_agreement_8_vs_5": 0.9884,
-    "eligible_8": 10243,
+    "label_agreement_all_vs_5": 0.9909,
+    "eligible_all": 10243,
     "eligible_5": 10142,
     "eligible_jaccard": 0.9807,
     "label_agreement_on_both_eligible": 1.0,
-    "label_dist_8": {
-      "NDBE": 7349,
+    "label_dist_all": {
       "IND": 855,
       "CANCER": 545,
-      "HGD": 544,
-      "LGD": 950
+      "NDBE": 7349,
+      "LGD": 950,
+      "HGD": 544
     },
     "label_dist_5": {
-      "NDBE": 7223,
       "IND": 870,
       "CANCER": 563,
-      "HGD": 545,
-      "LGD": 941
+      "NDBE": 7223,
+      "LGD": 941,
+      "HGD": 545
     }
   }
 }
