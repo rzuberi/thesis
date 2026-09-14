@@ -233,7 +233,11 @@ On return: read results against pre-registrations; deviations to log: none yet.
   0.993). Juror-count replay: first run mistakenly used the jury_full_* votes,
   which are the Barrett's-DB corpus (13,645 integer-keyed reports), not ERIN
   — caught by checking the CaseName universe; rerun on labeller/llm_full
-  (ERIN) as pancancer_hard_v2, DB-corpus replay kept and labelled.
+  (ERIN) as pancancer_hard_v2, DB-corpus replay kept and labelled. ERIN
+  replay result: 8-juror vs 5-juror rule agree on 99.4% of 6,657 common
+  reports, eligibility Jaccard 0.991, 100% label agreement on reports both
+  rules accept — the 5-juror TCGA procedure is a faithful proxy for the
+  deployed ERIN rule (A13's procedural objection is closed).
 - 2026-09-09 (joint, Rehan: "Queue the selection-adjusted SWG test"): 2.39 —
   selection-adjusted inference for C1 (Astra wave-4 finding A1: late_mean was
   selected among competing arm families on the same OOF data; Holm over 4

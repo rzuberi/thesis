@@ -57,8 +57,13 @@ results JSONs are ground truth; any mismatch is a finding.
 - **C13.** Jury uncertainty tracks genuine textual ambiguity: unsure reports
   have 3.3× the hedging rate (0.52 vs 0.16). [results/unsure_characterization.json]
 - **C14.** External validity: the same jury pipeline agrees with human
-  registry grades at 0.97–0.99 (two-tier) across TCGA ESCA/STAD/KIRC/BLCA.
-  [results/pancancer_jury.json]
+  registry grades at 0.97–0.99 (two-tier) across TCGA ESCA/STAD/KIRC/BLCA —
+  against majority-class baselines of 0.56–0.64 in the three multi-class
+  studies; balanced accuracy ≥0.96, minority-class recall ≥0.95. BLCA's
+  registry is HIGH/LOW-only (majority baseline 0.978), so its two-tier
+  figure is uninformative beyond "all 8 LOW recovered". The 5-juror TCGA
+  rule reproduces the 8-juror ERIN rule on 99.4% of ERIN reports.
+  [results/pancancer_jury.json, results/pancancer_hardening.json]
 - **C15.** MDT-style deliberation ≥ independent voting: chair 98.7% vs 97.4%
   on adjudicated cases, zero conformity losses; caveat — chair confidence is
   uncalibrated on unsure cases (200/201 "confident"). [results/mdt_erin.json]
