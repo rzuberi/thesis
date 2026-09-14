@@ -110,6 +110,12 @@ for name, fn in arms.items():
 z = {n: zscore_oof(o) for n, o in oof.items()}
 oof["late_hist_gen"] = {k: (z["hist_abmil"][k] + z["gen_cox"][k]) / 2 for k in cases}
 oof["late_hist_clin"] = {k: (z["hist_abmil"][k] + z["clin_cox"][k]) / 2 for k in cases}
+# 2.46 (Astra A8): persist OOF risks + fold membership so pooled-vs-within-fold
+# concordance and fold-local fusion normalisation can be audited without retraining
+json.dump({"fold_of": {k: i for i, f in enumerate(folds) for k in f},
+           "time": {k: float(time[k]) for k in cases}, "event": {k: int(event[k]) for k in cases},
+           "oof": {n: {k: float(v) for k, v in o.items()} for n, o in oof.items()}},
+          open(os.path.join(OUT, "oof.json"), "w"))
 
 res = {"_meta": {"n": len(cases), "events": int(sum(event[c] for c in cases)),
                  "seeds": SEEDS, "clinical_cols": clin_cols, "shuffle": SHUFFLE,

@@ -184,10 +184,17 @@ On return: read results against pre-registrations; deviations to log: none yet.
   0.547, erin_grade patient-level 0.960), infeasible deltas (base+d>0.99)
   reported as such instead of clipped. C6's quoted MDDs will be replaced by
   v2 values. Tier 2 (hardening, no conclusion at stake; run behind Tier 1):
-  A8 within-fold C-index (needs OCCAMS OOF dump), A12 prevalence-matched
-  visibility curves, A13 pan-cancer confusion matrices + majority baseline +
-  5-vs-8 juror replay. A15 deferred. Stopping rule: no further result-table
-  LLM reviews; the next review is of a draft.
+  2.44 pan-cancer hardening (A13; scripts/task_pancancer_hardening.py):
+  confusion matrices, balanced accuracy, macro-F1, majority-class baseline,
+  Wilson CIs, BLCA mapping audit, and the 8-vs-5 juror rule replayed on saved
+  ERIN votes. 2.45 prevalence-matched visibility (A12;
+  scripts/task_visibility_matched.py): balanced n/2+n/2 draws per cell,
+  cohort-identity-only baseline and within-cohort permutation nulls for mixed
+  strata. 2.46 within-fold concordance (A8; task_occams_v3.py now dumps
+  oof.json; task occams_v3_oof rerun + scripts/task_occams_withinfold.py):
+  pooled vs within-fold C per arm, fold-local z-scored late fusion. A15
+  deferred. Stopping rule: no further result-table LLM reviews; the next
+  review is of a draft.
 - 2026-09-09 (joint, Rehan: "Queue the selection-adjusted SWG test"): 2.39 —
   selection-adjusted inference for C1 (Astra wave-4 finding A1: late_mean was
   selected among competing arm families on the same OOF data; Holm over 4
