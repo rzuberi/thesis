@@ -1,0 +1,46 @@
+{
+  "_meta": {
+    "erin_reports": 7149,
+    "erin_patients": 2537,
+    "erin_acc_parsed": 7149,
+    "swg_samples": 707,
+    "swg_patients": 150,
+    "swg_acc_parsed": 670,
+    "db_rows_with_acc": 13291,
+    "db_participants": 3543
+  },
+  "erin_swg_overlap": {
+    "shared_accessions_direct": 10,
+    "patient_pairs_direct": 10,
+    "patient_pairs_bridged_via_db": 52,
+    "erin_patients_in_swg": 55,
+    "swg_patients_in_erin": 54,
+    "frac_swg_patients_in_erin": 0.36,
+    "erin_db_participant_match_rate": 0.4009,
+    "swg_db_participant_match_rate": 0.78,
+    "multi_participant_erin_patients": 41
+  },
+  "vlm_split": {
+    "n_slides": {
+      "train": 1333,
+      "val": 452,
+      "test": 436
+    },
+    "patient_disjoint": true,
+    "report_disjoint": true,
+    "duplicate_h5_rows_in_master": 0,
+    "vlm_trainval_patients_also_in_swg": 28,
+    "vlm_test_patients_also_in_swg": 4
+  },
+  "label_dev_vs_vlm_test": {
+    "adjudicated_cases": 79,
+    "adjudicated_in_vlm_test": 4,
+    "handlabel_cases": 100,
+    "handlabel_in_vlm_test": 5,
+    "note": "adjudicated cases carry human-checked labels; their presence in test is a labelling provenance note, not leakage of model training data"
+  },
+  "report_integrity": {
+    "casenames_with_multiple_anon_ids": 0,
+    "anon_ids_per_casename_max": 1
+  }
+}

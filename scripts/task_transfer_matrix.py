@@ -40,9 +40,16 @@ coh = pd.read_csv(F + "/pre_event_cohort.csv", dtype=str).merge(
     man, left_on="SampleID", right_on="sample_id")
 uidx = pd.read_csv(F + "/feature_views/uni2/uni2_index.csv", dtype=str)
 npz_of = dict(zip(uidx[uidx["status"] == "ok"]["sample_id"], uidx[uidx["status"] == "ok"]["npz_path"]))
-rows = []
+# 2.40 follow-up: drop SWG patients who are also ERIN patients (overlap audit list)
+EXCL_F = os.environ.get("EXCLUDE_PATIENTS", "")
+if EXCL_F and not os.path.exists(EXCL_F):
+    raise SystemExit(f"EXCLUDE_PATIENTS set but missing: {EXCL_F}")
+EXCL = set(open(EXCL_F).read().split()) if EXCL_F else set()
+rows = []; n_excl = 0
 for _, r in coh.iterrows():
     if r["sample_id"] not in npz_of: continue
+    if EXCL and str(r["patient_id"]) in EXCL:
+        n_excl += 1; continue
     z = np.load(npz_of[r["sample_id"]])
     rows.append({"emb": np.asarray(z["slide_embedding_mean"]), "pat": r["patient_id"],
                  "y_prog": int(r["y_progressor"]),
@@ -132,7 +139,9 @@ occ = landmark_cohort(((c, e) for c, e in occ_seen.items() if c in mast.index),
                       lambda c: int(mast.loc[c, "event"]))
 print(f"OCCAMS landmark {len(occ)} pos={occ['y'].sum()}", flush=True)
 
-res = {"_meta": {"machinery": "pooled UNI2 + scaler/PCA64/logistic everywhere"}}
+res = {"_meta": {"machinery": "pooled UNI2 + scaler/PCA64/logistic everywhere",
+                 "swg_samples_excluded_for_erin_overlap": n_excl, "exclude_file": EXCL_F,
+                 "swg_patients_used": int(swg["pat"].nunique())}}
 def cell(name, Xtr, ytr, Xte, yte, gtr):
     within = cv_auc(Xtr, ytr, gtr)
     pl = make_pipe(); pl.fit(Xtr, ytr)

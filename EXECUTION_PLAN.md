@@ -195,6 +195,32 @@ On return: read results against pre-registrations; deviations to log: none yet.
   pooled vs within-fold C per arm, fold-local z-scored late fusion. A15
   deferred. Stopping rule: no further result-table LLM reviews; the next
   review is of a draft.
+  OUTCOMES (2026-09-14, same day):
+  2.40 (results/overlap_audit.json): 54/150 SWG patients (36%) are also ERIN
+  patients — 10 by directly shared accession numbers, 52 bridged through the
+  Barrett's-DB participant id (ERIN→DB match rate only 40%, so 36% is a LOWER
+  bound). VLM split itself is patient- and report-disjoint (no internal
+  leakage), but 28 overlapping patients sit in VLM train/val, so the "third
+  cohort" VLM-SWG zero-shot (C23) is contaminated; the >5% rule is TRIGGERED
+  → C23 is replaced by the exclusion rerun (vlm_swg_excl, chained), and the
+  ERIN↔SWG cells of the transfer matrix (prog_SWG_to_ERIN 0.640,
+  prog_ERIN_to_SWG 0.544, grade_ERIN_to_SWG 0.565) are re-run with the 54
+  patients removed (task transfer_excl). Those cells are already near chance,
+  so overlap can only have flattered them — direction of the transfer-fails
+  conclusion is safe; magnitudes to be replaced.
+  2.41 (results/clustered_cis.json): every conclusion unchanged; clustered/iid
+  CI width ratios 1.01 (2.38 binary), 1.00 (2.38b macro-AUC), 1.10 (QWK);
+  1,155 patients for 1,538 slides. 2.38b's macro-AUC advantage for case-max
+  still excludes zero under patient resampling ([−0.066, −0.020]).
+  2.42 (results/swg_trajectory_baselines.json): C10 DEMOTED. Current-CNV
+  persistence alone predicts next-biopsy CNV at rho 0.259 (0.269 with grade)
+  vs histology 0.160; adding histology to the persistence baseline gives an
+  increment of −0.100, patient-clustered CI [−0.216, +0.016]. The "images
+  anticipate genomic evolution" reading is withdrawn: the 2.24b rho was
+  histology recovering information already present in the current CNV
+  state. (The OOF-shuffle permutation p in that file is NOT interpretable for
+  a negative increment and is disregarded; the clustered CI was the
+  pre-registered primary.)
 - 2026-09-09 (joint, Rehan: "Queue the selection-adjusted SWG test"): 2.39 —
   selection-adjusted inference for C1 (Astra wave-4 finding A1: late_mean was
   selected among competing arm families on the same OOF data; Holm over 4
