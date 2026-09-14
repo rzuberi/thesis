@@ -45,8 +45,11 @@ all 53 results JSONs). Script: `scripts/openai_gapreview.py`; raw outputs in
 - **A14 — DONE 2026-09-14 (2.40, results/overlap_audit.json): REAL
   CONTAMINATION FOUND.** 36% of SWG patients (54/150, a lower bound) are also
   ERIN patients; 28 sit in VLM train/val. VLM split internally clean.
-  Consequence: VLM-SWG zero-shot and the three ERIN↔SWG transfer-matrix
-  cells are being re-run with those patients excluded.
+  Consequence, both re-runs done: the three ERIN↔SWG transfer-matrix cells
+  move ≤0.05 and stay near chance (conclusion unchanged); the VLM-SWG
+  zero-shot COLLAPSES to chance-level retrieval (R@1 = 1/122) and AUC 0.579
+  on 9 positives — C23's SWG half is demoted. The second conclusion-changing
+  finding of this review, after A1.
 - **A10 — DONE 2026-09-14 (2.42, results/swg_trajectory_baselines.json):
   C10 DEMOTED.** Histology adds nothing over current-CNV persistence
   (increment −0.100, clustered CI [−0.216, +0.016]).
