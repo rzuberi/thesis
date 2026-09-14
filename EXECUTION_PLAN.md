@@ -208,6 +208,13 @@ On return: read results against pre-registrations; deviations to log: none yet.
   patients removed (task transfer_excl). Those cells are already near chance,
   so overlap can only have flattered them — direction of the transfer-fails
   conclusion is safe; magnitudes to be replaced.
+  → transfer_excl DONE (results/transfer_matrix_excl.json): 279 SWG samples
+  (54 patients) removed, 96 SWG patients remain. prog_SWG_to_ERIN 0.640→0.623,
+  prog_ERIN_to_SWG 0.544→0.597, grade_ERIN_to_SWG 0.565→0.533; all still
+  0.53–0.62 vs within-cohort 0.71–0.90. Conclusion unchanged: cross-cohort
+  transfer fails; the excl file is now the canonical one for those cells.
+  (OCCAMS↔TCGA cells moved by ≤0.011 between runs despite no exclusion —
+  residual nondeterminism in the pooled-probe pipeline; report to 2 d.p.)
   2.41 (results/clustered_cis.json): every conclusion unchanged; clustered/iid
   CI width ratios 1.01 (2.38 binary), 1.00 (2.38b macro-AUC), 1.10 (QWK);
   1,155 patients for 1,538 slides. 2.38b's macro-AUC advantage for case-max
