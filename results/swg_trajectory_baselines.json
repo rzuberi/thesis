@@ -1,0 +1,46 @@
+{
+  "_meta": {
+    "n_transitions": 557,
+    "n_patients": 124,
+    "n_boot": 2000,
+    "n_perm": 2000
+  },
+  "cx_next": {
+    "rho": {
+      "persist": 0.2586,
+      "persist_grade": 0.2685,
+      "hist_only": 0.1601,
+      "hist_plus": 0.1683
+    },
+    "increment_hist_plus_minus_persist_grade": {
+      "observed": -0.1002,
+      "patient_clustered_ci": [
+        -0.2156,
+        0.0163
+      ],
+      "perm_p_oof_shuffle": 0.0005
+    },
+    "hist_only_minus_persist": {
+      "observed": -0.0985
+    }
+  },
+  "cx_delta": {
+    "rho": {
+      "persist": 0.4061,
+      "persist_grade": 0.3971,
+      "hist_only": 0.0107,
+      "hist_plus": 0.3428
+    },
+    "increment_hist_plus_minus_persist_grade": {
+      "observed": -0.0543,
+      "patient_clustered_ci": [
+        -0.1255,
+        0.0157
+      ],
+      "perm_p_oof_shuffle": 0.0005
+    },
+    "hist_only_minus_persist": {
+      "observed": -0.3954
+    }
+  }
+}

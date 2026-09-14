@@ -1,0 +1,79 @@
+{
+  "_meta": {
+    "n_boot": 2000
+  },
+  "binary_2_38_delta_slide_minus_case_auc": {
+    "iid_slide_bootstrap": {
+      "mean": -0.0099,
+      "ci": [
+        -0.0292,
+        0.0089
+      ],
+      "width": 0.0381
+    },
+    "patient_clustered_bootstrap": {
+      "mean": -0.0104,
+      "ci": [
+        -0.0301,
+        0.0085
+      ],
+      "width": 0.0385
+    },
+    "width_ratio_clustered_over_iid": 1.01,
+    "n_slides": 1538,
+    "n_patients": 1155,
+    "excludes_zero_iid": false,
+    "excludes_zero_clustered": false
+  },
+  "sixclass_2_38b_delta_macro_auc": {
+    "iid_slide_bootstrap": {
+      "mean": -0.0422,
+      "ci": [
+        -0.0656,
+        -0.0192
+      ],
+      "width": 0.0463
+    },
+    "patient_clustered_bootstrap": {
+      "mean": -0.0427,
+      "ci": [
+        -0.0662,
+        -0.02
+      ],
+      "width": 0.0462
+    },
+    "width_ratio_clustered_over_iid": 0.998,
+    "n_slides": 1538,
+    "n_patients": 1155,
+    "excludes_zero_iid": true,
+    "excludes_zero_clustered": true
+  },
+  "sixclass_2_38b_delta_qwk": {
+    "iid_slide_bootstrap": {
+      "mean": -0.0092,
+      "ci": [
+        -0.0686,
+        0.0467
+      ],
+      "width": 0.1153
+    },
+    "patient_clustered_bootstrap": {
+      "mean": -0.009,
+      "ci": [
+        -0.072,
+        0.0547
+      ],
+      "width": 0.1267
+    },
+    "width_ratio_clustered_over_iid": 1.099,
+    "n_slides": 1538,
+    "n_patients": 1155,
+    "excludes_zero_iid": false,
+    "excludes_zero_clustered": false
+  },
+  "verdict": {
+    "binary_2_38_delta_slide_minus_case_auc": "conclusion unchanged",
+    "sixclass_2_38b_delta_macro_auc": "conclusion unchanged",
+    "sixclass_2_38b_delta_qwk": "conclusion unchanged"
+  }
+}

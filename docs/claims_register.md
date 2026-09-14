@@ -39,9 +39,12 @@ results JSONs are ground truth; any mismatch is a finding.
   and its predictions anti-correlate with measured CNV in SWG (rho −0.10,
   p=0.005): cross-cohort molecular distillation fails at the ranking level.
   [results/wgd_transfer.json]
-- **C10.** SWG trajectory: image embeddings weakly predict FUTURE CNV state
-  (rho 0.161, p=1.3e-4) — signal exists but is small.
-  [results/swg_trajectory.json]
+- **C10 (DEMOTED, 2026-09-14).** SWG trajectory: image embeddings correlate
+  with next-biopsy CNV (rho 0.161) but add NOTHING beyond current-CNV
+  persistence (persistence rho 0.259; increment from adding histology −0.100,
+  patient-clustered CI [−0.216, +0.016]). Reads as "histology recovers the
+  current CNV state", not "anticipates genomic evolution".
+  [results/swg_trajectory.json, results/swg_trajectory_baselines.json]
 
 ## Chapter 3/4 — LLM report labelling (P1 paper)
 
@@ -69,7 +72,8 @@ results JSONs are ground truth; any mismatch is a finding.
   slide-label-trained 0.860 on slide truth (delta −0.010 [−0.028, +0.009]).
   [results/slide_vs_casemax.json]
 - **C19.** At six-class grading, case-max is significantly BETTER (macro-AUC
-  0.764 vs 0.722, delta −0.042 [−0.066, −0.019]; QWK null): with 35–82 slides
+  0.764 vs 0.722, delta −0.042 [−0.066, −0.019]; patient-clustered CI
+  [−0.066, −0.020], results/clustered_cis.json; QWK null): with 35–82 slides
   per rare class, noisy-but-plentiful beats clean-but-scarce. Scaling
   reversal left as testable prediction. [results/svc_5class.json]
 - **C20.** Jury labels support strong image models: grade classification AUC
@@ -82,9 +86,12 @@ results JSONs are ground truth; any mismatch is a finding.
 
 - **C22.** CLIP-style report-slide alignment trains: retrieval R@1 16× chance;
   zero-shot grading 0.889 on ERIN test. [results/vlm_pretrain.json]
-- **C23.** VLM transfer: TCGA site classification 0.782 but retrieval fails;
-  SWG zero-shot vs pathologist grades 0.614 with retrieval 3× chance —
-  transfer is partial and honest. [results/vlm_swg.json]
+- **C23 (SWG HALF UNDER REVISION, 2026-09-14).** VLM transfer: TCGA site
+  classification 0.782 but retrieval fails; SWG zero-shot vs pathologist
+  grades 0.614 with retrieval 3× chance. The overlap audit found 36% of SWG
+  patients are ERIN patients (28 in VLM train/val), so SWG is not a clean
+  third cohort; the numbers are being replaced by the overlap-excluded rerun.
+  [results/vlm_swg.json, results/overlap_audit.json]
 - **C24.** LLM case-finding works: EoE finder returns 26 diagnosed reports
   (17 patients) + 77 suspected (66 patients), 0 false EoE in 100
   keyword-negative controls. [results/eoe_finder.json]

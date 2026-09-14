@@ -39,10 +39,17 @@ all 53 results JSONs). Script: `scripts/openai_gapreview.py`; raw outputs in
 
 ## Accepted — recomputation queue (all from saved artefacts)
 
-- **A6 (the substantive one): patient-clustered uncertainty.** Our paired
-  bootstraps resample slides/rows, not patients. Recompute headline CIs
-  (2.38, 2.38b, grade AUC, SWG correlations) resampling whole patients;
-  patient-aware permutation for the trajectory rho. CPU-hours.
+- **A6 — DONE 2026-09-14 (2.41, results/clustered_cis.json): no conclusion
+  changes.** Patient-clustered CIs are 1.00–1.10× the iid widths (1,155
+  patients / 1,538 slides); 2.38b's case-max advantage still excludes zero.
+- **A14 — DONE 2026-09-14 (2.40, results/overlap_audit.json): REAL
+  CONTAMINATION FOUND.** 36% of SWG patients (54/150, a lower bound) are also
+  ERIN patients; 28 sit in VLM train/val. VLM split internally clean.
+  Consequence: VLM-SWG zero-shot and the three ERIN↔SWG transfer-matrix
+  cells are being re-run with those patients excluded.
+- **A10 — DONE 2026-09-14 (2.42, results/swg_trajectory_baselines.json):
+  C10 DEMOTED.** Histology adds nothing over current-CNV persistence
+  (increment −0.100, clustered CI [−0.216, +0.016]).
 - **A1 (labelled blocker): selection history for C1 — ACTIONED 2026-09-09
   as 2.39, and the finding was RIGHT.** Max-over-arms permutation +
   OOB-selection bootstrap on the frozen OOF
