@@ -71,8 +71,16 @@ npz_of = dict(zip(uidx[uidx["status"] == "ok"]["sample_id"], uidx[uidx["status"]
 NUMG = {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4}
 pairs = []
 sns = list(rep.index)
+# 2.40 follow-up: optionally drop SWG patients that overlap ERIN (VLM training cohort)
+EXCL_F = os.environ.get("EXCLUDE_PATIENTS", "")
+if EXCL_F and not os.path.exists(EXCL_F):
+    raise SystemExit(f"EXCLUDE_PATIENTS set but missing: {EXCL_F}")
+EXCL = set(open(EXCL_F).read().split()) if EXCL_F else set()
+n_excl = 0
 for _, r in coh.iterrows():
     if r["sample_id"] not in npz_of: continue
+    if EXCL and (str(r.get("patient_id")) in EXCL or str(r.get("PatientID_real")) in EXCL):
+        n_excl += 1; continue
     stem_n = norm(os.path.basename(str(r["ImageAbsPath"])))
     hit = next((sn for sn in sns if sn in stem_n), None)
     if hit is None: continue
@@ -100,7 +108,10 @@ score = zs[:, 1] - zs[:, 0]
 y = np.array([p["grade"] for p in pairs], dtype=float)
 ok = ~np.isnan(y)
 from sklearn.metrics import roc_auc_score
-res = {"_meta": {"n_pairs": len(pairs), "checkpoint": CK, "graded": int(ok.sum())},
+np.savez(os.path.join(OUT, "pair_preds.npz"), sample=np.array([p["sample"] for p in pairs]),
+         rank_of_true=hit, zeroshot_score=score, grade=y)
+res = {"_meta": {"n_pairs": len(pairs), "checkpoint": CK, "graded": int(ok.sum()),
+                 "excluded_overlap_samples": n_excl, "exclude_file": EXCL_F},
        "retrieval": {"recall_at_1": round(float((hit == 0).mean()), 4),
                      "recall_at_5": round(float((hit < 5).mean()), 4),
                      "chance_at_1": round(1 / len(pairs), 5)},

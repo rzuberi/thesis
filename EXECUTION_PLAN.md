@@ -162,6 +162,32 @@ On return: read results against pre-registrations; deviations to log: none yet.
 
 ## Amendment log
 
+- 2026-09-14 (joint, Rehan: "go" on the Astra Tier-1 recompute batch — the
+  LAST compute gate before writing; writing starts in parallel, not after):
+  2.40 overlap audit (A14; scripts/task_overlap_audit.py): accession-number
+  crosswalk ERIN<->SWG<->Barrett's-DB to count shared specimens/patients,
+  VLM split re-derived and asserted patient-disjoint, label-development
+  samples vs VLM test fold; writes the SWG-patients-in-ERIN list, and the
+  VLM-SWG zero-shot (2.28c) is RE-RUN excluding them (task vlm_swg_excl,
+  chained). Rule: if >5% of SWG patients overlap ERIN, the VLM-SWG transfer
+  numbers are replaced by the exclusion run in the thesis.
+  2.41 patient-clustered CIs (A6; scripts/task_clustered_cis.py): 2.38 and
+  2.38b deltas re-bootstrapped resampling whole patients; report width ratio;
+  a conclusion changes only if zero-exclusion flips.
+  2.42 trajectory baselines (A10; scripts/task_swg_trajectory_baselines.py):
+  next-biopsy CNV from histology vs persistence [cx_i, dt] and
+  persistence+grade; the 2.24b secondary claim (rho 0.161) survives only if
+  the hist_plus − persist_grade increment's patient-clustered CI excludes 0.
+  2.43 power map v2 (A9; task_power_map.py edited in place, new task
+  power_map_v2): d=0 type-I check, Wilson CIs, Holm-alpha power, baselines
+  updated to final unimodal results (occams 0.627, tcga_oac 0.679, tcga_pool
+  0.547, erin_grade patient-level 0.960), infeasible deltas (base+d>0.99)
+  reported as such instead of clipped. C6's quoted MDDs will be replaced by
+  v2 values. Tier 2 (hardening, no conclusion at stake; run behind Tier 1):
+  A8 within-fold C-index (needs OCCAMS OOF dump), A12 prevalence-matched
+  visibility curves, A13 pan-cancer confusion matrices + majority baseline +
+  5-vs-8 juror replay. A15 deferred. Stopping rule: no further result-table
+  LLM reviews; the next review is of a draft.
 - 2026-09-09 (joint, Rehan: "Queue the selection-adjusted SWG test"): 2.39 —
   selection-adjusted inference for C1 (Astra wave-4 finding A1: late_mean was
   selected among competing arm families on the same OOF data; Holm over 4
