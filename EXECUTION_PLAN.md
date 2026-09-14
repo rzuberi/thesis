@@ -221,6 +221,19 @@ On return: read results against pre-registrations; deviations to log: none yet.
   state. (The OOF-shuffle permutation p in that file is NOT interpretable for
   a negative increment and is disregarded; the clustered CI was the
   pre-registered primary.)
+  2.44 (results/pancancer_hardening.json): C14 HARDENED, not weakened. Two-
+  tier agreement sits far above the majority-class baseline in the three
+  multi-class studies (ESCA 0.971 vs 0.637; STAD 0.964 vs 0.597; KIRC 0.964
+  vs 0.560), balanced accuracy 0.963–0.967, macro-F1 0.963–0.968, minority-
+  class recall 0.946–0.991, Wilson lower bounds ≥0.917. BLCA explained: the
+  registry codes only HIGH/LOW (358/8) while the jury emitted G2/G3/G4/HIGH,
+  so the 0.579 "exact" agreement was a coding-scheme mismatch, not error;
+  two-tier 0.986 is only just above the 0.978 majority baseline there, but
+  all 8 LOW cases were recovered (minority recall 1.0, balanced accuracy
+  0.993). Juror-count replay: first run mistakenly used the jury_full_* votes,
+  which are the Barrett's-DB corpus (13,645 integer-keyed reports), not ERIN
+  — caught by checking the CaseName universe; rerun on labeller/llm_full
+  (ERIN) as pancancer_hard_v2, DB-corpus replay kept and labelled.
 - 2026-09-09 (joint, Rehan: "Queue the selection-adjusted SWG test"): 2.39 —
   selection-adjusted inference for C1 (Astra wave-4 finding A1: late_mean was
   selected among competing arm families on the same OOF data; Holm over 4
