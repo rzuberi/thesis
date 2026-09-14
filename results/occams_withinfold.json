@@ -1,0 +1,131 @@
+{
+  "_meta": {
+    "n": 87,
+    "events": 58,
+    "folds": 5,
+    "source": "/mnt/scratche/slow/fmlab/zuberi01/phd/thesis/feasibility/runs/occams_v3_oof/output/oof.json"
+  },
+  "hist_abmil": {
+    "pooled_c": 0.6272,
+    "within_fold_c": 0.6549,
+    "per_fold_c": [
+      0.5407,
+      0.7857,
+      0.623,
+      0.6542,
+      0.6942
+    ],
+    "per_fold_risk_mean": [
+      -1.1168,
+      -0.147,
+      -0.4709,
+      -0.7079,
+      -0.6882
+    ]
+  },
+  "gen_cox": {
+    "pooled_c": 0.5205,
+    "within_fold_c": 0.5209,
+    "per_fold_c": [
+      0.4963,
+      0.5982,
+      0.4426,
+      0.5047,
+      0.5702
+    ],
+    "per_fold_risk_mean": [
+      0.0802,
+      0.0286,
+      0.0846,
+      -0.0953,
+      -0.0665
+    ]
+  },
+  "clin_cox": {
+    "pooled_c": 0.5358,
+    "within_fold_c": 0.5377,
+    "per_fold_c": [
+      0.5185,
+      0.5804,
+      0.4754,
+      0.5327,
+      0.5868
+    ],
+    "per_fold_risk_mean": [
+      -0.0715,
+      -0.0247,
+      -0.0772,
+      0.163,
+      -0.3872
+    ]
+  },
+  "late_hist_gen": {
+    "pooled_c": 0.5888,
+    "within_fold_c": 0.598,
+    "per_fold_c": [
+      0.437,
+      0.7946,
+      0.5492,
+      0.5794,
+      0.6612
+    ],
+    "per_fold_risk_mean": [
+      -0.1028,
+      0.2574,
+      0.203,
+      -0.2123,
+      -0.1543
+    ]
+  },
+  "late_hist_clin": {
+    "pooled_c": 0.6132,
+    "within_fold_c": 0.6315,
+    "per_fold_c": [
+      0.5185,
+      0.7321,
+      0.6639,
+      0.6355,
+      0.6281
+    ],
+    "per_fold_risk_mean": [
+      -0.2198,
+      0.2723,
+      0.0733,
+      0.1894,
+      -0.3183
+    ]
+  },
+  "late_hist_gen_foldlocal_z": {
+    "c": 0.5999,
+    "c_ci": [
+      0.517,
+      0.6767
+    ],
+    "delta_ci": [
+      -0.0945,
+      0.0362
+    ],
+    "delta_mean": -0.0289,
+    "within_fold_c": 0.598
+  },
+  "late_hist_clin_foldlocal_z": {
+    "c": 0.6291,
+    "c_ci": [
+      0.5459,
+      0.7133
+    ],
+    "delta_ci": [
+      -0.059,
+      0.0616
+    ],
+    "delta_mean": 0.0021,
+    "within_fold_c": 0.6248
+  },
+  "verdict": {
+    "hist_abmil": 0.0277,
+    "gen_cox": 0.0004,
+    "clin_cox": 0.0019,
+    "late_hist_gen": 0.0092,
+    "late_hist_clin": 0.0183
+  }
+}
