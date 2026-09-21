@@ -1,0 +1,86 @@
+{
+  "T1": {
+    "n": 48,
+    "pos": 18,
+    "neg": 30,
+    "patients": 48,
+    "slides": 181,
+    "grade_dist": {
+      "NDBE": 46,
+      "IND": 2
+    },
+    "feasibility_only": true
+  },
+  "T2a": {
+    "n": 185,
+    "pos": 44,
+    "neg": 141,
+    "patients": 156,
+    "slides": 564,
+    "grade_dist": {
+      "NDBE": 171,
+      "IND": 14
+    },
+    "feasibility_only": false
+  },
+  "T2b": {
+    "n": 183,
+    "pos": 30,
+    "neg": 153,
+    "patients": 155,
+    "slides": 535,
+    "grade_dist": {
+      "NDBE": 171,
+      "IND": 12
+    },
+    "feasibility_only": false
+  },
+  "T2c": {
+    "n": 389,
+    "pos": 45,
+    "neg": 344,
+    "patients": 289,
+    "slides": 1212,
+    "grade_dist": {
+      "NDBE": 351,
+      "IND": 38
+    },
+    "feasibility_only": false
+  },
+  "T4": {
+    "n": 1147,
+    "pos": 518,
+    "neg": 629,
+    "patients": 874,
+    "slides": 3886,
+    "grade_dist": {
+      "NDBE": 1093,
+      "IND": 54
+    },
+    "feasibility_only": false
+  },
+  "T3a": {
+    "n": 1274,
+    "pos": 146,
+    "neg": 1128,
+    "patients": 1056,
+    "slides": 1274,
+    "grade_dist": {
+      "NORMAL_OTHER": 685,
+      "NDBE": 589
+    },
+    "feasibility_only": false
+  },
+  "T3b": {
+    "n": 1274,
+    "pos": 90,
+    "neg": 1184,
+    "patients": 1056,
+    "slides": 1274,
+    "grade_dist": {
+      "NORMAL_OTHER": 685,
+      "NDBE": 589
+    },
+    "feasibility_only": false
+  }
+}

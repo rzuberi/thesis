@@ -182,6 +182,15 @@ On return: read results against pre-registrations; deviations to log: none yet.
   Embedding on epyc CPU was ~1 report/min (again); moved to a GPU worker:
   389 reports in 19 s. Assembler/renderer: scripts/erin_fusion/assemble.py,
   render_report.py → reports/erin_imminent_tasks.md + 3 figures.
+  FINAL 22:40: all 364 queue tasks complete, 0 failures, 20.7 GPU-h (cuda 15.0,
+  h200 5.7, incl. worker idle). T2a permutation nulls: image arm null mean
+  0.509, 95th pct 0.623, empirical p = 0.020 (real 0.817); fusion arm null
+  mean 0.519, 95th pct 0.610, p = 0.020 (real 0.775). Fusion vs best single
+  modality on T2a: −0.043 [−0.097, +0.016] → pre-registered rule: "no
+  demonstrated fusion gain"; selection-adjusted permutation not triggered.
+  Tile-count confound AUROC 0.40–0.57 on every task (no adequacy artefact).
+  Deliverables: results/erin_progression_fusion/{results.json, task_counts.json,
+  figures/}, reports/erin_imminent_tasks.md.
 - 2026-09-21 22:10: CONCH zero-shot on the SWG release (707 slides, the 256
   stored level-2 tiles each; results/numbers/conch_swg.json): vs pathologist
   LGD+ grade only 0.53–0.59 (ERIN was 0.78); zero-shot progression 0.58–0.67

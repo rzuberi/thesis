@@ -1,0 +1,931 @@
+{
+  "tasks": {
+    "T1": {
+      "n": 48,
+      "pos": 18,
+      "neg": 30,
+      "patients": 48,
+      "img_units_done": "15/15",
+      "arms": {
+        "a": {
+          "auroc": 0.6222,
+          "auroc_ci": [
+            0.4541,
+            0.7813
+          ],
+          "auprc": 0.4566,
+          "auprc_ci": [
+            0.3005,
+            0.695
+          ],
+          "brier": 0.2473,
+          "spec_at_sens_0.95": 0.0333,
+          "spec_at_sens_1.0": 0.0333,
+          "sens_at_spec_0.80": 0.1667
+        },
+        "b": {
+          "auroc": 0.7278,
+          "auroc_ci": [
+            0.5535,
+            0.8803
+          ],
+          "auprc": 0.6622,
+          "auprc_ci": [
+            0.4647,
+            0.8835
+          ],
+          "brier": 0.2039,
+          "spec_at_sens_0.95": 0.0667,
+          "spec_at_sens_1.0": 0.0667,
+          "sens_at_spec_0.80": 0.6111
+        },
+        "c": {
+          "auroc": 0.8481,
+          "auroc_ci": [
+            0.7241,
+            0.9535
+          ],
+          "auprc": 0.8426,
+          "auprc_ci": [
+            0.6939,
+            0.951
+          ],
+          "brier": 0.14,
+          "spec_at_sens_0.95": 0.4,
+          "spec_at_sens_1.0": 0.4,
+          "sens_at_spec_0.80": 0.7222
+        },
+        "d": {
+          "auroc": 0.9093,
+          "auroc_ci": [
+            0.7983,
+            0.9877
+          ],
+          "auprc": 0.8991,
+          "auprc_ci": [
+            0.7737,
+            0.9831
+          ],
+          "brier": 0.1549,
+          "spec_at_sens_0.95": 0.2,
+          "spec_at_sens_1.0": 0.2,
+          "sens_at_spec_0.80": 0.8333
+        }
+      },
+      "deltas": {
+        "image - baseline": {
+          "mean": 0.2259,
+          "ci": [
+            0.0569,
+            0.398
+          ]
+        },
+        "text - baseline": {
+          "mean": 0.1056,
+          "ci": [
+            -0.125,
+            0.3072
+          ]
+        },
+        "late_mean - best single (c)": {
+          "mean": 0.0611,
+          "ci": [
+            -0.0388,
+            0.1807
+          ]
+        }
+      },
+      "tilecount_confound_auroc": 0.425
+    },
+    "T2a": {
+      "n": 185,
+      "pos": 44,
+      "neg": 141,
+      "patients": 156,
+      "img_units_done": "15/15",
+      "arms": {
+        "a": {
+          "auroc": 0.7086,
+          "auroc_ci": [
+            0.6198,
+            0.7978
+          ],
+          "auprc": 0.3987,
+          "auprc_ci": [
+            0.284,
+            0.5672
+          ],
+          "brier": 0.2168,
+          "spec_at_sens_0.95": 0.305,
+          "spec_at_sens_1.0": 0.1064,
+          "sens_at_spec_0.80": 0.4318
+        },
+        "b": {
+          "auroc": 0.6139,
+          "auroc_ci": [
+            0.5054,
+            0.7115
+          ],
+          "auprc": 0.333,
+          "auprc_ci": [
+            0.2072,
+            0.507
+          ],
+          "brier": 0.2621,
+          "spec_at_sens_0.95": 0.1489,
+          "spec_at_sens_1.0": 0.0851,
+          "sens_at_spec_0.80": 0.2727
+        },
+        "c": {
+          "auroc": 0.8174,
+          "auroc_ci": [
+            0.725,
+            0.892
+          ],
+          "auprc": 0.6202,
+          "auprc_ci": [
+            0.4473,
+            0.7945
+          ],
+          "brier": 0.1612,
+          "spec_at_sens_0.95": 0.2766,
+          "spec_at_sens_1.0": 0.0993,
+          "sens_at_spec_0.80": 0.6591
+        },
+        "d": {
+          "auroc": 0.7747,
+          "auroc_ci": [
+            0.6867,
+            0.8499
+          ],
+          "auprc": 0.5226,
+          "auprc_ci": [
+            0.3528,
+            0.6867
+          ],
+          "brier": 0.2161,
+          "spec_at_sens_0.95": 0.3688,
+          "spec_at_sens_1.0": 0.0993,
+          "sens_at_spec_0.80": 0.5682
+        }
+      },
+      "deltas": {
+        "image - baseline": {
+          "mean": 0.1088,
+          "ci": [
+            -0.0283,
+            0.2341
+          ]
+        },
+        "text - baseline": {
+          "mean": -0.0947,
+          "ci": [
+            -0.2353,
+            0.0348
+          ]
+        },
+        "late_mean - best single (c)": {
+          "mean": -0.0427,
+          "ci": [
+            -0.0965,
+            0.0163
+          ]
+        }
+      },
+      "tilecount_confound_auroc": 0.568,
+      "perm_null_c": {
+        "n": 50,
+        "mean": 0.5088,
+        "p95": 0.6228,
+        "p_empirical": 0.0196
+      },
+      "perm_null_d": {
+        "n": 50,
+        "mean": 0.5188,
+        "p95": 0.6097,
+        "p_empirical": 0.0196
+      }
+    },
+    "T2b": {
+      "n": 183,
+      "pos": 30,
+      "neg": 153,
+      "patients": 155,
+      "img_units_done": "15/15",
+      "arms": {
+        "a": {
+          "auroc": 0.6294,
+          "auroc_ci": [
+            0.5193,
+            0.7307
+          ],
+          "auprc": 0.2302,
+          "auprc_ci": [
+            0.1361,
+            0.3739
+          ],
+          "brier": 0.2354,
+          "spec_at_sens_0.95": 0.268,
+          "spec_at_sens_1.0": 0.0654,
+          "sens_at_spec_0.80": 0.3333
+        },
+        "b": {
+          "auroc": 0.6597,
+          "auroc_ci": [
+            0.55,
+            0.774
+          ],
+          "auprc": 0.3193,
+          "auprc_ci": [
+            0.1698,
+            0.5101
+          ],
+          "brier": 0.1829,
+          "spec_at_sens_0.95": 0.183,
+          "spec_at_sens_1.0": 0.1046,
+          "sens_at_spec_0.80": 0.3667
+        },
+        "c": {
+          "auroc": 0.8619,
+          "auroc_ci": [
+            0.7885,
+            0.9199
+          ],
+          "auprc": 0.5424,
+          "auprc_ci": [
+            0.3473,
+            0.752
+          ],
+          "brier": 0.1379,
+          "spec_at_sens_0.95": 0.6405,
+          "spec_at_sens_1.0": 0.549,
+          "sens_at_spec_0.80": 0.6667
+        },
+        "d": {
+          "auroc": 0.8257,
+          "auroc_ci": [
+            0.7514,
+            0.8896
+          ],
+          "auprc": 0.4617,
+          "auprc_ci": [
+            0.2853,
+            0.6588
+          ],
+          "brier": 0.2192,
+          "spec_at_sens_0.95": 0.5033,
+          "spec_at_sens_1.0": 0.4641,
+          "sens_at_spec_0.80": 0.7333
+        }
+      },
+      "deltas": {
+        "image - baseline": {
+          "mean": 0.2325,
+          "ci": [
+            0.1227,
+            0.3493
+          ]
+        },
+        "text - baseline": {
+          "mean": 0.0303,
+          "ci": [
+            -0.0952,
+            0.1681
+          ]
+        },
+        "late_mean - best single (c)": {
+          "mean": -0.0362,
+          "ci": [
+            -0.0824,
+            0.0104
+          ]
+        }
+      },
+      "tilecount_confound_auroc": 0.5363
+    },
+    "T2c": {
+      "n": 389,
+      "pos": 45,
+      "neg": 344,
+      "patients": 289,
+      "img_units_done": "15/15",
+      "arms": {
+        "a": {
+          "auroc": 0.6488,
+          "auroc_ci": [
+            0.5634,
+            0.727
+          ],
+          "auprc": 0.1689,
+          "auprc_ci": [
+            0.1174,
+            0.2477
+          ],
+          "brier": 0.2351,
+          "spec_at_sens_0.95": 0.125,
+          "spec_at_sens_1.0": 0.0756,
+          "sens_at_spec_0.80": 0.4222
+        },
+        "b": {
+          "auroc": 0.6522,
+          "auroc_ci": [
+            0.5709,
+            0.7293
+          ],
+          "auprc": 0.1874,
+          "auprc_ci": [
+            0.1263,
+            0.2869
+          ],
+          "brier": 0.1733,
+          "spec_at_sens_0.95": 0.1977,
+          "spec_at_sens_1.0": 0.0552,
+          "sens_at_spec_0.80": 0.3111
+        },
+        "c": {
+          "auroc": 0.6608,
+          "auroc_ci": [
+            0.5686,
+            0.745
+          ],
+          "auprc": 0.2595,
+          "auprc_ci": [
+            0.163,
+            0.4088
+          ],
+          "brier": 0.1832,
+          "spec_at_sens_0.95": 0.1802,
+          "spec_at_sens_1.0": 0.157,
+          "sens_at_spec_0.80": 0.4222
+        },
+        "d": {
+          "auroc": 0.7049,
+          "auroc_ci": [
+            0.6276,
+            0.7794
+          ],
+          "auprc": 0.25,
+          "auprc_ci": [
+            0.1618,
+            0.3866
+          ],
+          "brier": 0.2478,
+          "spec_at_sens_0.95": 0.2645,
+          "spec_at_sens_1.0": 0.1453,
+          "sens_at_spec_0.80": 0.4444
+        }
+      },
+      "deltas": {
+        "image - baseline": {
+          "mean": 0.012,
+          "ci": [
+            -0.0912,
+            0.1176
+          ]
+        },
+        "text - baseline": {
+          "mean": 0.0033,
+          "ci": [
+            -0.1096,
+            0.1248
+          ]
+        },
+        "late_mean - best single (c)": {
+          "mean": 0.0441,
+          "ci": [
+            -0.0232,
+            0.1254
+          ]
+        }
+      },
+      "tilecount_confound_auroc": 0.5334
+    },
+    "T3a": {
+      "n": 1274,
+      "pos": 146,
+      "neg": 1128,
+      "patients": 1056,
+      "img_units_done": "15/15",
+      "arms": {
+        "a": {
+          "auroc": 0.5771,
+          "auroc_ci": [
+            0.5297,
+            0.6254
+          ],
+          "auprc": 0.1452,
+          "auprc_ci": [
+            0.1161,
+            0.1844
+          ],
+          "brier": 0.2454,
+          "spec_at_sens_0.95": 0.078,
+          "spec_at_sens_1.0": 0.0089,
+          "sens_at_spec_0.80": 0.2534
+        },
+        "c": {
+          "auroc": 0.821,
+          "auroc_ci": [
+            0.7791,
+            0.8608
+          ],
+          "auprc": 0.5288,
+          "auprc_ci": [
+            0.4483,
+            0.6157
+          ],
+          "brier": 0.1166,
+          "spec_at_sens_0.95": 0.1223,
+          "spec_at_sens_1.0": 0.0044,
+          "sens_at_spec_0.80": 0.7055
+        }
+      },
+      "deltas": {
+        "image - baseline": {
+          "mean": 0.2438,
+          "ci": [
+            0.182,
+            0.3077
+          ]
+        }
+      },
+      "tilecount_confound_auroc": 0.5157
+    },
+    "T3b": {
+      "n": 1274,
+      "pos": 90,
+      "neg": 1184,
+      "patients": 1056,
+      "img_units_done": "15/15",
+      "arms": {
+        "a": {
+          "auroc": 0.6078,
+          "auroc_ci": [
+            0.545,
+            0.6648
+          ],
+          "auprc": 0.0968,
+          "auprc_ci": [
+            0.0744,
+            0.1339
+          ],
+          "brier": 0.236,
+          "spec_at_sens_0.95": 0.0431,
+          "spec_at_sens_1.0": 0.0177,
+          "sens_at_spec_0.80": 0.3
+        },
+        "c": {
+          "auroc": 0.8692,
+          "auroc_ci": [
+            0.8237,
+            0.9105
+          ],
+          "auprc": 0.4967,
+          "auprc_ci": [
+            0.3931,
+            0.6115
+          ],
+          "brier": 0.0737,
+          "spec_at_sens_0.95": 0.4037,
+          "spec_at_sens_1.0": 0.0152,
+          "sens_at_spec_0.80": 0.7778
+        }
+      },
+      "deltas": {
+        "image - baseline": {
+          "mean": 0.2614,
+          "ci": [
+            0.1926,
+            0.3286
+          ]
+        }
+      },
+      "tilecount_confound_auroc": 0.5344
+    },
+    "T4": {
+      "n": 1147,
+      "pos": 518,
+      "neg": 629,
+      "patients": 874,
+      "img_units_done": "15/15",
+      "arms": {
+        "a": {
+          "auroc": 0.5499,
+          "auroc_ci": [
+            0.5088,
+            0.5925
+          ],
+          "auprc": 0.4832,
+          "auprc_ci": [
+            0.4347,
+            0.5351
+          ],
+          "brier": 0.2465,
+          "spec_at_sens_0.95": 0.1399,
+          "spec_at_sens_1.0": 0.0111,
+          "sens_at_spec_0.80": 0.2432
+        },
+        "c": {
+          "auroc": 0.7802,
+          "auroc_ci": [
+            0.747,
+            0.8089
+          ],
+          "auprc": 0.7271,
+          "auprc_ci": [
+            0.6738,
+            0.7779
+          ],
+          "brier": 0.1953,
+          "spec_at_sens_0.95": 0.1908,
+          "spec_at_sens_1.0": 0.0191,
+          "sens_at_spec_0.80": 0.6409
+        }
+      },
+      "deltas": {
+        "image - baseline": {
+          "mean": 0.2303,
+          "ci": [
+            0.1754,
+            0.2811
+          ]
+        }
+      },
+      "tilecount_confound_auroc": 0.4017
+    }
+  },
+  "compute": {
+    "gpu_hours_by_partition": {
+      "cuda": 14.99,
+      "h200": 5.74,
+      "epyc": 0.0
+    },
+    "note": "allocated GPUs x wall time of efw_* worker jobs incl. idle time"
+  },
+  "task_partition_log": {
+    "perm_T2a_p42_f0": "57465673@h200",
+    "perm_T2a_p46_f0": "57465673@h200",
+    "perm_T2a_p43_f1": "57465674@h200",
+    "perm_T2a_p47_f1": "57465674@h200",
+    "img_T2c_f1_s2": "57465669@cuda",
+    "img_T1_f1_s2": "57465671@cuda",
+    "perm_T2a_p44_f2": "57465673@h200",
+    "img_T2c_f2_s1": "57465678@cuda",
+    "perm_T2a_p49_f3": "57465673@h200",
+    "img_T1_f2_s1": "57465678@cuda",
+    "perm_T2a_p27_f4": "57465674@h200",
+    "perm_T2a_p23_f4": "57465674@h200",
+    "tab_T2b": "57465982@cuda",
+    "perm_T2a_p40_f2": "57465673@h200",
+    "perm_T2a_p7_f4": "57465672@cuda",
+    "img_T1_f3_s0": "57465669@cuda",
+    "perm_T2a_p48_f2": "57465674@h200",
+    "perm_T2a_p45_f3": "57465671@cuda",
+    "img_T2c_f3_s0": "57465671@cuda",
+    "perm_T2a_p41_f3": "57465674@h200",
+    "perm_T2a_p3_f4": "57465674@h200",
+    "perm_T2a_p1_f2": "57465673@h200",
+    "perm_T2a_p20_f3": "57465673@h200",
+    "img_T4_f2_s0": "57465669@cuda",
+    "perm_T2a_p5_f2": "57465669@cuda",
+    "perm_T2a_p8_f3": "57465674@h200",
+    "perm_T2a_p24_f3": "57465673@h200",
+    "perm_T2a_p29_f2": "57465674@h200",
+    "img_T4_f3_s1": "57465670@cuda",
+    "perm_T2a_p42_f4": "57465674@h200",
+    "perm_T2a_p21_f2": "57465674@h200",
+    "perm_T2a_p28_f3": "57465671@cuda",
+    "perm_T2a_p25_f2": "57465674@h200",
+    "perm_T2a_p9_f2": "57465673@h200",
+    "perm_T2a_p4_f3": "57465674@h200",
+    "perm_T2a_p46_f4": "57465674@h200",
+    "perm_T2a_p26_f1": "57465674@h200",
+    "perm_T2a_p7_f0": "57465678@cuda",
+    "img_T4_f4_s2": "57465670@cuda",
+    "img_T4_f0_s2": "57465671@cuda",
+    "perm_T2a_p22_f1": "57465674@h200",
+    "perm_T2a_p3_f0": "57465672@cuda",
+    "perm_T2a_p6_f1": "57465669@cuda",
+    "perm_T2a_p27_f0": "57465671@cuda",
+    "perm_T2a_p2_f1": "57465674@h200",
+    "perm_T2a_p23_f0": "57465672@cuda",
+    "perm_T2a_p18_f1": "57465674@h200",
+    "perm_T2a_p15_f0": "57465671@cuda",
+    "perm_T2a_p39_f3": "57465674@h200",
+    "perm_T2a_p34_f2": "57465670@cuda",
+    "perm_T2a_p11_f0": "57465672@cuda",
+    "img_T2b_f3_s2": "57465672@cuda",
+    "perm_T2a_p30_f2": "57465673@h200",
+    "img_T2a_f2_s0": "57465678@cuda",
+    "perm_T2a_p35_f3": "57465669@cuda",
+    "perm_T2a_p38_f2": "57465674@h200",
+    "perm_T2a_p14_f1": "57465673@h200",
+    "perm_T2a_p19_f0": "57465672@cuda",
+    "tab_T4": "57465680@epyc",
+    "img_T2a_f3_s1": "57465669@cuda",
+    "perm_T2a_p31_f3": "57465674@h200",
+    "perm_T2a_p10_f1": "57465674@h200",
+    "img_T2a_f0_s2": "57465670@cuda",
+    "perm_T2a_p32_f0": "57465672@cuda",
+    "img_T2b_f1_s0": "57465672@cuda",
+    "perm_T2a_p13_f2": "57465673@h200",
+    "tab_T3b": "57465680@epyc",
+    "perm_T2a_p36_f0": "57465673@h200",
+    "perm_T2a_p17_f2": "57465674@h200",
+    "img_T2a_f4_s2": "57465670@cuda",
+    "perm_T2a_p12_f3": "57465671@cuda",
+    "img_T2b_f0_s1": "57465678@cuda",
+    "perm_T2a_p33_f1": "57465672@cuda",
+    "img_T2b_f4_s1": "57465672@cuda",
+    "perm_T2a_p16_f3": "57465673@h200",
+    "perm_T2a_p37_f1": "57465669@cuda",
+    "perm_T2a_p19_f4": "57465674@h200",
+    "img_T3a_f1_s1": "57465669@cuda",
+    "img_T3a_f4_s0": "57465669@cuda",
+    "perm_T2a_p15_f4": "57465673@h200",
+    "perm_T2a_p11_f4": "57465673@h200",
+    "img_T3a_f0_s0": "57465669@cuda",
+    "img_T3b_f1_s2": "57465671@cuda",
+    "img_T3b_f2_s1": "57465672@cuda",
+    "perm_T2a_p50_f3": "57465673@h200",
+    "img_T3b_f3_s0": "57465672@cuda",
+    "img_T3a_f2_s2": "57465671@cuda",
+    "perm_T2a_p32_f4": "57465670@cuda",
+    "perm_T2a_p36_f4": "57465673@h200",
+    "perm_T2a_p39_f2": "57465674@h200",
+    "perm_T2a_p34_f3": "57465670@cuda",
+    "perm_T2a_p18_f0": "57465678@cuda",
+    "perm_T2a_p15_f1": "57465678@cuda",
+    "img_T2a_f2_s1": "57465671@cuda",
+    "perm_T2a_p30_f3": "57465673@h200",
+    "perm_T2a_p11_f1": "57465673@h200",
+    "perm_T2a_p14_f0": "57465678@cuda",
+    "perm_T2a_p19_f1": "57465673@h200",
+    "perm_T2a_p35_f2": "57465669@cuda",
+    "perm_T2a_p38_f3": "57465673@h200",
+    "img_T2b_f2_s2": "57465670@cuda",
+    "perm_T2a_p10_f0": "57465671@cuda",
+    "perm_T2a_p31_f2": "57465678@cuda",
+    "img_T2a_f3_s0": "57465674@h200",
+    "img_T2b_f1_s1": "57465678@cuda",
+    "perm_T2a_p13_f3": "57465672@cuda",
+    "perm_T2a_p32_f1": "57465678@cuda",
+    "perm_T2a_p17_f3": "57465670@cuda",
+    "perm_T2a_p36_f1": "57465670@cuda",
+    "img_T2a_f1_s2": "57465669@cuda",
+    "perm_T2a_p33_f0": "57465678@cuda",
+    "perm_T2a_p12_f2": "57465674@h200",
+    "img_T2b_f0_s0": "57465678@cuda",
+    "perm_T2a_p37_f0": "57465670@cuda",
+    "img_T2b_f4_s0": "57465671@cuda",
+    "perm_T2a_p16_f2": "57465672@cuda",
+    "img_T3b_f4_s2": "57465678@cuda",
+    "tab_T1": "57465982@cuda",
+    "perm_T2a_p14_f4": "57465674@h200",
+    "img_T3a_f1_s0": "57465672@cuda",
+    "perm_T2a_p10_f4": "57465671@cuda",
+    "img_T3b_f0_s2": "57465669@cuda",
+    "img_T3a_f4_s1": "57465671@cuda",
+    "perm_T2a_p18_f4": "57465673@h200",
+    "img_T3a_f0_s1": "57465678@cuda",
+    "perm_T2a_p50_f2": "57465674@h200",
+    "img_T3b_f2_s0": "57465671@cuda",
+    "img_T3a_f3_s2": "57465669@cuda",
+    "perm_T2a_p33_f4": "57465674@h200",
+    "perm_T2a_p37_f4": "57465672@cuda",
+    "img_T3b_f3_s1": "57465669@cuda",
+    "img_T1_f4_s2": "57465678@cuda",
+    "img_T2c_f4_s2": "57465671@cuda",
+    "perm_T2a_p42_f1": "57465673@h200",
+    "img_T2c_f0_s2": "57465671@cuda",
+    "perm_T2a_p46_f1": "57465673@h200",
+    "img_T1_f0_s2": "57465671@cuda",
+    "perm_T2a_p43_f0": "57465674@h200",
+    "perm_T2a_p47_f0": "57465674@h200",
+    "perm_T2a_p6_f4": "57465673@h200",
+    "img_T1_f2_s0": "57465669@cuda",
+    "img_T2c_f2_s0": "57465669@cuda",
+    "perm_T2a_p44_f3": "57465678@cuda",
+    "perm_T2a_p49_f2": "57465673@h200",
+    "perm_T2a_p40_f3": "57465673@h200",
+    "tab_T2c": "57465982@cuda",
+    "perm_T2a_p2_f4": "57465670@cuda",
+    "perm_T2a_p48_f3": "57465674@h200",
+    "img_T2c_f3_s1": "57465672@cuda",
+    "perm_T2a_p45_f2": "57465672@cuda",
+    "perm_T2a_p26_f4": "57465673@h200",
+    "img_T1_f3_s1": "57465678@cuda",
+    "perm_T2a_p22_f4": "57465673@h200",
+    "perm_T2a_p41_f2": "57465674@h200",
+    "img_T4_f2_s1": "57465678@cuda",
+    "perm_T2a_p43_f4": "57465673@h200",
+    "perm_T2a_p20_f2": "57465669@cuda",
+    "perm_T2a_p1_f3": "57465673@h200",
+    "perm_T2a_p24_f2": "57465673@h200",
+    "perm_T2a_p29_f3": "57465674@h200",
+    "perm_T2a_p5_f3": "57465673@h200",
+    "perm_T2a_p8_f2": "57465674@h200",
+    "perm_T2a_p47_f4": "57465673@h200",
+    "perm_T2a_p21_f3": "57465674@h200",
+    "img_T4_f3_s0": "57465671@cuda",
+    "perm_T2a_p9_f3": "57465673@h200",
+    "perm_T2a_p4_f2": "57465670@cuda",
+    "perm_T2a_p28_f2": "57465673@h200",
+    "perm_T2a_p25_f3": "57465674@h200",
+    "perm_T2a_p7_f1": "57465673@h200",
+    "perm_T2a_p26_f0": "57465669@cuda",
+    "perm_T2a_p3_f1": "57465673@h200",
+    "perm_T2a_p22_f0": "57465678@cuda",
+    "perm_T2a_p27_f1": "57465673@h200",
+    "embed": "57465982@cuda",
+    "perm_T2a_p6_f0": "57465672@cuda",
+    "img_T4_f1_s2": "57465670@cuda",
+    "perm_T2a_p23_f1": "57465673@h200",
+    "perm_T2a_p2_f0": "57465671@cuda",
+    "perm_T2a_p30_f1": "57465674@h200",
+    "perm_T2a_p11_f3": "57465673@h200",
+    "img_T2b_f3_s1": "57465678@cuda",
+    "perm_T2a_p39_f0": "57465674@h200",
+    "perm_T2a_p34_f1": "57465671@cuda",
+    "perm_T2a_p18_f2": "57465673@h200",
+    "perm_T2a_p15_f3": "57465673@h200",
+    "img_T2a_f3_s2": "57465670@cuda",
+    "img_T2b_f2_s0": "57465669@cuda",
+    "perm_T2a_p10_f2": "57465674@h200",
+    "perm_T2a_p31_f0": "57465673@h200",
+    "perm_T2a_p14_f2": "57465671@cuda",
+    "perm_T2a_p19_f3": "57465674@h200",
+    "perm_T2a_p35_f0": "57465674@h200",
+    "perm_T2a_p38_f1": "57465673@h200",
+    "perm_T2a_p17_f1": "57465671@cuda",
+    "perm_T2a_p36_f3": "57465673@h200",
+    "img_T2a_f4_s1": "57465678@cuda",
+    "img_T2a_f0_s1": "57465672@cuda",
+    "perm_T2a_p13_f1": "57465674@h200",
+    "tab_T3a": "57465680@epyc",
+    "perm_T2a_p32_f3": "57465673@h200",
+    "perm_T2a_p37_f2": "57465673@h200",
+    "img_T2b_f4_s2": "57465678@cuda",
+    "perm_T2a_p16_f0": "57465669@cuda",
+    "perm_T2a_p33_f2": "57465671@cuda",
+    "perm_T2a_p12_f0": "57465672@cuda",
+    "img_T2b_f0_s2": "57465671@cuda",
+    "img_T2a_f1_s0": "57465669@cuda",
+    "perm_T2a_p50_f4": "57465673@h200",
+    "img_T3b_f0_s0": "57465670@cuda",
+    "perm_T2a_p31_f4": "57465674@h200",
+    "img_T3a_f1_s2": "57465672@cuda",
+    "perm_T2a_p35_f4": "57465674@h200",
+    "img_T3b_f4_s0": "57465671@cuda",
+    "img_T3b_f1_s1": "57465672@cuda",
+    "perm_T2a_p39_f4": "57465678@cuda",
+    "perm_T2a_p16_f4": "57465674@h200",
+    "img_T3a_f3_s0": "57465669@cuda",
+    "perm_T2a_p12_f4": "57465674@h200",
+    "perm_T2a_p50_f0": "57465678@cuda",
+    "img_T3b_f2_s2": "57465672@cuda",
+    "img_T3a_f2_s1": "57465671@cuda",
+    "perm_T2a_p28_f4": "57465673@h200",
+    "img_T1_f0_s0": "57465669@cuda",
+    "perm_T2a_p4_f4": "57465673@h200",
+    "img_T2c_f0_s0": "57465671@cuda",
+    "perm_T2a_p46_f3": "57465674@h200",
+    "img_T2c_f4_s0": "57465672@cuda",
+    "perm_T2a_p42_f3": "57465673@h200",
+    "img_T1_f4_s0": "57465671@cuda",
+    "img_T2c_f1_s1": "57465678@cuda",
+    "perm_T2a_p47_f2": "57465678@cuda",
+    "perm_T2a_p8_f4": "57465678@cuda",
+    "img_T1_f1_s1": "57465678@cuda",
+    "perm_T2a_p24_f4": "57465671@cuda",
+    "perm_T2a_p20_f4": "57465673@h200",
+    "perm_T2a_p43_f2": "57465674@h200",
+    "perm_T2a_p40_f1": "57465673@h200",
+    "tab_T2a": "57465982@cuda",
+    "img_T2c_f2_s2": "57465670@cuda",
+    "perm_T2a_p44_f1": "57465673@h200",
+    "perm_T2a_p49_f0": "57465672@cuda",
+    "img_T1_f2_s2": "57465670@cuda",
+    "perm_T2a_p41_f0": "57465674@h200",
+    "perm_T2a_p48_f1": "57465672@cuda",
+    "perm_T2a_p45_f0": "57465674@h200",
+    "perm_T2a_p24_f0": "57465672@cuda",
+    "perm_T2a_p29_f1": "57465673@h200",
+    "perm_T2a_p5_f1": "57465670@cuda",
+    "perm_T2a_p8_f0": "57465669@cuda",
+    "perm_T2a_p20_f0": "57465670@cuda",
+    "perm_T2a_p1_f1": "57465671@cuda",
+    "perm_T2a_p9_f1": "57465673@h200",
+    "perm_T2a_p4_f0": "57465678@cuda",
+    "perm_T2a_p28_f0": "57465674@h200",
+    "perm_T2a_p25_f1": "57465673@h200",
+    "img_T4_f3_s2": "57465678@cuda",
+    "perm_T2a_p21_f1": "57465669@cuda",
+    "perm_T2a_p41_f4": "57465673@h200",
+    "img_T4_f0_s1": "57465670@cuda",
+    "perm_T2a_p3_f3": "57465669@cuda",
+    "perm_T2a_p22_f2": "57465673@h200",
+    "perm_T2a_p7_f3": "57465673@h200",
+    "perm_T2a_p26_f2": "57465673@h200",
+    "perm_T2a_p45_f4": "57465673@h200",
+    "img_T4_f4_s1": "57465669@cuda",
+    "perm_T2a_p23_f3": "57465674@h200",
+    "perm_T2a_p2_f2": "57465674@h200",
+    "img_T4_f1_s0": "57465670@cuda",
+    "perm_T2a_p49_f4": "57465669@cuda",
+    "perm_T2a_p27_f3": "57465672@cuda",
+    "perm_T2a_p6_f2": "57465674@h200",
+    "perm_T2a_p46_f2": "57465671@cuda",
+    "img_T2c_f0_s1": "57465671@cuda",
+    "perm_T2a_p9_f4": "57465674@h200",
+    "perm_T2a_p25_f4": "57465678@cuda",
+    "img_T1_f0_s1": "57465678@cuda",
+    "img_T1_f4_s1": "57465672@cuda",
+    "perm_T2a_p21_f4": "57465674@h200",
+    "perm_T2a_p42_f2": "57465673@h200",
+    "img_T2c_f4_s1": "57465669@cuda",
+    "img_T1_f1_s0": "57465672@cuda",
+    "perm_T2a_p29_f4": "57465674@h200",
+    "perm_T2a_p5_f4": "57465674@h200",
+    "perm_T2a_p47_f3": "57465673@h200",
+    "img_T2c_f1_s0": "57465678@cuda",
+    "perm_T2a_p43_f3": "57465672@cuda",
+    "perm_T2a_p1_f4": "57465669@cuda",
+    "perm_T2a_p40_f0": "57465673@h200",
+    "perm_T2a_p44_f0": "57465673@h200",
+    "perm_T2a_p49_f1": "57465678@cuda",
+    "perm_T2a_p41_f1": "57465674@h200",
+    "perm_T2a_p48_f0": "57465673@h200",
+    "perm_T2a_p45_f1": "57465674@h200",
+    "img_T2c_f3_s2": "57465678@cuda",
+    "img_T1_f3_s2": "57465672@cuda",
+    "perm_T2a_p5_f0": "57465671@cuda",
+    "perm_T2a_p8_f1": "57465674@h200",
+    "perm_T2a_p24_f1": "57465674@h200",
+    "perm_T2a_p29_f0": "57465673@h200",
+    "img_T4_f2_s2": "57465670@cuda",
+    "perm_T2a_p1_f0": "57465671@cuda",
+    "perm_T2a_p20_f1": "57465670@cuda",
+    "perm_T2a_p28_f1": "57465674@h200",
+    "perm_T2a_p25_f0": "57465670@cuda",
+    "perm_T2a_p9_f0": "57465678@cuda",
+    "perm_T2a_p4_f1": "57465674@h200",
+    "perm_T2a_p21_f0": "57465669@cuda",
+    "perm_T2a_p22_f3": "57465673@h200",
+    "perm_T2a_p3_f2": "57465673@h200",
+    "img_T4_f0_s0": "57465672@cuda",
+    "img_T4_f4_s0": "57465670@cuda",
+    "perm_T2a_p48_f4": "57465670@cuda",
+    "perm_T2a_p26_f3": "57465673@h200",
+    "perm_T2a_p7_f2": "57465673@h200",
+    "perm_T2a_p40_f4": "57465674@h200",
+    "img_T4_f1_s1": "57465678@cuda",
+    "perm_T2a_p2_f3": "57465670@cuda",
+    "perm_T2a_p23_f2": "57465674@h200",
+    "perm_T2a_p6_f3": "57465674@h200",
+    "perm_T2a_p27_f2": "57465674@h200",
+    "perm_T2a_p44_f4": "57465674@h200",
+    "img_T2a_f2_s2": "57465673@h200",
+    "perm_T2a_p11_f2": "57465673@h200",
+    "img_T2b_f3_s0": "57465669@cuda",
+    "perm_T2a_p30_f0": "57465674@h200",
+    "perm_T2a_p18_f3": "57465669@cuda",
+    "perm_T2a_p15_f2": "57465678@cuda",
+    "perm_T2a_p39_f1": "57465674@h200",
+    "perm_T2a_p34_f0": "57465671@cuda",
+    "perm_T2a_p31_f1": "57465673@h200",
+    "img_T2b_f2_s1": "57465672@cuda",
+    "perm_T2a_p10_f3": "57465674@h200",
+    "perm_T2a_p35_f1": "57465674@h200",
+    "perm_T2a_p38_f0": "57465669@cuda",
+    "perm_T2a_p14_f3": "57465674@h200",
+    "perm_T2a_p19_f2": "57465670@cuda",
+    "img_T2a_f4_s0": "57465671@cuda",
+    "perm_T2a_p36_f2": "57465674@h200",
+    "perm_T2a_p17_f0": "57465671@cuda",
+    "perm_T2a_p32_f2": "57465672@cuda",
+    "img_T2b_f1_s2": "57465671@cuda",
+    "perm_T2a_p13_f0": "57465669@cuda",
+    "img_T2a_f0_s0": "57465671@cuda",
+    "perm_T2a_p16_f1": "57465672@cuda",
+    "perm_T2a_p37_f3": "57465674@h200",
+    "img_T2a_f1_s1": "57465670@cuda",
+    "perm_T2a_p12_f1": "57465674@h200",
+    "perm_T2a_p33_f3": "57465674@h200",
+    "img_T3b_f0_s1": "57465669@cuda",
+    "img_T3b_f4_s1": "57465672@cuda",
+    "perm_T2a_p38_f4": "57465671@cuda",
+    "img_T3b_f1_s0": "57465669@cuda",
+    "perm_T2a_p30_f4": "57465673@h200",
+    "img_T3a_f0_s2": "57465678@cuda",
+    "perm_T2a_p34_f4": "57465673@h200",
+    "img_T3a_f4_s2": "57465672@cuda",
+    "tabperm_T2a": "57465982@cuda",
+    "perm_T2a_p50_f1": "57465671@cuda",
+    "img_T3a_f3_s1": "57465678@cuda",
+    "perm_T2a_p17_f4": "57465669@cuda",
+    "perm_T2a_p13_f4": "57465673@h200",
+    "img_T3a_f2_s0": "57465672@cuda",
+    "img_T3b_f3_s2": "57465672@cuda"
+  }
+}
