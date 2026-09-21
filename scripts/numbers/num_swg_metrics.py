@@ -26,6 +26,13 @@ def sens_spec(y, p):
     fpr, tpr, thr = roc_curve(y, p); j = np.argmax(tpr - fpr); o = {"youden": {"threshold": float(thr[j]), "sensitivity": float(tpr[j]), "specificity": float(1 - fpr[j])}}
     for sp in (0.8, 0.9):
         k = np.where(1 - fpr >= sp)[0]; k = k[np.argmax(tpr[k])]; o[f"at_specificity_{sp}"] = {"threshold": float(thr[k]), "sensitivity": float(tpr[k]), "specificity": float(1 - fpr[k])}
+    prev = float(np.mean(y))
+    for se in (0.95, 1.0):   # rule-out operating points: lock sensitivity, report specificity (+ NPV/PPV at cohort prevalence and at 0.5%/yr real-world)
+        k = np.where(tpr >= se - 1e-9)[0]; k = k[np.argmax(1 - fpr[k])]; sens, spec = float(tpr[k]), float(1 - fpr[k])
+        def npv(pr): return (spec * (1 - pr)) / (spec * (1 - pr) + (1 - sens) * pr) if (spec * (1 - pr) + (1 - sens) * pr) > 0 else None
+        def ppv(pr): return (sens * pr) / (sens * pr + (1 - spec) * (1 - pr)) if (sens * pr + (1 - spec) * (1 - pr)) > 0 else None
+        o[f"at_sensitivity_{se}"] = {"threshold": float(thr[k]), "sensitivity": sens, "specificity": spec, "n_flagged_of_n": [int((p >= thr[k]).sum()), int(len(p))],
+                                    "npv_cohort_prevalence": npv(prev), "ppv_cohort_prevalence": ppv(prev), "npv_at_0.5pct": npv(0.005), "ppv_at_0.5pct": ppv(0.005)}
     return o
 def calib(y, p):
     p = np.clip(p, 1e-6, 1 - 1e-6); lg = np.log(p / (1 - p))[:, None]

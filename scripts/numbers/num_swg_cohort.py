@@ -13,7 +13,10 @@ coh["Date"] = pd.to_datetime(coh["Date"], errors="coerce")
 num = lambda c: pd.to_numeric(coh[c], errors="coerce")
 res = {"source": F}
 res["patients"] = int(man.patient_id.nunique()); res["samples_rows"] = len(man)
-res["progressor_patients"] = int(man.drop_duplicates("patient_id").y_progressor.astype(int).sum())
+pp = man.groupby("patient_id").y_progressor.agg(lambda v: int(v.astype(int).max()))
+res["progressor_patients"] = int(pp.sum()); res["positive_samples_next_biopsy_lgd2"] = int(man.y_progressor.astype(int).sum())
+res["endpoint_note"] = "y_progressor is PER SAMPLE: the next biopsy after this sample shows LGD confirmed on two reads or worse; a patient is a progressor if any sample is positive"
+res["alt_Progressor_label_col"] = {"positive_samples": int((coh.Progressor_label.astype(str) == "1").sum()), "positive_patients": int(coh[coh.Progressor_label.astype(str) == "1"].patient_id.nunique())}
 res["folds"] = sorted(man.fold_id_rep01.unique().tolist())
 per = coh.groupby("patient_id").size(); res["samples_per_patient"] = mr(per)
 res["years"] = {"min": int(coh.Date.min().year), "max": int(coh.Date.max().year), "by_year": coh.Date.dt.year.value_counts().sort_index().to_dict()}
@@ -26,10 +29,13 @@ res["grade_dist_patient_max"] = maxg.value_counts().sort_index().to_dict()
 first = coh.sort_values("Date").groupby("patient_id").first()
 res["entry_grade_first_sample"] = first["Label"].astype(str).value_counts().to_dict()
 res["max_pathology_col_dist"] = coh["max_pathology"].value_counts().to_dict() if "max_pathology" in coh else None
-prog = coh[coh.y_progressor.astype(int) == 1]; nonp = coh[coh.y_progressor.astype(int) == 0]
+progp = set(pp[pp == 1].index); prog = coh[coh.patient_id.isin(progp)]; nonp = coh[~coh.patient_id.isin(progp)]
 res["progression_timing"] = {
     "Time_to_progression_per_progressor_patient": mr(pd.to_numeric(prog.groupby("patient_id")["Time_to_progression"].first(), errors="coerce")),
-    "Time_to_progression_units_note": "column as released; values compared with MonthsBeforeLastBiopsy below",
+    "Time_to_progression_units_note": "days (median 1095 = 3 years); non-null on the samples of progressor patients",
+    "Time_to_progression_all_nonnull_samples_days": mr(num("Time_to_progression")),
+    "MonthsBeforeLastBiopsy_nonprogressor_samples": mr(pd.to_numeric(nonp["MonthsBeforeLastBiopsy"], errors="coerce")),
+    "biopsies_total_for_patient": mr(pd.to_numeric(coh["BiopsiesTotalForPatient"], errors="coerce")),
     "MonthsBeforeLastBiopsy_progressor_samples": mr(pd.to_numeric(prog["MonthsBeforeLastBiopsy"], errors="coerce")),
     "first_to_last_sample_span_months_progressors": mr((prog.groupby("patient_id").Date.max() - prog.groupby("patient_id").Date.min()).dt.days / 30.44),
     "first_to_last_sample_span_months_nonprogressors": mr((nonp.groupby("patient_id").Date.max() - nonp.groupby("patient_id").Date.min()).dt.days / 30.44),
