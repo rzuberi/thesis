@@ -57,9 +57,15 @@ def train(ydict, tr, seed=0):
     return net.eval()
 tr = [k for k in keys if fold_of[pat[k]] not in show_folds]   # never trained on a displayed slide's patient
 print(f"training on {len(tr)} slides (folds excluded: {sorted(show_folds)})", flush=True)
-nets = {"case_max": train(y_case, tr), "section": train(y_slide, tr)}
 os.makedirs(os.path.join(OUT, "maps"), exist_ok=True)
-for name, net in nets.items(): torch.save(net.state_dict(), os.path.join(OUT, f"mcmil_{name}.pt"))
+nets = {}
+for name, yd in (("case_max", y_case), ("section", y_slide)):
+    wp = os.path.join(OUT, f"mcmil_{name}.pt")
+    if os.path.exists(wp):   # resume: weights from a previous (rendering-killed) run
+        net = MC_MIL().to(DEV); net.load_state_dict(torch.load(wp, map_location=DEV)); nets[name] = net.eval(); print("loaded", wp, flush=True)
+    else:
+        nets[name] = train(yd, tr); torch.save(nets[name].state_dict(), wp)
+keep = {k: bags[k] for k in chosen}; del bags; bags = keep; import gc; gc.collect()   # free ~20 GB before rendering
 try: import openslide
 except Exception: openslide = None
 summary = []
@@ -80,8 +86,8 @@ for k in chosen:
     thumb = None
     if openslide is not None and sp and os.path.exists(sp):
         try:
-            sl = openslide.OpenSlide(sp); lvl = sl.get_best_level_for_downsample(32); ds = sl.level_downsamples[lvl]
-            thumb = np.asarray(sl.read_region((0, 0), lvl, sl.level_dimensions[lvl]).convert("RGB")); scale = 1.0 / ds
+            sl = openslide.OpenSlide(sp); W0, H0 = sl.dimensions; tw = 2500
+            thumb = np.asarray(sl.get_thumbnail((tw, int(tw * H0 / W0))).convert("RGB")); scale = thumb.shape[1] / W0   # thumbnail never reads full-res
         except Exception as e: print("openslide fail", e, flush=True)
     if thumb is None:
         W, H = coords.max(0) + 224; scale = 2000.0 / max(W, H); thumb = np.full((int(H * scale) + 1, int(W * scale) + 1, 3), 255, np.uint8)
