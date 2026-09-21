@@ -1,0 +1,21 @@
+{
+  "model": "medgemma:27b",
+  "slides_scored": 96,
+  "tiles_parsed": 386,
+  "parse_fail_tiles": 382,
+  "tile_grade_dist": {
+    "NDBE": 386
+  },
+  "truth_dist": {
+    "CANCER": 16,
+    "HGD": 16,
+    "IND": 16,
+    "NDBE": 16,
+    "LGD": 16,
+    "NORMAL_OTHER": 16
+  },
+  "auroc_LGDplus_max_tile_grade": 0.5,
+  "auroc_LGDplus_frac_tiles_LGDplus": 0.5,
+  "auroc_LGDplus_mean_grade": 0.5,
+  "gate_0.70": false
+}
