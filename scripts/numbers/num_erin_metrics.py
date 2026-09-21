@@ -32,7 +32,9 @@ for arm in ("case", "slide"):
         "auroc": round(float(roc_auc_score(y, p)), 4), "auroc_ci": cboot(lambda s: roc_auc_score(y[s], p[s]) if len(set(y[s])) > 1 else None, pats, len(keys)),
         "auprc": round(float(average_precision_score(y, p)), 4), "auprc_ci": cboot(lambda s: average_precision_score(y[s], p[s]) if len(set(y[s])) > 1 else None, pats, len(keys)),
         "f1_at_0.5": round(float(f1_score(y, p >= 0.5)), 4), "f1_at_youden": round(float(f1_score(y, p >= t)), 4), "youden_threshold": round(float(t), 4),
-        "sens_spec_at_youden": [round(float(tpr[j]), 4), round(float(1 - fpr[j]), 4)]}
+        "sens_spec_at_youden": [round(float(tpr[j]), 4), round(float(1 - fpr[j]), 4)],
+        "spec_at_sens_0.95": round(float(max(1 - fpr[tpr >= 0.95 - 1e-9])), 4), "spec_at_sens_1.0": round(float(max(1 - fpr[tpr >= 1.0 - 1e-9])), 4),
+        "f1_at_sens_0.95": round(float(f1_score(y, p >= thr[np.where(tpr >= 0.95 - 1e-9)[0][np.argmax(1 - fpr[tpr >= 0.95 - 1e-9])]])), 4)}
 acc5 = load(T + "/feasibility/svc5_units", "probs"); keys5 = sorted(set(acc5["case"]) & set(acc5["slide"]) & set(lab.index))
 yt = np.array([C_OF[lab.loc[k, "worst_grade"]] for k in keys5]); pats5 = [pat_of[k] for k in keys5]
 def macro_auc(yy, P): return float(np.mean([roc_auc_score((yy == c).astype(int), P[:, c]) for c in range(6) if 0 < (yy == c).sum() < len(yy)]))
