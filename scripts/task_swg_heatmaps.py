@@ -68,7 +68,7 @@ for sid, why in chosen.items():
             m = ms["coattention_fusion"]; out["coattention_attention"] = m.attention_weights(bag, m.cnv_embed(cnv)[0]).numpy(); out["coattention_slide_prob"] = float(torch.sigmoid(m([bag], cnv)).item())
         if "early_fusion" in ms:
             m = ms["early_fusion"]; out["early_tile_risk"] = torch.sigmoid(m.classifier(torch.cat([bag, cnv.repeat(len(bag), 1)], 1))).squeeze(-1).numpy(); out["early_slide_prob"] = float(torch.sigmoid(m([bag], cnv)).item())
-    rec = {"sample_id": sid, "why": why, "patient": coh.loc[sid, "PatientID_real"] if sid in coh.index else "", "fold": k, "y_true": int(oof.loc[sid, "y_true"]), "late_mean_oof_prob": round(float(oof.loc[sid, "y_prob"]), 3),
+    rec = {"sample_id": sid, "why": why, "patient": str(coh.loc[sid, "PatientID_real"]).replace("/", "-") if sid in coh.index else "", "fold": k, "y_true": int(oof.loc[sid, "y_true"]), "late_mean_oof_prob": round(float(oof.loc[sid, "y_prob"]), 3),
            "grade_code": coh.loc[sid, "Label"] if sid in coh.index else "", "months_before_last_biopsy": coh.loc[sid, "MonthsBeforeLastBiopsy"] if sid in coh.index else "", "n_tiles": len(coords)}
     for kk, v in out.items():
         if kk.endswith("prob"): rec[kk] = round(v, 3)
