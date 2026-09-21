@@ -1,0 +1,1105 @@
+{
+  "families": [
+    "cnv_only",
+    "coattention_fusion",
+    "early_fusion",
+    "image_only",
+    "intermediate_fusion",
+    "late_mean",
+    "late_stack_logit"
+  ],
+  "folds_seen": {
+    "cnv_only": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "coattention_fusion": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "early_fusion": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "image_only": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "intermediate_fusion": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "late_mean": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "late_stack_logit": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "seeds_seen": {
+    "cnv_only": [
+      20261713,
+      20262713,
+      20263713,
+      20264713,
+      20265713
+    ],
+    "coattention_fusion": [
+      20261713,
+      20262713,
+      20263713,
+      20264713,
+      20265713
+    ],
+    "early_fusion": [
+      20261713,
+      20262713,
+      20263713,
+      20264713,
+      20265713
+    ],
+    "image_only": [
+      20261713,
+      20262713,
+      20263713,
+      20264713,
+      20265713
+    ],
+    "intermediate_fusion": [
+      20261713,
+      20262713,
+      20263713,
+      20264713,
+      20265713
+    ],
+    "late_mean": [
+      20261713,
+      20262713,
+      20263713,
+      20264713,
+      20265713
+    ],
+    "late_stack_logit": [
+      20261713,
+      20262713,
+      20263713,
+      20264713,
+      20265713
+    ]
+  },
+  "rows_per_family": {
+    "cnv_only": 707,
+    "coattention_fusion": 707,
+    "early_fusion": 707,
+    "image_only": 707,
+    "intermediate_fusion": 707,
+    "late_mean": 707,
+    "late_stack_logit": 707
+  },
+  "design_note": "single nested-CV run, 5 outer folds, patient-disjoint (fold_id_rep01); one seed per family in release",
+  "arms": {
+    "cnv_only": {
+      "patient_level": {
+        "n": 150,
+        "pos": 50,
+        "auroc": 0.663,
+        "auroc_ci": [
+          0.5687,
+          0.7542
+        ],
+        "auprc": 0.5385,
+        "auprc_ci": [
+          0.4107,
+          0.6712
+        ],
+        "operating_points": {
+          "youden": {
+            "threshold": 0.2337664320897848,
+            "sensitivity": 0.74,
+            "specificity": 0.5800000000000001
+          },
+          "at_specificity_0.8": {
+            "threshold": 0.2997324851940783,
+            "sensitivity": 0.42,
+            "specificity": 0.81
+          },
+          "at_specificity_0.9": {
+            "threshold": 0.3389713533646454,
+            "sensitivity": 0.24,
+            "specificity": 0.91
+          }
+        },
+        "calibration": {
+          "brier": 0.2159536835246922,
+          "calibration_slope": 1.2295851512500444,
+          "calibration_intercept": 0.7313240109555679,
+          "reliability_bins": [
+            {
+              "mean_pred": 0.099,
+              "obs_rate": 0.267,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.149,
+              "obs_rate": 0.2,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.179,
+              "obs_rate": 0.067,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.204,
+              "obs_rate": 0.267,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.227,
+              "obs_rate": 0.267,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.252,
+              "obs_rate": 0.533,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.28,
+              "obs_rate": 0.333,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.303,
+              "obs_rate": 0.267,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.334,
+              "obs_rate": 0.467,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.382,
+              "obs_rate": 0.667,
+              "n": 15
+            }
+          ]
+        }
+      },
+      "sample_level": {
+        "n": 707,
+        "pos": 107,
+        "auroc": 0.6195,
+        "auroc_ci": [
+          0.5319,
+          0.7132
+        ],
+        "auprc": 0.229
+      }
+    },
+    "coattention_fusion": {
+      "patient_level": {
+        "n": 150,
+        "pos": 50,
+        "auroc": 0.7392,
+        "auroc_ci": [
+          0.6519,
+          0.8207
+        ],
+        "auprc": 0.5482,
+        "auprc_ci": [
+          0.4278,
+          0.7027
+        ],
+        "operating_points": {
+          "youden": {
+            "threshold": 0.5340502858161926,
+            "sensitivity": 0.8,
+            "specificity": 0.64
+          },
+          "at_specificity_0.8": {
+            "threshold": 0.7372578978538513,
+            "sensitivity": 0.56,
+            "specificity": 0.81
+          },
+          "at_specificity_0.9": {
+            "threshold": 0.8467134833335876,
+            "sensitivity": 0.3,
+            "specificity": 0.92
+          }
+        },
+        "calibration": {
+          "brier": 0.23003820079597853,
+          "calibration_slope": 0.5045277980616691,
+          "calibration_intercept": -0.8072119328302466,
+          "reliability_bins": [
+            {
+              "mean_pred": 0.029,
+              "obs_rate": 0.133,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.147,
+              "obs_rate": 0.067,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.265,
+              "obs_rate": 0.133,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.326,
+              "obs_rate": 0.2,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.471,
+              "obs_rate": 0.2,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.599,
+              "obs_rate": 0.4,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.694,
+              "obs_rate": 0.467,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.787,
+              "obs_rate": 0.667,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.846,
+              "obs_rate": 0.467,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.927,
+              "obs_rate": 0.6,
+              "n": 15
+            }
+          ]
+        }
+      },
+      "sample_level": {
+        "n": 707,
+        "pos": 107,
+        "auroc": 0.6825,
+        "auroc_ci": [
+          0.5956,
+          0.7691
+        ],
+        "auprc": 0.28
+      }
+    },
+    "early_fusion": {
+      "patient_level": {
+        "n": 150,
+        "pos": 50,
+        "auroc": 0.7384,
+        "auroc_ci": [
+          0.6455,
+          0.8182
+        ],
+        "auprc": 0.5896,
+        "auprc_ci": [
+          0.4529,
+          0.7331
+        ],
+        "operating_points": {
+          "youden": {
+            "threshold": 0.3445747494697571,
+            "sensitivity": 0.8,
+            "specificity": 0.6
+          },
+          "at_specificity_0.8": {
+            "threshold": 0.6528570055961609,
+            "sensitivity": 0.52,
+            "specificity": 0.81
+          },
+          "at_specificity_0.9": {
+            "threshold": 0.7605959177017212,
+            "sensitivity": 0.42,
+            "specificity": 0.9
+          }
+        },
+        "calibration": {
+          "brier": 0.21302356568360012,
+          "calibration_slope": 0.42009693913805063,
+          "calibration_intercept": -0.6553616219486644,
+          "reliability_bins": [
+            {
+              "mean_pred": 0.026,
+              "obs_rate": 0.067,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.081,
+              "obs_rate": 0.2,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.142,
+              "obs_rate": 0.133,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.203,
+              "obs_rate": 0.2,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.319,
+              "obs_rate": 0.2,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.445,
+              "obs_rate": 0.4,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.564,
+              "obs_rate": 0.4,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.702,
+              "obs_rate": 0.4,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.854,
+              "obs_rate": 0.667,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.975,
+              "obs_rate": 0.667,
+              "n": 15
+            }
+          ]
+        }
+      },
+      "sample_level": {
+        "n": 707,
+        "pos": 107,
+        "auroc": 0.7296,
+        "auroc_ci": [
+          0.6369,
+          0.813
+        ],
+        "auprc": 0.3189
+      }
+    },
+    "image_only": {
+      "patient_level": {
+        "n": 150,
+        "pos": 50,
+        "auroc": 0.7312,
+        "auroc_ci": [
+          0.6403,
+          0.8142
+        ],
+        "auprc": 0.557,
+        "auprc_ci": [
+          0.4263,
+          0.7168
+        ],
+        "operating_points": {
+          "youden": {
+            "threshold": 0.697090744972229,
+            "sensitivity": 0.64,
+            "specificity": 0.77
+          },
+          "at_specificity_0.8": {
+            "threshold": 0.7445687651634216,
+            "sensitivity": 0.52,
+            "specificity": 0.81
+          },
+          "at_specificity_0.9": {
+            "threshold": 0.8338428139686584,
+            "sensitivity": 0.44,
+            "specificity": 0.91
+          }
+        },
+        "calibration": {
+          "brier": 0.24525580649306414,
+          "calibration_slope": 0.6163800975078934,
+          "calibration_intercept": -0.9918237741815652,
+          "reliability_bins": [
+            {
+              "mean_pred": 0.125,
+              "obs_rate": 0.067,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.237,
+              "obs_rate": 0.133,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.316,
+              "obs_rate": 0.2,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.388,
+              "obs_rate": 0.267,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.503,
+              "obs_rate": 0.333,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.614,
+              "obs_rate": 0.133,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.707,
+              "obs_rate": 0.467,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.795,
+              "obs_rate": 0.333,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.865,
+              "obs_rate": 0.733,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.936,
+              "obs_rate": 0.667,
+              "n": 15
+            }
+          ]
+        }
+      },
+      "sample_level": {
+        "n": 707,
+        "pos": 107,
+        "auroc": 0.739,
+        "auroc_ci": [
+          0.6456,
+          0.8147
+        ],
+        "auprc": 0.3255
+      }
+    },
+    "intermediate_fusion": {
+      "patient_level": {
+        "n": 150,
+        "pos": 50,
+        "auroc": 0.7414,
+        "auroc_ci": [
+          0.6534,
+          0.8179
+        ],
+        "auprc": 0.5675,
+        "auprc_ci": [
+          0.4352,
+          0.7142
+        ],
+        "operating_points": {
+          "youden": {
+            "threshold": 0.2916620373725891,
+            "sensitivity": 0.92,
+            "specificity": 0.47
+          },
+          "at_specificity_0.8": {
+            "threshold": 0.6778289675712585,
+            "sensitivity": 0.56,
+            "specificity": 0.8
+          },
+          "at_specificity_0.9": {
+            "threshold": 0.8026425242424011,
+            "sensitivity": 0.34,
+            "specificity": 0.91
+          }
+        },
+        "calibration": {
+          "brier": 0.2241938929121184,
+          "calibration_slope": 0.41783001608994974,
+          "calibration_intercept": -0.7979916809770103,
+          "reliability_bins": [
+            {
+              "mean_pred": 0.056,
+              "obs_rate": 0.0,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.146,
+              "obs_rate": 0.133,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.215,
+              "obs_rate": 0.067,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.308,
+              "obs_rate": 0.333,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.417,
+              "obs_rate": 0.467,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.515,
+              "obs_rate": 0.267,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.635,
+              "obs_rate": 0.333,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.739,
+              "obs_rate": 0.533,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.837,
+              "obs_rate": 0.667,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.98,
+              "obs_rate": 0.533,
+              "n": 15
+            }
+          ]
+        }
+      },
+      "sample_level": {
+        "n": 707,
+        "pos": 107,
+        "auroc": 0.7049,
+        "auroc_ci": [
+          0.6059,
+          0.7997
+        ],
+        "auprc": 0.3172
+      }
+    },
+    "late_mean": {
+      "patient_level": {
+        "n": 150,
+        "pos": 50,
+        "auroc": 0.7742,
+        "auroc_ci": [
+          0.6872,
+          0.8494
+        ],
+        "auprc": 0.6296,
+        "auprc_ci": [
+          0.4897,
+          0.7724
+        ],
+        "operating_points": {
+          "youden": {
+            "threshold": 0.4664724932326827,
+            "sensitivity": 0.6,
+            "specificity": 0.85
+          },
+          "at_specificity_0.8": {
+            "threshold": 0.4571208758032095,
+            "sensitivity": 0.62,
+            "specificity": 0.83
+          },
+          "at_specificity_0.9": {
+            "threshold": 0.5055240711183967,
+            "sensitivity": 0.38,
+            "specificity": 0.9
+          }
+        },
+        "calibration": {
+          "brier": 0.18416471503194634,
+          "calibration_slope": 1.7795486502657902,
+          "calibration_intercept": 0.10435205901906161,
+          "reliability_bins": [
+            {
+              "mean_pred": 0.152,
+              "obs_rate": 0.0,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.213,
+              "obs_rate": 0.133,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.254,
+              "obs_rate": 0.2,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.3,
+              "obs_rate": 0.267,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.351,
+              "obs_rate": 0.133,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.397,
+              "obs_rate": 0.4,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.441,
+              "obs_rate": 0.2,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.479,
+              "obs_rate": 0.733,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.537,
+              "obs_rate": 0.467,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.622,
+              "obs_rate": 0.8,
+              "n": 15
+            }
+          ]
+        }
+      },
+      "sample_level": {
+        "n": 707,
+        "pos": 107,
+        "auroc": 0.7584,
+        "auroc_ci": [
+          0.6691,
+          0.8333
+        ],
+        "auprc": 0.3531
+      }
+    },
+    "late_stack_logit": {
+      "patient_level": {
+        "n": 150,
+        "pos": 50,
+        "auroc": 0.7366,
+        "auroc_ci": [
+          0.6478,
+          0.8138
+        ],
+        "auprc": 0.5303,
+        "auprc_ci": [
+          0.412,
+          0.6842
+        ],
+        "operating_points": {
+          "youden": {
+            "threshold": 0.2707702830615208,
+            "sensitivity": 0.72,
+            "specificity": 0.7
+          },
+          "at_specificity_0.8": {
+            "threshold": 0.317307542460912,
+            "sensitivity": 0.58,
+            "specificity": 0.8
+          },
+          "at_specificity_0.9": {
+            "threshold": 0.368746370906829,
+            "sensitivity": 0.26,
+            "specificity": 0.9
+          }
+        },
+        "calibration": {
+          "brier": 0.20249469565680342,
+          "calibration_slope": 1.6255800207363176,
+          "calibration_intercept": 0.9291605388037667,
+          "reliability_bins": [
+            {
+              "mean_pred": 0.134,
+              "obs_rate": 0.0,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.165,
+              "obs_rate": 0.133,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.18,
+              "obs_rate": 0.2,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.204,
+              "obs_rate": 0.333,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.232,
+              "obs_rate": 0.133,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.268,
+              "obs_rate": 0.4,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.311,
+              "obs_rate": 0.467,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.342,
+              "obs_rate": 0.533,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.377,
+              "obs_rate": 0.667,
+              "n": 15
+            },
+            {
+              "mean_pred": 0.472,
+              "obs_rate": 0.467,
+              "n": 15
+            }
+          ]
+        }
+      },
+      "sample_level": {
+        "n": 707,
+        "pos": 107,
+        "auroc": 0.7309,
+        "auroc_ci": [
+          0.641,
+          0.8087
+        ],
+        "auprc": 0.3105
+      }
+    }
+  },
+  "clinical_baseline_current_grade": {
+    "sample_level_auroc": 0.6514,
+    "patient_level_auroc_max_grade": 0.687,
+    "note": "pathologist grade of the biopsy (0-4 code) used directly as the risk score; no other clinical variables in the release"
+  },
+  "by_time_before_event": {
+    "cnv_only": {
+      "0-12m": {
+        "n_progressor_samples": 54,
+        "auroc": 0.6403
+      },
+      "12-36m": {
+        "n_progressor_samples": 29,
+        "auroc": 0.6163
+      },
+      ">36m": {
+        "n_progressor_samples": 24,
+        "auroc": 0.5766
+      },
+      "Progress_in_1": {
+        "n_pos": 11,
+        "n": 707,
+        "auroc": 0.6283
+      },
+      "Progress_in_2": {
+        "n_pos": 35,
+        "n": 707,
+        "auroc": 0.7125
+      },
+      "Progress_in_3": {
+        "n_pos": 64,
+        "n": 707,
+        "auroc": 0.6462
+      },
+      "Progress_in_4": {
+        "n_pos": 86,
+        "n": 707,
+        "auroc": 0.6219
+      },
+      "Progress_in_5": {
+        "n_pos": 95,
+        "n": 707,
+        "auroc": 0.6275
+      }
+    },
+    "coattention_fusion": {
+      "0-12m": {
+        "n_progressor_samples": 54,
+        "auroc": 0.7986
+      },
+      "12-36m": {
+        "n_progressor_samples": 29,
+        "auroc": 0.4939
+      },
+      ">36m": {
+        "n_progressor_samples": 24,
+        "auroc": 0.649
+      },
+      "Progress_in_1": {
+        "n_pos": 11,
+        "n": 707,
+        "auroc": 0.8102
+      },
+      "Progress_in_2": {
+        "n_pos": 35,
+        "n": 707,
+        "auroc": 0.6533
+      },
+      "Progress_in_3": {
+        "n_pos": 64,
+        "n": 707,
+        "auroc": 0.6214
+      },
+      "Progress_in_4": {
+        "n_pos": 86,
+        "n": 707,
+        "auroc": 0.572
+      },
+      "Progress_in_5": {
+        "n_pos": 95,
+        "n": 707,
+        "auroc": 0.5827
+      }
+    },
+    "early_fusion": {
+      "0-12m": {
+        "n_progressor_samples": 54,
+        "auroc": 0.8385
+      },
+      "12-36m": {
+        "n_progressor_samples": 29,
+        "auroc": 0.5653
+      },
+      ">36m": {
+        "n_progressor_samples": 24,
+        "auroc": 0.6831
+      },
+      "Progress_in_1": {
+        "n_pos": 11,
+        "n": 707,
+        "auroc": 0.8696
+      },
+      "Progress_in_2": {
+        "n_pos": 35,
+        "n": 707,
+        "auroc": 0.7519
+      },
+      "Progress_in_3": {
+        "n_pos": 64,
+        "n": 707,
+        "auroc": 0.6893
+      },
+      "Progress_in_4": {
+        "n_pos": 86,
+        "n": 707,
+        "auroc": 0.6603
+      },
+      "Progress_in_5": {
+        "n_pos": 95,
+        "n": 707,
+        "auroc": 0.6725
+      }
+    },
+    "image_only": {
+      "0-12m": {
+        "n_progressor_samples": 54,
+        "auroc": 0.8297
+      },
+      "12-36m": {
+        "n_progressor_samples": 29,
+        "auroc": 0.516
+      },
+      ">36m": {
+        "n_progressor_samples": 24,
+        "auroc": 0.8044
+      },
+      "Progress_in_1": {
+        "n_pos": 11,
+        "n": 707,
+        "auroc": 0.8306
+      },
+      "Progress_in_2": {
+        "n_pos": 35,
+        "n": 707,
+        "auroc": 0.6864
+      },
+      "Progress_in_3": {
+        "n_pos": 64,
+        "n": 707,
+        "auroc": 0.6444
+      },
+      "Progress_in_4": {
+        "n_pos": 86,
+        "n": 707,
+        "auroc": 0.6327
+      },
+      "Progress_in_5": {
+        "n_pos": 95,
+        "n": 707,
+        "auroc": 0.6246
+      }
+    },
+    "intermediate_fusion": {
+      "0-12m": {
+        "n_progressor_samples": 54,
+        "auroc": 0.8117
+      },
+      "12-36m": {
+        "n_progressor_samples": 29,
+        "auroc": 0.5499
+      },
+      ">36m": {
+        "n_progressor_samples": 24,
+        "auroc": 0.6516
+      },
+      "Progress_in_1": {
+        "n_pos": 11,
+        "n": 707,
+        "auroc": 0.8234
+      },
+      "Progress_in_2": {
+        "n_pos": 35,
+        "n": 707,
+        "auroc": 0.7314
+      },
+      "Progress_in_3": {
+        "n_pos": 64,
+        "n": 707,
+        "auroc": 0.6797
+      },
+      "Progress_in_4": {
+        "n_pos": 86,
+        "n": 707,
+        "auroc": 0.625
+      },
+      "Progress_in_5": {
+        "n_pos": 95,
+        "n": 707,
+        "auroc": 0.6296
+      }
+    },
+    "late_mean": {
+      "0-12m": {
+        "n_progressor_samples": 54,
+        "auroc": 0.8445
+      },
+      "12-36m": {
+        "n_progressor_samples": 29,
+        "auroc": 0.5556
+      },
+      ">36m": {
+        "n_progressor_samples": 24,
+        "auroc": 0.8098
+      },
+      "Progress_in_1": {
+        "n_pos": 11,
+        "n": 707,
+        "auroc": 0.816
+      },
+      "Progress_in_2": {
+        "n_pos": 35,
+        "n": 707,
+        "auroc": 0.7193
+      },
+      "Progress_in_3": {
+        "n_pos": 64,
+        "n": 707,
+        "auroc": 0.6711
+      },
+      "Progress_in_4": {
+        "n_pos": 86,
+        "n": 707,
+        "auroc": 0.6577
+      },
+      "Progress_in_5": {
+        "n_pos": 95,
+        "n": 707,
+        "auroc": 0.6525
+      }
+    },
+    "late_stack_logit": {
+      "0-12m": {
+        "n_progressor_samples": 54,
+        "auroc": 0.8121
+      },
+      "12-36m": {
+        "n_progressor_samples": 29,
+        "auroc": 0.5128
+      },
+      ">36m": {
+        "n_progressor_samples": 24,
+        "auroc": 0.8118
+      },
+      "Progress_in_1": {
+        "n_pos": 11,
+        "n": 707,
+        "auroc": 0.7808
+      },
+      "Progress_in_2": {
+        "n_pos": 35,
+        "n": 707,
+        "auroc": 0.6715
+      },
+      "Progress_in_3": {
+        "n_pos": 64,
+        "n": 707,
+        "auroc": 0.6285
+      },
+      "Progress_in_4": {
+        "n_pos": 86,
+        "n": 707,
+        "auroc": 0.62
+      },
+      "Progress_in_5": {
+        "n_pos": 95,
+        "n": 707,
+        "auroc": 0.6181
+      }
+    }
+  }
+}
