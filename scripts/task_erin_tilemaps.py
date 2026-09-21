@@ -87,12 +87,13 @@ for k in chosen:
     if openslide is not None and sp and os.path.exists(sp):
         try:
             sl = openslide.OpenSlide(sp); W0, H0 = sl.dimensions; tw = 2500
-            thumb = np.asarray(sl.get_thumbnail((tw, int(tw * H0 / W0))).convert("RGB")); scale = thumb.shape[1] / W0   # thumbnail never reads full-res
+            thumb = np.asarray(sl.get_thumbnail((tw, int(tw * H0 / W0))).convert("RGB"))
+            ds_lvl = sl.level_downsamples[int(attrs.get("level", 0))]   # coords are stored in the extraction LEVEL's pixel space
+            scale = thumb.shape[1] / W0 * ds_lvl   # level-coords -> level-0 -> thumbnail
         except Exception as e: print("openslide fail", e, flush=True)
     if thumb is None:
         W, H = coords.max(0) + 224; scale = 2000.0 / max(W, H); thumb = np.full((int(H * scale) + 1, int(W * scale) + 1, 3), 255, np.uint8)
-    # level0 coords assumed (extraction stored level-0 tile origins at mpp 0.5); tile size 224 at that level
-    xy = (coords * scale).astype(int); ts = max(1, int(224 * scale * (attrs.get("level", 1) and 2 ** int(attrs.get("level", 1)))))
+    xy = (coords * scale).astype(int); ts = max(1, int(224 * scale))   # 224-px tiles in level coords
     fig, axes = plt.subplots(1, 5, figsize=(22, 5)); axes[0].imshow(thumb); axes[0].set_title(f"{rec['h5'][:8]}  section={rec['section_grade']}  case-max={rec['case_max']}", fontsize=9)
     def overlay(ax, vals, cmap, vmin, vmax, title):
         ax.imshow(thumb, alpha=0.35)
