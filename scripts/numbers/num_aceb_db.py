@@ -44,6 +44,30 @@ pa = pt[pt.pid.isin(pids)].sort_values("d")
 res["pathology_db"] = {"participants_with_reports": int(pa.pid.nunique()), "reports": len(pa), "reports_with_jury_grade": int(pa.grade.notna().sum()),
                        "reports_per_participant": mr(pa.groupby("pid").size()), "date_min": str(pa.d.min().date()) if pa.d.notna().any() else None, "date_max": str(pa.d.max().date()) if pa.d.notna().any() else None,
                        "grade_dist_all_reports": pa.grade.value_counts().to_dict()}
+# trial-entry date per participant = earliest AFI/WLE date of its official case(s)
+entry = {}
+for _, r in ac.iterrows():
+    d0 = min([x for x in (pd.to_datetime(r["Date AFI"], dayfirst=True, errors="coerce"), pd.to_datetime(r["Date WLE"], dayfirst=True, errors="coerce")) if pd.notna(x)], default=pd.NaT)
+    for p in case2pid.get(r.study_number_normalized, ()): entry[p] = min(entry.get(p, d0), d0) if pd.notna(d0) else entry.get(p, pd.NaT)
+def timeline(frame, tag):
+    rows = []
+    for pid, g in frame[frame.grade.notna()].groupby("pid"):
+        g = g.sort_values("d"); seq = g.grade.map(ORD).values; dates = g.d.values
+        base = int(seq[0]); mx = int(seq.max()); hg = np.where(seq >= 3)[0]
+        first_hgd = dates[hg[0]] if len(hg) else None
+        prevalent = base >= 3; progressed = (not prevalent) and len(hg) > 0
+        tte = (pd.Timestamp(first_hgd) - pd.Timestamp(dates[0])).days if progressed else None
+        fu = (pd.Timestamp(dates[-1]) - pd.Timestamp(dates[0])).days
+        rows.append({"pid": pid, "n_reports": len(g), "baseline": INV[base], "max": INV[mx], "prevalent_HGD_plus": prevalent, "progressed_to_HGD_plus": progressed, "tte_days": tte, "followup_days": fu})
+    tl = pd.DataFrame(rows)
+    return tl, {"participants_with_graded_reports": len(tl), "baseline_grade": tl.baseline.value_counts().to_dict(), "max_grade": tl["max"].value_counts().to_dict(),
+                "prevalent_HGD_or_cancer_at_baseline": int(tl.prevalent_HGD_plus.sum()), "progressed_to_HGD_or_cancer": int(tl.progressed_to_HGD_plus.sum()),
+                "non_progressors": int((~tl.prevalent_HGD_plus & ~tl.progressed_to_HGD_plus).sum()),
+                "time_to_progression_days": mr(tl[tl.progressed_to_HGD_plus].tte_days), "followup_days_nonprogressors": mr(tl[~tl.prevalent_HGD_plus & ~tl.progressed_to_HGD_plus].followup_days),
+                "reports_per_participant": mr(tl.n_reports), "definition": tag}
+pa_entry = pa[pa.apply(lambda r: pd.notna(entry.get(r.pid, pd.NaT)) and r.d >= entry[r.pid] - pd.Timedelta(days=90), axis=1)]
+tl_e, res["derived_timeline_from_trial_entry"] = timeline(pa_entry, "reports from 90 days before the earliest AFI/WLE trial date onward; baseline = first such report")
+res["derived_timeline_from_trial_entry"]["participants_with_entry_date"] = int(sum(pd.notna(v) for v in entry.values()))
 rows = []
 for pid, g in pa[pa.grade.notna()].groupby("pid"):
     g = g.sort_values("d"); seq = g.grade.map(ORD).values; dates = g.d.values
@@ -59,7 +83,7 @@ res["derived_timeline"] = {"participants_with_graded_reports": len(tl), "baselin
                            "non_progressors": int((~tl.prevalent_HGD_plus & ~tl.progressed_to_HGD_plus).sum()),
                            "time_to_progression_days": mr(tl[tl.progressed_to_HGD_plus].tte_days), "followup_days_nonprogressors": mr(tl[~tl.prevalent_HGD_plus & ~tl.progressed_to_HGD_plus].followup_days),
                            "reports_per_participant": mr(tl.n_reports),
-                           "note": "grades are DB-corpus LLM-jury labels (majority of >=4 jurors); 'progression' = first HGD/CANCER report after a non-HGD baseline; compare with Leanne's 11/93/30 split"}
+                           "note": "ALL reports incl. pre-trial history back to 1996; grades are DB-corpus LLM-jury labels (majority of >=4 jurors); progression = first HGD/CANCER report after a non-HGD baseline"}
 # hgd table / surveillance study membership
 h = pd.read_parquet(E + "/hgd_pathology_table.parquet"); h["pid"] = h.participant_id.astype(str)
 res["hgd_pathology_table_rows_for_aceb"] = int(h.pid.isin(pids).sum())
