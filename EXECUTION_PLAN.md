@@ -213,6 +213,20 @@ On return: read results against pre-registrations; deviations to log: none yet.
   Per the pre-registered rule the full 1,538-slide run is submitted
   (task conch_zeroshot_all) to place CONCH beside the trained slide-report
   model (0.889) and supervised MIL (0.926) on identical slides.
+  D (tile-level training vs ABMIL, results/numbers/tile_level.json; 1,538 slides,
+  frozen folds, 3 seeds, 4 epochs, 2,000-tile cap): prediction HALF right.
+  Binary screening: tile-level (mean/top-10% aggregation) is slightly BELOW
+  ABMIL under both label schemes — case-max 0.845 vs 0.871 (delta CI
+  [-0.050, -0.003]), section 0.842 vs 0.860 ([-0.042, +0.003]); max-pooling
+  is clearly worse (0.78-0.81). Six-class: under CASE-MAX labels tile-level
+  loses (0.739 vs 0.764, CI excludes 0) — every tile inherits the report's
+  noise; under SECTION labels tile-level WINS (0.755 vs 0.722, delta
+  [+0.010, +0.057], CI excludes 0) — cleaner labels are worth more to a
+  tile classifier than to a bag model. Best six-class overall remains ABMIL
+  on case-max (0.764) by a hair over tile-level on section labels (0.755).
+  Reading: tile-level training is a legitimate alternative (within 0.02-0.03
+  AUC), gives true per-tile grade maps for free, and is the model of choice
+  once section-resolved labels exist; it is not a route to a better screener.
 - 2026-09-14 (joint, Rehan: "go" on the Astra Tier-1 recompute batch — the
   LAST compute gate before writing; writing starts in parallel, not after):
   2.40 overlap audit (A14; scripts/task_overlap_audit.py): accession-number
