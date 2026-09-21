@@ -191,6 +191,15 @@ On return: read results against pre-registrations; deviations to log: none yet.
   MedGemma-27B as ERIN juror (results/numbers/num_medgemma.json): 99.7%
   agreement with the 8-model consensus, sensitivity 1.0 on 79 adjudicated
   cancers; MedGemma-4B unusable (25% parse failures, under-calls cancer as HGD).
+  UPDATE (same evening): C2 fair arm — CNV-ONLY prompt (no grade): MedGemma-27B
+  patient AUROC 0.645 (sample 0.597) vs trained CNV-only model 0.663 (0.620):
+  a zero-shot LLM reading chromosome-arm gains/losses as text matches a trained
+  linear model to within noise, and grade+CNV text (0.751) exceeds either
+  alone (grade 0.687) — the same complementarity the LRT found (p 0.007),
+  reproduced without any training. B pilot, MedGemma-4B: 438/768 tiles
+  unparseable; on the rest only NDBE/HGD ever emitted; slide-level AUROC for
+  LGD+ 0.51 — gate (0.70) FAILED; image-LLM work stops here per the
+  pre-registration. 27B image pilot pending.
 - 2026-09-14 (joint, Rehan: "go" on the Astra Tier-1 recompute batch — the
   LAST compute gate before writing; writing starts in parallel, not after):
   2.40 overlap audit (A14; scripts/task_overlap_audit.py): accession-number
