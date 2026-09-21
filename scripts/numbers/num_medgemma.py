@@ -6,7 +6,7 @@ from collections import Counter
 import pandas as pd
 T = "/mnt/scratche/slow/fmlab/zuberi01/phd/thesis"; OUT = os.environ.get("OUTDIR", ".")
 ORD = ["NDBE", "IND", "LGD", "HGD", "CANCER"]
-fin = pd.read_csv(T + "/labeller/erin_labels_jury_final.csv", dtype=str).set_index("CaseName")
+fin = pd.read_csv(T + "/labeller/erin_labels_jury_final.csv", dtype=str).drop_duplicates("CaseName").set_index("CaseName")
 adj = pd.read_csv(T + "/labeller/adjudications.csv", dtype=str).drop_duplicates("CaseName").set_index("CaseName")
 jur = {}
 for f in glob.glob(T + "/labeller/llm_full/llm_grades_*.csv"):
