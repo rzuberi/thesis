@@ -1,0 +1,57 @@
+{
+  "n_patients": 1266,
+  "progressors": 181,
+  "baseline_index_grade_auroc": 0.6226,
+  "baseline_ci": [
+    0.5878,
+    0.6592
+  ],
+  "models": {
+    "medgemma_27b": {
+      "n_scored": 1266,
+      "parse_fail": 0,
+      "auroc": 0.5925,
+      "auroc_ci": [
+        0.5459,
+        0.637
+      ],
+      "auroc_within_index_grade_NDBE_only": 0.524,
+      "risk_by_outcome_median": {
+        "progressors": 15.0,
+        "non": 15.0
+      },
+      "reports_shown_median": 1.0
+    },
+    "qwen3_32b": {
+      "n_scored": 1266,
+      "parse_fail": 0,
+      "auroc": 0.6251,
+      "auroc_ci": [
+        0.5765,
+        0.6712
+      ],
+      "auroc_within_index_grade_NDBE_only": 0.5511,
+      "risk_by_outcome_median": {
+        "progressors": 10.0,
+        "non": 10.0
+      },
+      "reports_shown_median": 1.0
+    },
+    "gemma3_27b": {
+      "n_scored": 1266,
+      "parse_fail": 0,
+      "auroc": 0.6322,
+      "auroc_ci": [
+        0.5858,
+        0.6769
+      ],
+      "auroc_within_index_grade_NDBE_only": 0.5612,
+      "risk_by_outcome_median": {
+        "progressors": 25.0,
+        "non": 18.0
+      },
+      "reports_shown_median": 1.0
+    }
+  },
+  "reference_trained_text_model_db_corpus": 0.696
+}

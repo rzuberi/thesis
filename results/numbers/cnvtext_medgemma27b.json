@@ -1,0 +1,21 @@
+{
+  "model": "medgemma:27b",
+  "n_samples": 707,
+  "parsed": 707,
+  "sample_auroc": 0.6764,
+  "patient_auroc_maxrisk": 0.7505,
+  "risk_dist": {
+    "count": 707.0,
+    "mean": 23.05,
+    "std": 20.65,
+    "min": 1.0,
+    "25%": 10.0,
+    "50%": 15.0,
+    "75%": 25.0,
+    "max": 85.0
+  },
+  "reference_cnv_only_model": {
+    "patient": 0.663,
+    "sample": 0.6195
+  }
+}
