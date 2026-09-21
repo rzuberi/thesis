@@ -200,6 +200,10 @@ On return: read results against pre-registrations; deviations to log: none yet.
   unparseable; on the rest only NDBE/HGD ever emitted; slide-level AUROC for
   LGD+ 0.51 — gate (0.70) FAILED; image-LLM work stops here per the
   pre-registration. 27B image pilot pending.
+  27B image pilot DONE: 382/768 tiles unparseable and every parsed tile called
+  "NDBE" — AUROC exactly 0.50; gate failed. Conclusion for B: zero-shot general
+  medical VLMs cannot grade Barrett's H&E tiles; the pathology-specific route
+  (CONCH/TITAN, or our trained slide–report model at 0.889) is the only one.
 - 2026-09-14 (joint, Rehan: "go" on the Astra Tier-1 recompute batch — the
   LAST compute gate before writing; writing starts in parallel, not after):
   2.40 overlap audit (A14; scripts/task_overlap_audit.py): accession-number
