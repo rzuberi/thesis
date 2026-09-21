@@ -1,0 +1,144 @@
+{
+  "official_cases": 153,
+  "found_in_db": 125,
+  "participants": 125,
+  "official_case_dates": {
+    "AFI_min": "2017-05-18",
+    "AFI_max": "2020-02-18",
+    "WLE_min": "2017-06-28",
+    "WLE_max": "2020-01-20",
+    "AFI_by_year": {
+      "2017.0": 17,
+      "2018.0": 60,
+      "2019.0": 51,
+      "2020.0": 6
+    }
+  },
+  "seattle_histology_official": {
+    "IM": 101,
+    "LGD": 12,
+    "HGD": 12,
+    "ID": 6,
+    "IMC": 3
+  },
+  "endoscopies_db": {
+    "participants_with_endoscopy": 120,
+    "records": 1042,
+    "per_participant": {
+      "median": 8.0,
+      "min": 1.0,
+      "max": 24.0,
+      "n": 120
+    },
+    "date_min": "2009-08-20",
+    "date_max": "2026-08-17",
+    "ACE-B_tagged_records": 284,
+    "span_years_per_participant": {
+      "median": 3.392197125256674,
+      "min": 0.0,
+      "max": 15.88227241615332,
+      "n": 112
+    }
+  },
+  "pathology_db": {
+    "participants_with_reports": 123,
+    "reports": 1024,
+    "reports_with_jury_grade": 977,
+    "reports_per_participant": {
+      "median": 7.0,
+      "min": 2.0,
+      "max": 21.0,
+      "n": 123
+    },
+    "date_min": "1996-12-27",
+    "date_max": "2026-07-16",
+    "grade_dist_all_reports": {
+      "NDBE": 746,
+      "LGD": 84,
+      "IND": 67,
+      "HGD": 56,
+      "CANCER": 24
+    }
+  },
+  "derived_timeline_from_trial_entry": {
+    "participants_with_graded_reports": 115,
+    "baseline_grade": {
+      "NDBE": 85,
+      "HGD": 13,
+      "LGD": 10,
+      "IND": 4,
+      "CANCER": 3
+    },
+    "max_grade": {
+      "NDBE": 62,
+      "HGD": 19,
+      "LGD": 17,
+      "CANCER": 15,
+      "IND": 2
+    },
+    "prevalent_HGD_or_cancer_at_baseline": 16,
+    "progressed_to_HGD_or_cancer": 18,
+    "non_progressors": 81,
+    "time_to_progression_days": {
+      "median": 402.0,
+      "min": 56.0,
+      "max": 1657.0,
+      "n": 18
+    },
+    "followup_days_nonprogressors": {
+      "median": 1925.0,
+      "min": 0.0,
+      "max": 2997.0,
+      "n": 81
+    },
+    "reports_per_participant": {
+      "median": 4.0,
+      "min": 1.0,
+      "max": 17.0,
+      "n": 115
+    },
+    "definition": "reports from 90 days before the earliest AFI/WLE trial date onward; baseline = first such report",
+    "participants_with_entry_date": 116
+  },
+  "derived_timeline": {
+    "participants_with_graded_reports": 123,
+    "baseline_grade": {
+      "NDBE": 84,
+      "LGD": 17,
+      "HGD": 11,
+      "IND": 8,
+      "CANCER": 3
+    },
+    "max_grade": {
+      "NDBE": 50,
+      "LGD": 27,
+      "HGD": 21,
+      "CANCER": 15,
+      "IND": 10
+    },
+    "prevalent_HGD_or_cancer_at_first_report": 14,
+    "progressed_to_HGD_or_cancer": 22,
+    "non_progressors": 87,
+    "time_to_progression_days": {
+      "median": 778.0,
+      "min": 60.0,
+      "max": 6761.0,
+      "n": 22
+    },
+    "followup_days_nonprogressors": {
+      "median": 2878.0,
+      "min": 0.0,
+      "max": 9981.0,
+      "n": 87
+    },
+    "reports_per_participant": {
+      "median": 7.0,
+      "min": 1.0,
+      "max": 21.0,
+      "n": 123
+    },
+    "note": "ALL reports incl. pre-trial history back to 1996; grades are DB-corpus LLM-jury labels (majority of >=4 jurors); progression = first HGD/CANCER report after a non-HGD baseline"
+  },
+  "hgd_pathology_table_rows_for_aceb": 65,
+  "barretts_surveillance_study_rows_for_aceb": 2
+}

@@ -20,7 +20,7 @@ Cohort key: **SWG** = Cambridge Barrett's progression cohort (H&E + sWGS); **ERI
 - **SWG:** Cambridge (Addenbrooke's) surveillance; biopsy dates 1994–2017.
 - **ERIN:** Cambridge University Hospitals histopathology; report dates 2014–2025 (busiest years [('2024', 1168), ('2022', 989), ('2023', 941)]).
 - **OCCAMS:** UK multi-centre consortium; diagnosis years for the imaged cases 2010–2019. Contributing centres per case are not in our master extract.
-- **MISSING** — ACE-B site(s) and dates — endoscopy dates exist in the metadata (`Date AFI`, `Date WLE`) but were not summarised; ACE-B is a Fitzgerald-lab trial, sites to confirm with Tim Somerset.
+- **ACE-B:** Addenbrooke's (Rehan); trial endoscopies (AFI/WLE dates on the official case list) 2017-05-18 to 2020-02-18, by year {'2017.0': 17, '2018.0': 60, '2019.0': 51, '2020.0': 6}; in the Barrett's database the same participants have endoscopies from 2009-08-20 to 2026-08-17 (surveillance before and after the trial). *(num_aceb_db)*
 
 ## 3. Tissue and cancer type breakdown
 
@@ -49,14 +49,14 @@ Cohort key: **SWG** = Cambridge Barrett's progression cohort (H&E + sWGS); **ERI
 - **ERIN grade:** NDBE vs LGD+ from the report; source = 8-model LLM jury. Train-eligible reports 6867, LGD+ 1506 (21.9%); at slide level 528/2,153 positive (24.5%).
 - **ERIN progression:** index NDBE/IND report → any later HGD or cancer report (jury labels); 181/1266 patients (14.3%). Slide-level progression cohort 28/153.
 - **OCCAMS survival:** overall survival from the master table (vital_status/deceased_survival_days); 58 deaths / 87 in the fusion cohort. **TRG response:** Mandard TRG on the resection, 41 responders (TRG1–3) / 131 with an OGD slide (31%).
-- **MISSING** — ACE-B labels — the trial endpoint definition is not in our metadata.
+- **ACE-B (derived from the Barrett's-database scrape, LLM-jury grades on every report from trial entry onward):** of 115 participants with graded reports, baseline grade {'NDBE': 85, 'HGD': 13, 'LGD': 10, 'IND': 4, 'CANCER': 3}; **prevalent HGD/cancer at entry 16, progressed to HGD/cancer 18, non-progressors 81** — close to Leanne's 30 / 11 / 93 (our progressor count is higher because DB follow-up runs to 2026 and grades are LLM-derived, not trial-adjudicated). Leanne's split is the label to use; ours is the cross-check.
 
 ## 7. Time structure: time points, follow-up, censoring
 
 - **SWG:** samples per patient median 3 (range 1–19, n=150); gap between consecutive biopsies median 708 days (range 1–1981 days, n=707); first-to-last sample span, progressors median 24.343 months (range 0–135.742 months, n=50), non-progressors median 0 months (range 0–157.654 months, n=100). Non-progressors are censored at their last biopsy.
 - **ERIN:** reports per patient median 2 (range 1–21, n=2537); 1459 patients have ≥2 reports; follow-up span for them median 3.77002 y (range 0–10.308 y, n=1459). Progression cohort v3: time to HGD+ in progressors median 245 days (range 9–3227 days, n=181), follow-up in non-progressors median 1530 days (range 4–3765 days, n=1085) (censored at last report).
 - **OCCAMS:** single time point per case (diagnostic biopsy and/or resection); survival: vital_status present for 145 slide cases, death dates 94, last-known-alive days 50.
-- **MISSING** — ACE-B follow-up — trial visit schedule not in our metadata.
+- **ACE-B (DB-derived):** 120 participants with endoscopies in the database, median 8 (range 1–24, n=120) per participant; pathology reports from trial entry median 4 (range 1–17, n=115) per participant; time to progression median 402 days (range 56–1657 days, n=18); follow-up of non-progressors median 1925 days (range 0–2997 days, n=81) (≈5.3 y median).
 
 ## 8. Grade distribution where a grade exists
 
@@ -108,8 +108,8 @@ Cohort key: **SWG** = Cambridge Barrett's progression cohort (H&E + sWGS); **ERI
 
 ## 14. Case-control matching
 
-- PROJECT_STATE calls it an 'internal matched cohort' (line above: 'Do not generalise beyond this internal matched cohort').
-- **MISSING** — what the matching variables were (age/sex/segment length/follow-up?) — not in the release files I can read; ask Leanne or check the original cohort paper (Killcoyne 2020 design).
+- Two different things are called 'matching' here. (a) **Slide↔sWGS file matching** (Rehan's Dec 2025–Feb 2026 work, `slide_matching.xlsx`, `matched_manifest.csv`): every one of the 707 release rows has a paired image and CNV sample; `matching_sensitivity.csv` shows the effect of match strictness — restricting to exact matches leaves 532 rows / 111 patients / 24 positives and late-mean AUC 0.723 (image 0.672, CNV 0.645), i.e. the fusion pattern holds but with fewer positives. (b) **Case-control matching in the epidemiological sense** — were non-progressors *selected* to resemble progressors on age/sex/segment length? PROJECT_STATE calls SWG an 'internal matched cohort' and Killcoyne 2020's discovery set was 45 progressors vs 43 non-progressors by design, which suggests selection rather than a consecutive series.
+- **MISSING** — (b) only: whether SWG non-progressors were selected to match progressors, and on what — ask Leanne; matters for how the 33% progressor rate (vs <1%/yr in practice) is described.
 
 ## 15. CNV: platform, resolution, samples, timing
 
@@ -151,7 +151,7 @@ Cohort key: **SWG** = Cambridge Barrett's progression cohort (H&E + sWGS); **ERI
 | cnv_only | 0.07 | 141/150 | 0.778 | 0.9971 | 0.05 | 0.74/0.58 |
 | early_fusion | 0.18 | 130/150 | 0.900 | 0.9989 | 0.05 | 0.80/0.60 |
 - Read: at sensitivity 0.95, specificity is the fraction of non-progressors the model would release from intensified surveillance; NPV at 0.5%/yr shows what that means at real-world progression rates (where almost any test has NPV > 0.99, so specificity, not NPV, is the discriminating number). Thresholds are set post hoc on out-of-fold predictions; in a deployment they would be fixed on training folds.
-- **MISSING** — field-standard operating point to cite — needs a quick literature check (TissueCypher reports a high-risk class with sensitivity/specificity; Killcoyne 2020 reports risk classes); I have not verified their exact numbers and will not quote them from memory.
+- **What the field reports (checked 21 Sep 2026):** TissueCypher's independent blinded validation (Davison et al. 2020) gives sensitivity 29% / specificity 86% for its 3-tier risk class and 40% / 86% for 2-tier at 5 years; its clinical-utility study (Diehl et al. 2021) reports sensitivity 62.3%, specificity 79.8%, prevalence-adjusted NPV 97.4%. Killcoyne 2020 reports low/moderate/high risk classes rather than a single operating point. So the field's convention is **rule-in** (high specificity ~0.80–0.86, sensitivity 0.3–0.6). Our late-mean model at specificity 0.80 has sensitivity 0.62 — the same operating region as TissueCypher's 62%/80%. Recommendation: report both — spec at sens 0.95 (our rule-out standard) and sens at spec 0.80/0.86 (comparable to TissueCypher).
 
 ## 20. Calibration
 
@@ -174,7 +174,9 @@ Cohort key: **SWG** = Cambridge Barrett's progression cohort (H&E + sWGS); **ERI
 ## 23. Interpretability outputs
 
 - CNV: per-arm importances mapped to genes exist (`data/lgd2_cnv_feature_gene_annotation.csv`; TP53/EGFR/CCND1 arms).
-- **MISSING** — attention heat-maps / top patches for the histology arm — attention weights were not saved by the release training; producing them needs a GPU re-inference pass over the 707 slides (a few GPU-hours).
+- **Exists:** 5 attention overlays for the image-only ABMIL from the July hardening analysis (`chapter1_scientific_hardening_20260727/attention_overlays/`: cases AD0496, PR1_HIN_043, AHM1146, AD0425, PR1_ADH_069; 256 tiles each; top-10% attention share 0.11–0.45). The release stores 256-tile subsamples with level-2 coordinates and `model.pt` state-dicts for every family, so re-inference is cheap.
+- **DONE 21 Sep — SWG same-slide, cross-model maps** (`feasibility/runs/swg_heatmaps/output/maps/`, 11 slides: the 5 prior cases + 3 top-scored progressors + 1 missed progressor + 2 false-positive non-progressors; each panel = tissue thumbnail, image-only attention, image-only per-tile risk, intermediate-fusion attention, CNV-conditioned co-attention, early-fusion per-tile risk). Tile-ranking agreement (mean Spearman over slides): image-only vs early-fusion **per-tile risk 0.903** (the two models see the same tiles as risky); attention image-only vs intermediate 0.613, vs co-attention 0.41; **attention vs per-tile risk 0.023** — attention weight and tile risk are unrelated, i.e. 'where the model looks' is not 'what the model calls dangerous', which is the argument for tile-level grade maps rather than attention maps. Caveat: the release holds only 256 tiles per slide, so maps are sparse.
+- **Running (submitted 21 Sep):** (i) ERIN tile-level grade maps — six-class MIL trained under case-max and under section labels, then every tile scored individually (per-tile grade, expected grade on a 0–5 sliding scale, attention) on the same 12 held-out slides for both models (`scripts/task_erin_tilemaps.py`); (ii) SWG same-slide comparison across release families (image-only attention, co-attention CNV-conditioned attention, per-tile risk for early fusion) on the 5 existing cases plus additional progressors — being written.
 
 ## 24. What changed since the last lab presentation
 
@@ -202,6 +204,7 @@ Cohort key: **SWG** = Cambridge Barrett's progression cohort (H&E + sWGS); **ERI
 - Our May 2026 metadata match found 153 study cases / 111 patient codes in the Barrett's database (Seattle histology {'IM': 101, 'LGD': 12, 'HGD': 12, 'ID': 6, 'IMC': 3}) — these counts differ from Leanne's 134/294 and need reconciling once her sample list arrives.
 - **Plan (validation only, no training):** (1) featurise the scanned H&E with the identical UNI2 pipeline (20×/224 px; ~48 s/slide ⇒ under 1 GPU-h for the ~36–46 minimum slides, ~4 GPU-h for all 294); (2) obtain CNV from Dr di Pietro and **re-derive the SWG CNV representation at matched resolution** — 7× reads must be down-sampled or re-binned to the 0.4×/50 kb pipeline, otherwise the CNV arm sees a depth shift; (3) apply the frozen SWG image-only, CNV-only and late-mean models zero-shot; report AUROC/AUPRC and specificity at the SWG-fixed sensitivity-0.95 threshold (item 19). Minimum imaging plan from the proposal: 11 progressors (pre-cancer time point) + 20–25 matched non-progressors + optionally 5–10 prevalent HGD/IMC ≈ 36–46 slides.
 - **What 11 progressors can and cannot show:** with 11 positives and ~25–93 negatives the 95% CI on an AUROC near 0.75 is roughly ±0.15, so ACE-B can confirm that the model transfers (AUROC clearly above 0.5) but **cannot** decide whether fusion beats image-only (a 0.04 difference is far below detectability). The pre-registration should say so. Two further shifts to declare up front: scanner/format (Aperio .svs vs the SWG Hamamatsu .ndpi) and sequencing depth.
+- **From the database scrape (num_aceb_db):** 125 of the 153 official cases resolve to a DB participant; 120 have endoscopy records (median 8), 123 have pathology reports (1,024 in total, 977 jury-graded). Anchored at trial entry: 16 prevalent HGD/cancer, 18 progressors (median 402.0 days to progression), 81 non-progressors with median 1925.0 days follow-up — so the DB can supply dates, grades and follow-up for the validation set even before Dr di Pietro's tables arrive; per-participant timeline in `feasibility/runs/num_aceb_db_v2/output/aceb_participant_timeline.csv` (cluster).
 - **MISSING** — timing — depends on scanning completion and Dr di Pietro releasing the CNV; nothing else to compute until slides arrive.
 
 # D. ERIN labelling (LLM jury)
@@ -229,7 +232,8 @@ Cohort key: **SWG** = Cambridge Barrett's progression cohort (H&E + sWGS); **ERI
 
 ## 30. Fine-tuned MedGemma vs zero-shot
 
-- **MISSING** — never run. MedGemma appears in the plan only as 'if pullable' (2.18); no fine-tuning, no held-out labelled set. If wanted: the 78 adjudicated + future pathologist labels are the only human-labelled set; jury labels would be the training target.
+- **RUNNING (queued 21 Sep, 16:30).** MedGemma is in the ollama library after all (`medgemma` 4B, `medgemma:27b`, both pulled), so no Hugging Face gating is needed. Both models are grading all 7,149 ERIN reports as 9th/10th jurors with the identical whole-report prompt (`labeller/llm_grade_shard.py`, 8 shards × cuda+h200 twins each). ETA: 4B within ~1 h of starting, 27B ~2–4 h. Deliverable for Thursday: agreement with the 8-model jury and with the 78 adjudications, and whether the medical model changes any label the jury got wrong. Fine-tuning remains optional (see below).
+- **Original plan/estimate (kept for the record).** MedGemma (Google, Gemma-3-based, medically tuned; 4B multimodal and 27B text-only instruction-tuned) is gated on Hugging Face: the API sees the repos but the download was refused ('not in the authorized list') — **the HF account behind the cluster token must accept the Health AI Developer Foundations terms**; not available in the ollama library either. Once access is granted: zero-shot 27B as a 9th juror with the identical JSON prompt over 7,149 reports ≈ 3–4 GPU-h on one H200 (weights 54 GB bf16), sharded 8 ways ≈ 1 h wall; 4B ≈ 1 GPU-h. Deliverable: agreement with the 8-model jury and with the 78 adjudications, added to items 27–28. LoRA fine-tune of the 4B on the 6,867 jury-labelled reports (held-out = the 78 adjudicated + a jury-labelled fold) ≈ 3–4 GPU-h more. Both fit before Thursday IF access is granted by Tuesday.
 
 ## 31. Throughput and cost
 
