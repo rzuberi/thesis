@@ -1,0 +1,235 @@
+{
+  "medgemma27b": {
+    "rows": 7101,
+    "parse_fail": 0,
+    "na": 0,
+    "parse_rate": 0.9965,
+    "label_dist": {
+      "NDBE": 5209,
+      "CANCER": 889,
+      "HGD": 420,
+      "IND": 285,
+      "LGD": 273
+    },
+    "agreement_with_jury_train_eligible": {
+      "n": 6804,
+      "exact": 0.9974,
+      "binary_LGDplus": 0.9993,
+      "confusion_rows_jury_cols_medgemma": [
+        [
+          5066,
+          6,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          250,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          260,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          396,
+          5
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          814
+        ]
+      ]
+    },
+    "on_jury_unsure": {
+      "n": 195,
+      "dist": {
+        "NDBE": 96,
+        "CANCER": 42,
+        "IND": 26,
+        "HGD": 21,
+        "LGD": 10
+      }
+    },
+    "vs_adjudication_cancer": {
+      "n": 79,
+      "accuracy": 0.9873,
+      "sens": 1.0,
+      "spec": 0.9804
+    },
+    "pairwise_agreement_with_each_juror": {
+      "deepseek-r1_14b": 0.9613,
+      "gemma3_12b": 0.9688,
+      "gemma3_27b": 0.973,
+      "llama3.1_8b": 0.8803,
+      "mistral-small3.2": 0.952,
+      "phi4_14b": 0.9726,
+      "qwen3_14b": 0.9733,
+      "qwen3_32b": 0.9635
+    },
+    "disagree_with_confident_jury": {
+      "n_confident": 6621,
+      "n_disagree": 12,
+      "pattern": [
+        [
+          "jury=HGD|medgemma=CANCER",
+          4
+        ],
+        [
+          "jury=NDBE|medgemma=IND",
+          3
+        ],
+        [
+          "jury=LGD|medgemma=HGD",
+          1
+        ],
+        [
+          "jury=LGD|medgemma=IND",
+          1
+        ],
+        [
+          "jury=LGD|medgemma=NDBE",
+          1
+        ],
+        [
+          "jury=NDBE|medgemma=HGD",
+          1
+        ],
+        [
+          "jury=IND|medgemma=NDBE",
+          1
+        ]
+      ]
+    }
+  },
+  "medgemma": {
+    "rows": 7101,
+    "parse_fail": 1789,
+    "na": 0,
+    "parse_rate": 0.7458,
+    "label_dist": {
+      "NDBE": 4049,
+      "CANCER": 385,
+      "HGD": 382,
+      "LGD": 264,
+      "IND": 216
+    },
+    "agreement_with_jury_train_eligible": {
+      "n": 5128,
+      "exact": 0.9397,
+      "binary_LGDplus": 0.9881,
+      "confusion_rows_jury_cols_medgemma": [
+        [
+          3945,
+          50,
+          50,
+          3,
+          0
+        ],
+        [
+          0,
+          145,
+          1,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          181,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          14,
+          175,
+          0
+        ],
+        [
+          3,
+          1,
+          4,
+          179,
+          373
+        ]
+      ]
+    },
+    "on_jury_unsure": {
+      "n": 110,
+      "dist": {
+        "NDBE": 63,
+        "IND": 18,
+        "HGD": 16,
+        "LGD": 13
+      }
+    },
+    "vs_adjudication_cancer": {
+      "n": 58,
+      "accuracy": 0.8621,
+      "sens": 0.6,
+      "spec": 1.0
+    },
+    "pairwise_agreement_with_each_juror": {
+      "deepseek-r1_14b": 0.9228,
+      "gemma3_12b": 0.913,
+      "gemma3_27b": 0.9131,
+      "llama3.1_8b": 0.9075,
+      "mistral-small3.2": 0.8852,
+      "phi4_14b": 0.9154,
+      "qwen3_14b": 0.9213,
+      "qwen3_32b": 0.9101
+    },
+    "disagree_with_confident_jury": {
+      "n_confident": 5053,
+      "n_disagree": 270,
+      "pattern": [
+        [
+          "jury=CANCER|medgemma=HGD",
+          160
+        ],
+        [
+          "jury=NDBE|medgemma=LGD",
+          43
+        ],
+        [
+          "jury=NDBE|medgemma=IND",
+          43
+        ],
+        [
+          "jury=HGD|medgemma=LGD",
+          11
+        ],
+        [
+          "jury=CANCER|medgemma=NDBE",
+          3
+        ],
+        [
+          "jury=LGD|medgemma=NDBE",
+          3
+        ],
+        [
+          "jury=CANCER|medgemma=LGD",
+          2
+        ],
+        [
+          "jury=NDBE|medgemma=HGD",
+          2
+        ]
+      ]
+    }
+  }
+}
