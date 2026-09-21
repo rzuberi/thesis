@@ -22,11 +22,14 @@ keys = sorted(lab.h5); lab = lab.set_index("h5").loc[keys]; pat = dict(zip(keys,
 y_slide = {k: C_OF[g] for k, g in zip(keys, lab.worst_grade)}; y_case = {k: C_OF[g] for k, g in zip(keys, lab.case_max)}
 rng = np.random.RandomState(0); uniq = sorted(set(pat.values())); fold_of = {a: i % 5 for i, a in enumerate(rng.permutation(uniq))}
 # choose display slides: per class, prefer slides whose section grade differs from case-max (where the schemes disagree)
+SHOW_FOLD = int(os.environ.get("SHOW_FOLD", "4"))   # display slides come from ONE held-out fold; train on the other four
 rs = np.random.RandomState(1); chosen = []
+inf = lab[[fold_of[pat[k]] == SHOW_FOLD for k in lab.index]]
 for c in CLASSES:
-    cand = lab[(lab.worst_grade == c)]; dis = cand[cand.worst_grade != cand.case_max]; pool = dis if len(dis) >= NPC else cand
+    cand = inf[(inf.worst_grade == c)]; dis = cand[cand.worst_grade != cand.case_max]; pool = dis if len(dis) >= NPC else cand
     chosen += list(rs.choice(pool.index, min(NPC, len(pool)), replace=False))
-show_folds = {fold_of[pat[k]] for k in chosen}
+show_folds = {SHOW_FOLD}
+assert all(fold_of[pat[k]] == SHOW_FOLD for k in chosen)
 print("chosen", len(chosen), "held-out folds", sorted(show_folds), flush=True)
 bags = {}
 for k in keys:
