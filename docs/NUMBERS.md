@@ -249,10 +249,10 @@ Cohort key: **SWG** = Cambridge Barrett's progression cohort (H&E + sWGS); **ERI
 ## 34. Split, folds, metrics for both schemes
 
 - 5-fold patient-disjoint, frozen (patient hash seed 0), 3 seeds averaged, 1,538 slides / 1,155 patients. CIs are patient-clustered bootstraps (2,000).
-| scheme | AUROC [CI] | AUPRC [CI] | F1@0.5 | F1@Youden (sens/spec) |
-|---|---|---|---|---|
-| trained_on_case_labels | 0.8705 [0.8419, 0.8973] | 0.6238 [0.5555, 0.6894] | 0.5769 | 0.6385 (0.7598/0.8915) |
-| trained_on_slide_labels | 0.8604 [0.8291, 0.8886] | 0.6292 [0.559, 0.7027] | 0.6004 | 0.6018 (0.7293/0.8785) |
+| scheme | AUROC [CI] | AUPRC [CI] | F1@0.5 | F1@Youden (sens/spec) | spec @ sens 0.95 | spec @ sens 1.0 |
+|---|---|---|---|---|---|---|
+| trained_on_case_labels | 0.8705 [0.8419, 0.8973] | 0.6238 [0.5555, 0.6894] | 0.5769 | 0.6385 (0.7598/0.8915) | 0.314 | 0.0351 |
+| trained_on_slide_labels | 0.8604 [0.8291, 0.8886] | 0.6292 [0.559, 0.7027] | 0.6004 | 0.6018 (0.7293/0.8785) | 0.2949 | 0.0084 |
 
 | scheme (6-class) | macro AUROC [CI] | macro AUPRC | macro F1 [CI] | balanced acc |
 |---|---|---|---|---|
