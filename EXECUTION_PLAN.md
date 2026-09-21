@@ -162,6 +162,23 @@ On return: read results against pre-registrations; deviations to log: none yet.
 
 ## Amendment log
 
+- 2026-09-21 19:40 (Rehan: "pre-register and run the first image + text fusion
+  experiment on ERIN for predicting future progression"): 2.48 pre-registered
+  (docs/erin_progression_fusion_preregistration.md) and STOPPED at the cohort
+  stage by its own feasibility rule. Imaged index cases 632; 3-year label 18
+  positives / 0 negatives / 614 censored — every scanned ERIN slide is from a
+  2022–2025 report and 499/632 imaged index patients have no later report.
+  836 three-year-defined index cases (115 progressors) exist at report level,
+  none scanned (all 2014–2022). Report + what-is-missing in
+  reports/erin_progression_fusion.md. Consequence for the thesis: the earlier
+  ERIN "progression" result (153/28, hist 0.819) is imminent-dysplasia
+  detection in a censored window, not progression prediction; wording to be
+  changed in Ch4/claims register. GPU-hours used: 0.
+  ALSO 2026-09-21: CONCH zero-shot on all 1,538 dual-labelled slides
+  (results/numbers/conch_zeroshot_all.json): AUROC LGD+ 0.784 (max tile) /
+  0.770 (mean); six-class macro 0.733 — a pathology VLM zero-shot sits 0.10
+  below our trained slide–report model (0.889) and 0.14 below supervised MIL
+  (0.926) on identical slides; MedGemma sat at 0.50.
 - 2026-09-21 (joint, Rehan: "execute these 3 projects"): LLM extensions,
   pre-registered in docs/llm_extensions_preregistration.md. OUTCOMES so far:
   A (human-grade anchors, results/numbers/anchor_eval.json): against the SWG
