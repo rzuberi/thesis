@@ -1,0 +1,50 @@
+{
+  "report_level": {
+    "index_patients": 2092,
+    "y3_pos": 115,
+    "y3_neg": 721,
+    "y3_excluded_censored": 1256,
+    "y_any_pos": 159,
+    "index_grade": {
+      "NDBE": 1979,
+      "IND": 113
+    }
+  },
+  "imaged_index_cases": {
+    "n": 632,
+    "patients": 632,
+    "slides_total": 2499,
+    "slides_per_case": {
+      "median": 2.0,
+      "min": 1,
+      "max": 72
+    },
+    "y3_pos": 18,
+    "y3_neg": 0,
+    "y3_excluded": 614,
+    "y_any_pos": 18,
+    "index_grade": {
+      "NDBE": 611,
+      "IND": 21
+    },
+    "age_available": 632,
+    "b2_available": 632,
+    "swg_overlap_patients": 1,
+    "swg_overlap_among_y3_pos": 0
+  },
+  "analysis_set_y3": {
+    "n": 18,
+    "pos": 18,
+    "neg": 0,
+    "pos_frac": 1.0,
+    "tte_days_pos_median": 180.0,
+    "followup_neg_median": null
+  },
+  "analysis_set_any": {
+    "n": 632,
+    "pos": 18
+  },
+  "feasibility_flag_pos_lt_30": true,
+  "horizon_days": 1095,
+  "sex_available": false
+}

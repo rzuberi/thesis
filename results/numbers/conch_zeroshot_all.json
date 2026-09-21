@@ -1,0 +1,77 @@
+{
+  "n_slides": 1538,
+  "tiles_per_slide": 64,
+  "truth_dist": {
+    "NORMAL_OTHER": 685,
+    "NDBE": 589,
+    "LGD": 82,
+    "CANCER": 81,
+    "HGD": 66,
+    "IND": 35
+  },
+  "auroc_LGDplus": {
+    "mean_plgd": 0.7701,
+    "max_plgd": 0.7839,
+    "top10_plgd": 0.7775
+  },
+  "macro_auroc_6class_mean_probs": 0.7333,
+  "tile_pred_dist": {
+    "NORMAL_OTHER": 48814,
+    "NDBE": 33967,
+    "IND": 6244,
+    "HGD": 4365,
+    "LGD": 2937,
+    "CANCER": 2105
+  },
+  "mean_tile_argmax_frac_by_truth": {
+    "CANCER": {
+      "frac_NORMAL_OTHER": 0.383,
+      "frac_NDBE": 0.118,
+      "frac_IND": 0.021,
+      "frac_LGD": 0.02,
+      "frac_HGD": 0.245,
+      "frac_CANCER": 0.214
+    },
+    "HGD": {
+      "frac_NORMAL_OTHER": 0.378,
+      "frac_NDBE": 0.22,
+      "frac_IND": 0.089,
+      "frac_LGD": 0.024,
+      "frac_HGD": 0.206,
+      "frac_CANCER": 0.082
+    },
+    "IND": {
+      "frac_NORMAL_OTHER": 0.245,
+      "frac_NDBE": 0.572,
+      "frac_IND": 0.092,
+      "frac_LGD": 0.036,
+      "frac_HGD": 0.042,
+      "frac_CANCER": 0.013
+    },
+    "LGD": {
+      "frac_NORMAL_OTHER": 0.326,
+      "frac_NDBE": 0.367,
+      "frac_IND": 0.106,
+      "frac_LGD": 0.057,
+      "frac_HGD": 0.122,
+      "frac_CANCER": 0.022
+    },
+    "NDBE": {
+      "frac_NORMAL_OTHER": 0.378,
+      "frac_NDBE": 0.486,
+      "frac_IND": 0.068,
+      "frac_LGD": 0.045,
+      "frac_HGD": 0.019,
+      "frac_CANCER": 0.003
+    },
+    "NORMAL_OTHER": {
+      "frac_NORMAL_OTHER": 0.655,
+      "frac_NDBE": 0.248,
+      "frac_IND": 0.055,
+      "frac_LGD": 0.015,
+      "frac_HGD": 0.018,
+      "frac_CANCER": 0.009
+    }
+  },
+  "gate_0.70": true
+}
