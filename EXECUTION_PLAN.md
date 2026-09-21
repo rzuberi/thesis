@@ -217,7 +217,11 @@ On return: read results against pre-registrations; deviations to log: none yet.
   unparseable; on the rest only NDBE/HGD ever emitted; slide-level AUROC for
   LGD+ 0.51 — gate (0.70) FAILED; image-LLM work stops here per the
   pre-registration. 27B image pilot pending.
-  27B image pilot DONE: 382/768 tiles unparseable and every parsed tile called
+    qwen3-32B CNV-ONLY arm CANCELLED (not completed): 109/707 prompts in 90 min
+  (~1.2 prompts/min on an L40S even with think:false; the 3 h walltime could
+  not finish it). The CNV-only comparison rests on MedGemma-27B (0.645 vs
+  trained 0.663); qwen3's with-grade result (0.725) stands as reported.
+27B image pilot DONE: 382/768 tiles unparseable and every parsed tile called
   "NDBE" — AUROC exactly 0.50; gate failed. Conclusion for B: zero-shot general
   medical VLMs cannot grade Barrett's H&E tiles; the pathology-specific route
   (CONCH/TITAN, or our trained slide–report model at 0.889) is the only one.
