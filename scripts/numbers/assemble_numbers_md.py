@@ -6,7 +6,7 @@ R, N = T + "/results", T + "/results/numbers"
 def J(p):
     try: return json.load(open(p))
     except Exception: return {}
-swg, swgm, erin, erinm, occ, ace, comp = (J(f"{N}/{k}.json") for k in ("num_swg_cohort", "num_swg_metrics", "num_erin_cohort", "num_erin_metrics", "num_occams", "num_aceb", "compute"))
+swg, swgm, erin, erinm, occ, ace, comp, tnm = (J(f"{N}/{k}.json") for k in ("num_swg_cohort", "num_swg_metrics", "num_erin_cohort", "num_erin_metrics", "num_occams", "num_aceb", "compute", "num_occams_tnm"))
 sa, pm, cc, sl2, svc, svc5, jury, lofo, unc, pan, panh, oof, tm, vlm, vlme, vlm0, occv3, wf, resp, cl = (J(f"{R}/{k}.json") for k in (
     "swg_selection_adjusted", "power_map_v2", "clustered_cis", "slide_labels_v2", "slide_vs_casemax", "svc_5class", "erin_jury_labels_summary", "lofo_jury", "unsure_characterization",
     "pancancer_jury", "pancancer_hardening", "swg_oof_analyses", "transfer_matrix_excl", "vlm_pretrain", "vlm_swg_excl", "vlm_swg", "occams_v3", "occams_withinfold", "oac_response", "closure_cpu"))
@@ -23,7 +23,7 @@ def g(d, *ks, default=None):
 def pct(a, b): return f"{a} ({100*a/b:.1f}%)" if b else str(a)
 P("# Numbers dossier — every count and result in one place\n")
 P(f"Generated {__import__('datetime').date.today()} by `scripts/numbers/assemble_numbers_md.py` from committed result JSONs. Each item: the number, one sentence, the source file. Items I could not compute are marked **MISSING** with what is needed.\n")
-P("Cohort key: **SWG** = Cambridge Barrett's progression cohort (H&E + sWGS); **ERIN** = Cambridge Barrett's surveillance reports + slides; **OCCAMS** = OAC resection/biopsy consortium slice; **ACE-B** = Fitzgerald-lab trial cohort (metadata only so far).\n")
+P("Cohort key: **SWG** = Cambridge Barrett's progression cohort (H&E + sWGS); **ERIN** = Cambridge Barrett's surveillance reports + slides; **OCCAMS** = OAC resection/biopsy consortium slice; **ACE-B** = Dr di Pietro's Barrett's cohort (134 patients, 7× sWGS; slides being scanned) used only as an external validation set; **Hannah Coles set** = 221 OCCAMS OGD staging biopsies, not yet linked to patients.\n")
 
 # ---------------- A ----------------
 P("\n# A. Dataset descriptions\n")
@@ -103,7 +103,7 @@ P("- PROJECT_STATE calls it an 'internal matched cohort' (line above: 'Do not ge
 MISS("what the matching variables were (age/sex/segment length/follow-up?) — not in the release files I can read; ask Leanne or check the original cohort paper (Killcoyne 2020 design).")
 H("15. CNV: platform, resolution, samples, timing")
 P(f"- Platform: shallow whole-genome sequencing (sWGS) of the same biopsy as the slide; {g(swg,'cnv','samples_with_cx')} samples with a copy-number complexity value from {g(swg,'cnv','patients')} patients ({g(swg,'cnv','unique_cnv_ids')} unique CNV profiles; release notes 693). Per sample, i.e. per biopsy, time-matched to the slide by construction (same specimen).")
-MISS("bin resolution of the CNV calls (kb) — not in the release manifest; Killcoyne et al. 2020 used 50 kb bins and our older `xgboost_50kb_results` directory suggests the same, but confirm from the CNV pipeline.")
+P("- Depth 0.4× (Rehan, 21 Sep 2026); bin size 50 kb, the Killcoyne 2020 pipeline (6 March 2026 slides: 'Sequencing depth 0.4x, Bin size 50kb'). ACE-B, by contrast, is sequenced at ~7× (item 25), so its CNV must be re-called at matched resolution/depth before the SWG CNV arm is applied.")
 H("16. UNI2 embeddings")
 u = swg.get("uni2", {})
 P(f"- {u.get('slides_ok')} slides with UNI2 embeddings, {u.get('feat_dim')}-d; patches per slide {mr(u.get('patches_per_slide'))} — the release stores a fixed 256-tile subsample per slide, not all tissue tiles; 224-px tiles at 20× (release folder `uni2_tile224_lvl2`). ERIN for comparison: patches per slide {mr(fe.get('patches_per_slide_kept'))} at 0.5 mpp/224 px.")
@@ -122,10 +122,15 @@ cb = swgm.get("clinical_baseline_current_grade", {})
 P(f"- **Clinical baseline** (no clinical variables exist in the release; the pathologist grade of the biopsy used as the score): sample-level AUROC {cb.get('sample_level_auroc')}, patient-level (max grade) {cb.get('patient_level_auroc_max_grade')}.")
 P(f"- CIs are 2,000-replicate patient-resampled bootstraps. Positives: {g(arms,'late_mean','patient_level','pos')} of {g(arms,'late_mean','patient_level','n')} patients. *(num_swg_metrics)*")
 H("19. Sensitivity and specificity at a stated threshold")
-for k in ("late_mean", "image_only", "cnv_only"):
+P("- **Chosen operating rule (Rehan, 21 Sep 2026): lock sensitivity at 0.95 (and, as the no-miss standard, 1.0) and report the specificity that buys.** This is a rule-out framing: we refuse to miss progressors and ask how many non-progressors we can safely de-escalate. (Youden's J is just the threshold maximising sensitivity+specificity−1 — a symmetric default with no clinical weighting; kept below for reference only.) The March slides used the same family of convention, Spec@Sen90 and Sen@95.")
+P("| arm (patient level) | spec @ sens 0.95 | flagged/n | NPV @ cohort prev (33%) | NPV @ 0.5%/yr | spec @ sens 1.0 | Youden sens/spec |\n|---|---|---|---|---|---|---|")
+for k in ("late_mean", "image_only", "cnv_only", "early_fusion"):
     op = g(arms, k, "patient_level", "operating_points") or {}
-    if op: P(f"- **{k}:** Youden's J threshold {op['youden']['threshold']:.3f} → sens {op['youden']['sensitivity']:.2f} / spec {op['youden']['specificity']:.2f}; at spec 0.80 → sens {op['at_specificity_0.8']['sensitivity']:.2f}; at spec 0.90 → sens {op['at_specificity_0.9']['sensitivity']:.2f}.")
-P("- Thresholds chosen post hoc on the out-of-fold predictions (Youden, and fixed specificities); no threshold was pre-specified in the release.")
+    a, b, yj = op.get("at_sensitivity_0.95"), op.get("at_sensitivity_1.0"), op.get("youden")
+    if a and b and yj:
+        P(f"| {k} | {a['specificity']:.2f} | {a['n_flagged_of_n'][0]}/{a['n_flagged_of_n'][1]} | {a['npv_cohort_prevalence']:.3f} | {a['npv_at_0.5pct']:.4f} | {b['specificity']:.2f} | {yj['sensitivity']:.2f}/{yj['specificity']:.2f} |")
+P("- Read: at sensitivity 0.95, specificity is the fraction of non-progressors the model would release from intensified surveillance; NPV at 0.5%/yr shows what that means at real-world progression rates (where almost any test has NPV > 0.99, so specificity, not NPV, is the discriminating number). Thresholds are set post hoc on out-of-fold predictions; in a deployment they would be fixed on training folds.")
+MISS("field-standard operating point to cite — needs a quick literature check (TissueCypher reports a high-risk class with sensitivity/specificity; Killcoyne 2020 reports risk classes); I have not verified their exact numbers and will not quote them from memory.")
 H("20. Calibration")
 for k in ("late_mean", "image_only"):
     c = g(arms, k, "patient_level", "calibration") or {}
@@ -144,10 +149,28 @@ H("23. Interpretability outputs")
 P("- CNV: per-arm importances mapped to genes exist (`data/lgd2_cnv_feature_gene_annotation.csv`; TP53/EGFR/CCND1 arms).")
 MISS("attention heat-maps / top patches for the histology arm — attention weights were not saved by the release training; producing them needs a GPU re-inference pass over the 707 slides (a few GPU-hours).")
 H("24. What changed since the last lab presentation")
-MISS("the date of the last presentation — once given, the dated amendment log (EXECUTION_PLAN.md) lists every experiment after it. Since 26 Aug alone: selection-adjusted SWG test (headline demoted), overlap audit (36% SWG patients in ERIN), prevalence-matched visibility (OAC genotype not visible), power map v2, PORPOISE baseline, encoder sweep, pan-cancer jury validation, per-section jury + slide-vs-case-max contrasts, MDT deliberation, EoE finder, phenotype pilot, OAC response (null), all-slides ERIN extraction, jury v3.")
+P("- **Two audiences.** Markowetz lab: last update ~a year ago → everything in this dossier is new to them (the Barrett's fusion work AND ERIN/OCCAMS/TCGA/LLM-labelling, which did not exist then). Fitzgerald lab: last update **6 March 2026**, Barrett's chapter only. Changes since 6 March, from those slides to now:")
+P("| | 6 March 2026 (Fitzgerald slides) | Now (Sept 2026) |\n|---|---|---|")
+P("| Cohort | 160 patients / 470 visits / 959 samples / 941 sWGS; grades NDBE 609, ID 74, LGD 155, HGD 84, IMC 36, OAC 1 | **Frozen strict pre-event release: 150 patients / 707 samples**; at-event and post-event rows removed; patient-level max grade NDBE 97 / IND 15 / LGD 38 |")
+P("| Tasks | Six tasks (ever-progress, at-risk 1–5 y, next-biopsy progression, next-biopsy grade, days-to-progression) | **One pre-registered primary: next biopsy is LGD2+**; horizons kept only as descriptive time-point analyses (item 22) |")
+P("| Validation | Repeated CV (5–50 folds), best model per task reported, no CIs | 5 patient-disjoint frozen folds, nested CV, **paired bootstrap CIs**, Holm family, permutation controls |")
+P("| Headline numbers | Ever-progress: MM early-mean AUC 0.844, image 0.823, CNV 0.737, MoE 0.853; next-biopsy progression MoE 0.880 (Exclude LGD/HGD/IMC) | Late-mean **0.774** [0.687–0.849], image 0.731, CNV 0.663 (patient level, strict pre-event). Lower because at-event rows and post-hoc model selection are gone |")
+P("| Fusion claim | 'Image performs well, CNV confirms, combination is better' | Naive gain +0.043 (Holm p 0.0096) **does not survive selection adjustment** (p 0.25; out-of-bag gain +0.016 [−0.106, +0.080]); winner's curse quantified (+0.027); **claim demoted** |")
+P("| Fusion architecture | Early fusion > attention fusion; Mixture-of-Experts routing | Late-mean > early/intermediate/co-attention/stack-logit in the release; MoE not carried into the frozen release |")
+P("| Encoders | UNI2 only | UNI2 vs GigaPath histology: only the Brier difference survives (encoder-conditional gain) |")
+P("| Longitudinal ('next step 2' in March) | Planned | **Done, negative**: drift features and GRU do not beat the last sample; histology adds nothing over CNV persistence for next-CNV prediction |")
+P("| Attention-guided patch selection ('next step 1') | Planned | Not pursued as such; attention analysis limited to the 8 interpreted LGD2+ cases; heat-maps not regenerated |")
+P("| Power | Not addressed | Power map: minimum detectable fusion gain 0.075–0.10 at n=150 |")
+P("| Operating points / calibration | Spec@Sen90, Sen@95 in tables; no calibration | Spec at sens 0.95/1.0 with NPV (item 19); Brier + calibration slope and reliability deciles (item 20) |")
+P("| Complementarity | Routing analysis (image early / CNV late) | Likelihood-ratio tests: CNV adds to histology (p 0.007) and vice versa (p 3e-5) — information is complementary even though discrimination gain is unproven |")
+P("| External validation | None | **ACE-B agreed** (item 25); ERIN↔SWG overlap audit found 36% shared patients, so ERIN is not an external cohort for SWG |")
+P("| Beyond Barrett's | — | OCCAMS/TCGA fusion (null), PORPOISE baseline, LLM report jury (7,149 reports, validated on TCGA), section-level labels, VLM, OAC response (null) |")
 H("25. ACE-B: what will be run and when")
-P(f"- Exists: {g(ace,'cases_for_rehan','rows')} official cases, {ao.get('found_in_barretts_db')} matched to the Barrett's database, {ae.get('patients')} patients with endoscopy metadata. Intended pipeline once slides are accessible: tile at 20×/224 px → UNI2 features (48 s/slide on an L40S; ~2 GPU-h per 150 slides) → the frozen SWG ABMIL/late-mean models applied **zero-shot** as an external test (no retraining), reporting AUROC/AUPRC vs the SWG-trained thresholds of item 19.")
-MISS("dates and access route — pending Fitzgerald-lab agreement; nothing else to compute until slides arrive.")
+P("- **What ACE-B is (Rehan, 21 Sep 2026):** Dr Massimiliano di Pietro's cohort (he owns it; we collaborate to validate the SWG multimodal model). Per Leanne: **134 patients, 294 samples, sWGS at ~7× depth** (SWG is 0.4×), CNV complete or near-complete. Groups: **11 progressors** (NDBE/LGD → HGD/IMC), **93 non-progressors**, **30 prevalent HGD/IMC** at baseline. Blocks: 44 at the ECI (Nottingham blocks), 250 in the Cambridge Tissue Bank store in Wales (pre-2023). Histopathology did not exist — **slides are being scanned now** (Histopathology Core; ~£369 for the 44 ECI blocks, ~£2,094 for the 250 Wales blocks; .svs output; 2-week turnaround; magnification and full-QC options still to choose).")
+P(f"- Our May 2026 metadata match found {g(ace,'cases_for_rehan','rows')} study cases / {ae.get('patients')} patient codes in the Barrett's database (Seattle histology {ao.get('Histology_Seattle_Protocol')}) — these counts differ from Leanne's 134/294 and need reconciling once her sample list arrives.")
+P("- **Plan (validation only, no training):** (1) featurise the scanned H&E with the identical UNI2 pipeline (20×/224 px; ~48 s/slide ⇒ under 1 GPU-h for the ~36–46 minimum slides, ~4 GPU-h for all 294); (2) obtain CNV from Dr di Pietro and **re-derive the SWG CNV representation at matched resolution** — 7× reads must be down-sampled or re-binned to the 0.4×/50 kb pipeline, otherwise the CNV arm sees a depth shift; (3) apply the frozen SWG image-only, CNV-only and late-mean models zero-shot; report AUROC/AUPRC and specificity at the SWG-fixed sensitivity-0.95 threshold (item 19). Minimum imaging plan from the proposal: 11 progressors (pre-cancer time point) + 20–25 matched non-progressors + optionally 5–10 prevalent HGD/IMC ≈ 36–46 slides.")
+P("- **What 11 progressors can and cannot show:** with 11 positives and ~25–93 negatives the 95% CI on an AUROC near 0.75 is roughly ±0.15, so ACE-B can confirm that the model transfers (AUROC clearly above 0.5) but **cannot** decide whether fusion beats image-only (a 0.04 difference is far below detectability). The pre-registration should say so. Two further shifts to declare up front: scanner/format (Aperio .svs vs the SWG Hamamatsu .ndpi) and sequencing depth.")
+MISS("timing — depends on scanning completion and Dr di Pietro releasing the CNV; nothing else to compute until slides arrive.")
 
 # ---------------- D ----------------
 P("\n# D. ERIN labelling (LLM jury)\n")
@@ -192,7 +215,8 @@ P(f"- {er.get('patients_with_ge2_reports')} patients have ≥2 reports; progress
 # ---------------- F ----------------
 P("\n# F. OCCAMS\n")
 H("36. Patients behind the slides")
-P(f"- {occ.get('cases_with_slides')} cases (one patient each) behind {occ.get('slides_h5')} slides ({occ.get('specimen_mix_slides')}); {occ.get('cases_with_OGD')} have a biopsy slide, {occ.get('cases_with_RES')} a resection slide, {occ.get('cases_with_both')} both. **Your '227 slides' does not match this inventory — please tell me its source.**")
+P(f"- **Main OCCAMS tree:** {occ.get('cases_with_slides')} cases (one patient each) behind {occ.get('slides_h5')} featurised slides ({occ.get('specimen_mix_slides')}); {occ.get('cases_with_OGD')} have a biopsy slide, {occ.get('cases_with_RES')} a resection slide, {occ.get('cases_with_both')} both.")
+P("- **The '227' is the Hannah Coles batch: 221 .svs slides** scanned Mar–Jun 2026 (batches B8126 27+36, B8134 82+51, B8167 25), at `occams/wsi_data/occams_hannah_coles/`, **additional** to the 635 above and not yet featurised. 131 H&E + 90 IHC (HER2, MMR panel, p53, CK); all OGD staging biopsies per Will. Identifiers: 196 carry a PS (block) number, 16 an OCCAMS patient ID, 16 (B8167) neither. **Patients behind them: only 25 slides → 12 patients are resolvable** (OC-AH-001/003/005/596/609/610/611/613, OC-RS-007/027, OC-SH-051 + 1); the other 196 slides are unlinkable until Will supplies a PS→patient mapping (0 of the 78 PS numbers appear in his WGS-linked xlsx). Source: `hannah_coles_integration_summary.md` (28 Jul 2026) and your Slack thread with Will, 27 Jul.")
 H("37. The genomic values and coverage")
 P(f"- TP53 status (composite of {gm.get('columns')[:4] if gm.get('columns') else '?'}), ploidy, and whole-genome doubling; from WGS; {gm.get('tsv_cases')} cases in the TSV, {gm.get('tsv_cases_with_slides')} with slides, complete for all of them. Among slide cases: WGD {gm.get('WGD_dist_slide_cases')}, TP53-altered {gm.get('TP53_any_slide_cases')}/{gm.get('tsv_cases_with_slides')}.")
 H("38. Treatment and outcome fields")
@@ -205,9 +229,11 @@ P(f"- Death: 58/87 ✔. TRG1–3 response: {g(clp,'TRG1-3_responders_among_OGD_s
 # ---------------- G ----------------
 P("\n# G. OGD staging\n")
 H("40. Slides, patients, stage/nodal labels, results")
-P(f"- No project called 'OGD staging' exists in the repo. Nearest: **OAC neoadjuvant response from the pre-treatment OGD biopsy** (pre-registered 8 Sep 2026): {g(resp,'_meta','n')} cases with an OGD slide and TRG ({g(resp,'_meta','n_responder_trg123')} responders / {g(resp,'_meta','n_nonresponder_trg45')} non-responders); primary UNI2 AUC {g(resp,'uni_v2','hist','auc')} {g(resp,'uni_v2','hist','auc_ci')}, permutation p {g(resp,'uni_v2','permutation_null','p_empirical')} → **NULL**; other encoders (not pre-registered) 0.50–0.65.")
-P(f"- Stage labels available on the same OGD cases: pre-treatment T {sc.get('pretreatment_T')}, N {sc.get('pretreatment_N')}; resection pN {sc.get('resection_pN')}. No staging model has been run.")
-MISS("confirmation of what 'OGD staging' refers to; the uncommitted OAC-response files should be committed if this is it.")
+P(f"- **Reading of 'OGD staging' (Rehan: probably TNM staging):** predicting the cancer's stage from the pre-treatment endoscopic (OGD) biopsy slide. Two slide pools exist: (a) the 221 Hannah Coles OGD staging biopsies (item 36) — **stage labels reachable for only 12 patients** until the PS→patient mapping arrives; (b) the {g(tnm,'ogd_biopsy_slide_cases','n_cases_with_master_row')} OGD-biopsy cases in the main tree that have a clinical master row, which already carry TNM.")
+t = tnm.get("ogd_biopsy_slide_cases", {})
+P(f"- **Stage labels on the {t.get('n_cases_with_master_row')} main-tree OGD cases** — clinical (pre-treatment) cT {t.get('clinical_cT')}, cN {t.get('clinical_cN')}, cM {t.get('clinical_cM')}; approximate AJCC7 stage group {t.get('clinical_stage_group_AJCC7_approx')}; **clinically node-positive {t.get('node_positive_clinical')}/{t.get('n_cases_with_master_row')}**. Pathological (post-neoadjuvant resection) ypT {t.get('path_pT')}, ypN {t.get('path_pN')}; **node-positive at resection {t.get('node_positive_path')}/{t.get('n_cases_with_master_row')}**; approximate stage group {t.get('path_stage_group_AJCC7_approx')}. Differentiation grade at diagnosis {t.get('grade_differentiation_diagnostic')}. *(num_occams_tnm; stage groups from T/N/M only)*")
+P("- **Trainability:** node-positive (cN1–3: 96 vs 43 cN0; ypN1–3: 82 vs 51) and cT3 vs cT1–2 (111 vs 22) both clear the ~30-positive bar; full stage-group classification does not (most groups < 30). **No staging model has been run.** Nearest existing result on the same slides: pre-treatment biopsy → TRG response, NULL (UNI2 AUC 0.54; results/oac_response.json, which is local/uncommitted at your request).")
+MISS("your confirmation that this reading is right; if so, a nodal-status (cN0 vs cN+) probe from the OGD biopsy is a one-script job on existing features.")
 
 # ---------------- H ----------------
 P("\n# H. Cross-project\n")

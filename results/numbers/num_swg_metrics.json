@@ -150,6 +150,32 @@
             "threshold": 0.3389713533646454,
             "sensitivity": 0.24,
             "specificity": 0.91
+          },
+          "at_sensitivity_0.95": {
+            "threshold": 0.1148322265568618,
+            "sensitivity": 0.96,
+            "specificity": 0.06999999999999995,
+            "n_flagged_of_n": [
+              141,
+              150
+            ],
+            "npv_cohort_prevalence": 0.7777777777777776,
+            "ppv_cohort_prevalence": 0.34042553191489355,
+            "npv_at_0.5pct": 0.9971367215461703,
+            "ppv_at_0.5pct": 0.005160457990646669
+          },
+          "at_sensitivity_1.0": {
+            "threshold": 0.0912114582368065,
+            "sensitivity": 1.0,
+            "specificity": 0.050000000000000044,
+            "n_flagged_of_n": [
+              145,
+              150
+            ],
+            "npv_cohort_prevalence": 1.0,
+            "ppv_cohort_prevalence": 0.34482758620689646,
+            "npv_at_0.5pct": 1.0,
+            "ppv_at_0.5pct": 0.005261773217574323
           }
         },
         "calibration": {
@@ -250,6 +276,32 @@
             "threshold": 0.8467134833335876,
             "sensitivity": 0.3,
             "specificity": 0.92
+          },
+          "at_sensitivity_0.95": {
+            "threshold": 0.1509867757558822,
+            "sensitivity": 0.96,
+            "specificity": 0.19999999999999996,
+            "n_flagged_of_n": [
+              128,
+              150
+            ],
+            "npv_cohort_prevalence": 0.9090909090909091,
+            "ppv_cohort_prevalence": 0.37499999999999994,
+            "npv_at_0.5pct": 0.998995983935743,
+            "ppv_at_0.5pct": 0.005994005994005993
+          },
+          "at_sensitivity_1.0": {
+            "threshold": 0.0153633281588554,
+            "sensitivity": 1.0,
+            "specificity": 0.050000000000000044,
+            "n_flagged_of_n": [
+              145,
+              150
+            ],
+            "npv_cohort_prevalence": 1.0,
+            "ppv_cohort_prevalence": 0.34482758620689646,
+            "npv_at_0.5pct": 1.0,
+            "ppv_at_0.5pct": 0.005261773217574323
           }
         },
         "calibration": {
@@ -350,6 +402,32 @@
             "threshold": 0.7605959177017212,
             "sensitivity": 0.42,
             "specificity": 0.9
+          },
+          "at_sensitivity_0.95": {
+            "threshold": 0.0745627954602241,
+            "sensitivity": 0.96,
+            "specificity": 0.18000000000000005,
+            "n_flagged_of_n": [
+              130,
+              150
+            ],
+            "npv_cohort_prevalence": 0.9,
+            "ppv_cohort_prevalence": 0.36923076923076914,
+            "npv_at_0.5pct": 0.9988845510317903,
+            "ppv_at_0.5pct": 0.005848665773120506
+          },
+          "at_sensitivity_1.0": {
+            "threshold": 0.0268249493092298,
+            "sensitivity": 1.0,
+            "specificity": 0.050000000000000044,
+            "n_flagged_of_n": [
+              145,
+              150
+            ],
+            "npv_cohort_prevalence": 1.0,
+            "ppv_cohort_prevalence": 0.34482758620689646,
+            "npv_at_0.5pct": 1.0,
+            "ppv_at_0.5pct": 0.005261773217574323
           }
         },
         "calibration": {
@@ -450,6 +528,32 @@
             "threshold": 0.8338428139686584,
             "sensitivity": 0.44,
             "specificity": 0.91
+          },
+          "at_sensitivity_0.95": {
+            "threshold": 0.2166653722524643,
+            "sensitivity": 0.96,
+            "specificity": 0.16000000000000003,
+            "n_flagged_of_n": [
+              132,
+              150
+            ],
+            "npv_cohort_prevalence": 0.8888888888888888,
+            "ppv_cohort_prevalence": 0.3636363636363636,
+            "npv_at_0.5pct": 0.9987452948557088,
+            "ppv_at_0.5pct": 0.005710206995003568
+          },
+          "at_sensitivity_1.0": {
+            "threshold": 0.1727190613746643,
+            "sensitivity": 1.0,
+            "specificity": 0.12,
+            "n_flagged_of_n": [
+              138,
+              150
+            ],
+            "npv_cohort_prevalence": 1.0,
+            "ppv_cohort_prevalence": 0.3623188405797101,
+            "npv_at_0.5pct": 1.0,
+            "ppv_at_0.5pct": 0.005677946854417443
           }
         },
         "calibration": {
@@ -550,6 +654,32 @@
             "threshold": 0.8026425242424011,
             "sensitivity": 0.34,
             "specificity": 0.91
+          },
+          "at_sensitivity_0.95": {
+            "threshold": 0.213814228773117,
+            "sensitivity": 0.96,
+            "specificity": 0.36,
+            "n_flagged_of_n": [
+              112,
+              150
+            ],
+            "npv_cohort_prevalence": 0.9473684210526315,
+            "ppv_cohort_prevalence": 0.4285714285714285,
+            "npv_at_0.5pct": 0.9994419642857143,
+            "ppv_at_0.5pct": 0.007481296758104737
+          },
+          "at_sensitivity_1.0": {
+            "threshold": 0.1184705793857574,
+            "sensitivity": 1.0,
+            "specificity": 0.18000000000000005,
+            "n_flagged_of_n": [
+              132,
+              150
+            ],
+            "npv_cohort_prevalence": 1.0,
+            "ppv_cohort_prevalence": 0.37878787878787873,
+            "npv_at_0.5pct": 1.0,
+            "ppv_at_0.5pct": 0.006090875867949812
           }
         },
         "calibration": {
@@ -650,6 +780,32 @@
             "threshold": 0.5055240711183967,
             "sensitivity": 0.38,
             "specificity": 0.9
+          },
+          "at_sensitivity_0.95": {
+            "threshold": 0.2357043316529124,
+            "sensitivity": 0.96,
+            "specificity": 0.28,
+            "n_flagged_of_n": [
+              120,
+              150
+            ],
+            "npv_cohort_prevalence": 0.9333333333333333,
+            "ppv_cohort_prevalence": 0.3999999999999999,
+            "npv_at_0.5pct": 0.9992826398852225,
+            "ppv_at_0.5pct": 0.0066555740432612314
+          },
+          "at_sensitivity_1.0": {
+            "threshold": 0.2120822348796129,
+            "sensitivity": 1.0,
+            "specificity": 0.20999999999999996,
+            "n_flagged_of_n": [
+              129,
+              150
+            ],
+            "npv_cohort_prevalence": 1.0,
+            "ppv_cohort_prevalence": 0.3875968992248061,
+            "npv_at_0.5pct": 1.0,
+            "ppv_at_0.5pct": 0.0063207129764237405
           }
         },
         "calibration": {
@@ -750,6 +906,32 @@
             "threshold": 0.368746370906829,
             "sensitivity": 0.26,
             "specificity": 0.9
+          },
+          "at_sensitivity_0.95": {
+            "threshold": 0.1727623176259728,
+            "sensitivity": 0.96,
+            "specificity": 0.30000000000000004,
+            "n_flagged_of_n": [
+              118,
+              150
+            ],
+            "npv_cohort_prevalence": 0.9375,
+            "ppv_cohort_prevalence": 0.4067796610169491,
+            "npv_at_0.5pct": 0.999330431871443,
+            "ppv_at_0.5pct": 0.006844431769570796
+          },
+          "at_sensitivity_1.0": {
+            "threshold": 0.1684439135442729,
+            "sensitivity": 1.0,
+            "specificity": 0.25,
+            "n_flagged_of_n": [
+              125,
+              150
+            ],
+            "npv_cohort_prevalence": 1.0,
+            "ppv_cohort_prevalence": 0.4,
+            "npv_at_0.5pct": 1.0,
+            "ppv_at_0.5pct": 0.0066555740432612314
           }
         },
         "calibration": {
