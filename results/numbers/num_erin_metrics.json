@@ -23,7 +23,10 @@
         "sens_spec_at_youden": [
           0.7598,
           0.8915
-        ]
+        ],
+        "spec_at_sens_0.95": 0.314,
+        "spec_at_sens_1.0": 0.0351,
+        "f1_at_sens_0.95": 0.3242
       },
       "trained_on_slide_labels": {
         "auroc": 0.8604,
@@ -42,7 +45,10 @@
         "sens_spec_at_youden": [
           0.7293,
           0.8785
-        ]
+        ],
+        "spec_at_sens_0.95": 0.2949,
+        "spec_at_sens_1.0": 0.0084,
+        "f1_at_sens_0.95": 0.3182
       }
     }
   },

@@ -1,0 +1,163 @@
+{
+ "all_slide_cases": {
+  "n_cases_with_master_row": 145,
+  "clinical_cT": {
+   "t3": 115,
+   "t2": 22,
+   "tx": 4,
+   "t4a": 2,
+   "t4": 1,
+   "t1b": 1
+  },
+  "clinical_cN": {
+   "n1": 65,
+   "n0": 46,
+   "n2": 26,
+   "n3": 7,
+   "nx": 1
+  },
+  "clinical_cM": {
+   "m0": 136,
+   "mx": 7,
+   "m1": 2
+  },
+  "clinical_stage_group_AJCC7_approx": {
+   "IIIA": 57,
+   "IIA": 29,
+   "IIIB": 22,
+   "IB": 14,
+   "IIIC": 8,
+   "IIB": 7,
+   "unknown": 6,
+   "IV": 2
+  },
+  "path_pT": {
+   "t3": 80,
+   "t2": 19,
+   "t1b": 11,
+   "t0": 11,
+   "t4a": 10,
+   "tx": 6,
+   "t1a": 5,
+   "t4": 2,
+   "t1": 1
+  },
+  "path_pN": {
+   "n0": 53,
+   "n1": 41,
+   "n3": 24,
+   "n2": 20,
+   "nx": 7
+  },
+  "path_pM": {
+   "m0": 86,
+   "mx": 56,
+   "m1": 3
+  },
+  "path_stage_group_AJCC7_approx": {
+   "IIIA": 33,
+   "IIIC": 24,
+   "IIA": 18,
+   "IIIB": 15,
+   "IA": 13,
+   "IB": 11,
+   "0": 10,
+   "unknown": 10,
+   "IIB": 7,
+   "IV": 3,
+   "II+": 1
+  },
+  "node_positive_clinical": 98,
+  "node_positive_path": 85,
+  "grade_differentiation_diagnostic": {
+   "moderate": 57,
+   "poor": 30,
+   "NaN": 28,
+   "unknown": 14,
+   "moderate_to_poor": 9,
+   "moderate_to_well": 4,
+   "well": 3
+  }
+ },
+ "ogd_biopsy_slide_cases": {
+  "n_cases_with_master_row": 140,
+  "clinical_cT": {
+   "t3": 111,
+   "t2": 21,
+   "tx": 4,
+   "t4a": 2,
+   "t4": 1,
+   "t1b": 1
+  },
+  "clinical_cN": {
+   "n1": 63,
+   "n0": 43,
+   "n2": 26,
+   "n3": 7,
+   "nx": 1
+  },
+  "clinical_cM": {
+   "m0": 131,
+   "mx": 7,
+   "m1": 2
+  },
+  "clinical_stage_group_AJCC7_approx": {
+   "IIIA": 55,
+   "IIA": 27,
+   "IIIB": 22,
+   "IB": 13,
+   "IIIC": 8,
+   "IIB": 7,
+   "unknown": 6,
+   "IV": 2
+  },
+  "path_pT": {
+   "t3": 76,
+   "t2": 19,
+   "t1b": 11,
+   "t0": 11,
+   "t4a": 10,
+   "tx": 6,
+   "t1a": 4,
+   "t4": 2,
+   "t1": 1
+  },
+  "path_pN": {
+   "n0": 51,
+   "n1": 40,
+   "n3": 23,
+   "n2": 19,
+   "nx": 7
+  },
+  "path_pM": {
+   "m0": 83,
+   "mx": 55,
+   "m1": 2
+  },
+  "path_stage_group_AJCC7_approx": {
+   "IIIA": 32,
+   "IIIC": 24,
+   "IIA": 17,
+   "IIIB": 14,
+   "IA": 12,
+   "IB": 11,
+   "0": 10,
+   "unknown": 10,
+   "IIB": 7,
+   "IV": 2,
+   "II+": 1
+  },
+  "node_positive_clinical": 96,
+  "node_positive_path": 82,
+  "grade_differentiation_diagnostic": {
+   "moderate": 56,
+   "poor": 29,
+   "NaN": 26,
+   "unknown": 14,
+   "moderate_to_poor": 9,
+   "moderate_to_well": 4,
+   "well": 2
+  }
+ },
+ "note": "AJCC/TNM7 anatomic stage groups approximated from T,N,M only (no histologic grade/location refinement); ypT/ypN after neoadjuvant therapy for the path columns"
+}
