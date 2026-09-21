@@ -21,7 +21,7 @@ for f in glob.glob(E + "/jury_specimen/llm_grades_*.csv"):
     mo = os.path.basename(f).replace("llm_grades_", "").rsplit("_shard", 1)[0]
     try: d = pd.read_csv(f, dtype=str, on_bad_lines="skip").drop_duplicates("CaseName").set_index("CaseName")
     except Exception: continue
-    per.setdefault(mo, pd.Series(dtype=str)); per[mo] = pd.concat([per[mo], d.llm_grade])
+    per.setdefault(mo, pd.Series(dtype=str)); per[mo] = pd.concat([per[mo], d.llm_grade]); per[mo] = per[mo][~per[mo].index.duplicated()]
 res["swg_pathologist_grade"]["per_juror"] = {mo: metrics(sp.truth, v.reindex(sp.index)) for mo, v in per.items()}
 mg = glob.glob(T + "/feasibility/runs/jspec_medgemma27b/output/llm_grades_*.csv")
 if mg:
