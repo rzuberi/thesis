@@ -204,6 +204,15 @@ On return: read results against pre-registrations; deviations to log: none yet.
   "NDBE" — AUROC exactly 0.50; gate failed. Conclusion for B: zero-shot general
   medical VLMs cannot grade Barrett's H&E tiles; the pathology-specific route
   (CONCH/TITAN, or our trained slide–report model at 0.889) is the only one.
+  E (CONCH zero-shot, 96 pilot slides x 64 tiles, results/numbers/conch_zeroshot.json):
+  GATE PASSED — binary AUROC for LGD+ 0.755 (max-tile), 0.710 (mean), 0.723
+  (top-10%); six-class macro-AUROC 0.709. Tile predictions are anatomically
+  sensible (normal-tissue slides 70% tiles "normal"; NDBE slides 60% "NDBE";
+  cancer slides 31% "cancer/HGD" vs 0-2% on benign slides). A pathology VLM
+  does zero-shot what the general medical VLM could not (MedGemma 0.50-0.51).
+  Per the pre-registered rule the full 1,538-slide run is submitted
+  (task conch_zeroshot_all) to place CONCH beside the trained slide-report
+  model (0.889) and supervised MIL (0.926) on identical slides.
 - 2026-09-14 (joint, Rehan: "go" on the Astra Tier-1 recompute batch — the
   LAST compute gate before writing; writing starts in parallel, not after):
   2.40 overlap audit (A14; scripts/task_overlap_audit.py): accession-number

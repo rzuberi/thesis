@@ -28,8 +28,11 @@ with torch.inference_mode():
     W = torch.stack(W); scale = model.logit_scale.exp().item()
 lab = pd.read_csv(T + "/labeller/erin_slide_labels_v2.csv", dtype=str); lab = lab[lab.worst_grade.isin(C_OF)]
 rs = np.random.RandomState(7); per = max(1, NS // 6); chosen = []
-for c in CLASSES:
-    pool = lab[lab.worst_grade == c]; chosen += list(pool.sample(min(per, len(pool)), random_state=rs).h5)
+if os.environ.get("ALL"):   # full run (gate passed on the 100-slide pilot): every dual-labelled slide
+    chosen = sorted(lab.h5)
+else:
+    for c in CLASSES:
+        pool = lab[lab.worst_grade == c]; chosen += list(pool.sample(min(per, len(pool)), random_state=rs).h5)
 lab = lab.set_index("h5")
 class MC_MIL(nn.Module):
     def __init__(self, d_in=1536, n_cls=6):
