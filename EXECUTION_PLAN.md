@@ -162,6 +162,35 @@ On return: read results against pre-registrations; deviations to log: none yet.
 
 ## Amendment log
 
+- 2026-09-21 (joint, Rehan: "execute these 3 projects"): LLM extensions,
+  pre-registered in docs/llm_extensions_preregistration.md. OUTCOMES so far:
+  A (human-grade anchors, results/numbers/anchor_eval.json): against the SWG
+  research-pathologist grade on 658 specimen-level DB reports the jury
+  consensus is exact 0.59 / two-tier 0.82 / QWK 0.61 (n=627) and MedGemma-27B
+  0.63 / 0.78 / 0.59 (n=623) — both far below the TCGA registry figure
+  (0.96–0.97) and both OVER-grade relative to the pathologist (of 449
+  pathologist-NDBE biopsies the jury calls 176 dysplastic-or-indefinite).
+  Caveats recorded: the SWG grade is a research re-read, the text is the
+  original clinical report, and section↔specimen mapping is itself noisy.
+  Against ACE-B Seattle-protocol grades (report within 120 d of trial entry,
+  n=110–111): jury two-tier 0.90 / exact 0.84 / QWK 0.72; MedGemma-27B 0.91 /
+  0.86 / 0.75. C1 (text prognosis, results/numbers/prognosis_eval.json):
+  zero-shot 5-year HGD/cancer risk from pre-index report history, ERIN v3
+  (1,266 pts / 181 progressors): MedGemma-27B AUROC 0.593 [0.546–0.637],
+  qwen3-32B 0.625 [0.577–0.671], gemma3-27B 0.632 [0.586–0.677] vs index-grade
+  baseline 0.623 [0.588–0.659] — the pre-registered prediction (LLM ≈ grade)
+  holds; within NDBE-index patients 0.52–0.56. Median reports shown = 1
+  (index = first NDBE report by construction), so this is largely a
+  single-report reading. C2 (CNV-as-text, results/numbers/cnvtext_*.json):
+  with the current grade INCLUDED in the prompt, MedGemma-27B patient AUROC
+  0.751 (sample 0.676) and qwen3-32B 0.725 (0.691) vs the trained CNV-only
+  model 0.663 (0.620) — but the grade-only baseline is 0.687, so the fair
+  CNV-only prompt (NO_GRADE arm, submitted) decides whether the LLM adds
+  anything from the arms. B (image pilot): running; both MedGemma sizes fail
+  JSON parsing on ~50% of tiles, already a bad sign for zero-shot histology.
+  MedGemma-27B as ERIN juror (results/numbers/num_medgemma.json): 99.7%
+  agreement with the 8-model consensus, sensitivity 1.0 on 79 adjudicated
+  cancers; MedGemma-4B unusable (25% parse failures, under-calls cancer as HGD).
 - 2026-09-14 (joint, Rehan: "go" on the Astra Tier-1 recompute batch — the
   LAST compute gate before writing; writing starts in parallel, not after):
   2.40 overlap audit (A14; scripts/task_overlap_audit.py): accession-number

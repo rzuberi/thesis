@@ -1,0 +1,528 @@
+{
+  "classes": [
+    "NORMAL_OTHER",
+    "NDBE",
+    "IND",
+    "LGD",
+    "HGD",
+    "CANCER"
+  ],
+  "colors": [
+    "#bdbdbd",
+    "#4daf4a",
+    "#ffff33",
+    "#ff7f00",
+    "#e41a1c",
+    "#7b1fa2"
+  ],
+  "slides": [
+    {
+      "h5": "eb85bbdf-85f0-43b6-9398-f3491e23cd38.h5",
+      "section_grade": "NORMAL_OTHER",
+      "case_max": "NDBE",
+      "n_tiles": 3580,
+      "case_max_slide_pred": "NDBE",
+      "case_max_slide_probs": [
+        0.015,
+        0.936,
+        0.0,
+        0.0,
+        0.004,
+        0.045
+      ],
+      "case_max_tile_argmax_dist": {
+        "NORMAL_OTHER": 106,
+        "NDBE": 2738,
+        "IND": 326,
+        "LGD": 0,
+        "HGD": 4,
+        "CANCER": 406
+      },
+      "case_max_expected_grade_mean": 1.586,
+      "section_slide_pred": "NORMAL_OTHER",
+      "section_slide_probs": [
+        0.979,
+        0.018,
+        0.0,
+        0.0,
+        0.0,
+        0.002
+      ],
+      "section_tile_argmax_dist": {
+        "NORMAL_OTHER": 1916,
+        "NDBE": 1460,
+        "IND": 1,
+        "LGD": 128,
+        "HGD": 64,
+        "CANCER": 11
+      },
+      "section_expected_grade_mean": 0.734
+    },
+    {
+      "h5": "8b42662d-789a-4440-8fc1-c7fa2036f90a.h5",
+      "section_grade": "NORMAL_OTHER",
+      "case_max": "CANCER",
+      "n_tiles": 8000,
+      "case_max_slide_pred": "CANCER",
+      "case_max_slide_probs": [
+        0.082,
+        0.011,
+        0.0,
+        0.0,
+        0.0,
+        0.907
+      ],
+      "case_max_tile_argmax_dist": {
+        "NORMAL_OTHER": 3526,
+        "NDBE": 2385,
+        "IND": 3,
+        "LGD": 4,
+        "HGD": 48,
+        "CANCER": 2034
+      },
+      "case_max_expected_grade_mean": 1.654,
+      "section_slide_pred": "NORMAL_OTHER",
+      "section_slide_probs": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "section_tile_argmax_dist": {
+        "NORMAL_OTHER": 5389,
+        "NDBE": 105,
+        "IND": 45,
+        "LGD": 112,
+        "HGD": 601,
+        "CANCER": 1748
+      },
+      "section_expected_grade_mean": 1.48
+    },
+    {
+      "h5": "8e8c5c54-9317-4c48-a9e4-7ab9753c5f09.h5",
+      "section_grade": "NDBE",
+      "case_max": "IND",
+      "n_tiles": 4708,
+      "case_max_slide_pred": "NDBE",
+      "case_max_slide_probs": [
+        0.0,
+        0.999,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "case_max_tile_argmax_dist": {
+        "NORMAL_OTHER": 1339,
+        "NDBE": 2809,
+        "IND": 31,
+        "LGD": 192,
+        "HGD": 256,
+        "CANCER": 81
+      },
+      "case_max_expected_grade_mean": 1.088,
+      "section_slide_pred": "NDBE",
+      "section_slide_probs": [
+        0.164,
+        0.816,
+        0.001,
+        0.019,
+        0.0,
+        0.0
+      ],
+      "section_tile_argmax_dist": {
+        "NORMAL_OTHER": 2335,
+        "NDBE": 1735,
+        "IND": 365,
+        "LGD": 201,
+        "HGD": 64,
+        "CANCER": 8
+      },
+      "section_expected_grade_mean": 0.798
+    },
+    {
+      "h5": "5c062c30-2143-49d8-a334-ada2b8a9701f.h5",
+      "section_grade": "NDBE",
+      "case_max": "LGD",
+      "n_tiles": 2080,
+      "case_max_slide_pred": "NDBE",
+      "case_max_slide_probs": [
+        0.0,
+        0.999,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "case_max_tile_argmax_dist": {
+        "NORMAL_OTHER": 31,
+        "NDBE": 2026,
+        "IND": 15,
+        "LGD": 2,
+        "HGD": 6,
+        "CANCER": 0
+      },
+      "case_max_expected_grade_mean": 1.032,
+      "section_slide_pred": "NDBE",
+      "section_slide_probs": [
+        0.435,
+        0.564,
+        0.001,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "section_tile_argmax_dist": {
+        "NORMAL_OTHER": 776,
+        "NDBE": 1289,
+        "IND": 7,
+        "LGD": 5,
+        "HGD": 3,
+        "CANCER": 0
+      },
+      "section_expected_grade_mean": 0.667
+    },
+    {
+      "h5": "05d98bcc-0534-49e0-9cb0-9cebbe5da054.h5",
+      "section_grade": "IND",
+      "case_max": "LGD",
+      "n_tiles": 1743,
+      "case_max_slide_pred": "NDBE",
+      "case_max_slide_probs": [
+        0.0,
+        0.999,
+        0.0,
+        0.001,
+        0.0,
+        0.0
+      ],
+      "case_max_tile_argmax_dist": {
+        "NORMAL_OTHER": 70,
+        "NDBE": 1642,
+        "IND": 6,
+        "LGD": 15,
+        "HGD": 3,
+        "CANCER": 7
+      },
+      "case_max_expected_grade_mean": 1.022,
+      "section_slide_pred": "NDBE",
+      "section_slide_probs": [
+        0.222,
+        0.772,
+        0.004,
+        0.001,
+        0.0,
+        0.0
+      ],
+      "section_tile_argmax_dist": {
+        "NORMAL_OTHER": 341,
+        "NDBE": 1339,
+        "IND": 8,
+        "LGD": 40,
+        "HGD": 15,
+        "CANCER": 0
+      },
+      "section_expected_grade_mean": 0.898
+    },
+    {
+      "h5": "f8f435c0-5e69-4c84-8403-5652d0c5b8a5.h5",
+      "section_grade": "IND",
+      "case_max": "IND",
+      "n_tiles": 2637,
+      "case_max_slide_pred": "NDBE",
+      "case_max_slide_probs": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "case_max_tile_argmax_dist": {
+        "NORMAL_OTHER": 520,
+        "NDBE": 2014,
+        "IND": 4,
+        "LGD": 95,
+        "HGD": 4,
+        "CANCER": 0
+      },
+      "case_max_expected_grade_mean": 0.918,
+      "section_slide_pred": "NDBE",
+      "section_slide_probs": [
+        0.011,
+        0.981,
+        0.005,
+        0.003,
+        0.0,
+        0.0
+      ],
+      "section_tile_argmax_dist": {
+        "NORMAL_OTHER": 820,
+        "NDBE": 1706,
+        "IND": 4,
+        "LGD": 91,
+        "HGD": 15,
+        "CANCER": 1
+      },
+      "section_expected_grade_mean": 0.794
+    },
+    {
+      "h5": "40a08c9c-8ed7-41ea-8c32-f518a3101fb6.h5",
+      "section_grade": "LGD",
+      "case_max": "LGD",
+      "n_tiles": 3337,
+      "case_max_slide_pred": "NORMAL_OTHER",
+      "case_max_slide_probs": [
+        0.56,
+        0.44,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "case_max_tile_argmax_dist": {
+        "NORMAL_OTHER": 1823,
+        "NDBE": 1513,
+        "IND": 0,
+        "LGD": 0,
+        "HGD": 0,
+        "CANCER": 1
+      },
+      "case_max_expected_grade_mean": 0.479,
+      "section_slide_pred": "NORMAL_OTHER",
+      "section_slide_probs": [
+        0.998,
+        0.002,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "section_tile_argmax_dist": {
+        "NORMAL_OTHER": 2512,
+        "NDBE": 747,
+        "IND": 78,
+        "LGD": 0,
+        "HGD": 0,
+        "CANCER": 0
+      },
+      "section_expected_grade_mean": 0.333
+    },
+    {
+      "h5": "6449e538-41f9-4593-956c-86e7b3600f7c.h5",
+      "section_grade": "LGD",
+      "case_max": "LGD",
+      "n_tiles": 2594,
+      "case_max_slide_pred": "NDBE",
+      "case_max_slide_probs": [
+        0.0,
+        0.999,
+        0.0,
+        0.001,
+        0.0,
+        0.0
+      ],
+      "case_max_tile_argmax_dist": {
+        "NORMAL_OTHER": 130,
+        "NDBE": 2389,
+        "IND": 49,
+        "LGD": 4,
+        "HGD": 22,
+        "CANCER": 0
+      },
+      "case_max_expected_grade_mean": 1.024,
+      "section_slide_pred": "NORMAL_OTHER",
+      "section_slide_probs": [
+        0.995,
+        0.001,
+        0.004,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "section_tile_argmax_dist": {
+        "NORMAL_OTHER": 987,
+        "NDBE": 1556,
+        "IND": 27,
+        "LGD": 6,
+        "HGD": 17,
+        "CANCER": 1
+      },
+      "section_expected_grade_mean": 0.698
+    },
+    {
+      "h5": "f8731aba-3c77-44d4-bf39-c433d479955f.h5",
+      "section_grade": "HGD",
+      "case_max": "CANCER",
+      "n_tiles": 2372,
+      "case_max_slide_pred": "CANCER",
+      "case_max_slide_probs": [
+        0.0,
+        0.026,
+        0.0,
+        0.0,
+        0.0,
+        0.974
+      ],
+      "case_max_tile_argmax_dist": {
+        "NORMAL_OTHER": 147,
+        "NDBE": 1251,
+        "IND": 0,
+        "LGD": 0,
+        "HGD": 1,
+        "CANCER": 973
+      },
+      "case_max_expected_grade_mean": 2.564,
+      "section_slide_pred": "NDBE",
+      "section_slide_probs": [
+        0.0,
+        0.999,
+        0.0,
+        0.0,
+        0.001,
+        0.0
+      ],
+      "section_tile_argmax_dist": {
+        "NORMAL_OTHER": 121,
+        "NDBE": 1911,
+        "IND": 6,
+        "LGD": 237,
+        "HGD": 97,
+        "CANCER": 0
+      },
+      "section_expected_grade_mean": 1.429
+    },
+    {
+      "h5": "ba075dde-0f2a-4643-8fec-b35c1721e962.h5",
+      "section_grade": "HGD",
+      "case_max": "CANCER",
+      "n_tiles": 3970,
+      "case_max_slide_pred": "CANCER",
+      "case_max_slide_probs": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.02,
+        0.98
+      ],
+      "case_max_tile_argmax_dist": {
+        "NORMAL_OTHER": 432,
+        "NDBE": 2696,
+        "IND": 16,
+        "LGD": 29,
+        "HGD": 148,
+        "CANCER": 649
+      },
+      "case_max_expected_grade_mean": 1.76,
+      "section_slide_pred": "HGD",
+      "section_slide_probs": [
+        0.001,
+        0.0,
+        0.001,
+        0.005,
+        0.986,
+        0.007
+      ],
+      "section_tile_argmax_dist": {
+        "NORMAL_OTHER": 909,
+        "NDBE": 683,
+        "IND": 317,
+        "LGD": 786,
+        "HGD": 1238,
+        "CANCER": 37
+      },
+      "section_expected_grade_mean": 2.211
+    },
+    {
+      "h5": "38d8cb9d-b837-4290-9311-b1fce9e640e6.h5",
+      "section_grade": "CANCER",
+      "case_max": "CANCER",
+      "n_tiles": 7990,
+      "case_max_slide_pred": "CANCER",
+      "case_max_slide_probs": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "case_max_tile_argmax_dist": {
+        "NORMAL_OTHER": 1601,
+        "NDBE": 137,
+        "IND": 70,
+        "LGD": 2,
+        "HGD": 5,
+        "CANCER": 6175
+      },
+      "case_max_expected_grade_mean": 3.861,
+      "section_slide_pred": "CANCER",
+      "section_slide_probs": [
+        0.288,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.711
+      ],
+      "section_tile_argmax_dist": {
+        "NORMAL_OTHER": 5313,
+        "NDBE": 71,
+        "IND": 6,
+        "LGD": 25,
+        "HGD": 350,
+        "CANCER": 2225
+      },
+      "section_expected_grade_mean": 1.719
+    },
+    {
+      "h5": "f184e92b-2f30-4fff-9d8c-6860309e696d.h5",
+      "section_grade": "CANCER",
+      "case_max": "CANCER",
+      "n_tiles": 2205,
+      "case_max_slide_pred": "CANCER",
+      "case_max_slide_probs": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.002,
+        0.998
+      ],
+      "case_max_tile_argmax_dist": {
+        "NORMAL_OTHER": 261,
+        "NDBE": 1482,
+        "IND": 1,
+        "LGD": 38,
+        "HGD": 111,
+        "CANCER": 312
+      },
+      "case_max_expected_grade_mean": 1.706,
+      "section_slide_pred": "CANCER",
+      "section_slide_probs": [
+        0.002,
+        0.0,
+        0.0,
+        0.001,
+        0.05,
+        0.947
+      ],
+      "section_tile_argmax_dist": {
+        "NORMAL_OTHER": 884,
+        "NDBE": 588,
+        "IND": 58,
+        "LGD": 293,
+        "HGD": 337,
+        "CANCER": 45
+      },
+      "section_expected_grade_mean": 1.487
+    }
+  ],
+  "trained_on_slides": 1229,
+  "held_out_folds": [
+    4
+  ]
+}
