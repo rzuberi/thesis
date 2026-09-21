@@ -1,0 +1,39 @@
+{
+  "n_slides": 707,
+  "grade_dist": {
+    "0": 560,
+    "2": 87,
+    "1": 60
+  },
+  "grade_vs_pathologist": {
+    "LGDplus": {
+      "mean_plgd": 0.5344,
+      "max_plgd": 0.5658,
+      "top10_plgd": 0.5459,
+      "mean_phgd": 0.586
+    }
+  },
+  "progression_zero_shot": {
+    "mean_plgd": {
+      "sample_auroc": 0.5431,
+      "patient_auroc_max": 0.5826
+    },
+    "max_plgd": {
+      "sample_auroc": 0.5748,
+      "patient_auroc_max": 0.6555
+    },
+    "top10_plgd": {
+      "sample_auroc": 0.5485,
+      "patient_auroc_max": 0.596
+    },
+    "mean_phgd": {
+      "sample_auroc": 0.5933,
+      "patient_auroc_max": 0.6668
+    }
+  },
+  "reference_trained_image_only": {
+    "sample": 0.739,
+    "patient": 0.7312
+  },
+  "reference_pathologist_grade_as_score_patient": 0.687
+}

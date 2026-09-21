@@ -162,6 +162,33 @@ On return: read results against pre-registrations; deviations to log: none yet.
 
 ## Amendment log
 
+- 2026-09-21 20:15 → 22:30 (Rehan: "launch the ERIN job for the 1 year and other
+  feasible tasks given the imminent dysplasia"): 2.49 ERIN imminent-dysplasia
+  task set, pre-registered (docs/erin_imminent_tasks_preregistration.md, commit
+  48ab0c5) BEFORE launch; 364-task pull-worker queue (embed, 7 tabular, 105
+  image units, 250 T2a permutation units, tabular perms) over cuda/h200/epyc
+  workers with race twins; all 105 primary image units done by 22:04, zero
+  failures. INTERIM (permutations pending): image arm beats grade+age baseline
+  with CI excluding zero on T2b (HGD+ within 1 y of a benign report: 0.862 vs
+  0.629, +0.23 [+0.12, +0.35], 30 pos), T3a field effect (0.821 vs 0.577,
+  +0.24 [+0.18, +0.31]), T3b (0.869 vs 0.608, +0.26 [+0.19, +0.33]), T4 prior
+  dysplasia (0.780 vs 0.550, +0.23 [+0.18, +0.28]); T2a primary (LGD+ within
+  1 y, 44 pos) 0.817 vs 0.709, +0.11 [−0.03, +0.23] — CI includes 0; T2c
+  next-report LGD+ null (0.661 vs 0.649). Text arm (nomic) weak everywhere
+  (0.61–0.73); late-mean fusion NEVER beats the image arm (T2a −0.04 [−0.10,
+  +0.02], T2b −0.04, T2c +0.04 [−0.02, +0.13]) — the ERIN fusion answer is
+  the same null as SWG/OCCAMS, now on 7 tasks. T1 (1-y from first index, 18
+  pos): image 0.848, fusion 0.909 — feasibility only, not interpreted.
+  Embedding on epyc CPU was ~1 report/min (again); moved to a GPU worker:
+  389 reports in 19 s. Assembler/renderer: scripts/erin_fusion/assemble.py,
+  render_report.py → reports/erin_imminent_tasks.md + 3 figures.
+- 2026-09-21 22:10: CONCH zero-shot on the SWG release (707 slides, the 256
+  stored level-2 tiles each; results/numbers/conch_swg.json): vs pathologist
+  LGD+ grade only 0.53–0.59 (ERIN was 0.78); zero-shot progression 0.58–0.67
+  patient-level (best mean P(HGD+) 0.667) vs trained image_only 0.731 and
+  grade-as-score 0.687. Likely causes: level-2 (~0.9 µm/px) tiles vs CONCH's
+  20× training scale, and the 256-tile subsample; CONCH is not a substitute
+  for a trained SWG image arm.
 - 2026-09-21 19:40 (Rehan: "pre-register and run the first image + text fusion
   experiment on ERIN for predicting future progression"): 2.48 pre-registered
   (docs/erin_progression_fusion_preregistration.md) and STOPPED at the cohort
