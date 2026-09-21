@@ -1,0 +1,220 @@
+{
+  "source": "/mnt/scratche/slow/fmlab/zuberi01/phd/barretts_retraining/barretts_training/analysis/chapter1_lgd2_final_pre_event_20260713_final",
+  "patients": 150,
+  "samples_rows": 707,
+  "progressor_patients": 50,
+  "positive_samples_next_biopsy_lgd2": 107,
+  "endpoint_note": "y_progressor is PER SAMPLE: the next biopsy after this sample shows LGD confirmed on two reads or worse; a patient is a progressor if any sample is positive",
+  "alt_Progressor_label_col": {
+    "positive_samples": 127,
+    "positive_patients": 35
+  },
+  "folds": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+  ],
+  "samples_per_patient": {
+    "median": 3.0,
+    "min": 1.0,
+    "max": 19.0,
+    "n": 150
+  },
+  "years": {
+    "min": 1994,
+    "max": 2017,
+    "by_year": {
+      "1994": 1,
+      "1996": 5,
+      "1997": 3,
+      "1998": 8,
+      "1999": 9,
+      "2000": 16,
+      "2001": 20,
+      "2002": 21,
+      "2003": 42,
+      "2004": 28,
+      "2005": 39,
+      "2006": 49,
+      "2007": 62,
+      "2008": 64,
+      "2009": 75,
+      "2010": 64,
+      "2011": 32,
+      "2012": 43,
+      "2013": 41,
+      "2014": 29,
+      "2015": 24,
+      "2016": 25,
+      "2017": 7
+    }
+  },
+  "grade_dist_sample_level_codes": {
+    "0": 560,
+    "2": 87,
+    "1": 60
+  },
+  "grade_code_assumed_names": {
+    "0": "NDBE",
+    "1": "IND",
+    "2": "LGD",
+    "3": "HGD",
+    "4": "IMC/cancer"
+  },
+  "grade_dist_patient_max": {
+    "0": 97,
+    "1": 15,
+    "2": 38
+  },
+  "entry_grade_first_sample": {
+    "0": 121,
+    "2": 16,
+    "1": 13
+  },
+  "max_pathology_col_dist": {
+    "0": 237,
+    "2": 208,
+    "3": 130,
+    "1": 73,
+    "4": 51,
+    "5": 8
+  },
+  "progression_timing": {
+    "Time_to_progression_per_progressor_patient": {
+      "median": 1492.5,
+      "min": 396.0,
+      "max": 5262.0,
+      "n": 30
+    },
+    "Time_to_progression_units_note": "days (median 1095 = 3 years); non-null on the samples of progressor patients",
+    "Time_to_progression_all_nonnull_samples_days": {
+      "median": 1095.0,
+      "min": 50.0,
+      "max": 5262.0,
+      "n": 121
+    },
+    "MonthsBeforeLastBiopsy_nonprogressor_samples": {
+      "median": 22.57085,
+      "min": 0.0,
+      "max": 157.6674,
+      "n": 506
+    },
+    "biopsies_total_for_patient": {
+      "median": 4.0,
+      "min": 1.0,
+      "max": 11.0,
+      "n": 707
+    },
+    "MonthsBeforeLastBiopsy_progressor_samples": {
+      "median": 29.4374,
+      "min": 0.0,
+      "max": 172.8789,
+      "n": 201
+    },
+    "first_to_last_sample_span_months_progressors": {
+      "median": 24.34296977660972,
+      "min": 0.0,
+      "max": 135.742444152431,
+      "n": 50
+    },
+    "first_to_last_sample_span_months_nonprogressors": {
+      "median": 0.0,
+      "min": 0.0,
+      "max": 157.6544021024967,
+      "n": 100
+    },
+    "DaysToNextBiopsy_all": {
+      "median": 708.0,
+      "min": 1.0,
+      "max": 1981.0,
+      "n": 707
+    },
+    "Progress_in_k_sample_counts": {
+      "Progress_in_1": 11,
+      "Progress_in_2": 35,
+      "Progress_in_3": 64,
+      "Progress_in_4": 86,
+      "Progress_in_5": 95
+    },
+    "condition_col_dist": {
+      "all_samples": 707
+    }
+  },
+  "cnv": {
+    "samples_with_cx": 707,
+    "patients": 150,
+    "unique_cnv_ids": 693
+  },
+  "uni2": {
+    "slides_ok": 707,
+    "status_counts": {
+      "ok": 707
+    },
+    "patches_per_slide": {
+      "median": 256.0,
+      "min": 256.0,
+      "max": 256.0,
+      "n": 707
+    },
+    "feat_dim": "1536",
+    "magnification_note": "uni2_tile224_lvl2 = 224px tiles at pyramid level 2 (see release); thesis states 20x/224px"
+  },
+  "modality_intersection": {
+    "samples_uni2_and_cnv_in_manifest": 707,
+    "patients": 150,
+    "manifest_samples_missing_uni2": 0,
+    "manifest_samples_missing_cx": 0
+  },
+  "slides_on_disk_csv": {
+    "rows": 1028,
+    "cols": [
+      "patient_id",
+      "filename",
+      "pathology_grading",
+      "progressor"
+    ],
+    "with_patient": 1005,
+    "patients": 173,
+    "grade_col_dist": {
+      "NDBE": 629,
+      "LGD": 162,
+      "HGD": 77,
+      "IND": 67,
+      "NaN": 48,
+      "CANCER_IMC": 37,
+      "LGD (DB jury, specimen-level)": 3,
+      "normal": 3,
+      "GM": 2
+    },
+    "P_NP": {
+      "NP": 631,
+      "P": 353,
+      "NaN": 44
+    },
+    "slides_per_patient": {
+      "median": 4.0,
+      "min": 1.0,
+      "max": 30.0,
+      "n": 173
+    }
+  },
+  "project_state_lines": [
+    "- Primary endpoint: `NextBiopsyProgression_LGD2plus`.",
+    "- Primary LGD2+ strict next-biopsy master: `data/derived_nextbiopsy_lgd2_strict_nextbiopsy_CANONICAL_ONLY_20260319/derived_master.csv`",
+    "- Primary LGD2+ 5-fold campaign: `data/foundation_grid_runs/campaign_lgd2_nextbiopsy_lgd2_refresh_cuda_20260319_142251/`",
+    "- Primary LGD2+ patient aggregation: `data/foundation_grid_runs/campaign_lgd2_nextbiopsy_lgd2_refresh_cuda_20260319_142251/core_lvl2/patient_aggregation/`",
+    "- LGD2+ modality shuffle/ablation support: `data/foundation_grid_runs/campaign_lgd2_h200_patient_signal_lgd2_20260319/`",
+    "- Patient-level LGD2+ metrics (AUPRC, ROC AUC, Brier/calibration, PPV/NPV, FP/TN, fixed operating points, bootstrap CIs) are computed in `reports/thesis_ch1/lgd2_patient_level_metrics_all_samples.csv`.",
+    "- Early-prediction-only sensitivity analysis (excludes `DaysFromCurrentToEvent == 0`) is complete: `reports/thesis_ch1/lgd2_patient_level_metrics_early_prediction_only.csv`.",
+    "- Late fusion (`mean`, `stack_logit`) integrated at patient level for uni2/virchow2/gigapath; see manifest rows `lgd2_late_fusion_*`.",
+    "- ABMIL histology interpretation complete for all eight selected LGD2+ cases (external outputs, `pathology` env); no environment blocker remains.",
+    "- Frozen strict pre-event cohort release: 707 matched rows, 150 patients, 693 unique CNV profiles; at-event and post-event rows excluded before splitting.",
+    "- Final five-fold patient-disjoint nested-CV rerun complete for CNV-only, UNI2 ABMIL, early fusion, intermediate fusion, late mean, and late stack-logit on identical rows/patients.",
+    "- LGD2+ CNV feature-importance interpretation is now AVAILABLE. The July 13 final",
+    "  the five folds into `reports/thesis_ch1/lgd2_cnv_feature_importance_aggregated.csv`",
+    "- Clean final tile/magnification LGD2+ comparison table is not yet packaged.",
+    "- External validation remains absent. Do not generalise beyond this internal matched cohort."
+  ]
+}

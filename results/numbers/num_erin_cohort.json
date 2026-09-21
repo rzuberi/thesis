@@ -1,0 +1,328 @@
+{
+  "reports": {
+    "n": 7149,
+    "patients": 2537,
+    "years": {
+      "min": 2014,
+      "max": 2025,
+      "by_year": {
+        "2014": 47,
+        "2015": 337,
+        "2016": 405,
+        "2017": 447,
+        "2018": 614,
+        "2019": 751,
+        "2020": 515,
+        "2021": 738,
+        "2022": 989,
+        "2023": 941,
+        "2024": 1168,
+        "2025": 197
+      }
+    },
+    "reports_per_patient": {
+      "median": 2.0,
+      "min": 1.0,
+      "max": 21.0,
+      "n": 2537
+    },
+    "patients_with_ge2_reports": 1459,
+    "followup_span_years_patients_ge2": {
+      "median": 3.7700205338809036,
+      "min": 0.0,
+      "max": 10.30800821355236,
+      "n": 1459
+    },
+    "SpecimenProtocol_top": {
+      "OESOPHAGUS": 6654,
+      "OESOPHAGUS, PART/TOT RESECTION": 490,
+      "POLYP, STOMACH/SMALL INTESTINE": 1,
+      "ADIPOSE TISSUE": 1,
+      "DIVERTICULUM-OESOPHAGUS/SM INT": 1,
+      "STOMACH, BIOPSY": 1,
+      "LYMPH NODES, REGIONAL RESECT": 1
+    },
+    "CaseStatus": {
+      "Signed Out": 6300,
+      "Addendum": 679,
+      "Amendment": 170
+    },
+    "age_at_investigation": {
+      "median": 69.0,
+      "min": 17.0,
+      "max": 98.0,
+      "n": 7149
+    }
+  },
+  "slides": {
+    "all_files": 12347,
+    "cases": 2280,
+    "patients": 1614,
+    "he_slides": 11672,
+    "non_he": 675,
+    "stain_type_counts": {
+      "Haematoxylin and eosin stain (H&E)": 11672,
+      "Special stain": 282,
+      "(blank)": 281,
+      "Immunohistochemistry (IHC)": 112
+    },
+    "organ_meta_counts": {
+      "(blank)": 5169,
+      "OESOPHAGUS": 5140,
+      "LYMPH NODE": 1099,
+      "STOMACH": 479,
+      "DUODENUM": 165,
+      "SOFT TIS NOT TUM/MAS/LIP/DEB": 131,
+      "COLORECTAL": 86,
+      "POLYP": 57,
+      "MISCELLANEOUS / UNSPECIFIED": 14,
+      "SOFT TIS TUMOR EXTENSIVE RES": 3,
+      "STOMACH-SUB/TOT RES FOR TUMOR": 1,
+      "OMENTUM": 1,
+      "SOFT TIS MASS BX SIMP EXCISION": 1,
+      "PERITONEUM": 1
+    },
+    "organ_meta_known_frac": 0.581,
+    "tissue_meta_top": {
+      "(blank)": 5169,
+      "OESOPHAGUS": 4144,
+      "OESOPHAGUS |  PART/TOT RESECTION": 996,
+      "LYMPH NODE": 845,
+      "STOMACH |  BIOPSY": 479,
+      "LYMPH NODES |  REGIONAL RESECT": 254,
+      "DUODENUM |  BIOPSY": 165,
+      "SOFT TIS NOT TUM/MAS/LIP/DEB": 131,
+      "COLON |  BIOPSY": 81,
+      "POLYP |  STOMACH/SMALL INTESTINE": 45
+    },
+    "he_slides_per_case": {
+      "median": 3.0,
+      "min": 1.0,
+      "max": 88.0,
+      "n": 2268
+    },
+    "he_slides_per_patient": {
+      "median": 3.0,
+      "min": 1.0,
+      "max": 138.0,
+      "n": 1608
+    },
+    "size_mb_per_slide": {
+      "median": 383.7,
+      "min": 0.0,
+      "max": 8020.8,
+      "n": 12347
+    },
+    "total_tb": 6.35
+  },
+  "features": {
+    "h5_files": 11781,
+    "unreadable": 0,
+    "failed_log_lines": 1189,
+    "manifest_he_to_extract": 9562,
+    "he_slides_with_h5": 11654,
+    "he_slides_without_h5": 18,
+    "patches_total_kept": 38138909,
+    "patches_per_slide_kept": {
+      "median": 2226.0,
+      "min": 21.0,
+      "max": 8000.0,
+      "n": 11781
+    },
+    "grid_tiles_per_slide": {
+      "median": 72960.0,
+      "min": 594.0,
+      "max": 210504.0,
+      "n": 9540
+    },
+    "env_counts": {
+      "torch2.9.1+cu128|timm1.0.24|NVIDIA H200": 1928,
+      "torch2.0.1+cu117|timm1.0.3|NVIDIA L40S": 7612,
+      "?": 2241
+    },
+    "tile": "224 px at 0.5 mpp (20x), UNI2-h 1536-d"
+  },
+  "jury_report_level": {
+    "status": {
+      "train_eligible": 6867,
+      "unsure_held_out": 204,
+      "adjudicated": 78
+    },
+    "final_label_all": {
+      "NDBE": 5151,
+      "CANCER": 863,
+      "HGD": 405,
+      "LGD": 269,
+      "IND": 257,
+      "unsure": 204
+    },
+    "final_label_train_eligible": {
+      "NDBE": 5105,
+      "CANCER": 834,
+      "HGD": 404,
+      "LGD": 268,
+      "IND": 256
+    },
+    "patient_max_grade": {
+      "NDBE": 1561,
+      "CANCER": 622,
+      "HGD": 141,
+      "LGD": 92,
+      "IND": 91
+    },
+    "patient_first_report_grade": {
+      "NDBE": 1701,
+      "CANCER": 468,
+      "HGD": 124,
+      "unsure": 95,
+      "IND": 81,
+      "LGD": 68
+    },
+    "reports_with_he_slide_on_disk": 2282,
+    "reports_with_any_slide_file": 2294
+  },
+  "imaged_cases_original_one_per_case": {
+    "rows": 2280,
+    "cases": 2279,
+    "patients": 1614,
+    "label_status": {
+      "train_eligible": 2204,
+      "unsure_held_out": 59,
+      "adjudicated": 17
+    },
+    "final_label": {
+      "NDBE": 1625,
+      "CANCER": 313,
+      "HGD": 112,
+      "LGD": 103,
+      "IND": 68,
+      "unsure": 59
+    }
+  },
+  "progression_cohort_v3": {
+    "patients": 1266,
+    "progressors": 181,
+    "index_grade": {
+      "NDBE": 1096,
+      "IND": 92,
+      "LGD": 78
+    },
+    "tte_days_progressors": {
+      "median": 245.0,
+      "min": 9.0,
+      "max": 3227.0,
+      "n": 181
+    },
+    "followup_days_nonprogressors": {
+      "median": 1530.0,
+      "min": 4.0,
+      "max": 3765.0,
+      "n": 1085
+    },
+    "n_future_reports": {
+      "median": 2.0,
+      "min": 1.0,
+      "max": 20.0,
+      "n": 1266
+    }
+  },
+  "per_section": {
+    "reports_with_consensus": 7099,
+    "sections_per_report": {
+      "median": 2.0,
+      "min": 0.0,
+      "max": 17.0,
+      "n": 7099
+    },
+    "section_worst_grade_dist": {
+      "NORMAL_OTHER": 8101,
+      "IND": 478,
+      "NDBE": 7306,
+      "HGD": 888,
+      "CANCER": 1186,
+      "LGD": 732
+    },
+    "cancer_subtype_sections": {
+      "ADENOCARCINOMA": 1131,
+      "SQUAMOUS": 139,
+      "OTHER_CANCER": 11,
+      "SIGNET_RING": 78,
+      "POST_NEOADJUVANT_TX_EFFECT": 14
+    },
+    "jurors": [
+      "gemma3_12b",
+      "gemma3_27b",
+      "phi4_14b",
+      "qwen3_14b",
+      "qwen3_32b"
+    ],
+    "dual_labelled_slides": {
+      "n": 1538,
+      "worst_grade": {
+        "NORMAL_OTHER": 685,
+        "NDBE": 589,
+        "LGD": 82,
+        "CANCER": 81,
+        "HGD": 66,
+        "IND": 35
+      },
+      "case_max": {
+        "NDBE": 778,
+        "NORMAL_OTHER": 311,
+        "CANCER": 168,
+        "LGD": 116,
+        "HGD": 96,
+        "IND": 69
+      },
+      "frac_differ": 0.3199
+    }
+  },
+  "inter_model_agreement_full_corpus": {
+    "models": [
+      "deepseek-r1_14b",
+      "gemma3_12b",
+      "gemma3_27b",
+      "llama3.1_8b",
+      "mistral-small3.2",
+      "phi4_14b",
+      "qwen3_14b",
+      "qwen3_32b"
+    ],
+    "n_reports_all_models": 6657,
+    "mean_pairwise_agreement": 0.9555,
+    "min_pairwise": 0.8965,
+    "max_pairwise": 0.9866,
+    "fleiss_kappa": 0.9002,
+    "frac_unanimous": 0.8639,
+    "pairwise": {
+      "deepseek-r1_14b|gemma3_12b": 0.9639,
+      "deepseek-r1_14b|gemma3_27b": 0.9659,
+      "deepseek-r1_14b|llama3.1_8b": 0.9064,
+      "deepseek-r1_14b|mistral-small3.2": 0.9787,
+      "deepseek-r1_14b|phi4_14b": 0.9713,
+      "deepseek-r1_14b|qwen3_14b": 0.9808,
+      "deepseek-r1_14b|qwen3_32b": 0.9665,
+      "gemma3_12b|gemma3_27b": 0.9758,
+      "gemma3_12b|llama3.1_8b": 0.8976,
+      "gemma3_12b|mistral-small3.2": 0.9772,
+      "gemma3_12b|phi4_14b": 0.9677,
+      "gemma3_12b|qwen3_14b": 0.97,
+      "gemma3_12b|qwen3_32b": 0.9725,
+      "gemma3_27b|llama3.1_8b": 0.8971,
+      "gemma3_27b|mistral-small3.2": 0.9794,
+      "gemma3_27b|phi4_14b": 0.9737,
+      "gemma3_27b|qwen3_14b": 0.9715,
+      "gemma3_27b|qwen3_32b": 0.9728,
+      "llama3.1_8b|mistral-small3.2": 0.9028,
+      "llama3.1_8b|phi4_14b": 0.8965,
+      "llama3.1_8b|qwen3_14b": 0.904,
+      "llama3.1_8b|qwen3_32b": 0.8989,
+      "mistral-small3.2|phi4_14b": 0.9814,
+      "mistral-small3.2|qwen3_14b": 0.9866,
+      "mistral-small3.2|qwen3_32b": 0.9767,
+      "phi4_14b|qwen3_14b": 0.9763,
+      "phi4_14b|qwen3_32b": 0.9679,
+      "qwen3_14b|qwen3_32b": 0.9739
+    }
+  }
+}

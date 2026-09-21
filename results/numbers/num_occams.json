@@ -1,0 +1,199 @@
+{
+  "slides_h5": 635,
+  "cases_with_slides": 276,
+  "specimen_mix_slides": {
+    "RES": 322,
+    "OGD": 286,
+    "NOT-HE": 25,
+    "OTHER": 2
+  },
+  "slides_per_case": {
+    "median": 2.0,
+    "min": 1.0,
+    "max": 11.0,
+    "n": 276
+  },
+  "cases_with_RES": 141,
+  "cases_with_OGD": 221,
+  "cases_with_both": 86,
+  "master": {
+    "rows_dedup": 2393,
+    "id_col": "occams_id"
+  },
+  "master_rows_for_slide_cases": 145,
+  "slide_cases": {
+    "diagnosis_years": {
+      "min": 2010,
+      "max": 2019,
+      "by_year": {
+        "2010": 3,
+        "2011": 13,
+        "2012": 26,
+        "2013": 21,
+        "2014": 25,
+        "2015": 23,
+        "2016": 16,
+        "2017": 6,
+        "2018": 11,
+        "2019": 1
+      }
+    },
+    "cancer_site": {
+      "prostate 2001": 1,
+      "bladder": 1,
+      "breast": 1,
+      "after diagnosis of gastro-oesophageal cancer 03/10/2016 patient was diagnosed with adenocarcinoma of sigmoid colon 26/10/2016  initial diagnosis adenocarcinoma of sigmoid colo": 1,
+      "gastro oesophageal junction": 1
+    },
+    "neoadjuvant_grouped": {
+      "ECF/ECX/EOF/EOX": 118,
+      "CRT-CF/CX": 9,
+      "CF/CX/XELOX/FOLFOX/CAPOX": 8,
+      "FLOT": 3,
+      "CF/CX/XELOX/FOLFOX/CAPOX-lapatinib": 2,
+      "CRT-CROSS": 2,
+      "CRT-unknown": 1,
+      "CRT-CX": 1,
+      "Other-Singleagent": 1
+    },
+    "neoadjuvant_broadcategory": {
+      "Anthra-Plat-Fluoro": 117,
+      "CRT-Plat-Fluoro": 10,
+      "Plat-Fluoro": 8,
+      "Plat-Fluoro-Microtubule inh": 3,
+      "Plat-Fluoro-TKI": 2,
+      "CRT-Unknown": 1,
+      "CRT-Carbo-Taxol": 1,
+      "Plat-Taxol": 1,
+      "CRT-Plat-Taxol": 1,
+      "Other-Taxol": 1
+    },
+    "trg_score": {
+      "4": 72,
+      "3": 24,
+      "5": 21,
+      "1": 11,
+      "2": 8
+    },
+    "tumour_response": {
+      "not_recorded": 51,
+      "greater_than_or_equals_to_50pc": 51,
+      "less_than_50pc": 16,
+      "0pc_remaining": 10,
+      "greater_than_or_equals_to_20pc": 6,
+      "less_than_20pc": 3
+    },
+    "pretreatment_T": {
+      "t3": 115,
+      "t2": 22,
+      "tx": 4,
+      "t4a": 2,
+      "t4": 1,
+      "t1b": 1
+    },
+    "pretreatment_N": {
+      "n1": 65,
+      "n0": 46,
+      "n2": 26,
+      "n3": 7,
+      "nx": 1
+    },
+    "resection_pT": {
+      "t3": 80,
+      "t2": 19,
+      "t1b": 11,
+      "t0": 11,
+      "t4a": 10,
+      "tx": 6,
+      "t1a": 5,
+      "t4": 2,
+      "t1": 1
+    },
+    "resection_pN": {
+      "n0": 53,
+      "n1": 41,
+      "n3": 24,
+      "n2": 20,
+      "nx": 7
+    },
+    "recurrence_date_nonnull": 21,
+    "adjuvant_regimen_nonnull": 145
+  },
+  "survival_columns_found": {
+    "smoker_status": 139,
+    "diagnostic_tumour_grading_differentiation_status": 117,
+    "pre_treatment_performance_status": 130,
+    "resection_path_tumour_grading_differentiation_status": 133,
+    "vital_status": 145,
+    "date_death": 94,
+    "deceased_survival_days": 95,
+    "last_known_survival_days": 50
+  },
+  "completeness_all_master_rows": {
+    "trg_score": 2018,
+    "resection_path_mandard_score_for_response": 2291,
+    "tumour_response": 2111,
+    "neoadjuvant_grouped": 2392,
+    "date_original_disease_reoccurred": 540,
+    "resection_path_nstage_rp_tnm7": 2393,
+    "date_of_operation": 2392
+  },
+  "genomics": {
+    "tsv_cases": 383,
+    "tsv_cases_with_slides": 141,
+    "columns": [
+      "TP53_SNV",
+      "TP53_indel",
+      "TP53_deletion",
+      "TP53_knockout",
+      "ploidy",
+      "WGD"
+    ],
+    "nonnull_in_slide_cases": {
+      "TP53_SNV": 141,
+      "TP53_indel": 141,
+      "TP53_deletion": 141,
+      "TP53_knockout": 141,
+      "ploidy": 141,
+      "WGD": 141
+    },
+    "WGD_dist_slide_cases": {
+      "yes": 85,
+      "no": 56
+    },
+    "TP53_any_slide_cases": 117
+  },
+  "candidate_labels_positives": {
+    "TRG1-3_responders_among_OGD_slide_cases": {
+      "pos": 41,
+      "n": 131
+    },
+    "TRG1-2_among_OGD_slide_cases": {
+      "pos": 18,
+      "n": 131
+    },
+    "recurrence_recorded_among_slide_cases": {
+      "pos": 21,
+      "n": 145,
+      "note": "date present = recurred; absence != no recurrence"
+    },
+    "node_positive_pN_among_slide_cases": {
+      "pos": 0,
+      "n": 145
+    },
+    "node_positive_pN_among_OGD_slide_cases": {
+      "pos": 0,
+      "n": 140
+    },
+    "deaths_in_fusion_cohort": {
+      "pos": 58,
+      "n": 87,
+      "source": "results/occams_v3.json"
+    },
+    "WGD_positive_slide_cases": {
+      "pos": 85,
+      "n": 141
+    },
+    "rule_of_thumb": "fewer than ~30 positives -> not trainable"
+  }
+}

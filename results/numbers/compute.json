@@ -1,0 +1,114 @@
+{
+ "window": "2026-08-14 to 2026-09-21",
+ "total_jobs": 32011,
+ "total_gpu_h": 1010.9,
+ "total_cpu_h": 36762.6,
+ "by_project": {
+  "erin_extraction_other_encoders": {
+   "jobs": 12097,
+   "gpu_h": 495.7,
+   "cpu_h": 3582.7,
+   "completed": 11252,
+   "cpu_only_llm_garbage_h": 0.0
+  },
+  "erin_allslides_extraction": {
+   "jobs": 2577,
+   "gpu_h": 201.4,
+   "cpu_h": 817.3,
+   "completed": 244,
+   "cpu_only_llm_garbage_h": 0.0
+  },
+  "llm_jury_sections_v3": {
+   "jobs": 212,
+   "gpu_h": 109.4,
+   "cpu_h": 728.6,
+   "completed": 184,
+   "cpu_only_llm_garbage_h": 0.0
+  },
+  "tcga_stad_extraction": {
+   "jobs": 2342,
+   "gpu_h": 56.6,
+   "cpu_h": 452.8,
+   "completed": 2089,
+   "cpu_only_llm_garbage_h": 0.0
+  },
+  "other_analysis_and_misc": {
+   "jobs": 9757,
+   "gpu_h": 41.0,
+   "cpu_h": 11675.2,
+   "completed": 4422,
+   "cpu_only_llm_garbage_h": 0.0
+  },
+  "erin_extraction_uni2_one_per_case": {
+   "jobs": 4558,
+   "gpu_h": 38.1,
+   "cpu_h": 304.5,
+   "completed": 4096,
+   "cpu_only_llm_garbage_h": 0.0
+  },
+  "llm_jury_whole_report": {
+   "jobs": 141,
+   "gpu_h": 31.8,
+   "cpu_h": 270.5,
+   "completed": 118,
+   "cpu_only_llm_garbage_h": 0.0
+  },
+  "llm_jury_sections_v2": {
+   "jobs": 80,
+   "gpu_h": 19.8,
+   "cpu_h": 13259.2,
+   "completed": 40,
+   "cpu_only_llm_garbage_h": 13100.8
+  },
+  "scifi_video_nonthesis": {
+   "jobs": 6,
+   "gpu_h": 7.0,
+   "cpu_h": 84.3,
+   "completed": 2,
+   "cpu_only_llm_garbage_h": 0.0
+  },
+  "swg_barretts": {
+   "jobs": 157,
+   "gpu_h": 5.4,
+   "cpu_h": 61.7,
+   "completed": 58,
+   "cpu_only_llm_garbage_h": 0.0
+  },
+  "llm_eoe_mdt_pheno": {
+   "jobs": 34,
+   "gpu_h": 3.4,
+   "cpu_h": 5403.9,
+   "completed": 21,
+   "cpu_only_llm_garbage_h": 5377.0
+  },
+  "occams_fusion_models": {
+   "jobs": 20,
+   "gpu_h": 0.7,
+   "cpu_h": 53.7,
+   "completed": 6,
+   "cpu_only_llm_garbage_h": 0.0
+  },
+  "occams_extraction": {
+   "jobs": 18,
+   "gpu_h": 0.5,
+   "cpu_h": 12.4,
+   "completed": 11,
+   "cpu_only_llm_garbage_h": 0.0
+  },
+  "vlm": {
+   "jobs": 8,
+   "gpu_h": 0.1,
+   "cpu_h": 55.9,
+   "completed": 6,
+   "cpu_only_llm_garbage_h": 0.0
+  },
+  "llm_pancancer_tcga": {
+   "jobs": 4,
+   "gpu_h": 0.0,
+   "cpu_h": 0.0,
+   "completed": 4,
+   "cpu_only_llm_garbage_h": 0.0
+  }
+ },
+ "note": "GPU-h = allocated GPUs x wall time incl. race-twin duplicates that exited early; project mapping by job-name prefix"
+}

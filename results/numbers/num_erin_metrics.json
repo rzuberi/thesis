@@ -1,0 +1,108 @@
+{
+  "task_binary": "NDBE/IND/normal vs LGD+ (LGD, HGD, CANCER) on the slide's OWN section grade (truth) ; models trained on case-max vs section label",
+  "task_sixclass": "NORMAL_OTHER<NDBE<IND<LGD<HGD<CANCER, same truth",
+  "split": "5-fold patient-disjoint, frozen (patient hash seed 0), 3 seeds averaged, 1,538 slides / 1,155 patients",
+  "binary": {
+    "n_slides": 1538,
+    "n_pos": 229,
+    "arms": {
+      "trained_on_case_labels": {
+        "auroc": 0.8705,
+        "auroc_ci": [
+          0.8419,
+          0.8973
+        ],
+        "auprc": 0.6238,
+        "auprc_ci": [
+          0.5555,
+          0.6894
+        ],
+        "f1_at_0.5": 0.5769,
+        "f1_at_youden": 0.6385,
+        "youden_threshold": 0.7845,
+        "sens_spec_at_youden": [
+          0.7598,
+          0.8915
+        ]
+      },
+      "trained_on_slide_labels": {
+        "auroc": 0.8604,
+        "auroc_ci": [
+          0.8291,
+          0.8886
+        ],
+        "auprc": 0.6292,
+        "auprc_ci": [
+          0.559,
+          0.7027
+        ],
+        "f1_at_0.5": 0.6004,
+        "f1_at_youden": 0.6018,
+        "youden_threshold": 0.4694,
+        "sens_spec_at_youden": [
+          0.7293,
+          0.8785
+        ]
+      }
+    }
+  },
+  "sixclass": {
+    "n_slides": 1538,
+    "class_counts": {
+      "NORMAL_OTHER": 685,
+      "NDBE": 589,
+      "IND": 35,
+      "LGD": 82,
+      "HGD": 66,
+      "CANCER": 81
+    },
+    "arms": {
+      "trained_on_case_labels": {
+        "macro_auroc_ovr": 0.7639,
+        "macro_auroc_ci": [
+          0.7409,
+          0.7866
+        ],
+        "macro_auprc_ovr": 0.3645,
+        "macro_f1": 0.3455,
+        "macro_f1_ci": [
+          0.3182,
+          0.3745
+        ],
+        "balanced_accuracy": 0.3968,
+        "accuracy": 0.5221,
+        "per_class_f1": {
+          "NORMAL_OTHER": 0.473,
+          "NDBE": 0.638,
+          "IND": 0.0,
+          "LGD": 0.199,
+          "HGD": 0.27,
+          "CANCER": 0.494
+        }
+      },
+      "trained_on_slide_labels": {
+        "macro_auroc_ovr": 0.7216,
+        "macro_auroc_ci": [
+          0.6957,
+          0.7462
+        ],
+        "macro_auprc_ovr": 0.3296,
+        "macro_f1": 0.3408,
+        "macro_f1_ci": [
+          0.3094,
+          0.3703
+        ],
+        "balanced_accuracy": 0.3407,
+        "accuracy": 0.5371,
+        "per_class_f1": {
+          "NORMAL_OTHER": 0.614,
+          "NDBE": 0.548,
+          "IND": 0.0,
+          "LGD": 0.131,
+          "HGD": 0.26,
+          "CANCER": 0.491
+        }
+      }
+    }
+  }
+}
