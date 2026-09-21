@@ -21,8 +21,22 @@ results JSONs are ground truth; any mismatch is a finding.
   normalisation: histology C 0.655 within-fold (0.627 pooled); hist+genomics
   delta −0.029 [−0.095, +0.036], hist+clinical +0.002 [−0.059, +0.062].
   [results/closure_cpu.json, results/occams_v3.json, results/occams_withinfold.json]
-- **C3.** In ERIN progression, fusion does not beat histology alone
-  (p_holm=1.0). [results/closure_cpu.json]
+- **C3 (REWORDED 2026-09-21).** In ERIN, fusion of histology with report-derived
+  clinical fields does not beat histology (Holm p 1.0). The endpoint of that
+  analysis (153 index slides / 28 "progressors") is imminent dysplasia in a
+  2022–2025 imaging window with median 0 days of follow-up — NOT progression
+  prediction; true 3-year progression is infeasible from ERIN images
+  (0 negatives; reports/erin_progression_fusion.md). The 2.49 task set
+  (7 imminent-dysplasia tasks, 105 image units) confirms the fusion null on
+  every task: late-mean never beats the image arm.
+  [results/closure_cpu.json, results/erin_prog_ablation.json,
+  results/erin_progression_fusion/results.json]
+- **C26 (NEW 2026-09-21).** Benign-looking ERIN tissue carries visible signal
+  about dysplasia elsewhere or later: image ABMIL vs grade+age baseline on
+  field effect T3a +0.24 [+0.18, +0.31] (0.821 vs 0.577), T3b +0.26, prior
+  dysplasia T4 +0.23 [+0.18, +0.28], HGD+ within 1 y T2b +0.23 [+0.12, +0.35];
+  LGD+ within 1 y T2a +0.11 [−0.03, +0.23] (n.s., 44 pos). Text embedding arm
+  weak (0.61–0.73). [results/erin_progression_fusion/results.json]
 - **C4.** The fusion nulls are not an artefact of encoder choice: under all 4
   tile encoders the fusion delta CIs cross zero on all survival cohorts.
   [results/encoder_sweep_surv.json]
