@@ -162,6 +162,38 @@ On return: read results against pre-registrations; deviations to log: none yet.
 
 ## Amendment log
 
+- 2026-09-22 10:20-12:00 (Rehan: "are we still waiting on some jobs... tell me if
+  any jobs have failed"): ERIN all-slides UNI2-h extraction CLOSED OUT. The
+  keepalive sweeper had been refilling 16 cuda + 8 h200 workers every 30 min for
+  ~24 h against 18 slides that could never succeed: 1,093 of the 1,211 FAILED
+  jobs in that window are those workers, all ExitCode 0:9 (OOM kill). Cause:
+  `openslide.get_thumbnail()` decodes the SMALLEST pyramid level whole, and 11
+  slides are truncated at exactly 4 GiB with only 2 levels (smallest
+  108032x88576), so the thumbnail alone needed ~38 GB against a 32 G limit.
+  Fixes: (a) `safe_grey_thumb()` in campaigns/allslides/extract_worker.py builds
+  the thumbnail from banded read_region calls (<1 GB) when the smallest level
+  exceeds 50 Mpx; (b) keep_workers_alive.sh now retires after STALL_LIMIT=3
+  cycles with no decrease in the remaining count, instead of only at zero.
+  All 11 big slides then extracted in ~35 min on 3 workers (87,677 tiles added).
+  Coverage 9,555/9,562 = 99.93% (results/numbers/extraction_coverage.json,
+  scripts/numbers/num_extraction_coverage.py). The 7 slides that remain are all
+  in one case (58beb6fd) and are unreadable by BOTH openslide and PIL, i.e. the
+  scans are corrupt (24 KB - 105 MB files) and need rescanning - a request for
+  the scanning team, not a compute task.
+  ALSO found by auditing tile scale across all 11,792 feature files: 4 slides had
+  been stored at 0.25 um/px (level 0) because they have a SINGLE pyramid level,
+  so no 0.5 um/px level existed to choose; their 224 px tiles cover 56 um of
+  tissue instead of 112 um and are not comparable to the other 11,788. Old files
+  moved to features_uni_v2_all/_offscale_0.25/ and re-extracted with
+  campaigns/allslides/extract_downsample.py (read 448 px at level 0, resize to
+  224; attrs record tile_px_at_level / downsample_factor). NB Slurm
+  `--export=ALL,K=V` splits on commas, so a comma-joined slide list arrives
+  truncated to its first element - the script now takes SLIDELIST (a file).
+  No analysis result changes: every experiment to date used the 0.5 um/px files.
+  Nothing else needs resubmitting; the ~112 other failures were race-losing
+  twins of the nodal probe (results complete, 50/50 perms on both labels) and 5
+  were the one-off bugs that already succeeded on re-run.
+
 - 2026-09-21 20:15 → 22:30 (Rehan: "launch the ERIN job for the 1 year and other
   feasible tasks given the imminent dysplasia"): 2.49 ERIN imminent-dysplasia
   task set, pre-registered (docs/erin_imminent_tasks_preregistration.md, commit

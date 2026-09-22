@@ -1,0 +1,60 @@
+{
+ "manifest_slides": 9562,
+ "extracted": 9555,
+ "coverage": 0.99927,
+ "excluded": [
+  {
+   "slide": "298b07b2-d8b5-43f5-bae9-f334fc8124ee.tiff",
+   "case_dir": "58beb6fd-5838-4f57-b923-c6278bd37f15",
+   "bytes": 104897561,
+   "reason": "unreadable_source_file",
+   "error": "OpenSlideUnsupportedFormatError"
+  },
+  {
+   "slide": "74b384ef-2cd8-4987-aafb-d34a770ec4c0.tiff",
+   "case_dir": "58beb6fd-5838-4f57-b923-c6278bd37f15",
+   "bytes": 24818,
+   "reason": "unreadable_source_file",
+   "error": "OpenSlideUnsupportedFormatError"
+  },
+  {
+   "slide": "b160f25d-0c68-4205-bc99-9da326b3edc2.tiff",
+   "case_dir": "58beb6fd-5838-4f57-b923-c6278bd37f15",
+   "bytes": 57898,
+   "reason": "unreadable_source_file",
+   "error": "OpenSlideUnsupportedFormatError"
+  },
+  {
+   "slide": "cbc3b730-fe77-4713-89b3-0a4af38a4f3d.tiff",
+   "case_dir": "58beb6fd-5838-4f57-b923-c6278bd37f15",
+   "bytes": 14715119,
+   "reason": "unreadable_source_file",
+   "error": "OpenSlideUnsupportedFormatError"
+  },
+  {
+   "slide": "db24c3bb-0714-4349-a86f-5e4d2891c64f.tiff",
+   "case_dir": "58beb6fd-5838-4f57-b923-c6278bd37f15",
+   "bytes": 8738308,
+   "reason": "unreadable_source_file",
+   "error": "OpenSlideUnsupportedFormatError"
+  },
+  {
+   "slide": "c6969cd1-ec2b-4680-bd16-19f644107fd5.tiff",
+   "case_dir": "58beb6fd-5838-4f57-b923-c6278bd37f15",
+   "bytes": 285323,
+   "reason": "unreadable_source_file",
+   "error": "OpenSlideUnsupportedFormatError"
+  },
+  {
+   "slide": "9460de77-e336-40e4-b1fe-e043f8b8ade3.tiff",
+   "case_dir": "58beb6fd-5838-4f57-b923-c6278bd37f15",
+   "bytes": 55687121,
+   "reason": "unreadable_source_file",
+   "error": "OpenSlideUnsupportedFormatError"
+  }
+ ],
+ "excluded_cases": [
+  "58beb6fd-5838-4f57-b923-c6278bd37f15"
+ ],
+ "note": "Feature extraction is UNI2-h at level nearest 0.5 um/px, 224 px tiles, 8000-tile cap. Slides listed under 'excluded' have no features; 'unreadable_source_file' means neither openslide nor PIL can decode the file, i.e. the scan itself is corrupt and needs rescanning."
+}
