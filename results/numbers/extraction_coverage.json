@@ -1,8 +1,80 @@
 {
  "manifest_slides": 9562,
- "extracted": 9555,
- "coverage": 0.99927,
+ "extracted": 9544,
+ "coverage": 0.99812,
  "excluded": [
+  {
+   "slide": "b25036b4-8b6a-41da-a13e-05ae21abbe0c.tiff",
+   "case_dir": "3ac62d39-2ff4-460b-aa24-fc97e341c4eb",
+   "bytes": 4294967219,
+   "level_dimensions": [
+    [
+     216064,
+     177152
+    ],
+    [
+     108032,
+     88576
+    ]
+   ],
+   "reason": "truncated_source_file"
+  },
+  {
+   "slide": "c99e75a0-39aa-44a4-a683-16643eab46ed.tiff",
+   "case_dir": "1de4bff6-e066-44d4-a555-d1d357c8a0ac",
+   "bytes": 4294967018,
+   "level_dimensions": [
+    [
+     178688,
+     172544
+    ],
+    [
+     89344,
+     86272
+    ]
+   ],
+   "reason": "truncated_source_file"
+  },
+  {
+   "slide": "53e885ca-f8d0-4604-b773-17eaf873799a.tiff",
+   "case_dir": "a708dba7-dc8c-456a-909d-7878322ac96f",
+   "bytes": 4294967067,
+   "level_dimensions": [
+    [
+     217600,
+     157184
+    ]
+   ],
+   "reason": "truncated_source_file"
+  },
+  {
+   "slide": "8b4c496c-d788-42a1-85a7-a81a136001f2.tiff",
+   "case_dir": "a708dba7-dc8c-456a-909d-7878322ac96f",
+   "bytes": 4294965804,
+   "level_dimensions": [
+    [
+     216064,
+     158720
+    ],
+    [
+     108032,
+     79360
+    ]
+   ],
+   "reason": "truncated_source_file"
+  },
+  {
+   "slide": "bf639085-b111-4992-af7c-35825b4f60e3.tiff",
+   "case_dir": "394362f3-eba0-4ce9-a525-3e831c4b3c1f",
+   "bytes": 4294966679,
+   "level_dimensions": [
+    [
+     194048,
+     157184
+    ]
+   ],
+   "reason": "truncated_source_file"
+  },
   {
    "slide": "298b07b2-d8b5-43f5-bae9-f334fc8124ee.tiff",
    "case_dir": "58beb6fd-5838-4f57-b923-c6278bd37f15",
@@ -51,10 +123,111 @@
    "bytes": 55687121,
    "reason": "unreadable_source_file",
    "error": "OpenSlideUnsupportedFormatError"
+  },
+  {
+   "slide": "ba7bc95a-b72a-4183-9795-e82be1df574e.tiff",
+   "case_dir": "60ef28fe-5574-4994-9209-7ef6f21b3d00",
+   "bytes": 4294966208,
+   "level_dimensions": [
+    [
+     209920,
+     155648
+    ],
+    [
+     104960,
+     77824
+    ]
+   ],
+   "reason": "truncated_source_file"
+  },
+  {
+   "slide": "2ae9154b-286c-45dd-9982-e3e395fc05e4.tiff",
+   "case_dir": "88118f30-60ba-4bcb-95d9-942a0847cede",
+   "bytes": 4294964184,
+   "level_dimensions": [
+    [
+     172544,
+     163328
+    ],
+    [
+     86272,
+     81664
+    ]
+   ],
+   "reason": "truncated_source_file"
+  },
+  {
+   "slide": "1dfbe2c1-5641-48e2-b596-dde640c92af2.tiff",
+   "case_dir": "54c9d67d-2216-4def-906b-f6d60894e0ee",
+   "bytes": 4294966962,
+   "level_dimensions": [
+    [
+     223744,
+     172544
+    ],
+    [
+     111872,
+     86272
+    ]
+   ],
+   "reason": "truncated_source_file"
+  },
+  {
+   "slide": "15644852-9b07-4f01-b30c-50ffce7cd8f9.tiff",
+   "case_dir": "44a1e709-d564-4188-a7cc-5d13cd00c214",
+   "bytes": 4294965026,
+   "level_dimensions": [
+    [
+     236032,
+     177152
+    ],
+    [
+     118016,
+     88576
+    ]
+   ],
+   "reason": "truncated_source_file"
+  },
+  {
+   "slide": "7f6949c2-7cfd-41eb-9eed-5e1ffc567842.tiff",
+   "case_dir": "44a1e709-d564-4188-a7cc-5d13cd00c214",
+   "bytes": 4294963533,
+   "level_dimensions": [
+    [
+     225280,
+     184832
+    ]
+   ],
+   "reason": "truncated_source_file"
+  },
+  {
+   "slide": "5e29d027-a070-4a00-b909-6e7a6944c38b.tiff",
+   "case_dir": "52387ced-4cac-433e-83dd-339ee2b4aeb0",
+   "bytes": 4294963016,
+   "level_dimensions": [
+    [
+     219136,
+     129024
+    ]
+   ],
+   "reason": "truncated_source_file"
   }
  ],
  "excluded_cases": [
-  "58beb6fd-5838-4f57-b923-c6278bd37f15"
+  "1de4bff6-e066-44d4-a555-d1d357c8a0ac",
+  "394362f3-eba0-4ce9-a525-3e831c4b3c1f",
+  "3ac62d39-2ff4-460b-aa24-fc97e341c4eb",
+  "44a1e709-d564-4188-a7cc-5d13cd00c214",
+  "52387ced-4cac-433e-83dd-339ee2b4aeb0",
+  "54c9d67d-2216-4def-906b-f6d60894e0ee",
+  "58beb6fd-5838-4f57-b923-c6278bd37f15",
+  "60ef28fe-5574-4994-9209-7ef6f21b3d00",
+  "88118f30-60ba-4bcb-95d9-942a0847cede",
+  "a708dba7-dc8c-456a-909d-7878322ac96f"
  ],
+ "reasons": {
+  "truncated_source_file": "classic TIFF capped at 4 GiB; excluded after feature-distribution review",
+  "unreadable_source_file": "neither openslide nor PIL can decode the file; needs rescanning"
+ },
  "note": "Feature extraction is UNI2-h at level nearest 0.5 um/px, 224 px tiles, 8000-tile cap. Slides listed under 'excluded' have no features; 'unreadable_source_file' means neither openslide nor PIL can decode the file, i.e. the scan itself is corrupt and needs rescanning."
 }

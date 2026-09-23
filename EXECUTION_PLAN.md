@@ -190,6 +190,18 @@ On return: read results against pre-registrations; deviations to log: none yet.
   `--export=ALL,K=V` splits on commas, so a comma-joined slide list arrives
   truncated to its first element - the script now takes SLIDELIST (a file).
   No analysis result changes: every experiment to date used the 0.5 um/px files.
+  CORRECTION 2026-09-23 (Fable 5.1 review of the above): the 11 truncated TIFFs were
+  NOT rescued. Their UNI2 features are far outside the corpus (slide-mean cosine to
+  the corpus centroid 0.19-0.43 vs reference median 0.62 / min 0.30; per-tile cosine
+  median 0.09-0.19 with 92-100% of tiles <0.3 vs 15-63% for reference slides). The
+  files are classic TIFFs capped at exactly 4,294,967,219 bytes with no resolution tag
+  and a declared canvas that at 0.25 um/px would be 54x44 mm (wider than a slide), so
+  header dimensions and tile data beyond the cap are untrustworthy. All 11 EXCLUDED
+  (features parked in features/20x_224px/_truncated_source_excluded/, reason
+  `truncated_source_file` in results/numbers/extraction_coverage.json). Coverage is
+  9,544/9,562 = 99.81%. No analysis ever used them (no features existed before 22 Sep;
+  no task table, cohort or label file references their ids). Full digest of the
+  21-22 Sep runs + review flags: docs/results_digest_2026-09-21_22.md.
   Nothing else needs resubmitting; the ~112 other failures were race-losing
   twins of the nodal probe (results complete, 50/50 perms on both labels) and 5
   were the one-off bugs that already succeeded on re-run.
