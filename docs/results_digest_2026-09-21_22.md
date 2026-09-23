@@ -15,7 +15,7 @@ Classification used throughout:
 | # | Run | Class | One-line result | Source |
 |---|---|---|---|---|
 | 1 | ERIN 3-year progression fusion (2.48) | BOUNDARY / INFRA | Infeasible: 18 positives, 0 negatives; every scanned slide is 2022–2025 | `reports/erin_progression_fusion.md` |
-| 2 | ERIN imminent-dysplasia task set (2.49), 7 tasks | USE + DIG | Image beats grade+age by +0.23 to +0.26 AUROC on T2b/T3a/T3b/T4 (CI > 0); fusion never beats image | `results/erin_progression_fusion/results.json` |
+| 2 | ERIN imminent-dysplasia task set (2.49), 7 tasks | USE + DIG | Image beats grade+age by +0.23 to +0.26 AUROC on T2b/T3a/T3b/T4 (CI > 0); fusion never beats image. Review: 5 % of T3 slides are resection tissue and specimen type alone scores 0.59/0.64 on T3a/T3b (§13) | `results/erin_progression_fusion/results.json` |
 | 3 | Human-grade anchors: jury vs SWG pathologist, vs ACE-B Seattle | USE | Two-tier 0.82 (κ 0.61) vs SWG pathologist with systematic over-grading; 0.90 vs ACE-B | `results/numbers/anchor_eval.json` |
 | 4 | MedGemma-27B as ERIN juror | USE | 99.7 % exact agreement with the 8-model jury; sensitivity 1.0 on 79 adjudicated cancers | `results/numbers/num_medgemma.json` |
 | 5 | Zero-shot 5-year risk from report text (3 LLMs) | BOUNDARY | 0.59–0.63 vs index-grade baseline 0.62; LLM ≈ grade, as predicted | `results/numbers/prognosis_eval.json` |
@@ -26,7 +26,7 @@ Classification used throughout:
 | 10 | Tile-level training vs ABMIL | USE | Within 0.02–0.03 of ABMIL; tile-level wins six-class under section labels | `results/numbers/tile_level.json` |
 | 11 | Nodal status from OGD biopsy (OCCAMS) | BOUNDARY | cN null (0.49–0.57, perm p 0.67); ypN weak (0.58–0.67), below clinical 0.66 | `results/numbers/nodal_probe.json` |
 | 12 | Attention heat-maps (SWG) and tile grade maps (ERIN) | INFRA | Qualitative figures produced; 12 ERIN slides, SWG prior/progressor samples | `results/numbers/{swg_heatmaps,erin_tilemaps}.json`, `review/` |
-| 13 | ERIN all-slides UNI2-h extraction close-out | INFRA | 9,544 clean of 9,562; 11 truncated + 7 corrupt source files excluded (see §11 and review) | `results/numbers/extraction_coverage.json` |
+| 13 | ERIN all-slides UNI2-h extraction close-out | INFRA | 9,544 biopsy-scale slides in use of 9,562; 11 valid resection megaslides parked; 7 corrupt files need rescan (§11, §13) | `results/numbers/extraction_coverage.json` |
 
 ---
 
@@ -219,7 +219,8 @@ No task's label is predictable from biopsy size.
 image units, tabular permutations. Figures: `fig1_roc_T2a.png`, `fig2_forest_deltas.png`, `fig3_reliability_T2a_d.png` + CSVs.
 
 ### 2.10 What still needs doing before C26 carries weight (DIG)
-- **Confound arm.** Train on scanner/block/date metadata alone for T3/T4; if that alone reaches 0.7, the field-effect reading collapses.
+- **Specimen-type confound, quantified in review (§13.3, item 1).** ERIN is not biopsy-only: 490 of 7,149 reports are oesophagectomy resections and they contribute ~34 % of all slide rows. In the T3 tables 68 of 1,274 "benign-section" slides come from resection cases, where the positive rate is 0.44 (T3a) / 0.41 (T3b) against 0.10 / 0.05 for biopsies; specimen type alone scores AUROC 0.586 / 0.639. It cannot explain 0.82 / 0.87, but it inflates them. The fix is a biopsy-only re-run of the T3 image arm (n = 1,206; 116 / 62 positives; 30 image units, ~1 GPU-hour). T2 and T4 are unaffected (≤ 3 resection units, specimen-type AUROC ≤ 0.51).
+- **Other metadata confounds.** Scanner/block/date alone for T3/T4; if that reaches 0.7 the field-effect reading collapses.
 - **Section-label noise check for T3.** "Benign-section slide" comes from the v2 section jury, which disagrees with case-max on 32 % of slides (C17). Some T3 positives may be dysplastic slides mislabelled benign; the model would then be detecting dysplasia present, not field effect. Look at the tile grade maps of the top-scoring T3 positives.
 - **Treatment history for T4.** Patients with prior dysplasia have usually had RFA/EMR; the image may be recognising post-ablation neosquamous epithelium and scarring rather than a "trace" of dysplasia. Split T4 by treatment mention in the earlier reports.
 - **T2b power.** 30 positives. The 818 unscanned pre-2022 blocks or ACE-B are the only routes to more.
@@ -459,19 +460,29 @@ cN "not visible in the primary". Clinical baseline for ypN includes cN.
 
 ## 11. ERIN all-slides UNI2-h extraction — close-out (INFRA) and data-quality register
 
-`results/numbers/extraction_coverage.json`. Manifest 9,562 H&E slides; feature directory also holds ~2,230 files from earlier manifests (11,792 total).
+`results/numbers/extraction_coverage.json`. Manifest 9,562 H&E slides; feature directory also holds ~2,230 files from earlier manifests (11,781 in the main directory after parking).
 
 ```csv
-category,slides,cases,action
-extracted cleanly (0.5 um/px, level 1),9544,,in use
-truncated source TIFF (exactly 4,294,967,219 bytes; 1-2 pyramid levels; no mpp tag),11,9,EXCLUDED after review (see §13) — features out of distribution
-unreadable source TIFF (openslide and PIL both fail; 24 KB - 105 MB),7,1,EXCLUDED — needs rescan (case 58beb6fd)
+category,slides,cases,status
+extracted at 0.5 um/px and in use,9544,,in use
+large-format resection megaslides (classic TIFF capped at exactly 4 GiB; no mpp tag; 1-2 pyramid levels),11,9,valid features extracted (level 1 fully readable; 4 single-level ones resized 448->224) but PARKED pending scope decision
+unreadable source TIFF (openslide and PIL both fail; 24 KB - 105 MB),7,1,EXCLUDED - needs rescan (case 58beb6fd)
 ```
 
-Compute burned on the failure loop: 1,093 OOM-killed worker jobs over ~24 h (740 cuda, 353 h200) chasing the
-same 18 slides, because the keepalive sweeper only stopped at zero remaining. Fixes now in place:
-banded thumbnail path for non-pyramidal slides, sweeper stall floor (3 cycles), file-based slide lists
-(Slurm `--export` splits on commas).
+The 9 megaslide cases all carry SpecimenProtocol "OESOPHAGUS, PART/TOT RESECTION" (labels 6 CANCER, 1 HGD, 1 NDBE, 1 unsure). Their tiles are full-thickness oesophageal wall (muscularis propria, ganglia, vessels, submucosa) at the normal scan resolution; the physical size (~54 × 44 mm at 0.25 µm/px) fits a 2 × 3 inch slide, which is why these files alone hit the cap. Parked because a biopsy-cohort model should not silently ingest resection tissue; restore with a single `mv` if resections are in scope.
+
+**Corpus composition, found in the same check (chart: pie or bar):**
+
+```csv
+specimen_protocol_class,reports_all,reports_imaged,slide_rows_all_stains
+OESOPHAGUS (biopsy protocol),6654,2132,8085
+OESOPHAGUS PART/TOT RESECTION,490,161,4192
+other (polyp / stomach biopsy / nodes / adipose / diverticulum),5,0,~70 unmatched
+```
+
+Resections are 6.9 % of reports but ~34 % of slide rows (30–70 blocks per oesophagectomy; the cohort table's "max 72 slides per case" is one of these). This belongs in the thesis cohort description and is the source of the T3 confound in §2.10.
+
+Compute burned on the failure loop: 1,093 OOM-killed worker jobs over ~24 h (740 cuda, 353 h200) chasing the same 18 slides, because the keepalive sweeper only stopped at zero remaining. Fixes now in place: banded thumbnail path for non-pyramidal slides, sweeper stall floor (3 cycles), file-based slide lists (Slurm `--export` splits on commas). Also confirmed: **no ERIN slide carries an mpp tag**; the pipeline assumes 0.25 µm/px at level 0 for every slide (normal slides' dimensions, e.g. 152,064 × 54,784 px → 38 × 14 mm, are consistent with that). State it in methods.
 
 ---
 
@@ -505,17 +516,21 @@ fold-local fusion and the extraction fix re-read; the "rescued" slides checked a
 - The tile-scale audit and the 0.5 µm/px re-extraction of 4 single-level slides were the right call, and the corpus is now homogeneous.
 - Git attribution and repo hygiene (aggregate JSON only; slide UUIDs already had precedent in `erin_tilemaps.json`).
 
-### 13.2 Found and acted on
-- **The 11 truncated TIFFs were not rescued; they were silently corrupted.** Their UNI2 features are far outside the corpus: slide-mean cosine to the corpus centroid 0.19–0.43 (reference slides median 0.62, 5th percentile 0.41, minimum 0.30); per-tile cosine median 0.09–0.19 with 92–100 % of tiles below 0.3 (reference 0.29–0.42 median, 15–63 % below 0.3). The files are classic TIFFs capped at exactly 4 GiB with no resolution tag and a declared canvas (216,064 × 177,152 px) that at 0.25 µm/px would be 54 × 44 mm — wider than a glass slide — so the header dimensions and/or tile data beyond the cap are not trustworthy. Decision: exclude all 11 (features moved aside, reason `truncated_source_file`), coverage restated as 9,544/9,562 = 99.81 %. No analysis ever used them (they had no features until 22 Sep; no task table, cohort or label file references their ids).
-- Coverage register and plan entry corrected accordingly.
+### 13.2 Found and acted on (two passes — the first conclusion was wrong and is kept here on purpose)
+- **Pass 1 (quantitative).** The 11 "rescued" 4-GiB TIFFs have UNI2 features far outside the corpus: slide-mean cosine to the corpus centroid 0.19–0.43 (reference slides median 0.62, 5th percentile 0.41, minimum 0.30); per-tile cosine median 0.09–0.19 with 92–100 % of tiles below 0.3 (reference 0.29–0.42, 15–63 %). I provisionally called them corrupt and parked them.
+- **Pass 2 (look at the tiles, read the metadata).** Rendered thumbnails and 36 random tiles from three of them (`review/bigcheck/`): well-preserved full-thickness oesophageal wall at the normal scale, next to a normal biopsy slide for comparison. All 9 cases are oesophagectomy resections by SpecimenProtocol. The features are valid; the distance from the centroid is tissue type. Parking stands, for the scope reason given in §11, with the reason relabelled `large_format_resection_specimen_parked` and the files restorable. Coverage register, plan entry and memory corrected. Lesson recorded: an out-of-distribution check is a flag, not a verdict.
+- **Consequence that matters more than the 11 slides:** the check exposed that ~34 % of ERIN slide rows are resection material, and that 68 T3 slides come from resection cases (§2.10). That is the review's main finding.
+- No analysis ever used the 11 slides (no features existed before 22 Sep; no task table, cohort or label file references their ids). The 22 Sep summary's numbers and the commit `3ca5f11` description remain accurate except for the word "rescued".
 
 ### 13.3 Flags for Rehan (not acted on)
-1. **T3 field-effect positives may be label noise, not field effect** (section-jury vs case-max disagreement is 32 %). Check the tile grade maps of the highest-scoring T3 positives before presenting C26 as biology.
-2. **T4 "prior dysplasia" is confounded with prior treatment.** The image may be recognising post-RFA/EMR tissue. Split by treatment mention.
-3. **ACE-B two-tier 0.90 hides HGD recall of 6/11.** State both.
-4. **The jury over-grades pathologist-NDBE tissue 43 % of the time** (incl. 20 HGD and 8 cancer calls). Before this goes into P1 it needs a 30-report manual audit to separate mapping error from genuine jury over-call.
-5. **Downstream tile-map code assumes 224 px tiles at the stored level**; the 4 re-extracted single-level slides store 448 px tiles at level 0 (attribute `tile_px_at_level`). Harmless now, will mis-draw a map if one of those four is ever displayed.
-6. **Missing mpp tags across the entire ERIN corpus**: every slide checked has `openslide.mpp-x = None`; the pipeline assumes 0.25 µm/px at level 0. Normal slides' dimensions (e.g. 152,064 × 54,784 → 38 × 14 mm) are consistent with that, but the assumption should be stated in the thesis methods.
+1. **Specimen type is a partial confound for the T3 field-effect result.** 68 of 1,274 T3 slides are from resection cases (positive rate 0.44 / 0.41 vs 0.10 / 0.05); specimen type alone gives AUROC 0.586 (T3a) / 0.639 (T3b). A biopsy-only re-run (n = 1,206) is ~1 GPU-hour and should precede any presentation of C26 as biology. T2 and T4 are clean on this axis (≤ 0.51).
+2. **T3 positives may also be section-label noise** (section-jury vs case-max disagreement is 32 %). Check the tile grade maps of the highest-scoring T3 positives.
+3. **T4 "prior dysplasia" is confounded with prior treatment.** The image may be recognising post-RFA/EMR tissue. Split by treatment mention in the earlier reports.
+4. **Grade models may exploit specimen type corpus-wide.** 490 resection reports (mostly CANCER) and ~34 % of slides: the six-class and cancer-vs-rest numbers (C20 0.921/0.960, VLM 0.889, CONCH 0.784) should be re-read within biopsies only, or with specimen type as a covariate, before P1 goes out.
+5. **ACE-B two-tier 0.90 hides HGD recall of 6/11.** State both.
+6. **The jury over-grades pathologist-NDBE tissue 43 % of the time** (incl. 20 HGD and 8 cancer calls). Needs a 30-report manual audit to separate mapping error from genuine over-call before P1.
+7. **Downstream tile-map code assumes 224 px tiles at the stored level**; the 4 re-extracted single-level slides store 448 px tiles at level 0 (attribute `tile_px_at_level`). Harmless now; would mis-draw a map if displayed.
+8. **No mpp tag anywhere in ERIN**: 0.25 µm/px at level 0 is an assumption; state it in methods.
 
 ---
 

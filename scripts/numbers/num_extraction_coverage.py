@@ -25,10 +25,13 @@ for p in paths:
         s = openslide.OpenSlide(p)
         rec["level_dimensions"] = [list(d) for d in s.level_dimensions]
         if rec["bytes"] is not None and rec["bytes"] >= 4_294_000_000:
-            # classic-TIFF 4 GiB cap: header declares a full canvas, tile data beyond the cap is
-            # missing/garbled; UNI2 features extracted from these sit far outside the corpus
-            # (slide-mean cosine to centroid 0.19-0.43 vs reference min 0.30; reviewed 2026-09-23)
-            rec["reason"] = "truncated_source_file"
+            # Classic-TIFF export capped at exactly 4 GiB. Visual review 2026-09-23: these are
+            # full-thickness oesophageal wall on large-format slides (resection specimens, 9 cases),
+            # scanned at the corpus resolution; level 1 is fully readable and UNI2 features at
+            # 0.5 um/px were extracted (parked in _truncated_source_excluded/, restorable with mv).
+            # Parked by default because the biopsy-cohort analyses should not silently mix in
+            # resection tissue; whether to include them is a scope decision for Rehan.
+            rec["reason"] = "large_format_resection_specimen_parked"
         else:
             rec["reason"] = "readable_but_unextracted"
     except Exception as e:
@@ -42,7 +45,7 @@ res = {
     "coverage": round((len(paths) - len(missing)) / len(paths), 5),
     "excluded": missing,
     "excluded_cases": sorted({m["case_dir"] for m in missing}),
-    "reasons": {"truncated_source_file": "classic TIFF capped at 4 GiB; excluded after feature-distribution review",
+    "reasons": {"large_format_resection_specimen_parked": "valid 0.5 um/px features exist (parked); resection-type tissue on a 4 GiB-capped large-format TIFF; include only if resections are in scope",
                 "unreadable_source_file": "neither openslide nor PIL can decode the file; needs rescanning"},
     "note": ("Feature extraction is UNI2-h at level nearest 0.5 um/px, 224 px tiles, "
              "8000-tile cap. Slides listed under 'excluded' have no features; "
