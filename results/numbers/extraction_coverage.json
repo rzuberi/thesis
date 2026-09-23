@@ -17,7 +17,7 @@
      88576
     ]
    ],
-   "reason": "truncated_source_file"
+   "reason": "large_format_resection_specimen_parked"
   },
   {
    "slide": "c99e75a0-39aa-44a4-a683-16643eab46ed.tiff",
@@ -33,7 +33,7 @@
      86272
     ]
    ],
-   "reason": "truncated_source_file"
+   "reason": "large_format_resection_specimen_parked"
   },
   {
    "slide": "53e885ca-f8d0-4604-b773-17eaf873799a.tiff",
@@ -45,7 +45,7 @@
      157184
     ]
    ],
-   "reason": "truncated_source_file"
+   "reason": "large_format_resection_specimen_parked"
   },
   {
    "slide": "8b4c496c-d788-42a1-85a7-a81a136001f2.tiff",
@@ -61,7 +61,7 @@
      79360
     ]
    ],
-   "reason": "truncated_source_file"
+   "reason": "large_format_resection_specimen_parked"
   },
   {
    "slide": "bf639085-b111-4992-af7c-35825b4f60e3.tiff",
@@ -73,7 +73,7 @@
      157184
     ]
    ],
-   "reason": "truncated_source_file"
+   "reason": "large_format_resection_specimen_parked"
   },
   {
    "slide": "298b07b2-d8b5-43f5-bae9-f334fc8124ee.tiff",
@@ -138,7 +138,7 @@
      77824
     ]
    ],
-   "reason": "truncated_source_file"
+   "reason": "large_format_resection_specimen_parked"
   },
   {
    "slide": "2ae9154b-286c-45dd-9982-e3e395fc05e4.tiff",
@@ -154,7 +154,7 @@
      81664
     ]
    ],
-   "reason": "truncated_source_file"
+   "reason": "large_format_resection_specimen_parked"
   },
   {
    "slide": "1dfbe2c1-5641-48e2-b596-dde640c92af2.tiff",
@@ -170,7 +170,7 @@
      86272
     ]
    ],
-   "reason": "truncated_source_file"
+   "reason": "large_format_resection_specimen_parked"
   },
   {
    "slide": "15644852-9b07-4f01-b30c-50ffce7cd8f9.tiff",
@@ -186,7 +186,7 @@
      88576
     ]
    ],
-   "reason": "truncated_source_file"
+   "reason": "large_format_resection_specimen_parked"
   },
   {
    "slide": "7f6949c2-7cfd-41eb-9eed-5e1ffc567842.tiff",
@@ -198,7 +198,7 @@
      184832
     ]
    ],
-   "reason": "truncated_source_file"
+   "reason": "large_format_resection_specimen_parked"
   },
   {
    "slide": "5e29d027-a070-4a00-b909-6e7a6944c38b.tiff",
@@ -210,7 +210,7 @@
      129024
     ]
    ],
-   "reason": "truncated_source_file"
+   "reason": "large_format_resection_specimen_parked"
   }
  ],
  "excluded_cases": [
@@ -226,7 +226,7 @@
   "a708dba7-dc8c-456a-909d-7878322ac96f"
  ],
  "reasons": {
-  "truncated_source_file": "classic TIFF capped at 4 GiB; excluded after feature-distribution review",
+  "large_format_resection_specimen_parked": "valid 0.5 um/px features exist (parked); resection-type tissue on a 4 GiB-capped large-format TIFF; include only if resections are in scope",
   "unreadable_source_file": "neither openslide nor PIL can decode the file; needs rescanning"
  },
  "note": "Feature extraction is UNI2-h at level nearest 0.5 um/px, 224 px tiles, 8000-tile cap. Slides listed under 'excluded' have no features; 'unreadable_source_file' means neither openslide nor PIL can decode the file, i.e. the scan itself is corrupt and needs rescanning."
