@@ -119,4 +119,4 @@ pathologist grade (if this is < 0.7 the imputation has not transferred and the f
   ERIN-trained image head on a NON-grade target, e.g. treatment effect, which is at chance for progression, as the
   third arm — already available: fuse3 with treatment_effect only vs fuse2 is the cheap version); (3) second CV
   repeat of the fold models; (4) apply the same heads to ACE-B when scanned.
-
+- 2026-09-24 23:50: OVERNIGHT fluke checks launched — repeat-split grade head, permuted-label head (random-head control), SWG image arm on 0.5 µm features, selection-adjusted permutation over fields, rep02-split replication, imputed grade vs DB confirmed code, calibration; real-vs-imputed fields on the 65 DB-matched patients. See `docs/projects/overnight_2026-09-25.md`.

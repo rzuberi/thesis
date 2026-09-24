@@ -91,4 +91,4 @@ the Barrett's-DB reports for SWG patients (a copy of this script with `INPUT` po
   First pass verdict: **extraction works** for grade (with the full ladder), specimen type, p53, ulceration,
   treatment effect and IM; inflammation grade and certainty are the fields that will need a second juror and a
   human check before use.
-
+- 2026-09-24 23:50: OVERNIGHT checks launched — second juror gemma3-27B (v2) on all 2,293 reports → per-field agreement (`p31_agreement`); v2 extraction on the Barrett's-DB clinical reports of SWG samples (`p31_db_s*`). See `docs/projects/overnight_2026-09-25.md`.

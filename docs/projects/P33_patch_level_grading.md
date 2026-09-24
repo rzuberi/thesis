@@ -64,4 +64,4 @@ coefficients reported so the signal is readable.
   Reading: the interpretable summary recovers most of the field-effect signal and is now inspectable per slide;
   it is not a replacement for ABMIL on the clinically important T2b. Second pass: spatial statistics of LGD/cancer-like
   tiles, and tile maps of the top-scoring benign T3 slides for the pathologist checklist.
-
+- 2026-09-24 23:50: OVERNIGHT v2 launched — 3 seeds + patient-level fold scoring (closes the indirect-leak caveat) → tasks re-run; tile maps for the 8 top-scoring benign T3a slides + 4 controls for the pathologist checklist. See `docs/projects/overnight_2026-09-25.md`.
