@@ -1,0 +1,290 @@
+{
+ "_meta": {
+  "unit": "patient (max over samples)",
+  "n_patients": 150,
+  "positives": 50,
+  "arms": [
+   "image_only",
+   "cnv_only",
+   "early_fusion",
+   "intermediate_fusion",
+   "coattention_fusion",
+   "late_mean",
+   "late_stack_logit"
+  ],
+  "reference_arm": "image_only",
+  "threshold_rule": "item 19 / num_swg_metrics.py: lock sens>=s, max spec; lock spec>=s, max sens",
+  "n_boot": 2000,
+  "seed": 0,
+  "score": "y_prob (uncalibrated), outer-fold OOF"
+ },
+ "arms": {
+  "image_only": {
+   "spec_at_sens_0.95": 0.16,
+   "spec_at_sens_0.95_ci": [
+    0.0874,
+    0.426
+   ],
+   "sens_achieved_0.95": 0.96,
+   "flagged_of_n_0.95": [
+    132,
+    150
+   ],
+   "spec_at_sens_1.0": 0.12,
+   "spec_at_sens_1.0_ci": [
+    0.066,
+    0.2577
+   ],
+   "flagged_of_n_1.0": [
+    138,
+    150
+   ],
+   "sens_at_spec_0.80": 0.52,
+   "sens_at_spec_0.80_ci": [
+    0.3555,
+    0.7459
+   ],
+   "spec_achieved_0.80": 0.81,
+   "sens_at_spec_0.86": 0.44,
+   "sens_at_spec_0.86_ci": [
+    0.2889,
+    0.6364
+   ],
+   "spec_achieved_0.86": 0.91,
+   "delta_spec_at_sens_0.95_vs_image_only": 0.0,
+   "delta_spec_at_sens_0.95_vs_image_only_ci": [
+    0.0,
+    0.0
+   ]
+  },
+  "cnv_only": {
+   "spec_at_sens_0.95": 0.07,
+   "spec_at_sens_0.95_ci": [
+    0.0206,
+    0.2353
+   ],
+   "sens_achieved_0.95": 0.96,
+   "flagged_of_n_0.95": [
+    141,
+    150
+   ],
+   "spec_at_sens_1.0": 0.05,
+   "spec_at_sens_1.0_ci": [
+    0.0106,
+    0.125
+   ],
+   "flagged_of_n_1.0": [
+    145,
+    150
+   ],
+   "sens_at_spec_0.80": 0.42,
+   "sens_at_spec_0.80_ci": [
+    0.2549,
+    0.5625
+   ],
+   "spec_achieved_0.80": 0.81,
+   "sens_at_spec_0.86": 0.34,
+   "sens_at_spec_0.86_ci": [
+    0.1628,
+    0.5082
+   ],
+   "spec_achieved_0.86": 0.88,
+   "delta_spec_at_sens_0.95_vs_image_only": -0.09,
+   "delta_spec_at_sens_0.95_vs_image_only_ci": [
+    -0.3465,
+    0.0909
+   ]
+  },
+  "early_fusion": {
+   "spec_at_sens_0.95": 0.18,
+   "spec_at_sens_0.95_ci": [
+    0.0388,
+    0.4555
+   ],
+   "sens_achieved_0.95": 0.96,
+   "flagged_of_n_0.95": [
+    130,
+    150
+   ],
+   "spec_at_sens_1.0": 0.05,
+   "spec_at_sens_1.0_ci": [
+    0.0114,
+    0.2526
+   ],
+   "flagged_of_n_1.0": [
+    145,
+    150
+   ],
+   "sens_at_spec_0.80": 0.52,
+   "sens_at_spec_0.80_ci": [
+    0.3414,
+    0.7091
+   ],
+   "spec_achieved_0.80": 0.81,
+   "sens_at_spec_0.86": 0.42,
+   "sens_at_spec_0.86_ci": [
+    0.2641,
+    0.625
+   ],
+   "spec_achieved_0.86": 0.9,
+   "delta_spec_at_sens_0.95_vs_image_only": 0.02,
+   "delta_spec_at_sens_0.95_vs_image_only_ci": [
+    -0.2323,
+    0.2404
+   ]
+  },
+  "intermediate_fusion": {
+   "spec_at_sens_0.95": 0.36,
+   "spec_at_sens_0.95_ci": [
+    0.1327,
+    0.5577
+   ],
+   "sens_achieved_0.95": 0.96,
+   "flagged_of_n_0.95": [
+    112,
+    150
+   ],
+   "spec_at_sens_1.0": 0.18,
+   "spec_at_sens_1.0_ci": [
+    0.11,
+    0.4519
+   ],
+   "flagged_of_n_1.0": [
+    132,
+    150
+   ],
+   "sens_at_spec_0.80": 0.56,
+   "sens_at_spec_0.80_ci": [
+    0.3166,
+    0.6977
+   ],
+   "spec_achieved_0.80": 0.8,
+   "sens_at_spec_0.86": 0.42,
+   "sens_at_spec_0.86_ci": [
+    0.2182,
+    0.6079
+   ],
+   "spec_achieved_0.86": 0.86,
+   "delta_spec_at_sens_0.95_vs_image_only": 0.2,
+   "delta_spec_at_sens_0.95_vs_image_only_ci": [
+    -0.1262,
+    0.3939
+   ]
+  },
+  "coattention_fusion": {
+   "spec_at_sens_0.95": 0.2,
+   "spec_at_sens_0.95_ci": [
+    0.0202,
+    0.5001
+   ],
+   "sens_achieved_0.95": 0.96,
+   "flagged_of_n_0.95": [
+    128,
+    150
+   ],
+   "spec_at_sens_1.0": 0.05,
+   "spec_at_sens_1.0_ci": [
+    0.0106,
+    0.3304
+   ],
+   "flagged_of_n_1.0": [
+    145,
+    150
+   ],
+   "sens_at_spec_0.80": 0.56,
+   "sens_at_spec_0.80_ci": [
+    0.25,
+    0.74
+   ],
+   "spec_achieved_0.80": 0.81,
+   "sens_at_spec_0.86": 0.32,
+   "sens_at_spec_0.86_ci": [
+    0.1923,
+    0.6379
+   ],
+   "spec_achieved_0.86": 0.89,
+   "delta_spec_at_sens_0.95_vs_image_only": 0.04,
+   "delta_spec_at_sens_0.95_vs_image_only_ci": [
+    -0.2816,
+    0.3196
+   ]
+  },
+  "late_mean": {
+   "spec_at_sens_0.95": 0.28,
+   "spec_at_sens_0.95_ci": [
+    0.18,
+    0.4667
+   ],
+   "sens_achieved_0.95": 0.96,
+   "flagged_of_n_0.95": [
+    120,
+    150
+   ],
+   "spec_at_sens_1.0": 0.21,
+   "spec_at_sens_1.0_ci": [
+    0.1383,
+    0.3552
+   ],
+   "flagged_of_n_1.0": [
+    129,
+    150
+   ],
+   "sens_at_spec_0.80": 0.62,
+   "sens_at_spec_0.80_ci": [
+    0.4348,
+    0.7609
+   ],
+   "spec_achieved_0.80": 0.83,
+   "sens_at_spec_0.86": 0.56,
+   "sens_at_spec_0.86_ci": [
+    0.2545,
+    0.7234
+   ],
+   "spec_achieved_0.86": 0.86,
+   "delta_spec_at_sens_0.95_vs_image_only": 0.12,
+   "delta_spec_at_sens_0.95_vs_image_only_ci": [
+    -0.0569,
+    0.22
+   ]
+  },
+  "late_stack_logit": {
+   "spec_at_sens_0.95": 0.3,
+   "spec_at_sens_0.95_ci": [
+    0.2053,
+    0.4679
+   ],
+   "sens_achieved_0.95": 0.96,
+   "flagged_of_n_0.95": [
+    118,
+    150
+   ],
+   "spec_at_sens_1.0": 0.25,
+   "spec_at_sens_1.0_ci": [
+    0.1748,
+    0.3694
+   ],
+   "flagged_of_n_1.0": [
+    125,
+    150
+   ],
+   "sens_at_spec_0.80": 0.58,
+   "sens_at_spec_0.80_ci": [
+    0.2745,
+    0.7258
+   ],
+   "spec_achieved_0.80": 0.8,
+   "sens_at_spec_0.86": 0.34,
+   "sens_at_spec_0.86_ci": [
+    0.102,
+    0.625
+   ],
+   "spec_achieved_0.86": 0.89,
+   "delta_spec_at_sens_0.95_vs_image_only": 0.14,
+   "delta_spec_at_sens_0.95_vs_image_only_ci": [
+    -0.0283,
+    0.233
+   ]
+  }
+ },
+ "table_markdown": "| arm | spec @ sens 0.95 [95% CI] | flagged/n | spec @ sens 1.0 [95% CI] | flagged/n | sens @ spec 0.80 [95% CI] | sens @ spec 0.86 [95% CI] | \u0394 spec@sens0.95 vs image_only [paired CI] |\n|---|---|---|---|---|---|---|---|\n| image_only | 0.160 [0.087, 0.426] | 132/150 | 0.120 [0.066, 0.258] | 138/150 | 0.520 [0.355, 0.746] | 0.440 [0.289, 0.636] | +0.000 [+0.000, +0.000] |\n| cnv_only | 0.070 [0.021, 0.235] | 141/150 | 0.050 [0.011, 0.125] | 145/150 | 0.420 [0.255, 0.562] | 0.340 [0.163, 0.508] | -0.090 [-0.346, +0.091] |\n| early_fusion | 0.180 [0.039, 0.456] | 130/150 | 0.050 [0.011, 0.253] | 145/150 | 0.520 [0.341, 0.709] | 0.420 [0.264, 0.625] | +0.020 [-0.232, +0.240] |\n| intermediate_fusion | 0.360 [0.133, 0.558] | 112/150 | 0.180 [0.110, 0.452] | 132/150 | 0.560 [0.317, 0.698] | 0.420 [0.218, 0.608] | +0.200 [-0.126, +0.394] |\n| coattention_fusion | 0.200 [0.020, 0.500] | 128/150 | 0.050 [0.011, 0.330] | 145/150 | 0.560 [0.250, 0.740] | 0.320 [0.192, 0.638] | +0.040 [-0.282, +0.320] |\n| late_mean | 0.280 [0.180, 0.467] | 120/150 | 0.210 [0.138, 0.355] | 129/150 | 0.620 [0.435, 0.761] | 0.560 [0.255, 0.723] | +0.120 [-0.057, +0.220] |\n| late_stack_logit | 0.300 [0.205, 0.468] | 118/150 | 0.250 [0.175, 0.369] | 125/150 | 0.580 [0.275, 0.726] | 0.340 [0.102, 0.625] | +0.140 [-0.028, +0.233] |"
+}
