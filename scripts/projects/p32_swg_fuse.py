@@ -11,7 +11,8 @@ def roc_auc_score(y, s):   # rank-based AUROC, ~50x faster than sklearn for the 
     y = np.asarray(y); r = rankdata(s); n1 = y.sum(); n0 = len(y) - n1
     return float((r[y == 1].sum() - n1 * (n1 + 1) / 2) / (n1 * n0))
 F = "/mnt/scratche/slow/fmlab/zuberi01/phd/barretts_retraining/barretts_training/analysis/chapter1_lgd2_final_pre_event_20260713_final"; OUT = os.environ.get("OUTDIR", "."); NB = 2000
-imp = pd.concat([pd.read_csv(p + "/swg_imputed_fields.csv", index_col=0) for p in os.environ["P32DIRS"].split(",")], axis=1); imp = imp.loc[:, ~imp.columns.duplicated()].dropna(axis=1, how="all")
+imp = pd.concat([pd.read_csv(p + "/swg_imputed_fields.csv", index_col=0) for p in os.environ["P32DIRS"].split(",")], axis=1); imp = imp.loc[:, ~imp.columns.duplicated()].dropna(axis=1, how="all"); imp.index = imp.index.astype(str)
+print("imputed table", imp.shape, flush=True)
 man = pd.read_csv(F + "/training_manifest.csv", dtype=str).set_index("sample_id"); man = man.loc[man.index.intersection(imp.index)]
 def oof(fam): return pd.concat([pd.read_csv(f, dtype={"sample_id": str}) for f in glob.glob(f"{F}/training_final_nested_cv_v1/{fam}/fold*/outer_test_predictions.csv")]).set_index("sample_id").y_prob
 d = man.assign(img=oof("image_only").reindex(man.index).values, cnv=oof("cnv_only").reindex(man.index).values, y=man.y_progressor.astype(int).values, fold=man.fold_id_rep01.astype(int).values)
@@ -29,6 +30,7 @@ d["fields"] = cvlog(X, d.y.values); d["fuse2"] = (zf(d.img.values) + zf(d.cnv.va
 for c in imp.columns: d[f"f_{c}"] = imp.loc[d.index, c].values
 g = d.groupby("patient_id"); y = g.y.max().values; P = {k: g[k].max().values for k in ["img", "cnv", "fields", "fuse2", "fuse2_prob", "fuse3"] + [f"f_{c}" for c in imp.columns]}
 rng = np.random.RandomState(0); n = len(y); B = []
+if n < 10 or len(set(y)) < 2: sys.exit(f"degenerate patient set: n={n} classes={set(y)} (index mismatch between imputed table and manifest?)")
 while len(B) < NB:
     s = rng.choice(n, n)
     if len(set(y[s])) < 2: continue
