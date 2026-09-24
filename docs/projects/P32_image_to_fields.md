@@ -45,3 +45,34 @@ pathologist grade (if this is < 0.7 the imputation has not transferred and the f
 
 ## Status log
 - 2026-09-24 evening: scripts written; 8 field-group jobs + fusion job submitted, chained on P31.
+- 2026-09-25 02:00: FIRST PASS DONE (`results/numbers/p32_fields.json`; P31 v1 fields as targets, 2,293 cases, ABMIL,
+  patient folds, 3 seeds). Image → field AUROC [patient-clustered 95 % CI]:
+
+  | field | n / pos | AUROC | predicted band | verdict |
+  |---|---|---|---|---|
+  | specimen_resection | 2,293 / 91 | 1.000 | visible | trivially (resection tissue) |
+  | squamous_only | 2,291 / 127 | 0.920 [0.892, 0.945] | visible | held |
+  | grade HGD+ | 1,642 / 482 | 0.911 [0.893, 0.931] | visible | held |
+  | im_present | 2,192 / 1,406 | 0.897 [0.884, 0.910] | visible | held |
+  | grade LGD+ | 1,642 / 644 | 0.861 [0.840, 0.882] | visible | held (jury-label reference 0.926 on 2,153 slides) |
+  | ulceration | 2,154 / 320 | 0.847 [0.818, 0.875] | partly | above band |
+  | treatment_effect | 2,293 / 522 | 0.821 [0.797, 0.842] | visible | held |
+  | gastric_present | 1,182 / 831 | 0.781 [0.749, 0.811] | visible | just below band |
+  | p53_abnormal | 473 / 193 | 0.749 [0.703, 0.795] | not visible | **above band**: rides on grade (p53 is stained when dysplasia is suspected) |
+  | inflammation_mod_severe | 1,846 / 373 | 0.742 [0.709, 0.771] | partly | held |
+  | site_goj_or_stomach | 2,293 / 612 | 0.723 [0.698, 0.749] | not visible | above band: cardia-type mucosa is morphological |
+  | inflammation_any | 1,846 / 1,517 | 0.607 [0.574, 0.643] | partly | below band (85 % prevalence; "mild" is the default phrase) |
+  | certainty_not_definite | 2,289 / 78 | 0.538 [0.467, 0.611] | not visible | held |
+  | goblet_present | skipped (21 positives) | | | |
+
+  Reading: what the pathologist SEES is predictable from UNI2 bags (tissue type, IM, ulceration, treatment change,
+  grade); what they INFER or ORDER (certainty) is not; p53 and site are visible only through their correlation with
+  grade and mucosa type. Eleven of thirteen tested fields fall in or above the predicted band.
+  **SWG payoff test: MOOT in pass 1.** Imputed grade LGD+ vs the SWG pathologist grade = **0.540**: the fold models
+  did not transfer to the release's 256 level-2 tiles (~0.88 µm/px), exactly the pre-registered failure condition
+  (< 0.7). The 3-way fusion result from `p32_swg_fuse` is therefore reported but not interpreted.
+  Action (pass 2, launched): re-extract all 707 SWG release slides with the ERIN UNI2-h pipeline at 0.5 µm/px
+  (`feasibility/swg_manifest_05um.txt` → `SWGCohort/features_uni2h_05um/`, 6 cuda pull-workers + 2 h200), then
+  re-run six informative fields with `SWG_FEATS` pointing at the new bags and the fold models saved
+  (`p32b_fields`), then the fusion test (`p32b_swg_fuse`). Targets now come from P31 v2.
+
