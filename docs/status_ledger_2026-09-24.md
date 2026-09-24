@@ -141,6 +141,14 @@ QWK 0.717; HGD recall **11/11** (8 HGD + 3 called cancer), LGD 8/9, cancer 3/3, 
 7 HGD). MedGemma-27B max-window: 0.865 / 0.820 / 0.737. Report both: the closest-report rule under-calls, the max rule
 exposes the same over-calling seen on SWG (18 % of benign cases).
 
+### Evening addition (Rehan: "have we fully extracted what we needed from the Barrett's database?") — `results/numbers/db_confirmed_grade_anchor.json`
+The database report table carries a coded confirmed grade on 99.8 % of reports (lookup `query_dysplasia_types.csv`). Jury vs
+DB confirmed code, 8,221 Barrett's-coded reports: exact 0.961, two-tier 0.986, QWK 0.974; over-call on NDBE 2.9 %, under-call
+on LGD+ 1.6 %. Including non-Barrett's mucosa codes (11,613 reports): 0.966 / 0.988. DB confirmed code vs SWG spreadsheet
+code on the same 313 reports: 0.847 / 0.907 (the spreadsheet under-calls 22 % of DB-coded LGD+). Provisional code vs
+confirmed code: exact 0.49, the provisional entry over-calls 81 % of confirmed-NDBE reports, so "prov" is a first-pass
+field, not a grade. New claim C27; provenance question Q13 added.
+
 ## Commits
 `384987a` scripts + first results; `c998de8` questions and checklist; results of the batch in the commit after
 `c998de8` on `main` (see `git log`). Plan amendment 2.50 records the whole day.
