@@ -43,3 +43,25 @@ coefficients reported so the signal is readable.
 ## Status log
 - 2026-09-24 evening: scripts written; tilefeat (cuda + h200 twin) and tasks (chained) submitted.
 - 2026-09-24 22:30: tilefeat DONE on cuda (h200 twin cancelled). 13,319 slides summarised, 1,538 fold-scored; OOF slide-level LGD+ AUROC from mean tile probability 0.837 (2.47 reported 0.836 for the same recipe: reproduced). `feasibility/runs/p33_tilefeat/output/`. p33_tasks released.
+- 2026-09-24 23:05: PAYOFF TEST DONE (`results/numbers/p33_tasks.json`). 13-d tile-grade summary + age + grade flag
+  (logistic, queue folds) vs the saved ABMIL image OOF, patient-clustered paired CIs:
+
+  | task | n / pos | tile summary [CI] | ABMIL | Δ tile − ABMIL | fused Δ vs ABMIL |
+  |---|---|---|---|---|---|
+  | T2a | 185 / 44 | 0.792 [0.714, 0.864] | 0.817 | [−0.107, +0.059] | [−0.030, +0.054] |
+  | T2b | 183 / 30 | 0.782 [0.680, 0.865] | 0.862 | **[−0.157, −0.010]** | [−0.034, +0.035] |
+  | T3a | 1,274 / 146 | 0.798 [0.753, 0.844] | 0.821 | [−0.061, +0.013] | [−0.006, +0.030] |
+  | T3b | 1,274 / 90 | 0.827 [0.761, 0.884] | 0.869 | [−0.090, +0.001] | [−0.033, +0.013] |
+  | T3a_bio | 1,203 / 116 | 0.765 [0.712, 0.817] | 0.801 | [−0.076, +0.009] | [−0.010, +0.024] |
+  | T3b_bio | 1,203 / 62 | 0.804 [0.733, 0.874] | 0.822 | [−0.085, +0.054] | [−0.014, +0.057] |
+
+  Predictions: (1) T3 within 0.05 of ABMIL — HELD (−0.02 to −0.04, CIs include 0). (2) T2b ≥ 0.05 below ABMIL —
+  HELD (−0.08, CI excludes 0: the attention model uses something the grade summary discards for HGD-within-a-year).
+  (3) fusion does not beat ABMIL — HELD on all six. Top coefficient: predicted frac_IND / mean_LGD; observed
+  mean_CANCER (+) with frac_LGD (+) second on every T3 task, i.e. the field-effect signal reads as "benign-called
+  slides in dysplastic cases carry tiles with raised cancer-class probability and more LGD-like tiles" (coefficients on
+  collinear frac/mean pairs should not be read individually). Baseline grade+age 0.57–0.71 on all tasks.
+  Reading: the interpretable summary recovers most of the field-effect signal and is now inspectable per slide;
+  it is not a replacement for ABMIL on the clinically important T2b. Second pass: spatial statistics of LGD/cancer-like
+  tiles, and tile maps of the top-scoring benign T3 slides for the pathologist checklist.
+
