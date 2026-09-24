@@ -42,3 +42,4 @@ coefficients reported so the signal is readable.
 
 ## Status log
 - 2026-09-24 evening: scripts written; tilefeat (cuda + h200 twin) and tasks (chained) submitted.
+- 2026-09-24 22:30: tilefeat DONE on cuda (h200 twin cancelled). 13,319 slides summarised, 1,538 fold-scored; OOF slide-level LGD+ AUROC from mean tile probability 0.837 (2.47 reported 0.836 for the same recipe: reproduced). `feasibility/runs/p33_tilefeat/output/`. p33_tasks released.
