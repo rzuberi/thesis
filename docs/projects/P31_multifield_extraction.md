@@ -51,3 +51,21 @@ the Barrett's-DB reports for SWG patients (a copy of this script with `INPUT` po
 ## Status log
 - 2026-09-24 evening: scripts written, 8 shard jobs + validate submitted (validate chained on the shards).
 - 2026-09-24 22:30: all 4 shards DONE on cuda in ~17 min each (570 reports per shard, 2,279 total; h200 twins cancelled). Validation job released.
+- 2026-09-24 22:50: VALIDATION (`results/numbers/p31_validation.json`, 2,293 reports). Parse failures ≤ 1 % on every
+  field (max 1.0 % gastric_mucosa_present). Keyword checks: p53 stated 0.99, ulceration 0.95, inflammation stated 0.89,
+  treatment_effect 0.87 (220 keyword mentions without "yes" are mostly RFA/EMR in the clinical-history line, i.e. the
+  field is stricter than the regex, as intended; 75 "yes" without keyword to hand-check), IM present 0.71 (regex includes
+  "Barrett" from the clinical line; 786 "absent" are squamous/gastric/neosquamous specimens). specimen_type vs
+  protocol 0.96, with 127 EMR/ESD split off correctly. Marginals: treatment_effect yes 522 (23 %), p53 stated 475,
+  certainty non-definite 78 (3.4 %), squamous_only 127, gastric present 831.
+  **FINDING: the grade field DEGRADED under the multi-field prompt.** vs the 8-model jury on 1,579 train-eligible
+  reports: two-tier 0.936 but exact 0.477; the model called IND on 651 jury-NDBE reports (749 IND in total vs the
+  jury's ≈ 300 corpus-wide) and NA on 650 reports. The same model with the dedicated single-field prompt agreed
+  99.7 % exact. Cause (hypothesis): the one-line grade definition in the multi-field prompt lets "IND" absorb
+  inflammation/reactive change and "NA" absorb GOJ/gastric specimens. Prediction 1 (grade reliable) is therefore
+  FALSE for this prompt; predictions on p53/treatment/specimen hold.
+  Action: v2 prompt with the explicit ladder text (IND only if the pathologist writes it; NA only if no
+  oesophageal/GOJ tissue) launched on 400 reports (`p31_v2check`) to test whether the fix restores agreement.
+  For P32 the grade targets use the P31 v1 grade binarised (two-tier 0.936 is adequate); the jury grade result
+  (0.926) remains the reference. Hand-check pack (50 reports) copied to `review/p31_handcheck_pack.md` on the laptop.
+
