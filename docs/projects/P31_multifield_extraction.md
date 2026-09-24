@@ -80,4 +80,15 @@ the Barrett's-DB reports for SWG patients (a copy of this script with `INPUT` po
   and 4 → LGD (3.8 % over-call on benign), 6 jury-CANCER → HGD, 1 HGD → NDBE. Conclusion: multi-field extraction
   works when each field carries its full definition in the prompt; a one-line vocabulary is not enough for the
   clinically loaded field. Full v2 run in progress.
+- 2026-09-25 00:10: FULL v2 RUN VALIDATED (`results/numbers/p31_validation_v2.json`, 2,293 reports; the v2 field
+  table `feasibility/runs/p31_validate_v2/output/p31_fields.csv` is now the canonical P31 output). Grade vs jury on
+  2,215 train-eligible reports: exact **0.949**, two-tier 0.969, NA 2. Residual pattern: 60 of 1,590 jury-NDBE
+  reports over-called (29 HGD, 31 LGD; 3.8 %), 27 of 310 jury-cancer under-called as HGD. Parse failure ≤ 3.1 %
+  (inflammation). Keyword checks unchanged (p53 0.98, ulceration 0.95, inflammation 0.92, treatment 0.84, IM 0.72).
+  Side effect worth knowing: sharpening the grade definition collapsed diagnostic_certainty (78 non-definite in v1
+  → 19 in v2): fields interact through the prompt, so every field needs its own definition and its own check.
+  Marginals v2: treatment_effect yes 445 (19 %), p53 stated 484, IM present 1,436 / absent 788.
+  First pass verdict: **extraction works** for grade (with the full ladder), specimen type, p53, ulceration,
+  treatment effect and IM; inflammation grade and certainty are the fields that will need a second juror and a
+  human check before use.
 
