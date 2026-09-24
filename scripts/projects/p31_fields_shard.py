@@ -39,8 +39,13 @@ REPORT:
 if PV == "v2":
     PROMPT = PROMPT.replace('"grade": worst current oesophageal/GOJ finding: NDBE | IND | LGD | HGD | CANCER | NA',
         '"grade": worst CURRENT oesophageal/GOJ finding on this ladder. NDBE = Barrett\'s / intestinal metaplasia without dysplasia, or benign, normal, squamous-only or gastric mucosa (anything non-dysplastic). IND = ONLY when the pathologist explicitly writes indefinite for dysplasia (or equivalent); inflammation or reactive atypia alone is NDBE. LGD = low-grade dysplasia. HGD = high-grade dysplasia. CANCER = carcinoma of any type, including intramucosal. NA = ONLY if no oesophageal or GOJ tissue is present at all. Ignore historical mentions and negated findings. Allowed: NDBE | IND | LGD | HGD | CANCER | NA')
-rep = pd.read_csv(ERIN, dtype=str).fillna(""); rep["text"] = (rep.ClinicalInformation_redacted + "\n" + rep.GrossDescription_redacted + "\n" + rep.MicroscopicDescription_redacted + "\n" + rep.FinalDiagnosis_redacted + "\n" + rep.Addendum1_redacted).str.slice(0, 7000)
-cases = pd.read_csv(INPUT, dtype=str).CaseName.dropna().unique(); cases = sorted(set(cases) & set(rep.CaseName)); mine = cases[SHARD::N]; mine = mine[:LIMIT] if LIMIT else mine
+SOURCE = os.environ.get("SOURCE", "erin")
+if SOURCE == "db":   # Barrett's-database clinical reports matched to SWG samples (pathology_text_id as CaseName)
+    _sm = pd.read_parquet("/mnt/scratche/slow/fmlab/zuberi01/barretts_db_export/swg_matched_reports_v2.parquet")
+    rep = pd.DataFrame({"CaseName": _sm.pathology_text_id.astype(str), "text": _sm.reporttext.astype(str).str.slice(0, 7000)}).drop_duplicates("CaseName")
+else:
+    rep = pd.read_csv(ERIN, dtype=str).fillna(""); rep["text"] = (rep.ClinicalInformation_redacted + "\n" + rep.GrossDescription_redacted + "\n" + rep.MicroscopicDescription_redacted + "\n" + rep.FinalDiagnosis_redacted + "\n" + rep.Addendum1_redacted).str.slice(0, 7000)
+cases = (rep.CaseName.unique() if SOURCE == "db" else pd.read_csv(INPUT, dtype=str).CaseName.dropna().unique()); cases = sorted(set(cases) & set(rep.CaseName)); mine = cases[SHARD::N]; mine = mine[:LIMIT] if LIMIT else mine
 text_of = dict(zip(rep.CaseName, rep.text))
 out = os.path.join(OUT, f"fields_{MODEL.replace(':', '_')}{'_' + PV if PV != 'v1' else ''}_shard{SHARD}.jsonl"); done = set()
 if os.path.exists(out):
