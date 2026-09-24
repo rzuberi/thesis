@@ -50,3 +50,4 @@ the Barrett's-DB reports for SWG patients (a copy of this script with `INPUT` po
 
 ## Status log
 - 2026-09-24 evening: scripts written, 8 shard jobs + validate submitted (validate chained on the shards).
+- 2026-09-24 22:30: all 4 shards DONE on cuda in ~17 min each (570 reports per shard, 2,279 total; h200 twins cancelled). Validation job released.
