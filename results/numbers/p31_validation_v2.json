@@ -1,0 +1,181 @@
+{
+ "n_reports": 2293,
+ "parse_fail_rate": {
+  "grade": 0.0,
+  "site": 0.0,
+  "specimen_type": 0.0,
+  "intestinal_metaplasia": 0.0004,
+  "goblet_cells": 0.0,
+  "inflammation": 0.0031,
+  "ulceration_or_erosion": 0.0,
+  "squamous_only": 0.0009,
+  "gastric_mucosa_present": 0.031,
+  "treatment_effect": 0.0,
+  "p53": 0.0,
+  "diagnostic_certainty": 0.0004
+ },
+ "marginals": {
+  "grade": {
+   "NDBE": 1606,
+   "CANCER": 291,
+   "HGD": 191,
+   "LGD": 140,
+   "IND": 63,
+   "NA": 2
+  },
+  "site": {
+   "oesophagus": 1487,
+   "mixed": 601,
+   "goj": 194,
+   "stomach": 9,
+   "other": 2
+  },
+  "specimen_type": {
+   "biopsy": 2084,
+   "emr_esd": 118,
+   "resection": 91
+  },
+  "intestinal_metaplasia": {
+   "present": 1436,
+   "absent": 788,
+   "not_stated": 68,
+   "PARSE_FAIL": 1
+  },
+  "goblet_cells": {
+   "not_stated": 1485,
+   "absent": 693,
+   "present": 115
+  },
+  "inflammation": {
+   "mild": 1140,
+   "not_stated": 541,
+   "moderate": 337,
+   "none": 262,
+   "PARSE_FAIL": 7,
+   "severe": 6
+  },
+  "ulceration_or_erosion": {
+   "no": 1796,
+   "yes": 318,
+   "not_stated": 179
+  },
+  "squamous_only": {
+   "no": 2175,
+   "yes": 116,
+   "PARSE_FAIL": 2
+  },
+  "gastric_mucosa_present": {
+   "not_stated": 1043,
+   "yes": 708,
+   "no": 471,
+   "PARSE_FAIL": 71
+  },
+  "treatment_effect": {
+   "no": 1848,
+   "yes": 445
+  },
+  "p53": {
+   "not_stated": 1809,
+   "normal": 279,
+   "abnormal": 188,
+   "not_done": 17
+  },
+  "diagnostic_certainty": {
+   "definite": 2273,
+   "uncertain": 18,
+   "probable": 1,
+   "PARSE_FAIL": 1
+  }
+ },
+ "n_specimens_median": 3.0,
+ "keyword_agreement": {
+  "treatment_effect_yes_vs_keyword": {
+   "kw_present": 667,
+   "field_yes": 445,
+   "agreement": 0.8369,
+   "yes_without_keyword": 76,
+   "keyword_without_yes": 298
+  },
+  "p53_mentioned_vs_keyword": {
+   "kw_present": 489,
+   "field_not_not_stated": 484,
+   "agreement": 0.9812
+  },
+  "inflammation_stated_vs_keyword": {
+   "kw_present": 1679,
+   "field_stated": 1745,
+   "agreement": 0.9198
+  },
+  "IM_present_vs_keyword": {
+   "kw_present": 2072,
+   "field_present": 1436,
+   "agreement": 0.7191
+  },
+  "ulceration_yes_vs_keyword": {
+   "kw_present": 418,
+   "field_yes": 318,
+   "agreement": 0.9512
+  }
+ },
+ "specimen_type_vs_protocol": {
+  "protocol_resection": 161,
+  "field_resection": 91,
+  "agreement_resection_flag": 0.9642,
+  "crosstab": {
+   "biopsy": {
+    "OESOPHAGUS": 2046,
+    "RESECTION": 38
+   },
+   "emr_esd": {
+    "OESOPHAGUS": 80,
+    "RESECTION": 38
+   },
+   "resection": {
+    "OESOPHAGUS": 6,
+    "RESECTION": 85
+   }
+  }
+ },
+ "grade_vs_jury_final": {
+  "n": 2215,
+  "exact": 0.9494,
+  "two_tier": 0.9693,
+  "crosstab_jury_rows": {
+   "CANCER": {
+    "CANCER": 282,
+    "HGD": 0,
+    "IND": 0,
+    "LGD": 0,
+    "NDBE": 1
+   },
+   "HGD": {
+    "CANCER": 27,
+    "HGD": 111,
+    "IND": 3,
+    "LGD": 8,
+    "NDBE": 29
+   },
+   "IND": {
+    "CANCER": 0,
+    "HGD": 0,
+    "IND": 59,
+    "LGD": 0,
+    "NDBE": 3
+   },
+   "LGD": {
+    "CANCER": 1,
+    "HGD": 0,
+    "IND": 2,
+    "LGD": 95,
+    "NDBE": 31
+   },
+   "NDBE": {
+    "CANCER": 0,
+    "HGD": 1,
+    "IND": 5,
+    "LGD": 1,
+    "NDBE": 1556
+   }
+  }
+ }
+}
