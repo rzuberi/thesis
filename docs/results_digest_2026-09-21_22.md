@@ -21,7 +21,7 @@ Classification used throughout:
 | 5 | Zero-shot 5-year risk from report text (3 LLMs) | BOUNDARY | 0.59–0.63 vs index-grade baseline 0.62; LLM ≈ grade, as predicted | `results/numbers/prognosis_eval.json` |
 | 6 | CNV-as-text (MedGemma-27B, qwen3-32B) | USE | CNV-only prompt 0.645 vs trained CNV model 0.663; grade+CNV 0.751 > grade 0.687 | `results/numbers/cnvtext_*.json` |
 | 7 | MedGemma image pilots (4B, 27B) | BOUNDARY | AUROC 0.50–0.51, half the tiles unparseable; gate failed | `results/numbers/patchvlm_*.json` |
-| 8 | CONCH zero-shot (pilot → 1,538 slides) | USE | 0.784 LGD+ zero-shot vs 0.889 trained VLM vs 0.926 MIL on identical slides | `results/numbers/conch_zeroshot*.json` |
+| 8 | CONCH zero-shot (pilot → 1,538 slides) | USE | 0.784 LGD+ zero-shot on the 1,538 dual-labelled slides (section truth). Fair supervised reference on the SAME slides and truth is ABMIL 0.871 (case-max-trained) / 0.860 (section-trained), not 0.926 (see §13.3 item 9) | `results/numbers/conch_zeroshot*.json` |
 | 9 | CONCH zero-shot on SWG release | DIG | 0.53–0.59 vs pathologist grade; 0.58–0.67 progression; scale/subsample suspected | `results/numbers/conch_swg.json` |
 | 10 | Tile-level training vs ABMIL | USE | Within 0.02–0.03 of ABMIL; tile-level wins six-class under section labels | `results/numbers/tile_level.json` |
 | 11 | Nodal status from OGD biopsy (OCCAMS) | BOUNDARY | cN null (0.49–0.57, perm p 0.67); ypN weak (0.58–0.67), below clinical 0.66 | `results/numbers/nodal_probe.json` |
@@ -366,7 +366,7 @@ pilot,96,0.710,0.755,0.723,0.709,pass
 full,1538,0.770,0.784,0.778,0.733,pass
 ```
 
-Reference points on the same 1,538 slides: trained slide–report VLM 0.889; supervised MIL 0.926; MedGemma 0.50.
+Reference points, corrected 24 Sep: the pre-registration quoted "trained VLM 0.889, supervised MIL 0.926 on identical slides", but those three numbers come from three different slide sets. 0.926 is `results/erin_encoder_sweep.json` uni2/hist_abmil on 2,153 slides against case-max labels; 0.889 is `results/vlm_pretrain.json` on a 423-slide VLM test split; CONCH's 0.784 is on the 1,538 dual-labelled slides against section truth. On those 1,538 slides and that truth the supervised ABMIL reference is 0.871 (case-max-trained) or 0.860 (section-trained), `results/slide_vs_casemax.json`. The zero-shot gap is therefore 0.08–0.09, not 0.14. MedGemma 0.50 was on a 96-slide subset of the same 1,538.
 
 Tile-level argmax fractions by true slide grade, full run (chart: stacked bars or heat-map):
 
@@ -531,6 +531,7 @@ fold-local fusion and the extraction fix re-read; the "rescued" slides checked a
 6. **The jury over-grades pathologist-NDBE tissue 43 % of the time** (incl. 20 HGD and 8 cancer calls). Needs a 30-report manual audit to separate mapping error from genuine over-call before P1.
 7. **Downstream tile-map code assumes 224 px tiles at the stored level**; the 4 re-extracted single-level slides store 448 px tiles at level 0 (attribute `tile_px_at_level`). Harmless now; would mis-draw a map if displayed.
 8. **No mpp tag anywhere in ERIN**: 0.25 µm/px at level 0 is an assumption; state it in methods.
+9. **The CONCH comparison's supervised reference was on a different slide set.** 0.926 (2,153 slides, case-max truth) vs CONCH on 1,538 slides with section truth, where ABMIL scores 0.871. Wording in the pre-registration, plan entries and claims text should say 0.871/0.860; the qualitative conclusion (pathology VLM zero-shot ≈ 0.08 below supervised) stands.
 
 ---
 
