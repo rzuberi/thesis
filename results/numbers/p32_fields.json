@@ -1,0 +1,136 @@
+{
+ "_meta": {
+  "n_cases": 2293,
+  "epochs": 25,
+  "seeds": [
+   0,
+   1,
+   2
+  ],
+  "folds": "patient_folds seed 0",
+  "swg_caveat": "SWG UNI2 tiles are the release's 256 level-2 tiles (~0.88 um/px) vs ERIN 0.5 um/px: imputed scores carry a scale shift"
+ },
+ "fields": {
+  "grade_LGDplus": {
+   "n": 1642,
+   "pos": 644,
+   "auroc": 0.8608,
+   "ci": [
+    0.8402,
+    0.8821
+   ]
+  },
+  "grade_HGDplus": {
+   "n": 1642,
+   "pos": 482,
+   "auroc": 0.9114,
+   "ci": [
+    0.8928,
+    0.9307
+   ]
+  },
+  "im_present": {
+   "n": 2192,
+   "pos": 1406,
+   "auroc": 0.8969,
+   "ci": [
+    0.8839,
+    0.91
+   ]
+  },
+  "goblet_present": {
+   "skipped": "pos 21 neg 683"
+  },
+  "inflammation_mod_severe": {
+   "n": 1846,
+   "pos": 373,
+   "auroc": 0.7416,
+   "ci": [
+    0.709,
+    0.7705
+   ]
+  },
+  "inflammation_any": {
+   "n": 1846,
+   "pos": 1517,
+   "auroc": 0.6074,
+   "ci": [
+    0.5743,
+    0.6427
+   ]
+  },
+  "ulceration": {
+   "n": 2154,
+   "pos": 320,
+   "auroc": 0.8472,
+   "ci": [
+    0.8175,
+    0.8747
+   ]
+  },
+  "squamous_only": {
+   "n": 2291,
+   "pos": 127,
+   "auroc": 0.9201,
+   "ci": [
+    0.8923,
+    0.9446
+   ]
+  },
+  "gastric_present": {
+   "n": 1182,
+   "pos": 831,
+   "auroc": 0.7814,
+   "ci": [
+    0.7486,
+    0.8112
+   ]
+  },
+  "treatment_effect": {
+   "n": 2293,
+   "pos": 522,
+   "auroc": 0.8209,
+   "ci": [
+    0.7969,
+    0.842
+   ]
+  },
+  "p53_abnormal": {
+   "n": 473,
+   "pos": 193,
+   "auroc": 0.7487,
+   "ci": [
+    0.7033,
+    0.795
+   ]
+  },
+  "certainty_not_definite": {
+   "n": 2289,
+   "pos": 78,
+   "auroc": 0.5382,
+   "ci": [
+    0.4667,
+    0.6114
+   ]
+  },
+  "site_goj_or_stomach": {
+   "n": 2293,
+   "pos": 612,
+   "auroc": 0.7234,
+   "ci": [
+    0.6984,
+    0.7489
+   ]
+  },
+  "specimen_resection": {
+   "n": 2293,
+   "pos": 91,
+   "auroc": 1.0,
+   "ci": [
+    1.0,
+    1.0
+   ]
+  }
+ },
+ "swg_imputed_grade_vs_pathologist_LGDplus_auroc": 0.5404
+}

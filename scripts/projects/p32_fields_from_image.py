@@ -31,7 +31,18 @@ for k, p in zip(d.CaseName, d.h5):
     with h5py.File(p) as h: X = np.asarray(h["features"], np.float16)
     bags[k] = X[rs.choice(len(X), MAXT, replace=False)] if len(X) > MAXT else X
 ui = pd.read_csv(F + "/feature_views/uni2/uni2_index.csv", dtype=str); coh = pd.read_csv(F + "/pre_event_cohort.csv", dtype=str).set_index("SampleID"); man = pd.read_csv(F + "/training_manifest.csv", dtype=str)
-swg = {s: np.load(p, allow_pickle=True)["embeddings"].astype(np.float16) for s, p in zip(ui.sample_id, ui.npz_path)}; print("SWG bags", len(swg), flush=True)
+SWG_FEATS = os.environ.get("SWG_FEATS")   # dir of <slide_basename_stem>.h5 at 0.5 um/px (P32 pass 2); default = release npz (0.88 um/px)
+if SWG_FEATS:
+    swg = {}
+    for sid, b in zip(ui.sample_id, ui.image_basename):
+        h5 = os.path.join(SWG_FEATS, os.path.splitext(b)[0] + ".h5")
+        if os.path.exists(h5):
+            with h5py.File(h5) as h: X = np.asarray(h["features"], np.float16)
+            swg[sid] = X[rs.choice(len(X), MAXT, replace=False)] if len(X) > MAXT else X
+    res_note = f"SWG bags from {SWG_FEATS} (0.5 um/px re-extraction)"
+else:
+    swg = {s: np.load(p, allow_pickle=True)["embeddings"].astype(np.float16) for s, p in zip(ui.sample_id, ui.npz_path)}; res_note = "SWG bags = release npz, 256 tiles at ~0.88 um/px (scale shift)"
+print("SWG bags", len(swg), res_note, flush=True)
 def train(keys_tr, y, seed):
     rng = np.random.RandomState(seed); torch.manual_seed(seed); model = ABMIL(d_in=1536).to(DEV); opt = torch.optim.Adam(model.parameters(), lr=1e-4, weight_decay=1e-5)
     pos = sum(y[k] for k in keys_tr); w = (len(keys_tr) - pos) / max(pos, 1); lossf = nn.BCEWithLogitsLoss(pos_weight=torch.tensor(float(w), device=DEV))
@@ -46,7 +57,7 @@ def train(keys_tr, y, seed):
 def predict(model, X):
     with torch.no_grad(): return float(torch.sigmoid(model(torch.tensor(np.asarray(X), dtype=torch.float32, device=DEV))[0]).item())
 def ci(v): return [round(float(np.percentile(v, 2.5)), 4), round(float(np.percentile(v, 97.5)), 4)]
-res = {"_meta": {"n_cases": int(len(d)), "epochs": EPOCHS, "seeds": SEEDS, "folds": "patient_folds seed 0", "swg_caveat": "SWG UNI2 tiles are the release's 256 level-2 tiles (~0.88 um/px) vs ERIN 0.5 um/px: imputed scores carry a scale shift"}, "fields": {}}
+res = {"_meta": {"n_cases": int(len(d)), "epochs": EPOCHS, "seeds": SEEDS, "folds": "patient_folds seed 0", "swg_bags": res_note}, "fields": {}}
 swg_imp = pd.DataFrame(index=sorted(swg))
 for t in want:
     pos, ok = TARGETS[t]; sub = d[ok.values].copy(); yv = pos[ok.values].astype(int).values
@@ -59,6 +70,7 @@ for t in want:
             for k in te: oof[k].append(predict(model, bags[k]))
             if s == 0:
                 for sid in swg: imp[sid].append(predict(model, swg[sid]))
+                torch.save(model.state_dict(), os.path.join(OUT, f"model_{t}_f{fi}.pt"))
             print(t, "seed", s, "fold", fi, flush=True)
     p = np.array([np.mean(oof[k]) for k in keys]); g = np.array([pat[k] for k in keys]); up = np.unique(g); idx_of = {u: np.where(g == u)[0] for u in up}; rng = np.random.RandomState(0); B = []
     while len(B) < 1000:
