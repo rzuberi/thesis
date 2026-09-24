@@ -1,0 +1,54 @@
+{
+ "_meta": {
+  "units_dir": "/mnt/scratche/slow/fmlab/zuberi01/phd/thesis/feasibility/svc_units",
+  "truth": "section label LGD+ (erin_slide_labels_v2.worst_grade)",
+  "n_boot": 2000,
+  "seed": 0
+ },
+ "case_max_trained": {
+  "n_slides": 1538,
+  "n_resection_slides": 109,
+  "pos_rate_biopsy": 0.133,
+  "pos_rate_resection": 0.3578,
+  "auroc_all": 0.8705,
+  "auroc_all_ci": [
+   0.8419,
+   0.8973
+  ],
+  "auroc_biopsy_only": 0.8654,
+  "auroc_biopsy_only_ci": [
+   0.8314,
+   0.8961
+  ],
+  "auroc_resection_only": 0.7564,
+  "auroc_specimen_type_alone": 0.5584,
+  "auroc_within_stratum_weighted": 0.8577,
+  "delta_all_minus_biopsy_only": [
+   -0.0022,
+   0.0133
+  ]
+ },
+ "section_trained": {
+  "n_slides": 1538,
+  "n_resection_slides": 109,
+  "pos_rate_biopsy": 0.133,
+  "pos_rate_resection": 0.3578,
+  "auroc_all": 0.8604,
+  "auroc_all_ci": [
+   0.8291,
+   0.8886
+  ],
+  "auroc_biopsy_only": 0.8526,
+  "auroc_biopsy_only_ci": [
+   0.8154,
+   0.8851
+  ],
+  "auroc_resection_only": 0.7762,
+  "auroc_specimen_type_alone": 0.5584,
+  "auroc_within_stratum_weighted": 0.8472,
+  "delta_all_minus_biopsy_only": [
+   0.0005,
+   0.017
+  ]
+ }
+}

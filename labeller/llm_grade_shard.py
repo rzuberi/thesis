@@ -135,6 +135,9 @@ def work(item):
         import csv as _csv
         with open(out, "a", newline="") as fh:
             _csv.writer(fh).writerow([name, g])
+        # Item 28 (24 Sep 2026): keep the model's raw JSON string, not only the parsed grade, one line per report
+        with open(out.replace(".csv", "_raw_responses.jsonl"), "a") as rf:
+            rf.write(json.dumps({"CaseName": name, "model": MODEL, "raw": raw, "parsed_grade": g, "ts": time.strftime("%Y-%m-%dT%H:%M:%S")}) + "\n")
         count += 1
         if count <= 3: print(f"RAW: {raw[:200]!r}", flush=True)
         if count % 50 == 0: print(f"{count}/{len(todo)} elapsed={time.time()-t0:.0f}s", flush=True)

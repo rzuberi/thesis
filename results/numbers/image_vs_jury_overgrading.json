@@ -1,0 +1,29 @@
+{
+ "linked_samples": 129,
+ "of_release_samples": 707,
+ "truth_dist": {
+  "0": 82,
+  "1": 24,
+  "2": 23
+ },
+ "jury_overcall_rate_linked": 0.1938,
+ "pathologist_NDBE": {
+  "n": 82,
+  "n_jury_overcalled": 25,
+  "conch_mean_plgd_median_overcalled": 0.0778,
+  "conch_mean_plgd_median_agreed": 0.0514,
+  "mannwhitney_p": 0.5658719979882054,
+  "auroc_conch_predicts_jury_overcall": 0.5404,
+  "spearman_conch_vs_jury_grade_within_NDBE": [
+   0.0644,
+   0.5657
+  ]
+ },
+ "all_linked": {
+  "spearman_img_resid_vs_jury_diff": [
+   0.0785,
+   0.3766
+  ],
+  "note": "residuals = CONCH P(LGD+) minus the median for that pathologist grade; jury_diff = jury minus pathologist ordinal"
+ }
+}

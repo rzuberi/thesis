@@ -1,0 +1,32 @@
+{
+ "n": 1147,
+ "pos": 518,
+ "prior_therapy_units": 510,
+ "pos_rate_prior_therapy": 0.8686,
+ "pos_rate_no_prior_therapy": 0.1177,
+ "index_report_mentions_therapy_units": 437,
+ "auroc_image_all": 0.7802,
+ "auroc_prior_therapy_flag_alone": 0.8743,
+ "ci_flag_alone": [
+  0.8504,
+  0.8962
+ ],
+ "auroc_index_mentions_therapy_alone": 0.8127,
+ "auroc_image_within_no_prior_therapy": 0.6864,
+ "ci": [
+  0.6103,
+  0.7672
+ ],
+ "n_no_prior_therapy": 637,
+ "pos_no_prior_therapy": 75,
+ "auroc_image_within_prior_therapy": 0.589,
+ "ci_prior": [
+  0.499,
+  0.6745
+ ],
+ "n_prior_therapy": 510,
+ "pos_prior_therapy": 443,
+ "auroc_image_within_no_therapy_anywhere": 0.6447,
+ "n_no_therapy_anywhere": 612,
+ "pos_no_therapy_anywhere": 62
+}

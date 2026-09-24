@@ -1,0 +1,173 @@
+{
+ "_meta": {
+  "n_pairs": 625,
+  "jurors": [
+   "deepseek-r1_14b",
+   "gemma3_12b",
+   "gemma3_27b",
+   "llama3.1_8b",
+   "mistral-small3.2",
+   "phi4_14b",
+   "qwen3_14b",
+   "qwen3_32b"
+  ],
+  "cv": "5-fold GroupKFold by report"
+ },
+ "swg": {
+  "a_majority": {
+   "n": 625,
+   "exact": 0.6256,
+   "two_tier": 0.8208,
+   "qwk": 0.6222,
+   "overcall_rate_on_NDBE": 0.3753,
+   "LGDplus_sensitivity": 0.96,
+   "LGDplus_specificity": 0.786
+  },
+  "per_juror_qwk": {
+   "deepseek-r1_14b": 0.5035,
+   "gemma3_12b": 0.5767,
+   "gemma3_27b": 0.5756,
+   "llama3.1_8b": 0.4885,
+   "mistral-small3.2": 0.6656,
+   "phi4_14b": 0.6574,
+   "qwen3_14b": 0.6426,
+   "qwen3_32b": 0.5881
+  },
+  "b_drop_1_worst": {
+   "dropped": [
+    "llama3.1_8b"
+   ],
+   "n": 625,
+   "exact": 0.6352,
+   "two_tier": 0.8224,
+   "qwk": 0.6254,
+   "overcall_rate_on_NDBE": 0.3636,
+   "LGDplus_sensitivity": 0.96,
+   "LGDplus_specificity": 0.788
+  },
+  "b_drop_2_worst": {
+   "dropped": [
+    "llama3.1_8b",
+    "deepseek-r1_14b"
+   ],
+   "n": 625,
+   "exact": 0.6624,
+   "two_tier": 0.8224,
+   "qwk": 0.6397,
+   "overcall_rate_on_NDBE": 0.3124,
+   "LGDplus_sensitivity": 0.928,
+   "LGDplus_specificity": 0.796
+  },
+  "b_drop_3_worst": {
+   "dropped": [
+    "llama3.1_8b",
+    "deepseek-r1_14b",
+    "gemma3_27b"
+   ],
+   "n": 625,
+   "exact": 0.6752,
+   "two_tier": 0.8224,
+   "qwk": 0.6445,
+   "overcall_rate_on_NDBE": 0.2937,
+   "LGDplus_sensitivity": 0.928,
+   "LGDplus_specificity": 0.796
+  },
+  "c_LGDplus_needs_0.500_of_jurors": {
+   "n": 625,
+   "exact": 0.6272,
+   "two_tier": 0.8208,
+   "qwk": 0.6218,
+   "overcall_rate_on_NDBE": 0.3753,
+   "LGDplus_sensitivity": 0.968,
+   "LGDplus_specificity": 0.784
+  },
+  "c_LGDplus_needs_0.625_of_jurors": {
+   "n": 625,
+   "exact": 0.6304,
+   "two_tier": 0.8256,
+   "qwk": 0.6262,
+   "overcall_rate_on_NDBE": 0.3706,
+   "LGDplus_sensitivity": 0.96,
+   "LGDplus_specificity": 0.792
+  },
+  "c_LGDplus_needs_0.750_of_jurors": {
+   "n": 625,
+   "exact": 0.624,
+   "two_tier": 0.8224,
+   "qwk": 0.6251,
+   "overcall_rate_on_NDBE": 0.3706,
+   "LGDplus_sensitivity": 0.928,
+   "LGDplus_specificity": 0.796
+  },
+  "c_LGDplus_needs_0.875_of_jurors": {
+   "n": 625,
+   "exact": 0.6208,
+   "two_tier": 0.8272,
+   "qwk": 0.6233,
+   "overcall_rate_on_NDBE": 0.3706,
+   "LGDplus_sensitivity": 0.856,
+   "LGDplus_specificity": 0.82
+  },
+  "d_multinomial_logistic_cv": {
+   "n": 625,
+   "exact": 0.7184,
+   "two_tier": 0.8032,
+   "qwk": 0.5093,
+   "overcall_rate_on_NDBE": 0.1725,
+   "LGDplus_sensitivity": 0.656,
+   "LGDplus_specificity": 0.84
+  },
+  "chosen_rule": {
+   "rule": "LGD+ needs >= 0.875 of jurors (CV)",
+   "cv_two_tier": 0.8272
+  }
+ },
+ "aceb": {
+  "n": 110,
+  "a_majority": {
+   "n": 110,
+   "exact": 0.8364,
+   "two_tier": 0.9,
+   "qwk": 0.7156,
+   "overcall_rate_on_NDBE": 0.061,
+   "LGDplus_sensitivity": 0.6957,
+   "LGDplus_specificity": 0.954
+  },
+  "c_chosen_threshold_rule": {
+   "n": 110,
+   "exact": 0.8455,
+   "two_tier": 0.9091,
+   "qwk": 0.7435,
+   "overcall_rate_on_NDBE": 0.0488,
+   "LGDplus_sensitivity": 0.6957,
+   "LGDplus_specificity": 0.9655
+  },
+  "b_drop_1_worst": {
+   "n": 110,
+   "exact": 0.8455,
+   "two_tier": 0.9,
+   "qwk": 0.7251,
+   "overcall_rate_on_NDBE": 0.061,
+   "LGDplus_sensitivity": 0.6957,
+   "LGDplus_specificity": 0.954
+  },
+  "b_drop_2_worst": {
+   "n": 110,
+   "exact": 0.8545,
+   "two_tier": 0.9091,
+   "qwk": 0.7525,
+   "overcall_rate_on_NDBE": 0.0488,
+   "LGDplus_sensitivity": 0.6957,
+   "LGDplus_specificity": 0.9655
+  },
+  "b_drop_3_worst": {
+   "n": 110,
+   "exact": 0.8545,
+   "two_tier": 0.9091,
+   "qwk": 0.7525,
+   "overcall_rate_on_NDBE": 0.0488,
+   "LGDplus_sensitivity": 0.6957,
+   "LGDplus_specificity": 0.9655
+  }
+ }
+}
