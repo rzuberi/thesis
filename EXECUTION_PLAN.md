@@ -162,6 +162,39 @@ On return: read results against pre-registrations; deviations to log: none yet.
 
 ## Amendment log
 
+- 2026-09-24 (Rehan: 38-item post-talk list, "Do all of this"): 2.50 robustness and
+  audit campaign. Ledger with every number and source: docs/status_ledger_2026-09-24.md;
+  questions needing people: docs/questions_for_people_2026-09-24.md. Headlines:
+  (13) SECOND CV REPEAT of the frozen SWG release (new split, seed 20260924, release
+  trainer unchanged, 25 folds): release late_mean (= plain mean of image and CNV
+  probabilities) beats histology by +0.043 [+0.014, +0.071] on rep01 and +0.042
+  [+0.019, +0.069] on rep02, perm p 0.0025 / 0.001; single-model fusions +0.01 to
+  +0.04 on both splits; split-to-split movement +0.01 to +0.05 per arm. C1 can be
+  upgraded to "replicated across two CV repeats (same 150 patients re-partitioned),
+  selection-adjusted on the first only". (30b) T4 "prior dysplasia leaves a trace" is
+  WITHDRAWN: a prior RFA/EMR flag alone scores 0.874 > image 0.780; image within
+  untreated patients 0.686 / 0.645. (30a) T3 field effect SURVIVES biopsy-only
+  re-run: 0.801 / 0.822 vs baseline 0.573 / 0.596, deltas +0.23 with CIs > 0.
+  (14-18) operating points with train-fold thresholds within a few points of the
+  post-hoc table; Brier late_mean - image -0.061 [-0.095, -0.027]; Platt within CV
+  fixes image over-confidence (Brier 0.245->0.202) but not late_mean
+  under-confidence; detection-intensity exclusion changes nothing; the 12-36 m dip
+  is a grade-composition artefact (>36 m window is 19/24 LGD). (19) CNV-as-text
+  stable over 3 seeds: 0.750/0.756/0.748 with grade, 0.645/0.647/0.642 without.
+  (24) grade model within biopsies only 0.865 vs 0.871 all. (26) ACE-B HGD misses
+  were a MATCHING error (HGD in the other report of the same visit); max-over-window
+  rule: HGD recall 11/11 but 15/83 NDBE over-called, two-tier 0.856 vs 0.900. (34)
+  no juror weighting or vote threshold fixes over-grading (<=0.006 two-tier gain,
+  sensitivity traded 1:1). (35) no evidence CONCH over-grades the specimens the jury
+  over-grades (p 0.57, n 82). (37-38) SWG report text as third modality: nomic
+  embedding NULL (0.43); jury grade of the same report 0.669 vs pathologist code
+  0.677 (delta [-0.046, +0.029]); fusion gains not shown at n=65 patients. (29)
+  CONCH on SWG at 0.22/0.44/0.88 um/px: chance at every scale on LGD-vs-IND slides,
+  never emits "LGD"; scale is not the cause. (28) labeller now stores raw JSON.
+  Facts from code: LGD2+ = two consecutive LGD BIOPSIES; one slide = one unit (26/707
+  share a CNV); MedGemma 0.50 was on 96 of the 1,538 dual-labelled slides (seed 7).
+  No record of SWG resequencing exists. Compute: ~35 GPU-h.
+
 - 2026-09-22 10:20-12:00 (Rehan: "are we still waiting on some jobs... tell me if
   any jobs have failed"): ERIN all-slides UNI2-h extraction CLOSED OUT. The
   keepalive sweeper had been refilling 16 cuda + 8 h200 workers every 30 min for
