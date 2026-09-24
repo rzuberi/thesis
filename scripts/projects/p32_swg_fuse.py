@@ -2,9 +2,14 @@
 Text-surrogate arm = CV logistic (release folds) on the imputed field vector; late fusion = fold-local z-mean.
 3-way (image, cnv, fields) vs 2-way (image, cnv) on ALL 150 patients, patient level, 2,000 bootstraps.
 Env: P32DIRS (comma list of dirs with swg_imputed_fields.csv), OUTDIR."""
-import glob, json, os, numpy as np, pandas as pd
+import glob, json, os, numpy as np, pandas as pd, sys
+print('p32_swg_fuse start', flush=True)
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import roc_auc_score
+from sklearn.metrics import roc_auc_score as _sk_auc
+from scipy.stats import rankdata
+def roc_auc_score(y, s):   # rank-based AUROC, ~50x faster than sklearn for the bootstrap loops
+    y = np.asarray(y); r = rankdata(s); n1 = y.sum(); n0 = len(y) - n1
+    return float((r[y == 1].sum() - n1 * (n1 + 1) / 2) / (n1 * n0))
 F = "/mnt/scratche/slow/fmlab/zuberi01/phd/barretts_retraining/barretts_training/analysis/chapter1_lgd2_final_pre_event_20260713_final"; OUT = os.environ.get("OUTDIR", "."); NB = 2000
 imp = pd.concat([pd.read_csv(p + "/swg_imputed_fields.csv", index_col=0) for p in os.environ["P32DIRS"].split(",")], axis=1); imp = imp.loc[:, ~imp.columns.duplicated()].dropna(axis=1, how="all")
 man = pd.read_csv(F + "/training_manifest.csv", dtype=str).set_index("sample_id"); man = man.loc[man.index.intersection(imp.index)]
