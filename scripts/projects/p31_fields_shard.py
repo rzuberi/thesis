@@ -6,7 +6,7 @@ import json, os, re, subprocess, sys, time, urllib.request, threading, csv
 import pandas as pd
 ERIN = "/mnt/scratche/fast/fmlab/datasets/imaging/ERIN/data/PathologyReport_AnonIds.csv"; T = "/mnt/scratche/slow/fmlab/zuberi01/phd/thesis"
 OUT = os.environ.get("OUTDIR", "."); MODEL = os.environ.get("MODEL", "medgemma:27b"); SHARD = int(os.environ.get("SHARD", "0")); N = int(os.environ.get("N_SHARDS", "1")); CONC = int(os.environ.get("CONC", "4"))
-INPUT = os.environ.get("INPUT", T + "/labeller/erin_master.csv")
+INPUT = os.environ.get("INPUT", T + "/labeller/erin_master.csv"); PV = os.environ.get("PROMPT_VERSION", "v1"); LIMIT = int(os.environ.get("LIMIT", "0"))
 os.environ.setdefault("OLLAMA_MODELS", "/mnt/scratche/slow/fmlab/zuberi01/ollama-models"); os.environ.setdefault("OLLAMA_NUM_PARALLEL", str(CONC))
 PORT = 20000 + int(os.environ.get("SLURM_JOB_ID", "0")) % 20000; os.environ["OLLAMA_HOST"] = f"127.0.0.1:{PORT}"; BASE = f"http://127.0.0.1:{PORT}"
 srv = subprocess.Popen([os.path.expanduser("~/.local/bin/ollama"), "serve"], stdout=open(os.path.join(OUT, f"ollama_{SHARD}.log"), "w"), stderr=subprocess.STDOUT)
@@ -36,10 +36,13 @@ Return ONLY a JSON object with exactly these keys and allowed values:
 "n_specimens": integer count of lettered specimens (A, B, C ...) or null
 REPORT:
 """
+if PV == "v2":
+    PROMPT = PROMPT.replace('"grade": worst current oesophageal/GOJ finding: NDBE | IND | LGD | HGD | CANCER | NA',
+        '"grade": worst CURRENT oesophageal/GOJ finding on this ladder. NDBE = Barrett\'s / intestinal metaplasia without dysplasia, or benign, normal, squamous-only or gastric mucosa (anything non-dysplastic). IND = ONLY when the pathologist explicitly writes indefinite for dysplasia (or equivalent); inflammation or reactive atypia alone is NDBE. LGD = low-grade dysplasia. HGD = high-grade dysplasia. CANCER = carcinoma of any type, including intramucosal. NA = ONLY if no oesophageal or GOJ tissue is present at all. Ignore historical mentions and negated findings. Allowed: NDBE | IND | LGD | HGD | CANCER | NA')
 rep = pd.read_csv(ERIN, dtype=str).fillna(""); rep["text"] = (rep.ClinicalInformation_redacted + "\n" + rep.GrossDescription_redacted + "\n" + rep.MicroscopicDescription_redacted + "\n" + rep.FinalDiagnosis_redacted + "\n" + rep.Addendum1_redacted).str.slice(0, 7000)
-cases = pd.read_csv(INPUT, dtype=str).CaseName.dropna().unique(); cases = sorted(set(cases) & set(rep.CaseName)); mine = cases[SHARD::N]
+cases = pd.read_csv(INPUT, dtype=str).CaseName.dropna().unique(); cases = sorted(set(cases) & set(rep.CaseName)); mine = cases[SHARD::N]; mine = mine[:LIMIT] if LIMIT else mine
 text_of = dict(zip(rep.CaseName, rep.text))
-out = os.path.join(OUT, f"fields_{MODEL.replace(':', '_')}_shard{SHARD}.jsonl"); done = set()
+out = os.path.join(OUT, f"fields_{MODEL.replace(':', '_')}{'_' + PV if PV != 'v1' else ''}_shard{SHARD}.jsonl"); done = set()
 if os.path.exists(out):
     for l in open(out):
         try: done.add(json.loads(l)["CaseName"])
