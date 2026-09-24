@@ -8,7 +8,7 @@ import json, os, sys, glob, numpy as np, pandas as pd, torch, torch.nn as nn, h5
 from sklearn.metrics import roc_auc_score
 T = "/mnt/scratche/slow/fmlab/zuberi01/phd/thesis"; sys.path.insert(0, T + "/scripts"); from abmil_clf import ABMIL, patient_folds
 F = "/mnt/scratche/slow/fmlab/zuberi01/phd/barretts_retraining/barretts_training/analysis/chapter1_lgd2_final_pre_event_20260713_final"
-OUT = os.environ.get("OUTDIR", "."); P31 = os.environ["P31DIR"]; DEV = "cuda" if torch.cuda.is_available() else "cpu"; SEEDS = [0, 1, 2]; EPOCHS = 25; MAXT = 1500
+OUT = os.environ.get("OUTDIR", "."); P31 = os.environ["P31DIR"]; FOLD_SEED = int(os.environ.get("FOLD_SEED", "0")); PERM_SEED = os.environ.get("PERM_SEED"); DEV = "cuda" if torch.cuda.is_available() else "cpu"; SEEDS = [0, 1, 2]; EPOCHS = 25; MAXT = 1500
 f = pd.read_csv(P31 + "/p31_fields.csv", dtype=str); m = pd.read_csv(T + "/labeller/erin_master.csv", dtype=str).dropna(subset=["h5", "anon_id"]).drop_duplicates("CaseName")
 d = m.merge(f, on="CaseName"); print("cases with fields + slide:", len(d), flush=True)
 TARGETS = {"grade_LGDplus": (d.grade.isin(["LGD", "HGD", "CANCER"]), d.grade.isin(["NDBE", "IND", "LGD", "HGD", "CANCER"])),
@@ -57,12 +57,14 @@ def train(keys_tr, y, seed):
 def predict(model, X):
     with torch.no_grad(): return float(torch.sigmoid(model(torch.tensor(np.asarray(X), dtype=torch.float32, device=DEV))[0]).item())
 def ci(v): return [round(float(np.percentile(v, 2.5)), 4), round(float(np.percentile(v, 97.5)), 4)]
-res = {"_meta": {"n_cases": int(len(d)), "epochs": EPOCHS, "seeds": SEEDS, "folds": "patient_folds seed 0", "swg_bags": res_note}, "fields": {}}
+res = {"_meta": {"n_cases": int(len(d)), "epochs": EPOCHS, "seeds": SEEDS, "folds": f"patient_folds seed {FOLD_SEED}", "perm_seed": PERM_SEED, "swg_bags": res_note}, "fields": {}}
 swg_imp = pd.DataFrame(index=sorted(swg))
 for t in want:
     pos, ok = TARGETS[t]; sub = d[ok.values].copy(); yv = pos[ok.values].astype(int).values
     if yv.sum() < 30 or (1 - yv).sum() < 30: res["fields"][t] = {"skipped": f"pos {int(yv.sum())} neg {int((1-yv).sum())}"}; print(t, "skipped", flush=True); continue
-    keys = list(sub.CaseName); pat = dict(zip(keys, sub.anon_id)); y = dict(zip(keys, yv)); folds = patient_folds(keys, pat, y, 5, seed=0)
+    keys = list(sub.CaseName); pat = dict(zip(keys, sub.anon_id))
+    if PERM_SEED is not None: yv = np.random.RandomState(int(PERM_SEED)).permutation(yv)   # CONTROL: labels shuffled across cases -> a "random ERIN head"
+    y = dict(zip(keys, yv)); folds = patient_folds(keys, pat, y, 5, seed=FOLD_SEED)
     oof = {k: [] for k in keys}; imp = {s: [] for s in swg}
     for s in SEEDS:
         for fi, te in enumerate(folds):
