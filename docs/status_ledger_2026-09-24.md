@@ -51,7 +51,7 @@ Questions for people are drafted, ready to paste, in `docs/questions_for_people_
 | 26 | ACE-B HGD under-calls | Pack ready; **cause confirmed and re-scored** (see §Results 26) | `review/audit_item26_aceb_hgd_missed.md`. All 4 missed cases have gap 0 days and a **second report in the 120-day window that the jury graded HGD** (ACE-B/C/019, /078, /096, /109). The anchor matched the *closest* report, which was a benign one from the same visit; the HGD sits in the other report. This is a matching rule error, not a jury error: use the max grade over reports in the window, or the trial-tagged report. Re-running the anchor with max-over-window is a one-line change and would move HGD recall from 6/11 toward 10/11. |
 | 27 | Pathologist grades | Needs Rehan | App relaunched 24 Sep, passphrase rotated; 0 grades. |
 | 28 | Keep raw jury JSON | **Done** | `labeller/llm_grade_shard.py` now appends `{CaseName, model, raw, parsed_grade, ts}` to `<output>_raw_responses.jsonl` for every report. Committed. |
-| 29 | CONCH on SWG: scale check | **Interim: scale is not the cause** (see §Results 29; NDBE slides still scoring) | `scripts/task_conch_swg_scale.py`: same slides and tissue points at level 2 (~0.88 µm/px, what was used), level 1 (~0.44) and level 0 (~0.22); 128 tiles; all HGD+ and IND/LGD slides plus 40 NDBE. AUROC vs pathologist grade per scale. |
+| 29 | CONCH on SWG: scale check | **Done: chance at every scale; not a scale artefact** (see §Results 29) | `scripts/task_conch_swg_scale.py`: same slides and tissue points at level 2 (~0.88 µm/px, what was used), level 1 (~0.44) and level 0 (~0.22); 128 tiles; all HGD+ and IND/LGD slides plus 40 NDBE. AUROC vs pathologist grade per scale. |
 | 30a | T3 biopsy-only re-run | **Done, field effect survives** (see §Results 30a) | T3a_bio n 1,203 (116 pos), T3b_bio n 1,203 (62 pos); 30 image units + 2 tabular in the pull-worker queue; assembler `scripts/erin_fusion/assemble_bio.py`. |
 | 30b | T4 confound with prior RFA/EMR | **Done, confound confirmed** | `results/numbers/t4_treatment_split.json`. Of 1,147 T4 units, 510 have an earlier report mentioning RFA/EMR/ablation, and 87 % of those are positive against 12 % of the rest. **The prior-therapy flag alone scores 0.874 [0.850, 0.896], above the image arm's 0.780.** Within units with no prior therapy (637, 75 positives) the image arm falls to 0.686 [0.610, 0.767]; with no therapy mentioned anywhere (612, 62 positives) to 0.645. The index report itself mentions therapy in 437 units (post-ablation neosquamous epithelium etc.), flag alone 0.813. **C26's T4 component should be withdrawn as "prior dysplasia leaves a trace"; what the image recognises is treated mucosa.** A residual 0.65–0.69 remains in untreated patients and is the honest number. |
 
@@ -107,12 +107,14 @@ Stable to 0.01 across seeds. Grade+CNV text sits 0.09 above the trained CNV mode
 on all three seeds; CNV-only text is indistinguishable from the trained model. The qwen CNV-only run (109 rows) is skipped
 as degenerate.
 
-### 29. CONCH tile scale — INTERIM (45 of 80 slides; the 40 NDBE slides are processed last)
-Same slides and tissue points at 0.22, 0.44 and 0.88 µm/px. On the LGD-vs-IND slides finished so far CONCH is at chance
-at **every** scale (mean P(LGD+) AUROC 0.55 / 0.48 / 0.45; level-0 minus level-2 +0.10 [−0.04, +0.24]) and never emits
-"LGD" as a tile argmax (0 % at all three scales; it spreads LGD slides across NDBE, IND, cancer and normal). Scale is not
-the explanation for the weak SWG result; CONCH's prompt vocabulary has no working "low-grade dysplasia" concept on this
-material. Final numbers with the NDBE slides in `feasibility/runs/conch_swg_scale/output/results.json` when the job ends.
+### 29. CONCH tile scale — FINAL, `results/numbers/conch_swg_scale.json`
+80 SWG release slides (40 NDBE, 20 IND, 20 LGD; the pre-event cohort has no HGD), 128 tiles each, same tissue points read
+at three scales. AUROC for pathologist LGD vs the rest, mean P(LGD+): 0.22 µm/px **0.559**, 0.44 µm/px **0.468**,
+0.88 µm/px (the scale used before) **0.442**. Chance at every scale; the level-0 minus level-2 difference is +0.10 with a
+bootstrap interval spanning zero. CONCH never emits "LGD" as a tile argmax on LGD slides at any scale (0 %); it spreads them
+over NDBE, IND, cancer and normal. **Scale is not the explanation for the weak SWG result.** CONCH's prompt vocabulary has no
+working low-grade-dysplasia concept on this material, and its ERIN 0.78 rests on separating cancer/HGD from benign, not
+LGD. Do not use CONCH anywhere LGD is the target without a supervised head.
 
 ### 30a. T3 biopsy-only — `results/numbers/erin_t3_biopsy_only.json`
 | task | n / pos | image AUROC [CI] | baseline | Δ image − baseline [CI] | original (all specimens) |
