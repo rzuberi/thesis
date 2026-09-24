@@ -68,4 +68,11 @@ the Barrett's-DB reports for SWG patients (a copy of this script with `INPUT` po
   oesophageal/GOJ tissue) launched on 400 reports (`p31_v2check`) to test whether the fix restores agreement.
   For P32 the grade targets use the P31 v1 grade binarised (two-tier 0.936 is adequate); the jury grade result
   (0.926) remains the reference. Hand-check pack (50 reports) copied to `review/p31_handcheck_pack.md` on the laptop.
+- 2026-09-24 23:15: v2 PROMPT CHECK, first 96 overlapping train-eligible reports (400-report check still running):
+  grade vs jury exact **0.927** (v1 on the same reports 0.500), two-tier 0.948 (0.917), NA calls 0 (24), IND calls 1
+  (26; jury 1). The other fields barely move between v1 and v2 (treatment 0.96, IM 0.97, certainty 0.97,
+  inflammation 0.88 agreement), so the fix is specific to the grade definition. Cause confirmed: the one-line
+  ladder let IND absorb reactive change and NA absorb GOJ specimens. v2 is now the P31 prompt. FULL v2 extraction
+  (4 shards, `p31_fields_v2_s*`) + chained validation launched; P32's first pass continues on v1 fields (grade
+  binarised, two-tier ≥ 0.92; non-grade fields ≥ 0.88 identical), and P32 pass 2 will use v2.
 
