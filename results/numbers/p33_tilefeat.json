@@ -1,0 +1,6 @@
+{
+ "n_summarised": 13319,
+ "n_fold_scored": 1538,
+ "oof_1538_binary_LGDplus_auroc_mean_prob": 0.8367,
+ "epochs": 4
+}
