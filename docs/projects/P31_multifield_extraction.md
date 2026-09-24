@@ -75,4 +75,9 @@ the Barrett's-DB reports for SWG patients (a copy of this script with `INPUT` po
   ladder let IND absorb reactive change and NA absorb GOJ specimens. v2 is now the P31 prompt. FULL v2 extraction
   (4 shards, `p31_fields_v2_s*`) + chained validation launched; P32's first pass continues on v1 fields (grade
   binarised, two-tier ≥ 0.92; non-grade fields ≥ 0.88 identical), and P32 pass 2 will use v2.
+- 2026-09-24 23:45: v2 CHECK COMPLETE, 386 train-eligible reports with both prompts: v2 grade vs jury exact **0.948**
+  (v1 0.491), two-tier 0.966 (0.950), NA 0 (107), IND 9 vs jury 10 (v1 123). Residual v2 errors: 7 jury-NDBE → HGD
+  and 4 → LGD (3.8 % over-call on benign), 6 jury-CANCER → HGD, 1 HGD → NDBE. Conclusion: multi-field extraction
+  works when each field carries its full definition in the prompt; a one-line vocabulary is not enough for the
+  clinically loaded field. Full v2 run in progress.
 
