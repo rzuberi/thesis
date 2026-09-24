@@ -59,7 +59,7 @@ def run_embed(t):
     return {"n_reports": len(E), "dim": int(next(iter(E.values())).shape[0]), "model": "nomic-embed-text"}
 def tab_design(t, arm, d):
     if arm == "a":
-        g = (d.grade.isin(["IND"]) if t != "T3a" and t != "T3b" else d.grade.eq("NDBE")).astype(float).values; age = d.age.fillna(d.age.median()).values
+        g = (d.grade.isin(["IND"]) if not t.startswith("T3") else d.grade.eq("NDBE")).astype(float).values; age = d.age.fillna(d.age.median()).values
         return np.column_stack([g, age])
     z = np.load(f"{Q}/results/embed.npz", allow_pickle=True); E = dict(zip(z["keys"], z["X"])); return np.stack([E.get(c, np.zeros(768, np.float32)) for c in d.CaseName])
 def fit_lr(X, y, tr, te, seed):

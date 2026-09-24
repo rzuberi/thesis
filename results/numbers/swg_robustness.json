@@ -1,0 +1,1090 @@
+{
+ "_meta": {
+  "n_patients": 150,
+  "pos": 50,
+  "n_boot": 2000,
+  "seed": 0,
+  "release": "/mnt/scratche/slow/fmlab/zuberi01/phd/barretts_retraining/barretts_training/analysis/chapter1_lgd2_final_pre_event_20260713_final/training_final_nested_cv_v1"
+ },
+ "item14_thresholds_from_other_folds": {
+  "image_only": {
+   "sens_0.95": {
+    "achieved_sensitivity": 0.94,
+    "sens_ci": [
+     0.8649,
+     1.0
+    ],
+    "achieved_specificity": 0.18,
+    "spec_ci": [
+     0.1111,
+     0.26
+    ],
+    "flagged_of_n": [
+     129,
+     150
+    ]
+   },
+   "sens_1.0": {
+    "achieved_sensitivity": 0.98,
+    "sens_ci": [
+     0.9362,
+     1.0
+    ],
+    "achieved_specificity": 0.12,
+    "spec_ci": [
+     0.06,
+     0.1889
+    ],
+    "flagged_of_n": [
+     137,
+     150
+    ]
+   },
+   "spec_0.80": {
+    "achieved_sensitivity": 0.54,
+    "sens_ci": [
+     0.4,
+     0.68
+    ],
+    "achieved_specificity": 0.78,
+    "spec_ci": [
+     0.6981,
+     0.8614
+    ],
+    "flagged_of_n": [
+     49,
+     150
+    ]
+   },
+   "spec_0.86": {
+    "achieved_sensitivity": 0.42,
+    "sens_ci": [
+     0.2765,
+     0.5614
+    ],
+    "achieved_specificity": 0.86,
+    "spec_ci": [
+     0.7843,
+     0.9286
+    ],
+    "flagged_of_n": [
+     35,
+     150
+    ]
+   }
+  },
+  "cnv_only": {
+   "sens_0.95": {
+    "achieved_sensitivity": 0.94,
+    "sens_ci": [
+     0.8644,
+     1.0
+    ],
+    "achieved_specificity": 0.06,
+    "spec_ci": [
+     0.0198,
+     0.1134
+    ],
+    "flagged_of_n": [
+     141,
+     150
+    ]
+   },
+   "sens_1.0": {
+    "achieved_sensitivity": 0.98,
+    "sens_ci": [
+     0.9362,
+     1.0
+    ],
+    "achieved_specificity": 0.05,
+    "spec_ci": [
+     0.0102,
+     0.1
+    ],
+    "flagged_of_n": [
+     144,
+     150
+    ]
+   },
+   "spec_0.80": {
+    "achieved_sensitivity": 0.4,
+    "sens_ci": [
+     0.2632,
+     0.5385
+    ],
+    "achieved_specificity": 0.77,
+    "spec_ci": [
+     0.6832,
+     0.8491
+    ],
+    "flagged_of_n": [
+     43,
+     150
+    ]
+   },
+   "spec_0.86": {
+    "achieved_sensitivity": 0.34,
+    "sens_ci": [
+     0.2083,
+     0.4737
+    ],
+    "achieved_specificity": 0.83,
+    "spec_ci": [
+     0.7567,
+     0.901
+    ],
+    "flagged_of_n": [
+     34,
+     150
+    ]
+   }
+  },
+  "early_fusion": {
+   "sens_0.95": {
+    "achieved_sensitivity": 0.9,
+    "sens_ci": [
+     0.8125,
+     0.9778
+    ],
+    "achieved_specificity": 0.25,
+    "spec_ci": [
+     0.1649,
+     0.3366
+    ],
+    "flagged_of_n": [
+     120,
+     150
+    ]
+   },
+   "sens_1.0": {
+    "achieved_sensitivity": 0.98,
+    "sens_ci": [
+     0.9347,
+     1.0
+    ],
+    "achieved_specificity": 0.11,
+    "spec_ci": [
+     0.051,
+     0.1735
+    ],
+    "flagged_of_n": [
+     138,
+     150
+    ]
+   },
+   "spec_0.80": {
+    "achieved_sensitivity": 0.48,
+    "sens_ci": [
+     0.34,
+     0.6171
+    ],
+    "achieved_specificity": 0.77,
+    "spec_ci": [
+     0.6837,
+     0.8515
+    ],
+    "flagged_of_n": [
+     47,
+     150
+    ]
+   },
+   "spec_0.86": {
+    "achieved_sensitivity": 0.46,
+    "sens_ci": [
+     0.32,
+     0.6
+    ],
+    "achieved_specificity": 0.82,
+    "spec_ci": [
+     0.7419,
+     0.8932
+    ],
+    "flagged_of_n": [
+     41,
+     150
+    ]
+   }
+  },
+  "intermediate_fusion": {
+   "sens_0.95": {
+    "achieved_sensitivity": 0.92,
+    "sens_ci": [
+     0.8333,
+     0.9815
+    ],
+    "achieved_specificity": 0.4,
+    "spec_ci": [
+     0.3039,
+     0.5
+    ],
+    "flagged_of_n": [
+     106,
+     150
+    ]
+   },
+   "sens_1.0": {
+    "achieved_sensitivity": 0.98,
+    "sens_ci": [
+     0.9302,
+     1.0
+    ],
+    "achieved_specificity": 0.18,
+    "spec_ci": [
+     0.1058,
+     0.26
+    ],
+    "flagged_of_n": [
+     131,
+     150
+    ]
+   },
+   "spec_0.80": {
+    "achieved_sensitivity": 0.42,
+    "sens_ci": [
+     0.28,
+     0.549
+    ],
+    "achieved_specificity": 0.79,
+    "spec_ci": [
+     0.7075,
+     0.8675
+    ],
+    "flagged_of_n": [
+     42,
+     150
+    ]
+   },
+   "spec_0.86": {
+    "achieved_sensitivity": 0.38,
+    "sens_ci": [
+     0.2413,
+     0.5111
+    ],
+    "achieved_specificity": 0.84,
+    "spec_ci": [
+     0.77,
+     0.9101
+    ],
+    "flagged_of_n": [
+     35,
+     150
+    ]
+   }
+  },
+  "coattention_fusion": {
+   "sens_0.95": {
+    "achieved_sensitivity": 0.92,
+    "sens_ci": [
+     0.8372,
+     0.9818
+    ],
+    "achieved_specificity": 0.25,
+    "spec_ci": [
+     0.1649,
+     0.3367
+    ],
+    "flagged_of_n": [
+     121,
+     150
+    ]
+   },
+   "sens_1.0": {
+    "achieved_sensitivity": 0.92,
+    "sens_ci": [
+     0.8372,
+     0.9818
+    ],
+    "achieved_specificity": 0.19,
+    "spec_ci": [
+     0.1146,
+     0.2681
+    ],
+    "flagged_of_n": [
+     127,
+     150
+    ]
+   },
+   "spec_0.80": {
+    "achieved_sensitivity": 0.52,
+    "sens_ci": [
+     0.3778,
+     0.66
+    ],
+    "achieved_specificity": 0.79,
+    "spec_ci": [
+     0.7111,
+     0.8687
+    ],
+    "flagged_of_n": [
+     47,
+     150
+    ]
+   },
+   "spec_0.86": {
+    "achieved_sensitivity": 0.36,
+    "sens_ci": [
+     0.2245,
+     0.4906
+    ],
+    "achieved_specificity": 0.84,
+    "spec_ci": [
+     0.7699,
+     0.9091
+    ],
+    "flagged_of_n": [
+     34,
+     150
+    ]
+   }
+  },
+  "late_mean": {
+   "sens_0.95": {
+    "achieved_sensitivity": 0.92,
+    "sens_ci": [
+     0.8363,
+     0.9811
+    ],
+    "achieved_specificity": 0.28,
+    "spec_ci": [
+     0.1932,
+     0.3704
+    ],
+    "flagged_of_n": [
+     118,
+     150
+    ]
+   },
+   "sens_1.0": {
+    "achieved_sensitivity": 0.96,
+    "sens_ci": [
+     0.9,
+     1.0
+    ],
+    "achieved_specificity": 0.23,
+    "spec_ci": [
+     0.1521,
+     0.3131
+    ],
+    "flagged_of_n": [
+     125,
+     150
+    ]
+   },
+   "spec_0.80": {
+    "achieved_sensitivity": 0.6,
+    "sens_ci": [
+     0.463,
+     0.7333
+    ],
+    "achieved_specificity": 0.84,
+    "spec_ci": [
+     0.7619,
+     0.9118
+    ],
+    "flagged_of_n": [
+     46,
+     150
+    ]
+   },
+   "spec_0.86": {
+    "achieved_sensitivity": 0.48,
+    "sens_ci": [
+     0.3333,
+     0.62
+    ],
+    "achieved_specificity": 0.85,
+    "spec_ci": [
+     0.7767,
+     0.9208
+    ],
+    "flagged_of_n": [
+     39,
+     150
+    ]
+   }
+  },
+  "late_stack_logit": {
+   "sens_0.95": {
+    "achieved_sensitivity": 0.92,
+    "sens_ci": [
+     0.8364,
+     0.9818
+    ],
+    "achieved_specificity": 0.3,
+    "spec_ci": [
+     0.2121,
+     0.3922
+    ],
+    "flagged_of_n": [
+     116,
+     150
+    ]
+   },
+   "sens_1.0": {
+    "achieved_sensitivity": 0.98,
+    "sens_ci": [
+     0.9333,
+     1.0
+    ],
+    "achieved_specificity": 0.25,
+    "spec_ci": [
+     0.1682,
+     0.3402
+    ],
+    "flagged_of_n": [
+     124,
+     150
+    ]
+   },
+   "spec_0.80": {
+    "achieved_sensitivity": 0.52,
+    "sens_ci": [
+     0.38,
+     0.6607
+    ],
+    "achieved_specificity": 0.79,
+    "spec_ci": [
+     0.7083,
+     0.871
+    ],
+    "flagged_of_n": [
+     47,
+     150
+    ]
+   },
+   "spec_0.86": {
+    "achieved_sensitivity": 0.32,
+    "sens_ci": [
+     0.186,
+     0.4469
+    ],
+    "achieved_specificity": 0.85,
+    "spec_ci": [
+     0.7789,
+     0.9184
+    ],
+    "flagged_of_n": [
+     31,
+     150
+    ]
+   }
+  }
+ },
+ "item15_brier": {
+  "image_only": {
+   "brier": 0.2453,
+   "brier_ci": [
+    0.2057,
+    0.2866
+   ],
+   "delta_vs_image_only": 0.0,
+   "delta_ci": [
+    0.0,
+    0.0
+   ]
+  },
+  "cnv_only": {
+   "brier": 0.216,
+   "brier_ci": [
+    0.1778,
+    0.2531
+   ],
+   "delta_vs_image_only": -0.0293,
+   "delta_ci": [
+    -0.0905,
+    0.0307
+   ]
+  },
+  "early_fusion": {
+   "brier": 0.213,
+   "brier_ci": [
+    0.1714,
+    0.2571
+   ],
+   "delta_vs_image_only": -0.0322,
+   "delta_ci": [
+    -0.0704,
+    0.0056
+   ]
+  },
+  "intermediate_fusion": {
+   "brier": 0.2242,
+   "brier_ci": [
+    0.1844,
+    0.2678
+   ],
+   "delta_vs_image_only": -0.0211,
+   "delta_ci": [
+    -0.049,
+    0.0089
+   ]
+  },
+  "coattention_fusion": {
+   "brier": 0.23,
+   "brier_ci": [
+    0.1875,
+    0.2735
+   ],
+   "delta_vs_image_only": -0.0152,
+   "delta_ci": [
+    -0.0523,
+    0.0225
+   ]
+  },
+  "late_mean": {
+   "brier": 0.1842,
+   "brier_ci": [
+    0.1622,
+    0.2071
+   ],
+   "delta_vs_image_only": -0.0611,
+   "delta_ci": [
+    -0.095,
+    -0.0271
+   ]
+  },
+  "late_stack_logit": {
+   "brier": 0.2025,
+   "brier_ci": [
+    0.1701,
+    0.235
+   ],
+   "delta_vs_image_only": -0.0428,
+   "delta_ci": [
+    -0.0931,
+    0.0079
+   ]
+  }
+ },
+ "item16_recalibration": {
+  "image_only": {
+   "before": {
+    "slope": 0.616,
+    "intercept": -0.992,
+    "brier": 0.2453,
+    "auroc": 0.7312
+   },
+   "after_platt_cv": {
+    "slope": 0.709,
+    "intercept": -0.21,
+    "brier": 0.202,
+    "brier_ci": [
+     0.1672,
+     0.2354
+    ],
+    "auroc": 0.699
+   },
+   "brier_delta_after_minus_before_ci": [
+    -0.0786,
+    -0.0072
+   ]
+  },
+  "cnv_only": {
+   "before": {
+    "slope": 1.23,
+    "intercept": 0.731,
+    "brier": 0.216,
+    "auroc": 0.663
+   },
+   "after_platt_cv": {
+    "slope": 0.735,
+    "intercept": -0.2,
+    "brier": 0.2118,
+    "brier_ci": [
+     0.1839,
+     0.2403
+    ],
+    "auroc": 0.6376
+   },
+   "brier_delta_after_minus_before_ci": [
+    -0.0216,
+    0.0127
+   ]
+  },
+  "late_mean": {
+   "before": {
+    "slope": 1.78,
+    "intercept": 0.104,
+    "brier": 0.1842,
+    "auroc": 0.7742
+   },
+   "after_platt_cv": {
+    "slope": 0.706,
+    "intercept": -0.197,
+    "brier": 0.191,
+    "brier_ci": [
+     0.1567,
+     0.2266
+    ],
+    "auroc": 0.7426
+   },
+   "brier_delta_after_minus_before_ci": [
+    -0.0079,
+    0.0221
+   ]
+  },
+  "late_stack_logit": {
+   "before": {
+    "slope": 1.626,
+    "intercept": 0.929,
+    "brier": 0.2025,
+    "auroc": 0.7366
+   },
+   "after_platt_cv": {
+    "slope": 0.499,
+    "intercept": -0.372,
+    "brier": 0.2154,
+    "brier_ci": [
+     0.1791,
+     0.252
+    ],
+    "auroc": 0.7044
+   },
+   "brier_delta_after_minus_before_ci": [
+    -0.0113,
+    0.037
+   ]
+  }
+ },
+ "item17_detection_intensity": {
+  "rule": "exclude samples with DaysSincePreviousBiopsy <= 183 (a repeat within 6 months of the previous biopsy)",
+  "image_only": {
+   "all_samples": {
+    "windows": {
+     "samples_kept": 707,
+     "samples_total": 707,
+     "0-12m": {
+      "n_progressor_samples": 54,
+      "n_nonprogressor_samples": 600,
+      "auroc": 0.8297,
+      "ci": [
+       0.7688,
+       0.8831
+      ]
+     },
+     "12-36m": {
+      "n_progressor_samples": 29,
+      "n_nonprogressor_samples": 600,
+      "auroc": 0.516,
+      "ci": [
+       0.3347,
+       0.7071
+      ]
+     },
+     ">36m": {
+      "n_progressor_samples": 24,
+      "n_nonprogressor_samples": 600,
+      "auroc": 0.8044,
+      "ci": [
+       0.7028,
+       0.878
+      ]
+     }
+    },
+    "horizons": {
+     "Progress_in_1": {
+      "n_patients": 150,
+      "pos": 6,
+      "auroc": 0.8993
+     },
+     "Progress_in_2": {
+      "n_patients": 150,
+      "pos": 18,
+      "auroc": 0.6818
+     },
+     "Progress_in_3": {
+      "n_patients": 150,
+      "pos": 26,
+      "auroc": 0.6386
+     },
+     "Progress_in_4": {
+      "n_patients": 150,
+      "pos": 30,
+      "auroc": 0.6342
+     },
+     "Progress_in_5": {
+      "n_patients": 150,
+      "pos": 31,
+      "auroc": 0.6495
+     }
+    }
+   },
+   "excluding_repeats_within_6m": {
+    "windows": {
+     "samples_kept": 685,
+     "samples_total": 707,
+     "0-12m": {
+      "n_progressor_samples": 54,
+      "n_nonprogressor_samples": 581,
+      "auroc": 0.8308,
+      "ci": [
+       0.7712,
+       0.8843
+      ]
+     },
+     "12-36m": {
+      "n_progressor_samples": 26,
+      "n_nonprogressor_samples": 581,
+      "auroc": 0.4904,
+      "ci": [
+       0.3074,
+       0.7052
+      ]
+     },
+     ">36m": {
+      "n_progressor_samples": 24,
+      "n_nonprogressor_samples": 581,
+      "auroc": 0.8057,
+      "ci": [
+       0.7013,
+       0.8795
+      ]
+     }
+    },
+    "horizons": {
+     "Progress_in_1": {
+      "n_patients": 150,
+      "pos": 6,
+      "auroc": 0.8993
+     },
+     "Progress_in_2": {
+      "n_patients": 150,
+      "pos": 18,
+      "auroc": 0.6843
+     },
+     "Progress_in_3": {
+      "n_patients": 150,
+      "pos": 26,
+      "auroc": 0.6259
+     },
+     "Progress_in_4": {
+      "n_patients": 150,
+      "pos": 30,
+      "auroc": 0.6233
+     },
+     "Progress_in_5": {
+      "n_patients": 150,
+      "pos": 31,
+      "auroc": 0.6389
+     }
+    }
+   }
+  },
+  "cnv_only": {
+   "all_samples": {
+    "windows": {
+     "samples_kept": 707,
+     "samples_total": 707,
+     "0-12m": {
+      "n_progressor_samples": 54,
+      "n_nonprogressor_samples": 600,
+      "auroc": 0.6403,
+      "ci": [
+       0.5472,
+       0.74
+      ]
+     },
+     "12-36m": {
+      "n_progressor_samples": 29,
+      "n_nonprogressor_samples": 600,
+      "auroc": 0.6163,
+      "ci": [
+       0.4689,
+       0.784
+      ]
+     },
+     ">36m": {
+      "n_progressor_samples": 24,
+      "n_nonprogressor_samples": 600,
+      "auroc": 0.5766,
+      "ci": [
+       0.3809,
+       0.8135
+      ]
+     }
+    },
+    "horizons": {
+     "Progress_in_1": {
+      "n_patients": 150,
+      "pos": 6,
+      "auroc": 0.7384
+     },
+     "Progress_in_2": {
+      "n_patients": 150,
+      "pos": 18,
+      "auroc": 0.6582
+     },
+     "Progress_in_3": {
+      "n_patients": 150,
+      "pos": 26,
+      "auroc": 0.6272
+     },
+     "Progress_in_4": {
+      "n_patients": 150,
+      "pos": 30,
+      "auroc": 0.61
+     },
+     "Progress_in_5": {
+      "n_patients": 150,
+      "pos": 31,
+      "auroc": 0.6067
+     }
+    }
+   },
+   "excluding_repeats_within_6m": {
+    "windows": {
+     "samples_kept": 685,
+     "samples_total": 707,
+     "0-12m": {
+      "n_progressor_samples": 54,
+      "n_nonprogressor_samples": 581,
+      "auroc": 0.6408,
+      "ci": [
+       0.5486,
+       0.7401
+      ]
+     },
+     "12-36m": {
+      "n_progressor_samples": 26,
+      "n_nonprogressor_samples": 581,
+      "auroc": 0.6019,
+      "ci": [
+       0.4491,
+       0.7882
+      ]
+     },
+     ">36m": {
+      "n_progressor_samples": 24,
+      "n_nonprogressor_samples": 581,
+      "auroc": 0.5769,
+      "ci": [
+       0.3838,
+       0.8123
+      ]
+     }
+    },
+    "horizons": {
+     "Progress_in_1": {
+      "n_patients": 150,
+      "pos": 6,
+      "auroc": 0.7407
+     },
+     "Progress_in_2": {
+      "n_patients": 150,
+      "pos": 18,
+      "auroc": 0.6616
+     },
+     "Progress_in_3": {
+      "n_patients": 150,
+      "pos": 26,
+      "auroc": 0.6169
+     },
+     "Progress_in_4": {
+      "n_patients": 150,
+      "pos": 30,
+      "auroc": 0.6017
+     },
+     "Progress_in_5": {
+      "n_patients": 150,
+      "pos": 31,
+      "auroc": 0.5988
+     }
+    }
+   }
+  },
+  "late_mean": {
+   "all_samples": {
+    "windows": {
+     "samples_kept": 707,
+     "samples_total": 707,
+     "0-12m": {
+      "n_progressor_samples": 54,
+      "n_nonprogressor_samples": 600,
+      "auroc": 0.8445,
+      "ci": [
+       0.7883,
+       0.8959
+      ]
+     },
+     "12-36m": {
+      "n_progressor_samples": 29,
+      "n_nonprogressor_samples": 600,
+      "auroc": 0.5556,
+      "ci": [
+       0.3565,
+       0.7455
+      ]
+     },
+     ">36m": {
+      "n_progressor_samples": 24,
+      "n_nonprogressor_samples": 600,
+      "auroc": 0.8098,
+      "ci": [
+       0.7327,
+       0.8947
+      ]
+     }
+    },
+    "horizons": {
+     "Progress_in_1": {
+      "n_patients": 150,
+      "pos": 6,
+      "auroc": 0.9282
+     },
+     "Progress_in_2": {
+      "n_patients": 150,
+      "pos": 18,
+      "auroc": 0.7163
+     },
+     "Progress_in_3": {
+      "n_patients": 150,
+      "pos": 26,
+      "auroc": 0.6783
+     },
+     "Progress_in_4": {
+      "n_patients": 150,
+      "pos": 30,
+      "auroc": 0.6694
+     },
+     "Progress_in_5": {
+      "n_patients": 150,
+      "pos": 31,
+      "auroc": 0.6823
+     }
+    }
+   },
+   "excluding_repeats_within_6m": {
+    "windows": {
+     "samples_kept": 685,
+     "samples_total": 707,
+     "0-12m": {
+      "n_progressor_samples": 54,
+      "n_nonprogressor_samples": 581,
+      "auroc": 0.8451,
+      "ci": [
+       0.789,
+       0.8961
+      ]
+     },
+     "12-36m": {
+      "n_progressor_samples": 26,
+      "n_nonprogressor_samples": 581,
+      "auroc": 0.5303,
+      "ci": [
+       0.339,
+       0.7438
+      ]
+     },
+     ">36m": {
+      "n_progressor_samples": 24,
+      "n_nonprogressor_samples": 581,
+      "auroc": 0.8112,
+      "ci": [
+       0.7335,
+       0.8954
+      ]
+     }
+    },
+    "horizons": {
+     "Progress_in_1": {
+      "n_patients": 150,
+      "pos": 6,
+      "auroc": 0.9282
+     },
+     "Progress_in_2": {
+      "n_patients": 150,
+      "pos": 18,
+      "auroc": 0.7193
+     },
+     "Progress_in_3": {
+      "n_patients": 150,
+      "pos": 26,
+      "auroc": 0.6613
+     },
+     "Progress_in_4": {
+      "n_patients": 150,
+      "pos": 30,
+      "auroc": 0.6547
+     },
+     "Progress_in_5": {
+      "n_patients": 150,
+      "pos": 31,
+      "auroc": 0.6679
+     }
+    }
+   }
+  }
+ },
+ "item18_window_composition_progressor_samples": {
+  "0-12m": {
+   "n_samples": 54,
+   "n_patients": 23,
+   "grade_int_dist": {
+    "0": 30,
+    "1": 12,
+    "2": 12
+   },
+   "mean_grade_int": 0.667,
+   "median_biopsies_total_for_patient": 3.0,
+   "median_days_since_previous": 825.0,
+   "frac_first_biopsy": 0.259,
+   "image_only_median_prob": 0.686
+  },
+  "12-36m": {
+   "n_samples": 29,
+   "n_patients": 13,
+   "grade_int_dist": {
+    "0": 18,
+    "1": 1,
+    "2": 10
+   },
+   "mean_grade_int": 0.724,
+   "median_biopsies_total_for_patient": 4.0,
+   "median_days_since_previous": 438.0,
+   "frac_first_biopsy": 0.138,
+   "image_only_median_prob": 0.342
+  },
+  ">36m": {
+   "n_samples": 24,
+   "n_patients": 14,
+   "grade_int_dist": {
+    "0": 5,
+    "2": 19
+   },
+   "mean_grade_int": 1.583,
+   "median_biopsies_total_for_patient": 5.0,
+   "median_days_since_previous": 757.0,
+   "frac_first_biopsy": 0.625,
+   "image_only_median_prob": 0.637
+  },
+  "non_progressor_samples_reference": {
+   "n_samples": 600,
+   "n_patients": 134,
+   "grade_int_dist": {
+    "0": 500,
+    "1": 54,
+    "2": 46
+   },
+   "mean_grade_int": 0.243,
+   "median_biopsies_total_for_patient": 4.0,
+   "median_days_since_previous": 722.0,
+   "frac_first_biopsy": 0.438,
+   "image_only_median_prob": 0.278
+  },
+  "patients_in_12_36m_window": [
+   "AD0496",
+   "AD0775X",
+   "AHM0268",
+   "AHM0277",
+   "AHM0896",
+   "AHM0952",
+   "AHM1110",
+   "AHM1146",
+   "AHM1290",
+   "PR1/ADH/069",
+   "PR1/ADH/076",
+   "PR1/BED/060",
+   "PR1/HIN/042"
+  ]
+ }
+}
