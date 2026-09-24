@@ -1,0 +1,248 @@
+{
+ "T2a": {
+  "n": 185,
+  "pos": 44,
+  "tile_summary_logistic": {
+   "auroc": 0.7916,
+   "ci": [
+    0.7137,
+    0.8639
+   ]
+  },
+  "abmil_image": {
+   "auroc": 0.8174,
+   "ci": [
+    0.725,
+    0.892
+   ]
+  },
+  "baseline_grade_age": 0.7083,
+  "delta_tile_minus_abmil": [
+   -0.107,
+   0.0594
+  ],
+  "delta_tile_minus_baseline": [
+   -0.0086,
+   0.1723
+  ],
+  "fused_tile_abmil": {
+   "auroc": 0.828,
+   "delta_vs_abmil": [
+    -0.03,
+    0.0539
+   ]
+  },
+  "coef_top": {
+   "frac_LGD": -0.844,
+   "mean_LGD": 0.771,
+   "frac_CANCER": -0.742,
+   "mean_HGD": 0.707,
+   "frac_NDBE": 0.627
+  }
+ },
+ "T2b": {
+  "n": 183,
+  "pos": 30,
+  "tile_summary_logistic": {
+   "auroc": 0.7821,
+   "ci": [
+    0.68,
+    0.8654
+   ]
+  },
+  "abmil_image": {
+   "auroc": 0.8619,
+   "ci": [
+    0.7885,
+    0.9199
+   ]
+  },
+  "baseline_grade_age": 0.6235,
+  "delta_tile_minus_abmil": [
+   -0.1573,
+   -0.01
+  ],
+  "delta_tile_minus_baseline": [
+   0.0381,
+   0.2625
+  ],
+  "fused_tile_abmil": {
+   "auroc": 0.8623,
+   "delta_vs_abmil": [
+    -0.0341,
+    0.0353
+   ]
+  },
+  "coef_top": {
+   "frac_CANCER": -0.937,
+   "mean_LGD": 0.846,
+   "mean_HGD": 0.807,
+   "frac_LGD": -0.676,
+   "mean_CANCER": 0.671
+  }
+ },
+ "T3a": {
+  "n": 1274,
+  "pos": 146,
+  "tile_summary_logistic": {
+   "auroc": 0.7977,
+   "ci": [
+    0.7525,
+    0.8441
+   ]
+  },
+  "abmil_image": {
+   "auroc": 0.821,
+   "ci": [
+    0.7791,
+    0.8608
+   ]
+  },
+  "baseline_grade_age": 0.5769,
+  "delta_tile_minus_abmil": [
+   -0.0605,
+   0.0125
+  ],
+  "delta_tile_minus_baseline": [
+   0.1629,
+   0.2781
+  ],
+  "fused_tile_abmil": {
+   "auroc": 0.832,
+   "delta_vs_abmil": [
+    -0.0063,
+    0.0297
+   ]
+  },
+  "coef_top": {
+   "mean_CANCER": 1.276,
+   "frac_CANCER": -0.88,
+   "frac_LGD": 0.81,
+   "mean_NDBE": -0.486,
+   "frac_NDBE": 0.438
+  }
+ },
+ "T3b": {
+  "n": 1274,
+  "pos": 90,
+  "tile_summary_logistic": {
+   "auroc": 0.8267,
+   "ci": [
+    0.761,
+    0.884
+   ]
+  },
+  "abmil_image": {
+   "auroc": 0.8692,
+   "ci": [
+    0.8237,
+    0.9105
+   ]
+  },
+  "baseline_grade_age": 0.6085,
+  "delta_tile_minus_abmil": [
+   -0.0904,
+   0.0011
+  ],
+  "delta_tile_minus_baseline": [
+   0.1554,
+   0.2844
+  ],
+  "fused_tile_abmil": {
+   "auroc": 0.8606,
+   "delta_vs_abmil": [
+    -0.0329,
+    0.0131
+   ]
+  },
+  "coef_top": {
+   "mean_CANCER": 1.259,
+   "frac_CANCER": -0.799,
+   "frac_LGD": 0.758,
+   "mean_LGD": -0.669,
+   "mean_NDBE": -0.614
+  }
+ },
+ "T3a_bio": {
+  "n": 1203,
+  "pos": 116,
+  "tile_summary_logistic": {
+   "auroc": 0.7646,
+   "ci": [
+    0.7117,
+    0.8168
+   ]
+  },
+  "abmil_image": {
+   "auroc": 0.8009,
+   "ci": [
+    0.7512,
+    0.8483
+   ]
+  },
+  "baseline_grade_age": 0.5731,
+  "delta_tile_minus_abmil": [
+   -0.0762,
+   0.0085
+  ],
+  "delta_tile_minus_baseline": [
+   0.1304,
+   0.2538
+  ],
+  "fused_tile_abmil": {
+   "auroc": 0.8072,
+   "delta_vs_abmil": [
+    -0.01,
+    0.0235
+   ]
+  },
+  "coef_top": {
+   "mean_CANCER": 0.94,
+   "frac_LGD": 0.819,
+   "frac_HGD": 0.596,
+   "frac_CANCER": -0.579,
+   "mean_HGD": -0.453
+  }
+ },
+ "T3b_bio": {
+  "n": 1203,
+  "pos": 62,
+  "tile_summary_logistic": {
+   "auroc": 0.8042,
+   "ci": [
+    0.7331,
+    0.8736
+   ]
+  },
+  "abmil_image": {
+   "auroc": 0.822,
+   "ci": [
+    0.7644,
+    0.8742
+   ]
+  },
+  "baseline_grade_age": 0.5979,
+  "delta_tile_minus_abmil": [
+   -0.0853,
+   0.0538
+  ],
+  "delta_tile_minus_baseline": [
+   0.1323,
+   0.287
+  ],
+  "fused_tile_abmil": {
+   "auroc": 0.842,
+   "delta_vs_abmil": [
+    -0.0144,
+    0.0574
+   ]
+  },
+  "coef_top": {
+   "mean_CANCER": 0.912,
+   "frac_LGD": 0.795,
+   "mean_LGD": -0.576,
+   "frac_HGD": 0.508,
+   "grade_flag": -0.451
+  }
+ }
+}
