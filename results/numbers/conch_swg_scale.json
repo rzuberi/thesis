@@ -1,0 +1,119 @@
+{
+  "n_slides": 80,
+  "label_dist": {
+    "0": 40,
+    "2": 20,
+    "1": 20
+  },
+  "tiles_per_slide": 128,
+  "by_scale": {
+    "level_0": {
+      "mpp": 0.221,
+      "n": 80,
+      "auroc_LGDplus": {
+        "mean_plgd": 0.5592,
+        "max_plgd": 0.3596,
+        "mean_phgd": 0.5583
+      },
+      "auroc_HGDplus": null,
+      "mean_tile_argmax_frac_by_truth": {
+        "0": {
+          "NORMAL_OTHER": 0.298,
+          "NDBE": 0.203,
+          "IND": 0.301,
+          "LGD": 0.0,
+          "HGD": 0.014,
+          "CANCER": 0.185
+        },
+        "1": {
+          "NORMAL_OTHER": 0.3,
+          "NDBE": 0.167,
+          "IND": 0.321,
+          "LGD": 0.0,
+          "HGD": 0.016,
+          "CANCER": 0.197
+        },
+        "2": {
+          "NORMAL_OTHER": 0.281,
+          "NDBE": 0.204,
+          "IND": 0.296,
+          "LGD": 0.0,
+          "HGD": 0.022,
+          "CANCER": 0.198
+        }
+      }
+    },
+    "level_1": {
+      "mpp": 0.442,
+      "n": 80,
+      "auroc_LGDplus": {
+        "mean_plgd": 0.4675,
+        "max_plgd": 0.4383,
+        "mean_phgd": 0.4667
+      },
+      "auroc_HGDplus": null,
+      "mean_tile_argmax_frac_by_truth": {
+        "0": {
+          "NORMAL_OTHER": 0.129,
+          "NDBE": 0.342,
+          "IND": 0.298,
+          "LGD": 0.0,
+          "HGD": 0.018,
+          "CANCER": 0.213
+        },
+        "1": {
+          "NORMAL_OTHER": 0.17,
+          "NDBE": 0.231,
+          "IND": 0.344,
+          "LGD": 0.0,
+          "HGD": 0.026,
+          "CANCER": 0.229
+        },
+        "2": {
+          "NORMAL_OTHER": 0.147,
+          "NDBE": 0.373,
+          "IND": 0.251,
+          "LGD": 0.0,
+          "HGD": 0.03,
+          "CANCER": 0.199
+        }
+      }
+    },
+    "level_2": {
+      "mpp": 0.884,
+      "n": 80,
+      "auroc_LGDplus": {
+        "mean_plgd": 0.4417,
+        "max_plgd": 0.5104,
+        "mean_phgd": 0.445
+      },
+      "auroc_HGDplus": null,
+      "mean_tile_argmax_frac_by_truth": {
+        "0": {
+          "NORMAL_OTHER": 0.067,
+          "NDBE": 0.449,
+          "IND": 0.298,
+          "LGD": 0.002,
+          "HGD": 0.007,
+          "CANCER": 0.177
+        },
+        "1": {
+          "NORMAL_OTHER": 0.1,
+          "NDBE": 0.41,
+          "IND": 0.306,
+          "LGD": 0.001,
+          "HGD": 0.011,
+          "CANCER": 0.173
+        },
+        "2": {
+          "NORMAL_OTHER": 0.095,
+          "NDBE": 0.464,
+          "IND": 0.285,
+          "LGD": 0.001,
+          "HGD": 0.011,
+          "CANCER": 0.144
+        }
+      }
+    }
+  }
+}
