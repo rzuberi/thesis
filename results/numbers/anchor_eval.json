@@ -508,9 +508,9 @@
     "gap_days_median": 0.0,
     "jury": {
       "n": 110,
-      "exact": 0.8364,
+      "exact": 0.8455,
       "two_tier_LGDplus": 0.9,
-      "qwk": 0.7156,
+      "qwk": 0.7251,
       "within_one_rung": 0.9091,
       "confusion_truth_rows": [
         [
@@ -545,8 +545,8 @@
           0,
           0,
           0,
-          2,
-          1
+          1,
+          2
         ]
       ]
     },
@@ -591,6 +591,105 @@
           0,
           1,
           2
+        ]
+      ]
+    }
+  },
+  "aceb_seattle_grade_maxwindow": {
+    "rule": "max jury grade over all DB reports within 120 d of trial entry (vs closest report above)",
+    "cases": 111,
+    "reports_in_window_dist": {
+      "1": 13,
+      "2": 66,
+      "3": 28,
+      "4": 3,
+      "5": 1
+    },
+    "jury": {
+      "n": 111,
+      "exact": 0.8108,
+      "two_tier_LGDplus": 0.8559,
+      "qwk": 0.7172,
+      "within_one_rung": 0.8649,
+      "confusion_truth_rows": [
+        [
+          68,
+          1,
+          7,
+          7,
+          0
+        ],
+        [
+          0,
+          3,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          8,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          8,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          3
+        ]
+      ]
+    },
+    "medgemma27b": {
+      "n": 111,
+      "exact": 0.8198,
+      "two_tier_LGDplus": 0.8649,
+      "qwk": 0.7374,
+      "within_one_rung": 0.8739,
+      "confusion_truth_rows": [
+        [
+          69,
+          1,
+          7,
+          6,
+          0
+        ],
+        [
+          0,
+          3,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          8,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          8,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          3
         ]
       ]
     }

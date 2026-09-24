@@ -1,0 +1,56 @@
+{
+ "_meta": {
+  "n_perm": 2000,
+  "seed": 0,
+  "statistic": "max over fusion arms of AUROC(arm) - AUROC(image_only), labels permuted, predictions fixed"
+ },
+ "rep01": {
+  "observed_delta_vs_image_only": {
+   "early_fusion": 0.0072,
+   "intermediate_fusion": 0.0102,
+   "coattention_fusion": 0.008,
+   "late_mean_prob": 0.043,
+   "late_mean_z": 0.0514
+  },
+  "selected_arm": "late_mean_z",
+  "t_obs": 0.0514,
+  "p_selection_adjusted": 0.22489,
+  "p_selected_arm_unadjusted": 0.09095,
+  "p_unadjusted_per_arm": {
+   "early_fusion": 0.44178,
+   "intermediate_fusion": 0.38781,
+   "coattention_fusion": 0.42529,
+   "late_mean_prob": 0.0025,
+   "late_mean_z": 0.09095
+  },
+  "null_t_q95": 0.0838
+ },
+ "rep02": {
+  "observed_delta_vs_image_only": {
+   "early_fusion": 0.043,
+   "intermediate_fusion": 0.022,
+   "coattention_fusion": 0.0234,
+   "late_mean_prob": 0.0424,
+   "late_mean_z": 0.0852
+  },
+  "selected_arm": "late_mean_z",
+  "t_obs": 0.0852,
+  "p_selection_adjusted": 0.02399,
+  "p_selected_arm_unadjusted": 0.004,
+  "p_unadjusted_per_arm": {
+   "early_fusion": 0.13593,
+   "intermediate_fusion": 0.26887,
+   "coattention_fusion": 0.24238,
+   "late_mean_prob": 0.001,
+   "late_mean_z": 0.004
+  },
+  "null_t_q95": 0.073
+ },
+ "two_repeat_mean_delta_vs_image_only": {
+  "early_fusion": 0.0251,
+  "intermediate_fusion": 0.0161,
+  "coattention_fusion": 0.0157,
+  "late_mean_prob": 0.0427,
+  "late_mean_z": 0.0683
+ }
+}

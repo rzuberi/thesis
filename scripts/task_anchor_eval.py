@@ -45,8 +45,16 @@ for _, r in ac.iterrows():
     cand = pt[pt.participant_id.isin(pids) & pt.d.notna()].copy(); cand["gap"] = (cand.d - d0).abs().dt.days; cand = cand[cand.gap <= 120].sort_values("gap")
     if cand.empty: continue
     pid_ = str(cand.iloc[0].pathology_text_id)
-    rows.append({"case": r.study_number_normalized, "truth": SEA[r.Histology_Seattle_Protocol], "gap_days": int(cand.iloc[0].gap), "jury": jury_db.get(pid_), "medgemma27b": mg_db.get(pid_)})
+    # item 26 (24 Sep 2026): a Seattle-protocol HGD can sit in a DIFFERENT report of the same visit than the one
+    # closest in time; also score the MAX jury grade over every report in the 120-day window
+    def mx(lab):
+        g = [lab.get(str(x)) for x in cand.pathology_text_id]; g = [x for x in g if x in ORD]; return max(g, key=lambda k: ORD[k]) if g else None
+    rows.append({"case": r.study_number_normalized, "truth": SEA[r.Histology_Seattle_Protocol], "gap_days": int(cand.iloc[0].gap), "jury": jury_db.get(pid_), "medgemma27b": mg_db.get(pid_),
+                 "n_reports_in_window": int(len(cand)), "jury_max_window": mx(jury_db), "medgemma27b_max_window": mx(mg_db)})
 ad = pd.DataFrame(rows)
 res["aceb_seattle_grade"] = {"cases_with_report_within_120d": len(ad), "truth_dist": ad.truth.value_counts().to_dict() if len(ad) else {}, "gap_days_median": float(ad.gap_days.median()) if len(ad) else None,
                              "jury": metrics(ad.truth, ad.jury) if len(ad) else {}, "medgemma27b": metrics(ad.truth, ad.medgemma27b) if len(ad) and ad.medgemma27b.notna().any() else {"n": 0, "note": "DB-corpus MedGemma run not finished"}}
+res["aceb_seattle_grade_maxwindow"] = {"rule": "max jury grade over all DB reports within 120 d of trial entry (vs closest report above)", "cases": len(ad),
+    "reports_in_window_dist": ad.n_reports_in_window.value_counts().sort_index().to_dict() if len(ad) else {},
+    "jury": metrics(ad.truth, ad.jury_max_window) if len(ad) else {}, "medgemma27b": metrics(ad.truth, ad.medgemma27b_max_window) if len(ad) else {}}
 json.dump(res, open(os.path.join(OUT, "results.json"), "w"), indent=2, default=str); print(json.dumps({k: {kk: vv for kk, vv in v.items() if kk != "per_juror"} for k, v in res.items()}, indent=1, default=str)[:4000])

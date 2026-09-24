@@ -1,0 +1,163 @@
+{
+ "_meta": {
+  "n_boot": 2000,
+  "seed": 0,
+  "unit": "patient (max risk over samples)"
+ },
+ "runs": {
+  "cnvtextNG_medgemma27b": {
+   "file": "cnv_text_medgemma_27b_nograde.csv",
+   "n_samples_parsed": 707,
+   "n_patients": 150,
+   "pos": 50,
+   "patient_auroc": 0.645,
+   "ci": [
+    0.548,
+    0.7379
+   ],
+   "sample_auroc": 0.5969,
+   "grade_baseline_auroc": 0.687,
+   "delta_vs_grade": [
+    -0.1678,
+    0.0781
+   ],
+   "trained_cnv_model_auroc": 0.663,
+   "delta_vs_trained_cnv": [
+    -0.1115,
+    0.0754
+   ]
+  },
+  "cnvtextNG_medgemma27b_rep1": {
+   "file": "cnv_text_medgemma_27b_nograde_rep1.csv",
+   "n_samples_parsed": 707,
+   "n_patients": 150,
+   "pos": 50,
+   "patient_auroc": 0.6467,
+   "ci": [
+    0.553,
+    0.7355
+   ],
+   "sample_auroc": 0.5942,
+   "grade_baseline_auroc": 0.687,
+   "delta_vs_grade": [
+    -0.1635,
+    0.0798
+   ],
+   "trained_cnv_model_auroc": 0.663,
+   "delta_vs_trained_cnv": [
+    -0.1056,
+    0.0764
+   ]
+  },
+  "cnvtextNG_medgemma27b_rep2": {
+   "file": "cnv_text_medgemma_27b_nograde_rep2.csv",
+   "n_samples_parsed": 707,
+   "n_patients": 150,
+   "pos": 50,
+   "patient_auroc": 0.6416,
+   "ci": [
+    0.5443,
+    0.7338
+   ],
+   "sample_auroc": 0.5916,
+   "grade_baseline_auroc": 0.687,
+   "delta_vs_grade": [
+    -0.174,
+    0.0817
+   ],
+   "trained_cnv_model_auroc": 0.663,
+   "delta_vs_trained_cnv": [
+    -0.1151,
+    0.0754
+   ]
+  },
+  "cnvtext_medgemma27b": {
+   "file": "cnv_text_medgemma_27b.csv",
+   "n_samples_parsed": 707,
+   "n_patients": 150,
+   "pos": 50,
+   "patient_auroc": 0.7505,
+   "ci": [
+    0.662,
+    0.8324
+   ],
+   "sample_auroc": 0.6764,
+   "grade_baseline_auroc": 0.687,
+   "delta_vs_grade": [
+    -0.0395,
+    0.1611
+   ],
+   "trained_cnv_model_auroc": 0.663,
+   "delta_vs_trained_cnv": [
+    -0.0061,
+    0.1869
+   ]
+  },
+  "cnvtext_medgemma27b_rep1": {
+   "file": "cnv_text_medgemma_27b_rep1.csv",
+   "n_samples_parsed": 707,
+   "n_patients": 150,
+   "pos": 50,
+   "patient_auroc": 0.7564,
+   "ci": [
+    0.6688,
+    0.8365
+   ],
+   "sample_auroc": 0.676,
+   "grade_baseline_auroc": 0.687,
+   "delta_vs_grade": [
+    -0.0345,
+    0.1687
+   ],
+   "trained_cnv_model_auroc": 0.663,
+   "delta_vs_trained_cnv": [
+    -0.0034,
+    0.195
+   ]
+  },
+  "cnvtext_medgemma27b_rep2": {
+   "file": "cnv_text_medgemma_27b_rep2.csv",
+   "n_samples_parsed": 707,
+   "n_patients": 150,
+   "pos": 50,
+   "patient_auroc": 0.7475,
+   "ci": [
+    0.657,
+    0.8292
+   ],
+   "sample_auroc": 0.6892,
+   "grade_baseline_auroc": 0.687,
+   "delta_vs_grade": [
+    -0.0436,
+    0.1603
+   ],
+   "trained_cnv_model_auroc": 0.663,
+   "delta_vs_trained_cnv": [
+    -0.0126,
+    0.1896
+   ]
+  },
+  "cnvtext_qwen332b": {
+   "file": "cnv_text_qwen3_32b.csv",
+   "n_samples_parsed": 707,
+   "n_patients": 150,
+   "pos": 50,
+   "patient_auroc": 0.7246,
+   "ci": [
+    0.64,
+    0.8018
+   ],
+   "sample_auroc": 0.691,
+   "grade_baseline_auroc": 0.687,
+   "delta_vs_grade": [
+    -0.0781,
+    0.1527
+   ],
+   "trained_cnv_model_auroc": 0.663,
+   "delta_vs_trained_cnv": [
+    -0.0283,
+    0.1545
+   ]
+  }
+ }
+}

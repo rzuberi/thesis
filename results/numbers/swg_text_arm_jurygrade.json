@@ -1,0 +1,68 @@
+{
+ "n_patients": 64,
+ "pos": 23,
+ "n_samples": 412,
+ "jury_grade": {
+  "auroc": 0.6691,
+  "ci": [
+   0.5302,
+   0.8001
+  ]
+ },
+ "grade": {
+  "auroc": 0.6766,
+  "ci": [
+   0.5399,
+   0.8017
+  ]
+ },
+ "img": {
+  "auroc": 0.6193,
+  "ci": [
+   0.4743,
+   0.7645
+  ]
+ },
+ "cnv": {
+  "auroc": 0.508,
+  "ci": [
+   0.3684,
+   0.6526
+  ]
+ },
+ "fuse2": {
+  "auroc": 0.5928,
+  "ci": [
+   0.4485,
+   0.722
+  ]
+ },
+ "fuse3_jg": {
+  "auroc": 0.6681,
+  "ci": [
+   0.5231,
+   0.8011
+  ]
+ },
+ "delta_jury_grade_minus_pathologist_grade": [
+  -0.046,
+  0.0292
+ ],
+ "delta_fuse3_jg_minus_fuse2": [
+  -0.0368,
+  0.1864
+ ],
+ "delta_fuse3_jg_minus_img": [
+  -0.1012,
+  0.2031
+ ],
+ "sample_level": {
+  "jury_grade": 0.7279,
+  "grade": 0.7398,
+  "img": 0.6976,
+  "cnv": 0.6051,
+  "fuse2": 0.6814,
+  "fuse3_jg": 0.7356
+ },
+ "note": "jury_grade = whole-report jury majority on the matched DB report; grade = release pathologist code. Progression = release y_progressor, patient level = max over samples, matched subset only."
+}
