@@ -18,3 +18,7 @@ labeller/claude_adjudications_raw.csv
 feasibility/slurm_logs/
 labeller/adjudication_pack.md
 review/
+
+# local-only review copies (never commit: may hold report text or patient-level rows)
+review/
+review_local/
