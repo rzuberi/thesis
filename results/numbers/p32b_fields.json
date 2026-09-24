@@ -1,0 +1,70 @@
+{
+ "_meta": {
+  "n_cases": 2293,
+  "epochs": 25,
+  "seeds": [
+   0,
+   1,
+   2
+  ],
+  "folds": "patient_folds seed 0",
+  "swg_bags": "SWG bags from /mnt/scratche/fast/fmlab/datasets/imaging/SWGCohort/features_uni2h_05um (0.5 um/px re-extraction)"
+ },
+ "fields": {
+  "grade_LGDplus": {
+   "n": 2291,
+   "pos": 622,
+   "auroc": 0.8868,
+   "ci": [
+    0.8688,
+    0.9044
+   ]
+  },
+  "im_present": {
+   "n": 2224,
+   "pos": 1436,
+   "auroc": 0.8909,
+   "ci": [
+    0.8776,
+    0.9041
+   ]
+  },
+  "treatment_effect": {
+   "n": 2293,
+   "pos": 445,
+   "auroc": 0.8194,
+   "ci": [
+    0.7963,
+    0.8415
+   ]
+  },
+  "ulceration": {
+   "n": 2114,
+   "pos": 318,
+   "auroc": 0.8576,
+   "ci": [
+    0.8307,
+    0.8842
+   ]
+  },
+  "squamous_only": {
+   "n": 2291,
+   "pos": 116,
+   "auroc": 0.8813,
+   "ci": [
+    0.8538,
+    0.9084
+   ]
+  },
+  "inflammation_mod_severe": {
+   "n": 1745,
+   "pos": 343,
+   "auroc": 0.7381,
+   "ci": [
+    0.7065,
+    0.7712
+   ]
+  }
+ },
+ "swg_imputed_grade_vs_pathologist_LGDplus_auroc": 0.6192
+}

@@ -1,0 +1,123 @@
+{
+ "n_patients": 150,
+ "pos": 50,
+ "aurocs": {
+  "fuse2": 0.7826,
+  "fuse3_fields": 0.8324,
+  "fuse3_img2_control": 0.8002,
+  "fuse3_grade_only": 0.8512,
+  "fuse3_inflam_only": 0.8192,
+  "fuse4_fields_img2": 0.8272,
+  "fuse3_fields_without_grade_LGDplus": 0.8092,
+  "fuse3_fields_without_im_present": 0.8356,
+  "fuse3_fields_without_treatment_effect": 0.8406,
+  "fuse3_fields_without_ulceration": 0.831,
+  "fuse3_fields_without_squamous_only": 0.8328,
+  "fuse3_fields_without_inflammation_mod_severe": 0.8254,
+  "img": 0.7312,
+  "cnv": 0.663,
+  "img2_rep02": 0.745,
+  "fields_all": 0.7376,
+  "field_grade_LGDplus": 0.7564,
+  "field_im_present": 0.385,
+  "field_treatment_effect": 0.5564,
+  "field_ulceration": 0.3744,
+  "field_squamous_only": 0.4874,
+  "field_inflammation_mod_severe": 0.739,
+  "fields_without_grade_LGDplus": 0.7166,
+  "fields_without_im_present": 0.7454,
+  "fields_without_treatment_effect": 0.766,
+  "fields_without_ulceration": 0.7348,
+  "fields_without_squamous_only": 0.7374,
+  "fields_without_inflammation_mod_severe": 0.697
+ },
+ "delta_fuse3_fields_minus_fuse2": {
+  "delta": 0.0498,
+  "ci": [
+   0.0154,
+   0.0894
+  ],
+  "perm_p": 0.002
+ },
+ "CONTROL_delta_fuse3_img2_minus_fuse2": {
+  "delta": 0.0176,
+  "ci": [
+   -0.0179,
+   0.0581
+  ],
+  "perm_p": 0.16992
+ },
+ "delta_fuse3_fields_minus_fuse3_img2": {
+  "delta": 0.0322,
+  "ci": [
+   -0.0103,
+   0.0783
+  ]
+ },
+ "delta_fuse3_grade_only_minus_fuse2": {
+  "delta": 0.0686,
+  "ci": [
+   0.0242,
+   0.1194
+  ]
+ },
+ "delta_fuse4_minus_fuse3_img2": {
+  "delta": 0.027,
+  "ci": [
+   -0.0,
+   0.056
+  ]
+ },
+ "leave_one_field_out_fuse3": {
+  "grade_LGDplus": 0.8092,
+  "im_present": 0.8356,
+  "treatment_effect": 0.8406,
+  "ulceration": 0.831,
+  "squamous_only": 0.8328,
+  "inflammation_mod_severe": 0.8254
+ },
+ "imputed_field_alone_vs_img": {
+  "grade_LGDplus": {
+   "auroc": 0.7564,
+   "delta_vs_img_ci": [
+    -0.0804,
+    0.1301
+   ]
+  },
+  "im_present": {
+   "auroc": 0.385,
+   "delta_vs_img_ci": [
+    -0.4697,
+    -0.213
+   ]
+  },
+  "treatment_effect": {
+   "auroc": 0.5564,
+   "delta_vs_img_ci": [
+    -0.2823,
+    -0.0708
+   ]
+  },
+  "ulceration": {
+   "auroc": 0.3744,
+   "delta_vs_img_ci": [
+    -0.4949,
+    -0.2097
+   ]
+  },
+  "squamous_only": {
+   "auroc": 0.4874,
+   "delta_vs_img_ci": [
+    -0.3574,
+    -0.1344
+   ]
+  },
+  "inflammation_mod_severe": {
+   "auroc": 0.739,
+   "delta_vs_img_ci": [
+    -0.0822,
+    0.0948
+   ]
+  }
+ }
+}
