@@ -94,6 +94,17 @@ results JSONs are ground truth; any mismatch is a finding.
   figure is uninformative beyond "all 8 LOW recovered". The 5-juror TCGA
   rule reproduces the 8-juror ERIN rule on 99.4% of ERIN reports.
   [results/pancancer_jury.json, results/pancancer_hardening.json]
+- **C27 (NEW 2026-09-24).** Human-coded anchor at scale: the Barrett's database's
+  own "highest grade of dysplasia, confirmed" code exists on 99.8% of 13,645 reports.
+  On the 8,221 jury-graded reports with a Barrett's code (2,337 participants) the
+  8-model jury agrees exact 0.961 / two-tier 0.986 / QWK 0.974, over-calling 2.9% of
+  coded-NDBE reports and under-calling 1.6% of LGD+. On the 298 SWG-matched reports
+  the jury agrees with the DB code at two-tier 0.983, while the DB code itself agrees
+  with the SWG spreadsheet code at only 0.907 (n 313): the jury's "over-grading" against
+  the SWG spreadsheet (C14-anchor, 0.82) is the gap between the clinical report and
+  the spreadsheet's coding, not jury error. Provenance of the DB field (transcription
+  vs pathologist consensus) pending (questions doc Q13).
+  [results/numbers/db_confirmed_grade_anchor.json, scripts/numbers/num_db_confirmed_grade_anchor.py]
 - **C15.** MDT-style deliberation ≥ independent voting: chair 98.7% vs 97.4%
   on adjudicated cases, zero conformity losses; caveat — chair confidence is
   uncalibrated on unsure cases (200/201 "confident"). [results/mdt_erin.json]

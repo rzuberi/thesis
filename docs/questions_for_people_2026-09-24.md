@@ -35,6 +35,14 @@ and ACE-B about 7x. We have no record of any SWG resequencing at 4x or any other
 SWG data exist anywhere? If yes, where, and at what depth, because item 22 of our list (rerun the CNV
 arm and all fusions on deeper data) depends on it.
 
+**Q13 (new, 24 Sep evening). Provenance of `highestgradedysconf` in the Barrett's database.**
+Every pathology report row in the database carries a coded "highest grade of dysplasia, confirmed" (99.8 % filled,
+codes from `query_dysplasia_types`). Who enters it, and from what: the research nurse or data manager transcribing the
+clinical report, the reporting pathologist, or a consensus re-read? Is `highestgradedysprov` the initial entry and
+`…conf` the checked one? We find our LLM jury agrees with the confirmed code on 8,221 Barrett's-coded reports at 98.6 %
+two-tier, so the answer decides whether that is "agreement with a human reading of the report" (strong) or "agreement
+with a human re-read of the slide" (stronger still).
+
 ## For the data owner of the ERIN reports
 
 **Q5 (T). Permission to show one de-identified report on screen.**
