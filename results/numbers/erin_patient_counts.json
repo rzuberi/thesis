@@ -1,0 +1,76 @@
+{
+ "source_report_table": "/mnt/scratche/fast/fmlab/datasets/imaging/ERIN/data/PathologyReport_AnonIds.csv",
+ "source_labels": "/mnt/scratche/slow/fmlab/zuberi01/phd/thesis/labeller/erin_labels_jury_final.csv",
+ "source_slides": "/mnt/scratche/slow/fmlab/zuberi01/phd/thesis/campaigns/allslides/erin_slides_all.csv",
+ "reports": 7149,
+ "patients": 2537,
+ "reports_graded": 6945,
+ "patients_any_CANCER": 622,
+ "patients_any_HGD_plus": 763,
+ "patients_any_LGD_plus": 855,
+ "patients_any_IND_plus": 946,
+ "patients_max_NDBE": 1561,
+ "patients_no_graded_report": 30,
+ "resection_reports": 491,
+ "resection_patients": 449,
+ "reports_per_patient": {
+  "median": 2.0,
+  "min": 1,
+  "max": 21,
+  "mean": 2.82,
+  "one_report_only": 1078
+ },
+ "followup_first_to_last_report_days": {
+  "median": 181.0,
+  "q25": 0.0,
+  "q75": 1658.0,
+  "max": 3765,
+  "patients_with_ge2_reports": 1459,
+  "median_among_ge2": 1377.0,
+  "q25_ge2": 435.5,
+  "q75_ge2": 2417.5
+ },
+ "report_year_range": [
+  2014,
+  2025
+ ],
+ "reports_by_year": {
+  "2014": 47,
+  "2015": 337,
+  "2016": 405,
+  "2017": 447,
+  "2018": 614,
+  "2019": 751,
+  "2020": 515,
+  "2021": 738,
+  "2022": 989,
+  "2023": 941,
+  "2024": 1168,
+  "2025": 197
+ },
+ "slides_rows": 12347,
+ "slides_matched_to_report": 12277,
+ "slide_report_year_range": [
+  2017,
+  2025
+ ],
+ "slides_by_report_year": {
+  "2017.0": 4,
+  "2021.0": 3,
+  "2022.0": 265,
+  "2023.0": 4819,
+  "2024.0": 5959,
+  "2025.0": 1227
+ },
+ "slide_scan_date_range": [
+  null,
+  null
+ ],
+ "stain_type_dist": {
+  "Haematoxylin and eosin stain (H&E)": 11672,
+  "Special stain": 282,
+  "": 281,
+  "Immunohistochemistry (IHC)": 112
+ },
+ "patients_with_any_slide": 1615
+}

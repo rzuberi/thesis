@@ -1,0 +1,67 @@
+{
+ "source_reports": "/mnt/scratche/slow/fmlab/zuberi01/barretts_db_export/pathology_text_normalised_full.csv",
+ "source_grades": "/mnt/scratche/slow/fmlab/zuberi01/phd/thesis/feasibility/runs/jury_full_*/output/llm_grades_*.csv",
+ "event": "first report graded exactly LGD (jury majority, >=4 votes)",
+ "patients": 194,
+ "intervals_before": 443,
+ "intervals_after": 992,
+ "per_patient_median_before_days": {
+  "median": 420.0,
+  "q25": 233.375,
+  "q75": 729.125
+ },
+ "per_patient_median_after_days": {
+  "median": 347.75,
+  "q25": 214.25,
+  "q75": 551.375
+ },
+ "wilcoxon_paired_p": 0.004454732014179911,
+ "frac_shorter_after": 0.5618556701030928,
+ "pooled_before_percentiles_10_25_50_75_90": [
+  96.0,
+  227.0,
+  385.0,
+  743.0,
+  940.0
+ ],
+ "pooled_after_percentiles_10_25_50_75_90": [
+  121.0,
+  190.0,
+  359.0,
+  730.0,
+  891.0
+ ],
+ "mannwhitney_pooled_p": 0.0009191176427112379,
+ "by_era": [
+  {
+   "year": "(1990, 2005]",
+   "n": "99",
+   "before": "374.5",
+   "after": "389.0"
+  },
+  {
+   "year": "(2005, 2010]",
+   "n": "16",
+   "before": "505.5",
+   "after": "354.75"
+  },
+  {
+   "year": "(2010, 2015]",
+   "n": "40",
+   "before": "445.75",
+   "after": "261.5"
+  },
+  {
+   "year": "(2015, 2020]",
+   "n": "23",
+   "before": "713.0",
+   "after": "230.0"
+  },
+  {
+   "year": "(2020, 2026]",
+   "n": "16",
+   "before": "708.75",
+   "after": "204.75"
+  }
+ ]
+}

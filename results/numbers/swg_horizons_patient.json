@@ -1,0 +1,273 @@
+{
+ "_meta": {
+  "arms": [
+   "image_only",
+   "cnv_only",
+   "late_mean"
+  ],
+  "n_boot": 2000,
+  "seed": 0,
+  "source_predictions": "/mnt/scratche/slow/fmlab/zuberi01/phd/barretts_retraining/barretts_training/analysis/chapter1_lgd2_final_pre_event_20260713_final/training_final_nested_cv_v1",
+  "source_cohort": "/mnt/scratche/slow/fmlab/zuberi01/phd/barretts_retraining/barretts_training/analysis/chapter1_lgd2_final_pre_event_20260713_final/pre_event_cohort.csv"
+ },
+ "horizons_patient_level": {
+  "Progress_in_1": {
+   "n_patients": 150,
+   "pos": 6,
+   "image_only": {
+    "auroc": 0.8993,
+    "ci": [
+     0.8206,
+     0.9662
+    ]
+   },
+   "cnv_only": {
+    "auroc": 0.7384,
+    "ci": [
+     0.4401,
+     0.9527
+    ]
+   },
+   "late_mean": {
+    "auroc": 0.9282,
+    "ci": [
+     0.839,
+     0.9868
+    ]
+   },
+   "late_mean_minus_image_only": {
+    "delta": 0.0289,
+    "ci": [
+     -0.0138,
+     0.0801
+    ]
+   }
+  },
+  "Progress_in_2": {
+   "n_patients": 150,
+   "pos": 18,
+   "image_only": {
+    "auroc": 0.6818,
+    "ci": [
+     0.5435,
+     0.8115
+    ]
+   },
+   "cnv_only": {
+    "auroc": 0.6582,
+    "ci": [
+     0.5005,
+     0.8027
+    ]
+   },
+   "late_mean": {
+    "auroc": 0.7163,
+    "ci": [
+     0.5798,
+     0.8434
+    ]
+   },
+   "late_mean_minus_image_only": {
+    "delta": 0.0345,
+    "ci": [
+     -0.0101,
+     0.0756
+    ]
+   }
+  },
+  "Progress_in_3": {
+   "n_patients": 150,
+   "pos": 26,
+   "image_only": {
+    "auroc": 0.6386,
+    "ci": [
+     0.5184,
+     0.7562
+    ]
+   },
+   "cnv_only": {
+    "auroc": 0.6272,
+    "ci": [
+     0.4985,
+     0.7421
+    ]
+   },
+   "late_mean": {
+    "auroc": 0.6783,
+    "ci": [
+     0.5652,
+     0.7881
+    ]
+   },
+   "late_mean_minus_image_only": {
+    "delta": 0.0397,
+    "ci": [
+     -0.0,
+     0.0768
+    ]
+   }
+  },
+  "Progress_in_4": {
+   "n_patients": 150,
+   "pos": 30,
+   "image_only": {
+    "auroc": 0.6342,
+    "ci": [
+     0.5191,
+     0.7417
+    ]
+   },
+   "cnv_only": {
+    "auroc": 0.61,
+    "ci": [
+     0.4845,
+     0.7151
+    ]
+   },
+   "late_mean": {
+    "auroc": 0.6694,
+    "ci": [
+     0.5601,
+     0.766
+    ]
+   },
+   "late_mean_minus_image_only": {
+    "delta": 0.0353,
+    "ci": [
+     -0.0014,
+     0.0688
+    ]
+   }
+  },
+  "Progress_in_5": {
+   "n_patients": 150,
+   "pos": 31,
+   "image_only": {
+    "auroc": 0.6495,
+    "ci": [
+     0.5366,
+     0.7529
+    ]
+   },
+   "cnv_only": {
+    "auroc": 0.6067,
+    "ci": [
+     0.487,
+     0.7113
+    ]
+   },
+   "late_mean": {
+    "auroc": 0.6823,
+    "ci": [
+     0.5774,
+     0.7783
+    ]
+   },
+   "late_mean_minus_image_only": {
+    "delta": 0.0328,
+    "ci": [
+     -0.0028,
+     0.0667
+    ]
+   }
+  }
+ },
+ "time_windows_sample_level": {
+  "image_only": {
+   "0-12m": {
+    "n_progressor_samples": 54,
+    "n_nonprogressor_samples": 600,
+    "n_patients": 140,
+    "auroc": 0.8297,
+    "ci": [
+     0.7688,
+     0.8852
+    ]
+   },
+   "12-36m": {
+    "n_progressor_samples": 29,
+    "n_nonprogressor_samples": 600,
+    "n_patients": 136,
+    "auroc": 0.516,
+    "ci": [
+     0.3343,
+     0.7055
+    ]
+   },
+   ">36m": {
+    "n_progressor_samples": 24,
+    "n_nonprogressor_samples": 600,
+    "n_patients": 142,
+    "auroc": 0.8044,
+    "ci": [
+     0.7029,
+     0.879
+    ]
+   }
+  },
+  "cnv_only": {
+   "0-12m": {
+    "n_progressor_samples": 54,
+    "n_nonprogressor_samples": 600,
+    "n_patients": 140,
+    "auroc": 0.6403,
+    "ci": [
+     0.5498,
+     0.7405
+    ]
+   },
+   "12-36m": {
+    "n_progressor_samples": 29,
+    "n_nonprogressor_samples": 600,
+    "n_patients": 136,
+    "auroc": 0.6163,
+    "ci": [
+     0.4613,
+     0.7804
+    ]
+   },
+   ">36m": {
+    "n_progressor_samples": 24,
+    "n_nonprogressor_samples": 600,
+    "n_patients": 142,
+    "auroc": 0.5766,
+    "ci": [
+     0.3802,
+     0.8139
+    ]
+   }
+  },
+  "late_mean": {
+   "0-12m": {
+    "n_progressor_samples": 54,
+    "n_nonprogressor_samples": 600,
+    "n_patients": 140,
+    "auroc": 0.8445,
+    "ci": [
+     0.7911,
+     0.8952
+    ]
+   },
+   "12-36m": {
+    "n_progressor_samples": 29,
+    "n_nonprogressor_samples": 600,
+    "n_patients": 136,
+    "auroc": 0.5556,
+    "ci": [
+     0.3604,
+     0.7455
+    ]
+   },
+   ">36m": {
+    "n_progressor_samples": 24,
+    "n_nonprogressor_samples": 600,
+    "n_patients": 142,
+    "auroc": 0.8098,
+    "ci": [
+     0.7333,
+     0.8946
+    ]
+   }
+  }
+ }
+}
