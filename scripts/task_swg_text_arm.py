@@ -14,7 +14,7 @@ F = "/mnt/scratche/slow/fmlab/zuberi01/phd/barretts_retraining/barretts_training
 E = "/mnt/scratche/slow/fmlab/zuberi01/barretts_db_export"; OUT = os.environ.get("OUTDIR", "."); JOB = os.environ.get("SLURM_JOB_ID", "0"); NB = 2000
 def stem(x): x = str(x).lower().strip(); x = re.sub(r"[\s_].*$", "", x); return re.sub(r"[^a-z0-9]", "", x)
 man = pd.read_csv(F + "/training_manifest.csv", dtype=str); coh = pd.read_csv(F + "/pre_event_cohort.csv", dtype=str).set_index("SampleID")
-man["stem"] = coh.BiopsyID_real.reindex(man.sample_id).map(stem).values; man["grade"] = pd.to_numeric(coh.Label.reindex(man.sample_id).values, errors="coerce").fillna(0).astype(int).values
+man["stem"] = coh.BiopsyID_real.reindex(man.sample_id).map(stem).values; man["grade"] = pd.to_numeric(pd.Series(coh.Label.reindex(man.sample_id).values), errors="coerce").fillna(0).astype(int).values
 man["y"] = man.y_progressor.astype(int); man["fold"] = man.fold_id_rep01.astype(int)
 sm = pd.read_parquet(E + "/swg_matched_reports_v2.parquet"); rows = []
 for r in sm.itertuples():
