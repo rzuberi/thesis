@@ -1,0 +1,105 @@
+{
+  "_meta": {
+    "matched_samples": 428,
+    "patients": 65,
+    "progressor_samples": 51,
+    "embedding": "nomic-embed-text 768-d",
+    "folds": "release fold_id_rep01",
+    "n_boot": 2000
+  },
+  "progression_matched_subset_patient_level": {
+    "n_patients": 65,
+    "pos": 24,
+    "txt": {
+      "auroc": 0.4319,
+      "ci": [
+        0.2846,
+        0.5848
+      ]
+    },
+    "img": {
+      "auroc": 0.6087,
+      "ci": [
+        0.4604,
+        0.7467
+      ]
+    },
+    "cnv": {
+      "auroc": 0.4909,
+      "ci": [
+        0.3446,
+        0.6367
+      ]
+    },
+    "fuse2": {
+      "auroc": 0.5904,
+      "ci": [
+        0.445,
+        0.7272
+      ]
+    },
+    "fuse3": {
+      "auroc": 0.5528,
+      "ci": [
+        0.4049,
+        0.7027
+      ]
+    },
+    "fuse_it": {
+      "auroc": 0.4949,
+      "ci": [
+        0.3517,
+        0.6394
+      ]
+    },
+    "delta_fuse3_minus_fuse2": [
+      -0.1395,
+      0.0736
+    ],
+    "delta_fuse3_minus_img": [
+      -0.2257,
+      0.1108
+    ],
+    "delta_txt_minus_img": [
+      -0.3848,
+      0.0455
+    ]
+  },
+  "progression_matched_subset_sample_level": {
+    "txt": 0.4635,
+    "img": 0.6972,
+    "cnv": 0.6046,
+    "fuse2": 0.6842,
+    "fuse3": 0.6234
+  },
+  "pathologist_grade_LGDplus_sample_level": {
+    "n": 428,
+    "pos": 65,
+    "txt_g": {
+      "auroc": 0.7552,
+      "ci": [
+        0.6864,
+        0.8179
+      ]
+    },
+    "img_g": {
+      "auroc": 0.6701,
+      "ci": [
+        0.595,
+        0.7413
+      ]
+    },
+    "fuse_g": {
+      "auroc": 0.731,
+      "ci": [
+        0.6635,
+        0.794
+      ]
+    },
+    "delta_fuse_minus_best_single": [
+      -0.0712,
+      0.0225
+    ],
+    "jury_grade_reference": "jury two-tier agreement with the same pathologist grade is 0.82 (anchor_eval.json)"
+  }
+}

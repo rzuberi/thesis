@@ -1,0 +1,60 @@
+{
+ "T3a_bio": {
+  "n": 1203,
+  "pos": 116,
+  "patients": 1001,
+  "image_auroc": 0.8009,
+  "image_ci": [
+   0.7512,
+   0.8483
+  ],
+  "baseline_auroc": 0.573,
+  "delta_image_minus_baseline": 0.2279,
+  "delta_ci": [
+   0.1564,
+   0.298
+  ],
+  "original_all_specimens": {
+   "n": 1274,
+   "pos": 146,
+   "image_auroc": 0.821,
+   "baseline_auroc": 0.5771,
+   "delta": {
+    "mean": 0.2438,
+    "ci": [
+     0.182,
+     0.3077
+    ]
+   }
+  }
+ },
+ "T3b_bio": {
+  "n": 1203,
+  "pos": 62,
+  "patients": 1001,
+  "image_auroc": 0.822,
+  "image_ci": [
+   0.7644,
+   0.8742
+  ],
+  "baseline_auroc": 0.5958,
+  "delta_image_minus_baseline": 0.2263,
+  "delta_ci": [
+   0.1376,
+   0.317
+  ],
+  "original_all_specimens": {
+   "n": 1274,
+   "pos": 90,
+   "image_auroc": 0.8692,
+   "baseline_auroc": 0.6078,
+   "delta": {
+    "mean": 0.2614,
+    "ci": [
+     0.1926,
+     0.3286
+    ]
+   }
+  }
+ }
+}

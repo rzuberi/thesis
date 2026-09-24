@@ -1,0 +1,220 @@
+{
+ "_meta": {
+  "n_boot": 2000,
+  "seed": 0,
+  "rep02_split": "StratifiedKFold on patient-level label, seed 20260924, see REPEAT02_README.json"
+ },
+ "reps": {
+  "rep01": {
+   "n_patients": 150,
+   "pos": 50,
+   "families_complete": [
+    "image_only",
+    "cnv_only",
+    "early_fusion",
+    "intermediate_fusion",
+    "coattention_fusion",
+    "late_mean_z",
+    "late_mean_prob"
+   ],
+   "arms": {
+    "image_only": {
+     "auroc": 0.7312,
+     "auroc_ci": [
+      0.6403,
+      0.8142
+     ],
+     "auprc": 0.557
+    },
+    "cnv_only": {
+     "auroc": 0.663,
+     "auroc_ci": [
+      0.5687,
+      0.7542
+     ],
+     "auprc": 0.5385,
+     "delta_vs_image_only": -0.0682,
+     "delta_ci": [
+      -0.1965,
+      0.0648
+     ]
+    },
+    "early_fusion": {
+     "auroc": 0.7384,
+     "auroc_ci": [
+      0.6455,
+      0.8182
+     ],
+     "auprc": 0.5896,
+     "delta_vs_image_only": 0.0072,
+     "delta_ci": [
+      -0.0558,
+      0.0673
+     ]
+    },
+    "intermediate_fusion": {
+     "auroc": 0.7414,
+     "auroc_ci": [
+      0.6534,
+      0.8179
+     ],
+     "auprc": 0.5675,
+     "delta_vs_image_only": 0.0102,
+     "delta_ci": [
+      -0.0527,
+      0.0674
+     ]
+    },
+    "coattention_fusion": {
+     "auroc": 0.7392,
+     "auroc_ci": [
+      0.6519,
+      0.8207
+     ],
+     "auprc": 0.5482,
+     "delta_vs_image_only": 0.008,
+     "delta_ci": [
+      -0.0715,
+      0.0935
+     ]
+    },
+    "late_mean_z": {
+     "auroc": 0.7826,
+     "auroc_ci": [
+      0.6999,
+      0.8535
+     ],
+     "auprc": 0.6884,
+     "delta_vs_image_only": 0.0514,
+     "delta_ci": [
+      -0.0215,
+      0.1178
+     ]
+    },
+    "late_mean_prob": {
+     "auroc": 0.7742,
+     "auroc_ci": [
+      0.6872,
+      0.8494
+     ],
+     "auprc": 0.6296,
+     "delta_vs_image_only": 0.043,
+     "delta_ci": [
+      0.0142,
+      0.0708
+     ]
+    }
+   }
+  },
+  "rep02": {
+   "n_patients": 150,
+   "pos": 50,
+   "families_complete": [
+    "image_only",
+    "cnv_only",
+    "early_fusion",
+    "intermediate_fusion",
+    "coattention_fusion",
+    "late_mean_z",
+    "late_mean_prob"
+   ],
+   "arms": {
+    "image_only": {
+     "auroc": 0.745,
+     "auroc_ci": [
+      0.6602,
+      0.8269
+     ],
+     "auprc": 0.5682
+    },
+    "cnv_only": {
+     "auroc": 0.7078,
+     "auroc_ci": [
+      0.6177,
+      0.7931
+     ],
+     "auprc": 0.6078,
+     "delta_vs_image_only": -0.0372,
+     "delta_ci": [
+      -0.1514,
+      0.0732
+     ]
+    },
+    "early_fusion": {
+     "auroc": 0.788,
+     "auroc_ci": [
+      0.7063,
+      0.8608
+     ],
+     "auprc": 0.6771,
+     "delta_vs_image_only": 0.043,
+     "delta_ci": [
+      -0.0291,
+      0.1191
+     ]
+    },
+    "intermediate_fusion": {
+     "auroc": 0.767,
+     "auroc_ci": [
+      0.6823,
+      0.8452
+     ],
+     "auprc": 0.6342,
+     "delta_vs_image_only": 0.022,
+     "delta_ci": [
+      -0.0358,
+      0.0792
+     ]
+    },
+    "coattention_fusion": {
+     "auroc": 0.7684,
+     "auroc_ci": [
+      0.6821,
+      0.8456
+     ],
+     "auprc": 0.6214,
+     "delta_vs_image_only": 0.0234,
+     "delta_ci": [
+      -0.0359,
+      0.0864
+     ]
+    },
+    "late_mean_z": {
+     "auroc": 0.8302,
+     "auroc_ci": [
+      0.7554,
+      0.8974
+     ],
+     "auprc": 0.7454,
+     "delta_vs_image_only": 0.0852,
+     "delta_ci": [
+      0.0337,
+      0.1374
+     ]
+    },
+    "late_mean_prob": {
+     "auroc": 0.7874,
+     "auroc_ci": [
+      0.706,
+      0.8645
+     ],
+     "auprc": 0.6817,
+     "delta_vs_image_only": 0.0424,
+     "delta_ci": [
+      0.0194,
+      0.0686
+     ]
+    }
+   }
+  }
+ },
+ "rep02_minus_rep01_point": {
+  "image_only": 0.0138,
+  "cnv_only": 0.0448,
+  "early_fusion": 0.0496,
+  "intermediate_fusion": 0.0256,
+  "coattention_fusion": 0.0292,
+  "late_mean_z": 0.0476,
+  "late_mean_prob": 0.0132
+ }
+}
