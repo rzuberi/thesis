@@ -25,7 +25,7 @@ with torch.inference_mode():
     T = torch.stack(T); T = T / T.norm(dim=-1, keepdim=True)
 man = pd.read_csv(F + "/training_manifest.csv", dtype=str); coh = pd.read_csv(F + "/pre_event_cohort.csv", dtype=str).set_index("SampleID")
 uidx = pd.read_csv(F + "/feature_views/uni2/uni2_index.csv", dtype=str); uidx = uidx[uidx.status == "ok"]; npz_of = dict(zip(uidx.sample_id, uidx.npz_path))
-man["label"] = pd.to_numeric(coh.Label.reindex(man.sample_id).values, errors="coerce").fillna(0).astype(int)
+man["label"] = pd.to_numeric(pd.Series(coh.Label.reindex(man.sample_id).values), errors="coerce").fillna(0).astype(int)
 rs = np.random.RandomState(0)
 sub = pd.concat([man[man.label >= 3], man[(man.label >= 1) & (man.label < 3)].sample(min(N_PER, int(((man.label >= 1) & (man.label < 3)).sum())), random_state=0), man[man.label == 0].sample(N_PER, random_state=0)])
 print("subset:", len(sub), sub.label.value_counts().to_dict(), flush=True)
