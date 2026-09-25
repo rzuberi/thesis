@@ -9,7 +9,7 @@ T = "/mnt/scratche/slow/fmlab/zuberi01/phd/thesis"; ROW = T + "/feasibility/clos
 cx = pd.read_csv(F + "/feature_views/cnv/cx.csv", dtype=str); rows = []
 for cid, path in cx.drop_duplicates("cnv_id")[["cnv_id", "cnv_id"]].values:
     d = None
-    for root in ["/mnt/scratche/fast/fmlab/datasets/imaging/SWGCohort/copy_number_hg38/train/perPatient/50kb/", "/mnt/scratche/fast/fmlab/datasets/imaging/SWGCohort/copy_number_hg38/val/perPatient/50kb/"]:
+    for root in ["/mnt/scratche/fast/fmlab/datasets/imaging/SWGCohort/copy_number_hg38/train/perPatient/50kb/", "/mnt/scratche/fast/fmlab/datasets/imaging/SWGCohort/copy_number_hg38/val/50kb/", "/mnt/scratche/fast/fmlab/datasets/imaging/SWGCohort/copy_number_hg38/val/perPatient/50kb/"]:
         p = root + cid + "/50.copy_number_segmented_output.csv"
         if os.path.exists(p): d = pd.read_csv(p, usecols=["chromosome", "start", "copy_number", "segmented"]); break
     if d is None: rows.append({"cnv_id": cid, "found": False}); continue

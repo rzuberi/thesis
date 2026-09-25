@@ -20,8 +20,11 @@ def auc(y, s):
     return float((r[y == 1].sum() - n1 * (n1 + 1) / 2) / (n1 * n0)) if 0 < n1 < len(y) else float("nan")
 def r3(x): return None if x is None or (isinstance(x, float) and np.isnan(x)) else round(float(x), 3)
 RES = {"_conventions": __doc__}; MD = []
+def to_md(df):
+    df = df.astype(str); cols = list(df.columns)
+    return "| " + " | ".join(cols) + " |\n|" + "---|" * len(cols) + "\n" + "\n".join("| " + " | ".join(str(v).replace("|", "/") for v in row) + " |" for row in df.values.tolist())
 def md(title, df):
-    MD.append(f"\n**{title}**\n\n" + df.to_markdown(index=False) + "\n")
+    MD.append(f"\n**{title}**\n\n" + to_md(df) + "\n")
 # ------------------------------------------------------------------ data
 man = pd.read_csv(F + "/training_manifest.csv", dtype=str).set_index("sample_id"); coh = pd.read_csv(F + "/pre_event_cohort.csv", dtype=str).set_index("SampleID").loc[man.index]
 man["y"] = man.y_progressor.astype(int); man["fold"] = man.fold_id_rep01.astype(int); man["date"] = pd.to_datetime(coh.Date, errors="coerce"); man["grade"] = pd.to_numeric(coh.Label, errors="coerce")
