@@ -121,3 +121,25 @@ pathologist grade (if this is < 0.7 the imputation has not transferred and the f
   repeat of the fold models; (4) apply the same heads to ACE-B when scanned.
 - 2026-09-24 23:50: OVERNIGHT fluke checks launched — repeat-split grade head, permuted-label head (random-head control), SWG image arm on 0.5 µm features, selection-adjusted permutation over fields, rep02-split replication, imputed grade vs DB confirmed code, calibration; real-vs-imputed fields on the 65 DB-matched patients. See `docs/projects/overnight_2026-09-25.md`.
 - 2026-09-25 09:45: OVERNIGHT CHECKS IN (see `overnight_2026-09-25.md` §Track A): selection-adjusted p 0.022; repeat-split head replicates (Δ [+0.028, +0.122]); permuted-label head HURTS (Δ [−0.17, −0.04]) so the gain needs real supervision; SWG arm on 0.5 µm features 0.693 (no feature-quality artefact) and the gain holds on it (Δ [+0.002, +0.098]); rep02 split Δ +0.035 [−0.008, +0.079]. BUT imputed grade vs DB confirmed code 0.629 and 85 % of SWG slides scored p > 0.5: the transferred head is NOT a grade read-out on SWG. Reword the claim as report-supervised pre-training transfer, not imputed fields. Ulceration visibility demoted to fragile (juror κ 0.19).
+- 2026-09-25 10:30 (Rehan: "do ERIN and SWG share patients… did you rule them out before training on ERIN?"):
+  **They share patients and I had not excluded them.** The 2.40 audit (`results/overlap_audit.json`, accession
+  crosswalk + Barrett's-DB participant bridge) found 54 of 150 SWG patients (36 %) also in ERIN (55 ERIN anon_ids).
+  Of the 2,293 ERIN cases the P32 heads trained on, **44 cases from 33 of those patients** (40 NDBE, 2 IND, 2 HGD) were
+  in training. The SWG slides are 1994–2017 biopsies and the ERIN slides 2022–2025, so no slide is shared, but
+  patient-level leakage was possible. Split of the pass-2 result by SWG overlap status (existing imputed scores):
+
+  | SWG patients | n / pos | image | CNV | ERIN head | fuse2 | fuse3 | Δ fuse3 − fuse2 |
+  |---|---|---|---|---|---|---|---|
+  | all | 150 / 50 | 0.731 | 0.663 | 0.756 | 0.783 | 0.851 | +0.069 [+0.024, +0.119] |
+  | **never in ERIN** | 96 / 36 | 0.744 | 0.760 | **0.758** | 0.863 | 0.884 | **+0.020 [−0.025, +0.066]** |
+  | also in ERIN | 54 / 14 | 0.704 | 0.454 | 0.739 | 0.580 | 0.784 | +0.204 [+0.087, +0.336] |
+
+  Reading: the ERIN head's own AUROC is the same in patients it could have seen (0.739) and patients it could not
+  (0.758), which is not the signature of memorisation; the gain difference comes from the CNV arm collapsing to 0.45
+  in the overlap subgroup, so image + CNV is weak there and the head rescues it. But the leak-proof estimate of the
+  fusion gain is the non-overlap one: **+0.02 with a CI spanning zero**, not +0.05. Launched: the grade and
+  inflammation heads retrained with the 33 overlap patients EXCLUDED from ERIN training (`p32_head_noov`,
+  `EXCLUDE_PATIENTS`), re-imputed on SWG, fusion re-run (`p32_fuse_noov`). Until that lands, the headline is the
+  non-overlap number. Lesson: the exclusion list existed since 2.40 and should have been wired into every ERIN→SWG
+  transfer by default; it now is (`feasibility/erin_fusion/erin_swg_overlap_anon_ids.txt`).
+

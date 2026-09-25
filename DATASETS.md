@@ -12,7 +12,7 @@
 | TCGA-Reports | — | — | — | 9,523 cleaned reports, joinable by case ID | Ch4 replication | pan-cancer | open (Mendeley hyg5xkznpx) |
 
 ## Independence audit
-- ERIN ∩ SWGCohort = 6 / 1,992 patients → genuinely independent. ✅ verified
+- ERIN ∩ SWGCohort: **54 of 150 SWG patients (36 %) are also ERIN patients** (accession crosswalk + DB participant bridge, `results/overlap_audit.json`, 2026-09-14). The earlier "6 / 1,992 → independent" line was wrong (accession-only match). No slide is shared (SWG biopsies 1994–2017, ERIN slides 2022–2025) but any ERIN→SWG transfer must exclude `feasibility/erin_fusion/erin_swg_overlap_anon_ids.txt` from ERIN training.
 - **ICGC ESAD-UK ≡ OCCAMS** (same patients) → EXCLUDED from any external-validation role.
 - TCGA is US-based, independent of all local cohorts.
 - DFCI/Broad OAC (Dulak 2013, n=151, cBioPortal `esca_broad`): likely independent; genomics-only sanity checks (no usable WSIs).
