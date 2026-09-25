@@ -266,6 +266,8 @@ if H:
 
 **Sources.** `results/closeout/h_nongrade_controls.json` · `scripts/closeout/co_h_assemble.py` · commit {RESC}; head runs `feasibility/runs/co_h_*_noov/output/` (cluster).
 
+Reading rule outcome (stated before training, §6): no non-grade head's gain has a CI excluding zero on the positive side; the condition under which the gain would be attributed to representation rather than grade content is not met.
+
 **Caveats.** The reading rule was stated before training (§6). ERIN OOF AUROCs of the new heads are reported so a weak head can be told apart from a non-transferring one.
 """)
 else:
@@ -438,7 +440,7 @@ P(f"""## 4. Discrepancies found
 3. **"33 overlap patients excluded".** The digest and project log say 33 patients were excluded; the exclusion file lists all 55 linked ERIN identities (all 54 SWG patients). 33 is the number of SWG patients that had a case in training; the exclusion was wider (item B).
 4. **P32 ERIN field CIs** used 1,000 resamples, not the 2,000 stated as the convention elsewhere; recomputed values differ by ≤ 0.002 (item J).
 5. **Sanity gate.** The digest (§5, "Mechanism check") reports 0.619 and 0.629 for the pass-2 head; the canonical leak-free head scores {f3(G['observed']['noov'])} / {f3(G['vs_db_confirmed_code']['noov'])}, lower, and this was not previously reported (item G).
-6. **Killcoyne comparison doc** in the pipeline repository (`reports/scientific_hardening/killcoyne_protocol_comparison.md`) states "69/150 local patients are Killcoyne-discovery PSIDs"; by CNV id, {Lo['killcoyne_discovery_overlap_by_cnv_id']} of 707 rows are in the discovery sheet, i.e. {sum(1 for r in CC if False) or ''}{[r for r in CC if r['variable']=='seq_sheet_mode'][0]['also_in_ERIN_54']['discovery_777'] + [r for r in CC if r['variable']=='seq_sheet_mode'][0]['never_in_ERIN_96']['discovery_777']} of 150 patients by modal sheet (item C). Not reconciled here; both counts are reported.
+6. **Killcoyne comparison doc** in the pipeline repository (`reports/scientific_hardening/killcoyne_protocol_comparison.md`) states "69/150 local patients are Killcoyne-discovery PSIDs"; by CNV id, {Lo['killcoyne_discovery_overlap_by_cnv_id']} of 707 rows are in the discovery sheet, i.e. {[r for r in CC if r['variable']=='seq_sheet_mode'][0]['also_in_ERIN_54']['discovery_777'] + [r for r in CC if r['variable']=='seq_sheet_mode'][0]['never_in_ERIN_96']['discovery_777']} of 150 patients by modal sheet (item C). Not reconciled here; both counts are reported.
 7. **First-run labelling error in item E secondary analysis** (own error, corrected at `4af24d5` before reporting; see item E).
 8. **Digest "nothing pending"** (§6): item H (non-grade control) had been listed in the P32 log as "Next (not run)" and was not run until this closeout.
 
