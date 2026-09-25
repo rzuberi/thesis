@@ -1,0 +1,410 @@
+{
+ "cnv_only": {
+  "importance_mean_delta_auroc": {
+   "chr1p": 0.015,
+   "chr1q": -0.008,
+   "chr10p": -0.005,
+   "chr10q": -0.001,
+   "chr11p": -0.024,
+   "chr11q": 0.021,
+   "chr12p": -0.002,
+   "chr12q": 0.002,
+   "chr13p": 0.013,
+   "chr13q": 0.012,
+   "chr14p": 0.016,
+   "chr14q": 0.015,
+   "chr15p": 0.015,
+   "chr15q": 0.003,
+   "chr16p": 0.017,
+   "chr16q": 0.003,
+   "chr17p": 0.027,
+   "chr17q": 0.0,
+   "chr18p": 0.005,
+   "chr18q": 0.015,
+   "chr19p": -0.011,
+   "chr19q": 0.005,
+   "chr2p": 0.004,
+   "chr2q": 0.016,
+   "chr20p": 0.008,
+   "chr20q": 0.011,
+   "chr21p": 0.015,
+   "chr21q": 0.015,
+   "chr22p": 0.015,
+   "chr22q": -0.001,
+   "chr3p": 0.001,
+   "chr3q": -0.006,
+   "chr4p": -0.003,
+   "chr4q": -0.011,
+   "chr5p": 0.022,
+   "chr5q": 0.022,
+   "chr6p": -0.012,
+   "chr6q": 0.0,
+   "chr7p": 0.001,
+   "chr7q": -0.014,
+   "chr8p": -0.018,
+   "chr8q": -0.006,
+   "chr9p": -0.012,
+   "chr9q": -0.006,
+   "cx": 0.011
+  },
+  "top10": [
+   {
+    "feature": "chr17p",
+    "delta_auroc": 0.027,
+    "sd_over_repeats": 0.015
+   },
+   {
+    "feature": "chr5q",
+    "delta_auroc": 0.022,
+    "sd_over_repeats": 0.013
+   },
+   {
+    "feature": "chr5p",
+    "delta_auroc": 0.022,
+    "sd_over_repeats": 0.016
+   },
+   {
+    "feature": "chr11q",
+    "delta_auroc": 0.021,
+    "sd_over_repeats": 0.013
+   },
+   {
+    "feature": "chr16p",
+    "delta_auroc": 0.017,
+    "sd_over_repeats": 0.018
+   },
+   {
+    "feature": "chr2q",
+    "delta_auroc": 0.016,
+    "sd_over_repeats": 0.017
+   },
+   {
+    "feature": "chr14p",
+    "delta_auroc": 0.016,
+    "sd_over_repeats": 0.009
+   },
+   {
+    "feature": "chr21q",
+    "delta_auroc": 0.015,
+    "sd_over_repeats": 0.016
+   },
+   {
+    "feature": "chr21p",
+    "delta_auroc": 0.015,
+    "sd_over_repeats": 0.011
+   },
+   {
+    "feature": "chr18q",
+    "delta_auroc": 0.015,
+    "sd_over_repeats": 0.013
+   }
+  ]
+ },
+ "early_fusion": {
+  "importance_mean_delta_auroc": {
+   "chr1p": 0.006,
+   "chr1q": -0.0,
+   "chr10p": 0.002,
+   "chr10q": -0.001,
+   "chr11p": -0.001,
+   "chr11q": -0.001,
+   "chr12p": 0.001,
+   "chr12q": 0.004,
+   "chr13p": 0.0,
+   "chr13q": 0.003,
+   "chr14p": 0.0,
+   "chr14q": 0.001,
+   "chr15p": 0.001,
+   "chr15q": 0.0,
+   "chr16p": -0.002,
+   "chr16q": -0.003,
+   "chr17p": 0.005,
+   "chr17q": -0.001,
+   "chr18p": -0.0,
+   "chr18q": -0.003,
+   "chr19p": -0.0,
+   "chr19q": -0.002,
+   "chr2p": -0.002,
+   "chr2q": -0.004,
+   "chr20p": -0.001,
+   "chr20q": 0.0,
+   "chr21p": 0.001,
+   "chr21q": 0.008,
+   "chr22p": -0.0,
+   "chr22q": -0.001,
+   "chr3p": 0.001,
+   "chr3q": -0.001,
+   "chr4p": -0.002,
+   "chr4q": -0.001,
+   "chr5p": 0.001,
+   "chr5q": 0.002,
+   "chr6p": -0.003,
+   "chr6q": -0.001,
+   "chr7p": 0.001,
+   "chr7q": 0.001,
+   "chr8p": -0.0,
+   "chr8q": -0.003,
+   "chr9p": -0.0,
+   "chr9q": 0.0,
+   "cx": 0.003
+  },
+  "top10": [
+   {
+    "feature": "chr21q",
+    "delta_auroc": 0.008,
+    "sd_over_repeats": 0.004
+   },
+   {
+    "feature": "chr1p",
+    "delta_auroc": 0.006,
+    "sd_over_repeats": 0.005
+   },
+   {
+    "feature": "chr17p",
+    "delta_auroc": 0.005,
+    "sd_over_repeats": 0.005
+   },
+   {
+    "feature": "chr12q",
+    "delta_auroc": 0.004,
+    "sd_over_repeats": 0.003
+   },
+   {
+    "feature": "cx",
+    "delta_auroc": 0.003,
+    "sd_over_repeats": 0.005
+   },
+   {
+    "feature": "chr13q",
+    "delta_auroc": 0.003,
+    "sd_over_repeats": 0.003
+   },
+   {
+    "feature": "chr5q",
+    "delta_auroc": 0.002,
+    "sd_over_repeats": 0.006
+   },
+   {
+    "feature": "chr10p",
+    "delta_auroc": 0.002,
+    "sd_over_repeats": 0.003
+   },
+   {
+    "feature": "chr12p",
+    "delta_auroc": 0.001,
+    "sd_over_repeats": 0.004
+   },
+   {
+    "feature": "chr5p",
+    "delta_auroc": 0.001,
+    "sd_over_repeats": 0.001
+   }
+  ],
+  "spearman_vs_cnv_only": 0.241
+ },
+ "intermediate_fusion": {
+  "importance_mean_delta_auroc": {
+   "chr1p": 0.006,
+   "chr1q": -0.0,
+   "chr10p": -0.002,
+   "chr10q": -0.001,
+   "chr11p": -0.002,
+   "chr11q": 0.001,
+   "chr12p": 0.001,
+   "chr12q": 0.001,
+   "chr13p": -0.0,
+   "chr13q": 0.0,
+   "chr14p": -0.0,
+   "chr14q": 0.001,
+   "chr15p": -0.001,
+   "chr15q": 0.0,
+   "chr16p": 0.002,
+   "chr16q": 0.0,
+   "chr17p": 0.002,
+   "chr17q": 0.006,
+   "chr18p": -0.001,
+   "chr18q": 0.001,
+   "chr19p": -0.0,
+   "chr19q": -0.001,
+   "chr2p": -0.0,
+   "chr2q": -0.001,
+   "chr20p": 0.0,
+   "chr20q": 0.002,
+   "chr21p": -0.001,
+   "chr21q": 0.005,
+   "chr22p": -0.001,
+   "chr22q": 0.001,
+   "chr3p": -0.001,
+   "chr3q": 0.001,
+   "chr4p": -0.001,
+   "chr4q": 0.001,
+   "chr5p": 0.001,
+   "chr5q": -0.0,
+   "chr6p": 0.002,
+   "chr6q": -0.0,
+   "chr7p": 0.003,
+   "chr7q": -0.004,
+   "chr8p": -0.0,
+   "chr8q": -0.0,
+   "chr9p": 0.001,
+   "chr9q": 0.001,
+   "cx": 0.001
+  },
+  "top10": [
+   {
+    "feature": "chr1p",
+    "delta_auroc": 0.006,
+    "sd_over_repeats": 0.003
+   },
+   {
+    "feature": "chr17q",
+    "delta_auroc": 0.006,
+    "sd_over_repeats": 0.002
+   },
+   {
+    "feature": "chr21q",
+    "delta_auroc": 0.005,
+    "sd_over_repeats": 0.003
+   },
+   {
+    "feature": "chr7p",
+    "delta_auroc": 0.003,
+    "sd_over_repeats": 0.002
+   },
+   {
+    "feature": "chr16p",
+    "delta_auroc": 0.002,
+    "sd_over_repeats": 0.002
+   },
+   {
+    "feature": "chr6p",
+    "delta_auroc": 0.002,
+    "sd_over_repeats": 0.003
+   },
+   {
+    "feature": "chr17p",
+    "delta_auroc": 0.002,
+    "sd_over_repeats": 0.002
+   },
+   {
+    "feature": "chr20q",
+    "delta_auroc": 0.002,
+    "sd_over_repeats": 0.001
+   },
+   {
+    "feature": "cx",
+    "delta_auroc": 0.001,
+    "sd_over_repeats": 0.002
+   },
+   {
+    "feature": "chr3q",
+    "delta_auroc": 0.001,
+    "sd_over_repeats": 0.002
+   }
+  ],
+  "spearman_vs_cnv_only": 0.176
+ },
+ "coattention_fusion": {
+  "importance_mean_delta_auroc": {
+   "chr1p": -0.001,
+   "chr1q": -0.003,
+   "chr10p": 0.0,
+   "chr10q": 0.001,
+   "chr11p": -0.0,
+   "chr11q": 0.001,
+   "chr12p": -0.001,
+   "chr12q": 0.001,
+   "chr13p": 0.001,
+   "chr13q": -0.001,
+   "chr14p": -0.0,
+   "chr14q": -0.0,
+   "chr15p": 0.0,
+   "chr15q": -0.001,
+   "chr16p": -0.002,
+   "chr16q": -0.001,
+   "chr17p": 0.005,
+   "chr17q": 0.002,
+   "chr18p": -0.0,
+   "chr18q": 0.002,
+   "chr19p": -0.002,
+   "chr19q": 0.001,
+   "chr2p": -0.002,
+   "chr2q": 0.002,
+   "chr20p": 0.005,
+   "chr20q": 0.001,
+   "chr21p": -0.0,
+   "chr21q": 0.004,
+   "chr22p": -0.001,
+   "chr22q": 0.002,
+   "chr3p": -0.002,
+   "chr3q": 0.001,
+   "chr4p": 0.0,
+   "chr4q": 0.001,
+   "chr5p": 0.002,
+   "chr5q": 0.001,
+   "chr6p": 0.002,
+   "chr6q": 0.001,
+   "chr7p": 0.003,
+   "chr7q": -0.001,
+   "chr8p": 0.004,
+   "chr8q": -0.001,
+   "chr9p": 0.001,
+   "chr9q": 0.002,
+   "cx": 0.005
+  },
+  "top10": [
+   {
+    "feature": "chr20p",
+    "delta_auroc": 0.005,
+    "sd_over_repeats": 0.002
+   },
+   {
+    "feature": "cx",
+    "delta_auroc": 0.005,
+    "sd_over_repeats": 0.002
+   },
+   {
+    "feature": "chr17p",
+    "delta_auroc": 0.005,
+    "sd_over_repeats": 0.003
+   },
+   {
+    "feature": "chr21q",
+    "delta_auroc": 0.004,
+    "sd_over_repeats": 0.004
+   },
+   {
+    "feature": "chr8p",
+    "delta_auroc": 0.004,
+    "sd_over_repeats": 0.006
+   },
+   {
+    "feature": "chr7p",
+    "delta_auroc": 0.003,
+    "sd_over_repeats": 0.003
+   },
+   {
+    "feature": "chr18q",
+    "delta_auroc": 0.002,
+    "sd_over_repeats": 0.002
+   },
+   {
+    "feature": "chr9q",
+    "delta_auroc": 0.002,
+    "sd_over_repeats": 0.001
+   },
+   {
+    "feature": "chr22q",
+    "delta_auroc": 0.002,
+    "sd_over_repeats": 0.002
+   },
+   {
+    "feature": "chr2q",
+    "delta_auroc": 0.002,
+    "sd_over_repeats": 0.002
+   }
+  ],
+  "spearman_vs_cnv_only": 0.122
+ },
+ "_method": "held-out rows per fold; one of 45 arm-level features (39 arms + cx) permuted across the held-out rows, 50 repeats, RandomState(0); delta = baseline patient-level AUROC (max over rows) minus permuted, averaged over the 5 folds; 5-Mb features held fixed; fusion models: image parts precomputed, CNV branch re-run"
+}

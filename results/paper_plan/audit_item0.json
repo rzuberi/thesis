@@ -1,0 +1,336 @@
+{
+ "_spec": "docs/paper_plan_answers.md @ db236a0 item 0",
+ "n_overlap_patients": 54,
+ "comparator_patients": [
+  "AD0085",
+  "AD0098",
+  "AD0347",
+  "AD0361",
+  "AD0563",
+  "AD0613",
+  "AH0254",
+  "AHM0030",
+  "AHM0121",
+  "AHM0238",
+  "AHM0288",
+  "AHM0746",
+  "AHM0814",
+  "AHM0952",
+  "AHM0973",
+  "AHM0975",
+  "AHM1372",
+  "AHM1646",
+  "AHM1870",
+  "AHM1892",
+  "AHN01405",
+  "PR1/BED/037",
+  "PR1/HIN/042",
+  "PR1/HIN/044",
+  "PR1/HIN/064"
+ ],
+ "summary_by_subgroup": {
+  "also_in_ERIN": {
+   "rows": 279,
+   "patients": 54,
+   "sheet": {
+    "discovery": 192,
+    "validation": 87
+   },
+   "rows_with_slidematch": 279,
+   "rows_with_db_report": 256,
+   "f_patient_sheet": {
+    "rows": 48,
+    "patients": 10
+   },
+   "f_patient_slidematch": {
+    "rows": 0,
+    "patients": 0
+   },
+   "f_acc_sheet": {
+    "rows": 0,
+    "patients": 0
+   },
+   "f_acc_slidematch": {
+    "rows": 0,
+    "patients": 0
+   },
+   "f_acc_slidefile": {
+    "rows": 35,
+    "patients": 10
+   },
+   "f_cnv_from_other_endoscopy": {
+    "rows": 35,
+    "patients": 10
+   },
+   "f_year_sheet": {
+    "rows": 0,
+    "patients": 0
+   },
+   "f_date_slidematch": {
+    "rows": 0,
+    "patients": 0
+   },
+   "f_date_db": {
+    "rows": 0,
+    "patients": 0
+   },
+   "f_grade_sheet": {
+    "rows": 27,
+    "patients": 9
+   },
+   "f_grade_slidematch": {
+    "rows": 24,
+    "patients": 8
+   },
+   "f_grade_db": {
+    "rows": 0,
+    "patients": 0
+   },
+   "f_next_orig_vs_scrape": {
+    "rows": 17,
+    "patients": 5
+   },
+   "f_next_vs_db": {
+    "rows": 21,
+    "patients": 5
+   },
+   "confirmed_error_rows": 0,
+   "confirmed_error_types": {}
+  },
+  "comparator_25": {
+   "rows": 126,
+   "patients": 25,
+   "sheet": {
+    "discovery": 95,
+    "validation": 31
+   },
+   "rows_with_slidematch": 126,
+   "rows_with_db_report": 92,
+   "f_patient_sheet": {
+    "rows": 26,
+    "patients": 7
+   },
+   "f_patient_slidematch": {
+    "rows": 0,
+    "patients": 0
+   },
+   "f_acc_sheet": {
+    "rows": 0,
+    "patients": 0
+   },
+   "f_acc_slidematch": {
+    "rows": 0,
+    "patients": 0
+   },
+   "f_acc_slidefile": {
+    "rows": 27,
+    "patients": 7
+   },
+   "f_cnv_from_other_endoscopy": {
+    "rows": 27,
+    "patients": 7
+   },
+   "f_year_sheet": {
+    "rows": 0,
+    "patients": 0
+   },
+   "f_date_slidematch": {
+    "rows": 0,
+    "patients": 0
+   },
+   "f_date_db": {
+    "rows": 0,
+    "patients": 0
+   },
+   "f_grade_sheet": {
+    "rows": 12,
+    "patients": 6
+   },
+   "f_grade_slidematch": {
+    "rows": 12,
+    "patients": 6
+   },
+   "f_grade_db": {
+    "rows": 0,
+    "patients": 0
+   },
+   "f_next_orig_vs_scrape": {
+    "rows": 4,
+    "patients": 4
+   },
+   "f_next_vs_db": {
+    "rows": 3,
+    "patients": 3
+   },
+   "confirmed_error_rows": 0,
+   "confirmed_error_types": {}
+  },
+  "other": {
+   "rows": 302,
+   "patients": 71,
+   "sheet": {
+    "discovery": 217,
+    "validation": 85
+   },
+   "rows_with_slidematch": 302,
+   "rows_with_db_report": 199,
+   "f_patient_sheet": {
+    "rows": 83,
+    "patients": 19
+   },
+   "f_patient_slidematch": {
+    "rows": 0,
+    "patients": 0
+   },
+   "f_acc_sheet": {
+    "rows": 0,
+    "patients": 0
+   },
+   "f_acc_slidematch": {
+    "rows": 0,
+    "patients": 0
+   },
+   "f_acc_slidefile": {
+    "rows": 31,
+    "patients": 13
+   },
+   "f_cnv_from_other_endoscopy": {
+    "rows": 31,
+    "patients": 13
+   },
+   "f_year_sheet": {
+    "rows": 6,
+    "patients": 2
+   },
+   "f_date_slidematch": {
+    "rows": 0,
+    "patients": 0
+   },
+   "f_date_db": {
+    "rows": 0,
+    "patients": 0
+   },
+   "f_grade_sheet": {
+    "rows": 15,
+    "patients": 12
+   },
+   "f_grade_slidematch": {
+    "rows": 15,
+    "patients": 12
+   },
+   "f_grade_db": {
+    "rows": 0,
+    "patients": 0
+   },
+   "f_next_orig_vs_scrape": {
+    "rows": 7,
+    "patients": 7
+   },
+   "f_next_vs_db": {
+    "rows": 6,
+    "patients": 6
+   },
+   "confirmed_error_rows": 0,
+   "confirmed_error_types": {}
+  }
+ },
+ "killcoyne": {
+  "killcoyne_table_rows": 773,
+  "matched_rows": 500,
+  "matched_patients": 82,
+  "matched_rows_by_subgroup": {
+   "never_in_ERIN": 308,
+   "also_in_ERIN": 192
+  },
+  "status_vs_our_label_patients": {
+   "0": {
+    "Non-Progressor": 37,
+    "Progressor": 5
+   },
+   "1": {
+    "Non-Progressor": 6,
+    "Progressor": 34
+   }
+  },
+  "spearman_kprob_vs_our_cnv_oof_rows": {
+   "rho": 0.278,
+   "n": 500
+  },
+  "patient_auroc_killcoyne_maxprob_for_our_endpoint": {
+   "all": {
+    "n": 82,
+    "events": 40,
+    "auroc_killcoyne": 0.718,
+    "auroc_our_cnv_only": 0.562
+   },
+   "also_in_ERIN": {
+    "n": 25,
+    "events": 11,
+    "auroc_killcoyne": 0.792,
+    "auroc_our_cnv_only": 0.253
+   },
+   "never_in_ERIN": {
+    "n": 57,
+    "events": 29,
+    "auroc_killcoyne": 0.688,
+    "auroc_our_cnv_only": 0.702
+   }
+  },
+  "killcoyne_class_by_our_row_label": {
+   "0": {
+    "High": 110,
+    "Low": 234,
+    "Moderate": 80
+   },
+   "1": {
+    "High": 41,
+    "Low": 24,
+    "Moderate": 11
+   }
+  }
+ },
+ "count_reconciliation": {
+  "rows_in_discovery_sheet": 504,
+  "rows_in_killcoyne_pred_table": 500,
+  "patients_any_row_discovery_sheet": 82,
+  "patients_any_row_in_killcoyne_table": 82,
+  "patients_all_rows_discovery_sheet": 82,
+  "patients_all_rows_in_killcoyne_table": 81,
+  "patients_modal_sheet_discovery": 82,
+  "note": "'82/150' (closeout C) = modal sheet per patient; '69/150' (pipeline doc) matches none of these definitions exactly unless stated otherwise below"
+ },
+ "decision": {
+  "confirmed_error_rows_total": 0,
+  "confirmed_error_patients": 0,
+  "decision": "no confirmed errors: all items run on the frozen release only"
+ },
+ "grade_source_by_subgroup": {
+  "master_label_fallback": {
+   "also_in_ERIN": 19,
+   "comparator_25": 34,
+   "other": 102
+  },
+  "scraped_confirmed": {
+   "also_in_ERIN": 256,
+   "comparator_25": 92,
+   "other": 199
+  },
+  "scraped_research": {
+   "also_in_ERIN": 4,
+   "comparator_25": 0,
+   "other": 1
+  }
+ },
+ "next_source_by_subgroup": {
+  "master": {
+   "also_in_ERIN": 174,
+   "comparator_25": 87,
+   "other": 187
+  },
+  "scrape_exact": {
+   "also_in_ERIN": 105,
+   "comparator_25": 39,
+   "other": 115
+  }
+ }
+}
