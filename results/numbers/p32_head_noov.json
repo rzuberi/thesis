@@ -1,0 +1,36 @@
+{
+ "_meta": {
+  "n_cases": 2249,
+  "epochs": 25,
+  "seeds": [
+   0,
+   1,
+   2
+  ],
+  "folds": "patient_folds seed 0",
+  "perm_seed": null,
+  "excluded_patients_file": "/mnt/scratche/slow/fmlab/zuberi01/phd/thesis/feasibility/erin_fusion/erin_swg_overlap_anon_ids.txt",
+  "swg_bags": "SWG bags from /mnt/scratche/fast/fmlab/datasets/imaging/SWGCohort/features_uni2h_05um (0.5 um/px re-extraction)"
+ },
+ "fields": {
+  "grade_LGDplus": {
+   "n": 2247,
+   "pos": 620,
+   "auroc": 0.8898,
+   "ci": [
+    0.8709,
+    0.9072
+   ]
+  },
+  "inflammation_mod_severe": {
+   "n": 1712,
+   "pos": 342,
+   "auroc": 0.7466,
+   "ci": [
+    0.7179,
+    0.7784
+   ]
+  }
+ },
+ "swg_imputed_grade_vs_pathologist_LGDplus_auroc": 0.5969
+}

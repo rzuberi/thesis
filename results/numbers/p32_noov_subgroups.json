@@ -1,0 +1,47 @@
+{
+ "note": "grade head trained WITHOUT the 33 SWG-overlap patients (p32_head_noov); grade-head-only 3-way fusion",
+ "subgroups": {
+  "all": {
+   "n": 150,
+   "pos": 50,
+   "img": 0.7312,
+   "cnv": 0.663,
+   "g": 0.7528,
+   "fuse2": 0.7826,
+   "f3": 0.85,
+   "delta_f3_fuse2": 0.0674,
+   "ci": [
+    0.0219,
+    0.1142
+   ]
+  },
+  "never_in_ERIN": {
+   "n": 96,
+   "pos": 36,
+   "img": 0.7435,
+   "cnv": 0.7597,
+   "g": 0.7579,
+   "fuse2": 0.8634,
+   "f3": 0.8852,
+   "delta_f3_fuse2": 0.0218,
+   "ci": [
+    -0.0274,
+    0.0702
+   ]
+  },
+  "also_in_ERIN": {
+   "n": 54,
+   "pos": 14,
+   "img": 0.7036,
+   "cnv": 0.4536,
+   "g": 0.7446,
+   "fuse2": 0.5804,
+   "f3": 0.7786,
+   "delta_f3_fuse2": 0.1982,
+   "ci": [
+    0.0957,
+    0.3171
+   ]
+  }
+ }
+}
