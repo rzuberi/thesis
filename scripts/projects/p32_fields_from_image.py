@@ -10,7 +10,11 @@ T = "/mnt/scratche/slow/fmlab/zuberi01/phd/thesis"; sys.path.insert(0, T + "/scr
 F = "/mnt/scratche/slow/fmlab/zuberi01/phd/barretts_retraining/barretts_training/analysis/chapter1_lgd2_final_pre_event_20260713_final"
 OUT = os.environ.get("OUTDIR", "."); P31 = os.environ["P31DIR"]; FOLD_SEED = int(os.environ.get("FOLD_SEED", "0")); PERM_SEED = os.environ.get("PERM_SEED"); DEV = "cuda" if torch.cuda.is_available() else "cpu"; SEEDS = [0, 1, 2]; EPOCHS = 25; MAXT = 1500
 f = pd.read_csv(P31 + "/p31_fields.csv", dtype=str); m = pd.read_csv(T + "/labeller/erin_master.csv", dtype=str).dropna(subset=["h5", "anon_id"]).drop_duplicates("CaseName")
-d = m.merge(f, on="CaseName"); print("cases with fields + slide:", len(d), flush=True)
+d = m.merge(f, on="CaseName")
+EXCL = os.environ.get("EXCLUDE_PATIENTS")   # file of ERIN anon_ids to drop from training (e.g. patients also in SWG)
+if EXCL:
+    ex = set(l.strip() for l in open(EXCL) if l.strip()); n0 = len(d); d = d[~d.anon_id.isin(ex)].reset_index(drop=True); print(f"EXCLUDE_PATIENTS: dropped {n0-len(d)} cases from {len(ex)} listed patients", flush=True)
+print("cases with fields + slide:", len(d), flush=True)
 TARGETS = {"grade_LGDplus": (d.grade.isin(["LGD", "HGD", "CANCER"]), d.grade.isin(["NDBE", "IND", "LGD", "HGD", "CANCER"])),
            "grade_HGDplus": (d.grade.isin(["HGD", "CANCER"]), d.grade.isin(["NDBE", "IND", "LGD", "HGD", "CANCER"])),
            "im_present": (d.intestinal_metaplasia.eq("present"), d.intestinal_metaplasia.isin(["present", "absent"])),
@@ -57,7 +61,7 @@ def train(keys_tr, y, seed):
 def predict(model, X):
     with torch.no_grad(): return float(torch.sigmoid(model(torch.tensor(np.asarray(X), dtype=torch.float32, device=DEV))[0]).item())
 def ci(v): return [round(float(np.percentile(v, 2.5)), 4), round(float(np.percentile(v, 97.5)), 4)]
-res = {"_meta": {"n_cases": int(len(d)), "epochs": EPOCHS, "seeds": SEEDS, "folds": f"patient_folds seed {FOLD_SEED}", "perm_seed": PERM_SEED, "swg_bags": res_note}, "fields": {}}
+res = {"_meta": {"n_cases": int(len(d)), "epochs": EPOCHS, "seeds": SEEDS, "folds": f"patient_folds seed {FOLD_SEED}", "perm_seed": PERM_SEED, "excluded_patients_file": os.environ.get("EXCLUDE_PATIENTS"), "swg_bags": res_note}, "fields": {}}
 swg_imp = pd.DataFrame(index=sorted(swg))
 for t in want:
     pos, ok = TARGETS[t]; sub = d[ok.values].copy(); yv = pos[ok.values].astype(int).values
