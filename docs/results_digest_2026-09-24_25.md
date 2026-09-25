@@ -1,8 +1,8 @@
 # Results digest — everything run 24–25 September 2026
 
-Compiled 25 Sep 2026, 10:40. Companion to `results_digest_2026-09-21_22.md`. Every number is transcribed from a
-committed JSON named in its section; tables are CSV-shaped so they can be plotted directly. One result is still
-running (§6, the leak-free P32 retrain) and is marked PENDING.
+Compiled 25 Sep 2026, 10:40; updated 11:20 with the leak-free P32 retrain. Companion to `results_digest_2026-09-21_22.md`.
+Every number is transcribed from a committed JSON named in its section; tables are CSV-shaped so they can be plotted directly.
+Nothing is pending.
 
 Classes: **USE** solid, goes in the thesis · **BOUNDARY** a null worth stating · **DIG** real but needs one more step ·
 **WITHDRAWN** an earlier claim retracted · **INFRA** data/pipeline fact.
@@ -24,7 +24,7 @@ Classes: **USE** solid, goes in the thesis · **BOUNDARY** a null worth stating 
 | 13 | Barrett's-DB confirmed grade as anchor (C27) | **USE** | jury vs DB code on 8,221 reports: exact 0.961, two-tier 0.986, QWK 0.974 | `results/numbers/db_confirmed_grade_anchor.json` |
 | 14 | P31 multi-field extraction | USE | 12 fields, ≤ 3 % parse fail; grade needs its full definition (0.949 vs 0.477 exact); 6 fields two-juror robust, 4 not | `results/numbers/p31_validation_v2.json`, `p31_agreement.json` |
 | 15 | P32 image → fields (ERIN) | USE | 11/13 fields in predicted band; visible: squamous 0.92, HGD+ 0.91, IM 0.90, LGD+ 0.86, treatment 0.82; not: certainty 0.54 | `results/numbers/p32_fields.json`, `p32b_fields.json` |
-| 16 | P32 ERIN head → SWG fusion | **DIG** | +0.050 [+0.015, +0.089] on all 150; survives selection, permuted-label and feature controls; **but** 36 % patient overlap not excluded from training; non-overlap gain +0.020 [−0.025, +0.066]; leak-free retrain PENDING | `results/numbers/p32b_swg_fuse.json`, `p32_fuse_controls.json`, `p32_checks.json` |
+| 16 | P32 ERIN head → SWG fusion | **USE (heterogeneous)** | leak-free head (33 overlap patients excluded): alone 0.753; fusion +0.063 [+0.020, +0.107] on all 150; survives selection, permuted-label, feature and leakage controls; gain is +0.02 (n.s.) in the 96 never-in-ERIN patients and +0.20 in the 54 whose CNV arm fails | `results/numbers/p32b_swg_fuse.json`, `p32_fuse_controls.json`, `p32_checks.json` |
 | 17 | P33 patch-level grading | USE | 13-d tile summary within 0.02–0.04 of ABMIL on T3 (no leak); T2b 0.14 below ABMIL after patient-level scoring | `results/numbers/p33_tasks_v2.json` |
 | 18 | Local-LLM review panel | INFRA | 6 models agree on ACE-B validation, spatial statistics, human label audit; none found a numerical error | `docs/projects/llm_review_2026-09-25.md` |
 | 19 | Grading app | INFRA | relaunched, passphrase rotated; 0 grades | `hand_grading/README.txt` (cluster) |
@@ -188,7 +188,17 @@ also_in_ERIN,54,14,0.704,0.454,0.739,0.580,0.784,0.204,0.087,0.336
 ```
 
 The head's own AUROC is not higher on patients it could have seen; the gain concentrates where the CNV arm collapses.
-Leak-free retrain with the 33 patients excluded: **PENDING** (`p32_head_noov` → `p32_fuse_noov`).
+Leak-free retrain with the 33 patients excluded (`p32_head_noov.json`, `p32_fuse_noov.json`, `p32_noov_subgroups.json`):
+
+```csv
+swg_subgroup,n,pos,image,cnv,erin_head_leakfree,fuse2,fuse3,delta,ci_lo,ci_hi
+all,150,50,0.731,0.663,0.753,0.783,0.850,0.067,0.022,0.114
+never_in_ERIN,96,36,0.744,0.760,0.758,0.863,0.885,0.022,-0.027,0.070
+also_in_ERIN,54,14,0.704,0.454,0.745,0.580,0.779,0.198,0.096,0.317
+```
+
+Excluding the shared patients changed nothing (head 0.756 → 0.753): training leakage was not the driver. The gain is
+real on the full cohort and concentrated where the CNV arm collapses; report both numbers.
 
 ### P33 — patch-level grading (`p33_tasks_v2.json`, 3 seeds, patient-level fold scoring)
 
@@ -207,9 +217,7 @@ mean cancer-class probability, then LGD tile fraction. Tile maps for 12 slides i
 benign-called positives carry 5–66 % LGD-class tiles; two top-scoring negatives look dysplastic too.
 
 ## 6. Pending
-- `p32_head_noov` / `p32_fuse_noov`: grade + inflammation heads retrained without the 33 SWG-overlap patients,
-  re-imputed on SWG at 0.5 µm/px, fusion re-run. Expected ~11:30 on 25 Sep. Decides whether the P32 fusion gain is
-  quotable at all.
+Nothing. The leak-free retrain landed at 11:10 on 25 Sep (see §5).
 
 ## 7. People and decisions still needed
 Questions drafted in `docs/questions_for_people_2026-09-24.md` (Leanne ×5 incl. DB-code provenance, data owner ×2,

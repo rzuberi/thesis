@@ -121,3 +121,8 @@ for the pathologist checklist.
 - **P32:** the SWG gain is robust to every control run (selection, permuted labels, second ERIN split, second feature set), weaker on the rep02 split, and *not* explained by grade read-out on SWG. Claim to carry forward: *report-supervised pre-training on ERIN transfers a progression-relevant image score to SWG (+0.05 over image + CNV; lower bound +0.015 on rep02).* The ulceration-visibility row is demoted.
 - **P33:** the field-effect summary stands with no leakage; the T2 summaries were leak-inflated and are corrected downward; twelve tile maps are ready for a pathologist, and the two dysplastic-looking "negatives" are the first cases to show them.
 
+### Addendum 25 Sep 11:15 — patient overlap and the leak-free retrain
+36 % of SWG patients are ERIN patients; 44 ERIN training cases from 33 of them had been in the P32 heads. Retrained
+without them: head on SWG 0.753 (was 0.756), fusion Δ +0.063 [+0.020, +0.107] (was +0.050). Not a leak. The gain is
+heterogeneous: +0.022 [−0.027, +0.070] in the 96 never-in-ERIN patients, +0.198 in the 54 whose CNV arm fails.
+
