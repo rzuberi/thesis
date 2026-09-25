@@ -65,3 +65,4 @@ coefficients reported so the signal is readable.
   it is not a replacement for ABMIL on the clinically important T2b. Second pass: spatial statistics of LGD/cancer-like
   tiles, and tile maps of the top-scoring benign T3 slides for the pathologist checklist.
 - 2026-09-24 23:50: OVERNIGHT v2 launched — 3 seeds + patient-level fold scoring (closes the indirect-leak caveat) → tasks re-run; tile maps for the 8 top-scoring benign T3a slides + 4 controls for the pathologist checklist. See `docs/projects/overnight_2026-09-25.md`.
+- 2026-09-25 09:45: v2 (3 seeds, patient-level fold scoring) — T3 unchanged (0.800/0.828; no leak), T2a 0.758 and T2b 0.720 fell 0.03–0.06 (v1 T2 had indirect leakage); T2b now 0.14 below ABMIL. Tile maps for 12 slides in `review/p33_tilemaps/`: top benign-called positives carry 5–66 % LGD-class tiles; two top-scoring negatives look dysplastic too (label noise or over-call: pathologist question).

@@ -92,3 +92,4 @@ the Barrett's-DB reports for SWG patients (a copy of this script with `INPUT` po
   treatment effect and IM; inflammation grade and certainty are the fields that will need a second juror and a
   human check before use.
 - 2026-09-24 23:50: OVERNIGHT checks launched — second juror gemma3-27B (v2) on all 2,293 reports → per-field agreement (`p31_agreement`); v2 extraction on the Barrett's-DB clinical reports of SWG samples (`p31_db_s*`). See `docs/projects/overnight_2026-09-25.md`.
+- 2026-09-25 09:45: SECOND JUROR (gemma3-27B v2, 2,279 reports): robust fields = grade (κ 0.89), specimen (0.97), IM (0.85), p53 (0.77), inflammation (0.71), treatment (0.65); NOT robust = ulceration (κ 0.19), goblet (0.07), certainty (0.23), site (0.55). DB-report extraction for SWG samples done (428 slides). Verdict: six fields ready for a two-juror consensus; four need prompt work or should be dropped.
