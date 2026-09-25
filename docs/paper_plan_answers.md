@@ -21,7 +21,7 @@
 | Every table row × ACE-B | NOT AVAILABLE | no ACE-B slides, features or CNV on the cluster (closeout item N); nothing run |
 | Discussion 1: risk groups (item 5) | DONE | late_mean tertiles: high-group rate 0.585 vs low 0.137; Cox HR high vs low [1.792, 0.788, 4.075]; `results/paper_plan/figs/km/km_late_mean_tertile.png` |
 | Discussion 2: latent space (item 6) | DONE | probe AUROC image 0.784, intermediate 0.819, co-attention 0.736; figs `results/paper_plan/figs/latent/` |
-| Discussion 3: attention patches (item 7) | DONE | Spearman image-only vs intermediate median 0.867, vs co-attention 0.347; montages `results/paper_plan/figs/attention/` |
+| Discussion 3: attention patches (item 7) | DONE | Spearman image-only vs intermediate median 0.867, vs co-attention 0.347; montages cluster-only `feasibility/paper_plan/figs/attention/` |
 | Discussion 4: CNV prediction change (item 8) | DONE | 8a Spearman CNV vs late 0.387, NRI [0.17, -0.082, 0.418]; 8b top feature cnv_only chr17p |
 | Discussion 5: false positives (item 9) | DONE | late_mean FP 40 / TN 60; later LGD+ [11, 40, 0.275] vs [8, 60, 0.133], Fisher p 0.117 |
 | Discussion 6: false negatives (item 10) | DONE | late_mean FN 11 / TP 39; review pack 31 FN + 31 TP + 31 TN slides (cluster) |
