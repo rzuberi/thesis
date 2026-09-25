@@ -1,0 +1,13 @@
+{
+ "n_summarised": 13319,
+ "n_fold_scored_slide": 1538,
+ "n_fold_scored_patient": 10344,
+ "n_final": 1437,
+ "seeds": [
+  0,
+  1,
+  2
+ ],
+ "oof_1538_binary_LGDplus_auroc_mean_prob": 0.8384,
+ "epochs": 4
+}

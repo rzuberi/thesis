@@ -1,0 +1,159 @@
+{
+ "n_common": 2279,
+ "model_A": "medgemma:27b",
+ "model_B": "gemma3:27b",
+ "fields": {
+  "grade": {
+   "n": 2279,
+   "exact": 0.946,
+   "kappa": 0.8916,
+   "B_parse_fail": 0.0,
+   "B_marginal": {
+    "NDBE": 1537,
+    "CANCER": 313,
+    "LGD": 180,
+    "HGD": 169,
+    "IND": 77,
+    "NA": 3
+   }
+  },
+  "site": {
+   "n": 2279,
+   "exact": 0.7407,
+   "kappa": 0.5542,
+   "B_parse_fail": 0.0,
+   "B_marginal": {
+    "oesophagus": 1109,
+    "mixed": 767,
+    "goj": 394,
+    "stomach": 7,
+    "other": 2
+   }
+  },
+  "specimen_type": {
+   "n": 2279,
+   "exact": 0.9956,
+   "kappa": 0.9744,
+   "B_parse_fail": 0.0,
+   "B_marginal": {
+    "biopsy": 2064,
+    "emr_esd": 125,
+    "resection": 90
+   }
+  },
+  "intestinal_metaplasia": {
+   "n": 2278,
+   "exact": 0.9258,
+   "kappa": 0.8495,
+   "B_parse_fail": 0.0,
+   "B_marginal": {
+    "present": 1492,
+    "absent": 629,
+    "not_stated": 158
+   }
+  },
+  "goblet_cells": {
+   "n": 2279,
+   "exact": 0.6648,
+   "kappa": 0.0731,
+   "B_parse_fail": 0.0,
+   "B_marginal": {
+    "not_stated": 2232,
+    "absent": 27,
+    "present": 20
+   }
+  },
+  "inflammation": {
+   "n": 2271,
+   "exact": 0.8146,
+   "kappa": 0.7104,
+   "B_parse_fail": 0.0013,
+   "B_marginal": {
+    "mild": 1288,
+    "not_stated": 431,
+    "moderate": 430,
+    "none": 92,
+    "severe": 35,
+    "PARSE_FAIL": 3
+   }
+  },
+  "ulceration_or_erosion": {
+   "n": 2279,
+   "exact": 0.3177,
+   "kappa": 0.1882,
+   "B_parse_fail": 0.0,
+   "B_marginal": {
+    "not_stated": 1687,
+    "yes": 360,
+    "no": 232
+   }
+  },
+  "squamous_only": {
+   "n": 2277,
+   "exact": 0.9578,
+   "kappa": 0.5604,
+   "B_parse_fail": 0.0,
+   "B_marginal": {
+    "no": 2165,
+    "yes": 114
+   }
+  },
+  "gastric_mucosa_present": {
+   "n": 2208,
+   "exact": 0.7351,
+   "kappa": 0.5616,
+   "B_parse_fail": 0.0,
+   "B_marginal": {
+    "not_stated": 1185,
+    "yes": 1014,
+    "no": 80
+   }
+  },
+  "treatment_effect": {
+   "n": 2243,
+   "exact": 0.8613,
+   "kappa": 0.6488,
+   "B_parse_fail": 0.0158,
+   "B_marginal": {
+    "no": 1510,
+    "yes": 733,
+    "PARSE_FAIL": 36
+   }
+  },
+  "p53": {
+   "n": 2276,
+   "exact": 0.9007,
+   "kappa": 0.7665,
+   "B_parse_fail": 0.0013,
+   "B_marginal": {
+    "not_stated": 1593,
+    "normal": 268,
+    "abnormal": 210,
+    "not_done": 205,
+    "PARSE_FAIL": 3
+   }
+  },
+  "diagnostic_certainty": {
+   "n": 2274,
+   "exact": 0.9538,
+   "kappa": 0.2341,
+   "B_parse_fail": 0.0018,
+   "B_marginal": {
+    "definite": 2154,
+    "uncertain": 116,
+    "probable": 5,
+    "PARSE_FAIL": 4
+   }
+  }
+ },
+ "grade_A_vs_jury": {
+  "n": 2201,
+  "exact": 0.95,
+  "two_tier": 0.9691
+ },
+ "grade_B_vs_jury": {
+  "n": 2201,
+  "exact": 0.9423,
+  "two_tier": 0.9532
+ }
+}

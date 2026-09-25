@@ -1,0 +1,127 @@
+{
+ "n_samples": 428,
+ "n_patients": 65,
+ "imputed_vs_real_field_auroc": {
+  "grade_LGDplus": {
+   "real_pos": 68,
+   "auroc": 0.6467
+  },
+  "im_present": {
+   "real_pos": 397,
+   "auroc": 0.7238
+  },
+  "treatment_effect": {
+   "real_pos": 3,
+   "auroc": 0.6173
+  },
+  "ulceration": {
+   "real_pos": 24,
+   "auroc": 0.6811
+  },
+  "squamous_only": {
+   "real_pos": 2,
+   "auroc": 0.8815
+  },
+  "inflammation_mod_severe": {
+   "real_pos": 169,
+   "auroc": 0.6086
+  }
+ },
+ "progression_matched_subset": {
+  "n_patients": 65,
+  "pos": 24,
+  "img": {
+   "auroc": 0.6087,
+   "ci": [
+    0.4604,
+    0.7467
+   ]
+  },
+  "cnv": {
+   "auroc": 0.4909,
+   "ci": [
+    0.3446,
+    0.6367
+   ]
+  },
+  "real_f": {
+   "auroc": 0.6499,
+   "ci": [
+    0.5043,
+    0.7856
+   ]
+  },
+  "imp_f": {
+   "auroc": 0.437,
+   "ci": [
+    0.2931,
+    0.5968
+   ]
+  },
+  "real_grade": {
+   "auroc": 0.6331,
+   "ci": [
+    0.5119,
+    0.75
+   ]
+  },
+  "imp_grade": {
+   "auroc": 0.6839,
+   "ci": [
+    0.5297,
+    0.8362
+   ]
+  },
+  "fuse2": {
+   "auroc": 0.5904,
+   "ci": [
+    0.445,
+    0.7272
+   ]
+  },
+  "f3_real": {
+   "auroc": 0.6362,
+   "ci": [
+    0.4854,
+    0.7727
+   ]
+  },
+  "f3_imp": {
+   "auroc": 0.624,
+   "ci": [
+    0.48,
+    0.7558
+   ]
+  },
+  "f3_real_grade": {
+   "auroc": 0.6596,
+   "ci": [
+    0.515,
+    0.795
+   ]
+  },
+  "f3_imp_grade": {
+   "auroc": 0.6982,
+   "ci": [
+    0.5634,
+    0.8203
+   ]
+  },
+  "delta_f3_real_minus_fuse2": [
+   -0.0592,
+   0.1555
+  ],
+  "delta_f3_imp_minus_fuse2": [
+   -0.049,
+   0.1303
+  ],
+  "delta_f3_imp_minus_f3_real": [
+   -0.1325,
+   0.1046
+  ],
+  "delta_imp_grade_minus_real_grade": [
+   -0.1237,
+   0.2172
+  ]
+ }
+}
