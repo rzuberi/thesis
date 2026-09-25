@@ -142,4 +142,17 @@ pathologist grade (if this is < 0.7 the imputation has not transferred and the f
   `EXCLUDE_PATIENTS`), re-imputed on SWG, fusion re-run (`p32_fuse_noov`). Until that lands, the headline is the
   non-overlap number. Lesson: the exclusion list existed since 2.40 and should have been wired into every ERIN→SWG
   transfer by default; it now is (`feasibility/erin_fusion/erin_swg_overlap_anon_ids.txt`).
+- 2026-09-25 11:15: LEAK-FREE RETRAIN DONE (`p32_head_noov.json`, `p32_fuse_noov.json`, `p32_noov_subgroups.json`). Grade
+  and inflammation heads retrained on 2,249 ERIN cases with the 44 cases / 33 SWG-overlap patients excluded (ERIN OOF
+  grade 0.890, unchanged). On SWG: grade head alone **0.753** (with overlap 0.756), inflammation 0.738; 3-way fusion
+  with both heads 0.846, **Δ vs fuse2 +0.063 [+0.020, +0.107]**; grade-head-only fusion 0.850, Δ +0.067 [+0.022, +0.114].
+  Training-side leakage was therefore NOT the driver: excluding the shared patients changed nothing.
+  Subgroup split with the leak-free head: never-in-ERIN (96 / 36) head 0.758, fuse2 0.863 → fuse3 0.885,
+  **Δ +0.022 [−0.027, +0.070]**; also-in-ERIN (54 / 14) head 0.745, fuse2 0.580 → fuse3 0.779, Δ +0.198 [+0.096, +0.317].
+  Same pattern as before: the head performs identically in both subgroups; the *gain* lives where the CNV arm collapses
+  (0.45) and image + CNV is weak (0.58). That is heterogeneity of the baseline fusion across SWG subgroups, not a
+  leak — but it means the +0.06 average is not a uniform effect. Final wording: *an ERIN report-supervised image
+  score transfers to SWG (0.75–0.76 for progression on patients never in ERIN) and raises image + CNV fusion from 0.78
+  to 0.85 on the full cohort (+0.06, CI > 0, leak-free); the gain is concentrated in the 54 patients whose CNV arm
+  fails and is +0.02 (n.s.) in the other 96.* Status: DIG → **USE with the heterogeneity stated**.
 
