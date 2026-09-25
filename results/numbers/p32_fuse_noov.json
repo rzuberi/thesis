@@ -1,0 +1,83 @@
+{
+ "n_patients": 150,
+ "pos": 50,
+ "fields_used": [
+  "grade_LGDplus",
+  "inflammation_mod_severe"
+ ],
+ "img": {
+  "auroc": 0.7312,
+  "ci": [
+   0.6403,
+   0.8142
+  ]
+ },
+ "cnv": {
+  "auroc": 0.663,
+  "ci": [
+   0.5687,
+   0.7542
+  ]
+ },
+ "fields": {
+  "auroc": 0.7536,
+  "ci": [
+   0.664,
+   0.8343
+  ]
+ },
+ "fuse2": {
+  "auroc": 0.7826,
+  "ci": [
+   0.6999,
+   0.8535
+  ]
+ },
+ "fuse2_prob": {
+  "auroc": 0.7742,
+  "ci": [
+   0.6872,
+   0.8494
+  ]
+ },
+ "fuse3": {
+  "auroc": 0.8456,
+  "ci": [
+   0.7736,
+   0.9077
+  ]
+ },
+ "f_grade_LGDplus": {
+  "auroc": 0.7528,
+  "ci": [
+   0.6591,
+   0.84
+  ]
+ },
+ "f_inflammation_mod_severe": {
+  "auroc": 0.738,
+  "ci": [
+   0.6474,
+   0.8149
+  ]
+ },
+ "delta_fuse3_minus_fuse2": [
+  0.0196,
+  0.1073
+ ],
+ "delta_fuse3_minus_img": [
+  0.0446,
+  0.185
+ ],
+ "delta_fields_minus_img": [
+  -0.0787,
+  0.1179
+ ],
+ "sample_level": {
+  "img": 0.739,
+  "cnv": 0.6195,
+  "fields": 0.636,
+  "fuse2": 0.7434,
+  "fuse3": 0.7652
+ }
+}
