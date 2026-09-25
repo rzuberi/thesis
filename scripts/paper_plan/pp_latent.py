@@ -24,7 +24,8 @@ def auc(y, s):
 def r3(x): return None if x is None or (isinstance(x, float) and np.isnan(x)) else round(float(x), 3)
 man = pd.read_csv(F + "/training_manifest.csv", dtype=str).set_index("sample_id"); ids = list(man.index); y_row = man.y_progressor.astype(int).values; fold = man.fold_id_rep01.astype(int).values; pid = man.patient_id.values
 ui = pd.read_csv(F + "/feature_views/uni2/uni2_index.csv", dtype=str).set_index("sample_id").reindex(ids)
-cnv_df, feats = load_cnv_matrix(F + "/feature_views/cnv"); X_cnv = cnv_df.set_index("sample_id").loc[ids, feats].to_numpy(np.float64);   # float64: the release fed the sklearn pipeline a float64 DataFrame (float32 shifts RF probabilities by up to 0.14) ARM = [i for i, f in enumerate(feats) if f.startswith("chr") and (f.endswith("p") or f.endswith("q")) or f == "cx"]
+cnv_df, feats = load_cnv_matrix(F + "/feature_views/cnv"); X_cnv = cnv_df.set_index("sample_id").loc[ids, feats].to_numpy(np.float64)   # float64: the release fed the sklearn pipeline a float64 DataFrame (float32 shifts RF probabilities by up to 0.14)
+ARM = [i for i, f in enumerate(feats) if f.startswith("chr") and (f.endswith("p") or f.endswith("q")) or f == "cx"]
 print("rows", len(ids), "cnv feats", len(feats), "arm+cx feats", len(ARM), flush=True)
 bags = {}
 for s, p in zip(ids, ui.npz_path):
