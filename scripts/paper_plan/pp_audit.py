@@ -17,12 +17,12 @@ def stem(x):
     if x.startswith("ps"): m = re.match(r"^ps(\d{2})[.\-]?(\d{3,6})$", x)
     elif x.startswith("s"): m = re.match(r"^s(\d{2})[.\-]?(\d{3,6})$", x)
     return f"ps{m.group(1)}{int(m.group(2))}" if m else re.sub(r"[^a-z0-9]", "", x)
-def slide_stem(fn):
-    t = str(fn).replace(".ndpi", "").split(); 
+def slide_stem(fn):   # v2 parser: 'PS00 4239 B2100 1', 'S08 6265 2 1 G3497', 'PS01.24958 1 L1-3', '0009H053851 PR1 HIN 042 B2506' (no accession -> None)
+    t = str(fn).replace(".ndpi", "").split()
     if not t: return None
     if re.match(r"^(ps|PS)\d\d\.\d+", t[0]): return stem(t[0])
-    if re.match(r"^[Ss]\d\d$", t[0]) and len(t) > 1 and t[1].isdigit(): return f"ps{t[0][1:]}{int(t[1])}"
-    return stem(t[0])
+    if re.match(r"^(ps|PS|s|S)\d\d$", t[0]) and len(t) > 1 and t[1].isdigit(): return f"ps{t[0][-2:]}{int(t[1])}"
+    return None
 man = pd.read_csv(F + "/training_manifest.csv", dtype=str).set_index("sample_id"); coh = pd.read_csv(F + "/pre_event_cohort.csv", dtype=str).set_index("SampleID").loc[man.index]
 cx = pd.read_csv(F + "/feature_views/cnv/cx.csv", dtype=str).set_index("sample_id").reindex(man.index)
 d = pd.DataFrame({"patient_id": man.patient_id, "y_row": man.y_progressor.astype(int), "fold": man.fold_id_rep01, "cnv_id": cx.cnv_id, "acc": coh.BiopsyID_real, "date": pd.to_datetime(coh.Date, errors="coerce"), "date_source": coh.DateSource, "acc_match": coh.BiopsyIDMatchType,
@@ -39,11 +39,15 @@ pt = pd.read_csv(E + "/pathology_text_normalised_full.csv", dtype=str, usecols=[
 MAP = {2: 0, 3: 1, 4: 2, 5: 3, 6: 4, 8: 4}; pt["g"] = pt.code.map(MAP); ptc = pt.dropna(subset=["stem", "g"]).drop_duplicates("stem").set_index("stem")
 G_SHEET = {"BE": 0, "NDBE": 0, "ID": 1, "IND": 1, "LGD": 2, "HGD": 3, "IMC": 4, "OAC": 4, "EAC": 4}
 def tier(g): return None if g is None or (isinstance(g, float) and np.isnan(g)) else int(g >= 2)
+# v2: the discovery sheet's numeric PatientID is a different numbering from slide_matching.PatientID; map each numeric id to the
+# release patient that the majority of its cnv_ids belong to, and flag rows whose sheet id maps elsewhere (mixed-patient sheet id)
+fdnum = fd.PatientID.astype(str).str.replace(".0", "", regex=False); tmp = d[["patient_id", "cnv_id"]].dropna(); tmp["num"] = tmp.cnv_id.map(fdnum); tmp = tmp.dropna(subset=["num"])
+num2code = tmp.groupby("num").patient_id.agg(lambda s: s.mode().iloc[0]).to_dict(); num_mixed = tmp.groupby("num").patient_id.nunique(); num_mixed = sorted(num_mixed[num_mixed > 1].index)
 rows = []
 for sid, r in d.iterrows():
     o = {"sample_id": sid, "patient_id": r.patient_id, "subgroup": r.subgroup, "cnv_id": r.cnv_id, "release_acc": r.acc, "release_acc_stem": r.acc_stem, "release_date": r.date, "date_source": r.date_source, "acc_match": r.acc_match, "release_grade": r.grade, "grade_source": r.grade_source, "release_next": r.next, "next_source": r.next_source, "next_orig": r.next_orig, "next_scrape": r.next_scrape, "slide": r.slide, "slide_stem": r.slide_stem, "y_row": r.y_row}
     if r.cnv_id in fd.index:
-        f = fd.loc[r.cnv_id]; o.update(sheet="discovery", sheet_patient=num2alt.get(str(f.PatientID).replace(".0", ""), f"num:{f.PatientID}"), sheet_acc_stem=stem(f["Path ID"]), sheet_year=pd.to_numeric(f["Endoscopy Year"], errors="coerce"), sheet_grade=G_SHEET.get(str(f.Pathology).strip().upper()), sheet_status=f.Status)
+        f = fd.loc[r.cnv_id]; o.update(sheet="discovery", sheet_patient=num2code.get(str(f.PatientID).replace(".0", ""), f"num:{f.PatientID}"), sheet_patient_num=str(f.PatientID).replace(".0", ""), sheet_acc_stem=stem(f["Path ID"]), sheet_year=pd.to_numeric(f["Endoscopy Year"], errors="coerce"), sheet_grade=G_SHEET.get(str(f.Pathology).strip().upper()), sheet_status=f.Status)
     elif r.cnv_id in va.index:
         f = va.loc[r.cnv_id]; o.update(sheet="validation", sheet_patient=f.PatientID, sheet_acc_stem=stem(f.Block), sheet_year=pd.to_numeric(f["Endoscopy Year"], errors="coerce"), sheet_grade=G_SHEET.get(str(f.Pathology2).strip().upper()), sheet_status=f.Status)
     else: o.update(sheet="none")
@@ -106,7 +110,16 @@ CR = {"rows_in_discovery_sheet": int(disc.sum()), "rows_in_killcoyne_pred_table"
       "note": "'82/150' (closeout C) = modal sheet per patient; '69/150' (pipeline doc) matches none of these definitions exactly unless stated otherwise below"}
 for k_, v_ in list(CR.items()):
     if v_ == 69: CR["note"] = f"69 matches definition {k_}"
+# v2: label-source sensitivity: patient progressor status under the release rule with the next-biopsy label taken from (a) release, (b) DB scrape where present else release, (c) master where present else release
+def lgd2(next_lab, streak): return ((next_lab >= 3) | ((next_lab == 2) & (streak >= 1))).astype(float).where(next_lab.notna())
+streak = pd.to_numeric(coh.LGDStreakSoFar, errors="coerce").reindex(d.index)
+alt = pd.DataFrame({"release": d.y_row.astype(float), "db_scrape_preferred": lgd2(d.next_scrape.fillna(d.next), streak), "master_preferred": lgd2(d.next_orig.fillna(d.next), streak)}, index=d.index)
+altp = alt.groupby(d.patient_id).max(); altp["subgroup"] = np.where(altp.index.isin(ov), "also_in_ERIN", "never_in_ERIN")
+SENS = {"patient_status_changes_vs_release": {src: {sg: {"patients": int(((altp[src] != altp.release) & (altp.subgroup == sg)).sum()), "to_progressor": int(((altp[src] == 1) & (altp.release == 0) & (altp.subgroup == sg)).sum()), "to_nonprogressor": int(((altp[src] == 0) & (altp.release == 1) & (altp.subgroup == sg)).sum())} for sg in ["also_in_ERIN", "never_in_ERIN"]} for src in ["db_scrape_preferred", "master_preferred"]},
+        "rows_with_both_next_sources": int((d.next_orig.notna() & d.next_scrape.notna()).sum()), "rows_both_sources_disagree_two_tier": int(((d.next_orig >= 2) != (d.next_scrape >= 2))[d.next_orig.notna() & d.next_scrape.notna()].sum()),
+        "grade_rows_release_LGD_vs_sheet_and_slidematch_benign": int(((A.release_grade >= 2) & (A.sheet_grade.fillna(-1) < 2) & (A.sm_grade.fillna(-1) < 2) & A.sheet_grade.notna() & A.sm_grade.notna()).sum()), "grade_rows_release_benign_vs_sheet_and_slidematch_LGDplus": int(((A.release_grade < 2) & (A.sheet_grade >= 2) & (A.sm_grade >= 2)).sum()),
+        "note": "grade and next-label disagreements are label-source disagreements, not chain errors; the pre-specified confirmed-error rule covers patient, accession and date only"}
 DEC = {"confirmed_error_rows_total": int((A.confirmed_error != "").sum()), "confirmed_error_patients": int(A.loc[A.confirmed_error != "", "patient_id"].nunique()), "decision": "corrected release required" if (A.confirmed_error != "").any() else "no confirmed errors: all items run on the frozen release only"}
-res = {"_spec": "docs/paper_plan_answers.md @ db236a0 item 0", "n_overlap_patients": len(ov), "comparator_patients": comp, "summary_by_subgroup": summ, "killcoyne": KJ, "count_reconciliation": CR, "decision": DEC,
+res = {"_spec": "docs/paper_plan_answers.md @ db236a0 item 0", "n_overlap_patients": len(ov), "comparator_patients": comp, "summary_by_subgroup": summ, "killcoyne": KJ, "count_reconciliation": CR, "decision": DEC, "label_source_sensitivity": SENS, "sheet_numeric_ids_mapping_to_more_than_one_release_patient": num_mixed, "version": "v2 (5bf5419+): slide-filename parser fixed, sheet patient id mapped by majority through cnv_id; v1 = commit 187dda8 output audit_item0.json",
        "grade_source_by_subgroup": pd.crosstab(A.subgroup, A.grade_source).to_dict(), "next_source_by_subgroup": pd.crosstab(A.subgroup, A.next_source).to_dict()}
-json.dump(res, open(AGG + "/audit_item0.json", "w"), indent=1, default=str); print(json.dumps(res, indent=1, default=str)[:6000])
+json.dump(res, open(AGG + "/audit_item0_v2.json", "w"), indent=1, default=str); print(json.dumps(res, indent=1, default=str)[:6000])
