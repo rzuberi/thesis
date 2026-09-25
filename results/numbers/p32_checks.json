@@ -1,0 +1,116 @@
+{
+ "1_selection_adjusted_over_fields": {
+  "observed_delta_by_field": {
+   "grade_LGDplus": 0.0686,
+   "im_present": -0.0074,
+   "treatment_effect": -0.005,
+   "ulceration": -0.078,
+   "squamous_only": -0.0418,
+   "inflammation_mod_severe": 0.0366
+  },
+  "selected_field": "grade_LGDplus",
+  "t_obs": 0.0686,
+  "p_selection_adjusted": 0.02199,
+  "p_unadjusted_selected": 0.0055,
+  "f3_all_fields_delta": 0.0498,
+  "p_f3_all": 0.0025
+ },
+ "2_rep02_split_replication": {
+  "img": 0.745,
+  "cnv": 0.7078,
+  "fuse2": 0.8302,
+  "f3_grade": 0.8656,
+  "f3_all": 0.8452,
+  "delta_f3_all_minus_fuse2": [
+   -0.0177,
+   0.0479
+  ],
+  "delta_f3_grade_minus_fuse2": [
+   -0.0076,
+   0.0792
+  ],
+  "note": "ERIN heads unchanged (trained on ERIN); SWG image/cnv arms and folds from the rep02 split"
+ },
+ "3_imputed_grade_anchors": {
+  "vs_spreadsheet_LGDplus_auroc_all707": 0.6192,
+  "n_with_db_code": 418,
+  "vs_db_confirmed_LGDplus_auroc": 0.6293,
+  "vs_spreadsheet_on_same_subset": 0.6398,
+  "spreadsheet_vs_db_code_two_tier_on_subset": 0.9928
+ },
+ "4_transfer_calibration": {
+  "swg_imputed_mean_p": 0.6374,
+  "swg_frac_p_gt_0.5": 0.8472,
+  "swg_spreadsheet_LGDplus_rate": 0.1231,
+  "erin_oof_mean_p": 0.3239,
+  "erin_label_LGDplus_rate": 0.2715,
+  "calib_slope_vs_spreadsheet": 0.578,
+  "calib_intercept": -2.453
+ },
+ "5_overnight_arms": {
+  "f3_grade_LGDplus": {
+   "auroc": 0.8512,
+   "delta_vs_fuse2": [
+    0.0242,
+    0.1194
+   ]
+  },
+  "f3_grade_repeat_foldseed1": {
+   "auroc": 0.8544,
+   "delta_vs_fuse2": [
+    0.0277,
+    0.1215
+   ]
+  },
+  "arm_grade_repeat_foldseed1": {
+   "auroc": 0.764,
+   "delta_vs_fuse2": [
+    -0.1198,
+    0.083
+   ]
+  },
+  "f3_grade_permuted_labels": {
+   "auroc": 0.6772,
+   "delta_vs_fuse2": [
+    -0.1704,
+    -0.0373
+   ]
+  },
+  "arm_grade_permuted_labels": {
+   "auroc": 0.4486,
+   "delta_vs_fuse2": [
+    -0.461,
+    -0.1984
+   ]
+  },
+  "img05": {
+   "auroc": 0.693,
+   "delta_vs_fuse2": [
+    -0.1755,
+    -0.0056
+   ]
+  },
+  "fuse2_05": {
+   "auroc": 0.7736,
+   "delta_vs_fuse2": [
+    -0.0581,
+    0.0378
+   ]
+  },
+  "f3_05_grade": {
+   "auroc": 0.8228,
+   "delta_vs_fuse2": [
+    -0.0155,
+    0.097
+   ]
+  },
+  "img05_minus_release_img": [
+   -0.1032,
+   0.0215
+  ],
+  "f3_05_grade_minus_fuse2_05": [
+   0.0023,
+   0.0977
+  ]
+ }
+}

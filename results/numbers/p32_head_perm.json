@@ -1,0 +1,26 @@
+{
+ "_meta": {
+  "n_cases": 2293,
+  "epochs": 25,
+  "seeds": [
+   0,
+   1,
+   2
+  ],
+  "folds": "patient_folds seed 0",
+  "perm_seed": "7",
+  "swg_bags": "SWG bags from /mnt/scratche/fast/fmlab/datasets/imaging/SWGCohort/features_uni2h_05um (0.5 um/px re-extraction)"
+ },
+ "fields": {
+  "grade_LGDplus": {
+   "n": 2291,
+   "pos": 622,
+   "auroc": 0.4874,
+   "ci": [
+    0.4618,
+    0.5124
+   ]
+  }
+ },
+ "swg_imputed_grade_vs_pathologist_LGDplus_auroc": 0.5656
+}

@@ -1,0 +1,15 @@
+{
+ "n_patients": 150,
+ "pos": 50,
+ "image_05um_auroc": 0.693,
+ "ci": [
+  0.5959,
+  0.7804
+ ],
+ "release_image_auroc": 0.7312,
+ "delta_05um_minus_release": [
+  -0.1032,
+  0.0215
+ ],
+ "sample_level_05um": 0.6883
+}
