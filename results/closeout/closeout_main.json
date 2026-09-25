@@ -1,0 +1,2771 @@
+{
+ "_conventions": "Closeout for review (docs/closeout_for_review.md): items A, B, C, D, E, F, G, I, J, K, L, M computed from data.\nPre-specified in docs/closeout_for_review.md before this script was run. Nothing here reads a number from any prose file.\n\nConventions (every item): SWG release chapter1_lgd2_final_pre_event_20260713_final, 707 rows / 150 patients / 50 progressor\npatients; arm scores are release OOF probabilities (image_only, cnv_only) or ERIN-head imputed probabilities per slide;\nlate fusion = mean of fold-local z-scores (z within each release outer fold); patient score = MAX over the patient's rows;\nAUROC rank-based; 95 % CI = percentile bootstrap over PATIENTS (2,000 resamples, numpy RandomState(0)); permutation tests\npermute PATIENT-level labels (2,000, RandomState(0)). Row-level tables -> feasibility/closeout (cluster only);\naggregates -> results/closeout/closeout_main.json and results/closeout/tables.md (markdown tables for the report).",
+ "A_versions": [
+  {
+   "version": "v1_p32b_fields6_logistic",
+   "n": 150,
+   "events": 50,
+   "head_alone": 0.738,
+   "head_ci": [
+    0.652,
+    0.817
+   ],
+   "fuse2": 0.783,
+   "fuse3": 0.832,
+   "fuse3_ci": [
+    0.762,
+    0.894
+   ],
+   "gain": 0.05,
+   "gain_ci": [
+    0.015,
+    0.089
+   ],
+   "perm_p_gain": 0.0025,
+   "third_arm": "CV logistic on 6 imputed fields (incl-overlap heads)"
+  },
+  {
+   "version": "v2_p32b_grade_only",
+   "n": 150,
+   "events": 50,
+   "head_alone": 0.756,
+   "head_ci": [
+    0.661,
+    0.842
+   ],
+   "fuse2": 0.783,
+   "fuse3": 0.851,
+   "fuse3_ci": [
+    0.781,
+    0.909
+   ],
+   "gain": 0.069,
+   "gain_ci": [
+    0.024,
+    0.119
+   ],
+   "perm_p_gain": 0.0055,
+   "third_arm": "imputed grade LGD+ (incl-overlap head)"
+  },
+  {
+   "version": "v3_noov_fields2_logistic",
+   "n": 150,
+   "events": 50,
+   "head_alone": 0.754,
+   "head_ci": [
+    0.664,
+    0.834
+   ],
+   "fuse2": 0.783,
+   "fuse3": 0.846,
+   "fuse3_ci": [
+    0.774,
+    0.908
+   ],
+   "gain": 0.063,
+   "gain_ci": [
+    0.02,
+    0.107
+   ],
+   "perm_p_gain": 0.0025,
+   "third_arm": "CV logistic on 2 leak-free imputed fields (grade, inflammation)"
+  },
+  {
+   "version": "v4_noov_grade_only_CANONICAL",
+   "n": 150,
+   "events": 50,
+   "head_alone": 0.753,
+   "head_ci": [
+    0.659,
+    0.84
+   ],
+   "fuse2": 0.783,
+   "fuse3": 0.85,
+   "fuse3_ci": [
+    0.779,
+    0.909
+   ],
+   "gain": 0.067,
+   "gain_ci": [
+    0.022,
+    0.114
+   ],
+   "perm_p_gain": 0.003,
+   "third_arm": "imputed grade LGD+ (leak-free head, 55 ERIN ids / 54 SWG patients excluded)"
+  }
+ ],
+ "A_arms": {
+  "img": [
+   0.731,
+   0.64,
+   0.814
+  ],
+  "cnv": [
+   0.663,
+   0.569,
+   0.754
+  ],
+  "fuse2": [
+   0.783,
+   0.7,
+   0.854
+  ]
+ },
+ "B_overlap": {
+  "swg_patients_linked_to_erin": 54,
+  "erin_anon_ids_linked": 55,
+  "pairs": 62,
+  "how": {
+   "db_bridge": 52,
+   "direct": 10
+  },
+  "swg_patients_with_case_in_any_inclusive_training_table": 33,
+  "swg_patients_with_case_in_noov_training": 0,
+  "imaged_erin_cases_of_linked_ids": 43,
+  "imaged_label_status": {
+   "train_eligible": 42,
+   "unsure_held_out": 1
+  },
+  "cases_in_p32b_training_from_linked_ids": 43,
+  "exclusion_file_ids": 55,
+  "note": "ERIN heads are 5-fold CV over all training cases; every included case trains 4 of the 5 fold models whose average is applied to SWG, so any included case is in training for the imputation. The 21 linked patients without a case in the tables have no imaged ERIN case at all (their ERIN link is report-only)."
+ },
+ "C_characterisation": [
+  {
+   "variable": "n_rows",
+   "type": "continuous (median [IQR])",
+   "also_in_ERIN_54": "4 [2, 7] (n=54)",
+   "never_in_ERIN_96": "3 [2, 6] (n=96)",
+   "test": "Mann-Whitney",
+   "p": 0.25
+  },
+  {
+   "variable": "first_year",
+   "type": "continuous (median [IQR])",
+   "also_in_ERIN_54": "2008 [2005, 2012] (n=54)",
+   "never_in_ERIN_96": "2008 [2002, 2010] (n=96)",
+   "test": "Mann-Whitney",
+   "p": 0.068
+  },
+  {
+   "variable": "span_days",
+   "type": "continuous (median [IQR])",
+   "also_in_ERIN_54": "119 [0, 1548] (n=54)",
+   "never_in_ERIN_96": "360 [0, 1536] (n=96)",
+   "test": "Mann-Whitney",
+   "p": 0.954
+  },
+  {
+   "variable": "biopsies_total",
+   "type": "continuous (median [IQR])",
+   "also_in_ERIN_54": "2 [1, 5] (n=54)",
+   "never_in_ERIN_96": "3 [1, 5] (n=96)",
+   "test": "Mann-Whitney",
+   "p": 0.484
+  },
+  {
+   "variable": "followup_months_first_to_last_biopsy",
+   "type": "continuous (median [IQR])",
+   "also_in_ERIN_54": "24.6 [0, 69.6] (n=54)",
+   "never_in_ERIN_96": "36.0 [0, 75.1] (n=96)",
+   "test": "Mann-Whitney",
+   "p": 0.609
+  },
+  {
+   "variable": "days_first_to_event",
+   "type": "continuous (median [IQR])",
+   "also_in_ERIN_54": "942 [434, 1894] (n=14)",
+   "never_in_ERIN_96": "1102 [812, 2308] (n=36)",
+   "test": "Mann-Whitney",
+   "p": 0.483
+  },
+  {
+   "variable": "age_at_diagnosis",
+   "type": "continuous (median [IQR])",
+   "also_in_ERIN_54": "56.5 [51.2, 63.8] (n=22)",
+   "never_in_ERIN_96": "65.0 [58.8, 68.2] (n=44)",
+   "test": "Mann-Whitney",
+   "p": 0.006
+  },
+  {
+   "variable": "prague_C",
+   "type": "continuous (median [IQR])",
+   "also_in_ERIN_54": "0 [0, 2.5] (n=20)",
+   "never_in_ERIN_96": "0 [0, 2] (n=32)",
+   "test": "Mann-Whitney",
+   "p": 0.76
+  },
+  {
+   "variable": "prague_M",
+   "type": "continuous (median [IQR])",
+   "also_in_ERIN_54": "4.5 [4, 5.75] (n=22)",
+   "never_in_ERIN_96": "4 [2, 6] (n=33)",
+   "test": "Mann-Whitney",
+   "p": 0.27
+  },
+  {
+   "variable": "n_reads_mean",
+   "type": "continuous (median [IQR])",
+   "also_in_ERIN_54": "22197935 [20800968, 25242923] (n=25)",
+   "never_in_ERIN_96": "20981523 [18806932, 23508466] (n=56)",
+   "test": "Mann-Whitney",
+   "p": 0.054
+  },
+  {
+   "variable": "cellularity_mean",
+   "type": "continuous (median [IQR])",
+   "also_in_ERIN_54": "29.3 [23.9, 50.0] (n=5)",
+   "never_in_ERIN_96": "47.5 [44.6, 50.0] (n=13)",
+   "test": "Mann-Whitney",
+   "p": 0.34
+  },
+  {
+   "variable": "cx_max",
+   "type": "continuous (median [IQR])",
+   "also_in_ERIN_54": "14.5 [0, 45.0] (n=54)",
+   "never_in_ERIN_96": "11.5 [0, 46.5] (n=96)",
+   "test": "Mann-Whitney",
+   "p": 0.911
+  },
+  {
+   "variable": "noise_mapd_mean",
+   "type": "continuous (median [IQR])",
+   "also_in_ERIN_54": "0.0715 [0.0633, 0.0783] (n=54)",
+   "never_in_ERIN_96": "0.074 [0.0645, 0.0821] (n=96)",
+   "test": "Mann-Whitney",
+   "p": 0.246
+  },
+  {
+   "variable": "n_segments_mean",
+   "type": "continuous (median [IQR])",
+   "also_in_ERIN_54": "218 [174, 291] (n=54)",
+   "never_in_ERIN_96": "201 [162, 283] (n=96)",
+   "test": "Mann-Whitney",
+   "p": 0.499
+  },
+  {
+   "variable": "frac_altered_0p15_mean",
+   "type": "continuous (median [IQR])",
+   "also_in_ERIN_54": "0.0316 [0.0231, 0.0463] (n=54)",
+   "never_in_ERIN_96": "0.031 [0.0208, 0.0531] (n=96)",
+   "test": "Mann-Whitney",
+   "p": 0.92
+  },
+  {
+   "variable": "frac_altered_0p30_mean",
+   "type": "continuous (median [IQR])",
+   "also_in_ERIN_54": "0.0151 [0.0146, 0.0158] (n=54)",
+   "never_in_ERIN_96": "0.0152 [0.0148, 0.0169] (n=96)",
+   "test": "Mann-Whitney",
+   "p": 0.078
+  },
+  {
+   "variable": "slide_age_at_scan_days_mean",
+   "type": "continuous (median [IQR])",
+   "also_in_ERIN_54": "2823 [1424, 3650] (n=54)",
+   "never_in_ERIN_96": "3057 [2237, 4031] (n=96)",
+   "test": "Mann-Whitney",
+   "p": 0.044
+  },
+  {
+   "variable": "scan_year_first",
+   "type": "continuous (median [IQR])",
+   "also_in_ERIN_54": "2017 [2017, 2017] (n=54)",
+   "never_in_ERIN_96": "2017 [2017, 2017] (n=96)",
+   "test": "Mann-Whitney",
+   "p": 0.45
+  },
+  {
+   "variable": "mpp_mean",
+   "type": "continuous (median [IQR])",
+   "also_in_ERIN_54": "0.221 [0.221, 0.221] (n=54)",
+   "never_in_ERIN_96": "0.221 [0.221, 0.221] (n=96)",
+   "test": "Mann-Whitney",
+   "p": 0.194
+  },
+  {
+   "variable": "y",
+   "type": "categorical (counts)",
+   "also_in_ERIN_54": {
+    "0": 40,
+    "1": 14
+   },
+   "never_in_ERIN_96": {
+    "0": 60,
+    "1": 36
+   },
+   "test": "Fisher exact",
+   "p": 0.206
+  },
+  {
+   "variable": "baseline_grade",
+   "type": "categorical (counts)",
+   "also_in_ERIN_54": {
+    "0": 41,
+    "1": 7,
+    "2": 6
+   },
+   "never_in_ERIN_96": {
+    "0": 80,
+    "1": 6,
+    "2": 10
+   },
+   "test": "chi-square (3 levels; Fisher only defined for 2x2)",
+   "p": 0.359
+  },
+  {
+   "variable": "max_grade",
+   "type": "categorical (counts)",
+   "also_in_ERIN_54": {
+    "0": 36,
+    "1": 6,
+    "2": 12
+   },
+   "never_in_ERIN_96": {
+    "0": 61,
+    "1": 9,
+    "2": 26
+   },
+   "test": "chi-square (3 levels; Fisher only defined for 2x2)",
+   "p": 0.787
+  },
+  {
+   "variable": "endpoint_label_name",
+   "type": "categorical (counts)",
+   "also_in_ERIN_54": {
+    "HGD": 8,
+    "IMC/cancer": 2,
+    "LGD (second consecutive)": 4,
+    "missing": 40
+   },
+   "never_in_ERIN_96": {
+    "HGD": 18,
+    "IMC/cancer": 8,
+    "LGD (second consecutive)": 10,
+    "missing": 60
+   },
+   "test": "chi-square (4 levels; Fisher only defined for 2x2)",
+   "p": 0.484
+  },
+  {
+   "variable": "sex_demographics",
+   "type": "categorical (counts)",
+   "also_in_ERIN_54": {
+    "F": 5,
+    "M": 17,
+    "missing": 32
+   },
+   "never_in_ERIN_96": {
+    "F": 10,
+    "M": 34,
+    "missing": 52
+   },
+   "test": "chi-square (3 levels; Fisher only defined for 2x2)",
+   "p": 0.834
+  },
+  {
+   "variable": "gender_id_code",
+   "type": "categorical (counts)",
+   "also_in_ERIN_54": {
+    "1": 40,
+    "2": 14,
+    "missing": 0
+   },
+   "never_in_ERIN_96": {
+    "1": 74,
+    "2": 21,
+    "missing": 1
+   },
+   "test": "chi-square (3 levels; Fisher only defined for 2x2)",
+   "p": 0.655
+  },
+  {
+   "variable": "smoking",
+   "type": "categorical (counts)",
+   "also_in_ERIN_54": {
+    "N": 4,
+    "Y": 10,
+    "missing": 40
+   },
+   "never_in_ERIN_96": {
+    "N": 4,
+    "Y": 17,
+    "missing": 75
+   },
+   "test": "chi-square (3 levels; Fisher only defined for 2x2)",
+   "p": 0.681
+  },
+  {
+   "variable": "referral_hospital_db",
+   "type": "categorical (counts)",
+   "also_in_ERIN_54": {
+    "Addenbrookes": 3,
+    "Bedford": 0,
+    "Hinchingbrooke": 0,
+    "None": 33,
+    "Not Specified": 18,
+    "West Suffolk": 0,
+    "not in DB": 0
+   },
+   "never_in_ERIN_96": {
+    "Addenbrookes": 2,
+    "Bedford": 1,
+    "Hinchingbrooke": 3,
+    "None": 55,
+    "Not Specified": 30,
+    "West Suffolk": 1,
+    "not in DB": 4
+   },
+   "test": "chi-square (7 levels; Fisher only defined for 2x2)",
+   "p": 0.375
+  },
+  {
+   "variable": "seq_sheet_mode",
+   "type": "categorical (counts)",
+   "also_in_ERIN_54": {
+    "discovery_777": 25,
+    "validation_268": 29
+   },
+   "never_in_ERIN_96": {
+    "discovery_777": 57,
+    "validation_268": 39
+   },
+   "test": "Fisher exact",
+   "p": 0.129
+  },
+  {
+   "variable": "seq_batch_mode",
+   "type": "categorical (counts)",
+   "also_in_ERIN_54": {
+    "Batch 1": 2,
+    "Batch 2": 3,
+    "Batch 3": 5,
+    "Batch 4": 2,
+    "Batch 5": 2,
+    "Batch 6": 4,
+    "Batch 8": 4,
+    "Batch 9": 1,
+    "Exome Subcohort": 1,
+    "NP Pilot Study": 1,
+    "Progressor Pilot Study": 0,
+    "missing": 29
+   },
+   "never_in_ERIN_96": {
+    "Batch 1": 6,
+    "Batch 2": 5,
+    "Batch 3": 6,
+    "Batch 4": 12,
+    "Batch 5": 9,
+    "Batch 6": 3,
+    "Batch 8": 7,
+    "Batch 9": 2,
+    "Exome Subcohort": 5,
+    "NP Pilot Study": 1,
+    "Progressor Pilot Study": 1,
+    "missing": 39
+   },
+   "test": "chi-square (12 levels; Fisher only defined for 2x2)",
+   "p": 0.565
+  },
+  {
+   "variable": "slx_run_mode",
+   "type": "categorical (counts)",
+   "also_in_ERIN_54": {
+    "SLX-10722": 2,
+    "SLX-10725": 0,
+    "SLX-10729": 1,
+    "SLX-12451": 5,
+    "SLX-12452": 3,
+    "SLX-12453": 2,
+    "SLX-12455": 2,
+    "SLX-12456": 4,
+    "SLX-13692": 4,
+    "SLX-13696": 1,
+    "SLX-16273": 2,
+    "SLX-16276": 0,
+    "SLX-16277": 0,
+    "SLX-16278": 2,
+    "SLX-16279": 0,
+    "SLX-16691": 1,
+    "SLX-16692": 1,
+    "SLX-16693": 1,
+    "SLX-16694": 1,
+    "SLX-16695": 2,
+    "SLX-16696": 2,
+    "SLX-16697": 1,
+    "SLX-16698": 0,
+    "SLX-16699": 2,
+    "SLX-16700": 1,
+    "SLX-16756": 2,
+    "SLX-16757": 1,
+    "SLX-16781": 1,
+    "SLX-16783": 0,
+    "SLX-17965": 1,
+    "SLX-17966": 0,
+    "SLX-17971": 1,
+    "SLX-17972": 1,
+    "SLX-17973": 0,
+    "SLX-17974": 2,
+    "SLX-17976": 0,
+    "SLX-17977": 1,
+    "SLX-17978": 1,
+    "SLX-17980": 2,
+    "SLX-9242": 0,
+    "SLX-9246": 1
+   },
+   "never_in_ERIN_96": {
+    "SLX-10722": 6,
+    "SLX-10725": 1,
+    "SLX-10729": 4,
+    "SLX-12451": 6,
+    "SLX-12452": 5,
+    "SLX-12453": 9,
+    "SLX-12455": 12,
+    "SLX-12456": 3,
+    "SLX-13692": 7,
+    "SLX-13696": 2,
+    "SLX-16273": 0,
+    "SLX-16276": 1,
+    "SLX-16277": 2,
+    "SLX-16278": 0,
+    "SLX-16279": 1,
+    "SLX-16691": 2,
+    "SLX-16692": 3,
+    "SLX-16693": 2,
+    "SLX-16694": 1,
+    "SLX-16695": 4,
+    "SLX-16696": 2,
+    "SLX-16697": 0,
+    "SLX-16698": 1,
+    "SLX-16699": 1,
+    "SLX-16700": 1,
+    "SLX-16756": 3,
+    "SLX-16757": 3,
+    "SLX-16781": 2,
+    "SLX-16783": 2,
+    "SLX-17965": 1,
+    "SLX-17966": 2,
+    "SLX-17971": 0,
+    "SLX-17972": 0,
+    "SLX-17973": 1,
+    "SLX-17974": 0,
+    "SLX-17976": 2,
+    "SLX-17977": 2,
+    "SLX-17978": 0,
+    "SLX-17980": 0,
+    "SLX-9242": 1,
+    "SLX-9246": 1
+   },
+   "test": "chi-square (41 levels; Fisher only defined for 2x2)",
+   "p": 0.51
+  },
+  {
+   "variable": "scanner_model_mode",
+   "type": "categorical (counts)",
+   "also_in_ERIN_54": {
+    "C13210": 6,
+    "C13239-01": 48
+   },
+   "never_in_ERIN_96": {
+    "C13210": 14,
+    "C13239-01": 82
+   },
+   "test": "Fisher exact",
+   "p": 0.624
+  },
+  {
+   "variable": "scanner_serial_mode",
+   "type": "categorical (counts)",
+   "also_in_ERIN_54": {
+    "000023": 6,
+    "000058": 48
+   },
+   "never_in_ERIN_96": {
+    "000023": 14,
+    "000058": 82
+   },
+   "test": "Fisher exact",
+   "p": 0.624
+  },
+  {
+   "variable": "source_lens_mode",
+   "type": "categorical",
+   "also_in_ERIN_54": {
+    "40": "54"
+   },
+   "never_in_ERIN_96": {
+    "40": "96"
+   },
+   "test": "constant",
+   "p": null
+  },
+  {
+   "variable": "p53_ihc_any_aberrant",
+   "type": "categorical (counts)",
+   "also_in_ERIN_54": {
+    "aberrant": 4,
+    "missing": 31,
+    "normal": 19
+   },
+   "never_in_ERIN_96": {
+    "aberrant": 12,
+    "missing": 44,
+    "normal": 40
+   },
+   "test": "chi-square (3 levels; Fisher only defined for 2x2)",
+   "p": 0.344
+  },
+  {
+   "variable": "p53_seqsheet_any",
+   "type": "categorical (counts)",
+   "also_in_ERIN_54": {
+    "0": 19,
+    "1": 4,
+    "missing": 31
+   },
+   "never_in_ERIN_96": {
+    "0": 40,
+    "1": 11,
+    "missing": 45
+   },
+   "test": "chi-square (3 levels; Fisher only defined for 2x2)",
+   "p": 0.429
+  },
+  {
+   "variable": "grade_source_mode",
+   "type": "categorical (counts)",
+   "also_in_ERIN_54": {
+    "master_label_fallback": 4,
+    "scraped_confirmed": 49,
+    "scraped_research": 1
+   },
+   "never_in_ERIN_96": {
+    "master_label_fallback": 36,
+    "scraped_confirmed": 60,
+    "scraped_research": 0
+   },
+   "test": "chi-square (3 levels; Fisher only defined for 2x2)",
+   "p": "<0.001"
+  },
+  {
+   "variable": "next_label_source_mode",
+   "type": "categorical (counts)",
+   "also_in_ERIN_54": {
+    "master": 27,
+    "scrape_exact": 27
+   },
+   "never_in_ERIN_96": {
+    "master": 57,
+    "scrape_exact": 39
+   },
+   "test": "Fisher exact",
+   "p": 0.306
+  }
+ ],
+ "C_not_available": [
+  "staining batch (no record in any SWG table)",
+  "referral pathway beyond DB referral_hospital of first endoscopy",
+  "sequencing depth in x (reads only; read length not recorded in the sheet)",
+  "sex for patients absent from Demographics_full.csv (gender_id code from barretts_database_230809.csv reported as code, mapping not documented)",
+  "p53 IHC for slides with blank p53IHC in slide_matching.csv",
+  "4x resequencing (none exists; see L)"
+ ],
+ "C_subgroup_aurocs": [
+  {
+   "subgroup": "all",
+   "n": 150,
+   "events": 50,
+   "img": 0.731,
+   "img_ci": [
+    0.64,
+    0.814
+   ],
+   "cnv": 0.663,
+   "cnv_ci": [
+    0.569,
+    0.754
+   ],
+   "head": 0.753,
+   "head_ci": [
+    0.659,
+    0.84
+   ],
+   "fuse2": 0.783,
+   "fuse2_ci": [
+    0.7,
+    0.854
+   ],
+   "fuse3": 0.85,
+   "fuse3_ci": [
+    0.779,
+    0.909
+   ],
+   "gain": 0.067,
+   "gain_ci": [
+    0.022,
+    0.114
+   ]
+  },
+  {
+   "subgroup": "also_in_ERIN",
+   "n": 54,
+   "events": 14,
+   "img": 0.704,
+   "img_ci": [
+    0.55,
+    0.841
+   ],
+   "cnv": 0.454,
+   "cnv_ci": [
+    0.28,
+    0.627
+   ],
+   "head": 0.745,
+   "head_ci": [
+    0.562,
+    0.899
+   ],
+   "fuse2": 0.58,
+   "fuse2_ci": [
+    0.395,
+    0.754
+   ],
+   "fuse3": 0.779,
+   "fuse3_ci": [
+    0.625,
+    0.909
+   ],
+   "gain": 0.198,
+   "gain_ci": [
+    0.096,
+    0.317
+   ]
+  },
+  {
+   "subgroup": "never_in_ERIN",
+   "n": 96,
+   "events": 36,
+   "img": 0.744,
+   "img_ci": [
+    0.634,
+    0.85
+   ],
+   "cnv": 0.76,
+   "cnv_ci": [
+    0.652,
+    0.858
+   ],
+   "head": 0.758,
+   "head_ci": [
+    0.638,
+    0.863
+   ],
+   "fuse2": 0.863,
+   "fuse2_ci": [
+    0.785,
+    0.932
+   ],
+   "fuse3": 0.885,
+   "fuse3_ci": [
+    0.816,
+    0.945
+   ],
+   "gain": 0.022,
+   "gain_ci": [
+    -0.027,
+    0.07
+   ]
+  }
+ ],
+ "C_cnv_by_stratum": [
+  {
+   "stratum": "sequencing sheet (discovery vs validation)=discovery_777",
+   "subgroup": "also_in_ERIN",
+   "n": 25,
+   "events": 11,
+   "cnv_auroc": 0.253,
+   "cnv_ci": [
+    0.081,
+    0.487
+   ]
+  },
+  {
+   "stratum": "sequencing sheet (discovery vs validation)=discovery_777",
+   "subgroup": "never_in_ERIN",
+   "n": 57,
+   "events": 29,
+   "cnv_auroc": 0.703,
+   "cnv_ci": [
+    0.556,
+    0.835
+   ]
+  },
+  {
+   "stratum": "sequencing sheet (discovery vs validation)=validation_268",
+   "subgroup": "also_in_ERIN",
+   "n": 29,
+   "events": 3,
+   "cnv_auroc": 0.538,
+   "cnv_ci": [
+    0.143,
+    0.846
+   ]
+  },
+  {
+   "stratum": "sequencing sheet (discovery vs validation)=validation_268",
+   "subgroup": "never_in_ERIN",
+   "n": 39,
+   "events": 7,
+   "cnv_auroc": 0.75,
+   "cnv_ci": [
+    0.5,
+    0.938
+   ]
+  },
+  {
+   "stratum": "SLX run=SLX-10722",
+   "subgroup": "also_in_ERIN",
+   "n": 2,
+   "events": 1,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-10722",
+   "subgroup": "never_in_ERIN",
+   "n": 6,
+   "events": 3,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-10725",
+   "subgroup": "also_in_ERIN",
+   "n": 0,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-10725",
+   "subgroup": "never_in_ERIN",
+   "n": 1,
+   "events": 1,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-10729",
+   "subgroup": "also_in_ERIN",
+   "n": 1,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-10729",
+   "subgroup": "never_in_ERIN",
+   "n": 4,
+   "events": 2,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-12451",
+   "subgroup": "also_in_ERIN",
+   "n": 5,
+   "events": 2,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-12451",
+   "subgroup": "never_in_ERIN",
+   "n": 6,
+   "events": 4,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-12452",
+   "subgroup": "also_in_ERIN",
+   "n": 3,
+   "events": 2,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-12452",
+   "subgroup": "never_in_ERIN",
+   "n": 5,
+   "events": 4,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-12453",
+   "subgroup": "also_in_ERIN",
+   "n": 2,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-12453",
+   "subgroup": "never_in_ERIN",
+   "n": 9,
+   "events": 2,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-12455",
+   "subgroup": "also_in_ERIN",
+   "n": 2,
+   "events": 2,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-12455",
+   "subgroup": "never_in_ERIN",
+   "n": 12,
+   "events": 6,
+   "cnv_auroc": 0.417,
+   "cnv_ci": [
+    0.029,
+    0.806
+   ]
+  },
+  {
+   "stratum": "SLX run=SLX-12456",
+   "subgroup": "also_in_ERIN",
+   "n": 4,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-12456",
+   "subgroup": "never_in_ERIN",
+   "n": 3,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-13692",
+   "subgroup": "also_in_ERIN",
+   "n": 4,
+   "events": 3,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-13692",
+   "subgroup": "never_in_ERIN",
+   "n": 7,
+   "events": 6,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-13696",
+   "subgroup": "also_in_ERIN",
+   "n": 1,
+   "events": 1,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-13696",
+   "subgroup": "never_in_ERIN",
+   "n": 2,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16273",
+   "subgroup": "also_in_ERIN",
+   "n": 2,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16273",
+   "subgroup": "never_in_ERIN",
+   "n": 0,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16276",
+   "subgroup": "also_in_ERIN",
+   "n": 0,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16276",
+   "subgroup": "never_in_ERIN",
+   "n": 1,
+   "events": 1,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16277",
+   "subgroup": "also_in_ERIN",
+   "n": 0,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16277",
+   "subgroup": "never_in_ERIN",
+   "n": 2,
+   "events": 2,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16278",
+   "subgroup": "also_in_ERIN",
+   "n": 2,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16278",
+   "subgroup": "never_in_ERIN",
+   "n": 0,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16279",
+   "subgroup": "also_in_ERIN",
+   "n": 0,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16279",
+   "subgroup": "never_in_ERIN",
+   "n": 1,
+   "events": 1,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16691",
+   "subgroup": "also_in_ERIN",
+   "n": 1,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16691",
+   "subgroup": "never_in_ERIN",
+   "n": 2,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16692",
+   "subgroup": "also_in_ERIN",
+   "n": 1,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16692",
+   "subgroup": "never_in_ERIN",
+   "n": 3,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16693",
+   "subgroup": "also_in_ERIN",
+   "n": 1,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16693",
+   "subgroup": "never_in_ERIN",
+   "n": 2,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16694",
+   "subgroup": "also_in_ERIN",
+   "n": 1,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16694",
+   "subgroup": "never_in_ERIN",
+   "n": 1,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16695",
+   "subgroup": "also_in_ERIN",
+   "n": 2,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16695",
+   "subgroup": "never_in_ERIN",
+   "n": 4,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16696",
+   "subgroup": "also_in_ERIN",
+   "n": 2,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16696",
+   "subgroup": "never_in_ERIN",
+   "n": 2,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16697",
+   "subgroup": "also_in_ERIN",
+   "n": 1,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16697",
+   "subgroup": "never_in_ERIN",
+   "n": 0,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16698",
+   "subgroup": "also_in_ERIN",
+   "n": 0,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16698",
+   "subgroup": "never_in_ERIN",
+   "n": 1,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16699",
+   "subgroup": "also_in_ERIN",
+   "n": 2,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16699",
+   "subgroup": "never_in_ERIN",
+   "n": 1,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16700",
+   "subgroup": "also_in_ERIN",
+   "n": 1,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16700",
+   "subgroup": "never_in_ERIN",
+   "n": 1,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16756",
+   "subgroup": "also_in_ERIN",
+   "n": 2,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16756",
+   "subgroup": "never_in_ERIN",
+   "n": 3,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16757",
+   "subgroup": "also_in_ERIN",
+   "n": 1,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16757",
+   "subgroup": "never_in_ERIN",
+   "n": 3,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16781",
+   "subgroup": "also_in_ERIN",
+   "n": 1,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16781",
+   "subgroup": "never_in_ERIN",
+   "n": 2,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16783",
+   "subgroup": "also_in_ERIN",
+   "n": 0,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-16783",
+   "subgroup": "never_in_ERIN",
+   "n": 2,
+   "events": 1,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-17965",
+   "subgroup": "also_in_ERIN",
+   "n": 1,
+   "events": 1,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-17965",
+   "subgroup": "never_in_ERIN",
+   "n": 1,
+   "events": 1,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-17966",
+   "subgroup": "also_in_ERIN",
+   "n": 0,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-17966",
+   "subgroup": "never_in_ERIN",
+   "n": 2,
+   "events": 1,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-17971",
+   "subgroup": "also_in_ERIN",
+   "n": 1,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-17971",
+   "subgroup": "never_in_ERIN",
+   "n": 0,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-17972",
+   "subgroup": "also_in_ERIN",
+   "n": 1,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-17972",
+   "subgroup": "never_in_ERIN",
+   "n": 0,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-17973",
+   "subgroup": "also_in_ERIN",
+   "n": 0,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-17973",
+   "subgroup": "never_in_ERIN",
+   "n": 1,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-17974",
+   "subgroup": "also_in_ERIN",
+   "n": 2,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-17974",
+   "subgroup": "never_in_ERIN",
+   "n": 0,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-17976",
+   "subgroup": "also_in_ERIN",
+   "n": 0,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-17976",
+   "subgroup": "never_in_ERIN",
+   "n": 2,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-17977",
+   "subgroup": "also_in_ERIN",
+   "n": 1,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-17977",
+   "subgroup": "never_in_ERIN",
+   "n": 2,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-17978",
+   "subgroup": "also_in_ERIN",
+   "n": 1,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-17978",
+   "subgroup": "never_in_ERIN",
+   "n": 0,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-17980",
+   "subgroup": "also_in_ERIN",
+   "n": 2,
+   "events": 2,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-17980",
+   "subgroup": "never_in_ERIN",
+   "n": 0,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-9242",
+   "subgroup": "also_in_ERIN",
+   "n": 0,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-9242",
+   "subgroup": "never_in_ERIN",
+   "n": 1,
+   "events": 1,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-9246",
+   "subgroup": "also_in_ERIN",
+   "n": 1,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "SLX run=SLX-9246",
+   "subgroup": "never_in_ERIN",
+   "n": 1,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=Batch 1",
+   "subgroup": "also_in_ERIN",
+   "n": 2,
+   "events": 1,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=Batch 1",
+   "subgroup": "never_in_ERIN",
+   "n": 6,
+   "events": 3,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=Batch 2",
+   "subgroup": "also_in_ERIN",
+   "n": 3,
+   "events": 2,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=Batch 2",
+   "subgroup": "never_in_ERIN",
+   "n": 5,
+   "events": 4,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=Batch 3",
+   "subgroup": "also_in_ERIN",
+   "n": 5,
+   "events": 2,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=Batch 3",
+   "subgroup": "never_in_ERIN",
+   "n": 6,
+   "events": 4,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=Batch 4",
+   "subgroup": "also_in_ERIN",
+   "n": 2,
+   "events": 2,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=Batch 4",
+   "subgroup": "never_in_ERIN",
+   "n": 12,
+   "events": 6,
+   "cnv_auroc": 0.417,
+   "cnv_ci": [
+    0.029,
+    0.806
+   ]
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=Batch 5",
+   "subgroup": "also_in_ERIN",
+   "n": 2,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=Batch 5",
+   "subgroup": "never_in_ERIN",
+   "n": 9,
+   "events": 2,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=Batch 6",
+   "subgroup": "also_in_ERIN",
+   "n": 4,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=Batch 6",
+   "subgroup": "never_in_ERIN",
+   "n": 3,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=Batch 8",
+   "subgroup": "also_in_ERIN",
+   "n": 4,
+   "events": 3,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=Batch 8",
+   "subgroup": "never_in_ERIN",
+   "n": 7,
+   "events": 6,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=Batch 9",
+   "subgroup": "also_in_ERIN",
+   "n": 1,
+   "events": 1,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=Batch 9",
+   "subgroup": "never_in_ERIN",
+   "n": 2,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=Exome Subcohort",
+   "subgroup": "also_in_ERIN",
+   "n": 1,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=Exome Subcohort",
+   "subgroup": "never_in_ERIN",
+   "n": 5,
+   "events": 3,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=NP Pilot Study",
+   "subgroup": "also_in_ERIN",
+   "n": 1,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=NP Pilot Study",
+   "subgroup": "never_in_ERIN",
+   "n": 1,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=Progressor Pilot Study",
+   "subgroup": "also_in_ERIN",
+   "n": 0,
+   "events": 0,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=Progressor Pilot Study",
+   "subgroup": "never_in_ERIN",
+   "n": 1,
+   "events": 1,
+   "cnv_auroc": null,
+   "cnv_ci": null
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=missing",
+   "subgroup": "also_in_ERIN",
+   "n": 29,
+   "events": 3,
+   "cnv_auroc": 0.538,
+   "cnv_ci": [
+    0.143,
+    0.846
+   ]
+  },
+  {
+   "stratum": "Leanne batch (discovery only)=missing",
+   "subgroup": "never_in_ERIN",
+   "n": 39,
+   "events": 7,
+   "cnv_auroc": 0.75,
+   "cnv_ci": [
+    0.5,
+    0.938
+   ]
+  },
+  {
+   "stratum": "read-count tertile=reads_T1_low",
+   "subgroup": "also_in_ERIN",
+   "n": 6,
+   "events": 4,
+   "cnv_auroc": 0.375,
+   "cnv_ci": [
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "stratum": "read-count tertile=reads_T1_low",
+   "subgroup": "never_in_ERIN",
+   "n": 21,
+   "events": 10,
+   "cnv_auroc": 0.682,
+   "cnv_ci": [
+    0.436,
+    0.904
+   ]
+  },
+  {
+   "stratum": "read-count tertile=reads_T2",
+   "subgroup": "also_in_ERIN",
+   "n": 8,
+   "events": 3,
+   "cnv_auroc": 0.133,
+   "cnv_ci": [
+    0.0,
+    0.571
+   ]
+  },
+  {
+   "stratum": "read-count tertile=reads_T2",
+   "subgroup": "never_in_ERIN",
+   "n": 19,
+   "events": 8,
+   "cnv_auroc": 0.682,
+   "cnv_ci": [
+    0.393,
+    0.923
+   ]
+  },
+  {
+   "stratum": "read-count tertile=reads_T3_high",
+   "subgroup": "also_in_ERIN",
+   "n": 11,
+   "events": 4,
+   "cnv_auroc": 0.25,
+   "cnv_ci": [
+    0.0,
+    0.607
+   ]
+  },
+  {
+   "stratum": "read-count tertile=reads_T3_high",
+   "subgroup": "never_in_ERIN",
+   "n": 16,
+   "events": 10,
+   "cnv_auroc": 0.817,
+   "cnv_ci": [
+    0.545,
+    1.0
+   ]
+  }
+ ],
+ "C_4x": "NOT AVAILABLE: no resequenced data exists; see item L",
+ "D_interaction": {
+  "gain_also_in_ERIN": 0.198,
+  "gain_never_in_ERIN": 0.022,
+  "difference": 0.176,
+  "bootstrap_ci_stratified": [
+   0.065,
+   0.303
+  ],
+  "n_boot": 2000,
+  "seed": 0,
+  "perm_sizes_only": {
+   "n_valid_perms": 2000,
+   "p_two_sided": 0.001,
+   "p_one_sided_ge": 0.001,
+   "null_q025_q975": [
+    -0.098,
+    0.095
+   ]
+  },
+  "perm_sizes_and_events": {
+   "n_valid_perms": 2000,
+   "p_two_sided": 0.0015,
+   "p_one_sided_ge": 0.0015,
+   "null_q025_q975": [
+    -0.103,
+    0.098
+   ]
+  },
+  "n_events": {
+   "also_in_ERIN": [
+    54,
+    14
+   ],
+   "never_in_ERIN": [
+    96,
+    36
+   ]
+  }
+ },
+ "E_interval": {
+  "n_progressors": 50,
+  "n_with_interval": 50,
+  "median_days": 1096.0,
+  "iqr_days": [
+   539.5,
+   2080.5
+  ],
+  "min_max": [
+   118.0,
+   5262.0
+  ],
+  "hist_bins": {
+   "0-6m": 6,
+   "6-12m": 2,
+   "12-24m": 6,
+   "24-36m": 10,
+   "36-60m": 10,
+   ">60m": 16
+  },
+  "definition": "earliest release row date -> date of the endpoint biopsy (positive row date + DaysToNextBiopsy, earliest positive row)",
+  "secondary_DaysFromCurrentToEvent_min_per_progressor": {
+   "median": 728.5,
+   "n": 30
+  },
+  "progressors_with_single_row": 9
+ },
+ "E_exclusions": [
+  {
+   "exclusion": "none",
+   "n": 150,
+   "events": 50,
+   "head": 0.753,
+   "head_ci": [
+    0.659,
+    0.84
+   ],
+   "fuse2": 0.783,
+   "fuse2_ci": [
+    0.7,
+    0.854
+   ],
+   "fuse3": 0.85,
+   "fuse3_ci": [
+    0.779,
+    0.909
+   ],
+   "gain": 0.067,
+   "gain_ci": [
+    0.022,
+    0.114
+   ]
+  },
+  {
+   "exclusion": "exclude progressors with event <= 6 m from first row",
+   "n": 144,
+   "events": 44,
+   "head": 0.776,
+   "head_ci": [
+    0.68,
+    0.861
+   ],
+   "fuse2": 0.794,
+   "fuse2_ci": [
+    0.715,
+    0.866
+   ],
+   "fuse3": 0.864,
+   "fuse3_ci": [
+    0.797,
+    0.92
+   ],
+   "gain": 0.07,
+   "gain_ci": [
+    0.03,
+    0.113
+   ]
+  },
+  {
+   "exclusion": "exclude progressors with event <= 12 m from first row",
+   "n": 142,
+   "events": 42,
+   "head": 0.767,
+   "head_ci": [
+    0.672,
+    0.856
+   ],
+   "fuse2": 0.791,
+   "fuse2_ci": [
+    0.711,
+    0.871
+   ],
+   "fuse3": 0.859,
+   "fuse3_ci": [
+    0.793,
+    0.918
+   ],
+   "gain": 0.068,
+   "gain_ci": [
+    0.026,
+    0.112
+   ]
+  },
+  {
+   "exclusion": "SECONDARY: drop positive ROWS with DaysToNextBiopsy <= 183 (patient keeps other rows)",
+   "n": 144,
+   "events": 44,
+   "rows_kept": 675,
+   "head": 0.772,
+   "head_ci": [
+    0.677,
+    0.857
+   ],
+   "fuse2": 0.775,
+   "fuse2_ci": [
+    0.693,
+    0.85
+   ],
+   "fuse3": 0.856,
+   "fuse3_ci": [
+    0.786,
+    0.915
+   ],
+   "gain": 0.081,
+   "gain_ci": [
+    0.038,
+    0.126
+   ]
+  },
+  {
+   "exclusion": "SECONDARY: drop positive ROWS with DaysToNextBiopsy <= 365",
+   "n": 142,
+   "events": 42,
+   "rows_kept": 660,
+   "head": 0.727,
+   "head_ci": [
+    0.624,
+    0.824
+   ],
+   "fuse2": 0.74,
+   "fuse2_ci": [
+    0.647,
+    0.829
+   ],
+   "fuse3": 0.801,
+   "fuse3_ci": [
+    0.717,
+    0.879
+   ],
+   "gain": 0.062,
+   "gain_ci": [
+    0.013,
+    0.111
+   ]
+  }
+ ],
+ "F_arms": {
+  "release_families": [
+   "cnv_only",
+   "coattention_fusion",
+   "early_fusion",
+   "image_only",
+   "intermediate_fusion",
+   "late_mean",
+   "late_stack_logit"
+  ],
+  "clinical_arm_exists": false,
+  "grade_coding": "pre_event_cohort.Label per row: 0 NDBE, 1 IND, 2 LGD (no HGD+ rows in the 707); MaxPathologySoFar = max grade up to the row",
+  "rows": [
+   {
+    "arm": "grade_arm",
+    "n": 150,
+    "events": 50,
+    "auroc": 0.682,
+    "ci": [
+     0.585,
+     0.778
+    ]
+   },
+   {
+    "arm": "grade_plus_head",
+    "n": 150,
+    "events": 50,
+    "auroc": 0.797,
+    "ci": [
+     0.713,
+     0.873
+    ]
+   },
+   {
+    "arm": "grade_maxsofar_arm",
+    "n": 150,
+    "events": 50,
+    "auroc": 0.671,
+    "ci": [
+     0.574,
+     0.77
+    ]
+   },
+   {
+    "arm": "grade_maxsofar_plus_head",
+    "n": 150,
+    "events": 50,
+    "auroc": 0.796,
+    "ci": [
+     0.711,
+     0.872
+    ]
+   },
+   {
+    "arm": "fuse2_plus_grade",
+    "n": 150,
+    "events": 50,
+    "auroc": 0.843,
+    "ci": [
+     0.776,
+     0.901
+    ]
+   },
+   {
+    "arm": "fuse3_plus_grade",
+    "n": 150,
+    "events": 50,
+    "auroc": 0.885,
+    "ci": [
+     0.83,
+     0.934
+    ]
+   },
+   {
+    "arm": "head",
+    "n": 150,
+    "events": 50,
+    "auroc": 0.753,
+    "ci": [
+     0.659,
+     0.84
+    ]
+   },
+   {
+    "arm": "fuse2",
+    "n": 150,
+    "events": 50,
+    "auroc": 0.783,
+    "ci": [
+     0.7,
+     0.854
+    ]
+   },
+   {
+    "arm": "fuse3",
+    "n": 150,
+    "events": 50,
+    "auroc": 0.85,
+    "ci": [
+     0.779,
+     0.909
+    ]
+   },
+   {
+    "arm": "grade_raw_max",
+    "n": 150,
+    "events": 50,
+    "auroc": 0.687,
+    "ci": [
+     0.601,
+     0.768
+    ]
+   }
+  ]
+ },
+ "F_within_NDBE": [
+  {
+   "definition": "first release row NDBE (Label 0)",
+   "n": 121,
+   "events": 33,
+   "head": 0.74,
+   "head_ci": [
+    0.625,
+    0.845
+   ],
+   "fuse2": 0.832,
+   "fuse2_ci": [
+    0.749,
+    0.904
+   ],
+   "fuse3": 0.881,
+   "fuse3_ci": [
+    0.815,
+    0.938
+   ],
+   "img": 0.777,
+   "img_ci": [
+    0.674,
+    0.866
+   ],
+   "cnv": 0.71,
+   "cnv_ci": [
+    0.595,
+    0.816
+   ],
+   "gain": 0.049,
+   "gain_ci": [
+    0.009,
+    0.091
+   ]
+  },
+  {
+   "definition": "all release rows NDBE",
+   "n": 97,
+   "events": 21,
+   "head": 0.724,
+   "head_ci": [
+    0.573,
+    0.853
+   ],
+   "fuse2": 0.867,
+   "fuse2_ci": [
+    0.773,
+    0.943
+   ],
+   "fuse3": 0.916,
+   "fuse3_ci": [
+    0.846,
+    0.969
+   ],
+   "img": 0.781,
+   "img_ci": [
+    0.654,
+    0.893
+   ],
+   "cnv": 0.758,
+   "cnv_ci": [
+    0.636,
+    0.866
+   ],
+   "gain": 0.049,
+   "gain_ci": [
+    0.004,
+    0.101
+   ]
+  }
+ ],
+ "G_sanity": {
+  "metric": "slide-level AUROC of the head's imputed P(LGD+) against the binary pathologist grade LGD+ (Label >= 2) on the 707 release rows; the 707 rows contain no HGD+ so LGD+ = LGD",
+  "n_rows": 707,
+  "n_LGD_rows": 87,
+  "grade_source_of_Label_707": {
+   "scraped_confirmed": 547,
+   "master_label_fallback": 155,
+   "scraped_research": 5
+  },
+  "observed": {
+   "pass1": 0.54,
+   "p32b": 0.619,
+   "repeat": 0.602,
+   "perm": 0.566,
+   "noov": 0.597
+  },
+  "vs_db_confirmed_code": {
+   "n_rows_with_code": 418,
+   "n_LGDplus_by_code": 62,
+   "p32b": 0.629,
+   "noov": 0.606
+  },
+  "read_vs_read_on_coded_rows": {
+   "Label_vs_DBcode_two_tier_agreement": 0.993,
+   "kappa": 0.972,
+   "auroc_Label_as_score_vs_DBcode": 0.996,
+   "n": 418,
+   "note": "GradeSource shows Label is itself 'scraped_confirmed' (the DB code) for most rows, so this is not an independent second pathologist read"
+  },
+  "head_vs_each_read_same_rows": {
+   "vs_Label": {
+    "p32b": 0.64,
+    "noov": 0.621
+   },
+   "vs_DBcode": {
+    "p32b": 0.629,
+    "noov": 0.606
+   }
+  },
+  "second_pathologist_read": "NONE: highestgradedysresearch is 7 (not done) on 325/327 matched reports; no other pathologist re-read table exists in the release, the SWGCohort folder or the DB export"
+ },
+ "I_selection": {
+  "n_candidate_third_arms": 28,
+  "candidates_observed_gain": {
+   "pass1_0.88um:grade_LGDplus": 0.007,
+   "pass1_0.88um:grade_HGDplus": -0.012,
+   "pass1_0.88um:im_present": 0.001,
+   "pass1_0.88um:inflammation_mod_severe": 0.011,
+   "pass1_0.88um:inflammation_any": 0.032,
+   "pass1_0.88um:ulceration": -0.046,
+   "pass1_0.88um:squamous_only": -0.046,
+   "pass1_0.88um:gastric_present": -0.03,
+   "pass1_0.88um:treatment_effect": -0.059,
+   "pass1_0.88um:p53_abnormal": -0.001,
+   "pass1_0.88um:certainty_not_definite": -0.051,
+   "pass1_0.88um:site_goj_or_stomach": -0.009,
+   "pass1_0.88um:specimen_resection": -0.008,
+   "pass1_0.88um:logistic_all13": 0.02,
+   "pass2_0.5um:grade_LGDplus": 0.069,
+   "pass2_0.5um:im_present": -0.007,
+   "pass2_0.5um:treatment_effect": -0.005,
+   "pass2_0.5um:ulceration": -0.078,
+   "pass2_0.5um:squamous_only": -0.042,
+   "pass2_0.5um:inflammation_mod_severe": 0.037,
+   "pass2_0.5um:logistic_all6": 0.05,
+   "pass2_0.5um:logistic_without_grade_LGDplus": 0.027,
+   "pass2_0.5um:logistic_without_im_present": 0.053,
+   "pass2_0.5um:logistic_without_treatment_effect": 0.058,
+   "pass2_0.5um:logistic_without_ulceration": 0.048,
+   "pass2_0.5um:logistic_without_squamous_only": 0.05,
+   "pass2_0.5um:logistic_without_inflammation_mod_severe": 0.043,
+   "pass2_0.5um:img2_rep02_ensemble_control": 0.018
+  },
+  "selected_max": "pass2_0.5um:grade_LGDplus",
+  "t_obs_max": 0.069,
+  "p_selection_adjusted_max_over_all_candidates": 0.069,
+  "p_unadjusted_for_selected": 0.0055,
+  "canonical_noov_grade_gain": 0.067,
+  "p_canonical_against_max_null": 0.078,
+  "what_was_maximised_over": "every third arm ever fused with image + CNV on SWG: 13 pass-1 single fields (0.88 um imputation), pass-1 all-13 logistic, 6 pass-2 single fields (0.5 um), pass-2 all-6 logistic, 6 pass-2 leave-one-field-out logistics, the rep02 image ensemble control; fusion rule fixed (fold-local z-mean) so not maximised over",
+  "n_perm": 2000,
+  "seed": 0
+ },
+ "J_p32_erin_cis_2000": [
+  {
+   "run": "p32b_fields",
+   "field": "grade_LGDplus",
+   "n_cases": 2291,
+   "n_patients": 1613,
+   "pos": 622,
+   "auroc": 0.887,
+   "ci_2000_patient_clustered": [
+    0.868,
+    0.905
+   ]
+  },
+  {
+   "run": "p32b_fields",
+   "field": "im_present",
+   "n_cases": 2224,
+   "n_patients": 1564,
+   "pos": 1436,
+   "auroc": 0.891,
+   "ci_2000_patient_clustered": [
+    0.877,
+    0.904
+   ]
+  },
+  {
+   "run": "p32b_fields",
+   "field": "inflammation_mod_severe",
+   "n_cases": 1745,
+   "n_patients": 1292,
+   "pos": 343,
+   "auroc": 0.738,
+   "ci_2000_patient_clustered": [
+    0.707,
+    0.77
+   ]
+  },
+  {
+   "run": "p32b_fields",
+   "field": "squamous_only",
+   "n_cases": 2291,
+   "n_patients": 1614,
+   "pos": 116,
+   "auroc": 0.881,
+   "ci_2000_patient_clustered": [
+    0.854,
+    0.908
+   ]
+  },
+  {
+   "run": "p32b_fields",
+   "field": "treatment_effect",
+   "n_cases": 2293,
+   "n_patients": 1614,
+   "pos": 445,
+   "auroc": 0.819,
+   "ci_2000_patient_clustered": [
+    0.796,
+    0.843
+   ]
+  },
+  {
+   "run": "p32b_fields",
+   "field": "ulceration",
+   "n_cases": 2114,
+   "n_patients": 1505,
+   "pos": 318,
+   "auroc": 0.858,
+   "ci_2000_patient_clustered": [
+    0.831,
+    0.883
+   ]
+  },
+  {
+   "run": "p32_head_noov",
+   "field": "grade_LGDplus",
+   "n_cases": 2247,
+   "n_patients": 1580,
+   "pos": 620,
+   "auroc": 0.89,
+   "ci_2000_patient_clustered": [
+    0.872,
+    0.907
+   ]
+  },
+  {
+   "run": "p32_head_noov",
+   "field": "inflammation_mod_severe",
+   "n_cases": 1712,
+   "n_patients": 1269,
+   "pos": 342,
+   "auroc": 0.747,
+   "ci_2000_patient_clustered": [
+    0.715,
+    0.778
+   ]
+  },
+  {
+   "run": "p32_fields_g0",
+   "field": "grade_HGDplus",
+   "n_cases": 1642,
+   "n_patients": 1213,
+   "pos": 482,
+   "auroc": 0.911,
+   "ci_2000_patient_clustered": [
+    0.892,
+    0.931
+   ]
+  },
+  {
+   "run": "p32_fields_g0",
+   "field": "grade_LGDplus",
+   "n_cases": 1642,
+   "n_patients": 1213,
+   "pos": 644,
+   "auroc": 0.861,
+   "ci_2000_patient_clustered": [
+    0.839,
+    0.882
+   ]
+  },
+  {
+   "run": "p32_fields_g0",
+   "field": "im_present",
+   "n_cases": 2192,
+   "n_patients": 1542,
+   "pos": 1406,
+   "auroc": 0.897,
+   "ci_2000_patient_clustered": [
+    0.884,
+    0.91
+   ]
+  },
+  {
+   "run": "p32_fields_g1",
+   "field": "inflammation_any",
+   "n_cases": 1846,
+   "n_patients": 1352,
+   "pos": 1517,
+   "auroc": 0.607,
+   "ci_2000_patient_clustered": [
+    0.57,
+    0.643
+   ]
+  },
+  {
+   "run": "p32_fields_g1",
+   "field": "inflammation_mod_severe",
+   "n_cases": 1846,
+   "n_patients": 1352,
+   "pos": 373,
+   "auroc": 0.742,
+   "ci_2000_patient_clustered": [
+    0.709,
+    0.77
+   ]
+  },
+  {
+   "run": "p32_fields_g1",
+   "field": "squamous_only",
+   "n_cases": 2291,
+   "n_patients": 1614,
+   "pos": 127,
+   "auroc": 0.92,
+   "ci_2000_patient_clustered": [
+    0.893,
+    0.944
+   ]
+  },
+  {
+   "run": "p32_fields_g1",
+   "field": "ulceration",
+   "n_cases": 2154,
+   "n_patients": 1527,
+   "pos": 320,
+   "auroc": 0.847,
+   "ci_2000_patient_clustered": [
+    0.817,
+    0.875
+   ]
+  },
+  {
+   "run": "p32_fields_g2",
+   "field": "gastric_present",
+   "n_cases": 1182,
+   "n_patients": 958,
+   "pos": 831,
+   "auroc": 0.781,
+   "ci_2000_patient_clustered": [
+    0.749,
+    0.812
+   ]
+  },
+  {
+   "run": "p32_fields_g2",
+   "field": "p53_abnormal",
+   "n_cases": 473,
+   "n_patients": 368,
+   "pos": 193,
+   "auroc": 0.749,
+   "ci_2000_patient_clustered": [
+    0.701,
+    0.795
+   ]
+  },
+  {
+   "run": "p32_fields_g2",
+   "field": "treatment_effect",
+   "n_cases": 2293,
+   "n_patients": 1614,
+   "pos": 522,
+   "auroc": 0.821,
+   "ci_2000_patient_clustered": [
+    0.799,
+    0.842
+   ]
+  },
+  {
+   "run": "p32_fields_g3",
+   "field": "certainty_not_definite",
+   "n_cases": 2289,
+   "n_patients": 1613,
+   "pos": 78,
+   "auroc": 0.538,
+   "ci_2000_patient_clustered": [
+    0.464,
+    0.612
+   ]
+  },
+  {
+   "run": "p32_fields_g3",
+   "field": "site_goj_or_stomach",
+   "n_cases": 2293,
+   "n_patients": 1614,
+   "pos": 612,
+   "auroc": 0.723,
+   "ci_2000_patient_clustered": [
+    0.697,
+    0.749
+   ]
+  },
+  {
+   "run": "p32_fields_g3",
+   "field": "specimen_resection",
+   "n_cases": 2293,
+   "n_patients": 1614,
+   "pos": 91,
+   "auroc": 1.0,
+   "ci_2000_patient_clustered": [
+    1.0,
+    1.0
+   ]
+  }
+ ],
+ "K_folds": {
+  "swg_rep01_patients_in_more_than_one_outer_fold": 0,
+  "swg_rep02_patients_in_more_than_one_outer_fold": 0,
+  "swg_inner_folds": {
+   "image_only": {
+    "patients_in_more_than_one_inner_fold": 0,
+    "note": "inner_fold_assignments.csv is keyed by patient_id: inner folds are patient-level by construction"
+   },
+   "cnv_only": {
+    "patients_in_more_than_one_inner_fold": 0,
+    "note": "inner_fold_assignments.csv is keyed by patient_id: inner folds are patient-level by construction"
+   }
+  },
+  "erin_tasks": {
+   "T1": {
+    "n_units": 48,
+    "n_patients": 48,
+    "patients_in_more_than_one_fold": 0,
+    "units_assigned": 48
+   },
+   "T2a": {
+    "n_units": 185,
+    "n_patients": 156,
+    "patients_in_more_than_one_fold": 0,
+    "units_assigned": 185
+   },
+   "T2b": {
+    "n_units": 183,
+    "n_patients": 155,
+    "patients_in_more_than_one_fold": 0,
+    "units_assigned": 183
+   },
+   "T2c": {
+    "n_units": 389,
+    "n_patients": 289,
+    "patients_in_more_than_one_fold": 0,
+    "units_assigned": 389
+   },
+   "T3a": {
+    "n_units": 1274,
+    "n_patients": 1056,
+    "patients_in_more_than_one_fold": 0,
+    "units_assigned": 1274
+   },
+   "T3a_bio": {
+    "n_units": 1203,
+    "n_patients": 1001,
+    "patients_in_more_than_one_fold": 0,
+    "units_assigned": 1203
+   },
+   "T3b": {
+    "n_units": 1274,
+    "n_patients": 1056,
+    "patients_in_more_than_one_fold": 0,
+    "units_assigned": 1274
+   },
+   "T3b_bio": {
+    "n_units": 1203,
+    "n_patients": 1001,
+    "patients_in_more_than_one_fold": 0,
+    "units_assigned": 1203
+   },
+   "T4": {
+    "n_units": 1147,
+    "n_patients": 874,
+    "patients_in_more_than_one_fold": 0,
+    "units_assigned": 1147
+   }
+  },
+  "p32_erin_heads": {
+   "n_cases": 2293,
+   "n_patients": 1614,
+   "patients_in_more_than_one_fold": 0
+  },
+  "aggregation": {
+   "swg_unit": "release row = one slide + one CNV profile (707 rows; 26 rows share a CNV profile with another row)",
+   "patient_score": "max over the patient's rows of the arm score (after fold-local z for fused arms)",
+   "patient_label": "max of y_progressor over rows",
+   "baseline": "the release has no single baseline row: every strict pre-event row of a patient is a unit in training and in evaluation; 'baseline' in items C/E means the earliest release row",
+   "training": "rows of one patient always share an outer fold (assertion above) so no patient is split across train/test"
+  }
+ },
+ "L_ours": {
+  "endpoint_name": "NextBiopsyProgression_LGD2plus",
+  "endpoint_rule_code": "src/barrett/labels/lgd2.py derive_next_biopsy_lgd2plus: positive if next biopsy label >= HGD, or next biopsy = LGD and current LGD streak >= 1 (two consecutive LGD)",
+  "eligibility": "strict pre-event rows only: exclusion_counts {\"\": 707, \"at_event\": 183, \"endpoint_not_evaluable\": 38, \"post_event\": 31}",
+  "rows_patients": [
+   707,
+   150
+  ],
+  "progressor_patients": 50,
+  "positive_rows": 107,
+  "split": "5-fold patient-level, split_seed 20260713; nested inner CV per outer fold",
+  "primary_metric_release": "auprc_mean",
+  "cnv_representation": "QDNAseq 50 kb bins -> arm-level features (features_arms.csv, 39 arm columns) + complexity cx",
+  "depth_statement": "0.4x stated in docs/NUMBERS.md (Leanne's slide, 6 Mar 2026); not verifiable from data here; read counts from the sequencing sheet summarised in item C",
+  "reads_median_per_sample_sheet": 21512922.0,
+  "reads_n_samples_with_value": 500,
+  "killcoyne_discovery_overlap_by_cnv_id": 504,
+  "validation_sheet_cnv_ids": 203,
+  "code_commit_release": "5cfbf0cd8f6cc2b185a8e16c791dbe6b584339c2",
+  "fold1_git_commit": "98ba86820b3a3a33cd61f1f6724f20da38e9c8da"
+ },
+ "L_4x": {
+  "status": "NOT AVAILABLE",
+  "looked": [
+   "/mnt/scratche/fast/fmlab/datasets/imaging/SWGCohort (50kb, copy_number_hg38/train, dna_seq_bam: 1,035 BAMs, validation_genomics: id lists only)",
+   "barretts_training/leanne_files_25_03_2026 (777 discovery + 268 validation sample sheets, no depth column)",
+   "docs/NUMBERS.md, docs/status_ledger_2026-09-24.md item 2, questions_for_people Q2 (question to Leanne, unanswered)"
+  ]
+ },
+ "M_calibration": {
+  "rows": [
+   {
+    "arm": "image_only_prob",
+    "n": 150,
+    "events": 50,
+    "auroc": 0.731,
+    "mean_pred": 0.549,
+    "calib_slope": 0.616,
+    "calib_intercept_at_slope_fit": -0.992,
+    "calib_in_the_large": -0.888,
+    "brier": 0.245,
+    "brier_ci": [
+     0.206,
+     0.287
+    ],
+    "net_benefit": {
+     "0.1": 0.262,
+     "0.15": 0.227,
+     "0.2": 0.183,
+     "0.25": 0.144,
+     "0.3": 0.1,
+     "0.35": 0.074,
+     "0.4": 0.033,
+     "0.45": -0.007,
+     "0.5": -0.04
+    }
+   },
+   {
+    "arm": "late_mean_prob_release",
+    "n": 150,
+    "events": 50,
+    "auroc": 0.774,
+    "mean_pred": 0.375,
+    "calib_slope": 1.78,
+    "calib_intercept_at_slope_fit": 0.104,
+    "calib_in_the_large": -0.18,
+    "brier": 0.184,
+    "brier_ci": [
+     0.162,
+     0.207
+    ],
+    "net_benefit": {
+     "0.1": 0.26,
+     "0.15": 0.22,
+     "0.2": 0.197,
+     "0.25": 0.156,
+     "0.3": 0.135,
+     "0.35": 0.119,
+     "0.4": 0.109,
+     "0.45": 0.098,
+     "0.5": 0.053
+    }
+   },
+   {
+    "arm": "fuse2_z_plattCV",
+    "n": 150,
+    "events": 50,
+    "auroc": 0.777,
+    "mean_pred": 0.239,
+    "calib_slope": 1.292,
+    "calib_intercept_at_slope_fit": 0.872,
+    "calib_in_the_large": 0.464,
+    "brier": 0.189,
+    "brier_ci": [
+     0.152,
+     0.225
+    ],
+    "net_benefit": {
+     "0.1": 0.271,
+     "0.15": 0.242,
+     "0.2": 0.19,
+     "0.25": 0.124,
+     "0.3": 0.135,
+     "0.35": 0.111,
+     "0.4": 0.104,
+     "0.45": 0.077,
+     "0.5": 0.053
+    }
+   },
+   {
+    "arm": "fuse3_head_z_plattCV",
+    "n": 150,
+    "events": 50,
+    "auroc": 0.845,
+    "mean_pred": 0.246,
+    "calib_slope": 1.72,
+    "calib_intercept_at_slope_fit": 1.338,
+    "calib_in_the_large": 0.428,
+    "brier": 0.168,
+    "brier_ci": [
+     0.132,
+     0.204
+    ],
+    "net_benefit": {
+     "0.1": 0.277,
+     "0.15": 0.25,
+     "0.2": 0.215,
+     "0.25": 0.178,
+     "0.3": 0.16,
+     "0.35": 0.125,
+     "0.4": 0.091,
+     "0.45": 0.089,
+     "0.5": 0.08
+    }
+   },
+   {
+    "arm": "head_prob",
+    "n": 150,
+    "events": 50,
+    "auroc": 0.753,
+    "mean_pred": 0.749,
+    "calib_slope": 1.06,
+    "calib_intercept_at_slope_fit": -2.187,
+    "calib_in_the_large": -1.785,
+    "brier": 0.36,
+    "brier_ci": [
+     0.319,
+     0.401
+    ],
+    "net_benefit": {
+     "0.1": 0.259,
+     "0.15": 0.216,
+     "0.2": 0.167,
+     "0.25": 0.111,
+     "0.3": 0.048,
+     "0.35": -0.026,
+     "0.4": -0.109,
+     "0.45": -0.202,
+     "0.5": -0.32
+    }
+   }
+  ],
+  "treat_all_net_benefit": {
+   "0.1": 0.259,
+   "0.15": 0.216,
+   "0.2": 0.167,
+   "0.25": 0.111,
+   "0.3": 0.048,
+   "0.35": -0.026,
+   "0.4": -0.111,
+   "0.45": -0.212,
+   "0.5": -0.333
+  },
+  "treat_none": 0.0,
+  "prevalence": 0.333,
+  "note": "fused arms are z-score means with no probability scale; fuse2/fuse3 are put on a probability scale by a Platt logistic fitted on the other four outer folds (CV), then max over rows; image_only and late_mean are release probabilities"
+ },
+ "M_p53": {
+  "source": "slide_matching.csv p53IHC per slide (normal/aberrant/blank); patient = aberrant if any release slide aberrant, normal if any normal and none aberrant",
+  "n_patients_with_ihc": 75,
+  "events": 38,
+  "n_aberrant": 16,
+  "p53_auroc": [
+   0.684,
+   0.602,
+   0.764
+  ],
+  "head_auroc_same_patients": [
+   0.734,
+   0.607,
+   0.851
+  ],
+  "p53_plus_head_rankmean": [
+   0.738,
+   0.61,
+   0.855
+  ],
+  "delta_p53_plus_head_minus_p53": [
+   -0.044,
+   0.156
+  ],
+  "fuse2_same_patients": [
+   0.699,
+   0.574,
+   0.82
+  ],
+  "fuse2_plus_p53_rankmean": [
+   0.772,
+   0.663,
+   0.877
+  ],
+  "delta_fuse2_plus_p53_minus_fuse2": [
+   0.022,
+   0.143
+  ],
+  "note": "rank-mean combination (no fitted weights) because a fitted combination on 150 patients would need its own CV"
+ }
+}

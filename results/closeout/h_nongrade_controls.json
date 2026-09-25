@@ -1,0 +1,232 @@
+{
+ "rows": [
+  {
+   "head": "grade_LGDplus_leakfree_CANONICAL",
+   "n": 150,
+   "events": 50,
+   "erin_oof_auroc": 0.8898,
+   "erin_n_pos": [
+    2247,
+    620
+   ],
+   "erin_training_cases": 2249,
+   "head_alone_swg": 0.753,
+   "head_ci": [
+    0.659,
+    0.84
+   ],
+   "fuse2": 0.783,
+   "fuse3": 0.85,
+   "fuse3_ci": [
+    0.779,
+    0.909
+   ],
+   "gain": 0.067,
+   "gain_ci": [
+    0.022,
+    0.114
+   ],
+   "perm_p": 0.0025
+  },
+  {
+   "head": "inflammation_mod_severe_leakfree",
+   "n": 150,
+   "events": 50,
+   "erin_oof_auroc": 0.7466,
+   "erin_n_pos": [
+    1712,
+    342
+   ],
+   "erin_training_cases": 2249,
+   "head_alone_swg": 0.738,
+   "head_ci": [
+    0.647,
+    0.815
+   ],
+   "fuse2": 0.783,
+   "fuse3": 0.82,
+   "fuse3_ci": [
+    0.741,
+    0.886
+   ],
+   "gain": 0.038,
+   "gain_ci": [
+    -0.004,
+    0.08
+   ],
+   "perm_p": 0.0575
+  },
+  {
+   "head": "treatment_effect_leakfree_NEW",
+   "n": 150,
+   "events": 50,
+   "erin_oof_auroc": 0.8339,
+   "erin_n_pos": [
+    2249,
+    433
+   ],
+   "erin_training_cases": 2249,
+   "head_alone_swg": 0.55,
+   "head_ci": [
+    0.448,
+    0.649
+   ],
+   "fuse2": 0.783,
+   "fuse3": 0.754,
+   "fuse3_ci": [
+    0.671,
+    0.831
+   ],
+   "gain": -0.029,
+   "gain_ci": [
+    -0.075,
+    0.014
+   ],
+   "perm_p": 0.8671
+  },
+  {
+   "head": "im_present_leakfree_NEW",
+   "n": 150,
+   "events": 50,
+   "erin_oof_auroc": 0.8935,
+   "erin_n_pos": [
+    2180,
+    1411
+   ],
+   "erin_training_cases": 2249,
+   "head_alone_swg": 0.389,
+   "head_ci": [
+    0.299,
+    0.487
+   ],
+   "fuse2": 0.783,
+   "fuse3": 0.779,
+   "fuse3_ci": [
+    0.699,
+    0.854
+   ],
+   "gain": -0.004,
+   "gain_ci": [
+    -0.053,
+    0.039
+   ],
+   "perm_p": 0.5887
+  },
+  {
+   "head": "grade_permuted_labels_leakfree_NEW",
+   "n": 150,
+   "events": 50,
+   "erin_oof_auroc": 0.4914,
+   "erin_n_pos": [
+    2247,
+    620
+   ],
+   "erin_training_cases": 2249,
+   "head_alone_swg": 0.583,
+   "head_ci": [
+    0.486,
+    0.681
+   ],
+   "fuse2": 0.783,
+   "fuse3": 0.782,
+   "fuse3_ci": [
+    0.694,
+    0.858
+   ],
+   "gain": -0.001,
+   "gain_ci": [
+    -0.043,
+    0.045
+   ],
+   "perm_p": 0.5252
+  },
+  {
+   "head": "grade_permuted_labels_incl_overlap",
+   "n": 150,
+   "events": 50,
+   "erin_oof_auroc": 0.4874,
+   "erin_n_pos": [
+    2291,
+    622
+   ],
+   "erin_training_cases": 2293,
+   "head_alone_swg": 0.449,
+   "head_ci": [
+    0.354,
+    0.552
+   ],
+   "fuse2": 0.783,
+   "fuse3": 0.677,
+   "fuse3_ci": [
+    0.589,
+    0.768
+   ],
+   "gain": -0.105,
+   "gain_ci": [
+    -0.17,
+    -0.037
+   ],
+   "perm_p": 1.0
+  },
+  {
+   "head": "treatment_effect_incl_overlap_pass2",
+   "n": 150,
+   "events": 50,
+   "erin_oof_auroc": 0.8194,
+   "erin_n_pos": [
+    2293,
+    445
+   ],
+   "erin_training_cases": 2293,
+   "head_alone_swg": 0.556,
+   "head_ci": [
+    0.462,
+    0.652
+   ],
+   "fuse2": 0.783,
+   "fuse3": 0.778,
+   "fuse3_ci": [
+    0.698,
+    0.851
+   ],
+   "gain": -0.005,
+   "gain_ci": [
+    -0.049,
+    0.038
+   ],
+   "perm_p": 0.5802
+  },
+  {
+   "head": "im_present_incl_overlap_pass2",
+   "n": 150,
+   "events": 50,
+   "erin_oof_auroc": 0.8909,
+   "erin_n_pos": [
+    2224,
+    1436
+   ],
+   "erin_training_cases": 2293,
+   "head_alone_swg": 0.385,
+   "head_ci": [
+    0.293,
+    0.483
+   ],
+   "fuse2": 0.783,
+   "fuse3": 0.775,
+   "fuse3_ci": [
+    0.695,
+    0.853
+   ],
+   "gain": -0.007,
+   "gain_ci": [
+    -0.059,
+    0.036
+   ],
+   "perm_p": 0.6367
+  }
+ ],
+ "n_boot": 2000,
+ "n_perm": 2000,
+ "seed": 0,
+ "fusion": "fold-local z-mean of image_only OOF, cnv_only OOF and the head's imputed probability; patient = max over rows"
+}
