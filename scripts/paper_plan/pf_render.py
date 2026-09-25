@@ -15,7 +15,7 @@ T0 = M["F3"]["table_all_150"] if M else None; S1 = F1["subsets"]["all_150"] if F
 P(f"""# BE paper plan follow-up (F1–F9)
 
 ## 1. Header
-- Date: 25–26 September 2026. Commit at start: `38a83f2`. Pre-specification commit: `{PRESPEC}` (verbatim in §6). Script commits: `a8e5311`, `367d512`, `2d….` (see git log). Results commit (result files, figures, scripts): `{RESC}`; this rendered text is the next commit. Frozen release only.
+- Date: 25–26 September 2026. Commit at start: `38a83f2`. Pre-specification commit: `{PRESPEC}` (verbatim in §6). Script commits: `a8e5311`, `367d512`, `f99bde9`, `7d62569`. Results commit (result files, figures, scripts): `{RESC}`; this rendered text is the next commit. Frozen release only.
 - Scripts (`scripts/paper_plan/`): `pf_cnv_killcoyne.py` (F1), `pf_main.py` (F2–F5, F6a, attention mass, F9), `pf_gpu.py` (F6b/c, F7, F8 train-vs-held-out), `pf_latent_figs.py` (F8), `pf_render.py`, `pf_check_report.py`.
 - Results (`results/paper_plan/`): `f1_cnv_killcoyne.json`, `followup_main.json`, `f6_image_tiles.json`, `f7_modality_ablation.json`, `f8_train_vs_heldout.json`, `f8_probe_vs_output.json`; figures `figs/km_v2/`, `figs/latent_folds/`. Cluster-only rows: `feasibility/paper_plan/` (F1 OOF, strata, patient scores, later-HGD list, F6 draws, F6c checkpoints).
 - Conventions as in `docs/paper_plan_answers.md`.
