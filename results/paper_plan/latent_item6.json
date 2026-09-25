@@ -1,0 +1,212 @@
+{
+ "image_only": {
+  "dim": 256,
+  "n": 150,
+  "events": 50,
+  "probe_auroc": 0.784,
+  "probe_ci": [
+   0.699,
+   0.862
+  ],
+  "knn10_auroc": 0.786,
+  "knn10_ci": [
+   0.697,
+   0.861
+  ],
+  "silhouette_heldout_per_fold": [
+   0.095,
+   0.175,
+   0.06,
+   0.144,
+   0.114
+  ],
+  "silhouette_mean": 0.118
+ },
+ "cnv_only": {
+  "dim": 64,
+  "n": 150,
+  "events": 50,
+  "probe_auroc": 0.713,
+  "probe_ci": [
+   0.617,
+   0.797
+  ],
+  "knn10_auroc": 0.662,
+  "knn10_ci": [
+   0.575,
+   0.746
+  ],
+  "silhouette_heldout_per_fold": [
+   0.166,
+   0.078,
+   0.241,
+   0.237,
+   -0.3
+  ],
+  "silhouette_mean": 0.085
+ },
+ "early_fusion": {
+  "dim": 512,
+  "n": 150,
+  "events": 50,
+  "probe_auroc": 0.822,
+  "probe_ci": [
+   0.741,
+   0.893
+  ],
+  "knn10_auroc": 0.793,
+  "knn10_ci": [
+   0.704,
+   0.868
+  ],
+  "silhouette_heldout_per_fold": [
+   0.118,
+   0.17,
+   0.126,
+   0.288,
+   -0.278
+  ],
+  "silhouette_mean": 0.085,
+  "probe_delta_vs_image_only": [
+   0.038,
+   -0.04,
+   0.123
+  ],
+  "knn_delta_vs_image_only": [
+   0.007,
+   -0.059,
+   0.07
+  ],
+  "probe_delta_vs_cnv_only": [
+   0.11,
+   0.005,
+   0.215
+  ],
+  "knn_delta_vs_cnv_only": [
+   0.131,
+   0.019,
+   0.233
+  ]
+ },
+ "intermediate_fusion": {
+  "dim": 384,
+  "n": 150,
+  "events": 50,
+  "probe_auroc": 0.819,
+  "probe_ci": [
+   0.743,
+   0.888
+  ],
+  "knn10_auroc": 0.797,
+  "knn10_ci": [
+   0.713,
+   0.871
+  ],
+  "silhouette_heldout_per_fold": [
+   0.112,
+   0.122,
+   0.103,
+   0.188,
+   -0.067
+  ],
+  "silhouette_mean": 0.092,
+  "probe_delta_vs_image_only": [
+   0.034,
+   -0.033,
+   0.107
+  ],
+  "knn_delta_vs_image_only": [
+   0.011,
+   -0.036,
+   0.056
+  ],
+  "probe_delta_vs_cnv_only": [
+   0.106,
+   0.001,
+   0.22
+  ],
+  "knn_delta_vs_cnv_only": [
+   0.135,
+   0.028,
+   0.24
+  ]
+ },
+ "coattention_fusion": {
+  "dim": 384,
+  "n": 150,
+  "events": 50,
+  "probe_auroc": 0.736,
+  "probe_ci": [
+   0.64,
+   0.827
+  ],
+  "knn10_auroc": 0.786,
+  "knn10_ci": [
+   0.698,
+   0.859
+  ],
+  "silhouette_heldout_per_fold": [
+   0.119,
+   0.075,
+   0.247,
+   0.187,
+   -0.055
+  ],
+  "silhouette_mean": 0.115,
+  "probe_delta_vs_image_only": [
+   -0.048,
+   -0.14,
+   0.045
+  ],
+  "knn_delta_vs_image_only": [
+   -0.0,
+   -0.075,
+   0.078
+  ],
+  "probe_delta_vs_cnv_only": [
+   0.023,
+   -0.098,
+   0.151
+  ],
+  "knn_delta_vs_cnv_only": [
+   0.124,
+   0.012,
+   0.229
+  ]
+ },
+ "_figures": {
+  "image_only_pca": "results/paper_plan/figs/latent/image_only_pca_fold1.png",
+  "image_only_umap": "results/paper_plan/figs/latent/image_only_umap_fold1.png",
+  "cnv_only_pca": "results/paper_plan/figs/latent/cnv_only_pca_fold1.png",
+  "cnv_only_umap": "results/paper_plan/figs/latent/cnv_only_umap_fold1.png",
+  "early_fusion_pca": "results/paper_plan/figs/latent/early_fusion_pca_fold1.png",
+  "early_fusion_umap": "results/paper_plan/figs/latent/early_fusion_umap_fold1.png",
+  "intermediate_fusion_pca": "results/paper_plan/figs/latent/intermediate_fusion_pca_fold1.png",
+  "intermediate_fusion_umap": "results/paper_plan/figs/latent/intermediate_fusion_umap_fold1.png",
+  "coattention_fusion_pca": "results/paper_plan/figs/latent/coattention_fusion_pca_fold1.png",
+  "coattention_fusion_umap": "results/paper_plan/figs/latent/coattention_fusion_umap_fold1.png"
+ },
+ "_method": "row vectors from each fold model (held-out rows = out-of-sample); patient = mean of rows; probe/kNN/scaler fitted on training-fold patients (C by release inner folds); silhouette on held-out standardised patients; PCA/UMAP fitted on fold-1 training patients, held-out fold-1 patients shown; late_mean excluded (no shared representation)",
+ "_sanity_recomputed_vs_release_oof": {
+  "image_only": {
+   "max_abs_diff_vs_release_oof": 0.0,
+   "spearman": 1.0
+  },
+  "early_fusion": {
+   "max_abs_diff_vs_release_oof": 0.0,
+   "spearman": 1.0
+  },
+  "intermediate_fusion": {
+   "max_abs_diff_vs_release_oof": 0.0,
+   "spearman": 1.0
+  },
+  "coattention_fusion": {
+   "max_abs_diff_vs_release_oof": 0.0,
+   "spearman": 1.0
+  },
+  "cnv_only": {
+   "max_abs_diff_vs_release_oof": 0.021,
+   "spearman": 0.999
+  }
+ }
+}
