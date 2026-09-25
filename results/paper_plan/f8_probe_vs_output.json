@@ -1,0 +1,56 @@
+{
+ "probe_vs_model_output": {
+  "image_only": {
+   "n": 150,
+   "events": 50,
+   "probe_auroc": 0.784,
+   "model_oof_auroc": 0.731,
+   "delta_probe_minus_model": 0.053,
+   "ci": [
+    -0.015,
+    0.121
+   ]
+  },
+  "early_fusion": {
+   "n": 150,
+   "events": 50,
+   "probe_auroc": 0.822,
+   "model_oof_auroc": 0.738,
+   "delta_probe_minus_model": 0.084,
+   "ci": [
+    0.006,
+    0.163
+   ]
+  },
+  "intermediate_fusion": {
+   "n": 150,
+   "events": 50,
+   "probe_auroc": 0.819,
+   "model_oof_auroc": 0.741,
+   "delta_probe_minus_model": 0.077,
+   "ci": [
+    0.019,
+    0.14
+   ]
+  },
+  "coattention_fusion": {
+   "n": 150,
+   "events": 50,
+   "probe_auroc": 0.736,
+   "model_oof_auroc": 0.739,
+   "delta_probe_minus_model": -0.003,
+   "ci": [
+    -0.1,
+    0.093
+   ]
+  }
+ },
+ "figures": {
+  "image_only": "results/paper_plan/figs/latent_folds/image_only_pca_umap_5folds.png",
+  "cnv_only": "results/paper_plan/figs/latent_folds/cnv_only_pca_umap_5folds.png",
+  "early_fusion": "results/paper_plan/figs/latent_folds/early_fusion_pca_umap_5folds.png",
+  "intermediate_fusion": "results/paper_plan/figs/latent_folds/intermediate_fusion_pca_umap_5folds.png",
+  "coattention_fusion": "results/paper_plan/figs/latent_folds/coattention_fusion_pca_umap_5folds.png"
+ },
+ "_method": "probe: L2 logistic on patient-mean row embeddings, standardised and C-tuned (release inner folds) on training patients, applied to held-out patients (same procedure and seed as pp_latent.py); model output: release OOF, patient max; paired patient bootstrap; projections fitted on each fold's training patients"
+}
