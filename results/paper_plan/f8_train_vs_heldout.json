@@ -1,0 +1,132 @@
+{
+ "train_vs_heldout_auroc_patient_level": {
+  "image_only": {
+   "1": {
+    "train_auroc": 0.943,
+    "heldout_auroc": 0.525,
+    "n_train_patients": 120,
+    "n_heldout_patients": 30
+   },
+   "2": {
+    "train_auroc": 0.864,
+    "heldout_auroc": 0.875,
+    "n_train_patients": 120,
+    "n_heldout_patients": 30
+   },
+   "3": {
+    "train_auroc": 0.922,
+    "heldout_auroc": 0.755,
+    "n_train_patients": 120,
+    "n_heldout_patients": 30
+   },
+   "4": {
+    "train_auroc": 0.866,
+    "heldout_auroc": 0.73,
+    "n_train_patients": 120,
+    "n_heldout_patients": 30
+   },
+   "5": {
+    "train_auroc": 0.913,
+    "heldout_auroc": 0.88,
+    "n_train_patients": 120,
+    "n_heldout_patients": 30
+   }
+  },
+  "early_fusion": {
+   "1": {
+    "train_auroc": 0.999,
+    "heldout_auroc": 0.67,
+    "n_train_patients": 120,
+    "n_heldout_patients": 30
+   },
+   "2": {
+    "train_auroc": 0.948,
+    "heldout_auroc": 0.935,
+    "n_train_patients": 120,
+    "n_heldout_patients": 30
+   },
+   "3": {
+    "train_auroc": 0.947,
+    "heldout_auroc": 0.77,
+    "n_train_patients": 120,
+    "n_heldout_patients": 30
+   },
+   "4": {
+    "train_auroc": 0.973,
+    "heldout_auroc": 0.8,
+    "n_train_patients": 120,
+    "n_heldout_patients": 30
+   },
+   "5": {
+    "train_auroc": 0.938,
+    "heldout_auroc": 0.795,
+    "n_train_patients": 120,
+    "n_heldout_patients": 30
+   }
+  },
+  "intermediate_fusion": {
+   "1": {
+    "train_auroc": 0.978,
+    "heldout_auroc": 0.555,
+    "n_train_patients": 120,
+    "n_heldout_patients": 30
+   },
+   "2": {
+    "train_auroc": 0.984,
+    "heldout_auroc": 0.83,
+    "n_train_patients": 120,
+    "n_heldout_patients": 30
+   },
+   "3": {
+    "train_auroc": 0.969,
+    "heldout_auroc": 0.825,
+    "n_train_patients": 120,
+    "n_heldout_patients": 30
+   },
+   "4": {
+    "train_auroc": 0.906,
+    "heldout_auroc": 0.815,
+    "n_train_patients": 120,
+    "n_heldout_patients": 30
+   },
+   "5": {
+    "train_auroc": 0.899,
+    "heldout_auroc": 0.76,
+    "n_train_patients": 120,
+    "n_heldout_patients": 30
+   }
+  },
+  "coattention_fusion": {
+   "1": {
+    "train_auroc": 0.962,
+    "heldout_auroc": 0.64,
+    "n_train_patients": 120,
+    "n_heldout_patients": 30
+   },
+   "2": {
+    "train_auroc": 0.934,
+    "heldout_auroc": 0.84,
+    "n_train_patients": 120,
+    "n_heldout_patients": 30
+   },
+   "3": {
+    "train_auroc": 0.936,
+    "heldout_auroc": 0.72,
+    "n_train_patients": 120,
+    "n_heldout_patients": 30
+   },
+   "4": {
+    "train_auroc": 0.934,
+    "heldout_auroc": 0.74,
+    "n_train_patients": 120,
+    "n_heldout_patients": 30
+   },
+   "5": {
+    "train_auroc": 0.89,
+    "heldout_auroc": 0.835,
+    "n_train_patients": 120,
+    "n_heldout_patients": 30
+   }
+  }
+ }
+}

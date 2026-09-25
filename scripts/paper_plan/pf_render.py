@@ -170,7 +170,7 @@ Probability deciles (patient max score, 0–100 % in steps of 10): {F4['probabil
 
 **8b noise floor** (one random 5-Mb window feature permuted, 10 windows × 50 repeats × 5 folds): """ + "; ".join(f"{fam}: mean {v['random_window_delta_auroc']['mean']}, SD {v['random_window_delta_auroc']['sd']}, 95th pct {v['random_window_delta_auroc']['q95']}, 99th {v['random_window_delta_auroc']['q99']}" for fam, v in F7["_8b_noise_floor"].items()) + f""". Per-fold arm importances (mean of 10 repeats per fold) are in the JSON (`_8b_noise_floor.<model>.arm_features_per_fold_delta_auroc_mean_of_10_repeats`).
 
-**Method.** {F7['_method']}. **Sources.** {SRC('f7_modality_ablation.json', 'pf_gpu.py')}. **Caveats.** Replacing CNV by the training mean is a single deterministic ablation (no CI beyond the patient bootstrap); the image ablation for early fusion replaces the mean-pooled bag.
+**Method.** {F7['_method']}. **Sources.** {SRC('f7_modality_ablation.json', 'pf_gpu.py')}. **Caveats.** Two different quantities are shown for the permutation ablations: the mean over 50 repeats of the per-repeat ΔAUROC, and the ΔAUROC of the score averaged over the 50 permutations (whose CI is given); averaging permuted scores removes part of the damage, so the second is smaller. Replacing CNV by the training mean is a single deterministic ablation; the image ablation for early fusion replaces the mean-pooled bag.
 """)
     # F8
     P(f"""### F8. Latent space: small follow-ups
@@ -201,7 +201,8 @@ Five-fold PCA/UMAP figures (projection fitted on each fold's training patients; 
 Source: `results/paper_plan/followup_main.json` (`F3.table_all_150`), commit {RESC}.
 
 ## 5. Discrepancies found
-1. The release CNV arm and the Killcoyne-method arm are fitted on the same features and folds but disagree on the 25 overlap-discovery patients (item F1 diagnosis table); the earlier reading that the CNV data are sound (paper plan item 0) stands.
+1. The Killcoyne-method arm does not recover the CNV signal: on the 82 discovery patients it scores {f3(ka['cnv_km']['auroc'])} against the release RF {f3(ka['cnv_only']['auroc'])} and the published LOPO predictions {f3(FA['patient_auroc_matched']['killcoyne_max'])}, and its agreement with the published probabilities ({f3(FA['spearman_cnv_km_vs_killcoyne'])}) is no higher than the RF's ({f3(FA['spearman_cnv_only_vs_killcoyne'])}). Both of our CNV models are trained on our LGD2+ labels; the published predictions were trained on their HGD/IMC case–control labels, which disagree with ours for 11 of the 82 patients (paper plan item 0). The difference is therefore in labels and cohort design, not in the model class.
+1b. Design stratum alone predicts our label with AUROC {f3(F2['stratum_only_score']['auroc'])} {ci(F2['stratum_only_score']['ci'])}: 34 of 39 Killcoyne discovery cases and 6 of 43 discovery controls are our progressors, while the validation-sheet stratum has 10 events in 68 patients (F2). Within the discovery-control stratum the CNV arms score below 0.5.
 2. Killcoyne fixed classes place no release-RF patient in the high class because the RF probabilities never reach 0.5 (deciles in F4); the classes were designed for a logistic-regression probability scale.
 3. The paper-plan item-5 censoring time (version A) does not equal the biopsy-date interval (version B) for most non-progressors (F4 censoring derivation).
 4. Clinical arm 3a's advantage over C2 comes from features that encode the endpoint rule or surveillance history (F3, C1→C4).
@@ -209,7 +210,7 @@ Source: `results/paper_plan/followup_main.json` (`F3.table_all_150`), commit {RE
 
 ## 6. Not done
 - glmnet itself (R) was not run; the elastic net is the sklearn saga implementation.
-- F6c uses 0.44 µm/px features (the only multi-tile pool available), so tile count and scale change together; a 0.88 µm/px multi-tile re-extraction was not done.
+- F6c uses 0.44 µm/px features (the only multi-tile pool available), so tile count and scale change together; a 0.88 µm/px multi-tile re-extraction was not done. F6c scored below the release image arm, so the tile-count hypothesis is not supported by this test but is not isolated by it either.
 - ACE-B: no data.
 
 ## 7. Pre-specification text as committed at `{PRESPEC}` (verbatim)
