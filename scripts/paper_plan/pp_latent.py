@@ -24,7 +24,7 @@ def auc(y, s):
 def r3(x): return None if x is None or (isinstance(x, float) and np.isnan(x)) else round(float(x), 3)
 man = pd.read_csv(F + "/training_manifest.csv", dtype=str).set_index("sample_id"); ids = list(man.index); y_row = man.y_progressor.astype(int).values; fold = man.fold_id_rep01.astype(int).values; pid = man.patient_id.values
 ui = pd.read_csv(F + "/feature_views/uni2/uni2_index.csv", dtype=str).set_index("sample_id").reindex(ids)
-cnv_df, feats = load_cnv_matrix(F + "/feature_views/cnv"); X_cnv = cnv_df.set_index("sample_id").loc[ids, feats].to_numpy(np.float32); ARM = [i for i, f in enumerate(feats) if f.startswith("chr") and (f.endswith("p") or f.endswith("q")) or f == "cx"]
+cnv_df, feats = load_cnv_matrix(F + "/feature_views/cnv"); X_cnv = cnv_df.set_index("sample_id").loc[ids, feats].to_numpy(np.float64);   # float64: the release fed the sklearn pipeline a float64 DataFrame (float32 shifts RF probabilities by up to 0.14) ARM = [i for i, f in enumerate(feats) if f.startswith("chr") and (f.endswith("p") or f.endswith("q")) or f == "cx"]
 print("rows", len(ids), "cnv feats", len(feats), "arm+cx feats", len(ARM), flush=True)
 bags = {}
 for s, p in zip(ids, ui.npz_path):
@@ -38,7 +38,7 @@ def build(fam, cfg, cnv_dim):
 def load(fam, k):
     ck = torch.load(f"{R}/{fam}/fold{k}/model.pt", map_location="cpu"); m = build(fam, ck["configuration"], len(feats)); m.load_state_dict(ck["state_dict"]); m.eval().to(DEV)
     return m, ck.get("cnv_median"), ck.get("cnv_mean"), ck.get("cnv_std")
-def std_cnv(X, med, mu, sd):
+def std_cnv(X, med, mu, sd):   # torch models: float32 standardised input, as in training
     X = np.where(np.isfinite(X), X, med) if med is not None else X; return ((X - mu) / sd).astype(np.float32) if mu is not None else X.astype(np.float32)
 EMB = {}; ATT = {}; PROB = {}; PRE = {}
 with torch.no_grad():
