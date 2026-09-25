@@ -108,12 +108,12 @@ fd = pd.read_csv(S + "/sWGS_777_samples_cleaned_202401_Leanne_fullDetails (3) (1
 va = pd.read_csv(S + "/sWGS_validation_cleaned_Leanne (4) (1).csv", dtype=str).drop_duplicates("sample_id").set_index("sample_id")
 man["seq_sheet"] = np.where(man.cnv_id.isin(fd.index), "discovery_777", np.where(man.cnv_id.isin(va.index), "validation_268", "neither"))
 man["seq_batch"] = man.cnv_id.map(fd.Batch); man["n_reads"] = pd.to_numeric(man.cnv_id.map(fd["Number of reads"]).str.replace(",", ""), errors="coerce"); man["cellularity"] = pd.to_numeric(man.cnv_id.map(fd["% Barrett's cellularity"]), errors="coerce"); man["p53_seqsheet"] = man.cnv_id.map(fd["p53 status"])
-qc = pd.read_csv(ROW + "/swg_cnv_qc.csv").set_index("cnv_id"); man = man.join(qc[["n_bins", "noise_mapd", "sd_logratio", "n_segments", "frac_altered_0p3"]], on="cnv_id")
+qc = pd.read_csv(ROW + "/swg_cnv_qc.csv").set_index("cnv_id"); man = man.join(qc[["n_bins", "noise_mapd", "sd_logratio", "n_segments", "frac_altered_0p15", "frac_altered_0p3"]], on="cnv_id")
 sm = pd.read_csv(S + "/slide_matching.csv", dtype=str).drop_duplicates("Slide file").set_index("Slide file"); man["slide_file"] = coh.ImageAbsPath.map(os.path.basename).values; man["p53_ihc"] = man.slide_file.map(sm.p53IHC)
 sl = pd.read_csv(ROW + "/swg_slide_meta.csv", dtype=str).set_index("sample_id").reindex(man.index); man["scanner_model"] = sl["tiff.Model"].values; man["scanner_serial"] = sl["hamamatsu.NDP.S/N"].values; man["scan_date"] = pd.to_datetime(sl["hamamatsu.Created"], format="%Y/%m/%d", errors="coerce").values
 man["scan_year"] = pd.DatetimeIndex(man.scan_date).year; man["slide_age_at_scan_days"] = (man.scan_date - man.date).dt.days; man["mpp"] = pd.to_numeric(sl["openslide.mpp-x"], errors="coerce").values; man["source_lens"] = sl["hamamatsu.SourceLens"].values
 gp = man.groupby("patient_id")
-for c, f_ in [("n_reads_mean", ("n_reads", "mean")), ("cellularity_mean", ("cellularity", "mean")), ("cx_max", ("cx", "max")), ("noise_mapd_mean", ("noise_mapd", "mean")), ("n_segments_mean", ("n_segments", "mean")), ("frac_altered_mean", ("frac_altered_0p3", "mean")),
+for c, f_ in [("n_reads_mean", ("n_reads", "mean")), ("cellularity_mean", ("cellularity", "mean")), ("cx_max", ("cx", "max")), ("noise_mapd_mean", ("noise_mapd", "mean")), ("n_segments_mean", ("n_segments", "mean")), ("frac_altered_0p15_mean", ("frac_altered_0p15", "mean")), ("frac_altered_0p30_mean", ("frac_altered_0p3", "mean")),
               ("slide_age_at_scan_days_mean", ("slide_age_at_scan_days", "mean")), ("scan_year_first", ("scan_year", "min")), ("mpp_mean", ("mpp", "mean"))]: PT[c] = gp[f_[0]].agg(f_[1]).reindex(PT.index)
 for c in ["seq_sheet", "seq_batch", "slx_run", "scanner_model", "scanner_serial", "source_lens"]: PT[c + "_mode"] = gp[c].agg(lambda s: s.mode().iloc[0] if s.notna().any() else "missing").reindex(PT.index)
 PT["p53_ihc_any_aberrant"] = gp.p53_ihc.agg(lambda s: ("aberrant" if (s == "aberrant").any() else ("normal" if (s == "normal").any() else np.nan))).reindex(PT.index)
@@ -121,19 +121,21 @@ PT["p53_seqsheet_any"] = gp.p53_seqsheet.agg(lambda s: ("1" if (s == "1").any() 
 PT["endpoint_label_name"] = PT.endpoint_label.map({2: "LGD (second consecutive)", 3: "HGD", 4: "IMC/cancer", 5: "IMC/cancer"})
 PT["grade_source_mode"] = coh.GradeSource.groupby(man.patient_id).agg(lambda s: s.mode().iloc[0]).reindex(PT.index); PT["next_label_source_mode"] = coh.NextBiopsyLabel_source.groupby(man.patient_id).agg(lambda s: s.mode().iloc[0]).reindex(PT.index)
 PT.to_csv(ROW + "/swg_patient_table.csv")
-CONT = ["n_rows", "first_year", "span_days", "biopsies_total", "followup_months_first_to_last_biopsy", "days_first_to_event", "age_at_diagnosis", "prague_C", "prague_M", "n_reads_mean", "cellularity_mean", "cx_max", "noise_mapd_mean", "n_segments_mean", "frac_altered_mean", "slide_age_at_scan_days_mean", "scan_year_first", "mpp_mean"]
+CONT = ["n_rows", "first_year", "span_days", "biopsies_total", "followup_months_first_to_last_biopsy", "days_first_to_event", "age_at_diagnosis", "prague_C", "prague_M", "n_reads_mean", "cellularity_mean", "cx_max", "noise_mapd_mean", "n_segments_mean", "frac_altered_0p15_mean", "frac_altered_0p30_mean", "slide_age_at_scan_days_mean", "scan_year_first", "mpp_mean"]
 CAT = ["y", "baseline_grade", "max_grade", "endpoint_label_name", "sex_demographics", "gender_id_code", "smoking", "referral_hospital_db", "seq_sheet_mode", "seq_batch_mode", "slx_run_mode", "scanner_model_mode", "scanner_serial_mode", "source_lens_mode", "p53_ihc_any_aberrant", "p53_seqsheet_any", "grade_source_mode", "next_label_source_mode"]
 a_, b_ = PT[PT.subgroup == "also_in_ERIN"], PT[PT.subgroup == "never_in_ERIN"]; rowsC = []
-def qs(s): s = s.dropna(); return f"{s.median():.3g} [{s.quantile(.25):.3g}, {s.quantile(.75):.3g}] (n={len(s)})" if len(s) else "n=0"
+def fmt(x): return f"{x:.0f}" if abs(x) >= 100 else (f"{x:.1f}" if abs(x) >= 10 else f"{x:.3g}")
+def qs(s): s = s.dropna(); return f"{fmt(s.median())} [{fmt(s.quantile(.25))}, {fmt(s.quantile(.75))}] (n={len(s)})" if len(s) else "n=0"
+def pf(p): return None if p is None or (isinstance(p, float) and np.isnan(p)) else ("<0.001" if p < 0.001 else round(float(p), 3))
 for c in CONT:
     x, z = a_[c].dropna(), b_[c].dropna(); p = mannwhitneyu(x, z).pvalue if len(x) > 1 and len(z) > 1 else np.nan
-    rowsC.append({"variable": c, "type": "continuous (median [IQR])", "also_in_ERIN_54": qs(a_[c]), "never_in_ERIN_96": qs(b_[c]), "test": "Mann-Whitney", "p": r3(p)})
+    rowsC.append({"variable": c, "type": "continuous (median [IQR])", "also_in_ERIN_54": qs(a_[c]), "never_in_ERIN_96": qs(b_[c]), "test": "Mann-Whitney", "p": pf(p)})
 for c in CAT:
     tab = pd.crosstab(PT[c].fillna("missing"), PT.subgroup); 
     if tab.shape[0] < 2: rowsC.append({"variable": c, "type": "categorical", "also_in_ERIN_54": dict(tab.get("also_in_ERIN", pd.Series(dtype=int))), "never_in_ERIN_96": dict(tab.get("never_in_ERIN", pd.Series(dtype=int))), "test": "constant", "p": None}); continue
     if tab.shape[0] == 2: p = fisher_exact(tab.values)[1]; tn = "Fisher exact"
     else: p = chi2_contingency(tab.values)[1]; tn = f"chi-square ({tab.shape[0]} levels; Fisher only defined for 2x2)"
-    rowsC.append({"variable": c, "type": "categorical (counts)", "also_in_ERIN_54": {k: int(v) for k, v in tab["also_in_ERIN"].items()}, "never_in_ERIN_96": {k: int(v) for k, v in tab["never_in_ERIN"].items()}, "test": tn, "p": r3(p)})
+    rowsC.append({"variable": c, "type": "categorical (counts)", "also_in_ERIN_54": {k: int(v) for k, v in tab["also_in_ERIN"].items()}, "never_in_ERIN_96": {k: int(v) for k, v in tab["never_in_ERIN"].items()}, "test": tn, "p": pf(p)})
 RES["C_characterisation"] = rowsC; md("C. Subgroup characterisation (patient level)", pd.DataFrame(rowsC).astype(str))
 RES["C_not_available"] = ["staining batch (no record in any SWG table)", "referral pathway beyond DB referral_hospital of first endoscopy", "sequencing depth in x (reads only; read length not recorded in the sheet)", "sex for patients absent from Demographics_full.csv (gender_id code from barretts_database_230809.csv reported as code, mapping not documented)", "p53 IHC for slides with blank p53IHC in slide_matching.csv", "4x resequencing (none exists; see L)"]
 # per-subgroup AUROCs with the canonical head
@@ -193,7 +195,7 @@ for thr, name in [(0, "none"), (183, "exclude progressors with event <= 6 m from
     for k in ["head", "fuse2", "fuse3"]: r[k] = r3(auc(yy, P[k][m_])); r[k + "_ci"] = ci(yy, Bg, P[k][m_])
     r["gain"] = r3(auc(yy, P["fuse3"][m_]) - auc(yy, P["fuse2"][m_])); r["gain_ci"] = ci(yy, Bg, P["fuse3"][m_], P["fuse2"][m_]); rowsE.append(r)
 for thr, name in [(183, "SECONDARY: drop positive ROWS with DaysToNextBiopsy <= 183 (patient keeps other rows)"), (365, "SECONDARY: drop positive ROWS with DaysToNextBiopsy <= 365")]:
-    keep = ~((man.y == 1) & (man.days_to_next <= thr)).values; yy, Pk, pk = patient(colsS, rows=keep); Bg = boots(yy)
+    keep = ~((man.y == 1) & (man.days_to_next <= thr)).values; _, Pk, pk = patient(colsS, rows=keep); yy = PT.y.reindex(pk).values.astype(int); Bg = boots(yy)   # patient label = ORIGINAL progressor status; only rows are dropped
     r = {"exclusion": name, "n": int(len(yy)), "events": int(yy.sum()), "rows_kept": int(keep.sum())}
     for k in ["head", "fuse2", "fuse3"]: r[k] = r3(auc(yy, Pk[k])); r[k + "_ci"] = ci(yy, Bg, Pk[k])
     r["gain"] = r3(auc(yy, Pk["fuse3"]) - auc(yy, Pk["fuse2"])); r["gain_ci"] = ci(yy, Bg, Pk["fuse3"], Pk["fuse2"]); rowsE.append(r)
