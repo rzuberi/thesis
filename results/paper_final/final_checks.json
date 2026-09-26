@@ -1,0 +1,1303 @@
+{
+ "_spec": "docs/paper_final_inputs.md @ e6e00c0",
+ "figures": {
+  "F_intro": "results/paper_final/figs/F_intro_forest",
+  "F_table": "results/paper_final/figs/F_table_forest",
+  "F_D1": "results/paper_final/figs/F_D1_risk_groups",
+  "F_D2": "results/paper_final/figs/F_D2_latent",
+  "F_D3": "results/paper_final/figs/F_D3_attention",
+  "F_D4": "results/paper_final/figs/F_D4_cnv_change",
+  "F_D5": "results/paper_final/figs/F_D5_false_positives",
+  "F_D6": "results/paper_final/figs/F_D6_false_negatives"
+ },
+ "K1": {
+  "per_stratum": {
+   "late_mean": {
+    "discovery": {
+     "FP": 22,
+     "TN": 20,
+     "laterHGD_FP": 3,
+     "laterHGD_TN": 3,
+     "rate_FP": 0.136,
+     "rate_TN": 0.15,
+     "wilson_FP": [
+      0.047,
+      0.333
+     ],
+     "wilson_TN": [
+      0.052,
+      0.36
+     ],
+     "fisher_p": 1.0
+    },
+    "validation": {
+     "FP": 18,
+     "TN": 40,
+     "laterHGD_FP": 8,
+     "laterHGD_TN": 1,
+     "rate_FP": 0.444,
+     "rate_TN": 0.025,
+     "wilson_FP": [
+      0.246,
+      0.663
+     ],
+     "wilson_TN": [
+      0.004,
+      0.129
+     ],
+     "fisher_p": "<0.001"
+    }
+   },
+   "image_only": {
+    "discovery": {
+     "FP": 25,
+     "TN": 17,
+     "laterHGD_FP": 3,
+     "laterHGD_TN": 3,
+     "rate_FP": 0.12,
+     "rate_TN": 0.176,
+     "wilson_FP": [
+      0.042,
+      0.3
+     ],
+     "wilson_TN": [
+      0.062,
+      0.41
+     ],
+     "fisher_p": 0.672
+    },
+    "validation": {
+     "FP": 25,
+     "TN": 33,
+     "laterHGD_FP": 8,
+     "laterHGD_TN": 1,
+     "rate_FP": 0.32,
+     "rate_TN": 0.03,
+     "wilson_FP": [
+      0.172,
+      0.516
+     ],
+     "wilson_TN": [
+      0.005,
+      0.153
+     ],
+     "fisher_p": 0.004
+    }
+   },
+   "cnv_only": {
+    "discovery": {
+     "FP": 35,
+     "TN": 7,
+     "laterHGD_FP": 6,
+     "laterHGD_TN": 0,
+     "rate_FP": 0.171,
+     "rate_TN": 0.0,
+     "wilson_FP": [
+      0.081,
+      0.327
+     ],
+     "wilson_TN": [
+      0.0,
+      0.354
+     ],
+     "fisher_p": 0.567
+    },
+    "validation": {
+     "FP": 20,
+     "TN": 38,
+     "laterHGD_FP": 7,
+     "laterHGD_TN": 2,
+     "rate_FP": 0.35,
+     "rate_TN": 0.053,
+     "wilson_FP": [
+      0.181,
+      0.567
+     ],
+     "wilson_TN": [
+      0.015,
+      0.173
+     ],
+     "fisher_p": 0.006
+    }
+   },
+   "C2_grade_maxsofar": {
+    "discovery": {
+     "FP": 30,
+     "TN": 12,
+     "laterHGD_FP": 4,
+     "laterHGD_TN": 2,
+     "rate_FP": 0.133,
+     "rate_TN": 0.167,
+     "wilson_FP": [
+      0.053,
+      0.297
+     ],
+     "wilson_TN": [
+      0.047,
+      0.448
+     ],
+     "fisher_p": 1.0
+    },
+    "validation": {
+     "FP": 26,
+     "TN": 32,
+     "laterHGD_FP": 6,
+     "laterHGD_TN": 3,
+     "rate_FP": 0.231,
+     "rate_TN": 0.094,
+     "wilson_FP": [
+      0.11,
+      0.421
+     ],
+     "wilson_TN": [
+      0.032,
+      0.242
+     ],
+     "fisher_p": 0.274
+    }
+   }
+  },
+  "validation_logistic": {
+   "late_mean": {
+    "error": "Singular matrix",
+    "fisher_only": true
+   },
+   "image_only": {
+    "error": "Singular matrix",
+    "fisher_only": true
+   },
+   "cnv_only": {
+    "error": "Singular matrix",
+    "fisher_only": true
+   },
+   "C2_grade_maxsofar": {
+    "error": "Singular matrix",
+    "fisher_only": true
+   }
+  },
+  "spearman_tiles_vs_laterHGD_validation_nonprogressors": {
+   "rho": -0.414,
+   "p": 0.001,
+   "n": 58,
+   "events": 9
+  },
+  "discovery_nonprogressors": {
+   "n": 42,
+   "db_followup_days_median_iqr": [
+    2506.5,
+    808.0,
+    3183.25
+   ],
+   "share_with_any_later_db_report": 0.976,
+   "killcoyne_sheet_controls_NP": 37,
+   "killcoyne_sheet_cases_P_labelled_nonprogressor_by_us": 5,
+   "later_HGDplus": 6,
+   "later_LGDplus": 8
+  }
+ },
+ "K2": {
+  "late_mean": {
+   "n_FN": 11,
+   "n_TP": 29,
+   "comparison": {
+    "first_to_event": {
+     "FN": [
+      898.0,
+      11
+     ],
+     "TP": [
+      1096.0,
+      29
+     ],
+     "mannwhitney_p": 0.348
+    },
+    "n_rows": {
+     "FN": [
+      2.0,
+      11
+     ],
+     "TP": [
+      4.0,
+      29
+     ],
+     "mannwhitney_p": 0.1
+    },
+    "baseline_grade": {
+     "FN": [
+      0.0,
+      11
+     ],
+     "TP": [
+      0.0,
+      29
+     ],
+     "mannwhitney_p": 0.359
+    },
+    "max_sofar": {
+     "FN": [
+      2.0,
+      11
+     ],
+     "TP": [
+      2.0,
+      29
+     ],
+     "mannwhitney_p": 0.773
+    },
+    "cx": {
+     "FN": [
+      24.0,
+      11
+     ],
+     "TP": [
+      55.0,
+      29
+     ],
+     "mannwhitney_p": 0.041
+    },
+    "noise": {
+     "FN": [
+      0.074,
+      11
+     ],
+     "TP": [
+      0.064,
+      29
+     ],
+     "mannwhitney_p": 0.016
+    },
+    "segments": {
+     "FN": [
+      179.5,
+      11
+     ],
+     "TP": [
+      223.0,
+      29
+     ],
+     "mannwhitney_p": 0.155
+    },
+    "frac_alt": {
+     "FN": [
+      0.029,
+      11
+     ],
+     "TP": [
+      0.043,
+      29
+     ],
+     "mannwhitney_p": 0.13
+    },
+    "reads": {
+     "FN": [
+      18533790.0,
+      11
+     ],
+     "TP": [
+      23077752.375,
+      28
+     ],
+     "mannwhitney_p": 0.002
+    },
+    "kept_tiles": {
+     "FN": [
+      3194.143,
+      11
+     ],
+     "TP": [
+      991.0,
+      29
+     ],
+     "mannwhitney_p": 0.002
+    },
+    "tissue_frac": {
+     "FN": [
+      0.111,
+      11
+     ],
+     "TP": [
+      0.133,
+      29
+     ],
+     "mannwhitney_p": 0.056
+    },
+    "endpoint_type": {
+     "table": {
+      "FN": {
+       "HGD": 2,
+       "IMC/cancer": 3,
+       "second LGD": 6
+      },
+      "TP": {
+       "HGD": 16,
+       "IMC/cancer": 5,
+       "second LGD": 8
+      }
+     },
+     "fisher_p": null
+    },
+    "scanner": {
+     "table": {
+      "FN": {
+       "C13210": 0,
+       "C13239-01": 11
+      },
+      "TP": {
+       "C13210": 12,
+       "C13239-01": 17
+      }
+     },
+     "fisher_p": 0.017
+    },
+    "p53": {
+     "table": {
+      "FN": {
+       "aberrant": 2,
+       "missing": 2,
+       "normal": 7
+      },
+      "TP": {
+       "aberrant": 13,
+       "missing": 0,
+       "normal": 16
+      }
+     },
+     "fisher_p": null
+    }
+   }
+  },
+  "image_only": {
+   "n_FN": 13,
+   "n_TP": 27,
+   "comparison": {
+    "first_to_event": {
+     "FN": [
+      933.0,
+      13
+     ],
+     "TP": [
+      1096.0,
+      27
+     ],
+     "mannwhitney_p": 0.729
+    },
+    "n_rows": {
+     "FN": [
+      2.0,
+      13
+     ],
+     "TP": [
+      4.0,
+      27
+     ],
+     "mannwhitney_p": 0.128
+    },
+    "baseline_grade": {
+     "FN": [
+      0.0,
+      13
+     ],
+     "TP": [
+      0.0,
+      27
+     ],
+     "mannwhitney_p": 0.729
+    },
+    "max_sofar": {
+     "FN": [
+      2.0,
+      13
+     ],
+     "TP": [
+      2.0,
+      27
+     ],
+     "mannwhitney_p": 0.897
+    },
+    "cx": {
+     "FN": [
+      31.0,
+      13
+     ],
+     "TP": [
+      62.0,
+      27
+     ],
+     "mannwhitney_p": 0.024
+    },
+    "noise": {
+     "FN": [
+      0.075,
+      13
+     ],
+     "TP": [
+      0.064,
+      27
+     ],
+     "mannwhitney_p": 0.004
+    },
+    "segments": {
+     "FN": [
+      179.5,
+      13
+     ],
+     "TP": [
+      229.7,
+      27
+     ],
+     "mannwhitney_p": 0.067
+    },
+    "frac_alt": {
+     "FN": [
+      0.029,
+      13
+     ],
+     "TP": [
+      0.043,
+      27
+     ],
+     "mannwhitney_p": 0.053
+    },
+    "reads": {
+     "FN": [
+      18533790.0,
+      13
+     ],
+     "TP": [
+      23077752.375,
+      26
+     ],
+     "mannwhitney_p": 0.003
+    },
+    "kept_tiles": {
+     "FN": [
+      3194.143,
+      13
+     ],
+     "TP": [
+      969.8,
+      27
+     ],
+     "mannwhitney_p": "<0.001"
+    },
+    "tissue_frac": {
+     "FN": [
+      0.125,
+      13
+     ],
+     "TP": [
+      0.136,
+      27
+     ],
+     "mannwhitney_p": 0.04
+    },
+    "endpoint_type": {
+     "table": {
+      "FN": {
+       "HGD": 2,
+       "IMC/cancer": 5,
+       "second LGD": 6
+      },
+      "TP": {
+       "HGD": 16,
+       "IMC/cancer": 3,
+       "second LGD": 8
+      }
+     },
+     "fisher_p": null
+    },
+    "scanner": {
+     "table": {
+      "FN": {
+       "C13210": 1,
+       "C13239-01": 12
+      },
+      "TP": {
+       "C13210": 11,
+       "C13239-01": 16
+      }
+     },
+     "fisher_p": 0.063
+    },
+    "p53": {
+     "table": {
+      "FN": {
+       "aberrant": 2,
+       "missing": 2,
+       "normal": 9
+      },
+      "TP": {
+       "aberrant": 13,
+       "missing": 0,
+       "normal": 14
+      }
+     },
+     "fisher_p": null
+    }
+   }
+  }
+ },
+ "K3": {
+  "image_only": {
+   "n": 82,
+   "events": 40,
+   "probe_auroc_discovery": 0.783,
+   "probe_ci": [
+    0.676,
+    0.881
+   ],
+   "knn10_auroc_discovery": 0.792,
+   "knn_ci": [
+    0.681,
+    0.884
+   ],
+   "probe_auroc_pooled_item6": 0.784
+  },
+  "cnv_only": {
+   "n": 82,
+   "events": 40,
+   "probe_auroc_discovery": 0.68,
+   "probe_ci": [
+    0.557,
+    0.79
+   ],
+   "knn10_auroc_discovery": 0.672,
+   "knn_ci": [
+    0.554,
+    0.781
+   ],
+   "probe_auroc_pooled_item6": 0.713
+  },
+  "early_fusion": {
+   "n": 82,
+   "events": 40,
+   "probe_auroc_discovery": 0.799,
+   "probe_ci": [
+    0.687,
+    0.89
+   ],
+   "knn10_auroc_discovery": 0.783,
+   "knn_ci": [
+    0.668,
+    0.881
+   ],
+   "probe_auroc_pooled_item6": 0.822,
+   "probe_delta_vs_image_only_discovery": [
+    0.015,
+    -0.101,
+    0.121
+   ],
+   "knn_delta_vs_image_only_discovery": [
+    -0.009,
+    -0.095,
+    0.07
+   ],
+   "probe_delta_vs_cnv_only_discovery": [
+    0.118,
+    -0.012,
+    0.257
+   ],
+   "knn_delta_vs_cnv_only_discovery": [
+    0.111,
+    -0.035,
+    0.251
+   ]
+  },
+  "intermediate_fusion": {
+   "n": 82,
+   "events": 40,
+   "probe_auroc_discovery": 0.807,
+   "probe_ci": [
+    0.704,
+    0.897
+   ],
+   "knn10_auroc_discovery": 0.793,
+   "knn_ci": [
+    0.689,
+    0.885
+   ],
+   "probe_auroc_pooled_item6": 0.819,
+   "probe_delta_vs_image_only_discovery": [
+    0.024,
+    -0.066,
+    0.118
+   ],
+   "knn_delta_vs_image_only_discovery": [
+    0.001,
+    -0.068,
+    0.067
+   ],
+   "probe_delta_vs_cnv_only_discovery": [
+    0.127,
+    -0.016,
+    0.274
+   ],
+   "knn_delta_vs_cnv_only_discovery": [
+    0.121,
+    -0.016,
+    0.249
+   ]
+  },
+  "coattention_fusion": {
+   "n": 82,
+   "events": 40,
+   "probe_auroc_discovery": 0.719,
+   "probe_ci": [
+    0.595,
+    0.833
+   ],
+   "knn10_auroc_discovery": 0.794,
+   "knn_ci": [
+    0.688,
+    0.889
+   ],
+   "probe_auroc_pooled_item6": 0.736,
+   "probe_delta_vs_image_only_discovery": [
+    -0.064,
+    -0.193,
+    0.055
+   ],
+   "knn_delta_vs_image_only_discovery": [
+    0.002,
+    -0.1,
+    0.105
+   ],
+   "probe_delta_vs_cnv_only_discovery": [
+    0.039,
+    -0.122,
+    0.198
+   ],
+   "knn_delta_vs_cnv_only_discovery": [
+    0.122,
+    -0.024,
+    0.257
+   ]
+  }
+ },
+ "K4": {
+  "ablation": {
+   "early_fusion": {
+    "all_150": {
+     "cnv_permuted_jointly_mean_of_50": {
+      "delta_auroc": 0.05,
+      "ci": [
+       -0.009,
+       0.111
+      ],
+      "baseline_auroc": 0.738,
+      "ablated_auroc": 0.688,
+      "n": 150,
+      "events": 50
+     },
+     "cnv_replaced_by_training_mean": {
+      "delta_auroc": 0.064,
+      "ci": [
+       0.007,
+       0.123
+      ],
+      "baseline_auroc": 0.738,
+      "ablated_auroc": 0.674,
+      "n": 150,
+      "events": 50
+     },
+     "image_bags_permuted_mean_of_50": {
+      "delta_auroc": 0.114,
+      "ci": [
+       0.038,
+       0.191
+      ],
+      "baseline_auroc": 0.738,
+      "ablated_auroc": 0.624,
+      "n": 150,
+      "events": 50
+     },
+     "image_replaced_by_mean_tile": {
+      "delta_auroc": 0.082,
+      "ci": [
+       0.016,
+       0.154
+      ],
+      "baseline_auroc": 0.738,
+      "ablated_auroc": 0.656,
+      "n": 150,
+      "events": 50
+     }
+    },
+    "discovery_82": {
+     "cnv_permuted_jointly_mean_of_50": {
+      "delta_auroc": 0.068,
+      "ci": [
+       -0.02,
+       0.151
+      ],
+      "baseline_auroc": 0.704,
+      "ablated_auroc": 0.636,
+      "n": 82,
+      "events": 40
+     },
+     "cnv_replaced_by_training_mean": {
+      "delta_auroc": 0.091,
+      "ci": [
+       0.013,
+       0.17
+      ],
+      "baseline_auroc": 0.704,
+      "ablated_auroc": 0.613,
+      "n": 82,
+      "events": 40
+     },
+     "image_bags_permuted_mean_of_50": {
+      "delta_auroc": 0.139,
+      "ci": [
+       0.047,
+       0.234
+      ],
+      "baseline_auroc": 0.704,
+      "ablated_auroc": 0.564,
+      "n": 82,
+      "events": 40
+     },
+     "image_replaced_by_mean_tile": {
+      "delta_auroc": 0.085,
+      "ci": [
+       0.007,
+       0.173
+      ],
+      "baseline_auroc": 0.704,
+      "ablated_auroc": 0.618,
+      "n": 82,
+      "events": 40
+     }
+    }
+   },
+   "intermediate_fusion": {
+    "all_150": {
+     "cnv_permuted_jointly_mean_of_50": {
+      "delta_auroc": 0.023,
+      "ci": [
+       -0.03,
+       0.072
+      ],
+      "baseline_auroc": 0.741,
+      "ablated_auroc": 0.719,
+      "n": 150,
+      "events": 50
+     },
+     "cnv_replaced_by_training_mean": {
+      "delta_auroc": 0.038,
+      "ci": [
+       -0.016,
+       0.096
+      ],
+      "baseline_auroc": 0.741,
+      "ablated_auroc": 0.703,
+      "n": 150,
+      "events": 50
+     },
+     "image_bags_permuted_mean_of_50": {
+      "delta_auroc": 0.167,
+      "ci": [
+       0.06,
+       0.271
+      ],
+      "baseline_auroc": 0.741,
+      "ablated_auroc": 0.574,
+      "n": 150,
+      "events": 50
+     },
+     "image_replaced_by_mean_tile": {
+      "delta_auroc": 0.125,
+      "ci": [
+       0.021,
+       0.231
+      ],
+      "baseline_auroc": 0.741,
+      "ablated_auroc": 0.616,
+      "n": 150,
+      "events": 50
+     }
+    },
+    "discovery_82": {
+     "cnv_permuted_jointly_mean_of_50": {
+      "delta_auroc": 0.059,
+      "ci": [
+       -0.02,
+       0.134
+      ],
+      "baseline_auroc": 0.684,
+      "ablated_auroc": 0.625,
+      "n": 82,
+      "events": 40
+     },
+     "cnv_replaced_by_training_mean": {
+      "delta_auroc": 0.061,
+      "ci": [
+       -0.024,
+       0.14
+      ],
+      "baseline_auroc": 0.684,
+      "ablated_auroc": 0.623,
+      "n": 82,
+      "events": 40
+     },
+     "image_bags_permuted_mean_of_50": {
+      "delta_auroc": 0.177,
+      "ci": [
+       0.046,
+       0.315
+      ],
+      "baseline_auroc": 0.684,
+      "ablated_auroc": 0.507,
+      "n": 82,
+      "events": 40
+     },
+     "image_replaced_by_mean_tile": {
+      "delta_auroc": 0.157,
+      "ci": [
+       0.011,
+       0.299
+      ],
+      "baseline_auroc": 0.684,
+      "ablated_auroc": 0.527,
+      "n": 82,
+      "events": 40
+     }
+    }
+   },
+   "coattention_fusion": {
+    "all_150": {
+     "cnv_permuted_jointly_mean_of_50": {
+      "delta_auroc": 0.016,
+      "ci": [
+       -0.033,
+       0.067
+      ],
+      "baseline_auroc": 0.739,
+      "ablated_auroc": 0.723,
+      "n": 150,
+      "events": 50
+     },
+     "cnv_replaced_by_training_mean": {
+      "delta_auroc": 0.025,
+      "ci": [
+       -0.029,
+       0.078
+      ],
+      "baseline_auroc": 0.739,
+      "ablated_auroc": 0.714,
+      "n": 150,
+      "events": 50
+     },
+     "image_bags_permuted_mean_of_50": {
+      "delta_auroc": 0.168,
+      "ci": [
+       0.092,
+       0.252
+      ],
+      "baseline_auroc": 0.739,
+      "ablated_auroc": 0.571,
+      "n": 150,
+      "events": 50
+     },
+     "image_replaced_by_mean_tile": {
+      "delta_auroc": 0.17,
+      "ci": [
+       0.094,
+       0.249
+      ],
+      "baseline_auroc": 0.739,
+      "ablated_auroc": 0.569,
+      "n": 150,
+      "events": 50
+     }
+    },
+    "discovery_82": {
+     "cnv_permuted_jointly_mean_of_50": {
+      "delta_auroc": 0.045,
+      "ci": [
+       -0.04,
+       0.121
+      ],
+      "baseline_auroc": 0.625,
+      "ablated_auroc": 0.58,
+      "n": 82,
+      "events": 40
+     },
+     "cnv_replaced_by_training_mean": {
+      "delta_auroc": 0.052,
+      "ci": [
+       -0.033,
+       0.129
+      ],
+      "baseline_auroc": 0.625,
+      "ablated_auroc": 0.573,
+      "n": 82,
+      "events": 40
+     },
+     "image_bags_permuted_mean_of_50": {
+      "delta_auroc": 0.146,
+      "ci": [
+       0.043,
+       0.256
+      ],
+      "baseline_auroc": 0.625,
+      "ablated_auroc": 0.479,
+      "n": 82,
+      "events": 40
+     },
+     "image_replaced_by_mean_tile": {
+      "delta_auroc": 0.174,
+      "ci": [
+       0.058,
+       0.292
+      ],
+      "baseline_auroc": 0.625,
+      "ablated_auroc": 0.451,
+      "n": 82,
+      "events": 40
+     }
+    }
+   }
+  },
+  "rank_shift_discovery": {
+   "n": 82,
+   "events": 40,
+   "spearman_cnv_vs_late": 0.26,
+   "progressors_up_gt20": 12,
+   "progressors_down_gt20": 9,
+   "nonprogressors_up_gt20": 10,
+   "nonprogressors_down_gt20": 15,
+   "categorical_NRI": [
+    0.312,
+    -0.016,
+    0.626
+   ]
+  }
+ },
+ "K5": {
+  "LGD2plus": {
+   "C2_grade_maxsofar": {
+    "groups": {
+     "low": {
+      "n": 19,
+      "events": 7,
+      "rate": 0.368,
+      "wilson": [
+       0.191,
+       0.59
+      ]
+     },
+     "moderate": {
+      "n": 19,
+      "events": 7,
+      "rate": 0.368,
+      "wilson": [
+       0.191,
+       0.59
+      ]
+     },
+     "high": {
+      "n": 44,
+      "events": 26,
+      "rate": 0.591,
+      "wilson": [
+       0.444,
+       0.723
+      ]
+     }
+    },
+    "OR_high_vs_low_haldane": [
+     2.387,
+     0.809,
+     7.049
+    ],
+    "cochran_armitage_z_p": [
+     1.829,
+     0.067
+    ]
+   },
+   "cnv_only": {
+    "groups": {
+     "low": {
+      "n": 12,
+      "events": 7,
+      "rate": 0.583,
+      "wilson": [
+       0.32,
+       0.807
+      ]
+     },
+     "moderate": {
+      "n": 31,
+      "events": 13,
+      "rate": 0.419,
+      "wilson": [
+       0.264,
+       0.592
+      ]
+     },
+     "high": {
+      "n": 39,
+      "events": 20,
+      "rate": 0.513,
+      "wilson": [
+       0.362,
+       0.661
+      ]
+     }
+    },
+    "OR_high_vs_low_haldane": [
+     0.771,
+     0.218,
+     2.726
+    ],
+    "cochran_armitage_z_p": [
+     -0.053,
+     0.958
+    ]
+   },
+   "image_only": {
+    "groups": {
+     "low": {
+      "n": 24,
+      "events": 8,
+      "rate": 0.333,
+      "wilson": [
+       0.18,
+       0.533
+      ]
+     },
+     "moderate": {
+      "n": 24,
+      "events": 11,
+      "rate": 0.458,
+      "wilson": [
+       0.279,
+       0.649
+      ]
+     },
+     "high": {
+      "n": 34,
+      "events": 21,
+      "rate": 0.618,
+      "wilson": [
+       0.45,
+       0.761
+      ]
+     }
+    },
+    "OR_high_vs_low_haldane": [
+     3.092,
+     1.059,
+     9.026
+    ],
+    "cochran_armitage_z_p": [
+     2.156,
+     0.031
+    ]
+   },
+   "late_mean": {
+    "groups": {
+     "low": {
+      "n": 21,
+      "events": 7,
+      "rate": 0.333,
+      "wilson": [
+       0.172,
+       0.546
+      ]
+     },
+     "moderate": {
+      "n": 26,
+      "events": 10,
+      "rate": 0.385,
+      "wilson": [
+       0.224,
+       0.575
+      ]
+     },
+     "high": {
+      "n": 35,
+      "events": 23,
+      "rate": 0.657,
+      "wilson": [
+       0.492,
+       0.792
+      ]
+     }
+    },
+    "OR_high_vs_low_haldane": [
+     3.635,
+     1.189,
+     11.108
+    ],
+    "cochran_armitage_z_p": [
+     2.506,
+     0.012
+    ]
+   }
+  },
+  "E_HGD": {
+   "C2_grade_maxsofar": {
+    "groups": {
+     "low": {
+      "n": 19,
+      "events": 7,
+      "rate": 0.368,
+      "wilson": [
+       0.191,
+       0.59
+      ]
+     },
+     "moderate": {
+      "n": 19,
+      "events": 7,
+      "rate": 0.368,
+      "wilson": [
+       0.191,
+       0.59
+      ]
+     },
+     "high": {
+      "n": 44,
+      "events": 12,
+      "rate": 0.273,
+      "wilson": [
+       0.163,
+       0.418
+      ]
+     }
+    },
+    "OR_high_vs_low_haldane": [
+     0.641,
+     0.21,
+     1.956
+    ],
+    "cochran_armitage_z_p": [
+     -0.845,
+     0.398
+    ]
+   },
+   "cnv_only": {
+    "groups": {
+     "low": {
+      "n": 12,
+      "events": 4,
+      "rate": 0.333,
+      "wilson": [
+       0.138,
+       0.609
+      ]
+     },
+     "moderate": {
+      "n": 31,
+      "events": 7,
+      "rate": 0.226,
+      "wilson": [
+       0.114,
+       0.398
+      ]
+     },
+     "high": {
+      "n": 39,
+      "events": 15,
+      "rate": 0.385,
+      "wilson": [
+       0.249,
+       0.541
+      ]
+     }
+    },
+    "OR_high_vs_low_haldane": [
+     1.195,
+     0.323,
+     4.419
+    ],
+    "cochran_armitage_z_p": [
+     0.808,
+     0.419
+    ]
+   },
+   "image_only": {
+    "groups": {
+     "low": {
+      "n": 24,
+      "events": 5,
+      "rate": 0.208,
+      "wilson": [
+       0.092,
+       0.405
+      ]
+     },
+     "moderate": {
+      "n": 24,
+      "events": 5,
+      "rate": 0.208,
+      "wilson": [
+       0.092,
+       0.405
+      ]
+     },
+     "high": {
+      "n": 34,
+      "events": 16,
+      "rate": 0.471,
+      "wilson": [
+       0.315,
+       0.633
+      ]
+     }
+    },
+    "OR_high_vs_low_haldane": [
+     3.162,
+     0.995,
+     10.045
+    ],
+    "cochran_armitage_z_p": [
+     2.233,
+     0.026
+    ]
+   },
+   "late_mean": {
+    "groups": {
+     "low": {
+      "n": 21,
+      "events": 3,
+      "rate": 0.143,
+      "wilson": [
+       0.05,
+       0.346
+      ]
+     },
+     "moderate": {
+      "n": 26,
+      "events": 7,
+      "rate": 0.269,
+      "wilson": [
+       0.137,
+       0.461
+      ]
+     },
+     "high": {
+      "n": 35,
+      "events": 16,
+      "rate": 0.457,
+      "wilson": [
+       0.305,
+       0.618
+      ]
+     }
+    },
+    "OR_high_vs_low_haldane": [
+     4.473,
+     1.198,
+     16.696
+    ],
+    "cochran_armitage_z_p": [
+     2.513,
+     0.012
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "A_spearman_rows": {
+  "intermediate_fusion": {
+   "n_rows": 707,
+   "median": 0.867,
+   "iqr": [
+    0.722,
+    0.934
+   ]
+  },
+  "coattention_fusion": {
+   "n_rows": 707,
+   "median": 0.347,
+   "iqr": [
+    -0.048,
+    0.629
+   ]
+  }
+ },
+ "B_top5pct_mass": {
+  "image_only": {
+   "n_rows": 707,
+   "median": 0.158,
+   "iqr": [
+    0.11,
+    0.213
+   ]
+  },
+  "intermediate_fusion": {
+   "n_rows": 707,
+   "median": 0.173,
+   "iqr": [
+    0.127,
+    0.237
+   ]
+  },
+  "coattention_fusion": {
+   "n_rows": 707,
+   "median": 0.085,
+   "iqr": [
+    0.064,
+    0.128
+   ]
+  }
+ },
+ "uniform_top5": 0.05,
+ "montage_paths_cluster": "feasibility/paper_plan/figs/attention/M01-M20.png; manifest feasibility/paper_plan/montage_manifest_SECRET.csv"
+}
