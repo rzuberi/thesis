@@ -39,8 +39,9 @@ sp = pd.read_csv(ROW + "/followup_patient_scores.csv", dtype={"patient_id": str}
 y = d.y.values.astype(int); neg = y == 0; bgr = pd.to_numeric(PT.baseline_grade.reindex(pats), errors="coerce").fillna(0).values; mxs = pd.to_numeric(PT.max_grade.reindex(pats), errors="coerce").fillna(0).values
 laterL = ((LT.db_max_grade_after >= 2) | (LT.release_excluded_max_grade >= 2) | (LT.slidematch_max_grade_after >= 2)).values; laterH = ((LT.db_max_grade_after >= 3) | (LT.release_excluded_max_grade >= 3) | (LT.slidematch_max_grade_after >= 3) | (LT.hgd_table_entries_after > 0)).values
 MODELS = ["late_mean", "image_only", "cnv_only", "cnv_km", "C2_grade_maxsofar", "clinical_3a", "v4_exploratory"]
+SCORE_COL = {"clinical_3a": "C4_plus_surveillance_3a"}; sp0 = pd.read_csv(ROW + "/patient_scores_predictions.csv", dtype={"patient_id": str}).set_index("patient_id").reindex(pats)
 def refit_pred(a):
-    s = sp[a].values; pred = np.zeros(len(y), int)
+    s = sp0[a].values if a == "v4_exploratory" else sp[SCORE_COL.get(a, a)].values; pred = np.zeros(len(y), int)
     for k in range(1, 6):
         tr = pfold != k; te = ~tr; ss = np.sort(np.unique(s[tr]))[::-1]; t = ss[-1]
         for t_ in ss:
