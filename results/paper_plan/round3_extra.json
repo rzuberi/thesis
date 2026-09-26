@@ -1,0 +1,25 @@
+{
+ "cnv_qc_without_reads": {
+  "features": [
+   "noise_mapd",
+   "n_segments",
+   "frac_altered_0p15",
+   "cx"
+  ],
+  "n_nonprogressors": 100,
+  "discovery": 42,
+  "validation": 58,
+  "auroc": 0.756,
+  "ci": [
+   0.656,
+   0.847
+  ],
+  "univariate_auroc_raw_direction": {
+   "noise_mapd": 0.278,
+   "n_segments": 0.244,
+   "frac_altered_0p15": 0.298,
+   "cx": 0.604
+  }
+ },
+ "note": "post hoc, added after seeing the pre-specified QC probe reach 1.0 through the read-count missing indicator"
+}
