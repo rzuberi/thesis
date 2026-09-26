@@ -18,9 +18,11 @@ st = pd.Series(cx.cnv_id.map(fd.Status).values, index=ids); disc_rows = st.notna
 ps = pd.Series(st.values, index=pid).dropna().groupby(level=0).agg(lambda s: s.mode().iloc[0]); dpats = sorted(ps.index); rows = np.where(pd.Series(pid).isin(dpats))[0]
 yp = (ps == "P").astype(int); yr = np.array([yp[p] for p in pid[rows]]); Xd = X[rows]; pr = pid[rows]; print("discovery rows", len(rows), "patients", len(dpats), "sheet P patients", int(yp.sum()), flush=True)
 CS = [0.01, 0.1, 1.0, 10.0]; oof = np.zeros(len(rows)); chosen = []
+SHARD = os.environ.get("SHARD_ID"); NSH = int(os.environ.get("N_SHARDS", "1")); my = [p for i, p in enumerate(dpats) if SHARD is None or i % NSH == int(SHARD)]   # sharded LOPO: this job handles patients i with i % N_SHARDS == SHARD_ID
 def prep(Xtr, Xte): med = np.nanmedian(Xtr, 0); Xtr = np.where(np.isfinite(Xtr), Xtr, med); Xte = np.where(np.isfinite(Xte), Xte, med); mu, sd = Xtr.mean(0), Xtr.std(0) + 1e-9; return (Xtr - mu) / sd, (Xte - mu) / sd
 def pat_auc(p_, y_, s_): g = pd.DataFrame({"p": p_, "s": s_, "y": y_}).groupby("p"); return auc(g.y.max().values, g.s.max().values)
 for i, p in enumerate(dpats):
+    if p not in my: continue
     te = pr == p; tr = ~te; best, bestC = -1, 1.0; gk = GroupKFold(5)
     for C in CS:
         pv = np.zeros(tr.sum()); Xt, yt, gt = Xd[tr], yr[tr], pr[tr]
@@ -30,6 +32,8 @@ for i, p in enumerate(dpats):
         if a_ > best: best, bestC = a_, C
     Xa, Xb = prep(Xd[tr], Xd[te]); oof[te] = LogisticRegression(penalty="elasticnet", solver="saga", l1_ratio=0.9, C=bestC, max_iter=20000, tol=1e-4).fit(Xa, yr[tr]).predict_proba(Xb)[:, 1]; chosen.append(bestC)
     if (i + 1) % 10 == 0: print("lopo", i + 1, "of", len(dpats), flush=True)
+if SHARD is not None:   # write this shard's rows and stop; pr3_lopo_merge.py assembles the summary
+    os.makedirs(T + "/feasibility/paper_plan/lopo_shards", exist_ok=True); pd.DataFrame({"sample_id": np.array(ids)[rows][np.isin(pr, my)], "lopo": oof[np.isin(pr, my)], "C": [dict(zip(my, chosen)).get(p_) for p_ in pr[np.isin(pr, my)]]}).to_csv(f"{T}/feasibility/paper_plan/lopo_shards/shard_{SHARD}_of_{NSH}.csv", index=False); print("SHARD DONE", SHARD, flush=True); sys.exit(0)
 kp = pd.read_excel(K + "/41591_2020_1033_MOESM4_ESM.xlsx", sheet_name="Supporting data for Figure 2a", header=1).rename(columns={"Samplename": "cnv_id", "Probability": "k_prob"})
 f1 = pd.read_csv(T + "/feasibility/paper_plan/f1_cnv_km_oof.csv", dtype={"sample_id": str}).set_index("sample_id")
 d = pd.DataFrame({"sample_id": np.array(ids)[rows], "p": pr, "y_sheet": yr, "lopo": oof, "cnv_id": cx.cnv_id.values[rows]}); d["cnv_km_f1"] = f1.cnv_km.reindex(d.sample_id).values; d["y_ours"] = man.y_progressor.astype(int).reindex(d.sample_id).values; m = d.merge(kp[["cnv_id", "k_prob"]], on="cnv_id")
