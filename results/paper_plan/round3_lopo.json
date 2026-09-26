@@ -1,0 +1,35 @@
+{
+ "_spec": "docs/paper_plan_round3.md @ cf244e1 R2 faithfulness (sharded run, merged by pr3_lopo_merge.py)",
+ "discovery_rows": 504,
+ "patients": 82,
+ "sheet_P_patients": 39,
+ "C_chosen_counts": {
+  "10.0": 214,
+  "1.0": 171,
+  "0.1": 119
+ },
+ "lopo_vs_sheet_status": {
+  "row_auroc": 0.786,
+  "patient_auroc_max": 0.8
+ },
+ "matched_rows_with_published": 500,
+ "matched_patients": 82,
+ "spearman_lopo_vs_published_rows": 0.414,
+ "spearman_f1arm_vs_published_rows": 0.243,
+ "spearman_lopo_vs_f1arm_rows": 0.481,
+ "published_vs_sheet_status": {
+  "row_auroc": 0.82,
+  "patient_auroc_max": 0.873
+ },
+ "lopo_vs_sheet_status_matched_rows": {
+  "row_auroc": 0.78,
+  "patient_auroc_max": 0.8
+ },
+ "lopo_vs_our_endpoint": {
+  "patient_auroc_max": 0.744,
+  "events": 40
+ },
+ "published_vs_our_endpoint_matched": {
+  "patient_auroc_max": 0.718
+ }
+}

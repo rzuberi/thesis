@@ -1,0 +1,3236 @@
+{
+ "_spec": "docs/paper_plan_round3.md @ cf244e1",
+ "R1": {
+  "probes_stratum_from_inputs_nonprogressors": {
+   "cnv_features_pca20": {
+    "n_nonprogressors": 100,
+    "discovery": 42,
+    "validation": 58,
+    "auroc": 0.891,
+    "ci": [
+     0.819,
+     0.951
+    ]
+   },
+   "cnv_arms_cx_no_pca": {
+    "n_nonprogressors": 100,
+    "discovery": 42,
+    "validation": 58,
+    "auroc": 0.886,
+    "ci": [
+     0.813,
+     0.949
+    ]
+   },
+   "cnv_qc": {
+    "n_nonprogressors": 100,
+    "discovery": 42,
+    "validation": 58,
+    "auroc": 1.0,
+    "ci": [
+     1.0,
+     1.0
+    ]
+   },
+   "image_patient_embedding_256d": {
+    "n_nonprogressors": 100,
+    "discovery": 42,
+    "validation": 58,
+    "auroc": 0.948,
+    "ci": [
+     0.887,
+     0.993
+    ]
+   }
+  },
+  "stratified_auroc": {
+   "pairs_weights": {
+    "discovery": 1680,
+    "validation": 580
+   },
+   "n_by_stratum": {
+    "discovery": [
+     82,
+     40
+    ],
+    "validation": [
+     68,
+     10
+    ]
+   },
+   "arms": {
+    "C1_grade": {
+     "pooled": 0.688,
+     "pooled_ci": [
+      0.588,
+      0.785
+     ],
+     "stratified": 0.591,
+     "stratified_ci": [
+      0.482,
+      0.699
+     ],
+     "discovery": 0.615,
+     "validation": 0.521
+    },
+    "C2_grade_maxsofar": {
+     "pooled": 0.681,
+     "pooled_ci": [
+      0.582,
+      0.776
+     ],
+     "stratified": 0.601,
+     "stratified_ci": [
+      0.492,
+      0.704
+     ],
+     "discovery": 0.625,
+     "validation": 0.531
+    },
+    "C3_plus_streak": {
+     "pooled": 0.666,
+     "pooled_ci": [
+      0.571,
+      0.758
+     ],
+     "stratified": 0.582,
+     "stratified_ci": [
+      0.478,
+      0.688
+     ],
+     "discovery": 0.591,
+     "validation": 0.553
+    },
+    "C4_plus_surveillance_3a": {
+     "pooled": 0.765,
+     "pooled_ci": [
+      0.684,
+      0.844
+     ],
+     "stratified": 0.739,
+     "stratified_ci": [
+      0.648,
+      0.824
+     ],
+     "discovery": 0.72,
+     "validation": 0.795
+    },
+    "cnv_only": {
+     "pooled": 0.663,
+     "pooled_ci": [
+      0.569,
+      0.754
+     ],
+     "stratified": 0.594,
+     "stratified_ci": [
+      0.488,
+      0.695
+     ],
+     "discovery": 0.564,
+     "validation": 0.683
+    },
+    "cnv_km": {
+     "pooled": 0.64,
+     "pooled_ci": [
+      0.538,
+      0.734
+     ],
+     "stratified": 0.597,
+     "stratified_ci": [
+      0.486,
+      0.703
+     ],
+     "discovery": 0.58,
+     "validation": 0.647
+    },
+    "image_only": {
+     "pooled": 0.731,
+     "pooled_ci": [
+      0.64,
+      0.814
+     ],
+     "stratified": 0.708,
+     "stratified_ci": [
+      0.612,
+      0.796
+     ],
+     "discovery": 0.649,
+     "validation": 0.879
+    },
+    "early_fusion": {
+     "pooled": 0.738,
+     "pooled_ci": [
+      0.646,
+      0.818
+     ],
+     "stratified": 0.735,
+     "stratified_ci": [
+      0.642,
+      0.82
+     ],
+     "discovery": 0.704,
+     "validation": 0.828
+    },
+    "intermediate_fusion": {
+     "pooled": 0.741,
+     "pooled_ci": [
+      0.653,
+      0.818
+     ],
+     "stratified": 0.717,
+     "stratified_ci": [
+      0.619,
+      0.806
+     ],
+     "discovery": 0.684,
+     "validation": 0.814
+    },
+    "late_mean": {
+     "pooled": 0.774,
+     "pooled_ci": [
+      0.687,
+      0.849
+     ],
+     "stratified": 0.745,
+     "stratified_ci": [
+      0.652,
+      0.829
+     ],
+     "discovery": 0.691,
+     "validation": 0.9
+    },
+    "late_mean_km": {
+     "pooled": 0.764,
+     "pooled_ci": [
+      0.672,
+      0.843
+     ],
+     "stratified": 0.73,
+     "stratified_ci": [
+      0.63,
+      0.819
+     ],
+     "discovery": 0.676,
+     "validation": 0.888
+    },
+    "coattention_fusion": {
+     "pooled": 0.739,
+     "pooled_ci": [
+      0.652,
+      0.821
+     ],
+     "stratified": 0.695,
+     "stratified_ci": [
+      0.596,
+      0.792
+     ],
+     "discovery": 0.625,
+     "validation": 0.897
+    },
+    "late_stack_logit": {
+     "pooled": 0.737,
+     "pooled_ci": [
+      0.648,
+      0.814
+     ],
+     "stratified": 0.701,
+     "stratified_ci": [
+      0.602,
+      0.791
+     ],
+     "discovery": 0.647,
+     "validation": 0.857
+    },
+    "C2+image": {
+     "pooled": 0.802,
+     "pooled_ci": [
+      0.727,
+      0.873
+     ],
+     "stratified": 0.756,
+     "stratified_ci": [
+      0.663,
+      0.838
+     ],
+     "discovery": 0.704,
+     "validation": 0.905
+    },
+    "C2+cnv_only": {
+     "pooled": 0.784,
+     "pooled_ci": [
+      0.707,
+      0.857
+     ],
+     "stratified": 0.715,
+     "stratified_ci": [
+      0.619,
+      0.805
+     ],
+     "discovery": 0.698,
+     "validation": 0.764
+    },
+    "C2+cnv_km": {
+     "pooled": 0.796,
+     "pooled_ci": [
+      0.713,
+      0.871
+     ],
+     "stratified": 0.748,
+     "stratified_ci": [
+      0.647,
+      0.836
+     ],
+     "discovery": 0.735,
+     "validation": 0.786
+    },
+    "C2+late_mean": {
+     "pooled": 0.824,
+     "pooled_ci": [
+      0.755,
+      0.888
+     ],
+     "stratified": 0.778,
+     "stratified_ci": [
+      0.689,
+      0.856
+     ],
+     "discovery": 0.729,
+     "validation": 0.922
+    },
+    "C2+image+cnv_only": {
+     "pooled": 0.843,
+     "pooled_ci": [
+      0.778,
+      0.901
+     ],
+     "stratified": 0.791,
+     "stratified_ci": [
+      0.703,
+      0.867
+     ],
+     "discovery": 0.749,
+     "validation": 0.914
+    }
+   }
+  },
+  "stratified_paired_differences": {
+   "image_only_minus_cnv_only": {
+    "stratified_delta": 0.114,
+    "ci": [
+     -0.029,
+     0.253
+    ],
+    "pooled_delta": 0.068,
+    "pooled_ci": [
+     -0.065,
+     0.196
+    ]
+   },
+   "image_only_minus_cnv_km": {
+    "stratified_delta": 0.111,
+    "ci": [
+     -0.025,
+     0.252
+    ],
+    "pooled_delta": 0.091,
+    "pooled_ci": [
+     -0.031,
+     0.215
+    ]
+   },
+   "late_mean_minus_image_only": {
+    "stratified_delta": 0.036,
+    "ci": [
+     0.006,
+     0.07
+    ],
+    "pooled_delta": 0.043,
+    "pooled_ci": [
+     0.014,
+     0.071
+    ]
+   },
+   "late_mean_km_minus_image_only": {
+    "stratified_delta": 0.022,
+    "ci": [
+     -0.031,
+     0.069
+    ],
+    "pooled_delta": 0.033,
+    "pooled_ci": [
+     -0.009,
+     0.072
+    ]
+   },
+   "late_mean_minus_cnv_only": {
+    "stratified_delta": 0.15,
+    "ci": [
+     0.029,
+     0.275
+    ],
+    "pooled_delta": 0.111,
+    "pooled_ci": [
+     -0.001,
+     0.222
+    ]
+   },
+   "C2+image_minus_C2_grade_maxsofar": {
+    "stratified_delta": 0.155,
+    "ci": [
+     0.068,
+     0.24
+    ],
+    "pooled_delta": 0.12,
+    "pooled_ci": [
+     0.05,
+     0.196
+    ]
+   },
+   "C2+cnv_only_minus_C2_grade_maxsofar": {
+    "stratified_delta": 0.114,
+    "ci": [
+     0.021,
+     0.207
+    ],
+    "pooled_delta": 0.103,
+    "pooled_ci": [
+     0.027,
+     0.179
+    ]
+   },
+   "C2+cnv_km_minus_C2_grade_maxsofar": {
+    "stratified_delta": 0.147,
+    "ci": [
+     0.054,
+     0.246
+    ],
+    "pooled_delta": 0.114,
+    "pooled_ci": [
+     0.034,
+     0.193
+    ]
+   },
+   "C2+late_mean_minus_C2_grade_maxsofar": {
+    "stratified_delta": 0.177,
+    "ci": [
+     0.089,
+     0.265
+    ],
+    "pooled_delta": 0.143,
+    "pooled_ci": [
+     0.072,
+     0.216
+    ]
+   },
+   "C2+image+cnv_only_minus_C2_grade_maxsofar": {
+    "stratified_delta": 0.19,
+    "ci": [
+     0.094,
+     0.288
+    ],
+    "pooled_delta": 0.161,
+    "pooled_ci": [
+     0.086,
+     0.243
+    ]
+   }
+  },
+  "stratum_adjusted_incremental_value": {
+   "C1_grade": {
+    "LR_stat": 5.432,
+    "LR_p": 0.02,
+    "auroc_base_insample": 0.69,
+    "auroc_base_plus_arm_insample": 0.731,
+    "delta_auroc_insample": 0.041,
+    "auroc_base_foldhonest": 0.649,
+    "auroc_base_plus_arm_foldhonest": 0.725,
+    "delta_auroc_foldhonest": 0.076,
+    "delta_ci_foldhonest": [
+     0.014,
+     0.142
+    ]
+   },
+   "C2_grade_maxsofar": {
+    "LR_stat": 4.347,
+    "LR_p": 0.037,
+    "auroc_base_insample": 0.69,
+    "auroc_base_plus_arm_insample": 0.735,
+    "delta_auroc_insample": 0.045,
+    "auroc_base_foldhonest": 0.649,
+    "auroc_base_plus_arm_foldhonest": 0.706,
+    "delta_auroc_foldhonest": 0.057,
+    "delta_ci_foldhonest": [
+     -0.003,
+     0.119
+    ]
+   },
+   "C3_plus_streak": {
+    "LR_stat": 5.626,
+    "LR_p": 0.018,
+    "auroc_base_insample": 0.69,
+    "auroc_base_plus_arm_insample": 0.725,
+    "delta_auroc_insample": 0.035,
+    "auroc_base_foldhonest": 0.649,
+    "auroc_base_plus_arm_foldhonest": 0.709,
+    "delta_auroc_foldhonest": 0.06,
+    "delta_ci_foldhonest": [
+     0.003,
+     0.123
+    ]
+   },
+   "C4_plus_surveillance_3a": {
+    "LR_stat": 9.918,
+    "LR_p": 0.002,
+    "auroc_base_insample": 0.69,
+    "auroc_base_plus_arm_insample": 0.785,
+    "delta_auroc_insample": 0.095,
+    "auroc_base_foldhonest": 0.649,
+    "auroc_base_plus_arm_foldhonest": 0.75,
+    "delta_auroc_foldhonest": 0.101,
+    "delta_ci_foldhonest": [
+     0.035,
+     0.168
+    ]
+   },
+   "cnv_only": {
+    "LR_stat": 2.181,
+    "LR_p": 0.14,
+    "auroc_base_insample": 0.69,
+    "auroc_base_plus_arm_insample": 0.733,
+    "delta_auroc_insample": 0.043,
+    "auroc_base_foldhonest": 0.649,
+    "auroc_base_plus_arm_foldhonest": 0.692,
+    "delta_auroc_foldhonest": 0.043,
+    "delta_ci_foldhonest": [
+     -0.002,
+     0.086
+    ]
+   },
+   "cnv_km": {
+    "LR_stat": 7.02,
+    "LR_p": 0.008,
+    "auroc_base_insample": 0.69,
+    "auroc_base_plus_arm_insample": 0.735,
+    "delta_auroc_insample": 0.045,
+    "auroc_base_foldhonest": 0.649,
+    "auroc_base_plus_arm_foldhonest": 0.707,
+    "delta_auroc_foldhonest": 0.058,
+    "delta_ci_foldhonest": [
+     -0.009,
+     0.125
+    ]
+   },
+   "image_only": {
+    "LR_stat": 17.144,
+    "LR_p": "<0.001",
+    "auroc_base_insample": 0.69,
+    "auroc_base_plus_arm_insample": 0.789,
+    "delta_auroc_insample": 0.099,
+    "auroc_base_foldhonest": 0.649,
+    "auroc_base_plus_arm_foldhonest": 0.753,
+    "delta_auroc_foldhonest": 0.104,
+    "delta_ci_foldhonest": [
+     0.02,
+     0.182
+    ]
+   },
+   "early_fusion": {
+    "LR_stat": 20.454,
+    "LR_p": "<0.001",
+    "auroc_base_insample": 0.69,
+    "auroc_base_plus_arm_insample": 0.796,
+    "delta_auroc_insample": 0.106,
+    "auroc_base_foldhonest": 0.649,
+    "auroc_base_plus_arm_foldhonest": 0.781,
+    "delta_auroc_foldhonest": 0.131,
+    "delta_ci_foldhonest": [
+     0.053,
+     0.206
+    ]
+   },
+   "intermediate_fusion": {
+    "LR_stat": 15.663,
+    "LR_p": "<0.001",
+    "auroc_base_insample": 0.69,
+    "auroc_base_plus_arm_insample": 0.789,
+    "delta_auroc_insample": 0.099,
+    "auroc_base_foldhonest": 0.649,
+    "auroc_base_plus_arm_foldhonest": 0.749,
+    "delta_auroc_foldhonest": 0.1,
+    "delta_ci_foldhonest": [
+     0.034,
+     0.165
+    ]
+   },
+   "late_mean": {
+    "LR_stat": 23.726,
+    "LR_p": "<0.001",
+    "auroc_base_insample": 0.69,
+    "auroc_base_plus_arm_insample": 0.811,
+    "delta_auroc_insample": 0.121,
+    "auroc_base_foldhonest": 0.649,
+    "auroc_base_plus_arm_foldhonest": 0.768,
+    "delta_auroc_foldhonest": 0.119,
+    "delta_ci_foldhonest": [
+     0.028,
+     0.206
+    ]
+   },
+   "late_mean_km": {
+    "LR_stat": 22.813,
+    "LR_p": "<0.001",
+    "auroc_base_insample": 0.69,
+    "auroc_base_plus_arm_insample": 0.798,
+    "delta_auroc_insample": 0.108,
+    "auroc_base_foldhonest": 0.649,
+    "auroc_base_plus_arm_foldhonest": 0.756,
+    "delta_auroc_foldhonest": 0.107,
+    "delta_ci_foldhonest": [
+     0.021,
+     0.187
+    ]
+   },
+   "coattention_fusion": {
+    "LR_stat": 14.016,
+    "LR_p": "<0.001",
+    "auroc_base_insample": 0.69,
+    "auroc_base_plus_arm_insample": 0.77,
+    "delta_auroc_insample": 0.08,
+    "auroc_base_foldhonest": 0.649,
+    "auroc_base_plus_arm_foldhonest": 0.743,
+    "delta_auroc_foldhonest": 0.094,
+    "delta_ci_foldhonest": [
+     0.02,
+     0.162
+    ]
+   },
+   "late_stack_logit": {
+    "LR_stat": 14.328,
+    "LR_p": "<0.001",
+    "auroc_base_insample": 0.69,
+    "auroc_base_plus_arm_insample": 0.779,
+    "delta_auroc_insample": 0.089,
+    "auroc_base_foldhonest": 0.649,
+    "auroc_base_plus_arm_foldhonest": 0.736,
+    "delta_auroc_foldhonest": 0.087,
+    "delta_ci_foldhonest": [
+     0.009,
+     0.161
+    ]
+   },
+   "C2+image": {
+    "LR_stat": 24.414,
+    "LR_p": "<0.001",
+    "auroc_base_insample": 0.69,
+    "auroc_base_plus_arm_insample": 0.816,
+    "delta_auroc_insample": 0.126,
+    "auroc_base_foldhonest": 0.649,
+    "auroc_base_plus_arm_foldhonest": 0.795,
+    "delta_auroc_foldhonest": 0.146,
+    "delta_ci_foldhonest": [
+     0.072,
+     0.228
+    ]
+   },
+   "C2+cnv_only": {
+    "LR_stat": 15.563,
+    "LR_p": "<0.001",
+    "auroc_base_insample": 0.69,
+    "auroc_base_plus_arm_insample": 0.782,
+    "delta_auroc_insample": 0.092,
+    "auroc_base_foldhonest": 0.649,
+    "auroc_base_plus_arm_foldhonest": 0.759,
+    "delta_auroc_foldhonest": 0.11,
+    "delta_ci_foldhonest": [
+     0.048,
+     0.177
+    ]
+   },
+   "C2+cnv_km": {
+    "LR_stat": 17.743,
+    "LR_p": "<0.001",
+    "auroc_base_insample": 0.69,
+    "auroc_base_plus_arm_insample": 0.787,
+    "delta_auroc_insample": 0.097,
+    "auroc_base_foldhonest": 0.649,
+    "auroc_base_plus_arm_foldhonest": 0.763,
+    "delta_auroc_foldhonest": 0.114,
+    "delta_ci_foldhonest": [
+     0.052,
+     0.182
+    ]
+   },
+   "C2+late_mean": {
+    "LR_stat": 31.716,
+    "LR_p": "<0.001",
+    "auroc_base_insample": 0.69,
+    "auroc_base_plus_arm_insample": 0.837,
+    "delta_auroc_insample": 0.147,
+    "auroc_base_foldhonest": 0.649,
+    "auroc_base_plus_arm_foldhonest": 0.82,
+    "delta_auroc_foldhonest": 0.171,
+    "delta_ci_foldhonest": [
+     0.094,
+     0.256
+    ]
+   },
+   "C2+image+cnv_only": {
+    "LR_stat": 29.954,
+    "LR_p": "<0.001",
+    "auroc_base_insample": 0.69,
+    "auroc_base_plus_arm_insample": 0.828,
+    "delta_auroc_insample": 0.138,
+    "auroc_base_foldhonest": 0.649,
+    "auroc_base_plus_arm_foldhonest": 0.804,
+    "delta_auroc_foldhonest": 0.154,
+    "delta_ci_foldhonest": [
+     0.085,
+     0.226
+    ]
+   }
+  },
+  "stratum_alone": {
+   "auroc_insample": 0.69,
+   "n": 150,
+   "events": 50
+  }
+ },
+ "R2": {
+  "progressor_types": {
+   "HGD_IMC": 36,
+   "second_LGD_only": 14,
+   "by_stratum": {
+    "discovery": {
+     "HGD_IMC": 26,
+     "second_LGD_only": 14
+    },
+    "validation": {
+     "HGD_IMC": 10,
+     "second_LGD_only": 0
+    }
+   }
+  },
+  "E_HGD": {
+   "n": 150,
+   "events": 36,
+   "arms": {
+    "C1_grade": {
+     "pooled": 0.542,
+     "pooled_ci": [
+      0.432,
+      0.656
+     ],
+     "stratified": 0.441,
+     "stratified_ci": [
+      0.328,
+      0.552
+     ],
+     "discovery": 0.41,
+     "validation": 0.521
+    },
+    "C2_grade_maxsofar": {
+     "pooled": 0.529,
+     "pooled_ci": [
+      0.424,
+      0.64
+     ],
+     "stratified": 0.446,
+     "stratified_ci": [
+      0.327,
+      0.553
+     ],
+     "discovery": 0.412,
+     "validation": 0.531
+    },
+    "C3_plus_streak": {
+     "pooled": 0.51,
+     "pooled_ci": [
+      0.404,
+      0.619
+     ],
+     "stratified": 0.422,
+     "stratified_ci": [
+      0.311,
+      0.533
+     ],
+     "discovery": 0.37,
+     "validation": 0.553
+    },
+    "C4_plus_surveillance_3a": {
+     "pooled": 0.69,
+     "pooled_ci": [
+      0.591,
+      0.786
+     ],
+     "stratified": 0.667,
+     "stratified_ci": [
+      0.561,
+      0.764
+     ],
+     "discovery": 0.617,
+     "validation": 0.795
+    },
+    "cnv_only": {
+     "pooled": 0.676,
+     "pooled_ci": [
+      0.561,
+      0.774
+     ],
+     "stratified": 0.651,
+     "stratified_ci": [
+      0.532,
+      0.771
+     ],
+     "discovery": 0.639,
+     "validation": 0.683
+    },
+    "cnv_km": {
+     "pooled": 0.694,
+     "pooled_ci": [
+      0.58,
+      0.789
+     ],
+     "stratified": 0.684,
+     "stratified_ci": [
+      0.567,
+      0.794
+     ],
+     "discovery": 0.698,
+     "validation": 0.647
+    },
+    "image_only": {
+     "pooled": 0.746,
+     "pooled_ci": [
+      0.65,
+      0.837
+     ],
+     "stratified": 0.721,
+     "stratified_ci": [
+      0.616,
+      0.816
+     ],
+     "discovery": 0.658,
+     "validation": 0.879
+    },
+    "early_fusion": {
+     "pooled": 0.782,
+     "pooled_ci": [
+      0.68,
+      0.868
+     ],
+     "stratified": 0.773,
+     "stratified_ci": [
+      0.673,
+      0.86
+     ],
+     "discovery": 0.751,
+     "validation": 0.828
+    },
+    "intermediate_fusion": {
+     "pooled": 0.744,
+     "pooled_ci": [
+      0.654,
+      0.829
+     ],
+     "stratified": 0.723,
+     "stratified_ci": [
+      0.623,
+      0.817
+     ],
+     "discovery": 0.687,
+     "validation": 0.814
+    },
+    "late_mean": {
+     "pooled": 0.782,
+     "pooled_ci": [
+      0.688,
+      0.865
+     ],
+     "stratified": 0.757,
+     "stratified_ci": [
+      0.662,
+      0.85
+     ],
+     "discovery": 0.701,
+     "validation": 0.9
+    },
+    "late_mean_km": {
+     "pooled": 0.785,
+     "pooled_ci": [
+      0.695,
+      0.864
+     ],
+     "stratified": 0.757,
+     "stratified_ci": [
+      0.657,
+      0.847
+     ],
+     "discovery": 0.705,
+     "validation": 0.888
+    },
+    "coattention_fusion": {
+     "pooled": 0.778,
+     "pooled_ci": [
+      0.689,
+      0.859
+     ],
+     "stratified": 0.744,
+     "stratified_ci": [
+      0.649,
+      0.839
+     ],
+     "discovery": 0.683,
+     "validation": 0.897
+    },
+    "late_stack_logit": {
+     "pooled": 0.746,
+     "pooled_ci": [
+      0.657,
+      0.828
+     ],
+     "stratified": 0.719,
+     "stratified_ci": [
+      0.62,
+      0.813
+     ],
+     "discovery": 0.664,
+     "validation": 0.857
+    },
+    "C2+image": {
+     "pooled": 0.678,
+     "pooled_ci": [
+      0.586,
+      0.772
+     ],
+     "stratified": 0.616,
+     "stratified_ci": [
+      0.513,
+      0.716
+     ],
+     "discovery": 0.501,
+     "validation": 0.905
+    },
+    "C2+cnv_only": {
+     "pooled": 0.657,
+     "pooled_ci": [
+      0.565,
+      0.753
+     ],
+     "stratified": 0.579,
+     "stratified_ci": [
+      0.47,
+      0.683
+     ],
+     "discovery": 0.505,
+     "validation": 0.764
+    },
+    "C2+cnv_km": {
+     "pooled": 0.692,
+     "pooled_ci": [
+      0.587,
+      0.795
+     ],
+     "stratified": 0.651,
+     "stratified_ci": [
+      0.532,
+      0.758
+     ],
+     "discovery": 0.598,
+     "validation": 0.786
+    },
+    "C2+late_mean": {
+     "pooled": 0.701,
+     "pooled_ci": [
+      0.612,
+      0.79
+     ],
+     "stratified": 0.637,
+     "stratified_ci": [
+      0.538,
+      0.733
+     ],
+     "discovery": 0.523,
+     "validation": 0.922
+    },
+    "C2+image+cnv_only": {
+     "pooled": 0.738,
+     "pooled_ci": [
+      0.654,
+      0.821
+     ],
+     "stratified": 0.673,
+     "stratified_ci": [
+      0.573,
+      0.77
+     ],
+     "discovery": 0.578,
+     "validation": 0.914
+    }
+   }
+  },
+  "E_HGD_excl": {
+   "n": 136,
+   "events": 36,
+   "arms": {
+    "C1_grade": {
+     "pooled": 0.597,
+     "pooled_ci": [
+      0.483,
+      0.71
+     ],
+     "stratified": 0.504,
+     "stratified_ci": [
+      0.386,
+      0.624
+     ]
+    },
+    "C2_grade_maxsofar": {
+     "pooled": 0.588,
+     "pooled_ci": [
+      0.479,
+      0.696
+     ],
+     "stratified": 0.513,
+     "stratified_ci": [
+      0.392,
+      0.63
+     ]
+    },
+    "C3_plus_streak": {
+     "pooled": 0.566,
+     "pooled_ci": [
+      0.453,
+      0.677
+     ],
+     "stratified": 0.487,
+     "stratified_ci": [
+      0.366,
+      0.606
+     ]
+    },
+    "C4_plus_surveillance_3a": {
+     "pooled": 0.738,
+     "pooled_ci": [
+      0.636,
+      0.827
+     ],
+     "stratified": 0.726,
+     "stratified_ci": [
+      0.626,
+      0.817
+     ]
+    },
+    "cnv_only": {
+     "pooled": 0.684,
+     "pooled_ci": [
+      0.569,
+      0.794
+     ],
+     "stratified": 0.646,
+     "stratified_ci": [
+      0.523,
+      0.76
+     ]
+    },
+    "cnv_km": {
+     "pooled": 0.697,
+     "pooled_ci": [
+      0.579,
+      0.801
+     ],
+     "stratified": 0.676,
+     "stratified_ci": [
+      0.561,
+      0.792
+     ]
+    },
+    "image_only": {
+     "pooled": 0.765,
+     "pooled_ci": [
+      0.668,
+      0.852
+     ],
+     "stratified": 0.751,
+     "stratified_ci": [
+      0.647,
+      0.837
+     ]
+    },
+    "early_fusion": {
+     "pooled": 0.789,
+     "pooled_ci": [
+      0.694,
+      0.869
+     ],
+     "stratified": 0.786,
+     "stratified_ci": [
+      0.691,
+      0.869
+     ]
+    },
+    "intermediate_fusion": {
+     "pooled": 0.763,
+     "pooled_ci": [
+      0.675,
+      0.838
+     ],
+     "stratified": 0.745,
+     "stratified_ci": [
+      0.645,
+      0.827
+     ]
+    },
+    "late_mean": {
+     "pooled": 0.802,
+     "pooled_ci": [
+      0.716,
+      0.881
+     ],
+     "stratified": 0.786,
+     "stratified_ci": [
+      0.69,
+      0.868
+     ]
+    },
+    "late_mean_km": {
+     "pooled": 0.802,
+     "pooled_ci": [
+      0.712,
+      0.877
+     ],
+     "stratified": 0.781,
+     "stratified_ci": [
+      0.685,
+      0.864
+     ]
+    },
+    "coattention_fusion": {
+     "pooled": 0.787,
+     "pooled_ci": [
+      0.699,
+      0.865
+     ],
+     "stratified": 0.757,
+     "stratified_ci": [
+      0.655,
+      0.841
+     ]
+    },
+    "late_stack_logit": {
+     "pooled": 0.765,
+     "pooled_ci": [
+      0.674,
+      0.841
+     ],
+     "stratified": 0.743,
+     "stratified_ci": [
+      0.64,
+      0.827
+     ]
+    },
+    "C2+image": {
+     "pooled": 0.75,
+     "pooled_ci": [
+      0.654,
+      0.835
+     ],
+     "stratified": 0.709,
+     "stratified_ci": [
+      0.6,
+      0.807
+     ]
+    },
+    "C2+cnv_only": {
+     "pooled": 0.725,
+     "pooled_ci": [
+      0.627,
+      0.811
+     ],
+     "stratified": 0.658,
+     "stratified_ci": [
+      0.541,
+      0.76
+     ]
+    },
+    "C2+cnv_km": {
+     "pooled": 0.745,
+     "pooled_ci": [
+      0.641,
+      0.839
+     ],
+     "stratified": 0.711,
+     "stratified_ci": [
+      0.599,
+      0.815
+     ]
+    },
+    "C2+late_mean": {
+     "pooled": 0.778,
+     "pooled_ci": [
+      0.691,
+      0.856
+     ],
+     "stratified": 0.737,
+     "stratified_ci": [
+      0.632,
+      0.829
+     ]
+    },
+    "C2+image+cnv_only": {
+     "pooled": 0.807,
+     "pooled_ci": [
+      0.726,
+      0.878
+     ],
+     "stratified": 0.76,
+     "stratified_ci": [
+      0.662,
+      0.849
+     ]
+    }
+   }
+  },
+  "second_LGD_only_progressors_scores_rank": {
+   "cnv_only": {
+    "median_percentile_among_all_patients": 56.0
+   },
+   "cnv_km": {
+    "median_percentile_among_all_patients": 40.333
+   },
+   "image_only": {
+    "median_percentile_among_all_patients": 57.0
+   },
+   "late_mean": {
+    "median_percentile_among_all_patients": 61.333
+   },
+   "C2_grade_maxsofar": {
+    "median_percentile_among_all_patients": 87.667
+   }
+  }
+ },
+ "R3": {
+  "kept_tiles_as_score": {
+   "pooled": {
+    "auroc": 0.766,
+    "ci": [
+     0.688,
+     0.837
+    ],
+    "n": 150,
+    "events": 50,
+    "sign_note": "sign chosen on training folds per fold"
+   },
+   "stratified": 0.648,
+   "discovery": {
+    "auroc": 0.551,
+    "n": 82,
+    "events": 40
+   },
+   "validation": {
+    "auroc": 0.93,
+    "n": 68,
+    "events": 10
+   },
+   "raw_pooled_auroc_more_tiles_higher": 0.234
+  },
+  "tissue_frac_as_score": {
+   "pooled_auroc": 0.548,
+   "ci": [
+    0.451,
+    0.65
+   ]
+  },
+  "kept_tiles_distribution": {
+   "by_stratum": {
+    "discovery_case": {
+     "n": 39,
+     "median": 1283.6,
+     "iqr": [
+      907.875,
+      2964.667
+     ]
+    },
+    "discovery_control": {
+     "n": 43,
+     "median": 1173.0,
+     "iqr": [
+      945.854,
+      2178.991
+     ]
+    },
+    "validation_sheet": {
+     "n": 68,
+     "median": 5504.167,
+     "iqr": [
+      2802.15,
+      6550.875
+     ]
+    }
+   },
+   "discovery_vs_validation_mannwhitney_p": "<0.001",
+   "by_scanner": {
+    "C13210": {
+     "n": 20,
+     "median": 1095.25,
+     "iqr": [
+      781.969,
+      2264.315
+     ]
+    },
+    "C13239-01": {
+     "n": 130,
+     "median": 2873.167,
+     "iqr": [
+      1074.7,
+      5622.75
+     ]
+    }
+   },
+   "by_label": {
+    "progressors_median": 1119.5,
+    "nonprogressors_median": 3447.115,
+    "mannwhitney_p": "<0.001"
+   }
+  },
+  "spearman_arm_score_vs_kept_tiles_nonprogressors": {
+   "C1_grade": {
+    "rho": -0.504,
+    "p": "<0.001"
+   },
+   "C2_grade_maxsofar": {
+    "rho": -0.403,
+    "p": "<0.001"
+   },
+   "C3_plus_streak": {
+    "rho": -0.475,
+    "p": "<0.001"
+   },
+   "C4_plus_surveillance_3a": {
+    "rho": -0.415,
+    "p": "<0.001"
+   },
+   "cnv_only": {
+    "rho": -0.467,
+    "p": "<0.001"
+   },
+   "cnv_km": {
+    "rho": -0.503,
+    "p": "<0.001"
+   },
+   "image_only": {
+    "rho": -0.431,
+    "p": "<0.001"
+   },
+   "early_fusion": {
+    "rho": -0.308,
+    "p": 0.002
+   },
+   "intermediate_fusion": {
+    "rho": -0.434,
+    "p": "<0.001"
+   },
+   "late_mean": {
+    "rho": -0.487,
+    "p": "<0.001"
+   },
+   "late_mean_km": {
+    "rho": -0.488,
+    "p": "<0.001"
+   },
+   "coattention_fusion": {
+    "rho": -0.446,
+    "p": "<0.001"
+   },
+   "late_stack_logit": {
+    "rho": -0.473,
+    "p": "<0.001"
+   },
+   "C2+image": {
+    "rho": -0.558,
+    "p": "<0.001"
+   },
+   "C2+cnv_only": {
+    "rho": -0.553,
+    "p": "<0.001"
+   },
+   "C2+cnv_km": {
+    "rho": -0.644,
+    "p": "<0.001"
+   },
+   "C2+late_mean": {
+    "rho": -0.598,
+    "p": "<0.001"
+   },
+   "C2+image+cnv_only": {
+    "rho": -0.615,
+    "p": "<0.001"
+   }
+  },
+  "stratum_plus_tiles_incremental_value": {
+   "C1_grade": {
+    "LR_stat": 4.588,
+    "LR_p": 0.032,
+    "auroc_base_insample": 0.762,
+    "auroc_base_plus_arm_insample": 0.77,
+    "delta_auroc_insample": 0.008,
+    "auroc_base_foldhonest": 0.737,
+    "auroc_base_plus_arm_foldhonest": 0.746,
+    "delta_auroc_foldhonest": 0.009,
+    "delta_ci_foldhonest": [
+     -0.026,
+     0.044
+    ]
+   },
+   "C2_grade_maxsofar": {
+    "LR_stat": 4.143,
+    "LR_p": 0.042,
+    "auroc_base_insample": 0.762,
+    "auroc_base_plus_arm_insample": 0.77,
+    "delta_auroc_insample": 0.008,
+    "auroc_base_foldhonest": 0.737,
+    "auroc_base_plus_arm_foldhonest": 0.751,
+    "delta_auroc_foldhonest": 0.014,
+    "delta_ci_foldhonest": [
+     -0.026,
+     0.054
+    ]
+   },
+   "C3_plus_streak": {
+    "LR_stat": 5.449,
+    "LR_p": 0.02,
+    "auroc_base_insample": 0.762,
+    "auroc_base_plus_arm_insample": 0.773,
+    "delta_auroc_insample": 0.011,
+    "auroc_base_foldhonest": 0.737,
+    "auroc_base_plus_arm_foldhonest": 0.747,
+    "delta_auroc_foldhonest": 0.01,
+    "delta_ci_foldhonest": [
+     -0.028,
+     0.048
+    ]
+   },
+   "C4_plus_surveillance_3a": {
+    "LR_stat": 5.848,
+    "LR_p": 0.016,
+    "auroc_base_insample": 0.762,
+    "auroc_base_plus_arm_insample": 0.777,
+    "delta_auroc_insample": 0.015,
+    "auroc_base_foldhonest": 0.737,
+    "auroc_base_plus_arm_foldhonest": 0.75,
+    "delta_auroc_foldhonest": 0.013,
+    "delta_ci_foldhonest": [
+     -0.021,
+     0.048
+    ]
+   },
+   "cnv_only": {
+    "LR_stat": 0.673,
+    "LR_p": 0.412,
+    "auroc_base_insample": 0.762,
+    "auroc_base_plus_arm_insample": 0.766,
+    "delta_auroc_insample": 0.004,
+    "auroc_base_foldhonest": 0.737,
+    "auroc_base_plus_arm_foldhonest": 0.721,
+    "delta_auroc_foldhonest": -0.016,
+    "delta_ci_foldhonest": [
+     -0.041,
+     0.004
+    ]
+   },
+   "cnv_km": {
+    "LR_stat": 4.484,
+    "LR_p": 0.034,
+    "auroc_base_insample": 0.762,
+    "auroc_base_plus_arm_insample": 0.774,
+    "delta_auroc_insample": 0.012,
+    "auroc_base_foldhonest": 0.737,
+    "auroc_base_plus_arm_foldhonest": 0.739,
+    "delta_auroc_foldhonest": 0.002,
+    "delta_ci_foldhonest": [
+     -0.029,
+     0.035
+    ]
+   },
+   "image_only": {
+    "LR_stat": 7.295,
+    "LR_p": 0.007,
+    "auroc_base_insample": 0.762,
+    "auroc_base_plus_arm_insample": 0.796,
+    "delta_auroc_insample": 0.034,
+    "auroc_base_foldhonest": 0.737,
+    "auroc_base_plus_arm_foldhonest": 0.75,
+    "delta_auroc_foldhonest": 0.013,
+    "delta_ci_foldhonest": [
+     -0.03,
+     0.057
+    ]
+   },
+   "early_fusion": {
+    "LR_stat": 11.142,
+    "LR_p": "<0.001",
+    "auroc_base_insample": 0.762,
+    "auroc_base_plus_arm_insample": 0.81,
+    "delta_auroc_insample": 0.047,
+    "auroc_base_foldhonest": 0.737,
+    "auroc_base_plus_arm_foldhonest": 0.764,
+    "delta_auroc_foldhonest": 0.027,
+    "delta_ci_foldhonest": [
+     -0.021,
+     0.076
+    ]
+   },
+   "intermediate_fusion": {
+    "LR_stat": 7.403,
+    "LR_p": 0.007,
+    "auroc_base_insample": 0.762,
+    "auroc_base_plus_arm_insample": 0.794,
+    "delta_auroc_insample": 0.032,
+    "auroc_base_foldhonest": 0.737,
+    "auroc_base_plus_arm_foldhonest": 0.754,
+    "delta_auroc_foldhonest": 0.017,
+    "delta_ci_foldhonest": [
+     -0.02,
+     0.057
+    ]
+   },
+   "late_mean": {
+    "LR_stat": 12.347,
+    "LR_p": "<0.001",
+    "auroc_base_insample": 0.762,
+    "auroc_base_plus_arm_insample": 0.814,
+    "delta_auroc_insample": 0.052,
+    "auroc_base_foldhonest": 0.737,
+    "auroc_base_plus_arm_foldhonest": 0.76,
+    "delta_auroc_foldhonest": 0.023,
+    "delta_ci_foldhonest": [
+     -0.03,
+     0.078
+    ]
+   },
+   "late_mean_km": {
+    "LR_stat": 12.466,
+    "LR_p": "<0.001",
+    "auroc_base_insample": 0.762,
+    "auroc_base_plus_arm_insample": 0.802,
+    "delta_auroc_insample": 0.04,
+    "auroc_base_foldhonest": 0.737,
+    "auroc_base_plus_arm_foldhonest": 0.748,
+    "delta_auroc_foldhonest": 0.011,
+    "delta_ci_foldhonest": [
+     -0.041,
+     0.062
+    ]
+   },
+   "coattention_fusion": {
+    "LR_stat": 7.093,
+    "LR_p": 0.008,
+    "auroc_base_insample": 0.762,
+    "auroc_base_plus_arm_insample": 0.786,
+    "delta_auroc_insample": 0.024,
+    "auroc_base_foldhonest": 0.737,
+    "auroc_base_plus_arm_foldhonest": 0.748,
+    "delta_auroc_foldhonest": 0.011,
+    "delta_ci_foldhonest": [
+     -0.032,
+     0.055
+    ]
+   },
+   "late_stack_logit": {
+    "LR_stat": 5.554,
+    "LR_p": 0.018,
+    "auroc_base_insample": 0.762,
+    "auroc_base_plus_arm_insample": 0.788,
+    "delta_auroc_insample": 0.025,
+    "auroc_base_foldhonest": 0.737,
+    "auroc_base_plus_arm_foldhonest": 0.743,
+    "delta_auroc_foldhonest": 0.006,
+    "delta_ci_foldhonest": [
+     -0.036,
+     0.046
+    ]
+   },
+   "C2+image": {
+    "LR_stat": 16.732,
+    "LR_p": "<0.001",
+    "auroc_base_insample": 0.762,
+    "auroc_base_plus_arm_insample": 0.827,
+    "delta_auroc_insample": 0.065,
+    "auroc_base_foldhonest": 0.737,
+    "auroc_base_plus_arm_foldhonest": 0.796,
+    "delta_auroc_foldhonest": 0.059,
+    "delta_ci_foldhonest": [
+     0.005,
+     0.12
+    ]
+   },
+   "C2+cnv_only": {
+    "LR_stat": 10.599,
+    "LR_p": 0.001,
+    "auroc_base_insample": 0.762,
+    "auroc_base_plus_arm_insample": 0.809,
+    "delta_auroc_insample": 0.047,
+    "auroc_base_foldhonest": 0.737,
+    "auroc_base_plus_arm_foldhonest": 0.774,
+    "delta_auroc_foldhonest": 0.037,
+    "delta_ci_foldhonest": [
+     -0.004,
+     0.082
+    ]
+   },
+   "C2+cnv_km": {
+    "LR_stat": 13.433,
+    "LR_p": "<0.001",
+    "auroc_base_insample": 0.762,
+    "auroc_base_plus_arm_insample": 0.821,
+    "delta_auroc_insample": 0.059,
+    "auroc_base_foldhonest": 0.737,
+    "auroc_base_plus_arm_foldhonest": 0.784,
+    "delta_auroc_foldhonest": 0.047,
+    "delta_ci_foldhonest": [
+     -0.0,
+     0.098
+    ]
+   },
+   "C2+late_mean": {
+    "LR_stat": 23.208,
+    "LR_p": "<0.001",
+    "auroc_base_insample": 0.762,
+    "auroc_base_plus_arm_insample": 0.85,
+    "delta_auroc_insample": 0.088,
+    "auroc_base_foldhonest": 0.737,
+    "auroc_base_plus_arm_foldhonest": 0.818,
+    "delta_auroc_foldhonest": 0.081,
+    "delta_ci_foldhonest": [
+     0.023,
+     0.146
+    ]
+   },
+   "C2+image+cnv_only": {
+    "LR_stat": 20.367,
+    "LR_p": "<0.001",
+    "auroc_base_insample": 0.762,
+    "auroc_base_plus_arm_insample": 0.852,
+    "delta_auroc_insample": 0.09,
+    "auroc_base_foldhonest": 0.737,
+    "auroc_base_plus_arm_foldhonest": 0.806,
+    "delta_auroc_foldhonest": 0.069,
+    "delta_ci_foldhonest": [
+     0.012,
+     0.129
+    ]
+   }
+  },
+  "stratum_plus_tiles_base": {
+   "auroc_insample": 0.762,
+   "auroc_foldhonest": 0.737
+  },
+  "late_mean_FN_tiles": [
+   {
+    "stratum": "discovery",
+    "kept_tiles": 1413.667,
+    "percentile_among_stratum_progressors": 60.0,
+    "percentile_among_stratum_nonprogressors": 50.0
+   },
+   {
+    "stratum": "discovery",
+    "kept_tiles": 3194.143,
+    "percentile_among_stratum_progressors": 80.0,
+    "percentile_among_stratum_nonprogressors": 88.095
+   },
+   {
+    "stratum": "discovery",
+    "kept_tiles": 895.0,
+    "percentile_among_stratum_progressors": 27.5,
+    "percentile_among_stratum_nonprogressors": 19.048
+   },
+   {
+    "stratum": "discovery",
+    "kept_tiles": 3687.125,
+    "percentile_among_stratum_progressors": 87.5,
+    "percentile_among_stratum_nonprogressors": 92.857
+   },
+   {
+    "stratum": "discovery",
+    "kept_tiles": 3917.5,
+    "percentile_among_stratum_progressors": 90.0,
+    "percentile_among_stratum_nonprogressors": 92.857
+   },
+   {
+    "stratum": "discovery",
+    "kept_tiles": 1202.0,
+    "percentile_among_stratum_progressors": 55.0,
+    "percentile_among_stratum_nonprogressors": 45.238
+   },
+   {
+    "stratum": "discovery",
+    "kept_tiles": 3496.0,
+    "percentile_among_stratum_progressors": 85.0,
+    "percentile_among_stratum_nonprogressors": 90.476
+   },
+   {
+    "stratum": "discovery",
+    "kept_tiles": 5637.0,
+    "percentile_among_stratum_progressors": 97.5,
+    "percentile_among_stratum_nonprogressors": 100.0
+   },
+   {
+    "stratum": "discovery",
+    "kept_tiles": 1416.0,
+    "percentile_among_stratum_progressors": 62.5,
+    "percentile_among_stratum_nonprogressors": 50.0
+   },
+   {
+    "stratum": "discovery",
+    "kept_tiles": 4718.0,
+    "percentile_among_stratum_progressors": 95.0,
+    "percentile_among_stratum_nonprogressors": 100.0
+   },
+   {
+    "stratum": "discovery",
+    "kept_tiles": 1114.0,
+    "percentile_among_stratum_progressors": 47.5,
+    "percentile_among_stratum_nonprogressors": 35.714
+   }
+  ],
+  "late_mean_FN_summary": {
+   "n": 11,
+   "median_kept": 3194.143,
+   "median_percentile_vs_stratum_progressors": 80.0,
+   "median_percentile_vs_stratum_nonprogressors": 88.095,
+   "by_stratum": {
+    "discovery": 11
+   }
+  }
+ },
+ "R4": {
+  "version_A_superseded": "the paper-plan item-5 and follow-up F4 version-A results (censoring from MonthsBeforeLastBiopsy) are superseded by version B (biopsy-date censoring); earlier documents are not edited",
+  "validation_stratum_survival": {
+   "late_mean": {
+    "n": 68,
+    "events": 10,
+    "groups": {
+     "low": {
+      "n": 30,
+      "events": 0,
+      "median_time_d": 728.5
+     },
+     "moderate": {
+      "n": 20,
+      "events": 2,
+      "median_time_d": 736.5
+     },
+     "high": {
+      "n": 18,
+      "events": 8,
+      "median_time_d": 901.0
+     }
+    },
+    "logrank_p": 0.344,
+    "cox_feasible_rule_ge3_events_low_and_high": false,
+    "figure": "results/paper_plan/figs/km_v3/km_validation_late_mean.png"
+   },
+   "cnv_only": {
+    "n": 68,
+    "events": 10,
+    "groups": {
+     "low": {
+      "n": 40,
+      "events": 3,
+      "median_time_d": 731.0
+     },
+     "moderate": {
+      "n": 16,
+      "events": 4,
+      "median_time_d": 739.0
+     },
+     "high": {
+      "n": 12,
+      "events": 3,
+      "median_time_d": 810.5
+     }
+    },
+    "logrank_p": 0.746,
+    "cox_feasible_rule_ge3_events_low_and_high": true,
+    "cox_hr_high_vs_low": [
+     0.729,
+     0.117,
+     4.549
+    ],
+    "cox_hr_moderate_vs_low": [
+     1.385,
+     0.298,
+     6.429
+    ],
+    "figure": "results/paper_plan/figs/km_v3/km_validation_cnv_only.png"
+   },
+   "cnv_km": {
+    "n": 68,
+    "events": 10,
+    "groups": {
+     "low": {
+      "n": 35,
+      "events": 4,
+      "median_time_d": 722.0
+     },
+     "moderate": {
+      "n": 18,
+      "events": 4,
+      "median_time_d": 780.5
+     },
+     "high": {
+      "n": 15,
+      "events": 2,
+      "median_time_d": 735.0
+     }
+    },
+    "logrank_p": 0.105,
+    "cox_feasible_rule_ge3_events_low_and_high": false,
+    "figure": "results/paper_plan/figs/km_v3/km_validation_cnv_km.png"
+   },
+   "C2_grade_maxsofar": {
+    "n": 68,
+    "events": 10,
+    "groups": {
+     "low": {
+      "n": 38,
+      "events": 6,
+      "median_time_d": 729.0
+     },
+     "moderate": {
+      "n": 25,
+      "events": 2,
+      "median_time_d": 742.0
+     },
+     "high": {
+      "n": 5,
+      "events": 2,
+      "median_time_d": 1914.0
+     }
+    },
+    "logrank_p": 0.416,
+    "cox_feasible_rule_ge3_events_low_and_high": false,
+    "figure": "results/paper_plan/figs/km_v3/km_validation_C2_grade_maxsofar.png"
+   },
+   "image_only": {
+    "n": 68,
+    "events": 10,
+    "groups": {
+     "low": {
+      "n": 28,
+      "events": 0,
+      "median_time_d": 732.0
+     },
+     "moderate": {
+      "n": 23,
+      "events": 3,
+      "median_time_d": 729.0
+     },
+     "high": {
+      "n": 17,
+      "events": 7,
+      "median_time_d": 916.0
+     }
+    },
+    "logrank_p": 0.56,
+    "cox_feasible_rule_ge3_events_low_and_high": false,
+    "figure": "results/paper_plan/figs/km_v3/km_validation_image_only.png"
+   }
+  },
+  "pooled_rates_and_ORs": {
+   "late_mean": {
+    "groups": {
+     "low": {
+      "n": 51,
+      "events": 7,
+      "rate": 0.137,
+      "wilson": [
+       0.068,
+       0.257
+      ]
+     },
+     "moderate": {
+      "n": 46,
+      "events": 12,
+      "rate": 0.261,
+      "wilson": [
+       0.156,
+       0.403
+      ]
+     },
+     "high": {
+      "n": 53,
+      "events": 31,
+      "rate": 0.585,
+      "wilson": [
+       0.451,
+       0.707
+      ]
+     }
+    },
+    "OR_high_vs_low_haldane": 8.307,
+    "MH_two_strata": {
+     "OR": 7.167,
+     "ci": [
+      2.587,
+      19.85
+     ],
+     "strata_used": 2
+    },
+    "MH_three_strata": {
+     "OR": 12.463,
+     "ci": [
+      2.708,
+      57.355
+     ],
+     "strata_used": 3
+    }
+   },
+   "cnv_only": {
+    "groups": {
+     "low": {
+      "n": 52,
+      "events": 10,
+      "rate": 0.192,
+      "wilson": [
+       0.108,
+       0.319
+      ]
+     },
+     "moderate": {
+      "n": 47,
+      "events": 17,
+      "rate": 0.362,
+      "wilson": [
+       0.24,
+       0.505
+      ]
+     },
+     "high": {
+      "n": 51,
+      "events": 23,
+      "rate": 0.451,
+      "wilson": [
+       0.323,
+       0.586
+      ]
+     }
+    },
+    "OR_high_vs_low_haldane": 3.338,
+    "MH_two_strata": {
+     "OR": 1.31,
+     "ci": [
+      0.468,
+      3.664
+     ],
+     "strata_used": 2
+    },
+    "MH_three_strata": {
+     "OR": 0.926,
+     "ci": [
+      0.247,
+      3.469
+     ],
+     "strata_used": 3
+    }
+   },
+   "cnv_km": {
+    "groups": {
+     "low": {
+      "n": 49,
+      "events": 13,
+      "rate": 0.265,
+      "wilson": [
+       0.162,
+       0.403
+      ]
+     },
+     "moderate": {
+      "n": 49,
+      "events": 14,
+      "rate": 0.286,
+      "wilson": [
+       0.178,
+       0.424
+      ]
+     },
+     "high": {
+      "n": 52,
+      "events": 23,
+      "rate": 0.442,
+      "wilson": [
+       0.316,
+       0.577
+      ]
+     }
+    },
+    "OR_high_vs_low_haldane": 2.154,
+    "MH_two_strata": {
+     "OR": 0.854,
+     "ci": [
+      0.301,
+      2.425
+     ],
+     "strata_used": 2
+    },
+    "MH_three_strata": {
+     "OR": 0.334,
+     "ci": [
+      0.076,
+      1.473
+     ],
+     "strata_used": 3
+    }
+   },
+   "C2_grade_maxsofar": {
+    "groups": {
+     "low": {
+      "n": 57,
+      "events": 13,
+      "rate": 0.228,
+      "wilson": [
+       0.138,
+       0.352
+      ]
+     },
+     "moderate": {
+      "n": 44,
+      "events": 9,
+      "rate": 0.205,
+      "wilson": [
+       0.112,
+       0.345
+      ]
+     },
+     "high": {
+      "n": 49,
+      "events": 28,
+      "rate": 0.571,
+      "wilson": [
+       0.433,
+       0.7
+      ]
+     }
+    },
+    "OR_high_vs_low_haldane": 4.37,
+    "MH_two_strata": {
+     "OR": 2.663,
+     "ci": [
+      1.004,
+      7.067
+     ],
+     "strata_used": 2
+    },
+    "MH_three_strata": {
+     "OR": 4.694,
+     "ci": [
+      1.152,
+      19.116
+     ],
+     "strata_used": 3
+    }
+   },
+   "image_only": {
+    "groups": {
+     "low": {
+      "n": 52,
+      "events": 8,
+      "rate": 0.154,
+      "wilson": [
+       0.08,
+       0.275
+      ]
+     },
+     "moderate": {
+      "n": 47,
+      "events": 14,
+      "rate": 0.298,
+      "wilson": [
+       0.187,
+       0.44
+      ]
+     },
+     "high": {
+      "n": 51,
+      "events": 28,
+      "rate": 0.549,
+      "wilson": [
+       0.414,
+       0.677
+      ]
+     }
+    },
+    "OR_high_vs_low_haldane": 6.349,
+    "MH_two_strata": {
+     "OR": 5.66,
+     "ci": [
+      2.12,
+      15.11
+     ],
+     "strata_used": 2
+    },
+    "MH_three_strata": {
+     "OR": 25.539,
+     "ci": [
+      3.079,
+      211.82
+     ],
+     "strata_used": 3
+    }
+   }
+  }
+ },
+ "R5": {
+  "adjusted_with_stratum_and_followup": {
+   "late_mean": {
+    "n_FP": 40,
+    "n_TN": 60,
+    "FP_TN_by_stratum": {
+     "discovery": [
+      22,
+      20
+     ],
+     "validation": [
+      18,
+      40
+     ]
+    },
+    "later_HGDplus": {
+     "OR_FP_adjusted": 5.353,
+     "ci": [
+      1.392,
+      20.584
+     ],
+     "p": 0.015,
+     "OR_discovery": 0.6,
+     "OR_followup_per_year": 1.134,
+     "events": 15,
+     "n": 100,
+     "raw_FP_TN": [
+      11,
+      4
+     ]
+    },
+    "later_LGDplus": {
+     "OR_FP_adjusted": 2.589,
+     "ci": [
+      0.795,
+      8.435
+     ],
+     "p": 0.114,
+     "OR_discovery": 0.879,
+     "OR_followup_per_year": 1.19,
+     "events": 19,
+     "n": 100,
+     "raw_FP_TN": [
+      11,
+      8
+     ]
+    }
+   },
+   "image_only": {
+    "n_FP": 50,
+    "n_TN": 50,
+    "FP_TN_by_stratum": {
+     "discovery": [
+      25,
+      17
+     ],
+     "validation": [
+      25,
+      33
+     ]
+    },
+    "later_HGDplus": {
+     "OR_FP_adjusted": 3.747,
+     "ci": [
+      0.94,
+      14.936
+     ],
+     "p": 0.061,
+     "OR_discovery": 0.685,
+     "OR_followup_per_year": 1.154,
+     "events": 15,
+     "n": 100,
+     "raw_FP_TN": [
+      11,
+      4
+     ]
+    },
+    "later_LGDplus": {
+     "OR_FP_adjusted": 1.878,
+     "ci": [
+      0.56,
+      6.296
+     ],
+     "p": 0.307,
+     "OR_discovery": 0.926,
+     "OR_followup_per_year": 1.201,
+     "events": 19,
+     "n": 100,
+     "raw_FP_TN": [
+      11,
+      8
+     ]
+    }
+   },
+   "cnv_only": {
+    "n_FP": 55,
+    "n_TN": 45,
+    "FP_TN_by_stratum": {
+     "discovery": [
+      35,
+      7
+     ],
+     "validation": [
+      20,
+      38
+     ]
+    },
+    "later_HGDplus": {
+     "OR_FP_adjusted": 9.198,
+     "ci": [
+      1.668,
+      50.73
+     ],
+     "p": 0.011,
+     "OR_discovery": 0.26,
+     "OR_followup_per_year": 1.131,
+     "events": 15,
+     "n": 100,
+     "raw_FP_TN": [
+      13,
+      2
+     ]
+    },
+    "later_LGDplus": {
+     "OR_FP_adjusted": 8.704,
+     "ci": [
+      1.853,
+      40.889
+     ],
+     "p": 0.006,
+     "OR_discovery": 0.345,
+     "OR_followup_per_year": 1.192,
+     "events": 19,
+     "n": 100,
+     "raw_FP_TN": [
+      16,
+      3
+     ]
+    }
+   },
+   "cnv_km": {
+    "n_FP": 66,
+    "n_TN": 34,
+    "FP_TN_by_stratum": {
+     "discovery": [
+      38,
+      4
+     ],
+     "validation": [
+      28,
+      30
+     ]
+    },
+    "later_HGDplus": {
+     "OR_FP_adjusted": 12.122,
+     "ci": [
+      1.356,
+      108.322
+     ],
+     "p": 0.026,
+     "OR_discovery": 0.282,
+     "OR_followup_per_year": 1.131,
+     "events": 15,
+     "n": 100,
+     "raw_FP_TN": [
+      14,
+      1
+     ]
+    },
+    "later_LGDplus": {
+     "OR_FP_adjusted": 7.228,
+     "ci": [
+      1.321,
+      39.557
+     ],
+     "p": 0.023,
+     "OR_discovery": 0.444,
+     "OR_followup_per_year": 1.188,
+     "events": 19,
+     "n": 100,
+     "raw_FP_TN": [
+      17,
+      2
+     ]
+    }
+   },
+   "C2_grade_maxsofar": {
+    "n_FP": 56,
+    "n_TN": 44,
+    "FP_TN_by_stratum": {
+     "discovery": [
+      30,
+      12
+     ],
+     "validation": [
+      26,
+      32
+     ]
+    },
+    "later_HGDplus": {
+     "OR_FP_adjusted": 1.19,
+     "ci": [
+      0.3,
+      4.722
+     ],
+     "p": 0.804,
+     "OR_discovery": 0.57,
+     "OR_followup_per_year": 1.135,
+     "events": 15,
+     "n": 100,
+     "raw_FP_TN": [
+      10,
+      5
+     ]
+    },
+    "later_LGDplus": {
+     "OR_FP_adjusted": 0.726,
+     "ci": [
+      0.203,
+      2.593
+     ],
+     "p": 0.622,
+     "OR_discovery": 0.887,
+     "OR_followup_per_year": 1.194,
+     "events": 19,
+     "n": 100,
+     "raw_FP_TN": [
+      11,
+      8
+     ]
+    }
+   },
+   "clinical_3a": {
+    "n_FP": 38,
+    "n_TN": 62,
+    "FP_TN_by_stratum": {
+     "discovery": [
+      22,
+      20
+     ],
+     "validation": [
+      16,
+      42
+     ]
+    },
+    "later_HGDplus": {
+     "OR_FP_adjusted": 4.652,
+     "ci": [
+      1.151,
+      18.803
+     ],
+     "p": 0.031,
+     "OR_discovery": 0.54,
+     "OR_followup_per_year": 1.151,
+     "events": 15,
+     "n": 100,
+     "raw_FP_TN": [
+      10,
+      5
+     ]
+    },
+    "later_LGDplus": {
+     "OR_FP_adjusted": 5.833,
+     "ci": [
+      1.532,
+      22.209
+     ],
+     "p": 0.01,
+     "OR_discovery": 0.799,
+     "OR_followup_per_year": 1.22,
+     "events": 19,
+     "n": 100,
+     "raw_FP_TN": [
+      12,
+      7
+     ]
+    }
+   },
+   "v4_exploratory": {
+    "n_FP": 26,
+    "n_TN": 74,
+    "FP_TN_by_stratum": {
+     "discovery": [
+      17,
+      25
+     ],
+     "validation": [
+      9,
+      49
+     ]
+    },
+    "later_HGDplus": {
+     "OR_FP_adjusted": 7.696,
+     "ci": [
+      1.79,
+      33.095
+     ],
+     "p": 0.006,
+     "OR_discovery": 0.41,
+     "OR_followup_per_year": 1.143,
+     "events": 15,
+     "n": 100,
+     "raw_FP_TN": [
+      9,
+      6
+     ]
+    },
+    "later_LGDplus": {
+     "OR_FP_adjusted": 4.2,
+     "ci": [
+      1.096,
+      16.094
+     ],
+     "p": 0.036,
+     "OR_discovery": 0.696,
+     "OR_followup_per_year": 1.195,
+     "events": 19,
+     "n": 100,
+     "raw_FP_TN": [
+      9,
+      10
+     ]
+    }
+   }
+  },
+  "flagged_patients_reclassified": 1,
+  "rerun_with_flagged_as_progressor": {
+   "late_mean": {
+    "n_FP": 40,
+    "n_TN": 59,
+    "FP_TN_by_stratum": {
+     "discovery": [
+      22,
+      19
+     ],
+     "validation": [
+      18,
+      40
+     ]
+    },
+    "later_HGDplus": {
+     "OR_FP_adjusted": 7.425,
+     "ci": [
+      1.666,
+      33.092
+     ],
+     "p": 0.009,
+     "OR_discovery": 0.381,
+     "OR_followup_per_year": 1.154,
+     "events": 14,
+     "n": 99,
+     "raw_FP_TN": [
+      11,
+      3
+     ]
+    },
+    "later_LGDplus": {
+     "OR_FP_adjusted": 3.054,
+     "ci": [
+      0.883,
+      10.56
+     ],
+     "p": 0.078,
+     "OR_discovery": 0.656,
+     "OR_followup_per_year": 1.21,
+     "events": 18,
+     "n": 99,
+     "raw_FP_TN": [
+      11,
+      7
+     ]
+    }
+   },
+   "image_only": {
+    "n_FP": 49,
+    "n_TN": 50,
+    "FP_TN_by_stratum": {
+     "discovery": [
+      24,
+      17
+     ],
+     "validation": [
+      25,
+      33
+     ]
+    },
+    "later_HGDplus": {
+     "OR_FP_adjusted": 3.042,
+     "ci": [
+      0.736,
+      12.566
+     ],
+     "p": 0.124,
+     "OR_discovery": 0.444,
+     "OR_followup_per_year": 1.167,
+     "events": 14,
+     "n": 99,
+     "raw_FP_TN": [
+      10,
+      4
+     ]
+    },
+    "later_LGDplus": {
+     "OR_FP_adjusted": 1.534,
+     "ci": [
+      0.438,
+      5.369
+     ],
+     "p": 0.503,
+     "OR_discovery": 0.682,
+     "OR_followup_per_year": 1.214,
+     "events": 18,
+     "n": 99,
+     "raw_FP_TN": [
+      10,
+      8
+     ]
+    }
+   },
+   "cnv_only": {
+    "n_FP": 54,
+    "n_TN": 45,
+    "FP_TN_by_stratum": {
+     "discovery": [
+      34,
+      7
+     ],
+     "validation": [
+      20,
+      38
+     ]
+    },
+    "later_HGDplus": {
+     "OR_FP_adjusted": 8.938,
+     "ci": [
+      1.586,
+      50.356
+     ],
+     "p": 0.013,
+     "OR_discovery": 0.172,
+     "OR_followup_per_year": 1.152,
+     "events": 14,
+     "n": 99,
+     "raw_FP_TN": [
+      12,
+      2
+     ]
+    },
+    "later_LGDplus": {
+     "OR_FP_adjusted": 8.66,
+     "ci": [
+      1.8,
+      41.662
+     ],
+     "p": 0.007,
+     "OR_discovery": 0.258,
+     "OR_followup_per_year": 1.211,
+     "events": 18,
+     "n": 99,
+     "raw_FP_TN": [
+      15,
+      3
+     ]
+    }
+   },
+   "cnv_km": {
+    "n_FP": 65,
+    "n_TN": 34,
+    "FP_TN_by_stratum": {
+     "discovery": [
+      37,
+      4
+     ],
+     "validation": [
+      28,
+      30
+     ]
+    },
+    "later_HGDplus": {
+     "OR_FP_adjusted": 12.683,
+     "ci": [
+      1.366,
+      117.748
+     ],
+     "p": 0.025,
+     "OR_discovery": 0.168,
+     "OR_followup_per_year": 1.155,
+     "events": 14,
+     "n": 99,
+     "raw_FP_TN": [
+      13,
+      1
+     ]
+    },
+    "later_LGDplus": {
+     "OR_FP_adjusted": 7.374,
+     "ci": [
+      1.312,
+      41.442
+     ],
+     "p": 0.023,
+     "OR_discovery": 0.32,
+     "OR_followup_per_year": 1.209,
+     "events": 18,
+     "n": 99,
+     "raw_FP_TN": [
+      16,
+      2
+     ]
+    }
+   },
+   "C2_grade_maxsofar": {
+    "n_FP": 55,
+    "n_TN": 44,
+    "FP_TN_by_stratum": {
+     "discovery": [
+      29,
+      12
+     ],
+     "validation": [
+      26,
+      32
+     ]
+    },
+    "later_HGDplus": {
+     "OR_FP_adjusted": 0.949,
+     "ci": [
+      0.222,
+      4.068
+     ],
+     "p": 0.944,
+     "OR_discovery": 0.373,
+     "OR_followup_per_year": 1.157,
+     "events": 14,
+     "n": 99,
+     "raw_FP_TN": [
+      9,
+      5
+     ]
+    },
+    "later_LGDplus": {
+     "OR_FP_adjusted": 0.572,
+     "ci": [
+      0.149,
+      2.196
+     ],
+     "p": 0.416,
+     "OR_discovery": 0.674,
+     "OR_followup_per_year": 1.217,
+     "events": 18,
+     "n": 99,
+     "raw_FP_TN": [
+      10,
+      8
+     ]
+    }
+   },
+   "clinical_3a": {
+    "n_FP": 37,
+    "n_TN": 62,
+    "FP_TN_by_stratum": {
+     "discovery": [
+      21,
+      20
+     ],
+     "validation": [
+      16,
+      42
+     ]
+    },
+    "later_HGDplus": {
+     "OR_FP_adjusted": 3.816,
+     "ci": [
+      0.879,
+      16.564
+     ],
+     "p": 0.074,
+     "OR_discovery": 0.351,
+     "OR_followup_per_year": 1.17,
+     "events": 14,
+     "n": 99,
+     "raw_FP_TN": [
+      9,
+      5
+     ]
+    },
+    "later_LGDplus": {
+     "OR_FP_adjusted": 4.991,
+     "ci": [
+      1.262,
+      19.742
+     ],
+     "p": 0.022,
+     "OR_discovery": 0.603,
+     "OR_followup_per_year": 1.235,
+     "events": 18,
+     "n": 99,
+     "raw_FP_TN": [
+      11,
+      7
+     ]
+    }
+   },
+   "v4_exploratory": {
+    "n_FP": 26,
+    "n_TN": 73,
+    "FP_TN_by_stratum": {
+     "discovery": [
+      17,
+      24
+     ],
+     "validation": [
+      9,
+      49
+     ]
+    },
+    "later_HGDplus": {
+     "OR_FP_adjusted": 11.432,
+     "ci": [
+      2.275,
+      57.437
+     ],
+     "p": 0.003,
+     "OR_discovery": 0.231,
+     "OR_followup_per_year": 1.169,
+     "events": 14,
+     "n": 99,
+     "raw_FP_TN": [
+      9,
+      5
+     ]
+    },
+    "later_LGDplus": {
+     "OR_FP_adjusted": 5.296,
+     "ci": [
+      1.27,
+      22.073
+     ],
+     "p": 0.022,
+     "OR_discovery": 0.486,
+     "OR_followup_per_year": 1.217,
+     "events": 18,
+     "n": 99,
+     "raw_FP_TN": [
+      9,
+      9
+     ]
+    }
+   },
+   "late_mean_pooled_auroc_relabelled": {
+    "auroc": 0.769,
+    "events": 51,
+    "original": 0.774
+   }
+  }
+ },
+ "R6": {
+  "C1_grade": {
+   "pooled": [
+    0.688,
+    0.588,
+    0.785
+   ],
+   "stratified": [
+    0.591,
+    0.482,
+    0.699
+   ],
+   "E_HGD_pooled": [
+    0.542,
+    0.432,
+    0.656
+   ],
+   "E_HGD_stratified": [
+    0.441,
+    0.328,
+    0.552
+   ],
+   "delta_over_stratum_plus_tiles_foldhonest": [
+    0.009,
+    -0.026,
+    0.044
+   ]
+  },
+  "C2_grade_maxsofar": {
+   "pooled": [
+    0.681,
+    0.582,
+    0.776
+   ],
+   "stratified": [
+    0.601,
+    0.492,
+    0.704
+   ],
+   "E_HGD_pooled": [
+    0.529,
+    0.424,
+    0.64
+   ],
+   "E_HGD_stratified": [
+    0.446,
+    0.327,
+    0.553
+   ],
+   "delta_over_stratum_plus_tiles_foldhonest": [
+    0.014,
+    -0.026,
+    0.054
+   ]
+  },
+  "C3_plus_streak": {
+   "pooled": [
+    0.666,
+    0.571,
+    0.758
+   ],
+   "stratified": [
+    0.582,
+    0.478,
+    0.688
+   ],
+   "E_HGD_pooled": [
+    0.51,
+    0.404,
+    0.619
+   ],
+   "E_HGD_stratified": [
+    0.422,
+    0.311,
+    0.533
+   ],
+   "delta_over_stratum_plus_tiles_foldhonest": [
+    0.01,
+    -0.028,
+    0.048
+   ]
+  },
+  "C4_plus_surveillance_3a": {
+   "pooled": [
+    0.765,
+    0.684,
+    0.844
+   ],
+   "stratified": [
+    0.739,
+    0.648,
+    0.824
+   ],
+   "E_HGD_pooled": [
+    0.69,
+    0.591,
+    0.786
+   ],
+   "E_HGD_stratified": [
+    0.667,
+    0.561,
+    0.764
+   ],
+   "delta_over_stratum_plus_tiles_foldhonest": [
+    0.013,
+    -0.021,
+    0.048
+   ]
+  },
+  "cnv_only": {
+   "pooled": [
+    0.663,
+    0.569,
+    0.754
+   ],
+   "stratified": [
+    0.594,
+    0.488,
+    0.695
+   ],
+   "E_HGD_pooled": [
+    0.676,
+    0.561,
+    0.774
+   ],
+   "E_HGD_stratified": [
+    0.651,
+    0.532,
+    0.771
+   ],
+   "delta_over_stratum_plus_tiles_foldhonest": [
+    -0.016,
+    -0.041,
+    0.004
+   ]
+  },
+  "cnv_km": {
+   "pooled": [
+    0.64,
+    0.538,
+    0.734
+   ],
+   "stratified": [
+    0.597,
+    0.486,
+    0.703
+   ],
+   "E_HGD_pooled": [
+    0.694,
+    0.58,
+    0.789
+   ],
+   "E_HGD_stratified": [
+    0.684,
+    0.567,
+    0.794
+   ],
+   "delta_over_stratum_plus_tiles_foldhonest": [
+    0.002,
+    -0.029,
+    0.035
+   ]
+  },
+  "image_only": {
+   "pooled": [
+    0.731,
+    0.64,
+    0.814
+   ],
+   "stratified": [
+    0.708,
+    0.612,
+    0.796
+   ],
+   "E_HGD_pooled": [
+    0.746,
+    0.65,
+    0.837
+   ],
+   "E_HGD_stratified": [
+    0.721,
+    0.616,
+    0.816
+   ],
+   "delta_over_stratum_plus_tiles_foldhonest": [
+    0.013,
+    -0.03,
+    0.057
+   ]
+  },
+  "early_fusion": {
+   "pooled": [
+    0.738,
+    0.646,
+    0.818
+   ],
+   "stratified": [
+    0.735,
+    0.642,
+    0.82
+   ],
+   "E_HGD_pooled": [
+    0.782,
+    0.68,
+    0.868
+   ],
+   "E_HGD_stratified": [
+    0.773,
+    0.673,
+    0.86
+   ],
+   "delta_over_stratum_plus_tiles_foldhonest": [
+    0.027,
+    -0.021,
+    0.076
+   ]
+  },
+  "intermediate_fusion": {
+   "pooled": [
+    0.741,
+    0.653,
+    0.818
+   ],
+   "stratified": [
+    0.717,
+    0.619,
+    0.806
+   ],
+   "E_HGD_pooled": [
+    0.744,
+    0.654,
+    0.829
+   ],
+   "E_HGD_stratified": [
+    0.723,
+    0.623,
+    0.817
+   ],
+   "delta_over_stratum_plus_tiles_foldhonest": [
+    0.017,
+    -0.02,
+    0.057
+   ]
+  },
+  "late_mean": {
+   "pooled": [
+    0.774,
+    0.687,
+    0.849
+   ],
+   "stratified": [
+    0.745,
+    0.652,
+    0.829
+   ],
+   "E_HGD_pooled": [
+    0.782,
+    0.688,
+    0.865
+   ],
+   "E_HGD_stratified": [
+    0.757,
+    0.662,
+    0.85
+   ],
+   "delta_over_stratum_plus_tiles_foldhonest": [
+    0.023,
+    -0.03,
+    0.078
+   ]
+  },
+  "late_mean_km": {
+   "pooled": [
+    0.764,
+    0.672,
+    0.843
+   ],
+   "stratified": [
+    0.73,
+    0.63,
+    0.819
+   ],
+   "E_HGD_pooled": [
+    0.785,
+    0.695,
+    0.864
+   ],
+   "E_HGD_stratified": [
+    0.757,
+    0.657,
+    0.847
+   ],
+   "delta_over_stratum_plus_tiles_foldhonest": [
+    0.011,
+    -0.041,
+    0.062
+   ]
+  },
+  "coattention_fusion": {
+   "pooled": [
+    0.739,
+    0.652,
+    0.821
+   ],
+   "stratified": [
+    0.695,
+    0.596,
+    0.792
+   ],
+   "E_HGD_pooled": [
+    0.778,
+    0.689,
+    0.859
+   ],
+   "E_HGD_stratified": [
+    0.744,
+    0.649,
+    0.839
+   ],
+   "delta_over_stratum_plus_tiles_foldhonest": [
+    0.011,
+    -0.032,
+    0.055
+   ]
+  },
+  "late_stack_logit": {
+   "pooled": [
+    0.737,
+    0.648,
+    0.814
+   ],
+   "stratified": [
+    0.701,
+    0.602,
+    0.791
+   ],
+   "E_HGD_pooled": [
+    0.746,
+    0.657,
+    0.828
+   ],
+   "E_HGD_stratified": [
+    0.719,
+    0.62,
+    0.813
+   ],
+   "delta_over_stratum_plus_tiles_foldhonest": [
+    0.006,
+    -0.036,
+    0.046
+   ]
+  },
+  "C2+image": {
+   "pooled": [
+    0.802,
+    0.727,
+    0.873
+   ],
+   "stratified": [
+    0.756,
+    0.663,
+    0.838
+   ],
+   "E_HGD_pooled": [
+    0.678,
+    0.586,
+    0.772
+   ],
+   "E_HGD_stratified": [
+    0.616,
+    0.513,
+    0.716
+   ],
+   "delta_over_stratum_plus_tiles_foldhonest": [
+    0.059,
+    0.005,
+    0.12
+   ]
+  },
+  "C2+cnv_only": {
+   "pooled": [
+    0.784,
+    0.707,
+    0.857
+   ],
+   "stratified": [
+    0.715,
+    0.619,
+    0.805
+   ],
+   "E_HGD_pooled": [
+    0.657,
+    0.565,
+    0.753
+   ],
+   "E_HGD_stratified": [
+    0.579,
+    0.47,
+    0.683
+   ],
+   "delta_over_stratum_plus_tiles_foldhonest": [
+    0.037,
+    -0.004,
+    0.082
+   ]
+  },
+  "C2+cnv_km": {
+   "pooled": [
+    0.796,
+    0.713,
+    0.871
+   ],
+   "stratified": [
+    0.748,
+    0.647,
+    0.836
+   ],
+   "E_HGD_pooled": [
+    0.692,
+    0.587,
+    0.795
+   ],
+   "E_HGD_stratified": [
+    0.651,
+    0.532,
+    0.758
+   ],
+   "delta_over_stratum_plus_tiles_foldhonest": [
+    0.047,
+    -0.0,
+    0.098
+   ]
+  },
+  "C2+late_mean": {
+   "pooled": [
+    0.824,
+    0.755,
+    0.888
+   ],
+   "stratified": [
+    0.778,
+    0.689,
+    0.856
+   ],
+   "E_HGD_pooled": [
+    0.701,
+    0.612,
+    0.79
+   ],
+   "E_HGD_stratified": [
+    0.637,
+    0.538,
+    0.733
+   ],
+   "delta_over_stratum_plus_tiles_foldhonest": [
+    0.081,
+    0.023,
+    0.146
+   ]
+  },
+  "C2+image+cnv_only": {
+   "pooled": [
+    0.843,
+    0.778,
+    0.901
+   ],
+   "stratified": [
+    0.791,
+    0.703,
+    0.867
+   ],
+   "E_HGD_pooled": [
+    0.738,
+    0.654,
+    0.821
+   ],
+   "E_HGD_stratified": [
+    0.673,
+    0.573,
+    0.77
+   ],
+   "delta_over_stratum_plus_tiles_foldhonest": [
+    0.069,
+    0.012,
+    0.129
+   ]
+  },
+  "_n_events": {
+   "pooled": [
+    150,
+    50
+   ],
+   "E_HGD": [
+    150,
+    36
+   ]
+  }
+ }
+}
