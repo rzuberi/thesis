@@ -1,0 +1,119 @@
+{
+ "A_probe_auroc": {
+  "image_only": {
+   "pooled_item6": 0.784,
+   "pooled_ci": [
+    0.699,
+    0.862
+   ],
+   "discovery": 0.783,
+   "discovery_ci": [
+    0.676,
+    0.881
+   ]
+  },
+  "cnv_only": {
+   "pooled_item6": 0.713,
+   "pooled_ci": [
+    0.617,
+    0.797
+   ],
+   "discovery": 0.68,
+   "discovery_ci": [
+    0.557,
+    0.79
+   ]
+  },
+  "early_fusion": {
+   "pooled_item6": 0.822,
+   "pooled_ci": [
+    0.741,
+    0.893
+   ],
+   "discovery": 0.799,
+   "discovery_ci": [
+    0.687,
+    0.89
+   ]
+  },
+  "intermediate_fusion": {
+   "pooled_item6": 0.819,
+   "pooled_ci": [
+    0.743,
+    0.888
+   ],
+   "discovery": 0.807,
+   "discovery_ci": [
+    0.704,
+    0.897
+   ]
+  },
+  "coattention_fusion": {
+   "pooled_item6": 0.736,
+   "pooled_ci": [
+    0.64,
+    0.827
+   ],
+   "discovery": 0.719,
+   "discovery_ci": [
+    0.595,
+    0.833
+   ]
+  }
+ },
+ "B_C_umap": {
+  "folds": "1-5, projection fitted on each fold's training patients, held-out patients shown",
+  "n_heldout_per_fold": {
+   "image_only_fold1": {
+    "n": 30,
+    "discovery": 21,
+    "events_discovery": 9
+   },
+   "image_only_fold2": {
+    "n": 30,
+    "discovery": 18,
+    "events_discovery": 8
+   },
+   "image_only_fold3": {
+    "n": 30,
+    "discovery": 16,
+    "events_discovery": 9
+   },
+   "image_only_fold4": {
+    "n": 30,
+    "discovery": 16,
+    "events_discovery": 9
+   },
+   "image_only_fold5": {
+    "n": 30,
+    "discovery": 11,
+    "events_discovery": 5
+   },
+   "intermediate_fusion_fold1": {
+    "n": 30,
+    "discovery": 21,
+    "events_discovery": 9
+   },
+   "intermediate_fusion_fold2": {
+    "n": 30,
+    "discovery": 18,
+    "events_discovery": 8
+   },
+   "intermediate_fusion_fold3": {
+    "n": 30,
+    "discovery": 16,
+    "events_discovery": 9
+   },
+   "intermediate_fusion_fold4": {
+    "n": 30,
+    "discovery": 16,
+    "events_discovery": 9
+   },
+   "intermediate_fusion_fold5": {
+    "n": 30,
+    "discovery": 11,
+    "events_discovery": 5
+   }
+  }
+ }
+}

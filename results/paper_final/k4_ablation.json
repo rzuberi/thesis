@@ -1,0 +1,288 @@
+{
+ "_spec": "docs/paper_final_inputs.md @ e6e00c0 K4",
+ "models": {
+  "early_fusion": {
+   "all_150": {
+    "cnv_permuted_jointly_mean_of_50": {
+     "delta_auroc": 0.05,
+     "ci": [
+      -0.009,
+      0.111
+     ],
+     "baseline_auroc": 0.738,
+     "ablated_auroc": 0.688,
+     "n": 150,
+     "events": 50
+    },
+    "cnv_replaced_by_training_mean": {
+     "delta_auroc": 0.064,
+     "ci": [
+      0.007,
+      0.123
+     ],
+     "baseline_auroc": 0.738,
+     "ablated_auroc": 0.674,
+     "n": 150,
+     "events": 50
+    },
+    "image_bags_permuted_mean_of_50": {
+     "delta_auroc": 0.114,
+     "ci": [
+      0.038,
+      0.191
+     ],
+     "baseline_auroc": 0.738,
+     "ablated_auroc": 0.624,
+     "n": 150,
+     "events": 50
+    },
+    "image_replaced_by_mean_tile": {
+     "delta_auroc": 0.082,
+     "ci": [
+      0.016,
+      0.154
+     ],
+     "baseline_auroc": 0.738,
+     "ablated_auroc": 0.656,
+     "n": 150,
+     "events": 50
+    }
+   },
+   "discovery_82": {
+    "cnv_permuted_jointly_mean_of_50": {
+     "delta_auroc": 0.068,
+     "ci": [
+      -0.02,
+      0.151
+     ],
+     "baseline_auroc": 0.704,
+     "ablated_auroc": 0.636,
+     "n": 82,
+     "events": 40
+    },
+    "cnv_replaced_by_training_mean": {
+     "delta_auroc": 0.091,
+     "ci": [
+      0.013,
+      0.17
+     ],
+     "baseline_auroc": 0.704,
+     "ablated_auroc": 0.613,
+     "n": 82,
+     "events": 40
+    },
+    "image_bags_permuted_mean_of_50": {
+     "delta_auroc": 0.139,
+     "ci": [
+      0.047,
+      0.234
+     ],
+     "baseline_auroc": 0.704,
+     "ablated_auroc": 0.564,
+     "n": 82,
+     "events": 40
+    },
+    "image_replaced_by_mean_tile": {
+     "delta_auroc": 0.085,
+     "ci": [
+      0.007,
+      0.173
+     ],
+     "baseline_auroc": 0.704,
+     "ablated_auroc": 0.618,
+     "n": 82,
+     "events": 40
+    }
+   }
+  },
+  "intermediate_fusion": {
+   "all_150": {
+    "cnv_permuted_jointly_mean_of_50": {
+     "delta_auroc": 0.023,
+     "ci": [
+      -0.03,
+      0.072
+     ],
+     "baseline_auroc": 0.741,
+     "ablated_auroc": 0.719,
+     "n": 150,
+     "events": 50
+    },
+    "cnv_replaced_by_training_mean": {
+     "delta_auroc": 0.038,
+     "ci": [
+      -0.016,
+      0.096
+     ],
+     "baseline_auroc": 0.741,
+     "ablated_auroc": 0.703,
+     "n": 150,
+     "events": 50
+    },
+    "image_bags_permuted_mean_of_50": {
+     "delta_auroc": 0.167,
+     "ci": [
+      0.06,
+      0.271
+     ],
+     "baseline_auroc": 0.741,
+     "ablated_auroc": 0.574,
+     "n": 150,
+     "events": 50
+    },
+    "image_replaced_by_mean_tile": {
+     "delta_auroc": 0.125,
+     "ci": [
+      0.021,
+      0.231
+     ],
+     "baseline_auroc": 0.741,
+     "ablated_auroc": 0.616,
+     "n": 150,
+     "events": 50
+    }
+   },
+   "discovery_82": {
+    "cnv_permuted_jointly_mean_of_50": {
+     "delta_auroc": 0.059,
+     "ci": [
+      -0.02,
+      0.134
+     ],
+     "baseline_auroc": 0.684,
+     "ablated_auroc": 0.625,
+     "n": 82,
+     "events": 40
+    },
+    "cnv_replaced_by_training_mean": {
+     "delta_auroc": 0.061,
+     "ci": [
+      -0.024,
+      0.14
+     ],
+     "baseline_auroc": 0.684,
+     "ablated_auroc": 0.623,
+     "n": 82,
+     "events": 40
+    },
+    "image_bags_permuted_mean_of_50": {
+     "delta_auroc": 0.177,
+     "ci": [
+      0.046,
+      0.315
+     ],
+     "baseline_auroc": 0.684,
+     "ablated_auroc": 0.507,
+     "n": 82,
+     "events": 40
+    },
+    "image_replaced_by_mean_tile": {
+     "delta_auroc": 0.157,
+     "ci": [
+      0.011,
+      0.299
+     ],
+     "baseline_auroc": 0.684,
+     "ablated_auroc": 0.527,
+     "n": 82,
+     "events": 40
+    }
+   }
+  },
+  "coattention_fusion": {
+   "all_150": {
+    "cnv_permuted_jointly_mean_of_50": {
+     "delta_auroc": 0.016,
+     "ci": [
+      -0.033,
+      0.067
+     ],
+     "baseline_auroc": 0.739,
+     "ablated_auroc": 0.723,
+     "n": 150,
+     "events": 50
+    },
+    "cnv_replaced_by_training_mean": {
+     "delta_auroc": 0.025,
+     "ci": [
+      -0.029,
+      0.078
+     ],
+     "baseline_auroc": 0.739,
+     "ablated_auroc": 0.714,
+     "n": 150,
+     "events": 50
+    },
+    "image_bags_permuted_mean_of_50": {
+     "delta_auroc": 0.168,
+     "ci": [
+      0.092,
+      0.252
+     ],
+     "baseline_auroc": 0.739,
+     "ablated_auroc": 0.571,
+     "n": 150,
+     "events": 50
+    },
+    "image_replaced_by_mean_tile": {
+     "delta_auroc": 0.17,
+     "ci": [
+      0.094,
+      0.249
+     ],
+     "baseline_auroc": 0.739,
+     "ablated_auroc": 0.569,
+     "n": 150,
+     "events": 50
+    }
+   },
+   "discovery_82": {
+    "cnv_permuted_jointly_mean_of_50": {
+     "delta_auroc": 0.045,
+     "ci": [
+      -0.04,
+      0.121
+     ],
+     "baseline_auroc": 0.625,
+     "ablated_auroc": 0.58,
+     "n": 82,
+     "events": 40
+    },
+    "cnv_replaced_by_training_mean": {
+     "delta_auroc": 0.052,
+     "ci": [
+      -0.033,
+      0.129
+     ],
+     "baseline_auroc": 0.625,
+     "ablated_auroc": 0.573,
+     "n": 82,
+     "events": 40
+    },
+    "image_bags_permuted_mean_of_50": {
+     "delta_auroc": 0.146,
+     "ci": [
+      0.043,
+      0.256
+     ],
+     "baseline_auroc": 0.625,
+     "ablated_auroc": 0.479,
+     "n": 82,
+     "events": 40
+    },
+    "image_replaced_by_mean_tile": {
+     "delta_auroc": 0.174,
+     "ci": [
+      0.058,
+      0.292
+     ],
+     "baseline_auroc": 0.625,
+     "ablated_auroc": 0.451,
+     "n": 82,
+     "events": 40
+    }
+   }
+  }
+ },
+ "_method": "ablated score per row = mean over 50 permutations (or the deterministic replacement); delta = patient AUROC(baseline) - AUROC(ablated), patient = max over rows; CI = patient bootstrap (2,000, seed 0) of the paired difference"
+}

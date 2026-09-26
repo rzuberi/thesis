@@ -1,0 +1,283 @@
+{
+ "A_discovery_LGD2plus": {
+  "C2_grade_maxsofar": [
+   0.625,
+   0.498,
+   0.744
+  ],
+  "cnv_only": [
+   0.564,
+   0.427,
+   0.693
+  ],
+  "cnv_km": [
+   0.58,
+   0.443,
+   0.714
+  ],
+  "image_only": [
+   0.649,
+   0.527,
+   0.765
+  ],
+  "early_fusion": [
+   0.704,
+   0.579,
+   0.812
+  ],
+  "intermediate_fusion": [
+   0.684,
+   0.567,
+   0.798
+  ],
+  "late_mean": [
+   0.691,
+   0.569,
+   0.803
+  ],
+  "coattention_fusion": [
+   0.625,
+   0.505,
+   0.743
+  ],
+  "late_stack_logit": [
+   0.647,
+   0.524,
+   0.763
+  ]
+ },
+ "B_discovery_EHGD": {
+  "C2_grade_maxsofar": [
+   0.412,
+   0.277,
+   0.545
+  ],
+  "cnv_only": [
+   0.639,
+   0.491,
+   0.779
+  ],
+  "cnv_km": [
+   0.698,
+   0.556,
+   0.83
+  ],
+  "image_only": [
+   0.658,
+   0.527,
+   0.782
+  ],
+  "early_fusion": [
+   0.751,
+   0.618,
+   0.866
+  ],
+  "intermediate_fusion": [
+   0.687,
+   0.56,
+   0.806
+  ],
+  "late_mean": [
+   0.701,
+   0.573,
+   0.821
+  ],
+  "coattention_fusion": [
+   0.683,
+   0.557,
+   0.806
+  ],
+  "late_stack_logit": [
+   0.664,
+   0.536,
+   0.789
+  ]
+ },
+ "C_pooled_stratified_discovery_LGD2plus": {
+  "C2_grade_maxsofar": {
+   "pooled": [
+    0.681,
+    0.582,
+    0.776
+   ],
+   "stratified": [
+    0.601,
+    0.492,
+    0.704
+   ],
+   "discovery": [
+    0.625,
+    0.498,
+    0.744
+   ]
+  },
+  "cnv_only": {
+   "pooled": [
+    0.663,
+    0.569,
+    0.754
+   ],
+   "stratified": [
+    0.594,
+    0.488,
+    0.695
+   ],
+   "discovery": [
+    0.564,
+    0.427,
+    0.693
+   ]
+  },
+  "cnv_km": {
+   "pooled": [
+    0.64,
+    0.538,
+    0.734
+   ],
+   "stratified": [
+    0.597,
+    0.486,
+    0.703
+   ],
+   "discovery": [
+    0.58,
+    0.443,
+    0.714
+   ]
+  },
+  "image_only": {
+   "pooled": [
+    0.731,
+    0.64,
+    0.814
+   ],
+   "stratified": [
+    0.708,
+    0.612,
+    0.796
+   ],
+   "discovery": [
+    0.649,
+    0.527,
+    0.765
+   ]
+  },
+  "early_fusion": {
+   "pooled": [
+    0.738,
+    0.646,
+    0.818
+   ],
+   "stratified": [
+    0.735,
+    0.642,
+    0.82
+   ],
+   "discovery": [
+    0.704,
+    0.579,
+    0.812
+   ]
+  },
+  "intermediate_fusion": {
+   "pooled": [
+    0.741,
+    0.653,
+    0.818
+   ],
+   "stratified": [
+    0.717,
+    0.619,
+    0.806
+   ],
+   "discovery": [
+    0.684,
+    0.567,
+    0.798
+   ]
+  },
+  "late_mean": {
+   "pooled": [
+    0.774,
+    0.687,
+    0.849
+   ],
+   "stratified": [
+    0.745,
+    0.652,
+    0.829
+   ],
+   "discovery": [
+    0.691,
+    0.569,
+    0.803
+   ]
+  },
+  "coattention_fusion": {
+   "pooled": [
+    0.739,
+    0.652,
+    0.821
+   ],
+   "stratified": [
+    0.695,
+    0.596,
+    0.792
+   ],
+   "discovery": [
+    0.625,
+    0.505,
+    0.743
+   ]
+  },
+  "late_stack_logit": {
+   "pooled": [
+    0.737,
+    0.648,
+    0.814
+   ],
+   "stratified": [
+    0.701,
+    0.602,
+    0.791
+   ],
+   "discovery": [
+    0.647,
+    0.524,
+    0.763
+   ]
+  }
+ },
+ "n_events": {
+  "discovery": {
+   "LGD2plus": [
+    82,
+    40
+   ],
+   "E_HGD": [
+    82,
+    26
+   ]
+  },
+  "stratified": {
+   "LGD2plus": [
+    150,
+    50
+   ],
+   "E_HGD": [
+    150,
+    36
+   ]
+  },
+  "pooled": {
+   "LGD2plus": [
+    150,
+    50
+   ],
+   "E_HGD": [
+    150,
+    36
+   ]
+  }
+ }
+}

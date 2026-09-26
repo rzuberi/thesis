@@ -1,0 +1,203 @@
+{
+ "panels": {},
+ "rows": [
+  {
+   "population": "discovery",
+   "endpoint": "LGD2plus",
+   "n_events": [
+    82,
+    40
+   ],
+   "image_only": [
+    0.649,
+    0.527,
+    0.765
+   ],
+   "cnv_only": [
+    0.564,
+    0.427,
+    0.693
+   ],
+   "cnv_km": [
+    0.58,
+    0.443,
+    0.714
+   ],
+   "WSI_minus_cnv_only": [
+    0.086,
+    -0.084,
+    0.266
+   ],
+   "WSI_minus_cnv_km": [
+    0.069,
+    -0.097,
+    0.245
+   ]
+  },
+  {
+   "population": "stratified",
+   "endpoint": "LGD2plus",
+   "n_events": [
+    150,
+    50
+   ],
+   "image_only": [
+    0.708,
+    0.612,
+    0.796
+   ],
+   "cnv_only": [
+    0.594,
+    0.488,
+    0.695
+   ],
+   "cnv_km": [
+    0.597,
+    0.486,
+    0.703
+   ],
+   "WSI_minus_cnv_only": [
+    0.114,
+    -0.029,
+    0.253
+   ],
+   "WSI_minus_cnv_km": [
+    0.111,
+    -0.025,
+    0.252
+   ]
+  },
+  {
+   "population": "pooled",
+   "endpoint": "LGD2plus",
+   "n_events": [
+    150,
+    50
+   ],
+   "image_only": [
+    0.731,
+    0.64,
+    0.814
+   ],
+   "cnv_only": [
+    0.663,
+    0.569,
+    0.754
+   ],
+   "cnv_km": [
+    0.64,
+    0.538,
+    0.734
+   ],
+   "WSI_minus_cnv_only": [
+    0.068,
+    -0.065,
+    0.196
+   ],
+   "WSI_minus_cnv_km": [
+    0.091,
+    -0.031,
+    0.215
+   ]
+  },
+  {
+   "population": "discovery",
+   "endpoint": "E_HGD",
+   "n_events": [
+    82,
+    26
+   ],
+   "image_only": [
+    0.658,
+    0.527,
+    0.782
+   ],
+   "cnv_only": [
+    0.639,
+    0.491,
+    0.779
+   ],
+   "cnv_km": [
+    0.698,
+    0.556,
+    0.83
+   ],
+   "WSI_minus_cnv_only": [
+    0.019,
+    -0.151,
+    0.203
+   ],
+   "WSI_minus_cnv_km": [
+    -0.041,
+    -0.211,
+    0.144
+   ]
+  },
+  {
+   "population": "stratified",
+   "endpoint": "E_HGD",
+   "n_events": [
+    150,
+    36
+   ],
+   "image_only": [
+    0.721,
+    0.616,
+    0.816
+   ],
+   "cnv_only": [
+    0.651,
+    0.532,
+    0.771
+   ],
+   "cnv_km": [
+    0.684,
+    0.567,
+    0.794
+   ],
+   "WSI_minus_cnv_only": [
+    0.07,
+    -0.082,
+    0.219
+   ],
+   "WSI_minus_cnv_km": [
+    0.037,
+    -0.11,
+    0.18
+   ]
+  },
+  {
+   "population": "pooled",
+   "endpoint": "E_HGD",
+   "n_events": [
+    150,
+    36
+   ],
+   "image_only": [
+    0.746,
+    0.65,
+    0.837
+   ],
+   "cnv_only": [
+    0.676,
+    0.561,
+    0.774
+   ],
+   "cnv_km": [
+    0.694,
+    0.58,
+    0.789
+   ],
+   "WSI_minus_cnv_only": [
+    0.07,
+    -0.066,
+    0.212
+   ],
+   "WSI_minus_cnv_km": [
+    0.053,
+    -0.08,
+    0.193
+   ]
+  }
+ ]
+}
