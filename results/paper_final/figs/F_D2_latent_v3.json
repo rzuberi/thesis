@@ -1,0 +1,84 @@
+{
+ "A": {
+  "early_fusion": {
+   "image_only": [
+    0.015,
+    -0.101,
+    0.121
+   ],
+   "cnv_only": [
+    0.118,
+    -0.012,
+    0.257
+   ]
+  },
+  "intermediate_fusion": {
+   "image_only": [
+    0.024,
+    -0.066,
+    0.118
+   ],
+   "cnv_only": [
+    0.127,
+    -0.016,
+    0.274
+   ]
+  },
+  "coattention_fusion": {
+   "image_only": [
+    -0.064,
+    -0.193,
+    0.055
+   ],
+   "cnv_only": [
+    0.039,
+    -0.122,
+    0.198
+   ]
+  }
+ },
+ "B": {
+  "WSI embedding": {
+   "n_nonprogressors": 100,
+   "discovery": 42,
+   "validation": 58,
+   "auroc": 0.948,
+   "ci": [
+    0.887,
+    0.993
+   ]
+  },
+  "CNV features (PCA-20)": {
+   "n_nonprogressors": 100,
+   "discovery": 42,
+   "validation": 58,
+   "auroc": 0.891,
+   "ci": [
+    0.819,
+    0.951
+   ]
+  },
+  "CNV QC (no read count, post hoc)": {
+   "features": [
+    "noise_mapd",
+    "n_segments",
+    "frac_altered_0p15",
+    "cx"
+   ],
+   "n_nonprogressors": 100,
+   "discovery": 42,
+   "validation": 58,
+   "auroc": 0.756,
+   "ci": [
+    0.656,
+    0.847
+   ],
+   "univariate_auroc_raw_direction": {
+    "noise_mapd": 0.278,
+    "n_segments": 0.244,
+    "frac_altered_0p15": 0.298,
+    "cx": 0.604
+   }
+  }
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "fold": 1,
+ "projection": "UMAP n_neighbors 15, min_dist 0.1, seed 0, fitted on fold-1 training patients",
+ "panels": {
+  "image_only": {
+   "held_out_n": 30,
+   "discovery": 21,
+   "events_discovery": 9,
+   "events_all": 10
+  },
+  "intermediate_fusion": {
+   "held_out_n": 30,
+   "discovery": 21,
+   "events_discovery": 9,
+   "events_all": 10
+  }
+ }
+}
