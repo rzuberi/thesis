@@ -1,0 +1,146 @@
+{
+ "late_mean": {
+  "discovery": {
+   "FP": 22,
+   "TN": 20,
+   "laterHGD_FP": 3,
+   "laterHGD_TN": 3,
+   "rate_FP": 0.136,
+   "rate_TN": 0.15,
+   "wilson_FP": [
+    0.047,
+    0.333
+   ],
+   "wilson_TN": [
+    0.052,
+    0.36
+   ],
+   "fisher_p": 1.0
+  },
+  "validation": {
+   "FP": 18,
+   "TN": 40,
+   "laterHGD_FP": 8,
+   "laterHGD_TN": 1,
+   "rate_FP": 0.444,
+   "rate_TN": 0.025,
+   "wilson_FP": [
+    0.246,
+    0.663
+   ],
+   "wilson_TN": [
+    0.004,
+    0.129
+   ],
+   "fisher_p": "<0.001"
+  }
+ },
+ "image_only": {
+  "discovery": {
+   "FP": 25,
+   "TN": 17,
+   "laterHGD_FP": 3,
+   "laterHGD_TN": 3,
+   "rate_FP": 0.12,
+   "rate_TN": 0.176,
+   "wilson_FP": [
+    0.042,
+    0.3
+   ],
+   "wilson_TN": [
+    0.062,
+    0.41
+   ],
+   "fisher_p": 0.672
+  },
+  "validation": {
+   "FP": 25,
+   "TN": 33,
+   "laterHGD_FP": 8,
+   "laterHGD_TN": 1,
+   "rate_FP": 0.32,
+   "rate_TN": 0.03,
+   "wilson_FP": [
+    0.172,
+    0.516
+   ],
+   "wilson_TN": [
+    0.005,
+    0.153
+   ],
+   "fisher_p": 0.004
+  }
+ },
+ "cnv_only": {
+  "discovery": {
+   "FP": 35,
+   "TN": 7,
+   "laterHGD_FP": 6,
+   "laterHGD_TN": 0,
+   "rate_FP": 0.171,
+   "rate_TN": 0.0,
+   "wilson_FP": [
+    0.081,
+    0.327
+   ],
+   "wilson_TN": [
+    0.0,
+    0.354
+   ],
+   "fisher_p": 0.567
+  },
+  "validation": {
+   "FP": 20,
+   "TN": 38,
+   "laterHGD_FP": 7,
+   "laterHGD_TN": 2,
+   "rate_FP": 0.35,
+   "rate_TN": 0.053,
+   "wilson_FP": [
+    0.181,
+    0.567
+   ],
+   "wilson_TN": [
+    0.015,
+    0.173
+   ],
+   "fisher_p": 0.006
+  }
+ },
+ "C2_grade_maxsofar": {
+  "discovery": {
+   "FP": 30,
+   "TN": 12,
+   "laterHGD_FP": 4,
+   "laterHGD_TN": 2,
+   "rate_FP": 0.133,
+   "rate_TN": 0.167,
+   "wilson_FP": [
+    0.053,
+    0.297
+   ],
+   "wilson_TN": [
+    0.047,
+    0.448
+   ],
+   "fisher_p": 1.0
+  },
+  "validation": {
+   "FP": 26,
+   "TN": 32,
+   "laterHGD_FP": 6,
+   "laterHGD_TN": 3,
+   "rate_FP": 0.231,
+   "rate_TN": 0.094,
+   "wilson_FP": [
+    0.11,
+    0.421
+   ],
+   "wilson_TN": [
+    0.032,
+    0.242
+   ],
+   "fisher_p": 0.274
+  }
+ }
+}
