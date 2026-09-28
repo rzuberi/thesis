@@ -1,0 +1,14 @@
+{
+ "model": "killcoyne_frozen_v1",
+ "spec": "docs/paper_plan_killcoyne_checks.md @ 828ebf7 item 5",
+ "files": {
+  "cnv_scaling_packaged_model.csv": "a2a26c05374cac79187c817be2a6e608ae655b354cb90d42eeee822be6e2e4a1",
+  "coef_L_CNV.csv": "381eaf663790347582f2f8e046e7b0409ece626829e8e2a7e8247fd96f308902",
+  "coef_L_EARLY.csv": "79724a80f67505e0b20ced303812ec4510b119a880c6e5ffb1115a1bf93ea8a5",
+  "coef_L_IMG.csv": "5f111cfa4493cd2c7da424dbc3c0fbf8d71d571d89d74e0f14bd94ee19d9e5a5",
+  "extraction_settings.json": "47b171dada811b951a1fcbe94e18969b6867d7b897f3e2b97cba8ca2e683506e",
+  "image_scaling.csv": "f2e7c082903a9af641baa3dfac374a4ffe1aa6b7d7c26b5bf51f8376ea7e47ce",
+  "model_info.json": "6a0c01ab62d93746833f4654cd3e5303672d34df5be87a69f5b11da42a5358cf"
+ },
+ "bundle_sha256": "17207de439433680a706d2e322838f18fe1ec17363ad647715e7f93acceee821"
+}

@@ -1,0 +1,42 @@
+{
+  "L_CNV": {
+    "lambda": 0.00923681011427474,
+    "n_features": 634,
+    "nonzero": 68,
+    "insample_mean_prob": 0.393491123756907
+  },
+  "L_IMG": {
+    "lambda": 0.00433122523693886,
+    "n_features": 1536,
+    "nonzero": 158,
+    "insample_mean_prob": 0.393491127148677
+  },
+  "L_EARLY": {
+    "lambda": 0.00225830442825927,
+    "n_features": 2170,
+    "nonzero": 142,
+    "insample_mean_prob": 0.393491123427797
+  },
+  "fit": {
+    "alpha": 0.9,
+    "standardize": false,
+    "family": "binomial",
+    "lambda_rule": "class-error min, 10 x 5 patient-grouped CV on all of set C, set.seed(r) r = 1..10, lambda.min = largest lambda at the minimum",
+    "late": "L_LATE probability = (L_CNV probability + L_IMG probability) / 2",
+    "training_set": "set C: 676 samples, 80 patients, label = sheet Status (P = 1)"
+  },
+  "versions": {
+    "R": "R version 4.4.1 (2024-06-14)",
+    "glmnet": "5.0",
+    "BarrettsProgressionRisk": "1.1"
+  },
+  "cnv_preprocessing": "Features in the column order of coef_L_CNV.csv: 589 5-Mb tiles (hg19 coordinates of the packaged model) minus their overlapping arm(s), 44 arms, cx. Construction as BarrettsProgressionRisk::tileSamples: segmentRawData (QDNAseq 50 kb, gamma2 250) -> tileSegments 5e6 and 'arms' -> unit.var with the packaged model's means/s.d. (cnv_scaling_packaged_model.csv) -> cx = scoreCX on the scaled tiles, then unit.var with cx mean/s.d. -> subtractArms. The training matrix is the packaged model's shipped fit.data (their hg19 processing); features computed on other data are an approximation of that scale.",
+  "image_preprocessing": "UNI2 slide embeddings (settings in extraction_settings.json): mean over the sample's tiles (union over the sample's slides), then (x - mean) / sd with image_scaling.csv.",
+  "insample_check": {
+    "auroc_L_CNV": 0.996066385475885,
+    "auroc_L_IMG": 0.998285347515129,
+    "auroc_L_EARLY": 1,
+    "auroc_L_LATE": 0.99998166147075,
+    "note": "in-sample on set C, not a performance estimate"
+  }
+}

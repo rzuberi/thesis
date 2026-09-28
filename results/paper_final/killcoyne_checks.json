@@ -1,0 +1,4037 @@
+{
+ "_spec": "docs/paper_plan_killcoyne_checks.md @ 828ebf7",
+ "subsets": {
+  "all_C": {
+   "n_samples": 676,
+   "n_patients": 80,
+   "n_P_patients": 37
+  },
+  "a_NDBE_only": {
+   "n_samples": 463,
+   "n_patients": 75,
+   "n_P_patients": 32
+  },
+  "b_before_first_HGD_IMC": {
+   "n_samples": 571,
+   "n_patients": 75,
+   "n_P_patients": 32
+  },
+  "c_NDBE_and_before": {
+   "n_samples": 438,
+   "n_patients": 71,
+   "n_P_patients": 28
+  }
+ },
+ "event_definition": {
+  "P_patients_in_C": 37,
+  "dated_from_HGD_IMC_record": 33,
+  "fallback_final_endoscopy": 4
+ },
+ "item1_max_T": {
+  "their": {
+   "L-IMG": {
+    "per_sample_auroc": {
+     "delta": 0.032,
+     "p_unadjusted": 0.3793,
+     "p_max_T_adjusted": 0.8261
+    },
+    "patient_max_auroc": {
+     "delta": -0.014,
+     "p_unadjusted": 0.7786,
+     "p_max_T_adjusted": 0.9985
+    }
+   },
+   "L-EARLY": {
+    "per_sample_auroc": {
+     "delta": 0.065,
+     "p_unadjusted": 0.0005,
+     "p_max_T_adjusted": 0.2169
+    },
+    "patient_max_auroc": {
+     "delta": 0.07,
+     "p_unadjusted": 0.007,
+     "p_max_T_adjusted": 0.2654
+    }
+   },
+   "L-INTER": {
+    "per_sample_auroc": {
+     "delta": 0.029,
+     "p_unadjusted": 0.3818,
+     "p_max_T_adjusted": 0.8706
+    },
+    "patient_max_auroc": {
+     "delta": 0.024,
+     "p_unadjusted": 0.5712,
+     "p_max_T_adjusted": 0.973
+    }
+   },
+   "L-LATE": {
+    "per_sample_auroc": {
+     "delta": 0.074,
+     "p_unadjusted": 0.001,
+     "p_max_T_adjusted": 0.1174
+    },
+    "patient_max_auroc": {
+     "delta": 0.016,
+     "p_unadjusted": 0.6097,
+     "p_max_T_adjusted": 0.9955
+    }
+   },
+   "N-IMG": {
+    "per_sample_auroc": {
+     "delta": -0.029,
+     "p_unadjusted": 0.5032,
+     "p_max_T_adjusted": 0.8746
+    },
+    "patient_max_auroc": {
+     "delta": -0.003,
+     "p_unadjusted": 0.956,
+     "p_max_T_adjusted": 1.0
+    }
+   },
+   "N-EARLY": {
+    "per_sample_auroc": {
+     "delta": 0.02,
+     "p_unadjusted": 0.5717,
+     "p_max_T_adjusted": 0.9725
+    },
+    "patient_max_auroc": {
+     "delta": -0.012,
+     "p_unadjusted": 0.6477,
+     "p_max_T_adjusted": 0.9995
+    }
+   },
+   "N-INTER": {
+    "per_sample_auroc": {
+     "delta": 0.025,
+     "p_unadjusted": 0.4943,
+     "p_max_T_adjusted": 0.925
+    },
+    "patient_max_auroc": {
+     "delta": -0.03,
+     "p_unadjusted": 0.2744,
+     "p_max_T_adjusted": 0.9095
+    }
+   },
+   "N-LATE": {
+    "per_sample_auroc": {
+     "delta": 0.038,
+     "p_unadjusted": 0.1279,
+     "p_max_T_adjusted": 0.7151
+    },
+    "patient_max_auroc": {
+     "delta": 0.04,
+     "p_unadjusted": 0.094,
+     "p_max_T_adjusted": 0.7526
+    }
+   }
+  },
+  "pkg": {
+   "L-IMG": {
+    "per_sample_auroc": {
+     "delta": 0.009,
+     "p_unadjusted": 0.8176,
+     "p_max_T_adjusted": 0.997
+    },
+    "patient_max_auroc": {
+     "delta": -0.016,
+     "p_unadjusted": 0.7426,
+     "p_max_T_adjusted": 0.996
+    }
+   },
+   "L-EARLY": {
+    "per_sample_auroc": {
+     "delta": 0.038,
+     "p_unadjusted": 0.059,
+     "p_max_T_adjusted": 0.5897
+    },
+    "patient_max_auroc": {
+     "delta": 0.037,
+     "p_unadjusted": 0.2169,
+     "p_max_T_adjusted": 0.7891
+    }
+   },
+   "L-INTER": {
+    "per_sample_auroc": {
+     "delta": 0.025,
+     "p_unadjusted": 0.3923,
+     "p_max_T_adjusted": 0.8346
+    },
+    "patient_max_auroc": {
+     "delta": 0.019,
+     "p_unadjusted": 0.6647,
+     "p_max_T_adjusted": 0.9895
+    }
+   },
+   "L-LATE": {
+    "per_sample_auroc": {
+     "delta": 0.057,
+     "p_unadjusted": 0.023,
+     "p_max_T_adjusted": 0.2959
+    },
+    "patient_max_auroc": {
+     "delta": 0.038,
+     "p_unadjusted": 0.2619,
+     "p_max_T_adjusted": 0.7731
+    }
+   },
+   "N-IMG": {
+    "per_sample_auroc": {
+     "delta": -0.052,
+     "p_unadjusted": 0.2764,
+     "p_max_T_adjusted": 0.3763
+    },
+    "patient_max_auroc": {
+     "delta": -0.006,
+     "p_unadjusted": 0.9165,
+     "p_max_T_adjusted": 1.0
+    }
+   },
+   "N-EARLY": {
+    "per_sample_auroc": {
+     "delta": -0.004,
+     "p_unadjusted": 0.9055,
+     "p_max_T_adjusted": 1.0
+    },
+    "patient_max_auroc": {
+     "delta": 0.017,
+     "p_unadjusted": 0.6697,
+     "p_max_T_adjusted": 0.9955
+    }
+   },
+   "N-INTER": {
+    "per_sample_auroc": {
+     "delta": -0.019,
+     "p_unadjusted": 0.5457,
+     "p_max_T_adjusted": 0.9455
+    },
+    "patient_max_auroc": {
+     "delta": -0.01,
+     "p_unadjusted": 0.7821,
+     "p_max_T_adjusted": 1.0
+    }
+   },
+   "N-LATE": {
+    "per_sample_auroc": {
+     "delta": 0.024,
+     "p_unadjusted": 0.3738,
+     "p_max_T_adjusted": 0.8481
+    },
+    "patient_max_auroc": {
+     "delta": 0.052,
+     "p_unadjusted": 0.1214,
+     "p_max_T_adjusted": 0.5357
+    }
+   }
+  }
+ },
+ "items2_3": {
+  "their": {
+   "all_C": {
+    "L-CNV": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.846,
+     "patient_max_auroc": 0.879,
+     "ci95": {
+      "per_sample_auroc": [
+       0.774,
+       0.908
+      ],
+      "patient_max_auroc": [
+       0.79,
+       0.954
+      ]
+     }
+    },
+    "L-IMG": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.878,
+     "patient_max_auroc": 0.865,
+     "ci95": {
+      "per_sample_auroc": [
+       0.837,
+       0.915
+      ],
+      "patient_max_auroc": [
+       0.776,
+       0.944
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.032,
+       "ci95": [
+        -0.036,
+        0.106
+       ],
+       "perm_p": 0.3793
+      },
+      "patient_max_auroc": {
+       "delta": -0.014,
+       "ci95": [
+        -0.106,
+        0.078
+       ],
+       "perm_p": 0.7786
+      }
+     }
+    },
+    "L-EARLY": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.91,
+     "patient_max_auroc": 0.949,
+     "ci95": {
+      "per_sample_auroc": [
+       0.854,
+       0.953
+      ],
+      "patient_max_auroc": [
+       0.892,
+       0.988
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.065,
+       "ci95": [
+        0.032,
+        0.105
+       ],
+       "perm_p": 0.0005
+      },
+      "patient_max_auroc": {
+       "delta": 0.07,
+       "ci95": [
+        0.018,
+        0.135
+       ],
+       "perm_p": 0.007
+      }
+     }
+    },
+    "L-INTER": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.875,
+     "patient_max_auroc": 0.903,
+     "ci95": {
+      "per_sample_auroc": [
+       0.811,
+       0.93
+      ],
+      "patient_max_auroc": [
+       0.816,
+       0.976
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.029,
+       "ci95": [
+        -0.036,
+        0.097
+       ],
+       "perm_p": 0.3818
+      },
+      "patient_max_auroc": {
+       "delta": 0.024,
+       "ci95": [
+        -0.05,
+        0.099
+       ],
+       "perm_p": 0.5712
+      }
+     }
+    },
+    "L-LATE": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.92,
+     "patient_max_auroc": 0.895,
+     "ci95": {
+      "per_sample_auroc": [
+       0.873,
+       0.954
+      ],
+      "patient_max_auroc": [
+       0.814,
+       0.958
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.074,
+       "ci95": [
+        0.032,
+        0.125
+       ],
+       "perm_p": 0.001
+      },
+      "patient_max_auroc": {
+       "delta": 0.016,
+       "ci95": [
+        -0.038,
+        0.077
+       ],
+       "perm_p": 0.6097
+      }
+     }
+    },
+    "N-IMG": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.817,
+     "patient_max_auroc": 0.876,
+     "ci95": {
+      "per_sample_auroc": [
+       0.75,
+       0.875
+      ],
+      "patient_max_auroc": [
+       0.793,
+       0.946
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": -0.029,
+       "ci95": [
+        -0.104,
+        0.053
+       ],
+       "perm_p": 0.5032
+      },
+      "patient_max_auroc": {
+       "delta": -0.003,
+       "ci95": [
+        -0.088,
+        0.084
+       ],
+       "perm_p": 0.956
+      }
+     }
+    },
+    "N-EARLY": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.866,
+     "patient_max_auroc": 0.867,
+     "ci95": {
+      "per_sample_auroc": [
+       0.793,
+       0.926
+      ],
+      "patient_max_auroc": [
+       0.776,
+       0.947
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.02,
+       "ci95": [
+        -0.04,
+        0.084
+       ],
+       "perm_p": 0.5717
+      },
+      "patient_max_auroc": {
+       "delta": -0.012,
+       "ci95": [
+        -0.063,
+        0.038
+       ],
+       "perm_p": 0.6477
+      }
+     }
+    },
+    "N-INTER": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.87,
+     "patient_max_auroc": 0.849,
+     "ci95": {
+      "per_sample_auroc": [
+       0.802,
+       0.926
+      ],
+      "patient_max_auroc": [
+       0.747,
+       0.938
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.025,
+       "ci95": [
+        -0.034,
+        0.084
+       ],
+       "perm_p": 0.4943
+      },
+      "patient_max_auroc": {
+       "delta": -0.03,
+       "ci95": [
+        -0.087,
+        0.024
+       ],
+       "perm_p": 0.2744
+      }
+     }
+    },
+    "N-LATE": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.883,
+     "patient_max_auroc": 0.919,
+     "ci95": {
+      "per_sample_auroc": [
+       0.82,
+       0.933
+      ],
+      "patient_max_auroc": [
+       0.849,
+       0.976
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.038,
+       "ci95": [
+        0.001,
+        0.082
+       ],
+       "perm_p": 0.1279
+      },
+      "patient_max_auroc": {
+       "delta": 0.04,
+       "ci95": [
+        0.004,
+        0.084
+       ],
+       "perm_p": 0.094
+      }
+     }
+    },
+    "L-IMG (fold-honest)": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.876,
+     "patient_max_auroc": 0.872,
+     "ci95": {
+      "per_sample_auroc": [
+       0.835,
+       0.914
+      ],
+      "patient_max_auroc": [
+       0.784,
+       0.949
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.031,
+       "ci95": [
+        -0.038,
+        0.104
+       ],
+       "perm_p": 0.3973
+      },
+      "patient_max_auroc": {
+       "delta": -0.008,
+       "ci95": [
+        -0.097,
+        0.089
+       ],
+       "perm_p": 0.8856
+      }
+     }
+    },
+    "L-EARLY (fold-honest)": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.911,
+     "patient_max_auroc": 0.951,
+     "ci95": {
+      "per_sample_auroc": [
+       0.855,
+       0.954
+      ],
+      "patient_max_auroc": [
+       0.895,
+       0.989
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.065,
+       "ci95": [
+        0.033,
+        0.105
+       ],
+       "perm_p": 0.0005
+      },
+      "patient_max_auroc": {
+       "delta": 0.072,
+       "ci95": [
+        0.018,
+        0.138
+       ],
+       "perm_p": 0.0055
+      }
+     }
+    },
+    "L-LATE (fold-honest)": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.919,
+     "patient_max_auroc": 0.899,
+     "ci95": {
+      "per_sample_auroc": [
+       0.871,
+       0.954
+      ],
+      "patient_max_auroc": [
+       0.819,
+       0.962
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.074,
+       "ci95": [
+        0.031,
+        0.123
+       ],
+       "perm_p": 0.0015
+      },
+      "patient_max_auroc": {
+       "delta": 0.019,
+       "ci95": [
+        -0.035,
+        0.08
+       ],
+       "perm_p": 0.5222
+      }
+     }
+    }
+   },
+   "a_NDBE_only": {
+    "L-CNV": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.781,
+     "patient_max_auroc": 0.765,
+     "ci95": {
+      "per_sample_auroc": [
+       0.664,
+       0.868
+      ],
+      "patient_max_auroc": [
+       0.64,
+       0.869
+      ]
+     }
+    },
+    "L-IMG": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.838,
+     "patient_max_auroc": 0.826,
+     "ci95": {
+      "per_sample_auroc": [
+       0.788,
+       0.886
+      ],
+      "patient_max_auroc": [
+       0.728,
+       0.915
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.058,
+       "ci95": [
+        -0.032,
+        0.165
+       ],
+       "perm_p": 0.2189
+      },
+      "patient_max_auroc": {
+       "delta": 0.061,
+       "ci95": [
+        -0.054,
+        0.187
+       ],
+       "perm_p": 0.3753
+      }
+     }
+    },
+    "L-EARLY": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.873,
+     "patient_max_auroc": 0.891,
+     "ci95": {
+      "per_sample_auroc": [
+       0.788,
+       0.941
+      ],
+      "patient_max_auroc": [
+       0.806,
+       0.958
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.092,
+       "ci95": [
+        0.043,
+        0.156
+       ],
+       "perm_p": 0.0005
+      },
+      "patient_max_auroc": {
+       "delta": 0.126,
+       "ci95": [
+        0.058,
+        0.206
+       ],
+       "perm_p": 0.001
+      }
+     }
+    },
+    "L-INTER": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.849,
+     "patient_max_auroc": 0.876,
+     "ci95": {
+      "per_sample_auroc": [
+       0.76,
+       0.929
+      ],
+      "patient_max_auroc": [
+       0.78,
+       0.951
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.069,
+       "ci95": [
+        -0.022,
+        0.161
+       ],
+       "perm_p": 0.1434
+      },
+      "patient_max_auroc": {
+       "delta": 0.111,
+       "ci95": [
+        0.023,
+        0.211
+       ],
+       "perm_p": 0.03
+      }
+     }
+    },
+    "L-LATE": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.877,
+     "patient_max_auroc": 0.844,
+     "ci95": {
+      "per_sample_auroc": [
+       0.807,
+       0.935
+      ],
+      "patient_max_auroc": [
+       0.746,
+       0.927
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.096,
+       "ci95": [
+        0.038,
+        0.17
+       ],
+       "perm_p": 0.003
+      },
+      "patient_max_auroc": {
+       "delta": 0.078,
+       "ci95": [
+        0.007,
+        0.166
+       ],
+       "perm_p": 0.065
+      }
+     }
+    },
+    "N-IMG": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.737,
+     "patient_max_auroc": 0.769,
+     "ci95": {
+      "per_sample_auroc": [
+       0.651,
+       0.825
+      ],
+      "patient_max_auroc": [
+       0.641,
+       0.88
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": -0.043,
+       "ci95": [
+        -0.15,
+        0.076
+       ],
+       "perm_p": 0.4708
+      },
+      "patient_max_auroc": {
+       "delta": 0.004,
+       "ci95": [
+        -0.141,
+        0.15
+       ],
+       "perm_p": 0.9655
+      }
+     }
+    },
+    "N-EARLY": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.83,
+     "patient_max_auroc": 0.805,
+     "ci95": {
+      "per_sample_auroc": [
+       0.734,
+       0.915
+      ],
+      "patient_max_auroc": [
+       0.694,
+       0.905
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.049,
+       "ci95": [
+        -0.048,
+        0.143
+       ],
+       "perm_p": 0.4023
+      },
+      "patient_max_auroc": {
+       "delta": 0.039,
+       "ci95": [
+        -0.046,
+        0.129
+       ],
+       "perm_p": 0.4333
+      }
+     }
+    },
+    "N-INTER": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.829,
+     "patient_max_auroc": 0.777,
+     "ci95": {
+      "per_sample_auroc": [
+       0.732,
+       0.914
+      ],
+      "patient_max_auroc": [
+       0.659,
+       0.882
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.049,
+       "ci95": [
+        -0.051,
+        0.145
+       ],
+       "perm_p": 0.4213
+      },
+      "patient_max_auroc": {
+       "delta": 0.012,
+       "ci95": [
+        -0.083,
+        0.109
+       ],
+       "perm_p": 0.8366
+      }
+     }
+    },
+    "N-LATE": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.818,
+     "patient_max_auroc": 0.813,
+     "ci95": {
+      "per_sample_auroc": [
+       0.728,
+       0.897
+      ],
+      "patient_max_auroc": [
+       0.703,
+       0.911
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.038,
+       "ci95": [
+        -0.018,
+        0.1
+       ],
+       "perm_p": 0.3503
+      },
+      "patient_max_auroc": {
+       "delta": 0.048,
+       "ci95": [
+        -0.019,
+        0.125
+       ],
+       "perm_p": 0.2409
+      }
+     }
+    },
+    "L-IMG (fold-honest)": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.836,
+     "patient_max_auroc": 0.826,
+     "ci95": {
+      "per_sample_auroc": [
+       0.785,
+       0.884
+      ],
+      "patient_max_auroc": [
+       0.725,
+       0.914
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.056,
+       "ci95": [
+        -0.034,
+        0.163
+       ],
+       "perm_p": 0.2339
+      },
+      "patient_max_auroc": {
+       "delta": 0.061,
+       "ci95": [
+        -0.063,
+        0.191
+       ],
+       "perm_p": 0.3793
+      }
+     }
+    },
+    "L-EARLY (fold-honest)": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.873,
+     "patient_max_auroc": 0.891,
+     "ci95": {
+      "per_sample_auroc": [
+       0.788,
+       0.941
+      ],
+      "patient_max_auroc": [
+       0.806,
+       0.958
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.093,
+       "ci95": [
+        0.043,
+        0.156
+       ],
+       "perm_p": 0.0005
+      },
+      "patient_max_auroc": {
+       "delta": 0.126,
+       "ci95": [
+        0.058,
+        0.206
+       ],
+       "perm_p": 0.001
+      }
+     }
+    },
+    "L-LATE (fold-honest)": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.876,
+     "patient_max_auroc": 0.849,
+     "ci95": {
+      "per_sample_auroc": [
+       0.805,
+       0.934
+      ],
+      "patient_max_auroc": [
+       0.751,
+       0.933
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.095,
+       "ci95": [
+        0.038,
+        0.167
+       ],
+       "perm_p": 0.0025
+      },
+      "patient_max_auroc": {
+       "delta": 0.084,
+       "ci95": [
+        0.012,
+        0.17
+       ],
+       "perm_p": 0.052
+      }
+     }
+    }
+   },
+   "b_before_first_HGD_IMC": {
+    "L-CNV": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.799,
+     "patient_max_auroc": 0.822,
+     "ci95": {
+      "per_sample_auroc": [
+       0.702,
+       0.876
+      ],
+      "patient_max_auroc": [
+       0.709,
+       0.918
+      ]
+     }
+    },
+    "L-IMG": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.849,
+     "patient_max_auroc": 0.818,
+     "ci95": {
+      "per_sample_auroc": [
+       0.796,
+       0.9
+      ],
+      "patient_max_auroc": [
+       0.705,
+       0.91
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.05,
+       "ci95": [
+        -0.039,
+        0.151
+       ],
+       "perm_p": 0.2989
+      },
+      "patient_max_auroc": {
+       "delta": -0.004,
+       "ci95": [
+        -0.124,
+        0.12
+       ],
+       "perm_p": 0.9535
+      }
+     }
+    },
+    "L-EARLY": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.88,
+     "patient_max_auroc": 0.927,
+     "ci95": {
+      "per_sample_auroc": [
+       0.802,
+       0.939
+      ],
+      "patient_max_auroc": [
+       0.86,
+       0.977
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.082,
+       "ci95": [
+        0.038,
+        0.134
+       ],
+       "perm_p": 0.0015
+      },
+      "patient_max_auroc": {
+       "delta": 0.105,
+       "ci95": [
+        0.038,
+        0.183
+       ],
+       "perm_p": 0.002
+      }
+     }
+    },
+    "L-INTER": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.837,
+     "patient_max_auroc": 0.839,
+     "ci95": {
+      "per_sample_auroc": [
+       0.756,
+       0.907
+      ],
+      "patient_max_auroc": [
+       0.731,
+       0.928
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.039,
+       "ci95": [
+        -0.051,
+        0.125
+       ],
+       "perm_p": 0.3933
+      },
+      "patient_max_auroc": {
+       "delta": 0.017,
+       "ci95": [
+        -0.07,
+        0.109
+       ],
+       "perm_p": 0.7206
+      }
+     }
+    },
+    "L-LATE": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.893,
+     "patient_max_auroc": 0.869,
+     "ci95": {
+      "per_sample_auroc": [
+       0.829,
+       0.942
+      ],
+      "patient_max_auroc": [
+       0.774,
+       0.943
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.094,
+       "ci95": [
+        0.04,
+        0.159
+       ],
+       "perm_p": 0.003
+      },
+      "patient_max_auroc": {
+       "delta": 0.047,
+       "ci95": [
+        -0.022,
+        0.126
+       ],
+       "perm_p": 0.2354
+      }
+     }
+    },
+    "N-IMG": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.77,
+     "patient_max_auroc": 0.786,
+     "ci95": {
+      "per_sample_auroc": [
+       0.688,
+       0.846
+      ],
+      "patient_max_auroc": [
+       0.666,
+       0.894
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": -0.029,
+       "ci95": [
+        -0.13,
+        0.077
+       ],
+       "perm_p": 0.5987
+      },
+      "patient_max_auroc": {
+       "delta": -0.036,
+       "ci95": [
+        -0.159,
+        0.091
+       ],
+       "perm_p": 0.6092
+      }
+     }
+    },
+    "N-EARLY": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.832,
+     "patient_max_auroc": 0.82,
+     "ci95": {
+      "per_sample_auroc": [
+       0.743,
+       0.907
+      ],
+      "patient_max_auroc": [
+       0.714,
+       0.911
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.033,
+       "ci95": [
+        -0.042,
+        0.112
+       ],
+       "perm_p": 0.5062
+      },
+      "patient_max_auroc": {
+       "delta": -0.001,
+       "ci95": [
+        -0.076,
+        0.075
+       ],
+       "perm_p": 0.9795
+      }
+     }
+    },
+    "N-INTER": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.834,
+     "patient_max_auroc": 0.796,
+     "ci95": {
+      "per_sample_auroc": [
+       0.755,
+       0.904
+      ],
+      "patient_max_auroc": [
+       0.68,
+       0.899
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.036,
+       "ci95": [
+        -0.043,
+        0.112
+       ],
+       "perm_p": 0.4768
+      },
+      "patient_max_auroc": {
+       "delta": -0.026,
+       "ci95": [
+        -0.101,
+        0.052
+       ],
+       "perm_p": 0.5142
+      }
+     }
+    },
+    "N-LATE": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.839,
+     "patient_max_auroc": 0.848,
+     "ci95": {
+      "per_sample_auroc": [
+       0.761,
+       0.908
+      ],
+      "patient_max_auroc": [
+       0.742,
+       0.938
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.041,
+       "ci95": [
+        -0.011,
+        0.098
+       ],
+       "perm_p": 0.2559
+      },
+      "patient_max_auroc": {
+       "delta": 0.026,
+       "ci95": [
+        -0.031,
+        0.085
+       ],
+       "perm_p": 0.4193
+      }
+     }
+    },
+    "L-IMG (fold-honest)": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.847,
+     "patient_max_auroc": 0.82,
+     "ci95": {
+      "per_sample_auroc": [
+       0.793,
+       0.899
+      ],
+      "patient_max_auroc": [
+       0.711,
+       0.914
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.048,
+       "ci95": [
+        -0.041,
+        0.147
+       ],
+       "perm_p": 0.3128
+      },
+      "patient_max_auroc": {
+       "delta": -0.002,
+       "ci95": [
+        -0.123,
+        0.124
+       ],
+       "perm_p": 0.9755
+      }
+     }
+    },
+    "L-EARLY (fold-honest)": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.881,
+     "patient_max_auroc": 0.929,
+     "ci95": {
+      "per_sample_auroc": [
+       0.802,
+       0.94
+      ],
+      "patient_max_auroc": [
+       0.863,
+       0.977
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.082,
+       "ci95": [
+        0.039,
+        0.135
+       ],
+       "perm_p": 0.0015
+      },
+      "patient_max_auroc": {
+       "delta": 0.107,
+       "ci95": [
+        0.039,
+        0.185
+       ],
+       "perm_p": 0.002
+      }
+     }
+    },
+    "L-LATE (fold-honest)": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.891,
+     "patient_max_auroc": 0.871,
+     "ci95": {
+      "per_sample_auroc": [
+       0.827,
+       0.94
+      ],
+      "patient_max_auroc": [
+       0.774,
+       0.945
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.093,
+       "ci95": [
+        0.039,
+        0.157
+       ],
+       "perm_p": 0.003
+      },
+      "patient_max_auroc": {
+       "delta": 0.049,
+       "ci95": [
+        -0.021,
+        0.127
+       ],
+       "perm_p": 0.2174
+      }
+     }
+    }
+   },
+   "c_NDBE_and_before": {
+    "L-CNV": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.761,
+     "patient_max_auroc": 0.765,
+     "ci95": {
+      "per_sample_auroc": [
+       0.646,
+       0.867
+      ],
+      "patient_max_auroc": [
+       0.636,
+       0.875
+      ]
+     }
+    },
+    "L-IMG": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.829,
+     "patient_max_auroc": 0.791,
+     "ci95": {
+      "per_sample_auroc": [
+       0.766,
+       0.885
+      ],
+      "patient_max_auroc": [
+       0.669,
+       0.895
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.068,
+       "ci95": [
+        -0.032,
+        0.181
+       ],
+       "perm_p": 0.1874
+      },
+      "patient_max_auroc": {
+       "delta": 0.026,
+       "ci95": [
+        -0.121,
+        0.166
+       ],
+       "perm_p": 0.7406
+      }
+     }
+    },
+    "L-EARLY": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.861,
+     "patient_max_auroc": 0.882,
+     "ci95": {
+      "per_sample_auroc": [
+       0.766,
+       0.937
+      ],
+      "patient_max_auroc": [
+       0.796,
+       0.952
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.1,
+       "ci95": [
+        0.042,
+        0.171
+       ],
+       "perm_p": 0.0025
+      },
+      "patient_max_auroc": {
+       "delta": 0.117,
+       "ci95": [
+        0.035,
+        0.206
+       ],
+       "perm_p": 0.004
+      }
+     }
+    },
+    "L-INTER": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.835,
+     "patient_max_auroc": 0.817,
+     "ci95": {
+      "per_sample_auroc": [
+       0.739,
+       0.921
+      ],
+      "patient_max_auroc": [
+       0.698,
+       0.92
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.075,
+       "ci95": [
+        -0.025,
+        0.177
+       ],
+       "perm_p": 0.1409
+      },
+      "patient_max_auroc": {
+       "delta": 0.052,
+       "ci95": [
+        -0.054,
+        0.167
+       ],
+       "perm_p": 0.3613
+      }
+     }
+    },
+    "L-LATE": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.866,
+     "patient_max_auroc": 0.841,
+     "ci95": {
+      "per_sample_auroc": [
+       0.784,
+       0.932
+      ],
+      "patient_max_auroc": [
+       0.738,
+       0.928
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.105,
+       "ci95": [
+        0.041,
+        0.184
+       ],
+       "perm_p": 0.0045
+      },
+      "patient_max_auroc": {
+       "delta": 0.076,
+       "ci95": [
+        -0.012,
+        0.174
+       ],
+       "perm_p": 0.1259
+      }
+     }
+    },
+    "N-IMG": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.729,
+     "patient_max_auroc": 0.724,
+     "ci95": {
+      "per_sample_auroc": [
+       0.633,
+       0.828
+      ],
+      "patient_max_auroc": [
+       0.586,
+       0.857
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": -0.032,
+       "ci95": [
+        -0.147,
+        0.096
+       ],
+       "perm_p": 0.6412
+      },
+      "patient_max_auroc": {
+       "delta": -0.041,
+       "ci95": [
+        -0.215,
+        0.127
+       ],
+       "perm_p": 0.6452
+      }
+     }
+    },
+    "N-EARLY": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.818,
+     "patient_max_auroc": 0.787,
+     "ci95": {
+      "per_sample_auroc": [
+       0.721,
+       0.904
+      ],
+      "patient_max_auroc": [
+       0.664,
+       0.891
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.057,
+       "ci95": [
+        -0.044,
+        0.154
+       ],
+       "perm_p": 0.3883
+      },
+      "patient_max_auroc": {
+       "delta": 0.022,
+       "ci95": [
+        -0.065,
+        0.114
+       ],
+       "perm_p": 0.6787
+      }
+     }
+    },
+    "N-INTER": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.816,
+     "patient_max_auroc": 0.773,
+     "ci95": {
+      "per_sample_auroc": [
+       0.713,
+       0.908
+      ],
+      "patient_max_auroc": [
+       0.645,
+       0.886
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.055,
+       "ci95": [
+        -0.052,
+        0.155
+       ],
+       "perm_p": 0.4303
+      },
+      "patient_max_auroc": {
+       "delta": 0.008,
+       "ci95": [
+        -0.071,
+        0.096
+       ],
+       "perm_p": 0.8776
+      }
+     }
+    },
+    "N-LATE": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.802,
+     "patient_max_auroc": 0.806,
+     "ci95": {
+      "per_sample_auroc": [
+       0.704,
+       0.893
+      ],
+      "patient_max_auroc": [
+       0.688,
+       0.915
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.042,
+       "ci95": [
+        -0.022,
+        0.113
+       ],
+       "perm_p": 0.3628
+      },
+      "patient_max_auroc": {
+       "delta": 0.042,
+       "ci95": [
+        -0.04,
+        0.125
+       ],
+       "perm_p": 0.3433
+      }
+     }
+    },
+    "L-IMG (fold-honest)": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.826,
+     "patient_max_auroc": 0.79,
+     "ci95": {
+      "per_sample_auroc": [
+       0.762,
+       0.882
+      ],
+      "patient_max_auroc": [
+       0.67,
+       0.892
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.065,
+       "ci95": [
+        -0.036,
+        0.174
+       ],
+       "perm_p": 0.1989
+      },
+      "patient_max_auroc": {
+       "delta": 0.025,
+       "ci95": [
+        -0.12,
+        0.171
+       ],
+       "perm_p": 0.7456
+      }
+     }
+    },
+    "L-EARLY (fold-honest)": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.861,
+     "patient_max_auroc": 0.883,
+     "ci95": {
+      "per_sample_auroc": [
+       0.767,
+       0.937
+      ],
+      "patient_max_auroc": [
+       0.797,
+       0.953
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.101,
+       "ci95": [
+        0.042,
+        0.172
+       ],
+       "perm_p": 0.002
+      },
+      "patient_max_auroc": {
+       "delta": 0.118,
+       "ci95": [
+        0.035,
+        0.207
+       ],
+       "perm_p": 0.004
+      }
+     }
+    },
+    "L-LATE (fold-honest)": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.864,
+     "patient_max_auroc": 0.841,
+     "ci95": {
+      "per_sample_auroc": [
+       0.783,
+       0.931
+      ],
+      "patient_max_auroc": [
+       0.739,
+       0.927
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.104,
+       "ci95": [
+        0.041,
+        0.179
+       ],
+       "perm_p": 0.0045
+      },
+      "patient_max_auroc": {
+       "delta": 0.076,
+       "ci95": [
+        -0.011,
+        0.175
+       ],
+       "perm_p": 0.1269
+      }
+     }
+    }
+   }
+  },
+  "pkg": {
+   "all_C": {
+    "L-CNV": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.868,
+     "patient_max_auroc": 0.882,
+     "ci95": {
+      "per_sample_auroc": [
+       0.795,
+       0.928
+      ],
+      "patient_max_auroc": [
+       0.8,
+       0.95
+      ]
+     }
+    },
+    "L-IMG": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.878,
+     "patient_max_auroc": 0.865,
+     "ci95": {
+      "per_sample_auroc": [
+       0.837,
+       0.915
+      ],
+      "patient_max_auroc": [
+       0.776,
+       0.944
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.009,
+       "ci95": [
+        -0.059,
+        0.091
+       ],
+       "perm_p": 0.8176
+      },
+      "patient_max_auroc": {
+       "delta": -0.016,
+       "ci95": [
+        -0.11,
+        0.079
+       ],
+       "perm_p": 0.7426
+      }
+     }
+    },
+    "L-EARLY": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.907,
+     "patient_max_auroc": 0.919,
+     "ci95": {
+      "per_sample_auroc": [
+       0.852,
+       0.952
+      ],
+      "patient_max_auroc": [
+       0.852,
+       0.971
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.038,
+       "ci95": [
+        0.004,
+        0.081
+       ],
+       "perm_p": 0.059
+      },
+      "patient_max_auroc": {
+       "delta": 0.037,
+       "ci95": [
+        -0.01,
+        0.087
+       ],
+       "perm_p": 0.2169
+      }
+     }
+    },
+    "L-INTER": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.894,
+     "patient_max_auroc": 0.901,
+     "ci95": {
+      "per_sample_auroc": [
+       0.848,
+       0.934
+      ],
+      "patient_max_auroc": [
+       0.821,
+       0.967
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.025,
+       "ci95": [
+        -0.03,
+        0.089
+       ],
+       "perm_p": 0.3923
+      },
+      "patient_max_auroc": {
+       "delta": 0.019,
+       "ci95": [
+        -0.064,
+        0.097
+       ],
+       "perm_p": 0.6647
+      }
+     }
+    },
+    "L-LATE": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.925,
+     "patient_max_auroc": 0.92,
+     "ci95": {
+      "per_sample_auroc": [
+       0.881,
+       0.961
+      ],
+      "patient_max_auroc": [
+       0.846,
+       0.976
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.057,
+       "ci95": [
+        0.019,
+        0.104
+       ],
+       "perm_p": 0.023
+      },
+      "patient_max_auroc": {
+       "delta": 0.038,
+       "ci95": [
+        -0.013,
+        0.091
+       ],
+       "perm_p": 0.2619
+      }
+     }
+    },
+    "N-IMG": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.817,
+     "patient_max_auroc": 0.876,
+     "ci95": {
+      "per_sample_auroc": [
+       0.75,
+       0.875
+      ],
+      "patient_max_auroc": [
+       0.793,
+       0.946
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": -0.052,
+       "ci95": [
+        -0.133,
+        0.038
+       ],
+       "perm_p": 0.2764
+      },
+      "patient_max_auroc": {
+       "delta": -0.006,
+       "ci95": [
+        -0.096,
+        0.08
+       ],
+       "perm_p": 0.9165
+      }
+     }
+    },
+    "N-EARLY": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.864,
+     "patient_max_auroc": 0.899,
+     "ci95": {
+      "per_sample_auroc": [
+       0.789,
+       0.928
+      ],
+      "patient_max_auroc": [
+       0.815,
+       0.967
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": -0.004,
+       "ci95": [
+        -0.058,
+        0.052
+       ],
+       "perm_p": 0.9055
+      },
+      "patient_max_auroc": {
+       "delta": 0.017,
+       "ci95": [
+        -0.055,
+        0.079
+       ],
+       "perm_p": 0.6697
+      }
+     }
+    },
+    "N-INTER": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.849,
+     "patient_max_auroc": 0.872,
+     "ci95": {
+      "per_sample_auroc": [
+       0.779,
+       0.913
+      ],
+      "patient_max_auroc": [
+       0.779,
+       0.951
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": -0.019,
+       "ci95": [
+        -0.072,
+        0.031
+       ],
+       "perm_p": 0.5457
+      },
+      "patient_max_auroc": {
+       "delta": -0.01,
+       "ci95": [
+        -0.083,
+        0.05
+       ],
+       "perm_p": 0.7821
+      }
+     }
+    },
+    "N-LATE": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.893,
+     "patient_max_auroc": 0.934,
+     "ci95": {
+      "per_sample_auroc": [
+       0.834,
+       0.94
+      ],
+      "patient_max_auroc": [
+       0.87,
+       0.985
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.024,
+       "ci95": [
+        -0.013,
+        0.07
+       ],
+       "perm_p": 0.3738
+      },
+      "patient_max_auroc": {
+       "delta": 0.052,
+       "ci95": [
+        0.018,
+        0.096
+       ],
+       "perm_p": 0.1214
+      }
+     }
+    },
+    "L-IMG (fold-honest)": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.876,
+     "patient_max_auroc": 0.872,
+     "ci95": {
+      "per_sample_auroc": [
+       0.835,
+       0.914
+      ],
+      "patient_max_auroc": [
+       0.784,
+       0.949
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.008,
+       "ci95": [
+        -0.059,
+        0.088
+       ],
+       "perm_p": 0.8341
+      },
+      "patient_max_auroc": {
+       "delta": -0.01,
+       "ci95": [
+        -0.104,
+        0.085
+       ],
+       "perm_p": 0.8336
+      }
+     }
+    },
+    "L-EARLY (fold-honest)": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.908,
+     "patient_max_auroc": 0.918,
+     "ci95": {
+      "per_sample_auroc": [
+       0.853,
+       0.953
+      ],
+      "patient_max_auroc": [
+       0.853,
+       0.971
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.04,
+       "ci95": [
+        0.006,
+        0.081
+       ],
+       "perm_p": 0.0405
+      },
+      "patient_max_auroc": {
+       "delta": 0.036,
+       "ci95": [
+        -0.011,
+        0.085
+       ],
+       "perm_p": 0.2089
+      }
+     }
+    },
+    "L-LATE (fold-honest)": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.925,
+     "patient_max_auroc": 0.918,
+     "ci95": {
+      "per_sample_auroc": [
+       0.88,
+       0.96
+      ],
+      "patient_max_auroc": [
+       0.842,
+       0.975
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.057,
+       "ci95": [
+        0.019,
+        0.103
+       ],
+       "perm_p": 0.023
+      },
+      "patient_max_auroc": {
+       "delta": 0.036,
+       "ci95": [
+        -0.016,
+        0.09
+       ],
+       "perm_p": 0.2909
+      }
+     }
+    }
+   },
+   "a_NDBE_only": {
+    "L-CNV": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.815,
+     "patient_max_auroc": 0.837,
+     "ci95": {
+      "per_sample_auroc": [
+       0.708,
+       0.899
+      ],
+      "patient_max_auroc": [
+       0.738,
+       0.92
+      ]
+     }
+    },
+    "L-IMG": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.838,
+     "patient_max_auroc": 0.826,
+     "ci95": {
+      "per_sample_auroc": [
+       0.788,
+       0.886
+      ],
+      "patient_max_auroc": [
+       0.728,
+       0.915
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.023,
+       "ci95": [
+        -0.062,
+        0.124
+       ],
+       "perm_p": 0.6872
+      },
+      "patient_max_auroc": {
+       "delta": -0.011,
+       "ci95": [
+        -0.132,
+        0.105
+       ],
+       "perm_p": 0.8581
+      }
+     }
+    },
+    "L-EARLY": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.857,
+     "patient_max_auroc": 0.882,
+     "ci95": {
+      "per_sample_auroc": [
+       0.771,
+       0.924
+      ],
+      "patient_max_auroc": [
+       0.801,
+       0.948
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.042,
+       "ci95": [
+        -0.013,
+        0.108
+       ],
+       "perm_p": 0.2469
+      },
+      "patient_max_auroc": {
+       "delta": 0.045,
+       "ci95": [
+        -0.019,
+        0.115
+       ],
+       "perm_p": 0.2109
+      }
+     }
+    },
+    "L-INTER": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.879,
+     "patient_max_auroc": 0.882,
+     "ci95": {
+      "per_sample_auroc": [
+       0.808,
+       0.935
+      ],
+      "patient_max_auroc": [
+       0.799,
+       0.948
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.063,
+       "ci95": [
+        -0.019,
+        0.15
+       ],
+       "perm_p": 0.1569
+      },
+      "patient_max_auroc": {
+       "delta": 0.044,
+       "ci95": [
+        -0.06,
+        0.143
+       ],
+       "perm_p": 0.3963
+      }
+     }
+    },
+    "L-LATE": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.879,
+     "patient_max_auroc": 0.906,
+     "ci95": {
+      "per_sample_auroc": [
+       0.806,
+       0.938
+      ],
+      "patient_max_auroc": [
+       0.824,
+       0.969
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.064,
+       "ci95": [
+        0.018,
+        0.123
+       ],
+       "perm_p": 0.0715
+      },
+      "patient_max_auroc": {
+       "delta": 0.068,
+       "ci95": [
+        0.007,
+        0.137
+       ],
+       "perm_p": 0.0895
+      }
+     }
+    },
+    "N-IMG": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.737,
+     "patient_max_auroc": 0.769,
+     "ci95": {
+      "per_sample_auroc": [
+       0.651,
+       0.825
+      ],
+      "patient_max_auroc": [
+       0.641,
+       0.88
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": -0.078,
+       "ci95": [
+        -0.189,
+        0.039
+       ],
+       "perm_p": 0.2344
+      },
+      "patient_max_auroc": {
+       "delta": -0.068,
+       "ci95": [
+        -0.216,
+        0.07
+       ],
+       "perm_p": 0.3298
+      }
+     }
+    },
+    "N-EARLY": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.819,
+     "patient_max_auroc": 0.841,
+     "ci95": {
+      "per_sample_auroc": [
+       0.71,
+       0.914
+      ],
+      "patient_max_auroc": [
+       0.74,
+       0.927
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.004,
+       "ci95": [
+        -0.082,
+        0.091
+       ],
+       "perm_p": 0.938
+      },
+      "patient_max_auroc": {
+       "delta": 0.004,
+       "ci95": [
+        -0.078,
+        0.083
+       ],
+       "perm_p": 0.93
+      }
+     }
+    },
+    "N-INTER": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.793,
+     "patient_max_auroc": 0.806,
+     "ci95": {
+      "per_sample_auroc": [
+       0.682,
+       0.888
+      ],
+      "patient_max_auroc": [
+       0.69,
+       0.904
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": -0.023,
+       "ci95": [
+        -0.098,
+        0.052
+       ],
+       "perm_p": 0.6297
+      },
+      "patient_max_auroc": {
+       "delta": -0.031,
+       "ci95": [
+        -0.122,
+        0.053
+       ],
+       "perm_p": 0.4838
+      }
+     }
+    },
+    "N-LATE": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.83,
+     "patient_max_auroc": 0.89,
+     "ci95": {
+      "per_sample_auroc": [
+       0.733,
+       0.912
+      ],
+      "patient_max_auroc": [
+       0.801,
+       0.96
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.015,
+       "ci95": [
+        -0.041,
+        0.075
+       ],
+       "perm_p": 0.7281
+      },
+      "patient_max_auroc": {
+       "delta": 0.052,
+       "ci95": [
+        -0.004,
+        0.113
+       ],
+       "perm_p": 0.1764
+      }
+     }
+    },
+    "L-IMG (fold-honest)": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.836,
+     "patient_max_auroc": 0.826,
+     "ci95": {
+      "per_sample_auroc": [
+       0.785,
+       0.884
+      ],
+      "patient_max_auroc": [
+       0.725,
+       0.914
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.021,
+       "ci95": [
+        -0.065,
+        0.119
+       ],
+       "perm_p": 0.7106
+      },
+      "patient_max_auroc": {
+       "delta": -0.011,
+       "ci95": [
+        -0.136,
+        0.105
+       ],
+       "perm_p": 0.8616
+      }
+     }
+    },
+    "L-EARLY (fold-honest)": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.861,
+     "patient_max_auroc": 0.883,
+     "ci95": {
+      "per_sample_auroc": [
+       0.774,
+       0.928
+      ],
+      "patient_max_auroc": [
+       0.801,
+       0.949
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.046,
+       "ci95": [
+        -0.008,
+        0.111
+       ],
+       "perm_p": 0.1869
+      },
+      "patient_max_auroc": {
+       "delta": 0.046,
+       "ci95": [
+        -0.017,
+        0.115
+       ],
+       "perm_p": 0.1869
+      }
+     }
+    },
+    "L-LATE (fold-honest)": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.879,
+     "patient_max_auroc": 0.905,
+     "ci95": {
+      "per_sample_auroc": [
+       0.808,
+       0.936
+      ],
+      "patient_max_auroc": [
+       0.822,
+       0.969
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.064,
+       "ci95": [
+        0.018,
+        0.121
+       ],
+       "perm_p": 0.074
+      },
+      "patient_max_auroc": {
+       "delta": 0.068,
+       "ci95": [
+        0.005,
+        0.138
+       ],
+       "perm_p": 0.097
+      }
+     }
+    }
+   },
+   "b_before_first_HGD_IMC": {
+    "L-CNV": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.827,
+     "patient_max_auroc": 0.846,
+     "ci95": {
+      "per_sample_auroc": [
+       0.737,
+       0.901
+      ],
+      "patient_max_auroc": [
+       0.748,
+       0.926
+      ]
+     }
+    },
+    "L-IMG": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.849,
+     "patient_max_auroc": 0.818,
+     "ci95": {
+      "per_sample_auroc": [
+       0.796,
+       0.9
+      ],
+      "patient_max_auroc": [
+       0.705,
+       0.91
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.022,
+       "ci95": [
+        -0.066,
+        0.12
+       ],
+       "perm_p": 0.6757
+      },
+      "patient_max_auroc": {
+       "delta": -0.028,
+       "ci95": [
+        -0.15,
+        0.092
+       ],
+       "perm_p": 0.6722
+      }
+     }
+    },
+    "L-EARLY": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.881,
+     "patient_max_auroc": 0.889,
+     "ci95": {
+      "per_sample_auroc": [
+       0.808,
+       0.937
+      ],
+      "patient_max_auroc": [
+       0.807,
+       0.958
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.053,
+       "ci95": [
+        0.008,
+        0.107
+       ],
+       "perm_p": 0.0645
+      },
+      "patient_max_auroc": {
+       "delta": 0.043,
+       "ci95": [
+        -0.015,
+        0.109
+       ],
+       "perm_p": 0.2264
+      }
+     }
+    },
+    "L-INTER": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.871,
+     "patient_max_auroc": 0.842,
+     "ci95": {
+      "per_sample_auroc": [
+       0.812,
+       0.92
+      ],
+      "patient_max_auroc": [
+       0.74,
+       0.934
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.044,
+       "ci95": [
+        -0.029,
+        0.123
+       ],
+       "perm_p": 0.2544
+      },
+      "patient_max_auroc": {
+       "delta": -0.004,
+       "ci95": [
+        -0.117,
+        0.113
+       ],
+       "perm_p": 0.94
+      }
+     }
+    },
+    "L-LATE": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.893,
+     "patient_max_auroc": 0.893,
+     "ci95": {
+      "per_sample_auroc": [
+       0.83,
+       0.943
+      ],
+      "patient_max_auroc": [
+       0.807,
+       0.963
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.065,
+       "ci95": [
+        0.02,
+        0.12
+       ],
+       "perm_p": 0.0425
+      },
+      "patient_max_auroc": {
+       "delta": 0.047,
+       "ci95": [
+        -0.014,
+        0.114
+       ],
+       "perm_p": 0.2074
+      }
+     }
+    },
+    "N-IMG": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.77,
+     "patient_max_auroc": 0.786,
+     "ci95": {
+      "per_sample_auroc": [
+       0.688,
+       0.846
+      ],
+      "patient_max_auroc": [
+       0.666,
+       0.894
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": -0.058,
+       "ci95": [
+        -0.16,
+        0.049
+       ],
+       "perm_p": 0.3628
+      },
+      "patient_max_auroc": {
+       "delta": -0.06,
+       "ci95": [
+        -0.192,
+        0.076
+       ],
+       "perm_p": 0.3978
+      }
+     }
+    },
+    "N-EARLY": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.822,
+     "patient_max_auroc": 0.847,
+     "ci95": {
+      "per_sample_auroc": [
+       0.731,
+       0.902
+      ],
+      "patient_max_auroc": [
+       0.743,
+       0.936
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": -0.006,
+       "ci95": [
+        -0.079,
+        0.068
+       ],
+       "perm_p": 0.8986
+      },
+      "patient_max_auroc": {
+       "delta": 0.001,
+       "ci95": [
+        -0.086,
+        0.085
+       ],
+       "perm_p": 0.994
+      }
+     }
+    },
+    "N-INTER": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.8,
+     "patient_max_auroc": 0.813,
+     "ci95": {
+      "per_sample_auroc": [
+       0.704,
+       0.881
+      ],
+      "patient_max_auroc": [
+       0.702,
+       0.91
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": -0.028,
+       "ci95": [
+        -0.096,
+        0.04
+       ],
+       "perm_p": 0.5387
+      },
+      "patient_max_auroc": {
+       "delta": -0.033,
+       "ci95": [
+        -0.124,
+        0.052
+       ],
+       "perm_p": 0.4718
+      }
+     }
+    },
+    "N-LATE": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.845,
+     "patient_max_auroc": 0.887,
+     "ci95": {
+      "per_sample_auroc": [
+       0.769,
+       0.913
+      ],
+      "patient_max_auroc": [
+       0.797,
+       0.964
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.018,
+       "ci95": [
+        -0.035,
+        0.075
+       ],
+       "perm_p": 0.6542
+      },
+      "patient_max_auroc": {
+       "delta": 0.041,
+       "ci95": [
+        -0.02,
+        0.105
+       ],
+       "perm_p": 0.2714
+      }
+     }
+    },
+    "L-IMG (fold-honest)": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.847,
+     "patient_max_auroc": 0.82,
+     "ci95": {
+      "per_sample_auroc": [
+       0.793,
+       0.899
+      ],
+      "patient_max_auroc": [
+       0.711,
+       0.914
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.019,
+       "ci95": [
+        -0.068,
+        0.116
+       ],
+       "perm_p": 0.7036
+      },
+      "patient_max_auroc": {
+       "delta": -0.026,
+       "ci95": [
+        -0.149,
+        0.095
+       ],
+       "perm_p": 0.6967
+      }
+     }
+    },
+    "L-EARLY (fold-honest)": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.882,
+     "patient_max_auroc": 0.892,
+     "ci95": {
+      "per_sample_auroc": [
+       0.811,
+       0.938
+      ],
+      "patient_max_auroc": [
+       0.81,
+       0.96
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.055,
+       "ci95": [
+        0.009,
+        0.108
+       ],
+       "perm_p": 0.043
+      },
+      "patient_max_auroc": {
+       "delta": 0.046,
+       "ci95": [
+        -0.01,
+        0.11
+       ],
+       "perm_p": 0.1719
+      }
+     }
+    },
+    "L-LATE (fold-honest)": {
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.892,
+     "patient_max_auroc": 0.891,
+     "ci95": {
+      "per_sample_auroc": [
+       0.83,
+       0.941
+      ],
+      "patient_max_auroc": [
+       0.802,
+       0.962
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.065,
+       "ci95": [
+        0.019,
+        0.119
+       ],
+       "perm_p": 0.043
+      },
+      "patient_max_auroc": {
+       "delta": 0.045,
+       "ci95": [
+        -0.018,
+        0.113
+       ],
+       "perm_p": 0.2354
+      }
+     }
+    }
+   },
+   "c_NDBE_and_before": {
+    "L-CNV": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.791,
+     "patient_max_auroc": 0.828,
+     "ci95": {
+      "per_sample_auroc": [
+       0.682,
+       0.892
+      ],
+      "patient_max_auroc": [
+       0.722,
+       0.921
+      ]
+     }
+    },
+    "L-IMG": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.829,
+     "patient_max_auroc": 0.791,
+     "ci95": {
+      "per_sample_auroc": [
+       0.766,
+       0.885
+      ],
+      "patient_max_auroc": [
+       0.669,
+       0.895
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.038,
+       "ci95": [
+        -0.066,
+        0.148
+       ],
+       "perm_p": 0.5407
+      },
+      "patient_max_auroc": {
+       "delta": -0.037,
+       "ci95": [
+        -0.184,
+        0.099
+       ],
+       "perm_p": 0.6092
+      }
+     }
+    },
+    "L-EARLY": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.847,
+     "patient_max_auroc": 0.853,
+     "ci95": {
+      "per_sample_auroc": [
+       0.757,
+       0.924
+      ],
+      "patient_max_auroc": [
+       0.757,
+       0.932
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.057,
+       "ci95": [
+        -0.011,
+        0.132
+       ],
+       "perm_p": 0.1914
+      },
+      "patient_max_auroc": {
+       "delta": 0.025,
+       "ci95": [
+        -0.046,
+        0.097
+       ],
+       "perm_p": 0.5287
+      }
+     }
+    },
+    "L-INTER": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.87,
+     "patient_max_auroc": 0.82,
+     "ci95": {
+      "per_sample_auroc": [
+       0.796,
+       0.933
+      ],
+      "patient_max_auroc": [
+       0.709,
+       0.914
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.079,
+       "ci95": [
+        -0.015,
+        0.18
+       ],
+       "perm_p": 0.1244
+      },
+      "patient_max_auroc": {
+       "delta": -0.008,
+       "ci95": [
+        -0.131,
+        0.102
+       ],
+       "perm_p": 0.9
+      }
+     }
+    },
+    "L-LATE": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.859,
+     "patient_max_auroc": 0.875,
+     "ci95": {
+      "per_sample_auroc": [
+       0.775,
+       0.931
+      ],
+      "patient_max_auroc": [
+       0.779,
+       0.951
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.068,
+       "ci95": [
+        0.015,
+        0.137
+       ],
+       "perm_p": 0.096
+      },
+      "patient_max_auroc": {
+       "delta": 0.047,
+       "ci95": [
+        -0.025,
+        0.118
+       ],
+       "perm_p": 0.2589
+      }
+     }
+    },
+    "N-IMG": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.729,
+     "patient_max_auroc": 0.724,
+     "ci95": {
+      "per_sample_auroc": [
+       0.633,
+       0.828
+      ],
+      "patient_max_auroc": [
+       0.586,
+       0.857
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": -0.062,
+       "ci95": [
+        -0.186,
+        0.065
+       ],
+       "perm_p": 0.4023
+      },
+      "patient_max_auroc": {
+       "delta": -0.104,
+       "ci95": [
+        -0.278,
+        0.06
+       ],
+       "perm_p": 0.1979
+      }
+     }
+    },
+    "N-EARLY": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.804,
+     "patient_max_auroc": 0.79,
+     "ci95": {
+      "per_sample_auroc": [
+       0.691,
+       0.903
+      ],
+      "patient_max_auroc": [
+       0.668,
+       0.899
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.014,
+       "ci95": [
+        -0.085,
+        0.108
+       ],
+       "perm_p": 0.8291
+      },
+      "patient_max_auroc": {
+       "delta": -0.038,
+       "ci95": [
+        -0.142,
+        0.055
+       ],
+       "perm_p": 0.4398
+      }
+     }
+    },
+    "N-INTER": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.771,
+     "patient_max_auroc": 0.779,
+     "ci95": {
+      "per_sample_auroc": [
+       0.65,
+       0.883
+      ],
+      "patient_max_auroc": [
+       0.647,
+       0.891
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": -0.02,
+       "ci95": [
+        -0.105,
+        0.066
+       ],
+       "perm_p": 0.7191
+      },
+      "patient_max_auroc": {
+       "delta": -0.049,
+       "ci95": [
+        -0.157,
+        0.043
+       ],
+       "perm_p": 0.3333
+      }
+     }
+    },
+    "N-LATE": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.806,
+     "patient_max_auroc": 0.865,
+     "ci95": {
+      "per_sample_auroc": [
+       0.702,
+       0.904
+      ],
+      "patient_max_auroc": [
+       0.766,
+       0.948
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.015,
+       "ci95": [
+        -0.049,
+        0.085
+       ],
+       "perm_p": 0.7626
+      },
+      "patient_max_auroc": {
+       "delta": 0.037,
+       "ci95": [
+        -0.034,
+        0.107
+       ],
+       "perm_p": 0.3983
+      }
+     }
+    },
+    "L-IMG (fold-honest)": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.826,
+     "patient_max_auroc": 0.79,
+     "ci95": {
+      "per_sample_auroc": [
+       0.762,
+       0.882
+      ],
+      "patient_max_auroc": [
+       0.67,
+       0.892
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.035,
+       "ci95": [
+        -0.068,
+        0.143
+       ],
+       "perm_p": 0.5722
+      },
+      "patient_max_auroc": {
+       "delta": -0.038,
+       "ci95": [
+        -0.189,
+        0.1
+       ],
+       "perm_p": 0.6117
+      }
+     }
+    },
+    "L-EARLY (fold-honest)": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.852,
+     "patient_max_auroc": 0.866,
+     "ci95": {
+      "per_sample_auroc": [
+       0.764,
+       0.927
+      ],
+      "patient_max_auroc": [
+       0.773,
+       0.943
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.061,
+       "ci95": [
+        -0.004,
+        0.133
+       ],
+       "perm_p": 0.1444
+      },
+      "patient_max_auroc": {
+       "delta": 0.038,
+       "ci95": [
+        -0.026,
+        0.103
+       ],
+       "perm_p": 0.2869
+      }
+     }
+    },
+    "L-LATE (fold-honest)": {
+     "n_samples": 438,
+     "n_patients": 71,
+     "n_P_patients": 28,
+     "per_sample_auroc": 0.858,
+     "patient_max_auroc": 0.872,
+     "ci95": {
+      "per_sample_auroc": [
+       0.774,
+       0.93
+      ],
+      "patient_max_auroc": [
+       0.775,
+       0.95
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": 0.068,
+       "ci95": [
+        0.015,
+        0.135
+       ],
+       "perm_p": 0.0985
+      },
+      "patient_max_auroc": {
+       "delta": 0.044,
+       "ci95": [
+        -0.028,
+        0.116
+       ],
+       "perm_p": 0.2909
+      }
+     }
+    }
+   }
+  }
+ },
+ "item4": {
+  "their": {
+   "all_C": {
+    "L-GRADE": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.492,
+     "patient_max_auroc": 0.82,
+     "ci95": {
+      "per_sample_auroc": [
+       0.383,
+       0.585
+      ],
+      "patient_max_auroc": [
+       0.701,
+       0.918
+      ]
+     }
+    },
+    "L-CNV+GRADE": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.818,
+     "patient_max_auroc": 0.859,
+     "ci95": {
+      "per_sample_auroc": [
+       0.735,
+       0.887
+      ],
+      "patient_max_auroc": [
+       0.766,
+       0.938
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": -0.028,
+       "ci95": [
+        -0.06,
+        0.0
+       ],
+       "perm_p": 0.0595
+      },
+      "patient_max_auroc": {
+       "delta": -0.02,
+       "ci95": [
+        -0.063,
+        0.024
+       ],
+       "perm_p": 0.3243
+      }
+     }
+    },
+    "L-EARLY+GRADE": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.909,
+     "patient_max_auroc": 0.952,
+     "ci95": {
+      "per_sample_auroc": [
+       0.853,
+       0.952
+      ],
+      "patient_max_auroc": [
+       0.9,
+       0.989
+      ]
+     },
+     "delta_vs_L_CNV+GRADE": {
+      "per_sample_auroc": {
+       "delta": 0.091,
+       "ci95": [
+        0.049,
+        0.14
+       ],
+       "perm_p": 0.0005
+      },
+      "patient_max_auroc": {
+       "delta": 0.093,
+       "ci95": [
+        0.029,
+        0.164
+       ],
+       "perm_p": 0.0015
+      }
+     }
+    },
+    "L-LATE with grade": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.906,
+     "patient_max_auroc": 0.891,
+     "ci95": {
+      "per_sample_auroc": [
+       0.855,
+       0.943
+      ],
+      "patient_max_auroc": [
+       0.812,
+       0.956
+      ]
+     },
+     "delta_vs_L_CNV+GRADE": {
+      "per_sample_auroc": {
+       "delta": 0.089,
+       "ci95": [
+        0.042,
+        0.141
+       ],
+       "perm_p": 0.001
+      },
+      "patient_max_auroc": {
+       "delta": 0.032,
+       "ci95": [
+        -0.027,
+        0.098
+       ],
+       "perm_p": 0.3108
+      }
+     }
+    },
+    "L-CNV": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.846,
+     "patient_max_auroc": 0.879,
+     "ci95": {
+      "per_sample_auroc": [
+       0.774,
+       0.908
+      ],
+      "patient_max_auroc": [
+       0.79,
+       0.954
+      ]
+     }
+    }
+   },
+   "a_NDBE_only": {
+    "L-GRADE": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.002,
+     "patient_max_auroc": 0.011,
+     "ci95": {
+      "per_sample_auroc": [
+       0.0,
+       0.008
+      ],
+      "patient_max_auroc": [
+       0.0,
+       0.033
+      ]
+     }
+    },
+    "L-CNV+GRADE": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.724,
+     "patient_max_auroc": 0.727,
+     "ci95": {
+      "per_sample_auroc": [
+       0.6,
+       0.825
+      ],
+      "patient_max_auroc": [
+       0.597,
+       0.837
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": -0.057,
+       "ci95": [
+        -0.097,
+        -0.022
+       ],
+       "perm_p": 0.0035
+      },
+      "patient_max_auroc": {
+       "delta": -0.039,
+       "ci95": [
+        -0.081,
+        0.004
+       ],
+       "perm_p": 0.1314
+      }
+     }
+    },
+    "L-EARLY+GRADE": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.862,
+     "patient_max_auroc": 0.873,
+     "ci95": {
+      "per_sample_auroc": [
+       0.776,
+       0.93
+      ],
+      "patient_max_auroc": [
+       0.785,
+       0.945
+      ]
+     },
+     "delta_vs_L_CNV+GRADE": {
+      "per_sample_auroc": {
+       "delta": 0.138,
+       "ci95": [
+        0.076,
+        0.209
+       ],
+       "perm_p": 0.0005
+      },
+      "patient_max_auroc": {
+       "delta": 0.146,
+       "ci95": [
+        0.065,
+        0.231
+       ],
+       "perm_p": 0.0015
+      }
+     }
+    },
+    "L-LATE with grade": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.853,
+     "patient_max_auroc": 0.828,
+     "ci95": {
+      "per_sample_auroc": [
+       0.774,
+       0.919
+      ],
+      "patient_max_auroc": [
+       0.725,
+       0.916
+      ]
+     },
+     "delta_vs_L_CNV+GRADE": {
+      "per_sample_auroc": {
+       "delta": 0.13,
+       "ci95": [
+        0.065,
+        0.207
+       ],
+       "perm_p": 0.001
+      },
+      "patient_max_auroc": {
+       "delta": 0.101,
+       "ci95": [
+        0.028,
+        0.191
+       ],
+       "perm_p": 0.0385
+      }
+     }
+    },
+    "L-CNV": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.781,
+     "patient_max_auroc": 0.765,
+     "ci95": {
+      "per_sample_auroc": [
+       0.664,
+       0.868
+      ],
+      "patient_max_auroc": [
+       0.64,
+       0.869
+      ]
+     }
+    }
+   }
+  },
+  "pkg": {
+   "all_C": {
+    "L-GRADE": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.492,
+     "patient_max_auroc": 0.82,
+     "ci95": {
+      "per_sample_auroc": [
+       0.383,
+       0.585
+      ],
+      "patient_max_auroc": [
+       0.701,
+       0.918
+      ]
+     }
+    },
+    "L-CNV+GRADE": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.845,
+     "patient_max_auroc": 0.878,
+     "ci95": {
+      "per_sample_auroc": [
+       0.762,
+       0.917
+      ],
+      "patient_max_auroc": [
+       0.791,
+       0.957
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": -0.023,
+       "ci95": [
+        -0.055,
+        0.006
+       ],
+       "perm_p": 0.1259
+      },
+      "patient_max_auroc": {
+       "delta": -0.004,
+       "ci95": [
+        -0.047,
+        0.041
+       ],
+       "perm_p": 0.8891
+      }
+     }
+    },
+    "L-EARLY+GRADE": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.892,
+     "patient_max_auroc": 0.911,
+     "ci95": {
+      "per_sample_auroc": [
+       0.83,
+       0.945
+      ],
+      "patient_max_auroc": [
+       0.84,
+       0.966
+      ]
+     },
+     "delta_vs_L_CNV+GRADE": {
+      "per_sample_auroc": {
+       "delta": 0.047,
+       "ci95": [
+        0.01,
+        0.095
+       ],
+       "perm_p": 0.0165
+      },
+      "patient_max_auroc": {
+       "delta": 0.033,
+       "ci95": [
+        -0.033,
+        0.1
+       ],
+       "perm_p": 0.3298
+      }
+     }
+    },
+    "L-LATE with grade": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.915,
+     "patient_max_auroc": 0.918,
+     "ci95": {
+      "per_sample_auroc": [
+       0.87,
+       0.951
+      ],
+      "patient_max_auroc": [
+       0.845,
+       0.975
+      ]
+     },
+     "delta_vs_L_CNV+GRADE": {
+      "per_sample_auroc": {
+       "delta": 0.07,
+       "ci95": [
+        0.022,
+        0.127
+       ],
+       "perm_p": 0.01
+      },
+      "patient_max_auroc": {
+       "delta": 0.04,
+       "ci95": [
+        -0.026,
+        0.114
+       ],
+       "perm_p": 0.2864
+      }
+     }
+    },
+    "L-CNV": {
+     "n_samples": 676,
+     "n_patients": 80,
+     "n_P_patients": 37,
+     "per_sample_auroc": 0.868,
+     "patient_max_auroc": 0.882,
+     "ci95": {
+      "per_sample_auroc": [
+       0.795,
+       0.928
+      ],
+      "patient_max_auroc": [
+       0.8,
+       0.95
+      ]
+     }
+    }
+   },
+   "a_NDBE_only": {
+    "L-GRADE": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.002,
+     "patient_max_auroc": 0.011,
+     "ci95": {
+      "per_sample_auroc": [
+       0.0,
+       0.008
+      ],
+      "patient_max_auroc": [
+       0.0,
+       0.033
+      ]
+     }
+    },
+    "L-CNV+GRADE": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.762,
+     "patient_max_auroc": 0.788,
+     "ci95": {
+      "per_sample_auroc": [
+       0.643,
+       0.864
+      ],
+      "patient_max_auroc": [
+       0.676,
+       0.884
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "per_sample_auroc": {
+       "delta": -0.053,
+       "ci95": [
+        -0.098,
+        -0.009
+       ],
+       "perm_p": 0.02
+      },
+      "patient_max_auroc": {
+       "delta": -0.049,
+       "ci95": [
+        -0.112,
+        0.012
+       ],
+       "perm_p": 0.1594
+      }
+     }
+    },
+    "L-EARLY+GRADE": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.824,
+     "patient_max_auroc": 0.851,
+     "ci95": {
+      "per_sample_auroc": [
+       0.728,
+       0.906
+      ],
+      "patient_max_auroc": [
+       0.758,
+       0.929
+      ]
+     },
+     "delta_vs_L_CNV+GRADE": {
+      "per_sample_auroc": {
+       "delta": 0.062,
+       "ci95": [
+        0.003,
+        0.133
+       ],
+       "perm_p": 0.053
+      },
+      "patient_max_auroc": {
+       "delta": 0.063,
+       "ci95": [
+        -0.0,
+        0.137
+       ],
+       "perm_p": 0.081
+      }
+     }
+    },
+    "L-LATE with grade": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.856,
+     "patient_max_auroc": 0.88,
+     "ci95": {
+      "per_sample_auroc": [
+       0.787,
+       0.917
+      ],
+      "patient_max_auroc": [
+       0.792,
+       0.955
+      ]
+     },
+     "delta_vs_L_CNV+GRADE": {
+      "per_sample_auroc": {
+       "delta": 0.094,
+       "ci95": [
+        0.032,
+        0.169
+       ],
+       "perm_p": 0.008
+      },
+      "patient_max_auroc": {
+       "delta": 0.092,
+       "ci95": [
+        0.013,
+        0.182
+       ],
+       "perm_p": 0.052
+      }
+     }
+    },
+    "L-CNV": {
+     "n_samples": 463,
+     "n_patients": 75,
+     "n_P_patients": 32,
+     "per_sample_auroc": 0.815,
+     "patient_max_auroc": 0.837,
+     "ci95": {
+      "per_sample_auroc": [
+       0.708,
+       0.899
+      ],
+      "patient_max_auroc": [
+       0.738,
+       0.92
+      ]
+     }
+    }
+   }
+  }
+ },
+ "item5_manifest_bundle_sha256": "17207de439433680a706d2e322838f18fe1ec17363ad647715e7f93acceee821"
+}
