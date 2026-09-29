@@ -42,4 +42,5 @@ Scoring uses the average of the five fold models' outputs per slide (image, grad
 1. Receive slides and CNV; record scanner, dates, depth. 2. Extract features (both scales). 3. Build the CNV arm table. 4. Score with the frozen models. 5. Compute the pre-specified metrics once. 6. Write results to `results/aceb/` and a status entry to this file's amendment section.
 
 ---
-Amendments: none.
+Amendments:
+1. 2026-09-29: the ACE-B primary analysis is now `docs/aceb_primary_killcoyne.md` (L-LATE vs L-CNV on package features, per-sample AUROC, NDBE samples, one-sided; frozen bundle `models/killcoyne_frozen_pkg_v1`, SHA-256 bf1eddeda5083a16ada1ab2a63bb96708686bd05e12120631664541ae0c90776). Everything in this plan becomes secondary. The text above is not edited.
