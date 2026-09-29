@@ -1,0 +1,25 @@
+{
+ "foundation_model": "UNI2",
+ "level": [
+  "2"
+ ],
+ "tile_size": [
+  "224"
+ ],
+ "tiles_requested": [
+  "256"
+ ],
+ "model_name": [
+  "[\"uni2\"]"
+ ],
+ "embedding_dim": [
+  "1536"
+ ],
+ "mpp_x": [
+  0.22,
+  0.221
+ ],
+ "tiles_per_slide": 256,
+ "tile_aggregation": "mean over tiles",
+ "note": "values observed across the set-C embedding files"
+}

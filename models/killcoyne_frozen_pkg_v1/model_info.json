@@ -1,0 +1,40 @@
+{
+  "L_CNV": {
+    "lambda": 0.0126900109372446,
+    "n_features": 632,
+    "nonzero": 55
+  },
+  "L_IMG": {
+    "lambda": 0.00433122523693886,
+    "n_features": 1536,
+    "nonzero": 158
+  },
+  "L_EARLY": {
+    "lambda": 0.00959952790029272,
+    "n_features": 2168,
+    "nonzero": 96
+  },
+  "fit": {
+    "alpha": 0.9,
+    "standardize": false,
+    "family": "binomial",
+    "lambda_rule": "class-error min, 10 x 5 patient-grouped CV on all of set C, set.seed(r) r = 1..10; largest lambda at the minimum",
+    "late": "L_LATE probability = (L_CNV probability + L_IMG probability) / 2",
+    "training_set": "set C: 676 samples, 80 patients, label = sheet Status (P = 1)"
+  },
+  "cnv_preprocessing": "hg38 QDNAseq 50 kb raw + fitted counts -> BarrettsProgressionRisk segmentRawData per patient (multipcf, gamma2 250, cutoff 0.008) with the hg38 adaptations of scripts/paper_plan/kr_package.R (blacklist lifted to hg38, autosomes only, explicit hg38 arms, bundled hg38 chromosome file) -> tileSegments 5e6 (587 hg38 tiles) and 'arms' (44) -> z-score tiles and arms with cnv_scaling_setC.csv -> cx = count of scaled tiles beyond 2 s.d. of the sample's own tile mean, then z-score with the cx row -> tile minus sum of overlapping scaled arms (arm_tile_incidence.csv) -> columns in the order of coef_L_CNV.csv; non-finite values set to 0.",
+  "image_preprocessing": "UNI2 (tile 224, level 2) slide embeddings, 256 tiles per slide (extraction_settings.json): mean over the sample's tiles (union over its slides), then z-score with image_scaling.csv.",
+  "reconstruction_max_abs_diff": 1.77635683940025e-15,
+  "insample_check": {
+    "auroc_L_CNV": 0.995002750779387,
+    "auroc_L_IMG": 0.998285347515129,
+    "auroc_L_EARLY": 0.999862461030625,
+    "auroc_L_LATE": 0.999926645883,
+    "note": "in-sample on set C, not a performance estimate"
+  },
+  "versions": {
+    "R": "R version 4.4.1 (2024-06-14)",
+    "glmnet": "5.0",
+    "BarrettsProgressionRisk": "1.1"
+  }
+}

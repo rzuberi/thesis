@@ -1,0 +1,15 @@
+{
+ "model": "killcoyne_frozen_pkg_v1",
+ "spec": "docs/paper_plan_killcoyne_cv.md @ 76879b8 item 4",
+ "files": {
+  "arm_tile_incidence.csv": "0ead67c26128027e9b6ec7a7605d15ba845b23bb96b1e6469535b3574a7e0a8c",
+  "cnv_scaling_setC.csv": "b26c3de1230e2229c75564d1209aeb994344d627d2355a5b784b175b04a3be64",
+  "coef_L_CNV.csv": "3fc6f7b3aef60a77d591870d5e9a9c5671ebc211f60b71ea13b8648e66445f14",
+  "coef_L_EARLY.csv": "f4165820089bb228bd3ef048de25e9ae97d2e541af28e7ac3ed50594e312ca65",
+  "coef_L_IMG.csv": "5f111cfa4493cd2c7da424dbc3c0fbf8d71d571d89d74e0f14bd94ee19d9e5a5",
+  "extraction_settings.json": "47b171dada811b951a1fcbe94e18969b6867d7b897f3e2b97cba8ca2e683506e",
+  "image_scaling.csv": "f2e7c082903a9af641baa3dfac374a4ffe1aa6b7d7c26b5bf51f8376ea7e47ce",
+  "model_info.json": "a4e4755ba3b64b051f2d4e0455caecf5e3c9b0e247ab5c449777970f08614891"
+ },
+ "bundle_sha256": "bf1eddeda5083a16ada1ab2a63bb96708686bd05e12120631664541ae0c90776"
+}
