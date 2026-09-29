@@ -1,0 +1,927 @@
+{
+ "_spec": "docs/paper_plan_killcoyne_final.md @ 8342ac0",
+ "item1_fold_stratified": {
+  "pkg": {
+   "a_NDBE_only": {
+    "n_samples": 463,
+    "n_patients": 75,
+    "n_P_patients": 32,
+    "L-CNV": {
+     "fold_stratified_auroc": 0.839,
+     "ci95": [
+      0.749,
+      0.905
+     ]
+    },
+    "L-IMG": {
+     "fold_stratified_auroc": 0.835,
+     "ci95": [
+      0.788,
+      0.881
+     ],
+     "delta_vs_L_CNV": {
+      "delta": -0.004,
+      "ci95": [
+       -0.072,
+       0.082
+      ],
+      "perm_p": 0.926
+     }
+    },
+    "L-EARLY": {
+     "fold_stratified_auroc": 0.87,
+     "ci95": [
+      0.791,
+      0.93
+     ],
+     "delta_vs_L_CNV": {
+      "delta": 0.032,
+      "ci95": [
+       0.002,
+       0.073
+      ],
+      "perm_p": 0.086
+     }
+    },
+    "L-LATE": {
+     "fold_stratified_auroc": 0.892,
+     "ci95": [
+      0.835,
+      0.938
+     ],
+     "delta_vs_L_CNV": {
+      "delta": 0.053,
+      "ci95": [
+       0.016,
+       0.103
+      ],
+      "perm_p": 0.025
+     }
+    },
+    "intercept_only_fold_stratified_auroc": 0.5
+   },
+   "all_C": {
+    "n_samples": 676,
+    "n_patients": 80,
+    "n_P_patients": 37,
+    "L-CNV": {
+     "fold_stratified_auroc": 0.878,
+     "ci95": [
+      0.813,
+      0.931
+     ]
+    },
+    "L-IMG": {
+     "fold_stratified_auroc": 0.873,
+     "ci95": [
+      0.833,
+      0.909
+     ],
+     "delta_vs_L_CNV": {
+      "delta": -0.004,
+      "ci95": [
+       -0.067,
+       0.069
+      ],
+      "perm_p": 0.8926
+     }
+    },
+    "L-EARLY": {
+     "fold_stratified_auroc": 0.91,
+     "ci95": [
+      0.861,
+      0.951
+     ],
+     "delta_vs_L_CNV": {
+      "delta": 0.032,
+      "ci95": [
+       0.008,
+       0.066
+      ],
+      "perm_p": 0.015
+     }
+    },
+    "L-LATE": {
+     "fold_stratified_auroc": 0.929,
+     "ci95": [
+      0.895,
+      0.957
+     ],
+     "delta_vs_L_CNV": {
+      "delta": 0.051,
+      "ci95": [
+       0.014,
+       0.096
+      ],
+      "perm_p": 0.016
+     }
+    },
+    "intercept_only_fold_stratified_auroc": 0.5
+   },
+   "b_before_first_HGD_IMC": {
+    "n_samples": 571,
+    "n_patients": 75,
+    "n_P_patients": 32,
+    "L-CNV": {
+     "fold_stratified_auroc": 0.845,
+     "ci95": [
+      0.766,
+      0.904
+     ]
+    },
+    "L-IMG": {
+     "fold_stratified_auroc": 0.847,
+     "ci95": [
+      0.798,
+      0.894
+     ],
+     "delta_vs_L_CNV": {
+      "delta": 0.002,
+      "ci95": [
+       -0.074,
+       0.09
+      ],
+      "perm_p": 0.967
+     }
+    },
+    "L-EARLY": {
+     "fold_stratified_auroc": 0.885,
+     "ci95": [
+      0.822,
+      0.937
+     ],
+     "delta_vs_L_CNV": {
+      "delta": 0.04,
+      "ci95": [
+       0.011,
+       0.078
+      ],
+      "perm_p": 0.0125
+     }
+    },
+    "L-LATE": {
+     "fold_stratified_auroc": 0.903,
+     "ci95": [
+      0.856,
+      0.944
+     ],
+     "delta_vs_L_CNV": {
+      "delta": 0.058,
+      "ci95": [
+       0.016,
+       0.108
+      ],
+      "perm_p": 0.023
+     }
+    },
+    "intercept_only_fold_stratified_auroc": 0.5
+   },
+   "c_NDBE_and_before": {
+    "n_samples": 438,
+    "n_patients": 71,
+    "n_P_patients": 28,
+    "L-CNV": {
+     "fold_stratified_auroc": 0.823,
+     "ci95": [
+      0.733,
+      0.901
+     ]
+    },
+    "L-IMG": {
+     "fold_stratified_auroc": 0.827,
+     "ci95": [
+      0.768,
+      0.883
+     ],
+     "delta_vs_L_CNV": {
+      "delta": 0.004,
+      "ci95": [
+       -0.071,
+       0.088
+      ],
+      "perm_p": 0.9215
+     }
+    },
+    "L-EARLY": {
+     "fold_stratified_auroc": 0.863,
+     "ci95": [
+      0.782,
+      0.929
+     ],
+     "delta_vs_L_CNV": {
+      "delta": 0.04,
+      "ci95": [
+       0.005,
+       0.083
+      ],
+      "perm_p": 0.0435
+     }
+    },
+    "L-LATE": {
+     "fold_stratified_auroc": 0.879,
+     "ci95": [
+      0.818,
+      0.935
+     ],
+     "delta_vs_L_CNV": {
+      "delta": 0.056,
+      "ci95": [
+       0.014,
+       0.106
+      ],
+      "perm_p": 0.0425
+     }
+    },
+    "intercept_only_fold_stratified_auroc": 0.5
+   }
+  },
+  "their": {
+   "c_NDBE_and_before": {
+    "n_samples": 438,
+    "n_patients": 71,
+    "n_P_patients": 28,
+    "L-CNV": {
+     "fold_stratified_auroc": 0.78,
+     "ci95": [
+      0.681,
+      0.879
+     ]
+    },
+    "L-IMG": {
+     "fold_stratified_auroc": 0.827,
+     "ci95": [
+      0.768,
+      0.883
+     ],
+     "delta_vs_L_CNV": {
+      "delta": 0.047,
+      "ci95": [
+       -0.04,
+       0.145
+      ],
+      "perm_p": 0.3248
+     }
+    },
+    "L-EARLY": {
+     "fold_stratified_auroc": 0.85,
+     "ci95": [
+      0.753,
+      0.929
+     ],
+     "delta_vs_L_CNV": {
+      "delta": 0.07,
+      "ci95": [
+       0.017,
+       0.131
+      ],
+      "perm_p": 0.0295
+     }
+    },
+    "L-LATE": {
+     "fold_stratified_auroc": 0.867,
+     "ci95": [
+      0.794,
+      0.931
+     ],
+     "delta_vs_L_CNV": {
+      "delta": 0.087,
+      "ci95": [
+       0.034,
+       0.152
+      ],
+      "perm_p": 0.009
+     }
+    },
+    "intercept_only_fold_stratified_auroc": 0.5
+   },
+   "b_before_first_HGD_IMC": {
+    "n_samples": 571,
+    "n_patients": 75,
+    "n_P_patients": 32,
+    "L-CNV": {
+     "fold_stratified_auroc": 0.801,
+     "ci95": [
+      0.71,
+      0.875
+     ]
+    },
+    "L-IMG": {
+     "fold_stratified_auroc": 0.847,
+     "ci95": [
+      0.798,
+      0.894
+     ],
+     "delta_vs_L_CNV": {
+      "delta": 0.045,
+      "ci95": [
+       -0.036,
+       0.136
+      ],
+      "perm_p": 0.3288
+     }
+    },
+    "L-EARLY": {
+     "fold_stratified_auroc": 0.865,
+     "ci95": [
+      0.787,
+      0.928
+     ],
+     "delta_vs_L_CNV": {
+      "delta": 0.063,
+      "ci95": [
+       0.021,
+       0.111
+      ],
+      "perm_p": 0.0155
+     }
+    },
+    "L-LATE": {
+     "fold_stratified_auroc": 0.889,
+     "ci95": [
+      0.83,
+      0.934
+     ],
+     "delta_vs_L_CNV": {
+      "delta": 0.087,
+      "ci95": [
+       0.037,
+       0.145
+      ],
+      "perm_p": 0.0055
+     }
+    },
+    "intercept_only_fold_stratified_auroc": 0.5
+   },
+   "a_NDBE_only": {
+    "n_samples": 463,
+    "n_patients": 75,
+    "n_P_patients": 32,
+    "L-CNV": {
+     "fold_stratified_auroc": 0.799,
+     "ci95": [
+      0.695,
+      0.882
+     ]
+    },
+    "L-IMG": {
+     "fold_stratified_auroc": 0.835,
+     "ci95": [
+      0.788,
+      0.881
+     ],
+     "delta_vs_L_CNV": {
+      "delta": 0.036,
+      "ci95": [
+       -0.045,
+       0.132
+      ],
+      "perm_p": 0.4228
+     }
+    },
+    "L-EARLY": {
+     "fold_stratified_auroc": 0.865,
+     "ci95": [
+      0.773,
+      0.934
+     ],
+     "delta_vs_L_CNV": {
+      "delta": 0.066,
+      "ci95": [
+       0.021,
+       0.12
+      ],
+      "perm_p": 0.0205
+     }
+    },
+    "L-LATE": {
+     "fold_stratified_auroc": 0.879,
+     "ci95": [
+      0.811,
+      0.933
+     ],
+     "delta_vs_L_CNV": {
+      "delta": 0.08,
+      "ci95": [
+       0.031,
+       0.14
+      ],
+      "perm_p": 0.008
+     }
+    },
+    "intercept_only_fold_stratified_auroc": 0.5
+   },
+   "all_C": {
+    "n_samples": 676,
+    "n_patients": 80,
+    "n_P_patients": 37,
+    "L-CNV": {
+     "fold_stratified_auroc": 0.848,
+     "ci95": [
+      0.777,
+      0.908
+     ]
+    },
+    "L-IMG": {
+     "fold_stratified_auroc": 0.873,
+     "ci95": [
+      0.833,
+      0.909
+     ],
+     "delta_vs_L_CNV": {
+      "delta": 0.026,
+      "ci95": [
+       -0.039,
+       0.097
+      ],
+      "perm_p": 0.4868
+     }
+    },
+    "L-EARLY": {
+     "fold_stratified_auroc": 0.899,
+     "ci95": [
+      0.841,
+      0.945
+     ],
+     "delta_vs_L_CNV": {
+      "delta": 0.051,
+      "ci95": [
+       0.019,
+       0.088
+      ],
+      "perm_p": 0.009
+     }
+    },
+    "L-LATE": {
+     "fold_stratified_auroc": 0.917,
+     "ci95": [
+      0.871,
+      0.949
+     ],
+     "delta_vs_L_CNV": {
+      "delta": 0.069,
+      "ci95": [
+       0.028,
+       0.119
+      ],
+      "perm_p": 0.0025
+     }
+    },
+    "intercept_only_fold_stratified_auroc": 0.5
+   }
+  }
+ },
+ "item2_max_T": {
+  "their_all_C": {
+   "L-IMG": {
+    "per_sample_auroc": {
+     "delta": 0.032,
+     "p_unadjusted": 0.3928,
+     "p_max_T_adjusted": 0.4568
+    },
+    "patient_max_auroc": {
+     "delta": -0.006,
+     "p_unadjusted": 0.9125,
+     "p_max_T_adjusted": 0.992
+    },
+    "fold_stratified_auroc": {
+     "delta": 0.026,
+     "p_unadjusted": 0.4868,
+     "p_max_T_adjusted": 0.6077
+    }
+   },
+   "L-EARLY": {
+    "per_sample_auroc": {
+     "delta": 0.065,
+     "p_unadjusted": 0.0005,
+     "p_max_T_adjusted": 0.071
+    },
+    "patient_max_auroc": {
+     "delta": 0.064,
+     "p_unadjusted": 0.0095,
+     "p_max_T_adjusted": 0.1774
+    },
+    "fold_stratified_auroc": {
+     "delta": 0.051,
+     "p_unadjusted": 0.009,
+     "p_max_T_adjusted": 0.1724
+    }
+   },
+   "L-LATE": {
+    "per_sample_auroc": {
+     "delta": 0.076,
+     "p_unadjusted": 0.002,
+     "p_max_T_adjusted": 0.033
+    },
+    "patient_max_auroc": {
+     "delta": 0.043,
+     "p_unadjusted": 0.1104,
+     "p_max_T_adjusted": 0.4203
+    },
+    "fold_stratified_auroc": {
+     "delta": 0.069,
+     "p_unadjusted": 0.0025,
+     "p_max_T_adjusted": 0.0545
+    }
+   }
+  },
+  "their_a_NDBE_only": {
+   "L-IMG": {
+    "per_sample_auroc": {
+     "delta": 0.049,
+     "p_unadjusted": 0.3018,
+     "p_max_T_adjusted": 0.3578
+    },
+    "patient_max_auroc": {
+     "delta": 0.066,
+     "p_unadjusted": 0.3298,
+     "p_max_T_adjusted": 0.3603
+    },
+    "fold_stratified_auroc": {
+     "delta": 0.036,
+     "p_unadjusted": 0.4228,
+     "p_max_T_adjusted": 0.5702
+    }
+   },
+   "L-EARLY": {
+    "per_sample_auroc": {
+     "delta": 0.082,
+     "p_unadjusted": 0.003,
+     "p_max_T_adjusted": 0.0755
+    },
+    "patient_max_auroc": {
+     "delta": 0.105,
+     "p_unadjusted": 0.0045,
+     "p_max_T_adjusted": 0.1274
+    },
+    "fold_stratified_auroc": {
+     "delta": 0.066,
+     "p_unadjusted": 0.0205,
+     "p_max_T_adjusted": 0.1504
+    }
+   },
+   "L-LATE": {
+    "per_sample_auroc": {
+     "delta": 0.091,
+     "p_unadjusted": 0.004,
+     "p_max_T_adjusted": 0.049
+    },
+    "patient_max_auroc": {
+     "delta": 0.104,
+     "p_unadjusted": 0.014,
+     "p_max_T_adjusted": 0.1314
+    },
+    "fold_stratified_auroc": {
+     "delta": 0.08,
+     "p_unadjusted": 0.008,
+     "p_max_T_adjusted": 0.075
+    }
+   }
+  },
+  "pkg_all_C": {
+   "L-IMG": {
+    "per_sample_auroc": {
+     "delta": -0.008,
+     "p_unadjusted": 0.8301,
+     "p_max_T_adjusted": 0.96
+    },
+    "patient_max_auroc": {
+     "delta": -0.003,
+     "p_unadjusted": 0.958,
+     "p_max_T_adjusted": 0.9995
+    },
+    "fold_stratified_auroc": {
+     "delta": -0.004,
+     "p_unadjusted": 0.8926,
+     "p_max_T_adjusted": 0.988
+    }
+   },
+   "L-EARLY": {
+    "per_sample_auroc": {
+     "delta": 0.032,
+     "p_unadjusted": 0.0135,
+     "p_max_T_adjusted": 0.3793
+    },
+    "patient_max_auroc": {
+     "delta": 0.05,
+     "p_unadjusted": 0.016,
+     "p_max_T_adjusted": 0.3203
+    },
+    "fold_stratified_auroc": {
+     "delta": 0.032,
+     "p_unadjusted": 0.015,
+     "p_max_T_adjusted": 0.3808
+    }
+   },
+   "L-LATE": {
+    "per_sample_auroc": {
+     "delta": 0.05,
+     "p_unadjusted": 0.0145,
+     "p_max_T_adjusted": 0.1479
+    },
+    "patient_max_auroc": {
+     "delta": 0.056,
+     "p_unadjusted": 0.052,
+     "p_max_T_adjusted": 0.2569
+    },
+    "fold_stratified_auroc": {
+     "delta": 0.051,
+     "p_unadjusted": 0.016,
+     "p_max_T_adjusted": 0.1514
+    }
+   }
+  },
+  "pkg_a_NDBE_only": {
+   "L-IMG": {
+    "per_sample_auroc": {
+     "delta": 0.002,
+     "p_unadjusted": 0.967,
+     "p_max_T_adjusted": 1.0
+    },
+    "patient_max_auroc": {
+     "delta": -0.003,
+     "p_unadjusted": 0.9635,
+     "p_max_T_adjusted": 1.0
+    },
+    "fold_stratified_auroc": {
+     "delta": -0.004,
+     "p_unadjusted": 0.926,
+     "p_max_T_adjusted": 0.9965
+    }
+   },
+   "L-EARLY": {
+    "per_sample_auroc": {
+     "delta": 0.033,
+     "p_unadjusted": 0.0715,
+     "p_max_T_adjusted": 0.5112
+    },
+    "patient_max_auroc": {
+     "delta": 0.052,
+     "p_unadjusted": 0.043,
+     "p_max_T_adjusted": 0.4123
+    },
+    "fold_stratified_auroc": {
+     "delta": 0.032,
+     "p_unadjusted": 0.086,
+     "p_max_T_adjusted": 0.5392
+    }
+   },
+   "L-LATE": {
+    "per_sample_auroc": {
+     "delta": 0.059,
+     "p_unadjusted": 0.018,
+     "p_max_T_adjusted": 0.1794
+    },
+    "patient_max_auroc": {
+     "delta": 0.076,
+     "p_unadjusted": 0.034,
+     "p_max_T_adjusted": 0.1934
+    },
+    "fold_stratified_auroc": {
+     "delta": 0.053,
+     "p_unadjusted": 0.025,
+     "p_max_T_adjusted": 0.2189
+    }
+   }
+  }
+ },
+ "aceb_size": {
+  "manifest_samples": 234,
+  "manifest_cases": 117,
+  "manifest_pathology": {
+   "IM": 163,
+   "LGD": 30,
+   "ID": 15,
+   "HGD": 13,
+   "GM": 5,
+   "IMC": 4,
+   "missing": 4
+  },
+  "IM_samples": 163,
+  "cases_with_IM": 107,
+  "IM_cases_by_status": {
+   "non_progressor": 67,
+   "progressed": 15,
+   "no_database_status": 14,
+   "prevalent": 11
+  },
+  "IM_samples_by_status": {
+   "non_progressor": 101,
+   "no_database_status": 27,
+   "progressed": 20,
+   "prevalent": 15
+  },
+  "owner_split": {
+   "progressors": 11,
+   "non_progressors": 93,
+   "prevalent_HGD_IMC": 30,
+   "patients": 134,
+   "samples": 294,
+   "source": "docs/NUMBERS.md item 25 (Leanne, 21 Sep 2026)"
+  },
+  "timeline_source": "feasibility/runs/num_aceb_db_v2/output/aceb_participant_timeline.csv (LLM-jury grades from the Barrett's DB; cross-check, not trial-adjudicated)",
+  "scenarios": {
+   "S1": {
+    "n_P": 26,
+    "n_NP": 67,
+    "n_samples": 136,
+    "label": "manifest IM samples; P = prevalent or progressed (database)"
+   },
+   "S2": {
+    "n_P": 15,
+    "n_NP": 67,
+    "n_samples": 121,
+    "label": "S1 without prevalent patients"
+   },
+   "S3": {
+    "n_P": 41,
+    "n_NP": 93,
+    "n_samples": null,
+    "label": "owner's split, P = 11 progressors + 30 prevalent, NP = 93, all assumed to contribute NDBE samples"
+   }
+  },
+  "IM_per_case_hist": {
+   "no_database_status": {
+    "1": 2,
+    "2": 11,
+    "3": 1
+   },
+   "non_progressor": {
+    "1": 34,
+    "2": 32,
+    "3": 1
+   },
+   "prevalent": {
+    "1": 8,
+    "2": 2,
+    "3": 1
+   },
+   "progressed": {
+    "1": 11,
+    "2": 3,
+    "3": 1
+   }
+  }
+ },
+ "item3_power": {
+  "S1_E1": {
+   "n_P": 26,
+   "n_NP": 67,
+   "blend_w": 1.0,
+   "set_C_NDBE_delta": 0.059,
+   "simulations": 2000,
+   "power_lower95_above_0": 0.902,
+   "power_95ci": [
+    0.889,
+    0.915
+   ],
+   "power_E2_shift_post_hoc": 0.169,
+   "median_simulated_delta": 0.056,
+   "median_lower95": 0.02,
+   "median_simulated_samples": 624,
+   "samples_range": [
+    528,
+    737
+   ]
+  },
+  "S1_E2": {
+   "n_P": 26,
+   "n_NP": 67,
+   "blend_w": 0.1993,
+   "set_C_NDBE_delta": 0.021,
+   "simulations": 2000,
+   "power_lower95_above_0": 1.0,
+   "power_95ci": [
+    1.0,
+    1.0
+   ],
+   "power_E2_shift_post_hoc": null,
+   "median_simulated_delta": 0.02,
+   "median_lower95": 0.012,
+   "median_simulated_samples": 624,
+   "samples_range": [
+    528,
+    737
+   ]
+  },
+  "S2_E1": {
+   "n_P": 15,
+   "n_NP": 67,
+   "blend_w": 1.0,
+   "set_C_NDBE_delta": 0.059,
+   "simulations": 2000,
+   "power_lower95_above_0": 0.776,
+   "power_95ci": [
+    0.758,
+    0.794
+   ],
+   "power_E2_shift_post_hoc": 0.127,
+   "median_simulated_delta": 0.057,
+   "median_lower95": 0.014,
+   "median_simulated_samples": 581,
+   "samples_range": [
+    475,
+    694
+   ]
+  },
+  "S2_E2": {
+   "n_P": 15,
+   "n_NP": 67,
+   "blend_w": 0.1993,
+   "set_C_NDBE_delta": 0.021,
+   "simulations": 2000,
+   "power_lower95_above_0": 1.0,
+   "power_95ci": [
+    1.0,
+    1.0
+   ],
+   "power_E2_shift_post_hoc": null,
+   "median_simulated_delta": 0.02,
+   "median_lower95": 0.01,
+   "median_simulated_samples": 581,
+   "samples_range": [
+    475,
+    694
+   ]
+  },
+  "S3_E1": {
+   "n_P": 41,
+   "n_NP": 93,
+   "blend_w": 1.0,
+   "set_C_NDBE_delta": 0.059,
+   "simulations": 2000,
+   "power_lower95_above_0": 0.981,
+   "power_95ci": [
+    0.974,
+    0.987
+   ],
+   "power_E2_shift_post_hoc": 0.25,
+   "median_simulated_delta": 0.057,
+   "median_lower95": 0.027,
+   "median_simulated_samples": 887,
+   "samples_range": [
+    771,
+    1003
+   ]
+  },
+  "S3_E2": {
+   "n_P": 41,
+   "n_NP": 93,
+   "blend_w": 0.1993,
+   "set_C_NDBE_delta": 0.021,
+   "simulations": 2000,
+   "power_lower95_above_0": 1.0,
+   "power_95ci": [
+    1.0,
+    1.0
+   ],
+   "power_E2_shift_post_hoc": null,
+   "median_simulated_delta": 0.02,
+   "median_lower95": 0.013,
+   "median_simulated_samples": 887,
+   "samples_range": [
+    771,
+    1003
+   ]
+  },
+  "S1m_E1": {
+   "n_P": 26,
+   "n_NP": 67,
+   "blend_w": 1.0,
+   "set_C_NDBE_delta": 0.059,
+   "simulations": 2000,
+   "power_lower95_above_0": 0.725,
+   "power_95ci": [
+    0.705,
+    0.744
+   ],
+   "power_E2_shift_post_hoc": 0.199,
+   "median_simulated_delta": 0.064,
+   "median_lower95": 0.015,
+   "median_simulated_samples": 134,
+   "samples_range": [
+    118,
+    152
+   ]
+  },
+  "S2m_E1": {
+   "n_P": 15,
+   "n_NP": 67,
+   "blend_w": 1.0,
+   "set_C_NDBE_delta": 0.059,
+   "simulations": 2000,
+   "power_lower95_above_0": 0.537,
+   "power_95ci": [
+    0.516,
+    0.559
+   ],
+   "power_E2_shift_post_hoc": 0.134,
+   "median_simulated_delta": 0.063,
+   "median_lower95": 0.003,
+   "median_simulated_samples": 120,
+   "samples_range": [
+    106,
+    137
+   ]
+  }
+ }
+}
