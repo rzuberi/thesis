@@ -1,0 +1,155 @@
+{
+ "part": "wsi_release",
+ "n_slides": 707,
+ "errors": 0,
+ "error_examples": [],
+ "scanners": {
+  "C13239-01": 585,
+  "C13210": 122
+ },
+ "vendor": {
+  "hamamatsu": 707
+ },
+ "objective": {
+  "40": 707
+ },
+ "mpp_native": {
+  "n": 707,
+  "mean": 0.2208,
+  "median": 0.2209,
+  "q1": 0.2209,
+  "q3": 0.2209,
+  "min": 0.2204,
+  "max": 0.2209
+ },
+ "mpp_native_by_scanner": {
+  "C13210": {
+   "n": 122,
+   "mean": 0.2204,
+   "median": 0.2204,
+   "q1": 0.2204,
+   "q3": 0.2204,
+   "min": 0.2204,
+   "max": 0.2204
+  },
+  "C13239-01": {
+   "n": 585,
+   "mean": 0.2209,
+   "median": 0.2209,
+   "q1": 0.2209,
+   "q3": 0.2209,
+   "min": 0.2209,
+   "max": 0.2209
+  }
+ },
+ "level": {
+  "2": 707
+ },
+ "tile_size": {
+  "224": 707
+ },
+ "level_mpp": {
+  "n": 707,
+  "mean": 0.8832,
+  "median": 0.8835,
+  "q1": 0.8835,
+  "q3": 0.8835,
+  "min": 0.8816,
+  "max": 0.8835
+ },
+ "level_mpp_by_scanner": {
+  "C13210": {
+   "n": 122,
+   "mean": 0.8816,
+   "median": 0.8816,
+   "q1": 0.8816,
+   "q3": 0.8816,
+   "min": 0.8816,
+   "max": 0.8816
+  },
+  "C13239-01": {
+   "n": 585,
+   "mean": 0.8835,
+   "median": 0.8835,
+   "q1": 0.8835,
+   "q3": 0.8835,
+   "min": 0.8835,
+   "max": 0.8835
+  }
+ },
+ "tiles_requested": {
+  "n": 707,
+  "mean": 256.0,
+  "median": 256.0,
+  "q1": 256.0,
+  "q3": 256.0,
+  "min": 256.0,
+  "max": 256.0
+ },
+ "tiles_ok": {
+  "n": 707,
+  "mean": 256.0,
+  "median": 256.0,
+  "q1": 256.0,
+  "q3": 256.0,
+  "min": 256.0,
+  "max": 256.0
+ },
+ "distinct_sampled": {
+  "n": 707,
+  "mean": 256.0,
+  "median": 256.0,
+  "q1": 256.0,
+  "q3": 256.0,
+  "min": 256.0,
+  "max": 256.0
+ },
+ "tissue_grid_tiles": {
+  "n": 707,
+  "mean": 683.8,
+  "median": 277.0,
+  "q1": 181.5,
+  "q3": 933.5,
+  "min": 5.0,
+  "max": 9348.0
+ },
+ "with_replacement": 0,
+ "emb_dim": {
+  "1536": 707
+ },
+ "slides_tissue_tiles_lt_requested": 315,
+ "patients_by_scanner": {
+  "C13210": 27,
+  "C13239-01": 141
+ },
+ "feature_views": {
+  "uni2": {
+   "rows": 707,
+   "feat_dim": {
+    "1536": 707
+   },
+   "n_instances": {
+    "256": 707
+   }
+  },
+  "virchow2": {
+   "rows": 707,
+   "feat_dim": {
+    "2560": 707
+   },
+   "n_instances": {
+    "256": 706,
+    "64": 1
+   }
+  },
+  "gigapath": {
+   "rows": 707,
+   "feat_dim": {
+    "1536": 707
+   },
+   "n_instances": {
+    "256": 707
+   }
+  }
+ }
+}
