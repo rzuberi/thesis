@@ -1,0 +1,1476 @@
+{
+ "part": "core",
+ "item1": {
+  "release": {
+   "all": {
+    "patients": 150,
+    "P": 50,
+    "NP": 100
+   },
+   "777": {
+    "patients": 82,
+    "P": 40,
+    "NP": 42
+   },
+   "268": {
+    "patients": 68,
+    "P": 10,
+    "NP": 58
+   },
+   "both": {
+    "patients": 0,
+    "P": 0,
+    "NP": 0
+   },
+   "none": {
+    "patients": 0,
+    "P": 0,
+    "NP": 0
+   }
+  },
+  "setC": {
+   "all": {
+    "patients": 80,
+    "P": 37,
+    "NP": 43
+   }
+  },
+  "release_sheet_vs_f2_strata": {
+   "agree": 150,
+   "n": 150
+  },
+  "release_sheet_vs_patient_id_membership": {
+   "agree": 143,
+   "n": 150,
+   "id_membership_counts": {
+    "777": 76,
+    "268": 67,
+    "both": 5,
+    "none": 2
+   }
+  },
+  "release_samples_by_sheet": {
+   "777": 504,
+   "268": 203
+  },
+  "release_Progressor_label_patients": {
+   "P": 35,
+   "n": 150
+  },
+  "setC_samples_in_777_sheet": {
+   "in": 676,
+   "n": 676
+  },
+  "setC_patients_with_release_rows": 73
+ },
+ "item2": {
+  "release": {
+   "rows": {
+    "all|all": {
+     "n": 150,
+     "mean": 4.713,
+     "median": 3.0,
+     "q1": 2.0,
+     "q3": 7.0,
+     "min": 1.0,
+     "max": 19.0,
+     "single": 26
+    },
+    "all|P": {
+     "n": 50,
+     "mean": 4.02,
+     "median": 3.0,
+     "q1": 2.0,
+     "q3": 5.0,
+     "min": 1.0,
+     "max": 13.0,
+     "single": 9
+    },
+    "all|NP": {
+     "n": 100,
+     "mean": 5.06,
+     "median": 4.0,
+     "q1": 2.0,
+     "q3": 7.25,
+     "min": 1.0,
+     "max": 19.0,
+     "single": 17
+    },
+    "777|all": {
+     "n": 82,
+     "mean": 6.146,
+     "median": 5.0,
+     "q1": 2.0,
+     "q3": 8.75,
+     "min": 1.0,
+     "max": 19.0,
+     "single": 9
+    },
+    "777|P": {
+     "n": 40,
+     "mean": 3.9,
+     "median": 3.0,
+     "q1": 2.0,
+     "q3": 5.0,
+     "min": 1.0,
+     "max": 13.0,
+     "single": 8
+    },
+    "777|NP": {
+     "n": 42,
+     "mean": 8.286,
+     "median": 8.0,
+     "q1": 4.25,
+     "q3": 12.0,
+     "min": 1.0,
+     "max": 19.0,
+     "single": 1
+    },
+    "268|all": {
+     "n": 68,
+     "mean": 2.985,
+     "median": 3.0,
+     "q1": 1.75,
+     "q3": 4.0,
+     "min": 1.0,
+     "max": 11.0,
+     "single": 17
+    },
+    "268|P": {
+     "n": 10,
+     "mean": 4.5,
+     "median": 3.0,
+     "q1": 2.25,
+     "q3": 5.75,
+     "min": 1.0,
+     "max": 11.0,
+     "single": 1
+    },
+    "268|NP": {
+     "n": 58,
+     "mean": 2.724,
+     "median": 2.5,
+     "q1": 1.0,
+     "q3": 4.0,
+     "min": 1.0,
+     "max": 8.0,
+     "single": 16
+    }
+   },
+   "biopsies": {
+    "all|all": {
+     "n": 150,
+     "mean": 2.393,
+     "median": 2.0,
+     "q1": 1.0,
+     "q3": 3.0,
+     "min": 1.0,
+     "max": 8.0,
+     "single": 72
+    },
+    "all|P": {
+     "n": 50,
+     "mean": 2.3,
+     "median": 2.0,
+     "q1": 1.0,
+     "q3": 3.0,
+     "min": 1.0,
+     "max": 6.0,
+     "single": 16
+    },
+    "all|NP": {
+     "n": 100,
+     "mean": 2.44,
+     "median": 1.0,
+     "q1": 1.0,
+     "q3": 4.0,
+     "min": 1.0,
+     "max": 8.0,
+     "single": 56
+    },
+    "777|all": {
+     "n": 82,
+     "mean": 3.354,
+     "median": 3.0,
+     "q1": 2.0,
+     "q3": 5.0,
+     "min": 1.0,
+     "max": 8.0,
+     "single": 14
+    },
+    "777|P": {
+     "n": 40,
+     "mean": 2.375,
+     "median": 2.0,
+     "q1": 1.0,
+     "q3": 3.0,
+     "min": 1.0,
+     "max": 6.0,
+     "single": 11
+    },
+    "777|NP": {
+     "n": 42,
+     "mean": 4.286,
+     "median": 4.0,
+     "q1": 3.0,
+     "q3": 5.75,
+     "min": 1.0,
+     "max": 8.0,
+     "single": 3
+    },
+    "268|all": {
+     "n": 68,
+     "mean": 1.235,
+     "median": 1.0,
+     "q1": 1.0,
+     "q3": 1.0,
+     "min": 1.0,
+     "max": 4.0,
+     "single": 58
+    },
+    "268|P": {
+     "n": 10,
+     "mean": 2.0,
+     "median": 1.5,
+     "q1": 1.0,
+     "q3": 3.0,
+     "min": 1.0,
+     "max": 4.0,
+     "single": 5
+    },
+    "268|NP": {
+     "n": 58,
+     "mean": 1.103,
+     "median": 1.0,
+     "q1": 1.0,
+     "q3": 1.0,
+     "min": 1.0,
+     "max": 3.0,
+     "single": 53
+    }
+   },
+   "slides": {
+    "all|all": {
+     "n": 150,
+     "mean": 4.713,
+     "median": 3.0,
+     "q1": 2.0,
+     "q3": 7.0,
+     "min": 1.0,
+     "max": 19.0,
+     "single": 26
+    },
+    "all|P": {
+     "n": 50,
+     "mean": 4.02,
+     "median": 3.0,
+     "q1": 2.0,
+     "q3": 5.0,
+     "min": 1.0,
+     "max": 13.0,
+     "single": 9
+    },
+    "all|NP": {
+     "n": 100,
+     "mean": 5.06,
+     "median": 4.0,
+     "q1": 2.0,
+     "q3": 7.25,
+     "min": 1.0,
+     "max": 19.0,
+     "single": 17
+    },
+    "777|all": {
+     "n": 82,
+     "mean": 6.146,
+     "median": 5.0,
+     "q1": 2.0,
+     "q3": 8.75,
+     "min": 1.0,
+     "max": 19.0,
+     "single": 9
+    },
+    "777|P": {
+     "n": 40,
+     "mean": 3.9,
+     "median": 3.0,
+     "q1": 2.0,
+     "q3": 5.0,
+     "min": 1.0,
+     "max": 13.0,
+     "single": 8
+    },
+    "777|NP": {
+     "n": 42,
+     "mean": 8.286,
+     "median": 8.0,
+     "q1": 4.25,
+     "q3": 12.0,
+     "min": 1.0,
+     "max": 19.0,
+     "single": 1
+    },
+    "268|all": {
+     "n": 68,
+     "mean": 2.985,
+     "median": 3.0,
+     "q1": 1.75,
+     "q3": 4.0,
+     "min": 1.0,
+     "max": 11.0,
+     "single": 17
+    },
+    "268|P": {
+     "n": 10,
+     "mean": 4.5,
+     "median": 3.0,
+     "q1": 2.25,
+     "q3": 5.75,
+     "min": 1.0,
+     "max": 11.0,
+     "single": 1
+    },
+    "268|NP": {
+     "n": 58,
+     "mean": 2.724,
+     "median": 2.5,
+     "q1": 1.0,
+     "q3": 4.0,
+     "min": 1.0,
+     "max": 8.0,
+     "single": 16
+    }
+   },
+   "swgs": {
+    "all|all": {
+     "n": 150,
+     "mean": 4.62,
+     "median": 3.0,
+     "q1": 2.0,
+     "q3": 7.0,
+     "min": 1.0,
+     "max": 19.0,
+     "single": 26
+    },
+    "all|P": {
+     "n": 50,
+     "mean": 3.94,
+     "median": 3.0,
+     "q1": 2.0,
+     "q3": 5.0,
+     "min": 1.0,
+     "max": 12.0,
+     "single": 9
+    },
+    "all|NP": {
+     "n": 100,
+     "mean": 4.96,
+     "median": 3.5,
+     "q1": 2.0,
+     "q3": 7.0,
+     "min": 1.0,
+     "max": 19.0,
+     "single": 17
+    },
+    "777|all": {
+     "n": 82,
+     "mean": 6.024,
+     "median": 5.0,
+     "q1": 2.0,
+     "q3": 8.75,
+     "min": 1.0,
+     "max": 19.0,
+     "single": 9
+    },
+    "777|P": {
+     "n": 40,
+     "mean": 3.8,
+     "median": 3.0,
+     "q1": 2.0,
+     "q3": 5.0,
+     "min": 1.0,
+     "max": 12.0,
+     "single": 8
+    },
+    "777|NP": {
+     "n": 42,
+     "mean": 8.143,
+     "median": 8.0,
+     "q1": 4.25,
+     "q3": 11.0,
+     "min": 1.0,
+     "max": 19.0,
+     "single": 1
+    },
+    "268|all": {
+     "n": 68,
+     "mean": 2.926,
+     "median": 3.0,
+     "q1": 1.75,
+     "q3": 4.0,
+     "min": 1.0,
+     "max": 11.0,
+     "single": 17
+    },
+    "268|P": {
+     "n": 10,
+     "mean": 4.5,
+     "median": 3.0,
+     "q1": 2.25,
+     "q3": 5.75,
+     "min": 1.0,
+     "max": 11.0,
+     "single": 1
+    },
+    "268|NP": {
+     "n": 58,
+     "mean": 2.655,
+     "median": 2.5,
+     "q1": 1.0,
+     "q3": 3.75,
+     "min": 1.0,
+     "max": 8.0,
+     "single": 16
+    }
+   }
+  },
+  "release_single": {
+   "rows": {
+    "all": 26,
+    "P": 9,
+    "NP": 17,
+    "n": 150
+   },
+   "biopsies": {
+    "all": 72,
+    "P": 16,
+    "NP": 56,
+    "n": 150
+   },
+   "slides": {
+    "all": 26,
+    "P": 9,
+    "NP": 17,
+    "n": 150
+   },
+   "swgs": {
+    "all": 26,
+    "P": 9,
+    "NP": 17,
+    "n": 150
+   }
+  },
+  "setC": {
+   "swgs": {
+    "all|all": {
+     "n": 80,
+     "mean": 8.45,
+     "median": 7.5,
+     "q1": 5.0,
+     "q3": 11.0,
+     "min": 1.0,
+     "max": 30.0,
+     "single": 3
+    },
+    "all|P": {
+     "n": 37,
+     "mean": 7.189,
+     "median": 6.0,
+     "q1": 3.0,
+     "q3": 10.0,
+     "min": 1.0,
+     "max": 20.0,
+     "single": 3
+    },
+    "all|NP": {
+     "n": 43,
+     "mean": 9.535,
+     "median": 8.0,
+     "q1": 7.0,
+     "q3": 12.0,
+     "min": 4.0,
+     "max": 30.0,
+     "single": 0
+    }
+   },
+   "slides": {
+    "all|all": {
+     "n": 80,
+     "mean": 8.537,
+     "median": 8.0,
+     "q1": 5.0,
+     "q3": 11.25,
+     "min": 1.0,
+     "max": 30.0,
+     "single": 3
+    },
+    "all|P": {
+     "n": 37,
+     "mean": 7.27,
+     "median": 6.0,
+     "q1": 3.0,
+     "q3": 10.0,
+     "min": 1.0,
+     "max": 20.0,
+     "single": 3
+    },
+    "all|NP": {
+     "n": 43,
+     "mean": 9.628,
+     "median": 8.0,
+     "q1": 7.0,
+     "q3": 12.0,
+     "min": 4.0,
+     "max": 30.0,
+     "single": 0
+    }
+   }
+  },
+  "setC_single": {
+   "swgs": {
+    "all": 3,
+    "P": 3,
+    "NP": 0,
+    "n": 80
+   },
+   "slides": {
+    "all": 3,
+    "P": 3,
+    "NP": 0,
+    "n": 80
+   }
+  }
+ },
+ "item3": {
+  "release": {
+   "first_to_last": {
+    "all|all": {
+     "n": 150,
+     "mean": 2.672,
+     "median": 0.819,
+     "q1": 0.0,
+     "q3": 4.239,
+     "min": 0.0,
+     "max": 13.139,
+     "single": 0
+    },
+    "all|P": {
+     "n": 50,
+     "mean": 2.727,
+     "median": 2.029,
+     "q1": 0.0,
+     "q3": 4.138,
+     "min": 0.0,
+     "max": 11.313,
+     "single": 0
+    },
+    "all|NP": {
+     "n": 100,
+     "mean": 2.645,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 4.389,
+     "min": 0.0,
+     "max": 13.139,
+     "single": 0
+    },
+    "777|all": {
+     "n": 82,
+     "mean": 4.25,
+     "median": 3.488,
+     "q1": 1.007,
+     "q3": 6.871,
+     "min": 0.0,
+     "max": 13.139,
+     "single": 0
+    },
+    "777|P": {
+     "n": 40,
+     "mean": 2.844,
+     "median": 2.042,
+     "q1": 0.0,
+     "q3": 4.185,
+     "min": 0.0,
+     "max": 11.313,
+     "single": 0
+    },
+    "777|NP": {
+     "n": 42,
+     "mean": 5.588,
+     "median": 4.83,
+     "q1": 2.626,
+     "q3": 7.811,
+     "min": 0.0,
+     "max": 13.139,
+     "single": 0
+    },
+    "268|all": {
+     "n": 68,
+     "mean": 0.77,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 0.0,
+     "min": 0.0,
+     "max": 13.087,
+     "single": 0
+    },
+    "268|P": {
+     "n": 10,
+     "mean": 2.258,
+     "median": 1.017,
+     "q1": 0.0,
+     "q3": 2.54,
+     "min": 0.0,
+     "max": 10.82,
+     "single": 0
+    },
+    "268|NP": {
+     "n": 58,
+     "mean": 0.513,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 0.0,
+     "min": 0.0,
+     "max": 13.087,
+     "single": 0
+    }
+   },
+   "first_to_endpoint": {
+    "all|all": {
+     "n": 50,
+     "mean": 4.05,
+     "median": 3.001,
+     "q1": 1.477,
+     "q3": 5.696,
+     "min": 0.323,
+     "max": 14.407,
+     "single": 0
+    },
+    "all|P": {
+     "n": 50,
+     "mean": 4.05,
+     "median": 3.001,
+     "q1": 1.477,
+     "q3": 5.696,
+     "min": 0.323,
+     "max": 14.407,
+     "single": 0
+    },
+    "all|NP": {
+     "n": 0,
+     "single": 0
+    },
+    "777|all": {
+     "n": 40,
+     "mean": 4.026,
+     "median": 2.908,
+     "q1": 1.201,
+     "q3": 6.051,
+     "min": 0.323,
+     "max": 14.407,
+     "single": 0
+    },
+    "777|P": {
+     "n": 40,
+     "mean": 4.026,
+     "median": 2.908,
+     "q1": 1.201,
+     "q3": 6.051,
+     "min": 0.323,
+     "max": 14.407,
+     "single": 0
+    },
+    "777|NP": {
+     "n": 0,
+     "single": 0
+    },
+    "268|all": {
+     "n": 10,
+     "mean": 4.146,
+     "median": 3.194,
+     "q1": 2.446,
+     "q3": 4.691,
+     "min": 0.761,
+     "max": 13.125,
+     "single": 0
+    },
+    "268|P": {
+     "n": 10,
+     "mean": 4.146,
+     "median": 3.194,
+     "q1": 2.446,
+     "q3": 4.691,
+     "min": 0.761,
+     "max": 13.125,
+     "single": 0
+    },
+    "268|NP": {
+     "n": 0,
+     "single": 0
+    }
+   }
+  },
+  "release_P_with_event_date": {
+   "n": 50,
+   "of": 50
+  },
+  "release_rows_with_date": 707,
+  "setC": {
+   "first_to_last": {
+    "all|all": {
+     "n": 80,
+     "mean": 5.594,
+     "median": 5.25,
+     "q1": 3.5,
+     "q3": 7.25,
+     "min": 0.0,
+     "max": 15.0,
+     "single": 2
+    },
+    "all|P": {
+     "n": 37,
+     "mean": 4.365,
+     "median": 4.0,
+     "q1": 1.0,
+     "q3": 6.0,
+     "min": 0.0,
+     "max": 15.0,
+     "single": 2
+    },
+    "all|NP": {
+     "n": 43,
+     "mean": 6.651,
+     "median": 6.0,
+     "q1": 4.25,
+     "q3": 8.0,
+     "min": 2.0,
+     "max": 13.0,
+     "single": 0
+    }
+   },
+   "first_to_endpoint": {
+    "all|all": {
+     "n": 37,
+     "mean": 4.622,
+     "median": 4.0,
+     "q1": 1.5,
+     "q3": 6.0,
+     "min": -0.5,
+     "max": 15.0,
+     "single": 1
+    },
+    "all|P": {
+     "n": 37,
+     "mean": 4.622,
+     "median": 4.0,
+     "q1": 1.5,
+     "q3": 6.0,
+     "min": -0.5,
+     "max": 15.0,
+     "single": 1
+    },
+    "all|NP": {
+     "n": 0,
+     "single": 0
+    }
+   }
+  },
+  "setC_P_with_hgd_imc_sample": {
+   "n": 33,
+   "of": 37,
+   "fallback_final_endoscopy": 4
+  },
+  "setC_P_endpoint_before_first_setC_sample": 1,
+  "setC_samples_with_mbf": {
+   "n": 676,
+   "of": 676
+  }
+ },
+ "item4": {
+  "release": {
+   "n_patients": 150,
+   "in_demographics_sheet": 82,
+   "with_participant_id": 149,
+   "first_sample_date_source": "pre_event_cohort.Date (first release row)",
+   "all": {
+    "n": 150,
+    "age_release": {
+     "n": 82,
+     "mean": 62.56,
+     "median": 63.59,
+     "q1": 56.68,
+     "q3": 69.89,
+     "min": 37.86,
+     "max": 82.5
+    },
+    "age_completed": {
+     "n": 113,
+     "mean": 62.67,
+     "median": 63.96,
+     "q1": 56.55,
+     "q3": 70.69,
+     "min": 25.17,
+     "max": 82.5
+    },
+    "age_completed_sources": {
+     "demographics": 82,
+     "initial_history": 31
+    },
+    "C_release": {
+     "n": 66,
+     "mean": 1.32,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 2.0,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "C_completed": {
+     "n": 121,
+     "mean": 2.01,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 4.0,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "C_completed_sources": {
+     "demographics": 66,
+     "endoscopy": 39,
+     "initial_history": 16
+    },
+    "M_release": {
+     "n": 69,
+     "mean": 4.62,
+     "median": 4.0,
+     "q1": 3.0,
+     "q3": 5.0,
+     "min": 1.0,
+     "max": 13.0
+    },
+    "M_completed": {
+     "n": 122,
+     "mean": 4.73,
+     "median": 4.5,
+     "q1": 3.0,
+     "q3": 7.0,
+     "min": 0.0,
+     "max": 13.0
+    },
+    "M_completed_sources": {
+     "demographics": 69,
+     "endoscopy": 39,
+     "initial_history": 14
+    },
+    "C_endoscopy_gap_days": {
+     "n": 39,
+     "mean": 2993.0,
+     "median": 2807.0,
+     "q1": 1827.0,
+     "q3": 3958.0,
+     "min": 839.0,
+     "max": 6341.0
+    },
+    "sex_release": {
+     "M": 64,
+     "F": 18
+    },
+    "sex_n": 82,
+    "smoking_release": {
+     "Y": 33,
+     "N": 11
+    },
+    "smoking_n": 44,
+    "smoking_db_raw_codes_for_missing": {
+     "0": 85,
+     "2": 7,
+     "3": 1,
+     "1": 1
+    },
+    "baseline_grade": {
+     "NDBE": 121,
+     "LGD": 16,
+     "IND": 13
+    },
+    "baseline_grade_n": 150
+   },
+   "P": {
+    "n": 50,
+    "age_release": {
+     "n": 40,
+     "mean": 64.0,
+     "median": 64.69,
+     "q1": 57.08,
+     "q3": 70.53,
+     "min": 39.36,
+     "max": 82.5
+    },
+    "age_completed": {
+     "n": 40,
+     "mean": 64.0,
+     "median": 64.69,
+     "q1": 57.08,
+     "q3": 70.53,
+     "min": 39.36,
+     "max": 82.5
+    },
+    "age_completed_sources": {
+     "demographics": 40
+    },
+    "C_release": {
+     "n": 28,
+     "mean": 1.54,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 2.0,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "C_completed": {
+     "n": 40,
+     "mean": 1.48,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 2.0,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "C_completed_sources": {
+     "demographics": 28,
+     "endoscopy": 10,
+     "initial_history": 2
+    },
+    "M_release": {
+     "n": 31,
+     "mean": 4.58,
+     "median": 4.0,
+     "q1": 2.5,
+     "q3": 5.0,
+     "min": 1.0,
+     "max": 13.0
+    },
+    "M_completed": {
+     "n": 41,
+     "mean": 4.34,
+     "median": 4.0,
+     "q1": 2.0,
+     "q3": 5.0,
+     "min": 0.0,
+     "max": 13.0
+    },
+    "M_completed_sources": {
+     "demographics": 31,
+     "endoscopy": 10
+    },
+    "C_endoscopy_gap_days": {
+     "n": 10,
+     "mean": 2191.0,
+     "median": 1827.0,
+     "q1": 1410.0,
+     "q3": 2406.0,
+     "min": 839.0,
+     "max": 5370.0
+    },
+    "sex_release": {
+     "M": 33,
+     "F": 7
+    },
+    "sex_n": 40,
+    "smoking_release": {
+     "Y": 18,
+     "N": 3
+    },
+    "smoking_n": 21,
+    "smoking_db_raw_codes_for_missing": {
+     "0": 26
+    },
+    "baseline_grade": {
+     "NDBE": 33,
+     "LGD": 11,
+     "IND": 6
+    },
+    "baseline_grade_n": 50
+   },
+   "NP": {
+    "n": 100,
+    "age_release": {
+     "n": 42,
+     "mean": 61.18,
+     "median": 62.52,
+     "q1": 55.71,
+     "q3": 69.05,
+     "min": 37.86,
+     "max": 77.36
+    },
+    "age_completed": {
+     "n": 73,
+     "mean": 61.94,
+     "median": 63.22,
+     "q1": 55.78,
+     "q3": 70.69,
+     "min": 25.17,
+     "max": 81.94
+    },
+    "age_completed_sources": {
+     "demographics": 42,
+     "initial_history": 31
+    },
+    "C_release": {
+     "n": 38,
+     "mean": 1.16,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 1.75,
+     "min": 0.0,
+     "max": 8.0
+    },
+    "C_completed": {
+     "n": 81,
+     "mean": 2.27,
+     "median": 1.0,
+     "q1": 0.0,
+     "q3": 5.0,
+     "min": 0.0,
+     "max": 10.0
+    },
+    "C_completed_sources": {
+     "demographics": 38,
+     "endoscopy": 29,
+     "initial_history": 14
+    },
+    "M_release": {
+     "n": 38,
+     "mean": 4.66,
+     "median": 4.5,
+     "q1": 3.0,
+     "q3": 5.75,
+     "min": 1.0,
+     "max": 10.0
+    },
+    "M_completed": {
+     "n": 81,
+     "mean": 4.93,
+     "median": 5.0,
+     "q1": 3.0,
+     "q3": 7.0,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "M_completed_sources": {
+     "demographics": 38,
+     "endoscopy": 29,
+     "initial_history": 14
+    },
+    "C_endoscopy_gap_days": {
+     "n": 29,
+     "mean": 3269.0,
+     "median": 3220.0,
+     "q1": 2254.0,
+     "q3": 4345.0,
+     "min": 1116.0,
+     "max": 6341.0
+    },
+    "sex_release": {
+     "M": 31,
+     "F": 11
+    },
+    "sex_n": 42,
+    "smoking_release": {
+     "Y": 15,
+     "N": 8
+    },
+    "smoking_n": 23,
+    "smoking_db_raw_codes_for_missing": {
+     "0": 59,
+     "2": 7,
+     "3": 1,
+     "1": 1
+    },
+    "baseline_grade": {
+     "NDBE": 88,
+     "IND": 7,
+     "LGD": 5
+    },
+    "baseline_grade_n": 100
+   }
+  },
+  "setC": {
+   "n_patients": 80,
+   "in_demographics_sheet": 80,
+   "with_participant_id": 78,
+   "first_sample_date_source": "first set C sample: {\"pre_event_cohort.Date\": 80}",
+   "all": {
+    "n": 80,
+    "age_release": {
+     "n": 80,
+     "mean": 62.46,
+     "median": 63.42,
+     "q1": 57.2,
+     "q3": 69.45,
+     "min": 37.86,
+     "max": 82.55
+    },
+    "age_completed": {
+     "n": 80,
+     "mean": 62.46,
+     "median": 63.42,
+     "q1": 57.2,
+     "q3": 69.45,
+     "min": 37.86,
+     "max": 82.55
+    },
+    "age_completed_sources": {
+     "demographics": 80
+    },
+    "C_release": {
+     "n": 64,
+     "mean": 1.28,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 2.0,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "C_completed": {
+     "n": 71,
+     "mean": 1.39,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 2.0,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "C_completed_sources": {
+     "demographics": 64,
+     "endoscopy": 4,
+     "initial_history": 3
+    },
+    "M_release": {
+     "n": 67,
+     "mean": 4.73,
+     "median": 4.0,
+     "q1": 3.0,
+     "q3": 6.0,
+     "min": 1.0,
+     "max": 13.0
+    },
+    "M_completed": {
+     "n": 72,
+     "mean": 4.75,
+     "median": 4.0,
+     "q1": 3.0,
+     "q3": 6.0,
+     "min": 1.0,
+     "max": 13.0
+    },
+    "M_completed_sources": {
+     "demographics": 67,
+     "endoscopy": 4,
+     "initial_history": 1
+    },
+    "C_endoscopy_gap_days": {
+     "n": 4,
+     "mean": 1791.0,
+     "median": 1728.0,
+     "q1": 1392.0,
+     "q3": 2127.0,
+     "min": 1165.0,
+     "max": 2545.0
+    },
+    "sex_release": {
+     "M": 61,
+     "F": 19
+    },
+    "sex_n": 80,
+    "smoking_release": {
+     "Y": 33,
+     "N": 10
+    },
+    "smoking_n": 43,
+    "smoking_db_raw_codes_for_missing": {
+     "0": 24,
+     "2": 2,
+     "3": 1
+    },
+    "baseline_grade": {
+     "NDBE": 55,
+     "LGD": 12,
+     "ID": 11,
+     "HGD": 2
+    },
+    "baseline_grade_n": 80
+   },
+   "P": {
+    "n": 37,
+    "age_release": {
+     "n": 37,
+     "mean": 63.14,
+     "median": 61.23,
+     "q1": 56.55,
+     "q3": 69.22,
+     "min": 42.23,
+     "max": 82.55
+    },
+    "age_completed": {
+     "n": 37,
+     "mean": 63.14,
+     "median": 61.23,
+     "q1": 56.55,
+     "q3": 69.22,
+     "min": 42.23,
+     "max": 82.55
+    },
+    "age_completed_sources": {
+     "demographics": 37
+    },
+    "C_release": {
+     "n": 24,
+     "mean": 1.29,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 1.25,
+     "min": 0.0,
+     "max": 9.0
+    },
+    "C_completed": {
+     "n": 28,
+     "mean": 1.39,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 1.25,
+     "min": 0.0,
+     "max": 9.0
+    },
+    "C_completed_sources": {
+     "demographics": 24,
+     "initial_history": 3,
+     "endoscopy": 1
+    },
+    "M_release": {
+     "n": 27,
+     "mean": 4.74,
+     "median": 4.0,
+     "q1": 3.0,
+     "q3": 6.5,
+     "min": 1.0,
+     "max": 10.0
+    },
+    "M_completed": {
+     "n": 29,
+     "mean": 4.86,
+     "median": 4.0,
+     "q1": 3.0,
+     "q3": 7.0,
+     "min": 1.0,
+     "max": 10.0
+    },
+    "M_completed_sources": {
+     "demographics": 27,
+     "endoscopy": 1,
+     "initial_history": 1
+    },
+    "C_endoscopy_gap_days": {
+     "n": 1,
+     "mean": 2545.0,
+     "median": 2545.0,
+     "q1": 2545.0,
+     "q3": 2545.0,
+     "min": 2545.0,
+     "max": 2545.0
+    },
+    "sex_release": {
+     "M": 29,
+     "F": 8
+    },
+    "sex_n": 37,
+    "smoking_release": {
+     "Y": 17,
+     "N": 4
+    },
+    "smoking_n": 21,
+    "smoking_db_raw_codes_for_missing": {
+     "0": 10
+    },
+    "baseline_grade": {
+     "NDBE": 24,
+     "LGD": 7,
+     "ID": 4,
+     "HGD": 2
+    },
+    "baseline_grade_n": 37
+   },
+   "NP": {
+    "n": 43,
+    "age_release": {
+     "n": 43,
+     "mean": 61.89,
+     "median": 65.54,
+     "q1": 57.27,
+     "q3": 69.61,
+     "min": 37.86,
+     "max": 76.82
+    },
+    "age_completed": {
+     "n": 43,
+     "mean": 61.89,
+     "median": 65.54,
+     "q1": 57.27,
+     "q3": 69.61,
+     "min": 37.86,
+     "max": 76.82
+    },
+    "age_completed_sources": {
+     "demographics": 43
+    },
+    "C_release": {
+     "n": 40,
+     "mean": 1.27,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 2.0,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "C_completed": {
+     "n": 43,
+     "mean": 1.4,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 2.0,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "C_completed_sources": {
+     "demographics": 40,
+     "endoscopy": 3
+    },
+    "M_release": {
+     "n": 40,
+     "mean": 4.72,
+     "median": 4.5,
+     "q1": 3.0,
+     "q3": 5.25,
+     "min": 1.0,
+     "max": 13.0
+    },
+    "M_completed": {
+     "n": 43,
+     "mean": 4.67,
+     "median": 4.0,
+     "q1": 3.0,
+     "q3": 5.0,
+     "min": 1.0,
+     "max": 13.0
+    },
+    "M_completed_sources": {
+     "demographics": 40,
+     "endoscopy": 3
+    },
+    "C_endoscopy_gap_days": {
+     "n": 3,
+     "mean": 1540.0,
+     "median": 1467.0,
+     "q1": 1316.0,
+     "q3": 1728.0,
+     "min": 1165.0,
+     "max": 1988.0
+    },
+    "sex_release": {
+     "M": 32,
+     "F": 11
+    },
+    "sex_n": 43,
+    "smoking_release": {
+     "Y": 16,
+     "N": 6
+    },
+    "smoking_n": 22,
+    "smoking_db_raw_codes_for_missing": {
+     "0": 14,
+     "2": 2,
+     "3": 1
+    },
+    "baseline_grade": {
+     "NDBE": 31,
+     "ID": 7,
+     "LGD": 5
+    },
+    "baseline_grade_n": 43
+   }
+  },
+  "setC_patients_with_hrid": 80
+ },
+ "item7": {
+  "manifest": "/mnt/scratche/slow/fmlab/zuberi01/phd/aceb_meta/ACEB_samples_for Rehan.csv",
+  "samples": 234,
+  "sample_ids_unique": 234,
+  "patients": 117,
+  "batches": {
+   "batch 2": 96,
+   "batch 1": 96,
+   "batch 3": 42
+  },
+  "slx_pools": {
+   "SLX-26851_SLX-27128": 96,
+   "SLX-26195_SLX-26196": 95,
+   "SLX-27125": 42,
+   "SLX-26195": 1
+  },
+  "mean_coverage": {
+   "n": 191,
+   "mean": 5.76,
+   "median": 5.3,
+   "q1": 4.55,
+   "q3": 6.47,
+   "min": 3.29,
+   "max": 14.91
+  },
+  "mean_coverage_by_batch": {
+   "batch 1": {
+    "n": 96,
+    "mean": 6.42,
+    "median": 6.2,
+    "q1": 5.39,
+    "q3": 7.27,
+    "min": 3.55,
+    "max": 11.41
+   },
+   "batch 2": {
+    "n": 95,
+    "mean": 5.09,
+    "median": 4.61,
+    "q1": 4.3,
+    "q3": 5.2,
+    "min": 3.29,
+    "max": 14.91
+   },
+   "batch 3": {
+    "n": 0
+   }
+  },
+  "samples_per_patient": {
+   "n": 117,
+   "mean": 2.0,
+   "median": 2.0,
+   "q1": 1.0,
+   "q3": 2.0,
+   "min": 1.0,
+   "max": 6.0
+  },
+  "columns": [
+   "Batch",
+   "Name",
+   "Index",
+   "PatientID",
+   "Pathology",
+   "Date of extraction",
+   "DNA conc (ng/\u00b5l)",
+   "DNA amount (ng)",
+   "SLX",
+   "SampleID",
+   "Mean_Coverage"
+  ],
+  "imaging_dirs_matching_ace": [],
+  "slide_files_in_aceb_meta": []
+ }
+}

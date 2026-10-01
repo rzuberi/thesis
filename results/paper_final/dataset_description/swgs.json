@@ -1,0 +1,285 @@
+{
+ "part": "swgs",
+ "release": {
+  "all": {
+   "samples": 693,
+   "with_readcount": 693,
+   "with_bam": 693,
+   "split": {
+    "train": 494,
+    "val": 199
+   },
+   "total_reads": {
+    "n": 693,
+    "mean": 19915893.0,
+    "median": 19963683.0,
+    "q1": 15850975.0,
+    "q3": 24046444.0,
+    "min": 97407.0,
+    "max": 77449748.0
+   },
+   "used_reads": {
+    "n": 693,
+    "mean": 19226759.0,
+    "median": 19278010.0,
+    "q1": 15339359.0,
+    "q3": 23208141.0,
+    "min": 93918.0,
+    "max": 75308765.0
+   },
+   "depth_total": {
+    "n": 693,
+    "mean": 0.3224,
+    "median": 0.3232,
+    "q1": 0.2566,
+    "q3": 0.3893,
+    "min": 0.0016,
+    "max": 1.2539
+   },
+   "depth_used": {
+    "n": 693,
+    "mean": 0.3113,
+    "median": 0.3121,
+    "q1": 0.2483,
+    "q3": 0.3757,
+    "min": 0.0015,
+    "max": 1.2193
+   },
+   "read_length_mode": {
+    "50": 693
+   },
+   "read_length_range": [
+    39,
+    50
+   ],
+   "reference": {
+    "hg38.fa": 437,
+    "Pipeline/hg38.fa": 256
+   },
+   "bwa": {
+    "0.7.18-r1243-dirty": 693
+   },
+   "aligner_cmd": {
+    "samse": 693
+   },
+   "genome_len_chr1_22_X_Y": {
+    "3088269832": 693
+   }
+  },
+  "268": {
+   "samples": 199,
+   "with_readcount": 199,
+   "with_bam": 199,
+   "split": {
+    "val": 199
+   },
+   "total_reads": {
+    "n": 199,
+    "mean": 23305421.0,
+    "median": 23952923.0,
+    "q1": 20604849.0,
+    "q3": 26873559.0,
+    "min": 97407.0,
+    "max": 39558553.0
+   },
+   "used_reads": {
+    "n": 199,
+    "mean": 22486067.0,
+    "median": 23007669.0,
+    "q1": 19945798.0,
+    "q3": 26028946.0,
+    "min": 93918.0,
+    "max": 38437798.0
+   },
+   "depth_total": {
+    "n": 199,
+    "mean": 0.3773,
+    "median": 0.3878,
+    "q1": 0.3336,
+    "q3": 0.4351,
+    "min": 0.0016,
+    "max": 0.6405
+   },
+   "depth_used": {
+    "n": 199,
+    "mean": 0.3641,
+    "median": 0.3725,
+    "q1": 0.3229,
+    "q3": 0.4214,
+    "min": 0.0015,
+    "max": 0.6223
+   },
+   "read_length_mode": {
+    "50": 199
+   },
+   "read_length_range": [
+    39,
+    50
+   ],
+   "reference": {
+    "hg38.fa": 191,
+    "Pipeline/hg38.fa": 8
+   },
+   "bwa": {
+    "0.7.18-r1243-dirty": 199
+   },
+   "aligner_cmd": {
+    "samse": 199
+   },
+   "genome_len_chr1_22_X_Y": {
+    "3088269832": 199
+   }
+  },
+  "777": {
+   "samples": 494,
+   "with_readcount": 494,
+   "with_bam": 494,
+   "split": {
+    "train": 494
+   },
+   "total_reads": {
+    "n": 494,
+    "mean": 18550476.0,
+    "median": 18413348.0,
+    "q1": 14577408.0,
+    "q3": 22159697.0,
+    "min": 2534277.0,
+    "max": 77449748.0
+   },
+   "used_reads": {
+    "n": 494,
+    "mean": 17913799.0,
+    "median": 17669189.0,
+    "q1": 14141162.0,
+    "q3": 21430631.0,
+    "min": 2462428.0,
+    "max": 75308765.0
+   },
+   "depth_total": {
+    "n": 494,
+    "mean": 0.3003,
+    "median": 0.2981,
+    "q1": 0.236,
+    "q3": 0.3588,
+    "min": 0.041,
+    "max": 1.2539
+   },
+   "depth_used": {
+    "n": 494,
+    "mean": 0.29,
+    "median": 0.2861,
+    "q1": 0.2289,
+    "q3": 0.347,
+    "min": 0.0399,
+    "max": 1.2193
+   },
+   "read_length_mode": {
+    "50": 494
+   },
+   "read_length_range": [
+    39,
+    50
+   ],
+   "reference": {
+    "Pipeline/hg38.fa": 248,
+    "hg38.fa": 246
+   },
+   "bwa": {
+    "0.7.18-r1243-dirty": 494
+   },
+   "aligner_cmd": {
+    "samse": 494
+   },
+   "genome_len_chr1_22_X_Y": {
+    "3088269832": 494
+   }
+  }
+ },
+ "setC": {
+  "samples": 676,
+  "with_readcount": 676,
+  "with_bam": 676,
+  "split": {
+   "train": 676
+  },
+  "total_reads": {
+   "n": 676,
+   "mean": 18292917.0,
+   "median": 18033248.0,
+   "q1": 14310256.0,
+   "q3": 21948732.0,
+   "min": 2330403.0,
+   "max": 105904745.0
+  },
+  "used_reads": {
+   "n": 676,
+   "mean": 17664763.0,
+   "median": 17432422.0,
+   "q1": 13835200.0,
+   "q3": 21233394.0,
+   "min": 2263712.0,
+   "max": 100764245.0
+  },
+  "depth_total": {
+   "n": 676,
+   "mean": 0.2962,
+   "median": 0.292,
+   "q1": 0.2317,
+   "q3": 0.3554,
+   "min": 0.0377,
+   "max": 1.7146
+  },
+  "depth_used": {
+   "n": 676,
+   "mean": 0.286,
+   "median": 0.2822,
+   "q1": 0.224,
+   "q3": 0.3438,
+   "min": 0.0367,
+   "max": 1.6314
+  },
+  "read_length_mode": {
+   "50": 676
+  },
+  "read_length_range": [
+   38,
+   50
+  ],
+  "reference": {
+   "hg38.fa": 345,
+   "Pipeline/hg38.fa": 331
+  },
+  "bwa": {
+   "0.7.18-r1243-dirty": 676
+  },
+  "aligner_cmd": {
+   "samse": 676
+  },
+  "genome_len_chr1_22_X_Y": {
+   "3088269832": 676
+  }
+ },
+ "setC_sheet_number_of_reads": {
+  "n": 671,
+  "mean": 22805065.0,
+  "median": 21515146.0,
+  "q1": 18005788.0,
+  "q3": 25751185.0,
+  "min": 3872011.0,
+  "max": 220095445.0
+ },
+ "release_cnv_build": {
+  "input_csv": "data/dataset_master_final_ready_nosplits.csv",
+  "segmentation_method": "copynumber::pcf(assembly=hg38)",
+  "centromere_file": "/mnt/scratchc/fmlab/zuberi01/phd/barretts_retraining/barretts_training/data/centromeres_hg38.tsv",
+  "copynumber_version": "1.15.0",
+  "package_versions": {
+   "data.table": "1.17.8",
+   "copynumber": "1.15.0",
+   "glmnet": "4.1.10",
+   "Matrix": "1.7.4",
+   "pROC": "1.19.0.1",
+   "jsonlite": "2.0.0"
+  }
+ }
+}
