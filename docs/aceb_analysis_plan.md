@@ -44,3 +44,4 @@ Scoring uses the average of the five fold models' outputs per slide (image, grad
 ---
 Amendments:
 1. 2026-09-29: the ACE-B primary analysis is now `docs/aceb_primary_killcoyne.md` (L-LATE vs L-CNV on package features, per-sample AUROC, NDBE samples, one-sided; frozen bundle `models/killcoyne_frozen_pkg_v1`, SHA-256 bf1eddeda5083a16ada1ab2a63bb96708686bd05e12120631664541ae0c90776). Everything in this plan becomes secondary. The text above is not edited.
+2. 2026-10-01: CNV depth rule for the ACE-B primary analysis (`docs/paper_survival_horizons.md` H4): ACE-B reads are downsampled to 0.4× nominal depth (reads × modal read length / 3,088,269,832; the depth closest to the discovery training data, median about 0.3×, and Killcoyne's reported depth) before QDNAseq 50 kb binning and the package pipeline; native depth is reported as secondary. Written before any ACE-B outcome is read. The text above is not edited.
