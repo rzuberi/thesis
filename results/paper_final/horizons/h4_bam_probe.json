@@ -1,0 +1,66 @@
+{
+ "groups": {
+  "/mnt/scratche/slow/fmlab/datasets/imaging/SWGCohort/validation_genomics": {
+   "files": 780,
+   "symlinks": 0,
+   "broken_links": 0,
+   "link_target_dirs": {},
+   "bytes_real_files_GB": 1166.6,
+   "ext": {
+    "bwa.bam": 741,
+    "bam": 39
+   },
+   "probe_n": 20,
+   "depth_median": 0.60015,
+   "depth_range": [
+    0.2862,
+    1.0209
+   ],
+   "read_len_mode": {
+    "50": 20
+   },
+   "build": {
+    "hg19": 20
+   },
+   "pg_examples": [
+    "/home/eldrid01/software/bwa/bwa-0.7.15/bwa samse /mnt/scratchb/bioinformatics/reference_data/reference_genomes/homo_sapi",
+    "/home/eldrid01/software/bwa/bwa-0.7.15/bwa samse /mnt/scratchb/bioinformatics/reference_data/reference_genomes/homo_sapi",
+    "/home/eldrid01/software/bwa/bwa-0.7.15/bwa samse /mnt/scratchb/bioinformatics/reference_data/reference_genomes/homo_sapi"
+   ],
+   "names_also_in_dna_seq_bam": 0
+  },
+  "/mnt/scratche/slow/fmlab/zuberi01/phd/barretts_retraining/barretts_training": {
+   "files": 780,
+   "symlinks": 780,
+   "broken_links": 780,
+   "link_target_dirs": {
+    "/scratchc/fmlab/datasets/imaging/SWGCohort/validation_genomics/SLX-10722_SLX-11823/D701_D501.bwa.bam": 4,
+    "/scratchc/fmlab/datasets/imaging/SWGCohort/validation_genomics/SLX-12456_SLX-12458/D702_D504.bwa.bam": 1,
+    "/scratchc/fmlab/datasets/imaging/SWGCohort/validation_genomics/SLX-12456_SLX-12458/D702_D505.bwa.bam": 1,
+    "/scratchc/fmlab/datasets/imaging/SWGCohort/validation_genomics/SLX-12456_SLX-12458/D702_D506.bwa.bam": 1,
+    "/scratchc/fmlab/datasets/imaging/SWGCohort/validation_genomics/SLX-12456_SLX-12458/D702_D507.bwa.bam": 1
+   },
+   "bytes_real_files_GB": 0.0,
+   "ext": {
+    "bam": 780
+   }
+  },
+  "/mnt/scratche/slow/fmlab/zuberi01/phd/barretts_retraining/paper": {
+   "files": 1565,
+   "symlinks": 1557,
+   "broken_links": 1557,
+   "link_target_dirs": {
+    "/scratchc/fmlab/datasets/imaging/SWGCohort/validation_genomics/SLX-10722_SLX-11823/D701_D501.bwa.bam": 5,
+    "/scratchc/fmlab/datasets/imaging/SWGCohort/validation_genomics/SLX-12456_SLX-12458/D702_D504.bwa.bam": 2,
+    "/scratchc/fmlab/datasets/imaging/SWGCohort/validation_genomics/SLX-12456_SLX-12458/D702_D505.bwa.bam": 2,
+    "/scratchc/fmlab/datasets/imaging/SWGCohort/validation_genomics/SLX-12456_SLX-12458/D702_D506.bwa.bam": 2,
+    "/scratchc/fmlab/datasets/imaging/SWGCohort/validation_genomics/SLX-12456_SLX-12458/D702_D507.bwa.bam": 2
+   },
+   "bytes_real_files_GB": 0.0,
+   "ext": {
+    "bam": 1557,
+    "fastq": 8
+   }
+  }
+ }
+}

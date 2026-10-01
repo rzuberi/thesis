@@ -1,0 +1,2121 @@
+{
+ "task": "their_pre",
+ "fold_check_inter_vs_kv": [
+  6760,
+  6760
+ ],
+ "arms": [
+  "L-GRADE",
+  "L-GRADE+age+sex",
+  "L-CNV",
+  "L-IMG",
+  "L-EARLY",
+  "L-INTER",
+  "L-LATE"
+ ],
+ "horizons": [
+  1.0,
+  3.0,
+  5.0
+ ],
+ "units": {
+  "sample": {
+   "n_rows": 571,
+   "n_patients": 75,
+   "n_event_rows": 161,
+   "n_event_patients": 32,
+   "horizons": {
+    "1": {
+     "n_cases": 29,
+     "n_controls": 449,
+     "n_excluded": 93,
+     "n_case_patients": 14,
+     "n_control_patients": 72,
+     "arms": {
+      "L-GRADE": {
+       "ipcw": {
+        "auroc": 0.682,
+        "ci95": [
+         0.543,
+         0.801
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": -0.134,
+         "ci95": [
+          -0.343,
+          0.056
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.188,
+         "ci95": [
+          -0.341,
+          -0.055
+         ],
+         "p_unadjusted": 0.002,
+         "p_max_T": 0.0025
+        }
+       },
+       "unweighted": {
+        "auroc": 0.682,
+        "ci95": [
+         0.543,
+         0.801
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": -0.133,
+         "ci95": [
+          -0.343,
+          0.056
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.187,
+         "ci95": [
+          -0.341,
+          -0.054
+         ]
+        }
+       }
+      },
+      "L-GRADE+age+sex": {
+       "ipcw": {
+        "auroc": 0.68,
+        "ci95": [
+         0.541,
+         0.802
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": -0.135,
+         "ci95": [
+          -0.347,
+          0.052
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.189,
+         "ci95": [
+          -0.35,
+          -0.049
+         ],
+         "p_unadjusted": 0.0015,
+         "p_max_T": 0.0015
+        }
+       },
+       "unweighted": {
+        "auroc": 0.68,
+        "ci95": [
+         0.541,
+         0.802
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": -0.135,
+         "ci95": [
+          -0.347,
+          0.052
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.189,
+         "ci95": [
+          -0.35,
+          -0.048
+         ]
+        }
+       }
+      },
+      "L-CNV": {
+       "ipcw": {
+        "auroc": 0.815,
+        "ci95": [
+         0.698,
+         0.923
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-LATE": {
+         "delta": -0.054,
+         "ci95": [
+          -0.151,
+          0.043
+         ],
+         "p_unadjusted": 0.3738,
+         "p_max_T": 0.7776
+        }
+       },
+       "unweighted": {
+        "auroc": 0.815,
+        "ci95": [
+         0.698,
+         0.923
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-LATE": {
+         "delta": -0.054,
+         "ci95": [
+          -0.151,
+          0.043
+         ]
+        }
+       }
+      },
+      "L-IMG": {
+       "ipcw": {
+        "auroc": 0.782,
+        "ci95": [
+         0.668,
+         0.869
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": -0.033,
+         "ci95": [
+          -0.217,
+          0.136
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.087,
+         "ci95": [
+          -0.182,
+          -0.009
+         ],
+         "p_unadjusted": 0.066,
+         "p_max_T": 0.3513
+        }
+       },
+       "unweighted": {
+        "auroc": 0.782,
+        "ci95": [
+         0.668,
+         0.869
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": -0.033,
+         "ci95": [
+          -0.217,
+          0.136
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.087,
+         "ci95": [
+          -0.182,
+          -0.009
+         ]
+        }
+       }
+      },
+      "L-EARLY": {
+       "ipcw": {
+        "auroc": 0.853,
+        "ci95": [
+         0.756,
+         0.931
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.037,
+         "ci95": [
+          -0.03,
+          0.105
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.017,
+         "ci95": [
+          -0.078,
+          0.042
+         ],
+         "p_unadjusted": 0.8416,
+         "p_max_T": 0.999
+        }
+       },
+       "unweighted": {
+        "auroc": 0.853,
+        "ci95": [
+         0.756,
+         0.931
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.037,
+         "ci95": [
+          -0.03,
+          0.104
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.017,
+         "ci95": [
+          -0.078,
+          0.042
+         ]
+        }
+       }
+      },
+      "L-INTER": {
+       "ipcw": {
+        "auroc": 0.829,
+        "ci95": [
+         0.737,
+         0.915
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.013,
+         "ci95": [
+          -0.067,
+          0.091
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.041,
+         "ci95": [
+          -0.102,
+          0.026
+         ],
+         "p_unadjusted": 0.3638,
+         "p_max_T": 0.915
+        }
+       },
+       "unweighted": {
+        "auroc": 0.829,
+        "ci95": [
+         0.736,
+         0.915
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.013,
+         "ci95": [
+          -0.067,
+          0.091
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.041,
+         "ci95": [
+          -0.102,
+          0.026
+         ]
+        }
+       }
+      },
+      "L-LATE": {
+       "ipcw": {
+        "auroc": 0.869,
+        "ci95": [
+         0.806,
+         0.921
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.054,
+         "ci95": [
+          -0.043,
+          0.151
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.869,
+        "ci95": [
+         0.806,
+         0.921
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.054,
+         "ci95": [
+          -0.043,
+          0.151
+         ]
+        }
+       }
+      }
+     }
+    },
+    "3": {
+     "n_cases": 99,
+     "n_controls": 277,
+     "n_excluded": 195,
+     "n_case_patients": 29,
+     "n_control_patients": 62,
+     "arms": {
+      "L-GRADE": {
+       "ipcw": {
+        "auroc": 0.46,
+        "ci95": [
+         0.334,
+         0.597
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": -0.315,
+         "ci95": [
+          -0.47,
+          -0.149
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.395,
+         "ci95": [
+          -0.51,
+          -0.277
+         ],
+         "p_unadjusted": 0.0005,
+         "p_max_T": 0.0005
+        }
+       },
+       "unweighted": {
+        "auroc": 0.471,
+        "ci95": [
+         0.345,
+         0.603
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": -0.305,
+         "ci95": [
+          -0.459,
+          -0.141
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.384,
+         "ci95": [
+          -0.503,
+          -0.268
+         ]
+        }
+       }
+      },
+      "L-GRADE+age+sex": {
+       "ipcw": {
+        "auroc": 0.445,
+        "ci95": [
+         0.321,
+         0.577
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": -0.33,
+         "ci95": [
+          -0.489,
+          -0.161
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.409,
+         "ci95": [
+          -0.531,
+          -0.288
+         ],
+         "p_unadjusted": 0.0005,
+         "p_max_T": 0.0005
+        }
+       },
+       "unweighted": {
+        "auroc": 0.456,
+        "ci95": [
+         0.333,
+         0.585
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": -0.319,
+         "ci95": [
+          -0.476,
+          -0.154
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.399,
+         "ci95": [
+          -0.521,
+          -0.278
+         ]
+        }
+       }
+      },
+      "L-CNV": {
+       "ipcw": {
+        "auroc": 0.775,
+        "ci95": [
+         0.683,
+         0.86
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-LATE": {
+         "delta": -0.08,
+         "ci95": [
+          -0.157,
+          -0.015
+         ],
+         "p_unadjusted": 0.027,
+         "p_max_T": 0.3188
+        }
+       },
+       "unweighted": {
+        "auroc": 0.775,
+        "ci95": [
+         0.683,
+         0.863
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-LATE": {
+         "delta": -0.08,
+         "ci95": [
+          -0.153,
+          -0.016
+         ]
+        }
+       }
+      },
+      "L-IMG": {
+       "ipcw": {
+        "auroc": 0.817,
+        "ci95": [
+         0.731,
+         0.894
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.041,
+         "ci95": [
+          -0.061,
+          0.147
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.038,
+         "ci95": [
+          -0.084,
+          0.001
+         ],
+         "p_unadjusted": 0.1444,
+         "p_max_T": 0.8386
+        }
+       },
+       "unweighted": {
+        "auroc": 0.816,
+        "ci95": [
+         0.73,
+         0.892
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.041,
+         "ci95": [
+          -0.063,
+          0.147
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.039,
+         "ci95": [
+          -0.086,
+          0.0
+         ]
+        }
+       }
+      },
+      "L-EARLY": {
+       "ipcw": {
+        "auroc": 0.828,
+        "ci95": [
+         0.747,
+         0.902
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.052,
+         "ci95": [
+          0.002,
+          0.113
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.027,
+         "ci95": [
+          -0.067,
+          0.01
+         ],
+         "p_unadjusted": 0.3268,
+         "p_max_T": 0.943
+        }
+       },
+       "unweighted": {
+        "auroc": 0.828,
+        "ci95": [
+         0.747,
+         0.902
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.052,
+         "ci95": [
+          0.003,
+          0.113
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.028,
+         "ci95": [
+          -0.07,
+          0.011
+         ]
+        }
+       }
+      },
+      "L-INTER": {
+       "ipcw": {
+        "auroc": 0.818,
+        "ci95": [
+         0.734,
+         0.898
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.043,
+         "ci95": [
+          -0.033,
+          0.127
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.037,
+         "ci95": [
+          -0.083,
+          0.012
+         ],
+         "p_unadjusted": 0.2584,
+         "p_max_T": 0.8521
+        }
+       },
+       "unweighted": {
+        "auroc": 0.817,
+        "ci95": [
+         0.734,
+         0.897
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.042,
+         "ci95": [
+          -0.03,
+          0.125
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.038,
+         "ci95": [
+          -0.086,
+          0.011
+         ]
+        }
+       }
+      },
+      "L-LATE": {
+       "ipcw": {
+        "auroc": 0.855,
+        "ci95": [
+         0.778,
+         0.922
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.08,
+         "ci95": [
+          0.015,
+          0.157
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.855,
+        "ci95": [
+         0.778,
+         0.923
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.08,
+         "ci95": [
+          0.016,
+          0.153
+         ]
+        }
+       }
+      }
+     }
+    },
+    "5": {
+     "n_cases": 126,
+     "n_controls": 168,
+     "n_excluded": 277,
+     "n_case_patients": 32,
+     "n_control_patients": 46,
+     "arms": {
+      "L-GRADE": {
+       "ipcw": {
+        "auroc": 0.439,
+        "ci95": [
+         0.337,
+         0.554
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": -0.353,
+         "ci95": [
+          -0.485,
+          -0.203
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.406,
+         "ci95": [
+          -0.508,
+          -0.295
+         ],
+         "p_unadjusted": 0.0005,
+         "p_max_T": 0.0005
+        }
+       },
+       "unweighted": {
+        "auroc": 0.453,
+        "ci95": [
+         0.35,
+         0.572
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": -0.338,
+         "ci95": [
+          -0.476,
+          -0.186
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.397,
+         "ci95": [
+          -0.501,
+          -0.288
+         ]
+        }
+       }
+      },
+      "L-GRADE+age+sex": {
+       "ipcw": {
+        "auroc": 0.43,
+        "ci95": [
+         0.33,
+         0.545
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": -0.362,
+         "ci95": [
+          -0.494,
+          -0.211
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.414,
+         "ci95": [
+          -0.52,
+          -0.302
+         ],
+         "p_unadjusted": 0.0005,
+         "p_max_T": 0.0005
+        }
+       },
+       "unweighted": {
+        "auroc": 0.444,
+        "ci95": [
+         0.342,
+         0.562
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": -0.347,
+         "ci95": [
+          -0.487,
+          -0.194
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.406,
+         "ci95": [
+          -0.513,
+          -0.294
+         ]
+        }
+       }
+      },
+      "L-CNV": {
+       "ipcw": {
+        "auroc": 0.792,
+        "ci95": [
+         0.698,
+         0.871
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-LATE": {
+         "delta": -0.053,
+         "ci95": [
+          -0.131,
+          0.011
+         ],
+         "p_unadjusted": 0.1384,
+         "p_max_T": 0.7021
+        }
+       },
+       "unweighted": {
+        "auroc": 0.792,
+        "ci95": [
+         0.696,
+         0.873
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-LATE": {
+         "delta": -0.059,
+         "ci95": [
+          -0.136,
+          0.004
+         ]
+        }
+       }
+      },
+      "L-IMG": {
+       "ipcw": {
+        "auroc": 0.786,
+        "ci95": [
+         0.714,
+         0.856
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": -0.005,
+         "ci95": [
+          -0.111,
+          0.115
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.058,
+         "ci95": [
+          -0.109,
+          -0.004
+         ],
+         "p_unadjusted": 0.056,
+         "p_max_T": 0.6297
+        }
+       },
+       "unweighted": {
+        "auroc": 0.795,
+        "ci95": [
+         0.722,
+         0.864
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.004,
+         "ci95": [
+          -0.101,
+          0.12
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.055,
+         "ci95": [
+          -0.103,
+          -0.006
+         ]
+        }
+       }
+      },
+      "L-EARLY": {
+       "ipcw": {
+        "auroc": 0.82,
+        "ci95": [
+         0.745,
+         0.886
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.029,
+         "ci95": [
+          -0.027,
+          0.095
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.024,
+         "ci95": [
+          -0.076,
+          0.026
+         ],
+         "p_unadjusted": 0.4588,
+         "p_max_T": 0.9805
+        }
+       },
+       "unweighted": {
+        "auroc": 0.823,
+        "ci95": [
+         0.745,
+         0.891
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.031,
+         "ci95": [
+          -0.022,
+          0.097
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.028,
+         "ci95": [
+          -0.078,
+          0.017
+         ]
+        }
+       }
+      },
+      "L-INTER": {
+       "ipcw": {
+        "auroc": 0.787,
+        "ci95": [
+         0.697,
+         0.872
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": -0.004,
+         "ci95": [
+          -0.086,
+          0.081
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.057,
+         "ci95": [
+          -0.123,
+          0.006
+         ],
+         "p_unadjusted": 0.2069,
+         "p_max_T": 0.6432
+        }
+       },
+       "unweighted": {
+        "auroc": 0.793,
+        "ci95": [
+         0.704,
+         0.875
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.001,
+         "ci95": [
+          -0.08,
+          0.084
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.058,
+         "ci95": [
+          -0.121,
+          0.001
+         ]
+        }
+       }
+      },
+      "L-LATE": {
+       "ipcw": {
+        "auroc": 0.844,
+        "ci95": [
+         0.777,
+         0.902
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.053,
+         "ci95": [
+          -0.011,
+          0.131
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.851,
+        "ci95": [
+         0.784,
+         0.908
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.059,
+         "ci95": [
+          -0.004,
+          0.136
+         ]
+        }
+       }
+      }
+     }
+    }
+   },
+   "cindex": {
+    "L-GRADE": {
+     "harrell": {
+      "c": 0.51,
+      "ci95": [
+       0.411,
+       0.613
+      ]
+     },
+     "uno": {
+      "c": 0.479,
+      "ci95": [
+       0.382,
+       0.572
+      ]
+     }
+    },
+    "L-GRADE+age+sex": {
+     "harrell": {
+      "c": 0.499,
+      "ci95": [
+       0.402,
+       0.601
+      ]
+     },
+     "uno": {
+      "c": 0.474,
+      "ci95": [
+       0.373,
+       0.568
+      ]
+     }
+    },
+    "L-CNV": {
+     "harrell": {
+      "c": 0.762,
+      "ci95": [
+       0.684,
+       0.834
+      ]
+     },
+     "uno": {
+      "c": 0.738,
+      "ci95": [
+       0.65,
+       0.823
+      ]
+     }
+    },
+    "L-IMG": {
+     "harrell": {
+      "c": 0.778,
+      "ci95": [
+       0.712,
+       0.838
+      ]
+     },
+     "uno": {
+      "c": 0.752,
+      "ci95": [
+       0.695,
+       0.82
+      ]
+     }
+    },
+    "L-EARLY": {
+     "harrell": {
+      "c": 0.802,
+      "ci95": [
+       0.734,
+       0.869
+      ]
+     },
+     "uno": {
+      "c": 0.793,
+      "ci95": [
+       0.718,
+       0.862
+      ]
+     }
+    },
+    "L-INTER": {
+     "harrell": {
+      "c": 0.777,
+      "ci95": [
+       0.705,
+       0.851
+      ]
+     },
+     "uno": {
+      "c": 0.773,
+      "ci95": [
+       0.698,
+       0.842
+      ]
+     }
+    },
+    "L-LATE": {
+     "harrell": {
+      "c": 0.824,
+      "ci95": [
+       0.764,
+       0.877
+      ]
+     },
+     "uno": {
+      "c": 0.802,
+      "ci95": [
+       0.74,
+       0.862
+      ]
+     }
+    }
+   }
+  },
+  "patient": {
+   "n_rows": 71,
+   "n_patients": 71,
+   "n_event_rows": 28,
+   "n_event_patients": 28,
+   "horizons": {
+    "1": {
+     "n_cases": 2,
+     "n_controls": 69,
+     "n_excluded": 0,
+     "n_case_patients": 2,
+     "n_control_patients": 69,
+     "arms": {
+      "L-GRADE": {
+       "ipcw": {
+        "auroc": 0.754,
+        "ci95": [
+         0.471,
+         0.986
+        ],
+        "valid_draws": 1743,
+        "delta_vs_L-CNV": {
+         "delta": -0.181,
+         "ci95": [
+          -0.456,
+          0.043
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.087,
+         "ci95": [
+          -0.319,
+          0.1
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.754,
+        "ci95": [
+         0.471,
+         0.986
+        ],
+        "valid_draws": 1743,
+        "delta_vs_L-CNV": {
+         "delta": -0.181,
+         "ci95": [
+          -0.456,
+          0.043
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.087,
+         "ci95": [
+          -0.319,
+          0.1
+         ]
+        }
+       }
+      },
+      "L-GRADE+age+sex": {
+       "ipcw": {
+        "auroc": 0.826,
+        "ci95": [
+         0.637,
+         0.971
+        ],
+        "valid_draws": 1743,
+        "delta_vs_L-CNV": {
+         "delta": -0.109,
+         "ci95": [
+          -0.292,
+          0.029
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.014,
+         "ci95": [
+          -0.171,
+          0.1
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.826,
+        "ci95": [
+         0.637,
+         0.971
+        ],
+        "valid_draws": 1743,
+        "delta_vs_L-CNV": {
+         "delta": -0.109,
+         "ci95": [
+          -0.292,
+          0.029
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.014,
+         "ci95": [
+          -0.171,
+          0.1
+         ]
+        }
+       }
+      },
+      "L-CNV": {
+       "ipcw": {
+        "auroc": 0.935,
+        "ci95": [
+         0.857,
+         0.986
+        ],
+        "valid_draws": 1743,
+        "delta_vs_L-LATE": {
+         "delta": 0.094,
+         "ci95": [
+          0.0,
+          0.203
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.935,
+        "ci95": [
+         0.857,
+         0.986
+        ],
+        "valid_draws": 1743,
+        "delta_vs_L-LATE": {
+         "delta": 0.094,
+         "ci95": [
+          0.0,
+          0.203
+         ]
+        }
+       }
+      },
+      "L-IMG": {
+       "ipcw": {
+        "auroc": 0.565,
+        "ci95": [
+         0.371,
+         0.754
+        ],
+        "valid_draws": 1743,
+        "delta_vs_L-CNV": {
+         "delta": -0.37,
+         "ci95": [
+          -0.543,
+          -0.2
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.275,
+         "ci95": [
+          -0.398,
+          -0.164
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.565,
+        "ci95": [
+         0.371,
+         0.754
+        ],
+        "valid_draws": 1743,
+        "delta_vs_L-CNV": {
+         "delta": -0.37,
+         "ci95": [
+          -0.543,
+          -0.2
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.275,
+         "ci95": [
+          -0.398,
+          -0.164
+         ]
+        }
+       }
+      },
+      "L-EARLY": {
+       "ipcw": {
+        "auroc": 0.906,
+        "ci95": [
+         0.797,
+         0.986
+        ],
+        "valid_draws": 1743,
+        "delta_vs_L-CNV": {
+         "delta": -0.029,
+         "ci95": [
+          -0.157,
+          0.087
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": 0.065,
+         "ci95": [
+          -0.103,
+          0.257
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.906,
+        "ci95": [
+         0.797,
+         0.986
+        ],
+        "valid_draws": 1743,
+        "delta_vs_L-CNV": {
+         "delta": -0.029,
+         "ci95": [
+          -0.157,
+          0.087
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": 0.065,
+         "ci95": [
+          -0.103,
+          0.257
+         ]
+        }
+       }
+      },
+      "L-INTER": {
+       "ipcw": {
+        "auroc": 0.891,
+        "ci95": [
+         0.814,
+         0.957
+        ],
+        "valid_draws": 1743,
+        "delta_vs_L-CNV": {
+         "delta": -0.043,
+         "ci95": [
+          -0.116,
+          0.014
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": 0.051,
+         "ci95": [
+          -0.071,
+          0.2
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.891,
+        "ci95": [
+         0.814,
+         0.957
+        ],
+        "valid_draws": 1743,
+        "delta_vs_L-CNV": {
+         "delta": -0.043,
+         "ci95": [
+          -0.116,
+          0.014
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": 0.051,
+         "ci95": [
+          -0.071,
+          0.2
+         ]
+        }
+       }
+      },
+      "L-LATE": {
+       "ipcw": {
+        "auroc": 0.841,
+        "ci95": [
+         0.7,
+         0.957
+        ],
+        "valid_draws": 1743,
+        "delta_vs_L-CNV": {
+         "delta": -0.094,
+         "ci95": [
+          -0.203,
+          0.0
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.841,
+        "ci95": [
+         0.7,
+         0.957
+        ],
+        "valid_draws": 1743,
+        "delta_vs_L-CNV": {
+         "delta": -0.094,
+         "ci95": [
+          -0.203,
+          0.0
+         ]
+        }
+       }
+      }
+     }
+    },
+    "3": {
+     "n_cases": 9,
+     "n_controls": 59,
+     "n_excluded": 3,
+     "n_case_patients": 9,
+     "n_control_patients": 59,
+     "arms": {
+      "L-GRADE": {
+       "ipcw": {
+        "auroc": 0.393,
+        "ci95": [
+         0.149,
+         0.642
+        ],
+        "valid_draws": 1998,
+        "delta_vs_L-CNV": {
+         "delta": -0.375,
+         "ci95": [
+          -0.605,
+          -0.16
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.427,
+         "ci95": [
+          -0.642,
+          -0.211
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.394,
+        "ci95": [
+         0.15,
+         0.645
+        ],
+        "valid_draws": 1998,
+        "delta_vs_L-CNV": {
+         "delta": -0.373,
+         "ci95": [
+          -0.604,
+          -0.159
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.426,
+         "ci95": [
+          -0.642,
+          -0.208
+         ]
+        }
+       }
+      },
+      "L-GRADE+age+sex": {
+       "ipcw": {
+        "auroc": 0.369,
+        "ci95": [
+         0.121,
+         0.64
+        ],
+        "valid_draws": 1998,
+        "delta_vs_L-CNV": {
+         "delta": -0.398,
+         "ci95": [
+          -0.617,
+          -0.18
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.451,
+         "ci95": [
+          -0.678,
+          -0.214
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.371,
+        "ci95": [
+         0.123,
+         0.642
+        ],
+        "valid_draws": 1998,
+        "delta_vs_L-CNV": {
+         "delta": -0.395,
+         "ci95": [
+          -0.615,
+          -0.18
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.448,
+         "ci95": [
+          -0.676,
+          -0.211
+         ]
+        }
+       }
+      },
+      "L-CNV": {
+       "ipcw": {
+        "auroc": 0.767,
+        "ci95": [
+         0.548,
+         0.934
+        ],
+        "valid_draws": 1998,
+        "delta_vs_L-LATE": {
+         "delta": -0.053,
+         "ci95": [
+          -0.169,
+          0.054
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.766,
+        "ci95": [
+         0.543,
+         0.934
+        ],
+        "valid_draws": 1998,
+        "delta_vs_L-LATE": {
+         "delta": -0.053,
+         "ci95": [
+          -0.17,
+          0.054
+         ]
+        }
+       }
+      },
+      "L-IMG": {
+       "ipcw": {
+        "auroc": 0.802,
+        "ci95": [
+         0.657,
+         0.913
+        ],
+        "valid_draws": 1998,
+        "delta_vs_L-CNV": {
+         "delta": 0.035,
+         "ci95": [
+          -0.179,
+          0.251
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.018,
+         "ci95": [
+          -0.139,
+          0.093
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.8,
+        "ci95": [
+         0.655,
+         0.912
+        ],
+        "valid_draws": 1998,
+        "delta_vs_L-CNV": {
+         "delta": 0.034,
+         "ci95": [
+          -0.183,
+          0.251
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.019,
+         "ci95": [
+          -0.142,
+          0.094
+         ]
+        }
+       }
+      },
+      "L-EARLY": {
+       "ipcw": {
+        "auroc": 0.831,
+        "ci95": [
+         0.661,
+         0.963
+        ],
+        "valid_draws": 1998,
+        "delta_vs_L-CNV": {
+         "delta": 0.064,
+         "ci95": [
+          -0.044,
+          0.181
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": 0.012,
+         "ci95": [
+          -0.094,
+          0.127
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.831,
+        "ci95": [
+         0.661,
+         0.963
+        ],
+        "valid_draws": 1998,
+        "delta_vs_L-CNV": {
+         "delta": 0.064,
+         "ci95": [
+          -0.044,
+          0.183
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": 0.011,
+         "ci95": [
+          -0.095,
+          0.128
+         ]
+        }
+       }
+      },
+      "L-INTER": {
+       "ipcw": {
+        "auroc": 0.885,
+        "ci95": [
+         0.779,
+         0.962
+        ],
+        "valid_draws": 1998,
+        "delta_vs_L-CNV": {
+         "delta": 0.118,
+         "ci95": [
+          -0.017,
+          0.29
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": 0.065,
+         "ci95": [
+          -0.026,
+          0.176
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.885,
+        "ci95": [
+         0.78,
+         0.961
+        ],
+        "valid_draws": 1998,
+        "delta_vs_L-CNV": {
+         "delta": 0.119,
+         "ci95": [
+          -0.017,
+          0.292
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": 0.066,
+         "ci95": [
+          -0.026,
+          0.177
+         ]
+        }
+       }
+      },
+      "L-LATE": {
+       "ipcw": {
+        "auroc": 0.82,
+        "ci95": [
+         0.675,
+         0.933
+        ],
+        "valid_draws": 1998,
+        "delta_vs_L-CNV": {
+         "delta": 0.053,
+         "ci95": [
+          -0.054,
+          0.169
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.819,
+        "ci95": [
+         0.674,
+         0.933
+        ],
+        "valid_draws": 1998,
+        "delta_vs_L-CNV": {
+         "delta": 0.053,
+         "ci95": [
+          -0.054,
+          0.17
+         ]
+        }
+       }
+      }
+     }
+    },
+    "5": {
+     "n_cases": 15,
+     "n_controls": 39,
+     "n_excluded": 17,
+     "n_case_patients": 15,
+     "n_control_patients": 39,
+     "arms": {
+      "L-GRADE": {
+       "ipcw": {
+        "auroc": 0.434,
+        "ci95": [
+         0.248,
+         0.615
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": -0.291,
+         "ci95": [
+          -0.511,
+          -0.072
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.33,
+         "ci95": [
+          -0.554,
+          -0.088
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.426,
+        "ci95": [
+         0.241,
+         0.611
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": -0.308,
+         "ci95": [
+          -0.52,
+          -0.096
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.345,
+         "ci95": [
+          -0.561,
+          -0.104
+         ]
+        }
+       }
+      },
+      "L-GRADE+age+sex": {
+       "ipcw": {
+        "auroc": 0.406,
+        "ci95": [
+         0.231,
+         0.591
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": -0.319,
+         "ci95": [
+          -0.527,
+          -0.105
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.358,
+         "ci95": [
+          -0.57,
+          -0.117
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.402,
+        "ci95": [
+         0.225,
+         0.592
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": -0.332,
+         "ci95": [
+          -0.535,
+          -0.122
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.369,
+         "ci95": [
+          -0.576,
+          -0.13
+         ]
+        }
+       }
+      },
+      "L-CNV": {
+       "ipcw": {
+        "auroc": 0.725,
+        "ci95": [
+         0.573,
+         0.864
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-LATE": {
+         "delta": -0.039,
+         "ci95": [
+          -0.149,
+          0.069
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.733,
+        "ci95": [
+         0.579,
+         0.871
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-LATE": {
+         "delta": -0.038,
+         "ci95": [
+          -0.143,
+          0.07
+         ]
+        }
+       }
+      },
+      "L-IMG": {
+       "ipcw": {
+        "auroc": 0.749,
+        "ci95": [
+         0.598,
+         0.88
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.024,
+         "ci95": [
+          -0.169,
+          0.196
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.016,
+         "ci95": [
+          -0.121,
+          0.081
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.75,
+        "ci95": [
+         0.602,
+         0.879
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.017,
+         "ci95": [
+          -0.179,
+          0.191
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.021,
+         "ci95": [
+          -0.126,
+          0.077
+         ]
+        }
+       }
+      },
+      "L-EARLY": {
+       "ipcw": {
+        "auroc": 0.73,
+        "ci95": [
+         0.577,
+         0.857
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.005,
+         "ci95": [
+          -0.121,
+          0.12
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.034,
+         "ci95": [
+          -0.156,
+          0.08
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.733,
+        "ci95": [
+         0.579,
+         0.862
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.0,
+         "ci95": [
+          -0.123,
+          0.114
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": -0.038,
+         "ci95": [
+          -0.158,
+          0.07
+         ]
+        }
+       }
+      },
+      "L-INTER": {
+       "ipcw": {
+        "auroc": 0.784,
+        "ci95": [
+         0.655,
+         0.901
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.059,
+         "ci95": [
+          -0.069,
+          0.192
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": 0.02,
+         "ci95": [
+          -0.091,
+          0.136
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.791,
+        "ci95": [
+         0.664,
+         0.905
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.058,
+         "ci95": [
+          -0.07,
+          0.193
+         ]
+        },
+        "delta_vs_L-LATE": {
+         "delta": 0.021,
+         "ci95": [
+          -0.091,
+          0.134
+         ]
+        }
+       }
+      },
+      "L-LATE": {
+       "ipcw": {
+        "auroc": 0.764,
+        "ci95": [
+         0.613,
+         0.889
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.039,
+         "ci95": [
+          -0.069,
+          0.149
+         ]
+        }
+       },
+       "unweighted": {
+        "auroc": 0.771,
+        "ci95": [
+         0.625,
+         0.891
+        ],
+        "valid_draws": 2000,
+        "delta_vs_L-CNV": {
+         "delta": 0.038,
+         "ci95": [
+          -0.07,
+          0.143
+         ]
+        }
+       }
+      }
+     }
+    }
+   },
+   "cindex": {
+    "L-GRADE": {
+     "harrell": {
+      "c": 0.426,
+      "ci95": [
+       0.278,
+       0.579
+      ]
+     },
+     "uno": {
+      "c": 0.432,
+      "ci95": [
+       0.301,
+       0.565
+      ]
+     }
+    },
+    "L-GRADE+age+sex": {
+     "harrell": {
+      "c": 0.411,
+      "ci95": [
+       0.26,
+       0.577
+      ]
+     },
+     "uno": {
+      "c": 0.415,
+      "ci95": [
+       0.275,
+       0.568
+      ]
+     }
+    },
+    "L-CNV": {
+     "harrell": {
+      "c": 0.764,
+      "ci95": [
+       0.641,
+       0.87
+      ]
+     },
+     "uno": {
+      "c": 0.769,
+      "ci95": [
+       0.658,
+       0.861
+      ]
+     }
+    },
+    "L-IMG": {
+     "harrell": {
+      "c": 0.751,
+      "ci95": [
+       0.647,
+       0.845
+      ]
+     },
+     "uno": {
+      "c": 0.755,
+      "ci95": [
+       0.654,
+       0.851
+      ]
+     }
+    },
+    "L-EARLY": {
+     "harrell": {
+      "c": 0.78,
+      "ci95": [
+       0.677,
+       0.875
+      ]
+     },
+     "uno": {
+      "c": 0.799,
+      "ci95": [
+       0.704,
+       0.888
+      ]
+     }
+    },
+    "L-INTER": {
+     "harrell": {
+      "c": 0.812,
+      "ci95": [
+       0.731,
+       0.881
+      ]
+     },
+     "uno": {
+      "c": 0.804,
+      "ci95": [
+       0.719,
+       0.876
+      ]
+     }
+    },
+    "L-LATE": {
+     "harrell": {
+      "c": 0.802,
+      "ci95": [
+       0.711,
+       0.879
+      ]
+     },
+     "uno": {
+      "c": 0.818,
+      "ci95": [
+       0.731,
+       0.895
+      ]
+     }
+    }
+   }
+  }
+ }
+}
