@@ -1,0 +1,1825 @@
+{
+ "part": "d3",
+ "aceb_linkage": {
+  "patients": 117,
+  "pid_status": {
+   "one": 91,
+   "none": 26
+  },
+  "mapping_file": "/mnt/scratche/slow/fmlab/zuberi01/phd/aceb_meta/aceb_rehan_study_number_match_table_20260527_1323.csv"
+ },
+ "discovery_linkage": {
+  "patients": 80,
+  "with_pid": 78,
+  "in_sqlite": 80
+ },
+ "release_linkage": {
+  "patients": 150,
+  "with_pid": 149,
+  "in_sqlite": 150
+ },
+ "coverage": {
+  "discovery": {
+   "all": {
+    "N": 80,
+    "with_participant_id": 78,
+    "age_first_sample_sheet": {
+     "n": 80,
+     "mean": 62.46,
+     "median": 63.42,
+     "q1": 57.2,
+     "q3": 69.45,
+     "min": 37.86,
+     "max": 82.55
+    },
+    "age_first_sample_db": {
+     "n": 36,
+     "mean": 58.94,
+     "median": 62.39,
+     "q1": 55.69,
+     "q3": 69.01,
+     "min": -2.08,
+     "max": 78.54
+    },
+    "age_dx_sheet": {
+     "n": 80,
+     "mean": 60.51,
+     "median": 61.5,
+     "q1": 55.0,
+     "q3": 67.0,
+     "min": 36.0,
+     "max": 82.0
+    },
+    "age_dx_db": {
+     "n": 24,
+     "mean": 62.24,
+     "median": 63.18,
+     "q1": 58.51,
+     "q3": 68.0,
+     "min": 38.56,
+     "max": 78.89
+    },
+    "age_dx_sqlite": {
+     "n": 80,
+     "mean": 60.51,
+     "median": 61.5,
+     "q1": 55.0,
+     "q3": 67.0,
+     "min": 36.0,
+     "max": 82.0
+    },
+    "prague_c_sheet": {
+     "n": 64,
+     "mean": 1.28,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 2.0,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "prague_c_db": {
+     "n": 24,
+     "mean": 1.33,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 2.25,
+     "min": 0.0,
+     "max": 6.0
+    },
+    "prague_c_ih": {
+     "n": 21,
+     "mean": 2.67,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 5.0,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "prague_c_sqlite": {
+     "n": 64,
+     "mean": 1.28,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 2.0,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "prague_m_sheet": {
+     "n": 67,
+     "mean": 4.73,
+     "median": 4.0,
+     "q1": 3.0,
+     "q3": 6.0,
+     "min": 1.0,
+     "max": 13.0
+    },
+    "prague_m_db": {
+     "n": 24,
+     "mean": 2.25,
+     "median": 3.0,
+     "q1": 0.0,
+     "q3": 4.0,
+     "min": 0.0,
+     "max": 6.0
+    },
+    "prague_m_ih": {
+     "n": 22,
+     "mean": 5.16,
+     "median": 5.0,
+     "q1": 3.25,
+     "q3": 6.75,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "prague_m_sqlite": {
+     "n": 67,
+     "mean": 4.73,
+     "median": 4.0,
+     "q1": 3.0,
+     "q3": 6.0,
+     "min": 1.0,
+     "max": 13.0
+    },
+    "prague_c_gap": {
+     "n": 24,
+     "mean": 4430.21,
+     "median": 4581.5,
+     "q1": 2923.25,
+     "q3": 5824.75,
+     "min": 1165.0,
+     "max": 8159.0
+    },
+    "prague_m_gap": {
+     "n": 24,
+     "mean": 4430.21,
+     "median": 4581.5,
+     "q1": 2923.25,
+     "q3": 5824.75,
+     "min": 1165.0,
+     "max": 8159.0
+    },
+    "hiatal_hernia_gap": {
+     "n": 21,
+     "mean": 5072.14,
+     "median": 5254.0,
+     "q1": 3649.0,
+     "q3": 5849.0,
+     "min": 1488.0,
+     "max": 8159.0
+    },
+    "bmi_db_num": {
+     "n": 3,
+     "mean": 27.51,
+     "median": 28.47,
+     "q1": 26.85,
+     "q3": 28.64,
+     "min": 25.24,
+     "max": 28.82
+    },
+    "bmi_sqlite": {
+     "n": 32,
+     "mean": 28.46,
+     "median": 27.74,
+     "q1": 26.2,
+     "q3": 30.75,
+     "min": 14.7,
+     "max": 37.97
+    },
+    "prague_c_db_gap_gt_365": 24,
+    "prague_m_db_gap_gt_365": 24,
+    "sex_sheet": {
+     "n": 80,
+     "counts": {
+      "M": 61,
+      "F": 19
+     }
+    },
+    "sex_sqlite": {
+     "n": 80,
+     "counts": {
+      "male": 61,
+      "female": 19
+     }
+    },
+    "sex_participant_table": {
+     "n": 0,
+     "counts": {}
+    },
+    "smoking_sheet": {
+     "n": 43,
+     "counts": {
+      "Y": 33,
+      "N": 10
+     }
+    },
+    "smoking_db_code": {
+     "n": 62,
+     "counts": {
+      "0": 53,
+      "conflict": 6,
+      "2": 2,
+      "3": 1
+     }
+    },
+    "smoking_sqlite": {
+     "n": 43,
+     "counts": {
+      "former": 30,
+      "never": 10,
+      "current": 3
+     }
+    },
+    "packyears_db": {
+     "n": 2,
+     "counts": {
+      "2003": 1,
+      "40": 1
+     }
+    },
+    "ppi_db_code": {
+     "n": 49,
+     "counts": {
+      "conflict": 25,
+      "1": 10,
+      "2": 7,
+      "3": 6,
+      "6": 1
+     }
+    },
+    "fam_be_db": {
+     "n": 0,
+     "counts": {}
+    },
+    "fam_oac_db": {
+     "n": 0,
+     "counts": {}
+    },
+    "hiatal_hernia_db": {
+     "n": 21,
+     "counts": {
+      "yes": 21
+     }
+    },
+    "alcohol_db_recorded": 7,
+    "bmi_db_implausible": 47,
+    "conflicts": {
+     "smoking_db_code": 6,
+     "bmi_db": 12,
+     "ppi_db_code": 25,
+     "fam_be_db": 0
+    }
+   },
+   "P": {
+    "N": 37,
+    "with_participant_id": 35,
+    "age_first_sample_sheet": {
+     "n": 37,
+     "mean": 63.14,
+     "median": 61.23,
+     "q1": 56.55,
+     "q3": 69.22,
+     "min": 42.23,
+     "max": 82.55
+    },
+    "age_first_sample_db": {
+     "n": 16,
+     "mean": 58.72,
+     "median": 59.51,
+     "q1": 55.69,
+     "q3": 68.96,
+     "min": -1.43,
+     "max": 78.54
+    },
+    "age_dx_sheet": {
+     "n": 37,
+     "mean": 61.49,
+     "median": 60.0,
+     "q1": 55.0,
+     "q3": 67.0,
+     "min": 42.0,
+     "max": 82.0
+    },
+    "age_dx_db": {
+     "n": 10,
+     "mean": 63.3,
+     "median": 61.59,
+     "q1": 59.49,
+     "q3": 67.27,
+     "min": 51.27,
+     "max": 78.53
+    },
+    "age_dx_sqlite": {
+     "n": 37,
+     "mean": 61.49,
+     "median": 60.0,
+     "q1": 55.0,
+     "q3": 67.0,
+     "min": 42.0,
+     "max": 82.0
+    },
+    "prague_c_sheet": {
+     "n": 24,
+     "mean": 1.29,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 1.25,
+     "min": 0.0,
+     "max": 9.0
+    },
+    "prague_c_db": {
+     "n": 12,
+     "mean": 0.08,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 0.0,
+     "min": 0.0,
+     "max": 1.0
+    },
+    "prague_c_ih": {
+     "n": 10,
+     "mean": 1.4,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 0.0,
+     "min": 0.0,
+     "max": 8.0
+    },
+    "prague_c_sqlite": {
+     "n": 24,
+     "mean": 1.29,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 1.25,
+     "min": 0.0,
+     "max": 9.0
+    },
+    "prague_m_sheet": {
+     "n": 27,
+     "mean": 4.74,
+     "median": 4.0,
+     "q1": 3.0,
+     "q3": 6.5,
+     "min": 1.0,
+     "max": 10.0
+    },
+    "prague_m_db": {
+     "n": 12,
+     "mean": 0.75,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 0.75,
+     "min": 0.0,
+     "max": 3.0
+    },
+    "prague_m_ih": {
+     "n": 11,
+     "mean": 4.82,
+     "median": 5.0,
+     "q1": 2.5,
+     "q3": 7.5,
+     "min": 0.0,
+     "max": 10.0
+    },
+    "prague_m_sqlite": {
+     "n": 27,
+     "mean": 4.74,
+     "median": 4.0,
+     "q1": 3.0,
+     "q3": 6.5,
+     "min": 1.0,
+     "max": 10.0
+    },
+    "prague_c_gap": {
+     "n": 12,
+     "mean": 3917.83,
+     "median": 4143.5,
+     "q1": 2923.25,
+     "q3": 4630.75,
+     "min": 1488.0,
+     "max": 6062.0
+    },
+    "prague_m_gap": {
+     "n": 12,
+     "mean": 3917.83,
+     "median": 4143.5,
+     "q1": 2923.25,
+     "q3": 4630.75,
+     "min": 1488.0,
+     "max": 6062.0
+    },
+    "hiatal_hernia_gap": {
+     "n": 12,
+     "mean": 4393.08,
+     "median": 4529.5,
+     "q1": 3339.5,
+     "q3": 5017.25,
+     "min": 1488.0,
+     "max": 7832.0
+    },
+    "bmi_db_num": {
+     "n": 0
+    },
+    "bmi_sqlite": {
+     "n": 18,
+     "mean": 28.62,
+     "median": 29.27,
+     "q1": 25.47,
+     "q3": 32.21,
+     "min": 14.7,
+     "max": 37.97
+    },
+    "prague_c_db_gap_gt_365": 12,
+    "prague_m_db_gap_gt_365": 12,
+    "sex_sheet": {
+     "n": 37,
+     "counts": {
+      "M": 29,
+      "F": 8
+     }
+    },
+    "sex_sqlite": {
+     "n": 37,
+     "counts": {
+      "male": 29,
+      "female": 8
+     }
+    },
+    "sex_participant_table": {
+     "n": 0,
+     "counts": {}
+    },
+    "smoking_sheet": {
+     "n": 21,
+     "counts": {
+      "Y": 17,
+      "N": 4
+     }
+    },
+    "smoking_db_code": {
+     "n": 28,
+     "counts": {
+      "0": 24,
+      "conflict": 4
+     }
+    },
+    "smoking_sqlite": {
+     "n": 21,
+     "counts": {
+      "former": 15,
+      "never": 4,
+      "current": 2
+     }
+    },
+    "packyears_db": {
+     "n": 1,
+     "counts": {
+      "40": 1
+     }
+    },
+    "ppi_db_code": {
+     "n": 25,
+     "counts": {
+      "conflict": 15,
+      "1": 5,
+      "3": 3,
+      "2": 2
+     }
+    },
+    "fam_be_db": {
+     "n": 0,
+     "counts": {}
+    },
+    "fam_oac_db": {
+     "n": 0,
+     "counts": {}
+    },
+    "hiatal_hernia_db": {
+     "n": 12,
+     "counts": {
+      "yes": 12
+     }
+    },
+    "alcohol_db_recorded": 2,
+    "bmi_db_implausible": 20,
+    "conflicts": {
+     "smoking_db_code": 4,
+     "bmi_db": 8,
+     "ppi_db_code": 15,
+     "fam_be_db": 0
+    }
+   },
+   "NP": {
+    "N": 43,
+    "with_participant_id": 43,
+    "age_first_sample_sheet": {
+     "n": 43,
+     "mean": 61.89,
+     "median": 65.54,
+     "q1": 57.27,
+     "q3": 69.61,
+     "min": 37.86,
+     "max": 76.82
+    },
+    "age_first_sample_db": {
+     "n": 20,
+     "mean": 59.13,
+     "median": 65.52,
+     "q1": 56.0,
+     "q3": 69.01,
+     "min": -2.08,
+     "max": 76.82
+    },
+    "age_dx_sheet": {
+     "n": 43,
+     "mean": 59.67,
+     "median": 63.0,
+     "q1": 55.0,
+     "q3": 66.0,
+     "min": 36.0,
+     "max": 76.0
+    },
+    "age_dx_db": {
+     "n": 14,
+     "mean": 61.49,
+     "median": 64.89,
+     "q1": 57.23,
+     "q3": 68.41,
+     "min": 38.56,
+     "max": 78.89
+    },
+    "age_dx_sqlite": {
+     "n": 43,
+     "mean": 59.67,
+     "median": 63.0,
+     "q1": 55.0,
+     "q3": 66.0,
+     "min": 36.0,
+     "max": 76.0
+    },
+    "prague_c_sheet": {
+     "n": 40,
+     "mean": 1.27,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 2.0,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "prague_c_db": {
+     "n": 12,
+     "mean": 2.58,
+     "median": 2.5,
+     "q1": 0.75,
+     "q3": 4.0,
+     "min": 0.0,
+     "max": 6.0
+    },
+    "prague_c_ih": {
+     "n": 11,
+     "mean": 3.82,
+     "median": 4.0,
+     "q1": 0.5,
+     "q3": 5.5,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "prague_c_sqlite": {
+     "n": 40,
+     "mean": 1.27,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 2.0,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "prague_m_sheet": {
+     "n": 40,
+     "mean": 4.72,
+     "median": 4.5,
+     "q1": 3.0,
+     "q3": 5.25,
+     "min": 1.0,
+     "max": 13.0
+    },
+    "prague_m_db": {
+     "n": 12,
+     "mean": 3.75,
+     "median": 4.0,
+     "q1": 3.0,
+     "q3": 5.0,
+     "min": 1.0,
+     "max": 6.0
+    },
+    "prague_m_ih": {
+     "n": 11,
+     "mean": 5.5,
+     "median": 5.0,
+     "q1": 4.0,
+     "q3": 6.0,
+     "min": 0.5,
+     "max": 11.0
+    },
+    "prague_m_sqlite": {
+     "n": 40,
+     "mean": 4.72,
+     "median": 4.5,
+     "q1": 3.0,
+     "q3": 5.25,
+     "min": 1.0,
+     "max": 13.0
+    },
+    "prague_c_gap": {
+     "n": 12,
+     "mean": 4942.58,
+     "median": 5430.5,
+     "q1": 3903.5,
+     "q3": 6077.0,
+     "min": 1165.0,
+     "max": 8159.0
+    },
+    "prague_m_gap": {
+     "n": 12,
+     "mean": 4942.58,
+     "median": 5430.5,
+     "q1": 3903.5,
+     "q3": 6077.0,
+     "min": 1165.0,
+     "max": 8159.0
+    },
+    "hiatal_hernia_gap": {
+     "n": 9,
+     "mean": 5977.56,
+     "median": 5842.0,
+     "q1": 5264.0,
+     "q3": 6761.0,
+     "min": 3649.0,
+     "max": 8159.0
+    },
+    "bmi_db_num": {
+     "n": 3,
+     "mean": 27.51,
+     "median": 28.47,
+     "q1": 26.85,
+     "q3": 28.64,
+     "min": 25.24,
+     "max": 28.82
+    },
+    "bmi_sqlite": {
+     "n": 14,
+     "mean": 28.25,
+     "median": 27.66,
+     "q1": 26.72,
+     "q3": 28.29,
+     "min": 25.38,
+     "max": 37.7
+    },
+    "prague_c_db_gap_gt_365": 12,
+    "prague_m_db_gap_gt_365": 12,
+    "sex_sheet": {
+     "n": 43,
+     "counts": {
+      "M": 32,
+      "F": 11
+     }
+    },
+    "sex_sqlite": {
+     "n": 43,
+     "counts": {
+      "male": 32,
+      "female": 11
+     }
+    },
+    "sex_participant_table": {
+     "n": 0,
+     "counts": {}
+    },
+    "smoking_sheet": {
+     "n": 22,
+     "counts": {
+      "Y": 16,
+      "N": 6
+     }
+    },
+    "smoking_db_code": {
+     "n": 34,
+     "counts": {
+      "0": 29,
+      "2": 2,
+      "conflict": 2,
+      "3": 1
+     }
+    },
+    "smoking_sqlite": {
+     "n": 22,
+     "counts": {
+      "former": 15,
+      "never": 6,
+      "current": 1
+     }
+    },
+    "packyears_db": {
+     "n": 1,
+     "counts": {
+      "2003": 1
+     }
+    },
+    "ppi_db_code": {
+     "n": 24,
+     "counts": {
+      "conflict": 10,
+      "1": 5,
+      "2": 5,
+      "3": 3,
+      "6": 1
+     }
+    },
+    "fam_be_db": {
+     "n": 0,
+     "counts": {}
+    },
+    "fam_oac_db": {
+     "n": 0,
+     "counts": {}
+    },
+    "hiatal_hernia_db": {
+     "n": 9,
+     "counts": {
+      "yes": 9
+     }
+    },
+    "alcohol_db_recorded": 5,
+    "bmi_db_implausible": 27,
+    "conflicts": {
+     "smoking_db_code": 2,
+     "bmi_db": 4,
+     "ppi_db_code": 10,
+     "fam_be_db": 0
+    }
+   }
+  },
+  "release": {
+   "all": {
+    "N": 150,
+    "with_participant_id": 149,
+    "age_first_sample_sheet": {
+     "n": 82,
+     "mean": 62.56,
+     "median": 63.59,
+     "q1": 56.68,
+     "q3": 69.89,
+     "min": 37.86,
+     "max": 82.5
+    },
+    "age_first_sample_db": {
+     "n": 64,
+     "mean": 60.56,
+     "median": 63.2,
+     "q1": 55.11,
+     "q3": 70.76,
+     "min": -2.08,
+     "max": 81.94
+    },
+    "age_dx_sheet": {
+     "n": 82,
+     "mean": 60.91,
+     "median": 62.0,
+     "q1": 55.0,
+     "q3": 67.75,
+     "min": 36.0,
+     "max": 82.0
+    },
+    "age_dx_db": {
+     "n": 45,
+     "mean": 59.94,
+     "median": 61.78,
+     "q1": 52.87,
+     "q3": 68.02,
+     "min": 20.2,
+     "max": 82.33
+    },
+    "age_dx_sqlite": {
+     "n": 150,
+     "mean": 63.39,
+     "median": 65.0,
+     "q1": 56.0,
+     "q3": 70.0,
+     "min": 25.0,
+     "max": 88.0
+    },
+    "prague_c_sheet": {
+     "n": 66,
+     "mean": 1.32,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 2.0,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "prague_c_db": {
+     "n": 62,
+     "mean": 2.19,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 4.0,
+     "min": 0.0,
+     "max": 10.0
+    },
+    "prague_c_ih": {
+     "n": 38,
+     "mean": 2.82,
+     "median": 1.5,
+     "q1": 0.0,
+     "q3": 5.0,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "prague_c_sqlite": {
+     "n": 134,
+     "mean": 2.77,
+     "median": 1.0,
+     "q1": 0.0,
+     "q3": 5.0,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "prague_m_sheet": {
+     "n": 69,
+     "mean": 4.62,
+     "median": 4.0,
+     "q1": 3.0,
+     "q3": 5.0,
+     "min": 1.0,
+     "max": 13.0
+    },
+    "prague_m_db": {
+     "n": 62,
+     "mean": 3.73,
+     "median": 3.5,
+     "q1": 0.0,
+     "q3": 6.0,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "prague_m_ih": {
+     "n": 39,
+     "mean": 4.83,
+     "median": 5.0,
+     "q1": 2.0,
+     "q3": 7.0,
+     "min": 0.5,
+     "max": 11.0
+    },
+    "prague_m_sqlite": {
+     "n": 137,
+     "mean": 5.34,
+     "median": 5.0,
+     "q1": 3.0,
+     "q3": 7.0,
+     "min": 1.0,
+     "max": 13.0
+    },
+    "prague_c_gap": {
+     "n": 62,
+     "mean": 3660.13,
+     "median": 3471.0,
+     "q1": 2264.5,
+     "q3": 4865.25,
+     "min": 839.0,
+     "max": 8159.0
+    },
+    "prague_m_gap": {
+     "n": 62,
+     "mean": 3638.65,
+     "median": 3471.0,
+     "q1": 2164.0,
+     "q3": 4865.25,
+     "min": 839.0,
+     "max": 8159.0
+    },
+    "hiatal_hernia_gap": {
+     "n": 59,
+     "mean": 3913.71,
+     "median": 3649.0,
+     "q1": 2723.0,
+     "q3": 5006.0,
+     "min": 839.0,
+     "max": 8159.0
+    },
+    "bmi_db_num": {
+     "n": 9,
+     "mean": 26.1,
+     "median": 25.51,
+     "q1": 24.76,
+     "q3": 28.47,
+     "min": 22.18,
+     "max": 29.13
+    },
+    "bmi_sqlite": {
+     "n": 35,
+     "mean": 28.54,
+     "median": 27.73,
+     "q1": 25.85,
+     "q3": 31.17,
+     "min": 14.7,
+     "max": 38.24
+    },
+    "prague_c_db_gap_gt_365": 62,
+    "prague_m_db_gap_gt_365": 62,
+    "sex_sheet": {
+     "n": 82,
+     "counts": {
+      "M": 64,
+      "F": 18
+     }
+    },
+    "sex_sqlite": {
+     "n": 150,
+     "counts": {
+      "male": 114,
+      "female": 36
+     }
+    },
+    "sex_participant_table": {
+     "n": 0,
+     "counts": {}
+    },
+    "smoking_sheet": {
+     "n": 44,
+     "counts": {
+      "Y": 33,
+      "N": 11
+     }
+    },
+    "smoking_db_code": {
+     "n": 131,
+     "counts": {
+      "0": 117,
+      "conflict": 7,
+      "2": 5,
+      "3": 1,
+      "1": 1
+     }
+    },
+    "smoking_sqlite": {
+     "n": 84,
+     "counts": {
+      "former": 53,
+      "never": 28,
+      "current": 3
+     }
+    },
+    "packyears_db": {
+     "n": 3,
+     "counts": {
+      "20": 1,
+      "2003": 1,
+      "40": 1
+     }
+    },
+    "ppi_db_code": {
+     "n": 112,
+     "counts": {
+      "conflict": 46,
+      "1": 41,
+      "2": 13,
+      "3": 8,
+      "4": 3,
+      "6": 1
+     }
+    },
+    "fam_be_db": {
+     "n": 0,
+     "counts": {}
+    },
+    "fam_oac_db": {
+     "n": 0,
+     "counts": {}
+    },
+    "hiatal_hernia_db": {
+     "n": 59,
+     "counts": {
+      "yes": 59
+     }
+    },
+    "alcohol_db_recorded": 13,
+    "bmi_db_implausible": 101,
+    "conflicts": {
+     "smoking_db_code": 7,
+     "bmi_db": 21,
+     "ppi_db_code": 46,
+     "fam_be_db": 0
+    }
+   },
+   "P": {
+    "N": 50,
+    "with_participant_id": 50,
+    "age_first_sample_sheet": {
+     "n": 40,
+     "mean": 64.0,
+     "median": 64.69,
+     "q1": 57.08,
+     "q3": 70.53,
+     "min": 39.36,
+     "max": 82.5
+    },
+    "age_first_sample_db": {
+     "n": 15,
+     "mean": 58.29,
+     "median": 61.55,
+     "q1": 54.83,
+     "q3": 69.77,
+     "min": -1.43,
+     "max": 78.54
+    },
+    "age_dx_sheet": {
+     "n": 40,
+     "mean": 62.92,
+     "median": 63.5,
+     "q1": 55.75,
+     "q3": 68.25,
+     "min": 39.0,
+     "max": 82.0
+    },
+    "age_dx_db": {
+     "n": 9,
+     "mean": 61.13,
+     "median": 61.55,
+     "q1": 52.87,
+     "q3": 67.67,
+     "min": 38.56,
+     "max": 78.53
+    },
+    "age_dx_sqlite": {
+     "n": 50,
+     "mean": 63.58,
+     "median": 64.5,
+     "q1": 57.25,
+     "q3": 68.75,
+     "min": 39.0,
+     "max": 82.0
+    },
+    "prague_c_sheet": {
+     "n": 28,
+     "mean": 1.54,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 2.0,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "prague_c_db": {
+     "n": 25,
+     "mean": 0.8,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 0.0,
+     "min": 0.0,
+     "max": 8.0
+    },
+    "prague_c_ih": {
+     "n": 8,
+     "mean": 2.12,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 1.5,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "prague_c_sqlite": {
+     "n": 38,
+     "mean": 2.08,
+     "median": 0.5,
+     "q1": 0.0,
+     "q3": 3.0,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "prague_m_sheet": {
+     "n": 31,
+     "mean": 4.58,
+     "median": 4.0,
+     "q1": 2.5,
+     "q3": 5.0,
+     "min": 1.0,
+     "max": 13.0
+    },
+    "prague_m_db": {
+     "n": 25,
+     "mean": 1.88,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 3.0,
+     "min": 0.0,
+     "max": 10.0
+    },
+    "prague_m_ih": {
+     "n": 9,
+     "mean": 5.06,
+     "median": 5.0,
+     "q1": 3.0,
+     "q3": 7.0,
+     "min": 0.5,
+     "max": 11.0
+    },
+    "prague_m_sqlite": {
+     "n": 41,
+     "mean": 5.02,
+     "median": 4.0,
+     "q1": 3.0,
+     "q3": 6.0,
+     "min": 1.0,
+     "max": 13.0
+    },
+    "prague_c_gap": {
+     "n": 25,
+     "mean": 3307.88,
+     "median": 3035.0,
+     "q1": 1988.0,
+     "q3": 4621.0,
+     "min": 839.0,
+     "max": 6698.0
+    },
+    "prague_m_gap": {
+     "n": 25,
+     "mean": 3305.72,
+     "median": 3035.0,
+     "q1": 1988.0,
+     "q3": 4621.0,
+     "min": 839.0,
+     "max": 6698.0
+    },
+    "hiatal_hernia_gap": {
+     "n": 23,
+     "mean": 3494.83,
+     "median": 3471.0,
+     "q1": 2654.0,
+     "q3": 4640.5,
+     "min": 839.0,
+     "max": 6469.0
+    },
+    "bmi_db_num": {
+     "n": 0
+    },
+    "bmi_sqlite": {
+     "n": 20,
+     "mean": 28.27,
+     "median": 27.72,
+     "q1": 24.56,
+     "q3": 32.45,
+     "min": 14.7,
+     "max": 37.97
+    },
+    "prague_c_db_gap_gt_365": 25,
+    "prague_m_db_gap_gt_365": 25,
+    "sex_sheet": {
+     "n": 40,
+     "counts": {
+      "M": 33,
+      "F": 7
+     }
+    },
+    "sex_sqlite": {
+     "n": 50,
+     "counts": {
+      "male": 40,
+      "female": 10
+     }
+    },
+    "sex_participant_table": {
+     "n": 0,
+     "counts": {}
+    },
+    "smoking_sheet": {
+     "n": 21,
+     "counts": {
+      "Y": 18,
+      "N": 3
+     }
+    },
+    "smoking_db_code": {
+     "n": 45,
+     "counts": {
+      "0": 42,
+      "conflict": 3
+     }
+    },
+    "smoking_sqlite": {
+     "n": 30,
+     "counts": {
+      "former": 23,
+      "never": 5,
+      "current": 2
+     }
+    },
+    "packyears_db": {
+     "n": 1,
+     "counts": {
+      "40": 1
+     }
+    },
+    "ppi_db_code": {
+     "n": 42,
+     "counts": {
+      "conflict": 20,
+      "1": 13,
+      "3": 6,
+      "4": 2,
+      "2": 1
+     }
+    },
+    "fam_be_db": {
+     "n": 0,
+     "counts": {}
+    },
+    "fam_oac_db": {
+     "n": 0,
+     "counts": {}
+    },
+    "hiatal_hernia_db": {
+     "n": 23,
+     "counts": {
+      "yes": 23
+     }
+    },
+    "alcohol_db_recorded": 2,
+    "bmi_db_implausible": 39,
+    "conflicts": {
+     "smoking_db_code": 3,
+     "bmi_db": 6,
+     "ppi_db_code": 20,
+     "fam_be_db": 0
+    }
+   },
+   "NP": {
+    "N": 100,
+    "with_participant_id": 99,
+    "age_first_sample_sheet": {
+     "n": 42,
+     "mean": 61.18,
+     "median": 62.52,
+     "q1": 55.71,
+     "q3": 69.05,
+     "min": 37.86,
+     "max": 77.36
+    },
+    "age_first_sample_db": {
+     "n": 49,
+     "mean": 61.26,
+     "median": 63.22,
+     "q1": 55.78,
+     "q3": 70.69,
+     "min": -2.08,
+     "max": 81.94
+    },
+    "age_dx_sheet": {
+     "n": 42,
+     "mean": 59.0,
+     "median": 60.5,
+     "q1": 52.75,
+     "q3": 66.0,
+     "min": 36.0,
+     "max": 77.0
+    },
+    "age_dx_db": {
+     "n": 36,
+     "mean": 59.64,
+     "median": 62.37,
+     "q1": 53.93,
+     "q3": 68.08,
+     "min": 20.2,
+     "max": 82.33
+    },
+    "age_dx_sqlite": {
+     "n": 100,
+     "mean": 63.3,
+     "median": 65.0,
+     "q1": 55.75,
+     "q3": 73.0,
+     "min": 25.0,
+     "max": 88.0
+    },
+    "prague_c_sheet": {
+     "n": 38,
+     "mean": 1.16,
+     "median": 0.0,
+     "q1": 0.0,
+     "q3": 1.75,
+     "min": 0.0,
+     "max": 8.0
+    },
+    "prague_c_db": {
+     "n": 37,
+     "mean": 3.14,
+     "median": 3.0,
+     "q1": 0.0,
+     "q3": 6.0,
+     "min": 0.0,
+     "max": 10.0
+    },
+    "prague_c_ih": {
+     "n": 30,
+     "mean": 3.0,
+     "median": 3.0,
+     "q1": 0.25,
+     "q3": 5.0,
+     "min": 0.0,
+     "max": 8.0
+    },
+    "prague_c_sqlite": {
+     "n": 96,
+     "mean": 3.04,
+     "median": 2.0,
+     "q1": 0.0,
+     "q3": 5.0,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "prague_m_sheet": {
+     "n": 38,
+     "mean": 4.66,
+     "median": 4.5,
+     "q1": 3.0,
+     "q3": 5.75,
+     "min": 1.0,
+     "max": 10.0
+    },
+    "prague_m_db": {
+     "n": 37,
+     "mean": 4.97,
+     "median": 5.0,
+     "q1": 3.0,
+     "q3": 7.0,
+     "min": 0.0,
+     "max": 11.0
+    },
+    "prague_m_ih": {
+     "n": 30,
+     "mean": 4.77,
+     "median": 5.0,
+     "q1": 2.0,
+     "q3": 6.75,
+     "min": 1.0,
+     "max": 10.0
+    },
+    "prague_m_sqlite": {
+     "n": 96,
+     "mean": 5.48,
+     "median": 5.0,
+     "q1": 3.0,
+     "q3": 7.0,
+     "min": 1.0,
+     "max": 12.0
+    },
+    "prague_c_gap": {
+     "n": 37,
+     "mean": 3898.14,
+     "median": 3834.0,
+     "q1": 2502.0,
+     "q3": 4916.0,
+     "min": 1116.0,
+     "max": 8159.0
+    },
+    "prague_m_gap": {
+     "n": 37,
+     "mean": 3863.59,
+     "median": 3819.0,
+     "q1": 2502.0,
+     "q3": 4916.0,
+     "min": 1116.0,
+     "max": 8159.0
+    },
+    "hiatal_hernia_gap": {
+     "n": 36,
+     "mean": 4181.33,
+     "median": 3841.5,
+     "q1": 2786.75,
+     "q3": 5339.75,
+     "min": 1116.0,
+     "max": 8159.0
+    },
+    "bmi_db_num": {
+     "n": 9,
+     "mean": 26.1,
+     "median": 25.51,
+     "q1": 24.76,
+     "q3": 28.47,
+     "min": 22.18,
+     "max": 29.13
+    },
+    "bmi_sqlite": {
+     "n": 15,
+     "mean": 28.91,
+     "median": 27.73,
+     "q1": 26.82,
+     "q3": 29.24,
+     "min": 25.22,
+     "max": 38.24
+    },
+    "prague_c_db_gap_gt_365": 37,
+    "prague_m_db_gap_gt_365": 37,
+    "sex_sheet": {
+     "n": 42,
+     "counts": {
+      "M": 31,
+      "F": 11
+     }
+    },
+    "sex_sqlite": {
+     "n": 100,
+     "counts": {
+      "male": 74,
+      "female": 26
+     }
+    },
+    "sex_participant_table": {
+     "n": 0,
+     "counts": {}
+    },
+    "smoking_sheet": {
+     "n": 23,
+     "counts": {
+      "Y": 15,
+      "N": 8
+     }
+    },
+    "smoking_db_code": {
+     "n": 86,
+     "counts": {
+      "0": 75,
+      "2": 5,
+      "conflict": 4,
+      "3": 1,
+      "1": 1
+     }
+    },
+    "smoking_sqlite": {
+     "n": 54,
+     "counts": {
+      "former": 30,
+      "never": 23,
+      "current": 1
+     }
+    },
+    "packyears_db": {
+     "n": 2,
+     "counts": {
+      "20": 1,
+      "2003": 1
+     }
+    },
+    "ppi_db_code": {
+     "n": 70,
+     "counts": {
+      "1": 28,
+      "conflict": 26,
+      "2": 12,
+      "3": 2,
+      "6": 1,
+      "4": 1
+     }
+    },
+    "fam_be_db": {
+     "n": 0,
+     "counts": {}
+    },
+    "fam_oac_db": {
+     "n": 0,
+     "counts": {}
+    },
+    "hiatal_hernia_db": {
+     "n": 36,
+     "counts": {
+      "yes": 36
+     }
+    },
+    "alcohol_db_recorded": 11,
+    "bmi_db_implausible": 62,
+    "conflicts": {
+     "smoking_db_code": 4,
+     "bmi_db": 15,
+     "ppi_db_code": 26,
+     "fam_be_db": 0
+    }
+   }
+  },
+  "aceb": {
+   "all": {
+    "N": 117,
+    "with_participant_id": 91,
+    "age_first_sample_sheet": {
+     "n": 0
+    },
+    "age_first_sample_db": {
+     "n": 0
+    },
+    "age_dx_sheet": {
+     "n": 0
+    },
+    "age_dx_db": {
+     "n": 7,
+     "mean": 59.22,
+     "median": 59.67,
+     "q1": 55.88,
+     "q3": 64.06,
+     "min": 41.1,
+     "max": 73.89
+    },
+    "age_dx_sqlite": {
+     "n": 0
+    },
+    "prague_c_sheet": {
+     "n": 0
+    },
+    "prague_c_db": {
+     "n": 0
+    },
+    "prague_c_ih": {
+     "n": 6,
+     "mean": 4.83,
+     "median": 4.5,
+     "q1": 4.0,
+     "q3": 6.5,
+     "min": 2.0,
+     "max": 7.0
+    },
+    "prague_c_sqlite": {
+     "n": 0
+    },
+    "prague_m_sheet": {
+     "n": 0
+    },
+    "prague_m_db": {
+     "n": 0
+    },
+    "prague_m_ih": {
+     "n": 6,
+     "mean": 6.17,
+     "median": 6.0,
+     "q1": 5.25,
+     "q3": 7.5,
+     "min": 3.0,
+     "max": 9.0
+    },
+    "prague_m_sqlite": {
+     "n": 0
+    },
+    "prague_c_gap": {
+     "n": 0
+    },
+    "prague_m_gap": {
+     "n": 0
+    },
+    "hiatal_hernia_gap": {
+     "n": 0
+    },
+    "bmi_db_num": {
+     "n": 0
+    },
+    "bmi_sqlite": {
+     "n": 0
+    },
+    "prague_c_db_gap_gt_365": 0,
+    "prague_m_db_gap_gt_365": 0,
+    "sex_sheet": {
+     "n": 0,
+     "counts": {}
+    },
+    "sex_sqlite": {
+     "n": 0,
+     "counts": {}
+    },
+    "sex_participant_table": {
+     "n": 52,
+     "counts": {
+      "Male": 38,
+      "Female": 14
+     }
+    },
+    "smoking_sheet": {
+     "n": 0,
+     "counts": {}
+    },
+    "smoking_db_code": {
+     "n": 52,
+     "counts": {
+      "0": 50,
+      "conflict": 2
+     }
+    },
+    "smoking_sqlite": {
+     "n": 0,
+     "counts": {}
+    },
+    "packyears_db": {
+     "n": 0,
+     "counts": {}
+    },
+    "ppi_db_code": {
+     "n": 88,
+     "counts": {
+      "1": 35,
+      "conflict": 29,
+      "2": 14,
+      "3": 8,
+      "4": 2
+     }
+    },
+    "fam_be_db": {
+     "n": 0,
+     "counts": {}
+    },
+    "fam_oac_db": {
+     "n": 0,
+     "counts": {}
+    },
+    "hiatal_hernia_db": {
+     "n": 0,
+     "counts": {}
+    },
+    "alcohol_db_recorded": 2,
+    "bmi_db_implausible": 46,
+    "conflicts": {
+     "smoking_db_code": 2,
+     "bmi_db": 6,
+     "ppi_db_code": 29,
+     "fam_be_db": 0
+    }
+   }
+  }
+ },
+ "missing_representation_initial_history_rows_of_cohort_patients": {
+  "dob": {
+   "NaN_or_None_object": 0,
+   "empty_string": 503,
+   "string_None": 473,
+   "zero": 0,
+   "n": 1051
+  },
+  "datediagnosed": {
+   "NaN_or_None_object": 0,
+   "empty_string": 526,
+   "string_None": 473,
+   "zero": 0,
+   "n": 1051
+  },
+  "smoking": {
+   "NaN_or_None_object": 0,
+   "empty_string": 0,
+   "string_None": 473,
+   "zero": 562,
+   "n": 1051
+  },
+  "packyears": {
+   "NaN_or_None_object": 0,
+   "empty_string": 575,
+   "string_None": 473,
+   "zero": 0,
+   "n": 1051
+  },
+  "praguec": {
+   "NaN_or_None_object": 0,
+   "empty_string": 532,
+   "string_None": 473,
+   "zero": 17,
+   "n": 1051
+  },
+  "praguem": {
+   "NaN_or_None_object": 0,
+   "empty_string": 531,
+   "string_None": 473,
+   "zero": 1,
+   "n": 1051
+  },
+  "bmi": {
+   "NaN_or_None_object": 0,
+   "empty_string": 2,
+   "string_None": 473,
+   "zero": 536,
+   "n": 1051
+  },
+  "heightm": {
+   "NaN_or_None_object": 0,
+   "empty_string": 536,
+   "string_None": 473,
+   "zero": 0,
+   "n": 1051
+  },
+  "weightkg": {
+   "NaN_or_None_object": 0,
+   "empty_string": 534,
+   "string_None": 473,
+   "zero": 0,
+   "n": 1051
+  },
+  "currentbmi": {
+   "NaN_or_None_object": 0,
+   "empty_string": 0,
+   "string_None": 473,
+   "zero": 578,
+   "n": 1051
+  },
+  "alcoholcurrent": {
+   "NaN_or_None_object": 0,
+   "empty_string": 564,
+   "string_None": 473,
+   "zero": 0,
+   "n": 1051
+  },
+  "ppi": {
+   "NaN_or_None_object": 0,
+   "empty_string": 99,
+   "string_None": 3,
+   "zero": 0,
+   "n": 1051
+  },
+  "fambarretts": {
+   "NaN_or_None_object": 0,
+   "empty_string": 578,
+   "string_None": 473,
+   "zero": 0,
+   "n": 1051
+  },
+  "famoescancer": {
+   "NaN_or_None_object": 0,
+   "empty_string": 578,
+   "string_None": 473,
+   "zero": 0,
+   "n": 1051
+  }
+ },
+ "missing_representation_endoscopy": {
+  "barretts_circumference": {
+   "NaN_or_None_object": 0,
+   "empty_string": 1626,
+   "string_None": 691,
+   "zero": 1973,
+   "n": 14302
+  },
+  "barretts_maximum": {
+   "NaN_or_None_object": 0,
+   "empty_string": 1443,
+   "string_None": 698,
+   "zero": 623,
+   "n": 14302
+  },
+  "hiatusherniapresent": {
+   "NaN_or_None_object": 0,
+   "empty_string": 1916,
+   "string_None": 1968,
+   "zero": 4362,
+   "n": 14302
+  }
+ },
+ "missing_representation_sqlite_patient": {
+  "Gender": {
+   "NaN_or_None_object": 0,
+   "empty_string": 0,
+   "string_None": 0,
+   "zero": 0,
+   "n": 165
+  },
+  "AgeAtDiagnosis": {
+   "NaN_or_None_object": 0,
+   "empty_string": 0,
+   "string_None": 0,
+   "zero": 0,
+   "n": 165
+  },
+  "SmokingStatus": {
+   "NaN_or_None_object": 73,
+   "empty_string": 0,
+   "string_None": 73,
+   "zero": 0,
+   "n": 165
+  },
+  "Height": {
+   "NaN_or_None_object": 128,
+   "empty_string": 0,
+   "string_None": 0,
+   "zero": 0,
+   "n": 165
+  },
+  "Weight": {
+   "NaN_or_None_object": 124,
+   "empty_string": 0,
+   "string_None": 0,
+   "zero": 0,
+   "n": 165
+  },
+  "Circumference": {
+   "NaN_or_None_object": 18,
+   "empty_string": 0,
+   "string_None": 0,
+   "zero": 59,
+   "n": 165
+  },
+  "Maximal": {
+   "NaN_or_None_object": 15,
+   "empty_string": 0,
+   "string_None": 0,
+   "zero": 0,
+   "n": 165
+  }
+ },
+ "sex_in_db_tables": "no sex/gender column in any Barrett's DB export table except OCCAMS masterlist _131_gender (OCCAMS cohort, no participant_id link); sex from BE_Progression_Project.db Patient.Gender (SWG) and aceb_sample_counts_per_patient.gender (participant table scrape, ACE-B)"
+}

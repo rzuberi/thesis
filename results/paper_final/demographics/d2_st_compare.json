@@ -1,0 +1,164 @@
+{
+ "demographics_full_all": {
+  "NP": {
+   "patients": 45,
+   "age_at_diagnosis": {
+    "n": 45,
+    "mean": 59.0,
+    "sd": 10.7
+   },
+   "be_length_maximal_cm": {
+    "n": 41,
+    "mean": 4.9,
+    "sd": 2.8
+   },
+   "be_length_not_recorded": 4,
+   "female": 12,
+   "male": 33,
+   "smoking_Y": 16,
+   "smoking_N": 6,
+   "smoking_not_recorded": 23,
+   "followup_years": {
+    "n": 45,
+    "mean": 8.2,
+    "sd": 3.0
+   },
+   "followup_range": [
+    3,
+    14
+   ]
+  },
+  "P": {
+   "patients": 45,
+   "age_at_diagnosis": {
+    "n": 45,
+    "mean": 62.4,
+    "sd": 9.7
+   },
+   "be_length_maximal_cm": {
+    "n": 33,
+    "mean": 4.6,
+    "sd": 2.4
+   },
+   "be_length_not_recorded": 12,
+   "female": 8,
+   "male": 37,
+   "smoking_Y": 19,
+   "smoking_N": 5,
+   "smoking_not_recorded": 21,
+   "followup_years": {
+    "n": 45,
+    "mean": 5.9,
+    "sd": 3.5
+   },
+   "followup_range": [
+    1,
+    15
+   ]
+  }
+ },
+ "discovery_subset_80": {
+  "NP": {
+   "patients": 43,
+   "age_at_diagnosis": {
+    "n": 43,
+    "mean": 59.7,
+    "sd": 10.0
+   },
+   "be_length_maximal_cm": {
+    "n": 40,
+    "mean": 4.7,
+    "sd": 2.6
+   },
+   "be_length_not_recorded": 3,
+   "female": 11,
+   "male": 32,
+   "smoking_Y": 16,
+   "smoking_N": 6,
+   "smoking_not_recorded": 21,
+   "followup_years": {
+    "n": 43,
+    "mean": 8.4,
+    "sd": 2.9
+   },
+   "followup_range": [
+    3,
+    14
+   ]
+  },
+  "P": {
+   "patients": 37,
+   "age_at_diagnosis": {
+    "n": 37,
+    "mean": 61.5,
+    "sd": 9.6
+   },
+   "be_length_maximal_cm": {
+    "n": 27,
+    "mean": 4.7,
+    "sd": 2.6
+   },
+   "be_length_not_recorded": 10,
+   "female": 8,
+   "male": 29,
+   "smoking_Y": 17,
+   "smoking_N": 4,
+   "smoking_not_recorded": 16,
+   "followup_years": {
+    "n": 37,
+    "mean": 6.1,
+    "sd": 3.7
+   },
+   "followup_range": [
+    1,
+    15
+   ]
+  }
+ },
+ "discovery_subset_matched_rows": 80,
+ "validation_sheet_patients_sqlite": {
+  "NP": {
+   "patients": 63,
+   "age_at_diagnosis": {
+    "n": 63,
+    "mean": 66.2,
+    "sd": 12.8
+   },
+   "be_length_maximal_cm": {
+    "n": 63,
+    "mean": 6.2,
+    "sd": 3.1
+   },
+   "female": 17,
+   "male": 46,
+   "smoking_yes_former_or_current": 16,
+   "smoking_no_never": 17,
+   "smoking_not_recorded": 30
+  },
+  "P": {
+   "patients": 18,
+   "age_at_diagnosis": {
+    "n": 18,
+    "mean": 62.8,
+    "sd": 9.7
+   },
+   "be_length_maximal_cm": {
+    "n": 18,
+    "mean": 5.4,
+    "sd": 2.9
+   },
+   "female": 4,
+   "male": 14,
+   "smoking_yes_former_or_current": 11,
+   "smoking_no_never": 4,
+   "smoking_not_recorded": 3
+  }
+ },
+ "validation_sheet_patients_total": 103,
+ "validation_sheet_status_values": {
+  "NP": 162,
+  "P": 95,
+  "nan": 10,
+  "UN": 1
+ }
+}
