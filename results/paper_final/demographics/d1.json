@@ -1,0 +1,419 @@
+{
+ "part": "d1",
+ "demographics_rows": 90,
+ "linkage": {
+  "pre_event_cohort.participant_id": 87,
+  "not linked": 3
+ },
+ "crosstab_dbcode_by_YN": {
+  "N": {
+   "0": 7,
+   "2": 0,
+   "3": 0,
+   "conflict:0/2": 0,
+   "conflict:0/3": 2,
+   "no_initial_history_row": 2,
+   "no_participant_id": 0
+  },
+  "Y": {
+   "0": 25,
+   "2": 1,
+   "3": 0,
+   "conflict:0/2": 2,
+   "conflict:0/3": 1,
+   "no_initial_history_row": 5,
+   "no_participant_id": 1
+  },
+  "missing": {
+   "0": 30,
+   "2": 1,
+   "3": 1,
+   "conflict:0/2": 1,
+   "conflict:0/3": 0,
+   "no_initial_history_row": 9,
+   "no_participant_id": 2
+  }
+ },
+ "crosstab_n": 33,
+ "secondary_not_prespecified": {
+  "crosstab_dbcode_by_sqlite_SmokingStatus": {
+   "None": {
+    "0": 30,
+    "2": 1,
+    "3": 1,
+    "conflict:0/2": 1,
+    "conflict:0/3": 0,
+    "no_initial_history_row": 9,
+    "no_participant_id": 0
+   },
+   "current": {
+    "0": 3,
+    "2": 0,
+    "3": 0,
+    "conflict:0/2": 0,
+    "conflict:0/3": 0,
+    "no_initial_history_row": 0,
+    "no_participant_id": 0
+   },
+   "former": {
+    "0": 22,
+    "2": 1,
+    "3": 0,
+    "conflict:0/2": 2,
+    "conflict:0/3": 1,
+    "no_initial_history_row": 5,
+    "no_participant_id": 1
+   },
+   "never": {
+    "0": 7,
+    "2": 0,
+    "3": 0,
+    "conflict:0/2": 0,
+    "conflict:0/3": 2,
+    "no_initial_history_row": 2,
+    "no_participant_id": 0
+   },
+   "no sqlite link": {
+    "0": 0,
+    "2": 0,
+    "3": 0,
+    "conflict:0/2": 0,
+    "conflict:0/3": 0,
+    "no_initial_history_row": 0,
+    "no_participant_id": 2
+   }
+  },
+  "crosstab_YN_by_sqlite_SmokingStatus": {
+   "None": {
+    "N": 0,
+    "Y": 0,
+    "missing": 42
+   },
+   "current": {
+    "N": 0,
+    "Y": 3,
+    "missing": 0
+   },
+   "former": {
+    "N": 0,
+    "Y": 32,
+    "missing": 0
+   },
+   "never": {
+    "N": 11,
+    "Y": 0,
+    "missing": 0
+   },
+   "no sqlite link": {
+    "N": 0,
+    "Y": 0,
+    "missing": 2
+   }
+  },
+  "note": "BE_Progression_Project.db Patient.SmokingStatus (never/former/current) linked through AlternatePatientID.AlternateID = study number; not pre-specified"
+ },
+ "d1_3_prespecified": {
+  "nonnull_fields_per_record": {
+   "n": 6155,
+   "mean": 25.07,
+   "median": 25.0,
+   "q1": 14.0,
+   "q3": 34.0,
+   "min": 4.0,
+   "max": 105.0
+  },
+  "tercile_field_count_ranges": {
+   "low": [
+    4,
+    14
+   ],
+   "mid": [
+    14,
+    34
+   ],
+   "high": [
+    34,
+    105
+   ]
+  },
+  "smoking": {
+   "low": {
+    "n": 2052,
+    "share_0": 0.0,
+    "share_null": 100.0
+   },
+   "mid": {
+    "n": 2051,
+    "share_0": 52.61,
+    "share_null": 47.39
+   },
+   "high": {
+    "n": 2052,
+    "share_0": 95.42,
+    "share_null": 0.05
+   }
+  },
+  "diff_low_minus_high_pp": -95.42,
+  "zero_is_default_by_rule": false
+ },
+ "d1_3_sensitivity_records_with_smoking_value": {
+  "n": 3130,
+  "smoking": {
+   "low": {
+    "n": 1043,
+    "share_0": 100.0,
+    "share_null": 0.0
+   },
+   "mid": {
+    "n": 1043,
+    "share_0": 100.0,
+    "share_null": 0.0
+   },
+   "high": {
+    "n": 1044,
+    "share_0": 91.09,
+    "share_null": 0.0
+   }
+  },
+  "diff_low_minus_high_pp": 8.91,
+  "note": "not pre-specified"
+ },
+ "d1_3_other_numeric_columns": {
+  "referredby": {
+   "n_nonnull": 3131,
+   "mode": "0",
+   "zero_is_mode": true,
+   "share_0_low": 0.0,
+   "share_0_high": 99.95,
+   "share_0_overall_nonnull": 99.97
+  },
+  "occupation": {
+   "n_nonnull": 3131,
+   "mode": "0",
+   "zero_is_mode": true,
+   "share_0_low": 0.0,
+   "share_0_high": 100.0,
+   "share_0_overall_nonnull": 100.0
+  },
+  "highesteducation": {
+   "n_nonnull": 3131,
+   "mode": "0",
+   "zero_is_mode": true,
+   "share_0_low": 0.0,
+   "share_0_high": 100.0,
+   "share_0_overall_nonnull": 100.0
+  },
+  "dysto": {
+   "n_nonnull": 3131,
+   "mode": "0",
+   "zero_is_mode": true,
+   "share_0_low": 0.0,
+   "share_0_high": 99.81,
+   "share_0_overall_nonnull": 99.87
+  },
+  "heartfrequency": {
+   "n_nonnull": 3128,
+   "mode": "0",
+   "zero_is_mode": true,
+   "share_0_low": 0.0,
+   "share_0_high": 99.37,
+   "share_0_overall_nonnull": 99.68
+  },
+  "regurgitationfrequency": {
+   "n_nonnull": 3131,
+   "mode": "0",
+   "zero_is_mode": true,
+   "share_0_low": 0.0,
+   "share_0_high": 99.9,
+   "share_0_overall_nonnull": 99.94
+  },
+  "nauseafrequency": {
+   "n_nonnull": 3130,
+   "mode": "0",
+   "zero_is_mode": true,
+   "share_0_low": 0.0,
+   "share_0_high": 99.85,
+   "share_0_overall_nonnull": 99.94
+  },
+  "vomitingfrequency": {
+   "n_nonnull": 3131,
+   "mode": "0",
+   "zero_is_mode": true,
+   "share_0_low": 0.0,
+   "share_0_high": 99.9,
+   "share_0_overall_nonnull": 99.94
+  },
+  "dyspepsiafrequency": {
+   "n_nonnull": 3130,
+   "mode": "0",
+   "zero_is_mode": true,
+   "share_0_low": 0.0,
+   "share_0_high": 99.81,
+   "share_0_overall_nonnull": 99.9
+  },
+  "abdnature": {
+   "n_nonnull": 3131,
+   "mode": "0",
+   "zero_is_mode": true,
+   "share_0_low": 0.0,
+   "share_0_high": 99.85,
+   "share_0_overall_nonnull": 99.9
+  },
+  "fundoopen": {
+   "n_nonnull": 3131,
+   "mode": "0",
+   "zero_is_mode": true,
+   "share_0_low": 0.0,
+   "share_0_high": 99.85,
+   "share_0_overall_nonnull": 99.9
+  },
+  "diabetescontrol": {
+   "n_nonnull": 3542,
+   "mode": "5",
+   "zero_is_mode": false,
+   "share_0_low": 0.0,
+   "share_0_high": 0.05,
+   "share_0_overall_nonnull": 4.18
+  },
+  "ppi": {
+   "n_nonnull": 5328,
+   "mode": "1",
+   "zero_is_mode": false,
+   "share_0_low": 0.0,
+   "share_0_high": 0.0,
+   "share_0_overall_nonnull": 0.0
+  },
+  "ppidose": {
+   "n_nonnull": 5626,
+   "mode": "40",
+   "zero_is_mode": false,
+   "share_0_low": 0.0,
+   "share_0_high": 5.99,
+   "share_0_overall_nonnull": 7.45
+  },
+  "ppifreq": {
+   "n_nonnull": 5626,
+   "mode": "2",
+   "zero_is_mode": false,
+   "share_0_low": 0.0,
+   "share_0_high": 7.12,
+   "share_0_overall_nonnull": 7.98
+  },
+  "ppiduration": {
+   "n_nonnull": 2777,
+   "mode": "0",
+   "zero_is_mode": true,
+   "share_0_low": 0.0,
+   "share_0_high": 92.88,
+   "share_0_overall_nonnull": 98.16
+  },
+  "exercise": {
+   "n_nonnull": 3131,
+   "mode": "0",
+   "zero_is_mode": true,
+   "share_0_low": 0.0,
+   "share_0_high": 96.15,
+   "share_0_overall_nonnull": 97.48
+  },
+  "praguec": {
+   "n_nonnull": 261,
+   "mode": "0",
+   "zero_is_mode": true,
+   "share_0_low": 0.0,
+   "share_0_high": 6.09,
+   "share_0_overall_nonnull": 47.89
+  },
+  "praguem": {
+   "n_nonnull": 264,
+   "mode": "1",
+   "zero_is_mode": false,
+   "share_0_low": 0.0,
+   "share_0_high": 0.19,
+   "share_0_overall_nonnull": 1.52
+  },
+  "currentbmi": {
+   "n_nonnull": 3131,
+   "mode": "0",
+   "zero_is_mode": true,
+   "share_0_low": 0.0,
+   "share_0_high": 99.95,
+   "share_0_overall_nonnull": 99.97
+  },
+  "heightm": {
+   "n_nonnull": 236,
+   "mode": "1.7",
+   "zero_is_mode": false,
+   "share_0_low": 0.0,
+   "share_0_high": 0.0,
+   "share_0_overall_nonnull": 0.0
+  },
+  "weightkg": {
+   "n_nonnull": 234,
+   "mode": "83.2",
+   "zero_is_mode": false,
+   "share_0_low": 0.0,
+   "share_0_high": 0.0,
+   "share_0_overall_nonnull": 0.0
+  },
+  "bmi": {
+   "n_nonnull": 3121,
+   "mode": "0",
+   "zero_is_mode": true,
+   "share_0_low": 0.0,
+   "share_0_high": 88.65,
+   "share_0_overall_nonnull": 92.85
+  },
+  "waist": {
+   "n_nonnull": 226,
+   "mode": "96",
+   "zero_is_mode": false,
+   "share_0_low": 0.0,
+   "share_0_high": 0.0,
+   "share_0_overall_nonnull": 0.0
+  },
+  "hip": {
+   "n_nonnull": 226,
+   "mode": "104",
+   "zero_is_mode": false,
+   "share_0_low": 0.0,
+   "share_0_high": 0.0,
+   "share_0_overall_nonnull": 0.0
+  },
+  "waisthipratio": {
+   "n_nonnull": 3128,
+   "mode": "0",
+   "zero_is_mode": true,
+   "share_0_low": 0.0,
+   "share_0_high": 88.94,
+   "share_0_overall_nonnull": 92.84
+  },
+  "waisthipcalc": {
+   "n_nonnull": 3131,
+   "mode": "0",
+   "zero_is_mode": true,
+   "share_0_low": 0.0,
+   "share_0_high": 99.95,
+   "share_0_overall_nonnull": 99.97
+  },
+  "selectedpatient": {
+   "n_nonnull": 3131,
+   "mode": "0",
+   "zero_is_mode": true,
+   "share_0_low": 0.0,
+   "share_0_high": 100.0,
+   "share_0_overall_nonnull": 100.0
+  }
+ },
+ "d1_4_rule": {
+  "overlap_n": 33,
+  "zero_treated_as_blank": false,
+  "candidate_mapping": {
+   "0": "Y",
+   "2": "Y"
+  },
+  "tie": false,
+  "agreement": 78.79,
+  "accepted": false,
+  "status": "NOT RESOLVED"
+ }
+}

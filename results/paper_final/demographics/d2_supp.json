@@ -1,0 +1,1190 @@
+{
+ "docx": "/mnt/scratche/fast/fmlab/zuberi01/personal/temp_hdd/Rehan/Downloads/Admin & Travel/EMS86618-supplement-Supp_Appendix.docx",
+ "docx_table_captions": [
+  "Supplementary Table 1: UK Discovery Cohort Demographics",
+  "Supplementary Table 2: UK Validation Cohort Demographics",
+  "Supplementary Table 3 Model coefficients",
+  "Supplementary Table 4 Model recommendations."
+ ],
+ "docx_tables": [
+  {
+   "caption_before": [
+    "2. Reid BJ, Levine DS, Longton G, Blount PL, Rabinovitch PS. Predictors of progression to cancer in Barrett\u2019s esophagus: baseline histology and flow cytometry identify low- and high-risk patient subsets. Am J Gastroenterol [Internet] 2000 [cited 2017 Feb 10];95(7):1669\u201376. Available from: http://www.nature.com/doifinder/10.1111/j.1572-0241.2000.02196.x",
+    "3. Kastelein F, van Olphen S, Steyerberg EW, et al. Surveillance in patients with long-segment Barrett\u2019s oesophagus: a cost-effectiveness analysis. Gut [Internet] 2015 [cited 2019 Dec 6];64(6):864\u201371. Available from: http://www.ncbi.nlm.nih.gov/pubmed/25037191",
+    "Supplementary Tables"
+   ],
+   "n_rows": 16,
+   "rows": [
+    [
+     "UK Discovery Cohort",
+     "Non-Progressors",
+     "Progressors",
+     "P-value (Test)"
+    ],
+    [
+     "Total Patients",
+     "43",
+     "45",
+     ""
+    ],
+    [
+     "Total Samples (passed QC)",
+     "424 (424)",
+     "353 (349)",
+     ""
+    ],
+    [
+     "Range of years samples obtained",
+     "1996-2012",
+     "1994-2016",
+     ""
+    ],
+    [
+     "Range years follow-up (Mean \u00b1 SD)",
+     "3-13 (6.7 \u00b1 3.2)",
+     "1-15 (4.6 \u00b1 3.7)",
+     "0.004 (Wilcoxon rank-sum)"
+    ],
+    [
+     "Mean age in years at diagnosis (SD)",
+     "59.7 \u00b1 10",
+     "62.4 \u00b1 9.7",
+     "P=0.4 (Wilcoxon rank-sum)"
+    ],
+    [
+     "Mean Barrett's segment length in cm (not recorded)",
+     "4.7 \u00b1 2.6 (3)",
+     "4.6 \u00b1 2.4 (12)",
+     "P=0.7 (Wilcoxon rank-sum)"
+    ],
+    [
+     "Gender Female:Male",
+     "11:32",
+     "8:37",
+     "P=0.5 (2)"
+    ],
+    [
+     "Smoking Yes:No (not recorded)",
+     "16:6 (21)",
+     "19:5 (21)",
+     "P=0.8 (2)"
+    ],
+    [
+     "Samples IHC stained for p53 (Not stained)",
+     "347 (77)",
+     "243 (110)",
+     ""
+    ],
+    [
+     "Reported pathology - number of samples"
+    ],
+    [
+     "Non-dysplastic Barrett's (NDBE)",
+     "346",
+     "176",
+     ""
+    ],
+    [
+     "Indeterminate (ID)",
+     "52",
+     "32",
+     ""
+    ],
+    [
+     "Low-Grade Dysplasia (LGD)",
+     "26",
+     "83",
+     ""
+    ],
+    [
+     "High-Grade Dysplasia (HGD)",
+     "N/A",
+     "37",
+     ""
+    ],
+    [
+     "Intramucosal Carcinoma (IMC)",
+     "N/A",
+     "25",
+     ""
+    ]
+   ]
+  },
+  {
+   "caption_before": [
+    "Supplementary Tables",
+    "Supplementary Table 1: UK Discovery Cohort Demographics",
+    "Patients were matched for age at diagnosis, BE segment length, and gender. Patients who did not progress to HGD/IMC had a minimum 3 years follow-up, patients who progressed to HGD/IMC from NDBE have a minimum 1 year follow-up."
+   ],
+   "n_rows": 13,
+   "rows": [
+    [
+     "UK Validation Cohort",
+     "Non-progressors",
+     "Progressors",
+     "P-value(Test)"
+    ],
+    [
+     "Total Patients",
+     "58",
+     "18",
+     ""
+    ],
+    [
+     "Total Samples (passed QC)",
+     "143 (142)",
+     "76 (71)",
+     ""
+    ],
+    [
+     "Range of years samples obtained",
+     "2004-2017",
+     "2000-2017",
+     ""
+    ],
+    [
+     "Years follow-up (Mean \u00b1 SD)",
+     "1.5-12.3 (5.4 \u00b1 3.0)",
+     "1.6-13(6.1 \u00b1 3.4)",
+     ""
+    ],
+    [
+     "Mean age at diagnosis (years)",
+     "67.1 \u00b1 13",
+     "62.8 \u00b1 9.7",
+     "P=0.09(Wilcoxon rank-sum)"
+    ],
+    [
+     "Gender Female:Male (unknown)",
+     "14:42",
+     "4:14",
+     "P=1(2)"
+    ],
+    [
+     "Mean Barrett's segment length in cm",
+     "6.3 \u00b1 3.1",
+     "5.4 \u00b1 2.9",
+     "P=0.22(Wilcoxon rank-sum)"
+    ],
+    [
+     "Smoking Yes:No (not recorded)",
+     "14:16 (27)",
+     "11:4 (3)",
+     "P=0.2(2)"
+    ],
+    [
+     "Reported pathology \u2013 number of samples"
+    ],
+    [
+     "Non-dysplastic Barrett's (NDBE)",
+     "147",
+     "63",
+     ""
+    ],
+    [
+     "Indeterminate (ID)",
+     "0",
+     "3",
+     ""
+    ],
+    [
+     "Low-Grade Dysplasia (LGD)",
+     "0",
+     "10",
+     ""
+    ]
+   ]
+  },
+  {
+   "caption_before": [
+    "Patients were matched for age at diagnosis, BE segment length, and gender. Patients who did not progress to HGD/IMC had a minimum 3 years follow-up, patients who progressed to HGD/IMC from NDBE have a minimum 1 year follow-up.",
+    "Supplementary Table 2: UK Validation Cohort Demographics",
+    "In the validation cohort patients were not matched for gender, follow-up, or BE segment length. In this group we aimed to evaluate a single timepoint from the earliest possible full surveillance endoscopy. In the progressor patients we did have a couple more timepoints as we were not certain that we would have sufficient DNA. However, all of the extra samples passed QC and so were included."
+   ],
+   "n_rows": 76,
+   "rows": [
+    [
+     "Coefficient",
+     "CV(RR)",
+     "Gain/Loss"
+    ],
+    [
+     "11:106076549-110898209",
+     "21.083",
+     "Loss"
+    ],
+    [
+     "15:43942026-48824472",
+     "20.042",
+     "Loss"
+    ],
+    [
+     "1:189430472-194415484",
+     "15.924",
+     "Loss"
+    ],
+    [
+     "17:1-22200000",
+     "8.546",
+     "Loss"
+    ],
+    [
+     "6:24445010-29334011",
+     "5.814",
+     "Gain"
+    ],
+    [
+     "17:25800000-81195210",
+     "5.090",
+     "Gain"
+    ],
+    [
+     "7:59676999-64650081",
+     "2.785",
+     "Loss"
+    ],
+    [
+     "16:19022054-23777566",
+     "2.752",
+     "Gain"
+    ],
+    [
+     "7:19892333-24865416",
+     "2.323",
+     "Loss"
+    ],
+    [
+     "1:39880100-44865111",
+     "2.249",
+     "Gain"
+    ],
+    [
+     "21:14300000-48129895",
+     "1.697",
+     "Loss"
+    ],
+    [
+     "6:44001018-48890019",
+     "1.337",
+     "Gain"
+    ],
+    [
+     "14:68313344-73192868",
+     "1.254",
+     "Gain"
+    ],
+    [
+     "16:28533080-33288593",
+     "1.113",
+     "Gain"
+    ],
+    [
+     "4:107830618-112732008",
+     "1.018",
+     "Gain"
+    ],
+    [
+     "14:14638574-19518098",
+     "0.978",
+     "Loss"
+    ],
+    [
+     "2:203493353-208456605",
+     "0.977",
+     "Loss"
+    ],
+    [
+     "2:89338546-94301797",
+     "0.879",
+     "Loss"
+    ],
+    [
+     "7:4973084-9946166",
+     "0.759",
+     "Loss"
+    ],
+    [
+     "4:132337576-137238967",
+     "0.729",
+     "Gain"
+    ],
+    [
+     "6:146670058-151559059",
+     "0.631",
+     "Gain"
+    ],
+    [
+     "2:29779516-34742767",
+     "0.593",
+     "Loss"
+    ],
+    [
+     "4:1-4901391",
+     "0.515",
+     "Gain"
+    ],
+    [
+     "3:108912337-113862897",
+     "0.406",
+     "Loss"
+    ],
+    [
+     "20:43633053-48481169",
+     "0.376",
+     "Loss"
+    ],
+    [
+     "2:183640343-188603595",
+     "0.343",
+     "Gain"
+    ],
+    [
+     "16:66577187-71332699",
+     "0.331",
+     "Loss"
+    ],
+    [
+     "22:27984309-32648360",
+     "0.327",
+     "Loss"
+    ],
+    [
+     "10:87129481-91970006",
+     "0.317",
+     "Loss"
+    ],
+    [
+     "4:44112526-49013916",
+     "0.275",
+     "Gain"
+    ],
+    [
+     "3:1-87900000",
+     "0.250",
+     "Gain"
+    ],
+    [
+     "1:69790174-74775186",
+     "0.209",
+     "Loss"
+    ],
+    [
+     "7:54703916-59676998",
+     "0.204",
+     "Loss"
+    ],
+    [
+     "1:149550373-154535385",
+     "0.202",
+     "Loss"
+    ],
+    [
+     "1:84745212-89730223",
+     "0.201",
+     "Loss"
+    ],
+    [
+     "4:171548710-176450100",
+     "0.194",
+     "Gain"
+    ],
+    [
+     "2:129044566-134007817",
+     "0.191",
+     "Loss"
+    ],
+    [
+     "9:111996860-116866287",
+     "0.180",
+     "Loss"
+    ],
+    [
+     "10:14521581-19362106",
+     "0.165",
+     "Loss"
+    ],
+    [
+     "7:84542415-89515497",
+     "0.152",
+     "Loss"
+    ],
+    [
+     "cx",
+     "0.144",
+     "-"
+    ],
+    [
+     "19:54201568-59128983",
+     "0.139",
+     "Loss"
+    ],
+    [
+     "1:199400497-204385509",
+     "0.138",
+     "Gain"
+    ],
+    [
+     "2:54595778-59559030",
+     "0.137",
+     "Gain"
+    ],
+    [
+     "18:19519313-24399140",
+     "0.136",
+     "Gain"
+    ],
+    [
+     "7:74596249-79569331",
+     "0.126",
+     "Gain"
+    ],
+    [
+     "2:59559031-64522282",
+     "0.118",
+     "Loss"
+    ],
+    [
+     "5:176025659-180915260",
+     "0.111",
+     "Loss"
+    ],
+    [
+     "5:127129643-132019243",
+     "0.109",
+     "Loss"
+    ],
+    [
+     "18:63437765-68317592",
+     "0.103",
+     "Gain"
+    ],
+    [
+     "6:102669041-107558042",
+     "0.100",
+     "Gain"
+    ],
+    [
+     "11:53038275-57859935",
+     "0.097",
+     "Gain"
+    ],
+    [
+     "2:69485536-74448787",
+     "0.096",
+     "Gain"
+    ],
+    [
+     "12:114021985-118979462",
+     "0.094",
+     "Gain"
+    ],
+    [
+     "1:79760199-84745211",
+     "0.089",
+     "Loss"
+    ],
+    [
+     "10:29043161-33883686",
+     "0.084",
+     "Gain"
+    ],
+    [
+     "4:186252885-191154276",
+     "0.080",
+     "Gain"
+    ],
+    [
+     "1:44865112-49850124",
+     "0.076",
+     "Gain"
+    ],
+    [
+     "9:14608286-19477714",
+     "0.073",
+     "Loss"
+    ],
+    [
+     "1:169490423-174475434",
+     "0.055",
+     "Loss"
+    ],
+    [
+     "1:24925063-29910074",
+     "0.052",
+     "Loss"
+    ],
+    [
+     "16:52310647-57066159",
+     "0.051",
+     "Loss"
+    ],
+    [
+     "1:144565361-149550372",
+     "0.048",
+     "Gain"
+    ],
+    [
+     "5:136908846-141798447",
+     "0.042",
+     "Loss"
+    ],
+    [
+     "10:125853694-130694220",
+     "0.037",
+     "Gain"
+    ],
+    [
+     "2:84375293-89338545",
+     "0.033",
+     "Gain"
+    ],
+    [
+     "4:73520876-78422267",
+     "0.026",
+     "Gain"
+    ],
+    [
+     "17:38209511-42985699",
+     "0.023",
+     "Loss"
+    ],
+    [
+     "10:67767374-72607900",
+     "0.019",
+     "Gain"
+    ],
+    [
+     "7:1-4973083",
+     "0.013",
+     "Gain"
+    ],
+    [
+     "15:20700000-102531392",
+     "0.008",
+     "Gain"
+    ],
+    [
+     "7:9946167-14919249",
+     "0.005",
+     "Gain"
+    ],
+    [
+     "6:9778004-14667005",
+     "0.005",
+     "Loss"
+    ],
+    [
+     "5:171136057-176025658",
+     "0.005",
+     "Gain"
+    ],
+    [
+     "4:29408351-34309741",
+     "0.004",
+     "Loss"
+    ]
+   ]
+  },
+  {
+   "caption_before": [
+    "In the validation cohort patients were not matched for gender, follow-up, or BE segment length. In this group we aimed to evaluate a single timepoint from the earliest possible full surveillance endoscopy. In the progressor patients we did have a couple more timepoints as we were not certain that we would have sufficient DNA. However, all of the extra samples passed QC and so were included.",
+    "Supplementary Table 3 Model coefficients",
+    "Genomic regions selected by the model as being predictive of progression with their associated coefficient of variation for the relative risk (i.e. , where y is the matrix value) and status (i.e. relative gain or loss). Few are strong drivers of the model, and even the top five coefficients are found in relatively few patients or samples. For example, the loss of 17p was not sufficient to predict progression as it occurred in only 9% of all samples (70/773), and while it occurred exclusively in progressor patients it was only in 20% (70/349) of progressor patient samples. Furthermore, due to the nature of elastic-net coefficient selection, these features change as patients are added to the model training process (Supplementary Fig. 6B) indicating that the model is not yet saturated. Many of the features listed in the table above are consistently selected, but the strength of the predictive power in the model () is not stable indicating that the model has not yet converged. The \u2018cx\u2019 coefficient is the value added to the model to represent the overall complexity of the genome."
+   ],
+   "n_rows": 11,
+   "rows": [
+    [
+     "",
+     "Non-Progressors",
+     "Progressors"
+    ],
+    [
+     "Recommendation following 2nd endoscopy",
+     "(n=41)",
+     "(n=35)"
+    ],
+    [
+     "3-5 year surveillance",
+     "21",
+     "2"
+    ],
+    [
+     "12-24 month recheck",
+     "6",
+     "9"
+    ],
+    [
+     "6-12 month recheck",
+     "7",
+     "5"
+    ],
+    [
+     "RFA Treatment",
+     "7",
+     "19"
+    ],
+    [
+     "Recommendation following penultimate endoscopy",
+     "(n=41)",
+     "(n=37)"
+    ],
+    [
+     "3-5 year surveillance",
+     "19",
+     "0"
+    ],
+    [
+     "12-24 month recheck",
+     "10",
+     "2"
+    ],
+    [
+     "6-12 month recheck",
+     "5",
+     "8"
+    ],
+    [
+     "RFA Treatment",
+     "7",
+     "27"
+    ]
+   ]
+  }
+ ],
+ "source_data_xlsx": {
+  "41591_2020_1033_MOESM3_ESM.xlsx": {
+   "Supporting data for Figure 1b": {
+    "shape": [
+     15905,
+     9
+    ],
+    "first_row_with_2plus_values": [
+     "Patient",
+     "Location",
+     "chr",
+     "start",
+     "end",
+     "CN value",
+     "Status",
+     "Months before final endoscopy",
+     "Relative esophageal sample location (1-4)"
+    ],
+    "demographic_like_cells_in_first_5_rows": [
+     "Relative esophageal sample location (1-4)"
+    ]
+   },
+   "Supporting data for Figure 1c-d": {
+    "shape": [
+     455298,
+     8
+    ],
+    "first_row_with_2plus_values": [
+     "Patient",
+     "Status",
+     "Pathology",
+     "Sample",
+     "Chromosome",
+     "Start",
+     "End",
+     "CN Value"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   }
+  },
+  "41591_2020_1033_MOESM4_ESM.xlsx": {
+   "Supporting data for Figure 2a": {
+    "shape": [
+     775,
+     4
+    ],
+    "first_row_with_2plus_values": [
+     "Samplename",
+     "Probability",
+     "log(Relative Risk)",
+     "Risk class"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   },
+   "Supporting data Figure 2a Inset": {
+    "shape": [
+     12,
+     9
+    ],
+    "first_row_with_2plus_values": [
+     "Decile",
+     "NP samples",
+     "P samples",
+     "P:NP",
+     "CI Low",
+     "CI High",
+     "Chi Square p-value",
+     "mean(Pr)",
+     "Risk class"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   },
+   "Supporting data for Figure 2b": {
+    "shape": [
+     25,
+     4
+    ],
+    "first_row_with_2plus_values": [
+     "Status",
+     "Pathology",
+     "Risk class",
+     "Sample count"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   },
+   "Supporting data for Figure 2c": {
+    "shape": [
+     11,
+     4
+    ],
+    "first_row_with_2plus_values": [
+     "Status",
+     "Pathology",
+     "Risk class",
+     "Sample count"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   },
+   "Supporting data for Figure 2d": {
+    "shape": [
+     775,
+     5
+    ],
+    "first_row_with_2plus_values": [
+     "Patient",
+     "Status",
+     "Esophageal location",
+     "Risk class",
+     "Months before final"
+    ],
+    "demographic_like_cells_in_first_5_rows": [
+     "Esophageal location"
+    ]
+   }
+  },
+  "41591_2020_1033_MOESM5_ESM.xlsx": {
+   "Supporting data for Figure 3a": {
+    "shape": [
+     401,
+     6
+    ],
+    "first_row_with_2plus_values": [
+     "Patient",
+     "Status",
+     "max(Pr)",
+     "max(Risk class)",
+     "max(Pathology)",
+     "Months since initial endoscopy"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   },
+   "Supporting data for Figure 3b": {
+    "shape": [
+     9,
+     6
+    ],
+    "first_row_with_2plus_values": [
+     "Months",
+     "Ratio predicted endoscopies",
+     "Sample count",
+     "Endoscopy count",
+     "mean(Pr)",
+     "SEM(Pr)"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   }
+  },
+  "41591_2020_1033_MOESM6_ESM.xlsx": {
+   "Sheet1": {
+    "shape": [
+     0,
+     0
+    ],
+    "first_row_with_2plus_values": [],
+    "demographic_like_cells_in_first_5_rows": []
+   },
+   "Supporting data for Figure 4b": {
+    "shape": [
+     78,
+     6
+    ],
+    "first_row_with_2plus_values": [
+     "Patient",
+     "Status",
+     "max(Pathology)",
+     "Months before endpoint",
+     "max(Pr)",
+     "Recommendation"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   }
+  },
+  "41591_2020_1033_MOESM7_ESM.xlsx": {
+   "Exended Data Fig 1a-b": {
+    "shape": [
+     774,
+     3
+    ],
+    "first_row_with_2plus_values": [
+     "Status",
+     "Complexity Score",
+     "Samplename"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   },
+   "Extended Data Fig 1c": {
+    "shape": [
+     169,
+     3
+    ],
+    "first_row_with_2plus_values": [
+     "Status",
+     "Segment type",
+     "CN count"
+    ],
+    "demographic_like_cells_in_first_5_rows": [
+     "Segment type"
+    ]
+   },
+   "Extended Data Fig 1d": {
+    "shape": [
+     169,
+     7
+    ],
+    "first_row_with_2plus_values": [
+     "Patient",
+     "Status",
+     "max(Pr)",
+     "max(RR)",
+     "max(Pathology)",
+     "Chromosome arms",
+     "Endoscopy"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   }
+  },
+  "41591_2020_1033_MOESM8_ESM.xlsx": {
+   "Ext Data Fig 2a All samples": {
+    "shape": [
+     774,
+     2
+    ],
+    "first_row_with_2plus_values": [
+     "Status",
+     "Probability"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   },
+   "Ext Data Fig 2a No HGD IMC": {
+    "shape": [
+     715,
+     2
+    ],
+    "first_row_with_2plus_values": [
+     "Status",
+     "Probability"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   },
+   "Ex Data Fig 2b": {
+    "shape": [
+     774,
+     4
+    ],
+    "first_row_with_2plus_values": [
+     "Patient",
+     "Status",
+     "Probability",
+     "Endoscopy"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   }
+  },
+  "41591_2020_1033_MOESM9_ESM.xlsx": {
+   "Ex Data Fig 3a": {
+    "shape": [
+     491,
+     3
+    ],
+    "first_row_with_2plus_values": [
+     "Status",
+     "Probability",
+     "Relative Risk"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   },
+   "Ex Data Fig 3b": {
+    "shape": [
+     491,
+     5
+    ],
+    "first_row_with_2plus_values": [
+     "Probability",
+     "Relative Risk",
+     "Risk",
+     "Pathology",
+     "Status"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   },
+   "Ex Data Fig 3c": {
+    "shape": [
+     19,
+     6
+    ],
+    "first_row_with_2plus_values": [
+     "value",
+     "CI.min",
+     "CI.max",
+     "model",
+     "n",
+     "Measure"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   },
+   "Ex Data Fig 3d": {
+    "shape": [
+     715,
+     4
+    ],
+    "first_row_with_2plus_values": [
+     "Status",
+     "Purity_mean",
+     "ASCAT.SCA.ratio_mean",
+     "SampleType"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   }
+  },
+  "41591_2020_1033_MOESM10_ESM.xlsx": {
+   "Ex Data Fig 4a": {
+    "shape": [
+     5,
+     14
+    ],
+    "first_row_with_2plus_values": [
+     "lambda.at",
+     "mean",
+     "sme",
+     "sd",
+     "lambda",
+     "log.lambda",
+     "mean.b.dev",
+     "sd.b.dev",
+     "sme.b.dev",
+     "lambda.min",
+     "lambda+1se",
+     "lambda-1se",
+     "penalty",
+     "non-zero coefs"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   },
+   "Ex Data Fig 4b": {
+    "shape": [
+     28,
+     4
+    ],
+    "first_row_with_2plus_values": [
+     "label",
+     "hazards",
+     "coef",
+     "stability"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   }
+  },
+  "41591_2020_1033_MOESM11_ESM.xlsx": {
+   "Ex Data Fig 5": {
+    "shape": [
+     774,
+     6
+    ],
+    "first_row_with_2plus_values": [
+     "Patient",
+     "Status",
+     "Esophageal location",
+     "Risk class",
+     "Pathology",
+     "Months before final"
+    ],
+    "demographic_like_cells_in_first_5_rows": [
+     "Esophageal location"
+    ]
+   }
+  },
+  "41591_2020_1033_MOESM12_ESM.xlsx": {
+   "Ex Data Fig 6a-c": {
+    "shape": [
+     12,
+     13
+    ],
+    "first_row_with_2plus_values": [
+     "n.patients",
+     "Cohort",
+     "Type",
+     "cv.performance_mean",
+     "n.coefs_mean",
+     "auc_mean",
+     "specificity_mean",
+     "sensitivity_mean",
+     "cv.performance_sem",
+     "n.coefs_sem",
+     "auc_sem",
+     "specificity_sem",
+     "sensitivity_sem"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   }
+  },
+  "41591_2020_1033_MOESM13_ESM.xlsx": {
+   "Ex Data Fig 7a": {
+    "shape": [
+     11,
+     5
+    ],
+    "first_row_with_2plus_values": [
+     "Pathology",
+     "p53.Status",
+     "Sample count",
+     "Status",
+     "Sample ratio"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   }
+  },
+  "41591_2020_1033_MOESM14_ESM.xlsx": {
+   "Ex Data Fig 8a": {
+    "shape": [
+     473,
+     6
+    ],
+    "first_row_with_2plus_values": [
+     "chrom",
+     "arm",
+     "start.pos",
+     "end.pos",
+     "n.probes",
+     "CaCo cell line, FFPE prep"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   },
+   "Ex Data Fig 8b": {
+    "shape": [
+     553,
+     6
+    ],
+    "first_row_with_2plus_values": [
+     "chrom",
+     "arm",
+     "start.pos",
+     "end.pos",
+     "n.probes",
+     "OAC patient fresh frozen"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   },
+   "Ex Data Fig 8c": {
+    "shape": [
+     184,
+     7
+    ],
+    "first_row_with_2plus_values": [
+     "chrom",
+     "arm",
+     "start.pos",
+     "end.pos",
+     "n.probes",
+     "Patient 34, FFPE rep 1",
+     "Patient 34, FFPE rep 2"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   }
+  },
+  "41591_2020_1033_MOESM15_ESM.xlsx": {
+   "Ex Data Fig 9a": {
+    "shape": [
+     25,
+     5
+    ],
+    "first_row_with_2plus_values": [
+     "mean",
+     "sme",
+     "alpha",
+     "n.coefs",
+     "kb"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   },
+   "Ex Data Fig 9b": {
+    "shape": [
+     5,
+     10
+    ],
+    "first_row_with_2plus_values": [
+     "auc",
+     "auc.ci.high",
+     "auc.ci.low",
+     "specificity.low",
+     "specificity",
+     "specificity.high",
+     "sensitivity.low",
+     "sensitivity",
+     "sensitivity.high",
+     "kb"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   },
+   "Ex Data Fig 9c": {
+    "shape": [
+     9,
+     5
+    ],
+    "first_row_with_2plus_values": [
+     "AUC",
+     "AUC.CI.high",
+     "AUC.CI.low",
+     "kb",
+     "Cohort"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   }
+  },
+  "41591_2020_1033_MOESM16_ESM.xlsx": {
+   "Ex Data Fig 10a": {
+    "shape": [
+     9,
+     6
+    ],
+    "first_row_with_2plus_values": [
+     "Status",
+     "Low",
+     "Moderate",
+     "High",
+     "Total samples",
+     "kb"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   },
+   "Ex Data Fig 10b": {
+    "shape": [
+     9,
+     6
+    ],
+    "first_row_with_2plus_values": [
+     "kb",
+     "Status",
+     "Low",
+     "Moderate",
+     "High",
+     "Total samples"
+    ],
+    "demographic_like_cells_in_first_5_rows": []
+   }
+  }
+ }
+}

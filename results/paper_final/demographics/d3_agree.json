@@ -1,0 +1,124 @@
+{
+ "discovery": {
+  "sex": {
+   "both": 80,
+   "agree": 80
+  },
+  "age_dx": {
+   "both": 80,
+   "agree_within_0.5y": 80
+  },
+  "prague_c": {
+   "both": 64,
+   "agree": 64
+  },
+  "prague_m": {
+   "both": 67,
+   "agree": 67
+  },
+  "smoking": {
+   "both": 43,
+   "agree": 0,
+   "agree_Y_eq_former_or_current": 43
+  },
+  "age_dx_db_minus_age_dx_sheet": {
+   "both": 24,
+   "median_abs_years": 0.8,
+   "within_1y": 13
+  },
+  "age_first_sample_db_minus_age_first_sample_sheet": {
+   "both": 36,
+   "median_abs_years": 0.0,
+   "within_1y": 34
+  },
+  "age_first_sample_db_below_18": 2,
+  "age_dx_db_below_18": 0,
+  "sqlite_only_patients_sex": 0,
+  "sqlite_only_patients_smoking": 0
+ },
+ "release": {
+  "sex": {
+   "both": 82,
+   "agree": 82
+  },
+  "age_dx": {
+   "both": 82,
+   "agree_within_0.5y": 82
+  },
+  "prague_c": {
+   "both": 66,
+   "agree": 66
+  },
+  "prague_m": {
+   "both": 69,
+   "agree": 69
+  },
+  "smoking": {
+   "both": 44,
+   "agree": 0,
+   "agree_Y_eq_former_or_current": 44
+  },
+  "age_dx_db_minus_age_dx_sheet": {
+   "both": 23,
+   "median_abs_years": 0.82,
+   "within_1y": 12
+  },
+  "age_first_sample_db_minus_age_first_sample_sheet": {
+   "both": 33,
+   "median_abs_years": 0.0,
+   "within_1y": 31
+  },
+  "age_first_sample_db_below_18": 2,
+  "age_dx_db_below_18": 0,
+  "sqlite_only_patients_sex": 68,
+  "sqlite_only_patients_smoking": 40
+ },
+ "sheet777_columns": [
+  "sample_id",
+  "PatientID",
+  "Hospital Research ID",
+  "Hospital_Research_ID_updated",
+  "Set",
+  "Path ID",
+  "Path ID_without_num",
+  "Endoscopy Year",
+  "Pathology",
+  "Pathology notes",
+  "inconsistency",
+  "Progressor/ Non Progressor",
+  "SLXID1",
+  "PlateIndex",
+  "SLXID2",
+  "combined_name",
+  "combined_name_formula",
+  "Pilot for unpurifed lib",
+  "Batch",
+  "p53 status",
+  "% Barrett's cellularity",
+  "Number of reads",
+  "Replicate",
+  "Block",
+  "Patient",
+  "Status",
+  "Esophageal location",
+  "Pathology2",
+  "Months before final",
+  "Path_class_per_OGD",
+  "groups",
+  "classification",
+  "labels_dysplasia",
+  "labels_LGD",
+  "labels_adj",
+  "labels_dysplasia_without_focal",
+  "labels_LGD_without_focal",
+  "labels_adj_without_focal",
+  "labels_NP",
+  "excluded",
+  "notes on label review",
+  "remove",
+  "consistency after review"
+ ],
+ "sheet777_demographic_columns": [
+  "Esophageal location"
+ ]
+}

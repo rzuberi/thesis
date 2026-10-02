@@ -1,0 +1,31 @@
+{
+ "pattern": "moesm|41591|1033|supp(lement)?[_ -]?(ary)?[_ -]?(appendix|table|info|data)|supp_appendix|extended[_ -]?data|EGAD00001006033|EGAS|killcoyne|s41591|table[_ -]?s1\\b|suppl",
+ "extensions": "\\.(xlsx|xls|csv|tsv|txt|pdf|docx|doc|rds|rda|rdata|zip|json)$",
+ "excluded_paths": "site-packages|/envs/|miniforge|/\\.git/|node_modules|/\\.pixi/|/lib/python|/conda|/R/library/(?!BarrettsProgressionRisk)",
+ "n_shards": 467,
+ "n_files_listed": 14853322,
+ "stderr_lines": 1975,
+ "n_hits": 367,
+ "killcoyne_2020_files": [
+  "/mnt/scratche/fast/fmlab/zuberi01/personal/temp_hdd/Archive 02092026/SWGCohort/s41591-020-1033-y.pdf",
+  "/mnt/scratche/fast/fmlab/zuberi01/personal/temp_hdd/Rehan/Downloads/Admin & Travel/EMS86618-supplement-Supp_Appendix.docx",
+  "/mnt/scratche/fast/fmlab/zuberi01/personal/temp_hdd/Rehan/Downloads/s41591-020-1033-y.pdf",
+  "/mnt/scratche/slow/fmlab/marker01/SWGCohort/s41591-020-1033-y.pdf",
+  "/mnt/scratche/slow/fmlab/zuberi01/phd/killcoyne_data_from_paper/41591_2020_1033_MOESM10_ESM.xlsx",
+  "/mnt/scratche/slow/fmlab/zuberi01/phd/killcoyne_data_from_paper/41591_2020_1033_MOESM11_ESM.xlsx",
+  "/mnt/scratche/slow/fmlab/zuberi01/phd/killcoyne_data_from_paper/41591_2020_1033_MOESM12_ESM.xlsx",
+  "/mnt/scratche/slow/fmlab/zuberi01/phd/killcoyne_data_from_paper/41591_2020_1033_MOESM13_ESM.xlsx",
+  "/mnt/scratche/slow/fmlab/zuberi01/phd/killcoyne_data_from_paper/41591_2020_1033_MOESM14_ESM.xlsx",
+  "/mnt/scratche/slow/fmlab/zuberi01/phd/killcoyne_data_from_paper/41591_2020_1033_MOESM15_ESM.xlsx",
+  "/mnt/scratche/slow/fmlab/zuberi01/phd/killcoyne_data_from_paper/41591_2020_1033_MOESM16_ESM.xlsx",
+  "/mnt/scratche/slow/fmlab/zuberi01/phd/killcoyne_data_from_paper/41591_2020_1033_MOESM3_ESM.xlsx",
+  "/mnt/scratche/slow/fmlab/zuberi01/phd/killcoyne_data_from_paper/41591_2020_1033_MOESM4_ESM.xlsx",
+  "/mnt/scratche/slow/fmlab/zuberi01/phd/killcoyne_data_from_paper/41591_2020_1033_MOESM5_ESM.xlsx",
+  "/mnt/scratche/slow/fmlab/zuberi01/phd/killcoyne_data_from_paper/41591_2020_1033_MOESM6_ESM.xlsx",
+  "/mnt/scratche/slow/fmlab/zuberi01/phd/killcoyne_data_from_paper/41591_2020_1033_MOESM7_ESM.xlsx",
+  "/mnt/scratche/slow/fmlab/zuberi01/phd/killcoyne_data_from_paper/41591_2020_1033_MOESM8_ESM.xlsx",
+  "/mnt/scratche/slow/fmlab/zuberi01/phd/killcoyne_data_from_paper/41591_2020_1033_MOESM9_ESM.xlsx",
+  "/mnt/scratche/slow/fmlab/zuberi01/phd/s41591-020-1033-y.pdf"
+ ],
+ "note": "Full hit list (other projects' file names) kept on the cluster only: results/paper_final/demographics/d2_name_search.json there; this repository copy keeps counts and the Killcoyne 2020 files (stricter filename filter, applied after the search)."
+}

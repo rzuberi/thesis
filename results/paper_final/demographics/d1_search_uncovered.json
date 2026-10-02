@@ -1,0 +1,11 @@
+{
+ "note": "Directories the D1 code/text search did not finish (listing did not complete within about 40 minutes after splitting twice); cancelled 2026-10-02 11:57 BST. Source: Slurm task status of campaigns dmc/dms/dms2/dco (feasibility/runs/*/done.json absent).",
+ "not_searched": [
+  "/mnt/scratche/slow/fmlab/zuberi01/phd/barretts_retraining/barretts_training/analysis",
+  "/mnt/scratche/slow/fmlab/zuberi01/phd/barretts_retraining/barretts_training/data",
+  "/mnt/scratche/slow/fmlab/zuberi01/phd/barretts_progressor/scripts/unimodal",
+  "/mnt/scratche/slow/fmlab/zuberi01/phd/barretts_progressor_broken/scripts/unimodal"
+ ],
+ "excluded_as_software_environments": ["/mnt/scratche/slow/fmlab/zuberi01/personal/scifi_video/env", "/mnt/scratche/slow/fmlab/zuberi01/personal/scifi_video/env_tts"],
+ "searched_with_code_and_doc_extensions_only": "see d1_search.json code_search.codeonly_shards"
+}
