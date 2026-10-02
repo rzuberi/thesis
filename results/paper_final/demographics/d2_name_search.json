@@ -27,5 +27,5 @@
   "/mnt/scratche/slow/fmlab/zuberi01/phd/killcoyne_data_from_paper/41591_2020_1033_MOESM9_ESM.xlsx",
   "/mnt/scratche/slow/fmlab/zuberi01/phd/s41591-020-1033-y.pdf"
  ],
- "note": "Full hit list (other projects' file names) kept on the cluster only: results/paper_final/demographics/d2_name_search.json there; this repository copy keeps counts and the Killcoyne 2020 files (stricter filename filter, applied after the search)."
+ "note": "Full hit list (other projects' file names) kept on the cluster only: /mnt/scratche/slow/fmlab/zuberi01/phd/thesis/feasibility/paper_plan/demographics/d2_name_search_full.json; this repository copy keeps counts and the Killcoyne 2020 files (stricter filename filter, applied after the search)."
 }
