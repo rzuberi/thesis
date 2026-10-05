@@ -1,0 +1,150 @@
+{
+ "source_list": "/mnt/scratche/slow/fmlab/zuberi01/phd/thesis/feasibility/paper_plan/killcoyne_mm/horizon_answers/q2_patient_list.csv",
+ "prob_match_moesm4_vs_kprob_max_abs_diff": 0.0,
+ "horizons": {
+  "1": {
+   "captured_cases_CNVneg_bestpos": {
+    "samples": 6,
+    "patients": 3,
+    "cx_raw_pkg": {
+     "n": 6,
+     "mean": 25.833,
+     "sd": 7.333
+    },
+    "tissue_tiles": {
+     "n": 6,
+     "mean": 206.333,
+     "sd": 109.46
+    },
+    "pub_prob_le_0.3": 3,
+    "pub_prob_missing": 0
+   },
+   "cases_both_pos": {
+    "samples": 21,
+    "patients": 13,
+    "cx_raw_pkg": {
+     "n": 21,
+     "mean": 23.429,
+     "sd": 9.174
+    },
+    "tissue_tiles": {
+     "n": 21,
+     "mean": 386.619,
+     "sd": 415.997
+    },
+    "pub_prob_le_0.3": 0,
+    "pub_prob_missing": 0
+   },
+   "cleared_controls_CNVpos_bestneg": {
+    "samples": 70,
+    "patients": 30
+   },
+   "controls_both_pos": {
+    "samples": 96,
+    "patients": 34
+   },
+   "check_vs_q2json": {
+    "captured_samples": true,
+    "cleared_samples": true,
+    "captured_patients": true,
+    "cleared_patients": true
+   }
+  },
+  "3": {
+   "captured_cases_CNVneg_bestpos": {
+    "samples": 11,
+    "patients": 6,
+    "cx_raw_pkg": {
+     "n": 11,
+     "mean": 21.273,
+     "sd": 5.641
+    },
+    "tissue_tiles": {
+     "n": 11,
+     "mean": 324.091,
+     "sd": 367.24
+    },
+    "pub_prob_le_0.3": 8,
+    "pub_prob_missing": 0
+   },
+   "cases_both_pos": {
+    "samples": 73,
+    "patients": 26,
+    "cx_raw_pkg": {
+     "n": 73,
+     "mean": 29.973,
+     "sd": 13.594
+    },
+    "tissue_tiles": {
+     "n": 73,
+     "mean": 412.712,
+     "sd": 756.127
+    },
+    "pub_prob_le_0.3": 1,
+    "pub_prob_missing": 0
+   },
+   "cleared_controls_CNVpos_bestneg": {
+    "samples": 58,
+    "patients": 26
+   },
+   "controls_both_pos": {
+    "samples": 65,
+    "patients": 25
+   },
+   "check_vs_q2json": {
+    "captured_samples": true,
+    "cleared_samples": true,
+    "captured_patients": true,
+    "cleared_patients": true
+   }
+  },
+  "5": {
+   "captured_cases_CNVneg_bestpos": {
+    "samples": 13,
+    "patients": 8,
+    "cx_raw_pkg": {
+     "n": 13,
+     "mean": 21.231,
+     "sd": 5.703
+    },
+    "tissue_tiles": {
+     "n": 13,
+     "mean": 307.538,
+     "sd": 340.103
+    },
+    "pub_prob_le_0.3": 8,
+    "pub_prob_missing": 0
+   },
+   "cases_both_pos": {
+    "samples": 91,
+    "patients": 28,
+    "cx_raw_pkg": {
+     "n": 91,
+     "mean": 29.538,
+     "sd": 12.634
+    },
+    "tissue_tiles": {
+     "n": 91,
+     "mean": 650.176,
+     "sd": 1019.426
+    },
+    "pub_prob_le_0.3": 1,
+    "pub_prob_missing": 0
+   },
+   "cleared_controls_CNVpos_bestneg": {
+    "samples": 31,
+    "patients": 14
+   },
+   "controls_both_pos": {
+    "samples": 39,
+    "patients": 20
+   },
+   "check_vs_q2json": {
+    "captured_samples": true,
+    "cleared_samples": true,
+    "captured_patients": true,
+    "cleared_patients": true
+   }
+  }
+ }
+}
