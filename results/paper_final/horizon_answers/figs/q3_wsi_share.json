@@ -1,0 +1,46 @@
+{
+ "their": {
+  "wsi_share_mean_over_fits": [
+   0.496,
+   0.575,
+   0.495
+  ],
+  "ci95": [
+   [
+    0.015,
+    0.811
+   ],
+   [
+    0.385,
+    0.73
+   ],
+   [
+    0.319,
+    0.661
+   ]
+  ],
+  "source": "results/paper_final/horizons/h3_their.json"
+ },
+ "pkg": {
+  "wsi_share_mean_over_fits": [
+   0.503,
+   0.596,
+   0.484
+  ],
+  "ci95": [
+   [
+    0.083,
+    0.785
+   ],
+   [
+    0.414,
+    0.741
+   ],
+   [
+    0.311,
+    0.639
+   ]
+  ],
+  "source": "results/paper_final/horizons/h3_pkg.json"
+ }
+}

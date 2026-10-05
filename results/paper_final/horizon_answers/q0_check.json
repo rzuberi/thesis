@@ -1,0 +1,31 @@
+{
+ "41591_2020_1033_MOESM4_ESM.xlsx": {
+  "columns": [
+   "Patient",
+   "Status",
+   "Esophageal location",
+   "Risk class",
+   "Months before final"
+  ],
+  "rows": 773,
+  "sample_column": null,
+  "note": "no sample column; per-patient comparison",
+  "patients_compared": 80,
+  "patients_months_subset_of_published": 80
+ },
+ "41591_2020_1033_MOESM11_ESM.xlsx": {
+  "columns": [
+   "Patient",
+   "Status",
+   "Esophageal location",
+   "Risk class",
+   "Pathology",
+   "Months before final"
+  ],
+  "rows": 773,
+  "sample_column": null,
+  "note": "no sample column; per-patient comparison",
+  "patients_compared": 80,
+  "patients_months_subset_of_published": 80
+ }
+}

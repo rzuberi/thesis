@@ -1,0 +1,1487 @@
+{
+ "best_by_horizon_their_pre": {
+  "1": "L-LATE",
+  "3": "L-LATE",
+  "5": "L-LATE"
+ },
+ "risk_class_matched": 676,
+ "results": {
+  "their": {
+   "1|sample": {
+    "n_cases": 29,
+    "n_controls": 449,
+    "n_case_patients": 14,
+    "n_control_patients": 72,
+    "thresholds": {
+     "L-CNV": {
+      "median": 0.327,
+      "range": [
+       0.127,
+       0.556
+      ],
+      "n": 100
+     },
+     "L-LATE": {
+      "median": 0.429,
+      "range": [
+       0.278,
+       0.555
+      ],
+      "n": 100
+     }
+    },
+    "L-CNV": {
+     "TPR": 0.793,
+     "FPR": 0.37
+    },
+    "L-LATE": {
+     "TPR": 0.931,
+     "FPR": 0.281
+    },
+    "L-LATE_vs_L-CNV": {
+     "dFPR": -0.089,
+     "dFPR_ci95": [
+      -0.156,
+      -0.019
+     ],
+     "dTPR": 0.138,
+     "dTPR_ci95": [
+      -0.133,
+      0.412
+     ],
+     "NRI": 0.227,
+     "NRI_ci95": [
+      -0.041,
+      0.5
+     ],
+     "reclassification": {
+      "cases": {
+       "CNVneg_bestpos": 6,
+       "CNVpos_bestneg": 2,
+       "both_pos": 21,
+       "both_neg": 0
+      },
+      "cases_patients": {
+       "CNVneg_bestpos": 3,
+       "CNVpos_bestneg": 2,
+       "both_pos": 13,
+       "both_neg": 0
+      },
+      "controls": {
+       "CNVneg_bestpos": 30,
+       "CNVpos_bestneg": 70,
+       "both_pos": 96,
+       "both_neg": 253
+      },
+      "controls_patients": {
+       "CNVneg_bestpos": 20,
+       "CNVpos_bestneg": 30,
+       "both_pos": 34,
+       "both_neg": 51
+      }
+     }
+    },
+    "L-LATE_groups": {
+     "captured_cases_CNVneg_bestpos": {
+      "n_samples": 6,
+      "n_patients": 3,
+      "pathology": {
+       "LGD": 5,
+       "NDBE": 1
+      },
+      "time_median_years": 0.75,
+      "cx_raw_pkg_median": 25.0,
+      "noise_varMAD_median": 0.002,
+      "tissue_tiles_median": 195.5,
+      "scanner": {
+       "C13210": 5,
+       "C13239-01": 1
+      },
+      "p53_ihc": {
+       "0.0": 5,
+       "1.0": 1
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "Low": 3,
+       "High": 2,
+       "Moderate": 1
+      }
+     },
+     "cases_both_pos": {
+      "n_samples": 21,
+      "n_patients": 13,
+      "pathology": {
+       "NDBE": 10,
+       "LGD": 9,
+       "ID": 2
+      },
+      "time_median_years": 0.5,
+      "cx_raw_pkg_median": 21.0,
+      "noise_varMAD_median": 0.003,
+      "tissue_tiles_median": 268.0,
+      "scanner": {
+       "C13239-01": 18,
+       "C13210": 3
+      },
+      "p53_ihc": {
+       "0.0": 11,
+       "nan": 5,
+       "1.0": 5
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "High": 21
+      }
+     },
+     "cleared_controls_CNVpos_bestneg": {
+      "n_samples": 70,
+      "n_patients": 30,
+      "pathology": {
+       "NDBE": 52,
+       "ID": 12,
+       "LGD": 6
+      },
+      "time_median_years": 4.0,
+      "cx_raw_pkg_median": 24.0,
+      "noise_varMAD_median": 0.003,
+      "tissue_tiles_median": 277.0,
+      "scanner": {
+       "C13239-01": 46,
+       "C13210": 24
+      },
+      "p53_ihc": {
+       "0.0": 54,
+       "nan": 15,
+       "1.0": 1
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "High": 39,
+       "Moderate": 26,
+       "Low": 5
+      }
+     },
+     "controls_both_pos": {
+      "n_samples": 96,
+      "n_patients": 34,
+      "pathology": {
+       "NDBE": 63,
+       "LGD": 23,
+       "ID": 10
+      },
+      "time_median_years": 3.0,
+      "cx_raw_pkg_median": 27.5,
+      "noise_varMAD_median": 0.003,
+      "tissue_tiles_median": 257.0,
+      "scanner": {
+       "C13239-01": 74,
+       "C13210": 22
+      },
+      "p53_ihc": {
+       "0.0": 48,
+       "nan": 40,
+       "1.0": 8
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "High": 82,
+       "Moderate": 13,
+       "Low": 1
+      }
+     }
+    }
+   },
+   "1|patient": {
+    "n_cases": 2,
+    "n_controls": 69,
+    "n_case_patients": 2,
+    "n_control_patients": 69,
+    "thresholds": {
+     "L-CNV": {
+      "median": 0.327,
+      "range": [
+       0.127,
+       0.556
+      ],
+      "n": 100
+     },
+     "L-LATE": {
+      "median": 0.429,
+      "range": [
+       0.278,
+       0.555
+      ],
+      "n": 100
+     }
+    },
+    "L-CNV": {
+     "TPR": 1.0,
+     "FPR": 0.319
+    },
+    "L-LATE": {
+     "TPR": 1.0,
+     "FPR": 0.333
+    },
+    "L-LATE_vs_L-CNV": {
+     "dFPR": 0.014,
+     "dFPR_ci95": [
+      -0.103,
+      0.13
+     ],
+     "dTPR": 0.0,
+     "dTPR_ci95": [
+      0.0,
+      0.0
+     ],
+     "NRI": -0.014,
+     "NRI_ci95": [
+      -0.13,
+      0.103
+     ],
+     "reclassification": {
+      "cases": {
+       "CNVneg_bestpos": 0,
+       "CNVpos_bestneg": 0,
+       "both_pos": 2,
+       "both_neg": 0
+      },
+      "controls": {
+       "CNVneg_bestpos": 9,
+       "CNVpos_bestneg": 8,
+       "both_pos": 14,
+       "both_neg": 38
+      }
+     }
+    }
+   },
+   "3|sample": {
+    "n_cases": 99,
+    "n_controls": 277,
+    "n_case_patients": 29,
+    "n_control_patients": 62,
+    "thresholds": {
+     "L-CNV": {
+      "median": 0.232,
+      "range": [
+       0.058,
+       0.351
+      ],
+      "n": 100
+     },
+     "L-LATE": {
+      "median": 0.358,
+      "range": [
+       0.225,
+       0.481
+      ],
+      "n": 100
+     }
+    },
+    "L-CNV": {
+     "TPR": 0.818,
+     "FPR": 0.444
+    },
+    "L-LATE": {
+     "TPR": 0.848,
+     "FPR": 0.303
+    },
+    "L-LATE_vs_L-CNV": {
+     "dFPR": -0.141,
+     "dFPR_ci95": [
+      -0.242,
+      -0.04
+     ],
+     "dTPR": 0.03,
+     "dTPR_ci95": [
+      -0.09,
+      0.153
+     ],
+     "NRI": 0.171,
+     "NRI_ci95": [
+      0.004,
+      0.343
+     ],
+     "reclassification": {
+      "cases": {
+       "CNVneg_bestpos": 11,
+       "CNVpos_bestneg": 8,
+       "both_pos": 73,
+       "both_neg": 7
+      },
+      "cases_patients": {
+       "CNVneg_bestpos": 6,
+       "CNVpos_bestneg": 6,
+       "both_pos": 26,
+       "both_neg": 4
+      },
+      "controls": {
+       "CNVneg_bestpos": 19,
+       "CNVpos_bestneg": 58,
+       "both_pos": 65,
+       "both_neg": 135
+      },
+      "controls_patients": {
+       "CNVneg_bestpos": 14,
+       "CNVpos_bestneg": 26,
+       "both_pos": 25,
+       "both_neg": 39
+      }
+     }
+    },
+    "L-LATE_groups": {
+     "captured_cases_CNVneg_bestpos": {
+      "n_samples": 11,
+      "n_patients": 6,
+      "pathology": {
+       "NDBE": 5,
+       "LGD": 5,
+       "ID": 1
+      },
+      "time_median_years": 2.0,
+      "cx_raw_pkg_median": 19.0,
+      "noise_varMAD_median": 0.002,
+      "tissue_tiles_median": 211.0,
+      "scanner": {
+       "C13239-01": 6,
+       "C13210": 5
+      },
+      "p53_ihc": {
+       "0.0": 9,
+       "nan": 2
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "Low": 8,
+       "High": 2,
+       "Moderate": 1
+      }
+     },
+     "cases_both_pos": {
+      "n_samples": 73,
+      "n_patients": 26,
+      "pathology": {
+       "NDBE": 44,
+       "LGD": 21,
+       "ID": 8
+      },
+      "time_median_years": 1.5,
+      "cx_raw_pkg_median": 25.0,
+      "noise_varMAD_median": 0.002,
+      "tissue_tiles_median": 258.0,
+      "scanner": {
+       "C13239-01": 54,
+       "C13210": 19
+      },
+      "p53_ihc": {
+       "0.0": 42,
+       "nan": 16,
+       "1.0": 15
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "High": 65,
+       "Moderate": 7,
+       "Low": 1
+      }
+     },
+     "cleared_controls_CNVpos_bestneg": {
+      "n_samples": 58,
+      "n_patients": 26,
+      "pathology": {
+       "NDBE": 36,
+       "ID": 19,
+       "LGD": 3
+      },
+      "time_median_years": 5.0,
+      "cx_raw_pkg_median": 24.0,
+      "noise_varMAD_median": 0.003,
+      "tissue_tiles_median": 237.0,
+      "scanner": {
+       "C13239-01": 44,
+       "C13210": 14
+      },
+      "p53_ihc": {
+       "0.0": 48,
+       "nan": 10
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "Moderate": 25,
+       "High": 17,
+       "Low": 16
+      }
+     },
+     "controls_both_pos": {
+      "n_samples": 65,
+      "n_patients": 25,
+      "pathology": {
+       "NDBE": 44,
+       "LGD": 16,
+       "ID": 5
+      },
+      "time_median_years": 5.5,
+      "cx_raw_pkg_median": 26.0,
+      "noise_varMAD_median": 0.003,
+      "tissue_tiles_median": 332.0,
+      "scanner": {
+       "C13239-01": 49,
+       "C13210": 16
+      },
+      "p53_ihc": {
+       "nan": 35,
+       "0.0": 29,
+       "1.0": 1
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "High": 51,
+       "Moderate": 11,
+       "Low": 3
+      }
+     }
+    }
+   },
+   "3|patient": {
+    "n_cases": 9,
+    "n_controls": 59,
+    "n_case_patients": 9,
+    "n_control_patients": 59,
+    "thresholds": {
+     "L-CNV": {
+      "median": 0.232,
+      "range": [
+       0.058,
+       0.351
+      ],
+      "n": 100
+     },
+     "L-LATE": {
+      "median": 0.358,
+      "range": [
+       0.225,
+       0.481
+      ],
+      "n": 100
+     }
+    },
+    "L-CNV": {
+     "TPR": 0.778,
+     "FPR": 0.373
+    },
+    "L-LATE": {
+     "TPR": 0.889,
+     "FPR": 0.322
+    },
+    "L-LATE_vs_L-CNV": {
+     "dFPR": -0.051,
+     "dFPR_ci95": [
+      -0.179,
+      0.07
+     ],
+     "dTPR": 0.111,
+     "dTPR_ci95": [
+      0.0,
+      0.364
+     ],
+     "NRI": 0.162,
+     "NRI_ci95": [
+      -0.036,
+      0.446
+     ],
+     "reclassification": {
+      "cases": {
+       "CNVneg_bestpos": 1,
+       "CNVpos_bestneg": 0,
+       "both_pos": 7,
+       "both_neg": 1
+      },
+      "controls": {
+       "CNVneg_bestpos": 6,
+       "CNVpos_bestneg": 9,
+       "both_pos": 13,
+       "both_neg": 31
+      }
+     }
+    }
+   },
+   "5|sample": {
+    "n_cases": 126,
+    "n_controls": 168,
+    "n_case_patients": 32,
+    "n_control_patients": 46,
+    "thresholds": {
+     "L-CNV": {
+      "median": 0.23,
+      "range": [
+       0.062,
+       0.362
+      ],
+      "n": 100
+     },
+     "L-LATE": {
+      "median": 0.334,
+      "range": [
+       0.221,
+       0.444
+      ],
+      "n": 100
+     }
+    },
+    "L-CNV": {
+     "TPR": 0.825,
+     "FPR": 0.417
+    },
+    "L-LATE": {
+     "TPR": 0.825,
+     "FPR": 0.327
+    },
+    "L-LATE_vs_L-CNV": {
+     "dFPR": -0.089,
+     "dFPR_ci95": [
+      -0.216,
+      0.04
+     ],
+     "dTPR": 0.0,
+     "dTPR_ci95": [
+      -0.102,
+      0.116
+     ],
+     "NRI": 0.089,
+     "NRI_ci95": [
+      -0.079,
+      0.261
+     ],
+     "reclassification": {
+      "cases": {
+       "CNVneg_bestpos": 13,
+       "CNVpos_bestneg": 13,
+       "both_pos": 91,
+       "both_neg": 9
+      },
+      "cases_patients": {
+       "CNVneg_bestpos": 8,
+       "CNVpos_bestneg": 9,
+       "both_pos": 28,
+       "both_neg": 5
+      },
+      "controls": {
+       "CNVneg_bestpos": 16,
+       "CNVpos_bestneg": 31,
+       "both_pos": 39,
+       "both_neg": 82
+      },
+      "controls_patients": {
+       "CNVneg_bestpos": 11,
+       "CNVpos_bestneg": 14,
+       "both_pos": 20,
+       "both_neg": 27
+      }
+     }
+    },
+    "L-LATE_groups": {
+     "captured_cases_CNVneg_bestpos": {
+      "n_samples": 13,
+      "n_patients": 8,
+      "pathology": {
+       "NDBE": 7,
+       "LGD": 5,
+       "ID": 1
+      },
+      "time_median_years": 2.0,
+      "cx_raw_pkg_median": 19.0,
+      "noise_varMAD_median": 0.002,
+      "tissue_tiles_median": 211.0,
+      "scanner": {
+       "C13239-01": 8,
+       "C13210": 5
+      },
+      "p53_ihc": {
+       "0.0": 11,
+       "nan": 2
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "Low": 8,
+       "High": 3,
+       "Moderate": 2
+      }
+     },
+     "cases_both_pos": {
+      "n_samples": 91,
+      "n_patients": 28,
+      "pathology": {
+       "NDBE": 54,
+       "LGD": 28,
+       "ID": 9
+      },
+      "time_median_years": 2.0,
+      "cx_raw_pkg_median": 26.0,
+      "noise_varMAD_median": 0.002,
+      "tissue_tiles_median": 278.0,
+      "scanner": {
+       "C13239-01": 71,
+       "C13210": 20
+      },
+      "p53_ihc": {
+       "0.0": 47,
+       "nan": 29,
+       "1.0": 15
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "High": 81,
+       "Moderate": 9,
+       "Low": 1
+      }
+     },
+     "cleared_controls_CNVpos_bestneg": {
+      "n_samples": 31,
+      "n_patients": 14,
+      "pathology": {
+       "NDBE": 16,
+       "ID": 13,
+       "LGD": 2
+      },
+      "time_median_years": 6.0,
+      "cx_raw_pkg_median": 23.0,
+      "noise_varMAD_median": 0.003,
+      "tissue_tiles_median": 223.0,
+      "scanner": {
+       "C13239-01": 21,
+       "C13210": 10
+      },
+      "p53_ihc": {
+       "0.0": 26,
+       "nan": 5
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "Moderate": 14,
+       "High": 9,
+       "Low": 8
+      }
+     },
+     "controls_both_pos": {
+      "n_samples": 39,
+      "n_patients": 20,
+      "pathology": {
+       "NDBE": 29,
+       "LGD": 7,
+       "ID": 3
+      },
+      "time_median_years": 8.0,
+      "cx_raw_pkg_median": 26.0,
+      "noise_varMAD_median": 0.004,
+      "tissue_tiles_median": 319.0,
+      "scanner": {
+       "C13239-01": 26,
+       "C13210": 13
+      },
+      "p53_ihc": {
+       "nan": 20,
+       "0.0": 18,
+       "1.0": 1
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "High": 28,
+       "Moderate": 9,
+       "Low": 2
+      }
+     }
+    }
+   },
+   "5|patient": {
+    "n_cases": 15,
+    "n_controls": 39,
+    "n_case_patients": 15,
+    "n_control_patients": 39,
+    "thresholds": {
+     "L-CNV": {
+      "median": 0.23,
+      "range": [
+       0.062,
+       0.362
+      ],
+      "n": 100
+     },
+     "L-LATE": {
+      "median": 0.334,
+      "range": [
+       0.221,
+       0.444
+      ],
+      "n": 100
+     }
+    },
+    "L-CNV": {
+     "TPR": 0.733,
+     "FPR": 0.359
+    },
+    "L-LATE": {
+     "TPR": 0.733,
+     "FPR": 0.385
+    },
+    "L-LATE_vs_L-CNV": {
+     "dFPR": 0.026,
+     "dFPR_ci95": [
+      -0.133,
+      0.179
+     ],
+     "dTPR": 0.0,
+     "dTPR_ci95": [
+      -0.273,
+      0.263
+     ],
+     "NRI": -0.026,
+     "NRI_ci95": [
+      -0.336,
+      0.275
+     ],
+     "reclassification": {
+      "cases": {
+       "CNVneg_bestpos": 2,
+       "CNVpos_bestneg": 2,
+       "both_pos": 9,
+       "both_neg": 2
+      },
+      "controls": {
+       "CNVneg_bestpos": 5,
+       "CNVpos_bestneg": 4,
+       "both_pos": 10,
+       "both_neg": 20
+      }
+     }
+    }
+   }
+  },
+  "pkg": {
+   "1|sample": {
+    "n_cases": 29,
+    "n_controls": 449,
+    "n_case_patients": 14,
+    "n_control_patients": 72,
+    "thresholds": {
+     "L-CNV": {
+      "median": 0.318,
+      "range": [
+       0.12,
+       0.506
+      ],
+      "n": 100
+     },
+     "L-LATE": {
+      "median": 0.414,
+      "range": [
+       0.267,
+       0.563
+      ],
+      "n": 100
+     }
+    },
+    "L-CNV": {
+     "TPR": 0.828,
+     "FPR": 0.365
+    },
+    "L-LATE": {
+     "TPR": 0.897,
+     "FPR": 0.281
+    },
+    "L-LATE_vs_L-CNV": {
+     "dFPR": -0.085,
+     "dFPR_ci95": [
+      -0.158,
+      -0.021
+     ],
+     "dTPR": 0.069,
+     "dTPR_ci95": [
+      -0.125,
+      0.25
+     ],
+     "NRI": 0.154,
+     "NRI_ci95": [
+      -0.048,
+      0.343
+     ],
+     "reclassification": {
+      "cases": {
+       "CNVneg_bestpos": 4,
+       "CNVpos_bestneg": 2,
+       "both_pos": 22,
+       "both_neg": 1
+      },
+      "cases_patients": {
+       "CNVneg_bestpos": 3,
+       "CNVpos_bestneg": 2,
+       "both_pos": 13,
+       "both_neg": 1
+      },
+      "controls": {
+       "CNVneg_bestpos": 25,
+       "CNVpos_bestneg": 63,
+       "both_pos": 101,
+       "both_neg": 260
+      },
+      "controls_patients": {
+       "CNVneg_bestpos": 16,
+       "CNVpos_bestneg": 27,
+       "both_pos": 38,
+       "both_neg": 46
+      }
+     }
+    },
+    "L-LATE_groups": {
+     "captured_cases_CNVneg_bestpos": {
+      "n_samples": 4,
+      "n_patients": 3,
+      "pathology": {
+       "LGD": 2,
+       "NDBE": 2
+      },
+      "time_median_years": 0.75,
+      "cx_raw_pkg_median": 20.0,
+      "noise_varMAD_median": 0.002,
+      "tissue_tiles_median": 258.5,
+      "scanner": {
+       "C13210": 2,
+       "C13239-01": 2
+      },
+      "p53_ihc": {
+       "0.0": 3,
+       "nan": 1
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "Low": 2,
+       "Moderate": 1,
+       "High": 1
+      }
+     },
+     "cases_both_pos": {
+      "n_samples": 22,
+      "n_patients": 13,
+      "pathology": {
+       "LGD": 12,
+       "NDBE": 8,
+       "ID": 2
+      },
+      "time_median_years": 0.5,
+      "cx_raw_pkg_median": 22.5,
+      "noise_varMAD_median": 0.002,
+      "tissue_tiles_median": 259.0,
+      "scanner": {
+       "C13239-01": 16,
+       "C13210": 6
+      },
+      "p53_ihc": {
+       "0.0": 13,
+       "1.0": 6,
+       "nan": 3
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "High": 21,
+       "Low": 1
+      }
+     },
+     "cleared_controls_CNVpos_bestneg": {
+      "n_samples": 63,
+      "n_patients": 27,
+      "pathology": {
+       "NDBE": 51,
+       "ID": 7,
+       "LGD": 5
+      },
+      "time_median_years": 4.0,
+      "cx_raw_pkg_median": 23.0,
+      "noise_varMAD_median": 0.003,
+      "tissue_tiles_median": 272.0,
+      "scanner": {
+       "C13239-01": 40,
+       "C13210": 23
+      },
+      "p53_ihc": {
+       "0.0": 52,
+       "nan": 11
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "Low": 25,
+       "High": 24,
+       "Moderate": 14
+      }
+     },
+     "controls_both_pos": {
+      "n_samples": 101,
+      "n_patients": 38,
+      "pathology": {
+       "NDBE": 66,
+       "LGD": 25,
+       "ID": 10
+      },
+      "time_median_years": 3.5,
+      "cx_raw_pkg_median": 27.0,
+      "noise_varMAD_median": 0.003,
+      "tissue_tiles_median": 248.0,
+      "scanner": {
+       "C13239-01": 77,
+       "C13210": 24
+      },
+      "p53_ihc": {
+       "0.0": 56,
+       "nan": 37,
+       "1.0": 8
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "High": 72,
+       "Moderate": 16,
+       "Low": 13
+      }
+     }
+    }
+   },
+   "1|patient": {
+    "n_cases": 2,
+    "n_controls": 69,
+    "n_case_patients": 2,
+    "n_control_patients": 69,
+    "thresholds": {
+     "L-CNV": {
+      "median": 0.318,
+      "range": [
+       0.12,
+       0.506
+      ],
+      "n": 100
+     },
+     "L-LATE": {
+      "median": 0.414,
+      "range": [
+       0.267,
+       0.563
+      ],
+      "n": 100
+     }
+    },
+    "L-CNV": {
+     "TPR": 1.0,
+     "FPR": 0.435
+    },
+    "L-LATE": {
+     "TPR": 1.0,
+     "FPR": 0.333
+    },
+    "L-LATE_vs_L-CNV": {
+     "dFPR": -0.101,
+     "dFPR_ci95": [
+      -0.221,
+      0.015
+     ],
+     "dTPR": 0.0,
+     "dTPR_ci95": [
+      0.0,
+      0.0
+     ],
+     "NRI": 0.101,
+     "NRI_ci95": [
+      -0.015,
+      0.224
+     ],
+     "reclassification": {
+      "cases": {
+       "CNVneg_bestpos": 0,
+       "CNVpos_bestneg": 0,
+       "both_pos": 2,
+       "both_neg": 0
+      },
+      "controls": {
+       "CNVneg_bestpos": 6,
+       "CNVpos_bestneg": 13,
+       "both_pos": 17,
+       "both_neg": 33
+      }
+     }
+    }
+   },
+   "3|sample": {
+    "n_cases": 99,
+    "n_controls": 277,
+    "n_case_patients": 29,
+    "n_control_patients": 62,
+    "thresholds": {
+     "L-CNV": {
+      "median": 0.226,
+      "range": [
+       0.094,
+       0.431
+      ],
+      "n": 100
+     },
+     "L-LATE": {
+      "median": 0.342,
+      "range": [
+       0.24,
+       0.437
+      ],
+      "n": 100
+     }
+    },
+    "L-CNV": {
+     "TPR": 0.838,
+     "FPR": 0.404
+    },
+    "L-LATE": {
+     "TPR": 0.838,
+     "FPR": 0.343
+    },
+    "L-LATE_vs_L-CNV": {
+     "dFPR": -0.061,
+     "dFPR_ci95": [
+      -0.147,
+      0.011
+     ],
+     "dTPR": 0.0,
+     "dTPR_ci95": [
+      -0.114,
+      0.097
+     ],
+     "NRI": 0.061,
+     "NRI_ci95": [
+      -0.061,
+      0.189
+     ],
+     "reclassification": {
+      "cases": {
+       "CNVneg_bestpos": 8,
+       "CNVpos_bestneg": 8,
+       "both_pos": 75,
+       "both_neg": 8
+      },
+      "cases_patients": {
+       "CNVneg_bestpos": 7,
+       "CNVpos_bestneg": 4,
+       "both_pos": 28,
+       "both_neg": 5
+      },
+      "controls": {
+       "CNVneg_bestpos": 21,
+       "CNVpos_bestneg": 38,
+       "both_pos": 74,
+       "both_neg": 144
+      },
+      "controls_patients": {
+       "CNVneg_bestpos": 14,
+       "CNVpos_bestneg": 21,
+       "both_pos": 31,
+       "both_neg": 32
+      }
+     }
+    },
+    "L-LATE_groups": {
+     "captured_cases_CNVneg_bestpos": {
+      "n_samples": 8,
+      "n_patients": 7,
+      "pathology": {
+       "NDBE": 5,
+       "LGD": 3
+      },
+      "time_median_years": 1.75,
+      "cx_raw_pkg_median": 20.0,
+      "noise_varMAD_median": 0.002,
+      "tissue_tiles_median": 208.5,
+      "scanner": {
+       "C13239-01": 5,
+       "C13210": 3
+      },
+      "p53_ihc": {
+       "0.0": 6,
+       "nan": 2
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "Low": 3,
+       "Moderate": 3,
+       "High": 2
+      }
+     },
+     "cases_both_pos": {
+      "n_samples": 75,
+      "n_patients": 28,
+      "pathology": {
+       "NDBE": 42,
+       "LGD": 24,
+       "ID": 9
+      },
+      "time_median_years": 1.5,
+      "cx_raw_pkg_median": 25.0,
+      "noise_varMAD_median": 0.002,
+      "tissue_tiles_median": 254.0,
+      "scanner": {
+       "C13239-01": 56,
+       "C13210": 19
+      },
+      "p53_ihc": {
+       "0.0": 45,
+       "nan": 16,
+       "1.0": 14
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "High": 63,
+       "Low": 7,
+       "Moderate": 5
+      }
+     },
+     "cleared_controls_CNVpos_bestneg": {
+      "n_samples": 38,
+      "n_patients": 21,
+      "pathology": {
+       "NDBE": 28,
+       "ID": 6,
+       "LGD": 4
+      },
+      "time_median_years": 4.75,
+      "cx_raw_pkg_median": 23.5,
+      "noise_varMAD_median": 0.003,
+      "tissue_tiles_median": 275.0,
+      "scanner": {
+       "C13239-01": 28,
+       "C13210": 10
+      },
+      "p53_ihc": {
+       "0.0": 31,
+       "nan": 7
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "Low": 18,
+       "High": 12,
+       "Moderate": 8
+      }
+     },
+     "controls_both_pos": {
+      "n_samples": 74,
+      "n_patients": 31,
+      "pathology": {
+       "NDBE": 55,
+       "LGD": 15,
+       "ID": 4
+      },
+      "time_median_years": 6.0,
+      "cx_raw_pkg_median": 26.0,
+      "noise_varMAD_median": 0.003,
+      "tissue_tiles_median": 285.5,
+      "scanner": {
+       "C13239-01": 54,
+       "C13210": 20
+      },
+      "p53_ihc": {
+       "0.0": 38,
+       "nan": 35,
+       "1.0": 1
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "High": 42,
+       "Low": 17,
+       "Moderate": 15
+      }
+     }
+    }
+   },
+   "3|patient": {
+    "n_cases": 9,
+    "n_controls": 59,
+    "n_case_patients": 9,
+    "n_control_patients": 59,
+    "thresholds": {
+     "L-CNV": {
+      "median": 0.226,
+      "range": [
+       0.094,
+       0.431
+      ],
+      "n": 100
+     },
+     "L-LATE": {
+      "median": 0.342,
+      "range": [
+       0.24,
+       0.437
+      ],
+      "n": 100
+     }
+    },
+    "L-CNV": {
+     "TPR": 0.778,
+     "FPR": 0.508
+    },
+    "L-LATE": {
+     "TPR": 0.889,
+     "FPR": 0.373
+    },
+    "L-LATE_vs_L-CNV": {
+     "dFPR": -0.136,
+     "dFPR_ci95": [
+      -0.25,
+      -0.034
+     ],
+     "dTPR": 0.111,
+     "dTPR_ci95": [
+      0.0,
+      0.364
+     ],
+     "NRI": 0.247,
+     "NRI_ci95": [
+      0.063,
+      0.514
+     ],
+     "reclassification": {
+      "cases": {
+       "CNVneg_bestpos": 1,
+       "CNVpos_bestneg": 0,
+       "both_pos": 7,
+       "both_neg": 1
+      },
+      "controls": {
+       "CNVneg_bestpos": 2,
+       "CNVpos_bestneg": 10,
+       "both_pos": 20,
+       "both_neg": 27
+      }
+     }
+    }
+   },
+   "5|sample": {
+    "n_cases": 126,
+    "n_controls": 168,
+    "n_case_patients": 32,
+    "n_control_patients": 46,
+    "thresholds": {
+     "L-CNV": {
+      "median": 0.242,
+      "range": [
+       0.11,
+       0.433
+      ],
+      "n": 100
+     },
+     "L-LATE": {
+      "median": 0.333,
+      "range": [
+       0.223,
+       0.399
+      ],
+      "n": 100
+     }
+    },
+    "L-CNV": {
+     "TPR": 0.841,
+     "FPR": 0.369
+    },
+    "L-LATE": {
+     "TPR": 0.833,
+     "FPR": 0.321
+    },
+    "L-LATE_vs_L-CNV": {
+     "dFPR": -0.048,
+     "dFPR_ci95": [
+      -0.139,
+      0.038
+     ],
+     "dTPR": -0.008,
+     "dTPR_ci95": [
+      -0.115,
+      0.082
+     ],
+     "NRI": 0.04,
+     "NRI_ci95": [
+      -0.097,
+      0.167
+     ],
+     "reclassification": {
+      "cases": {
+       "CNVneg_bestpos": 11,
+       "CNVpos_bestneg": 12,
+       "both_pos": 94,
+       "both_neg": 9
+      },
+      "cases_patients": {
+       "CNVneg_bestpos": 7,
+       "CNVpos_bestneg": 8,
+       "both_pos": 31,
+       "both_neg": 5
+      },
+      "controls": {
+       "CNVneg_bestpos": 10,
+       "CNVpos_bestneg": 18,
+       "both_pos": 44,
+       "both_neg": 96
+      },
+      "controls_patients": {
+       "CNVneg_bestpos": 7,
+       "CNVpos_bestneg": 11,
+       "both_pos": 21,
+       "both_neg": 25
+      }
+     }
+    },
+    "L-LATE_groups": {
+     "captured_cases_CNVneg_bestpos": {
+      "n_samples": 11,
+      "n_patients": 7,
+      "pathology": {
+       "NDBE": 5,
+       "LGD": 5,
+       "ID": 1
+      },
+      "time_median_years": 2.0,
+      "cx_raw_pkg_median": 21.0,
+      "noise_varMAD_median": 0.002,
+      "tissue_tiles_median": 250.0,
+      "scanner": {
+       "C13239-01": 8,
+       "C13210": 3
+      },
+      "p53_ihc": {
+       "0.0": 6,
+       "nan": 5
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "High": 5,
+       "Low": 3,
+       "Moderate": 3
+      }
+     },
+     "cases_both_pos": {
+      "n_samples": 94,
+      "n_patients": 31,
+      "pathology": {
+       "NDBE": 55,
+       "LGD": 30,
+       "ID": 9
+      },
+      "time_median_years": 2.0,
+      "cx_raw_pkg_median": 26.0,
+      "noise_varMAD_median": 0.002,
+      "tissue_tiles_median": 262.5,
+      "scanner": {
+       "C13239-01": 73,
+       "C13210": 21
+      },
+      "p53_ihc": {
+       "0.0": 54,
+       "nan": 27,
+       "1.0": 13
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "High": 76,
+       "Moderate": 10,
+       "Low": 8
+      }
+     },
+     "cleared_controls_CNVpos_bestneg": {
+      "n_samples": 18,
+      "n_patients": 11,
+      "pathology": {
+       "NDBE": 13,
+       "ID": 3,
+       "LGD": 2
+      },
+      "time_median_years": 6.5,
+      "cx_raw_pkg_median": 23.0,
+      "noise_varMAD_median": 0.004,
+      "tissue_tiles_median": 285.5,
+      "scanner": {
+       "C13239-01": 11,
+       "C13210": 7
+      },
+      "p53_ihc": {
+       "0.0": 13,
+       "nan": 5
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "High": 9,
+       "Low": 6,
+       "Moderate": 3
+      }
+     },
+     "controls_both_pos": {
+      "n_samples": 44,
+      "n_patients": 21,
+      "pathology": {
+       "NDBE": 32,
+       "LGD": 8,
+       "ID": 4
+      },
+      "time_median_years": 8.0,
+      "cx_raw_pkg_median": 25.5,
+      "noise_varMAD_median": 0.004,
+      "tissue_tiles_median": 276.0,
+      "scanner": {
+       "C13239-01": 29,
+       "C13210": 15
+      },
+      "p53_ihc": {
+       "0.0": 24,
+       "nan": 19,
+       "1.0": 1
+      },
+      "killcoyne_risk_class_MOESM4": {
+       "High": 22,
+       "Low": 13,
+       "Moderate": 9
+      }
+     }
+    }
+   },
+   "5|patient": {
+    "n_cases": 15,
+    "n_controls": 39,
+    "n_case_patients": 15,
+    "n_control_patients": 39,
+    "thresholds": {
+     "L-CNV": {
+      "median": 0.242,
+      "range": [
+       0.11,
+       0.433
+      ],
+      "n": 100
+     },
+     "L-LATE": {
+      "median": 0.333,
+      "range": [
+       0.223,
+       0.399
+      ],
+      "n": 100
+     }
+    },
+    "L-CNV": {
+     "TPR": 0.8,
+     "FPR": 0.462
+    },
+    "L-LATE": {
+     "TPR": 0.8,
+     "FPR": 0.41
+    },
+    "L-LATE_vs_L-CNV": {
+     "dFPR": -0.051,
+     "dFPR_ci95": [
+      -0.189,
+      0.057
+     ],
+     "dTPR": 0.0,
+     "dTPR_ci95": [
+      -0.182,
+      0.2
+     ],
+     "NRI": 0.051,
+     "NRI_ci95": [
+      -0.167,
+      0.283
+     ],
+     "reclassification": {
+      "cases": {
+       "CNVneg_bestpos": 1,
+       "CNVpos_bestneg": 1,
+       "both_pos": 11,
+       "both_neg": 2
+      },
+      "controls": {
+       "CNVneg_bestpos": 2,
+       "CNVpos_bestneg": 4,
+       "both_pos": 14,
+       "both_neg": 19
+      }
+     }
+    }
+   }
+  }
+ },
+ "patient_list_rows": 1126,
+ "patient_list_path_cluster": "/mnt/scratche/slow/fmlab/zuberi01/phd/thesis/feasibility/paper_plan/killcoyne_mm/horizon_answers/q2_patient_list.csv"
+}

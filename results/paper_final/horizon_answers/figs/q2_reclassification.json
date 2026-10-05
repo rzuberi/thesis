@@ -1,0 +1,51 @@
+{
+ "best": {
+  "1": "L-LATE",
+  "3": "L-LATE",
+  "5": "L-LATE"
+ },
+ "their": {
+  "cases newly captured": [
+   6,
+   11,
+   13
+  ],
+  "cases lost": [
+   2,
+   8,
+   13
+  ],
+  "controls newly cleared": [
+   70,
+   58,
+   31
+  ],
+  "controls newly flagged": [
+   30,
+   19,
+   16
+  ]
+ },
+ "pkg": {
+  "cases newly captured": [
+   4,
+   8,
+   11
+  ],
+  "cases lost": [
+   2,
+   8,
+   12
+  ],
+  "controls newly cleared": [
+   63,
+   38,
+   18
+  ],
+  "controls newly flagged": [
+   25,
+   21,
+   10
+  ]
+ }
+}
