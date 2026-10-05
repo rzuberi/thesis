@@ -1,0 +1,102 @@
+{
+ "task": "their_3",
+ "n_cases": 99,
+ "n_controls": 277,
+ "valid_draws": 2000,
+ "arms": {
+  "GRADE": {
+   "pooled": {
+    "auroc": 0.554,
+    "ci95": [
+     0.461,
+     0.65
+    ],
+    "delta_vs_L-CNV": {
+     "delta": -0.222,
+     "ci95": [
+      -0.353,
+      -0.082
+     ],
+     "p_unadjusted_swap": 0.0075
+    },
+    "delta_vs_L-LATE": {
+     "delta": -0.301,
+     "ci95": [
+      -0.402,
+      -0.21
+     ],
+     "p_unadjusted_swap": 0.001
+    }
+   },
+   "foldstrat": {
+    "auroc": 0.543,
+    "ci95": [
+     0.445,
+     0.634
+    ],
+    "delta_vs_L-CNV": {
+     "delta": -0.225,
+     "ci95": [
+      -0.344,
+      -0.081
+     ],
+     "p_unadjusted_swap": 0.005
+    },
+    "delta_vs_L-LATE": {
+     "delta": -0.288,
+     "ci95": [
+      -0.374,
+      -0.181
+     ],
+     "p_unadjusted_swap": 0.001
+    }
+   }
+  },
+  "L-CNV": {
+   "pooled": {
+    "auroc": 0.775,
+    "ci95": [
+     0.683,
+     0.86
+    ]
+   },
+   "foldstrat": {
+    "auroc": 0.767,
+    "ci95": [
+     0.655,
+     0.841
+    ]
+   }
+  },
+  "L-LATE": {
+   "pooled": {
+    "auroc": 0.855,
+    "ci95": [
+     0.778,
+     0.922
+    ]
+   },
+   "foldstrat": {
+    "auroc": 0.831,
+    "ci95": [
+     0.705,
+     0.898
+    ]
+   }
+  }
+ },
+ "check_against_existing": {
+  "L-CNV": {
+   "pooled_here": 0.775,
+   "pooled_q0": 0.775,
+   "foldstrat_here": 0.767,
+   "foldstrat_fs": 0.767
+  },
+  "L-LATE": {
+   "pooled_here": 0.855,
+   "pooled_q0": 0.855,
+   "foldstrat_here": 0.831,
+   "foldstrat_fs": 0.831
+  }
+ }
+}

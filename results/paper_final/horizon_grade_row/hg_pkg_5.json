@@ -1,0 +1,102 @@
+{
+ "task": "pkg_5",
+ "n_cases": 126,
+ "n_controls": 168,
+ "valid_draws": 2000,
+ "arms": {
+  "GRADE": {
+   "pooled": {
+    "auroc": 0.535,
+    "ci95": [
+     0.449,
+     0.623
+    ],
+    "delta_vs_L-CNV": {
+     "delta": -0.261,
+     "ci95": [
+      -0.381,
+      -0.135
+     ],
+     "p_unadjusted_swap": 0.004
+    },
+    "delta_vs_L-LATE": {
+     "delta": -0.304,
+     "ci95": [
+      -0.402,
+      -0.211
+     ],
+     "p_unadjusted_swap": 0.001
+    }
+   },
+   "foldstrat": {
+    "auroc": 0.524,
+    "ci95": [
+     0.434,
+     0.613
+    ],
+    "delta_vs_L-CNV": {
+     "delta": -0.256,
+     "ci95": [
+      -0.355,
+      -0.119
+     ],
+     "p_unadjusted_swap": 0.003
+    },
+    "delta_vs_L-LATE": {
+     "delta": -0.293,
+     "ci95": [
+      -0.378,
+      -0.179
+     ],
+     "p_unadjusted_swap": 0.001
+    }
+   }
+  },
+  "L-CNV": {
+   "pooled": {
+    "auroc": 0.796,
+    "ci95": [
+     0.693,
+     0.878
+    ]
+   },
+   "foldstrat": {
+    "auroc": 0.78,
+    "ci95": [
+     0.64,
+     0.852
+    ]
+   }
+  },
+  "L-LATE": {
+   "pooled": {
+    "auroc": 0.839,
+    "ci95": [
+     0.76,
+     0.906
+    ]
+   },
+   "foldstrat": {
+    "auroc": 0.818,
+    "ci95": [
+     0.698,
+     0.878
+    ]
+   }
+  }
+ },
+ "check_against_existing": {
+  "L-CNV": {
+   "pooled_here": 0.796,
+   "pooled_q0": 0.796,
+   "foldstrat_here": 0.78,
+   "foldstrat_fs": 0.78
+  },
+  "L-LATE": {
+   "pooled_here": 0.839,
+   "pooled_q0": 0.839,
+   "foldstrat_here": 0.818,
+   "foldstrat_fs": 0.818
+  }
+ }
+}

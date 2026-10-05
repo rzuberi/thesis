@@ -1,0 +1,12 @@
+{
+ "population": "NDBE pre-event samples",
+ "n": 438,
+ "distinct_grades": [
+  0.0
+ ],
+ "pre_event_grades": {
+  "NDBE": 438,
+  "LGD": 67,
+  "ID": 66
+ }
+}
