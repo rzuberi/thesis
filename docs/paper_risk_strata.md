@@ -292,3 +292,47 @@ The intercept-only reference scores Harrell's C 0.316 on pre-event samples: the 
 - Samples are clustered within patients; sample-level KM and the log-rank trend test treat samples as independent (the bands and the ordinal Cox use patient clustering).
 - Matched case–control design: event rates, KM curves and Brier values are not population risks; HRs compare classes within this cohort.
 
+
+---
+
+## Addendum A: fold-stratified C-index (pre-specification)
+
+Status: PRE-SPECIFICATION (written 2026-10-07). Nothing below has been run. Results are appended under "### Addendum A results" in a later commit; this pre-specification and all sections above are not edited afterwards.
+
+Ground rules as above: no refitting; the same stored fold-honest predictions; report only; at most one line of interpretation.
+
+**Why.** The pooled C-indices in Section 4 compare samples from different outer folds, whose predictions come from different training sets; the intercept-only reference scores Harrell's C 0.316 on pre-event samples. Fold-stratified scoring removes that artefact, as fold-stratified AUROC did.
+
+**Definition.**
+- For each repeat r (1–10) and each outer fold k of that repeat, the comparable pairs are those whose two samples both sit in fold k of repeat r.
+  - Comparable pair (as in Section 4): sample i has an observed event with t_i < τ = 8 years, and t_i < t_j.
+  - Concordance uses repeat r's own out-of-fold predictions, not the repeat mean; tied predictions count 0.5.
+- **Harrell's C** for repeat r = Σ over folds of concordant pairs / Σ over folds of comparable pairs, i.e. pooled within folds, like the fold-stratified AUROC. The reported value is the mean over the 10 repeats; folds with no comparable pair contribute nothing.
+- **Uno's C:** as Harrell's, with each pair weighted by 1/G(t_i−)². G is the reverse Kaplan–Meier censoring distribution estimated on the whole population (the bootstrap draw, within the bootstrap), as in Section 4.
+- **Folds:** the outer-fold assignment of the `kv_cv.R` predictions (cfg 0; d69de24). The script checks that every cross-validated model's stored fold column matches it, and reports the result.
+  - If a model's folds differ, that model is scored on its own folds, and this is noted.
+- **Check:** intercept-only (training-fold prevalence) must score 0.500 on both C-indices, because its predictions are constant within a fold. If it does not, the run is reported as failed and not interpreted.
+
+**Models.**
+- Cross-validated: C, L, WSI (L-IMG), early fusion, inter fusion, and the package-feature versions of C, L, early fusion and inter fusion.
+- Not cross-validated: Killcoyne's published model (P) and pathology grade. These have no folds of their own.
+  - For a like-for-like comparison they are scored on exactly the same within-fold pairs, i.e. with the same cfg-0 folds of each repeat, averaged over the 10 repeats. Their scores do not vary across repeats; only the pair set does.
+  - Their pooled values from Section 4 stay as they are.
+
+**Populations.** All pre-event samples (571 samples, 75 patients; primary) and NDBE pre-event samples (secondary). Grade is constant on NDBE samples, so it is reported there as not estimable.
+
+**Inference.**
+- 2,000 patient-bootstrap draws: the same draws as Section 4 (seed 0, draws without both a progressor and a non-progressor sample redrawn).
+- A resampled patient keeps its fold in every repeat. The bootstrap statistic is recomputed per draw as defined above, giving percentile 95% CIs.
+- **Paired Δ** on the same draws: L vs C and L vs P (main), plus L vs C on package features (as in Section 4), for both C-indices and both populations. Each Δ gets a percentile CI and an unadjusted two-sided bootstrap p.
+
+**Reported.**
+- The same table as Section 4 for the C-index columns: fold-stratified Harrell's and Uno's C with CIs per model and population, next to the pooled Section 4 values.
+- The paired-Δ table.
+- The fold-match check and the intercept-only check.
+- One line: does the Section 4 answer to question 3 (L beats C on C-index) hold under fold-stratified scoring, and how does L compare with P?
+
+**Output.**
+- Script `scripts/paper_plan/rs_fsc.py`: TASK `fsc_pre` | `fsc_pre_ndbe`, run on Slurm via `scripts/cluster/campaign.sh`.
+- Aggregates: `results/paper_final/risk_strata/fsc_pre.json` and `fsc_pre_ndbe.json`.
+- Rendered by `scripts/paper_plan/rs_fsc_render.py`, which appends below this pre-specification only.
