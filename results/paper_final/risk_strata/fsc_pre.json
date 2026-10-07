@@ -1,0 +1,339 @@
+{
+ "task": "fsc_pre",
+ "prespec": "f29bd1d",
+ "n_samples": 571,
+ "n_patients": 75,
+ "n_events": 161,
+ "tau": 8.0,
+ "draws": 2000,
+ "fold_match_vs_cfg0": {
+  "C": true,
+  "C_pkg": true,
+  "WSI": true,
+  "EARLY": true,
+  "EARLY_pkg": true,
+  "INTER": true,
+  "INTER_pkg": true,
+  "INTERCEPT": true
+ },
+ "fold_source": {
+  "P": "C",
+  "C": "C",
+  "L": "C",
+  "WSI": "WSI",
+  "EARLY": "EARLY",
+  "INTER": "INTER",
+  "GRADE": "C",
+  "C_pkg": "C_pkg",
+  "L_pkg": "C",
+  "EARLY_pkg": "EARLY_pkg",
+  "INTER_pkg": "INTER_pkg",
+  "INTERCEPT": "INTERCEPT"
+ },
+ "grade_constant": false,
+ "intercept_check": {
+  "harrell": 0.5,
+  "uno": 0.5,
+  "pass": true
+ },
+ "pooled_crosscheck": {
+  "P": {
+   "harrell": 0.791,
+   "uno": 0.794
+  },
+  "C": {
+   "harrell": 0.764,
+   "uno": 0.765
+  },
+  "L": {
+   "harrell": 0.825,
+   "uno": 0.823
+  },
+  "WSI": {
+   "harrell": 0.779,
+   "uno": 0.77
+  },
+  "EARLY": {
+   "harrell": 0.804,
+   "uno": 0.809
+  },
+  "INTER": {
+   "harrell": 0.778,
+   "uno": 0.771
+  },
+  "GRADE": {
+   "harrell": 0.586,
+   "uno": 0.57
+  },
+  "C_pkg": {
+   "harrell": 0.765,
+   "uno": 0.776
+  },
+  "L_pkg": {
+   "harrell": 0.817,
+   "uno": 0.823
+  },
+  "EARLY_pkg": {
+   "harrell": 0.793,
+   "uno": 0.797
+  },
+  "INTER_pkg": {
+   "harrell": 0.787,
+   "uno": 0.786
+  },
+  "INTERCEPT": {
+   "harrell": 0.316,
+   "uno": 0.292
+  }
+ },
+ "models": {
+  "P": {
+   "harrell": {
+    "value": 0.774,
+    "ci95": [
+     0.664,
+     0.839
+    ]
+   },
+   "uno": {
+    "value": 0.764,
+    "ci95": [
+     0.623,
+     0.833
+    ]
+   }
+  },
+  "C": {
+   "harrell": {
+    "value": 0.752,
+    "ci95": [
+     0.653,
+     0.814
+    ]
+   },
+   "uno": {
+    "value": 0.744,
+    "ci95": [
+     0.616,
+     0.801
+    ]
+   }
+  },
+  "L": {
+   "harrell": {
+    "value": 0.805,
+    "ci95": [
+     0.713,
+     0.848
+    ]
+   },
+   "uno": {
+    "value": 0.803,
+    "ci95": [
+     0.709,
+     0.842
+    ]
+   }
+  },
+  "WSI": {
+   "harrell": {
+    "value": 0.761,
+    "ci95": [
+     0.675,
+     0.808
+    ]
+   },
+   "uno": {
+    "value": 0.754,
+    "ci95": [
+     0.675,
+     0.801
+    ]
+   }
+  },
+  "EARLY": {
+   "harrell": {
+    "value": 0.779,
+    "ci95": [
+     0.683,
+     0.837
+    ]
+   },
+   "uno": {
+    "value": 0.774,
+    "ci95": [
+     0.653,
+     0.824
+    ]
+   }
+  },
+  "INTER": {
+   "harrell": {
+    "value": 0.755,
+    "ci95": [
+     0.657,
+     0.819
+    ]
+   },
+   "uno": {
+    "value": 0.741,
+    "ci95": [
+     0.633,
+     0.801
+    ]
+   }
+  },
+  "GRADE": {
+   "harrell": {
+    "value": 0.577,
+    "ci95": [
+     0.5,
+     0.651
+    ]
+   },
+   "uno": {
+    "value": 0.561,
+    "ci95": [
+     0.49,
+     0.616
+    ]
+   }
+  },
+  "C_pkg": {
+   "harrell": {
+    "value": 0.748,
+    "ci95": [
+     0.641,
+     0.804
+    ]
+   },
+   "uno": {
+    "value": 0.759,
+    "ci95": [
+     0.636,
+     0.816
+    ]
+   }
+  },
+  "L_pkg": {
+   "harrell": {
+    "value": 0.799,
+    "ci95": [
+     0.7,
+     0.847
+    ]
+   },
+   "uno": {
+    "value": 0.807,
+    "ci95": [
+     0.708,
+     0.852
+    ]
+   }
+  },
+  "EARLY_pkg": {
+   "harrell": {
+    "value": 0.78,
+    "ci95": [
+     0.676,
+     0.835
+    ]
+   },
+   "uno": {
+    "value": 0.782,
+    "ci95": [
+     0.679,
+     0.836
+    ]
+   }
+  },
+  "INTER_pkg": {
+   "harrell": {
+    "value": 0.767,
+    "ci95": [
+     0.674,
+     0.815
+    ]
+   },
+   "uno": {
+    "value": 0.761,
+    "ci95": [
+     0.661,
+     0.812
+    ]
+   }
+  },
+  "INTERCEPT": {
+   "harrell": {
+    "value": 0.5,
+    "ci95": [
+     0.5,
+     0.5
+    ]
+   },
+   "uno": {
+    "value": 0.5,
+    "ci95": [
+     0.5,
+     0.5
+    ]
+   }
+  }
+ },
+ "paired": {
+  "L_vs_C": {
+   "harrell": {
+    "delta": 0.053,
+    "ci95": [
+     0.003,
+     0.106
+    ],
+    "p_bootstrap_unadjusted": 0.032
+   },
+   "uno": {
+    "delta": 0.059,
+    "ci95": [
+     0.01,
+     0.122
+    ],
+    "p_bootstrap_unadjusted": 0.019
+   }
+  },
+  "L_vs_P": {
+   "harrell": {
+    "delta": 0.031,
+    "ci95": [
+     -0.022,
+     0.095
+    ],
+    "p_bootstrap_unadjusted": 0.266
+   },
+   "uno": {
+    "delta": 0.039,
+    "ci95": [
+     -0.024,
+     0.129
+    ],
+    "p_bootstrap_unadjusted": 0.276
+   }
+  },
+  "L_pkg_vs_C_pkg": {
+   "harrell": {
+    "delta": 0.051,
+    "ci95": [
+     0.011,
+     0.108
+    ],
+    "p_bootstrap_unadjusted": 0.012
+   },
+   "uno": {
+    "delta": 0.047,
+    "ci95": [
+     0.008,
+     0.099
+    ],
+    "p_bootstrap_unadjusted": 0.022
+   }
+  }
+ }
+}

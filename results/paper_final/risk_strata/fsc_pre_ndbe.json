@@ -1,0 +1,324 @@
+{
+ "task": "fsc_pre_ndbe",
+ "prespec": "f29bd1d",
+ "n_samples": 438,
+ "n_patients": 71,
+ "n_events": 104,
+ "tau": 8.0,
+ "draws": 2000,
+ "fold_match_vs_cfg0": {
+  "C": true,
+  "C_pkg": true,
+  "WSI": true,
+  "EARLY": true,
+  "EARLY_pkg": true,
+  "INTER": true,
+  "INTER_pkg": true,
+  "INTERCEPT": true
+ },
+ "fold_source": {
+  "P": "C",
+  "C": "C",
+  "L": "C",
+  "WSI": "WSI",
+  "EARLY": "EARLY",
+  "INTER": "INTER",
+  "GRADE": "C",
+  "C_pkg": "C_pkg",
+  "L_pkg": "C",
+  "EARLY_pkg": "EARLY_pkg",
+  "INTER_pkg": "INTER_pkg",
+  "INTERCEPT": "INTERCEPT"
+ },
+ "grade_constant": true,
+ "intercept_check": {
+  "harrell": 0.5,
+  "uno": 0.5,
+  "pass": true
+ },
+ "pooled_crosscheck": {
+  "P": {
+   "harrell": 0.773,
+   "uno": 0.777
+  },
+  "C": {
+   "harrell": 0.759,
+   "uno": 0.759
+  },
+  "L": {
+   "harrell": 0.795,
+   "uno": 0.8
+  },
+  "WSI": {
+   "harrell": 0.744,
+   "uno": 0.747
+  },
+  "EARLY": {
+   "harrell": 0.799,
+   "uno": 0.8
+  },
+  "INTER": {
+   "harrell": 0.779,
+   "uno": 0.766
+  },
+  "GRADE": {
+   "harrell": 0.5,
+   "uno": 0.5
+  },
+  "C_pkg": {
+   "harrell": 0.739,
+   "uno": 0.759
+  },
+  "L_pkg": {
+   "harrell": 0.778,
+   "uno": 0.792
+  },
+  "EARLY_pkg": {
+   "harrell": 0.757,
+   "uno": 0.766
+  },
+  "INTER_pkg": {
+   "harrell": 0.785,
+   "uno": 0.793
+  },
+  "INTERCEPT": {
+   "harrell": 0.329,
+   "uno": 0.31
+  }
+ },
+ "models": {
+  "P": {
+   "harrell": {
+    "value": 0.766,
+    "ci95": [
+     0.647,
+     0.856
+    ]
+   },
+   "uno": {
+    "value": 0.77,
+    "ci95": [
+     0.667,
+     0.848
+    ]
+   }
+  },
+  "C": {
+   "harrell": {
+    "value": 0.758,
+    "ci95": [
+     0.648,
+     0.838
+    ]
+   },
+   "uno": {
+    "value": 0.755,
+    "ci95": [
+     0.66,
+     0.825
+    ]
+   }
+  },
+  "L": {
+   "harrell": {
+    "value": 0.781,
+    "ci95": [
+     0.677,
+     0.85
+    ]
+   },
+   "uno": {
+    "value": 0.785,
+    "ci95": [
+     0.685,
+     0.844
+    ]
+   }
+  },
+  "WSI": {
+   "harrell": {
+    "value": 0.728,
+    "ci95": [
+     0.631,
+     0.792
+    ]
+   },
+   "uno": {
+    "value": 0.726,
+    "ci95": [
+     0.629,
+     0.777
+    ]
+   }
+  },
+  "EARLY": {
+   "harrell": {
+    "value": 0.779,
+    "ci95": [
+     0.668,
+     0.856
+    ]
+   },
+   "uno": {
+    "value": 0.774,
+    "ci95": [
+     0.669,
+     0.847
+    ]
+   }
+  },
+  "INTER": {
+   "harrell": {
+    "value": 0.77,
+    "ci95": [
+     0.639,
+     0.856
+    ]
+   },
+   "uno": {
+    "value": 0.757,
+    "ci95": [
+     0.647,
+     0.835
+    ]
+   }
+  },
+  "GRADE": "not estimable: grade constant in this population",
+  "C_pkg": {
+   "harrell": {
+    "value": 0.733,
+    "ci95": [
+     0.616,
+     0.814
+    ]
+   },
+   "uno": {
+    "value": 0.76,
+    "ci95": [
+     0.649,
+     0.833
+    ]
+   }
+  },
+  "L_pkg": {
+   "harrell": {
+    "value": 0.766,
+    "ci95": [
+     0.661,
+     0.835
+    ]
+   },
+   "uno": {
+    "value": 0.783,
+    "ci95": [
+     0.684,
+     0.845
+    ]
+   }
+  },
+  "EARLY_pkg": {
+   "harrell": {
+    "value": 0.751,
+    "ci95": [
+     0.635,
+     0.827
+    ]
+   },
+   "uno": {
+    "value": 0.766,
+    "ci95": [
+     0.656,
+     0.842
+    ]
+   }
+  },
+  "INTER_pkg": {
+   "harrell": {
+    "value": 0.768,
+    "ci95": [
+     0.654,
+     0.844
+    ]
+   },
+   "uno": {
+    "value": 0.774,
+    "ci95": [
+     0.657,
+     0.85
+    ]
+   }
+  },
+  "INTERCEPT": {
+   "harrell": {
+    "value": 0.5,
+    "ci95": [
+     0.5,
+     0.5
+    ]
+   },
+   "uno": {
+    "value": 0.5,
+    "ci95": [
+     0.5,
+     0.5
+    ]
+   }
+  }
+ },
+ "paired": {
+  "L_vs_C": {
+   "harrell": {
+    "delta": 0.023,
+    "ci95": [
+     -0.02,
+     0.075
+    ],
+    "p_bootstrap_unadjusted": 0.333
+   },
+   "uno": {
+    "delta": 0.03,
+    "ci95": [
+     -0.017,
+     0.085
+    ],
+    "p_bootstrap_unadjusted": 0.26
+   }
+  },
+  "L_vs_P": {
+   "harrell": {
+    "delta": 0.015,
+    "ci95": [
+     -0.044,
+     0.083
+    ],
+    "p_bootstrap_unadjusted": 0.693
+   },
+   "uno": {
+    "delta": 0.016,
+    "ci95": [
+     -0.049,
+     0.092
+    ],
+    "p_bootstrap_unadjusted": 0.871
+   }
+  },
+  "L_pkg_vs_C_pkg": {
+   "harrell": {
+    "delta": 0.033,
+    "ci95": [
+     -0.007,
+     0.082
+    ],
+    "p_bootstrap_unadjusted": 0.106
+   },
+   "uno": {
+    "delta": 0.024,
+    "ci95": [
+     -0.016,
+     0.069
+    ],
+    "p_bootstrap_unadjusted": 0.303
+   }
+  }
+ }
+}
