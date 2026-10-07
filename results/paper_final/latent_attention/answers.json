@@ -1,0 +1,9 @@
+{
+ "1": "**Early fusion yes, inter fusion no.** Probe Δ AUROC, early fusion (R2) vs WSI-only (R1), on all pre-event samples: +0.065 [+0.015, +0.112], max-T adjusted p 0.025; on NDBE samples +0.085 [+0.033, +0.141], p 0.008. Inter fusion (R3) vs R1: −0.005 [−0.064, +0.055], p 0.98. With package features the early-fusion gain is not significant (+0.055 [−0.002, +0.105], adjusted p 0.092).",
+ "2": "**Scanner dominates the image-based representations, then patient.** A probe identifies the scanner perfectly from R0–R3 (AUROC 1.000), against 0.55 from CNV alone. A sample's nearest held-out neighbour is from the same patient 62–84% of the time (93% for CNV), against 16% by chance. Progression (0.84–0.91), grade (0.81–0.87) and tile count (0.71–0.79) come next, and the image alone does not encode CNV complexity (0.48). Scanner is not confounded with progression: 28% of samples are from progressors on either scanner (descriptive, not pre-specified).",
+ "3": "**Not applicable.** No model in this tier has tile attention (Step 0); late fusion's image half is WSI-only.",
+ "deviations": [
+  "Not pre-specified, descriptive only: scanner by progressor status (`la_scanner_xtab.py`, `scanner_xtab.json`), added to interpret answer 2.",
+  "The UMAP task was run twice; the second run only added the grade colour key to the column title. UMAP with random_state 0 was not bit-reproducible between the two runs, which ran on different nodes. Silhouettes on the representations are identical, but UMAP-space silhouettes changed by up to 0.09 (largest change: R3, held-out, progressor, 0.252 → 0.174). The figure and the table come from the second run; UMAP-space silhouettes are illustrative only."
+ ]
+}

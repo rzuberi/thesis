@@ -1,0 +1,116 @@
+{
+ "prespec": "dfac9ad",
+ "settings": {
+  "n_neighbors": 15,
+  "min_dist": 0.1,
+  "metric": "cosine",
+  "random_state": 0,
+  "umap_version": "0.5.7"
+ },
+ "main": {
+  "R1": {
+   "progressor": {
+    "repr_cosine": 0.02,
+    "umap": 0.002
+   },
+   "patient": {
+    "repr_cosine": -0.166,
+    "umap": -0.479,
+    "n_samples": 569
+   }
+  },
+  "R2": {
+   "progressor": {
+    "repr_cosine": 0.022,
+    "umap": 0.035
+   },
+   "patient": {
+    "repr_cosine": -0.087,
+    "umap": -0.485,
+    "n_samples": 569
+   }
+  },
+  "R3": {
+   "progressor": {
+    "repr_cosine": 0.027,
+    "umap": 0.026
+   },
+   "patient": {
+    "repr_cosine": 0.166,
+    "umap": -0.081,
+    "n_samples": 569
+   }
+  }
+ },
+ "nn50": {
+  "R1": {
+   "progressor": {
+    "repr_cosine": 0.02,
+    "umap": 0.018
+   },
+   "patient": {
+    "repr_cosine": -0.166,
+    "umap": -0.533,
+    "n_samples": 569
+   }
+  },
+  "R2": {
+   "progressor": {
+    "repr_cosine": 0.022,
+    "umap": 0.01
+   },
+   "patient": {
+    "repr_cosine": -0.087,
+    "umap": -0.547,
+    "n_samples": 569
+   }
+  },
+  "R3": {
+   "progressor": {
+    "repr_cosine": 0.027,
+    "umap": 0.053
+   },
+   "patient": {
+    "repr_cosine": 0.166,
+    "umap": -0.127,
+    "n_samples": 569
+   }
+  }
+ },
+ "heldout_rep1_fold1": {
+  "n_samples": 52,
+  "R1": {
+   "progressor": {
+    "repr_cosine": 0.085,
+    "umap": 0.125
+   },
+   "patient": {
+    "repr_cosine": 0.111,
+    "umap": 0.032,
+    "n_samples": 52
+   }
+  },
+  "R2": {
+   "progressor": {
+    "repr_cosine": 0.086,
+    "umap": 0.143
+   },
+   "patient": {
+    "repr_cosine": 0.159,
+    "umap": 0.062,
+    "n_samples": 52
+   }
+  },
+  "R3": {
+   "progressor": {
+    "repr_cosine": 0.094,
+    "umap": 0.174
+   },
+   "patient": {
+    "repr_cosine": 0.206,
+    "umap": 0.212,
+    "n_samples": 52
+   }
+  }
+ }
+}

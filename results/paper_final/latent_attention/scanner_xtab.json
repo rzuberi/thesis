@@ -1,0 +1,48 @@
+{
+ "pre": {
+  "samples": {
+   "C13210": {
+    "progressor": 39,
+    "non_progressor": 100
+   },
+   "C13239-01": {
+    "progressor": 122,
+    "non_progressor": 310
+   }
+  },
+  "patients_with_any_sample_on": {
+   "C13210": {
+    "progressor": 9,
+    "non_progressor": 18
+   },
+   "C13239-01": {
+    "progressor": 31,
+    "non_progressor": 40
+   }
+  },
+  "patients_on_both_scanners": 23
+ },
+ "pre_ndbe": {
+  "samples": {
+   "C13210": {
+    "progressor": 21,
+    "non_progressor": 74
+   },
+   "C13239-01": {
+    "progressor": 83,
+    "non_progressor": 260
+   }
+  },
+  "patients_with_any_sample_on": {
+   "C13210": {
+    "progressor": 8,
+    "non_progressor": 16
+   },
+   "C13239-01": {
+    "progressor": 26,
+    "non_progressor": 40
+   }
+  },
+  "patients_on_both_scanners": 19
+ }
+}

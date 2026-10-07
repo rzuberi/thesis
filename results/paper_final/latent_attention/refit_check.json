@@ -1,0 +1,39 @@
+{
+ "prespec": "dfac9ad",
+ "threshold": 1e-05,
+ "n_checks": 50,
+ "max_abs_diff": 3.0769831127486214e-13,
+ "all_pass": true,
+ "models": {
+  "early_pkg": {
+   "repeats": 10,
+   "max_abs_diff": 1.1102230246251565e-16,
+   "fold_match_all": true,
+   "n_per_repeat": 676
+  },
+  "early_their": {
+   "repeats": 10,
+   "max_abs_diff": 1.1102230246251565e-16,
+   "fold_match_all": true,
+   "n_per_repeat": 676
+  },
+  "img": {
+   "repeats": 10,
+   "max_abs_diff": 1.1102230246251565e-16,
+   "fold_match_all": true,
+   "n_per_repeat": 676
+  },
+  "inter_pkg": {
+   "repeats": 10,
+   "max_abs_diff": 2.6095792193814304e-13,
+   "fold_match_all": true,
+   "n_per_repeat": 676
+  },
+  "inter_their": {
+   "repeats": 10,
+   "max_abs_diff": 3.0769831127486214e-13,
+   "fold_match_all": true,
+   "n_per_repeat": 676
+  }
+ }
+}

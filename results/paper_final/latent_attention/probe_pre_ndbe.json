@@ -1,0 +1,425 @@
+{
+ "task": "pre_ndbe",
+ "prespec": "dfac9ad",
+ "n_samples": 438,
+ "n_patients": 71,
+ "n_progressor_samples": 104,
+ "draws": 2000,
+ "fingerprint_max_abs_diff": 1.4210854715202004e-12,
+ "probe": {
+  "cx": {
+   "R0": {
+    "auroc": 0.495,
+    "ci95": [
+     0.43,
+     0.553
+    ],
+    "C_median": 0.0001,
+    "n_labelled": 438
+   },
+   "R1": {
+    "auroc": 0.495,
+    "ci95": [
+     0.43,
+     0.553
+    ],
+    "C_median": 0.0001,
+    "n_labelled": 438
+   },
+   "R2": {
+    "auroc": 0.646,
+    "ci95": [
+     0.572,
+     0.714
+    ],
+    "C_median": 6.58113883008419,
+    "n_labelled": 438
+   },
+   "R2p": {
+    "auroc": 0.795,
+    "ci95": [
+     0.731,
+     0.853
+    ],
+    "C_median": 3.162277660168379,
+    "n_labelled": 438
+   },
+   "R3": {
+    "auroc": 0.626,
+    "ci95": [
+     0.543,
+     0.697
+    ],
+    "C_median": 0.1,
+    "n_labelled": 438
+   },
+   "R3p": {
+    "auroc": 0.668,
+    "ci95": [
+     0.604,
+     0.729
+    ],
+    "C_median": 31.6227766016838,
+    "n_labelled": 438
+   }
+  },
+  "progressor": {
+   "R0": {
+    "auroc": 0.819,
+    "ci95": [
+     0.762,
+     0.872
+    ],
+    "C_median": 1.0,
+    "n_labelled": 438
+   },
+   "R1": {
+    "auroc": 0.819,
+    "ci95": [
+     0.762,
+     0.872
+    ],
+    "C_median": 1.0,
+    "n_labelled": 438
+   },
+   "R2": {
+    "auroc": 0.903,
+    "ci95": [
+     0.834,
+     0.957
+    ],
+    "C_median": 31.6227766016838,
+    "n_labelled": 438
+   },
+   "R2p": {
+    "auroc": 0.871,
+    "ci95": [
+     0.792,
+     0.939
+    ],
+    "C_median": 100.0,
+    "n_labelled": 438
+   },
+   "R3": {
+    "auroc": 0.84,
+    "ci95": [
+     0.762,
+     0.911
+    ],
+    "C_median": 0.3162277660168379,
+    "n_labelled": 438
+   },
+   "R3p": {
+    "auroc": 0.854,
+    "ci95": [
+     0.778,
+     0.916
+    ],
+    "C_median": 1.0,
+    "n_labelled": 438
+   },
+   "R4": {
+    "auroc": 0.847,
+    "ci95": [
+     0.768,
+     0.917
+    ],
+    "C_median": 31.6227766016838,
+    "n_labelled": 438
+   },
+   "R4p": {
+    "auroc": 0.812,
+    "ci95": [
+     0.715,
+     0.899
+    ],
+    "C_median": 100.0,
+    "n_labelled": 438
+   }
+  },
+  "scanner": {
+   "R0": {
+    "auroc": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ],
+    "C_median": 0.0003162277660168,
+    "n_labelled": 438
+   },
+   "R1": {
+    "auroc": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ],
+    "C_median": 0.0003162277660168,
+    "n_labelled": 438
+   },
+   "R2": {
+    "auroc": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ],
+    "C_median": 0.001,
+    "n_labelled": 438
+   },
+   "R2p": {
+    "auroc": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ],
+    "C_median": 0.001,
+    "n_labelled": 438
+   },
+   "R3": {
+    "auroc": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ],
+    "C_median": 0.3162277660168379,
+    "n_labelled": 438
+   },
+   "R3p": {
+    "auroc": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ],
+    "C_median": 2.0811388300841895,
+    "n_labelled": 438
+   },
+   "R4": {
+    "auroc": 0.517,
+    "ci95": [
+     0.403,
+     0.597
+    ],
+    "C_median": 0.0031622776601683,
+    "n_labelled": 438
+   },
+   "R4p": {
+    "auroc": 0.546,
+    "ci95": [
+     0.441,
+     0.638
+    ],
+    "C_median": 0.001,
+    "n_labelled": 438
+   }
+  },
+  "tiles": {
+   "R0": {
+    "auroc": 0.767,
+    "ci95": [
+     0.708,
+     0.817
+    ],
+    "C_median": 0.0316227766016837,
+    "n_labelled": 438
+   },
+   "R1": {
+    "auroc": 0.767,
+    "ci95": [
+     0.708,
+     0.817
+    ],
+    "C_median": 0.0316227766016837,
+    "n_labelled": 438
+   },
+   "R2": {
+    "auroc": 0.758,
+    "ci95": [
+     0.705,
+     0.812
+    ],
+    "C_median": 0.01,
+    "n_labelled": 438
+   },
+   "R2p": {
+    "auroc": 0.78,
+    "ci95": [
+     0.726,
+     0.831
+    ],
+    "C_median": 0.01,
+    "n_labelled": 438
+   },
+   "R3": {
+    "auroc": 0.705,
+    "ci95": [
+     0.641,
+     0.76
+    ],
+    "C_median": 0.0316227766016837,
+    "n_labelled": 438
+   },
+   "R3p": {
+    "auroc": 0.725,
+    "ci95": [
+     0.667,
+     0.779
+    ],
+    "C_median": 0.01,
+    "n_labelled": 438
+   },
+   "R4": {
+    "auroc": 0.6,
+    "ci95": [
+     0.524,
+     0.668
+    ],
+    "C_median": 0.0006581138830084,
+    "n_labelled": 438
+   },
+   "R4p": {
+    "auroc": 0.617,
+    "ci95": [
+     0.549,
+     0.669
+    ],
+    "C_median": 0.0031622776601683,
+    "n_labelled": 438
+   }
+  }
+ },
+ "paired": {
+  "R2_vs_R1": {
+   "family": "their",
+   "delta": 0.085,
+   "ci95": [
+    0.033,
+    0.141
+   ],
+   "p_unadjusted": 0.002,
+   "p_maxT_adjusted": 0.008
+  },
+  "R3_vs_R1": {
+   "family": "their",
+   "delta": 0.021,
+   "ci95": [
+    -0.04,
+    0.08
+   ],
+   "p_unadjusted": 0.403,
+   "p_maxT_adjusted": 0.737
+  },
+  "R2_vs_R3": {
+   "family": "their",
+   "delta": 0.064,
+   "ci95": [
+    0.028,
+    0.103
+   ],
+   "p_unadjusted": 0.0,
+   "p_maxT_adjusted": 0.003
+  },
+  "R2p_vs_R1": {
+   "family": "pkg",
+   "delta": 0.052,
+   "ci95": [
+    -0.016,
+    0.116
+   ],
+   "p_unadjusted": 0.108,
+   "p_maxT_adjusted": 0.23
+  },
+  "R3p_vs_R1": {
+   "family": "pkg",
+   "delta": 0.035,
+   "ci95": [
+    -0.019,
+    0.089
+   ],
+   "p_unadjusted": 0.201,
+   "p_maxT_adjusted": 0.3765
+  },
+  "R2p_vs_R3p": {
+   "family": "pkg",
+   "delta": 0.017,
+   "ci95": [
+    -0.026,
+    0.068
+   ],
+   "p_unadjusted": 0.409,
+   "p_maxT_adjusted": 0.741
+  }
+ },
+ "nn_patient": {
+  "R0": {
+   "share_same_patient": 0.608,
+   "chance": 0.169,
+   "ratio": 3.597,
+   "per_repeat_range": [
+    0.594,
+    0.623
+   ]
+  },
+  "R1": {
+   "share_same_patient": 0.629,
+   "chance": 0.169,
+   "ratio": 3.726,
+   "per_repeat_range": [
+    0.596,
+    0.646
+   ]
+  },
+  "R2": {
+   "share_same_patient": 0.69,
+   "chance": 0.169,
+   "ratio": 4.085,
+   "per_repeat_range": [
+    0.671,
+    0.708
+   ]
+  },
+  "R2p": {
+   "share_same_patient": 0.708,
+   "chance": 0.169,
+   "ratio": 4.191,
+   "per_repeat_range": [
+    0.692,
+    0.726
+   ]
+  },
+  "R3": {
+   "share_same_patient": 0.817,
+   "chance": 0.169,
+   "ratio": 4.839,
+   "per_repeat_range": [
+    0.79,
+    0.829
+   ]
+  },
+  "R3p": {
+   "share_same_patient": 0.815,
+   "chance": 0.169,
+   "ratio": 4.827,
+   "per_repeat_range": [
+    0.801,
+    0.824
+   ]
+  },
+  "R4": {
+   "share_same_patient": 0.901,
+   "chance": 0.169,
+   "ratio": 5.336,
+   "per_repeat_range": [
+    0.886,
+    0.913
+   ]
+  },
+  "R4p": {
+   "share_same_patient": 0.906,
+   "chance": 0.169,
+   "ratio": 5.365,
+   "per_repeat_range": [
+    0.9,
+    0.918
+   ]
+  }
+ }
+}
