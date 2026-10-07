@@ -40,7 +40,7 @@ def panel_row(axs, U, rr, label, st):
         ax.scatter(U[order, 0], U[order, 1], c=np.array(c, dtype=object)[order].tolist(), s=7, lw=0, alpha=0.85); ax.set_xticks([]); ax.set_yticks([])
         if j == 0: ax.set_ylabel(label, fontsize=9); ax.text(0.02, 0.02, f"silhouette (repr / UMAP): {st['progressor']['repr_cosine']} / {st['progressor']['umap']}", transform=ax.transAxes, fontsize=6.5)
         if j == 1: ax.text(0.02, 0.02, f"silhouette (repr / UMAP): {st['patient']['repr_cosine']} / {st['patient']['umap']}", transform=ax.transAxes, fontsize=6.5)
-TITLES = ["progressor status (red = progressor)", "patient (10 largest coloured)", "scanner (green C13239-01, purple C13210)", "grade (NDBE / ID / LGD)"]
+TITLES = ["progressor status (red = progressor)", "patient (10 largest coloured)", "scanner (green C13239-01, purple C13210)", "grade (purple NDBE, teal ID, yellow LGD)"]
 res = {"prespec": "dfac9ad", "settings": {"n_neighbors": 15, "min_dist": 0.1, "metric": "cosine", "random_state": 0, "umap_version": umap.__version__}, "main": {}, "nn50": {}, "heldout_rep1_fold1": {"n_samples": int(len(held_rows))}}
 coords = []
 def figure(rowsets, fname, title):
