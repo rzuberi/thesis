@@ -336,3 +336,64 @@ Ground rules as above: no refitting; the same stored fold-honest predictions; re
 - Script `scripts/paper_plan/rs_fsc.py`: TASK `fsc_pre` | `fsc_pre_ndbe`, run on Slurm via `scripts/cluster/campaign.sh`.
 - Aggregates: `results/paper_final/risk_strata/fsc_pre.json` and `fsc_pre_ndbe.json`.
 - Rendered by `scripts/paper_plan/rs_fsc_render.py`, which appends below this pre-specification only.
+
+### Addendum A results
+
+Pre-specification commit f29bd1d; results commit bcb9e72. Script `scripts/paper_plan/rs_fsc.py` (Slurm via `scripts/cluster/campaign.sh`, prefix fsc), `scripts/paper_plan/rs_fsc_render.py`. Aggregates `results/paper_final/risk_strata/fsc_pre.json`, `fsc_pre_ndbe.json`.
+
+| Check | Result |
+|---|---|
+| Fold columns of every cross-validated model equal the cfg-0 folds, all 10 repeats | yes |
+| Intercept-only, fold-stratified Harrell's / Uno's C (must be 0.500) | pre-event 0.500 / 0.500; NDBE 0.500 / 0.500: PASS |
+| Pooled C recomputed by this script equals Section 4 (±0.001) | yes, both populations |
+
+**All pre-event samples** (571 samples, 75 patients, 161 samples with an event; 2000 patient-bootstrap draws).
+
+| Model | Harrell's C, fold-stratified [95% CI] | Uno's C, fold-stratified [95% CI] | Harrell's C, pooled (Section 4) | Uno's C, pooled (Section 4) |
+|---|---|---|---|---|
+| Killcoyne published (P) † | 0.774 [0.664, 0.839] | 0.764 [0.623, 0.833] | 0.791 | 0.794 |
+| CNV, their matrix (C) | 0.752 [0.653, 0.814] | 0.744 [0.616, 0.801] | 0.764 | 0.765 |
+| Late fusion, their matrix (L) | 0.805 [0.713, 0.848] | 0.803 [0.709, 0.842] | 0.825 | 0.823 |
+| WSI (L-IMG) | 0.761 [0.675, 0.808] | 0.754 [0.675, 0.801] | 0.779 | 0.770 |
+| Early fusion | 0.779 [0.683, 0.837] | 0.774 [0.653, 0.824] | 0.804 | 0.809 |
+| Inter fusion | 0.755 [0.657, 0.819] | 0.741 [0.633, 0.801] | 0.778 | 0.771 |
+| Pathology grade (raw score) † | 0.577 [0.500, 0.651] | 0.561 [0.490, 0.616] | 0.586 | 0.570 |
+| CNV, package features | 0.748 [0.641, 0.804] | 0.759 [0.636, 0.816] | 0.765 | 0.776 |
+| Late fusion, package features | 0.799 [0.700, 0.847] | 0.807 [0.708, 0.852] | 0.817 | 0.823 |
+| Early fusion, package | 0.780 [0.676, 0.835] | 0.782 [0.679, 0.836] | 0.793 | 0.797 |
+| Inter fusion, package | 0.767 [0.674, 0.815] | 0.761 [0.661, 0.812] | 0.787 | 0.786 |
+| Intercept-only (reference) | 0.500 [0.500, 0.500] | 0.500 [0.500, 0.500] | 0.316 | 0.292 |
+
+**NDBE pre-event samples** (438 samples, 71 patients, 104 samples with an event; 2000 patient-bootstrap draws).
+
+| Model | Harrell's C, fold-stratified [95% CI] | Uno's C, fold-stratified [95% CI] | Harrell's C, pooled (Section 4) | Uno's C, pooled (Section 4) |
+|---|---|---|---|---|
+| Killcoyne published (P) † | 0.766 [0.647, 0.856] | 0.770 [0.667, 0.848] | 0.773 | 0.777 |
+| CNV, their matrix (C) | 0.758 [0.648, 0.838] | 0.755 [0.660, 0.825] | 0.759 | 0.759 |
+| Late fusion, their matrix (L) | 0.781 [0.677, 0.850] | 0.785 [0.685, 0.844] | 0.795 | 0.800 |
+| WSI (L-IMG) | 0.728 [0.631, 0.792] | 0.726 [0.629, 0.777] | 0.744 | 0.747 |
+| Early fusion | 0.779 [0.668, 0.856] | 0.774 [0.669, 0.847] | 0.799 | 0.800 |
+| Inter fusion | 0.770 [0.639, 0.856] | 0.757 [0.647, 0.835] | 0.779 | 0.766 |
+| Pathology grade (raw score) † | not estimable (grade constant) | — | — | — |
+| CNV, package features | 0.733 [0.616, 0.814] | 0.760 [0.649, 0.833] | 0.739 | 0.759 |
+| Late fusion, package features | 0.766 [0.661, 0.835] | 0.783 [0.684, 0.845] | 0.778 | 0.792 |
+| Early fusion, package | 0.751 [0.635, 0.827] | 0.766 [0.656, 0.842] | 0.757 | 0.766 |
+| Inter fusion, package | 0.768 [0.654, 0.844] | 0.774 [0.657, 0.850] | 0.785 | 0.793 |
+| Intercept-only (reference) | 0.500 [0.500, 0.500] | 0.500 [0.500, 0.500] | 0.329 | 0.310 |
+
+† Not cross-validated: scored on the same within-fold pairs as the cross-validated models (cfg-0 folds), averaged over the 10 repeats; only the pair set varies across repeats.
+
+**Paired Δ, fold-stratified** (same 2,000 patient-bootstrap draws; unadjusted two-sided bootstrap p).
+
+| Population | Comparison | Δ Harrell's C [95% CI], p | Δ Uno's C [95% CI], p |
+|---|---|---|---|
+| All pre-event samples | L vs C | +0.053 [+0.003, +0.106], p 0.032 | +0.059 [+0.010, +0.122], p 0.019 |
+| All pre-event samples | L vs P | +0.031 [-0.022, +0.095], p 0.266 | +0.039 [-0.024, +0.129], p 0.276 |
+| All pre-event samples | L (package) vs C (package) | +0.051 [+0.011, +0.108], p 0.012 | +0.047 [+0.008, +0.099], p 0.022 |
+| NDBE pre-event samples | L vs C | +0.023 [-0.020, +0.075], p 0.333 | +0.030 [-0.017, +0.085], p 0.26 |
+| NDBE pre-event samples | L vs P | +0.015 [-0.044, +0.083], p 0.693 | +0.016 [-0.049, +0.092], p 0.871 |
+| NDBE pre-event samples | L (package) vs C (package) | +0.033 [-0.007, +0.082], p 0.106 | +0.024 [-0.016, +0.069], p 0.303 |
+
+**Answer (one line).** The Section 4 answer to question 3 holds on all pre-event samples under fold-stratified scoring: L beats C on Harrell's C (+0.053 [+0.003, +0.106]) and Uno's C (+0.059 [+0.010, +0.122]), with every model's C-index lower than its pooled value; L vs P is not significant (+0.031 [-0.022, +0.095]), and on NDBE samples neither difference is significant (L vs C +0.023 [-0.020, +0.075]).
+
+**Caveat (observed after running, not pre-specified).** For every model the fold-stratified point estimate sits near the upper end of its percentile CI (e.g. L, pre-event, 0.805 [0.713, 0.848]). A likely cause: a patient drawn more than once keeps its fold, so its copies are compared with each other inside one fold, and these within-patient pairs make up a much larger share of the within-fold pairs than of the pooled pairs; within-patient ordering is close to uninformative, which pulls the bootstrap distribution towards 0.5. The CIs of single models are therefore conservative on the low side; the paired Δ, which uses the same pairs for both models, is less affected. The method was not changed after seeing this.
