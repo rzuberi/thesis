@@ -1,0 +1,1872 @@
+{
+ "task": "sep_pre_ndbe",
+ "n_samples": 438,
+ "n_patients": 71,
+ "n_progressor_patients": 28,
+ "P_class_proportions": [
+  0.555,
+  0.176,
+  0.269
+ ],
+ "matched_cutpoints": {
+  "P": [
+   0.3,
+   0.5
+  ],
+  "C": [
+   0.25,
+   0.437
+  ],
+  "L": [
+   0.249,
+   0.401
+  ],
+  "C_pkg": [
+   0.228,
+   0.467
+  ],
+  "L_pkg": [
+   0.246,
+   0.396
+  ]
+ },
+ "models": {
+  "P": {
+   "primary": {
+    "classes": [
+     {
+      "class": "low",
+      "samples": 243,
+      "patients": 47,
+      "progressor_samples": 23,
+      "progressor_patients": 9,
+      "event_samples": 23
+     },
+     {
+      "class": "moderate",
+      "samples": 77,
+      "patients": 34,
+      "progressor_samples": 21,
+      "progressor_patients": 12,
+      "event_samples": 21
+     },
+     {
+      "class": "high",
+      "samples": 118,
+      "patients": 38,
+      "progressor_samples": 60,
+      "progressor_patients": 22,
+      "event_samples": 60
+     }
+    ],
+    "sens_spec": {
+     "low_vs_above": {
+      "sensitivity": 0.779,
+      "specificity": 0.659,
+      "sensitivity_ci95": [
+       0.62,
+       0.923
+      ],
+      "specificity_ci95": [
+       0.535,
+       0.772
+      ]
+     },
+     "high_vs_below": {
+      "sensitivity": 0.577,
+      "specificity": 0.826,
+      "sensitivity_ci95": [
+       0.414,
+       0.741
+      ],
+      "specificity_ci95": [
+       0.725,
+       0.91
+      ]
+     }
+    },
+    "class_share_by_status": {
+     "progressor": {
+      "all": [
+       0.221,
+       0.202,
+       0.577,
+       104
+      ],
+      "NDBE": [
+       0.221,
+       0.202,
+       0.577,
+       104
+      ]
+     },
+     "nonprogressor": {
+      "all": [
+       0.659,
+       0.168,
+       0.174,
+       334
+      ],
+      "NDBE": [
+       0.659,
+       0.168,
+       0.174,
+       334
+      ]
+     }
+    },
+    "deciles": [
+     {
+      "decile": 1,
+      "n": 44,
+      "P": 1,
+      "NP": 43,
+      "mean_pred": 0.006
+     },
+     {
+      "decile": 2,
+      "n": 44,
+      "P": 6,
+      "NP": 38,
+      "mean_pred": 0.032
+     },
+     {
+      "decile": 3,
+      "n": 44,
+      "P": 7,
+      "NP": 37,
+      "mean_pred": 0.08
+     },
+     {
+      "decile": 4,
+      "n": 43,
+      "P": 3,
+      "NP": 40,
+      "mean_pred": 0.124
+     },
+     {
+      "decile": 5,
+      "n": 44,
+      "P": 2,
+      "NP": 42,
+      "mean_pred": 0.187
+     },
+     {
+      "decile": 6,
+      "n": 44,
+      "P": 5,
+      "NP": 39,
+      "mean_pred": 0.288
+     },
+     {
+      "decile": 7,
+      "n": 43,
+      "P": 13,
+      "NP": 30,
+      "mean_pred": 0.402
+     },
+     {
+      "decile": 8,
+      "n": 44,
+      "P": 14,
+      "NP": 30,
+      "mean_pred": 0.523
+     },
+     {
+      "decile": 9,
+      "n": 44,
+      "P": 19,
+      "NP": 25,
+      "mean_pred": 0.688
+     },
+     {
+      "decile": 10,
+      "n": 44,
+      "P": 34,
+      "NP": 10,
+      "mean_pred": 0.934
+     }
+    ],
+    "endoscopy_sensitivity": [
+     {
+      "months_before_endpoint": "endpoint",
+      "endoscopies": 0,
+      "samples": 0,
+      "patients": 0,
+      "share_high": null
+     },
+     {
+      "months_before_endpoint": "1-12",
+      "endoscopies": 8,
+      "samples": 11,
+      "patients": 8,
+      "share_high": 0.875
+     },
+     {
+      "months_before_endpoint": "12-24",
+      "endoscopies": 12,
+      "samples": 27,
+      "patients": 12,
+      "share_high": 0.667
+     },
+     {
+      "months_before_endpoint": "24-48",
+      "endoscopies": 19,
+      "samples": 29,
+      "patients": 16,
+      "share_high": 0.632
+     },
+     {
+      "months_before_endpoint": "48-72",
+      "endoscopies": 14,
+      "samples": 18,
+      "patients": 12,
+      "share_high": 0.571
+     },
+     {
+      "months_before_endpoint": "72-96",
+      "endoscopies": 5,
+      "samples": 5,
+      "patients": 5,
+      "share_high": 0.4
+     },
+     {
+      "months_before_endpoint": ">96",
+      "endoscopies": 10,
+      "samples": 14,
+      "patients": 7,
+      "share_high": 0.3
+     }
+    ],
+    "cox": {
+     "source": "lifelines CoxPHFitter, Efron ties, cluster-robust (fallback)",
+     "HR_moderate_vs_low": 3.681,
+     "HR_moderate_ci95": [
+      1.359,
+      9.971
+     ],
+     "HR_high_vs_low": 5.606,
+     "HR_high_ci95": [
+      2.171,
+      14.476
+     ],
+     "p_moderate": 0.0104,
+     "p_high": 0.000368
+    },
+    "logrank_trend": {
+     "z": 7.727,
+     "p": 1.11e-14
+    },
+    "ordinal_cox_robust": {
+     "HR_per_class": 2.274,
+     "ci95": [
+      1.503,
+      3.441
+     ],
+     "p": 0.000102,
+     "source": "lifelines, Efron, cluster-robust (fallback)"
+    },
+    "share_events_in_high": 0.577
+   },
+   "matched": {
+    "classes": [
+     {
+      "class": "low",
+      "samples": 243,
+      "patients": 47,
+      "progressor_samples": 23,
+      "progressor_patients": 9,
+      "event_samples": 23
+     },
+     {
+      "class": "moderate",
+      "samples": 77,
+      "patients": 34,
+      "progressor_samples": 21,
+      "progressor_patients": 12,
+      "event_samples": 21
+     },
+     {
+      "class": "high",
+      "samples": 118,
+      "patients": 38,
+      "progressor_samples": 60,
+      "progressor_patients": 22,
+      "event_samples": 60
+     }
+    ],
+    "sens_spec": {
+     "low_vs_above": {
+      "sensitivity": 0.779,
+      "specificity": 0.659
+     },
+     "high_vs_below": {
+      "sensitivity": 0.577,
+      "specificity": 0.826
+     }
+    },
+    "class_share_by_status": {
+     "progressor": {
+      "all": [
+       0.221,
+       0.202,
+       0.577,
+       104
+      ],
+      "NDBE": [
+       0.221,
+       0.202,
+       0.577,
+       104
+      ]
+     },
+     "nonprogressor": {
+      "all": [
+       0.659,
+       0.168,
+       0.174,
+       334
+      ],
+      "NDBE": [
+       0.659,
+       0.168,
+       0.174,
+       334
+      ]
+     }
+    },
+    "cox": {
+     "source": "lifelines CoxPHFitter, Efron ties, cluster-robust (fallback)",
+     "HR_moderate_vs_low": 3.681,
+     "HR_moderate_ci95": [
+      1.359,
+      9.971
+     ],
+     "HR_high_vs_low": 5.606,
+     "HR_high_ci95": [
+      2.171,
+      14.476
+     ],
+     "p_moderate": 0.0104,
+     "p_high": 0.000368
+    },
+    "logrank_trend": {
+     "z": 7.727,
+     "p": 1.11e-14
+    },
+    "ordinal_cox_robust": {
+     "HR_per_class": 2.274,
+     "ci95": [
+      1.503,
+      3.441
+     ],
+     "p": 0.000102,
+     "source": "lifelines, Efron, cluster-robust (fallback)"
+    },
+    "share_events_in_high": 0.577
+   }
+  },
+  "C": {
+   "primary": {
+    "classes": [
+     {
+      "class": "low",
+      "samples": 261,
+      "patients": 51,
+      "progressor_samples": 27,
+      "progressor_patients": 12,
+      "event_samples": 27
+     },
+     {
+      "class": "moderate",
+      "samples": 85,
+      "patients": 34,
+      "progressor_samples": 27,
+      "progressor_patients": 14,
+      "event_samples": 27
+     },
+     {
+      "class": "high",
+      "samples": 92,
+      "patients": 32,
+      "progressor_samples": 50,
+      "progressor_patients": 19,
+      "event_samples": 50
+     }
+    ],
+    "sens_spec": {
+     "low_vs_above": {
+      "sensitivity": 0.74,
+      "specificity": 0.701,
+      "sensitivity_ci95": [
+       0.582,
+       0.883
+      ],
+      "specificity_ci95": [
+       0.583,
+       0.815
+      ]
+     },
+     "high_vs_below": {
+      "sensitivity": 0.481,
+      "specificity": 0.874,
+      "sensitivity_ci95": [
+       0.314,
+       0.647
+      ],
+      "specificity_ci95": [
+       0.79,
+       0.943
+      ]
+     }
+    },
+    "class_share_by_status": {
+     "progressor": {
+      "all": [
+       0.26,
+       0.26,
+       0.481,
+       104
+      ],
+      "NDBE": [
+       0.26,
+       0.26,
+       0.481,
+       104
+      ]
+     },
+     "nonprogressor": {
+      "all": [
+       0.701,
+       0.174,
+       0.126,
+       334
+      ],
+      "NDBE": [
+       0.701,
+       0.174,
+       0.126,
+       334
+      ]
+     }
+    },
+    "deciles": [
+     {
+      "decile": 1,
+      "n": 44,
+      "P": 3,
+      "NP": 41,
+      "mean_pred": 0.013
+     },
+     {
+      "decile": 2,
+      "n": 44,
+      "P": 2,
+      "NP": 42,
+      "mean_pred": 0.041
+     },
+     {
+      "decile": 3,
+      "n": 44,
+      "P": 4,
+      "NP": 40,
+      "mean_pred": 0.078
+     },
+     {
+      "decile": 4,
+      "n": 43,
+      "P": 5,
+      "NP": 38,
+      "mean_pred": 0.126
+     },
+     {
+      "decile": 5,
+      "n": 44,
+      "P": 7,
+      "NP": 37,
+      "mean_pred": 0.179
+     },
+     {
+      "decile": 6,
+      "n": 44,
+      "P": 6,
+      "NP": 38,
+      "mean_pred": 0.251
+     },
+     {
+      "decile": 7,
+      "n": 43,
+      "P": 15,
+      "NP": 28,
+      "mean_pred": 0.351
+     },
+     {
+      "decile": 8,
+      "n": 44,
+      "P": 15,
+      "NP": 29,
+      "mean_pred": 0.457
+     },
+     {
+      "decile": 9,
+      "n": 44,
+      "P": 16,
+      "NP": 28,
+      "mean_pred": 0.611
+     },
+     {
+      "decile": 10,
+      "n": 44,
+      "P": 31,
+      "NP": 13,
+      "mean_pred": 0.877
+     }
+    ],
+    "endoscopy_sensitivity": [
+     {
+      "months_before_endpoint": "endpoint",
+      "endoscopies": 0,
+      "samples": 0,
+      "patients": 0,
+      "share_high": null
+     },
+     {
+      "months_before_endpoint": "1-12",
+      "endoscopies": 8,
+      "samples": 11,
+      "patients": 8,
+      "share_high": 0.75
+     },
+     {
+      "months_before_endpoint": "12-24",
+      "endoscopies": 12,
+      "samples": 27,
+      "patients": 12,
+      "share_high": 0.417
+     },
+     {
+      "months_before_endpoint": "24-48",
+      "endoscopies": 19,
+      "samples": 29,
+      "patients": 16,
+      "share_high": 0.579
+     },
+     {
+      "months_before_endpoint": "48-72",
+      "endoscopies": 14,
+      "samples": 18,
+      "patients": 12,
+      "share_high": 0.429
+     },
+     {
+      "months_before_endpoint": "72-96",
+      "endoscopies": 5,
+      "samples": 5,
+      "patients": 5,
+      "share_high": 0.4
+     },
+     {
+      "months_before_endpoint": ">96",
+      "endoscopies": 10,
+      "samples": 14,
+      "patients": 7,
+      "share_high": 0.4
+     }
+    ],
+    "cox": {
+     "source": "lifelines CoxPHFitter, Efron ties, cluster-robust (fallback)",
+     "HR_moderate_vs_low": 3.896,
+     "HR_moderate_ci95": [
+      1.744,
+      8.705
+     ],
+     "HR_high_vs_low": 4.78,
+     "HR_high_ci95": [
+      1.994,
+      11.46
+     ],
+     "p_moderate": 0.000915,
+     "p_high": 0.000454
+    },
+    "logrank_trend": {
+     "z": 7.146,
+     "p": 8.94e-13
+    },
+    "ordinal_cox_robust": {
+     "HR_per_class": 2.105,
+     "ci95": [
+      1.428,
+      3.103
+     ],
+     "p": 0.00017,
+     "source": "lifelines, Efron, cluster-robust (fallback)"
+    },
+    "share_events_in_high": 0.481
+   },
+   "matched": {
+    "classes": [
+     {
+      "class": "low",
+      "samples": 243,
+      "patients": 50,
+      "progressor_samples": 26,
+      "progressor_patients": 11,
+      "event_samples": 26
+     },
+     {
+      "class": "moderate",
+      "samples": 77,
+      "patients": 34,
+      "progressor_samples": 22,
+      "progressor_patients": 12,
+      "event_samples": 22
+     },
+     {
+      "class": "high",
+      "samples": 118,
+      "patients": 37,
+      "progressor_samples": 56,
+      "progressor_patients": 20,
+      "event_samples": 56
+     }
+    ],
+    "sens_spec": {
+     "low_vs_above": {
+      "sensitivity": 0.75,
+      "specificity": 0.65
+     },
+     "high_vs_below": {
+      "sensitivity": 0.538,
+      "specificity": 0.814
+     }
+    },
+    "class_share_by_status": {
+     "progressor": {
+      "all": [
+       0.25,
+       0.212,
+       0.538,
+       104
+      ],
+      "NDBE": [
+       0.25,
+       0.212,
+       0.538,
+       104
+      ]
+     },
+     "nonprogressor": {
+      "all": [
+       0.65,
+       0.165,
+       0.186,
+       334
+      ],
+      "NDBE": [
+       0.65,
+       0.165,
+       0.186,
+       334
+      ]
+     }
+    },
+    "cox": {
+     "source": "lifelines CoxPHFitter, Efron ties, cluster-robust (fallback)",
+     "HR_moderate_vs_low": 3.384,
+     "HR_moderate_ci95": [
+      1.405,
+      8.15
+     ],
+     "HR_high_vs_low": 4.418,
+     "HR_high_ci95": [
+      1.83,
+      10.668
+     ],
+     "p_moderate": 0.00656,
+     "p_high": 0.000957
+    },
+    "logrank_trend": {
+     "z": 6.742,
+     "p": 1.56e-11
+    },
+    "ordinal_cox_robust": {
+     "HR_per_class": 2.03,
+     "ci95": [
+      1.365,
+      3.02
+     ],
+     "p": 0.000473,
+     "source": "lifelines, Efron, cluster-robust (fallback)"
+    },
+    "share_events_in_high": 0.538
+   }
+  },
+  "L": {
+   "primary": {
+    "classes": [
+     {
+      "class": "low",
+      "samples": 273,
+      "patients": 54,
+      "progressor_samples": 22,
+      "progressor_patients": 11,
+      "event_samples": 22
+     },
+     {
+      "class": "moderate",
+      "samples": 80,
+      "patients": 37,
+      "progressor_samples": 19,
+      "progressor_patients": 12,
+      "event_samples": 19
+     },
+     {
+      "class": "high",
+      "samples": 85,
+      "patients": 38,
+      "progressor_samples": 63,
+      "progressor_patients": 26,
+      "event_samples": 63
+     }
+    ],
+    "sens_spec": {
+     "low_vs_above": {
+      "sensitivity": 0.788,
+      "specificity": 0.751,
+      "sensitivity_ci95": [
+       0.667,
+       0.9
+      ],
+      "specificity_ci95": [
+       0.662,
+       0.829
+      ]
+     },
+     "high_vs_below": {
+      "sensitivity": 0.606,
+      "specificity": 0.934,
+      "sensitivity_ci95": [
+       0.476,
+       0.747
+      ],
+      "specificity_ci95": [
+       0.889,
+       0.968
+      ]
+     }
+    },
+    "class_share_by_status": {
+     "progressor": {
+      "all": [
+       0.212,
+       0.183,
+       0.606,
+       104
+      ],
+      "NDBE": [
+       0.212,
+       0.183,
+       0.606,
+       104
+      ]
+     },
+     "nonprogressor": {
+      "all": [
+       0.751,
+       0.183,
+       0.066,
+       334
+      ],
+      "NDBE": [
+       0.751,
+       0.183,
+       0.066,
+       334
+      ]
+     }
+    },
+    "deciles": [
+     {
+      "decile": 1,
+      "n": 44,
+      "P": 0,
+      "NP": 44,
+      "mean_pred": 0.02
+     },
+     {
+      "decile": 2,
+      "n": 44,
+      "P": 2,
+      "NP": 42,
+      "mean_pred": 0.052
+     },
+     {
+      "decile": 3,
+      "n": 44,
+      "P": 1,
+      "NP": 43,
+      "mean_pred": 0.087
+     },
+     {
+      "decile": 4,
+      "n": 43,
+      "P": 1,
+      "NP": 42,
+      "mean_pred": 0.14
+     },
+     {
+      "decile": 5,
+      "n": 44,
+      "P": 6,
+      "NP": 38,
+      "mean_pred": 0.189
+     },
+     {
+      "decile": 6,
+      "n": 44,
+      "P": 8,
+      "NP": 36,
+      "mean_pred": 0.249
+     },
+     {
+      "decile": 7,
+      "n": 43,
+      "P": 7,
+      "NP": 36,
+      "mean_pred": 0.325
+     },
+     {
+      "decile": 8,
+      "n": 44,
+      "P": 15,
+      "NP": 29,
+      "mean_pred": 0.424
+     },
+     {
+      "decile": 9,
+      "n": 44,
+      "P": 29,
+      "NP": 15,
+      "mean_pred": 0.553
+     },
+     {
+      "decile": 10,
+      "n": 44,
+      "P": 35,
+      "NP": 9,
+      "mean_pred": 0.783
+     }
+    ],
+    "endoscopy_sensitivity": [
+     {
+      "months_before_endpoint": "endpoint",
+      "endoscopies": 0,
+      "samples": 0,
+      "patients": 0,
+      "share_high": null
+     },
+     {
+      "months_before_endpoint": "1-12",
+      "endoscopies": 8,
+      "samples": 11,
+      "patients": 8,
+      "share_high": 0.875
+     },
+     {
+      "months_before_endpoint": "12-24",
+      "endoscopies": 12,
+      "samples": 27,
+      "patients": 12,
+      "share_high": 0.833
+     },
+     {
+      "months_before_endpoint": "24-48",
+      "endoscopies": 19,
+      "samples": 29,
+      "patients": 16,
+      "share_high": 0.737
+     },
+     {
+      "months_before_endpoint": "48-72",
+      "endoscopies": 14,
+      "samples": 18,
+      "patients": 12,
+      "share_high": 0.643
+     },
+     {
+      "months_before_endpoint": "72-96",
+      "endoscopies": 5,
+      "samples": 5,
+      "patients": 5,
+      "share_high": 0.8
+     },
+     {
+      "months_before_endpoint": ">96",
+      "endoscopies": 10,
+      "samples": 14,
+      "patients": 7,
+      "share_high": 0.4
+     }
+    ],
+    "cox": {
+     "source": "lifelines CoxPHFitter, Efron ties, cluster-robust (fallback)",
+     "HR_moderate_vs_low": 1.998,
+     "HR_moderate_ci95": [
+      0.889,
+      4.487
+     ],
+     "HR_high_vs_low": 8.054,
+     "HR_high_ci95": [
+      3.787,
+      17.126
+     ],
+     "p_moderate": 0.0937,
+     "p_high": 5.99e-08
+    },
+    "logrank_trend": {
+     "z": 9.595,
+     "p": 0.0
+    },
+    "ordinal_cox_robust": {
+     "HR_per_class": 2.963,
+     "ci95": [
+      2.021,
+      4.344
+     ],
+     "p": 2.65e-08,
+     "source": "lifelines, Efron, cluster-robust (fallback)"
+    },
+    "share_events_in_high": 0.606
+   },
+   "matched": {
+    "classes": [
+     {
+      "class": "low",
+      "samples": 243,
+      "patients": 48,
+      "progressor_samples": 15,
+      "progressor_patients": 6,
+      "event_samples": 15
+     },
+     {
+      "class": "moderate",
+      "samples": 77,
+      "patients": 32,
+      "progressor_samples": 14,
+      "progressor_patients": 10,
+      "event_samples": 14
+     },
+     {
+      "class": "high",
+      "samples": 118,
+      "patients": 48,
+      "progressor_samples": 75,
+      "progressor_patients": 26,
+      "event_samples": 75
+     }
+    ],
+    "sens_spec": {
+     "low_vs_above": {
+      "sensitivity": 0.856,
+      "specificity": 0.683
+     },
+     "high_vs_below": {
+      "sensitivity": 0.721,
+      "specificity": 0.871
+     }
+    },
+    "class_share_by_status": {
+     "progressor": {
+      "all": [
+       0.144,
+       0.135,
+       0.721,
+       104
+      ],
+      "NDBE": [
+       0.144,
+       0.135,
+       0.721,
+       104
+      ]
+     },
+     "nonprogressor": {
+      "all": [
+       0.683,
+       0.189,
+       0.129,
+       334
+      ],
+      "NDBE": [
+       0.683,
+       0.189,
+       0.129,
+       334
+      ]
+     }
+    },
+    "cox": {
+     "source": "lifelines CoxPHFitter, Efron ties, cluster-robust (fallback)",
+     "HR_moderate_vs_low": 2.193,
+     "HR_moderate_ci95": [
+      0.769,
+      6.259
+     ],
+     "HR_high_vs_low": 8.443,
+     "HR_high_ci95": [
+      3.141,
+      22.693
+     ],
+     "p_moderate": 0.142,
+     "p_high": 2.35e-05
+    },
+    "logrank_trend": {
+     "z": 9.112,
+     "p": 0.0
+    },
+    "ordinal_cox_robust": {
+     "HR_per_class": 3.045,
+     "ci95": [
+      1.893,
+      4.897
+     ],
+     "p": 4.37e-06,
+     "source": "lifelines, Efron, cluster-robust (fallback)"
+    },
+    "share_events_in_high": 0.721
+   }
+  },
+  "C_pkg": {
+   "primary": {
+    "classes": [
+     {
+      "class": "low",
+      "samples": 267,
+      "patients": 47,
+      "progressor_samples": 25,
+      "progressor_patients": 11,
+      "event_samples": 25
+     },
+     {
+      "class": "moderate",
+      "samples": 64,
+      "patients": 30,
+      "progressor_samples": 20,
+      "progressor_patients": 10,
+      "event_samples": 20
+     },
+     {
+      "class": "high",
+      "samples": 107,
+      "patients": 35,
+      "progressor_samples": 59,
+      "progressor_patients": 24,
+      "event_samples": 59
+     }
+    ],
+    "sens_spec": {
+     "low_vs_above": {
+      "sensitivity": 0.76,
+      "specificity": 0.725,
+      "sensitivity_ci95": [
+       0.637,
+       0.882
+      ],
+      "specificity_ci95": [
+       0.593,
+       0.838
+      ]
+     },
+     "high_vs_below": {
+      "sensitivity": 0.567,
+      "specificity": 0.856,
+      "sensitivity_ci95": [
+       0.405,
+       0.755
+      ],
+      "specificity_ci95": [
+       0.751,
+       0.943
+      ]
+     }
+    },
+    "class_share_by_status": {
+     "progressor": {
+      "all": [
+       0.24,
+       0.192,
+       0.567,
+       104
+      ],
+      "NDBE": [
+       0.24,
+       0.192,
+       0.567,
+       104
+      ]
+     },
+     "nonprogressor": {
+      "all": [
+       0.725,
+       0.132,
+       0.144,
+       334
+      ],
+      "NDBE": [
+       0.725,
+       0.132,
+       0.144,
+       334
+      ]
+     }
+    },
+    "deciles": [
+     {
+      "decile": 1,
+      "n": 44,
+      "P": 0,
+      "NP": 44,
+      "mean_pred": 0.007
+     },
+     {
+      "decile": 2,
+      "n": 44,
+      "P": 2,
+      "NP": 42,
+      "mean_pred": 0.027
+     },
+     {
+      "decile": 3,
+      "n": 44,
+      "P": 4,
+      "NP": 40,
+      "mean_pred": 0.06
+     },
+     {
+      "decile": 4,
+      "n": 43,
+      "P": 3,
+      "NP": 40,
+      "mean_pred": 0.106
+     },
+     {
+      "decile": 5,
+      "n": 44,
+      "P": 6,
+      "NP": 38,
+      "mean_pred": 0.159
+     },
+     {
+      "decile": 6,
+      "n": 44,
+      "P": 10,
+      "NP": 34,
+      "mean_pred": 0.233
+     },
+     {
+      "decile": 7,
+      "n": 43,
+      "P": 14,
+      "NP": 29,
+      "mean_pred": 0.339
+     },
+     {
+      "decile": 8,
+      "n": 44,
+      "P": 11,
+      "NP": 33,
+      "mean_pred": 0.49
+     },
+     {
+      "decile": 9,
+      "n": 44,
+      "P": 18,
+      "NP": 26,
+      "mean_pred": 0.646
+     },
+     {
+      "decile": 10,
+      "n": 44,
+      "P": 36,
+      "NP": 8,
+      "mean_pred": 0.909
+     }
+    ],
+    "endoscopy_sensitivity": [
+     {
+      "months_before_endpoint": "endpoint",
+      "endoscopies": 0,
+      "samples": 0,
+      "patients": 0,
+      "share_high": null
+     },
+     {
+      "months_before_endpoint": "1-12",
+      "endoscopies": 8,
+      "samples": 11,
+      "patients": 8,
+      "share_high": 0.875
+     },
+     {
+      "months_before_endpoint": "12-24",
+      "endoscopies": 12,
+      "samples": 27,
+      "patients": 12,
+      "share_high": 0.417
+     },
+     {
+      "months_before_endpoint": "24-48",
+      "endoscopies": 19,
+      "samples": 29,
+      "patients": 16,
+      "share_high": 0.737
+     },
+     {
+      "months_before_endpoint": "48-72",
+      "endoscopies": 14,
+      "samples": 18,
+      "patients": 12,
+      "share_high": 0.714
+     },
+     {
+      "months_before_endpoint": "72-96",
+      "endoscopies": 5,
+      "samples": 5,
+      "patients": 5,
+      "share_high": 1.0
+     },
+     {
+      "months_before_endpoint": ">96",
+      "endoscopies": 10,
+      "samples": 14,
+      "patients": 7,
+      "share_high": 0.5
+     }
+    ],
+    "cox": {
+     "source": "lifelines CoxPHFitter, Efron ties, cluster-robust (fallback)",
+     "HR_moderate_vs_low": 3.102,
+     "HR_moderate_ci95": [
+      1.268,
+      7.586
+     ],
+     "HR_high_vs_low": 6.116,
+     "HR_high_ci95": [
+      2.586,
+      14.464
+     ],
+     "p_moderate": 0.0131,
+     "p_high": 3.73e-05
+    },
+    "logrank_trend": {
+     "z": 8.348,
+     "p": 0.0
+    },
+    "ordinal_cox_robust": {
+     "HR_per_class": 2.428,
+     "ci95": [
+      1.613,
+      3.656
+     ],
+     "p": 2.14e-05,
+     "source": "lifelines, Efron, cluster-robust (fallback)"
+    },
+    "share_events_in_high": 0.567
+   },
+   "matched": {
+    "classes": [
+     {
+      "class": "low",
+      "samples": 243,
+      "patients": 47,
+      "progressor_samples": 18,
+      "progressor_patients": 11,
+      "event_samples": 18
+     },
+     {
+      "class": "moderate",
+      "samples": 77,
+      "patients": 35,
+      "progressor_samples": 23,
+      "progressor_patients": 12,
+      "event_samples": 23
+     },
+     {
+      "class": "high",
+      "samples": 118,
+      "patients": 38,
+      "progressor_samples": 63,
+      "progressor_patients": 25,
+      "event_samples": 63
+     }
+    ],
+    "sens_spec": {
+     "low_vs_above": {
+      "sensitivity": 0.827,
+      "specificity": 0.674
+     },
+     "high_vs_below": {
+      "sensitivity": 0.606,
+      "specificity": 0.835
+     }
+    },
+    "class_share_by_status": {
+     "progressor": {
+      "all": [
+       0.173,
+       0.221,
+       0.606,
+       104
+      ],
+      "NDBE": [
+       0.173,
+       0.221,
+       0.606,
+       104
+      ]
+     },
+     "nonprogressor": {
+      "all": [
+       0.674,
+       0.162,
+       0.165,
+       334
+      ],
+      "NDBE": [
+       0.674,
+       0.162,
+       0.165,
+       334
+      ]
+     }
+    },
+    "cox": {
+     "source": "lifelines CoxPHFitter, Efron ties, cluster-robust (fallback)",
+     "HR_moderate_vs_low": 4.0,
+     "HR_moderate_ci95": [
+      1.456,
+      10.985
+     ],
+     "HR_high_vs_low": 6.9,
+     "HR_high_ci95": [
+      2.872,
+      16.58
+     ],
+     "p_moderate": 0.00716,
+     "p_high": 1.57e-05
+    },
+    "logrank_trend": {
+     "z": 8.239,
+     "p": 2.22e-16
+    },
+    "ordinal_cox_robust": {
+     "HR_per_class": 2.495,
+     "ci95": [
+      1.66,
+      3.751
+     ],
+     "p": 1.1e-05,
+     "source": "lifelines, Efron, cluster-robust (fallback)"
+    },
+    "share_events_in_high": 0.606
+   }
+  },
+  "L_pkg": {
+   "primary": {
+    "classes": [
+     {
+      "class": "low",
+      "samples": 268,
+      "patients": 48,
+      "progressor_samples": 18,
+      "progressor_patients": 7,
+      "event_samples": 18
+     },
+     {
+      "class": "moderate",
+      "samples": 89,
+      "patients": 41,
+      "progressor_samples": 25,
+      "progressor_patients": 16,
+      "event_samples": 25
+     },
+     {
+      "class": "high",
+      "samples": 81,
+      "patients": 39,
+      "progressor_samples": 61,
+      "progressor_patients": 26,
+      "event_samples": 61
+     }
+    ],
+    "sens_spec": {
+     "low_vs_above": {
+      "sensitivity": 0.827,
+      "specificity": 0.749,
+      "sensitivity_ci95": [
+       0.716,
+       0.935
+      ],
+      "specificity_ci95": [
+       0.643,
+       0.841
+      ]
+     },
+     "high_vs_below": {
+      "sensitivity": 0.587,
+      "specificity": 0.94,
+      "sensitivity_ci95": [
+       0.449,
+       0.735
+      ],
+      "specificity_ci95": [
+       0.902,
+       0.969
+      ]
+     }
+    },
+    "class_share_by_status": {
+     "progressor": {
+      "all": [
+       0.173,
+       0.24,
+       0.587,
+       104
+      ],
+      "NDBE": [
+       0.173,
+       0.24,
+       0.587,
+       104
+      ]
+     },
+     "nonprogressor": {
+      "all": [
+       0.749,
+       0.192,
+       0.06,
+       334
+      ],
+      "NDBE": [
+       0.749,
+       0.192,
+       0.06,
+       334
+      ]
+     }
+    },
+    "deciles": [
+     {
+      "decile": 1,
+      "n": 44,
+      "P": 0,
+      "NP": 44,
+      "mean_pred": 0.017
+     },
+     {
+      "decile": 2,
+      "n": 44,
+      "P": 0,
+      "NP": 44,
+      "mean_pred": 0.052
+     },
+     {
+      "decile": 3,
+      "n": 44,
+      "P": 0,
+      "NP": 44,
+      "mean_pred": 0.083
+     },
+     {
+      "decile": 4,
+      "n": 43,
+      "P": 3,
+      "NP": 40,
+      "mean_pred": 0.121
+     },
+     {
+      "decile": 5,
+      "n": 44,
+      "P": 7,
+      "NP": 37,
+      "mean_pred": 0.169
+     },
+     {
+      "decile": 6,
+      "n": 44,
+      "P": 7,
+      "NP": 37,
+      "mean_pred": 0.243
+     },
+     {
+      "decile": 7,
+      "n": 43,
+      "P": 11,
+      "NP": 32,
+      "mean_pred": 0.33
+     },
+     {
+      "decile": 8,
+      "n": 44,
+      "P": 11,
+      "NP": 33,
+      "mean_pred": 0.415
+     },
+     {
+      "decile": 9,
+      "n": 44,
+      "P": 26,
+      "NP": 18,
+      "mean_pred": 0.557
+     },
+     {
+      "decile": 10,
+      "n": 44,
+      "P": 39,
+      "NP": 5,
+      "mean_pred": 0.83
+     }
+    ],
+    "endoscopy_sensitivity": [
+     {
+      "months_before_endpoint": "endpoint",
+      "endoscopies": 0,
+      "samples": 0,
+      "patients": 0,
+      "share_high": null
+     },
+     {
+      "months_before_endpoint": "1-12",
+      "endoscopies": 8,
+      "samples": 11,
+      "patients": 8,
+      "share_high": 0.875
+     },
+     {
+      "months_before_endpoint": "12-24",
+      "endoscopies": 12,
+      "samples": 27,
+      "patients": 12,
+      "share_high": 0.583
+     },
+     {
+      "months_before_endpoint": "24-48",
+      "endoscopies": 19,
+      "samples": 29,
+      "patients": 16,
+      "share_high": 0.737
+     },
+     {
+      "months_before_endpoint": "48-72",
+      "endoscopies": 14,
+      "samples": 18,
+      "patients": 12,
+      "share_high": 0.571
+     },
+     {
+      "months_before_endpoint": "72-96",
+      "endoscopies": 5,
+      "samples": 5,
+      "patients": 5,
+      "share_high": 1.0
+     },
+     {
+      "months_before_endpoint": ">96",
+      "endoscopies": 10,
+      "samples": 14,
+      "patients": 7,
+      "share_high": 0.6
+     }
+    ],
+    "cox": {
+     "source": "lifelines CoxPHFitter, Efron ties, cluster-robust (fallback)",
+     "HR_moderate_vs_low": 3.372,
+     "HR_moderate_ci95": [
+      1.389,
+      8.187
+     ],
+     "HR_high_vs_low": 9.665,
+     "HR_high_ci95": [
+      3.801,
+      24.576
+     ],
+     "p_moderate": 0.00723,
+     "p_high": 1.89e-06
+    },
+    "logrank_trend": {
+     "z": 9.888,
+     "p": 0.0
+    },
+    "ordinal_cox_robust": {
+     "HR_per_class": 3.068,
+     "ci95": [
+      1.986,
+      4.74
+     ],
+     "p": 4.35e-07,
+     "source": "lifelines, Efron, cluster-robust (fallback)"
+    },
+    "share_events_in_high": 0.587
+   },
+   "matched": {
+    "classes": [
+     {
+      "class": "low",
+      "samples": 243,
+      "patients": 45,
+      "progressor_samples": 13,
+      "progressor_patients": 6,
+      "event_samples": 13
+     },
+     {
+      "class": "moderate",
+      "samples": 77,
+      "patients": 42,
+      "progressor_samples": 20,
+      "progressor_patients": 15,
+      "event_samples": 20
+     },
+     {
+      "class": "high",
+      "samples": 118,
+      "patients": 47,
+      "progressor_samples": 71,
+      "progressor_patients": 27,
+      "event_samples": 71
+     }
+    ],
+    "sens_spec": {
+     "low_vs_above": {
+      "sensitivity": 0.875,
+      "specificity": 0.689
+     },
+     "high_vs_below": {
+      "sensitivity": 0.683,
+      "specificity": 0.859
+     }
+    },
+    "class_share_by_status": {
+     "progressor": {
+      "all": [
+       0.125,
+       0.192,
+       0.683,
+       104
+      ],
+      "NDBE": [
+       0.125,
+       0.192,
+       0.683,
+       104
+      ]
+     },
+     "nonprogressor": {
+      "all": [
+       0.689,
+       0.171,
+       0.141,
+       334
+      ],
+      "NDBE": [
+       0.689,
+       0.171,
+       0.141,
+       334
+      ]
+     }
+    },
+    "cox": {
+     "source": "lifelines CoxPHFitter, Efron ties, cluster-robust (fallback)",
+     "HR_moderate_vs_low": 4.546,
+     "HR_moderate_ci95": [
+      2.042,
+      10.123
+     ],
+     "HR_high_vs_low": 9.389,
+     "HR_high_ci95": [
+      3.518,
+      25.055
+     ],
+     "p_moderate": 0.000209,
+     "p_high": 7.75e-06
+    },
+    "logrank_trend": {
+     "z": 8.901,
+     "p": 0.0
+    },
+    "ordinal_cox_robust": {
+     "HR_per_class": 2.855,
+     "ci95": [
+      1.867,
+      4.366
+     ],
+     "p": 1.3e-06,
+     "source": "lifelines, Efron, cluster-robust (fallback)"
+    },
+    "share_events_in_high": 0.683
+   }
+  }
+ },
+ "paired": {
+  "L_vs_C|primary": {
+   "delta_logHR_high_vs_low": {
+    "delta": 0.481,
+    "ci95": [
+     -0.199,
+     1.184
+    ],
+    "p_bootstrap_unadjusted": 0.1692,
+    "valid_draws": 1998
+   },
+   "delta_share_events_in_high": {
+    "delta": 0.125,
+    "ci95": [
+     -0.009,
+     0.272
+    ],
+    "p_bootstrap_unadjusted": 0.082,
+    "valid_draws": 2000
+   }
+  },
+  "L_vs_P|primary": {
+   "delta_logHR_high_vs_low": {
+    "delta": 0.324,
+    "ci95": [
+     -0.696,
+     1.089
+    ],
+    "p_bootstrap_unadjusted": 0.5265,
+    "valid_draws": 1998
+   },
+   "delta_share_events_in_high": {
+    "delta": 0.029,
+    "ci95": [
+     -0.084,
+     0.156
+    ],
+    "p_bootstrap_unadjusted": 0.749,
+    "valid_draws": 2000
+   }
+  },
+  "L_pkg_vs_C_pkg|primary": {
+   "delta_logHR_high_vs_low": {
+    "delta": 0.432,
+    "ci95": [
+     -0.155,
+     1.143
+    ],
+    "p_bootstrap_unadjusted": 0.1486,
+    "valid_draws": 1992
+   },
+   "delta_share_events_in_high": {
+    "delta": 0.019,
+    "ci95": [
+     -0.097,
+     0.128
+    ],
+    "p_bootstrap_unadjusted": 0.847,
+    "valid_draws": 2000
+   }
+  },
+  "L_pkg_vs_P|primary": {
+   "delta_logHR_high_vs_low": {
+    "delta": 0.509,
+    "ci95": [
+     -0.667,
+     1.586
+    ],
+    "p_bootstrap_unadjusted": 0.4106,
+    "valid_draws": 1992
+   },
+   "delta_share_events_in_high": {
+    "delta": 0.01,
+    "ci95": [
+     -0.146,
+     0.173
+    ],
+    "p_bootstrap_unadjusted": 0.987,
+    "valid_draws": 2000
+   }
+  },
+  "L_vs_C|matched": {
+   "delta_logHR_high_vs_low": {
+    "delta": 0.616,
+    "ci95": [
+     0.016,
+     1.663
+    ],
+    "p_bootstrap_unadjusted": 0.0451,
+    "valid_draws": 1997
+   },
+   "delta_share_events_in_high": {
+    "delta": 0.183,
+    "ci95": [
+     0.063,
+     0.294
+    ],
+    "p_bootstrap_unadjusted": 0.003,
+    "valid_draws": 2000
+   }
+  },
+  "L_vs_P|matched": {
+   "delta_logHR_high_vs_low": {
+    "delta": 0.385,
+    "ci95": [
+     -0.389,
+     1.39
+    ],
+    "p_bootstrap_unadjusted": 0.2804,
+    "valid_draws": 1997
+   },
+   "delta_share_events_in_high": {
+    "delta": 0.144,
+    "ci95": [
+     0.023,
+     0.263
+    ],
+    "p_bootstrap_unadjusted": 0.014,
+    "valid_draws": 2000
+   }
+  },
+  "L_pkg_vs_C_pkg|matched": {
+   "delta_logHR_high_vs_low": {
+    "delta": 0.3,
+    "ci95": [
+     -0.316,
+     1.193
+    ],
+    "p_bootstrap_unadjusted": 0.2817,
+    "valid_draws": 1995
+   },
+   "delta_share_events_in_high": {
+    "delta": 0.077,
+    "ci95": [
+     -0.01,
+     0.206
+    ],
+    "p_bootstrap_unadjusted": 0.093,
+    "valid_draws": 2000
+   }
+  },
+  "L_pkg_vs_P|matched": {
+   "delta_logHR_high_vs_low": {
+    "delta": 0.496,
+    "ci95": [
+     -0.752,
+     1.761
+    ],
+    "p_bootstrap_unadjusted": 0.5003,
+    "valid_draws": 1995
+   },
+   "delta_share_events_in_high": {
+    "delta": 0.106,
+    "ci95": [
+     -0.009,
+     0.262
+    ],
+    "p_bootstrap_unadjusted": 0.084,
+    "valid_draws": 2000
+   }
+  }
+ }
+}
