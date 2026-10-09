@@ -1,0 +1,385 @@
+{
+ "task": "pkg_pre",
+ "prespec": "32653f1",
+ "reproduces_paper_triage_95_90": true,
+ "cells": [
+  {
+   "t_low_sens": 0.9,
+   "t_high_spec": 0.85,
+   "sensitivity": 0.82,
+   "specificity": 0.793,
+   "share_sequenced": 0.298,
+   "progressor_patients_all_missed": 1,
+   "missed_progressor_samples": 29,
+   "folds_no_middle": 0,
+   "d_sens_vs_A": {
+    "delta": -0.019,
+    "ci95": [
+     -0.113,
+     0.085
+    ],
+    "one_sided_95_lower": -0.1
+   },
+   "d_spec_vs_A": {
+    "delta": 0.093,
+    "ci95": [
+     0.0,
+     0.202
+    ],
+    "one_sided_95_lower": 0.012
+   },
+   "d_sens_vs_B": {
+    "delta": -0.012,
+    "ci95": [
+     -0.061,
+     0.041
+    ],
+    "one_sided_95_lower": -0.054
+   },
+   "d_spec_vs_B": {
+    "delta": -0.027,
+    "ci95": [
+     -0.075,
+     0.034
+    ],
+    "one_sided_95_lower": -0.068
+   }
+  },
+  {
+   "t_low_sens": 0.9,
+   "t_high_spec": 0.9,
+   "sensitivity": 0.82,
+   "specificity": 0.815,
+   "share_sequenced": 0.342,
+   "progressor_patients_all_missed": 1,
+   "missed_progressor_samples": 29,
+   "folds_no_middle": 0,
+   "d_sens_vs_A": {
+    "delta": -0.019,
+    "ci95": [
+     -0.113,
+     0.085
+    ],
+    "one_sided_95_lower": -0.1
+   },
+   "d_spec_vs_A": {
+    "delta": 0.115,
+    "ci95": [
+     0.021,
+     0.228
+    ],
+    "one_sided_95_lower": 0.035
+   },
+   "d_sens_vs_B": {
+    "delta": -0.012,
+    "ci95": [
+     -0.061,
+     0.041
+    ],
+    "one_sided_95_lower": -0.054
+   },
+   "d_spec_vs_B": {
+    "delta": -0.005,
+    "ci95": [
+     -0.052,
+     0.06
+    ],
+    "one_sided_95_lower": -0.047
+   }
+  },
+  {
+   "t_low_sens": 0.9,
+   "t_high_spec": 0.95,
+   "sensitivity": 0.814,
+   "specificity": 0.841,
+   "share_sequenced": 0.401,
+   "progressor_patients_all_missed": 1,
+   "missed_progressor_samples": 30,
+   "folds_no_middle": 0,
+   "d_sens_vs_A": {
+    "delta": -0.025,
+    "ci95": [
+     -0.123,
+     0.078
+    ],
+    "one_sided_95_lower": -0.108
+   },
+   "d_spec_vs_A": {
+    "delta": 0.141,
+    "ci95": [
+     0.048,
+     0.251
+    ],
+    "one_sided_95_lower": 0.062
+   },
+   "d_sens_vs_B": {
+    "delta": -0.019,
+    "ci95": [
+     -0.062,
+     0.028
+    ],
+    "one_sided_95_lower": -0.056
+   },
+   "d_spec_vs_B": {
+    "delta": 0.022,
+    "ci95": [
+     -0.018,
+     0.081
+    ],
+    "one_sided_95_lower": -0.014
+   }
+  },
+  {
+   "t_low_sens": 0.95,
+   "t_high_spec": 0.85,
+   "sensitivity": 0.882,
+   "specificity": 0.739,
+   "share_sequenced": 0.414,
+   "progressor_patients_all_missed": 1,
+   "missed_progressor_samples": 19,
+   "folds_no_middle": 0,
+   "d_sens_vs_A": {
+    "delta": 0.043,
+    "ci95": [
+     -0.044,
+     0.139
+    ],
+    "one_sided_95_lower": -0.032
+   },
+   "d_spec_vs_A": {
+    "delta": 0.039,
+    "ci95": [
+     -0.042,
+     0.136
+    ],
+    "one_sided_95_lower": -0.033
+   },
+   "d_sens_vs_B": {
+    "delta": 0.05,
+    "ci95": [
+     0.0,
+     0.109
+    ],
+    "one_sided_95_lower": 0.006
+   },
+   "d_spec_vs_B": {
+    "delta": -0.08,
+    "ci95": [
+     -0.125,
+     -0.032
+    ],
+    "one_sided_95_lower": -0.119
+   }
+  },
+  {
+   "t_low_sens": 0.95,
+   "t_high_spec": 0.9,
+   "sensitivity": 0.863,
+   "specificity": 0.763,
+   "share_sequenced": 0.458,
+   "progressor_patients_all_missed": 1,
+   "missed_progressor_samples": 22,
+   "folds_no_middle": 0,
+   "d_sens_vs_A": {
+    "delta": 0.025,
+    "ci95": [
+     -0.068,
+     0.124
+    ],
+    "one_sided_95_lower": -0.054
+   },
+   "d_spec_vs_A": {
+    "delta": 0.063,
+    "ci95": [
+     -0.021,
+     0.161
+    ],
+    "one_sided_95_lower": -0.009
+   },
+   "d_sens_vs_B": {
+    "delta": 0.031,
+    "ci95": [
+     -0.013,
+     0.09
+    ],
+    "one_sided_95_lower": -0.006
+   },
+   "d_spec_vs_B": {
+    "delta": -0.056,
+    "ci95": [
+     -0.099,
+     -0.009
+    ],
+    "one_sided_95_lower": -0.092
+   }
+  },
+  {
+   "t_low_sens": 0.95,
+   "t_high_spec": 0.95,
+   "sensitivity": 0.863,
+   "specificity": 0.798,
+   "share_sequenced": 0.517,
+   "progressor_patients_all_missed": 1,
+   "missed_progressor_samples": 22,
+   "folds_no_middle": 0,
+   "d_sens_vs_A": {
+    "delta": 0.025,
+    "ci95": [
+     -0.068,
+     0.124
+    ],
+    "one_sided_95_lower": -0.054
+   },
+   "d_spec_vs_A": {
+    "delta": 0.098,
+    "ci95": [
+     0.012,
+     0.2
+    ],
+    "one_sided_95_lower": 0.024
+   },
+   "d_sens_vs_B": {
+    "delta": 0.031,
+    "ci95": [
+     -0.013,
+     0.09
+    ],
+    "one_sided_95_lower": -0.006
+   },
+   "d_spec_vs_B": {
+    "delta": -0.022,
+    "ci95": [
+     -0.064,
+     0.028
+    ],
+    "one_sided_95_lower": -0.058
+   }
+  },
+  {
+   "t_low_sens": 0.98,
+   "t_high_spec": 0.85,
+   "sensitivity": 0.907,
+   "specificity": 0.693,
+   "share_sequenced": 0.542,
+   "progressor_patients_all_missed": 1,
+   "missed_progressor_samples": 15,
+   "folds_no_middle": 0,
+   "d_sens_vs_A": {
+    "delta": 0.068,
+    "ci95": [
+     -0.01,
+     0.153
+    ],
+    "one_sided_95_lower": 0.0
+   },
+   "d_spec_vs_A": {
+    "delta": -0.007,
+    "ci95": [
+     -0.074,
+     0.071
+    ],
+    "one_sided_95_lower": -0.067
+   },
+   "d_sens_vs_B": {
+    "delta": 0.075,
+    "ci95": [
+     0.03,
+     0.13
+    ],
+    "one_sided_95_lower": 0.035
+   },
+   "d_spec_vs_B": {
+    "delta": -0.127,
+    "ci95": [
+     -0.167,
+     -0.088
+    ],
+    "one_sided_95_lower": -0.161
+   }
+  },
+  {
+   "t_low_sens": 0.98,
+   "t_high_spec": 0.9,
+   "sensitivity": 0.894,
+   "specificity": 0.715,
+   "share_sequenced": 0.586,
+   "progressor_patients_all_missed": 1,
+   "missed_progressor_samples": 17,
+   "folds_no_middle": 0,
+   "d_sens_vs_A": {
+    "delta": 0.056,
+    "ci95": [
+     -0.019,
+     0.135
+    ],
+    "one_sided_95_lower": -0.006
+   },
+   "d_spec_vs_A": {
+    "delta": 0.015,
+    "ci95": [
+     -0.055,
+     0.094
+    ],
+    "one_sided_95_lower": -0.045
+   },
+   "d_sens_vs_B": {
+    "delta": 0.062,
+    "ci95": [
+     0.018,
+     0.12
+    ],
+    "one_sided_95_lower": 0.023
+   },
+   "d_spec_vs_B": {
+    "delta": -0.105,
+    "ci95": [
+     -0.141,
+     -0.071
+    ],
+    "one_sided_95_lower": -0.137
+   }
+  },
+  {
+   "t_low_sens": 0.98,
+   "t_high_spec": 0.95,
+   "sensitivity": 0.876,
+   "specificity": 0.756,
+   "share_sequenced": 0.645,
+   "progressor_patients_all_missed": 1,
+   "missed_progressor_samples": 20,
+   "folds_no_middle": 0,
+   "d_sens_vs_A": {
+    "delta": 0.037,
+    "ci95": [
+     -0.05,
+     0.128
+    ],
+    "one_sided_95_lower": -0.035
+   },
+   "d_spec_vs_A": {
+    "delta": 0.056,
+    "ci95": [
+     -0.017,
+     0.139
+    ],
+    "one_sided_95_lower": -0.006
+   },
+   "d_sens_vs_B": {
+    "delta": 0.043,
+    "ci95": [
+     0.006,
+     0.098
+    ],
+    "one_sided_95_lower": 0.01
+   },
+   "d_spec_vs_B": {
+    "delta": -0.063,
+    "ci95": [
+     -0.101,
+     -0.03
+    ],
+    "one_sided_95_lower": -0.094
+   }
+  }
+ ]
+}

@@ -1,0 +1,123 @@
+{
+ "task": "their_pre",
+ "prespec": "32653f1",
+ "draws": 2000,
+ "selection_inclusive": {
+  "triage_LATE": {
+   "sensitivity_ci95": [
+    0.802,
+    0.895
+   ],
+   "specificity_ci95": [
+    0.61,
+    0.83
+   ],
+   "fixed_threshold_sens_ci95": [
+    0.774,
+    0.942
+   ],
+   "fixed_threshold_spec_ci95": [
+    0.667,
+    0.802
+   ],
+   "point_sensitivity": 0.863,
+   "point_specificity": 0.734
+  },
+  "A": {
+   "sensitivity_ci95": [
+    0.726,
+    0.86
+   ],
+   "specificity_ci95": [
+    0.403,
+    0.749
+   ],
+   "fixed_threshold_sens_ci95": [
+    0.651,
+    0.888
+   ],
+   "fixed_threshold_spec_ci95": [
+    0.469,
+    0.722
+   ],
+   "point_sensitivity": 0.783,
+   "point_specificity": 0.59
+  },
+  "B": {
+   "sensitivity_ci95": [
+    0.765,
+    0.871
+   ],
+   "specificity_ci95": [
+    0.657,
+    0.889
+   ],
+   "fixed_threshold_sens_ci95": [
+    0.697,
+    0.893
+   ],
+   "fixed_threshold_spec_ci95": [
+    0.714,
+    0.85
+   ],
+   "point_sensitivity": 0.801,
+   "point_specificity": 0.785
+  },
+  "C": {
+   "sensitivity_ci95": [
+    0.741,
+    0.822
+   ],
+   "specificity_ci95": [
+    0.651,
+    0.836
+   ],
+   "fixed_threshold_sens_ci95": [
+    0.703,
+    0.875
+   ],
+   "fixed_threshold_spec_ci95": [
+    0.693,
+    0.811
+   ],
+   "point_sensitivity": 0.789,
+   "point_specificity": 0.754
+  }
+ },
+ "d_sens_vs_B": {
+  "delta": 0.062,
+  "ci95": [
+   -0.015,
+   0.093
+  ],
+  "one_sided_95_lower": -0.007,
+  "criterion_holds": true,
+  "fixed_threshold_ci95": [
+   0.011,
+   0.116
+  ],
+  "fixed_threshold_one_sided_95_lower": 0.02
+ },
+ "d_spec_vs_A": {
+  "delta": 0.144,
+  "ci95": [
+   0.022,
+   0.293
+  ],
+  "fixed_threshold_ci95": [
+   0.029,
+   0.256
+  ]
+ },
+ "share_sequenced": {
+  "point": 0.458,
+  "ci95": [
+   0.344,
+   0.54
+  ],
+  "fixed_threshold_ci95": [
+   0.408,
+   0.504
+  ]
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "status": {
+  "1 Sequencing-budget curve": "DONE",
+  "2 Cut-off grid (95/90 reproduces paper_triage.md exactly)": "DONE",
+  "3 CIs including threshold selection": "DONE",
+  "4 Endoscopy and patient level": "DONE (endoscopy unit clarified, see deviations)",
+  "5 Scanner transfer": "DONE; 2 of 4 planned directions not estimable by the pre-specified rule",
+  "6 Frozen cut-offs and ACE-B power": "DONE; `models/killcoyne_frozen_v1/triage_cutoffs.json` written, SHA-256 under the manifest's `addenda`"
+ },
+ "1": "**A 70% band to match CNV alone, a 90% band to match late fusion (their matrix, all pre-event samples).**\n   - The symmetric, Youden-centred band matches sequencing everyone with CNV alone at a 70% target share (58% of samples actually sequenced), and sequencing everyone with late fusion at a 90% target (82% sequenced).\n   - The CIs are wide: against CNV alone, 0–90%, and not reached in 655 of 2,000 draws.\n   - With package features or on NDBE samples, the CNV-alone match is not reached at any share.\n   - This symmetric band adds specificity rather than sensitivity. The primary asymmetric triage (95/90) sequences 46% with higher sensitivity than both.",
+ "2": "**Yes, through t_low.**\n   - Across the 9 cells, the one-sided lower bound of Δ sensitivity vs (B) runs from −0.058 (90/95) to +0.061 (98/85), and the share sequenced from 30% to 65%.\n   - The criterion (> −0.05) holds in 8 of 9 cells with their matrix; it fails only at 90/95.\n   - With package features it holds in 6 of 9; it fails in all three cells with t_low at 90%.",
+ "3": "**Yes.** With every cut-off re-chosen in each draw:\n   - Δ sensitivity vs (B) is +0.062 [−0.015, +0.093], one-sided lower bound −0.007 > −0.05 (fixed thresholds: +0.020).\n   - The share sequenced is 45.8% [34.4%, 54.0%], still below 70%.\n   - Δ specificity vs (A) is +0.144 [+0.022, +0.293].\n   - Once selection is included, a sensitivity gain over (B) is no longer shown.",
+ "4": "**Triage misses 1 of 32 progressor patients; (A) misses 4, (B) 2 and (C) 1** (their matrix, all pre-event samples).\n   - The cost is false positives in 30 of 43 non-progressor patients (A 29, B 28, C 35).\n   - With package features, every strategy misses 1.",
+ "5": "**Only from the larger scanner, and per-scanner standardisation does not help.**\n   - The model trained on C13239-01 scores 0.726 [0.56, 0.86] on C13210 patients it never saw (within-C13239-01 CV: 0.841).\n   - A model trained on the 27 C13210 patients fails within its own scanner (0.456) and on C13239-01 (0.541).\n   - Per-scanner z-scoring gives 0.710 and 0.544.",
+ "6": "**Frozen cut-offs: t_low 0.042, t_high 0.589, t_seq 0.233 and t_B 0.314.**\n   - ACE-B power for the triage criterion is ≥ 0.98 at the internal effect under frozen cut-offs (Δ +0.075) and at its lower bound (+0.033). This holds for 15 progressor / 67 non-progressor patients (1.000 / 0.999) and for 11 / 93 (0.990 / 0.976).\n   - The −0.05 margin is wide relative to the triage–(B) discordance.\n   - Power to show a sensitivity gain was not assessed.",
+ "deviations": [
+  "Endoscopy unit: the `Endoscopy` field of the sample table numbers endoscopies within each patient (11 distinct values), so the unit used is (patient, endoscopy number): 288 endoscopies from 75 patients on pre-event samples.",
+  "Scanner transfer: by the pre-specified estimability rule, design (a) C13239-01 → C13210 (4 test patients) and design (b) C13210 → C13239-01 (4 training patients) are not estimable, because 23 patients have slides on both scanners. The estimable directions are (a) C13210 → C13239-01 and (b) C13239-01 → C13210.",
+  "The within-scanner CV on C13210 (139 samples, 27 patients, 9 progressors) gives AUROC 0.456, below 0.5. Cross-validation is known to be biased downwards in very small samples; this is reported, not interpreted further.",
+  "Selection-inclusive bootstrap distributions are not centred on the point estimates (e.g. Δ sensitivity vs (B): +0.062, 95% CI [−0.015, +0.093]). Percentile intervals are reported as pre-specified.",
+  "Budget curve: the held-out share sequenced is lower than the target share (e.g. 70% target, 58% sequenced), because the band is the training score interval. Both are reported; the figure uses the target share, as pre-specified.",
+  "ACE-B power: the frozen cut-offs are applied to each sample's repeat-mean held-out predictions (pre-specified), not to the ≥ 6-of-10 vote, so the internal Δ (+0.075) differs from `paper_triage.md`'s +0.062. Specificity under frozen cut-offs: triage 0.673 vs (B) 0.768; 51% of samples sequenced.",
+  "The run was split into a smoke batch (prefix tbs, 7 tasks), the main batch (tb1, 66 tasks) and merges (tb2, 4 tasks). The smoke outputs are part of the results."
+ ]
+}

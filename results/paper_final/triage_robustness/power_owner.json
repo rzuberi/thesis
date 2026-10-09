@@ -1,0 +1,43 @@
+{
+ "task": "owner",
+ "prespec": "32653f1",
+ "n_P": 11,
+ "n_NP": 93,
+ "simulations": 2000,
+ "frozen_cutoffs": {
+  "t_B": 0.3142820722822518,
+  "t_high": 0.5889331683320793,
+  "t_low": 0.041709136400387495,
+  "t_seq": 0.23336062165507165
+ },
+ "internal_delta_E1": 0.075,
+ "internal_lower_E2": 0.033,
+ "q_flip_E2": 0.513,
+ "internal_sens_triage": 0.901,
+ "internal_sens_B": 0.826,
+ "internal_spec_triage": 0.673,
+ "internal_spec_B": 0.768,
+ "internal_share_sequenced": 0.511,
+ "effects": {
+  "E1": {
+   "target_delta": 0.075,
+   "power": 0.99,
+   "power_ci95_wilson": [
+    0.985,
+    0.994
+   ],
+   "median_simulated_delta": 0.071,
+   "median_lower_bound": 0.006
+  },
+  "E2": {
+   "target_delta": 0.033,
+   "power": 0.976,
+   "power_ci95_wilson": [
+    0.968,
+    0.981
+   ],
+   "median_simulated_delta": 0.032,
+   "median_lower_bound": 0.0
+  }
+ }
+}

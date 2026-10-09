@@ -1,0 +1,37 @@
+{
+ "caveat": "chosen on fold-model predictions; applying them to the frozen models (fitted on all 676 samples) assumes similar score distributions on new data",
+ "cutoffs": {
+  "t_B": 0.33154122501404903,
+  "t_high": 0.5889331683320793,
+  "t_low": 0.041709136400387495,
+  "t_seq": 0.2365036455875395
+ },
+ "model_bundle": "models/killcoyne_frozen_pkg_v1 (reported only; not written into that bundle)",
+ "population": "all pre-event samples of the 676 samples from 80 patients of the Killcoyne discovery cohort with a matched H&E slide (571 samples, 75 patients)",
+ "ranges": {
+  "t_B": [
+   0.22140435578580359,
+   0.41641139144628864
+  ],
+  "t_high": [
+   0.4887032534496148,
+   0.7249067107446022
+  ],
+  "t_low": [
+   0.0049048587574054,
+   0.1091164506866452
+  ],
+  "t_seq": [
+   0.1672428803140272,
+   0.30604090517497123
+  ]
+ },
+ "rules": {
+  "t_B": "comparator (B): positive if L-LATE >= t_B (80% training sensitivity), needed for the triage criterion",
+  "t_high": "L-IMG > t_high -> flagged high risk (t_high = c*, 90% training specificity)",
+  "t_low": "L-IMG < t_low -> cleared (95% training sensitivity)",
+  "t_seq": "t_low <= L-IMG <= t_high -> sequenced; positive if L-LATE >= t_seq (80% sensitivity among training middle-band cases)"
+ },
+ "source": "docs/paper_triage.md (pre-spec f5944d2, results 650701b); recomputed by scripts/paper_plan/tb_frozen.py (docs/paper_triage_robustness.md @ 32653f1)",
+ "statistic": "median (and range) over the 100 repeat x fold cut-offs chosen on inner out-of-fold training predictions"
+}

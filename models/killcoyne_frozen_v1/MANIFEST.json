@@ -10,5 +10,13 @@
   "image_scaling.csv": "f2e7c082903a9af641baa3dfac374a4ffe1aa6b7d7c26b5bf51f8376ea7e47ce",
   "model_info.json": "6a0c01ab62d93746833f4654cd3e5303672d34df5be87a69f5b11da42a5358cf"
  },
- "bundle_sha256": "17207de439433680a706d2e322838f18fe1ec17363ad647715e7f93acceee821"
+ "bundle_sha256": "17207de439433680a706d2e322838f18fe1ec17363ad647715e7f93acceee821",
+ "addenda": {
+  "triage_cutoffs.json": {
+   "sha256": "fc449f34ffbcaa32ae9f849ab10ffff81b749c83105e6dcf8af5c01b70e126c7",
+   "added": "2026-10-09",
+   "spec": "docs/paper_triage_robustness.md @ 32653f1 item 6",
+   "note": "not part of bundle_sha256; the original files and bundle hash are unchanged"
+  }
+ }
 }

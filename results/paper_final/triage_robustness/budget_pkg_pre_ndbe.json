@@ -1,0 +1,346 @@
+{
+ "task": "pkg_pre_ndbe",
+ "prespec": "32653f1",
+ "n_samples": 438,
+ "grid": [
+  {
+   "target_share": 0.0,
+   "realised_share": 0.0,
+   "sensitivity": 0.644,
+   "sens_ci95": [
+    0.526,
+    0.762
+   ],
+   "specificity": 0.817,
+   "spec_ci95": [
+    0.768,
+    0.864
+   ],
+   "t_seq_fallbacks": 0
+  },
+  {
+   "target_share": 0.05,
+   "realised_share": 0.035,
+   "sensitivity": 0.663,
+   "sens_ci95": [
+    0.556,
+    0.771
+   ],
+   "specificity": 0.82,
+   "spec_ci95": [
+    0.767,
+    0.867
+   ],
+   "t_seq_fallbacks": 25
+  },
+  {
+   "target_share": 0.1,
+   "realised_share": 0.073,
+   "sensitivity": 0.673,
+   "sens_ci95": [
+    0.571,
+    0.779
+   ],
+   "specificity": 0.826,
+   "spec_ci95": [
+    0.772,
+    0.875
+   ],
+   "t_seq_fallbacks": 0
+  },
+  {
+   "target_share": 0.15,
+   "realised_share": 0.109,
+   "sensitivity": 0.683,
+   "sens_ci95": [
+    0.581,
+    0.79
+   ],
+   "specificity": 0.841,
+   "spec_ci95": [
+    0.789,
+    0.888
+   ],
+   "t_seq_fallbacks": 0
+  },
+  {
+   "target_share": 0.2,
+   "realised_share": 0.145,
+   "sensitivity": 0.702,
+   "sens_ci95": [
+    0.584,
+    0.822
+   ],
+   "specificity": 0.838,
+   "spec_ci95": [
+    0.783,
+    0.886
+   ],
+   "t_seq_fallbacks": 0
+  },
+  {
+   "target_share": 0.25,
+   "realised_share": 0.184,
+   "sensitivity": 0.712,
+   "sens_ci95": [
+    0.592,
+    0.83
+   ],
+   "specificity": 0.835,
+   "spec_ci95": [
+    0.776,
+    0.886
+   ],
+   "t_seq_fallbacks": 0
+  },
+  {
+   "target_share": 0.3,
+   "realised_share": 0.222,
+   "sensitivity": 0.712,
+   "sens_ci95": [
+    0.593,
+    0.825
+   ],
+   "specificity": 0.838,
+   "spec_ci95": [
+    0.78,
+    0.889
+   ],
+   "t_seq_fallbacks": 0
+  },
+  {
+   "target_share": 0.35,
+   "realised_share": 0.256,
+   "sensitivity": 0.712,
+   "sens_ci95": [
+    0.593,
+    0.825
+   ],
+   "specificity": 0.832,
+   "spec_ci95": [
+    0.77,
+    0.887
+   ],
+   "t_seq_fallbacks": 0
+  },
+  {
+   "target_share": 0.4,
+   "realised_share": 0.294,
+   "sensitivity": 0.74,
+   "sens_ci95": [
+    0.624,
+    0.851
+   ],
+   "specificity": 0.838,
+   "spec_ci95": [
+    0.777,
+    0.892
+   ],
+   "t_seq_fallbacks": 0
+  },
+  {
+   "target_share": 0.45,
+   "realised_share": 0.339,
+   "sensitivity": 0.731,
+   "sens_ci95": [
+    0.614,
+    0.845
+   ],
+   "specificity": 0.841,
+   "spec_ci95": [
+    0.779,
+    0.895
+   ],
+   "t_seq_fallbacks": 0
+  },
+  {
+   "target_share": 0.5,
+   "realised_share": 0.387,
+   "sensitivity": 0.721,
+   "sens_ci95": [
+    0.602,
+    0.841
+   ],
+   "specificity": 0.847,
+   "spec_ci95": [
+    0.782,
+    0.901
+   ],
+   "t_seq_fallbacks": 0
+  },
+  {
+   "target_share": 0.55,
+   "realised_share": 0.434,
+   "sensitivity": 0.731,
+   "sens_ci95": [
+    0.614,
+    0.845
+   ],
+   "specificity": 0.841,
+   "spec_ci95": [
+    0.777,
+    0.898
+   ],
+   "t_seq_fallbacks": 0
+  },
+  {
+   "target_share": 0.6,
+   "realised_share": 0.479,
+   "sensitivity": 0.74,
+   "sens_ci95": [
+    0.624,
+    0.864
+   ],
+   "specificity": 0.847,
+   "spec_ci95": [
+    0.784,
+    0.902
+   ],
+   "t_seq_fallbacks": 0
+  },
+  {
+   "target_share": 0.65,
+   "realised_share": 0.529,
+   "sensitivity": 0.74,
+   "sens_ci95": [
+    0.624,
+    0.864
+   ],
+   "specificity": 0.853,
+   "spec_ci95": [
+    0.788,
+    0.908
+   ],
+   "t_seq_fallbacks": 0
+  },
+  {
+   "target_share": 0.7,
+   "realised_share": 0.58,
+   "sensitivity": 0.76,
+   "sens_ci95": [
+    0.642,
+    0.881
+   ],
+   "specificity": 0.85,
+   "spec_ci95": [
+    0.785,
+    0.905
+   ],
+   "t_seq_fallbacks": 0
+  },
+  {
+   "target_share": 0.75,
+   "realised_share": 0.637,
+   "sensitivity": 0.779,
+   "sens_ci95": [
+    0.664,
+    0.9
+   ],
+   "specificity": 0.841,
+   "spec_ci95": [
+    0.775,
+    0.899
+   ],
+   "t_seq_fallbacks": 0
+  },
+  {
+   "target_share": 0.8,
+   "realised_share": 0.7,
+   "sensitivity": 0.779,
+   "sens_ci95": [
+    0.664,
+    0.9
+   ],
+   "specificity": 0.838,
+   "spec_ci95": [
+    0.767,
+    0.9
+   ],
+   "t_seq_fallbacks": 0
+  },
+  {
+   "target_share": 0.85,
+   "realised_share": 0.76,
+   "sensitivity": 0.779,
+   "sens_ci95": [
+    0.664,
+    0.9
+   ],
+   "specificity": 0.817,
+   "spec_ci95": [
+    0.745,
+    0.884
+   ],
+   "t_seq_fallbacks": 0
+  },
+  {
+   "target_share": 0.9,
+   "realised_share": 0.826,
+   "sensitivity": 0.808,
+   "sens_ci95": [
+    0.69,
+    0.928
+   ],
+   "specificity": 0.796,
+   "spec_ci95": [
+    0.716,
+    0.867
+   ],
+   "t_seq_fallbacks": 0
+  },
+  {
+   "target_share": 0.95,
+   "realised_share": 0.897,
+   "sensitivity": 0.817,
+   "sens_ci95": [
+    0.703,
+    0.932
+   ],
+   "specificity": 0.781,
+   "spec_ci95": [
+    0.691,
+    0.861
+   ],
+   "t_seq_fallbacks": 0
+  },
+  {
+   "target_share": 1.0,
+   "realised_share": 1.0,
+   "sensitivity": 0.817,
+   "sens_ci95": [
+    0.703,
+    0.932
+   ],
+   "specificity": 0.76,
+   "spec_ci95": [
+    0.667,
+    0.845
+   ],
+   "t_seq_fallbacks": 0
+  }
+ ],
+ "A": {
+  "sensitivity": 0.808,
+  "specificity": 0.686
+ },
+ "B": {
+  "sensitivity": 0.817,
+  "specificity": 0.76
+ },
+ "smallest_s_vs_A": {
+  "value": 0.9,
+  "ci95": [
+   0.05,
+   0.95
+  ],
+  "draws_not_reached": 759
+ },
+ "smallest_s_vs_B": {
+  "value": 0.95,
+  "ci95": [
+   0.75,
+   0.95
+  ],
+  "draws_not_reached": 0
+ }
+}

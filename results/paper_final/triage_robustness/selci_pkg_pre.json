@@ -1,0 +1,123 @@
+{
+ "task": "pkg_pre",
+ "prespec": "32653f1",
+ "draws": 2000,
+ "selection_inclusive": {
+  "triage_LATE": {
+   "sensitivity_ci95": [
+    0.806,
+    0.915
+   ],
+   "specificity_ci95": [
+    0.681,
+    0.85
+   ],
+   "fixed_threshold_sens_ci95": [
+    0.779,
+    0.945
+   ],
+   "fixed_threshold_spec_ci95": [
+    0.69,
+    0.824
+   ],
+   "point_sensitivity": 0.863,
+   "point_specificity": 0.763
+  },
+  "A": {
+   "sensitivity_ci95": [
+    0.759,
+    0.87
+   ],
+   "specificity_ci95": [
+    0.554,
+    0.83
+   ],
+   "fixed_threshold_sens_ci95": [
+    0.745,
+    0.916
+   ],
+   "fixed_threshold_spec_ci95": [
+    0.564,
+    0.81
+   ],
+   "point_sensitivity": 0.839,
+   "point_specificity": 0.7
+  },
+  "B": {
+   "sensitivity_ci95": [
+    0.776,
+    0.861
+   ],
+   "specificity_ci95": [
+    0.693,
+    0.92
+   ],
+   "fixed_threshold_sens_ci95": [
+    0.728,
+    0.924
+   ],
+   "fixed_threshold_spec_ci95": [
+    0.741,
+    0.885
+   ],
+   "point_sensitivity": 0.832,
+   "point_specificity": 0.82
+  },
+  "C": {
+   "sensitivity_ci95": [
+    0.741,
+    0.822
+   ],
+   "specificity_ci95": [
+    0.651,
+    0.836
+   ],
+   "fixed_threshold_sens_ci95": [
+    0.703,
+    0.875
+   ],
+   "fixed_threshold_spec_ci95": [
+    0.693,
+    0.811
+   ],
+   "point_sensitivity": 0.789,
+   "point_specificity": 0.754
+  }
+ },
+ "d_sens_vs_B": {
+  "delta": 0.031,
+  "ci95": [
+   -0.012,
+   0.096
+  ],
+  "one_sided_95_lower": -0.006,
+  "criterion_holds": true,
+  "fixed_threshold_ci95": [
+   -0.013,
+   0.09
+  ],
+  "fixed_threshold_one_sided_95_lower": -0.006
+ },
+ "d_spec_vs_A": {
+  "delta": 0.063,
+  "ci95": [
+   -0.028,
+   0.178
+  ],
+  "fixed_threshold_ci95": [
+   -0.021,
+   0.161
+  ]
+ },
+ "share_sequenced": {
+  "point": 0.458,
+  "ci95": [
+   0.344,
+   0.54
+  ],
+  "fixed_threshold_ci95": [
+   0.408,
+   0.504
+  ]
+ }
+}
