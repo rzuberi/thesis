@@ -1,0 +1,10 @@
+{
+ "1": "**Histology is non-inferior to CNV with their matrix, not with package features; only late fusion beats histology, and with their matrix only borderline.** L-IMG 0.847 vs L-CNV 0.801: Δ +0.045, one-sided 95% lower bound −0.025 > −0.05 (NDBE −0.030). With package features the lower bound is −0.062 (NDBE −0.061). L-LATE − L-IMG +0.042 [+0.002, +0.078], max-T adjusted p 0.066 (package +0.056, p 0.010). Early and inter fusion do not beat L-IMG (adjusted p ≥ 0.25).",
+ "2": "**Yes.** Triage with L-LATE in the middle band has sensitivity 0.863 vs 0.801 for sequencing everyone with L-LATE: Δ +0.062, one-sided lower bound +0.020 > −0.05. It sequences 45.8% [40.8%, 50.4%] of samples. Specificity is lower (0.734 vs 0.785, Δ −0.051 [−0.092, −0.008]), and it misses 22 progressor samples from 9 patients, against 32 from 15 for (B).",
+ "3": "**Yes.** In the middle band, L-CNV AUROC is 0.786 vs L-IMG 0.650: Δ +0.136 [+0.011, +0.238] (their matrix, all pre-event samples). On NDBE samples it is +0.106 [−0.012, +0.226], and with package features +0.191. L-IMG's AUROC there is restricted by construction, because the band is defined by L-IMG.",
+ "4": "**About half.** Projected share sequenced: 49.4% at 2%, 49.0% at 5% and 48.3% at 10% progressor-sample prevalence (45.8% observed at 28%). Half of non-progressor samples fall in the middle band, so the share barely changes with prevalence. These are projections, not observations.",
+ "deviations": [
+  "None in method. The `primary_criterion` block is computed in every task, but the criterion applies only to their matrix, all pre-event samples; the other tasks' blocks are not used.",
+  "Middle-band AUROC of L-IMG is computed on samples selected for intermediate L-IMG scores, so it is range-restricted by construction; the comparison answers whether CNV ranks those samples better, not whether CNV is better overall."
+ ]
+}
