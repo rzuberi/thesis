@@ -9,11 +9,11 @@ for key, ci, col, lab in (("sensitivity", "sens_ci95", "#d62728", "sensitivity")
     ax.fill_between(x, [g[ci][0] for g in G], [g[ci][1] for g in G], color=col, alpha=0.15, lw=0); ax.plot(x, [g[key] for g in G], "-o", color=col, ms=3, lw=1.8, label=f"triage {lab}")
     for ref, ls in (("A", "--"), ("B", ":")):
         ax.axhline(J[ref][key], color=col, ls=ls, lw=1.1, alpha=0.9, label=f"({ref}) sequence everyone, {'L-CNV' if ref == 'A' else 'L-LATE'}: {lab}")
-for ref, yy in (("A", 0.06), ("B", 0.12)):
+for ref, yy in (("A", 0.96), ("B", 0.91)):
     s = J[f"smallest_s_vs_{ref}"]["value"]
     if s == s and s is not None: ax.axvline(100 * s, color="#555555", lw=0.8, ls="-."); ax.text(100 * s + 1, yy, f"matches ({ref}) from {100 * s:.0f}%", fontsize=7.5, color="#333333")
 ax.set_xlim(0, 100); ax.set_ylim(0, 1.0); ax.set_xlabel("target share of samples sequenced (%)"); ax.set_ylabel("per-sample sensitivity / specificity")
 ax.set_title("Sequencing budget: H&E-first triage, their CNV matrix, all pre-event samples (571 samples, 75 patients)\n0% = H&E only at the Youden threshold; 100% = sequence everyone with L-LATE (= B)", fontsize=9, loc="left")
-ax.legend(fontsize=7, frameon=False, loc="lower right", ncol=1); fig.tight_layout()
+ax.legend(fontsize=7, frameon=False, loc="lower left", ncol=1); fig.tight_layout()
 for ext in ("pdf", "png"): fig.savefig(f"{OUT}/14_F_budget_curve.{ext}", dpi=200)
 print("TB FIG DONE")
