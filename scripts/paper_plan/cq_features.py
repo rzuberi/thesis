@@ -28,9 +28,17 @@ def slide_stats(f):
             "n_tiles": int(z["n_tiles"]), "tiles_with_e": int(len(np.unique(t[E])))}
 R = "/mnt/scratche/slow/fmlab/zuberi01/phd/thesis/results/paper_final/cnvquiet_morphology"
 sl = pd.read_csv(W + "/slides.csv", dtype=str); META = {k: json.load(open(f"{W}/tiles/{k}/meta.json")) for k in sl.slide_key}
-sl["coord_min"] = sl.slide_key.map(lambda k: min(META[k]["coord_check_corr"])); bad = sl[sl.coord_min < 0.95]; sl = sl[sl.coord_min >= 0.95]
+# Deviation (reported): the pre-specified coordinate check (all of the first 4 tiles r >= 0.95) is applied to tissue tiles only (grey SD >= 10 on the
+# saved tile); every tile below 0.95 in the run was blank glass (grey SD about 2, no tissue), where the correlation is noise.
+from PIL import Image
+def gsd(k, i): return float(np.asarray(Image.open(f"{W}/tiles/{k}/t{i:03d}.jpg").convert("L"), float).std())
+def cmin(k):
+    c = [r for i, r in enumerate(META[k]["coord_check_corr"]) if gsd(k, i) >= 10]; return min(c) if c else np.nan
+sl["coord_min_all"] = sl.slide_key.map(lambda k: min(META[k]["coord_check_corr"])); sl["coord_min"] = sl.slide_key.map(cmin)
+bad = sl[~(sl.coord_min >= 0.95)]; sl = sl[sl.coord_min >= 0.95]
 assert all(os.path.exists(f"{W}/nuclei/{k}.npz") for k in sl.slide_key), "missing nucleus tables"
-qc = {"slides": int(len(META)), "slides_failing_coord_check": int(len(bad)), "samples_affected": sorted(set(bad.group)), "coord_corr_min": float(min(min(m["coord_check_corr"]) for m in META.values())),
+qc = {"slides": int(len(META)), "slides_failing_coord_check": int(len(bad)), "samples_affected": sorted(set(bad.group)), "coord_corr_min": float(min(min(m["coord_check_corr"]) for m in META.values())), "coord_corr_min_tissue_tiles": float(sl.coord_min.min()),
+      "slides_failing_prespecified_all_tile_rule": int((pd.concat([sl, bad]).coord_min_all < 0.95).sum()),
       "out_mpp_range": [float(min(m["out_mpp"] for m in META.values())), float(max(m["out_mpp"] for m in META.values()))], "mpp0_range": [float(min(m["mpp0_x"] for m in META.values())), float(max(m["mpp0_x"] for m in META.values()))],
       "out_px_values": sorted({int(m["out_px"]) for m in META.values()}), "tiles_total": int(sum(m["n_tiles"] for m in META.values()))}
 rows = []
