@@ -30,7 +30,7 @@ for s, lab in LAB.items(): L.append(f"| {lab} | " + " | ".join(f"{f3(S[s][e]['R'
 L += ["", "| Analysis | " + " | ".join(f"Δ {e} − UNI2-h [95% CI]" for e in ("Virchow2", "H-optimus-0")) + " | Same direction as primary |", "|---|---|---|---|"]
 for s, lab in LAB.items():
     A = S["agreement"][s]; L.append(f"| {lab} | " + " | ".join(f"{sg(A[e]['dR'])}{cis(A[e]['dR_ci95'])}" for e in ("Virchow2", "H-optimus-0")) + " | " + ", ".join(f"{e}: {'yes' if A[e]['same_sign_as_primary'] else 'no'}" for e in ("Virchow2", "H-optimus-0")) + " |")
-L += ["", "**S7. Scanner probe** (all 676 samples, 5-fold patient-grouped, pooled out-of-fold AUROC): " + "; ".join(f"{e} {f3(S['S7_scanner_probe'][e]['auroc_oof'])}" for e in EX) + ".", ""]
+L += ["", "**S7. Scanner probe** (all 676 samples, 5-fold patient-grouped, pooled out-of-fold AUROC): " + "; ".join(f"{e} {S['S7_scanner_probe'][e]['auroc_oof']:.4f}" for e in EX) + ".", ""]
 L += ["### 4. Downstream run", ""] + (DS["lines"] if DS else ["Not run: the pre-specified rule kept UNI2-h."]) + [""]
 L += ["### Deviations and caveats", ""] + [f"- {d}" for d in ANS["deviations"]] + [""]
 open(DOC, "w").write(head + "\n".join(L)); print("SR RENDER DONE")

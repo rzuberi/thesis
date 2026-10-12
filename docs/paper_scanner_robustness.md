@@ -155,3 +155,118 @@ No other configuration is run and nothing is tuned.
 5. If an extractor was switched in: how do L-IMG, L-LATE and cross-scanner transfer change? Otherwise: not run, per the rule.
 
 ---
+
+## Results
+
+Pre-specification commit abe96e9; results commit e8309b9. Scripts `scripts/paper_plan/sr_*.py` (Slurm via `scripts/cluster/campaign.sh`, prefixes sr0 smoke tiles, sr1 smoke embeddings, sr2 smoke validation, sr3 tiles, sr4 embeddings, sr5 index, sr6 refits, sr7 refit metrics). GPU use: 0.71 GPU-hours allocated (sr1 0.06, sr4 0.65; L40S; cap 30). CPU: about 7.2 job-hours, 6.6 of them reading tiles. Aggregates `results/paper_final/scanner_robustness/`; row-level outputs (tiles, embeddings, neighbour lists) on the cluster only. Figure `~/Downloads/be_paper_figs/v3/15_F_scanner_robustness.{pdf,png}`.
+
+### Status
+
+| Item | Status |
+|---|---|
+| 1 Extractors and embeddings | DONE. H0-mini was not accessible and is replaced by H-optimus-0, as pre-specified. Prov-GigaPath is included: coordinates equal on 683 of 683 slides. Smoke validation passed (cosine 1.000). |
+| 2 Robustness index (primary) | DONE |
+| 3 Decision rule | DONE: switch to H-optimus-0. Both criteria are met, narrowly. |
+| Secondary S1–S7 | DONE |
+| 4 Downstream run (H-optimus-0) | DONE. D0 reproduction passed (max difference 0). |
+
+### Answers
+
+1. **Barely: UNI2-h's neighbourhoods are organised by scanner far more than by patient.**
+   - R_10 is 0.077 [0.034, 0.132], against a chance level of 0.040.
+   - Among the 10 nearest neighbours of the 283 samples, 1,538 are other patients on the same scanner and 128 are the same patient on the other scanner.
+2. **H-optimus-0 meets the rule, only just; Virchow2 does not. Decision: switch to H-optimus-0, which triggered the one downstream run.**
+   - H-optimus-0: R_10 0.097 [0.041, 0.168]; ΔR +0.020 [+0.001, +0.040]; 1.26 × UNI2-h, against a threshold of 1.25.
+   - Virchow2: R_10 0.068; ΔR −0.009 [−0.024, +0.004].
+   - Prov-GigaPath (reference): R_10 0.028, below chance.
+3. **The direction holds; the size is not robust.**
+   - H-optimus-0 is above UNI2-h at every k from 1 to 50 and in all five secondary forms.
+   - Its CI excludes 0 only with all 676 samples as neighbours (+0.026) and in the de Jong form (+0.037). It includes 0 with z-scored features, at tile level and with other-endoscopy neighbours only.
+   - Virchow2 is below UNI2-h at 48 of 50 k values and in 4 of 5 secondary forms.
+4. **No.** The scanner probe AUROC is 1.000 for UNI2-h, Virchow2 and H-optimus-0, and 0.9995 for Prov-GigaPath.
+5. **No gain from switching: H-optimus-0 is worse for histology alone and transfers worse between scanners.**
+   - L-IMG: 0.805 vs 0.847 (Δ −0.042 [−0.082, −0.010]) on all pre-event samples; NDBE pre-event samples −0.043 [−0.101, +0.002].
+   - L-LATE (their matrix): 0.870 vs 0.889 (Δ −0.019 [−0.040, +0.001]); package features −0.013 [−0.029, +0.001].
+   - Cross-scanner (C13239-01 → C13210): 0.676 [0.516, 0.827] vs 0.726. Within C13239-01: 0.779 vs 0.841.
+   - The score shift on C13210 changes direction rather than going away: 0% / 91% / 9% low / middle / high, against 50% / 30% / 21% with UNI2-h.
+   - The small neighbourhood-robustness gain did not carry over to accuracy or transfer. Keeping UNI2-h is the decision to confirm with Rehan.
+
+### Checks
+
+- Smoke validation: Prov-GigaPath re-embedded from the saved tiles of 2 slides vs the stored embeddings, per-tile cosine median 1.00000, minimum 1.00000 (required ≥ 0.99 / ≥ 0.95): passed.
+- Prov-GigaPath `coords_level` equal to UNI2-h's on 683 of 683 slides: included as reference.
+- UNI2-h sample representation vs `img_mean.csv`: max |difference| 5.85e-08 (≤ 1e-4 required).
+- Pool: 283 samples from 25 patients (C13210 146, C13239-01 137); 113 endoscopies, 12 with samples on both scanners; 9,152 tiles for S4.
+- Feature dimensions: UNI2-h 1536, Virchow2 2560, H-optimus-0 1536, Prov-GigaPath 1536.
+
+### 2–3. Primary robustness index (pool of dual-scanner patients, cosine, k = 10) and decision
+
+| Extractor | R_10 [95% CI] | Chance | SO / OS / SS neighbours | ΔR vs UNI2-h [95% CI] | Ratio to UNI2-h | CI above 0 | Ratio ≥ 1.25 | Qualifies |
+|---|---|---|---|---|---|---|---|---|
+| UNI2-h | 0.077 [0.034, 0.132] | 0.040 | 128 / 1538 / 641 | — | — | — | — | — (incumbent) |
+| Virchow2 | 0.068 [0.032, 0.113] | 0.040 | 116 / 1596 / 556 | -0.009 [-0.024, +0.004] | 0.88 | no | no | no |
+| H-optimus-0 | 0.097 [0.041, 0.168] | 0.040 | 152 / 1413 / 653 | +0.020 [+0.001, +0.040] | 1.26 | yes | yes | yes |
+| Prov-GigaPath | 0.028 [0.010, 0.048] | 0.040 | 51 / 1779 / 645 | -0.049 [-0.088, -0.019] | 0.36 | no | no | not eligible (reference) |
+
+**Decision: switch to H-optimus-0.**
+
+### Secondary analyses (report only)
+
+**S1. R_k at selected k** (pool of dual-scanner patients).
+
+| Extractor | k = 1 | k = 5 | k = 10 | k = 20 | k = 50 |
+|---|---|---|---|---|---|
+| UNI2-h | 0.115 [0.046, 0.189] | 0.069 [0.030, 0.117] | 0.077 [0.034, 0.132] | 0.073 [0.032, 0.127] | 0.064 [0.032, 0.107] |
+| Virchow2 | 0.080 [0.025, 0.151] | 0.064 [0.030, 0.103] | 0.068 [0.032, 0.113] | 0.066 [0.028, 0.118] | 0.054 [0.024, 0.095] |
+| H-optimus-0 | 0.164 [0.054, 0.285] | 0.120 [0.054, 0.195] | 0.097 [0.041, 0.168] | 0.085 [0.034, 0.153] | 0.068 [0.031, 0.117] |
+| Prov-GigaPath | 0.016 [0.000, 0.039] | 0.025 [0.011, 0.041] | 0.028 [0.010, 0.048] | 0.030 [0.010, 0.058] | 0.035 [0.011, 0.070] |
+
+| Analysis | UNI2-h | Virchow2 | H-optimus-0 | Prov-GigaPath | Chance |
+|---|---|---|---|---|---|
+| S2 all 676 samples as neighbours, k = 10 | 0.043 [0.015, 0.077] | 0.037 [0.017, 0.059] | 0.069 [0.028, 0.117] | 0.017 [0.004, 0.032] | 0.017 |
+| S3 z-scored features, k = 10 | 0.061 [0.029, 0.098] | 0.070 [0.033, 0.111] | 0.078 [0.033, 0.132] | 0.029 [0.016, 0.043] | 0.040 |
+| S4 tile level, k = 50 | 0.060 [0.036, 0.091] | 0.056 [0.032, 0.087] | 0.067 [0.036, 0.111] | 0.041 [0.019, 0.072] | 0.041 |
+| S5 de Jong form (same patient / same scanner), k = 10 | 0.353 [0.230, 0.485] | 0.312 [0.211, 0.421] | 0.390 [0.263, 0.529] | 0.287 [0.194, 0.384] | 0.096 |
+| S6 other-endoscopy neighbours only, k = 10 | 0.077 [0.029, 0.136] | 0.070 [0.025, 0.127] | 0.096 [0.033, 0.176] | 0.029 [0.006, 0.058] | 0.038 |
+
+| Analysis | Δ Virchow2 − UNI2-h [95% CI] | Δ H-optimus-0 − UNI2-h [95% CI] | Same direction as primary |
+|---|---|---|---|
+| S2 all 676 samples as neighbours, k = 10 | -0.006 [-0.022, +0.008] | +0.025 [+0.009, +0.044] | Virchow2: yes, H-optimus-0: yes |
+| S3 z-scored features, k = 10 | +0.008 [-0.006, +0.021] | +0.017 [-0.002, +0.037] | Virchow2: no, H-optimus-0: yes |
+| S4 tile level, k = 50 | -0.004 [-0.010, +0.000] | +0.007 [-0.003, +0.021] | Virchow2: yes, H-optimus-0: yes |
+| S5 de Jong form (same patient / same scanner), k = 10 | -0.041 [-0.072, -0.010] | +0.037 [+0.011, +0.062] | Virchow2: yes, H-optimus-0: yes |
+| S6 other-endoscopy neighbours only, k = 10 | -0.007 [-0.024, +0.006] | +0.019 [-0.008, +0.044] | Virchow2: yes, H-optimus-0: yes |
+
+**S7. Scanner probe** (all 676 samples, 5-fold patient-grouped, pooled out-of-fold AUROC): UNI2-h 1.0000; Virchow2 1.0000; H-optimus-0 1.0000; Prov-GigaPath 0.9995.
+
+### 4. Downstream run
+
+D0: `sr_cv.R` with the UNI2-h matrix reproduces stored `cfg_02_rep_01` predictions: max |difference| 0.0e+00, folds equal: yes (passed).
+
+**D1. Fold-stratified per-sample AUROC, stratified patient-grouped 10-fold × 10 CV (stored folds), H-optimus-0 vs UNI2-h.**
+
+| Population | Arm | UNI2-h [95% CI] | H-optimus-0 [95% CI] | Δ [95% CI] | p (two-sided) |
+|---|---|---|---|---|---|
+| all pre-event (571 samples, 75 patients) | L-IMG | 0.847 [0.798, 0.894] | 0.805 [0.744, 0.859] | -0.042 [-0.082, -0.010] | 0.009 |
+| all pre-event (571 samples, 75 patients) | L-LATE their | 0.889 [0.830, 0.934] | 0.870 [0.807, 0.922] | -0.019 [-0.040, +0.001] | 0.06 |
+| all pre-event (571 samples, 75 patients) | L-LATE package | 0.903 [0.856, 0.944] | 0.890 [0.837, 0.934] | -0.013 [-0.029, +0.001] | 0.076 |
+| NDBE pre-event (438 samples, 71 patients) | L-IMG | 0.827 [0.768, 0.883] | 0.784 [0.710, 0.851] | -0.043 [-0.101, +0.002] | 0.064 |
+| NDBE pre-event (438 samples, 71 patients) | L-LATE their | 0.867 [0.794, 0.931] | 0.850 [0.771, 0.917] | -0.017 [-0.046, +0.006] | 0.154 |
+| NDBE pre-event (438 samples, 71 patients) | L-LATE package | 0.879 [0.818, 0.935] | 0.866 [0.798, 0.929] | -0.013 [-0.031, +0.004] | 0.141 |
+
+**D2. Scanner transfer with H-optimus-0** (L-IMG refitted; pre-event samples).
+
+| Design | AUROC [95% CI] | UNI2-h reference | Test bands low / middle / high (training-scanner inner OOF) |
+|---|---|---|---|
+| Within C13239-01, fold-stratified, 432 samples, 71 patients | 0.779 [0.710, 0.839] | 0.841 | — |
+| (b) C13239-01 → C13210, 139 test samples, 27 patients; 48 training patients | 0.676 [0.516, 0.827] | 0.726; bands 50% / 30% / 21% (18% / 61% / 20%) | 0% / 91% / 9% (14% / 67% / 20%) |
+
+### Deviations and caveats
+
+- H0-mini, the README's main candidate, was not used. `bioptimus/H0-mini` is gated and the cached token was refused (HTTP 403) on 2026-10-12. H-optimus-0, its teacher and the next-ranked cached model in PathoROB, replaced it. This was stated in the pre-specification before any embedding was computed.
+- Dual-scanner patients: 25 patients and 283 samples across all 676 samples. Earlier documents give 23 because they count pre-event samples only.
+- The decision rule was met by a narrow margin: ratio 1.264 against the 1.25 threshold, and a CI lower bound of +0.0009. The pre-specified downstream run followed, and its result points the other way (answer 5). Under the pre-specification a switch is a recommendation subject to Rehan's decision; the frozen bundles in `models/` were not changed.
+- Every index is close to chance (chance R_10 0.040), because a pool of 283 samples offers few same-patient, other-scanner candidates per query (about 5). The index ranks extractors on identical data; its absolute values are not comparable with PathoROB's balanced datasets.
+- Tiles are about 0.88 µm/px (level 2), while Virchow2 and H-optimus-0 were trained at about 0.5 µm/px. This matches the stored UNI2-h pipeline and applies to every extractor.
+- Found in passing, not part of this analysis: `coords_level` in the stored npz files are tile centres. `scripts/paper_plan/pp_montage.py` and `scripts/task_conch_swg.py` read them as top-left corners, so their tiles are offset by half a tile (112 px at level 2).
+- The run was split into a smoke batch (sr0–sr2) and main batches (sr3–sr7). The smoke tiles and embeddings are part of the results.
