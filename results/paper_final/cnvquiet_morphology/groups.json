@@ -1,0 +1,119 @@
+{
+ "seed": 20261012,
+ "k_match": 3,
+ "count_checks": {
+  "3y captured_cases_CNVneg_bestpos": {
+   "expected": [
+    11,
+    6
+   ],
+   "got": [
+    11,
+    6
+   ],
+   "ok": true
+  },
+  "5y captured_cases_CNVneg_bestpos": {
+   "expected": [
+    13,
+    8
+   ],
+   "got": [
+    13,
+    8
+   ],
+   "ok": true
+  },
+  "3y cases_both_pos": {
+   "expected": [
+    73,
+    26
+   ],
+   "got": [
+    73,
+    26
+   ],
+   "ok": true
+  },
+  "5y cases_both_pos": {
+   "expected": [
+    91,
+    28
+   ],
+   "got": [
+    91,
+    28
+   ],
+   "ok": true
+  }
+ },
+ "groups": {
+  "a": {
+   "samples": 13,
+   "patients": 8,
+   "slides": 13,
+   "cx_raw_mean": 21.23,
+   "cx_raw_sd": 5.7,
+   "cx_raw_median": 19.000000000000004,
+   "grade": {
+    "NDBE": 7,
+    "LGD": 5,
+    "ID": 1
+   },
+   "scanner": {
+    "C13239-01": 8,
+    "C13210": 5
+   },
+   "tissue_tiles_median": 211.0,
+   "tissue_tiles_mean": 307.5,
+   "samples_per_patient_max": 3
+  },
+  "b": {
+   "samples": 91,
+   "patients": 28,
+   "slides": 94,
+   "cx_raw_mean": 29.54,
+   "cx_raw_sd": 12.63,
+   "cx_raw_median": 26.000000000000004,
+   "grade": {
+    "NDBE": 54,
+    "LGD": 28,
+    "ID": 9
+   },
+   "scanner": {
+    "C13239-01": 71,
+    "C13210": 20
+   },
+   "tissue_tiles_median": 278.0,
+   "tissue_tiles_mean": 650.2,
+   "samples_per_patient_max": 9
+  },
+  "c": {
+   "samples": 39,
+   "patients": 23,
+   "slides": 39,
+   "cx_raw_mean": 21.33,
+   "cx_raw_sd": 5.59,
+   "cx_raw_median": 20.000000000000004,
+   "grade": {
+    "NDBE": 21,
+    "ID": 14,
+    "LGD": 4
+   },
+   "scanner": {
+    "C13239-01": 24,
+    "C13210": 15
+   },
+   "tissue_tiles_median": 228.0,
+   "tissue_tiles_mean": 305.8,
+   "samples_per_patient_max": 4
+  }
+ },
+ "a_in_3y_newly_caught": 11,
+ "a_patients_also_in_b": 6,
+ "c_abs_dcx": {
+  "mean": 0.46,
+  "max": 3.0,
+  "n_exact": 26
+ }
+}

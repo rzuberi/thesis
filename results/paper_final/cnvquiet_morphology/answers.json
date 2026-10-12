@@ -1,0 +1,36 @@
+{
+ "prefixes": "cq0, cq0b (environment), cq1, cq2 (smoke), cq3a (groups), cq3, cq3b (extraction), cq4, cq4d (segmentation), cq5, cq5b (features, statistics, figure)",
+ "status": {
+  "Groups from stored outputs; per-horizon counts equal docs/paper_horizon_q2_all_horizons.md": "DONE; all four counts match (11/6, 13/8, 73/26, 91/28)",
+  "(c) matching": "DONE; 39 samples / 23 patients, mean absolute Δcx 0.46",
+  "Tile re-read and coordinate check": "DONE; 146 slides, none excluded (check applied to tissue tiles, see deviations)",
+  "Segmentation (HoVer-Net fast, PanNuke, TIAToolbox 2.1.3)": "DONE; 146 slides, 37,376 tiles",
+  "Features F1–F5": "DONE",
+  "Plasma-cell density": "NOT MEASURABLE (no plasma-cell class in PanNuke)",
+  "Primary tests (a) vs (c), Holm": "DONE; no feature significant after Holm",
+  "(b) descriptive": "DONE",
+  "Figure 16_F_cnvquiet_morphology": "DONE"
+ },
+ "compute": "GPU: 8.2 GPU-hours allocated over 53 jobs on L40S (including the smoke test, model start-up and duplicate twins), under the 15-hour cap; about 150 s per slide of segmentation.",
+ "answers": [
+  "Nuclear area: the CNV-quiet newly caught patients had a smaller mean epithelial nuclear area than matched non-progressors (28.3 vs 31.0 µm², Δ −2.8 [−4.7, −1.0], AUC 0.22, p 0.020), but not after Holm (p 0.10); its SD did not differ (Δ −1.4 µm², Holm p 0.75). If anything the nuclei are smaller, not the enlarged nuclei that track aneuploidy (Abel 2024).",
+  "Circularity: no difference (0.842 vs 0.843, Holm p 1.00).",
+  "Basal-layer crowding: no difference (6.57 vs 6.71 epithelial nuclei within 20 µm, Holm p 1.00).",
+  "Peri-epithelial inflammatory density: no difference and no consistent direction (31.7 vs 28.6 per 100 epithelial nuclei, Δ +3.1 [−12.2, +22.3], Holm p 1.00; one (a) patient at 86).",
+  "Caught by both: close to the matched non-progressors on every feature (nuclear area 30.7 vs 31.0 µm², Δ −0.4 [−1.8, +1.1]) and above (a) in nuclear area (Δ +2.4 [+0.7, +4.2]); the small-nucleus tendency is confined to the CNV-quiet newly caught samples.",
+  "No: PanNuke's inflammatory class pools lymphocytes, plasma cells, neutrophils and macrophages, so plasma-cell density was not measured."
+ ],
+ "deviations": [
+  "Coordinate check applied to tissue tiles only (grey SD ≥ 10 on the saved tile), changed in commit de6f70b before any feature was computed. Under the pre-specified rule (all first 4 tiles r ≥ 0.95), 25 of 146 slides would have been excluded, but every tile below 0.95 was blank glass (grey SD about 2, no tissue), where the correlation is noise. On tissue tiles the minimum r was 0.967 and no slide was excluded.",
+  "Operational, no effect on outputs (every step writes per-slide outputs and skips finished slides): 4 extraction tasks hit the 1-hour limit on slow level-0 reads and were completed as cq3b; segmentation of the 13 slides extracted last was queued as cq4b/cq4c, orphaned when an h200 job was preempted and requeued under the same job id, and rerun on cuda only as cq4d.",
+  "Figure: the overlay shows a quarter of the tile, enlarged, so that contours are legible."
+ ],
+ "caveats": [
+  "(a) has 8 patients, so power is low; the nulls do not exclude moderate differences, and the nuclear-area result is unadjusted-only.",
+  "Grade was matched at class level (NDBE vs ID/LGD) as pre-specified; within the dysplastic class (a) is mostly LGD (5 LGD, 1 ID) and its matches mostly ID (14 ID, 4 LGD).",
+  "F4 and F5 are proxies: there is no Barrett's layer segmenter, PanNuke's inflammatory class is not lymphocyte-specific, and in the smoke overlays some lymphocyte-like stromal cells were called connective.",
+  "Only the 256 stored tiles per slide (about 10 mm²) were measured, i.e. what the image model saw, not all tissue; no stain normalisation (scanner matched exactly).",
+  "PanNuke's neoplastic/non-neoplastic split is uninformative here (52–53% of epithelial nuclei called neoplastic in every group).",
+  "Matched case–control cohort; results are descriptive and do not feed any predictor."
+ ]
+}
