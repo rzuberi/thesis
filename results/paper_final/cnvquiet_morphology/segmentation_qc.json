@@ -1,0 +1,22 @@
+{
+ "slides": 52,
+ "slides_failing_coord_check": 0,
+ "samples_affected": [],
+ "coord_corr_min": 0.8835088946692616,
+ "coord_corr_min_tissue_tiles": 0.9637198059174162,
+ "slides_failing_prespecified_all_tile_rule": 3,
+ "out_mpp_range": [
+  0.24989245699618556,
+  0.24997293819753888
+ ],
+ "mpp0_range": [
+  0.22040024684827647,
+  0.22088708252341402
+ ],
+ "out_px_values": [
+  790,
+  792
+ ],
+ "tiles_total": 13312,
+ "nuclei_kept_total": 2301135
+}

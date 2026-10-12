@@ -1,0 +1,316 @@
+{
+ "features": {
+  "F1_area_mean": "epithelial nuclear area, mean (um^2)",
+  "F2_area_sd": "epithelial nuclear area, SD (um^2)",
+  "F3_circularity": "epithelial nuclear circularity, mean",
+  "F4_basal_crowding": "basal-layer crowding (epithelial nuclei within 20 um)",
+  "F5_pel_per100e": "peri-epithelial inflammatory nuclei per 100 epithelial nuclei"
+ },
+ "primary": {
+  "F1_area_mean": {
+   "n_patients": {
+    "a": 8,
+    "c": 23
+   },
+   "n_samples": {
+    "a": 13,
+    "c": 39
+   },
+   "patient_mean": {
+    "a": 28.290295770833332,
+    "c": 31.166734539855067
+   },
+   "patient_sd": {
+    "a": 2.1482064008562918,
+    "c": 2.7868864819853614
+   },
+   "patient_median": {
+    "a": 28.907301750000002,
+    "c": 31.203281500000003
+   },
+   "sample_mean": {
+    "a": 28.96206253846154,
+    "c": 31.250792102564102
+   },
+   "sample_sd": {
+    "a": 2.4980309351764305,
+    "c": 2.884652100460377
+   },
+   "diff_a_minus_c": -2.8764387690217355,
+   "diff_ci95": [
+    -4.619265362726446,
+    -1.2277130778079668
+   ],
+   "auc_a_gt_c": 0.21195652173913043,
+   "p_raw": 0.015501364288906,
+   "test": "exact",
+   "p_holm": 0.07750682144453
+  },
+  "F2_area_sd": {
+   "n_patients": {
+    "a": 8,
+    "c": 23
+   },
+   "n_samples": {
+    "a": 13,
+    "c": 39
+   },
+   "patient_mean": {
+    "a": 15.244701479166668,
+    "c": 16.572569311594204
+   },
+   "patient_sd": {
+    "a": 1.5073816189744162,
+    "c": 2.5482706930279737
+   },
+   "patient_median": {
+    "a": 15.10629925,
+    "c": 16.187193
+   },
+   "sample_mean": {
+    "a": 15.346788923076925,
+    "c": 16.59933261538461
+   },
+   "sample_sd": {
+    "a": 2.14580713913209,
+    "c": 2.637566312172548
+   },
+   "diff_a_minus_c": -1.3278678324275361,
+   "diff_ci95": [
+    -2.754501109442932,
+    0.01767296014492462
+   ],
+   "auc_a_gt_c": 0.34782608695652173,
+   "p_raw": 0.2192767525804233,
+   "test": "exact",
+   "p_holm": 0.8771070103216932
+  },
+  "F3_circularity": {
+   "n_patients": {
+    "a": 8,
+    "c": 23
+   },
+   "n_samples": {
+    "a": 13,
+    "c": 39
+   },
+   "patient_mean": {
+    "a": 0.8431528410416667,
+    "c": 0.8428057109420288
+   },
+   "patient_sd": {
+    "a": 0.008680875336036828,
+    "c": 0.01615685907620115
+   },
+   "patient_median": {
+    "a": 0.8403681350000001,
+    "c": 0.8445145199999999
+   },
+   "sample_mean": {
+    "a": 0.8445968646153846,
+    "c": 0.8423194533333332
+   },
+   "sample_sd": {
+    "a": 0.016137410097006786,
+    "c": 0.017768229396428234
+   },
+   "diff_a_minus_c": 0.0003471300996378268,
+   "diff_ci95": [
+    -0.007902380569066886,
+    0.00922512059850533
+   ],
+   "auc_a_gt_c": 0.45108695652173914,
+   "p_raw": 0.7068049653144202,
+   "test": "exact",
+   "p_holm": 1.0
+  },
+  "F4_basal_crowding": {
+   "n_patients": {
+    "a": 8,
+    "c": 23
+   },
+   "n_samples": {
+    "a": 13,
+    "c": 39
+   },
+   "patient_mean": {
+    "a": 6.624869415467774,
+    "c": 6.721697315868751
+   },
+   "patient_sd": {
+    "a": 0.9072380397283546,
+    "c": 0.9912042775120913
+   },
+   "patient_median": {
+    "a": 6.460266846958991,
+    "c": 6.588797412525728
+   },
+   "sample_mean": {
+    "a": 6.61720001052391,
+    "c": 6.688049970793687
+   },
+   "sample_sd": {
+    "a": 1.0753178486873027,
+    "c": 1.0994110610952756
+   },
+   "diff_a_minus_c": -0.09682790040097711,
+   "diff_ci95": [
+    -0.802533292344538,
+    0.6334487989584573
+   ],
+   "auc_a_gt_c": 0.4782608695652174,
+   "p_raw": 0.8770114308712751,
+   "test": "exact",
+   "p_holm": 1.0
+  },
+  "F5_pel_per100e": {
+   "n_patients": {
+    "a": 8,
+    "c": 23
+   },
+   "n_samples": {
+    "a": 13,
+    "c": 39
+   },
+   "patient_mean": {
+    "a": 29.431729391420745,
+    "c": 27.923829088798858
+   },
+   "patient_sd": {
+    "a": 21.009345113849392,
+    "c": 14.431488495941828
+   },
+   "patient_median": {
+    "a": 26.56325642147458,
+    "c": 26.889160270776305
+   },
+   "sample_mean": {
+    "a": 31.149426409460887,
+    "c": 28.315032726276467
+   },
+   "sample_sd": {
+    "a": 20.373037687823334,
+    "c": 15.227499284103878
+   },
+   "diff_a_minus_c": 1.5079003026218878,
+   "diff_ci95": [
+    -11.736419440310375,
+    17.36516672236323
+   ],
+   "auc_a_gt_c": 0.4945652173913043,
+   "p_raw": 0.9823617885019441,
+   "test": "exact",
+   "p_holm": 1.0
+  }
+ },
+ "descriptive": {},
+ "secondary_3y": {
+  "F1_area_mean": {
+   "n_patients": [
+    6,
+    18
+   ],
+   "mean_a": 28.699789194444445,
+   "mean_c": 31.4675830787037,
+   "diff": -2.7677938842592553,
+   "p_unadjusted": 0.033002466640910576
+  },
+  "F2_area_sd": {
+   "n_patients": [
+    6,
+    18
+   ],
+   "mean_a": 15.346229638888891,
+   "mean_c": 16.94223581481482,
+   "diff": -1.5960061759259272,
+   "p_unadjusted": 0.15563612588784212
+  },
+  "F3_circularity": {
+   "n_patients": [
+    6,
+    18
+   ],
+   "mean_a": 0.8414634263888888,
+   "mean_c": 0.8413932206481481,
+   "diff": 7.020574074068087e-05,
+   "p_unadjusted": 0.6729174715444739
+  },
+  "F4_basal_crowding": {
+   "n_patients": [
+    6,
+    18
+   ],
+   "mean_a": 6.759727552923674,
+   "mean_c": 6.640955428714569,
+   "diff": 0.1187721242091051,
+   "p_unadjusted": 0.6729174715444739
+  },
+  "F5_pel_per100e": {
+   "n_patients": [
+    6,
+    18
+   ],
+   "mean_a": 22.546059201029294,
+   "mean_c": 26.79952986258222,
+   "diff": -4.2534706615529245,
+   "p_unadjusted": 0.5805224523759993
+  }
+ },
+ "matched_sets": {
+  "F1_area_mean": {
+   "n_sets": 13,
+   "mean_diff": -2.2887295641025656,
+   "n_a_above_matches": 3
+  },
+  "F2_area_sd": {
+   "n_sets": 13,
+   "mean_diff": -1.2525436923076911,
+   "n_a_above_matches": 4
+  },
+  "F3_circularity": {
+   "n_sets": 13,
+   "mean_diff": 0.002277411282051295,
+   "n_a_above_matches": 6
+  },
+  "F4_basal_crowding": {
+   "n_sets": 13,
+   "mean_diff": -0.07084996026977809,
+   "n_a_above_matches": 4
+  },
+  "F5_pel_per100e": {
+   "n_sets": 13,
+   "mean_diff": 2.834393683184424,
+   "n_a_above_matches": 6
+  }
+ },
+ "qc": {
+  "a": {
+   "samples": 13,
+   "patients": 8,
+   "nuclei_total": 569924,
+   "epithelial_nuclei": 176173,
+   "share_epithelial_called_neoplastic": 0.5309496914964268,
+   "inflammatory_per_100_epithelial_all": 39.74559098159196,
+   "median_epithelial_nuclei_per_sample": 12345.0,
+   "share_tiles_with_epithelium": 0.8966346153846154,
+   "samples_ineligible_F1_F3_F5": 0,
+   "samples_ineligible_F4": 0
+  },
+  "c": {
+   "samples": 39,
+   "patients": 23,
+   "nuclei_total": 1731211,
+   "epithelial_nuclei": 573838,
+   "share_epithelial_called_neoplastic": 0.5325353148449562,
+   "inflammatory_per_100_epithelial_all": 36.36967227684468,
+   "median_epithelial_nuclei_per_sample": 14365.0,
+   "share_tiles_with_epithelium": 0.8772035256410257,
+   "samples_ineligible_F1_F3_F5": 0,
+   "samples_ineligible_F4": 0
+  }
+ },
+ "groups_present": [
+  "a",
+  "c"
+ ]
+}
