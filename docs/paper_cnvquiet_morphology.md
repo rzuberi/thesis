@@ -92,3 +92,94 @@ Nuclei < 5 µm² are dropped everywhere. Edge nuclei are dropped from F1–F3 on
 6. Is plasma-cell density measurable with the chosen model? (Expected: no.)
 
 ---
+
+## Results
+
+Pre-specification commit a50ce7b; results commit c446989. Scripts `scripts/paper_plan/cq_groups.py`, `cq_extract.py`, `cq_segment.py`, `cq_features.py`, `cq_stats.py`, `cq_fig.py`, `cq_render.py` (Slurm via `scripts/cluster/campaign.sh`, prefixes cq0, cq0b (environment), cq1, cq2 (smoke), cq3a (groups), cq3, cq3b (extraction), cq4, cq4d (segmentation), cq5, cq5b (features, statistics, figure)). Aggregates `results/paper_final/cnvquiet_morphology/`. Row-level outputs on the cluster only.
+
+### Status
+
+| Item | Status |
+|---|---|
+| Groups from stored outputs; per-horizon counts equal docs/paper_horizon_q2_all_horizons.md | DONE; all four counts match (11/6, 13/8, 73/26, 91/28) |
+| (c) matching | DONE; 39 samples / 23 patients, mean absolute Δcx 0.46 |
+| Tile re-read and coordinate check | DONE; 146 slides, none excluded (check applied to tissue tiles, see deviations) |
+| Segmentation (HoVer-Net fast, PanNuke, TIAToolbox 2.1.3) | DONE; 146 slides, 37,376 tiles |
+| Features F1–F5 | DONE |
+| Plasma-cell density | NOT MEASURABLE (no plasma-cell class in PanNuke) |
+| Primary tests (a) vs (c), Holm | DONE; no feature significant after Holm |
+| (b) descriptive | DONE |
+| Figure 16_F_cnvquiet_morphology | DONE |
+
+### Groups
+
+Patient counts are distinct patients; (a) and (b) share patients (6 of the 8 (a) patients also have (b) samples). Raw cx = package block.
+
+| Group | Samples | Patients | Slides | Raw cx, mean (SD) | Raw cx, median | Grade | Scanner | Tissue tiles, median | Max samples per patient |
+|---|---|---|---|---|---|---|---|---|---|
+| (a) CNV-quiet newly caught | 13 | 8 | 13 | 21.2 (5.7) | 19 | ID 1, LGD 5, NDBE 7 | C13210 5, C13239-01 8 | 211 | 3 |
+| (b) caught by both | 91 | 28 | 94 | 29.5 (12.6) | 26 | ID 9, LGD 28, NDBE 54 | C13210 20, C13239-01 71 | 278 | 9 |
+| (c) matched non-progressors | 39 | 23 | 39 | 21.3 (5.6) | 20 | ID 14, LGD 4, NDBE 21 | C13210 15, C13239-01 24 | 228 | 4 |
+
+Count check against `docs/paper_horizon_q2_all_horizons.md`: 3y captured_cases_CNVneg_bestpos 11 / 6 (ok); 5y captured_cases_CNVneg_bestpos 13 / 8 (ok); 3y cases_both_pos 73 / 26 (ok); 5y cases_both_pos 91 / 28 (ok).
+Matching: |Δcx| mean 0.46, maximum 3, exact 26 of 39. (a) samples also newly caught at 3 years: 11.
+
+### Segmentation
+
+Slides 146, tiles 37376; coordinate check on tissue tiles: minimum r 0.967, slides failing 0 (pre-specified all-tile rule: 25 slides would fail, minimum r 0.533, all on blank-glass tiles; see deviations); level-0 mpp 0.2204–0.2209, resampled tiles 790, 792 px at 0.2499–0.2500 µm/px; nuclei kept (≥ 5 µm²) 5,708,539. GPU: 8.2 GPU-hours allocated over 53 jobs on L40S (including the smoke test, model start-up and duplicate twins), under the 15-hour cap; about 150 s per slide of segmentation.
+
+| Group | Nuclei | Epithelial nuclei | Share of epithelial called neoplastic | Inflammatory per 100 epithelial (any distance) | Median epithelial nuclei per sample | Tiles with epithelium | Samples ineligible F1–F3, F5 / F4 |
+|---|---|---|---|---|---|---|---|
+| (a) CNV-quiet newly caught | 533,151 | 163,420 | 0.527 | 41.0 | 11366 | 0.828 | 0 / 0 |
+| (b) caught by both | 3,540,529 | 1,288,864 | 0.522 | 30.3 | 14206 | 0.788 | 2 / 1 |
+| (c) matched non-progressors | 1,634,859 | 535,083 | 0.528 | 37.3 | 13138 | 0.827 | 0 / 0 |
+
+### Primary: (a) vs (c), patient level
+
+Patient value = mean over the patient's eligible samples in the group. Δ = (a) − (c) patient-level means, 95% patient-bootstrap CI. AUC = P((a) patient > (c) patient). Two-sided Mann–Whitney U; Holm over the features.
+
+| Feature | Patients a / c | (a) mean (SD) | (c) mean (SD) | Δ (a − c) [95% CI] | AUC | p | Holm p |
+|---|---|---|---|---|---|---|---|
+| F1 epithelial nuclear area, mean (um^2) | 8 / 23 | 28.3 (2.361) | 31.0 (2.774) | -2.786 [-4.704, -0.965] | 0.223 | 0.020 | 0.102 |
+| F2 epithelial nuclear area, SD (um^2) | 8 / 23 | 15.1 (1.642) | 16.5 (2.302) | -1.357 [-2.757, -0.065] | 0.337 | 0.187 | 0.747 |
+| F3 epithelial nuclear circularity, mean | 8 / 23 | 0.842 (0.010) | 0.843 (0.015) | -0.001 [-0.009, 0.008] | 0.435 | 0.611 | 1.000 |
+| F4 basal-layer crowding (epithelial nuclei within 20 um) | 8 / 23 | 6.573 (0.817) | 6.713 (1.064) | -0.140 [-0.841, 0.527] | 0.478 | 0.877 | 1.000 |
+| F5 peri-epithelial inflammatory nuclei per 100 epithelial nuclei | 8 / 23 | 31.7 (25.4) | 28.6 (15.3) | 3.050 [-12.2, 22.3] | 0.489 | 0.947 | 1.000 |
+
+### (b) progressor samples caught by both, descriptive (no tests)
+
+| Feature | Patients | (b) mean (SD) | Δ (b − c) [95% CI] | AUC (b > c) | Δ (b − a) [95% CI] |
+|---|---|---|---|---|---|
+| F1 epithelial nuclear area, mean (um^2) | 27 | 30.7 (2.409) | -0.385 [-1.798, 1.051] | 0.436 | 2.401 [0.740, 4.213] |
+| F2 epithelial nuclear area, SD (um^2) | 27 | 16.3 (1.588) | -0.187 [-1.311, 0.851] | 0.494 | 1.170 [0.063, 2.511] |
+| F3 epithelial nuclear circularity, mean | 27 | 0.843 (0.011) | -0.000 [-0.007, 0.007] | 0.452 | 0.000 [-0.008, 0.007] |
+| F4 basal-layer crowding (epithelial nuclei within 20 um) | 27 | 6.545 (0.994) | -0.168 [-0.769, 0.390] | 0.481 | -0.028 [-0.667, 0.617] |
+| F5 peri-epithelial inflammatory nuclei per 100 epithelial nuclei | 27 | 25.4 (13.6) | -3.232 [-11.2, 4.546] | 0.440 | -6.282 [-24.8, 9.051] |
+
+### Secondary, descriptive
+
+| Feature | 3-year (a) vs its matches: patients, Δ, unadjusted p | Sample-level means a / b / c | Matched sets: mean (a − matches), (a) above |
+|---|---|---|---|
+| F1 | 6 / 18, -2.395, 0.047 | 29.0 / 30.7 / 31.2 | -2.157, 5 of 13 |
+| F2 | 6 / 18, -1.331, 0.177 | 15.3 / 16.2 / 16.6 | -1.254, 6 of 13 |
+| F3 | 6 / 18, -0.001, 0.626 | 0.844 / 0.842 / 0.842 | 0.001, 5 of 13 |
+| F4 | 6 / 18, -0.107, 0.974 | 6.567 / 6.451 / 6.695 | -0.127, 4 of 13 |
+| F5 | 6 / 18, -4.389, 0.581 | 32.9 / 24.2 / 28.8 | 4.073, 7 of 13 |
+
+### Answers
+
+1. Nuclear area: the CNV-quiet newly caught patients had a smaller mean epithelial nuclear area than matched non-progressors (28.3 vs 31.0 µm², Δ −2.8 [−4.7, −1.0], AUC 0.22, p 0.020), but not after Holm (p 0.10); its SD did not differ (Δ −1.4 µm², Holm p 0.75). If anything the nuclei are smaller, not the enlarged nuclei that track aneuploidy (Abel 2024).
+2. Circularity: no difference (0.842 vs 0.843, Holm p 1.00).
+3. Basal-layer crowding: no difference (6.57 vs 6.71 epithelial nuclei within 20 µm, Holm p 1.00).
+4. Peri-epithelial inflammatory density: no difference and no consistent direction (31.7 vs 28.6 per 100 epithelial nuclei, Δ +3.1 [−12.2, +22.3], Holm p 1.00; one (a) patient at 86).
+5. Caught by both: close to the matched non-progressors on every feature (nuclear area 30.7 vs 31.0 µm², Δ −0.4 [−1.8, +1.1]) and above (a) in nuclear area (Δ +2.4 [+0.7, +4.2]); the small-nucleus tendency is confined to the CNV-quiet newly caught samples.
+6. No: PanNuke's inflammatory class pools lymphocytes, plasma cells, neutrophils and macrophages, so plasma-cell density was not measured.
+
+### Deviations from the pre-specification
+
+- Coordinate check applied to tissue tiles only (grey SD ≥ 10 on the saved tile), changed in commit de6f70b before any feature was computed. Under the pre-specified rule (all first 4 tiles r ≥ 0.95), 25 of 146 slides would have been excluded, but every tile below 0.95 was blank glass (grey SD about 2, no tissue), where the correlation is noise. On tissue tiles the minimum r was 0.967 and no slide was excluded.
+- Operational, no effect on outputs (every step writes per-slide outputs and skips finished slides): 4 extraction tasks hit the 1-hour limit on slow level-0 reads and were completed as cq3b; segmentation of the 13 slides extracted last was queued as cq4b/cq4c, orphaned when an h200 job was preempted and requeued under the same job id, and rerun on cuda only as cq4d.
+- Figure: the overlay shows a quarter of the tile, enlarged, so that contours are legible.
+
+**Figure.** `be_paper_figs/v3/16_F_cnvquiet_morphology.{pdf,png}`.
+**Caveats.** (1) (a) has 8 patients, so power is low; the nulls do not exclude moderate differences, and the nuclear-area result is unadjusted-only. (2) Grade was matched at class level (NDBE vs ID/LGD) as pre-specified; within the dysplastic class (a) is mostly LGD (5 LGD, 1 ID) and its matches mostly ID (14 ID, 4 LGD). (3) F4 and F5 are proxies: there is no Barrett's layer segmenter, PanNuke's inflammatory class is not lymphocyte-specific, and in the smoke overlays some lymphocyte-like stromal cells were called connective. (4) Only the 256 stored tiles per slide (about 10 mm²) were measured, i.e. what the image model saw, not all tissue; no stain normalisation (scanner matched exactly). (5) PanNuke's neoplastic/non-neoplastic split is uninformative here (52–53% of epithelial nuclei called neoplastic in every group). (6) Matched case–control cohort; results are descriptive and do not feed any predictor.
