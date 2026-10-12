@@ -1,0 +1,25 @@
+{
+ "prefixes": "sr0 smoke tiles, sr1 smoke embeddings, sr2 smoke validation, sr3 tiles, sr4 embeddings, sr5 index, sr6 refits, sr7 refit metrics",
+ "compute": "GPU use: 0.71 GPU-hours allocated (sr1 0.06, sr4 0.65; L40S; cap 30). CPU: about 7.2 job-hours, 6.6 of them reading tiles.",
+ "status": {
+  "1 Extractors and embeddings": "DONE. H0-mini was not accessible and is replaced by H-optimus-0, as pre-specified. Prov-GigaPath is included: coordinates equal on 683 of 683 slides. Smoke validation passed (cosine 1.000).",
+  "2 Robustness index (primary)": "DONE",
+  "3 Decision rule": "DONE: switch to H-optimus-0. Both criteria are met, narrowly.",
+  "Secondary S1–S7": "DONE",
+  "4 Downstream run (H-optimus-0)": "DONE. D0 reproduction passed (max difference 0)."
+ },
+ "1": "**Barely: UNI2-h's neighbourhoods are organised by scanner far more than by patient.**\n   - R_10 is 0.077 [0.034, 0.132], against a chance level of 0.040.\n   - Among the 10 nearest neighbours of the 283 samples, 1,538 are other patients on the same scanner and 128 are the same patient on the other scanner.",
+ "2": "**H-optimus-0 meets the rule, only just; Virchow2 does not. Decision: switch to H-optimus-0, which triggered the one downstream run.**\n   - H-optimus-0: R_10 0.097 [0.041, 0.168]; ΔR +0.020 [+0.001, +0.040]; 1.26 × UNI2-h, against a threshold of 1.25.\n   - Virchow2: R_10 0.068; ΔR −0.009 [−0.024, +0.004].\n   - Prov-GigaPath (reference): R_10 0.028, below chance.",
+ "3": "**The direction holds; the size is not robust.**\n   - H-optimus-0 is above UNI2-h at every k from 1 to 50 and in all five secondary forms.\n   - Its CI excludes 0 only with all 676 samples as neighbours (+0.026) and in the de Jong form (+0.037). It includes 0 with z-scored features, at tile level and with other-endoscopy neighbours only.\n   - Virchow2 is below UNI2-h at 48 of 50 k values and in 4 of 5 secondary forms.",
+ "4": "**No.** The scanner probe AUROC is 1.000 for UNI2-h, Virchow2 and H-optimus-0, and 0.9995 for Prov-GigaPath.",
+ "5": "**No gain from switching: H-optimus-0 is worse for histology alone and transfers worse between scanners.**\n   - L-IMG: 0.805 vs 0.847 (Δ −0.042 [−0.082, −0.010]) on all pre-event samples; NDBE pre-event samples −0.043 [−0.101, +0.002].\n   - L-LATE (their matrix): 0.870 vs 0.889 (Δ −0.019 [−0.040, +0.001]); package features −0.013 [−0.029, +0.001].\n   - Cross-scanner (C13239-01 → C13210): 0.676 [0.516, 0.827] vs 0.726. Within C13239-01: 0.779 vs 0.841.\n   - The score shift on C13210 changes direction rather than going away: 0% / 91% / 9% low / middle / high, against 50% / 30% / 21% with UNI2-h.\n   - The small neighbourhood-robustness gain did not carry over to accuracy or transfer. Keeping UNI2-h is the decision to confirm with Rehan.",
+ "deviations": [
+  "H0-mini, the README's main candidate, was not used. `bioptimus/H0-mini` is gated and the cached token was refused (HTTP 403) on 2026-10-12. H-optimus-0, its teacher and the next-ranked cached model in PathoROB, replaced it. This was stated in the pre-specification before any embedding was computed.",
+  "Dual-scanner patients: 25 patients and 283 samples across all 676 samples. Earlier documents give 23 because they count pre-event samples only.",
+  "The decision rule was met by a narrow margin: ratio 1.264 against the 1.25 threshold, and a CI lower bound of +0.0009. The pre-specified downstream run followed, and its result points the other way (answer 5). Under the pre-specification a switch is a recommendation subject to Rehan's decision; the frozen bundles in `models/` were not changed.",
+  "Every index is close to chance (chance R_10 0.040), because a pool of 283 samples offers few same-patient, other-scanner candidates per query (about 5). The index ranks extractors on identical data; its absolute values are not comparable with PathoROB's balanced datasets.",
+  "Tiles are about 0.88 µm/px (level 2), while Virchow2 and H-optimus-0 were trained at about 0.5 µm/px. This matches the stored UNI2-h pipeline and applies to every extractor.",
+  "Found in passing, not part of this analysis: `coords_level` in the stored npz files are tile centres. `scripts/paper_plan/pp_montage.py` and `scripts/task_conch_swg.py` read them as top-left corners, so their tiles are offset by half a tile (112 px at level 2).",
+  "The run was split into a smoke batch (sr0–sr2) and main batches (sr3–sr7). The smoke tiles and embeddings are part of the results."
+ ]
+}

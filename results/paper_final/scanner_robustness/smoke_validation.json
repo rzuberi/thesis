@@ -1,0 +1,40 @@
+{
+ "prespec": "abe96e9",
+ "slides": [
+  {
+   "cos_median": 1.0,
+   "cos_min": 1.0,
+   "n": 256
+  },
+  {
+   "cos_median": 1.0,
+   "cos_min": 1.0,
+   "n": 256
+  }
+ ],
+ "shapes": {
+  "virchow2": [
+   [
+    256,
+    2560
+   ],
+   [
+    256,
+    2560
+   ]
+  ],
+  "hoptimus0": [
+   [
+    256,
+    1536
+   ],
+   [
+    256,
+    1536
+   ]
+  ]
+ },
+ "cos_median": 1.0,
+ "cos_min": 1.0,
+ "passed": true
+}

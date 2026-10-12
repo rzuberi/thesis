@@ -1,0 +1,216 @@
+{
+ "prespec": "abe96e9",
+ "extractor": "H-optimus-0",
+ "D0_repro_max_abs_diff": 0.0,
+ "D0_folds_equal": true,
+ "D0_passed": true,
+ "D1_folds_equal_stored": true,
+ "D1": {
+  "all pre-event": {
+   "n_samples": 571,
+   "n_patients": 75,
+   "arms": {
+    "L-IMG UNI2-h": {
+     "auroc": 0.847,
+     "ci95": [
+      0.798,
+      0.894
+     ]
+    },
+    "L-IMG H-optimus-0": {
+     "auroc": 0.805,
+     "ci95": [
+      0.744,
+      0.859
+     ]
+    },
+    "L-LATE their UNI2-h": {
+     "auroc": 0.889,
+     "ci95": [
+      0.83,
+      0.934
+     ]
+    },
+    "L-LATE their H-optimus-0": {
+     "auroc": 0.87,
+     "ci95": [
+      0.807,
+      0.922
+     ]
+    },
+    "L-LATE package UNI2-h": {
+     "auroc": 0.903,
+     "ci95": [
+      0.856,
+      0.944
+     ]
+    },
+    "L-LATE package H-optimus-0": {
+     "auroc": 0.89,
+     "ci95": [
+      0.837,
+      0.934
+     ]
+    }
+   },
+   "delta": {
+    "L-IMG": {
+     "delta": -0.042,
+     "ci95": [
+      -0.082,
+      -0.01
+     ],
+     "p_two_sided": 0.009
+    },
+    "L-LATE their": {
+     "delta": -0.019,
+     "ci95": [
+      -0.04,
+      0.001
+     ],
+     "p_two_sided": 0.06
+    },
+    "L-LATE package": {
+     "delta": -0.013,
+     "ci95": [
+      -0.029,
+      0.001
+     ],
+     "p_two_sided": 0.076
+    }
+   }
+  },
+  "NDBE pre-event": {
+   "n_samples": 438,
+   "n_patients": 71,
+   "arms": {
+    "L-IMG UNI2-h": {
+     "auroc": 0.827,
+     "ci95": [
+      0.768,
+      0.883
+     ]
+    },
+    "L-IMG H-optimus-0": {
+     "auroc": 0.784,
+     "ci95": [
+      0.71,
+      0.851
+     ]
+    },
+    "L-LATE their UNI2-h": {
+     "auroc": 0.867,
+     "ci95": [
+      0.794,
+      0.931
+     ]
+    },
+    "L-LATE their H-optimus-0": {
+     "auroc": 0.85,
+     "ci95": [
+      0.771,
+      0.917
+     ]
+    },
+    "L-LATE package UNI2-h": {
+     "auroc": 0.879,
+     "ci95": [
+      0.818,
+      0.935
+     ]
+    },
+    "L-LATE package H-optimus-0": {
+     "auroc": 0.866,
+     "ci95": [
+      0.798,
+      0.929
+     ]
+    }
+   },
+   "delta": {
+    "L-IMG": {
+     "delta": -0.043,
+     "ci95": [
+      -0.101,
+      0.002
+     ],
+     "p_two_sided": 0.064
+    },
+    "L-LATE their": {
+     "delta": -0.017,
+     "ci95": [
+      -0.046,
+      0.006
+     ],
+     "p_two_sided": 0.154
+    },
+    "L-LATE package": {
+     "delta": -0.013,
+     "ci95": [
+      -0.031,
+      0.004
+     ],
+     "p_two_sided": 0.141
+    }
+   }
+  }
+ },
+ "D2": {
+  "within_s39": {
+   "auroc_fold_stratified": 0.779,
+   "ci95": [
+    0.71,
+    0.839
+   ],
+   "n_samples": 432,
+   "n_patients": 71,
+   "reference_uni2": 0.841
+  },
+  "cross_b_s39_to_s10": {
+   "auroc": 0.676,
+   "ci95": [
+    0.516,
+    0.827
+   ],
+   "n_test": 139,
+   "n_test_patients": 27,
+   "n_train_patients": 48,
+   "bands_test_scanner": {
+    "low": 0.0,
+    "mid": 0.914,
+    "high": 0.086
+   },
+   "bands_training_scanner_inner_oof": {
+    "low": 0.135,
+    "mid": 0.67,
+    "high": 0.196
+   },
+   "reference_uni2": {
+    "auroc": 0.726,
+    "bands_test": "50% / 30% / 21%",
+    "bands_train_inner": "18% / 61% / 20%"
+   }
+  }
+ },
+ "lines": [
+  "D0: `sr_cv.R` with the UNI2-h matrix reproduces stored `cfg_02_rep_01` predictions: max |difference| 0.0e+00, folds equal: yes (passed).",
+  "",
+  "**D1. Fold-stratified per-sample AUROC, stratified patient-grouped 10-fold \u00d7 10 CV (stored folds), H-optimus-0 vs UNI2-h.**",
+  "",
+  "| Population | Arm | UNI2-h [95% CI] | H-optimus-0 [95% CI] | \u0394 [95% CI] | p (two-sided) |",
+  "|---|---|---|---|---|---|",
+  "| all pre-event (571 samples, 75 patients) | L-IMG | 0.847 [0.798, 0.894] | 0.805 [0.744, 0.859] | -0.042 [-0.082, -0.010] | 0.009 |",
+  "| all pre-event (571 samples, 75 patients) | L-LATE their | 0.889 [0.830, 0.934] | 0.870 [0.807, 0.922] | -0.019 [-0.040, +0.001] | 0.06 |",
+  "| all pre-event (571 samples, 75 patients) | L-LATE package | 0.903 [0.856, 0.944] | 0.890 [0.837, 0.934] | -0.013 [-0.029, +0.001] | 0.076 |",
+  "| NDBE pre-event (438 samples, 71 patients) | L-IMG | 0.827 [0.768, 0.883] | 0.784 [0.710, 0.851] | -0.043 [-0.101, +0.002] | 0.064 |",
+  "| NDBE pre-event (438 samples, 71 patients) | L-LATE their | 0.867 [0.794, 0.931] | 0.850 [0.771, 0.917] | -0.017 [-0.046, +0.006] | 0.154 |",
+  "| NDBE pre-event (438 samples, 71 patients) | L-LATE package | 0.879 [0.818, 0.935] | 0.866 [0.798, 0.929] | -0.013 [-0.031, +0.004] | 0.141 |",
+  "",
+  "**D2. Scanner transfer with H-optimus-0** (L-IMG refitted; pre-event samples).",
+  "",
+  "| Design | AUROC [95% CI] | UNI2-h reference | Test bands low / middle / high (training-scanner inner OOF) |",
+  "|---|---|---|---|",
+  "| Within C13239-01, fold-stratified, 432 samples, 71 patients | 0.779 [0.710, 0.839] | 0.841 | \u2014 |",
+  "| (b) C13239-01 \u2192 C13210, 139 test samples, 27 patients; 48 training patients | 0.676 [0.516, 0.827] | 0.726; bands 50% / 30% / 21% (18% / 61% / 20%) | 0% / 91% / 9% (14% / 67% / 20%) |"
+ ]
+}
