@@ -1,5 +1,5 @@
 """CONCH zero-shot on the SWG Barrett's (histology + CNV) release: all 707 release slides, the 256 stored tiles per
-slide (coords in level-2 pixel space, 224 px), Barrett's prompt ensemble -> per-tile class probabilities.
+slide (coords_level = tile centres in level-2 pixel space, 224 px), Barrett's prompt ensemble -> per-tile class probabilities.
 Readouts: (i) grade vs the release PATHOLOGIST label (LGD+ = Label >= 2; HGD+ = Label >= 3) — the human image anchor;
 (ii) zero-shot IMAGE arm for progression (release endpoint y_progressor, sample and patient level) vs trained
 image_only 0.739 (sample) / 0.731 (patient). Writes per-slide scores for later fusion with CNV. Env: OUTDIR."""
@@ -33,8 +33,8 @@ for r in coh.itertuples():
     if sid in done or sid not in npz_of: continue
     try:
         z = np.load(npz_of[sid], allow_pickle=True); coords = np.asarray(z["coords_level"]); lvl = int(z["level"]); ts = int(z["tile_size"]); path = os.path.join(SL, os.path.basename(str(z["slide_path"])))
-        sl = openslide.OpenSlide(path); ds = sl.level_downsamples[lvl]
-        imgs = [preprocess(sl.read_region((int(x * ds), int(y * ds)), lvl, (ts, ts)).convert("RGB")) for x, y in coords]
+        sl = openslide.OpenSlide(path); ds = sl.level_downsamples[lvl]; tl = np.clip(coords - ts // 2, 0, np.array(sl.level_dimensions[lvl]) - ts)   # coords_level are tile centres
+        imgs = [preprocess(sl.read_region((int(x * ds), int(y * ds)), lvl, (ts, ts)).convert("RGB")) for x, y in tl]
         P = []
         with torch.inference_mode():
             for i in range(0, len(imgs), 128):
