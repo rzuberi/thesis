@@ -1,0 +1,120 @@
+{
+ "item": "R13",
+ "spec": "docs/paper_review_round1_analyses.md @ baa47ab",
+ "population": "pre-event samples",
+ "smoke": false,
+ "n_samples": 571,
+ "n_patients": 75,
+ "n_progressor_samples": 161,
+ "n_progressor_patients": 32,
+ "auroc_type": "fold-stratified per-sample (pairs within the same outer fold of a repeat, mean over repeats)",
+ "bootstrap": {
+  "draws": 2000,
+  "seed": "RandomState(0)",
+  "unit": "patient",
+  "redraw_if_one_class": true,
+  "folds_kept": true,
+  "predictions_fixed": true
+ },
+ "auroc": {
+  "N-IMG": {
+   "value": 0.778,
+   "ci95": [
+    0.714,
+    0.839
+   ]
+  },
+  "N-LATE": {
+   "value": 0.848,
+   "ci95": [
+    0.78,
+    0.904
+   ]
+  },
+  "L-IMG": {
+   "value": 0.847,
+   "ci95": [
+    0.798,
+    0.894
+   ]
+  },
+  "L-LATE": {
+   "value": 0.889,
+   "ci95": [
+    0.83,
+    0.934
+   ]
+  },
+  "L-CNV": {
+   "value": 0.801,
+   "ci95": [
+    0.71,
+    0.875
+   ]
+  }
+ },
+ "paired": {
+  "N-IMG - L-IMG": {
+   "delta": -0.069,
+   "ci95": [
+    -0.11,
+    -0.031
+   ],
+   "p_bootstrap_unadjusted": 0.0
+  },
+  "N-LATE - L-LATE": {
+   "delta": -0.041,
+   "ci95": [
+    -0.066,
+    -0.018
+   ],
+   "p_bootstrap_unadjusted": 0.0
+  }
+ },
+ "auroc_by_repeat_range": {
+  "N-IMG": [
+   0.73,
+   0.803
+  ],
+  "N-LATE": [
+   0.808,
+   0.891
+  ],
+  "L-IMG": [
+   0.823,
+   0.862
+  ],
+  "L-LATE": [
+   0.861,
+   0.915
+  ],
+  "L-CNV": [
+   0.773,
+   0.876
+  ]
+ },
+ "training": {
+  "fold_fits": 100,
+  "seed": "= repeat",
+  "device": "cpu (as the stored km_neural.py runs)",
+  "best_epoch_mean": 7.23,
+  "best_epoch_range": [
+   3,
+   16
+  ],
+  "epochs_run_mean": 12.22,
+  "n_train_range": [
+   443,
+   519
+  ],
+  "val_patients_range": [
+   15,
+   15
+  ],
+  "val_progressor_patients_range": [
+   6,
+   10
+  ],
+  "fits_with_no_progressor_in_validation": 0
+ }
+}

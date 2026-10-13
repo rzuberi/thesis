@@ -41,8 +41,10 @@ r10 = J("r10")["R10"]; L += ["### R10. Harrell's C without within-patient pairs"
 r11 = J("r11")["R11"]; L += ["### R11. Proportional hazards (Schoenfeld, rank transform)", "", "; ".join(f"{m}: moderate p {v['p_moderate']}, high p {v['p_high']}" for m, v in r11.items()) + ".", ""]
 r12 = J("r12")["R12"]; L += ["### R12. Band predictive values", "", "| Prevalence | PPV high band | NPV low band | Progressor share in middle band |", "|---|---|---|---|"] + [f"| {f3(v['prevalence'])} | {f3(v['PPV_high_band']['value'])}{ci(v['PPV_high_band']['ci95'])} | {f3(v['NPV_low_band']['value'])}{ci(v['NPV_low_band']['ci95'])} | {f3(v['progressor_share_middle_band']['value'])}{ci(v['progressor_share_middle_band']['ci95'])} |" for v in r12.values()] + [""]
 if r13:
-    x = J("r13_abmil"); L += ["### R13. Attention MIL under 10 × 10 CV", "", "```", json.dumps(x, indent=1)[:3000], "```", ""]
+    x = J("r13_abmil"); a = x["auroc"]; pr = x["paired"]
+    L += ["### R13. Attention MIL under 10 × 10 CV (fold-stratified, all pre-event samples)", "", "| Model | AUROC [95% CI] |", "|---|---|"] + [f"| {m} | {f3(v['value'])}{ci(v['ci95'])} |" for m, v in a.items()]
+    L += ["", "; ".join(f"{k}: {sg(v['delta'])}{cis(v['ci95'])} (p {v['p_bootstrap_unadjusted']})" for k, v in pr.items()) + ". Trained on CPU (as the stored leave-one-patient-out N-IMG runs); 0 GPU-hours. Validation group chosen as in `km_neural.py` (seed-1 shuffle of training patients, group 1 held out).", ""]
 else:
     L += ["### R13. Attention MIL under 10 × 10 CV", "", "Pending (running separately; appended when complete).", ""]
-L += ["### Deviations", "", "- None in method for R1–R12. R13 is rendered separately when its run completes.", ""]
+L += ["### Deviations", "", "- None in method. R13 was trained on CPU rather than GPU (matching the stored leave-one-patient-out runs); this does not change the analysis.", ""]
 open(DOC, "w").write(head + "\n".join(L) + "\n"); print("rendered")
