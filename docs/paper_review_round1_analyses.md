@@ -135,7 +135,7 @@ The manuscript dismissed attention MIL on leave-one-patient-out results. Here:
 
 ## Results
 
-Pre-specification commit baa47ab; results commit 87fe74a. Script `scripts/paper_plan/rv_round1.py` (Slurm via `scripts/cluster/campaign.sh`, prefix rv; R13 prefix rva), `rv_render.py`. Aggregates `results/paper_final/review_round1/`.
+Pre-specification commit baa47ab; results commit 2dd9535. Script `scripts/paper_plan/rv_round1.py` (Slurm via `scripts/cluster/campaign.sh`, prefix rv; R13 prefix rva), `rv_render.py`. Aggregates `results/paper_final/review_round1/`.
 
 ### Status
 
@@ -153,7 +153,7 @@ Pre-specification commit baa47ab; results commit 87fe74a. Script `scripts/paper_
 | R10 C-index without within-patient pairs | DONE |
 | R11 proportional hazards | DONE |
 | R12 band predictive values | DONE |
-| R13 attention MIL under 10 × 10 CV | PENDING |
+| R13 attention MIL under 10 × 10 CV | DONE |
 
 ### R1. Matched specificity (fold-honest; secondary test-set matching in the last column)
 
@@ -263,11 +263,19 @@ P: moderate p 0.1, high p 0.333; L-CNV: moderate p 0.908, high p 0.532; L-LATE: 
 | 0.100 | 0.395 [0.314, 0.484] | 0.982 [0.972, 0.991] | 0.075 [0.056, 0.093] |
 | 0.282 | 0.697 [0.618, 0.768] | 0.940 [0.907, 0.969] | 0.222 [0.174, 0.265] |
 
-### R13. Attention MIL under 10 × 10 CV
+### R13. Attention MIL under 10 × 10 CV (fold-stratified, all pre-event samples)
 
-Pending (running separately; appended when complete).
+| Model | AUROC [95% CI] |
+|---|---|
+| N-IMG | 0.778 [0.714, 0.839] |
+| N-LATE | 0.848 [0.780, 0.904] |
+| L-IMG | 0.847 [0.798, 0.894] |
+| L-LATE | 0.889 [0.830, 0.934] |
+| L-CNV | 0.801 [0.710, 0.875] |
+
+N-IMG - L-IMG: -0.069 [-0.110, -0.031] (p 0.0); N-LATE - L-LATE: -0.041 [-0.066, -0.018] (p 0.0). Trained on CPU (as the stored leave-one-patient-out N-IMG runs); 0 GPU-hours. Validation group chosen as in `km_neural.py` (seed-1 shuffle of training patients, group 1 held out).
 
 ### Deviations
 
-- None in method for R1–R12. R13 is rendered separately when its run completes.
+- None in method. R13 was trained on CPU rather than GPU (matching the stored leave-one-patient-out runs); this does not change the analysis.
 
