@@ -1,0 +1,147 @@
+{
+ "task": "r1_pkg_pre",
+ "src": "pkg",
+ "pop": "pre",
+ "n_samples": 571,
+ "R1": {
+  "training_specificity_target": {
+   "median": 0.666,
+   "range": [
+    0.427,
+    0.801
+   ]
+  },
+  "triage": {
+   "sensitivity": 0.863,
+   "specificity": 0.763
+  },
+  "matched": {
+   "A*": {
+    "model": "L-CNV",
+    "sensitivity": 0.795,
+    "sens_ci95": [
+     0.698,
+     0.881
+    ],
+    "specificity": 0.727,
+    "spec_ci95": [
+     0.597,
+     0.831
+    ],
+    "d_sens_triage_minus": {
+     "delta": 0.068,
+     "ci95": [
+      -0.018,
+      0.165
+     ],
+     "p_two_sided": 0.145
+    },
+    "d_spec_triage_minus": {
+     "delta": 0.037,
+     "ci95": [
+      -0.043,
+      0.132
+     ],
+     "p_two_sided": 0.445
+    }
+   },
+   "B*": {
+    "model": "L-LATE",
+    "sensitivity": 0.882,
+    "sens_ci95": [
+     0.799,
+     0.953
+    ],
+    "specificity": 0.729,
+    "spec_ci95": [
+     0.627,
+     0.813
+    ],
+    "d_sens_triage_minus": {
+     "delta": -0.019,
+     "ci95": [
+      -0.046,
+      0.0
+     ],
+     "p_two_sided": 0.283
+    },
+    "d_spec_triage_minus": {
+     "delta": 0.034,
+     "ci95": [
+      -0.01,
+      0.087
+     ],
+     "p_two_sided": 0.166
+    }
+   },
+   "C*": {
+    "model": "L-IMG",
+    "sensitivity": 0.77,
+    "sens_ci95": [
+     0.678,
+     0.864
+    ],
+    "specificity": 0.78,
+    "spec_ci95": [
+     0.725,
+     0.831
+    ],
+    "d_sens_triage_minus": {
+     "delta": 0.093,
+     "ci95": [
+      0.035,
+      0.16
+     ],
+     "p_two_sided": 0.001
+    },
+    "d_spec_triage_minus": {
+     "delta": -0.017,
+     "ci95": [
+      -0.077,
+      0.035
+     ],
+     "p_two_sided": 0.577
+    }
+   }
+  },
+  "secondary_test_set_matching": {
+   "A*": {
+    "sensitivity_at_triage_specificity": 0.764,
+    "realised_specificity": 0.763,
+    "d_sens_triage_minus": {
+     "delta": 0.099,
+     "ci95": [
+      -0.048,
+      0.264
+     ],
+     "p_two_sided": 0.192
+    }
+   },
+   "B*": {
+    "sensitivity_at_triage_specificity": 0.857,
+    "realised_specificity": 0.763,
+    "d_sens_triage_minus": {
+     "delta": 0.006,
+     "ci95": [
+      -0.042,
+      0.045
+     ],
+     "p_two_sided": 1.0
+    }
+   },
+   "C*": {
+    "sensitivity_at_triage_specificity": 0.77,
+    "realised_specificity": 0.763,
+    "d_sens_triage_minus": {
+     "delta": 0.093,
+     "ci95": [
+      0.006,
+      0.172
+     ],
+     "p_two_sided": 0.048
+    }
+   }
+  }
+ },
+ "prespec": "baa47ab"
+}

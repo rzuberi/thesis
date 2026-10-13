@@ -1,0 +1,43 @@
+{
+ "task": "r10",
+ "R10": {
+  "L-CNV": {
+   "harrell_excl_within_patient": 0.778,
+   "ci95": [
+    0.704,
+    0.854
+   ]
+  },
+  "L-LATE": {
+   "harrell_excl_within_patient": 0.83,
+   "ci95": [
+    0.772,
+    0.881
+   ]
+  },
+  "P": {
+   "harrell_excl_within_patient": 0.802,
+   "ci95": [
+    0.715,
+    0.881
+   ]
+  },
+  "L-LATE_minus_L-CNV": {
+   "delta": 0.052,
+   "ci95": [
+    0.001,
+    0.111
+   ],
+   "p_two_sided": 0.041
+  },
+  "L-LATE_minus_P": {
+   "delta": 0.028,
+   "ci95": [
+    -0.028,
+    0.097
+   ],
+   "p_two_sided": 0.376
+  }
+ },
+ "prespec": "baa47ab"
+}

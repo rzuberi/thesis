@@ -1,0 +1,202 @@
+{
+ "task": "r8",
+ "R8": {
+  "their": {
+   "triage_LATE": {
+    "sensitivity_mean": 0.865,
+    "sensitivity_range": [
+     0.832,
+     0.901
+    ],
+    "specificity_mean": 0.697,
+    "specificity_range": [
+     0.622,
+     0.744
+    ],
+    "patients_missed_mean": 0.9,
+    "patients_missed_range": [
+     0,
+     3
+    ],
+    "nonprog_patients_fp_mean": 32.0,
+    "nonprog_patients_fp_range": [
+     30,
+     33
+    ]
+   },
+   "A": {
+    "sensitivity_mean": 0.801,
+    "sensitivity_range": [
+     0.745,
+     0.845
+    ],
+    "specificity_mean": 0.56,
+    "specificity_range": [
+     0.488,
+     0.639
+    ],
+    "patients_missed_mean": 2.6,
+    "patients_missed_range": [
+     2,
+     3
+    ],
+    "nonprog_patients_fp_mean": 30.2,
+    "nonprog_patients_fp_range": [
+     29,
+     34
+    ]
+   },
+   "B": {
+    "sensitivity_mean": 0.832,
+    "sensitivity_range": [
+     0.801,
+     0.863
+    ],
+    "specificity_mean": 0.762,
+    "specificity_range": [
+     0.724,
+     0.795
+    ],
+    "patients_missed_mean": 1.3,
+    "patients_missed_range": [
+     0,
+     2
+    ],
+    "nonprog_patients_fp_mean": 28.5,
+    "nonprog_patients_fp_range": [
+     27,
+     32
+    ]
+   },
+   "C": {
+    "sensitivity_mean": 0.795,
+    "sensitivity_range": [
+     0.758,
+     0.832
+    ],
+    "specificity_mean": 0.719,
+    "specificity_range": [
+     0.688,
+     0.746
+    ],
+    "patients_missed_mean": 0.9,
+    "patients_missed_range": [
+     0,
+     2
+    ],
+    "nonprog_patients_fp_mean": 35.0,
+    "nonprog_patients_fp_range": [
+     31,
+     37
+    ]
+   },
+   "share_sequenced_per_repeat": {
+    "mean": 0.458,
+    "range": [
+     0.406,
+     0.559
+    ]
+   },
+   "share_middle_band_in_at_least_one_repeat": 0.76
+  },
+  "pkg": {
+   "triage_LATE": {
+    "sensitivity_mean": 0.865,
+    "sensitivity_range": [
+     0.826,
+     0.907
+    ],
+    "specificity_mean": 0.737,
+    "specificity_range": [
+     0.69,
+     0.776
+    ],
+    "patients_missed_mean": 0.9,
+    "patients_missed_range": [
+     0,
+     2
+    ],
+    "nonprog_patients_fp_mean": 33.0,
+    "nonprog_patients_fp_range": [
+     32,
+     36
+    ]
+   },
+   "A": {
+    "sensitivity_mean": 0.812,
+    "sensitivity_range": [
+     0.727,
+     0.907
+    ],
+    "specificity_mean": 0.683,
+    "specificity_range": [
+     0.646,
+     0.741
+    ],
+    "patients_missed_mean": 1.4,
+    "patients_missed_range": [
+     0,
+     3
+    ],
+    "nonprog_patients_fp_mean": 28.1,
+    "nonprog_patients_fp_range": [
+     22,
+     32
+    ]
+   },
+   "B": {
+    "sensitivity_mean": 0.827,
+    "sensitivity_range": [
+     0.795,
+     0.888
+    ],
+    "specificity_mean": 0.793,
+    "specificity_range": [
+     0.766,
+     0.829
+    ],
+    "patients_missed_mean": 1.0,
+    "patients_missed_range": [
+     0,
+     2
+    ],
+    "nonprog_patients_fp_mean": 28.1,
+    "nonprog_patients_fp_range": [
+     24,
+     32
+    ]
+   },
+   "C": {
+    "sensitivity_mean": 0.795,
+    "sensitivity_range": [
+     0.758,
+     0.832
+    ],
+    "specificity_mean": 0.719,
+    "specificity_range": [
+     0.688,
+     0.746
+    ],
+    "patients_missed_mean": 0.9,
+    "patients_missed_range": [
+     0,
+     2
+    ],
+    "nonprog_patients_fp_mean": 35.0,
+    "nonprog_patients_fp_range": [
+     31,
+     37
+    ]
+   },
+   "share_sequenced_per_repeat": {
+    "mean": 0.458,
+    "range": [
+     0.406,
+     0.559
+    ]
+   },
+   "share_middle_band_in_at_least_one_repeat": 0.76
+  }
+ },
+ "prespec": "baa47ab"
+}

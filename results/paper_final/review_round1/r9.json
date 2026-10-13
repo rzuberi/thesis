@@ -1,0 +1,52 @@
+{
+ "task": "r9",
+ "R9": {
+  "their": {
+   "progressor_samples": {
+    "spearman": 0.163,
+    "ci95": [
+     -0.048,
+     0.39
+    ]
+   },
+   "nonprogressor_samples": {
+    "spearman": 0.202,
+    "ci95": [
+     0.059,
+     0.337
+    ]
+   },
+   "all": {
+    "spearman": 0.381,
+    "ci95": [
+     0.248,
+     0.5
+    ]
+   }
+  },
+  "pkg": {
+   "progressor_samples": {
+    "spearman": 0.224,
+    "ci95": [
+     0.014,
+     0.432
+    ]
+   },
+   "nonprogressor_samples": {
+    "spearman": 0.071,
+    "ci95": [
+     -0.09,
+     0.221
+    ]
+   },
+   "all": {
+    "spearman": 0.369,
+    "ci95": [
+     0.231,
+     0.497
+    ]
+   }
+  }
+ },
+ "prespec": "baa47ab"
+}

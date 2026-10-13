@@ -1,0 +1,67 @@
+{
+ "task": "r6",
+ "R6": {
+  "time_to_event_progressor_samples": {
+   "median": 2.5,
+   "iqr": [
+    1.5,
+    5.0
+   ],
+   "n_le_0.5y": 15,
+   "patients_le_0.5y": 7,
+   "n_le_1y": 29,
+   "patients_le_1y": 14
+  },
+  "excluding_progressor_samples_within_1y": {
+   "n_samples": 542,
+   "n_progressor_samples": 132,
+   "n_patients": 72,
+   "auroc": {
+    "L-CNV": {
+     "value": 0.785,
+     "ci95": [
+      0.688,
+      0.867
+     ]
+    },
+    "L-IMG": {
+     "value": 0.842,
+     "ci95": [
+      0.79,
+      0.892
+     ]
+    },
+    "L-LATE": {
+     "value": 0.873,
+     "ci95": [
+      0.802,
+      0.927
+     ]
+    },
+    "P": {
+     "value": 0.804,
+     "ci95": [
+      0.681,
+      0.905
+     ]
+    }
+   },
+   "IMG_minus_CNV": {
+    "delta": 0.057,
+    "ci95": [
+     -0.021,
+     0.151
+    ],
+    "one_sided_95_lower": -0.01,
+    "non_inferior_at_-0.05": true
+   },
+   "sensitivity_stored_calls": {
+    "triage_LATE": 0.841,
+    "A": 0.765,
+    "B": 0.765,
+    "C": 0.78
+   }
+  }
+ },
+ "prespec": "baa47ab"
+}

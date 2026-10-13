@@ -1,0 +1,21 @@
+{
+ "task": "r11",
+ "R11": {
+  "P": {
+   "p_moderate": 0.1,
+   "p_high": 0.333,
+   "note": "Efron ties, non-robust fit for the test; rank time transform"
+  },
+  "L-CNV": {
+   "p_moderate": 0.908,
+   "p_high": 0.532,
+   "note": "Efron ties, non-robust fit for the test; rank time transform"
+  },
+  "L-LATE": {
+   "p_moderate": 0.187,
+   "p_high": 0.08,
+   "note": "Efron ties, non-robust fit for the test; rank time transform"
+  }
+ },
+ "prespec": "baa47ab"
+}

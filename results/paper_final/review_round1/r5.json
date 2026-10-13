@@ -1,0 +1,72 @@
+{
+ "task": "r5",
+ "R5": {
+  "a_auroc_year": {
+   "value": 0.572,
+   "ci95": [
+    0.457,
+    0.691
+   ]
+  },
+  "a_auroc_tissue_tiles": {
+   "value": 0.561,
+   "ci95": [
+    0.473,
+    0.633
+   ]
+  },
+  "b_LIMG_overlap_lt256": {
+   "n_samples": 293,
+   "value": 0.905,
+   "ci95": [
+    0.846,
+    0.946
+   ]
+  },
+  "b_LIMG_no_overlap_ge256": {
+   "n_samples": 278,
+   "value": 0.799,
+   "ci95": [
+    0.733,
+    0.861
+   ]
+  },
+  "c_spearman_LIMG_year_progressor": {
+   "value": 0.171,
+   "ci95": [
+    -0.087,
+    0.385
+   ]
+  },
+  "c_spearman_LIMG_year_nonprogressor": {
+   "value": -0.15,
+   "ci95": [
+    -0.278,
+    -0.021
+   ]
+  },
+  "c_spearman_LIMG_log_tiles_progressor": {
+   "value": -0.308,
+   "ci95": [
+    -0.489,
+    -0.101
+   ]
+  },
+  "c_spearman_LIMG_log_tiles_nonprogressor": {
+   "value": 0.148,
+   "ci95": [
+    0.045,
+    0.25
+   ]
+  },
+  "d_LIMG_residualised": {
+   "value": 0.831,
+   "ci95": [
+    0.774,
+    0.887
+   ],
+   "unadjusted": 0.847
+  }
+ },
+ "prespec": "baa47ab"
+}

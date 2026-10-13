@@ -1,0 +1,102 @@
+{
+ "task": "r12",
+ "R12": {
+  "0.02": {
+   "prevalence": 0.02,
+   "PPV_high_band": {
+    "value": 0.107,
+    "ci95": [
+     0.077,
+     0.147
+    ]
+   },
+   "NPV_low_band": {
+    "value": 0.997,
+    "ci95": [
+     0.995,
+     0.998
+    ]
+   },
+   "progressor_share_middle_band": {
+    "value": 0.015,
+    "ci95": [
+     0.011,
+     0.018
+    ]
+   }
+  },
+  "0.05": {
+   "prevalence": 0.05,
+   "PPV_high_band": {
+    "value": 0.236,
+    "ci95": [
+     0.178,
+     0.308
+    ]
+   },
+   "NPV_low_band": {
+    "value": 0.992,
+    "ci95": [
+     0.986,
+     0.996
+    ]
+   },
+   "progressor_share_middle_band": {
+    "value": 0.037,
+    "ci95": [
+     0.027,
+     0.046
+    ]
+   }
+  },
+  "0.10": {
+   "prevalence": 0.1,
+   "PPV_high_band": {
+    "value": 0.395,
+    "ci95": [
+     0.314,
+     0.484
+    ]
+   },
+   "NPV_low_band": {
+    "value": 0.982,
+    "ci95": [
+     0.972,
+     0.991
+    ]
+   },
+   "progressor_share_middle_band": {
+    "value": 0.075,
+    "ci95": [
+     0.056,
+     0.093
+    ]
+   }
+  },
+  "observed": {
+   "prevalence": 0.282,
+   "PPV_high_band": {
+    "value": 0.697,
+    "ci95": [
+     0.618,
+     0.768
+    ]
+   },
+   "NPV_low_band": {
+    "value": 0.94,
+    "ci95": [
+     0.907,
+     0.969
+    ]
+   },
+   "progressor_share_middle_band": {
+    "value": 0.222,
+    "ci95": [
+     0.174,
+     0.265
+    ]
+   }
+  }
+ },
+ "prespec": "baa47ab"
+}
