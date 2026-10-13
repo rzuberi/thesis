@@ -7,7 +7,7 @@ doc = open(DOC).read(); head = doc[: doc.rindex("\n---")].rstrip("\n") + "\n\n--
 L = ["", "## Results", "", f"Pre-specification commit baa47ab; results commit {RC}. Script `scripts/paper_plan/rv_round1.py` (Slurm via `scripts/cluster/campaign.sh`, prefix rv; R13 prefix rva), `rv_render.py`. Aggregates `results/paper_final/review_round1/`.", ""]
 r13 = os.path.exists(f"{R}/r13_abmil.json")
 L += ["### Status", "", "| Item | Status |", "|---|---|"] + [f"| {k} | DONE |" for k in ("R1 matched-specificity comparators", "R2 patient-level discrimination", "R3 calibration", "R4 scanner like-for-like and transfer triage", "R5 confounders", "R6 timing", "R7 worst grade to date", "R8 no-vote triage", "R9 score correlation", "R10 C-index without within-patient pairs", "R11 proportional hazards", "R12 band predictive values")] + [f"| R13 attention MIL under 10 × 10 CV | {'DONE' if r13 else 'PENDING'} |", ""]
-L += ["### R1. Matched specificity (fold-honest; secondary test-set matching in brackets)", "", "| Population | Triage sens / spec | Comparator | Comparator sens / spec | Δ sens triage − comparator [95% CI] | Δ spec [95% CI] | Secondary Δ sens [95% CI] |", "|---|---|---|---|---|---|---|"]
+L += ["### R1. Matched specificity (fold-honest; secondary test-set matching in the last column)", "", "| Population | Triage sens / spec | Comparator | Comparator sens / spec | Δ sens triage − comparator [95% CI] | Δ spec [95% CI] | Secondary Δ sens [95% CI] |", "|---|---|---|---|---|---|---|"]
 for t, lab in (("r1_their_pre", "their, all pre-event"), ("r1_their_pre_ndbe", "their, NDBE pre-event"), ("r1_pkg_pre", "package, all pre-event"), ("r1_pkg_pre_ndbe", "package, NDBE pre-event")):
     x = J(t)["R1"]
     for a, v in x["matched"].items():
