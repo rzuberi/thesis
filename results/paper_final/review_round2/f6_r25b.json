@@ -1,0 +1,105 @@
+{
+ "task": "f6_r25b",
+ "F6_R25b": {
+  "permutations": 5,
+  "per_permutation": {
+   "1": {
+    "no_vote": {
+     "share_sequenced": 0.839,
+     "sensitivity": 0.775,
+     "specificity": 0.466
+    },
+    "voted": {
+     "share_sequenced_in_at_least_one_repeat": 1.0,
+     "sensitivity": 0.807,
+     "specificity": 0.546
+    },
+    "folds_no_middle_band": 0,
+    "t_seq_fallback": 0,
+    "gate_auroc_fold_stratified": 0.495,
+    "late_auroc_with_permuted_gate": 0.753
+   },
+   "2": {
+    "no_vote": {
+     "share_sequenced": 0.834,
+     "sensitivity": 0.786,
+     "specificity": 0.476
+    },
+    "voted": {
+     "share_sequenced_in_at_least_one_repeat": 1.0,
+     "sensitivity": 0.826,
+     "specificity": 0.549
+    },
+    "folds_no_middle_band": 0,
+    "t_seq_fallback": 0,
+    "gate_auroc_fold_stratified": 0.519,
+    "late_auroc_with_permuted_gate": 0.752
+   },
+   "3": {
+    "no_vote": {
+     "share_sequenced": 0.852,
+     "sensitivity": 0.801,
+     "specificity": 0.457
+    },
+    "voted": {
+     "share_sequenced_in_at_least_one_repeat": 1.0,
+     "sensitivity": 0.82,
+     "specificity": 0.524
+    },
+    "folds_no_middle_band": 0,
+    "t_seq_fallback": 0,
+    "gate_auroc_fold_stratified": 0.504,
+    "late_auroc_with_permuted_gate": 0.759
+   },
+   "4": {
+    "no_vote": {
+     "share_sequenced": 0.845,
+     "sensitivity": 0.783,
+     "specificity": 0.473
+    },
+    "voted": {
+     "share_sequenced_in_at_least_one_repeat": 1.0,
+     "sensitivity": 0.851,
+     "specificity": 0.534
+    },
+    "folds_no_middle_band": 0,
+    "t_seq_fallback": 0,
+    "gate_auroc_fold_stratified": 0.51,
+    "late_auroc_with_permuted_gate": 0.755
+   },
+   "5": {
+    "no_vote": {
+     "share_sequenced": 0.837,
+     "sensitivity": 0.774,
+     "specificity": 0.473
+    },
+    "voted": {
+     "share_sequenced_in_at_least_one_repeat": 1.0,
+     "sensitivity": 0.807,
+     "specificity": 0.549
+    },
+    "folds_no_middle_band": 0,
+    "t_seq_fallback": 0,
+    "gate_auroc_fold_stratified": 0.499,
+    "late_auroc_with_permuted_gate": 0.755
+   }
+  },
+  "mean_over_permutations_no_vote": {
+   "share_sequenced": 0.841,
+   "sensitivity": 0.784,
+   "specificity": 0.469
+  },
+  "mean_over_permutations_voted": {
+   "sensitivity": 0.822,
+   "specificity": 0.54
+  },
+  "gate_auroc_mean": 0.505,
+  "real_gate_no_vote": {
+   "share_sequenced": 0.458,
+   "sensitivity": 0.865,
+   "specificity": 0.697
+  },
+  "note": "labels permuted at the patient level within each outer training set (outer and inner fits of L-IMG); cut-offs chosen on the permuted gate's inner scores against the real labels; middle-band call = real L-LATE (stored L-CNV + permuted L-IMG)"
+ },
+ "prespec": "d681783"
+}

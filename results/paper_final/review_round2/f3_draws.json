@@ -1,0 +1,15 @@
+{
+ "task": "f3_draws",
+ "draws": 200,
+ "population": "pre",
+ "n_patients": 75,
+ "consistent_with_tb_common_boots_for": true,
+ "distinct_patients_per_draw": {
+  "mean": 48.03,
+  "range": [
+   40,
+   54
+  ]
+ },
+ "prespec": "d681783"
+}

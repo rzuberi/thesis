@@ -1,0 +1,70 @@
+{
+ "task": "r21b",
+ "R21b": {
+  "source": "km_linear.R cfg 0 (cnv, their matrix), leave-one-patient-out over the 80 patients, lambda = class-error minimum of the 10 x 5 patient-grouped CV (as kv_cv.R)",
+  "rows": 676,
+  "pre": {
+   "n_samples": 571,
+   "fold_stratified_auroc_on_10x10_pairs": {
+    "LOPO_L-CNV": {
+     "value": 0.794,
+     "ci95": [
+      0.691,
+      0.877
+     ]
+    },
+    "CV_L-CNV_10x10": {
+     "value": 0.801,
+     "ci95": [
+      0.71,
+      0.875
+     ]
+    }
+   },
+   "d_LOPO_minus_CV": {
+    "delta": -0.008,
+    "ci95": [
+     -0.036,
+     0.018
+    ],
+    "p_two_sided": 0.587
+   },
+   "plain_pooled_auroc": {
+    "LOPO_L-CNV": 0.799,
+    "CV_L-CNV_repeat_mean_score": 0.802
+   }
+  },
+  "pre_ndbe": {
+   "n_samples": 438,
+   "fold_stratified_auroc_on_10x10_pairs": {
+    "LOPO_L-CNV": {
+     "value": 0.758,
+     "ci95": [
+      0.638,
+      0.87
+     ]
+    },
+    "CV_L-CNV_10x10": {
+     "value": 0.78,
+     "ci95": [
+      0.681,
+      0.879
+     ]
+    }
+   },
+   "d_LOPO_minus_CV": {
+    "delta": -0.022,
+    "ci95": [
+     -0.053,
+     0.006
+    ],
+    "p_two_sided": 0.134
+   },
+   "plain_pooled_auroc": {
+    "LOPO_L-CNV": 0.761,
+    "CV_L-CNV_repeat_mean_score": 0.778
+   }
+  }
+ },
+ "prespec": "d681783"
+}

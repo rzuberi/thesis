@@ -1,0 +1,162 @@
+{
+ "task": "f3",
+ "F3": {
+  "draws_scored": 200,
+  "draw_indices_scored_max": 199,
+  "n_eval_rows_mean": 565.995,
+  "d_auroc_IMG_minus_CNV": {
+   "refit_bootstrap": {
+    "mean": 0.07,
+    "median": 0.06,
+    "ci95_percentile": [
+     -0.114,
+     0.302
+    ],
+    "one_sided_95_lower": -0.083,
+    "sd": 0.108
+   },
+   "non_inferior_at_-0.05": false,
+   "conditional_stored": {
+    "delta": 0.045,
+    "ci95": [
+     -0.036,
+     0.136
+    ],
+    "one_sided_95_lower": -0.025,
+    "margin": -0.05,
+    "non_inferior": true,
+    "p_two_sided": 0.295
+   }
+  },
+  "auroc_refit_draw_mean": {
+   "L-CNV": 0.718,
+   "L-IMG": 0.788,
+   "L-LATE": 0.821
+  },
+  "d_sens_triage_vs_B": {
+   "refit_bootstrap": {
+    "mean": 0.018,
+    "median": 0.018,
+    "ci95_percentile": [
+     -0.055,
+     0.102
+    ],
+    "one_sided_95_lower": -0.038,
+    "sd": 0.039
+   },
+   "non_inferior_at_-0.05": true,
+   "conditional_stored_voted": {
+    "delta": 0.062,
+    "ci95": [
+     0.011,
+     0.116
+    ],
+    "one_sided_95_lower": 0.02,
+    "p_two_sided": 0.018
+   },
+   "conditional_stored_no_vote": {
+    "delta": 0.033,
+    "ci95": [
+     0.005,
+     0.062
+    ],
+    "one_sided_95_lower": 0.011,
+    "p_two_sided": 0.02
+   }
+  },
+  "d_spec_triage_vs_B": {
+   "refit_bootstrap": {
+    "mean": -0.041,
+    "median": -0.043,
+    "ci95_percentile": [
+     -0.145,
+     0.059
+    ],
+    "one_sided_95_lower": -0.122,
+    "sd": 0.051
+   },
+   "conditional_stored_voted": {
+    "delta": -0.051,
+    "ci95": [
+     -0.092,
+     -0.008
+    ],
+    "one_sided_95_lower": -0.084,
+    "p_two_sided": 0.029
+   },
+   "conditional_stored_no_vote": {
+    "delta": -0.065,
+    "ci95": [
+     -0.092,
+     -0.034
+    ],
+    "one_sided_95_lower": -0.088,
+    "p_two_sided": 0.0
+   }
+  },
+  "d_sens_triage_vs_Bstar": {
+   "refit_bootstrap": {
+    "mean": -0.018,
+    "median": -0.016,
+    "ci95_percentile": [
+     -0.079,
+     0.04
+    ],
+    "one_sided_95_lower": -0.069,
+    "sd": 0.033
+   },
+   "non_inferior_at_-0.05": false,
+   "conditional_stored_voted": {
+    "delta": -0.006,
+    "ci95": [
+     -0.051,
+     0.034
+    ],
+    "p_two_sided": 0.952
+   },
+   "conditional_stored_no_vote": {
+    "delta": -0.016,
+    "ci95": [
+     -0.036,
+     0.001
+    ],
+    "one_sided_95_lower": -0.032,
+    "p_two_sided": 0.076
+   }
+  },
+  "triage_per_draw": {
+   "sensitivity": {
+    "mean": 0.828,
+    "median": 0.833,
+    "ci95_percentile": [
+     0.716,
+     0.915
+    ],
+    "one_sided_95_lower": 0.729,
+    "sd": 0.052
+   },
+   "specificity": {
+    "mean": 0.598,
+    "median": 0.619,
+    "ci95_percentile": [
+     0.379,
+     0.752
+    ],
+    "one_sided_95_lower": 0.4,
+    "sd": 0.102
+   },
+   "share_sequenced": {
+    "mean": 0.567,
+    "median": 0.566,
+    "ci95_percentile": [
+     0.381,
+     0.779
+    ],
+    "one_sided_95_lower": 0.4,
+    "sd": 0.1
+   }
+  },
+  "note": "single stratified 10-fold CV per draw (seed = draw index), lambda and all cut-offs re-chosen inside the draw; no vote; copies of a patient share the fold and every grouped split"
+ },
+ "prespec": "d681783"
+}

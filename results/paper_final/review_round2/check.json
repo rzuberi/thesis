@@ -1,0 +1,48 @@
+{
+ "task": "check",
+ "checks": {
+  "f1_outer_unfiltered_vs_cfg_00_rep_01": {
+   "n": 676,
+   "max_abs_pred_diff": 0.0,
+   "folds_equal": true,
+   "lambda_max_abs_diff": 0.0,
+   "passed": true
+  },
+  "f1_inner_unfiltered_vs_inner_img_rep_01_fold_01": {
+   "n": 618,
+   "max_abs_pred_diff": 0.0,
+   "folds_equal": true,
+   "lambda_max_abs_diff": 0.0,
+   "passed": true
+  },
+  "f5_inner_uni2_vs_inner_img_rep_01_fold_01": {
+   "n": 618,
+   "max_abs_pred_diff": 0.0,
+   "folds_equal": true,
+   "lambda_max_abs_diff": 0.0,
+   "passed": true
+  },
+  "f4_class_lambda_vs_cfg_00_rep_01": {
+   "n": 676,
+   "max_abs_pred_diff": 0.0,
+   "folds_equal": true,
+   "lambda_max_abs_diff": 0.0,
+   "passed": true
+  },
+  "hoptimus0_outer_auroc_pre": {
+   "value": 0.805,
+   "reference_docs_paper_scanner_robustness": 0.805,
+   "folds_equal_stored": true,
+   "passed": true
+  },
+  "lopo_L-CNV_their_stored": {
+   "rows": 676,
+   "patients": 80,
+   "all_samples_covered": true,
+   "source": "km_linear.R cfg 0 (killcoyne_mm/linear), rule class_min",
+   "F7_needed": false
+  },
+  "all_passed": true
+ },
+ "prespec": "d681783"
+}
