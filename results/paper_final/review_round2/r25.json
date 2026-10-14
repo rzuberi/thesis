@@ -1,0 +1,44 @@
+{
+ "task": "r25_merge",
+ "R25": {
+  "n_seeds": 100,
+  "target_real_no_vote_sensitivity": 0.8645962732919255,
+  "random_gate_share_sequenced": {
+   "mean": 0.846,
+   "p2.5_97.5": [
+    0.835,
+    0.859
+   ]
+  },
+  "random_gate_sensitivity": {
+   "mean": 0.804,
+   "p2.5_97.5": [
+    0.791,
+    0.817
+   ]
+  },
+  "random_gate_specificity": {
+   "mean": 0.697,
+   "p2.5_97.5": [
+    0.69,
+    0.708
+   ]
+  },
+  "share_to_reach_real_sensitivity": {
+   "mean": null,
+   "p2.5_97.5": [
+    null,
+    null
+   ],
+   "n_seeds_not_reached": 100,
+   "n_seeds": 100
+  },
+  "sensitivity_at_full_sequencing_mean": 0.832,
+  "real_gate_reference": {
+   "share_sequenced": 0.4584938704028021,
+   "sensitivity": 0.8645962732919255,
+   "specificity": 0.6970731707317073
+  }
+ },
+ "prespec": "d681783"
+}

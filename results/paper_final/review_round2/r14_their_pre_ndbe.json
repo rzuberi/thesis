@@ -1,0 +1,567 @@
+{
+ "task": "r14_their_pre_ndbe",
+ "src": "their",
+ "pop": "pre_ndbe",
+ "R14": {
+  "n_samples": 438,
+  "n_patients": 71,
+  "n_progressor_samples": 104,
+  "draws": 2000,
+  "a_sequencing_cost": {
+   "share_mid": {
+    "value": 0.491,
+    "ci95": [
+     0.441,
+     0.539
+    ]
+   },
+   "share_mid_any": {
+    "value": 0.806,
+    "ci95": [
+     0.75,
+     0.856
+    ]
+   },
+   "share_pivotal": {
+    "value": 0.5,
+    "ci95": [
+     0.442,
+     0.562
+    ]
+   },
+   "share_mid_P": {
+    "value": 0.408,
+    "ci95": [
+     0.309,
+     0.496
+    ]
+   },
+   "share_mid_any_P": {
+    "value": 0.625,
+    "ci95": [
+     0.488,
+     0.747
+    ]
+   },
+   "share_pivotal_P": {
+    "value": 0.433,
+    "ci95": [
+     0.33,
+     0.533
+    ]
+   },
+   "share_mid_N": {
+    "value": 0.517,
+    "ci95": [
+     0.464,
+     0.569
+    ]
+   },
+   "share_mid_any_N": {
+    "value": 0.862,
+    "ci95": [
+     0.813,
+     0.91
+    ]
+   },
+   "share_pivotal_N": {
+    "value": 0.521,
+    "ci95": [
+     0.454,
+     0.593
+    ]
+   },
+   "note": "share_mid = per-repeat mean share in the middle band (sequenced without the vote); share_mid_any = in the middle band in >= 1 repeat; share_pivotal = >= 6-of-10 call changes between all middle-band calls positive and all negative"
+  },
+  "triage_no_vote": {
+   "sensitivity": 0.846,
+   "sens_ci95": [
+    0.748,
+    0.928
+   ],
+   "specificity": 0.68,
+   "spec_ci95": [
+    0.605,
+    0.75
+   ]
+  },
+  "triage_voted": {
+   "sensitivity": 0.856,
+   "sens_ci95": [
+    0.742,
+    0.955
+   ],
+   "specificity": 0.728,
+   "spec_ci95": [
+    0.646,
+    0.798
+   ]
+  },
+  "b_no_vote_paired": {
+   "A": {
+    "d_sens_triage_minus": {
+     "delta": 0.038,
+     "ci95": [
+      -0.03,
+      0.121
+     ],
+     "p_two_sided": 0.327
+    },
+    "d_spec_triage_minus": {
+     "delta": 0.148,
+     "ci95": [
+      0.073,
+      0.228
+     ],
+     "p_two_sided": 0.0
+    },
+    "comparator_sensitivity": 0.808,
+    "comparator_sens_ci95": [
+     0.696,
+     0.911
+    ],
+    "comparator_specificity": 0.532,
+    "comparator_spec_ci95": [
+     0.421,
+     0.646
+    ]
+   },
+   "B": {
+    "d_sens_triage_minus": {
+     "delta": 0.023,
+     "ci95": [
+      -0.008,
+      0.052
+     ],
+     "p_two_sided": 0.147,
+     "one_sided_95_lower": -0.003,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": -0.04,
+     "ci95": [
+      -0.066,
+      -0.012
+     ],
+     "p_two_sided": 0.006
+    },
+    "comparator_sensitivity": 0.823,
+    "comparator_sens_ci95": [
+     0.713,
+     0.918
+    ],
+    "comparator_specificity": 0.72,
+    "comparator_spec_ci95": [
+     0.638,
+     0.797
+    ]
+   },
+   "C": {
+    "d_sens_triage_minus": {
+     "delta": 0.059,
+     "ci95": [
+      0.004,
+      0.113
+     ],
+     "p_two_sided": 0.029
+    },
+    "d_spec_triage_minus": {
+     "delta": -0.011,
+     "ci95": [
+      -0.064,
+      0.038
+     ],
+     "p_two_sided": 0.704
+    },
+    "comparator_sensitivity": 0.787,
+    "comparator_sens_ci95": [
+     0.708,
+     0.868
+    ],
+    "comparator_specificity": 0.69,
+    "comparator_spec_ci95": [
+     0.63,
+     0.748
+    ]
+   },
+   "A*": {
+    "d_sens_triage_minus": {
+     "delta": 0.123,
+     "ci95": [
+      0.035,
+      0.223
+     ],
+     "p_two_sided": 0.003
+    },
+    "d_spec_triage_minus": {
+     "delta": 0.025,
+     "ci95": [
+      -0.047,
+      0.101
+     ],
+     "p_two_sided": 0.517
+    },
+    "comparator_sensitivity": 0.723,
+    "comparator_sens_ci95": [
+     0.579,
+     0.853
+    ],
+    "comparator_specificity": 0.654,
+    "comparator_spec_ci95": [
+     0.542,
+     0.766
+    ]
+   },
+   "B*": {
+    "d_sens_triage_minus": {
+     "delta": -0.014,
+     "ci95": [
+      -0.038,
+      0.004
+     ],
+     "p_two_sided": 0.158,
+     "one_sided_95_lower": -0.034,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": 0.027,
+     "ci95": [
+      -0.002,
+      0.061
+     ],
+     "p_two_sided": 0.08
+    },
+    "comparator_sensitivity": 0.861,
+    "comparator_sens_ci95": [
+     0.755,
+     0.944
+    ],
+    "comparator_specificity": 0.653,
+    "comparator_spec_ci95": [
+     0.562,
+     0.739
+    ]
+   },
+   "C*": {
+    "d_sens_triage_minus": {
+     "delta": 0.056,
+     "ci95": [
+      0.005,
+      0.113
+     ],
+     "p_two_sided": 0.033
+    },
+    "d_spec_triage_minus": {
+     "delta": -0.013,
+     "ci95": [
+      -0.066,
+      0.036
+     ],
+     "p_two_sided": 0.621
+    },
+    "comparator_sensitivity": 0.79,
+    "comparator_sens_ci95": [
+     0.705,
+     0.874
+    ],
+    "comparator_specificity": 0.693,
+    "comparator_spec_ci95": [
+     0.636,
+     0.748
+    ]
+   }
+  },
+  "c_no_vote_evaluation_matched": {
+   "A*": {
+    "d_sens_triage_minus": {
+     "delta": 0.136,
+     "ci95": [
+      0.036,
+      0.257
+     ],
+     "p_two_sided": 0.003,
+     "one_sided_95_lower": 0.052,
+     "non_inferior_at_-0.05": true
+    },
+    "comparator_sensitivity": 0.711,
+    "comparator_sens_ci95": [
+     0.543,
+     0.852
+    ]
+   },
+   "B*": {
+    "d_sens_triage_minus": {
+     "delta": 0.0,
+     "ci95": [
+      -0.034,
+      0.036
+     ],
+     "p_two_sided": 0.971,
+     "one_sided_95_lower": -0.028,
+     "non_inferior_at_-0.05": true
+    },
+    "comparator_sensitivity": 0.846,
+    "comparator_sens_ci95": [
+     0.736,
+     0.933
+    ]
+   },
+   "C*": {
+    "d_sens_triage_minus": {
+     "delta": 0.05,
+     "ci95": [
+      -0.011,
+      0.121
+     ],
+     "p_two_sided": 0.121,
+     "one_sided_95_lower": -0.003,
+     "non_inferior_at_-0.05": true
+    },
+    "comparator_sensitivity": 0.796,
+    "comparator_sens_ci95": [
+     0.708,
+     0.876
+    ]
+   },
+   "note": "per repeat, threshold on that repeat's held-out scores at the triage's realised specificity in that repeat (R1 secondary rule), re-chosen in every bootstrap draw"
+  },
+  "voted_for_reference": {
+   "training_matched": {
+    "A": {
+     "d_sens_triage_minus": {
+      "delta": 0.058,
+      "ci95": [
+       -0.033,
+       0.158
+      ],
+      "p_two_sided": 0.281
+     },
+     "d_spec_triage_minus": {
+      "delta": 0.168,
+      "ci95": [
+       0.066,
+       0.278
+      ],
+      "p_two_sided": 0.0
+     },
+     "comparator_sensitivity": 0.798,
+     "comparator_sens_ci95": [
+      0.652,
+      0.931
+     ],
+     "comparator_specificity": 0.56,
+     "comparator_spec_ci95": [
+      0.43,
+      0.688
+     ]
+    },
+    "B": {
+     "d_sens_triage_minus": {
+      "delta": 0.067,
+      "ci95": [
+       0.013,
+       0.128
+      ],
+      "p_two_sided": 0.027,
+      "one_sided_95_lower": 0.021,
+      "non_inferior_at_-0.05": true
+     },
+     "d_spec_triage_minus": {
+      "delta": -0.006,
+      "ci95": [
+       -0.049,
+       0.042
+      ],
+      "p_two_sided": 0.745
+     },
+     "comparator_sensitivity": 0.788,
+     "comparator_sens_ci95": [
+      0.667,
+      0.9
+     ],
+     "comparator_specificity": 0.734,
+     "comparator_spec_ci95": [
+      0.644,
+      0.813
+     ]
+    },
+    "C": {
+     "d_sens_triage_minus": {
+      "delta": 0.077,
+      "ci95": [
+       -0.01,
+       0.164
+      ],
+      "p_two_sided": 0.098
+     },
+     "d_spec_triage_minus": {
+      "delta": 0.018,
+      "ci95": [
+       -0.044,
+       0.076
+      ],
+      "p_two_sided": 0.585
+     },
+     "comparator_sensitivity": 0.779,
+     "comparator_sens_ci95": [
+      0.689,
+      0.873
+     ],
+     "comparator_specificity": 0.71,
+     "comparator_spec_ci95": [
+      0.643,
+      0.768
+     ]
+    },
+    "A*": {
+     "d_sens_triage_minus": {
+      "delta": 0.135,
+      "ci95": [
+       0.038,
+       0.241
+      ],
+      "p_two_sided": 0.012
+     },
+     "d_spec_triage_minus": {
+      "delta": 0.051,
+      "ci95": [
+       -0.04,
+       0.149
+      ],
+      "p_two_sided": 0.297
+     },
+     "comparator_sensitivity": 0.721,
+     "comparator_sens_ci95": [
+      0.566,
+      0.866
+     ],
+     "comparator_specificity": 0.677,
+     "comparator_spec_ci95": [
+      0.558,
+      0.792
+     ]
+    },
+    "B*": {
+     "d_sens_triage_minus": {
+      "delta": 0.01,
+      "ci95": [
+       -0.023,
+       0.044
+      ],
+      "p_two_sided": 0.777,
+      "one_sided_95_lower": -0.018,
+      "non_inferior_at_-0.05": true
+     },
+     "d_spec_triage_minus": {
+      "delta": 0.057,
+      "ci95": [
+       0.017,
+       0.103
+      ],
+      "p_two_sided": 0.003
+     },
+     "comparator_sensitivity": 0.846,
+     "comparator_sens_ci95": [
+      0.725,
+      0.95
+     ],
+     "comparator_specificity": 0.671,
+     "comparator_spec_ci95": [
+      0.577,
+      0.758
+     ]
+    },
+    "C*": {
+     "d_sens_triage_minus": {
+      "delta": 0.077,
+      "ci95": [
+       -0.009,
+       0.165
+      ],
+      "p_two_sided": 0.086
+     },
+     "d_spec_triage_minus": {
+      "delta": -0.006,
+      "ci95": [
+       -0.068,
+       0.052
+      ],
+      "p_two_sided": 0.874
+     },
+     "comparator_sensitivity": 0.779,
+     "comparator_sens_ci95": [
+      0.673,
+      0.878
+     ],
+     "comparator_specificity": 0.734,
+     "comparator_spec_ci95": [
+      0.667,
+      0.793
+     ]
+    }
+   },
+   "evaluation_matched": {
+    "A*": {
+     "d_sens_triage_minus": {
+      "delta": 0.173,
+      "ci95": [
+       0.035,
+       0.33
+      ],
+      "p_two_sided": 0.012,
+      "one_sided_95_lower": 0.053,
+      "non_inferior_at_-0.05": true
+     },
+     "comparator_sensitivity": 0.683,
+     "comparator_sens_ci95": [
+      0.496,
+      0.865
+     ]
+    },
+    "B*": {
+     "d_sens_triage_minus": {
+      "delta": 0.019,
+      "ci95": [
+       -0.02,
+       0.099
+      ],
+      "p_two_sided": 0.528,
+      "one_sided_95_lower": -0.013,
+      "non_inferior_at_-0.05": true
+     },
+     "comparator_sensitivity": 0.837,
+     "comparator_sens_ci95": [
+      0.699,
+      0.943
+     ]
+    },
+    "C*": {
+     "d_sens_triage_minus": {
+      "delta": 0.058,
+      "ci95": [
+       -0.05,
+       0.184
+      ],
+      "p_two_sided": 0.286,
+      "one_sided_95_lower": -0.03,
+      "non_inferior_at_-0.05": true
+     },
+     "comparator_sensitivity": 0.798,
+     "comparator_sens_ci95": [
+      0.691,
+      0.893
+     ]
+    }
+   }
+  },
+  "sanity_round1": {
+   "voted_d_sens_vs_Bstar": 0.01,
+   "voted_d_sens_vs_B": 0.067,
+   "share_mid_any": 0.806,
+   "share_mid_mean": 0.491,
+   "nv_sens_T": 0.846,
+   "training_specificity_target_median": 0.601
+  }
+ },
+ "prespec": "d681783"
+}

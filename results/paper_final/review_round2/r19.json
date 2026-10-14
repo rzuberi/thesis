@@ -1,0 +1,148 @@
+{
+ "task": "r19",
+ "R19": {
+  "setting": {
+   "n_samples": 139,
+   "n_transfer_test_rows": 139,
+   "test_rows_equal_C13210_pre_event": true,
+   "n_patients": 27,
+   "n_P_patients": 9,
+   "t_seq_frozen": 0.233,
+   "internal_target_shares": {
+    "low": 0.309,
+    "high": 0.232
+   }
+  },
+  "transfer_unreset": {
+   "cutoffs": {
+    "t_low": 0.141,
+    "c_star": 0.497
+   },
+   "sensitivity": 0.744,
+   "sens_ci95": [
+    0.516,
+    0.929
+   ],
+   "specificity": 0.69,
+   "spec_ci95": [
+    0.544,
+    0.807
+   ],
+   "band_shares": {
+    "low": 0.496,
+    "mid": 0.295,
+    "high": 0.209
+   }
+  },
+  "transfer_fallback_reset": {
+   "cutoffs": {
+    "t_low": 0.077,
+    "c_star": 0.428
+   },
+   "sensitivity": 0.846,
+   "sens_ci95": [
+    0.629,
+    0.977
+   ],
+   "specificity": 0.6,
+   "spec_ci95": [
+    0.449,
+    0.756
+   ],
+   "band_shares": {
+    "low": 0.309,
+    "mid": 0.453,
+    "high": 0.237
+   }
+  },
+  "mixed_scanner_cv_same_samples": {
+   "sensitivity": 0.923,
+   "sens_ci95": [
+    0.839,
+    1.0
+   ],
+   "specificity": 0.7,
+   "spec_ci95": [
+    0.588,
+    0.793
+   ],
+   "band_shares_mean_over_repeats": {
+    "low": 0.309,
+    "mid": 0.469,
+    "high": 0.222
+   }
+  },
+  "class_wise_band_rates": {
+   "progressor": {
+    "low": 0.066,
+    "mid": 0.36,
+    "high": 0.574
+   },
+   "non_progressor": {
+    "low": 0.405,
+    "mid": 0.497,
+    "high": 0.098
+   }
+  },
+  "expected_shares_by_prevalence": {
+   "0.02": {
+    "low": 0.398,
+    "mid": 0.494,
+    "high": 0.107
+   },
+   "0.05": {
+    "low": 0.388,
+    "mid": 0.49,
+    "high": 0.122
+   },
+   "0.10": {
+    "low": 0.371,
+    "mid": 0.483,
+    "high": 0.145
+   },
+   "0.15": {
+    "low": 0.354,
+    "mid": 0.477,
+    "high": 0.169
+   },
+   "0.20": {
+    "low": 0.337,
+    "mid": 0.47,
+    "high": 0.193
+   },
+   "observed_0.282": {
+    "low": 0.309,
+    "mid": 0.458,
+    "high": 0.232
+   }
+  },
+  "trigger_prediction_interval_117_patients": {
+   "draws": 2000,
+   "mean_samples_per_draw": 890.76,
+   "n_internal_patients": 75,
+   "low": {
+    "mean": 0.311,
+    "pi95": [
+     0.213,
+     0.39
+    ]
+   },
+   "mid": {
+    "mean": 0.456,
+    "pi95": [
+     0.38,
+     0.568
+    ]
+   },
+   "high": {
+    "mean": 0.233,
+    "pi95": [
+     0.184,
+     0.291
+    ]
+   },
+   "note": "117 internal pre-event patients resampled with replacement (all their samples), calls from a randomly chosen repeat per draw"
+  }
+ },
+ "prespec": "d681783"
+}

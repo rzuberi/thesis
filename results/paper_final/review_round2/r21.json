@@ -1,0 +1,210 @@
+{
+ "task": "r21",
+ "R21": {
+  "stored_lopo_L_CNV": {
+   "exists": true,
+   "path": "killcoyne_mm/linear/cfg_00_chunk_*.csv (rule class_min; their matrix; 676 rows)",
+   "lopo_lambda_range": [
+    0.003,
+    0.015
+   ]
+  },
+  "intercept_only_lopo": {
+   "path": "killcoyne_mm/cv/lopo_intercepts/arm_00.csv (train_prev of each leave-one-patient-out fit)",
+   "n_patients": 80
+  },
+  "pre": {
+   "n_samples": 571,
+   "fold_stratified_10x10_pairs": {
+    "intercept_only_LOPO": {
+     "value": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "P_published": {
+     "value": 0.823,
+     "ci95": [
+      0.709,
+      0.908
+     ]
+    },
+    "L-CNV_LOPO_stored": {
+     "value": 0.794,
+     "ci95": [
+      0.691,
+      0.877
+     ]
+    },
+    "L-CNV_10x10": {
+     "value": 0.801,
+     "ci95": [
+      0.71,
+      0.875
+     ]
+    }
+   },
+   "plain_pooled_auroc": {
+    "intercept_only_LOPO": {
+     "value": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "P_published": {
+     "value": 0.828,
+     "ci95": [
+      0.73,
+      0.904
+     ]
+    },
+    "L-CNV_LOPO_stored": {
+     "value": 0.799,
+     "ci95": [
+      0.702,
+      0.876
+     ]
+    },
+    "L-CNV_10x10": {
+     "value": 0.802,
+     "ci95": [
+      0.706,
+      0.879
+     ]
+    }
+   },
+   "a_intercept_only_vs_P": {
+    "delta": -0.823,
+    "ci95": [
+     -0.908,
+     -0.709
+    ],
+    "p_two_sided": 0.0
+   },
+   "a_intercept_only_vs_0.5_fold_stratified": -0.5,
+   "b_LOPO_minus_10x10_L_CNV": {
+    "delta": -0.008,
+    "ci95": [
+     -0.036,
+     0.018
+    ],
+    "p_two_sided": 0.587
+   },
+   "b_LOPO_minus_10x10_L_CNV_plain": {
+    "delta": -0.003,
+    "ci95": [
+     -0.021,
+     0.016
+    ],
+    "p_two_sided": 0.73
+   },
+   "P_minus_10x10_L_CNV": {
+    "delta": 0.022,
+    "ci95": [
+     -0.028,
+     0.07
+    ],
+    "p_two_sided": 0.359
+   }
+  },
+  "pre_ndbe": {
+   "n_samples": 438,
+   "fold_stratified_10x10_pairs": {
+    "intercept_only_LOPO": {
+     "value": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "P_published": {
+     "value": 0.781,
+     "ci95": [
+      0.647,
+      0.902
+     ]
+    },
+    "L-CNV_LOPO_stored": {
+     "value": 0.758,
+     "ci95": [
+      0.638,
+      0.87
+     ]
+    },
+    "L-CNV_10x10": {
+     "value": 0.78,
+     "ci95": [
+      0.681,
+      0.879
+     ]
+    }
+   },
+   "plain_pooled_auroc": {
+    "intercept_only_LOPO": {
+     "value": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "P_published": {
+     "value": 0.788,
+     "ci95": [
+      0.667,
+      0.897
+     ]
+    },
+    "L-CNV_LOPO_stored": {
+     "value": 0.761,
+     "ci95": [
+      0.646,
+      0.867
+     ]
+    },
+    "L-CNV_10x10": {
+     "value": 0.778,
+     "ci95": [
+      0.667,
+      0.879
+     ]
+    }
+   },
+   "a_intercept_only_vs_P": {
+    "delta": -0.781,
+    "ci95": [
+     -0.902,
+     -0.647
+    ],
+    "p_two_sided": 0.0
+   },
+   "a_intercept_only_vs_0.5_fold_stratified": -0.5,
+   "b_LOPO_minus_10x10_L_CNV": {
+    "delta": -0.022,
+    "ci95": [
+     -0.053,
+     0.006
+    ],
+    "p_two_sided": 0.134
+   },
+   "b_LOPO_minus_10x10_L_CNV_plain": {
+    "delta": -0.017,
+    "ci95": [
+     -0.038,
+     0.003
+    ],
+    "p_two_sided": 0.085
+   },
+   "P_minus_10x10_L_CNV": {
+    "delta": 0.002,
+    "ci95": [
+     -0.048,
+     0.056
+    ],
+    "p_two_sided": 0.883
+   }
+  }
+ },
+ "prespec": "d681783"
+}

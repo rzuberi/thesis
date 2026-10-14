@@ -1,0 +1,237 @@
+{
+ "task": "r29",
+ "R29": {
+  "class_wise_band_rates": {
+   "low": {
+    "progressor": {
+     "value": 0.066,
+     "ci95": [
+      0.033,
+      0.103
+     ]
+    },
+    "non_progressor": {
+     "value": 0.405,
+     "ci95": [
+      0.341,
+      0.47
+     ]
+    }
+   },
+   "mid": {
+    "progressor": {
+     "value": 0.36,
+     "ci95": [
+      0.269,
+      0.443
+     ]
+    },
+    "non_progressor": {
+     "value": 0.497,
+     "ci95": [
+      0.444,
+      0.549
+     ]
+    }
+   },
+   "high": {
+    "progressor": {
+     "value": 0.574,
+     "ci95": [
+      0.469,
+      0.689
+     ]
+    },
+    "non_progressor": {
+     "value": 0.098,
+     "ci95": [
+      0.071,
+      0.13
+     ]
+    }
+   }
+  },
+  "likelihood_ratios": {
+   "low": {
+    "value": 0.163,
+    "ci95": [
+     0.08,
+     0.262
+    ]
+   },
+   "mid": {
+    "value": 0.725,
+    "ci95": [
+     0.535,
+     0.92
+    ]
+   },
+   "high": {
+    "value": 5.868,
+    "ci95": [
+     4.111,
+     8.451
+    ]
+   }
+  },
+  "natural_frequencies_per_1000": {
+   "0.02": {
+    "no_vote": {
+     "sequenced": {
+      "value": 494.3,
+      "ci95": [
+       442.0,
+       545.5
+      ]
+     },
+     "progressor_biopsies_caught": {
+      "value": 17.3,
+      "ci95": [
+       15.8,
+       18.5
+      ]
+     },
+     "progressor_biopsies_missed": {
+      "value": 2.7,
+      "ci95": [
+       1.5,
+       4.2
+      ]
+     },
+     "false_flags": {
+      "value": 296.9,
+      "ci95": [
+       233.3,
+       360.1
+      ]
+     },
+     "sequenced_any_repeat": {
+      "value": 822.1,
+      "ci95": [
+       768.5,
+       870.9
+      ]
+     }
+    },
+    "voted": {
+     "sequenced": {
+      "value": 498.0,
+      "ci95": [
+       432.5,
+       560.4
+      ]
+     },
+     "progressor_biopsies_caught": {
+      "value": 17.3,
+      "ci95": [
+       15.5,
+       18.8
+      ]
+     },
+     "progressor_biopsies_missed": {
+      "value": 2.7,
+      "ci95": [
+       1.2,
+       4.5
+      ]
+     },
+     "false_flags": {
+      "value": 260.5,
+      "ci95": [
+       194.3,
+       325.9
+      ]
+     },
+     "sequenced_any_repeat": {
+      "value": 822.1,
+      "ci95": [
+       768.5,
+       870.9
+      ]
+     }
+    }
+   },
+   "0.05": {
+    "no_vote": {
+     "sequenced": {
+      "value": 490.2,
+      "ci95": [
+       439.1,
+       540.0
+      ]
+     },
+     "progressor_biopsies_caught": {
+      "value": 43.2,
+      "ci95": [
+       39.5,
+       46.3
+      ]
+     },
+     "progressor_biopsies_missed": {
+      "value": 6.8,
+      "ci95": [
+       3.7,
+       10.5
+      ]
+     },
+     "false_flags": {
+      "value": 287.8,
+      "ci95": [
+       226.1,
+       349.0
+      ]
+     },
+     "sequenced_any_repeat": {
+      "value": 815.0,
+      "ci95": [
+       762.1,
+       862.4
+      ]
+     }
+    },
+    "voted": {
+     "sequenced": {
+      "value": 494.9,
+      "ci95": [
+       431.5,
+       555.5
+      ]
+     },
+     "progressor_biopsies_caught": {
+      "value": 43.2,
+      "ci95": [
+       38.7,
+       47.1
+      ]
+     },
+     "progressor_biopsies_missed": {
+      "value": 6.8,
+      "ci95": [
+       2.9,
+       11.3
+      ]
+     },
+     "false_flags": {
+      "value": 252.6,
+      "ci95": [
+       188.3,
+       315.9
+      ]
+     },
+     "sequenced_any_repeat": {
+      "value": 815.0,
+      "ci95": [
+       762.1,
+       862.4
+      ]
+     }
+    }
+   }
+  },
+  "note": "no_vote: sequenced = middle-band share at the prevalence (per-repeat mean rates); voted: sequenced = vote-pivotal share (copy number needed for the >= 6-of-10 call), sequenced_any_repeat = middle band in >= 1 repeat",
+  "sanity_round12": {
+   "PPV_high_band_0.05": 0.236
+  }
+ },
+ "prespec": "d681783"
+}

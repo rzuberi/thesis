@@ -1,0 +1,269 @@
+{
+ "task": "r20",
+ "R20": {
+  "n_patients_sheet": 88,
+  "n_patients_analysed": 80,
+  "n_without_slide": 8,
+  "all_without_slide_are_progressors": true,
+  "n_included_progressor_patients": 37,
+  "without_slide_8": {
+   "all_samples": {
+    "n_patients": 8,
+    "n_samples": 46,
+    "P_per_sample": {
+     "n": 46,
+     "mean": 0.718,
+     "median": 0.913,
+     "iqr": [
+      0.388,
+      0.996
+     ]
+    },
+    "P_per_patient_mean": {
+     "n": 8,
+     "mean": 0.709,
+     "median": 0.78,
+     "iqr": [
+      0.624,
+      0.872
+     ]
+    },
+    "samples_per_patient": {
+     "n": 8,
+     "mean": 5.75,
+     "median": 5.0,
+     "iqr": [
+      4.0,
+      6.75
+     ]
+    },
+    "grade_mix": {
+     "NDBE": 26,
+     "LGD": 10,
+     "HGD": 6,
+     "ID": 3,
+     "IMC": 1
+    },
+    "share_P_ge_0.5_samples": 0.652
+   },
+   "pre_event_samples": {
+    "n_patients": 8,
+    "n_samples": 29,
+    "P_per_sample": {
+     "n": 29,
+     "mean": 0.711,
+     "median": 0.944,
+     "iqr": [
+      0.404,
+      0.996
+     ]
+    },
+    "P_per_patient_mean": {
+     "n": 8,
+     "mean": 0.659,
+     "median": 0.691,
+     "iqr": [
+      0.416,
+      0.937
+     ]
+    },
+    "samples_per_patient": {
+     "n": 8,
+     "mean": 3.625,
+     "median": 3.0,
+     "iqr": [
+      2.0,
+      4.25
+     ]
+    },
+    "grade_mix": {
+     "NDBE": 17,
+     "LGD": 10,
+     "ID": 2
+    },
+    "share_P_ge_0.5_samples": 0.621
+   }
+  },
+  "included_progressors_37": {
+   "all_samples": {
+    "n_patients": 37,
+    "n_samples": 303,
+    "P_per_sample": {
+     "n": 303,
+     "mean": 0.7,
+     "median": 0.768,
+     "iqr": [
+      0.486,
+      0.963
+     ]
+    },
+    "P_per_patient_mean": {
+     "n": 37,
+     "mean": 0.678,
+     "median": 0.691,
+     "iqr": [
+      0.503,
+      0.898
+     ]
+    },
+    "samples_per_patient": {
+     "n": 37,
+     "mean": 8.189,
+     "median": 7.0,
+     "iqr": [
+      4.0,
+      10.0
+     ]
+    },
+    "grade_mix": {
+     "NDBE": 146,
+     "LGD": 73,
+     "HGD": 30,
+     "ID": 30,
+     "IMC": 24
+    },
+    "share_P_ge_0.5_samples": 0.733
+   },
+   "pre_event_samples": {
+    "n_patients": 33,
+    "n_samples": 187,
+    "P_per_sample": {
+     "n": 187,
+     "mean": 0.648,
+     "median": 0.711,
+     "iqr": [
+      0.435,
+      0.93
+     ]
+    },
+    "P_per_patient_mean": {
+     "n": 33,
+     "mean": 0.65,
+     "median": 0.678,
+     "iqr": [
+      0.477,
+      0.84
+     ]
+    },
+    "samples_per_patient": {
+     "n": 33,
+     "mean": 5.667,
+     "median": 5.0,
+     "iqr": [
+      2.0,
+      7.0
+     ]
+    },
+    "grade_mix": {
+     "NDBE": 119,
+     "LGD": 48,
+     "ID": 20
+    },
+    "share_P_ge_0.5_samples": 0.658
+   }
+  },
+  "plain_auroc_P_pre_event": {
+   "all_88_patients": {
+    "n_samples": 640,
+    "n_patients": 84,
+    "n_P_patients": 41,
+    "auroc": 0.836,
+    "ci95": [
+     0.749,
+     0.903
+    ]
+   },
+   "80_patients_all_sheet_pre_event_samples": {
+    "n_samples": 611,
+    "n_patients": 76,
+    "n_P_patients": 33,
+    "auroc": 0.834,
+    "ci95": [
+     0.739,
+     0.911
+    ]
+   },
+   "80_patients_571_analysed_samples": {
+    "n_samples": 571,
+    "n_patients": 75,
+    "n_P_patients": 32,
+    "auroc": 0.828,
+    "ci95": [
+     0.73,
+     0.904
+    ]
+   }
+  },
+  "reason_no_slide": {
+   "source_columns_checked": {
+    "Pathology notes": {
+     "n_nonempty": 6,
+     "distinct_values": [
+      "BE (gastric type)",
+      "GM",
+      "IM",
+      "LGD/focal HGD",
+      "focal"
+     ]
+    },
+    "inconsistency": {
+     "n_nonempty": 1,
+     "distinct_values": [
+      "Y"
+     ]
+    },
+    "notes on label review": {
+     "n_nonempty": 9,
+     "distinct_values": [
+      "focal HGD",
+      "no path record",
+      "outcome OGD focal HGD"
+     ]
+    },
+    "excluded": {
+     "n_nonempty": 46,
+     "distinct_values": [
+      "0",
+      "1"
+     ]
+    },
+    "remove": {
+     "n_nonempty": 46,
+     "distinct_values": [
+      "0"
+     ]
+    },
+    "Replicate": {
+     "n_nonempty": 0,
+     "distinct_values": []
+    },
+    "Set": {
+     "n_nonempty": 46,
+     "distinct_values": [
+      "Test",
+      "Training"
+     ]
+    },
+    "Batch": {
+     "n_nonempty": 46,
+     "distinct_values": [
+      "Batch 1",
+      "Batch 16S",
+      "Batch 3",
+      "Batch 4",
+      "Exome Subcohort"
+     ]
+    },
+    "slide_matching": {
+     "n_sheet_rows_8_patients": 46,
+     "n_matched_slide_rows": 0,
+     "n_with_slide_file": 0,
+     "slide_notes_distinct": [],
+     "notes_distinct": []
+    }
+   },
+   "conclusion": "see columns"
+  }
+ },
+ "prespec": "d681783"
+}

@@ -1,0 +1,451 @@
+{
+ "task": "r26",
+ "R26": {
+  "spread_of_fold_cutoffs": {
+   "their": {
+    "t_low": {
+     "median": 0.042,
+     "iqr": [
+      0.027,
+      0.059
+     ],
+     "range": [
+      0.005,
+      0.109
+     ]
+    },
+    "c_star": {
+     "median": 0.589,
+     "iqr": [
+      0.554,
+      0.619
+     ],
+     "range": [
+      0.489,
+      0.725
+     ]
+    },
+    "t_seq": {
+     "median": 0.233,
+     "iqr": [
+      0.214,
+      0.257
+     ],
+     "range": [
+      0.159,
+      0.328
+     ]
+    },
+    "t_B": {
+     "median": 0.314,
+     "iqr": [
+      0.288,
+      0.346
+     ],
+     "range": [
+      0.225,
+      0.441
+     ]
+    }
+   },
+   "pkg": {
+    "t_low": {
+     "median": 0.042,
+     "iqr": [
+      0.027,
+      0.059
+     ],
+     "range": [
+      0.005,
+      0.109
+     ]
+    },
+    "c_star": {
+     "median": 0.589,
+     "iqr": [
+      0.554,
+      0.619
+     ],
+     "range": [
+      0.489,
+      0.725
+     ]
+    },
+    "t_seq": {
+     "median": 0.237,
+     "iqr": [
+      0.216,
+      0.257
+     ],
+     "range": [
+      0.167,
+      0.306
+     ]
+    },
+    "t_B": {
+     "median": 0.332,
+     "iqr": [
+      0.307,
+      0.356
+     ],
+     "range": [
+      0.221,
+      0.416
+     ]
+    }
+   }
+  },
+  "training_vs_heldout_operating_points": {
+   "their": {
+    "T": {
+     "training_specificity": {
+      "median": 0.618,
+      "iqr": [
+       0.562,
+       0.674
+      ],
+      "range": [
+       0.393,
+       0.795
+      ]
+     },
+     "heldout_specificity": {
+      "median": 0.718,
+      "iqr": [
+       0.631,
+       0.8
+      ],
+      "range": [
+       0.286,
+       0.968
+      ]
+     },
+     "heldout_minus_training": {
+      "median": 0.087,
+      "iqr": [
+       -0.002,
+       0.163
+      ],
+      "range": [
+       -0.293,
+       0.385
+      ]
+     }
+    },
+    "A": {
+     "training_specificity": {
+      "median": 0.478,
+      "iqr": [
+       0.392,
+       0.553
+      ],
+      "range": [
+       0.141,
+       0.839
+      ]
+     },
+     "heldout_specificity": {
+      "median": 0.574,
+      "iqr": [
+       0.44,
+       0.735
+      ],
+      "range": [
+       0.121,
+       1.0
+      ]
+     },
+     "heldout_minus_training": {
+      "median": 0.106,
+      "iqr": [
+       -0.058,
+       0.266
+      ],
+      "range": [
+       -0.465,
+       0.637
+      ]
+     }
+    },
+    "B": {
+     "training_specificity": {
+      "median": 0.717,
+      "iqr": [
+       0.682,
+       0.772
+      ],
+      "range": [
+       0.52,
+       0.894
+      ]
+     },
+     "heldout_specificity": {
+      "median": 0.783,
+      "iqr": [
+       0.699,
+       0.857
+      ],
+      "range": [
+       0.394,
+       0.97
+      ]
+     },
+     "heldout_minus_training": {
+      "median": 0.049,
+      "iqr": [
+       -0.035,
+       0.131
+      ],
+      "range": [
+       -0.294,
+       0.294
+      ]
+     }
+    },
+    "C": {
+     "training_specificity": {
+      "median": 0.621,
+      "iqr": [
+       0.584,
+       0.672
+      ],
+      "range": [
+       0.475,
+       0.758
+      ]
+     },
+     "heldout_specificity": {
+      "median": 0.718,
+      "iqr": [
+       0.648,
+       0.798
+      ],
+      "range": [
+       0.296,
+       0.923
+      ]
+     },
+     "heldout_minus_training": {
+      "median": 0.094,
+      "iqr": [
+       0.011,
+       0.165
+      ],
+      "range": [
+       -0.276,
+       0.342
+      ]
+     }
+    }
+   },
+   "pkg": {
+    "T": {
+     "training_specificity": {
+      "median": 0.666,
+      "iqr": [
+       0.627,
+       0.702
+      ],
+      "range": [
+       0.427,
+       0.801
+      ]
+     },
+     "heldout_specificity": {
+      "median": 0.739,
+      "iqr": [
+       0.658,
+       0.816
+      ],
+      "range": [
+       0.455,
+       1.0
+      ]
+     },
+     "heldout_minus_training": {
+      "median": 0.086,
+      "iqr": [
+       -0.034,
+       0.169
+      ],
+      "range": [
+       -0.188,
+       0.375
+      ]
+     }
+    },
+    "A": {
+     "training_specificity": {
+      "median": 0.632,
+      "iqr": [
+       0.579,
+       0.701
+      ],
+      "range": [
+       0.35,
+       0.838
+      ]
+     },
+     "heldout_specificity": {
+      "median": 0.686,
+      "iqr": [
+       0.537,
+       0.844
+      ],
+      "range": [
+       0.129,
+       1.0
+      ]
+     },
+     "heldout_minus_training": {
+      "median": 0.046,
+      "iqr": [
+       -0.087,
+       0.211
+      ],
+      "range": [
+       -0.492,
+       0.455
+      ]
+     }
+    },
+    "B": {
+     "training_specificity": {
+      "median": 0.768,
+      "iqr": [
+       0.722,
+       0.806
+      ],
+      "range": [
+       0.547,
+       0.892
+      ]
+     },
+     "heldout_specificity": {
+      "median": 0.802,
+      "iqr": [
+       0.72,
+       0.882
+      ],
+      "range": [
+       0.333,
+       1.0
+      ]
+     },
+     "heldout_minus_training": {
+      "median": 0.036,
+      "iqr": [
+       -0.056,
+       0.13
+      ],
+      "range": [
+       -0.416,
+       0.285
+      ]
+     }
+    },
+    "C": {
+     "training_specificity": {
+      "median": 0.621,
+      "iqr": [
+       0.584,
+       0.672
+      ],
+      "range": [
+       0.475,
+       0.758
+      ]
+     },
+     "heldout_specificity": {
+      "median": 0.718,
+      "iqr": [
+       0.648,
+       0.798
+      ],
+      "range": [
+       0.296,
+       0.923
+      ]
+     },
+     "heldout_minus_training": {
+      "median": 0.094,
+      "iqr": [
+       0.011,
+       0.165
+      ],
+      "range": [
+       -0.276,
+       0.342
+      ]
+     }
+    }
+   }
+  },
+  "frozen_model_in_sample": {
+   "label": "IN-SAMPLE (frozen bundle fitted on all 676 samples; not a performance estimate)",
+   "cutoffs": {
+    "t_B": 0.314,
+    "t_high": 0.589,
+    "t_low": 0.042,
+    "t_seq": 0.233
+   },
+   "reproduction_check": {
+    "auroc_L_CNV_676": 0.996,
+    "auroc_L_IMG_676": 0.998,
+    "model_info": {
+     "auroc_L_CNV": 0.996,
+     "auroc_L_IMG": 0.998
+    },
+    "mean_prob_L_CNV": 0.393,
+    "mean_prob_L_IMG": 0.393,
+    "model_info_mean": [
+     0.393,
+     0.393
+    ]
+   },
+   "band_shares_571": {
+    "low": 0.356,
+    "mid": 0.385,
+    "high": 0.259
+   },
+   "band_shares_by_class": {
+    "progressor": {
+     "low": 0.0,
+     "mid": 0.081,
+     "high": 0.919
+    },
+    "non_progressor": {
+     "low": 0.495,
+     "mid": 0.505,
+     "high": 0.0
+    }
+   },
+   "triage_in_sample": {
+    "sensitivity": 1.0,
+    "specificity": 0.946
+   },
+   "B_in_sample": {
+    "sensitivity": 1.0,
+    "specificity": 0.98
+   },
+   "nonzero_coefficients": {
+    "frozen_L_CNV": 68,
+    "frozen_L_IMG": 158,
+    "fold_models": "coefficient counts of the 100 fold models are not stored (cv/preds keeps lambda only); lambda ranges given instead",
+    "lambda": {
+     "frozen_L_CNV": 0.009,
+     "fold_L_CNV_range": [
+      0.002,
+      0.029
+     ],
+     "frozen_L_IMG": 0.004,
+     "fold_L_IMG_range": [
+      0.002,
+      0.014
+     ]
+    }
+   }
+  }
+ },
+ "prespec": "d681783"
+}

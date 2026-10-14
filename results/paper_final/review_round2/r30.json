@@ -1,0 +1,107 @@
+{
+ "task": "r30",
+ "R30": {
+  "n_progressor_patients_with_pre_event_samples": 32,
+  "voted": {
+   "T": {
+    "n": 31,
+    "median": 5.0,
+    "iqr": [
+     2.5,
+     7.5
+    ],
+    "mean": 5.177
+   },
+   "B": {
+    "n": 30,
+    "median": 4.5,
+    "iqr": [
+     2.0,
+     6.75
+    ],
+    "mean": 4.983
+   },
+   "C": {
+    "n": 31,
+    "median": 5.0,
+    "iqr": [
+     2.25,
+     7.5
+    ],
+    "mean": 5.29
+   },
+   "B*": {
+    "n": 31,
+    "median": 5.0,
+    "iqr": [
+     2.5,
+     7.0
+    ],
+    "mean": 5.242
+   },
+   "C*": {
+    "n": 30,
+    "median": 5.0,
+    "iqr": [
+     2.125,
+     7.75
+    ],
+    "mean": 5.267
+   },
+   "paired_T_minus_C_caught_by_both": {
+    "n": 30,
+    "median": 0.0,
+    "iqr": [
+     0.0,
+     0.0
+    ],
+    "mean": 0.033
+   },
+   "paired_T_minus_B_caught_by_both": {
+    "n": 30,
+    "median": 0.0,
+    "iqr": [
+     0.0,
+     0.0
+    ],
+    "mean": 0.1
+   }
+  },
+  "no_vote_mean_over_repeats": {
+   "T": {
+    "n_caught_mean": 31.1,
+    "median_mean": 4.95,
+    "iqr_mean": [
+     2.425,
+     7.175
+    ],
+    "mean_mean": 5.208
+   },
+   "B": {
+    "n_caught_mean": 30.7,
+    "median_mean": 4.575,
+    "iqr_mean": [
+     2.1,
+     6.8
+    ],
+    "mean_mean": 5.057
+   },
+   "C": {
+    "n_caught_mean": 31.1,
+    "median_mean": 4.975,
+    "iqr_mean": [
+     2.25,
+     7.35
+    ],
+    "mean_mean": 5.232
+   },
+   "paired_T_minus_C_caught_by_both": {
+    "n_mean": 30.4,
+    "median_mean": 0.0,
+    "mean_mean": 0.092
+   }
+  },
+  "note": "lead time = TIME of the earliest positive pre-event sample (years before the first HGD/IMC); patients counted once"
+ },
+ "prespec": "d681783"
+}
