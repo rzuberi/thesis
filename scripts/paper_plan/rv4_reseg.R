@@ -47,6 +47,9 @@ segment_tiles <- function(s) {   # kr_package.R steps on the samples s segmented
                   error = function(e) { message("SEGMENT FAIL ", paste(s$Sample, collapse = ","), ": ", conditionMessage(e)); NULL })
   if (is.null(obj)) return(NULL)
   allseg <- obj$seg.vals; if (!is.null(obj$failedQC)) allseg <- cbind(allseg, obj$failedQC[, setdiff(colnames(obj$failedQC), colnames(allseg)), drop = FALSE])
+  # package edge case absent from the stored joint runs: when no sample of the call passes QC, seg.vals repeats the descriptor columns (grep of an
+  # empty pass list), which breaks tileSegments; keep the first occurrence of each descriptor column and the sample columns (values unchanged)
+  keepc <- c("chrom", "arm", "start.pos", "end.pos", "n.probes", intersect(s$sid, colnames(allseg))); allseg <- allseg[, match(keepc, colnames(allseg)), drop = FALSE]
   obj2 <- obj; obj2$seg.vals <- allseg; obj2$residuals <- obj$residuals %>% mutate(Pass = TRUE)   # tile every segmented sample; QC kept separately
   segt <- suppressWarnings(tileSegments(obj2, size = 5e6, verbose = FALSE)); armt <- suppressWarnings(tileSegments(obj2, size = "arms", verbose = FALSE))
   qc <- obj$residuals %>% mutate(samplename = as.character(samplename)); sids <- rownames(segt$tiles); stopifnot(all(rownames(armt$tiles) == sids))
