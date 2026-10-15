@@ -28,7 +28,7 @@ for b in ("low", "mid", "high"):
     cp, cn = f["called_positive"]["progressor"], f["called_positive"]["non_progressor"]; outs = [("Flagged", cp, cn, "#CC6677"), ("Cleared", f["progressor"] - cp, f["non_progressor"] - cn, "#88CCEE")]
     outs = [o for o in outs if o[1] + o[2] > 0]; off = [0] if len(outs) == 1 else [9, -9]
     for (t, a, c, col), dy in zip(outs, off): box(ax, 72, ys[b] + dy - 7, 27, 14, f"{t}: n = {a + c}\n{a} P / {c} NP", col + "33", col, fs=6.1); arrow(ax, 62, ys[b], 72, ys[b] + dy)
-ax.text(1, 3, "Band = most frequent band over the 10 repeats (ties to the middle band); call = positive in ≥ 6 of 10 repeats. P progressor, NP non-progressor.", fontsize=5.6, color="#333333")
+ax.text(1, 4, "Band: most frequent of the 10 repeats (ties to middle); call: positive in ≥ 6 of 10 repeats.\nP, progressor; NP, non-progressor.", fontsize=5.4, color="#333333", va="top")
 letter(fig, ax, "a", dx=0.01, dy=-0.02)
 # ------------------------------------------------------------------ (b) share sequenced vs sensitivity (single model)
 bx = fig.add_axes([0.70, 0.60, 0.29, 0.35]); pr0 = J("review_round4/r33_base_primary.json")["R33_base"]["claim_T"]; r33 = J("review_round4/r33_merge.json")["R33"]["claim_T_triage_vs_Bstar_training_matched_single_model"]

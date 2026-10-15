@@ -11,17 +11,17 @@ grid = lambda ql, qh: f"cut-off grid cell: t_low {ql}% training sensitivity, t_h
 ROWS = [("Population", "Primary: all pre-event biopsies", "primary: all pre-event samples", "primary: all pre-event samples"), ("Population", "NDBE pre-event biopsies", "NDBE pre-event samples", "NDBE pre-event samples"),
         ("Population", "Never-dysplastic patients", "patients never dysplastic before the event", "patients never dysplastic before the event"), ("Population", "Excl. progressor biopsies within 1 year", "excluding progressor samples within 1 year", "excluding progressor samples within 1 year"),
         ("Population", "Earliest endoscopy per patient", "earliest pre-event endoscopy per patient (all its samples)", "earliest pre-event endoscopy per patient (all its samples)"), ("Population", "Earliest biopsy per patient", "earliest pre-event sample per patient (Table 5)", "earliest pre-event sample per patient (Table 5)"),
-        ("Population", "Patient-weighted", "patient-weighted (R34)", "patient-weighted (R34)"),
+        ("Population", "Patient-weighted", "patient-weighted (R34)", "patient-weighted (R34)"), ("Population", "Within-batch pairs", None, "within-batch pairs"),
         ("Features", "Package features, joint segmentation", "package features", "package features"), ("Features", "Package, per-sample segmentation", "per-sample re-segmented copy number (R36)", "per-sample re-segmented copy number (R36)"),
         ("Features", "Package, past-only segmentation", "past-only re-segmented copy number (R36, extra row)", "past-only re-segmented copy number (R36, extra row)"), ("Features", "H-optimus-0 extractor", "H-optimus-0 gate (F5)", "H-optimus-0 gate (F5)"),
         ("Features", "Tissue- and year-adjusted H&E score", "tissue-adjusted gate (R32b)", "tissue-adjusted gate (R32b)"),
         ("Training", "Pre-event-only training", "pre-event-only training (F1)", "pre-event-only training (F1)"), ("Training", "Package, pre-event-only training", "package features, pre-event-only training (Table 5)", "package features, pre-event-only training (Table 5)"),
-        ("Training", "λ by deviance", "lambda by deviance (B5)", "lambda by deviance (B5)"), ("Training", "Refit bootstrap, 200 draws", "refit bootstrap (F3, 200 draws)", "refit bootstrap (F3, 200 draws)"),
+        ("Training", "λ by deviance", "lambda by deviance (B5)", "lambda by deviance (B5)"),
         ("Tissue", "Slides with < 256 tissue tiles", "tissue stratum: < 256 tissue tiles (R32a)", "tissue stratum: < 256 tissue tiles (R32a)"), ("Tissue", "Slides with ≥ 256 tissue tiles", "tissue stratum: >= 256 tissue tiles (R32a)", "tissue stratum: >= 256 tissue tiles (R32a)"),
         ("Tissue", "Tissue-matched pairs", None, "tissue-matched pairs: same tissue tertile (Table 5)")]
 ROWS += [("Cut-offs", f"t_low {ql}% sens. / t_high {qh}% spec.", grid(ql, qh), None) for ql in (90, 95, 98) for qh in (85, 90, 95) if (ql, qh) != (95, 90)]
 ROWS += [("Inference", "Cut-offs re-chosen per bootstrap draw", "selection-inclusive (every cut-off re-chosen in each draw)", None), ("Inference", "Evaluation-matched B*", "evaluation-matched B*", None), ("Inference", "10-model vote", "10-model vote", None),
-         ("Inference", "Between-repeat variance added", "between-repeat variance added", "between-repeat variance added"), ("Inference", "Within-batch pairs", None, "within-batch pairs")]
+         ("Inference", "Between-repeat variance added", "between-repeat variance added", "between-repeat variance added"), ("Inference", "Refit bootstrap, 200 draws", "refit bootstrap (F3, 200 draws)", "refit bootstrap (F3, 200 draws)")]
 fig = plt.figure(figsize=(183 * MM, 195 * MM)); nrow = len(ROWS); groups = list(dict.fromkeys(g for g, *_ in ROWS)); ngap = len(groups) - 1
 ys = []; yy = 0; prev = None
 for g, *_ in ROWS:

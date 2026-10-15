@@ -15,7 +15,7 @@ for j, m in enumerate(("P", "C", "L")):
         src[m][c] = {"n": d["n"], "patients": d["patients"], "events": d["events"], "at_risk": dict(zip(AT, d["at_risk"])), "km_grid": d["grid"], "km": d["km"], "lo": d["lo"], "hi": d["hi"]}
     tab.text(0.5, 1.12, "number at risk", ha="center", va="bottom", fontsize=5.6, transform=tab.transAxes); cox = S[m]["primary"]["cox"]; src[m]["cox"] = cox
     ax.text(0.03, 0.06, f"HR high vs low {cox['HR_high_vs_low']:.1f} [{cox['HR_high_ci95'][0]:.1f}, {cox['HR_high_ci95'][1]:.1f}]\nHR moderate vs low {cox['HR_moderate_vs_low']:.1f} [{cox['HR_moderate_ci95'][0]:.1f}, {cox['HR_moderate_ci95'][1]:.1f}]", transform=ax.transAxes, fontsize=5.6, va="bottom")
-    ax.set_xlim(0, 10); ax.set_ylim(0, 1.02); ax.set_xticks(AT + [10]); ax.set_xlabel("years from the biopsy"); ax.set_title(NAMES[m], fontsize=6.5); ax.legend(loc="lower left", bbox_to_anchor=(0.0, 0.16), fontsize=5.2)
+    ax.set_xlim(0, 10); ax.set_ylim(0, 1.3); ax.set_yticks([0, 0.2, 0.4, 0.6, 0.8, 1.0]); ax.set_xticks(AT + [10]); ax.set_xlabel("years from the biopsy"); ax.set_title(NAMES[m], fontsize=6.5); ax.legend(loc="upper right", bbox_to_anchor=(1.0, 1.0), fontsize=5.2)
     if j == 0: ax.set_ylabel("free of HGD/IMC")
     letter(fig, ax, "abc"[j], dx=-0.055)
 save(fig, "ED7"); dump("ED7", src)
