@@ -44,14 +44,13 @@ for k, (s, sc, se, sec, col, mk, ms) in gates.items():
 comps = {"(A)": (100, r14["A"]["comparator_sensitivity"], MODEL["L-CNV"], "o"), "A*": (100, r14["A*"]["comparator_sensitivity"], MODEL["L-CNV"], "s"), "(B)": (100, pr0["no_vote_vs_B"]["comparator_sensitivity"], MODEL["L-LATE"], "o"),
          "B*": (100, pr0["no_vote_vs_Bstar_training_matched"]["comparator_sensitivity"], MODEL["L-LATE"], "s"), "(C)": (0, pr0["no_vote_vs_C"]["comparator_sensitivity"], MODEL["L-IMG"], "o"),
          "C*": (0, pr0["no_vote_vs_Cstar_training_matched"]["comparator_sensitivity"], MODEL["L-IMG"], "s"), "(D)": (0, r24["sample"]["sensitivity"], MODEL["grade"], "D")}
-OFF = {"(A)": (-3, -0.012), "A*": (-3, 0), "(B)": (-3, 0.012), "B*": (-3, 0.012), "(C)": (3, -0.014), "C*": (3, 0.012), "(D)": (3, 0)}
-for k, (s, se, col, mk) in comps.items(): bx.plot([s], [se], marker=mk, color=col, ms=4, lw=0, mec="black", mew=0.4, zorder=5); bx.text(s + OFF[k][0], se + OFF[k][1], k, fontsize=5.8, ha="right" if s == 100 else "left", va="center")
+OFF = {"(A)": (3, 0.004), "A*": (3, 0), "(B)": (3, 0.0), "B*": (3, 0.0), "(C)": (3, -0.014), "C*": (3, 0.012), "(D)": (3, 0)}
+for k, (s, se, col, mk) in comps.items(): bx.plot([s], [se], marker=mk, color=col, ms=4, lw=0, mec="black", mew=0.4, zorder=5); bx.text(s + OFF[k][0], se + OFF[k][1], k, fontsize=5.8, ha="left", va="center")
 grid = [r for r in r33 if r["item"] == 8]
 for r in grid:
-    lab = r["analysis"].split("t_low ")[1].split("%")[0] + "/" + r["analysis"].split("t_high ")[1].split("%")[0]; bx.plot([100 * r["share_sequenced"]], [r["triage_sens_spec"][0]], marker="o", color="white", mec=MODEL["L-IMG"], mew=0.7, ms=3.2, lw=0, zorder=4)
-    bx.text(100 * r["share_sequenced"] + 1.2, r["triage_sens_spec"][0] - 0.004, lab, fontsize=4.8, color=MODEL["L-IMG"], va="top")
+    bx.plot([100 * r["share_sequenced"]], [r["triage_sens_spec"][0]], marker="o", color="white", mec=MODEL["L-IMG"], mew=0.7, ms=3.2, lw=0, zorder=4)
 bx.plot([], [], marker="o", color="white", mec=MODEL["L-IMG"], mew=0.7, ms=3.2, lw=0, label="H&E gate, cut-off grid (t_low / t_high)")
-bx.set_xlabel("share of biopsies sequenced (%)"); bx.set_ylabel("sensitivity (single model, mean over repeats)"); bx.set_xlim(-8, 108); bx.set_ylim(0.3, 1.0); bx.legend(loc="lower left", fontsize=5.4, bbox_to_anchor=(-0.02, 0.0))
+bx.set_xlabel("share of biopsies sequenced (%)"); bx.set_ylabel("sensitivity (single model, mean over repeats)"); bx.set_xlim(-6, 118); bx.set_ylim(0.3, 1.0); bx.legend(loc="center left", fontsize=5.2, bbox_to_anchor=(0.08, 0.50))
 src["gates_share_sensitivity"] = {k: {"share": v[0], "share_range": v[1], "sensitivity": v[2], "sensitivity_range": v[3]} for k, v in gates.items()}; src["comparators_share_sensitivity"] = {k: {"share": v[0] / 100, "sensitivity": v[1]} for k, v in comps.items()}
 src["grid_cells"] = [{"analysis": r["analysis"], "share": r["share_sequenced"], "sensitivity": r["triage_sens_spec"][0]} for r in grid]
 letter(fig, bx, "b", dx=-0.07, dy=-0.02)
@@ -65,11 +64,11 @@ for k, C in CALLS.items():
 D = r24["patient"]; pats["(D)"] = {"progressor_patients_missed": {"mean": float(D["progressor_missed"]), "range": [D["progressor_missed"], D["progressor_missed"]]}, "non_progressor_patients_flagged": {"mean": float(D["nonprogressor_flagged"]), "range": [D["nonprogressor_flagged"], D["nonprogressor_flagged"]]}}
 src["per_patient_by_strategy"] = pats; order = ["Triage", "(A)", "(B)", "(C)", "(D)"]; SC = {"Triage": "black", "(A)": MODEL["L-CNV"], "(B)": MODEL["L-LATE"], "(C)": MODEL["L-IMG"], "(D)": MODEL["grade"]}
 for q, key in enumerate(("progressor_patients_missed", "non_progressor_patients_flagged")):
-    a_ = fig.add_axes([0.07 + q * 0.145, 0.10, 0.12, 0.33])
+    a_ = fig.add_axes([0.07 + q * 0.155, 0.10, 0.11, 0.33])
     for i, k in enumerate(order):
         v = pats[k][key]; yy = len(order) - 1 - i; a_.plot(v["range"], [yy, yy], color=SC[k], lw=1.6, alpha=0.45, solid_capstyle="butt"); a_.plot([v["mean"]], [yy], marker="o", color=SC[k], ms=4, lw=0)
     a_.set_yticks(range(len(order))); a_.set_yticklabels(order[::-1] if q == 0 else [""] * len(order)); a_.set_ylim(-0.6, len(order) - 0.4)
-    a_.set_xlabel("progressor patients\nmissed (of 32)" if q == 0 else "non-progressor patients\nflagged (of 43)"); a_.set_xlim(-0.5, 32.5 if q == 0 else 43.5)
+    a_.set_xlabel("progressor\npatients missed\n(of 32)" if q == 0 else "non-progressor\npatients flagged\n(of 43)", fontsize=6.2); a_.set_xlim(-0.5, 32.5 if q == 0 else 43.5)
     if q == 0: cxa = a_
 letter(fig, cxa, "c", dx=-0.055)
 # ------------------------------------------------------------------ (d) predictive values against prevalence
@@ -82,21 +81,21 @@ obs = curves(*rates(rows)); BS = np.array([np.stack(curves(*rates(b))) for b in 
 for q, (lab, col) in enumerate((("high-band PPV (post-test risk if flagged)", BAND["high"]), ("low-band NPV", BAND["low"]), ("share sequenced (middle band)", BAND["mid"]))):
     dx_.fill_between(100 * piv, lo[q], hi[q], color=col, alpha=0.35, lw=0); dx_.plot(100 * piv, obs[q], color=col, lw=1.2, label=lab, path_effects=None)
 dx_.axvline(2, color=LIGHT, lw=0.6, ls=":"); i2 = int(np.argmin(np.abs(piv - 0.02)))
-dx_.text(2.6, 0.56, f"at 2%: PPV {100 * obs[0][i2]:.1f}%, NPV {100 * obs[1][i2]:.1f}%,\nsequenced {100 * obs[2][i2]:.1f}%", fontsize=5.6, va="top")
-dx_.set_xlabel("progressor-biopsy prevalence (%)"); dx_.set_ylabel("proportion"); dx_.set_xlim(0, 30); dx_.set_ylim(0, 1.02); dx_.legend(loc="center right", fontsize=5.4)
+dx_.text(29.5, 0.03, f"at 2% prevalence: PPV {100 * obs[0][i2]:.1f}%,\nNPV {100 * obs[1][i2]:.1f}%, sequenced {100 * obs[2][i2]:.1f}%", fontsize=5.4, va="bottom", ha="right")
+dx_.set_xlabel("progressor-biopsy prevalence (%)"); dx_.set_ylabel("proportion"); dx_.set_xlim(0, 30); dx_.set_ylim(0, 1.02); dx_.legend(loc="upper left", bbox_to_anchor=(0.0, 0.92), fontsize=5.2)
 r1o, r0o = rates(rows); src["class_wise_band_rates"] = {"progressor": r1o.tolist(), "non_progressor": r0o.tolist()}
 src["prevalence_curves"] = {"prevalence": piv.tolist(), "ppv_high": obs[0].tolist(), "ppv_high_ci": [lo[0].tolist(), hi[0].tolist()], "npv_low": obs[1].tolist(), "npv_low_ci": [lo[1].tolist(), hi[1].tolist()], "share_sequenced": obs[2].tolist(), "share_ci": [lo[2].tolist(), hi[2].tolist()], "draws": len(boots)}
 letter(fig, dx_, "d", dx=-0.06)
 # ------------------------------------------------------------------ (e) band stability (committed R35)
-ex = fig.add_axes([0.76, 0.10, 0.22, 0.33]); st = J("review_round4/r35.json")["R35"]["c_band_stability"]["repeats_in_modal_band_distribution"]; keys = [f"{c}_{b}" for c in ("progressor", "non_progressor") for b in ("low", "mid", "high")]
+ex = fig.add_axes([0.765, 0.10, 0.185, 0.33]); st = J("review_round4/r35.json")["R35"]["c_band_stability"]["repeats_in_modal_band_distribution"]; keys = [f"{c}_{b}" for c in ("progressor", "non_progressor") for b in ("low", "mid", "high")]
 greys = {10: "#222222", 9: "#555555", 8: "#808080", 7: "#A6A6A6", 6: "#CCCCCC", 5: "#E8E8E8"}; src["band_stability"] = st
 for i, k in enumerate(keys):
     d = st[k]; tot = sum(d.values()); left = 0; yy = len(keys) - 1 - i
     for r_ in (10, 9, 8, 7, 6, 5):
         v = d.get(str(r_), 0); ex.barh(yy, 100 * v / tot, left=left, color=greys[r_], edgecolor="white", lw=0.3, height=0.7); left += 100 * v / tot
-    ex.text(101, yy, f"n {tot}", fontsize=5.6, va="center")
+    ex.text(102, yy, f"n {tot}", fontsize=5.4, va="center", clip_on=False)
 ex.set_yticks(range(len(keys))); ex.set_yticklabels([f"{'P' if k.startswith('progressor') else 'NP'}, {k.split('_')[-1]} band" for k in keys][::-1]); ex.set_xlabel("biopsies (%)"); ex.set_xlim(0, 100)
 for r_ in (10, 9, 8, 7, 6, 5): ex.barh([-10], [0], color=greys[r_], label=f"{r_} of 10 repeats")
-ex.set_ylim(-0.6, len(keys) - 0.4); ex.legend(loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=3, fontsize=5.4, title="repeats in the modal band", title_fontsize=5.6)
+ex.set_ylim(-0.6, len(keys) - 0.4); ex.legend(loc="lower center", bbox_to_anchor=(0.45, 1.0), ncol=2, fontsize=5.2, title="repeats in the modal band", title_fontsize=5.4, columnspacing=0.8)
 letter(fig, ex, "e", dx=-0.09)
 save(fig, "Fig3"); dump("Fig3", src)

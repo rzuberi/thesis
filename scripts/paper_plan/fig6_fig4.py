@@ -38,9 +38,9 @@ for i, (nm, (key, col)) in enumerate(arms.items()):
         if nm == "grade": g = J(f"horizon_grade_row/hg_their_{hz}.json")["arms"]["GRADE"]["foldstrat"]; v, ci = g["auroc"], g["ci95"]
         else: g = J(f"horizon_foldstrat/fs_their_pre_{hz}.json")["arms"][key]; v, ci = g["ipcw"], g["ipcw_ci95"]
         td[nm][hz] = {"auroc": v, "ci95": ci}; ci_point(bx, hz + (i - 1.5) * 0.28, v, ci, col, ms=3.5, label=MODEL_NAME[nm] if hz == 1 else None)
-bx.axhline(0.5, color=LIGHT, lw=0.6, ls=":"); bx.set_xticks(H); bx.set_xticklabels([f"{h_} year{'s' if h_ > 1 else ''}" for h_ in H]); bx.set_ylabel("time-dependent AUROC (fold-stratified, IPCW)"); bx.set_ylim(0.3, 1.0); bx.set_xlim(0, 6)
+bx.axhline(0.5, color=LIGHT, lw=0.6, ls=":"); bx.set_xticks(H); bx.set_xticklabels([f"{h_} year{'s' if h_ > 1 else ''}" for h_ in H]); bx.set_ylabel("time-dependent AUROC (fold-stratified, IPCW)"); bx.set_ylim(0.3, 1.04); bx.set_xlim(0, 6)
 bx.legend(loc="lower left", fontsize=5.6); cases = {hz: J(f"horizon_foldstrat/fs_their_pre_{hz}.json") for hz in H}
-for hz in H: bx.text(hz, 0.32, f"{cases[hz]['n_cases']} cases /\n{cases[hz]['n_controls']} controls", ha="center", fontsize=5.2, color="#333333")
+for hz in H: bx.text(hz, 1.035, f"{cases[hz]['n_cases']} cases /\n{cases[hz]['n_controls']} controls", ha="center", va="top", fontsize=5.2, color="#333333")
 letter(fig, bx, "b", dx=-0.07)
 save(fig, "Fig4")
 agg = {"n_patients": int(nrow), "n_progressor_patients": nP, "biopsies_by_class_band_grade": {CLASS_NAME[c]: {BN[b]: {g: int(((D.y == v) & (D.band == b) & (D.grade == g)).sum()) for g in ("NDBE", "ID", "LGD")} for b in range(3)} for c, v in (("P", 1), ("N", 0))},

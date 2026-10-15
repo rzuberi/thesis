@@ -19,13 +19,12 @@ for cls, v in (("P", 1), ("N", 0)):
 ax.axvline(np.log10(256), color="black", lw=0.7, ls="--"); ax.text(np.log10(256) + 0.03, ax.get_ylim()[1] * 0.95, "256 tiles: below this the\n256 sampled tiles overlap", fontsize=5.6, va="top")
 ax.set_xlabel("tissue tiles per slide (log10)"); ax.set_ylabel("pre-event biopsies"); ax.legend(loc="upper right", fontsize=5.6, bbox_to_anchor=(1.0, 0.75)); letter(fig, ax, "a", dx=-0.05)
 # (b)
-bx = fig.add_axes([0.57, 0.60, 0.40, 0.36]); src["spearman_log_tiles_vs_LIMG"] = {}
+bx = fig.add_axes([0.57, 0.60, 0.40, 0.31]); src["spearman_log_tiles_vs_LIMG"] = {}
 for cls, v in (("N", 0), ("P", 1)):
-    m = yr == v; bx.scatter(lt[m], img[m], s=6, color=CLASS[cls], alpha=0.6, lw=0, label=CLASS_NAME[cls]); rho = float(spearmanr(lt[m], img[m]).correlation); ref = r5[f"c_spearman_LIMG_log_tiles_{'progressor' if v else 'nonprogressor'}"]
+    m = yr == v; ref0 = r5[f"c_spearman_LIMG_log_tiles_{'progressor' if v else 'nonprogressor'}"]; bx.scatter(lt[m], img[m], s=6, color=CLASS[cls], alpha=0.6, lw=0, label=f"{CLASS_NAME[cls]}: Spearman \u03c1 {mi(ref0['value'])} [{mi(ref0['ci95'][0])}, {mi(ref0['ci95'][1])}]"); rho = float(spearmanr(lt[m], img[m]).correlation); ref = r5[f"c_spearman_LIMG_log_tiles_{'progressor' if v else 'nonprogressor'}"]
     src["spearman_log_tiles_vs_LIMG"][CLASS_NAME[cls]] = {"computed": round(rho, 3), "committed_R5": ref}
     if abs(rho - ref["value"]) > 0.005: print("WARNING spearman differs from R5", cls, rho, ref, flush=True)
-bx.text(0.03, 0.97, "\n".join(f"Spearman ρ, {CLASS_NAME[c]}: {mi(src['spearman_log_tiles_vs_LIMG'][CLASS_NAME[c]]['committed_R5']['value'])} [{mi(src['spearman_log_tiles_vs_LIMG'][CLASS_NAME[c]]['committed_R5']['ci95'][0])}, {mi(src['spearman_log_tiles_vs_LIMG'][CLASS_NAME[c]]['committed_R5']['ci95'][1])}]" for c in ("P", "N")), transform=bx.transAxes, va="top", fontsize=6)
-bx.axvline(np.log10(256), color="black", lw=0.7, ls="--"); bx.set_xlabel("tissue tiles per slide (log10)"); bx.set_ylabel("L-IMG score (repeat mean)"); bx.legend(loc="lower right"); letter(fig, bx, "b", dx=-0.06)
+bx.axvline(np.log10(256), color="black", lw=0.7, ls="--"); bx.set_xlabel("tissue tiles per slide (log10)"); bx.set_ylabel("L-IMG score (repeat mean)"); bx.legend(loc="lower left", bbox_to_anchor=(0.0, 1.0), fontsize=5.8); letter(fig, bx, "b", dx=-0.06, dy=0.06)
 # (c)
 cx = fig.add_axes([0.06, 0.10, 0.52, 0.38]); groups = [("all pre-event\n(571)", {m: tp[m] for m in ("L-CNV", "L-IMG", "L-LATE")}), (f"< 256 tiles\n({r32['strata']['lt256']['n_samples']})", r32["strata"]["lt256"]["claim_H"]["auroc"]),
                                                      (f"≥ 256 tiles\n({r32['strata']['ge256']['n_samples']})", r32["strata"]["ge256"]["claim_H"]["auroc"]), ("tissue-matched pairs\n(same tertile)", r32["tissue_matched_pairs_claim_H"]["auroc"])]

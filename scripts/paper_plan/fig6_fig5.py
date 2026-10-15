@@ -27,14 +27,14 @@ tracks = [("joint segmentation (stored)", TJ[five].values[i0], MODEL["L-CNV-join
 fig = plt.figure(figsize=(183 * MM, 150 * MM)); x = np.arange(len(five)); bounds = np.where(chrom[1:] != chrom[:-1])[0] + 0.5; centres = [np.mean(x[chrom == c]) for c in dict.fromkeys(chrom)]
 vmin, vmax = min(t[1].min() for t in tracks), max(t[1].max() for t in tracks); pad = 0.08 * (vmax - vmin); axes = []
 for k, (lab, v, col) in enumerate(tracks):
-    a = fig.add_axes([0.06, 0.575 + (3 - k) * 0.105, 0.60, 0.095]); axes.append(a)
+    a = fig.add_axes([0.06, 0.545 + (3 - k) * 0.10, 0.60, 0.09]); axes.append(a)
     for b in bounds: a.axvline(b, color="#E6E6E6", lw=0.4, zorder=0)
     a.axhline(1.0, color=LIGHT, lw=0.5, ls=":"); a.step(x, v, where="mid", color=col, lw=0.8); a.set_ylim(vmin - pad, vmax + pad); a.set_xlim(-1, len(five))
     a.text(0.005, 0.95, lab, transform=a.transAxes, fontsize=6, va="top", color=col if k < 3 else "black")
     a.set_xticks([]); a.spines["bottom"].set_visible(k == 3)
     if k == 3: a.set_xticks(centres); a.set_xticklabels([c for c in dict.fromkeys(chrom)], fontsize=5.2); a.set_xlabel("chromosome (5-Mb windows, hg38)")
     if k == 1: a.set_ylabel("segmented relative copy number", labelpad=2)
-t0 = SM.time.values.astype(float)[i0]; axes[0].set_title(f"One progressor: earliest pre-event biopsy ({GR[i0]}, {t0:.1f} years before the first HGD/IMC endoscopy; joint vs per-sample r = {r_tiles[i0]:.2f})", fontsize=6.5)
+t0 = SM.time.values.astype(float)[i0]; axes[0].set_title(f"One progressor: earliest pre-event biopsy ({GR[i0]}, {t0:.1f} years before the first HGD/IMC endoscopy)", fontsize=6.5, pad=4)
 letter(fig, axes[0], "a", dx=-0.045)
 # ------------------------------------------------------------------ (b) AUROC by copy-number version
 bx = fig.add_axes([0.74, 0.60, 0.24, 0.35]); H = {r["analysis"]: r for r in J("review_round4/r33_merge.json")["R33"]["claim_H_LIMG_vs_LCNV_dAUROC"]}; tp = J("triage/their_pre.json")["section1"]["auroc"]; r36 = J("review_round4/r36.json")["R36"]
@@ -48,7 +48,7 @@ li = tp["L-IMG"]; bx.axvspan(li["ci95"][0], li["ci95"][1], color=MODEL["L-IMG"],
 bx.set_yticks(range(1, len(vers) + 1)); bx.set_yticklabels([v[0] for v in vers][::-1]); bx.set_xlim(0.35, 1.0); bx.set_ylim(0.4, len(vers) + 1.2); bx.set_xlabel("L-CNV AUROC, fold-stratified [95% CI]")
 letter(fig, bx, "b", dx=-0.13)
 # ------------------------------------------------------------------ (c) per-biopsy correlation joint vs per-sample
-rows = np.where(PRE)[0]; grp = np.where(y == 0, 0, np.where(has_post, 2, 1)); GN = {0: "non-progressor", 1: "progressor,\nno stored HGD/IMC biopsy", 2: "progressor,\nwith stored HGD/IMC biopsy"}; GC = {0: CLASS["N"], 1: "#C994C7", 2: CLASS["P"]}
+rows = np.where(PRE)[0]; grp = np.where(y == 0, 0, np.where(has_post, 2, 1)); GN = {0: "non-progressor", 1: "progressor,\nno HGD/IMC\nbiopsy stored", 2: "progressor,\nHGD/IMC\nbiopsy stored"}; GC = {0: CLASS["N"], 1: "#C994C7", 2: CLASS["P"]}
 src_c = {}; rng = np.random.RandomState(0)
 for q, (lab, r_) in enumerate((("raw 5-Mb tiles", r_tiles), ("final feature block (632 features)", r_block))):
     a = fig.add_axes([0.08 + q * 0.33, 0.08, 0.27, 0.36]); src_c[lab] = {}

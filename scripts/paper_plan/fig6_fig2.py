@@ -32,7 +32,7 @@ OP = {"Triage": (pr["triage_no_vote"]["sensitivity"], pr["triage_no_vote"]["spec
 cut = J("review_round4/r33_base_primary.json")["R33_base"]["cutoffs_median"]
 fig = plt.figure(figsize=(183 * MM, 150 * MM)); src = {"n_samples": int(len(rows)), "n_progressor_samples": int(yr.sum()), "prevalence": float(yr.mean())}
 # ------------------------------------------------------------------ (a) ROC
-ax = fig.add_axes([0.07, 0.57, 0.40, 0.39]); src["roc"] = {}
+ax = fig.add_axes([0.07, 0.63, 0.40, 0.34]); src["roc"] = {}
 for m in ("L-IMG", "L-CNV", "L-CNV-ps", "L-LATE", "P", "grade"):
     fpr, tpr = roc(S[m][rows], yr); a = auc_plain(S[m][rows], yr); L = LAB[m]
     ax.plot(fpr, tpr, color=MODEL[m], lw=1.1 if m in ("L-IMG", "L-CNV-ps", "L-LATE") else 0.9, ls="-" if m != "grade" else "--", drawstyle="steps-post" if m == "grade" else "default",
@@ -40,25 +40,26 @@ for m in ("L-IMG", "L-CNV", "L-CNV-ps", "L-LATE", "P", "grade"):
     src["roc"][m] = {"fpr": np.round(fpr, 4).tolist(), "tpr": np.round(tpr, 4).tolist(), "auroc_pooled_repeat_mean": round(a, 3), "auroc_fold_stratified_committed": L}
 ax.plot([0, 1], [0, 1], color=LIGHT, lw=0.6, ls=":")
 MK = {"Triage": ("*", "black", 9), "(A)": ("o", MODEL["L-CNV"], 4), "(B)": ("o", MODEL["L-LATE"], 4), "(C)": ("o", MODEL["L-IMG"], 4), "B*": ("s", MODEL["L-LATE"], 4), "C*": ("s", MODEL["L-IMG"], 4), "(D)": ("D", MODEL["grade"], 4)}
-OFF = {"Triage": (-0.045, 0.02), "(A)": (0.02, -0.03), "(B)": (0.02, -0.03), "(C)": (0.02, -0.035), "B*": (0.02, 0.01), "C*": (-0.045, -0.03), "(D)": (0.02, -0.01)}
+OFF = {"Triage": (-0.115, 0.035), "(A)": (0.02, -0.03), "(B)": (-0.055, 0.0), "(C)": (0.02, -0.035), "B*": (0.02, 0.015), "C*": (0.025, 0.012), "(D)": (0.02, -0.01)}
 for k, (se, sp) in OP.items():
     mk, c, ms = MK[k]; ax.plot([1 - sp], [se], marker=mk, color=c, ms=ms, mec="black", mew=0.4, lw=0, zorder=5); ax.text(1 - sp + OFF[k][0], se + OFF[k][1], k, fontsize=6, ha="left", va="center", zorder=6)
 ax.set_xlabel("1 − specificity"); ax.set_ylabel("sensitivity"); ax.set_xlim(-0.01, 1); ax.set_ylim(0, 1.01); ax.set_aspect("equal")
-ax.legend(loc="lower right", fontsize=5.6, title="fold-stratified AUROC [95% CI]", title_fontsize=5.8, handlelength=1.4); src["operating_points_sens_spec"] = OP
+ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.17), ncol=2, fontsize=5.4, title="fold-stratified AUROC [95% CI]", title_fontsize=5.6, handlelength=1.4, columnspacing=1.0); src["operating_points_sens_spec"] = OP
 letter(fig, ax, "a", dx=-0.05)
 # ------------------------------------------------------------------ (b) L-IMG distributions by class
-bx = fig.add_axes([0.58, 0.57, 0.40, 0.39]); bins = np.linspace(0, 1, 26); src["img_hist"] = {"bins": bins.tolist()}
+bx = fig.add_axes([0.58, 0.63, 0.40, 0.34]); bins = np.linspace(0, 1, 26); src["img_hist"] = {"bins": bins.tolist()}
 for b, (l, r) in zip(("low", "mid", "high"), ((0, cut["t_low"]), (cut["t_low"], cut["c_star"]), (cut["c_star"], 1))): bx.axvspan(l, r, color=BAND[b], alpha=0.25, lw=0)
 for cls, v in (("P", 1), ("N", 0)):
     h, _ = np.histogram(S["L-IMG"][rows][yr == v], bins); src["img_hist"][CLASS_NAME[cls]] = h.tolist()
     bx.hist(S["L-IMG"][rows][yr == v], bins, histtype="step", color=CLASS[cls], lw=1.1, label=f"{CLASS_NAME[cls]} (n {int((yr == v).sum())})"); bx.hist(S["L-IMG"][rows][yr == v], bins, histtype="stepfilled", color=CLASS[cls], alpha=0.18, lw=0)
 yl = bx.get_ylim()[1]
 for v, lab in ((cut["t_low"], f"t_low {cut['t_low']:.3f}"), (cut["c_star"], f"t_high {cut['c_star']:.3f}")): bx.axvline(v, color="black", lw=0.7, ls="--"); bx.text(v + 0.01, yl * 0.97, lab, fontsize=6, va="top")
-for b, xc in (("low", cut["t_low"] / 2), ("mid", (cut["t_low"] + cut["c_star"]) / 2), ("high", (1 + cut["c_star"]) / 2)): bx.text(xc, yl * 0.80, b, ha="center", fontsize=6, color="#333333")
+for b, xc in (("mid", (cut["t_low"] + cut["c_star"]) / 2), ("high", (1 + cut["c_star"]) / 2)): bx.text(xc, yl * 0.80, b, ha="center", fontsize=6, color="#333333")
+bx.text(0.004, yl * 0.80, "low", ha="left", fontsize=6, color="#333333")
 bx.set_xlabel("L-IMG score (mean over the 10 repeats)"); bx.set_ylabel("pre-event biopsies"); bx.legend(loc="center right"); bx.set_xlim(0, 1)
 letter(fig, bx, "b", dx=-0.06)
 # ------------------------------------------------------------------ (c) L-IMG vs L-CNV
-cx = fig.add_axes([0.07, 0.07, 0.40, 0.39]); src["spearman_within_class"] = {}
+cx = fig.add_axes([0.07, 0.07, 0.40, 0.34]); src["spearman_within_class"] = {}
 for cls, v in (("N", 0), ("P", 1)):
     m = yr == v; cx.scatter(S["L-IMG"][rows][m], S["L-CNV"][rows][m], s=7, color=CLASS[cls], alpha=0.65, lw=0, label=CLASS_NAME[cls]); rho = spearmanr(S["L-IMG"][rows][m], S["L-CNV"][rows][m]).correlation
     src["spearman_within_class"][CLASS_NAME[cls]] = round(float(rho), 3)
@@ -66,7 +67,7 @@ cx.text(0.03, 0.97, "\n".join(f"Spearman ρ, {CLASS_NAME[c]}: {src['spearman_wit
 cx.set_xlabel("L-IMG score (repeat mean)"); cx.set_ylabel("L-CNV score, shipped matrix (repeat mean)"); cx.set_xlim(-0.02, 1.02); cx.set_ylim(-0.02, 1.02); cx.set_aspect("equal"); cx.legend(loc="lower right")
 letter(fig, cx, "c", dx=-0.05)
 # ------------------------------------------------------------------ (d) precision-recall
-dx_ = fig.add_axes([0.58, 0.07, 0.40, 0.39]); src["pr"] = {}
+dx_ = fig.add_axes([0.58, 0.07, 0.40, 0.34]); src["pr"] = {}
 for m in ("L-IMG", "L-CNV", "L-LATE"):
     rec, prec = prc(S[m][rows], yr); ap = float(np.sum(np.diff(rec) * prec[1:])); dx_.plot(rec, prec, color=MODEL[m], lw=1.1, label=f"{MODEL_NAME[m]} (AP {ap:.2f})"); src["pr"][m] = {"recall": np.round(rec, 4).tolist(), "precision": np.round(prec, 4).tolist(), "average_precision": round(ap, 3)}
 dx_.axhline(yr.mean(), color=LIGHT, lw=0.7, ls=":"); dx_.text(0.02, yr.mean() + 0.015, f"prevalence {100 * yr.mean():.1f}%", fontsize=6, color=GREY)

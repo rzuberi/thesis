@@ -11,7 +11,7 @@ MODEL_NAME = {"L-IMG": "L-IMG (H&E model)", "L-CNV": "L-CNV, shipped matrix", "L
               "L-CNV-joint": "L-CNV, joint package", "L-LATE": "L-LATE (late fusion)", "P": "Published model (P)", "grade": "Pathologist grade"}
 BAND = {"low": "#88CCEE", "mid": "#DDCC77", "high": "#CC6677"}; BAND_NAME = {"low": "low band: cleared", "mid": "middle band: sequenced", "high": "high band: flagged"}
 CLASS = {"P": "#882255", "N": "#44AA99"}; CLASS_NAME = {"P": "progressor", "N": "non-progressor"}; GREY = "#777777"; LIGHT = "#BBBBBB"
-plt.rcParams.update({"font.family": "sans-serif", "font.sans-serif": ["Arial", "Helvetica", "Liberation Sans", "DejaVu Sans"], "font.size": 7, "axes.titlesize": 7, "axes.labelsize": 7,
+plt.rcParams.update({"font.family": "sans-serif", "font.sans-serif": ["DejaVu Sans"], "font.size": 7,   # bundled with matplotlib on every machine (the cluster has no Arial/Helvetica); Type 42 text, swap at submission "axes.titlesize": 7, "axes.labelsize": 7,
                      "xtick.labelsize": 6.5, "ytick.labelsize": 6.5, "legend.fontsize": 6.5, "axes.linewidth": 0.6, "xtick.major.width": 0.6, "ytick.major.width": 0.6, "xtick.major.size": 2.5,
                      "ytick.major.size": 2.5, "axes.spines.top": False, "axes.spines.right": False, "legend.frameon": False, "pdf.fonttype": 42, "ps.fonttype": 42, "lines.linewidth": 1.0,
                      "axes.titlelocation": "left", "legend.handlelength": 1.6, "legend.handletextpad": 0.5, "legend.labelspacing": 0.3, "legend.borderaxespad": 0.2, "mathtext.default": "regular"})
