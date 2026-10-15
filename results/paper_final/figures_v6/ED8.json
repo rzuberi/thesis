@@ -1,0 +1,166 @@
+{
+ "draws": 2000,
+ "strata": {
+  "time": {
+   "< 1 year": {
+    "n_progressor": 15,
+    "n_non_progressor": 410,
+    "n_patients": 50,
+    "L-CNV": {
+     "value": 0.852,
+     "ci95": [
+      0.688,
+      0.987
+     ]
+    },
+    "L-IMG": {
+     "value": 0.848,
+     "ci95": [
+      0.7,
+      0.963
+     ]
+    },
+    "L-LATE": {
+     "value": 0.951,
+     "ci95": [
+      0.915,
+      0.977
+     ]
+    }
+   },
+   "1\u20133 years": {
+    "n_progressor": 84,
+    "n_non_progressor": 410,
+    "n_patients": 69,
+    "L-CNV": {
+     "value": 0.819,
+     "ci95": [
+      0.721,
+      0.899
+     ]
+    },
+    "L-IMG": {
+     "value": 0.864,
+     "ci95": [
+      0.798,
+      0.928
+     ]
+    },
+    "L-LATE": {
+     "value": 0.897,
+     "ci95": [
+      0.823,
+      0.954
+     ]
+    }
+   },
+   "> 3 years": {
+    "n_progressor": 62,
+    "n_non_progressor": 410,
+    "n_patients": 64,
+    "L-CNV": {
+     "value": 0.765,
+     "ci95": [
+      0.646,
+      0.87
+     ]
+    },
+    "L-IMG": {
+     "value": 0.823,
+     "ci95": [
+      0.76,
+      0.879
+     ]
+    },
+    "L-LATE": {
+     "value": 0.861,
+     "ci95": [
+      0.79,
+      0.916
+     ]
+    }
+   }
+  },
+  "grade": {
+   "NDBE": {
+    "n_progressor": 104,
+    "n_non_progressor": 334,
+    "n_patients": 71,
+    "L-CNV": {
+     "value": 0.78,
+     "ci95": [
+      0.673,
+      0.869
+     ]
+    },
+    "L-IMG": {
+     "value": 0.827,
+     "ci95": [
+      0.771,
+      0.885
+     ]
+    },
+    "L-LATE": {
+     "value": 0.867,
+     "ci95": [
+      0.79,
+      0.928
+     ]
+    }
+   },
+   "ID": {
+    "n_progressor": 15,
+    "n_non_progressor": 51,
+    "n_patients": 30,
+    "L-CNV": {
+     "value": 0.861,
+     "ci95": [
+      0.692,
+      0.975
+     ]
+    },
+    "L-IMG": {
+     "value": 0.851,
+     "ci95": [
+      0.705,
+      0.982
+     ]
+    },
+    "L-LATE": {
+     "value": 0.92,
+     "ci95": [
+      0.826,
+      0.994
+     ]
+    }
+   },
+   "LGD": {
+    "n_progressor": 42,
+    "n_non_progressor": 25,
+    "n_patients": 30,
+    "L-CNV": {
+     "value": 0.789,
+     "ci95": [
+      0.658,
+      0.933
+     ]
+    },
+    "L-IMG": {
+     "value": 0.892,
+     "ci95": [
+      0.81,
+      0.981
+     ]
+    },
+    "L-LATE": {
+     "value": 0.925,
+     "ci95": [
+      0.869,
+      0.987
+     ]
+    }
+   }
+  }
+ },
+ "note": "descriptive; time strata use the progressor biopsies of the stratum against all non-progressor pre-event biopsies; grade strata use both classes within the grade"
+}

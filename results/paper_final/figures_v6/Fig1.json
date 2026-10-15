@@ -1,0 +1,98 @@
+{
+ "counts_checked_against_sample_sheet": {
+  "all": {
+   "samples": 676,
+   "patients": 80,
+   "progressor_patients": 37,
+   "progressor_samples": 266
+  },
+  "pre_event": {
+   "samples": 571,
+   "patients": 75,
+   "progressor_patients": 32,
+   "progressor_samples": 161
+  },
+  "ndbe_pre_event": {
+   "samples": 438,
+   "patients": 71,
+   "progressor_patients": 28,
+   "progressor_samples": 104
+  }
+ },
+ "flow_text": [
+  "Discovery cohort (Killcoyne et al. 2020)\n88 patients, 777 sequenced biopsies\n45 progressors, 43 non-progressors",
+  "Biopsies with a matched scanned H&E slide\n80 patients, 676 biopsies (683 slides)\n37 progressors (266), 43 non-progressors (410)",
+  "Primary population: pre-event biopsies\n75 patients, 571 biopsies\n32 progressors (161), 43 non-progressors (410)",
+  "Secondary population: NDBE pre-event biopsies\n71 patients, 438 biopsies\n28 progressors (104), 43 non-progressors (334)"
+ ],
+ "exclusions_text": [
+  "No matched slide:\n101 biopsies; 8 patients\nwithout any slide\n(all progressors)",
+  "At or after the first\nHGD/IMC endoscopy:\n105 biopsies; 5 progressors\nwith no pre-event biopsy",
+  "Graded ID or LGD:\n133 biopsies; 4 progressors\nwith no NDBE\npre-event biopsy"
+ ],
+ "band_shares": {
+  "low": 0.309,
+  "mid": 0.458,
+  "high": 0.232
+ },
+ "frozen_cutoffs_median": {
+  "t_low": 0.042,
+  "c_star": 0.589,
+  "t_seq": 0.233
+ },
+ "timeline_bins_years": [
+  0.0,
+  1.0,
+  2.0,
+  3.0,
+  4.0,
+  5.0,
+  6.0,
+  7.0,
+  8.0,
+  9.0,
+  10.0,
+  11.0,
+  12.0,
+  13.0,
+  14.0
+ ],
+ "timeline_counts": {
+  "progressor": [
+   15,
+   30,
+   36,
+   25,
+   5,
+   17,
+   10,
+   5,
+   3,
+   4,
+   7,
+   3,
+   0,
+   0
+  ],
+  "non-progressor": [
+   93,
+   22,
+   80,
+   26,
+   56,
+   31,
+   36,
+   14,
+   25,
+   6,
+   8,
+   6,
+   3,
+   4
+  ]
+ },
+ "timeline_median_years": {
+  "progressor": 2.5,
+  "non-progressor": 3.0
+ }
+}
