@@ -1,0 +1,115 @@
+{
+ "task": "r33_f3",
+ "R33_f3": {
+  "draws_scored": 200,
+  "mc_resamples": 2000,
+  "claim_H_d_auroc_IMG_minus_CNV": {
+   "mean": 0.07,
+   "median": 0.06,
+   "ci95_percentile": [
+    -0.114,
+    0.302
+   ],
+   "one_sided_5th_percentile": -0.083,
+   "sd": 0.108,
+   "non_inferior_at_-0.05": false,
+   "mc_se_of_5th_percentile": 0.0131,
+   "mc_ci95_of_5th_percentile": [
+    -0.114,
+    -0.069
+   ],
+   "share_of_draws_below_-0.05": 0.11
+  },
+  "claim_T_d_sens_triage_minus_Bstar": {
+   "mean": -0.018,
+   "median": -0.016,
+   "ci95_percentile": [
+    -0.079,
+    0.04
+   ],
+   "one_sided_5th_percentile": -0.069,
+   "sd": 0.033,
+   "non_inferior_at_-0.05": false,
+   "mc_se_of_5th_percentile": 0.0046,
+   "mc_ci95_of_5th_percentile": [
+    -0.079,
+    -0.062
+   ],
+   "share_of_draws_below_-0.05": 0.145
+  },
+  "d_spec_triage_minus_Bstar": {
+   "mean": 0.017,
+   "median": 0.013,
+   "ci95_percentile": [
+    -0.038,
+    0.077
+   ],
+   "one_sided_5th_percentile": -0.03,
+   "sd": 0.031,
+   "non_inferior_at_-0.05": true,
+   "mc_se_of_5th_percentile": 0.0045,
+   "mc_ci95_of_5th_percentile": [
+    -0.038,
+    -0.02
+   ],
+   "share_of_draws_below_-0.05": 0.01
+  },
+  "prespecified_d_sens_triage_minus_B": {
+   "mean": 0.018,
+   "median": 0.018,
+   "ci95_percentile": [
+    -0.055,
+    0.102
+   ],
+   "one_sided_5th_percentile": -0.038,
+   "sd": 0.039,
+   "non_inferior_at_-0.05": true,
+   "mc_se_of_5th_percentile": 0.0069,
+   "mc_ci95_of_5th_percentile": [
+    -0.055,
+    -0.031
+   ],
+   "share_of_draws_below_-0.05": 0.035
+  },
+  "d_spec_triage_minus_B": {
+   "mean": -0.041,
+   "median": -0.043,
+   "ci95_percentile": [
+    -0.145,
+    0.059
+   ],
+   "one_sided_5th_percentile": -0.122,
+   "sd": 0.051,
+   "non_inferior_at_-0.05": false,
+   "mc_se_of_5th_percentile": 0.0099,
+   "mc_ci95_of_5th_percentile": [
+    -0.145,
+    -0.107
+   ],
+   "share_of_draws_below_-0.05": 0.44
+  },
+  "share_sequenced": {
+   "mean": 0.567,
+   "median": 0.566,
+   "ci95_percentile": [
+    0.381,
+    0.779
+   ],
+   "one_sided_5th_percentile": 0.4,
+   "sd": 0.1,
+   "non_inferior_at_-0.05": true,
+   "mc_se_of_5th_percentile": 0.0129,
+   "mc_ci95_of_5th_percentile": [
+    0.382,
+    0.427
+   ],
+   "share_of_draws_below_-0.05": 0.0
+  },
+  "note": "no vote; one stratified 10-fold CV per draw with lambda and all cut-offs re-chosen (rv2_refit_metrics.py F3); Monte Carlo SE = SD of the 5th percentile over 2,000 resamples of the 200 draws",
+  "sanity_round2_f3_expected_Bstar_5th_-0.069_IMG_5th_-0.083": [
+   -0.069,
+   -0.083
+  ]
+ },
+ "prespec": "45b77bf"
+}

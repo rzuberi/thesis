@@ -1,0 +1,1119 @@
+{
+ "task": "r31",
+ "R31": {
+  "join": {
+   "samples_in_sheet": 676,
+   "n_all": 676,
+   "n_pre_event": 571,
+   "pilot_flag_column_nonempty": 0,
+   "pilot_definition": "the sheet's 'Pilot for unpurifed lib' column is empty for all analysed samples; the pilot flag is taken from Batch values containing 'Pilot' (NP Pilot Study, Progressor Pilot Study)",
+   "reads_available": {
+    "all": 671,
+    "pre_event": 567
+   },
+   "cellularity_available": {
+    "all": 135,
+    "pre_event": 111
+   }
+  },
+  "a_cross_tabulation": {
+   "batch": {
+    "by_pre_event_sample": {
+     "table": {
+      "Batch 1": {
+       "progressor": 23,
+       "non_progressor": 42
+      },
+      "Batch 16S": {
+       "progressor": 4,
+       "non_progressor": 7
+      },
+      "Batch 2": {
+       "progressor": 25,
+       "non_progressor": 29
+      },
+      "Batch 3": {
+       "progressor": 22,
+       "non_progressor": 35
+      },
+      "Batch 4": {
+       "progressor": 17,
+       "non_progressor": 40
+      },
+      "Batch 5": {
+       "progressor": 0,
+       "non_progressor": 86
+      },
+      "Batch 6": {
+       "progressor": 0,
+       "non_progressor": 78
+      },
+      "Batch 8": {
+       "progressor": 49,
+       "non_progressor": 0
+      },
+      "Batch 9": {
+       "progressor": 0,
+       "non_progressor": 46
+      },
+      "Exome Subcohort": {
+       "progressor": 17,
+       "non_progressor": 34
+      },
+      "NP Pilot Study": {
+       "progressor": 0,
+       "non_progressor": 13
+      },
+      "Progressor Pilot Study": {
+       "progressor": 4,
+       "non_progressor": 0
+      }
+     },
+     "fisher": {
+      "method": "monte_carlo_10000",
+      "p": 0.0
+     }
+    },
+    "by_all_676_samples": {
+     "table": {
+      "Batch 1": {
+       "progressor": 32,
+       "non_progressor": 42
+      },
+      "Batch 16S": {
+       "progressor": 7,
+       "non_progressor": 7
+      },
+      "Batch 2": {
+       "progressor": 54,
+       "non_progressor": 29
+      },
+      "Batch 3": {
+       "progressor": 30,
+       "non_progressor": 35
+      },
+      "Batch 4": {
+       "progressor": 23,
+       "non_progressor": 40
+      },
+      "Batch 5": {
+       "progressor": 0,
+       "non_progressor": 86
+      },
+      "Batch 6": {
+       "progressor": 0,
+       "non_progressor": 78
+      },
+      "Batch 8": {
+       "progressor": 87,
+       "non_progressor": 0
+      },
+      "Batch 9": {
+       "progressor": 0,
+       "non_progressor": 46
+      },
+      "Exome Subcohort": {
+       "progressor": 26,
+       "non_progressor": 34
+      },
+      "NP Pilot Study": {
+       "progressor": 0,
+       "non_progressor": 13
+      },
+      "Progressor Pilot Study": {
+       "progressor": 7,
+       "non_progressor": 0
+      }
+     },
+     "fisher": {
+      "method": "monte_carlo_10000",
+      "p": 0.0
+     }
+    },
+    "by_patient_modal": {
+     "table": {
+      "Batch 1": {
+       "progressor": 3,
+       "non_progressor": 4
+      },
+      "Batch 2": {
+       "progressor": 5,
+       "non_progressor": 3
+      },
+      "Batch 3": {
+       "progressor": 6,
+       "non_progressor": 4
+      },
+      "Batch 4": {
+       "progressor": 3,
+       "non_progressor": 6
+      },
+      "Batch 5": {
+       "progressor": 0,
+       "non_progressor": 11
+      },
+      "Batch 6": {
+       "progressor": 0,
+       "non_progressor": 7
+      },
+      "Batch 8": {
+       "progressor": 12,
+       "non_progressor": 0
+      },
+      "Batch 9": {
+       "progressor": 0,
+       "non_progressor": 3
+      },
+      "Exome Subcohort": {
+       "progressor": 2,
+       "non_progressor": 3
+      },
+      "NP Pilot Study": {
+       "progressor": 0,
+       "non_progressor": 2
+      },
+      "Progressor Pilot Study": {
+       "progressor": 1,
+       "non_progressor": 0
+      }
+     },
+     "fisher": {
+      "method": "monte_carlo_10000",
+      "p": 0.0
+     },
+     "patients_spanning_several": 15,
+     "n_patients": 75,
+     "max_values_per_patient": 3,
+     "spanning_by_status": {
+      "progressor": 7,
+      "non_progressor": 8
+     }
+    }
+   },
+   "slx_run": {
+    "by_pre_event_sample": {
+     "table": {
+      "SLX-10722": {
+       "progressor": 23,
+       "non_progressor": 42
+      },
+      "SLX-10725": {
+       "progressor": 4,
+       "non_progressor": 0
+      },
+      "SLX-10729": {
+       "progressor": 13,
+       "non_progressor": 34
+      },
+      "SLX-12451": {
+       "progressor": 22,
+       "non_progressor": 35
+      },
+      "SLX-12452": {
+       "progressor": 25,
+       "non_progressor": 29
+      },
+      "SLX-12453": {
+       "progressor": 0,
+       "non_progressor": 86
+      },
+      "SLX-12455": {
+       "progressor": 17,
+       "non_progressor": 40
+      },
+      "SLX-12456": {
+       "progressor": 0,
+       "non_progressor": 78
+      },
+      "SLX-12457": {
+       "progressor": 4,
+       "non_progressor": 7
+      },
+      "SLX-13692": {
+       "progressor": 49,
+       "non_progressor": 0
+      },
+      "SLX-13696": {
+       "progressor": 0,
+       "non_progressor": 46
+      },
+      "SLX-9242": {
+       "progressor": 4,
+       "non_progressor": 0
+      },
+      "SLX-9246": {
+       "progressor": 0,
+       "non_progressor": 13
+      }
+     },
+     "fisher": {
+      "method": "monte_carlo_10000",
+      "p": 0.0
+     }
+    },
+    "by_all_676_samples": {
+     "table": {
+      "SLX-10722": {
+       "progressor": 32,
+       "non_progressor": 42
+      },
+      "SLX-10725": {
+       "progressor": 5,
+       "non_progressor": 0
+      },
+      "SLX-10729": {
+       "progressor": 21,
+       "non_progressor": 34
+      },
+      "SLX-12451": {
+       "progressor": 30,
+       "non_progressor": 35
+      },
+      "SLX-12452": {
+       "progressor": 54,
+       "non_progressor": 29
+      },
+      "SLX-12453": {
+       "progressor": 0,
+       "non_progressor": 86
+      },
+      "SLX-12455": {
+       "progressor": 23,
+       "non_progressor": 40
+      },
+      "SLX-12456": {
+       "progressor": 0,
+       "non_progressor": 78
+      },
+      "SLX-12457": {
+       "progressor": 7,
+       "non_progressor": 7
+      },
+      "SLX-13692": {
+       "progressor": 87,
+       "non_progressor": 0
+      },
+      "SLX-13696": {
+       "progressor": 0,
+       "non_progressor": 46
+      },
+      "SLX-9242": {
+       "progressor": 7,
+       "non_progressor": 0
+      },
+      "SLX-9246": {
+       "progressor": 0,
+       "non_progressor": 13
+      }
+     },
+     "fisher": {
+      "method": "monte_carlo_10000",
+      "p": 0.0
+     }
+    },
+    "by_patient_modal": {
+     "table": {
+      "SLX-10722": {
+       "progressor": 3,
+       "non_progressor": 4
+      },
+      "SLX-10729": {
+       "progressor": 2,
+       "non_progressor": 3
+      },
+      "SLX-12451": {
+       "progressor": 6,
+       "non_progressor": 4
+      },
+      "SLX-12452": {
+       "progressor": 5,
+       "non_progressor": 3
+      },
+      "SLX-12453": {
+       "progressor": 0,
+       "non_progressor": 11
+      },
+      "SLX-12455": {
+       "progressor": 3,
+       "non_progressor": 6
+      },
+      "SLX-12456": {
+       "progressor": 0,
+       "non_progressor": 7
+      },
+      "SLX-13692": {
+       "progressor": 12,
+       "non_progressor": 0
+      },
+      "SLX-13696": {
+       "progressor": 0,
+       "non_progressor": 3
+      },
+      "SLX-9242": {
+       "progressor": 1,
+       "non_progressor": 0
+      },
+      "SLX-9246": {
+       "progressor": 0,
+       "non_progressor": 2
+      }
+     },
+     "fisher": {
+      "method": "monte_carlo_10000",
+      "p": 0.0
+     },
+     "patients_spanning_several": 16,
+     "n_patients": 75,
+     "max_values_per_patient": 3,
+     "spanning_by_status": {
+      "progressor": 8,
+      "non_progressor": 8
+     }
+    }
+   },
+   "pilot": {
+    "by_pre_event_sample": {
+     "table": {
+      "0": {
+       "progressor": 157,
+       "non_progressor": 397
+      },
+      "1": {
+       "progressor": 4,
+       "non_progressor": 13
+      }
+     },
+     "fisher": {
+      "method": "exact",
+      "p": 0.79
+     }
+    },
+    "by_all_676_samples": {
+     "table": {
+      "0": {
+       "progressor": 259,
+       "non_progressor": 397
+      },
+      "1": {
+       "progressor": 7,
+       "non_progressor": 13
+      }
+     },
+     "fisher": {
+      "method": "exact",
+      "p": 0.818
+     }
+    },
+    "by_patient_modal": {
+     "table": {
+      "0": {
+       "progressor": 31,
+       "non_progressor": 41
+      },
+      "1": {
+       "progressor": 1,
+       "non_progressor": 2
+      }
+     },
+     "fisher": {
+      "method": "exact",
+      "p": 1.0
+     },
+     "patients_spanning_several": 5,
+     "n_patients": 75,
+     "max_values_per_patient": 2,
+     "spanning_by_status": {
+      "progressor": 2,
+      "non_progressor": 3
+     }
+    }
+   }
+  },
+  "b_raw_score_auroc": {
+   "number_of_reads": {
+    "value": 0.472,
+    "ci95": [
+     0.375,
+     0.568
+    ]
+   },
+   "pct_barretts_cellularity": {
+    "value": 0.576,
+    "ci95": [
+     0.296,
+     0.786
+    ]
+   },
+   "batch_target_encoded": {
+    "value": 0.759,
+    "ci95": [
+     0.641,
+     0.865
+    ]
+   },
+   "slx_run_target_encoded": {
+    "value": 0.772,
+    "ci95": [
+     0.657,
+     0.873
+    ]
+   },
+   "pilot_flag": {
+    "value": 0.497,
+    "ci95": [
+     0.469,
+     0.524
+    ]
+   },
+   "note": "fold-stratified AUROC on the pre-event samples (missing values excluded within fold); target encoding per repeat x fold = progressor share of the category among the pre-event samples of that fold's training folds, unseen categories = the training share"
+  },
+  "c_within_batch_pairs": {
+   "batch": {
+    "within_pairs_per_repeat": [
+     439,
+     344,
+     410,
+     332,
+     283,
+     351,
+     596,
+     434,
+     442,
+     485
+    ],
+    "min_pairs_per_repeat": 283,
+    "reported": true,
+    "all_within_fold_pairs_repeat1": 5856,
+    "auroc": {
+     "L-CNV": {
+      "value": 0.79,
+      "ci95": [
+       0.675,
+       0.916
+      ]
+     },
+     "L-IMG": {
+      "value": 0.841,
+      "ci95": [
+       0.755,
+       0.925
+      ]
+     },
+     "L-LATE": {
+      "value": 0.893,
+      "ci95": [
+       0.796,
+       0.967
+      ]
+     }
+    },
+    "IMG_minus_CNV": {
+     "delta": 0.051,
+     "ci95": [
+      -0.071,
+      0.184
+     ],
+     "p_two_sided": 0.526,
+     "one_sided_95_lower": -0.059,
+     "non_inferior_at_-0.05": false
+    },
+    "LATE_minus_CNV": {
+     "delta": 0.102,
+     "ci95": [
+      0.013,
+      0.202
+     ],
+     "p_two_sided": 0.027
+    }
+   },
+   "slx_run": {
+    "within_pairs_per_repeat": [
+     421,
+     326,
+     378,
+     332,
+     283,
+     351,
+     564,
+     402,
+     410,
+     485
+    ],
+    "min_pairs_per_repeat": 283,
+    "reported": true,
+    "all_within_fold_pairs_repeat1": 5856,
+    "auroc": {
+     "L-CNV": {
+      "value": 0.783,
+      "ci95": [
+       0.671,
+       0.916
+      ]
+     },
+     "L-IMG": {
+      "value": 0.846,
+      "ci95": [
+       0.756,
+       0.927
+      ]
+     },
+     "L-LATE": {
+      "value": 0.891,
+      "ci95": [
+       0.794,
+       0.968
+      ]
+     }
+    },
+    "IMG_minus_CNV": {
+     "delta": 0.062,
+     "ci95": [
+      -0.065,
+      0.19
+     ],
+     "p_two_sided": 0.427,
+     "one_sided_95_lower": -0.049,
+     "non_inferior_at_-0.05": true
+    },
+    "LATE_minus_CNV": {
+     "delta": 0.107,
+     "ci95": [
+      0.015,
+      0.208
+     ],
+     "p_two_sided": 0.02
+    }
+   },
+   "unstratified_reference": {
+    "L-CNV": 0.801,
+    "L-IMG": 0.847,
+    "L-LATE": 0.889
+   }
+  },
+  "d_batch_probe_uni2h": {
+   "pre_event_samples": {
+    "batches": {
+     "Batch 1": {
+      "n_samples": 65,
+      "n_patients": 9,
+      "auroc_one_vs_rest": 0.802
+     },
+     "Batch 16S": {
+      "n_samples": 11,
+      "n_patients": 9,
+      "auroc_one_vs_rest": 0.441
+     },
+     "Batch 2": {
+      "n_samples": 54,
+      "n_patients": 9,
+      "auroc_one_vs_rest": 0.533
+     },
+     "Batch 3": {
+      "n_samples": 57,
+      "n_patients": 10,
+      "auroc_one_vs_rest": 0.691
+     },
+     "Batch 4": {
+      "n_samples": 57,
+      "n_patients": 9,
+      "auroc_one_vs_rest": 0.571
+     },
+     "Batch 5": {
+      "n_samples": 86,
+      "n_patients": 11,
+      "auroc_one_vs_rest": 0.596
+     },
+     "Batch 6": {
+      "n_samples": 78,
+      "n_patients": 7,
+      "auroc_one_vs_rest": 0.59
+     },
+     "Batch 8": {
+      "n_samples": 49,
+      "n_patients": 13,
+      "auroc_one_vs_rest": 0.81
+     },
+     "Exome Subcohort": {
+      "n_samples": 51,
+      "n_patients": 5,
+      "auroc_one_vs_rest": 0.713
+     }
+    },
+    "n_batches_probed": 9,
+    "auroc_mean_over_batches": 0.639,
+    "auroc_max": 0.81,
+    "n_samples": 571,
+    "n_patients": 75
+   },
+   "non_progressor_pre_event_samples": {
+    "batches": {
+     "Batch 1": {
+      "n_samples": 42,
+      "n_patients": 6,
+      "auroc_one_vs_rest": 0.771
+     },
+     "Batch 16S": {
+      "n_samples": 7,
+      "n_patients": 5,
+      "auroc_one_vs_rest": 0.416
+     },
+     "Batch 4": {
+      "n_samples": 40,
+      "n_patients": 6,
+      "auroc_one_vs_rest": 0.618
+     },
+     "Batch 5": {
+      "n_samples": 86,
+      "n_patients": 11,
+      "auroc_one_vs_rest": 0.615
+     },
+     "Batch 6": {
+      "n_samples": 78,
+      "n_patients": 7,
+      "auroc_one_vs_rest": 0.585
+     }
+    },
+    "n_batches_probed": 5,
+    "auroc_mean_over_batches": 0.601,
+    "auroc_max": 0.771,
+    "n_samples": 410,
+    "n_patients": 43
+   },
+   "embedding_dim": 1536,
+   "note": "one-vs-rest logistic regression (L2, C = 1, features standardised within the training folds), patient-grouped 5-fold CV, AUROC of the out-of-fold probabilities; batches with >= 5 patients"
+  },
+  "e_triage_largest_batch": {
+   "batch_sizes_pre_event": {
+    "Batch 5": 86,
+    "Batch 6": 78,
+    "Batch 1": 65,
+    "Batch 4": 57,
+    "Batch 3": 57,
+    "Batch 2": 54,
+    "Exome Subcohort": 51,
+    "Batch 8": 49,
+    "Batch 9": 46,
+    "NP Pilot Study": 13,
+    "Batch 16S": 11,
+    "Progressor Pilot Study": 4
+   },
+   "largest_batch": {
+    "batch": "Batch 5",
+    "n_samples": 86,
+    "n_progressor_samples": 0,
+    "n_patients": 11,
+    "n_progressor_patients": 0,
+    "draws": 2000,
+    "status": "d_sens not estimable: the batch holds non-progressor pre-event samples only",
+    "specificity_single_model": {
+     "T": {
+      "value": 0.778,
+      "ci95": [
+       0.624,
+       0.914
+      ]
+     },
+     "B": {
+      "value": 0.841,
+      "ci95": [
+       0.707,
+       0.952
+      ]
+     },
+     "B*": {
+      "value": 0.781,
+      "ci95": [
+       0.617,
+       0.918
+      ]
+     },
+     "C": {
+      "value": 0.755,
+      "ci95": [
+       0.656,
+       0.866
+      ]
+     },
+     "C*": {
+      "value": 0.75,
+      "ci95": [
+       0.656,
+       0.863
+      ]
+     }
+    },
+    "d_spec_triage_minus": {
+     "B": {
+      "delta": -0.063,
+      "ci95": [
+       -0.089,
+       -0.032
+      ],
+      "p_two_sided": 0.0
+     },
+     "B*": {
+      "delta": -0.003,
+      "ci95": [
+       -0.02,
+       0.024
+      ],
+      "p_two_sided": 0.786
+     }
+    },
+    "share_sequenced": {
+     "value": 0.458,
+     "ci95": [
+      0.381,
+      0.547
+     ]
+    }
+   },
+   "largest_batch_with_both_classes": {
+    "batch": "Batch 1",
+    "n_samples": 65,
+    "n_progressor_samples": 23,
+    "n_patients": 9,
+    "n_progressor_patients": 3,
+    "draws": 2000,
+    "status": "done",
+    "claim_T": {
+     "triage_no_vote": {
+      "sensitivity": 0.891,
+      "sens_ci95": [
+       0.833,
+       0.988
+      ],
+      "specificity": 0.667,
+      "spec_ci95": [
+       0.467,
+       0.893
+      ]
+     },
+     "triage_voted": {
+      "sensitivity": 0.913,
+      "sens_ci95": [
+       0.833,
+       1.0
+      ],
+      "specificity": 0.714,
+      "spec_ci95": [
+       0.5,
+       0.947
+      ]
+     },
+     "share_sequenced": {
+      "per_repeat_mean": 0.475,
+      "ci95": [
+       0.333,
+       0.6
+      ],
+      "in_at_least_one_repeat": 0.785,
+      "cap_0.70_met": true
+     },
+     "no_vote_vs_Bstar_training_matched": {
+      "d_sens_triage_minus": {
+       "delta": -0.017,
+       "ci95": [
+        -0.1,
+        0.0
+       ],
+       "p_two_sided": 0.176,
+       "one_sided_95_lower": -0.1,
+       "non_inferior_at_-0.05": false
+      },
+      "d_spec_triage_minus": {
+       "delta": 0.019,
+       "ci95": [
+        -0.026,
+        0.065
+       ],
+       "p_two_sided": 0.702
+      },
+      "comparator_sensitivity": 0.909,
+      "comparator_sens_ci95": [
+       0.842,
+       0.988
+      ],
+      "comparator_specificity": 0.648,
+      "comparator_spec_ci95": [
+       0.408,
+       0.912
+      ]
+     },
+     "no_vote_vs_Bstar_evaluation_matched": {
+      "d_sens_triage_minus": {
+       "delta": -0.009,
+       "ci95": [
+        -0.108,
+        0.033
+       ],
+       "p_two_sided": 0.764,
+       "one_sided_95_lower": -0.086,
+       "non_inferior_at_-0.05": false
+      },
+      "comparator_sensitivity": 0.9,
+      "comparator_sens_ci95": [
+       0.808,
+       0.994
+      ]
+     },
+     "no_vote_vs_B": {
+      "d_sens_triage_minus": {
+       "delta": 0.026,
+       "ci95": [
+        0.0,
+        0.042
+       ],
+       "p_two_sided": 0.176,
+       "one_sided_95_lower": 0.0,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec_triage_minus": {
+       "delta": -0.1,
+       "ci95": [
+        -0.157,
+        -0.055
+       ],
+       "p_two_sided": 0.0
+      },
+      "comparator_sensitivity": 0.865,
+      "comparator_sens_ci95": [
+       0.792,
+       0.988
+      ],
+      "comparator_specificity": 0.767,
+      "comparator_spec_ci95": [
+       0.58,
+       0.964
+      ]
+     },
+     "voted_vs_Bstar_training_matched": {
+      "d_sens_triage_minus": {
+       "delta": 0.043,
+       "ci95": [
+        0.0,
+        0.083
+       ],
+       "p_two_sided": 0.677,
+       "one_sided_95_lower": 0.0,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec_triage_minus": {
+       "delta": 0.048,
+       "ci95": [
+        0.0,
+        0.107
+       ],
+       "p_two_sided": 0.701
+      },
+      "comparator_sensitivity": 0.87,
+      "comparator_sens_ci95": [
+       0.75,
+       1.0
+      ],
+      "comparator_specificity": 0.667,
+      "comparator_spec_ci95": [
+       0.405,
+       0.947
+      ]
+     },
+     "voted_vs_B": {
+      "d_sens_triage_minus": {
+       "delta": 0.087,
+       "ci95": [
+        0.0,
+        0.333
+       ],
+       "p_two_sided": 0.176,
+       "one_sided_95_lower": 0.0,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec_triage_minus": {
+       "delta": -0.071,
+       "ci95": [
+        -0.147,
+        0.0
+       ],
+       "p_two_sided": 0.063
+      },
+      "comparator_sensitivity": 0.826,
+      "comparator_sens_ci95": [
+       0.667,
+       1.0
+      ],
+      "comparator_specificity": 0.786,
+      "comparator_spec_ci95": [
+       0.582,
+       1.0
+      ]
+     },
+     "no_vote_vs_Cstar_training_matched": {
+      "d_sens_triage_minus": {
+       "delta": 0.057,
+       "ci95": [
+        -0.012,
+        0.233
+       ],
+       "p_two_sided": 0.176,
+       "one_sided_95_lower": -0.012,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec_triage_minus": {
+       "delta": -0.05,
+       "ci95": [
+        -0.213,
+        0.115
+       ],
+       "p_two_sided": 0.753
+      },
+      "comparator_sensitivity": 0.835,
+      "comparator_sens_ci95": [
+       0.633,
+       1.0
+      ],
+      "comparator_specificity": 0.717,
+      "comparator_spec_ci95": [
+       0.6,
+       0.793
+      ]
+     },
+     "no_vote_vs_C": {
+      "d_sens_triage_minus": {
+       "delta": 0.07,
+       "ci95": [
+        -0.012,
+        0.267
+       ],
+       "p_two_sided": 0.176
+      },
+      "d_spec_triage_minus": {
+       "delta": -0.06,
+       "ci95": [
+        -0.229,
+        0.102
+       ],
+       "p_two_sided": 0.712
+      },
+      "comparator_sensitivity": 0.822,
+      "comparator_sens_ci95": [
+       0.6,
+       1.0
+      ],
+      "comparator_specificity": 0.726,
+      "comparator_spec_ci95": [
+       0.6,
+       0.805
+      ]
+     }
+    },
+    "claim_H": {
+     "auroc": {
+      "L-CNV": {
+       "value": 0.809,
+       "ci95": [
+        0.483,
+        1.0
+       ]
+      },
+      "L-IMG": {
+       "value": 0.823,
+       "ci95": [
+        0.556,
+        0.986
+       ]
+      },
+      "L-LATE": {
+       "value": 0.939,
+       "ci95": [
+        0.896,
+        0.979
+       ]
+      }
+     },
+     "IMG_minus_CNV": {
+      "delta": 0.014,
+      "ci95": [
+       -0.433,
+       0.483
+      ],
+      "p_two_sided": 0.947,
+      "one_sided_95_lower": -0.41,
+      "non_inferior_at_-0.05": false
+     },
+     "LATE_minus_CNV": {
+      "delta": 0.13,
+      "ci95": [
+       -0.079,
+       0.468
+      ],
+      "p_two_sided": 0.5
+     }
+    }
+   },
+   "batches_with_both_classes": [
+    "Batch 1",
+    "Batch 4",
+    "Batch 3",
+    "Batch 2",
+    "Exome Subcohort",
+    "Batch 16S"
+   ]
+  },
+  "f_exclusion_flags": {
+   "excluded": {
+    "all_676": {
+     "progressor": 80,
+     "non_progressor": 21
+    },
+    "pre_event_571": {
+     "progressor": 36,
+     "non_progressor": 21
+    }
+   },
+   "remove": {
+    "all_676": {
+     "progressor": 15,
+     "non_progressor": 2
+    },
+    "pre_event_571": {
+     "progressor": 1,
+     "non_progressor": 2
+    }
+   },
+   "inconsistency": {
+    "all_676": {
+     "progressor": 8,
+     "non_progressor": 0
+    },
+    "pre_event_571": {
+     "progressor": 8,
+     "non_progressor": 0
+    }
+   },
+   "notes_on_label_review": {
+    "all_676": {
+     "progressor": 102,
+     "non_progressor": 26
+    },
+    "pre_event_571": {
+     "progressor": 54,
+     "non_progressor": 26
+    }
+   },
+   "notes_on_label_review_distinct_pre_event": [
+    "A small cluster of glands showing atypia is noted but it has not been possible to assess these further due to insufficient representative tissue.",
+    "OGD path up to HGD/focal HGD",
+    "There is quite florid reactive atypia Barrett's oesophagus ?dysplasia.",
+    "focal ID, outcome OGD focal HGD",
+    "focal/outcome OGD focal HGD",
+    "focal_ID",
+    "focal_LGD",
+    "no path record",
+    "outcome OGD focal HGD",
+    "previous dysplasia",
+    "unclear annotation"
+   ]
+  }
+ },
+ "prespec": "45b77bf"
+}

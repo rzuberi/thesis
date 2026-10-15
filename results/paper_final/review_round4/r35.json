@@ -1,0 +1,503 @@
+{
+ "task": "r35",
+ "R35": {
+  "a_triage_CNV_middle_band": {
+   "claim_T": {
+    "triage_no_vote": {
+     "sensitivity": 0.863,
+     "sens_ci95": [
+      0.788,
+      0.923
+     ],
+     "specificity": 0.672,
+     "spec_ci95": [
+      0.599,
+      0.746
+     ]
+    },
+    "triage_voted": {
+     "sensitivity": 0.857,
+     "sens_ci95": [
+      0.762,
+      0.94
+     ],
+     "specificity": 0.717,
+     "spec_ci95": [
+      0.639,
+      0.795
+     ]
+    },
+    "share_sequenced": {
+     "per_repeat_mean": 0.458,
+     "ci95": [
+      0.408,
+      0.504
+     ],
+     "in_at_least_one_repeat": 0.76,
+     "cap_0.70_met": true
+    },
+    "no_vote_vs_Bstar_training_matched": {
+     "d_sens_triage_minus": {
+      "delta": -0.03,
+      "ci95": [
+       -0.054,
+       -0.01
+      ],
+      "p_two_sided": 0.001,
+      "one_sided_95_lower": -0.049,
+      "non_inferior_at_-0.05": true
+     },
+     "d_spec_triage_minus": {
+      "delta": 0.03,
+      "ci95": [
+       -0.001,
+       0.071
+      ],
+      "p_two_sided": 0.064
+     },
+     "comparator_sensitivity": 0.893,
+     "comparator_sens_ci95": [
+      0.818,
+      0.953
+     ],
+     "comparator_specificity": 0.642,
+     "comparator_spec_ci95": [
+      0.559,
+      0.722
+     ]
+    },
+    "no_vote_vs_Bstar_evaluation_matched": {
+     "d_sens_triage_minus": {
+      "delta": -0.009,
+      "ci95": [
+       -0.043,
+       0.026
+      ],
+      "p_two_sided": 0.538,
+      "one_sided_95_lower": -0.037,
+      "non_inferior_at_-0.05": true
+     },
+     "comparator_sensitivity": 0.872,
+     "comparator_sens_ci95": [
+      0.785,
+      0.939
+     ]
+    },
+    "no_vote_vs_B": {
+     "d_sens_triage_minus": {
+      "delta": 0.031,
+      "ci95": [
+       0.001,
+       0.063
+      ],
+      "p_two_sided": 0.046,
+      "one_sided_95_lower": 0.005,
+      "non_inferior_at_-0.05": true
+     },
+     "d_spec_triage_minus": {
+      "delta": -0.09,
+      "ci95": [
+       -0.121,
+       -0.054
+      ],
+      "p_two_sided": 0.0
+     },
+     "comparator_sensitivity": 0.832,
+     "comparator_sens_ci95": [
+      0.74,
+      0.909
+     ],
+     "comparator_specificity": 0.762,
+     "comparator_spec_ci95": [
+      0.694,
+      0.824
+     ]
+    },
+    "voted_vs_Bstar_training_matched": {
+     "d_sens_triage_minus": {
+      "delta": -0.025,
+      "ci95": [
+       -0.068,
+       0.011
+      ],
+      "p_two_sided": 0.295,
+      "one_sided_95_lower": -0.06,
+      "non_inferior_at_-0.05": false
+     },
+     "d_spec_triage_minus": {
+      "delta": 0.039,
+      "ci95": [
+       -0.01,
+       0.094
+      ],
+      "p_two_sided": 0.135
+     },
+     "comparator_sensitivity": 0.882,
+     "comparator_sens_ci95": [
+      0.788,
+      0.955
+     ],
+     "comparator_specificity": 0.678,
+     "comparator_spec_ci95": [
+      0.59,
+      0.762
+     ]
+    },
+    "voted_vs_B": {
+     "d_sens_triage_minus": {
+      "delta": 0.056,
+      "ci95": [
+       0.0,
+       0.115
+      ],
+      "p_two_sided": 0.053,
+      "one_sided_95_lower": 0.012,
+      "non_inferior_at_-0.05": true
+     },
+     "d_spec_triage_minus": {
+      "delta": -0.068,
+      "ci95": [
+       -0.118,
+       -0.013
+      ],
+      "p_two_sided": 0.018
+     },
+     "comparator_sensitivity": 0.801,
+     "comparator_sens_ci95": [
+      0.697,
+      0.893
+     ],
+     "comparator_specificity": 0.785,
+     "comparator_spec_ci95": [
+      0.714,
+      0.85
+     ]
+    },
+    "no_vote_vs_Cstar_training_matched": {
+     "d_sens_triage_minus": {
+      "delta": 0.047,
+      "ci95": [
+       0.0,
+       0.092
+      ],
+      "p_two_sided": 0.053,
+      "one_sided_95_lower": 0.007,
+      "non_inferior_at_-0.05": true
+     },
+     "d_spec_triage_minus": {
+      "delta": -0.009,
+      "ci95": [
+       -0.07,
+       0.054
+      ],
+      "p_two_sided": 0.78
+     },
+     "comparator_sensitivity": 0.816,
+     "comparator_sens_ci95": [
+      0.743,
+      0.889
+     ],
+     "comparator_specificity": 0.681,
+     "comparator_spec_ci95": [
+      0.629,
+      0.735
+     ]
+    },
+    "no_vote_vs_C": {
+     "d_sens_triage_minus": {
+      "delta": 0.068,
+      "ci95": [
+       0.016,
+       0.115
+      ],
+      "p_two_sided": 0.008
+     },
+     "d_spec_triage_minus": {
+      "delta": -0.047,
+      "ci95": [
+       -0.105,
+       0.012
+      ],
+      "p_two_sided": 0.107
+     },
+     "comparator_sensitivity": 0.795,
+     "comparator_sens_ci95": [
+      0.723,
+      0.87
+     ],
+     "comparator_specificity": 0.719,
+     "comparator_spec_ci95": [
+      0.669,
+      0.769
+     ]
+    }
+   },
+   "training_specificity_target_median": 0.592,
+   "t_seq_median": 0.214,
+   "t_seq_fallback": 0,
+   "reference_L-LATE_middle_band": {
+    "no_vote_vs_Bstar": {
+     "delta": -0.016,
+     "ci95": [
+      -0.036,
+      0.001
+     ],
+     "p_two_sided": 0.076,
+     "one_sided_95_lower": -0.032,
+     "non_inferior_at_-0.05": true
+    }
+   },
+   "sanity_paper_triage_voted": {
+    "expected": {
+     "sensitivity": 0.857,
+     "specificity": 0.717
+    },
+    "got": {
+     "sensitivity": 0.857,
+     "specificity": 0.717
+    }
+   }
+  },
+  "b_frozen_cutoffs_on_heldout": {
+   "label": "frozen cut-offs on held-out predictions, not out of fold (medians over folds that include the evaluated fold)",
+   "cutoffs": {
+    "t_B": 0.314,
+    "t_high": 0.589,
+    "t_low": 0.042,
+    "t_seq": 0.233
+   },
+   "t_B_is_0.314": true,
+   "triage_no_vote": {
+    "sensitivity": 0.86,
+    "sens_ci95": [
+     0.789,
+     0.923
+    ],
+    "specificity": 0.701,
+    "spec_ci95": [
+     0.635,
+     0.768
+    ],
+    "share_sequenced": 0.454,
+    "share_ci95": [
+     0.403,
+     0.499
+    ],
+    "cap_0.70_met": true
+   },
+   "band_shares_mean_over_repeats": {
+    "low": 0.314,
+    "mid": 0.454,
+    "high": 0.232
+   },
+   "vs_B_frozen_0.314_no_vote": {
+    "d_sens_triage_minus": {
+     "delta": 0.028,
+     "ci95": [
+      0.001,
+      0.054
+     ],
+     "p_two_sided": 0.041,
+     "one_sided_95_lower": 0.007,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": -0.047,
+     "ci95": [
+      -0.075,
+      -0.016
+     ],
+     "p_two_sided": 0.009
+    },
+    "comparator_sensitivity": 0.832,
+    "comparator_sens_ci95": [
+     0.744,
+     0.907
+    ],
+    "comparator_specificity": 0.748,
+    "comparator_spec_ci95": [
+     0.676,
+     0.815
+    ]
+   },
+   "vs_Bstar_training_matched_no_vote": {
+    "d_sens_triage_minus": {
+     "delta": -0.021,
+     "ci95": [
+      -0.047,
+      0.003
+     ],
+     "p_two_sided": 0.087,
+     "one_sided_95_lower": -0.043,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": 0.036,
+     "ci95": [
+      0.004,
+      0.073
+     ],
+     "p_two_sided": 0.018
+    },
+    "comparator_sensitivity": 0.881,
+    "comparator_sens_ci95": [
+     0.801,
+     0.944
+    ],
+    "comparator_specificity": 0.665,
+    "comparator_spec_ci95": [
+     0.585,
+     0.745
+    ]
+   },
+   "voted_for_reference": {
+    "vs_B_frozen": {
+     "d_sens_triage_minus": {
+      "delta": 0.031,
+      "ci95": [
+       -0.006,
+       0.07
+      ],
+      "p_two_sided": 0.128,
+      "one_sided_95_lower": 0.0,
+      "non_inferior_at_-0.05": true
+     },
+     "d_spec_triage_minus": {
+      "delta": -0.049,
+      "ci95": [
+       -0.087,
+       -0.006
+      ],
+      "p_two_sided": 0.034
+     },
+     "comparator_sensitivity": 0.82,
+     "comparator_sens_ci95": [
+      0.721,
+      0.906
+     ],
+     "comparator_specificity": 0.78,
+     "comparator_spec_ci95": [
+      0.705,
+      0.847
+     ]
+    },
+    "vs_Bstar": {
+     "d_sens_triage_minus": {
+      "delta": -0.019,
+      "ci95": [
+       -0.066,
+       0.024
+      ],
+      "p_two_sided": 0.536,
+      "one_sided_95_lower": -0.059,
+      "non_inferior_at_-0.05": false
+     },
+     "d_spec_triage_minus": {
+      "delta": 0.032,
+      "ci95": [
+       -0.003,
+       0.078
+      ],
+      "p_two_sided": 0.104
+     },
+     "comparator_sensitivity": 0.87,
+     "comparator_sens_ci95": [
+      0.773,
+      0.947
+     ],
+     "comparator_specificity": 0.7,
+     "comparator_spec_ci95": [
+      0.611,
+      0.783
+     ]
+    }
+   },
+   "all_repeats_identical_cutoffs": true
+  },
+  "c_band_stability": {
+   "repeats_in_modal_band_distribution": {
+    "all": {
+     "10": 200,
+     "9": 119,
+     "8": 81,
+     "7": 79,
+     "6": 67,
+     "5": 25
+    },
+    "progressor_low": {
+     "10": 2,
+     "8": 2,
+     "7": 1,
+     "6": 2
+    },
+    "progressor_mid": {
+     "10": 13,
+     "9": 20,
+     "8": 9,
+     "7": 9,
+     "6": 10,
+     "5": 3
+    },
+    "progressor_high": {
+     "10": 64,
+     "9": 11,
+     "8": 10,
+     "7": 4,
+     "6": 1
+    },
+    "non_progressor_low": {
+     "10": 59,
+     "9": 32,
+     "8": 20,
+     "7": 23,
+     "6": 21,
+     "5": 16
+    },
+    "non_progressor_mid": {
+     "10": 50,
+     "9": 49,
+     "8": 37,
+     "7": 35,
+     "6": 28,
+     "5": 6
+    },
+    "non_progressor_high": {
+     "10": 12,
+     "9": 7,
+     "8": 3,
+     "7": 7,
+     "6": 5
+    }
+   },
+   "mean_repeats_in_modal_band": {
+    "all": 8.405,
+    "progressor": 8.87,
+    "non_progressor": 8.222
+   },
+   "share_all_10_repeats_same_band": 0.35,
+   "modal_band_counts": {
+    "progressor": {
+     "low": 7,
+     "mid": 64,
+     "high": 90
+    },
+    "non_progressor": {
+     "low": 171,
+     "mid": 205,
+     "high": 34
+    }
+   },
+   "share_single_model_call_differs_between_repeats": {
+    "all": 0.382,
+    "progressor": 0.292,
+    "non_progressor": 0.417,
+    "by_modal_band": {
+     "low": 0.219,
+     "mid": 0.632,
+     "high": 0.073
+    }
+   }
+  }
+ },
+ "prespec": "45b77bf"
+}

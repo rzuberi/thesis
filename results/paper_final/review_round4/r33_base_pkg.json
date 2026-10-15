@@ -1,0 +1,336 @@
+{
+ "task": "r33_base_pkg",
+ "R33_base": {
+  "analysis": "pkg",
+  "n_samples": 571,
+  "n_progressor_samples": 161,
+  "n_patients": 75,
+  "n_progressor_patients": 32,
+  "draws": 2000,
+  "cutoffs_median": {
+   "t_low": 0.042,
+   "c_star": 0.589,
+   "t_seq": 0.237
+  },
+  "folds_no_middle_band": 0,
+  "t_seq_fallback": 0,
+  "training_specificity_target_median": 0.666,
+  "claim_T": {
+   "triage_no_vote": {
+    "sensitivity": 0.865,
+    "sens_ci95": [
+     0.801,
+     0.926
+    ],
+    "specificity": 0.737,
+    "spec_ci95": [
+     0.667,
+     0.796
+    ]
+   },
+   "triage_voted": {
+    "sensitivity": 0.863,
+    "sens_ci95": [
+     0.779,
+     0.945
+    ],
+    "specificity": 0.763,
+    "spec_ci95": [
+     0.69,
+     0.824
+    ]
+   },
+   "share_sequenced": {
+    "per_repeat_mean": 0.458,
+    "ci95": [
+     0.408,
+     0.504
+    ],
+    "in_at_least_one_repeat": 0.76,
+    "cap_0.70_met": true
+   },
+   "no_vote_vs_Bstar_training_matched": {
+    "d_sens_triage_minus": {
+     "delta": -0.007,
+     "ci95": [
+      -0.023,
+      0.007
+     ],
+     "p_two_sided": 0.428,
+     "one_sided_95_lower": -0.02,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": 0.024,
+     "ci95": [
+      -0.013,
+      0.071
+     ],
+     "p_two_sided": 0.254
+    },
+    "comparator_sensitivity": 0.872,
+    "comparator_sens_ci95": [
+     0.8,
+     0.934
+    ],
+    "comparator_specificity": 0.713,
+    "comparator_spec_ci95": [
+     0.618,
+     0.789
+    ]
+   },
+   "no_vote_vs_Bstar_evaluation_matched": {
+    "d_sens_triage_minus": {
+     "delta": 0.009,
+     "ci95": [
+      -0.021,
+      0.043
+     ],
+     "p_two_sided": 0.666,
+     "one_sided_95_lower": -0.017,
+     "non_inferior_at_-0.05": true
+    },
+    "comparator_sensitivity": 0.857,
+    "comparator_sens_ci95": [
+     0.777,
+     0.929
+    ]
+   },
+   "no_vote_vs_B": {
+    "d_sens_triage_minus": {
+     "delta": 0.039,
+     "ci95": [
+      0.01,
+      0.071
+     ],
+     "p_two_sided": 0.007,
+     "one_sided_95_lower": 0.014,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": -0.056,
+     "ci95": [
+      -0.084,
+      -0.027
+     ],
+     "p_two_sided": 0.0
+    },
+    "comparator_sensitivity": 0.827,
+    "comparator_sens_ci95": [
+     0.739,
+     0.906
+    ],
+    "comparator_specificity": 0.793,
+    "comparator_spec_ci95": [
+     0.72,
+     0.852
+    ]
+   },
+   "voted_vs_Bstar_training_matched": {
+    "d_sens_triage_minus": {
+     "delta": -0.019,
+     "ci95": [
+      -0.046,
+      0.0
+     ],
+     "p_two_sided": 0.283,
+     "one_sided_95_lower": -0.04,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": 0.034,
+     "ci95": [
+      -0.01,
+      0.087
+     ],
+     "p_two_sided": 0.166
+    },
+    "comparator_sensitivity": 0.882,
+    "comparator_sens_ci95": [
+     0.799,
+     0.953
+    ],
+    "comparator_specificity": 0.729,
+    "comparator_spec_ci95": [
+     0.627,
+     0.813
+    ]
+   },
+   "voted_vs_B": {
+    "d_sens_triage_minus": {
+     "delta": 0.031,
+     "ci95": [
+      -0.013,
+      0.09
+     ],
+     "p_two_sided": 0.261,
+     "one_sided_95_lower": -0.006,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": -0.056,
+     "ci95": [
+      -0.099,
+      -0.009
+     ],
+     "p_two_sided": 0.028
+    },
+    "comparator_sensitivity": 0.832,
+    "comparator_sens_ci95": [
+     0.728,
+     0.924
+    ],
+    "comparator_specificity": 0.82,
+    "comparator_spec_ci95": [
+     0.741,
+     0.885
+    ]
+   },
+   "no_vote_vs_Cstar_training_matched": {
+    "d_sens_triage_minus": {
+     "delta": 0.09,
+     "ci95": [
+      0.046,
+      0.136
+     ],
+     "p_two_sided": 0.0,
+     "one_sided_95_lower": 0.054,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": -0.006,
+     "ci95": [
+      -0.064,
+      0.043
+     ],
+     "p_two_sided": 0.835
+    },
+    "comparator_sensitivity": 0.775,
+    "comparator_sens_ci95": [
+     0.696,
+     0.857
+    ],
+    "comparator_specificity": 0.743,
+    "comparator_spec_ci95": [
+     0.692,
+     0.793
+    ]
+   },
+   "no_vote_vs_C": {
+    "d_sens_triage_minus": {
+     "delta": 0.07,
+     "ci95": [
+      0.03,
+      0.111
+     ],
+     "p_two_sided": 0.001
+    },
+    "d_spec_triage_minus": {
+     "delta": 0.018,
+     "ci95": [
+      -0.036,
+      0.063
+     ],
+     "p_two_sided": 0.472
+    },
+    "comparator_sensitivity": 0.795,
+    "comparator_sens_ci95": [
+     0.723,
+     0.87
+    ],
+    "comparator_specificity": 0.719,
+    "comparator_spec_ci95": [
+     0.669,
+     0.769
+    ]
+   }
+  },
+  "claim_H": {
+   "auroc": {
+    "L-CNV": {
+     "value": 0.845,
+     "ci95": [
+      0.766,
+      0.904
+     ]
+    },
+    "L-IMG": {
+     "value": 0.847,
+     "ci95": [
+      0.798,
+      0.894
+     ]
+    },
+    "L-LATE": {
+     "value": 0.903,
+     "ci95": [
+      0.856,
+      0.944
+     ]
+    }
+   },
+   "IMG_minus_CNV": {
+    "delta": 0.002,
+    "ci95": [
+     -0.074,
+     0.09
+    ],
+    "p_two_sided": 0.969,
+    "one_sided_95_lower": -0.062,
+    "non_inferior_at_-0.05": false
+   },
+   "LATE_minus_CNV": {
+    "delta": 0.058,
+    "ci95": [
+     0.016,
+     0.108
+    ],
+    "p_two_sided": 0.002
+   }
+  },
+  "sanity_round2_r14": {
+   "no_vote_vs_Bstar_expected": {
+    "delta": -0.007,
+    "ci95": [
+     -0.023,
+     0.007
+    ],
+    "p_two_sided": 0.428,
+    "one_sided_95_lower": -0.02,
+    "non_inferior_at_-0.05": true
+   },
+   "no_vote_vs_B_expected": {
+    "delta": 0.039,
+    "ci95": [
+     0.01,
+     0.071
+    ],
+    "p_two_sided": 0.007,
+    "one_sided_95_lower": 0.014,
+    "non_inferior_at_-0.05": true
+   },
+   "got_Bstar": {
+    "delta": -0.007,
+    "ci95": [
+     -0.023,
+     0.007
+    ],
+    "p_two_sided": 0.428,
+    "one_sided_95_lower": -0.02,
+    "non_inferior_at_-0.05": true
+   },
+   "got_B": {
+    "delta": 0.039,
+    "ci95": [
+     0.01,
+     0.071
+    ],
+    "p_two_sided": 0.007,
+    "one_sided_95_lower": 0.014,
+    "non_inferior_at_-0.05": true
+   }
+  },
+  "status": "done"
+ },
+ "prespec": "45b77bf"
+}

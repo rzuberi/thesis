@@ -1,0 +1,321 @@
+{
+ "task": "r33_base_r36past",
+ "R33_base": {
+  "analysis": "r36past",
+  "definition": "L-CNV refitted on package features segmented jointly with the patient's samples from the same or earlier endoscopies (R36 past-only, cnv_pkgpast); L-IMG stored; L-LATE = their mean; all cut-offs and B* re-chosen",
+  "n_samples": 571,
+  "n_progressor_samples": 161,
+  "n_patients": 75,
+  "n_progressor_patients": 32,
+  "draws": 2000,
+  "cutoffs_median": {
+   "t_low": 0.042,
+   "c_star": 0.589,
+   "t_seq": 0.208
+  },
+  "folds_no_middle_band": 0,
+  "t_seq_fallback": 0,
+  "training_specificity_target_median": 0.607,
+  "claim_T": {
+   "triage_no_vote": {
+    "sensitivity": 0.857,
+    "sens_ci95": [
+     0.787,
+     0.924
+    ],
+    "specificity": 0.697,
+    "spec_ci95": [
+     0.641,
+     0.75
+    ]
+   },
+   "triage_voted": {
+    "sensitivity": 0.876,
+    "sens_ci95": [
+     0.801,
+     0.947
+    ],
+    "specificity": 0.737,
+    "spec_ci95": [
+     0.678,
+     0.792
+    ]
+   },
+   "share_sequenced": {
+    "per_repeat_mean": 0.458,
+    "ci95": [
+     0.408,
+     0.504
+    ],
+    "in_at_least_one_repeat": 0.76,
+    "cap_0.70_met": true
+   },
+   "no_vote_vs_Bstar_training_matched": {
+    "d_sens_triage_minus": {
+     "delta": -0.009,
+     "ci95": [
+      -0.021,
+      0.002
+     ],
+     "p_two_sided": 0.141,
+     "one_sided_95_lower": -0.019,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": 0.029,
+     "ci95": [
+      0.0,
+      0.063
+     ],
+     "p_two_sided": 0.049
+    },
+    "comparator_sensitivity": 0.865,
+    "comparator_sens_ci95": [
+     0.792,
+     0.93
+    ],
+    "comparator_specificity": 0.669,
+    "comparator_spec_ci95": [
+     0.603,
+     0.728
+    ]
+   },
+   "no_vote_vs_Bstar_evaluation_matched": {
+    "d_sens_triage_minus": {
+     "delta": 0.0,
+     "ci95": [
+      -0.017,
+      0.02
+     ],
+     "p_two_sided": 0.941,
+     "one_sided_95_lower": -0.015,
+     "non_inferior_at_-0.05": true
+    },
+    "comparator_sensitivity": 0.857,
+    "comparator_sens_ci95": [
+     0.784,
+     0.925
+    ]
+   },
+   "no_vote_vs_B": {
+    "d_sens_triage_minus": {
+     "delta": 0.035,
+     "ci95": [
+      0.011,
+      0.061
+     ],
+     "p_two_sided": 0.002,
+     "one_sided_95_lower": 0.015,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": -0.078,
+     "ci95": [
+      -0.094,
+      -0.062
+     ],
+     "p_two_sided": 0.0
+    },
+    "comparator_sensitivity": 0.821,
+    "comparator_sens_ci95": [
+     0.74,
+     0.9
+    ],
+    "comparator_specificity": 0.775,
+    "comparator_spec_ci95": [
+     0.728,
+     0.821
+    ]
+   },
+   "voted_vs_Bstar_training_matched": {
+    "d_sens_triage_minus": {
+     "delta": 0.006,
+     "ci95": [
+      -0.013,
+      0.029
+     ],
+     "p_two_sided": 0.818,
+     "one_sided_95_lower": -0.011,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": 0.034,
+     "ci95": [
+      0.002,
+      0.072
+     ],
+     "p_two_sided": 0.05
+    },
+    "comparator_sensitivity": 0.87,
+    "comparator_sens_ci95": [
+     0.793,
+     0.938
+    ],
+    "comparator_specificity": 0.702,
+    "comparator_spec_ci95": [
+     0.637,
+     0.763
+    ]
+   },
+   "voted_vs_B": {
+    "d_sens_triage_minus": {
+     "delta": 0.043,
+     "ci95": [
+      0.006,
+      0.086
+     ],
+     "p_two_sided": 0.03,
+     "one_sided_95_lower": 0.013,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": -0.059,
+     "ci95": [
+      -0.084,
+      -0.034
+     ],
+     "p_two_sided": 0.0
+    },
+    "comparator_sensitivity": 0.832,
+    "comparator_sens_ci95": [
+     0.746,
+     0.909
+    ],
+    "comparator_specificity": 0.795,
+    "comparator_spec_ci95": [
+     0.746,
+     0.838
+    ]
+   },
+   "no_vote_vs_Cstar_training_matched": {
+    "d_sens_triage_minus": {
+     "delta": 0.045,
+     "ci95": [
+      0.011,
+      0.08
+     ],
+     "p_two_sided": 0.009,
+     "one_sided_95_lower": 0.016,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": 0.008,
+     "ci95": [
+      -0.028,
+      0.041
+     ],
+     "p_two_sided": 0.641
+    },
+    "comparator_sensitivity": 0.812,
+    "comparator_sens_ci95": [
+     0.745,
+     0.884
+    ],
+    "comparator_specificity": 0.689,
+    "comparator_spec_ci95": [
+     0.635,
+     0.742
+    ]
+   },
+   "no_vote_vs_C": {
+    "d_sens_triage_minus": {
+     "delta": 0.061,
+     "ci95": [
+      0.025,
+      0.103
+     ],
+     "p_two_sided": 0.0
+    },
+    "d_spec_triage_minus": {
+     "delta": -0.022,
+     "ci95": [
+      -0.056,
+      0.008
+     ],
+     "p_two_sided": 0.144
+    },
+    "comparator_sensitivity": 0.795,
+    "comparator_sens_ci95": [
+     0.723,
+     0.87
+    ],
+    "comparator_specificity": 0.719,
+    "comparator_spec_ci95": [
+     0.669,
+     0.769
+    ]
+   }
+  },
+  "claim_H": {
+   "auroc": {
+    "L-CNV": {
+     "value": 0.8,
+     "ci95": [
+      0.723,
+      0.867
+     ]
+    },
+    "L-IMG": {
+     "value": 0.847,
+     "ci95": [
+      0.798,
+      0.894
+     ]
+    },
+    "L-LATE": {
+     "value": 0.881,
+     "ci95": [
+      0.83,
+      0.927
+     ]
+    }
+   },
+   "IMG_minus_CNV": {
+    "delta": 0.047,
+    "ci95": [
+     -0.022,
+     0.131
+    ],
+    "p_two_sided": 0.214,
+    "one_sided_95_lower": -0.013,
+    "non_inferior_at_-0.05": true
+   },
+   "LATE_minus_CNV": {
+    "delta": 0.081,
+    "ci95": [
+     0.035,
+     0.14
+    ],
+    "p_two_sided": 0.001
+   }
+  },
+  "status": "done",
+  "source": {
+   "outer": "killcoyne_mm/review_round4/r36_outer/cnv_pkgpast_rep_*.csv",
+   "inner": "killcoyne_mm/review_round4/r36_inner/cnv_pkgpast_rep_*_fold_*.csv"
+  },
+  "sanity_part_b_r36": {
+   "no_vote_vs_Bstar_expected": {
+    "delta": -0.009,
+    "ci95": [
+     -0.021,
+     0.002
+    ],
+    "one_sided_95_lower": -0.019,
+    "p_two_sided": 0.141
+   },
+   "IMG_minus_CNV_expected": {
+    "delta": 0.047,
+    "ci95": [
+     -0.022,
+     0.131
+    ],
+    "one_sided_95_lower": -0.013,
+    "margin": -0.05,
+    "non_inferior": true,
+    "p_two_sided": 0.214
+   }
+  }
+ },
+ "prespec": "45b77bf"
+}
