@@ -175,7 +175,7 @@ if TASK == "r31":
         A[nm] = {"by_pre_event_sample": {"table": xtab(v[rows], y[rows]), "fisher": fisher_p(v[rows], y[rows])}, "by_all_676_samples": {"table": xtab(v, y), "fisher": fisher_p(v, y)},
                  "by_patient_modal": {"table": xtab(pv.values, ppat.values), "fisher": fisher_p(pv.values, ppat.values), "patients_spanning_several": int((nb > 1).sum()), "n_patients": int(len(pv)),
                                       "max_values_per_patient": int(nb.max()), "spanning_by_status": {"progressor": int(((nb > 1) & (ppat == 1)).sum()), "non_progressor": int(((nb > 1) & (ppat == 0)).sum())}}}
-    R["a_cross_tabulation"] = A
+    R["a_cross_tabulation"] = A; print("R31 (a) done", flush=True)
     # (b) raw-score AUROC, with fold-honest target encoding for batch and SLX run
     def target_enc(cat):
         S = np.full((n, 10), np.nan)
@@ -193,7 +193,7 @@ if TASK == "r31":
         code = pd.factorize(v)[0]; npairs = pairs_within(rows, code); o = {m: fsa(O[m], rows, cell=code) for m in MODELS}; Bc = frame([{m: fsa(O[m], b, cell=code) for m in MODELS} for b in boots])
         C[nm] = {"within_pairs_per_repeat": npairs, "min_pairs_per_repeat": int(min(npairs)), "reported": bool(nm == "batch" or min(npairs) >= 100), "all_within_fold_pairs_repeat1": int(pairs_within(rows, np.zeros(n, int))[0]),
                  "auroc": {m: {"value": r3(o[m]), "ci95": ci2(Bc[m])} for m in MODELS}, "IMG_minus_CNV": dstat(o["L-IMG"] - o["L-CNV"], Bc["L-IMG"] - Bc["L-CNV"], one_sided=True), "LATE_minus_CNV": dstat(o["L-LATE"] - o["L-CNV"], Bc["L-LATE"] - Bc["L-CNV"])}
-    C["unstratified_reference"] = {m: r3(fsa(O[m], rows)) for m in MODELS}; R["c_within_batch_pairs"] = C
+    C["unstratified_reference"] = {m: r3(fsa(O[m], rows)) for m in MODELS}; R["c_within_batch_pairs"] = C; print("R31 (c) done", flush=True)
     # (d) batch probe on the UNI2-h slide-mean embedding
     from sklearn.linear_model import LogisticRegression
     from sklearn.model_selection import GroupKFold
@@ -211,10 +211,21 @@ if TASK == "r31":
         vals = [v["auroc_one_vs_rest"] for v in out.values()]; return {"batches": out, "n_batches_probed": len(out), "auroc_mean_over_batches": r3(np.mean(vals)) if vals else None, "auroc_max": r3(max(vals)) if vals else None, "n_samples": int(len(idx)), "n_patients": int(len(set(g)))}
     R["d_batch_probe_uni2h"] = {"pre_event_samples": probe(rows), "non_progressor_pre_event_samples": probe(rows[y[rows] == 0]), "embedding_dim": int(IM.shape[1]),
                                 "note": "one-vs-rest logistic regression (L2, C = 1, features standardised within the training folds), patient-grouped 5-fold CV, AUROC of the out-of-fold probabilities; batches with >= 5 patients"}
-    # (e) triage within the largest batch
-    bcount = pd.Series(BATCH[rows]).value_counts(); bmax = bcount.index[0]; rb = rows[BATCH[rows] == bmax]; bb = boots_for(rb)
-    ob = draw_stats(rb, CALLS, band, O); Db = frame([draw_stats(b, CALLS, band, O) for b in bb])
-    R["e_triage_largest_batch"] = {"batch": str(bmax), **nfo(rb), "draws": int(len(Db)), "claim_T": trow(ob, Db), "claim_H": hrow(O, rb, bb), "batch_sizes_pre_event": {str(k): int(v) for k, v in bcount.items()}}
+    print("R31 (d) done", flush=True)
+    # (e) triage within the largest batch; if that batch holds one class only, the estimable side (specificity, share) with a patient bootstrap that does not
+    # require both classes, plus the full comparison in the largest batch holding both classes
+    bcount = pd.Series(BATCH[rows]).value_counts(); E = {"batch_sizes_pre_event": {str(k): int(v) for k, v in bcount.items()}}
+    def batch_block(bname):
+        rb = rows[BATCH[rows] == bname]; nP = int(y[rb].sum())
+        if 0 < nP < len(rb):
+            bb = boots_for(rb); ob = draw_stats(rb, CALLS, band, O); Db = frame([draw_stats(b, CALLS, band, O) for b in bb]); return {"batch": str(bname), **nfo(rb), "draws": int(len(Db)), "status": "done", "claim_T": trow(ob, Db), "claim_H": hrow(O, rb, bb)}
+        pp = pat[rb]; up = np.unique(pp); ro = {q: rb[pp == q] for q in up}; rng = np.random.RandomState(0); bb = [np.concatenate([ro[up[i]] for i in rng.choice(len(up), len(up))]) for _ in range(NB)]; cl = 1 if nP else 0
+        st = lambda b: {**{s: float(CALLS[s][b].mean(0).mean() if cl else 1 - CALLS[s][b].mean(0).mean()) for s in ("T", "B", "B*", "C", "C*")}, "share_mid": float((band[b] == 1).mean())}
+        o = st(rb); D = frame([st(b) for b in bb]); key = "sensitivity" if cl else "specificity"
+        return {"batch": str(bname), **nfo(rb), "draws": int(len(D)), "status": f"d_sens not estimable: the batch holds {'progressor' if cl else 'non-progressor'} pre-event samples only", f"{key}_single_model": {s: {"value": r3(o[s]), "ci95": ci2(D[s])} for s in ("T", "B", "B*", "C", "C*")},
+                f"d_{'sens' if cl else 'spec'}_triage_minus": {s: dstat(o["T"] - o[s], D["T"] - D[s]) for s in ("B", "B*")}, "share_sequenced": {"value": r3(o["share_mid"]), "ci95": ci2(D["share_mid"])}}
+    mixed = [b_ for b_ in bcount.index if 0 < y[rows[BATCH[rows] == b_]].sum() < (BATCH[rows] == b_).sum()]
+    E["largest_batch"] = batch_block(bcount.index[0]); E["largest_batch_with_both_classes"] = batch_block(mixed[0]) if mixed else None; E["batches_with_both_classes"] = [str(b_) for b_ in mixed]; R["e_triage_largest_batch"] = E
     # (f) exclusion flags
     R["f_exclusion_flags"] = {fl: {"all_676": {"progressor": int((m & (y == 1)).sum()), "non_progressor": int((m & (y == 0)).sum())}, "pre_event_571": {"progressor": int((m[rows] & (y[rows] == 1)).sum()), "non_progressor": int((m[rows] & (y[rows] == 0)).sum())}} for fl, m in FLAGS.items()}
     R["f_exclusion_flags"]["notes_on_label_review_distinct_pre_event"] = sorted(set(notes.values[rows][notes.values[rows] != ""]))
