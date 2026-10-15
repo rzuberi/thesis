@@ -305,7 +305,7 @@ elif TASK.startswith("r33_base_"):
         if len(fo) == 10 and len(fi) == 100:
             O, I, FO = load_refit(fo, kvf(2), fi, hzi("img")); R.update(analysis(O, I, FO, popm, rows)); R["status"] = "done"; R["source"] = {"outer": f"killcoyne_mm/review_round4/r36_outer/cnv_{src}_rep_*.csv", "inner": f"killcoyne_mm/review_round4/r36_inner/cnv_{src}_rep_*_fold_*.csv"}
             ref = J(f"{OUT4}/r36.json")
-            try: blk = ref["R36"]["persample" if src == "pkgps" else "pastonly"]["pre"]; R["sanity_part_b_r36"] = {"no_vote_vs_Bstar_expected": blk["strategies"]["no_vote"]["triage"]["vs_B*"]["d_sens"], "IMG_minus_CNV_expected": blk["discrimination"]["IMG_minus_CNV"]}
+            try: blk = ref["R36"]["persample" if src == "pkgps" else "past"]["pre"]; R["sanity_part_b_r36"] = {"no_vote_vs_Bstar_expected": blk["strategies"]["no_vote"]["triage"]["vs_B*"]["d_sens"], "IMG_minus_CNV_expected": blk["discrimination"]["IMG_minus_CNV"]}
             except Exception as e: R["sanity_part_b_r36"] = f"not compared: {type(e).__name__} {e}"[:200]
         else: R["status"] = "pending (Part B)"; R["claim_T"] = None; R["claim_H"] = None; R["note"] = f"{len(fo)} outer and {len(fi)} inner files for cnv_{src} under killcoyne_mm/review_round4/r36_outer and r36_inner (10 and 100 needed)"
     else: raise SystemExit(f"unknown base analysis {nm}")
