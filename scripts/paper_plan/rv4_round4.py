@@ -4,7 +4,7 @@ and the evaluation-matched comparators). Aggregates -> results/paper_final/revie
 killcoyne_mm/review_round4/. Items 11 (deviance lambda, needs B5) and 19 (R36) of R33 are filled when their Part B files exist and marked pending otherwise;
 r33_merge is re-runnable.
 TASK = r31 | r32a | r32b | r33_base_<name> | r33_grid_<ql>_<qh> | r33_selci_shardNN | r33_selci_merge | r33_r15 | r33_f3 | r33_merge | r34 | r35
-       (<name> primary | ndbe | pkg | f1 | f1pkg | neverdys | f5 | excl1y | earliest_endo | earliest_sample | devlam | r36)"""
+       (<name> primary | ndbe | pkg | f1 | f1pkg | neverdys | f5 | excl1y | earliest_endo | earliest_sample | devlam | r36 | r36past)"""
 import os, sys, json, glob, numpy as np, pandas as pd
 from scipy.stats import rankdata, fisher_exact
 from scipy.special import gammaln
@@ -295,13 +295,19 @@ elif TASK.startswith("r33_base_"):
         R["sanity_round2_f4_expected_+0.021_lower_-0.050"] = R["claim_H"]["IMG_minus_CNV"]; fc = sorted(glob.glob(f"{ROW4}/b5_inner/cnv_their_rep_*_fold_*.csv")); fi = sorted(glob.glob(f"{ROW4}/b5_inner/img_rep_*_fold_*.csv"))
         if len(fc) == 100 and len(fi) == 100:
             col = "pred_dev" if "pred_dev" in pd.read_csv(fc[0], nrows=1).columns else "pred"; _, I, _ = load_refit(sorted(glob.glob(f"{RR2}/f4/cnv_their_rep_*.csv")), sorted(glob.glob(f"{RR2}/f4/img_rep_*.csv")), fc, fi, col=col)
-            A = analysis(O, I, FO0, popm, rows, claim_h=False); R.update({k: v for k, v in A.items() if k != "claim_H"}); R["status"] = "done"; R["inner_source"] = f"killcoyne_mm/review_round4/b5_inner ({col})"
+            A = analysis(O, I, FO0, popm, rows, claim_h=False); R.update({k: v for k, v in A.items() if k != "claim_H"}); R["status"] = "done"; R["inner_source"] = f"killcoyne_mm/review_round4/b5_inner ({col})"; ref = J(f"{OUT4}/b5.json")
+            try: R["sanity_part_b_b5"] = {"no_vote_vs_Bstar_expected": ref["B5"]["deviance_lambda"]["pre"]["strategies"]["no_vote"]["triage"]["vs_B*"]["d_sens"]}
+            except Exception as e: R["sanity_part_b_b5"] = f"not compared: {type(e).__name__} {e}"[:200]
         else: R["status"] = "pending (Part B)"; R["claim_T"] = None; R["note"] = f"inner deviance-lambda predictions not found: {len(fc)} cnv and {len(fi)} img files under killcoyne_mm/review_round4/b5_inner (100 each needed); Claim H uses the F4 outer deviance predictions and is complete"
-    elif nm == "r36":
-        fo = sorted(f for f in glob.glob(f"{ROW4}/r36_outer*/cnv_*_rep_??.csv") if "past" not in os.path.basename(f) and "joint" not in os.path.basename(f)); fi = sorted(f for f in glob.glob(f"{ROW4}/r36_inner*/cnv_*_rep_??_fold_??.csv") if "past" not in os.path.basename(f) and "joint" not in os.path.basename(f))
+    elif nm in ("r36", "r36past"):
+        src = "pkgps" if nm == "r36" else "pkgpast"; fo = sorted(glob.glob(f"{ROW4}/r36_outer/cnv_{src}_rep_*.csv")); fi = sorted(glob.glob(f"{ROW4}/r36_inner/cnv_{src}_rep_*_fold_*.csv"))
+        R["definition"] = "L-CNV refitted on package features segmented " + ("per sample (R36 persample, cnv_pkgps)" if src == "pkgps" else "jointly with the patient's samples from the same or earlier endoscopies (R36 past-only, cnv_pkgpast)") + "; L-IMG stored; L-LATE = their mean; all cut-offs and B* re-chosen"
         if len(fo) == 10 and len(fi) == 100:
-            O, I, FO = load_refit(fo, kvf(2), fi, hzi("img")); R.update(analysis(O, I, FO, popm, rows)); R["status"] = "done"; R["source"] = {"outer": os.path.dirname(fo[0]), "inner": os.path.dirname(fi[0])}
-        else: R["status"] = "pending (Part B)"; R["claim_T"] = None; R["claim_H"] = None; R["note"] = f"per-sample re-segmented L-CNV predictions not found ({len(fo)} outer, {len(fi)} inner files under killcoyne_mm/review_round4/r36_outer*/ and r36_inner*/; 10 and 100 needed)"
+            O, I, FO = load_refit(fo, kvf(2), fi, hzi("img")); R.update(analysis(O, I, FO, popm, rows)); R["status"] = "done"; R["source"] = {"outer": f"killcoyne_mm/review_round4/r36_outer/cnv_{src}_rep_*.csv", "inner": f"killcoyne_mm/review_round4/r36_inner/cnv_{src}_rep_*_fold_*.csv"}
+            ref = J(f"{OUT4}/r36.json")
+            try: blk = ref["R36"]["persample" if src == "pkgps" else "pastonly"]["pre"]; R["sanity_part_b_r36"] = {"no_vote_vs_Bstar_expected": blk["strategies"]["no_vote"]["triage"]["vs_B*"]["d_sens"], "IMG_minus_CNV_expected": blk["discrimination"]["IMG_minus_CNV"]}
+            except Exception as e: R["sanity_part_b_r36"] = f"not compared: {type(e).__name__} {e}"[:200]
+        else: R["status"] = "pending (Part B)"; R["claim_T"] = None; R["claim_H"] = None; R["note"] = f"{len(fo)} outer and {len(fi)} inner files for cnv_{src} under killcoyne_mm/review_round4/r36_outer and r36_inner (10 and 100 needed)"
     else: raise SystemExit(f"unknown base analysis {nm}")
     R.setdefault("status", "done"); res["R33_base"] = R; dump(res)
 # ================================================================== R33 cut-off grid cells (B* re-matched to each cell's own training specificity)
@@ -438,7 +444,7 @@ elif TASK == "r33_merge":
         qa = Q["claim_H_d_auroc_IMG_minus_CNV"]; add("refit bootstrap (F3, 200 draws)", 18, g_(Q["claim_T_d_sens_triage_minus_Bstar"], Q["d_spec_triage_minus_Bstar"]), {"d_auroc": qa["mean"], "ci95": qa["ci95_percentile"], "one_sided_lower": qa["one_sided_5th_percentile"], "within_-0.05": qa["non_inferior_at_-0.05"], "mc_se_of_5th_percentile": qa["mc_se_of_5th_percentile"], "share_of_draws_below_-0.05": qa["share_of_draws_below_-0.05"]},
                                                       {"no_vote": g_(Q["prespecified_d_sens_triage_minus_B"], Q["d_spec_triage_minus_B"]), "voted": None, "voted_note": "one model per draw; no vote"})
     else: add("refit bootstrap (F3, 200 draws)", 18, status="missing (task not run)")
-    std("per-sample re-segmented copy number (R36)", 19, "r36")
+    std("per-sample re-segmented copy number (R36)", 19, "r36"); std("past-only re-segmented copy number (R36, extra row)", "19b", "r36past")
     std("package features, pre-event-only training (Table 5)", "T5", "f1pkg"); std("earliest pre-event sample per patient (Table 5)", "T5", "earliest_sample")
     done_T = [r for r in TT if r["status"] == "done"]; done_H = [r for r in TH if r["status"] == "done"]
     R = {"claim_T_triage_vs_Bstar_training_matched_single_model": TT, "claim_H_LIMG_vs_LCNV_dAUROC": TH, "prespecified_test_triage_vs_B_voted_and_single_model": P1,
