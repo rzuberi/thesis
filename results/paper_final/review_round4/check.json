@@ -1,0 +1,76 @@
+{
+ "task": "check",
+ "checks": {
+  "joint_segmentation_reproduction": {
+   "pat_005.csv": {
+    "patient_index": 5,
+    "n_samples_segmented_together": 4,
+    "n_samples_compared": 4,
+    "n_stored_rows": 4,
+    "n_tile_columns": 631,
+    "max_abs_tile_diff": 0.0,
+    "qc_pass_equal": true,
+    "seconds": 49.512,
+    "passed": true
+   },
+   "all_passed": true
+  },
+  "persample_vs_joint_same_patient": {
+   "n_samples": 4,
+   "per_sample_pearson_r_raw_tiles": {
+    "mean": 0.974,
+    "median": 0.977,
+    "iqr": [
+     0.972,
+     0.979
+    ],
+    "min": 0.959,
+    "max": 0.982
+   },
+   "max_abs_tile_diff": 0.408,
+   "qc_pass_joint": 4,
+   "qc_pass_persample": 4,
+   "seconds": 131.419,
+   "n_segmented_together": 1
+  },
+  "past_smoke": {
+   "n_samples": 4,
+   "n_segmented_together": [
+    1,
+    2,
+    4,
+    4
+   ],
+   "seconds": 115.083
+  },
+  "outer_cnv_pkg_rep_01_vs_stored_cfg_01_rep_01": {
+   "n": 676,
+   "max_abs_pred_diff": 0.0,
+   "folds_equal": true,
+   "lambda_max_abs_diff": 0.0,
+   "passed": true
+  },
+  "b5_inner_cnv_their_class_lambda_vs_stored_inner": {
+   "files": 100,
+   "worst": {
+    "n": 618,
+    "max_abs_pred_diff": 0.0,
+    "folds_equal": true,
+    "lambda_max_abs_diff": 0.0,
+    "passed": true
+   }
+  },
+  "b5_inner_img_class_lambda_vs_stored_inner": {
+   "files": 100,
+   "worst": {
+    "n": 618,
+    "max_abs_pred_diff": 0.0,
+    "folds_equal": true,
+    "lambda_max_abs_diff": 0.0,
+    "passed": true
+   }
+  },
+  "all_passed": true
+ },
+ "prespec": "45b77bf"
+}
