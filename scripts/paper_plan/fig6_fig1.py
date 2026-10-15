@@ -43,7 +43,7 @@ arrow(bx, 83, 76, 92, 62.5); arrow(bx, 83, 24, 92, 37.5)
 bx.text(1, 99, "Patient-grouped 10 × 10-fold CV; evaluation on held-out pre-event biopsies", fontsize=5.8, va="top", color="#333333")
 letter(fig, bx, "b", dx=-0.01)
 # ------------------------------------------------------------------ (c) three-band rule
-cx = fig.add_axes([0.53, 0.36, 0.45, 0.20]); cx.set_xlim(0, 100); cx.set_ylim(0, 100); cx.axis("off")
+cx = fig.add_axes([0.53, 0.38, 0.45, 0.20]); cx.set_xlim(0, 100); cx.set_ylim(0, 100); cx.axis("off")
 tp = J("triage/their_pre.json"); sh = {b: tp["bands"][b]["all"]["value"] for b in ("low", "mid", "high")}; cut = J("review_round4/r33_base_primary.json")["R33_base"]["cutoffs_median"]
 x0 = 2; wtot = 96; edges = [x0, x0 + wtot * sh["low"], x0 + wtot * (sh["low"] + sh["mid"]), x0 + wtot]
 for b, (l, r) in zip(("low", "mid", "high"), zip(edges[:-1], edges[1:])):
@@ -53,14 +53,14 @@ for e, lab, rule in ((edges[1], f"t_low = {cut['t_low']:.3f}", "95% training sen
     cx.plot([e, e], [60, 80], color="black", lw=0.8); cx.text(e, 82, lab, ha="center", va="bottom", fontsize=6, fontweight="bold"); cx.text(e, 94, rule, ha="center", va="bottom", fontsize=5.6, color="#333333")
 txt = {"low": "cleared without\nsequencing", "mid": f"sequenced; L-LATE ≥ t_seq = {cut['t_seq']:.3f}\n(80% training sensitivity in the band)\nflags, otherwise cleared", "high": "flagged\nwithout\nsequencing"}
 for b, (l, r) in zip(("low", "mid", "high"), zip(edges[:-1], edges[1:])): cx.text((l + r) / 2, 40, txt[b], ha="center", va="top", fontsize=5.8)
-cx.text(x0, 8, "Cut-offs are chosen in each fold on inner out-of-fold training predictions;\nvalues shown are the medians over the 100 folds (the frozen cut-offs).", fontsize=5.4, color="#333333", va="bottom")
+cx.text(x0, 6, "Cut-offs are chosen in each fold on inner out-of-fold training predictions;\nvalues shown are the medians over the 100 folds (the frozen cut-offs).", fontsize=5.4, color="#333333", va="top")
 letter(fig, cx, "c", dx=-0.03, dy=-0.01)
 # ------------------------------------------------------------------ (d) timeline
 dx_ = fig.add_axes([0.57, 0.09, 0.41, 0.22]); bins = np.arange(0, 15, 1.0); hist = {}
 for cls, v, dxo in (("P", 1, -0.2), ("N", 0, 0.2)):
     t = TIME[rows][y[rows] == v]; h, _ = np.histogram(t, bins); hist[cls] = h
     dx_.bar(bins[:-1] + 0.5 + dxo, h, width=0.38, color=CLASS[cls], label=f"{CLASS_NAME[cls]} (n {len(t)}, median {np.median(t):.1f} y)")
-dx_.set_xlabel("years before the first HGD/IMC endoscopy (P) or the last follow-up (NP)"); dx_.set_ylabel("pre-event biopsies"); dx_.set_xlim(0, 14); dx_.legend(loc="upper right")
+dx_.set_xlabel("years before the first HGD/IMC endoscopy (P) or last follow-up (NP)", fontsize=6.5); dx_.set_ylabel("pre-event biopsies"); dx_.set_xlim(0, 14); dx_.legend(loc="upper right")
 letter(fig, dx_, "d", dx=-0.08)
 save(fig, "Fig1")
 dump("Fig1", {"counts_checked_against_sample_sheet": chk, "flow_text": [t for t, _ in flow], "exclusions_text": [t for t, _ in excl], "band_shares": sh, "frozen_cutoffs_median": cut,

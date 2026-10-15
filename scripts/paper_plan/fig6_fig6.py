@@ -56,5 +56,5 @@ h = [Line2D([], [], marker="D", color="#222222", lw=0, ms=4.2, label="primary an
      Line2D([], [], marker="o", color=MODEL["L-CNV"], lw=0, ms=3.4, label="pre-specified sensitivity analysis, bound ≤ −0.05"), Line2D([], [], marker="|", color="#222222", lw=0, ms=4, mew=0.8, label="one-sided 95% lower bound"),
      Line2D([], [], color=MODEL["L-CNV"], lw=0.8, ls="--", label="−0.05 margin")]
 fig.legend(handles=h, loc="lower center", ncol=3, fontsize=5.8, bbox_to_anchor=(0.5, 0.0))
-letter(fig, lab_ax, "a", dx=0.005, dy=0.012); letter(fig, axR, "b", dx=-0.02, dy=0.012)
+letter(fig, lab_ax, "a", dx=0.005, dy=0.012); letter(fig, axR, "b", dx=-0.04, dy=0.012)
 save(fig, "Fig6"); dump("Fig6", src)

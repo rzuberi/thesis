@@ -95,7 +95,7 @@ for i, k in enumerate(keys):
         v = d.get(str(r_), 0); ex.barh(yy, 100 * v / tot, left=left, color=greys[r_], edgecolor="white", lw=0.3, height=0.7); left += 100 * v / tot
     ex.text(102, yy, f"n {tot}", fontsize=5.4, va="center", clip_on=False)
 ex.set_yticks(range(len(keys))); ex.set_yticklabels([f"{'P' if k.startswith('progressor') else 'NP'}, {k.split('_')[-1]} band" for k in keys][::-1]); ex.set_xlabel("biopsies (%)"); ex.set_xlim(0, 100)
-for r_ in (10, 9, 8, 7, 6, 5): ex.barh([-10], [0], color=greys[r_], label=f"{r_} of 10 repeats")
-ex.set_ylim(-0.6, len(keys) - 0.4); ex.legend(loc="lower center", bbox_to_anchor=(0.45, 1.0), ncol=2, fontsize=5.2, title="repeats in the modal band", title_fontsize=5.4, columnspacing=0.8)
+for r_ in (10, 9, 8, 7, 6, 5): ex.barh([-10], [0], color=greys[r_], label=f"{r_} of 10")
+ex.set_ylim(-0.6, len(keys) - 0.4); ex.legend(loc="lower center", bbox_to_anchor=(0.45, 1.0), ncol=3, fontsize=5.2, title="repeats in the modal band", title_fontsize=5.4, columnspacing=0.8)
 letter(fig, ex, "e", dx=-0.09)
 save(fig, "Fig3"); dump("Fig3", src)
