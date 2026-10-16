@@ -32,7 +32,7 @@ for k, (lab, v) in enumerate(tracks):
     for b in bounds: a.axvline(b, color="#E6E6E6", lw=0.4, zorder=0)
     if v is None: a.axhline(1.0, color=LIGHT, lw=0.5, ls=":"); a.step(x, vj, where="mid", color=MODEL["L-CNV-joint"], lw=0.9); a.step(x, vp, where="mid", color=MODEL["L-CNV-ps"], lw=0.7, alpha=0.9); a.set_ylabel("relative\ncopy number", fontsize=6)
     else: a.axhline(0.0, color=LIGHT, lw=0.5, ls=":"); a.step(x, v, where="mid", color=MODEL["L-CNV-ps"] if "per-sample" in lab else MODEL["L-CNV-past"], lw=0.8); a.set_ylabel("difference", fontsize=6); a.set_ylim(-0.6, 0.6)
-    a.text(0.005, 0.95, lab, transform=a.transAxes, fontsize=6, va="top"); a.set_xlim(-1, len(five)); a.set_xticks([]); a.spines["bottom"].set_visible(k == 2)
+    a.text(0.005, 0.06 if v is None else 0.95, lab, transform=a.transAxes, fontsize=6, va="bottom" if v is None else "top"); a.set_xlim(-1, len(five)); a.set_xticks([]); a.spines["bottom"].set_visible(k == 2)
     if k == 2: a.set_xticks(centres); a.set_xticklabels([c if (int(c) <= 16 or int(c) % 2 == 0) else "" for c in dict.fromkeys(chrom)], fontsize=5.0); a.set_xlabel("chromosome (5-Mb windows, hg38)")
 axes[0].set_title(f"One progressor, earliest pre-event biopsy ({GR[i0]}, {t0:.1f} y before the first HGD/IMC endoscopy); joint vs per-sample r = {r_tiles[i0]:.2f}", fontsize=6, pad=10)
 letter(fig, axes[0], "a", dx=-0.045)
@@ -63,7 +63,7 @@ for gi, (glab, gmask) in enumerate(groups):
     if glab != "all": rngs = TR[key]["n_segmented_range"]; src_d[glab]["n_segmented_together_range"] = rngs
 tl = ["all pre-event biopsies"] + [f"tertile {t + 1}: {TR[f'tertile_{t + 1}']['n_segmented_range'][0]}–{TR[f'tertile_{t + 1}']['n_segmented_range'][1]} samples\nsegmented together" for t in range(3)]
 dx_.set_xticks([gi * 2.6 for gi in range(4)]); dx_.set_xticklabels(tl, fontsize=5.6); dx_.tick_params(axis="x", pad=18); dx_.set_ylim(-0.12, 1.22); dx_.set_ylabel("Pearson r, joint vs per-sample final features\n(per pre-event biopsy)")
-dx_.scatter([], [], color=CLASS["N"], s=12, label="non-progressor"); dx_.scatter([], [], color=CLASS["P"], s=12, label="progressor"); dx_.legend(loc="upper right", bbox_to_anchor=(1.0, 1.0), fontsize=5.6); letter(fig, dx_, "d", dx=-0.05)
+dx_.scatter([], [], color=CLASS["N"], s=12, label="non-progressor"); dx_.scatter([], [], color=CLASS["P"], s=12, label="progressor"); dx_.legend(loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=2, fontsize=5.6); letter(fig, dx_, "d", dx=-0.05)
 save(fig, "ED4")
 dump("ED4", {"a_patient": {"class": "progressor", "n_pre_event_biopsies": int(((pat == p) & PRE).sum()), "earliest_pre_event_biopsy_grade": str(GR[i0]), "years_before_event": float(t0), "r_joint_vs_persample_raw_tiles": float(r_tiles[i0]), "n_candidates": len(cands),
                            "selection_rule": "largest 1 - r (joint vs per-sample raw 5-Mb windows) of the earliest pre-event biopsy among progressors with a stored HGD/IMC biopsy"},

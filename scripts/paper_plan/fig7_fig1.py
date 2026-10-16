@@ -24,12 +24,12 @@ flow = [("Discovery cohort (Killcoyne et al. 2020)\n88 patients, 777 sequenced b
 excl = [("No matched slide:\n101 biopsies; 8 patients\nwithout any slide\n(all progressors)", 76.5),
         (f"At or after the first\nHGD/IMC endoscopy:\n105 biopsies ({A['endoscopies'] - Pq['endoscopies']} endoscopies);\n5 progressors with no\npre-event biopsy", 49.5),
         (f"Graded ID or LGD:\n133 biopsies; 4 progressors\nwith no NDBE\npre-event biopsy", 22.5)]
-H = 15; W = 62
+H = 15; W = 64
 for i, (t, yc) in enumerate(flow):
-    box(ax, 1, yc - H / 2, W, H, t, FC, EC, fs=5.6, weight="bold" if i == 2 else "normal")
+    box(ax, 0.5, yc - H / 2, W, H, t, FC, EC, fs=5.3, weight="bold" if i == 2 else "normal")
     if i < 3: arrow(ax, 32, yc - H / 2, 32, flow[i + 1][1] + H / 2)
 for t, yc in excl:
-    box(ax, 67, yc - 6.5, 31, 13, t, XC, XE, fs=5.4); arrow(ax, 32, yc, 67, yc, color="#999999")
+    box(ax, 68.5, yc - 6.5, 30, 13, t, XC, XE, fs=5.3); arrow(ax, 32, yc, 68.5, yc, color="#999999")
 letter(fig, ax, "a", dx=0.005)
 # ------------------------------------------------------------------ (b) pipeline
 bx = fig.add_axes([0.51, 0.60, 0.48, 0.37]); bx.set_xlim(0, 100); bx.set_ylim(0, 100); bx.axis("off")
@@ -49,7 +49,7 @@ tp = J("triage/their_pre.json"); sh = {b: tp["bands"][b]["all"]["value"] for b i
 x0 = 2; wtot = 96; edges = [x0, x0 + wtot * sh["low"], x0 + wtot * (sh["low"] + sh["mid"]), x0 + wtot]
 for b, (l, r) in zip(("low", "mid", "high"), zip(edges[:-1], edges[1:])):
     cx.add_patch(plt.Rectangle((l, 62), r - l, 14, fc=BAND[b], ec="none")); cx.text((l + r) / 2, 69, f"{b} band\n{100 * sh[b]:.0f}% of biopsies", ha="center", va="center", fontsize=6)
-cx.annotate("", (x0 + wtot + 1, 62), (x0 - 1, 62), arrowprops=dict(arrowstyle="-|>", color="black", lw=0.7, mutation_scale=7)); cx.text(x0 + wtot / 2, 56, "H&E score (L-IMG); band widths = per-repeat mean share of pre-event biopsies (not the score scale)", ha="center", va="top", fontsize=5.2, color="#333333")
+cx.annotate("", (x0 + wtot + 1, 62), (x0 - 1, 62), arrowprops=dict(arrowstyle="-|>", color="black", lw=0.7, mutation_scale=7)); cx.text(x0 + wtot / 2, 56, "H&E score (L-IMG); band widths = per-repeat mean share of biopsies, not the score scale", ha="center", va="top", fontsize=5.2, color="#333333")
 for e, lab, rule in ((edges[1], f"t_low = {cut['t_low']:.3f}", "95% training sensitivity"), (edges[2], f"t_high = {cut['c_star']:.3f}", "90% training specificity")):
     cx.plot([e, e], [60, 80], color="black", lw=0.8); cx.text(e, 82, lab, ha="center", va="bottom", fontsize=6, fontweight="bold"); cx.text(e, 94, rule, ha="center", va="bottom", fontsize=5.6, color="#333333")
 txt = {"low": "cleared without\nsequencing", "mid": f"sequenced; L-LATE ≥ t_seq = {cut['t_seq']:.3f}\n(80% training sensitivity in the band)\nflags, otherwise cleared", "high": "flagged\nwithout\nsequencing"}
