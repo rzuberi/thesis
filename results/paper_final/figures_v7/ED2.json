@@ -1,0 +1,250 @@
+{
+ "batch_by_class_pre_event": {
+  "Batch 1": {
+   "progressor": 23,
+   "non_progressor": 42
+  },
+  "Batch 16S": {
+   "progressor": 4,
+   "non_progressor": 7
+  },
+  "Batch 2": {
+   "progressor": 25,
+   "non_progressor": 29
+  },
+  "Batch 3": {
+   "progressor": 22,
+   "non_progressor": 35
+  },
+  "Batch 4": {
+   "progressor": 17,
+   "non_progressor": 40
+  },
+  "Batch 5": {
+   "progressor": 0,
+   "non_progressor": 86
+  },
+  "Batch 6": {
+   "progressor": 0,
+   "non_progressor": 78
+  },
+  "Batch 8": {
+   "progressor": 49,
+   "non_progressor": 0
+  },
+  "Batch 9": {
+   "progressor": 0,
+   "non_progressor": 46
+  },
+  "Exome Subcohort": {
+   "progressor": 17,
+   "non_progressor": 34
+  },
+  "NP Pilot Study": {
+   "progressor": 0,
+   "non_progressor": 13
+  },
+  "Progressor Pilot Study": {
+   "progressor": 4,
+   "non_progressor": 0
+  }
+ },
+ "single_class": {
+  "Batch 1": false,
+  "Batch 16S": false,
+  "Batch 2": false,
+  "Batch 3": false,
+  "Batch 4": false,
+  "Batch 5": true,
+  "Batch 6": true,
+  "Batch 8": true,
+  "Batch 9": true,
+  "Exome Subcohort": false,
+  "NP Pilot Study": true,
+  "Progressor Pilot Study": true
+ },
+ "fisher": {
+  "method": "monte_carlo_10000",
+  "p": 0.0
+ },
+ "auroc_within_pairs": {
+  "all pairs": {
+   "L-CNV": {
+    "value": 0.801,
+    "ci95": [
+     0.71,
+     0.875
+    ]
+   },
+   "L-IMG": {
+    "value": 0.847,
+    "ci95": [
+     0.798,
+     0.894
+    ]
+   },
+   "L-LATE": {
+    "value": 0.889,
+    "ci95": [
+     0.83,
+     0.934
+    ]
+   }
+  },
+  "same batch": {
+   "L-CNV": {
+    "value": 0.79,
+    "ci95": [
+     0.675,
+     0.916
+    ]
+   },
+   "L-IMG": {
+    "value": 0.841,
+    "ci95": [
+     0.755,
+     0.925
+    ]
+   },
+   "L-LATE": {
+    "value": 0.893,
+    "ci95": [
+     0.796,
+     0.967
+    ]
+   }
+  },
+  "same run": {
+   "L-CNV": {
+    "value": 0.783,
+    "ci95": [
+     0.671,
+     0.916
+    ]
+   },
+   "L-IMG": {
+    "value": 0.846,
+    "ci95": [
+     0.756,
+     0.927
+    ]
+   },
+   "L-LATE": {
+    "value": 0.891,
+    "ci95": [
+     0.794,
+     0.968
+    ]
+   }
+  }
+ },
+ "batch_alone_target_encoded": {
+  "value": 0.759,
+  "ci95": [
+   0.641,
+   0.865
+  ]
+ },
+ "IMG_minus_CNV_within_batch": {
+  "delta": 0.051,
+  "ci95": [
+   -0.071,
+   0.184
+  ],
+  "p_two_sided": 0.526,
+  "one_sided_95_lower": -0.059,
+  "non_inferior_at_-0.05": false
+ },
+ "batch_probe": {
+  "pre_event_samples": {
+   "batches": {
+    "Batch 1": {
+     "n_samples": 65,
+     "n_patients": 9,
+     "auroc_one_vs_rest": 0.802
+    },
+    "Batch 16S": {
+     "n_samples": 11,
+     "n_patients": 9,
+     "auroc_one_vs_rest": 0.441
+    },
+    "Batch 2": {
+     "n_samples": 54,
+     "n_patients": 9,
+     "auroc_one_vs_rest": 0.533
+    },
+    "Batch 3": {
+     "n_samples": 57,
+     "n_patients": 10,
+     "auroc_one_vs_rest": 0.691
+    },
+    "Batch 4": {
+     "n_samples": 57,
+     "n_patients": 9,
+     "auroc_one_vs_rest": 0.571
+    },
+    "Batch 5": {
+     "n_samples": 86,
+     "n_patients": 11,
+     "auroc_one_vs_rest": 0.596
+    },
+    "Batch 6": {
+     "n_samples": 78,
+     "n_patients": 7,
+     "auroc_one_vs_rest": 0.59
+    },
+    "Batch 8": {
+     "n_samples": 49,
+     "n_patients": 13,
+     "auroc_one_vs_rest": 0.81
+    },
+    "Exome Subcohort": {
+     "n_samples": 51,
+     "n_patients": 5,
+     "auroc_one_vs_rest": 0.713
+    }
+   },
+   "n_batches_probed": 9,
+   "auroc_mean_over_batches": 0.639,
+   "auroc_max": 0.81,
+   "n_samples": 571,
+   "n_patients": 75
+  },
+  "non_progressor_pre_event_samples": {
+   "batches": {
+    "Batch 1": {
+     "n_samples": 42,
+     "n_patients": 6,
+     "auroc_one_vs_rest": 0.771
+    },
+    "Batch 16S": {
+     "n_samples": 7,
+     "n_patients": 5,
+     "auroc_one_vs_rest": 0.416
+    },
+    "Batch 4": {
+     "n_samples": 40,
+     "n_patients": 6,
+     "auroc_one_vs_rest": 0.618
+    },
+    "Batch 5": {
+     "n_samples": 86,
+     "n_patients": 11,
+     "auroc_one_vs_rest": 0.615
+    },
+    "Batch 6": {
+     "n_samples": 78,
+     "n_patients": 7,
+     "auroc_one_vs_rest": 0.585
+    }
+   },
+   "n_batches_probed": 5,
+   "auroc_mean_over_batches": 0.601,
+   "auroc_max": 0.771,
+   "n_samples": 410,
+   "n_patients": 43
+  },
+  "embedding_dim": 1536,
+  "note": "one-vs-rest logistic regression (L2, C = 1, features standardised within the training folds), patient-grouped 5-fold CV, AUROC of the out-of-fold probabilities; batches with >= 5 patients"
+ }
+}

@@ -1,0 +1,192 @@
+{
+ "robustness_index_R10": {
+  "UNI2-h": {
+   "R": 0.0768,
+   "ci95": [
+    0.0341,
+    0.1315
+   ],
+   "chance": 0.0398,
+   "k": 10,
+   "neighbour_classes_at_k": {
+    "SS": 641,
+    "SO": 128,
+    "OS": 1538
+   }
+  },
+  "Virchow2": {
+   "R": 0.0678,
+   "ci95": [
+    0.0321,
+    0.1127
+   ],
+   "chance": 0.0398,
+   "k": 10,
+   "neighbour_classes_at_k": {
+    "SS": 556,
+    "SO": 116,
+    "OS": 1596
+   }
+  },
+  "H-optimus-0": {
+   "R": 0.0971,
+   "ci95": [
+    0.0408,
+    0.1677
+   ],
+   "chance": 0.0398,
+   "k": 10,
+   "neighbour_classes_at_k": {
+    "SS": 653,
+    "SO": 152,
+    "OS": 1413
+   }
+  },
+  "Prov-GigaPath": {
+   "R": 0.0279,
+   "ci95": [
+    0.0101,
+    0.0482
+   ],
+   "chance": 0.0398,
+   "k": 10,
+   "neighbour_classes_at_k": {
+    "SS": 645,
+    "SO": 51,
+    "OS": 1779
+   }
+  }
+ },
+ "decision": {
+  "rule": "eligible E in {Virchow2, H-optimus-0}; switch if lower 95% CI of dR_10 > 0 AND R_10(E) >= 1.25 x R_10(UNI2-h); if both, larger R_10",
+  "candidates": {
+   "Virchow2": {
+    "R_10": 0.0678,
+    "dR": -0.009,
+    "dR_ci95": [
+     -0.0236,
+     0.0043
+    ],
+    "ratio_to_uni2": 0.8828,
+    "eligible": true,
+    "crit_ci_above_0": false,
+    "crit_ratio_ge_1.25": false,
+    "qualifies": false
+   },
+   "H-optimus-0": {
+    "R_10": 0.0971,
+    "dR": 0.0203,
+    "dR_ci95": [
+     0.0009,
+     0.0398
+    ],
+    "ratio_to_uni2": 1.2643,
+    "eligible": true,
+    "crit_ci_above_0": true,
+    "crit_ratio_ge_1.25": true,
+    "qualifies": true
+   },
+   "Prov-GigaPath": {
+    "R_10": 0.0279,
+    "dR": -0.0489,
+    "dR_ci95": [
+     -0.0881,
+     -0.019
+    ],
+    "ratio_to_uni2": 0.3633,
+    "eligible": false,
+    "crit_ci_above_0": false,
+    "crit_ratio_ge_1.25": false,
+    "qualifies": false
+   }
+  },
+  "switch_to": "H-optimus-0",
+  "decision": "switch to H-optimus-0"
+ },
+ "L_IMG_auroc": {
+  "all pre-event UNI2-h": {
+   "auroc": 0.847,
+   "ci95": [
+    0.798,
+    0.894
+   ]
+  },
+  "all pre-event H-optimus-0": {
+   "auroc": 0.805,
+   "ci95": [
+    0.744,
+    0.859
+   ]
+  },
+  "NDBE pre-event UNI2-h": {
+   "auroc": 0.827,
+   "ci95": [
+    0.768,
+    0.883
+   ]
+  },
+  "NDBE pre-event H-optimus-0": {
+   "auroc": 0.784,
+   "ci95": [
+    0.71,
+    0.851
+   ]
+  }
+ },
+ "scanner_transfer": {
+  "within C13239-01 UNI2-h": {
+   "value": 0.841,
+   "ci95": [
+    0.788,
+    0.89
+   ]
+  },
+  "within C13239-01 H-optimus-0": {
+   "value": 0.779,
+   "ci95": [
+    0.71,
+    0.839
+   ]
+  },
+  "C13239-01 \u2192 C13210 UNI2-h": {
+   "value": 0.726,
+   "ci95": [
+    0.56,
+    0.86
+   ]
+  },
+  "C13239-01 \u2192 C13210 H-optimus-0": {
+   "value": 0.676,
+   "ci95": [
+    0.516,
+    0.827
+   ]
+  }
+ },
+ "triage_gate": {
+  "UNI2-h": {
+   "share": 0.458,
+   "share_ci95": [
+    0.408,
+    0.504
+   ],
+   "sensitivity": 0.865,
+   "sens_ci95": [
+    0.791,
+    0.926
+   ]
+  },
+  "H-optimus-0": {
+   "share": 0.668,
+   "share_ci95": [
+    0.619,
+    0.71
+   ],
+   "sensitivity": 0.875,
+   "sens_ci95": [
+    0.798,
+    0.935
+   ]
+  }
+ }
+}

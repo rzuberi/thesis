@@ -1,0 +1,302 @@
+{
+ "availability": {
+  "pre_event_samples": {
+   "progressor": {
+    "with_p53": 111,
+    "without_p53": 50
+   },
+   "non_progressor": {
+    "with_p53": 339,
+    "without_p53": 71
+   },
+   "fisher_exact_p": 0.001,
+   "share_available": 0.788
+  },
+  "patients_with_any_p53": {
+   "progressor": 31,
+   "non_progressor": 40
+  },
+  "aberrant_among_available": {
+   "progressor": 17,
+   "non_progressor": 1
+  },
+  "grade_distribution": {
+   "with_p53": {
+    "progressor": {
+     "NDBE": 72,
+     "ID": 10,
+     "LGD": 29
+    },
+    "non_progressor": {
+     "NDBE": 270,
+     "ID": 48,
+     "LGD": 21
+    }
+   },
+   "without_p53": {
+    "progressor": {
+     "NDBE": 32,
+     "ID": 5,
+     "LGD": 13
+    },
+    "non_progressor": {
+     "NDBE": 64,
+     "ID": 3,
+     "LGD": 4
+    }
+   }
+  },
+  "all_676_available": 517,
+  "all_676_aberrant": 44
+ },
+ "n": {
+  "n_samples": 450,
+  "n_progressor_samples": 111,
+  "n_patients": 71,
+  "n_progressor_patients": 31,
+  "n_endoscopies": 220,
+  "n_progressor_endoscopies": 62
+ },
+ "rules": {
+  "sample": {
+   "p53 alone": {
+    "sensitivity": 0.153,
+    "sens_ci95": [
+     0.092,
+     0.234
+    ],
+    "specificity": 0.997,
+    "spec_ci95": [
+     0.984,
+     1.0
+    ],
+    "ci": "exact"
+   },
+   "current care (D)": {
+    "sensitivity": 0.351,
+    "sens_ci95": [
+     0.263,
+     0.448
+    ],
+    "specificity": 0.796,
+    "spec_ci95": [
+     0.75,
+     0.838
+    ],
+    "ci": "exact"
+   },
+   "(D) + p53": {
+    "sensitivity": 0.432,
+    "sens_ci95": [
+     0.339,
+     0.53
+    ],
+    "specificity": 0.794,
+    "spec_ci95": [
+     0.746,
+     0.835
+    ],
+    "ci": "exact"
+   },
+   "triage": {
+    "sensitivity": 0.871,
+    "sens_ci95": [
+     0.809,
+     0.927
+    ],
+    "specificity": 0.716,
+    "spec_ci95": [
+     0.651,
+     0.781
+    ],
+    "ci": "patient bootstrap"
+   },
+   "triage or p53": {
+    "sensitivity": 0.881,
+    "sens_ci95": [
+     0.823,
+     0.936
+    ],
+    "specificity": 0.713,
+    "spec_ci95": [
+     0.649,
+     0.779
+    ],
+    "ci": "patient bootstrap"
+   },
+   "B*": {
+    "sensitivity": 0.882,
+    "sens_ci95": [
+     0.821,
+     0.939
+    ],
+    "specificity": 0.683,
+    "spec_ci95": [
+     0.6,
+     0.764
+    ],
+    "ci": "patient bootstrap"
+   }
+  },
+  "endoscopy": {
+   "p53 alone": {
+    "sensitivity": 0.21,
+    "sens_ci95": [
+     0.117,
+     0.332
+    ],
+    "specificity": 0.994,
+    "spec_ci95": [
+     0.965,
+     1.0
+    ],
+    "ci": "exact"
+   },
+   "current care (D)": {
+    "sensitivity": 0.339,
+    "sens_ci95": [
+     0.223,
+     0.47
+    ],
+    "specificity": 0.734,
+    "spec_ci95": [
+     0.658,
+     0.801
+    ],
+    "ci": "exact"
+   },
+   "(D) + p53": {
+    "sensitivity": 0.419,
+    "sens_ci95": [
+     0.295,
+     0.552
+    ],
+    "specificity": 0.728,
+    "spec_ci95": [
+     0.651,
+     0.796
+    ],
+    "ci": "exact"
+   },
+   "triage": {
+    "sensitivity": 0.902,
+    "sens_ci95": [
+     0.842,
+     0.955
+    ],
+    "specificity": 0.572,
+    "spec_ci95": [
+     0.487,
+     0.661
+    ],
+    "ci": "patient bootstrap"
+   },
+   "triage or p53": {
+    "sensitivity": 0.91,
+    "sens_ci95": [
+     0.853,
+     0.96
+    ],
+    "specificity": 0.569,
+    "spec_ci95": [
+     0.484,
+     0.658
+    ],
+    "ci": "patient bootstrap"
+   },
+   "B*": {
+    "sensitivity": 0.898,
+    "sens_ci95": [
+     0.836,
+     0.952
+    ],
+    "specificity": 0.558,
+    "spec_ci95": [
+     0.461,
+     0.657
+    ],
+    "ci": "patient bootstrap"
+   }
+  },
+  "patient": {
+   "p53 alone": {
+    "sensitivity": 0.387,
+    "sens_ci95": [
+     0.218,
+     0.578
+    ],
+    "specificity": 0.975,
+    "spec_ci95": [
+     0.868,
+     0.999
+    ],
+    "ci": "exact"
+   },
+   "current care (D)": {
+    "sensitivity": 0.484,
+    "sens_ci95": [
+     0.302,
+     0.669
+    ],
+    "specificity": 0.45,
+    "spec_ci95": [
+     0.293,
+     0.615
+    ],
+    "ci": "exact"
+   },
+   "(D) + p53": {
+    "sensitivity": 0.613,
+    "sens_ci95": [
+     0.422,
+     0.782
+    ],
+    "specificity": 0.45,
+    "spec_ci95": [
+     0.293,
+     0.615
+    ],
+    "ci": "exact"
+   },
+   "triage": {
+    "sensitivity": 0.961,
+    "sens_ci95": [
+     0.896,
+     0.997
+    ],
+    "specificity": 0.282,
+    "spec_ci95": [
+     0.167,
+     0.4
+    ],
+    "ci": "patient bootstrap"
+   },
+   "triage or p53": {
+    "sensitivity": 0.961,
+    "sens_ci95": [
+     0.896,
+     0.997
+    ],
+    "specificity": 0.282,
+    "spec_ci95": [
+     0.167,
+     0.4
+    ],
+    "ci": "patient bootstrap"
+   },
+   "B*": {
+    "sensitivity": 0.965,
+    "sens_ci95": [
+     0.897,
+     1.0
+    ],
+    "specificity": 0.295,
+    "spec_ci95": [
+     0.171,
+     0.421
+    ],
+    "ci": "patient bootstrap"
+   }
+  }
+ }
+}

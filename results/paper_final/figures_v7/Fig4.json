@@ -1,0 +1,162 @@
+{
+ "n_patients": 75,
+ "n_progressor_patients": 32,
+ "biopsies_by_class_band_grade": {
+  "progressor": {
+   "low": {
+    "NDBE": 6,
+    "ID": 0,
+    "LGD": 1
+   },
+   "mid": {
+    "NDBE": 48,
+    "ID": 6,
+    "LGD": 10
+   },
+   "high": {
+    "NDBE": 50,
+    "ID": 9,
+    "LGD": 31
+   }
+  },
+  "non-progressor": {
+   "low": {
+    "NDBE": 144,
+    "ID": 15,
+    "LGD": 12
+   },
+   "mid": {
+    "NDBE": 163,
+    "ID": 32,
+    "LGD": 10
+   },
+   "high": {
+    "NDBE": 27,
+    "ID": 4,
+    "LGD": 3
+   }
+  }
+ },
+ "span_of_pre_event_sampling_years": {
+  "progressor": {
+   "median": 2.75,
+   "max": 12.0
+  },
+  "non-progressor": {
+   "median": 6.0,
+   "max": 13.0
+  }
+ },
+ "endoscopies": {
+  "n": 288,
+  "flagged_voted": 161,
+  "progressor_flagged": 79,
+  "non_progressor_flagged": 82
+ },
+ "patients_with_any_flagged_endoscopy_voted": {
+  "progressor": 31,
+  "non_progressor": 30
+ },
+ "first_flag_years_before_event_progressors_voted": {
+  "median": 5.0,
+  "iqr": [
+   2.5,
+   7.5
+  ]
+ },
+ "modal_band_rule": "most frequent band over the 10 repeats; ties to the lower band",
+ "time_dependent_auroc": {
+  "grade": {
+   "1": {
+    "auroc": 0.694,
+    "ci95": [
+     0.566,
+     0.797
+    ]
+   },
+   "3": {
+    "auroc": 0.543,
+    "ci95": [
+     0.445,
+     0.634
+    ]
+   },
+   "5": {
+    "auroc": 0.524,
+    "ci95": [
+     0.434,
+     0.613
+    ]
+   }
+  },
+  "L-CNV": {
+   "1": {
+    "auroc": 0.811,
+    "ci95": [
+     0.656,
+     0.923
+    ]
+   },
+   "3": {
+    "auroc": 0.767,
+    "ci95": [
+     0.655,
+     0.841
+    ]
+   },
+   "5": {
+    "auroc": 0.779,
+    "ci95": [
+     0.669,
+     0.841
+    ]
+   }
+  },
+  "L-IMG": {
+   "1": {
+    "auroc": 0.771,
+    "ci95": [
+     0.631,
+     0.846
+    ]
+   },
+   "3": {
+    "auroc": 0.788,
+    "ci95": [
+     0.659,
+     0.866
+    ]
+   },
+   "5": {
+    "auroc": 0.76,
+    "ci95": [
+     0.661,
+     0.819
+    ]
+   }
+  },
+  "L-LATE": {
+   "1": {
+    "auroc": 0.854,
+    "ci95": [
+     0.747,
+     0.907
+    ]
+   },
+   "3": {
+    "auroc": 0.831,
+    "ci95": [
+     0.705,
+     0.898
+    ]
+   },
+   "5": {
+    "auroc": 0.821,
+    "ci95": [
+     0.716,
+     0.873
+    ]
+   }
+  }
+ }
+}
