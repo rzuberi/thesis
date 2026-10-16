@@ -143,5 +143,5 @@ ex.set_yticks(range(len(keys))); ex.set_yticklabels([f"{'P' if c == 'progressor'
 for r_ in (10, 9, 8, 7, 6, 5): ex.barh([-10], [0], color=greys[r_], label=f"{r_} of 10")
 ex.plot([], [], marker="D", color=MODEL["L-IMG"], ms=3, lw=0, label="voted call: all 10 repeats agree"); ex.plot([], [], marker="D", color="white", mec=MODEL["L-IMG"], mew=0.7, ms=3, lw=0, label="voted call: ≥ 8 of 10 agree")
 ex.legend(loc="lower center", bbox_to_anchor=(0.35, 1.0), ncol=3, fontsize=4.8, title="bars: repeats in modal band; diamonds: repeats agreeing with vote", title_fontsize=4.9, columnspacing=0.6, handletextpad=0.3)
-letter(fig, ex, "e", dx=-0.115, dy=-0.035)
+letter(fig, ex, "e", dx=-0.05, dy=-0.035)
 save(fig, "Fig3"); dump("Fig3", src)
