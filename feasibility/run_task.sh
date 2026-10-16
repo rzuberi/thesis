@@ -37,6 +37,8 @@ fi
 echo "${SELF_JOB_ID}" > "${LOCK_DIR}/job_id"
 echo "${SELF_PARTITION}" > "${LOCK_DIR}/partition"
 date -Iseconds > "${LOCK_DIR}/started_at"
+# lock acquired: cancel this task's still-PENDING twins on other partitions right away (never self; workers have other names)
+for j in $(squeue -h -u "${USER}" -n "${TASK_NAME}" -t PENDING -o %i 2>/dev/null); do [[ "${j}" != "${SELF_JOB_ID}" ]] && scancel "${j}" 2>/dev/null || true; done
 
 source /home/zuberi01/miniforge3/etc/profile.d/conda.sh
 conda activate "${CONDA_ENV}"
@@ -58,3 +60,4 @@ cat > "${DONE_FILE}" <<EOF
 {"task":"${TASK_NAME}","job_id":"${SELF_JOB_ID}","partition":"${SELF_PARTITION}","completed_at":"$(date -Iseconds)","output_dir":"${OUTDIR}"}
 EOF
 echo "[done] ${DONE_FILE}"
+]50;SetProfile=Basic]0;Terminal
