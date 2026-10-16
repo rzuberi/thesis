@@ -19,9 +19,9 @@ grid = lambda ql, qh: f"cut-off grid cell: t_low {ql}% training sensitivity, t_h
 ROWS = [("Population", "Primary: all pre-event biopsies", "primary: all pre-event samples"), ("Population", "NDBE pre-event biopsies", "NDBE pre-event samples"), ("Population", "Never-dysplastic patients", "patients never dysplastic before the event"),
         ("Population", "Excl. progressor biopsies within 1 year", "excluding progressor samples within 1 year"), ("Population", "Earliest endoscopy per patient", "earliest pre-event endoscopy per patient (all its samples)"),
         ("Population", "Earliest biopsy per patient", "earliest pre-event sample per patient (Table 5)"), ("Population", "Patient-weighted", "patient-weighted (R34)"), ("Population", "Within-batch pairs", "within-batch pairs"),
-        ("Labels", "'Excluded' flag removed", "label: (a) 'excluded' flag removed"), ("Labels", "'Excluded', 'remove', 'inconsistency' removed", "label: (a) 'excluded', 'remove' and 'inconsistency' flags removed"),
-        ("Labels", "NP biopsies < 1 y before last endoscopy removed", "label: (b) non-progressor samples < 1 year before the last sequenced endoscopy removed"), ("Labels", "NP biopsies < 2 y before last endoscopy removed", "label: (b) non-progressor samples < 2 years before the last sequenced endoscopy removed"),
-        ("Labels", "NP patients with a later HGD report removed", "label: (c) non-progressor patients with a later HGD+ report removed"), ("Labels", "Flag, 1-year and later-HGD exclusions together", "label: (d) (a) + (b, 1 year) + (c)"),
+        ("Labels", "'Excluded' flag removed", "label: (a) 'excluded' flag removed"), ("Labels", "All sheet flags removed", "label: (a) 'excluded', 'remove' and 'inconsistency' flags removed"),
+        ("Labels", "NP biopsies < 1 y to last endoscopy removed", "label: (b) non-progressor samples < 1 year before the last sequenced endoscopy removed"), ("Labels", "NP biopsies < 2 y to last endoscopy removed", "label: (b) non-progressor samples < 2 years before the last sequenced endoscopy removed"),
+        ("Labels", "NP patients with later HGD removed", "label: (c) non-progressor patients with a later HGD+ report removed"), ("Labels", "All three label exclusions", "label: (d) (a) + (b, 1 year) + (c)"),
         ("Features", "Package features, joint segmentation", "package features"), ("Features", "Package, per-sample segmentation", "per-sample re-segmented copy number (R36)"), ("Features", "Package, past-only segmentation", "past-only re-segmented copy number (R36, extra row)"),
         ("Features", "H-optimus-0 extractor", "H-optimus-0 gate (F5)"), ("Features", "Tissue- and year-adjusted H&E score", "tissue-adjusted gate (R32b)"),
         ("Training", "Pre-event-only training", "pre-event-only training (F1)"), ("Training", "Package, pre-event-only training", "package features, pre-event-only training (Table 5)"), ("Training", "λ by deviance", "lambda by deviance (B5)"),
@@ -43,21 +43,21 @@ def forest(ax, table, dkey, xlab, xlim, share=False):
         ci_arrow(ax, y_, ci[0], ci[1], xlim, c_); ax.plot([lo], [y_], marker="|", color=c_, ms=4, mew=0.8, lw=0, zorder=3, clip_on=False)
         if xlim[0] <= d <= xlim[1]: ax.plot([d], [y_], marker="D" if primary else "o", color=c_, ms=4 if primary else 3.2, lw=0, zorder=4)
         txt = f"{signed(d)} [{mi(ci[0])}, {mi(ci[1])}]" + (f"  {100 * r['share_sequenced']:.0f}%" if share and r.get("share_sequenced") is not None else "")
-        ax.text(xlim[1] + 0.012, y_, txt, fontsize=4.9, va="center", ha="left", color=c_, clip_on=False)
+        ax.text(xlim[1] + 0.02 * (xlim[1] - xlim[0]) / 0.16, y_, txt, fontsize=4.5, va="center", ha="left", color=c_, clip_on=False)
     ax.set_xlim(*xlim); ax.set_ylim(-0.7, top + 0.7); ax.set_yticks([]); ax.spines["left"].set_visible(False); ax.set_xlabel(xlab, fontsize=6); ax.tick_params(labelsize=5.8)
 for g, lab, key in ROWS: src["rows"].append({"group": g, "label": lab, "triage_vs_Bstar": T.get(key), "registered_test_vs_B": PB.get(key), "IMG_minus_CNV": H.get(key)})
-Y0, HT = 0.07, 0.855; axL = fig.add_axes([0.215, Y0, 0.135, HT]); axM = fig.add_axes([0.49, Y0, 0.135, HT]); axR = fig.add_axes([0.745, Y0, 0.135, HT])
+Y0, HT = 0.07, 0.855; axL = fig.add_axes([0.245, Y0, 0.11, HT]); axM = fig.add_axes([0.525, Y0, 0.105, HT]); axR = fig.add_axes([0.76, Y0, 0.105, HT])
 forest(axL, T, "d_sens", "Δ sensitivity, triage − B*", (-0.10, 0.06), share=True); forest(axM, PB, "d_sens", "Δ sensitivity, triage − (B)", (-0.08, 0.12)); forest(axR, H, "d_auroc", "Δ AUROC, L-IMG − L-CNV", (-0.12, 0.16))
 for ax_, t_, hd in ((axL, "Triage vs B* (matched specificity)", "Δ [95% CI]  sequenced"), (axM, "Registered test: triage vs (B)", "Δ [95% CI]"), (axR, "H&E model vs copy number", "Δ [95% CI]")):
-    ax_.set_title(t_, fontsize=6.5, pad=16, loc="left"); ax_.text(ax_.get_xlim()[1] + 0.012, top + 1.2, hd, fontsize=5.2, va="bottom", ha="left", clip_on=False)
-lab_ax = fig.add_axes([0.0, Y0, 0.21, HT]); lab_ax.set_xlim(0, 1); lab_ax.set_ylim(-0.7, top + 0.7); lab_ax.axis("off")
+    ax_.set_title(t_, fontsize=6.2, pad=16, loc="left"); ax_.text(ax_.get_xlim()[1] + 0.02 * (ax_.get_xlim()[1] - ax_.get_xlim()[0]) / 0.16, top + 1.2, hd, fontsize=5.0, va="bottom", ha="left", clip_on=False)
+lab_ax = fig.add_axes([0.0, Y0, 0.24, HT]); lab_ax.set_xlim(0, 1); lab_ax.set_ylim(-0.7, top + 0.7); lab_ax.axis("off")
 for i, (g, lab, key) in enumerate(ROWS):
-    lab_ax.text(0.99, Y(i), lab, fontsize=5.4, ha="right", va="center", fontweight="bold" if lab.startswith("Primary") else "normal")
+    lab_ax.text(0.99, Y(i), lab, fontsize=5.2, ha="right", va="center", fontweight="bold" if lab.startswith("Primary") else "normal")
     if i == 0 or ROWS[i - 1][0] != g: lab_ax.text(0.02, Y(i) + 0.62, g, fontsize=6, ha="left", va="bottom", fontweight="bold", color="#333333")
 from matplotlib.lines import Line2D
 h = [Line2D([], [], marker="D", color="#222222", lw=0, ms=4, label="primary analysis"), Line2D([], [], marker="o", color="#222222", lw=0, ms=3.2, label="sensitivity analysis, bound > −0.05 (within margin)"),
      Line2D([], [], marker="o", color=MODEL["L-CNV"], lw=0, ms=3.2, label="sensitivity analysis, bound ≤ −0.05 (outside margin)"), Line2D([], [], marker="|", color="#222222", lw=0, ms=4, mew=0.8, label="one-sided 95% lower bound"),
      Line2D([], [], color=MODEL["L-CNV"], lw=0.8, ls="--", label="−0.05 margin"), Line2D([], [], marker=">", color="#222222", lw=0, ms=3.5, label="CI truncated by the axis")]
 fig.legend(handles=h, loc="lower center", ncol=3, fontsize=5.6, bbox_to_anchor=(0.5, 0.0))
-letter(fig, lab_ax, "a", dx=0.005, dy=0.03); letter(fig, axM, "b", dx=-0.03, dy=0.03); letter(fig, axR, "c", dx=-0.03, dy=0.03)
+letter(fig, lab_ax, "a", dx=0.005, dy=0.03); letter(fig, axM, "b", dx=-0.025, dy=0.03); letter(fig, axR, "c", dx=-0.025, dy=0.03)
 save(fig, "Fig5"); dump("Fig5", src)
