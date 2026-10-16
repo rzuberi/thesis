@@ -1,0 +1,306 @@
+{
+ "task": "r40",
+ "R40": {
+  "n_samples": 571,
+  "n_progressor_samples": 161,
+  "n_patients": 75,
+  "n_progressor_patients": 32,
+  "draws": 2000,
+  "auroc_L_CNV": {
+   "shipped_matrix": {
+    "value": 0.801,
+    "ci95": [
+     0.71,
+     0.875
+    ]
+   },
+   "joint_package": {
+    "value": 0.845,
+    "ci95": [
+     0.766,
+     0.904
+    ]
+   },
+   "past_only": {
+    "value": 0.8,
+    "ci95": [
+     0.723,
+     0.867
+    ]
+   },
+   "per_sample": {
+    "value": 0.785,
+    "ci95": [
+     0.723,
+     0.845
+    ]
+   }
+  },
+  "pairwise": {
+   "shipped_matrix_minus_joint_package": {
+    "delta": -0.044,
+    "ci95": [
+     -0.115,
+     0.031
+    ],
+    "p_two_sided": 0.265,
+    "p_holm": 1.0
+   },
+   "shipped_matrix_minus_past_only": {
+    "delta": 0.002,
+    "ci95": [
+     -0.065,
+     0.074
+    ],
+    "p_two_sided": 0.96,
+    "p_holm": 1.0
+   },
+   "shipped_matrix_minus_per_sample": {
+    "delta": 0.017,
+    "ci95": [
+     -0.064,
+     0.088
+    ],
+    "p_two_sided": 0.671,
+    "p_holm": 1.0
+   },
+   "joint_package_minus_past_only": {
+    "delta": 0.045,
+    "ci95": [
+     -0.012,
+     0.097
+    ],
+    "p_two_sided": 0.116,
+    "p_holm": 0.582
+   },
+   "joint_package_minus_per_sample": {
+    "delta": 0.061,
+    "ci95": [
+     -0.01,
+     0.121
+    ],
+    "p_two_sided": 0.097,
+    "p_holm": 0.582
+   },
+   "past_only_minus_per_sample": {
+    "delta": 0.015,
+    "ci95": [
+     -0.042,
+     0.064
+    ],
+    "p_two_sided": 0.592,
+    "p_holm": 1.0
+   }
+  },
+  "note": "fold-stratified AUROC of L-CNV on the pre-event samples; same patient-bootstrap draws for every version (paired); p = two-sided bootstrap percentile p; Holm over the six pairs",
+  "sanity_round4_r36_expected_per_sample_0.785_joint_0.845": [
+   0.785,
+   0.845
+  ],
+  "sampling_intensity": {
+   "n_segmented_together_joint": {
+    "definition": "number of the patient's samples in the stored joint segmentation call (all of the patient's sheet samples, rv4_reseg.R MODE=joint)",
+    "pre_event_by_class": {
+     "progressor": {
+      "n": 161,
+      "median": 10.0,
+      "iqr": [
+       7.0,
+       12.0
+      ]
+     },
+     "non_progressor": {
+      "n": 410,
+      "median": 12.0,
+      "iqr": [
+       8.0,
+       15.0
+      ]
+     }
+    },
+    "tertile_edges_pre_event": [
+     8.0,
+     13.0
+    ],
+    "max_past_only_call_equals_joint_share": 0.693
+   },
+   "per_sample_r_joint_vs_per_sample_final_features": {
+    "pre_event_all": {
+     "n": 571,
+     "median": 0.727,
+     "iqr": [
+      0.614,
+      0.826
+     ]
+    },
+    "pre_event_by_class": {
+     "progressor": {
+      "n": 161,
+      "median": 0.805,
+      "iqr": [
+       0.696,
+       0.894
+      ]
+     },
+     "non_progressor": {
+      "n": 410,
+      "median": 0.708,
+      "iqr": [
+       0.598,
+       0.791
+      ]
+     }
+    },
+    "by_tertile": {
+     "tertile_1": {
+      "n_segmented_range": [
+       2,
+       8
+      ],
+      "all": {
+       "n": 192,
+       "median": 0.74,
+       "iqr": [
+        0.649,
+        0.826
+       ]
+      },
+      "progressor": {
+       "n": 56,
+       "median": 0.836,
+       "iqr": [
+        0.74,
+        0.888
+       ]
+      },
+      "non_progressor": {
+       "n": 136,
+       "median": 0.716,
+       "iqr": [
+        0.612,
+        0.78
+       ]
+      }
+     },
+     "tertile_2": {
+      "n_segmented_range": [
+       9,
+       13
+      ],
+      "all": {
+       "n": 209,
+       "median": 0.741,
+       "iqr": [
+        0.628,
+        0.842
+       ]
+      },
+      "progressor": {
+       "n": 70,
+       "median": 0.79,
+       "iqr": [
+        0.637,
+        0.912
+       ]
+      },
+      "non_progressor": {
+       "n": 139,
+       "median": 0.729,
+       "iqr": [
+        0.623,
+        0.822
+       ]
+      }
+     },
+     "tertile_3": {
+      "n_segmented_range": [
+       14,
+       31
+      ],
+      "all": {
+       "n": 170,
+       "median": 0.676,
+       "iqr": [
+        0.579,
+        0.798
+       ]
+      },
+      "progressor": {
+       "n": 35,
+       "median": 0.769,
+       "iqr": [
+        0.674,
+        0.894
+       ]
+      },
+      "non_progressor": {
+       "n": 135,
+       "median": 0.645,
+       "iqr": [
+        0.568,
+        0.772
+       ]
+      }
+     }
+    },
+    "spearman_r_vs_n_segmented_pre_event": {
+     "all": -0.16,
+     "progressor": -0.061,
+     "non_progressor": -0.171
+    }
+   },
+   "class_difference_median_r_progressor_minus_non_progressor": {
+    "all_pre_event": {
+     "delta": 0.097,
+     "ci95": [
+      0.048,
+      0.166
+     ],
+     "p_two_sided": 0.0
+    },
+    "tertile_1": {
+     "delta": 0.12,
+     "ci95": [
+      0.065,
+      0.172
+     ],
+     "p_two_sided": 0.0
+    },
+    "tertile_2": {
+     "delta": 0.061,
+     "ci95": [
+      -0.056,
+      0.151
+     ],
+     "p_two_sided": 0.293
+    },
+    "tertile_3": {
+     "delta": 0.124,
+     "ci95": [
+      -0.002,
+      0.283
+     ],
+     "p_two_sided": 0.054
+    }
+   },
+   "counts_by_tertile_and_class": {
+    "tertile_1": {
+     "progressor": 56,
+     "non_progressor": 136,
+     "patients": 39
+    },
+    "tertile_2": {
+     "progressor": 70,
+     "non_progressor": 139,
+     "patients": 24
+    },
+    "tertile_3": {
+     "progressor": 35,
+     "non_progressor": 135,
+     "patients": 12
+    }
+   }
+  }
+ },
+ "prespec": "5c10c27"
+}

@@ -1,0 +1,2715 @@
+{
+ "task": "r37",
+ "R37": {
+  "a_availability": {
+   "pre_event_samples": {
+    "progressor": {
+     "with_p53": 111,
+     "without_p53": 50
+    },
+    "non_progressor": {
+     "with_p53": 339,
+     "without_p53": 71
+    },
+    "fisher_exact_p": 0.001,
+    "share_available": 0.788
+   },
+   "patients_with_any_p53": {
+    "progressor": 31,
+    "non_progressor": 40
+   },
+   "aberrant_among_available": {
+    "progressor": 17,
+    "non_progressor": 1
+   },
+   "grade_distribution": {
+    "with_p53": {
+     "progressor": {
+      "NDBE": 72,
+      "ID": 10,
+      "LGD": 29
+     },
+     "non_progressor": {
+      "NDBE": 270,
+      "ID": 48,
+      "LGD": 21
+     }
+    },
+    "without_p53": {
+     "progressor": {
+      "NDBE": 32,
+      "ID": 5,
+      "LGD": 13
+     },
+     "non_progressor": {
+      "NDBE": 64,
+      "ID": 3,
+      "LGD": 4
+     }
+    }
+   },
+   "all_676_available": 517,
+   "all_676_aberrant": 44
+  },
+  "b_c_d_samples_with_p53": {
+   "label": "pre-event samples with a p53 result; p53 = flag if aberrant; D = grade ID or LGD; D+p53 = D or p53 aberrant; T = triage (single model / voted); T|p53 = triage positive or p53 aberrant; B* training-matched",
+   "n_samples": 450,
+   "n_progressor_samples": 111,
+   "n_patients": 71,
+   "n_progressor_patients": 31,
+   "draws": 2000,
+   "n_endoscopies": 220,
+   "n_progressor_endoscopies": 62,
+   "rules": {
+    "p53": {
+     "sample": {
+      "sensitivity": 0.153,
+      "sens_ci95_bootstrap": [
+       0.086,
+       0.226
+      ],
+      "specificity": 0.997,
+      "spec_ci95_bootstrap": [
+       0.991,
+       1.0
+      ],
+      "sens_ci95_exact": [
+       0.092,
+       0.234
+      ],
+      "spec_ci95_exact": [
+       0.984,
+       1.0
+      ],
+      "counts": {
+       "true_positive": 17,
+       "positive": 111,
+       "true_negative": 338,
+       "negative": 339
+      }
+     },
+     "endoscopy": {
+      "sensitivity": 0.21,
+      "sens_ci95_bootstrap": [
+       0.119,
+       0.31
+      ],
+      "specificity": 0.994,
+      "spec_ci95_bootstrap": [
+       0.979,
+       1.0
+      ],
+      "sens_ci95_exact": [
+       0.117,
+       0.332
+      ],
+      "spec_ci95_exact": [
+       0.965,
+       1.0
+      ],
+      "counts": {
+       "true_positive": 13,
+       "positive": 62,
+       "true_negative": 157,
+       "negative": 158
+      }
+     },
+     "patient": {
+      "sensitivity": 0.387,
+      "sens_ci95_bootstrap": [
+       0.219,
+       0.564
+      ],
+      "specificity": 0.975,
+      "spec_ci95_bootstrap": [
+       0.917,
+       1.0
+      ],
+      "sens_ci95_exact": [
+       0.218,
+       0.578
+      ],
+      "spec_ci95_exact": [
+       0.868,
+       0.999
+      ],
+      "counts": {
+       "true_positive": 12,
+       "positive": 31,
+       "true_negative": 39,
+       "negative": 40
+      }
+     }
+    },
+    "D": {
+     "sample": {
+      "sensitivity": 0.351,
+      "sens_ci95_bootstrap": [
+       0.217,
+       0.488
+      ],
+      "specificity": 0.796,
+      "spec_ci95_bootstrap": [
+       0.723,
+       0.869
+      ],
+      "sens_ci95_exact": [
+       0.263,
+       0.448
+      ],
+      "spec_ci95_exact": [
+       0.75,
+       0.838
+      ],
+      "counts": {
+       "true_positive": 39,
+       "positive": 111,
+       "true_negative": 270,
+       "negative": 339
+      }
+     },
+     "endoscopy": {
+      "sensitivity": 0.339,
+      "sens_ci95_bootstrap": [
+       0.213,
+       0.483
+      ],
+      "specificity": 0.734,
+      "spec_ci95_bootstrap": [
+       0.665,
+       0.809
+      ],
+      "sens_ci95_exact": [
+       0.223,
+       0.47
+      ],
+      "spec_ci95_exact": [
+       0.658,
+       0.801
+      ],
+      "counts": {
+       "true_positive": 21,
+       "positive": 62,
+       "true_negative": 116,
+       "negative": 158
+      }
+     },
+     "patient": {
+      "sensitivity": 0.484,
+      "sens_ci95_bootstrap": [
+       0.31,
+       0.667
+      ],
+      "specificity": 0.45,
+      "spec_ci95_bootstrap": [
+       0.292,
+       0.609
+      ],
+      "sens_ci95_exact": [
+       0.302,
+       0.669
+      ],
+      "spec_ci95_exact": [
+       0.293,
+       0.615
+      ],
+      "counts": {
+       "true_positive": 15,
+       "positive": 31,
+       "true_negative": 18,
+       "negative": 40
+      }
+     }
+    },
+    "D+p53": {
+     "sample": {
+      "sensitivity": 0.432,
+      "sens_ci95_bootstrap": [
+       0.299,
+       0.577
+      ],
+      "specificity": 0.794,
+      "spec_ci95_bootstrap": [
+       0.716,
+       0.867
+      ],
+      "sens_ci95_exact": [
+       0.339,
+       0.53
+      ],
+      "spec_ci95_exact": [
+       0.746,
+       0.835
+      ],
+      "counts": {
+       "true_positive": 48,
+       "positive": 111,
+       "true_negative": 269,
+       "negative": 339
+      }
+     },
+     "endoscopy": {
+      "sensitivity": 0.419,
+      "sens_ci95_bootstrap": [
+       0.3,
+       0.556
+      ],
+      "specificity": 0.728,
+      "spec_ci95_bootstrap": [
+       0.652,
+       0.806
+      ],
+      "sens_ci95_exact": [
+       0.295,
+       0.552
+      ],
+      "spec_ci95_exact": [
+       0.651,
+       0.796
+      ],
+      "counts": {
+       "true_positive": 26,
+       "positive": 62,
+       "true_negative": 115,
+       "negative": 158
+      }
+     },
+     "patient": {
+      "sensitivity": 0.613,
+      "sens_ci95_bootstrap": [
+       0.444,
+       0.786
+      ],
+      "specificity": 0.45,
+      "spec_ci95_bootstrap": [
+       0.292,
+       0.609
+      ],
+      "sens_ci95_exact": [
+       0.422,
+       0.782
+      ],
+      "spec_ci95_exact": [
+       0.293,
+       0.615
+      ],
+      "counts": {
+       "true_positive": 19,
+       "positive": 31,
+       "true_negative": 18,
+       "negative": 40
+      }
+     }
+    },
+    "T_single": {
+     "sample": {
+      "sensitivity": 0.871,
+      "sens_ci95_bootstrap": [
+       0.809,
+       0.927
+      ],
+      "specificity": 0.716,
+      "spec_ci95_bootstrap": [
+       0.651,
+       0.781
+      ]
+     },
+     "endoscopy": {
+      "sensitivity": 0.902,
+      "sens_ci95_bootstrap": [
+       0.842,
+       0.955
+      ],
+      "specificity": 0.572,
+      "spec_ci95_bootstrap": [
+       0.487,
+       0.661
+      ]
+     },
+     "patient": {
+      "sensitivity": 0.961,
+      "sens_ci95_bootstrap": [
+       0.896,
+       0.997
+      ],
+      "specificity": 0.282,
+      "spec_ci95_bootstrap": [
+       0.167,
+       0.4
+      ]
+     }
+    },
+    "T_voted": {
+     "sample": {
+      "sensitivity": 0.874,
+      "sens_ci95_bootstrap": [
+       0.795,
+       0.947
+      ],
+      "specificity": 0.758,
+      "spec_ci95_bootstrap": [
+       0.688,
+       0.823
+      ],
+      "sens_ci95_exact": [
+       0.797,
+       0.929
+      ],
+      "spec_ci95_exact": [
+       0.709,
+       0.803
+      ],
+      "counts": {
+       "true_positive": 97,
+       "positive": 111,
+       "true_negative": 257,
+       "negative": 339
+      }
+     },
+     "endoscopy": {
+      "sensitivity": 0.903,
+      "sens_ci95_bootstrap": [
+       0.818,
+       0.978
+      ],
+      "specificity": 0.62,
+      "spec_ci95_bootstrap": [
+       0.53,
+       0.713
+      ],
+      "sens_ci95_exact": [
+       0.801,
+       0.964
+      ],
+      "spec_ci95_exact": [
+       0.54,
+       0.696
+      ],
+      "counts": {
+       "true_positive": 56,
+       "positive": 62,
+       "true_negative": 98,
+       "negative": 158
+      }
+     },
+     "patient": {
+      "sensitivity": 0.968,
+      "sens_ci95_bootstrap": [
+       0.889,
+       1.0
+      ],
+      "specificity": 0.325,
+      "spec_ci95_bootstrap": [
+       0.176,
+       0.475
+      ],
+      "sens_ci95_exact": [
+       0.833,
+       0.999
+      ],
+      "spec_ci95_exact": [
+       0.186,
+       0.491
+      ],
+      "counts": {
+       "true_positive": 30,
+       "positive": 31,
+       "true_negative": 13,
+       "negative": 40
+      }
+     }
+    },
+    "T|p53_single": {
+     "sample": {
+      "sensitivity": 0.881,
+      "sens_ci95_bootstrap": [
+       0.823,
+       0.936
+      ],
+      "specificity": 0.713,
+      "spec_ci95_bootstrap": [
+       0.649,
+       0.779
+      ]
+     },
+     "endoscopy": {
+      "sensitivity": 0.91,
+      "sens_ci95_bootstrap": [
+       0.853,
+       0.96
+      ],
+      "specificity": 0.569,
+      "spec_ci95_bootstrap": [
+       0.484,
+       0.658
+      ]
+     },
+     "patient": {
+      "sensitivity": 0.961,
+      "sens_ci95_bootstrap": [
+       0.896,
+       0.997
+      ],
+      "specificity": 0.282,
+      "spec_ci95_bootstrap": [
+       0.167,
+       0.4
+      ]
+     }
+    },
+    "T|p53_voted": {
+     "sample": {
+      "sensitivity": 0.874,
+      "sens_ci95_bootstrap": [
+       0.795,
+       0.947
+      ],
+      "specificity": 0.755,
+      "spec_ci95_bootstrap": [
+       0.687,
+       0.817
+      ],
+      "sens_ci95_exact": [
+       0.797,
+       0.929
+      ],
+      "spec_ci95_exact": [
+       0.706,
+       0.8
+      ],
+      "counts": {
+       "true_positive": 97,
+       "positive": 111,
+       "true_negative": 256,
+       "negative": 339
+      }
+     },
+     "endoscopy": {
+      "sensitivity": 0.903,
+      "sens_ci95_bootstrap": [
+       0.818,
+       0.978
+      ],
+      "specificity": 0.614,
+      "spec_ci95_bootstrap": [
+       0.523,
+       0.708
+      ],
+      "sens_ci95_exact": [
+       0.801,
+       0.964
+      ],
+      "spec_ci95_exact": [
+       0.533,
+       0.69
+      ],
+      "counts": {
+       "true_positive": 56,
+       "positive": 62,
+       "true_negative": 97,
+       "negative": 158
+      }
+     },
+     "patient": {
+      "sensitivity": 0.968,
+      "sens_ci95_bootstrap": [
+       0.889,
+       1.0
+      ],
+      "specificity": 0.325,
+      "spec_ci95_bootstrap": [
+       0.176,
+       0.475
+      ],
+      "sens_ci95_exact": [
+       0.833,
+       0.999
+      ],
+      "spec_ci95_exact": [
+       0.186,
+       0.491
+      ],
+      "counts": {
+       "true_positive": 30,
+       "positive": 31,
+       "true_negative": 13,
+       "negative": 40
+      }
+     }
+    },
+    "B_single": {
+     "sample": {
+      "sensitivity": 0.822,
+      "sens_ci95_bootstrap": [
+       0.743,
+       0.897
+      ],
+      "specificity": 0.777,
+      "spec_ci95_bootstrap": [
+       0.711,
+       0.841
+      ]
+     },
+     "endoscopy": {
+      "sensitivity": 0.839,
+      "sens_ci95_bootstrap": [
+       0.749,
+       0.917
+      ],
+      "specificity": 0.665,
+      "spec_ci95_bootstrap": [
+       0.582,
+       0.749
+      ]
+     },
+     "patient": {
+      "sensitivity": 0.952,
+      "sens_ci95_bootstrap": [
+       0.876,
+       1.0
+      ],
+      "specificity": 0.378,
+      "spec_ci95_bootstrap": [
+       0.251,
+       0.508
+      ]
+     }
+    },
+    "Bstar_single": {
+     "sample": {
+      "sensitivity": 0.882,
+      "sens_ci95_bootstrap": [
+       0.821,
+       0.939
+      ],
+      "specificity": 0.683,
+      "spec_ci95_bootstrap": [
+       0.6,
+       0.764
+      ]
+     },
+     "endoscopy": {
+      "sensitivity": 0.898,
+      "sens_ci95_bootstrap": [
+       0.836,
+       0.952
+      ],
+      "specificity": 0.558,
+      "spec_ci95_bootstrap": [
+       0.461,
+       0.657
+      ]
+     },
+     "patient": {
+      "sensitivity": 0.965,
+      "sens_ci95_bootstrap": [
+       0.897,
+       1.0
+      ],
+      "specificity": 0.295,
+      "spec_ci95_bootstrap": [
+       0.171,
+       0.421
+      ]
+     }
+    }
+   },
+   "paired": {
+    "T_single_minus_D": {
+     "sample": {
+      "d_sens": {
+       "delta": 0.52,
+       "ci95": [
+        0.393,
+        0.652
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.413,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.081,
+       "ci95": [
+        -0.163,
+        0.003
+       ],
+       "p_two_sided": 0.062
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": 0.563,
+       "ci95": [
+        0.435,
+        0.682
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.451,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.162,
+       "ci95": [
+        -0.261,
+        -0.068
+       ],
+       "p_two_sided": 0.001
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": 0.477,
+       "ci95": [
+        0.296,
+        0.654
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.326,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.167,
+       "ci95": [
+        -0.312,
+        -0.022
+       ],
+       "p_two_sided": 0.028
+      }
+     }
+    },
+    "T_single_minus_D+p53": {
+     "sample": {
+      "d_sens": {
+       "delta": 0.439,
+       "ci95": [
+        0.308,
+        0.568
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.328,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.078,
+       "ci95": [
+        -0.163,
+        0.011
+       ],
+       "p_two_sided": 0.082
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": 0.482,
+       "ci95": [
+        0.36,
+        0.602
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.376,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.156,
+       "ci95": [
+        -0.257,
+        -0.06
+       ],
+       "p_two_sided": 0.002
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": 0.348,
+       "ci95": [
+        0.179,
+        0.513
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.213,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.167,
+       "ci95": [
+        -0.312,
+        -0.022
+       ],
+       "p_two_sided": 0.028
+      }
+     }
+    },
+    "T_single_minus_p53": {
+     "sample": {
+      "d_sens": {
+       "delta": 0.718,
+       "ci95": [
+        0.633,
+        0.804
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.647,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.281,
+       "ci95": [
+        -0.348,
+        -0.215
+       ],
+       "p_two_sided": 0.0
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": 0.692,
+       "ci95": [
+        0.592,
+        0.787
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.612,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.422,
+       "ci95": [
+        -0.506,
+        -0.333
+       ],
+       "p_two_sided": 0.0
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": 0.574,
+       "ci95": [
+        0.393,
+        0.743
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.428,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.693,
+       "ci95": [
+        -0.811,
+        -0.57
+       ],
+       "p_two_sided": 0.0
+      }
+     }
+    },
+    "T_voted_minus_D": {
+     "sample": {
+      "d_sens": {
+       "delta": 0.523,
+       "ci95": [
+        0.382,
+        0.663
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.404,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.038,
+       "ci95": [
+        -0.13,
+        0.06
+       ],
+       "p_two_sided": 0.413
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": 0.565,
+       "ci95": [
+        0.418,
+        0.698
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.442,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.114,
+       "ci95": [
+        -0.224,
+        -0.012
+       ],
+       "p_two_sided": 0.029
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": 0.484,
+       "ci95": [
+        0.303,
+        0.667
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.333,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.125,
+       "ci95": [
+        -0.279,
+        0.031
+       ],
+       "p_two_sided": 0.165
+      }
+     }
+    },
+    "T_voted_minus_D+p53": {
+     "sample": {
+      "d_sens": {
+       "delta": 0.441,
+       "ci95": [
+        0.299,
+        0.573
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.326,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.035,
+       "ci95": [
+        -0.13,
+        0.067
+       ],
+       "p_two_sided": 0.46
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": 0.484,
+       "ci95": [
+        0.347,
+        0.615
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.368,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.108,
+       "ci95": [
+        -0.219,
+        0.0
+       ],
+       "p_two_sided": 0.051
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": 0.355,
+       "ci95": [
+        0.187,
+        0.52
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.219,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.125,
+       "ci95": [
+        -0.279,
+        0.031
+       ],
+       "p_two_sided": 0.165
+      }
+     }
+    },
+    "T_voted_minus_p53": {
+     "sample": {
+      "d_sens": {
+       "delta": 0.721,
+       "ci95": [
+        0.631,
+        0.815
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.644,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.239,
+       "ci95": [
+        -0.309,
+        -0.171
+       ],
+       "p_two_sided": 0.0
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": 0.694,
+       "ci95": [
+        0.589,
+        0.797
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.61,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.373,
+       "ci95": [
+        -0.465,
+        -0.282
+       ],
+       "p_two_sided": 0.0
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": 0.581,
+       "ci95": [
+        0.391,
+        0.75
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.428,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.65,
+       "ci95": [
+        -0.794,
+        -0.5
+       ],
+       "p_two_sided": 0.0
+      }
+     }
+    },
+    "T|p53_single_minus_D+p53": {
+     "sample": {
+      "d_sens": {
+       "delta": 0.449,
+       "ci95": [
+        0.317,
+        0.578
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.338,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.08,
+       "ci95": [
+        -0.163,
+        0.003
+       ],
+       "p_two_sided": 0.064
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": 0.49,
+       "ci95": [
+        0.368,
+        0.613
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.382,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.159,
+       "ci95": [
+        -0.26,
+        -0.064
+       ],
+       "p_two_sided": 0.002
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": 0.348,
+       "ci95": [
+        0.179,
+        0.513
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.213,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.167,
+       "ci95": [
+        -0.312,
+        -0.022
+       ],
+       "p_two_sided": 0.028
+      }
+     }
+    },
+    "T|p53_single_minus_T_single": {
+     "sample": {
+      "d_sens": {
+       "delta": 0.01,
+       "ci95": [
+        0.001,
+        0.021
+       ],
+       "p_two_sided": 0.035,
+       "one_sided_95_lower": 0.003,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.003,
+       "ci95": [
+        -0.008,
+        0.0
+       ],
+       "p_two_sided": 0.73
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": 0.008,
+       "ci95": [
+        0.0,
+        0.022
+       ],
+       "p_two_sided": 0.26,
+       "one_sided_95_lower": 0.0,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.003,
+       "ci95": [
+        -0.011,
+        0.0
+       ],
+       "p_two_sided": 0.73
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "p_two_sided": 1.0,
+       "one_sided_95_lower": 0.0,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "p_two_sided": 1.0
+      }
+     }
+    },
+    "T|p53_voted_minus_D+p53": {
+     "sample": {
+      "d_sens": {
+       "delta": 0.441,
+       "ci95": [
+        0.299,
+        0.573
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.326,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.038,
+       "ci95": [
+        -0.13,
+        0.06
+       ],
+       "p_two_sided": 0.413
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": 0.484,
+       "ci95": [
+        0.347,
+        0.615
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.368,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.114,
+       "ci95": [
+        -0.224,
+        -0.012
+       ],
+       "p_two_sided": 0.029
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": 0.355,
+       "ci95": [
+        0.187,
+        0.52
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.219,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.125,
+       "ci95": [
+        -0.279,
+        0.031
+       ],
+       "p_two_sided": 0.165
+      }
+     }
+    },
+    "T|p53_voted_minus_T_voted": {
+     "sample": {
+      "d_sens": {
+       "delta": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "p_two_sided": 1.0,
+       "one_sided_95_lower": 0.0,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.003,
+       "ci95": [
+        -0.009,
+        0.0
+       ],
+       "p_two_sided": 0.73
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "p_two_sided": 1.0,
+       "one_sided_95_lower": 0.0,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.006,
+       "ci95": [
+        -0.021,
+        0.0
+       ],
+       "p_two_sided": 0.73
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "p_two_sided": 1.0,
+       "one_sided_95_lower": 0.0,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "p_two_sided": 1.0
+      }
+     }
+    },
+    "T_single_minus_Bstar_single": {
+     "sample": {
+      "d_sens": {
+       "delta": -0.011,
+       "ci95": [
+        -0.028,
+        0.004
+       ],
+       "p_two_sided": 0.188,
+       "one_sided_95_lower": -0.025,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": 0.033,
+       "ci95": [
+        -0.006,
+        0.076
+       ],
+       "p_two_sided": 0.108
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": 0.003,
+       "ci95": [
+        -0.011,
+        0.016
+       ],
+       "p_two_sided": 0.66,
+       "one_sided_95_lower": -0.009,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": 0.015,
+       "ci95": [
+        -0.014,
+        0.049
+       ],
+       "p_two_sided": 0.403
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": -0.003,
+       "ci95": [
+        -0.011,
+        0.0
+       ],
+       "p_two_sided": 0.727,
+       "one_sided_95_lower": -0.009,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.013,
+       "ci95": [
+        -0.041,
+        0.026
+       ],
+       "p_two_sided": 0.487
+      }
+     }
+    },
+    "T|p53_single_minus_Bstar_single": {
+     "sample": {
+      "d_sens": {
+       "delta": -0.001,
+       "ci95": [
+        -0.014,
+        0.01
+       ],
+       "p_two_sided": 0.891,
+       "one_sided_95_lower": -0.012,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": 0.03,
+       "ci95": [
+        -0.006,
+        0.074
+       ],
+       "p_two_sided": 0.122
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": 0.011,
+       "ci95": [
+        -0.002,
+        0.022
+       ],
+       "p_two_sided": 0.09,
+       "one_sided_95_lower": 0.001,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": 0.011,
+       "ci95": [
+        -0.015,
+        0.043
+       ],
+       "p_two_sided": 0.502
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": -0.003,
+       "ci95": [
+        -0.011,
+        0.0
+       ],
+       "p_two_sided": 0.727,
+       "one_sided_95_lower": -0.009,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.013,
+       "ci95": [
+        -0.041,
+        0.026
+       ],
+       "p_two_sided": 0.487
+      }
+     }
+    }
+   },
+   "share_sequenced_triage": 0.452
+  },
+  "e_p53_among_triage_cleared": {
+   "modal_low_band": {
+    "definition": "low band in the majority of the 10 repeats",
+    "n_cleared": 178,
+    "n_cleared_with_p53": 150,
+    "progressor": {
+     "cleared_with_p53": 3,
+     "p53_aberrant": 0
+    },
+    "non_progressor": {
+     "cleared_with_p53": 147,
+     "p53_aberrant": 1
+    }
+   },
+   "low_band_all_repeats": {
+    "definition": "low band in all 10 repeats",
+    "n_cleared": 61,
+    "n_cleared_with_p53": 53,
+    "progressor": {
+     "cleared_with_p53": 1,
+     "p53_aberrant": 0
+    },
+    "non_progressor": {
+     "cleared_with_p53": 52,
+     "p53_aberrant": 0
+    }
+   },
+   "per_repeat_mean_p53_aberrant_in_low_band": {
+    "progressor": 0.6,
+    "non_progressor": 0.7
+   },
+   "note": "counts of pre-event samples with p53 available among those cleared; a p53-aberrant progressor sample in the low band is one the triage misses and p53 would flag"
+  },
+  "f_missing_as_wild_type_all_pre_event": {
+   "label": "all pre-event samples; missing p53 treated as wild-type (not flagged)",
+   "n_samples": 571,
+   "n_progressor_samples": 161,
+   "n_patients": 75,
+   "n_progressor_patients": 32,
+   "draws": 2000,
+   "n_endoscopies": 288,
+   "n_progressor_endoscopies": 88,
+   "rules": {
+    "p53": {
+     "sample": {
+      "sensitivity": 0.106,
+      "sens_ci95_bootstrap": [
+       0.055,
+       0.164
+      ],
+      "specificity": 0.998,
+      "spec_ci95_bootstrap": [
+       0.993,
+       1.0
+      ],
+      "sens_ci95_exact": [
+       0.063,
+       0.164
+      ],
+      "spec_ci95_exact": [
+       0.986,
+       1.0
+      ],
+      "counts": {
+       "true_positive": 17,
+       "positive": 161,
+       "true_negative": 409,
+       "negative": 410
+      }
+     },
+     "endoscopy": {
+      "sensitivity": 0.148,
+      "sens_ci95_bootstrap": [
+       0.083,
+       0.225
+      ],
+      "specificity": 0.995,
+      "spec_ci95_bootstrap": [
+       0.984,
+       1.0
+      ],
+      "sens_ci95_exact": [
+       0.081,
+       0.239
+      ],
+      "spec_ci95_exact": [
+       0.972,
+       1.0
+      ],
+      "counts": {
+       "true_positive": 13,
+       "positive": 88,
+       "true_negative": 199,
+       "negative": 200
+      }
+     },
+     "patient": {
+      "sensitivity": 0.375,
+      "sens_ci95_bootstrap": [
+       0.212,
+       0.548
+      ],
+      "specificity": 0.977,
+      "spec_ci95_bootstrap": [
+       0.927,
+       1.0
+      ],
+      "sens_ci95_exact": [
+       0.211,
+       0.563
+      ],
+      "spec_ci95_exact": [
+       0.877,
+       0.999
+      ],
+      "counts": {
+       "true_positive": 12,
+       "positive": 32,
+       "true_negative": 42,
+       "negative": 43
+      }
+     }
+    },
+    "D": {
+     "sample": {
+      "sensitivity": 0.354,
+      "sens_ci95_bootstrap": [
+       0.233,
+       0.48
+      ],
+      "specificity": 0.815,
+      "spec_ci95_bootstrap": [
+       0.753,
+       0.879
+      ],
+      "sens_ci95_exact": [
+       0.28,
+       0.433
+      ],
+      "spec_ci95_exact": [
+       0.774,
+       0.851
+      ],
+      "counts": {
+       "true_positive": 57,
+       "positive": 161,
+       "true_negative": 334,
+       "negative": 410
+      }
+     },
+     "endoscopy": {
+      "sensitivity": 0.364,
+      "sens_ci95_bootstrap": [
+       0.234,
+       0.49
+      ],
+      "specificity": 0.76,
+      "spec_ci95_bootstrap": [
+       0.689,
+       0.829
+      ],
+      "sens_ci95_exact": [
+       0.264,
+       0.473
+      ],
+      "spec_ci95_exact": [
+       0.695,
+       0.817
+      ],
+      "counts": {
+       "true_positive": 32,
+       "positive": 88,
+       "true_negative": 152,
+       "negative": 200
+      }
+     },
+     "patient": {
+      "sensitivity": 0.531,
+      "sens_ci95_bootstrap": [
+       0.364,
+       0.714
+      ],
+      "specificity": 0.419,
+      "spec_ci95_bootstrap": [
+       0.28,
+       0.568
+      ],
+      "sens_ci95_exact": [
+       0.347,
+       0.709
+      ],
+      "spec_ci95_exact": [
+       0.27,
+       0.579
+      ],
+      "counts": {
+       "true_positive": 17,
+       "positive": 32,
+       "true_negative": 18,
+       "negative": 43
+      }
+     }
+    },
+    "D+p53": {
+     "sample": {
+      "sensitivity": 0.41,
+      "sens_ci95_bootstrap": [
+       0.288,
+       0.538
+      ],
+      "specificity": 0.812,
+      "spec_ci95_bootstrap": [
+       0.749,
+       0.879
+      ],
+      "sens_ci95_exact": [
+       0.333,
+       0.49
+      ],
+      "spec_ci95_exact": [
+       0.771,
+       0.849
+      ],
+      "counts": {
+       "true_positive": 66,
+       "positive": 161,
+       "true_negative": 333,
+       "negative": 410
+      }
+     },
+     "endoscopy": {
+      "sensitivity": 0.42,
+      "sens_ci95_bootstrap": [
+       0.302,
+       0.542
+      ],
+      "specificity": 0.755,
+      "spec_ci95_bootstrap": [
+       0.683,
+       0.826
+      ],
+      "sens_ci95_exact": [
+       0.316,
+       0.53
+      ],
+      "spec_ci95_exact": [
+       0.689,
+       0.813
+      ],
+      "counts": {
+       "true_positive": 37,
+       "positive": 88,
+       "true_negative": 151,
+       "negative": 200
+      }
+     },
+     "patient": {
+      "sensitivity": 0.656,
+      "sens_ci95_bootstrap": [
+       0.485,
+       0.824
+      ],
+      "specificity": 0.419,
+      "spec_ci95_bootstrap": [
+       0.28,
+       0.568
+      ],
+      "sens_ci95_exact": [
+       0.468,
+       0.814
+      ],
+      "spec_ci95_exact": [
+       0.27,
+       0.579
+      ],
+      "counts": {
+       "true_positive": 21,
+       "positive": 32,
+       "true_negative": 18,
+       "negative": 43
+      }
+     }
+    },
+    "T_single": {
+     "sample": {
+      "sensitivity": 0.865,
+      "sens_ci95_bootstrap": [
+       0.791,
+       0.926
+      ],
+      "specificity": 0.697,
+      "spec_ci95_bootstrap": [
+       0.633,
+       0.762
+      ]
+     },
+     "endoscopy": {
+      "sensitivity": 0.909,
+      "sens_ci95_bootstrap": [
+       0.865,
+       0.952
+      ],
+      "specificity": 0.549,
+      "spec_ci95_bootstrap": [
+       0.46,
+       0.637
+      ]
+     },
+     "patient": {
+      "sensitivity": 0.972,
+      "sens_ci95_bootstrap": [
+       0.928,
+       1.0
+      ],
+      "specificity": 0.256,
+      "spec_ci95_bootstrap": [
+       0.156,
+       0.368
+      ]
+     }
+    },
+    "T_voted": {
+     "sample": {
+      "sensitivity": 0.863,
+      "sens_ci95_bootstrap": [
+       0.774,
+       0.942
+      ],
+      "specificity": 0.734,
+      "spec_ci95_bootstrap": [
+       0.667,
+       0.802
+      ],
+      "sens_ci95_exact": [
+       0.8,
+       0.912
+      ],
+      "spec_ci95_exact": [
+       0.689,
+       0.776
+      ],
+      "counts": {
+       "true_positive": 139,
+       "positive": 161,
+       "true_negative": 301,
+       "negative": 410
+      }
+     },
+     "endoscopy": {
+      "sensitivity": 0.898,
+      "sens_ci95_bootstrap": [
+       0.833,
+       0.959
+      ],
+      "specificity": 0.59,
+      "spec_ci95_bootstrap": [
+       0.497,
+       0.681
+      ],
+      "sens_ci95_exact": [
+       0.815,
+       0.952
+      ],
+      "spec_ci95_exact": [
+       0.518,
+       0.659
+      ],
+      "counts": {
+       "true_positive": 79,
+       "positive": 88,
+       "true_negative": 118,
+       "negative": 200
+      }
+     },
+     "patient": {
+      "sensitivity": 0.969,
+      "sens_ci95_bootstrap": [
+       0.893,
+       1.0
+      ],
+      "specificity": 0.302,
+      "spec_ci95_bootstrap": [
+       0.175,
+       0.438
+      ],
+      "sens_ci95_exact": [
+       0.838,
+       0.999
+      ],
+      "spec_ci95_exact": [
+       0.172,
+       0.461
+      ],
+      "counts": {
+       "true_positive": 31,
+       "positive": 32,
+       "true_negative": 13,
+       "negative": 43
+      }
+     }
+    },
+    "T|p53_single": {
+     "sample": {
+      "sensitivity": 0.871,
+      "sens_ci95_bootstrap": [
+       0.797,
+       0.933
+      ],
+      "specificity": 0.695,
+      "spec_ci95_bootstrap": [
+       0.631,
+       0.76
+      ]
+     },
+     "endoscopy": {
+      "sensitivity": 0.915,
+      "sens_ci95_bootstrap": [
+       0.872,
+       0.955
+      ],
+      "specificity": 0.546,
+      "spec_ci95_bootstrap": [
+       0.458,
+       0.635
+      ]
+     },
+     "patient": {
+      "sensitivity": 0.972,
+      "sens_ci95_bootstrap": [
+       0.928,
+       1.0
+      ],
+      "specificity": 0.256,
+      "spec_ci95_bootstrap": [
+       0.156,
+       0.368
+      ]
+     }
+    },
+    "T|p53_voted": {
+     "sample": {
+      "sensitivity": 0.863,
+      "sens_ci95_bootstrap": [
+       0.774,
+       0.942
+      ],
+      "specificity": 0.732,
+      "spec_ci95_bootstrap": [
+       0.667,
+       0.798
+      ],
+      "sens_ci95_exact": [
+       0.8,
+       0.912
+      ],
+      "spec_ci95_exact": [
+       0.686,
+       0.774
+      ],
+      "counts": {
+       "true_positive": 139,
+       "positive": 161,
+       "true_negative": 300,
+       "negative": 410
+      }
+     },
+     "endoscopy": {
+      "sensitivity": 0.898,
+      "sens_ci95_bootstrap": [
+       0.833,
+       0.959
+      ],
+      "specificity": 0.585,
+      "spec_ci95_bootstrap": [
+       0.492,
+       0.676
+      ],
+      "sens_ci95_exact": [
+       0.815,
+       0.952
+      ],
+      "spec_ci95_exact": [
+       0.513,
+       0.654
+      ],
+      "counts": {
+       "true_positive": 79,
+       "positive": 88,
+       "true_negative": 117,
+       "negative": 200
+      }
+     },
+     "patient": {
+      "sensitivity": 0.969,
+      "sens_ci95_bootstrap": [
+       0.893,
+       1.0
+      ],
+      "specificity": 0.302,
+      "spec_ci95_bootstrap": [
+       0.175,
+       0.438
+      ],
+      "sens_ci95_exact": [
+       0.838,
+       0.999
+      ],
+      "spec_ci95_exact": [
+       0.172,
+       0.461
+      ],
+      "counts": {
+       "true_positive": 31,
+       "positive": 32,
+       "true_negative": 13,
+       "negative": 43
+      }
+     }
+    },
+    "B_single": {
+     "sample": {
+      "sensitivity": 0.832,
+      "sens_ci95_bootstrap": [
+       0.74,
+       0.909
+      ],
+      "specificity": 0.762,
+      "spec_ci95_bootstrap": [
+       0.694,
+       0.824
+      ]
+     },
+     "endoscopy": {
+      "sensitivity": 0.876,
+      "sens_ci95_bootstrap": [
+       0.803,
+       0.935
+      ],
+      "specificity": 0.64,
+      "spec_ci95_bootstrap": [
+       0.552,
+       0.726
+      ]
+     },
+     "patient": {
+      "sensitivity": 0.959,
+      "sens_ci95_bootstrap": [
+       0.9,
+       1.0
+      ],
+      "specificity": 0.337,
+      "spec_ci95_bootstrap": [
+       0.223,
+       0.461
+      ]
+     }
+    },
+    "Bstar_single": {
+     "sample": {
+      "sensitivity": 0.881,
+      "sens_ci95_bootstrap": [
+       0.801,
+       0.944
+      ],
+      "specificity": 0.665,
+      "spec_ci95_bootstrap": [
+       0.585,
+       0.745
+      ]
+     },
+     "endoscopy": {
+      "sensitivity": 0.923,
+      "sens_ci95_bootstrap": [
+       0.873,
+       0.962
+      ],
+      "specificity": 0.53,
+      "spec_ci95_bootstrap": [
+       0.431,
+       0.629
+      ]
+     },
+     "patient": {
+      "sensitivity": 0.975,
+      "sens_ci95_bootstrap": [
+       0.929,
+       1.0
+      ],
+      "specificity": 0.263,
+      "spec_ci95_bootstrap": [
+       0.152,
+       0.381
+      ]
+     }
+    }
+   },
+   "paired": {
+    "T_single_minus_D": {
+     "sample": {
+      "d_sens": {
+       "delta": 0.511,
+       "ci95": [
+        0.396,
+        0.637
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.416,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.118,
+       "ci95": [
+        -0.204,
+        -0.039
+       ],
+       "p_two_sided": 0.003
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": 0.545,
+       "ci95": [
+        0.418,
+        0.674
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.435,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.211,
+       "ci95": [
+        -0.315,
+        -0.113
+       ],
+       "p_two_sided": 0.0
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": 0.441,
+       "ci95": [
+        0.258,
+        0.603
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.291,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.163,
+       "ci95": [
+        -0.316,
+        -0.018
+       ],
+       "p_two_sided": 0.03
+      }
+     }
+    },
+    "T_single_minus_D+p53": {
+     "sample": {
+      "d_sens": {
+       "delta": 0.455,
+       "ci95": [
+        0.346,
+        0.576
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.359,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.115,
+       "ci95": [
+        -0.204,
+        -0.034
+       ],
+       "p_two_sided": 0.004
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": 0.489,
+       "ci95": [
+        0.371,
+        0.611
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.387,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.206,
+       "ci95": [
+        -0.309,
+        -0.106
+       ],
+       "p_two_sided": 0.0
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": 0.316,
+       "ci95": [
+        0.159,
+        0.474
+       ],
+       "p_two_sided": 0.001,
+       "one_sided_95_lower": 0.179,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.163,
+       "ci95": [
+        -0.316,
+        -0.018
+       ],
+       "p_two_sided": 0.03
+      }
+     }
+    },
+    "T_single_minus_p53": {
+     "sample": {
+      "d_sens": {
+       "delta": 0.759,
+       "ci95": [
+        0.677,
+        0.833
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.694,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.3,
+       "ci95": [
+        -0.366,
+        -0.236
+       ],
+       "p_two_sided": 0.0
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": 0.761,
+       "ci95": [
+        0.679,
+        0.832
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.694,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.446,
+       "ci95": [
+        -0.535,
+        -0.358
+       ],
+       "p_two_sided": 0.0
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": 0.597,
+       "ci95": [
+        0.429,
+        0.757
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.454,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.721,
+       "ci95": [
+        -0.827,
+        -0.61
+       ],
+       "p_two_sided": 0.0
+      }
+     }
+    },
+    "T_voted_minus_D": {
+     "sample": {
+      "d_sens": {
+       "delta": 0.509,
+       "ci95": [
+        0.388,
+        0.648
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.403,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.08,
+       "ci95": [
+        -0.176,
+        0.009
+       ],
+       "p_two_sided": 0.083
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": 0.534,
+       "ci95": [
+        0.39,
+        0.679
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.413,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.17,
+       "ci95": [
+        -0.278,
+        -0.064
+       ],
+       "p_two_sided": 0.001
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": 0.438,
+       "ci95": [
+        0.258,
+        0.606
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.281,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.116,
+       "ci95": [
+        -0.275,
+        0.03
+       ],
+       "p_two_sided": 0.174
+      }
+     }
+    },
+    "T_voted_minus_D+p53": {
+     "sample": {
+      "d_sens": {
+       "delta": 0.453,
+       "ci95": [
+        0.333,
+        0.585
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.351,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.078,
+       "ci95": [
+        -0.175,
+        0.015
+       ],
+       "p_two_sided": 0.106
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": 0.477,
+       "ci95": [
+        0.35,
+        0.612
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.367,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.165,
+       "ci95": [
+        -0.276,
+        -0.058
+       ],
+       "p_two_sided": 0.001
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": 0.312,
+       "ci95": [
+        0.154,
+        0.472
+       ],
+       "p_two_sided": 0.001,
+       "one_sided_95_lower": 0.172,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.116,
+       "ci95": [
+        -0.275,
+        0.03
+       ],
+       "p_two_sided": 0.174
+      }
+     }
+    },
+    "T_voted_minus_p53": {
+     "sample": {
+      "d_sens": {
+       "delta": 0.758,
+       "ci95": [
+        0.667,
+        0.842
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.681,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.263,
+       "ci95": [
+        -0.333,
+        -0.196
+       ],
+       "p_two_sided": 0.0
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": 0.75,
+       "ci95": [
+        0.662,
+        0.829
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.677,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.405,
+       "ci95": [
+        -0.5,
+        -0.312
+       ],
+       "p_two_sided": 0.0
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": 0.594,
+       "ci95": [
+        0.414,
+        0.759
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.448,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.674,
+       "ci95": [
+        -0.81,
+        -0.537
+       ],
+       "p_two_sided": 0.0
+      }
+     }
+    },
+    "T|p53_single_minus_D+p53": {
+     "sample": {
+      "d_sens": {
+       "delta": 0.461,
+       "ci95": [
+        0.351,
+        0.584
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.366,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.117,
+       "ci95": [
+        -0.204,
+        -0.039
+       ],
+       "p_two_sided": 0.003
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": 0.494,
+       "ci95": [
+        0.374,
+        0.617
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.393,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.209,
+       "ci95": [
+        -0.311,
+        -0.109
+       ],
+       "p_two_sided": 0.0
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": 0.316,
+       "ci95": [
+        0.159,
+        0.474
+       ],
+       "p_two_sided": 0.001,
+       "one_sided_95_lower": 0.179,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.163,
+       "ci95": [
+        -0.316,
+        -0.018
+       ],
+       "p_two_sided": 0.03
+      }
+     }
+    },
+    "T|p53_single_minus_T_single": {
+     "sample": {
+      "d_sens": {
+       "delta": 0.007,
+       "ci95": [
+        0.001,
+        0.015
+       ],
+       "p_two_sided": 0.026,
+       "one_sided_95_lower": 0.002,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.002,
+       "ci95": [
+        -0.006,
+        0.0
+       ],
+       "p_two_sided": 0.74
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": 0.006,
+       "ci95": [
+        0.0,
+        0.017
+       ],
+       "p_two_sided": 0.265,
+       "one_sided_95_lower": 0.0,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.003,
+       "ci95": [
+        -0.008,
+        0.0
+       ],
+       "p_two_sided": 0.74
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "p_two_sided": 1.0,
+       "one_sided_95_lower": 0.0,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "p_two_sided": 1.0
+      }
+     }
+    },
+    "T|p53_voted_minus_D+p53": {
+     "sample": {
+      "d_sens": {
+       "delta": 0.453,
+       "ci95": [
+        0.333,
+        0.585
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.351,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.08,
+       "ci95": [
+        -0.176,
+        0.009
+       ],
+       "p_two_sided": 0.083
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": 0.477,
+       "ci95": [
+        0.35,
+        0.612
+       ],
+       "p_two_sided": 0.0,
+       "one_sided_95_lower": 0.367,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.17,
+       "ci95": [
+        -0.278,
+        -0.064
+       ],
+       "p_two_sided": 0.001
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": 0.312,
+       "ci95": [
+        0.154,
+        0.472
+       ],
+       "p_two_sided": 0.001,
+       "one_sided_95_lower": 0.172,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.116,
+       "ci95": [
+        -0.275,
+        0.03
+       ],
+       "p_two_sided": 0.174
+      }
+     }
+    },
+    "T|p53_voted_minus_T_voted": {
+     "sample": {
+      "d_sens": {
+       "delta": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "p_two_sided": 1.0,
+       "one_sided_95_lower": 0.0,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.002,
+       "ci95": [
+        -0.007,
+        0.0
+       ],
+       "p_two_sided": 0.74
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "p_two_sided": 1.0,
+       "one_sided_95_lower": 0.0,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.005,
+       "ci95": [
+        -0.016,
+        0.0
+       ],
+       "p_two_sided": 0.74
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "p_two_sided": 1.0,
+       "one_sided_95_lower": 0.0,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "p_two_sided": 1.0
+      }
+     }
+    },
+    "T_single_minus_Bstar_single": {
+     "sample": {
+      "d_sens": {
+       "delta": -0.016,
+       "ci95": [
+        -0.036,
+        0.001
+       ],
+       "p_two_sided": 0.076,
+       "one_sided_95_lower": -0.032,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": 0.032,
+       "ci95": [
+        -0.002,
+        0.071
+       ],
+       "p_two_sided": 0.074
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": -0.014,
+       "ci95": [
+        -0.041,
+        0.009
+       ],
+       "p_two_sided": 0.393,
+       "one_sided_95_lower": -0.036,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": 0.019,
+       "ci95": [
+        -0.01,
+        0.053
+       ],
+       "p_two_sided": 0.203
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": -0.003,
+       "ci95": [
+        -0.011,
+        0.0
+       ],
+       "p_two_sided": 0.741,
+       "one_sided_95_lower": -0.009,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.007,
+       "ci95": [
+        -0.033,
+        0.029
+       ],
+       "p_two_sided": 0.639
+      }
+     }
+    },
+    "T|p53_single_minus_Bstar_single": {
+     "sample": {
+      "d_sens": {
+       "delta": -0.009,
+       "ci95": [
+        -0.028,
+        0.007
+       ],
+       "p_two_sided": 0.358,
+       "one_sided_95_lower": -0.025,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": 0.03,
+       "ci95": [
+        -0.002,
+        0.07
+       ],
+       "p_two_sided": 0.081
+      }
+     },
+     "endoscopy": {
+      "d_sens": {
+       "delta": -0.008,
+       "ci95": [
+        -0.036,
+        0.014
+       ],
+       "p_two_sided": 0.695,
+       "one_sided_95_lower": -0.031,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": 0.017,
+       "ci95": [
+        -0.011,
+        0.049
+       ],
+       "p_two_sided": 0.259
+      }
+     },
+     "patient": {
+      "d_sens": {
+       "delta": -0.003,
+       "ci95": [
+        -0.011,
+        0.0
+       ],
+       "p_two_sided": 0.741,
+       "one_sided_95_lower": -0.009,
+       "non_inferior_at_-0.05": true
+      },
+      "d_spec": {
+       "delta": -0.007,
+       "ci95": [
+        -0.033,
+        0.029
+       ],
+       "p_two_sided": 0.639
+      }
+     }
+    }
+   },
+   "share_sequenced_triage": 0.458
+  },
+  "sanity_round2_r24_D1_expected_0.354_0.815": {
+   "sensitivity": 0.354,
+   "specificity": 0.815
+  }
+ },
+ "prespec": "5c10c27"
+}

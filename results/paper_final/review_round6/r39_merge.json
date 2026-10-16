@@ -1,0 +1,1589 @@
+{
+ "task": "r39_merge",
+ "R39": {
+  "claim_T_voted_triage_vs_voted_Bstar_training_matched": [
+   {
+    "item": 1,
+    "analysis": "primary: all pre-event samples",
+    "single_model_R33": {
+     "d_sens": -0.016,
+     "one_sided_lower": -0.032,
+     "within_-0.05": true,
+     "d_spec": 0.032
+    },
+    "status": "done",
+    "d_sens": -0.006,
+    "ci95": [
+     -0.051,
+     0.034
+    ],
+    "one_sided_lower": -0.044,
+    "within_-0.05": true,
+    "d_spec": 0.034,
+    "share_sequenced": 0.458,
+    "share_pivotal": 0.471,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.863,
+     0.734
+    ],
+    "comparator_sens_spec": [
+     0.87,
+     0.7
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.062,
+     "ci95": [
+      0.011,
+      0.116
+     ],
+     "one_sided_lower": 0.02,
+     "within_-0.05": true,
+     "d_spec": -0.051,
+     "share_sequenced": 0.458,
+     "share_pivotal": 0.471,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.863,
+      0.734
+     ],
+     "comparator_sens_spec": [
+      0.801,
+      0.785
+     ]
+    }
+   },
+   {
+    "item": 2,
+    "analysis": "NDBE pre-event samples",
+    "single_model_R33": {
+     "d_sens": -0.014,
+     "one_sided_lower": -0.034,
+     "within_-0.05": true,
+     "d_spec": 0.027
+    },
+    "status": "done",
+    "d_sens": 0.01,
+    "ci95": [
+     -0.023,
+     0.044
+    ],
+    "one_sided_lower": -0.018,
+    "within_-0.05": true,
+    "d_spec": 0.057,
+    "share_sequenced": 0.491,
+    "share_pivotal": 0.5,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.856,
+     0.728
+    ],
+    "comparator_sens_spec": [
+     0.846,
+     0.671
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.067,
+     "ci95": [
+      0.013,
+      0.128
+     ],
+     "one_sided_lower": 0.021,
+     "within_-0.05": true,
+     "d_spec": -0.006,
+     "share_sequenced": 0.491,
+     "share_pivotal": 0.5,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.856,
+      0.728
+     ],
+     "comparator_sens_spec": [
+      0.788,
+      0.734
+     ]
+    }
+   },
+   {
+    "item": 3,
+    "analysis": "package features",
+    "single_model_R33": {
+     "d_sens": -0.007,
+     "one_sided_lower": -0.02,
+     "within_-0.05": true,
+     "d_spec": 0.024
+    },
+    "status": "done",
+    "d_sens": -0.019,
+    "ci95": [
+     -0.046,
+     0.0
+    ],
+    "one_sided_lower": -0.04,
+    "within_-0.05": true,
+    "d_spec": 0.034,
+    "share_sequenced": 0.458,
+    "share_pivotal": 0.471,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.863,
+     0.763
+    ],
+    "comparator_sens_spec": [
+     0.882,
+     0.729
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.031,
+     "ci95": [
+      -0.013,
+      0.09
+     ],
+     "one_sided_lower": -0.006,
+     "within_-0.05": true,
+     "d_spec": -0.056,
+     "share_sequenced": 0.458,
+     "share_pivotal": 0.471,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.863,
+      0.763
+     ],
+     "comparator_sens_spec": [
+      0.832,
+      0.82
+     ]
+    }
+   },
+   {
+    "item": 4,
+    "analysis": "pre-event-only training (F1)",
+    "single_model_R33": {
+     "d_sens": -0.009,
+     "one_sided_lower": -0.021,
+     "within_-0.05": true,
+     "d_spec": 0.031
+    },
+    "status": "done",
+    "d_sens": 0.0,
+    "ci95": [
+     -0.025,
+     0.025
+    ],
+    "one_sided_lower": -0.021,
+    "within_-0.05": true,
+    "d_spec": 0.039,
+    "share_sequenced": 0.443,
+    "share_pivotal": 0.447,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.894,
+     0.734
+    ],
+    "comparator_sens_spec": [
+     0.894,
+     0.695
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.056,
+     "ci95": [
+      0.028,
+      0.086
+     ],
+     "one_sided_lower": 0.032,
+     "within_-0.05": true,
+     "d_spec": -0.044,
+     "share_sequenced": 0.443,
+     "share_pivotal": 0.447,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.894,
+      0.734
+     ],
+     "comparator_sens_spec": [
+      0.839,
+      0.778
+     ]
+    }
+   },
+   {
+    "item": 5,
+    "analysis": "patients never dysplastic before the event",
+    "single_model_R33": {
+     "d_sens": -0.014,
+     "one_sided_lower": -0.035,
+     "within_-0.05": true,
+     "d_spec": 0.028
+    },
+    "status": "done",
+    "d_sens": 0.018,
+    "ci95": [
+     0.0,
+     0.054
+    ],
+    "one_sided_lower": 0.0,
+    "within_-0.05": true,
+    "d_spec": 0.021,
+    "share_sequenced": 0.441,
+    "share_pivotal": 0.452,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.786,
+     0.773
+    ],
+    "comparator_sens_spec": [
+     0.768,
+     0.752
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.089,
+     "ci95": [
+      0.029,
+      0.154
+     ],
+     "one_sided_lower": 0.038,
+     "within_-0.05": true,
+     "d_spec": -0.021,
+     "share_sequenced": 0.441,
+     "share_pivotal": 0.452,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.786,
+      0.773
+     ],
+     "comparator_sens_spec": [
+      0.696,
+      0.794
+     ]
+    }
+   },
+   {
+    "item": 6,
+    "analysis": "H-optimus-0 gate (F5)",
+    "single_model_R33": {
+     "d_sens": -0.008,
+     "one_sided_lower": -0.022,
+     "within_-0.05": true,
+     "d_spec": 0.002
+    },
+    "status": "done",
+    "d_sens": -0.006,
+    "ci95": [
+     -0.023,
+     0.0
+    ],
+    "one_sided_lower": -0.019,
+    "within_-0.05": true,
+    "d_spec": -0.01,
+    "share_sequenced": 0.668,
+    "share_pivotal": 0.683,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.863,
+     0.646
+    ],
+    "comparator_sens_spec": [
+     0.87,
+     0.656
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.025,
+     "ci95": [
+      0.0,
+      0.052
+     ],
+     "one_sided_lower": 0.0,
+     "within_-0.05": true,
+     "d_spec": -0.085,
+     "share_sequenced": 0.668,
+     "share_pivotal": 0.683,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.863,
+      0.646
+     ],
+     "comparator_sens_spec": [
+      0.839,
+      0.732
+     ]
+    }
+   },
+   {
+    "item": 7,
+    "analysis": "excluding progressor samples within 1 year",
+    "single_model_R33": {
+     "d_sens": -0.006,
+     "one_sided_lower": -0.019,
+     "within_-0.05": true,
+     "d_spec": 0.032
+    },
+    "status": "done",
+    "d_sens": 0.0,
+    "ci95": [
+     -0.043,
+     0.04
+    ],
+    "one_sided_lower": -0.035,
+    "within_-0.05": true,
+    "d_spec": 0.034,
+    "share_sequenced": 0.469,
+    "share_pivotal": 0.483,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.841,
+     0.734
+    ],
+    "comparator_sens_spec": [
+     0.841,
+     0.7
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.076,
+     "ci95": [
+      0.029,
+      0.129
+     ],
+     "one_sided_lower": 0.037,
+     "within_-0.05": true,
+     "d_spec": -0.051,
+     "share_sequenced": 0.469,
+     "share_pivotal": 0.483,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.841,
+      0.734
+     ],
+     "comparator_sens_spec": [
+      0.765,
+      0.785
+     ]
+    }
+   },
+   {
+    "item": 8,
+    "analysis": "cut-off grid cell: t_low 90% training sensitivity, t_high 85% training specificity",
+    "single_model_R33": {
+     "d_sens": -0.039,
+     "one_sided_lower": -0.064,
+     "within_-0.05": false,
+     "d_spec": 0.044
+    },
+    "status": "done",
+    "d_sens": -0.043,
+    "ci95": [
+     -0.085,
+     0.0
+    ],
+    "one_sided_lower": -0.077,
+    "within_-0.05": false,
+    "d_spec": 0.061,
+    "share_sequenced": 0.298,
+    "share_pivotal": 0.289,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.82,
+     0.776
+    ],
+    "comparator_sens_spec": [
+     0.863,
+     0.715
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.019,
+     "ci95": [
+      -0.033,
+      0.074
+     ],
+     "one_sided_lower": -0.023,
+     "within_-0.05": true,
+     "d_spec": -0.01,
+     "share_sequenced": 0.298,
+     "share_pivotal": 0.289,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.82,
+      0.776
+     ],
+     "comparator_sens_spec": [
+      0.801,
+      0.785
+     ]
+    }
+   },
+   {
+    "item": 8,
+    "analysis": "cut-off grid cell: t_low 90% training sensitivity, t_high 90% training specificity",
+    "single_model_R33": {
+     "d_sens": -0.039,
+     "one_sided_lower": -0.063,
+     "within_-0.05": false,
+     "d_spec": 0.042
+    },
+    "status": "done",
+    "d_sens": -0.037,
+    "ci95": [
+     -0.075,
+     0.0
+    ],
+    "one_sided_lower": -0.069,
+    "within_-0.05": false,
+    "d_spec": 0.066,
+    "share_sequenced": 0.342,
+    "share_pivotal": 0.331,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.814,
+     0.798
+    ],
+    "comparator_sens_spec": [
+     0.851,
+     0.732
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.012,
+     "ci95": [
+      -0.039,
+      0.068
+     ],
+     "one_sided_lower": -0.03,
+     "within_-0.05": true,
+     "d_spec": 0.012,
+     "share_sequenced": 0.342,
+     "share_pivotal": 0.331,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.814,
+      0.798
+     ],
+     "comparator_sens_spec": [
+      0.801,
+      0.785
+     ]
+    }
+   },
+   {
+    "item": 8,
+    "analysis": "cut-off grid cell: t_low 90% training sensitivity, t_high 95% training specificity",
+    "single_model_R33": {
+     "d_sens": -0.031,
+     "one_sided_lower": -0.053,
+     "within_-0.05": false,
+     "d_spec": 0.029
+    },
+    "status": "done",
+    "d_sens": -0.043,
+    "ci95": [
+     -0.08,
+     -0.006
+    ],
+    "one_sided_lower": -0.075,
+    "within_-0.05": false,
+    "d_spec": 0.051,
+    "share_sequenced": 0.401,
+    "share_pivotal": 0.385,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.776,
+     0.817
+    ],
+    "comparator_sens_spec": [
+     0.82,
+     0.766
+    ],
+    "voted_vs_B": {
+     "d_sens": -0.025,
+     "ci95": [
+      -0.065,
+      0.017
+     ],
+     "one_sided_lower": -0.058,
+     "within_-0.05": false,
+     "d_spec": 0.032,
+     "share_sequenced": 0.401,
+     "share_pivotal": 0.385,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.776,
+      0.817
+     ],
+     "comparator_sens_spec": [
+      0.801,
+      0.785
+     ]
+    }
+   },
+   {
+    "item": 8,
+    "analysis": "cut-off grid cell: t_low 95% training sensitivity, t_high 85% training specificity",
+    "single_model_R33": {
+     "d_sens": -0.016,
+     "one_sided_lower": -0.033,
+     "within_-0.05": true,
+     "d_spec": 0.03
+    },
+    "status": "done",
+    "d_sens": -0.006,
+    "ci95": [
+     -0.051,
+     0.033
+    ],
+    "one_sided_lower": -0.043,
+    "within_-0.05": true,
+    "d_spec": 0.044,
+    "share_sequenced": 0.414,
+    "share_pivotal": 0.429,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.876,
+     0.715
+    ],
+    "comparator_sens_spec": [
+     0.882,
+     0.671
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.075,
+     "ci95": [
+      0.017,
+      0.137
+     ],
+     "one_sided_lower": 0.026,
+     "within_-0.05": true,
+     "d_spec": -0.071,
+     "share_sequenced": 0.414,
+     "share_pivotal": 0.429,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.876,
+      0.715
+     ],
+     "comparator_sens_spec": [
+      0.801,
+      0.785
+     ]
+    }
+   },
+   {
+    "item": 8,
+    "analysis": "cut-off grid cell: t_low 95% training sensitivity, t_high 90% training specificity (primary cell)",
+    "single_model_R33": {
+     "d_sens": -0.016,
+     "one_sided_lower": -0.032,
+     "within_-0.05": true,
+     "d_spec": 0.032
+    },
+    "status": "done",
+    "d_sens": -0.006,
+    "ci95": [
+     -0.051,
+     0.034
+    ],
+    "one_sided_lower": -0.044,
+    "within_-0.05": true,
+    "d_spec": 0.034,
+    "share_sequenced": 0.458,
+    "share_pivotal": 0.471,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.863,
+     0.734
+    ],
+    "comparator_sens_spec": [
+     0.87,
+     0.7
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.062,
+     "ci95": [
+      0.011,
+      0.116
+     ],
+     "one_sided_lower": 0.02,
+     "within_-0.05": true,
+     "d_spec": -0.051,
+     "share_sequenced": 0.458,
+     "share_pivotal": 0.471,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.863,
+      0.734
+     ],
+     "comparator_sens_spec": [
+      0.801,
+      0.785
+     ]
+    }
+   },
+   {
+    "item": 8,
+    "analysis": "cut-off grid cell: t_low 95% training sensitivity, t_high 95% training specificity",
+    "single_model_R33": {
+     "d_sens": -0.016,
+     "one_sided_lower": -0.03,
+     "within_-0.05": true,
+     "d_spec": 0.033
+    },
+    "status": "done",
+    "d_sens": 0.006,
+    "ci95": [
+     -0.027,
+     0.037
+    ],
+    "one_sided_lower": -0.021,
+    "within_-0.05": true,
+    "d_spec": 0.041,
+    "share_sequenced": 0.517,
+    "share_pivotal": 0.525,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.851,
+     0.766
+    ],
+    "comparator_sens_spec": [
+     0.845,
+     0.724
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.05,
+     "ci95": [
+      0.0,
+      0.101
+     ],
+     "one_sided_lower": 0.009,
+     "within_-0.05": true,
+     "d_spec": -0.02,
+     "share_sequenced": 0.517,
+     "share_pivotal": 0.525,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.851,
+      0.766
+     ],
+     "comparator_sens_spec": [
+      0.801,
+      0.785
+     ]
+    }
+   },
+   {
+    "item": 8,
+    "analysis": "cut-off grid cell: t_low 98% training sensitivity, t_high 85% training specificity",
+    "single_model_R33": {
+     "d_sens": -0.002,
+     "one_sided_lower": -0.012,
+     "within_-0.05": true,
+     "d_spec": 0.016
+    },
+    "status": "done",
+    "d_sens": 0.006,
+    "ci95": [
+     -0.014,
+     0.028
+    ],
+    "one_sided_lower": -0.011,
+    "within_-0.05": true,
+    "d_spec": 0.024,
+    "share_sequenced": 0.542,
+    "share_pivotal": 0.562,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.913,
+     0.646
+    ],
+    "comparator_sens_spec": [
+     0.907,
+     0.622
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.112,
+     "ci95": [
+      0.052,
+      0.185
+     ],
+     "one_sided_lower": 0.061,
+     "within_-0.05": true,
+     "d_spec": -0.139,
+     "share_sequenced": 0.542,
+     "share_pivotal": 0.562,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.913,
+      0.646
+     ],
+     "comparator_sens_spec": [
+      0.801,
+      0.785
+     ]
+    }
+   },
+   {
+    "item": 8,
+    "analysis": "cut-off grid cell: t_low 98% training sensitivity, t_high 90% training specificity",
+    "single_model_R33": {
+     "d_sens": -0.001,
+     "one_sided_lower": -0.01,
+     "within_-0.05": true,
+     "d_spec": 0.015
+    },
+    "status": "done",
+    "d_sens": 0.0,
+    "ci95": [
+     -0.016,
+     0.019
+    ],
+    "one_sided_lower": -0.014,
+    "within_-0.05": true,
+    "d_spec": 0.015,
+    "share_sequenced": 0.586,
+    "share_pivotal": 0.604,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.888,
+     0.673
+    ],
+    "comparator_sens_spec": [
+     0.888,
+     0.659
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.087,
+     "ci95": [
+      0.041,
+      0.145
+     ],
+     "one_sided_lower": 0.047,
+     "within_-0.05": true,
+     "d_spec": -0.112,
+     "share_sequenced": 0.586,
+     "share_pivotal": 0.604,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.888,
+      0.673
+     ],
+     "comparator_sens_spec": [
+      0.801,
+      0.785
+     ]
+    }
+   },
+   {
+    "item": 8,
+    "analysis": "cut-off grid cell: t_low 98% training sensitivity, t_high 95% training specificity",
+    "single_model_R33": {
+     "d_sens": -0.002,
+     "one_sided_lower": -0.011,
+     "within_-0.05": true,
+     "d_spec": 0.016
+    },
+    "status": "done",
+    "d_sens": 0.006,
+    "ci95": [
+     -0.014,
+     0.027
+    ],
+    "one_sided_lower": -0.011,
+    "within_-0.05": true,
+    "d_spec": 0.017,
+    "share_sequenced": 0.645,
+    "share_pivotal": 0.658,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.876,
+     0.727
+    ],
+    "comparator_sens_spec": [
+     0.87,
+     0.71
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.075,
+     "ci95": [
+      0.034,
+      0.125
+     ],
+     "one_sided_lower": 0.04,
+     "within_-0.05": true,
+     "d_spec": -0.059,
+     "share_sequenced": 0.645,
+     "share_pivotal": 0.658,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.876,
+      0.727
+     ],
+     "comparator_sens_spec": [
+      0.801,
+      0.785
+     ]
+    }
+   },
+   {
+    "item": 9,
+    "analysis": "tissue stratum: < 256 tissue tiles (R32a)",
+    "single_model_R33": {
+     "d_sens": -0.008,
+     "one_sided_lower": -0.022,
+     "within_-0.05": true,
+     "d_spec": 0.042
+    },
+    "status": "done",
+    "d_sens": -0.014,
+    "ci95": [
+     -0.045,
+     0.0
+    ],
+    "one_sided_lower": -0.039,
+    "within_-0.05": true,
+    "d_spec": 0.036,
+    "share_sequenced": 0.423,
+    "share_pivotal": 0.437,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.915,
+     0.743
+    ],
+    "comparator_sens_spec": [
+     0.93,
+     0.707
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.042,
+     "ci95": [
+      0.0,
+      0.098
+     ],
+     "one_sided_lower": 0.011,
+     "within_-0.05": true,
+     "d_spec": -0.036,
+     "share_sequenced": 0.423,
+     "share_pivotal": 0.437,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.915,
+      0.743
+     ],
+     "comparator_sens_spec": [
+      0.873,
+      0.779
+     ]
+    }
+   },
+   {
+    "item": 9,
+    "analysis": "tissue stratum: >= 256 tissue tiles (R32a)",
+    "single_model_R33": {
+     "d_sens": -0.022,
+     "one_sided_lower": -0.05,
+     "within_-0.05": false,
+     "d_spec": 0.02
+    },
+    "status": "done",
+    "d_sens": 0.0,
+    "ci95": [
+     -0.086,
+     0.069
+    ],
+    "one_sided_lower": -0.069,
+    "within_-0.05": false,
+    "d_spec": 0.032,
+    "share_sequenced": 0.496,
+    "share_pivotal": 0.507,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.822,
+     0.723
+    ],
+    "comparator_sens_spec": [
+     0.822,
+     0.691
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.078,
+     "ci95": [
+      -0.0,
+      0.172
+     ],
+     "one_sided_lower": 0.011,
+     "within_-0.05": true,
+     "d_spec": -0.069,
+     "share_sequenced": 0.496,
+     "share_pivotal": 0.507,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.822,
+      0.723
+     ],
+     "comparator_sens_spec": [
+      0.744,
+      0.793
+     ]
+    }
+   },
+   {
+    "item": 10,
+    "analysis": "tissue-adjusted gate (R32b)",
+    "single_model_R33": {
+     "d_sens": -0.012,
+     "one_sided_lower": -0.028,
+     "within_-0.05": true,
+     "d_spec": 0.008
+    },
+    "status": "done",
+    "d_sens": -0.019,
+    "ci95": [
+     -0.05,
+     0.009
+    ],
+    "one_sided_lower": -0.045,
+    "within_-0.05": true,
+    "d_spec": 0.005,
+    "share_sequenced": 0.577,
+    "share_pivotal": 0.595,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.863,
+     0.7
+    ],
+    "comparator_sens_spec": [
+     0.882,
+     0.695
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.062,
+     "ci95": [
+      0.015,
+      0.114
+     ],
+     "one_sided_lower": 0.024,
+     "within_-0.05": true,
+     "d_spec": -0.085,
+     "share_sequenced": 0.577,
+     "share_pivotal": 0.595,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.863,
+      0.7
+     ],
+     "comparator_sens_spec": [
+      0.801,
+      0.785
+     ]
+    }
+   },
+   {
+    "item": 11,
+    "analysis": "lambda by deviance (B5)",
+    "single_model_R33": {
+     "d_sens": -0.006,
+     "one_sided_lower": -0.02,
+     "within_-0.05": true,
+     "d_spec": 0.012
+    },
+    "status": "done",
+    "d_sens": -0.006,
+    "ci95": [
+     -0.032,
+     0.014
+    ],
+    "one_sided_lower": -0.027,
+    "within_-0.05": true,
+    "d_spec": 0.0,
+    "share_sequenced": 0.526,
+    "share_pivotal": 0.552,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.857,
+     0.671
+    ],
+    "comparator_sens_spec": [
+     0.863,
+     0.671
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.043,
+     "ci95": [
+      0.007,
+      0.082
+     ],
+     "one_sided_lower": 0.014,
+     "within_-0.05": true,
+     "d_spec": -0.09,
+     "share_sequenced": 0.526,
+     "share_pivotal": 0.552,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.857,
+      0.671
+     ],
+     "comparator_sens_spec": [
+      0.814,
+      0.761
+     ]
+    }
+   },
+   {
+    "item": 12,
+    "analysis": "patient-weighted (R34)",
+    "single_model_R33": {
+     "d_sens": -0.015,
+     "one_sided_lower": -0.03,
+     "within_-0.05": true,
+     "d_spec": 0.02
+    },
+    "status": "done",
+    "d_sens": 0.001,
+    "ci95": [
+     -0.023,
+     0.025
+    ],
+    "one_sided_lower": -0.019,
+    "within_-0.05": true,
+    "d_spec": 0.022,
+    "share_sequenced": 0.432,
+    "share_pivotal": 0.452,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.872,
+     0.736
+    ],
+    "comparator_sens_spec": [
+     0.871,
+     0.714
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.081,
+     "ci95": [
+      0.031,
+      0.139
+     ],
+     "one_sided_lower": 0.039,
+     "within_-0.05": true,
+     "d_spec": -0.057,
+     "share_sequenced": 0.432,
+     "share_pivotal": 0.452,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.872,
+      0.736
+     ],
+     "comparator_sens_spec": [
+      0.791,
+      0.793
+     ]
+    }
+   },
+   {
+    "item": 13,
+    "analysis": "earliest pre-event endoscopy per patient (all its samples)",
+    "single_model_R33": {
+     "d_sens": -0.013,
+     "one_sided_lower": -0.034,
+     "within_-0.05": true,
+     "d_spec": 0.025
+    },
+    "status": "done",
+    "d_sens": -0.016,
+    "ci95": [
+     -0.074,
+     0.038
+    ],
+    "one_sided_lower": -0.064,
+    "within_-0.05": false,
+    "d_spec": 0.013,
+    "share_sequenced": 0.46,
+    "share_pivotal": 0.486,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.869,
+     0.747
+    ],
+    "comparator_sens_spec": [
+     0.885,
+     0.734
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.049,
+     "ci95": [
+      -0.018,
+      0.125
+     ],
+     "one_sided_lower": 0.0,
+     "within_-0.05": true,
+     "d_spec": -0.076,
+     "share_sequenced": 0.46,
+     "share_pivotal": 0.486,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.869,
+      0.747
+     ],
+     "comparator_sens_spec": [
+      0.82,
+      0.823
+     ]
+    }
+   },
+   {
+    "item": 14,
+    "analysis": "selection-inclusive (every cut-off re-chosen in each draw)",
+    "single_model_R33": {
+     "d_sens": -0.016,
+     "one_sided_lower": -0.038,
+     "within_-0.05": true,
+     "d_spec": 0.032
+    },
+    "status": "done",
+    "d_sens": -0.006,
+    "ci95": [
+     -0.057,
+     0.032
+    ],
+    "one_sided_lower": -0.051,
+    "within_-0.05": false,
+    "d_spec": 0.034,
+    "share_sequenced": 0.458,
+    "share_pivotal": 0.471,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.863,
+     0.734
+    ],
+    "comparator_sens_spec": [
+     0.87,
+     0.7
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.062,
+     "ci95": [
+      -0.015,
+      0.093
+     ],
+     "one_sided_lower": -0.007,
+     "within_-0.05": true,
+     "d_spec": -0.051,
+     "share_sequenced": 0.458,
+     "share_pivotal": 0.471,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.863,
+      0.734
+     ],
+     "comparator_sens_spec": [
+      0.801,
+      0.785
+     ]
+    }
+   },
+   {
+    "item": 15,
+    "analysis": "evaluation-matched B*",
+    "single_model_R33": {
+     "d_sens": 0.003,
+     "one_sided_lower": -0.022,
+     "within_-0.05": true,
+     "d_spec": null
+    },
+    "status": "done",
+    "d_sens": 0.012,
+    "ci95": [
+     -0.038,
+     0.061
+    ],
+    "one_sided_lower": -0.03,
+    "within_-0.05": true,
+    "d_spec": null,
+    "share_sequenced": 0.458,
+    "share_pivotal": 0.471,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.863,
+     0.734
+    ],
+    "comparator_sens_spec": [
+     0.851,
+     null
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.062,
+     "ci95": [
+      0.011,
+      0.116
+     ],
+     "one_sided_lower": 0.02,
+     "within_-0.05": true,
+     "d_spec": -0.051,
+     "share_sequenced": 0.458,
+     "share_pivotal": 0.471,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.863,
+      0.734
+     ],
+     "comparator_sens_spec": [
+      0.801,
+      0.785
+     ]
+    }
+   },
+   {
+    "item": 16,
+    "analysis": "10-model vote",
+    "single_model_R33": {
+     "d_sens": -0.006,
+     "one_sided_lower": -0.044,
+     "within_-0.05": true,
+     "d_spec": 0.034
+    },
+    "status": "not applicable: this table is the voted rule; identical to row 1"
+   },
+   {
+    "item": 17,
+    "analysis": "between-repeat variance added",
+    "single_model_R33": {
+     "d_sens": -0.016,
+     "one_sided_lower": -0.046,
+     "within_-0.05": true,
+     "d_spec": 0.032
+    },
+    "status": "not applicable: the vote pools the repeats; no between-repeat variance"
+   },
+   {
+    "item": 18,
+    "analysis": "refit bootstrap (F3, 200 draws)",
+    "single_model_R33": {
+     "d_sens": -0.018,
+     "one_sided_lower": -0.069,
+     "within_-0.05": false,
+     "d_spec": 0.017
+    },
+    "status": "not applicable: one model per draw; no vote"
+   },
+   {
+    "item": 19,
+    "analysis": "per-sample re-segmented copy number (R36)",
+    "single_model_R33": {
+     "d_sens": -0.006,
+     "one_sided_lower": -0.016,
+     "within_-0.05": true,
+     "d_spec": 0.008
+    },
+    "status": "done",
+    "d_sens": 0.006,
+    "ci95": [
+     -0.015,
+     0.04
+    ],
+    "one_sided_lower": -0.012,
+    "within_-0.05": true,
+    "d_spec": 0.01,
+    "share_sequenced": 0.458,
+    "share_pivotal": 0.471,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.87,
+     0.724
+    ],
+    "comparator_sens_spec": [
+     0.863,
+     0.715
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.062,
+     "ci95": [
+      0.021,
+      0.109
+     ],
+     "one_sided_lower": 0.027,
+     "within_-0.05": true,
+     "d_spec": -0.061,
+     "share_sequenced": 0.458,
+     "share_pivotal": 0.471,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.87,
+      0.724
+     ],
+     "comparator_sens_spec": [
+      0.807,
+      0.785
+     ]
+    }
+   },
+   {
+    "item": "19b",
+    "analysis": "past-only re-segmented copy number (R36, extra row)",
+    "single_model_R33": {
+     "d_sens": -0.009,
+     "one_sided_lower": -0.019,
+     "within_-0.05": true,
+     "d_spec": 0.029
+    },
+    "status": "done",
+    "d_sens": 0.006,
+    "ci95": [
+     -0.013,
+     0.029
+    ],
+    "one_sided_lower": -0.011,
+    "within_-0.05": true,
+    "d_spec": 0.034,
+    "share_sequenced": 0.458,
+    "share_pivotal": 0.471,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.876,
+     0.737
+    ],
+    "comparator_sens_spec": [
+     0.87,
+     0.702
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.043,
+     "ci95": [
+      0.006,
+      0.086
+     ],
+     "one_sided_lower": 0.013,
+     "within_-0.05": true,
+     "d_spec": -0.059,
+     "share_sequenced": 0.458,
+     "share_pivotal": 0.471,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.876,
+      0.737
+     ],
+     "comparator_sens_spec": [
+      0.832,
+      0.795
+     ]
+    }
+   },
+   {
+    "item": "T5",
+    "analysis": "package features, pre-event-only training (Table 5)",
+    "single_model_R33": {
+     "d_sens": -0.005,
+     "one_sided_lower": -0.013,
+     "within_-0.05": true,
+     "d_spec": 0.033
+    },
+    "status": "done",
+    "d_sens": 0.006,
+    "ci95": [
+     -0.021,
+     0.035
+    ],
+    "one_sided_lower": -0.016,
+    "within_-0.05": true,
+    "d_spec": 0.059,
+    "share_sequenced": 0.443,
+    "share_pivotal": 0.447,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.888,
+     0.766
+    ],
+    "comparator_sens_spec": [
+     0.882,
+     0.707
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.081,
+     "ci95": [
+      0.032,
+      0.135
+     ],
+     "one_sided_lower": 0.039,
+     "within_-0.05": true,
+     "d_spec": 0.0,
+     "share_sequenced": 0.443,
+     "share_pivotal": 0.447,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.888,
+      0.766
+     ],
+     "comparator_sens_spec": [
+      0.807,
+      0.766
+     ]
+    }
+   },
+   {
+    "item": "T5",
+    "analysis": "earliest pre-event sample per patient (Table 5)",
+    "single_model_R33": {
+     "d_sens": 0.003,
+     "one_sided_lower": -0.027,
+     "within_-0.05": true,
+     "d_spec": 0.028
+    },
+    "status": "done",
+    "d_sens": 0.0,
+    "ci95": [
+     -0.088,
+     0.088
+    ],
+    "one_sided_lower": -0.069,
+    "within_-0.05": false,
+    "d_spec": 0.023,
+    "share_sequenced": 0.475,
+    "share_pivotal": 0.52,
+    "cap_0.70_met": true,
+    "triage_sens_spec": [
+     0.812,
+     0.791
+    ],
+    "comparator_sens_spec": [
+     0.812,
+     0.767
+    ],
+    "voted_vs_B": {
+     "d_sens": 0.094,
+     "ci95": [
+      -0.032,
+      0.231
+     ],
+     "one_sided_lower": 0.0,
+     "within_-0.05": true,
+     "d_spec": -0.047,
+     "share_sequenced": 0.475,
+     "share_pivotal": 0.52,
+     "cap_0.70_met": true,
+     "triage_sens_spec": [
+      0.812,
+      0.791
+     ],
+     "comparator_sens_spec": [
+      0.719,
+      0.837
+     ]
+    }
+   }
+  ],
+  "stability_of_voted_call": {
+   "all": {
+    "n": 571,
+    "unanimous_10_of_10": 0.618,
+    "near_unanimous_ge_8_of_10": 0.821,
+    "mean_repeats_agreeing_with_vote": 9.047
+   },
+   "progressor": {
+    "n": 161,
+    "unanimous_10_of_10": 0.708,
+    "near_unanimous_ge_8_of_10": 0.876,
+    "mean_repeats_agreeing_with_vote": 9.292
+   },
+   "non_progressor": {
+    "n": 410,
+    "unanimous_10_of_10": 0.583,
+    "near_unanimous_ge_8_of_10": 0.8,
+    "mean_repeats_agreeing_with_vote": 8.951
+   },
+   "by_modal_band": {
+    "low": {
+     "n": 178,
+     "unanimous_10_of_10": 0.781,
+     "near_unanimous_ge_8_of_10": 0.927,
+     "mean_repeats_agreeing_with_vote": 9.517
+    },
+    "mid": {
+     "n": 269,
+     "unanimous_10_of_10": 0.368,
+     "near_unanimous_ge_8_of_10": 0.669,
+     "mean_repeats_agreeing_with_vote": 8.342
+    },
+    "high": {
+     "n": 124,
+     "unanimous_10_of_10": 0.927,
+     "near_unanimous_ge_8_of_10": 1.0,
+     "mean_repeats_agreeing_with_vote": 9.903
+    }
+   },
+   "by_modal_band_and_class": {
+    "progressor": {
+     "low": {
+      "n": 7,
+      "unanimous_10_of_10": 0.714,
+      "near_unanimous_ge_8_of_10": 0.857,
+      "mean_repeats_agreeing_with_vote": 9.286
+     },
+     "mid": {
+      "n": 64,
+      "unanimous_10_of_10": 0.391,
+      "near_unanimous_ge_8_of_10": 0.703,
+      "mean_repeats_agreeing_with_vote": 8.422
+     },
+     "high": {
+      "n": 90,
+      "unanimous_10_of_10": 0.933,
+      "near_unanimous_ge_8_of_10": 1.0,
+      "mean_repeats_agreeing_with_vote": 9.911
+     }
+    },
+    "non_progressor": {
+     "low": {
+      "n": 171,
+      "unanimous_10_of_10": 0.784,
+      "near_unanimous_ge_8_of_10": 0.93,
+      "mean_repeats_agreeing_with_vote": 9.526
+     },
+     "mid": {
+      "n": 205,
+      "unanimous_10_of_10": 0.361,
+      "near_unanimous_ge_8_of_10": 0.659,
+      "mean_repeats_agreeing_with_vote": 8.317
+     },
+     "high": {
+      "n": 34,
+      "unanimous_10_of_10": 0.912,
+      "near_unanimous_ge_8_of_10": 1.0,
+      "mean_repeats_agreeing_with_vote": 9.882
+     }
+    }
+   },
+   "agreement_distribution": {
+    "10": 353,
+    "9": 68,
+    "8": 48,
+    "7": 45,
+    "6": 40,
+    "5": 17
+   },
+   "note": "agreement = number of the 10 per-repeat triage calls equal to the >= 6-of-10 voted call; modal band = the sample's most frequent band over the repeats",
+   "Bstar_for_reference": {
+    "unanimous_10_of_10": 0.651,
+    "near_unanimous_ge_8_of_10": 0.835
+   }
+  },
+  "sanity": {
+   "round4_r35_share_all_10_repeats_same_band_expected_0.35": 0.35,
+   "single_model_vs_Bstar_expected_-0.016_-0.032": [
+    -0.016,
+    -0.032
+   ],
+   "single_model_vs_B_expected_+0.033": 0.033,
+   "round4_r33_row16_voted_vs_Bstar_expected_-0.006_-0.044": [
+    -0.006,
+    -0.044
+   ]
+  },
+  "summary": {
+   "rows_done": 28,
+   "rows_within_-0.05": 21,
+   "rows_cap_met": 28,
+   "rows_with_single_model_counterpart": 28,
+   "single_model_within_-0.05_on_those_rows": 24,
+   "voted_within_-0.05_on_those_rows": 21,
+   "mean_d_sens_voted": -0.005,
+   "mean_d_sens_single_model": -0.012,
+   "mean_ci_width_voted": 0.071,
+   "missing": []
+  },
+  "note": "voted = >= 6-of-10 calls for both the triage and the training-matched B*; share_pivotal = share of samples whose voted call depends on the middle-band calls; single_model_R33 from results/paper_final/review_round4/r33_merge.json"
+ },
+ "prespec": "5c10c27"
+}

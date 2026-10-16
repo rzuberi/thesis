@@ -1,0 +1,383 @@
+{
+ "task": "r39_primary",
+ "R39_row": {
+  "analysis": "primary",
+  "n_samples": 571,
+  "n_progressor_samples": 161,
+  "n_patients": 75,
+  "n_progressor_patients": 32,
+  "draws": 2000,
+  "n_excluded_samples": 0,
+  "claim_T": {
+   "triage_no_vote": {
+    "sensitivity": 0.865,
+    "sens_ci95": [
+     0.791,
+     0.926
+    ],
+    "specificity": 0.697,
+    "spec_ci95": [
+     0.633,
+     0.762
+    ]
+   },
+   "triage_voted": {
+    "sensitivity": 0.863,
+    "sens_ci95": [
+     0.774,
+     0.942
+    ],
+    "specificity": 0.734,
+    "spec_ci95": [
+     0.667,
+     0.802
+    ]
+   },
+   "share_sequenced": {
+    "per_repeat_mean": 0.458,
+    "ci95": [
+     0.408,
+     0.504
+    ],
+    "in_at_least_one_repeat": 0.76,
+    "vote_pivotal": 0.471,
+    "cap_0.70_met": true
+   },
+   "no_vote_vs_Bstar_training_matched": {
+    "d_sens_triage_minus": {
+     "delta": -0.016,
+     "ci95": [
+      -0.036,
+      0.001
+     ],
+     "p_two_sided": 0.076,
+     "one_sided_95_lower": -0.032,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": 0.032,
+     "ci95": [
+      -0.002,
+      0.071
+     ],
+     "p_two_sided": 0.074
+    },
+    "comparator_sensitivity": 0.881,
+    "comparator_sens_ci95": [
+     0.801,
+     0.944
+    ],
+    "comparator_specificity": 0.665,
+    "comparator_spec_ci95": [
+     0.585,
+     0.745
+    ]
+   },
+   "no_vote_vs_Bstar_evaluation_matched": {
+    "d_sens_triage_minus": {
+     "delta": 0.003,
+     "ci95": [
+      -0.026,
+      0.035
+     ],
+     "p_two_sided": 0.899,
+     "one_sided_95_lower": -0.022,
+     "non_inferior_at_-0.05": true
+    },
+    "comparator_sensitivity": 0.861,
+    "comparator_sens_ci95": [
+     0.774,
+     0.933
+    ]
+   },
+   "no_vote_vs_B": {
+    "d_sens_triage_minus": {
+     "delta": 0.033,
+     "ci95": [
+      0.005,
+      0.062
+     ],
+     "p_two_sided": 0.02,
+     "one_sided_95_lower": 0.011,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": -0.065,
+     "ci95": [
+      -0.092,
+      -0.034
+     ],
+     "p_two_sided": 0.0
+    },
+    "comparator_sensitivity": 0.832,
+    "comparator_sens_ci95": [
+     0.74,
+     0.909
+    ],
+    "comparator_specificity": 0.762,
+    "comparator_spec_ci95": [
+     0.694,
+     0.824
+    ]
+   },
+   "voted_vs_Bstar_training_matched": {
+    "d_sens_triage_minus": {
+     "delta": -0.006,
+     "ci95": [
+      -0.051,
+      0.034
+     ],
+     "p_two_sided": 0.952,
+     "one_sided_95_lower": -0.044,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": 0.034,
+     "ci95": [
+      -0.006,
+      0.083
+     ],
+     "p_two_sided": 0.127
+    },
+    "comparator_sensitivity": 0.87,
+    "comparator_sens_ci95": [
+     0.773,
+     0.947
+    ],
+    "comparator_specificity": 0.7,
+    "comparator_spec_ci95": [
+     0.611,
+     0.783
+    ]
+   },
+   "voted_vs_Bstar_evaluation_matched": {
+    "d_sens_triage_minus": {
+     "delta": 0.012,
+     "ci95": [
+      -0.038,
+      0.061
+     ],
+     "p_two_sided": 0.745,
+     "one_sided_95_lower": -0.03,
+     "non_inferior_at_-0.05": true
+    },
+    "comparator_sensitivity": 0.851,
+    "comparator_sens_ci95": [
+     0.752,
+     0.939
+    ]
+   },
+   "voted_vs_B": {
+    "d_sens_triage_minus": {
+     "delta": 0.062,
+     "ci95": [
+      0.011,
+      0.116
+     ],
+     "p_two_sided": 0.018,
+     "one_sided_95_lower": 0.02,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": -0.051,
+     "ci95": [
+      -0.092,
+      -0.008
+     ],
+     "p_two_sided": 0.029
+    },
+    "comparator_sensitivity": 0.801,
+    "comparator_sens_ci95": [
+     0.697,
+     0.893
+    ],
+    "comparator_specificity": 0.785,
+    "comparator_spec_ci95": [
+     0.714,
+     0.85
+    ]
+   },
+   "no_vote_vs_Cstar_training_matched": {
+    "d_sens_triage_minus": {
+     "delta": 0.061,
+     "ci95": [
+      0.017,
+      0.103
+     ],
+     "p_two_sided": 0.005,
+     "one_sided_95_lower": 0.024,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": -0.016,
+     "ci95": [
+      -0.063,
+      0.031
+     ],
+     "p_two_sided": 0.485
+    },
+    "comparator_sensitivity": 0.804,
+    "comparator_sens_ci95": [
+     0.729,
+     0.879
+    ],
+    "comparator_specificity": 0.713,
+    "comparator_spec_ci95": [
+     0.663,
+     0.762
+    ]
+   },
+   "no_vote_vs_C": {
+    "d_sens_triage_minus": {
+     "delta": 0.07,
+     "ci95": [
+      0.021,
+      0.116
+     ],
+     "p_two_sided": 0.004
+    },
+    "d_spec_triage_minus": {
+     "delta": -0.022,
+     "ci95": [
+      -0.068,
+      0.021
+     ],
+     "p_two_sided": 0.29
+    },
+    "comparator_sensitivity": 0.795,
+    "comparator_sens_ci95": [
+     0.723,
+     0.87
+    ],
+    "comparator_specificity": 0.719,
+    "comparator_spec_ci95": [
+     0.669,
+     0.769
+    ]
+   }
+  },
+  "share_pivotal": {
+   "value": 0.471,
+   "ci95": [
+    0.412,
+    0.526
+   ],
+   "progressor": 0.398,
+   "non_progressor": 0.5
+  },
+  "training_specificity_target_median": 0.618,
+  "cutoffs_median": {
+   "t_low": 0.042,
+   "c_star": 0.589,
+   "t_seq": 0.233
+  },
+  "stability_of_voted_call": {
+   "all": {
+    "n": 571,
+    "unanimous_10_of_10": 0.618,
+    "near_unanimous_ge_8_of_10": 0.821,
+    "mean_repeats_agreeing_with_vote": 9.047
+   },
+   "progressor": {
+    "n": 161,
+    "unanimous_10_of_10": 0.708,
+    "near_unanimous_ge_8_of_10": 0.876,
+    "mean_repeats_agreeing_with_vote": 9.292
+   },
+   "non_progressor": {
+    "n": 410,
+    "unanimous_10_of_10": 0.583,
+    "near_unanimous_ge_8_of_10": 0.8,
+    "mean_repeats_agreeing_with_vote": 8.951
+   },
+   "by_modal_band": {
+    "low": {
+     "n": 178,
+     "unanimous_10_of_10": 0.781,
+     "near_unanimous_ge_8_of_10": 0.927,
+     "mean_repeats_agreeing_with_vote": 9.517
+    },
+    "mid": {
+     "n": 269,
+     "unanimous_10_of_10": 0.368,
+     "near_unanimous_ge_8_of_10": 0.669,
+     "mean_repeats_agreeing_with_vote": 8.342
+    },
+    "high": {
+     "n": 124,
+     "unanimous_10_of_10": 0.927,
+     "near_unanimous_ge_8_of_10": 1.0,
+     "mean_repeats_agreeing_with_vote": 9.903
+    }
+   },
+   "by_modal_band_and_class": {
+    "progressor": {
+     "low": {
+      "n": 7,
+      "unanimous_10_of_10": 0.714,
+      "near_unanimous_ge_8_of_10": 0.857,
+      "mean_repeats_agreeing_with_vote": 9.286
+     },
+     "mid": {
+      "n": 64,
+      "unanimous_10_of_10": 0.391,
+      "near_unanimous_ge_8_of_10": 0.703,
+      "mean_repeats_agreeing_with_vote": 8.422
+     },
+     "high": {
+      "n": 90,
+      "unanimous_10_of_10": 0.933,
+      "near_unanimous_ge_8_of_10": 1.0,
+      "mean_repeats_agreeing_with_vote": 9.911
+     }
+    },
+    "non_progressor": {
+     "low": {
+      "n": 171,
+      "unanimous_10_of_10": 0.784,
+      "near_unanimous_ge_8_of_10": 0.93,
+      "mean_repeats_agreeing_with_vote": 9.526
+     },
+     "mid": {
+      "n": 205,
+      "unanimous_10_of_10": 0.361,
+      "near_unanimous_ge_8_of_10": 0.659,
+      "mean_repeats_agreeing_with_vote": 8.317
+     },
+     "high": {
+      "n": 34,
+      "unanimous_10_of_10": 0.912,
+      "near_unanimous_ge_8_of_10": 1.0,
+      "mean_repeats_agreeing_with_vote": 9.882
+     }
+    }
+   },
+   "agreement_distribution": {
+    "10": 353,
+    "9": 68,
+    "8": 48,
+    "7": 45,
+    "6": 40,
+    "5": 17
+   },
+   "note": "agreement = number of the 10 per-repeat triage calls equal to the >= 6-of-10 voted call; modal band = the sample's most frequent band over the repeats",
+   "Bstar_for_reference": {
+    "unanimous_10_of_10": 0.651,
+    "near_unanimous_ge_8_of_10": 0.835
+   }
+  },
+  "sanity": {
+   "round4_r35_share_all_10_repeats_same_band_expected_0.35": 0.35,
+   "single_model_vs_Bstar_expected_-0.016_-0.032": [
+    -0.016,
+    -0.032
+   ],
+   "single_model_vs_B_expected_+0.033": 0.033,
+   "round4_r33_row16_voted_vs_Bstar_expected_-0.006_-0.044": [
+    -0.006,
+    -0.044
+   ]
+  }
+ },
+ "prespec": "5c10c27"
+}

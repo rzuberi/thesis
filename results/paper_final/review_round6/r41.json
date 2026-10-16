@@ -1,0 +1,327 @@
+{
+ "task": "r41",
+ "R41": {
+  "n_samples": 571,
+  "n_progressor_samples": 161,
+  "n_patients": 75,
+  "n_progressor_patients": 32,
+  "n_endoscopies": 288,
+  "n_progressor_endoscopies": 88,
+  "n_patients_units": 75,
+  "n_seeds": 100,
+  "draws": 2000,
+  "share_sequenced": {
+   "random_biopsy": 0.504,
+   "triage_per_repeat_mean": 0.458,
+   "triage_in_at_least_one_repeat": 0.76
+  },
+  "rule": "at each pre-event endoscopy one sample is drawn at random (seeds 0-99); the endoscopy is called by that sample's L-LATE result at (B)'s fold threshold (its stored (B) call); variant: the other samples of the endoscopy are called by the H&E model (C) at its fold threshold and the endoscopy is positive if any call is; triage = any sample positive; single model = per repeat, averaged; patient = any endoscopy positive",
+  "levels": {
+   "endoscopy": {
+    "sens_random_biopsy": {
+     "mean_over_seeds": 0.827,
+     "range_2.5_97.5_over_seeds": [
+      0.803,
+      0.852
+     ],
+     "ci95_bootstrap_of_seed_mean": [
+      0.742,
+      0.901
+     ]
+    },
+    "spec_random_biopsy": {
+     "mean_over_seeds": 0.74,
+     "range_2.5_97.5_over_seeds": [
+      0.721,
+      0.762
+     ],
+     "ci95_bootstrap_of_seed_mean": [
+      0.673,
+      0.805
+     ]
+    },
+    "sens_random_biopsy_rest_HE": {
+     "mean_over_seeds": 0.879,
+     "range_2.5_97.5_over_seeds": [
+      0.874,
+      0.885
+     ],
+     "ci95_bootstrap_of_seed_mean": [
+      0.807,
+      0.938
+     ]
+    },
+    "spec_random_biopsy_rest_HE": {
+     "mean_over_seeds": 0.589,
+     "range_2.5_97.5_over_seeds": [
+      0.575,
+      0.604
+     ],
+     "ci95_bootstrap_of_seed_mean": [
+      0.511,
+      0.669
+     ]
+    },
+    "sens_triage": {
+     "mean_over_seeds": 0.909,
+     "range_2.5_97.5_over_seeds": null,
+     "ci95_bootstrap_of_seed_mean": [
+      0.865,
+      0.952
+     ]
+    },
+    "spec_triage": {
+     "mean_over_seeds": 0.549,
+     "range_2.5_97.5_over_seeds": null,
+     "ci95_bootstrap_of_seed_mean": [
+      0.46,
+      0.637
+     ]
+    },
+    "sens_B_all_sequenced": {
+     "mean_over_seeds": 0.876,
+     "range_2.5_97.5_over_seeds": null,
+     "ci95_bootstrap_of_seed_mean": [
+      0.803,
+      0.935
+     ]
+    },
+    "spec_B_all_sequenced": {
+     "mean_over_seeds": 0.64,
+     "range_2.5_97.5_over_seeds": null,
+     "ci95_bootstrap_of_seed_mean": [
+      0.552,
+      0.726
+     ]
+    },
+    "d_sens_random_biopsy_minus_triage": {
+     "mean_over_seeds": -0.082,
+     "range_2.5_97.5_over_seeds": [
+      -0.106,
+      -0.057
+     ],
+     "ci95_bootstrap_of_seed_mean": [
+      -0.14,
+      -0.035
+     ],
+     "one_sided_95_lower_seed_mean": -0.131,
+     "p_two_sided_seed_mean": 0.0,
+     "ci95_pooled_seeds_and_draws": [
+      -0.155,
+      -0.026
+     ],
+     "one_sided_95_lower_pooled": -0.14
+    },
+    "d_spec_random_biopsy_minus_triage": {
+     "mean_over_seeds": 0.191,
+     "range_2.5_97.5_over_seeds": [
+      0.172,
+      0.213
+     ],
+     "ci95_bootstrap_of_seed_mean": [
+      0.15,
+      0.234
+     ],
+     "one_sided_95_lower_seed_mean": 0.156,
+     "p_two_sided_seed_mean": 0.0,
+     "ci95_pooled_seeds_and_draws": [
+      0.142,
+      0.247
+     ],
+     "one_sided_95_lower_pooled": 0.149
+    },
+    "d_sens_random_biopsy_rest_HE_minus_triage": {
+     "mean_over_seeds": -0.03,
+     "range_2.5_97.5_over_seeds": [
+      -0.035,
+      -0.024
+     ],
+     "ci95_bootstrap_of_seed_mean": [
+      -0.073,
+      0.009
+     ],
+     "one_sided_95_lower_seed_mean": -0.065,
+     "p_two_sided_seed_mean": 0.126,
+     "ci95_pooled_seeds_and_draws": [
+      -0.073,
+      0.01
+     ],
+     "one_sided_95_lower_pooled": -0.066
+    },
+    "d_spec_random_biopsy_rest_HE_minus_triage": {
+     "mean_over_seeds": 0.04,
+     "range_2.5_97.5_over_seeds": [
+      0.026,
+      0.055
+     ],
+     "ci95_bootstrap_of_seed_mean": [
+      0.011,
+      0.066
+     ],
+     "one_sided_95_lower_seed_mean": 0.017,
+     "p_two_sided_seed_mean": 0.006,
+     "ci95_pooled_seeds_and_draws": [
+      0.004,
+      0.074
+     ],
+     "one_sided_95_lower_pooled": 0.01
+    }
+   },
+   "patient": {
+    "sens_random_biopsy": {
+     "mean_over_seeds": 0.93,
+     "range_2.5_97.5_over_seeds": [
+      0.889,
+      0.956
+     ],
+     "ci95_bootstrap_of_seed_mean": [
+      0.862,
+      0.985
+     ]
+    },
+    "spec_random_biopsy": {
+     "mean_over_seeds": 0.417,
+     "range_2.5_97.5_over_seeds": [
+      0.373,
+      0.458
+     ],
+     "ci95_bootstrap_of_seed_mean": [
+      0.298,
+      0.544
+     ]
+    },
+    "sens_random_biopsy_rest_HE": {
+     "mean_over_seeds": 0.965,
+     "range_2.5_97.5_over_seeds": [
+      0.959,
+      0.972
+     ],
+     "ci95_bootstrap_of_seed_mean": [
+      0.914,
+      1.0
+     ]
+    },
+    "spec_random_biopsy_rest_HE": {
+     "mean_over_seeds": 0.24,
+     "range_2.5_97.5_over_seeds": [
+      0.209,
+      0.276
+     ],
+     "ci95_bootstrap_of_seed_mean": [
+      0.147,
+      0.351
+     ]
+    },
+    "sens_triage": {
+     "mean_over_seeds": 0.972,
+     "range_2.5_97.5_over_seeds": null,
+     "ci95_bootstrap_of_seed_mean": [
+      0.928,
+      1.0
+     ]
+    },
+    "spec_triage": {
+     "mean_over_seeds": 0.256,
+     "range_2.5_97.5_over_seeds": null,
+     "ci95_bootstrap_of_seed_mean": [
+      0.156,
+      0.368
+     ]
+    },
+    "sens_B_all_sequenced": {
+     "mean_over_seeds": 0.959,
+     "range_2.5_97.5_over_seeds": null,
+     "ci95_bootstrap_of_seed_mean": [
+      0.9,
+      1.0
+     ]
+    },
+    "spec_B_all_sequenced": {
+     "mean_over_seeds": 0.337,
+     "range_2.5_97.5_over_seeds": null,
+     "ci95_bootstrap_of_seed_mean": [
+      0.223,
+      0.461
+     ]
+    },
+    "d_sens_random_biopsy_minus_triage": {
+     "mean_over_seeds": -0.041,
+     "range_2.5_97.5_over_seeds": [
+      -0.083,
+      -0.016
+     ],
+     "ci95_bootstrap_of_seed_mean": [
+      -0.086,
+      -0.008
+     ],
+     "one_sided_95_lower_seed_mean": -0.078,
+     "p_two_sided_seed_mean": 0.01,
+     "ci95_pooled_seeds_and_draws": [
+      -0.127,
+      0.0
+     ],
+     "one_sided_95_lower_pooled": -0.108
+    },
+    "d_spec_random_biopsy_minus_triage": {
+     "mean_over_seeds": 0.161,
+     "range_2.5_97.5_over_seeds": [
+      0.117,
+      0.202
+     ],
+     "ci95_bootstrap_of_seed_mean": [
+      0.112,
+      0.209
+     ],
+     "one_sided_95_lower_seed_mean": 0.12,
+     "p_two_sided_seed_mean": 0.0,
+     "ci95_pooled_seeds_and_draws": [
+      0.089,
+      0.244
+     ],
+     "one_sided_95_lower_pooled": 0.1
+    },
+    "d_sens_random_biopsy_rest_HE_minus_triage": {
+     "mean_over_seeds": -0.007,
+     "range_2.5_97.5_over_seeds": [
+      -0.013,
+      0.0
+     ],
+     "ci95_bootstrap_of_seed_mean": [
+      -0.038,
+      0.015
+     ],
+     "one_sided_95_lower_seed_mean": -0.032,
+     "p_two_sided_seed_mean": 0.738,
+     "ci95_pooled_seeds_and_draws": [
+      -0.039,
+      0.023
+     ],
+     "one_sided_95_lower_pooled": -0.033
+    },
+    "d_spec_random_biopsy_rest_HE_minus_triage": {
+     "mean_over_seeds": -0.016,
+     "range_2.5_97.5_over_seeds": [
+      -0.047,
+      0.02
+     ],
+     "ci95_bootstrap_of_seed_mean": [
+      -0.061,
+      0.03
+     ],
+     "one_sided_95_lower_seed_mean": -0.054,
+     "p_two_sided_seed_mean": 0.51,
+     "ci95_pooled_seeds_and_draws": [
+      -0.083,
+      0.049
+     ],
+     "one_sided_95_lower_pooled": -0.071
+    }
+   }
+  },
+  "sanity_round2_r23_endoscopy_no_vote_T_expected_0.909_0.549": [
+   0.909,
+   0.549
+  ]
+ },
+ "prespec": "5c10c27"
+}

@@ -1,0 +1,336 @@
+{
+ "task": "r38_fu1y",
+ "R38": {
+  "analysis": "fu1y",
+  "definition": "non-progressor samples taken less than 1 year (months before final < 12) before the patient's last sequenced endoscopy removed",
+  "n_samples": 478,
+  "n_progressor_samples": 161,
+  "n_patients": 75,
+  "n_progressor_patients": 32,
+  "draws": 2000,
+  "cutoffs_median": {
+   "t_low": 0.042,
+   "c_star": 0.589,
+   "t_seq": 0.233
+  },
+  "folds_no_middle_band": 0,
+  "t_seq_fallback": 0,
+  "training_specificity_target_median": 0.618,
+  "claim_T": {
+   "triage_no_vote": {
+    "sensitivity": 0.865,
+    "sens_ci95": [
+     0.791,
+     0.926
+    ],
+    "specificity": 0.686,
+    "spec_ci95": [
+     0.616,
+     0.754
+    ]
+   },
+   "triage_voted": {
+    "sensitivity": 0.863,
+    "sens_ci95": [
+     0.774,
+     0.942
+    ],
+    "specificity": 0.707,
+    "spec_ci95": [
+     0.631,
+     0.778
+    ]
+   },
+   "share_sequenced": {
+    "per_repeat_mean": 0.444,
+    "ci95": [
+     0.389,
+     0.494
+    ],
+    "in_at_least_one_repeat": 0.745,
+    "vote_pivotal": 0.458,
+    "cap_0.70_met": true
+   },
+   "no_vote_vs_Bstar_training_matched": {
+    "d_sens_triage_minus": {
+     "delta": -0.016,
+     "ci95": [
+      -0.036,
+      0.001
+     ],
+     "p_two_sided": 0.076,
+     "one_sided_95_lower": -0.032,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": 0.035,
+     "ci95": [
+      -0.003,
+      0.084
+     ],
+     "p_two_sided": 0.082
+    },
+    "comparator_sensitivity": 0.881,
+    "comparator_sens_ci95": [
+     0.801,
+     0.944
+    ],
+    "comparator_specificity": 0.651,
+    "comparator_spec_ci95": [
+     0.564,
+     0.735
+    ]
+   },
+   "no_vote_vs_Bstar_evaluation_matched": {
+    "d_sens_triage_minus": {
+     "delta": 0.006,
+     "ci95": [
+      -0.028,
+      0.041
+     ],
+     "p_two_sided": 0.89,
+     "one_sided_95_lower": -0.024,
+     "non_inferior_at_-0.05": true
+    },
+    "comparator_sensitivity": 0.859,
+    "comparator_sens_ci95": [
+     0.771,
+     0.934
+    ]
+   },
+   "no_vote_vs_B": {
+    "d_sens_triage_minus": {
+     "delta": 0.033,
+     "ci95": [
+      0.005,
+      0.062
+     ],
+     "p_two_sided": 0.02,
+     "one_sided_95_lower": 0.011,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": -0.061,
+     "ci95": [
+      -0.098,
+      -0.016
+     ],
+     "p_two_sided": 0.01
+    },
+    "comparator_sensitivity": 0.832,
+    "comparator_sens_ci95": [
+     0.74,
+     0.909
+    ],
+    "comparator_specificity": 0.747,
+    "comparator_spec_ci95": [
+     0.673,
+     0.815
+    ]
+   },
+   "voted_vs_Bstar_training_matched": {
+    "d_sens_triage_minus": {
+     "delta": -0.006,
+     "ci95": [
+      -0.051,
+      0.034
+     ],
+     "p_two_sided": 0.952,
+     "one_sided_95_lower": -0.044,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": 0.028,
+     "ci95": [
+      -0.017,
+      0.088
+     ],
+     "p_two_sided": 0.364
+    },
+    "comparator_sensitivity": 0.87,
+    "comparator_sens_ci95": [
+     0.773,
+     0.947
+    ],
+    "comparator_specificity": 0.678,
+    "comparator_spec_ci95": [
+     0.585,
+     0.763
+    ]
+   },
+   "voted_vs_B": {
+    "d_sens_triage_minus": {
+     "delta": 0.062,
+     "ci95": [
+      0.011,
+      0.116
+     ],
+     "p_two_sided": 0.018,
+     "one_sided_95_lower": 0.02,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": -0.06,
+     "ci95": [
+      -0.118,
+      0.007
+     ],
+     "p_two_sided": 0.086
+    },
+    "comparator_sensitivity": 0.801,
+    "comparator_sens_ci95": [
+     0.697,
+     0.893
+    ],
+    "comparator_specificity": 0.767,
+    "comparator_spec_ci95": [
+     0.681,
+     0.839
+    ]
+   },
+   "no_vote_vs_Cstar_training_matched": {
+    "d_sens_triage_minus": {
+     "delta": 0.061,
+     "ci95": [
+      0.017,
+      0.103
+     ],
+     "p_two_sided": 0.005,
+     "one_sided_95_lower": 0.024,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_triage_minus": {
+     "delta": -0.01,
+     "ci95": [
+      -0.059,
+      0.035
+     ],
+     "p_two_sided": 0.641
+    },
+    "comparator_sensitivity": 0.804,
+    "comparator_sens_ci95": [
+     0.729,
+     0.879
+    ],
+    "comparator_specificity": 0.697,
+    "comparator_spec_ci95": [
+     0.643,
+     0.753
+    ]
+   },
+   "no_vote_vs_C": {
+    "d_sens_triage_minus": {
+     "delta": 0.07,
+     "ci95": [
+      0.021,
+      0.116
+     ],
+     "p_two_sided": 0.004
+    },
+    "d_spec_triage_minus": {
+     "delta": -0.016,
+     "ci95": [
+      -0.063,
+      0.027
+     ],
+     "p_two_sided": 0.451
+    },
+    "comparator_sensitivity": 0.795,
+    "comparator_sens_ci95": [
+     0.723,
+     0.87
+    ],
+    "comparator_specificity": 0.703,
+    "comparator_spec_ci95": [
+     0.649,
+     0.758
+    ]
+   }
+  },
+  "claim_H": {
+   "auroc": {
+    "L-CNV": {
+     "value": 0.807,
+     "ci95": [
+      0.713,
+      0.881
+     ]
+    },
+    "L-IMG": {
+     "value": 0.842,
+     "ci95": [
+      0.79,
+      0.891
+     ]
+    },
+    "L-LATE": {
+     "value": 0.885,
+     "ci95": [
+      0.822,
+      0.933
+     ]
+    }
+   },
+   "IMG_minus_CNV": {
+    "delta": 0.035,
+    "ci95": [
+     -0.049,
+     0.127
+    ],
+    "p_two_sided": 0.438,
+    "one_sided_95_lower": -0.037,
+    "non_inferior_at_-0.05": true
+   },
+   "LATE_minus_CNV": {
+    "delta": 0.078,
+    "ci95": [
+     0.028,
+     0.137
+    ],
+    "p_two_sided": 0.001
+   }
+  },
+  "n_excluded": {
+   "samples": 93,
+   "progressor_samples": 0,
+   "patients": 0
+  },
+  "later_hgd_check": {
+   "n_nonprogressor_patients": 43,
+   "n_matched_in_hospital_record_check": 43,
+   "n_not_identifiable": 0,
+   "n_with_later_HGDplus": 1,
+   "n_with_later_LGDplus": 9,
+   "definition": "pk_main.py K1: db_max_grade_after >= 3 or release_excluded_max_grade >= 3 or slidematch_max_grade_after >= 3 or hgd_table_entries_after > 0; joined to the analysed patients by study number",
+   "k1_stored_reference": {
+    "n": 42,
+    "db_followup_days_median_iqr": [
+     2506.5,
+     808.0,
+     3183.25
+    ],
+    "share_with_any_later_db_report": 0.976,
+    "killcoyne_sheet_controls_NP": 37,
+    "killcoyne_sheet_cases_P_labelled_nonprogressor_by_us": 5,
+    "later_HGDplus": 6,
+    "later_LGDplus": 8
+   }
+  },
+  "flag_counts_pre_event": {
+   "excluded": {
+    "progressor": 36,
+    "non_progressor": 21
+   },
+   "remove": {
+    "progressor": 1,
+    "non_progressor": 2
+   },
+   "inconsistency": {
+    "progressor": 8,
+    "non_progressor": 0
+   }
+  },
+  "note": "calls and cut-offs as stored (chosen on the full training folds); single-model statistics, the vote and the patient bootstrap recomputed on the remaining samples"
+ },
+ "prespec": "5c10c27"
+}
