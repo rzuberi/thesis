@@ -33,23 +33,23 @@ for k, (lab, v) in enumerate(tracks):
     if v is None: a.axhline(1.0, color=LIGHT, lw=0.5, ls=":"); a.step(x, vj, where="mid", color=MODEL["L-CNV-joint"], lw=0.9); a.step(x, vp, where="mid", color=MODEL["L-CNV-ps"], lw=0.7, alpha=0.9); a.set_ylabel("relative\ncopy number", fontsize=6)
     else: a.axhline(0.0, color=LIGHT, lw=0.5, ls=":"); a.step(x, v, where="mid", color=MODEL["L-CNV-ps"] if "per-sample" in lab else MODEL["L-CNV-past"], lw=0.8); a.set_ylabel("difference", fontsize=6); a.set_ylim(-0.6, 0.6)
     a.text(0.005, 0.95, lab, transform=a.transAxes, fontsize=6, va="top"); a.set_xlim(-1, len(five)); a.set_xticks([]); a.spines["bottom"].set_visible(k == 2)
-    if k == 2: a.set_xticks(centres); a.set_xticklabels([c for c in dict.fromkeys(chrom)], fontsize=5.2); a.set_xlabel("chromosome (5-Mb windows, hg38)")
-axes[0].set_title(f"One progressor: earliest pre-event biopsy ({GR[i0]}, {t0:.1f} years before the first HGD/IMC endoscopy); joint vs per-sample r = {r_tiles[i0]:.2f}", fontsize=6.5, pad=4)
+    if k == 2: a.set_xticks(centres); a.set_xticklabels([c if (int(c) <= 16 or int(c) % 2 == 0) else "" for c in dict.fromkeys(chrom)], fontsize=5.0); a.set_xlabel("chromosome (5-Mb windows, hg38)")
+axes[0].set_title(f"One progressor, earliest pre-event biopsy ({GR[i0]}, {t0:.1f} y before the first HGD/IMC endoscopy); joint vs per-sample r = {r_tiles[i0]:.2f}", fontsize=6, pad=10)
 letter(fig, axes[0], "a", dx=-0.045)
 # (b) AUROC by version
-bx = fig.add_axes([0.74, 0.72, 0.24, 0.24]); A = r40["auroc_L_CNV"]; tp = J("triage/their_pre.json")["section1"]["auroc"]; H = {r["analysis"]: r for r in J("review_round4/r33_merge.json")["R33"]["claim_H_LIMG_vs_LCNV_dAUROC"]}
+bx = fig.add_axes([0.76, 0.70, 0.22, 0.22]); A = r40["auroc_L_CNV"]; tp = J("triage/their_pre.json")["section1"]["auroc"]; H = {r["analysis"]: r for r in J("review_round4/r33_merge.json")["R33"]["claim_H_LIMG_vs_LCNV_dAUROC"]}
 vers = [("published matrix", "shipped_matrix", "L-CNV", H["primary: all pre-event samples"]), ("joint package", "joint_package", "L-CNV-joint", H["package features"]), ("past-only", "past_only", "L-CNV-past", H["past-only re-segmented copy number (R36, extra row)"]), ("per-sample", "per_sample", "L-CNV-ps", H["per-sample re-segmented copy number (R36)"])]
 for i, (lab, key, ck, row) in enumerate(vers):
     yy = len(vers) - i; ci_point(bx, A[key]["value"], yy, A[key]["ci95"], MODEL[ck], horizontal=True, ms=4); bx.text(0.36, yy + 0.12, f"L-IMG − L-CNV {signed(row['d_auroc'])}, bound {mi(row['one_sided_lower'])}", fontsize=5.2, va="bottom", color="#333333" if row["within_-0.05"] else MODEL["L-CNV"])
 li = tp["L-IMG"]; bx.axvspan(li["ci95"][0], li["ci95"][1], color=MODEL["L-IMG"], alpha=0.12, lw=0); bx.axvline(li["value"], color=MODEL["L-IMG"], lw=1.0); bx.text(li["value"], len(vers) + 0.75, f"L-IMG {li['value']:.3f}", color=MODEL["L-IMG"], fontsize=6, ha="center", va="bottom")
-bx.set_yticks(range(1, len(vers) + 1)); bx.set_yticklabels([v[0] for v in vers][::-1], fontsize=6); bx.set_xlim(0.35, 1.0); bx.set_ylim(0.4, len(vers) + 1.2); bx.set_xlabel("L-CNV AUROC, fold-stratified [95% CI]", fontsize=6); letter(fig, bx, "b", dx=-0.12)
+bx.set_yticks(range(1, len(vers) + 1)); bx.set_yticklabels([v[0] for v in vers][::-1], fontsize=6); bx.set_xlim(0.35, 1.0); bx.set_ylim(0.4, len(vers) + 1.2); bx.set_xlabel("L-CNV AUROC, fold-stratified [95% CI]", fontsize=6); letter(fig, bx, "b", dx=-0.09, dy=0.03)
 # (c) pairwise differences
-cx = fig.add_axes([0.74, 0.48, 0.24, 0.17]); PW = r40["pairwise"]; NM = {"shipped_matrix": "published", "joint_package": "joint pkg", "past_only": "past-only", "per_sample": "per-sample"}; keys = list(PW)
+cx = fig.add_axes([0.80, 0.47, 0.18, 0.16]); PW = r40["pairwise"]; NM = {"shipped_matrix": "published", "joint_package": "joint pkg", "past_only": "past-only", "per_sample": "per-sample"}; keys = list(PW)
 for i, k in enumerate(keys):
-    d = PW[k]; yy = len(keys) - 1 - i; a_, b_ = k.split("_minus_"); ci_point(cx, d["delta"], yy, d["ci95"], "#333333", horizontal=True, ms=3); cx.text(0.17, yy, f"p {d['p_two_sided']:.2f}; Holm {d['p_holm']:.2f}", fontsize=5.0, va="center")
-cx.axvline(0, color=LIGHT, lw=0.6); cx.set_yticks(range(len(keys))); cx.set_yticklabels([f"{NM[k.split('_minus_')[0]]} − {NM[k.split('_minus_')[1]]}" for k in keys][::-1], fontsize=5.4); cx.set_xlim(-0.15, 0.16); cx.set_xlabel("Δ AUROC, paired [95% CI]", fontsize=6); letter(fig, cx, "c", dx=-0.12)
+    d = PW[k]; yy = len(keys) - 1 - i; a_, b_ = k.split("_minus_"); ci_point(cx, d["delta"], yy, d["ci95"], "#333333", horizontal=True, ms=3)
+cx.axvline(0, color=LIGHT, lw=0.6); cx.set_yticks(range(len(keys))); cx.set_yticklabels([f"{NM[k.split('_minus_')[0]]} − {NM[k.split('_minus_')[1]]}\n(p {PW[k]['p_two_sided']:.2f}, Holm {PW[k]['p_holm']:.2f})" for k in keys][::-1], fontsize=4.8); cx.set_xlim(-0.15, 0.16); cx.set_xlabel("Δ AUROC, paired [95% CI]", fontsize=6); letter(fig, cx, "c", dx=-0.13, dy=0.01)
 # (d) correlation by class and tertile
-dx_ = fig.add_axes([0.07, 0.08, 0.90, 0.40]); rng = np.random.RandomState(0); groups = [("all", np.ones(n, bool))] + [(f"tertile {t + 1}", tert == t) for t in range(3)]; src_d = {}
+dx_ = fig.add_axes([0.07, 0.08, 0.90, 0.34]); rng = np.random.RandomState(0); groups = [("all", np.ones(n, bool))] + [(f"tertile {t + 1}", tert == t) for t in range(3)]; src_d = {}
 TR = SI["per_sample_r_joint_vs_per_sample_final_features"]["by_tertile"]; CD = SI["class_difference_median_r_progressor_minus_non_progressor"]
 for gi, (glab, gmask) in enumerate(groups):
     src_d[glab] = {}
@@ -59,11 +59,11 @@ for gi, (glab, gmask) in enumerate(groups):
         dx_.boxplot([vals], positions=[xpos], widths=0.7, showfliers=False, medianprops=dict(color="black", lw=1), boxprops=dict(lw=0.6), whiskerprops=dict(lw=0.6), capprops=dict(lw=0.6), zorder=3, manage_ticks=False)
         dx_.text(xpos, 1.03, f"n {len(vals)}\nmedian {np.median(vals):.2f}", ha="center", va="bottom", fontsize=5.2); src_d[glab][CLASS_NAME[cls]] = {"n": int(len(vals)), "median": float(np.median(vals)), "iqr": [float(np.percentile(vals, 25)), float(np.percentile(vals, 75))]}
     key = "all_pre_event" if glab == "all" else glab.replace(" ", "_"); cd = CD[key]; src_d[glab]["class_difference_median_committed"] = cd
-    dx_.text(gi * 2.6, -0.02, f"P − NP median {signed(cd['delta'], 2)} [{mi(cd['ci95'][0])}, {mi(cd['ci95'][1])}]", ha="center", va="top", fontsize=5.2, color="#333333")
+    dx_.text(gi * 2.6, -0.02, f"P − NP median {signed(cd['delta'], 2)}\n[{mi(cd['ci95'][0])}, {mi(cd['ci95'][1])}]", ha="center", va="top", fontsize=5.2, color="#333333")
     if glab != "all": rngs = TR[key]["n_segmented_range"]; src_d[glab]["n_segmented_together_range"] = rngs
 tl = ["all pre-event biopsies"] + [f"tertile {t + 1}: {TR[f'tertile_{t + 1}']['n_segmented_range'][0]}–{TR[f'tertile_{t + 1}']['n_segmented_range'][1]} samples\nsegmented together" for t in range(3)]
-dx_.set_xticks([gi * 2.6 for gi in range(4)]); dx_.set_xticklabels(tl, fontsize=5.6); dx_.tick_params(axis="x", pad=14); dx_.set_ylim(-0.12, 1.2); dx_.set_ylabel("Pearson r, joint vs per-sample final features\n(per pre-event biopsy)")
-dx_.scatter([], [], color=CLASS["N"], s=12, label="non-progressor"); dx_.scatter([], [], color=CLASS["P"], s=12, label="progressor"); dx_.legend(loc="lower right", fontsize=5.6); letter(fig, dx_, "d", dx=-0.05)
+dx_.set_xticks([gi * 2.6 for gi in range(4)]); dx_.set_xticklabels(tl, fontsize=5.6); dx_.tick_params(axis="x", pad=18); dx_.set_ylim(-0.12, 1.22); dx_.set_ylabel("Pearson r, joint vs per-sample final features\n(per pre-event biopsy)")
+dx_.scatter([], [], color=CLASS["N"], s=12, label="non-progressor"); dx_.scatter([], [], color=CLASS["P"], s=12, label="progressor"); dx_.legend(loc="upper right", bbox_to_anchor=(1.0, 1.0), fontsize=5.6); letter(fig, dx_, "d", dx=-0.05)
 save(fig, "ED4")
 dump("ED4", {"a_patient": {"class": "progressor", "n_pre_event_biopsies": int(((pat == p) & PRE).sum()), "earliest_pre_event_biopsy_grade": str(GR[i0]), "years_before_event": float(t0), "r_joint_vs_persample_raw_tiles": float(r_tiles[i0]), "n_candidates": len(cands),
                            "selection_rule": "largest 1 - r (joint vs per-sample raw 5-Mb windows) of the earliest pre-event biopsy among progressors with a stored HGD/IMC biopsy"},

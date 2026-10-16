@@ -15,7 +15,7 @@ D = pd.DataFrame({"pat": PT, "y": yr, "t": TIME, "grade": GR, "band": modal, "vo
 E = D.groupby(["pat", "endo"]).agg(t=("t", "max"), flag=("vote", "any"), y=("y", "max")).reset_index()
 span = D.groupby("pat").agg(y=("y", "max"), tmax=("t", "max"), tmin=("t", "min"), n=("t", "size")); span["span"] = span.tmax - span.tmin; span = span.sort_values(["y", "span"], ascending=[False, False]); order = {p: i for i, p in enumerate(span.index)}
 first_flag = E[E.flag].groupby("pat").t.max()   # largest time before the event = earliest flagged endoscopy
-fig = plt.figure(figsize=(183 * MM, 160 * MM)); ax = fig.add_axes([0.05, 0.06, 0.60, 0.91]); BN = {0: "low", 1: "mid", 2: "high"}; MK = {"NDBE": "o", "ID": "^", "LGD": "s"}
+fig = plt.figure(figsize=(183 * MM, 160 * MM)); ax = fig.add_axes([0.05, 0.08, 0.60, 0.89]); BN = {0: "low", 1: "mid", 2: "high"}; MK = {"NDBE": "o", "ID": "^", "LGD": "s"}
 nrow = len(span); yrow = lambda p: nrow - 1 - order[p]
 for p, r in span.iterrows():
     yy = yrow(p); ax.plot([-r.tmax, -r.tmin], [yy, yy], color="#CCCCCC", lw=0.9, zorder=1)
@@ -29,12 +29,12 @@ for (p, t), g in D.groupby(["pat", "t"]):
     for (idx, s), o in zip(g.iterrows(), off): ax.plot([-s.t], [yrow(p) + o], marker=MK.get(s.grade, "o"), color=BAND[BN[s.band]], ms=2.6, mec="#333333", mew=0.25, lw=0, zorder=3)
 nP = int(span.y.sum()); ax.axhline(nrow - nP - 0.5, color="black", lw=0.5, ls=":")
 ax.text(-13.8, nrow - nP / 2 - 0.5, f"progressors (n {nP})", rotation=90, va="center", ha="center", fontsize=6.5); ax.text(-13.8, (nrow - nP) / 2 - 0.5, f"non-progressors (n {nrow - nP})", rotation=90, va="center", ha="center", fontsize=6.5)
-ax.set_xlim(-14.5, 0.8); ax.set_ylim(-1, nrow); ax.set_yticks([]); ax.spines["left"].set_visible(False); ax.set_xlabel("years before the first HGD/IMC endoscopy (progressors) or the last sequenced endoscopy (non-progressors)")
+ax.set_xlim(-14.5, 0.8); ax.set_ylim(-1, nrow); ax.set_yticks([]); ax.spines["left"].set_visible(False); ax.set_xlabel("years before the first HGD/IMC endoscopy (progressors)\nor the last sequenced endoscopy (non-progressors)")
 h = [Line2D([], [], marker="o", color=BAND[b], mec="#333333", mew=0.25, lw=0, ms=4, label=BAND_NAME[b] + " (modal band)") for b in ("low", "mid", "high")]
 h += [Line2D([], [], marker=MK[g], color="white", mec="#333333", mew=0.6, lw=0, ms=4, label=f"grade {g}") for g in ("NDBE", "ID", "LGD")]
 h += [Line2D([], [], marker="v", color="#CC3311", lw=0, ms=3, label="endoscopy flagged (10-model vote, any biopsy)"), Line2D([], [], marker="o", color="none", mec="#CC3311", mew=0.7, lw=0, ms=5.5, label="first flagged endoscopy"),
       Line2D([], [], color="#CCCCCC", lw=0.9, label="span of pre-event sampling"), Line2D([], [], marker="x", color="black", lw=0, ms=4, mew=0.8, label="first HGD/IMC endoscopy"), Line2D([], [], marker="|", color=GREY, lw=0, ms=5, mew=0.7, label="last sequenced endoscopy")]
-ax.legend(handles=h, loc="lower left", fontsize=5.6, ncol=1, bbox_to_anchor=(0.0, 0.02))
+fig.legend(handles=h, loc="upper left", fontsize=5.6, ncol=1, bbox_to_anchor=(0.70, 0.50))
 letter(fig, ax, "a", dx=-0.035, dy=-0.01)
 # ------------------------------------------------------------------ (b) time-dependent AUROC
 bx = fig.add_axes([0.74, 0.60, 0.25, 0.35]); H = (1, 3, 5); arms = {"grade": ("GRADE", MODEL["grade"]), "L-CNV": ("L-CNV", MODEL["L-CNV"]), "L-IMG": ("L-IMG", MODEL["L-IMG"]), "L-LATE": ("L-LATE", MODEL["L-LATE"])}; td = {}

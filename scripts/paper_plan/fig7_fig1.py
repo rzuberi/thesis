@@ -18,13 +18,13 @@ fig = plt.figure(figsize=(183 * MM, 150 * MM))
 ax = fig.add_axes([0.02, 0.04, 0.46, 0.93]); ax.set_xlim(0, 100); ax.set_ylim(0, 100); ax.axis("off")
 FC, EC = "#F2F2F2", "#444444"; XC, XE = "#FFFFFF", "#999999"; A, Pq, Nq = chk["all"], chk["pre_event"], chk["ndbe_pre_event"]
 flow = [("Discovery cohort (Killcoyne et al. 2020)\n88 patients, 777 sequenced biopsies\n45 progressors, 43 non-progressors", 90),
-        (f"Biopsies with a matched scanned H&E slide\n80 patients, {A['endoscopies']} endoscopies, 676 biopsies (683 slides)\n37 progressors (266 biopsies), 43 non-progressors (410)", 63),
-        (f"Primary population: pre-event biopsies\n75 patients, {Pq['endoscopies']} endoscopies, 571 biopsies\n32 progressors (161 biopsies, {Pq['progressor_endoscopies']} endoscopies), 43 non-progressors (410, {Pq['endoscopies'] - Pq['progressor_endoscopies']})", 36),
-        (f"Secondary population: NDBE pre-event biopsies\n71 patients, {Nq['endoscopies']} endoscopies, 438 biopsies\n28 progressors (104 biopsies, {Nq['progressor_endoscopies']} endoscopies), 43 non-progressors (334, {Nq['endoscopies'] - Nq['progressor_endoscopies']})", 9)]
+        (f"Biopsies with a matched scanned H&E slide\n80 patients, {A['endoscopies']} endoscopies, 676 biopsies (683 slides)\n37 progressors (266 biopsies, {A['progressor_endoscopies']} endoscopies)\n43 non-progressors (410 biopsies, {A['endoscopies'] - A['progressor_endoscopies']} endoscopies)", 63),
+        (f"Primary population: pre-event biopsies\n75 patients, {Pq['endoscopies']} endoscopies, 571 biopsies\n32 progressors (161 biopsies, {Pq['progressor_endoscopies']} endoscopies)\n43 non-progressors (410 biopsies, {Pq['endoscopies'] - Pq['progressor_endoscopies']} endoscopies)", 36),
+        (f"Secondary population: NDBE pre-event biopsies\n71 patients, {Nq['endoscopies']} endoscopies, 438 biopsies\n28 progressors (104 biopsies, {Nq['progressor_endoscopies']} endoscopies)\n43 non-progressors (334 biopsies, {Nq['endoscopies'] - Nq['progressor_endoscopies']} endoscopies)", 9)]
 excl = [("No matched slide:\n101 biopsies; 8 patients\nwithout any slide\n(all progressors)", 76.5),
         (f"At or after the first\nHGD/IMC endoscopy:\n105 biopsies ({A['endoscopies'] - Pq['endoscopies']} endoscopies);\n5 progressors with no\npre-event biopsy", 49.5),
         (f"Graded ID or LGD:\n133 biopsies; 4 progressors\nwith no NDBE\npre-event biopsy", 22.5)]
-H = 13; W = 62
+H = 15; W = 62
 for i, (t, yc) in enumerate(flow):
     box(ax, 1, yc - H / 2, W, H, t, FC, EC, fs=5.6, weight="bold" if i == 2 else "normal")
     if i < 3: arrow(ax, 32, yc - H / 2, 32, flow[i + 1][1] + H / 2)
@@ -41,7 +41,7 @@ chain(76, ["Biopsy:\nH&E slide", "256 tiles\n224 px,\n0.88 µm/px", "UNI2-h\n1,5
 chain(24, ["Biopsy:\nDNA", "sWGS\n~0.3× depth", "Copy number:\npublished matrix\n(hg19, joint segm.)\nprimary; rebuilt joint,\npast-only, per-sample\nas sensitivity", "L-CNV\nelastic-net\nlogistic"], MODEL["L-CNV"])
 box(bx, 85, 38, 14, 24, "L-LATE\n= mean of\nL-IMG and\nL-CNV", MODEL["L-LATE"] + "22", MODEL["L-LATE"], fs=5.4)
 arrow(bx, 83, 76, 92, 62.5); arrow(bx, 83, 24, 92, 37.5)
-bx.text(1, 99, "Patient-grouped 10 × 10-fold CV; evaluation on held-out pre-event biopsies; one fitted model per repeat", fontsize=5.6, va="top", color="#333333")
+bx.text(1, 99, "Patient-grouped 10 × 10-fold CV, one fitted model per repeat;\nevaluation on held-out pre-event biopsies", fontsize=5.6, va="top", color="#333333")
 letter(fig, bx, "b", dx=-0.01)
 # ------------------------------------------------------------------ (c) three-band rule
 cx = fig.add_axes([0.53, 0.38, 0.45, 0.20]); cx.set_xlim(0, 100); cx.set_ylim(0, 100); cx.axis("off")
@@ -49,7 +49,7 @@ tp = J("triage/their_pre.json"); sh = {b: tp["bands"][b]["all"]["value"] for b i
 x0 = 2; wtot = 96; edges = [x0, x0 + wtot * sh["low"], x0 + wtot * (sh["low"] + sh["mid"]), x0 + wtot]
 for b, (l, r) in zip(("low", "mid", "high"), zip(edges[:-1], edges[1:])):
     cx.add_patch(plt.Rectangle((l, 62), r - l, 14, fc=BAND[b], ec="none")); cx.text((l + r) / 2, 69, f"{b} band\n{100 * sh[b]:.0f}% of biopsies", ha="center", va="center", fontsize=6)
-cx.annotate("", (x0 + wtot + 1, 62), (x0 - 1, 62), arrowprops=dict(arrowstyle="-|>", color="black", lw=0.7, mutation_scale=7)); cx.text(x0 + wtot / 2, 56, "H&E score (L-IMG); band widths show the per-repeat mean share of pre-event biopsies, not the score scale", ha="center", va="top", fontsize=5.4, color="#333333")
+cx.annotate("", (x0 + wtot + 1, 62), (x0 - 1, 62), arrowprops=dict(arrowstyle="-|>", color="black", lw=0.7, mutation_scale=7)); cx.text(x0 + wtot / 2, 56, "H&E score (L-IMG); band widths = per-repeat mean share of pre-event biopsies (not the score scale)", ha="center", va="top", fontsize=5.2, color="#333333")
 for e, lab, rule in ((edges[1], f"t_low = {cut['t_low']:.3f}", "95% training sensitivity"), (edges[2], f"t_high = {cut['c_star']:.3f}", "90% training specificity")):
     cx.plot([e, e], [60, 80], color="black", lw=0.8); cx.text(e, 82, lab, ha="center", va="bottom", fontsize=6, fontweight="bold"); cx.text(e, 94, rule, ha="center", va="bottom", fontsize=5.6, color="#333333")
 txt = {"low": "cleared without\nsequencing", "mid": f"sequenced; L-LATE ≥ t_seq = {cut['t_seq']:.3f}\n(80% training sensitivity in the band)\nflags, otherwise cleared", "high": "flagged\nwithout\nsequencing"}
@@ -57,11 +57,11 @@ for b, (l, r) in zip(("low", "mid", "high"), zip(edges[:-1], edges[1:])): cx.tex
 cx.text(x0, 6, "Cut-offs are chosen in each fold on inner out-of-fold training predictions;\nvalues shown are the medians over the 100 folds (the frozen cut-offs).", fontsize=5.4, color="#333333", va="top")
 letter(fig, cx, "c", dx=-0.03, dy=-0.01)
 # ------------------------------------------------------------------ (d) timeline
-dx_ = fig.add_axes([0.57, 0.09, 0.41, 0.22]); bins = np.arange(0, 15, 1.0); hist = {}
+dx_ = fig.add_axes([0.57, 0.11, 0.41, 0.21]); bins = np.arange(0, 15, 1.0); hist = {}
 for cls, v, dxo in (("P", 1, -0.2), ("N", 0, 0.2)):
     t = TIME[rows][y[rows] == v]; h, _ = np.histogram(t, bins); hist[cls] = h
     dx_.bar(bins[:-1] + 0.5 + dxo, h, width=0.38, color=CLASS[cls], label=f"{CLASS_NAME[cls]} (n {len(t)}, median {np.median(t):.1f} y)")
-dx_.set_xlabel("years before the first HGD/IMC endoscopy (P) or the last sequenced endoscopy (NP)", fontsize=6.3); dx_.set_ylabel("pre-event biopsies"); dx_.set_xlim(0, 14); dx_.legend(loc="upper right")
+dx_.set_xlabel("years before the first HGD/IMC endoscopy (P)\nor the last sequenced endoscopy (NP)", fontsize=6.3); dx_.set_ylabel("pre-event biopsies"); dx_.set_xlim(0, 14); dx_.legend(loc="upper right")
 letter(fig, dx_, "d", dx=-0.08)
 save(fig, "Fig1")
 dump("Fig1", {"counts_checked_against_sample_sheet": chk, "flow_text": [t for t, _ in flow], "exclusions_text": [t for t, _ in excl], "band_shares_per_repeat_mean": sh, "frozen_cutoffs_median": cut,

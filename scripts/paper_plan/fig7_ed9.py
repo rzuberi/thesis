@@ -35,7 +35,7 @@ for q, (part, xl) in enumerate((("time", "time before the first HGD/IMC endoscop
         d = res[part][lab]
         for k, m in enumerate(MODELS): ci_point(ax, i + (k - 1) * 0.22, d[m]["value"], d[m]["ci95"], MODEL[m], ms=3.5, label=MODEL_NAME[m] if (i == 0 and q == 0) else None)
         ax.text(i, 0.41, f"{d['n_progressor']} P / {d['n_non_progressor']} NP\n{d['n_patients']} patients", ha="center", fontsize=5.4, color="#333333")
-    ax.axhline(0.5, color=LIGHT, lw=0.6, ls=":"); ax.set_xticks(range(len(labs))); ax.set_xticklabels(labs); ax.set_ylim(0.36, 1.0); ax.set_xlim(-0.6, len(labs) - 0.4); ax.set_xlabel(xl, fontsize=6)
-    if q == 0: ax.set_ylabel("AUROC, fold-stratified [95% CI]"); ax.legend(loc="lower center", bbox_to_anchor=(0.5, 0.08), fontsize=5.6, ncol=3)
+    ax.axhline(0.5, color=LIGHT, lw=0.6, ls=":"); ax.set_xticks(range(len(labs))); ax.set_xticklabels(labs); ax.set_ylim(0.36, 1.06); ax.set_xlim(-0.6, len(labs) - 0.4); ax.set_xlabel(xl, fontsize=6)
+    if q == 0: ax.set_ylabel("AUROC, fold-stratified [95% CI]"); ax.legend(loc="upper center", bbox_to_anchor=(0.5, 1.0), fontsize=5.6, ncol=3)
     letter(fig, ax, "ab"[q], dx=-0.05)
 save(fig, "ED9"); dump("ED9", {"draws": len(boots), "strata": res, "note": "descriptive; time strata use the progressor biopsies of the stratum against all non-progressor pre-event biopsies; grade strata use both classes within the grade"})
