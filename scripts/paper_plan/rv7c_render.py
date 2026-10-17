@@ -18,7 +18,7 @@ LAB = {"r49": "**R49 gate**", "Bstar_endo": "B\\*-endo (sequence all, B\\* thres
 VD = {"within": "within", "shift": "fails: shift", "width": "fails: width"}
 
 A("\n## Results\n")
-A(f"Rendered by `scripts/paper_plan/rv7c_render.py` from `results/paper_final/review_round7c/` (aggregate results {RESC}). R49 exactly as in round 7 (max L-IMG endoscopy score, the triage's per-fold t_low / t_high / t_seq, top-L-IMG sample sequenced in the middle band). Single model = per-repeat values averaged over the 10 repeats; patient bootstrap 2,000 draws (`RandomState(0)`) with fitted models and cut-offs fixed; bound = one-sided 95% lower bound (5th percentile). Unit = pre-event endoscopy. Nothing was refitted.\n")
+A(f"Rendered by `scripts/paper_plan/rv7c_render.py` from `results/paper_final/review_round7c/` (aggregate results {RESC}). R49 exactly as in round 7 (max L-IMG endoscopy score, the triage's per-fold t_low / t_high / t_seq, top-L-IMG sample sequenced in the middle band). Single model = per-repeat values averaged over the 10 repeats; patient bootstrap 2,000 draws (`RandomState(0)`) with fitted models and cut-offs fixed; bound = one-sided 95% lower bound (5th percentile). Unit = pre-event endoscopy. No model was refitted for this item (refit rows read stored round-2 / round-4 / round-7 refit predictions).\n")
 A("| Item | Status |\n|---|---|")
 A("| primary comparison (R49 against B\\*-endo) and the other comparators | DONE |")
 for r in TAB:
@@ -50,7 +50,7 @@ for r in TAB:
     ss = f"{r['r49_sens_spec'][0]:.3f} / {r['r49_sens_spec'][1]:.3f}" if "r49_sens_spec" in r else ""
     sq = f"{r['share_samples_sequenced']:.3f} / {r['triage_share_samples_sequenced']:.3f}" if r.get("triage_share_samples_sequenced") is not None else f"{r['share_samples_sequenced']:.3f}"
     dt = f"{r['d_sens_vs_triage']:+.3f} ({r['d_sens_vs_triage_lower']:+.3f})" if "d_sens_vs_triage" in r else ""
-    A(f"| {r['item']} | {lab} | {ns} | {ss} | {r['d_sens']:+.3f} {ci(r['ci95'])} | {r['one_sided_lower']:+.3f} | {yn(r['within_-0.05'])} | {VD[r['verdict']] if r['row'] != 'primary' else '(reference) ' + VD[r['verdict']]} | {r['d_spec']:+.3f} | {sq} | {r['share_endoscopies_sequenced']:.3f} | {dt} |")
+    A(f"| {r['item'] if r['row'] != 'primary' else '—'} | {lab} | {ns} | {ss} | {r['d_sens']:+.3f} {ci(r['ci95'])} | {r['one_sided_lower']:+.3f} | {yn(r['within_-0.05'])} | {VD[r['verdict']] if r['row'] != 'primary' else '(reference) ' + VD[r['verdict']]} | {r['d_spec']:+.3f} | {sq} | {r['share_endoscopies_sequenced']:.3f} | {dt} |")
 fr = [r for r in TAB if r["row"] == "f3"][0]
 if fr["status"] == "done":
     A(f"\nRefit bootstrap: Monte Carlo SE of the 5th percentile {fr['mc_se_of_5th_percentile']:.4f}; share of the {F3['draws_scored']} draws with Δ below −0.05: {fr['share_of_draws_below_-0.05']:.3f}; held-out pre-event endoscopies per draw median {F3['n_endoscopies_per_draw']['median']:.0f} (range {F3['n_endoscopies_per_draw']['min']}–{F3['n_endoscopies_per_draw']['max']}).")
