@@ -221,7 +221,7 @@ def setup(row):
         lt = row in ("tis_lt256", "tis_lt256pure"); st = (TILES < 256) if lt else (TILES >= 256); mimg = O["L-IMG"].mean(1)
         top = np.array([s[np.argmax(mimg[s])] for s in es]); toprep = np.array([[s[np.argmax(O["L-IMG"][s, j])] for j in range(10)] for s in es])
         sel = np.array([st[s].all() for s in es]) if row.endswith("pure") else st[top]
-        d["top_sample_stratum_differs_in_some_repeat_share"] = r3(np.mean([(st[toprep[e]] != st[top[e]]).any() for e in range(len(es))]))
+        d["all_endoscopies_top_sample_stratum_changes_in_some_repeat_share"] = r3(np.mean([(st[toprep[e]] != st[top[e]]).any() for e in range(len(es))]))   # over all endoscopies, before selection
         d["definition"] = ("endoscopies whose pre-event samples are all " if row.endswith("pure") else "endoscopies whose top sample (highest L-IMG averaged over the 10 repeats) has ") + ("< 256" if lt else "≥ 256") + " tissue tiles; the endoscopy keeps all its samples; calls and cut-offs as stored (R32a strata)"
         eu = eu[sel]; es = [s for s, k in zip(es, sel) if k]
     return dict(O=O, I=I, FO=FO, popm=popm, CALLS=CALLS, band=band, info=info, sstar=sstar, eu=eu, es=es, meta=d)
@@ -331,7 +331,7 @@ elif TASK == "f3":
             te = f == k; s = E.pred_img.values[te]; la = E.late.values[te]
             bd = np.where(s < tl, 0, np.where(s > cs, 2, 1)) if tl <= cs else np.where(s > cs, 2, 0); band[te] = bd
             call["triage"][te] = np.where(bd == 1, la >= ts, bd == 2); call["B"][te] = la >= thr_b; call["B*"][te] = la > thr_bs; TL[te] = tl; CSt[te] = cs; TS[te] = ts
-        ek = (ENDOs.reindex(E.Sample).values.astype(str) + "#" + E["copy"].astype(str).values); assert pd.notna(ENDOs.reindex(E.Sample).values).all()
+        eo = ENDOs.reindex(E.Sample).values; assert pd.notna(eo).all(); ek = (pd.Series(eo).astype(str) + "#" + E["copy"].astype(str).reset_index(drop=True)).values
         ue, inv = np.unique(ek, return_inverse=True); es = [np.where(inv == g)[0] for g in range(len(ue))]; img = E.pred_img.values; late = E.late.values
         G = len(es); F = {nm: np.zeros(G, bool) for nm in ("r49", "Bstar_endo", "B_endo", "triage")}; NSq = np.zeros(G, int); NT = np.zeros(G, int); el = np.zeros(G, bool)
         for g, s in enumerate(es):
