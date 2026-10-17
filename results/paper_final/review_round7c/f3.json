@@ -1,0 +1,267 @@
+{
+ "task": "f3",
+ "R7C": {
+  "row": "f3",
+  "label": "refit bootstrap (F3, 200 draws)",
+  "status": "done",
+  "draws_scored": 200,
+  "mc_resamples": 2000,
+  "d_sens_vs_Bstar_endo": {
+   "mean": -0.012,
+   "median": -0.011,
+   "ci95_percentile": [
+    -0.08,
+    0.054
+   ],
+   "one_sided_5th_percentile": -0.072,
+   "sd": 0.033,
+   "non_inferior_at_-0.05": false,
+   "mc_se_of_5th_percentile": 0.0073,
+   "mc_ci95_of_5th_percentile": [
+    -0.08,
+    -0.053
+   ],
+   "share_of_draws_below_-0.05": 0.1
+  },
+  "d_spec_vs_Bstar_endo": {
+   "mean": 0.012,
+   "median": 0.011,
+   "ci95_percentile": [
+    -0.043,
+    0.079
+   ],
+   "one_sided_5th_percentile": -0.037,
+   "sd": 0.03,
+   "non_inferior_at_-0.05": true,
+   "mc_se_of_5th_percentile": 0.0042,
+   "mc_ci95_of_5th_percentile": [
+    -0.043,
+    -0.028
+   ],
+   "share_of_draws_below_-0.05": 0.015
+  },
+  "d_sens_vs_B_endo": {
+   "mean": 0.019,
+   "median": 0.013,
+   "ci95_percentile": [
+    -0.048,
+    0.104
+   ],
+   "one_sided_5th_percentile": -0.039,
+   "sd": 0.04,
+   "non_inferior_at_-0.05": true,
+   "mc_se_of_5th_percentile": 0.005,
+   "mc_ci95_of_5th_percentile": [
+    -0.048,
+    -0.028
+   ],
+   "share_of_draws_below_-0.05": 0.02
+  },
+  "d_spec_vs_B_endo": {
+   "mean": -0.044,
+   "median": -0.044,
+   "ci95_percentile": [
+    -0.133,
+    0.039
+   ],
+   "one_sided_5th_percentile": -0.125,
+   "sd": 0.049,
+   "non_inferior_at_-0.05": false,
+   "mc_se_of_5th_percentile": 0.0056,
+   "mc_ci95_of_5th_percentile": [
+    -0.133,
+    -0.112
+   ],
+   "share_of_draws_below_-0.05": 0.47
+  },
+  "d_sens_vs_triage": {
+   "mean": -0.003,
+   "median": 0.0,
+   "ci95_percentile": [
+    -0.031,
+    0.0
+   ],
+   "one_sided_5th_percentile": -0.027,
+   "sd": 0.009,
+   "non_inferior_at_-0.05": true,
+   "mc_se_of_5th_percentile": 0.005,
+   "mc_ci95_of_5th_percentile": [
+    -0.031,
+    -0.014
+   ],
+   "share_of_draws_below_-0.05": 0.005
+  },
+  "d_spec_vs_triage": {
+   "mean": 0.008,
+   "median": 0.005,
+   "ci95_percentile": [
+    0.0,
+    0.033
+   ],
+   "one_sided_5th_percentile": 0.0,
+   "sd": 0.009,
+   "non_inferior_at_-0.05": true,
+   "mc_se_of_5th_percentile": 0.0,
+   "mc_ci95_of_5th_percentile": [
+    0.0,
+    0.0
+   ],
+   "share_of_draws_below_-0.05": 0.0
+  },
+  "r49_sens": {
+   "mean": 0.874,
+   "median": 0.879,
+   "ci95_percentile": [
+    0.757,
+    0.962
+   ],
+   "one_sided_5th_percentile": 0.787,
+   "sd": 0.053,
+   "non_inferior_at_-0.05": true,
+   "mc_se_of_5th_percentile": 0.01,
+   "mc_ci95_of_5th_percentile": [
+    0.757,
+    0.8
+   ],
+   "share_of_draws_below_-0.05": 0.0
+  },
+  "r49_spec": {
+   "mean": 0.478,
+   "median": 0.491,
+   "ci95_percentile": [
+    0.261,
+    0.65
+   ],
+   "one_sided_5th_percentile": 0.302,
+   "sd": 0.103,
+   "non_inferior_at_-0.05": true,
+   "mc_se_of_5th_percentile": 0.0224,
+   "mc_ci95_of_5th_percentile": [
+    0.262,
+    0.337
+   ],
+   "share_of_draws_below_-0.05": 0.0
+  },
+  "Bstar_endo_sens": {
+   "mean": 0.886,
+   "median": 0.892,
+   "ci95_percentile": [
+    0.773,
+    0.973
+   ],
+   "one_sided_5th_percentile": 0.795,
+   "sd": 0.053,
+   "non_inferior_at_-0.05": true,
+   "mc_se_of_5th_percentile": 0.0098,
+   "mc_ci95_of_5th_percentile": [
+    0.773,
+    0.812
+   ],
+   "share_of_draws_below_-0.05": 0.0
+  },
+  "Bstar_endo_spec": {
+   "mean": 0.466,
+   "median": 0.476,
+   "ci95_percentile": [
+    0.267,
+    0.628
+   ],
+   "one_sided_5th_percentile": 0.281,
+   "sd": 0.099,
+   "non_inferior_at_-0.05": true,
+   "mc_se_of_5th_percentile": 0.0195,
+   "mc_ci95_of_5th_percentile": [
+    0.268,
+    0.323
+   ],
+   "share_of_draws_below_-0.05": 0.0
+  },
+  "share_samples_r49": {
+   "mean": 0.293,
+   "median": 0.292,
+   "ci95_percentile": [
+    0.21,
+    0.385
+   ],
+   "one_sided_5th_percentile": 0.221,
+   "sd": 0.046,
+   "non_inferior_at_-0.05": true,
+   "mc_se_of_5th_percentile": 0.006,
+   "mc_ci95_of_5th_percentile": [
+    0.21,
+    0.234
+   ],
+   "share_of_draws_below_-0.05": 0.0
+  },
+  "share_endoscopies_r49": {
+   "mean": 0.578,
+   "median": 0.578,
+   "ci95_percentile": [
+    0.417,
+    0.765
+   ],
+   "one_sided_5th_percentile": 0.441,
+   "sd": 0.085,
+   "non_inferior_at_-0.05": true,
+   "mc_se_of_5th_percentile": 0.0131,
+   "mc_ci95_of_5th_percentile": [
+    0.416,
+    0.463
+   ],
+   "share_of_draws_below_-0.05": 0.0
+  },
+  "share_samples_triage": {
+   "mean": 0.567,
+   "median": 0.566,
+   "ci95_percentile": [
+    0.381,
+    0.779
+   ],
+   "one_sided_5th_percentile": 0.4,
+   "sd": 0.1,
+   "non_inferior_at_-0.05": true,
+   "mc_se_of_5th_percentile": 0.0129,
+   "mc_ci95_of_5th_percentile": [
+    0.382,
+    0.427
+   ],
+   "share_of_draws_below_-0.05": 0.0
+  },
+  "sample_level_triage_minus_Bstar_d_sens": {
+   "mean": -0.018,
+   "median": -0.016,
+   "ci95_percentile": [
+    -0.079,
+    0.04
+   ],
+   "one_sided_5th_percentile": -0.069,
+   "sd": 0.033,
+   "non_inferior_at_-0.05": false,
+   "mc_se_of_5th_percentile": 0.0046,
+   "mc_ci95_of_5th_percentile": [
+    -0.079,
+    -0.062
+   ],
+   "share_of_draws_below_-0.05": 0.145
+  },
+  "n_endoscopies_per_draw": {
+   "median": 286.0,
+   "min": 244,
+   "max": 330
+  },
+  "definition": "stored F3 refit-bootstrap draws (one stratified 10-fold CV per patient-bootstrap draw with lambda refitted); per draw the triage cut-offs, t_seq and the B* / (B) thresholds re-derived from the draw's stored inner predictions by the rv4 r33_f3 rule; R49 and the endoscopy comparators on the draw's held-out pre-event endoscopies (resampled copies = distinct endoscopies); no vote",
+  "checks": {
+   "sample_level_triage_minus_Bstar_mean_and_5th_vs_R33": {
+    "got": [
+     -0.018,
+     -0.069
+    ],
+    "expected": [
+     -0.018,
+     -0.069
+    ]
+   }
+  }
+ },
+ "prespec": "6794545"
+}
