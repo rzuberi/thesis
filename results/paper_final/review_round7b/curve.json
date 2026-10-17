@@ -1,0 +1,214 @@
+{
+ "task": "curve",
+ "curve": {
+  "variant": "max | sample-level cut-offs | highest | L-LATE",
+  "grid": [
+   {
+    "t_low_training_sensitivity": 0.9,
+    "t_high_training_specificity": 0.85,
+    "gate_most_chosen_variant": {
+     "endoscopy_sensitivity": 0.894,
+     "endoscopy_specificity": 0.58,
+     "share_samples_sequenced": 0.175,
+     "share_endoscopies_sequenced": 0.346
+    },
+    "triage": {
+     "endoscopy_sensitivity": 0.894,
+     "endoscopy_specificity": 0.574,
+     "share_samples_sequenced": 0.298,
+     "share_endoscopies_sequenced": 0.434
+    },
+    "random_one_matched_to_gate_endoscopy_specificity": {
+     "endoscopy_sensitivity": 0.923,
+     "endoscopy_specificity": 0.58,
+     "share_samples_sequenced": 0.504,
+     "share_endoscopies_sequenced": 1.0
+    }
+   },
+   {
+    "t_low_training_sensitivity": 0.9,
+    "t_high_training_specificity": 0.9,
+    "gate_most_chosen_variant": {
+     "endoscopy_sensitivity": 0.887,
+     "endoscopy_specificity": 0.611,
+     "share_samples_sequenced": 0.209,
+     "share_endoscopies_sequenced": 0.415
+    },
+    "triage": {
+     "endoscopy_sensitivity": 0.887,
+     "endoscopy_specificity": 0.603,
+     "share_samples_sequenced": 0.342,
+     "share_endoscopies_sequenced": 0.493
+    },
+    "random_one_matched_to_gate_endoscopy_specificity": {
+     "endoscopy_sensitivity": 0.908,
+     "endoscopy_specificity": 0.611,
+     "share_samples_sequenced": 0.504,
+     "share_endoscopies_sequenced": 1.0
+    }
+   },
+   {
+    "t_low_training_sensitivity": 0.9,
+    "t_high_training_specificity": 0.95,
+    "gate_most_chosen_variant": {
+     "endoscopy_sensitivity": 0.865,
+     "endoscopy_specificity": 0.645,
+     "share_samples_sequenced": 0.249,
+     "share_endoscopies_sequenced": 0.494
+    },
+    "triage": {
+     "endoscopy_sensitivity": 0.865,
+     "endoscopy_specificity": 0.638,
+     "share_samples_sequenced": 0.401,
+     "share_endoscopies_sequenced": 0.566
+    },
+    "random_one_matched_to_gate_endoscopy_specificity": {
+     "endoscopy_sensitivity": 0.886,
+     "endoscopy_specificity": 0.645,
+     "share_samples_sequenced": 0.504,
+     "share_endoscopies_sequenced": 1.0
+    }
+   },
+   {
+    "t_low_training_sensitivity": 0.95,
+    "t_high_training_specificity": 0.85,
+    "gate_most_chosen_variant": {
+     "endoscopy_sensitivity": 0.917,
+     "endoscopy_specificity": 0.526,
+     "share_samples_sequenced": 0.22,
+     "share_endoscopies_sequenced": 0.437
+    },
+    "triage": {
+     "endoscopy_sensitivity": 0.919,
+     "endoscopy_specificity": 0.514,
+     "share_samples_sequenced": 0.414,
+     "share_endoscopies_sequenced": 0.547
+    },
+    "random_one_matched_to_gate_endoscopy_specificity": {
+     "endoscopy_sensitivity": 0.944,
+     "endoscopy_specificity": 0.526,
+     "share_samples_sequenced": 0.504,
+     "share_endoscopies_sequenced": 1.0
+    }
+   },
+   {
+    "t_low_training_sensitivity": 0.95,
+    "t_high_training_specificity": 0.9,
+    "gate_most_chosen_variant": {
+     "endoscopy_sensitivity": 0.907,
+     "endoscopy_specificity": 0.56,
+     "share_samples_sequenced": 0.255,
+     "share_endoscopies_sequenced": 0.505
+    },
+    "triage": {
+     "endoscopy_sensitivity": 0.909,
+     "endoscopy_specificity": 0.549,
+     "share_samples_sequenced": 0.458,
+     "share_endoscopies_sequenced": 0.597
+    },
+    "random_one_matched_to_gate_endoscopy_specificity": {
+     "endoscopy_sensitivity": 0.931,
+     "endoscopy_specificity": 0.56,
+     "share_samples_sequenced": 0.504,
+     "share_endoscopies_sequenced": 1.0
+    }
+   },
+   {
+    "t_low_training_sensitivity": 0.95,
+    "t_high_training_specificity": 0.95,
+    "gate_most_chosen_variant": {
+     "endoscopy_sensitivity": 0.895,
+     "endoscopy_specificity": 0.603,
+     "share_samples_sequenced": 0.295,
+     "share_endoscopies_sequenced": 0.585
+    },
+    "triage": {
+     "endoscopy_sensitivity": 0.897,
+     "endoscopy_specificity": 0.589,
+     "share_samples_sequenced": 0.517,
+     "share_endoscopies_sequenced": 0.663
+    },
+    "random_one_matched_to_gate_endoscopy_specificity": {
+     "endoscopy_sensitivity": 0.914,
+     "endoscopy_specificity": 0.603,
+     "share_samples_sequenced": 0.504,
+     "share_endoscopies_sequenced": 1.0
+    }
+   },
+   {
+    "t_low_training_sensitivity": 0.98,
+    "t_high_training_specificity": 0.85,
+    "gate_most_chosen_variant": {
+     "endoscopy_sensitivity": 0.936,
+     "endoscopy_specificity": 0.482,
+     "share_samples_sequenced": 0.266,
+     "share_endoscopies_sequenced": 0.527
+    },
+    "triage": {
+     "endoscopy_sensitivity": 0.941,
+     "endoscopy_specificity": 0.47,
+     "share_samples_sequenced": 0.542,
+     "share_endoscopies_sequenced": 0.655
+    },
+    "random_one_matched_to_gate_endoscopy_specificity": {
+     "endoscopy_sensitivity": 0.958,
+     "endoscopy_specificity": 0.482,
+     "share_samples_sequenced": 0.504,
+     "share_endoscopies_sequenced": 1.0
+    }
+   },
+   {
+    "t_low_training_sensitivity": 0.98,
+    "t_high_training_specificity": 0.9,
+    "gate_most_chosen_variant": {
+     "endoscopy_sensitivity": 0.927,
+     "endoscopy_specificity": 0.514,
+     "share_samples_sequenced": 0.3,
+     "share_endoscopies_sequenced": 0.595
+    },
+    "triage": {
+     "endoscopy_sensitivity": 0.931,
+     "endoscopy_specificity": 0.5,
+     "share_samples_sequenced": 0.586,
+     "share_endoscopies_sequenced": 0.699
+    },
+    "random_one_matched_to_gate_endoscopy_specificity": {
+     "endoscopy_sensitivity": 0.95,
+     "endoscopy_specificity": 0.514,
+     "share_samples_sequenced": 0.504,
+     "share_endoscopies_sequenced": 1.0
+    }
+   },
+   {
+    "t_low_training_sensitivity": 0.98,
+    "t_high_training_specificity": 0.95,
+    "gate_most_chosen_variant": {
+     "endoscopy_sensitivity": 0.914,
+     "endoscopy_specificity": 0.567,
+     "share_samples_sequenced": 0.34,
+     "share_endoscopies_sequenced": 0.675
+    },
+    "triage": {
+     "endoscopy_sensitivity": 0.917,
+     "endoscopy_specificity": 0.547,
+     "share_samples_sequenced": 0.645,
+     "share_endoscopies_sequenced": 0.761
+    },
+    "random_one_matched_to_gate_endoscopy_specificity": {
+     "endoscopy_sensitivity": 0.927,
+     "endoscopy_specificity": 0.567,
+     "share_samples_sequenced": 0.504,
+     "share_endoscopies_sequenced": 1.0
+    }
+   }
+  ],
+  "random_one_own_threshold": {
+   "endoscopy_sensitivity": 0.827,
+   "endoscopy_specificity": 0.74,
+   "share_samples_sequenced": 0.504,
+   "share_endoscopies_sequenced": 1.0
+  },
+  "note": "descriptive, no intervals; the most-chosen variant applied in every fold (not nested) with cut-offs at each grid point (sample-level: the triage rule at those quantiles; endoscopy-level: the same quantiles on inner endoscopy scores); t_seq and the L-CNV threshold from the triage at that grid point; random-one has no cut-off quantiles, so it is shown at its own threshold and matched to the gate's endoscopy specificity at each grid point (evaluation-matched, per repeat)"
+ },
+ "prespec": "0764a2e"
+}
