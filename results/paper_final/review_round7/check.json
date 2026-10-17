@@ -1,0 +1,121 @@
+{
+ "task": "check",
+ "checks": {
+  "outer_cnv_their_rep_01_vs_stored_cfg_00": {
+   "n": 676,
+   "max_abs_pred_diff": 0.0,
+   "folds_equal": true,
+   "lambda_max_abs_diff": 0.0
+  },
+  "outer_img_rep_01_vs_stored_cfg_02": {
+   "n": 676,
+   "max_abs_pred_diff": 0.0,
+   "folds_equal": true,
+   "lambda_max_abs_diff": 0.0
+  },
+  "inner_cnv_their_rep_01_10_folds_vs_stored": {
+   "files": 10,
+   "n": 6084,
+   "max_abs_pred_diff": 0.0,
+   "folds_equal": true,
+   "lambda_max_abs_diff": 0.0
+  },
+  "inner_img_rep_01_10_folds_vs_stored": {
+   "files": 10,
+   "n": 6084,
+   "max_abs_pred_diff": 0.0,
+   "folds_equal": true,
+   "lambda_max_abs_diff": 0.0
+  },
+  "all_passed": true,
+  "r33_row1_expected_-0.016_-0.032_+0.033_+0.045": {
+   "n_samples": 571,
+   "n_progressor_samples": 161,
+   "n_patients": 75,
+   "n_progressor_patients": 32,
+   "triage": {
+    "sensitivity": 0.865,
+    "specificity": 0.697,
+    "share_sequenced": 0.458
+   },
+   "vs_Bstar": {
+    "d_sens": -0.016,
+    "ci95": [
+     -0.036,
+     0.001
+    ],
+    "one_sided_lower": -0.032,
+    "within_-0.05": true,
+    "d_spec": 0.032,
+    "d_spec_ci95": [
+     -0.002,
+     0.071
+    ],
+    "comparator_sens_spec": [
+     0.881,
+     0.665
+    ]
+   },
+   "vs_B": {
+    "d_sens": 0.033,
+    "ci95": [
+     0.005,
+     0.062
+    ],
+    "one_sided_lower": 0.011,
+    "within_-0.05": true,
+    "d_spec": -0.065,
+    "d_spec_ci95": [
+     -0.092,
+     -0.034
+    ],
+    "comparator_sens_spec": [
+     0.832,
+     0.762
+    ]
+   },
+   "IMG_minus_CNV": {
+    "delta": 0.045,
+    "ci95": [
+     -0.036,
+     0.136
+    ],
+    "one_sided_lower": -0.025,
+    "within_-0.05": true
+   },
+   "auroc": {
+    "L-CNV": {
+     "value": 0.801,
+     "ci95": [
+      0.71,
+      0.875
+     ]
+    },
+    "L-IMG": {
+     "value": 0.847,
+     "ci95": [
+      0.798,
+      0.894
+     ]
+    },
+    "L-LATE": {
+     "value": 0.889,
+     "ci95": [
+      0.83,
+      0.934
+     ]
+    }
+   }
+  },
+  "r38_triage_sensitivity_by_row": {
+   "primary (R33 row 1, for reference)": 0.865,
+   "(a) 'excluded' flag removed": 0.852,
+   "(a) 'excluded', 'remove' and 'inconsistency' flags removed": 0.843,
+   "(b) non-progressor samples < 1 year before the last sequenced endoscopy removed": 0.865,
+   "(b) non-progressor samples < 2 years before the last sequenced endoscopy removed": 0.865,
+   "(c) non-progressor patients with a later HGD+ report removed": 0.865,
+   "(d) (a) + (b, 1 year) + (c)": 0.852
+  }
+ },
+ "prespec": "724ff97"
+}

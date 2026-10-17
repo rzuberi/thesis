@@ -1,0 +1,205 @@
+{
+ "task": "refit_r43b",
+ "refit": {
+  "variant": "r43b",
+  "n_samples": 456,
+  "n_progressor_samples": 161,
+  "n_patients": 75,
+  "n_progressor_patients": 32,
+  "triage": {
+   "sensitivity": 0.859,
+   "specificity": 0.703,
+   "share_sequenced": 0.484
+  },
+  "vs_Bstar": {
+   "d_sens": -0.015,
+   "ci95": [
+    -0.04,
+    0.004
+   ],
+   "one_sided_lower": -0.035,
+   "within_-0.05": true,
+   "d_spec": 0.019,
+   "d_spec_ci95": [
+    -0.007,
+    0.05
+   ],
+   "comparator_sens_spec": [
+    0.874,
+    0.684
+   ]
+  },
+  "vs_B": {
+   "d_sens": 0.035,
+   "ci95": [
+    0.004,
+    0.066
+   ],
+   "one_sided_lower": 0.009,
+   "within_-0.05": true,
+   "d_spec": -0.062,
+   "d_spec_ci95": [
+    -0.091,
+    -0.03
+   ],
+   "comparator_sens_spec": [
+    0.824,
+    0.765
+   ]
+  },
+  "IMG_minus_CNV": {
+   "delta": 0.029,
+   "ci95": [
+    -0.052,
+    0.121
+   ],
+   "one_sided_lower": -0.038,
+   "within_-0.05": true
+  },
+  "auroc": {
+   "L-CNV": {
+    "value": 0.806,
+    "ci95": [
+     0.712,
+     0.878
+    ]
+   },
+   "L-IMG": {
+    "value": 0.835,
+    "ci95": [
+     0.779,
+     0.886
+    ]
+   },
+   "L-LATE": {
+    "value": 0.882,
+    "ci95": [
+     0.813,
+     0.932
+    ]
+   }
+  },
+  "folds_no_middle_band": 0,
+  "t_seq_fallback": 0,
+  "table1": {
+   "rules": {
+    "T": {
+     "share_sequenced": 0.484,
+     "sensitivity": 0.859,
+     "sens_ci95": [
+      0.775,
+      0.923
+     ],
+     "specificity": 0.703,
+     "spec_ci95": [
+      0.633,
+      0.766
+     ],
+     "endoscopy_sensitivity": 0.903,
+     "endoscopy_sens_ci95": [
+      0.851,
+      0.948
+     ],
+     "endoscopy_specificity": 0.565,
+     "endoscopy_spec_ci95": [
+      0.469,
+      0.661
+     ],
+     "progressor_patients_missed": 0.4,
+     "non_progressor_patients_flagged": 31.5
+    },
+    "B*": {
+     "share_sequenced": 1.0,
+     "sensitivity": 0.874,
+     "sens_ci95": [
+      0.783,
+      0.94
+     ],
+     "specificity": 0.684,
+     "spec_ci95": [
+      0.595,
+      0.763
+     ],
+     "endoscopy_sensitivity": 0.903,
+     "endoscopy_sens_ci95": [
+      0.849,
+      0.951
+     ],
+     "endoscopy_specificity": 0.555,
+     "endoscopy_spec_ci95": [
+      0.449,
+      0.655
+     ],
+     "progressor_patients_missed": 0.5,
+     "non_progressor_patients_flagged": 31.7
+    },
+    "B": {
+     "share_sequenced": 1.0,
+     "sensitivity": 0.824,
+     "sens_ci95": [
+      0.73,
+      0.901
+     ],
+     "specificity": 0.765,
+     "spec_ci95": [
+      0.676,
+      0.838
+     ],
+     "endoscopy_sensitivity": 0.85,
+     "endoscopy_sens_ci95": [
+      0.772,
+      0.918
+     ],
+     "endoscopy_specificity": 0.647,
+     "endoscopy_spec_ci95": [
+      0.543,
+      0.742
+     ],
+     "progressor_patients_missed": 1.2,
+     "non_progressor_patients_flagged": 27.7
+    },
+    "C*": {
+     "share_sequenced": 0.0,
+     "sensitivity": 0.776,
+     "sens_ci95": [
+      0.692,
+      0.862
+     ],
+     "specificity": 0.709,
+     "spec_ci95": [
+      0.668,
+      0.75
+     ],
+     "endoscopy_sensitivity": 0.861,
+     "endoscopy_sens_ci95": [
+      0.799,
+      0.924
+     ],
+     "endoscopy_specificity": 0.554,
+     "endoscopy_spec_ci95": [
+      0.487,
+      0.629
+     ],
+     "progressor_patients_missed": 1.0,
+     "non_progressor_patients_flagged": 34.2
+    }
+   },
+   "n": {
+    "n_samples": 456,
+    "n_progressor_samples": 161,
+    "n_patients": 75,
+    "n_progressor_patients": 32,
+    "n_endoscopies": 238,
+    "n_progressor_endoscopies": 88
+   },
+   "draws": 2000,
+   "paired": {}
+  },
+  "n_total": {
+   "samples": 561,
+   "patients": 80,
+   "progressor_patients": 37
+  }
+ },
+ "prespec": "724ff97"
+}

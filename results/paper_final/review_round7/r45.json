@@ -1,0 +1,143 @@
+{
+ "task": "r45",
+ "R45": {
+  "n_samples": 450,
+  "n_progressor_samples": 111,
+  "n_patients": 71,
+  "n_progressor_patients": 31,
+  "draws": 2000,
+  "target_specificity_sample": 0.794,
+  "target_specificity_patient": 0.45,
+  "grade_or_p53": {
+   "sample": {
+    "sensitivity": 0.432,
+    "specificity": 0.794
+   },
+   "patient": {
+    "sensitivity": 0.613,
+    "specificity": 0.45
+   }
+  },
+  "per_sample": {
+   "L-LATE": {
+    "sensitivity_at_matched_specificity": 0.812,
+    "sens_ci95": [
+     0.696,
+     0.911
+    ],
+    "d_sens_minus_grade_or_p53": {
+     "delta": 0.379,
+     "ci95": [
+      0.225,
+      0.529
+     ],
+     "p_two_sided": 0.0,
+     "one_sided_95_lower": 0.25,
+     "non_inferior_at_-0.05": true
+    }
+   },
+   "L-IMG": {
+    "sensitivity_at_matched_specificity": 0.75,
+    "sens_ci95": [
+     0.596,
+     0.853
+    ],
+    "d_sens_minus_grade_or_p53": {
+     "delta": 0.317,
+     "ci95": [
+      0.136,
+      0.465
+     ],
+     "p_two_sided": 0.0,
+     "one_sided_95_lower": 0.166,
+     "non_inferior_at_-0.05": true
+    }
+   }
+  },
+  "per_patient": {
+   "L-LATE": {
+    "sensitivity_at_matched_specificity": 0.948,
+    "sens_ci95": [
+     0.844,
+     0.996
+    ],
+    "d_sens_minus_grade_or_p53": {
+     "delta": 0.335,
+     "ci95": [
+      0.147,
+      0.503
+     ],
+     "p_two_sided": 0.0,
+     "one_sided_95_lower": 0.179,
+     "non_inferior_at_-0.05": true
+    }
+   },
+   "L-IMG": {
+    "sensitivity_at_matched_specificity": 0.865,
+    "sens_ci95": [
+     0.726,
+     0.963
+    ],
+    "d_sens_minus_grade_or_p53": {
+     "delta": 0.252,
+     "ci95": [
+      0.059,
+      0.442
+     ],
+     "p_two_sided": 0.012,
+     "one_sided_95_lower": 0.097,
+     "non_inferior_at_-0.05": true
+    }
+   }
+  },
+  "triage_own_operating_point": {
+   "sample": {
+    "sensitivity": 0.871,
+    "specificity": 0.716,
+    "d_sens_minus_grade_or_p53": {
+     "delta": 0.439,
+     "ci95": [
+      0.308,
+      0.568
+     ],
+     "p_two_sided": 0.0,
+     "one_sided_95_lower": 0.328,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_minus_grade_or_p53": {
+     "delta": -0.078,
+     "ci95": [
+      -0.163,
+      0.011
+     ],
+     "p_two_sided": 0.082
+    }
+   },
+   "patient": {
+    "sensitivity": 0.961,
+    "specificity": 0.282,
+    "d_sens_minus_grade_or_p53": {
+     "delta": 0.348,
+     "ci95": [
+      0.179,
+      0.513
+     ],
+     "p_two_sided": 0.0,
+     "one_sided_95_lower": 0.213,
+     "non_inferior_at_-0.05": true
+    },
+    "d_spec_minus_grade_or_p53": {
+     "delta": -0.167,
+     "ci95": [
+      -0.312,
+      -0.022
+     ],
+     "p_two_sided": 0.029
+    }
+   }
+  },
+  "share_sequenced_triage": 0.452,
+  "note": "pre-event samples with a p53 result; threshold of each model set per repeat on these samples so that its specificity equals that of grade ID/LGD or p53 aberrant in the same samples (evaluation-matched; re-matched in every bootstrap draw); patient score = maximum over the patient's samples; patient bootstrap with resampled copies as distinct patients"
+ },
+ "prespec": "724ff97"
+}

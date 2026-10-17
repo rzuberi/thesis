@@ -1,0 +1,193 @@
+{
+ "task": "r53",
+ "R53": {
+  "event_date_source_progressor_patients": {
+   "sheet_only": 2,
+   "db_only": 6,
+   "both_db_earlier": 8,
+   "both_sheet_earlier_or_same": 21,
+   "neither": 0,
+   "not_linked": 1
+  },
+  "diagnostics_pre_event_progressor_samples": {
+   "dated_on_or_after_sheet_event_date": 6,
+   "dated_on_or_after_db_first_hgdplus": 6,
+   "dated_more_than_14_days_after_db_first_hgdplus": 4,
+   "dated_within_14_days_of_db_first_hgdplus": 2
+  },
+  "primary_on_or_after": {
+   "n_removed_samples": 10,
+   "n_removed_patients_affected": 4,
+   "removed_grade": {
+    "LGD": 6,
+    "NDBE": 2,
+    "ID": 2
+   },
+   "n_samples": 561,
+   "n_progressor_samples": 151,
+   "n_patients": 74,
+   "n_progressor_patients": 31,
+   "triage": {
+    "sensitivity": 0.86,
+    "specificity": 0.697,
+    "share_sequenced": 0.461
+   },
+   "vs_Bstar": {
+    "d_sens": -0.013,
+    "ci95": [
+     -0.036,
+     0.005
+    ],
+    "one_sided_lower": -0.032,
+    "within_-0.05": true,
+    "d_spec": 0.032,
+    "d_spec_ci95": [
+     -0.001,
+     0.072
+    ],
+    "comparator_sens_spec": [
+     0.874,
+     0.665
+    ]
+   },
+   "vs_B": {
+    "d_sens": 0.036,
+    "ci95": [
+     0.009,
+     0.069
+    ],
+    "one_sided_lower": 0.013,
+    "within_-0.05": true,
+    "d_spec": -0.065,
+    "d_spec_ci95": [
+     -0.092,
+     -0.034
+    ],
+    "comparator_sens_spec": [
+     0.824,
+     0.762
+    ]
+   },
+   "IMG_minus_CNV": {
+    "delta": 0.056,
+    "ci95": [
+     -0.027,
+     0.144
+    ],
+    "one_sided_lower": -0.015,
+    "within_-0.05": true
+   },
+   "auroc": {
+    "L-CNV": {
+     "value": 0.791,
+     "ci95": [
+      0.701,
+      0.866
+     ]
+    },
+    "L-IMG": {
+     "value": 0.847,
+     "ci95": [
+      0.795,
+      0.895
+     ]
+    },
+    "L-LATE": {
+     "value": 0.884,
+     "ci95": [
+      0.823,
+      0.932
+     ]
+    }
+   }
+  },
+  "same_endoscopy_within_14_days_or_after": {
+   "n_removed_samples": 10,
+   "n_removed_patients_affected": 4,
+   "removed_grade": {
+    "LGD": 6,
+    "NDBE": 2,
+    "ID": 2
+   },
+   "n_samples": 561,
+   "n_progressor_samples": 151,
+   "n_patients": 74,
+   "n_progressor_patients": 31,
+   "triage": {
+    "sensitivity": 0.86,
+    "specificity": 0.697,
+    "share_sequenced": 0.461
+   },
+   "vs_Bstar": {
+    "d_sens": -0.013,
+    "ci95": [
+     -0.036,
+     0.005
+    ],
+    "one_sided_lower": -0.032,
+    "within_-0.05": true,
+    "d_spec": 0.032,
+    "d_spec_ci95": [
+     -0.001,
+     0.072
+    ],
+    "comparator_sens_spec": [
+     0.874,
+     0.665
+    ]
+   },
+   "vs_B": {
+    "d_sens": 0.036,
+    "ci95": [
+     0.009,
+     0.069
+    ],
+    "one_sided_lower": 0.013,
+    "within_-0.05": true,
+    "d_spec": -0.065,
+    "d_spec_ci95": [
+     -0.092,
+     -0.034
+    ],
+    "comparator_sens_spec": [
+     0.824,
+     0.762
+    ]
+   },
+   "IMG_minus_CNV": {
+    "delta": 0.056,
+    "ci95": [
+     -0.027,
+     0.144
+    ],
+    "one_sided_lower": -0.015,
+    "within_-0.05": true
+   },
+   "auroc": {
+    "L-CNV": {
+     "value": 0.791,
+     "ci95": [
+      0.701,
+      0.866
+     ]
+    },
+    "L-IMG": {
+     "value": 0.847,
+     "ci95": [
+      0.795,
+      0.895
+     ]
+    },
+    "L-LATE": {
+     "value": 0.884,
+     "ci95": [
+      0.823,
+      0.932
+     ]
+    }
+   }
+  },
+  "note": "event date = earlier of the sheet event endoscopy (exact date of the first HGD/IMC sample, hz_prep.py event) and the first HGD+ confirmed-grade pathology report in the Barrett's database (r2_main.py linkage); pre-event samples dated (pre_event_cohort.Date) on or after it are removed from evaluation; stored calls and cut-offs (no refit); the 14-day row also removes samples from the same endoscopy as the first database HGD+ report (lookup convention)"
+ },
+ "prespec": "724ff97"
+}

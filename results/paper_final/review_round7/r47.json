@@ -1,0 +1,320 @@
+{
+ "task": "r47",
+ "R47": {
+  "rules": {
+   "T": {
+    "sensitivity": 0.865,
+    "false_positive_rate": 0.303,
+    "share_sequenced_progressor": 0.36,
+    "share_sequenced_non_progressor": 0.497,
+    "share_sequenced_cohort": 0.458,
+    "a_flagged_non_progressor_endoscopies_per_patient_year": 0.315,
+    "flagged_non_progressor_endoscopies_mean": 90.2,
+    "projection_per_1000_samples": {
+     "0.005": {
+      "samples_sequenced": 496.4,
+      "flagged_samples": 305.7,
+      "flagged_endoscopies": 237.1,
+      "progressor_samples_missed": 0.68,
+      "cost_gbp": 153876,
+      "cost_sequencing_gbp": 42193,
+      "cost_repeat_endoscopy_gbp": 111683,
+      "c_share_sequenced_reweighted": 0.496
+     },
+     "0.02": {
+      "samples_sequenced": 494.3,
+      "flagged_samples": 314.2,
+      "flagged_endoscopies": 242.1,
+      "progressor_samples_missed": 2.71,
+      "cost_gbp": 156056,
+      "cost_sequencing_gbp": 42019,
+      "cost_repeat_endoscopy_gbp": 114037,
+      "c_share_sequenced_reweighted": 0.494
+     },
+     "0.05": {
+      "samples_sequenced": 490.2,
+      "flagged_samples": 331.0,
+      "flagged_endoscopies": 251.9,
+      "progressor_samples_missed": 6.77,
+      "cost_gbp": 160326,
+      "cost_sequencing_gbp": 41670,
+      "cost_repeat_endoscopy_gbp": 118656,
+      "c_share_sequenced_reweighted": 0.49
+     }
+    }
+   },
+   "2B": {
+    "sensitivity": 0.865,
+    "false_positive_rate": 0.303,
+    "share_sequenced_progressor": 0.934,
+    "share_sequenced_non_progressor": 0.595,
+    "share_sequenced_cohort": 0.691,
+    "a_flagged_non_progressor_endoscopies_per_patient_year": 0.315,
+    "flagged_non_progressor_endoscopies_mean": 90.2,
+    "projection_per_1000_samples": {
+     "0.005": {
+      "samples_sequenced": 596.6,
+      "flagged_samples": 305.7,
+      "flagged_endoscopies": 237.1,
+      "progressor_samples_missed": 0.68,
+      "cost_gbp": 162392,
+      "cost_sequencing_gbp": 50709,
+      "cost_repeat_endoscopy_gbp": 111683,
+      "c_share_sequenced_reweighted": 0.597
+     },
+     "0.02": {
+      "samples_sequenced": 601.7,
+      "flagged_samples": 314.2,
+      "flagged_endoscopies": 242.1,
+      "progressor_samples_missed": 2.71,
+      "cost_gbp": 165179,
+      "cost_sequencing_gbp": 51141,
+      "cost_repeat_endoscopy_gbp": 114037,
+      "c_share_sequenced_reweighted": 0.602
+     },
+     "0.05": {
+      "samples_sequenced": 611.8,
+      "flagged_samples": 331.0,
+      "flagged_endoscopies": 251.9,
+      "progressor_samples_missed": 6.77,
+      "cost_gbp": 170663,
+      "cost_sequencing_gbp": 52007,
+      "cost_repeat_endoscopy_gbp": 118656,
+      "c_share_sequenced_reweighted": 0.612
+     }
+    }
+   },
+   "B*": {
+    "sensitivity": 0.881,
+    "false_positive_rate": 0.335,
+    "share_sequenced_progressor": 1.0,
+    "share_sequenced_non_progressor": 1.0,
+    "share_sequenced_cohort": 1.0,
+    "a_flagged_non_progressor_endoscopies_per_patient_year": 0.329,
+    "flagged_non_progressor_endoscopies_mean": 94.1,
+    "projection_per_1000_samples": {
+     "0.005": {
+      "samples_sequenced": 1000.0,
+      "flagged_samples": 337.4,
+      "flagged_endoscopies": 255.6,
+      "progressor_samples_missed": 0.6,
+      "cost_gbp": 205368,
+      "cost_sequencing_gbp": 85000,
+      "cost_repeat_endoscopy_gbp": 120368,
+      "c_share_sequenced_reweighted": 1.0
+     },
+     "0.02": {
+      "samples_sequenced": 1000.0,
+      "flagged_samples": 345.6,
+      "flagged_endoscopies": 260.2,
+      "progressor_samples_missed": 2.39,
+      "cost_gbp": 207550,
+      "cost_sequencing_gbp": 85000,
+      "cost_repeat_endoscopy_gbp": 122550,
+      "c_share_sequenced_reweighted": 1.0
+     },
+     "0.05": {
+      "samples_sequenced": 1000.0,
+      "flagged_samples": 361.9,
+      "flagged_endoscopies": 269.3,
+      "progressor_samples_missed": 5.96,
+      "cost_gbp": 211833,
+      "cost_sequencing_gbp": 85000,
+      "cost_repeat_endoscopy_gbp": 126833,
+      "c_share_sequenced_reweighted": 1.0
+     }
+    }
+   },
+   "B": {
+    "sensitivity": 0.832,
+    "false_positive_rate": 0.238,
+    "share_sequenced_progressor": 1.0,
+    "share_sequenced_non_progressor": 1.0,
+    "share_sequenced_cohort": 1.0,
+    "a_flagged_non_progressor_endoscopies_per_patient_year": 0.252,
+    "flagged_non_progressor_endoscopies_mean": 72.0,
+    "projection_per_1000_samples": {
+     "0.005": {
+      "samples_sequenced": 1000.0,
+      "flagged_samples": 241.0,
+      "flagged_endoscopies": 196.4,
+      "progressor_samples_missed": 0.84,
+      "cost_gbp": 177524,
+      "cost_sequencing_gbp": 85000,
+      "cost_repeat_endoscopy_gbp": 92524,
+      "c_share_sequenced_reweighted": 1.0
+     },
+     "0.02": {
+      "samples_sequenced": 1000.0,
+      "flagged_samples": 249.9,
+      "flagged_endoscopies": 202.3,
+      "progressor_samples_missed": 3.37,
+      "cost_gbp": 180278,
+      "cost_sequencing_gbp": 85000,
+      "cost_repeat_endoscopy_gbp": 95278,
+      "c_share_sequenced_reweighted": 1.0
+     },
+     "0.05": {
+      "samples_sequenced": 1000.0,
+      "flagged_samples": 267.7,
+      "flagged_endoscopies": 213.7,
+      "progressor_samples_missed": 8.42,
+      "cost_gbp": 185669,
+      "cost_sequencing_gbp": 85000,
+      "cost_repeat_endoscopy_gbp": 100669,
+      "c_share_sequenced_reweighted": 1.0
+     }
+    }
+   },
+   "C": {
+    "sensitivity": 0.795,
+    "false_positive_rate": 0.281,
+    "share_sequenced_progressor": 0.0,
+    "share_sequenced_non_progressor": 0.0,
+    "share_sequenced_cohort": 0.0,
+    "a_flagged_non_progressor_endoscopies_per_patient_year": 0.314,
+    "flagged_non_progressor_endoscopies_mean": 89.9,
+    "projection_per_1000_samples": {
+     "0.005": {
+      "samples_sequenced": 0.0,
+      "flagged_samples": 283.3,
+      "flagged_endoscopies": 223.5,
+      "progressor_samples_missed": 1.02,
+      "cost_gbp": 105261,
+      "cost_sequencing_gbp": 0,
+      "cost_repeat_endoscopy_gbp": 105261,
+      "c_share_sequenced_reweighted": 0.0
+     },
+     "0.02": {
+      "samples_sequenced": 0.0,
+      "flagged_samples": 291.0,
+      "flagged_endoscopies": 228.2,
+      "progressor_samples_missed": 4.1,
+      "cost_gbp": 107495,
+      "cost_sequencing_gbp": 0,
+      "cost_repeat_endoscopy_gbp": 107495,
+      "c_share_sequenced_reweighted": 0.0
+     },
+     "0.05": {
+      "samples_sequenced": 0.0,
+      "flagged_samples": 306.4,
+      "flagged_endoscopies": 237.5,
+      "progressor_samples_missed": 10.25,
+      "cost_gbp": 111883,
+      "cost_sequencing_gbp": 0,
+      "cost_repeat_endoscopy_gbp": 111883,
+      "c_share_sequenced_reweighted": 0.0
+     }
+    }
+   },
+   "D": {
+    "sensitivity": 0.354,
+    "false_positive_rate": 0.185,
+    "share_sequenced_progressor": 0.0,
+    "share_sequenced_non_progressor": 0.0,
+    "share_sequenced_cohort": 0.0,
+    "a_flagged_non_progressor_endoscopies_per_patient_year": 0.168,
+    "flagged_non_progressor_endoscopies_mean": 48.0,
+    "projection_per_1000_samples": {
+     "0.005": {
+      "samples_sequenced": 0.0,
+      "flagged_samples": 186.2,
+      "flagged_endoscopies": 158.5,
+      "progressor_samples_missed": 3.23,
+      "cost_gbp": 74676,
+      "cost_sequencing_gbp": 0,
+      "cost_repeat_endoscopy_gbp": 74676,
+      "c_share_sequenced_reweighted": 0.0
+     },
+     "0.02": {
+      "samples_sequenced": 0.0,
+      "flagged_samples": 188.7,
+      "flagged_endoscopies": 160.4,
+      "progressor_samples_missed": 12.92,
+      "cost_gbp": 75536,
+      "cost_sequencing_gbp": 0,
+      "cost_repeat_endoscopy_gbp": 75536,
+      "c_share_sequenced_reweighted": 0.0
+     },
+     "0.05": {
+      "samples_sequenced": 0.0,
+      "flagged_samples": 193.8,
+      "flagged_endoscopies": 164.0,
+      "progressor_samples_missed": 32.3,
+      "cost_gbp": 77244,
+      "cost_sequencing_gbp": 0,
+      "cost_repeat_endoscopy_gbp": 77244,
+      "c_share_sequenced_reweighted": 0.0
+     }
+    }
+   },
+   "D+p53": {
+    "sensitivity": 0.41,
+    "false_positive_rate": 0.188,
+    "share_sequenced_progressor": 0.0,
+    "share_sequenced_non_progressor": 0.0,
+    "share_sequenced_cohort": 0.0,
+    "a_flagged_non_progressor_endoscopies_per_patient_year": 0.171,
+    "flagged_non_progressor_endoscopies_mean": 49.0,
+    "projection_per_1000_samples": {
+     "0.005": {
+      "samples_sequenced": 0.0,
+      "flagged_samples": 188.9,
+      "flagged_endoscopies": 160.5,
+      "progressor_samples_missed": 2.95,
+      "cost_gbp": 75595,
+      "cost_sequencing_gbp": 0,
+      "cost_repeat_endoscopy_gbp": 75595,
+      "c_share_sequenced_reweighted": 0.0
+     },
+     "0.02": {
+      "samples_sequenced": 0.0,
+      "flagged_samples": 192.2,
+      "flagged_endoscopies": 162.9,
+      "progressor_samples_missed": 11.8,
+      "cost_gbp": 76722,
+      "cost_sequencing_gbp": 0,
+      "cost_repeat_endoscopy_gbp": 76722,
+      "c_share_sequenced_reweighted": 0.0
+     },
+     "0.05": {
+      "samples_sequenced": 0.0,
+      "flagged_samples": 198.9,
+      "flagged_endoscopies": 167.6,
+      "progressor_samples_missed": 29.5,
+      "cost_gbp": 78956,
+      "cost_sequencing_gbp": 0,
+      "cost_repeat_endoscopy_gbp": 78956,
+      "c_share_sequenced_reweighted": 0.0
+     }
+    }
+   }
+  },
+  "non_progressor_patient_years": 286.0,
+  "n_non_progressor_patients": 43,
+  "samples_per_endoscopy": {
+   "mean": 1.983,
+   "distribution": {
+    "1": 0.493,
+    "2": 0.233,
+    "3": 0.167,
+    "4": 0.059,
+    "5": 0.021,
+    "6": 0.017,
+    "7": 0.003,
+    "8": 0.007
+   }
+  },
+  "costs": {
+   "per_sequenced_sample_gbp": 85.0,
+   "per_flagged_endoscopy_gbp": 471.0,
+   "sources": "Gregson 2017 thesis (2017-18 prices); NHS Payment Scheme 2024/25 FE21Z, one repeat endoscopy per flagged endoscopy; illustrative"
+  },
+  "note": "class-conditional per-sample rates from the pre-event samples (single model, means over repeats); flagged endoscopies = (1000 / mean samples per endoscopy) x sum_k f(k) [1 - (1 - p)^k], f = cohort samples-per-endoscopy distribution, p = per-sample flag rate at that prevalence (samples within an endoscopy taken as independent); grade-or-p53 with missing p53 as wild-type; (C), (D), grade-or-p53 sequence nothing",
+  "n_samples": 571,
+  "n_progressor_samples": 161,
+  "n_patients": 75,
+  "n_progressor_patients": 32
+ },
+ "prespec": "724ff97"
+}

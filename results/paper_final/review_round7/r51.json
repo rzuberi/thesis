@@ -1,0 +1,75 @@
+{
+ "task": "r51",
+ "R51": {
+  "n_progressor_endoscopies": 88,
+  "by_time_to_event": {
+   "<1 year": {
+    "progressor_endoscopies": 7,
+    "falsely_cleared_mean_over_repeats": 0.0,
+    "falsely_cleared_in_any_repeat": 0,
+    "falsely_cleared_in_majority": 0,
+    "grade_of_endoscopies_cleared_in_any_repeat": {
+     "NDBE": 0,
+     "ID": 0,
+     "LGD": 0
+    }
+   },
+   "1-3 years": {
+    "progressor_endoscopies": 36,
+    "falsely_cleared_mean_over_repeats": 1.8,
+    "falsely_cleared_in_any_repeat": 6,
+    "falsely_cleared_in_majority": 1,
+    "grade_of_endoscopies_cleared_in_any_repeat": {
+     "NDBE": 6,
+     "ID": 0,
+     "LGD": 0
+    }
+   },
+   ">3 years": {
+    "progressor_endoscopies": 45,
+    "falsely_cleared_mean_over_repeats": 6.2,
+    "falsely_cleared_in_any_repeat": 15,
+    "falsely_cleared_in_majority": 5,
+    "grade_of_endoscopies_cleared_in_any_repeat": {
+     "NDBE": 12,
+     "ID": 2,
+     "LGD": 1
+    }
+   }
+  },
+  "grade_of_all_progressor_endoscopies": {
+   "NDBE": 56,
+   "ID": 7,
+   "LGD": 25
+  },
+  "progressor_patients_missed_in_at_least_one_repeat": {
+   "n": 3,
+   "n_progressor_patients": 32,
+   "repeats_missed": {
+    "median": 2.0,
+    "min": 1,
+    "max": 6
+   },
+   "n_pre_event_endoscopies": {
+    "median": 2.0,
+    "min": 1,
+    "max": 3
+   },
+   "max_grade": {
+    "NDBE": 2,
+    "LGD": 1
+   },
+   "tissue_tertile": {
+    "1": 2,
+    "2": 1
+   },
+   "years_first_sample_to_event": {
+    "median": 5.0,
+    "min": 2.0,
+    "max": 10.0
+   }
+  },
+  "note": "falsely cleared = progressor pre-event endoscopy with every sample called negative by the triage in that repeat; time to event of the endoscopy = its samples' time (years); grade = highest sample grade at the endoscopy; tissue tertile = tertile (pre-event sample edges) of the patient's median tissue tiles; time from first sample to event = the patient's largest pre-event time; aggregates only (render shows counts < 5 as '<5')"
+ },
+ "prespec": "724ff97"
+}

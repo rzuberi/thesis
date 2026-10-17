@@ -1,0 +1,61 @@
+{
+ "task": "r44",
+ "R44": {
+  "triage_negative_per_repeat": {
+   "progressor": {
+    "p53_aberrant_mean_over_repeats": 1.1,
+    "negative_samples_mean": 21.8,
+    "negative_with_p53_mean": 14.3,
+    "p53_aberrant_range": [
+     0,
+     3
+    ]
+   },
+   "non_progressor": {
+    "p53_aberrant_mean_over_repeats": 0.9,
+    "negative_samples_mean": 285.8,
+    "negative_with_p53_mean": 242.7,
+    "p53_aberrant_range": [
+     0,
+     1
+    ]
+   }
+  },
+  "low_band_only_per_repeat": {
+   "progressor": {
+    "p53_aberrant_mean_over_repeats": 0.6,
+    "negative_samples_mean": 10.6,
+    "negative_with_p53_mean": 6.5,
+    "p53_aberrant_range": [
+     0,
+     2
+    ]
+   },
+   "non_progressor": {
+    "p53_aberrant_mean_over_repeats": 0.7,
+    "negative_samples_mean": 166.1,
+    "negative_with_p53_mean": 143.6,
+    "p53_aberrant_range": [
+     0,
+     1
+    ]
+   }
+  },
+  "modal_low_band_R37e": {
+   "progressor": {
+    "cleared_with_p53": 3,
+    "p53_aberrant": 0
+   },
+   "non_progressor": {
+    "cleared_with_p53": 147,
+    "p53_aberrant": 1
+   }
+  },
+  "p53_aberrant_pre_event": {
+   "progressor": 17,
+   "non_progressor": 1
+  },
+  "note": "triage-negative = low band, or middle band called negative by L-LATE, in that repeat (single model; counts averaged over the 10 repeats); pre-event samples"
+ },
+ "prespec": "724ff97"
+}

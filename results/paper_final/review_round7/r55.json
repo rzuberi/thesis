@@ -1,0 +1,305 @@
+{
+ "task": "r55",
+ "R55": {
+  "a_background": {
+   "definition": "share of the stored 256 tile positions per slide whose tile (stored level and size) has > 50% pixels with all RGB > 220; per sample pooled over its slides",
+   "slides": {
+    "n": 683,
+    "share_slides_above_0.25": 0.053,
+    "n_slides_above_0.25": 36
+   },
+   "pre_event_samples_by_class": {
+    "progressor": {
+     "n": 161,
+     "mean": 0.055,
+     "median": 0.0,
+     "iqr": [
+      0.0,
+      0.066
+     ],
+     "share_above_0.25": 0.05,
+     "n_above_0.25": 8
+    },
+    "non_progressor": {
+     "n": 410,
+     "mean": 0.056,
+     "median": 0.0,
+     "iqr": [
+      0.0,
+      0.018
+     ],
+     "share_above_0.25": 0.066,
+     "n_above_0.25": 27
+    }
+   },
+   "pre_event_samples_by_tissue_tertile": {
+    "tertile_1": {
+     "progressor": {
+      "n": 49,
+      "mean": 0.038,
+      "median": 0.0,
+      "iqr": [
+       0.0,
+       0.0
+      ],
+      "share_above_0.25": 0.061,
+      "n_above_0.25": 3
+     },
+     "non_progressor": {
+      "n": 143,
+      "mean": 0.059,
+      "median": 0.0,
+      "iqr": [
+       0.0,
+       0.113
+      ],
+      "share_above_0.25": 0.084,
+      "n_above_0.25": 12
+     }
+    },
+    "tertile_2": {
+     "progressor": {
+      "n": 40,
+      "mean": 0.086,
+      "median": 0.018,
+      "iqr": [
+       0.0,
+       0.169
+      ],
+      "share_above_0.25": 0.025,
+      "n_above_0.25": 1
+     },
+     "non_progressor": {
+      "n": 152,
+      "mean": 0.059,
+      "median": 0.0,
+      "iqr": [
+       0.0,
+       0.15
+      ],
+      "share_above_0.25": 0.059,
+      "n_above_0.25": 9
+     }
+    },
+    "tertile_3": {
+     "progressor": {
+      "n": 72,
+      "mean": 0.049,
+      "median": 0.0,
+      "iqr": [
+       0.0,
+       0.025
+      ],
+      "share_above_0.25": 0.056,
+      "n_above_0.25": 4
+     },
+     "non_progressor": {
+      "n": 115,
+      "mean": 0.048,
+      "median": 0.0,
+      "iqr": [
+       0.0,
+       0.002
+      ],
+      "share_above_0.25": 0.052,
+      "n_above_0.25": 6
+     }
+    }
+   },
+   "all_676_by_class": {
+    "progressor": {
+     "n": 266,
+     "mean": 0.059,
+     "median": 0.0,
+     "iqr": [
+      0.0,
+      0.129
+     ],
+     "share_above_0.25": 0.034,
+     "n_above_0.25": 9
+    },
+    "non_progressor": {
+     "n": 410,
+     "mean": 0.056,
+     "median": 0.0,
+     "iqr": [
+      0.0,
+      0.018
+     ],
+     "share_above_0.25": 0.066,
+     "n_above_0.25": 27
+    }
+   },
+   "excluding_samples_above_0.25": {
+    "n_removed": 35,
+    "n_removed_progressor": 8,
+    "n_samples": 536,
+    "n_progressor_samples": 153,
+    "n_patients": 75,
+    "n_progressor_patients": 32,
+    "triage": {
+     "sensitivity": 0.859,
+     "specificity": 0.703,
+     "share_sequenced": 0.462
+    },
+    "vs_Bstar": {
+     "d_sens": -0.018,
+     "ci95": [
+      -0.041,
+      0.001
+     ],
+     "one_sided_lower": -0.036,
+     "within_-0.05": true,
+     "d_spec": 0.03,
+     "d_spec_ci95": [
+      0.001,
+      0.064
+     ],
+     "comparator_sens_spec": [
+      0.876,
+      0.673
+     ]
+    },
+    "vs_B": {
+     "d_sens": 0.032,
+     "ci95": [
+      0.001,
+      0.063
+     ],
+     "one_sided_lower": 0.007,
+     "within_-0.05": true,
+     "d_spec": -0.065,
+     "d_spec_ci95": [
+      -0.09,
+      -0.04
+     ],
+     "comparator_sens_spec": [
+      0.827,
+      0.768
+     ]
+    },
+    "IMG_minus_CNV": {
+     "delta": 0.042,
+     "ci95": [
+      -0.036,
+      0.129
+     ],
+     "one_sided_lower": -0.026,
+     "within_-0.05": true
+    },
+    "auroc": {
+     "L-CNV": {
+      "value": 0.803,
+      "ci95": [
+       0.709,
+       0.876
+      ]
+     },
+     "L-IMG": {
+      "value": 0.844,
+      "ci95": [
+       0.795,
+       0.892
+      ]
+     },
+     "L-LATE": {
+      "value": 0.886,
+      "ci95": [
+       0.826,
+       0.933
+      ]
+     }
+    }
+   }
+  },
+  "b_slide_age": {
+   "definition": "scan date (slide header hamamatsu.Created; earliest over the sample's slides) minus the exact endoscopy date (pre_event_cohort.Date), years",
+   "pre_event_by_class": {
+    "progressor": {
+     "median": 9.166,
+     "q1": 6.376,
+     "q3": 13.262,
+     "min": 2.166,
+     "max": 23.165
+    },
+    "non_progressor": {
+     "median": 10.214,
+     "q1": 7.743,
+     "q3": 12.78,
+     "min": 4.501,
+     "max": 20.542
+    }
+   },
+   "spearman_L_IMG_within_class": {
+    "progressor": {
+     "slide_age": -0.172,
+     "tissue_tiles": -0.308,
+     "biopsy_year": 0.171,
+     "n": 161
+    },
+    "non_progressor": {
+     "slide_age": 0.164,
+     "tissue_tiles": 0.148,
+     "biopsy_year": -0.15,
+     "n": 410
+    }
+   },
+   "auroc_slide_age_alone": {
+    "direction": "younger slide = higher score (score = -age)",
+    "value": 0.568,
+    "ci95": [
+     0.452,
+     0.689
+    ],
+    "note": "fold-stratified AUROC (fixed score, folds of the stored CV)"
+   }
+  },
+  "c_metadata_alone": {
+   "features": [
+    "slide age",
+    "log tissue tiles",
+    "scanner",
+    "batch composition (single-class / mixed)"
+   ],
+   "auroc": 0.594,
+   "ci95": [
+    0.462,
+    0.717
+   ],
+   "batch_groups": {
+    "single_class_batches": 6,
+    "mixed_batches": 6,
+    "pre_event_samples_in_single_class_batches": 276
+   },
+   "model": "unpenalised logistic regression on training-standardised features; trained on the outer training rows of each split (all set C samples), scored on the held-out fold; fold-stratified AUROC on pre-event samples, mean over repeats"
+  },
+  "d_incremental": {
+   "auroc_L_IMG_plus_metadata": 0.833,
+   "ci95": [
+    0.774,
+    0.884
+   ],
+   "auroc_L_IMG_alone": 0.847,
+   "d_L_IMG_plus_metadata_minus_metadata": {
+    "delta": 0.239,
+    "ci95": [
+     0.125,
+     0.362
+    ],
+    "p_two_sided": 0.0,
+    "one_sided_95_lower": 0.143,
+    "non_inferior_at_-0.05": true
+   },
+   "d_L_IMG_plus_metadata_minus_L_IMG": {
+    "delta": -0.014,
+    "ci95": [
+     -0.052,
+     0.017
+    ],
+    "p_two_sided": 0.422
+   },
+   "note": "L-IMG enters as the logit of its stored inner out-of-fold prediction on training rows and of its stored outer prediction on the held-out fold"
+  }
+ },
+ "prespec": "724ff97"
+}

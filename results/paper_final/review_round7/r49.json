@@ -1,0 +1,125 @@
+{
+ "task": "r49",
+ "R49": {
+  "n_samples": 571,
+  "n_progressor_samples": 161,
+  "n_patients": 75,
+  "n_progressor_patients": 32,
+  "n_endoscopies": 288,
+  "n_progressor_endoscopies": 88,
+  "draws": 2000,
+  "endoscopy_band_shares": {
+   "low": 0.18,
+   "middle": 0.505,
+   "high": 0.315
+  },
+  "rules": {
+   "gate": {
+    "endoscopy_sensitivity": 0.907,
+    "sens_ci95": [
+     0.861,
+     0.951
+    ],
+    "endoscopy_specificity": 0.56,
+    "spec_ci95": [
+     0.475,
+     0.645
+    ],
+    "share_samples_sequenced": 0.255,
+    "share_endoscopies_sequenced": 0.505,
+    "progressor_patients_missed": 0.9,
+    "non_progressor_patients_flagged": 31.8,
+    "minus_triage": {
+     "d_endoscopy_sens": {
+      "delta": -0.002,
+      "ci95": [
+       -0.008,
+       0.0
+      ],
+      "p_two_sided": 0.752,
+      "one_sided_95_lower": -0.006,
+      "non_inferior_at_-0.05": true
+     },
+     "d_endoscopy_spec": {
+      "delta": 0.011,
+      "ci95": [
+       0.005,
+       0.019
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_share_samples": {
+      "delta": -0.204,
+      "ci95": [
+       -0.239,
+       -0.164
+      ],
+      "p_two_sided": 0.0
+     }
+    }
+   },
+   "gate_all_mid_sequenced": {
+    "endoscopy_sensitivity": 0.914,
+    "sens_ci95": [
+     0.871,
+     0.955
+    ],
+    "endoscopy_specificity": 0.542,
+    "spec_ci95": [
+     0.453,
+     0.633
+    ],
+    "share_samples_sequenced": 0.501,
+    "share_endoscopies_sequenced": 0.505,
+    "progressor_patients_missed": 0.9,
+    "non_progressor_patients_flagged": 32.4,
+    "minus_triage": {
+     "d_endoscopy_sens": {
+      "delta": 0.005,
+      "ci95": [
+       0.0,
+       0.011
+      ],
+      "p_two_sided": 0.256,
+      "one_sided_95_lower": 0.0,
+      "non_inferior_at_-0.05": true
+     },
+     "d_endoscopy_spec": {
+      "delta": -0.006,
+      "ci95": [
+       -0.013,
+       -0.001
+      ],
+      "p_two_sided": 0.005
+     },
+     "d_share_samples": {
+      "delta": 0.042,
+      "ci95": [
+       -0.004,
+       0.088
+      ],
+      "p_two_sided": 0.08
+     }
+    }
+   },
+   "triage": {
+    "endoscopy_sensitivity": 0.909,
+    "sens_ci95": [
+     0.865,
+     0.952
+    ],
+    "endoscopy_specificity": 0.549,
+    "spec_ci95": [
+     0.46,
+     0.637
+    ],
+    "share_samples_sequenced": 0.458,
+    "share_endoscopies_sequenced": 0.597,
+    "progressor_patients_missed": 0.9,
+    "non_progressor_patients_flagged": 32.0
+   }
+  },
+  "note": "endoscopy score = maximum L-IMG over its pre-event samples; the triage's fold t_low and c* (t_high) and t_seq; gate: middle-band endoscopy sequences its top-L-IMG sample and is called by its L-LATE; variant: all its samples sequenced, flagged if any L-LATE positive; triage aggregated to endoscopies (any sample positive); single model; patient bootstrap over endoscopies"
+ },
+ "prespec": "724ff97"
+}

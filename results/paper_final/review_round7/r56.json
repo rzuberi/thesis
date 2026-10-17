@@ -1,0 +1,109 @@
+{
+ "task": "r56",
+ "R56": {
+  "a_identity": {
+   "validation_sheet": {
+    "samples": 268,
+    "patients": 103,
+    "patients_by_status": {
+     "NP": 67,
+     "P": 28,
+     "other": 8
+    }
+   },
+   "release_rows_from_validation_folders": {
+    "rows": 203,
+    "patients": 68
+   },
+   "validation_samples_in_release": 199,
+   "validation_patients_with_a_sample_in_release": 68,
+   "release_rows_matched_to_validation_samples": 203,
+   "share_validation_patients_in_release_batch": 0.66,
+   "validation_patients_overlapping_the_80": 5,
+   "definition": "release validation batch = release rows (training_manifest.csv) whose CNV sample is a sample of this sheet (docs/dataset_description.md 268-sheet stratum)",
+   "is_the_rejected_batch": true,
+   "rule": "the sheet is taken to be (or to contain) the rejected batch if any of its patients has a sample among the release rows"
+  },
+  "b_linkage": {
+   "samples_with_slide": 179,
+   "samples_with_slide_by_status": {
+    "NP": 143,
+    "P": 35,
+    "UN": 1
+   },
+   "patients_with_slide_by_status": {
+    "NP": 59,
+    "P": 9,
+    "other": 1
+   },
+   "slides": 180,
+   "progressor_patients_with_slide": 9,
+   "sequencing_runs_SLXID1": 30,
+   "sequencing_runs_by_status": {
+    "P": 9,
+    "NP": 22
+   },
+   "runs_with_both_classes": 1,
+   "scanner_by_status": {
+    "P": {
+     "C13239-01": 35
+    },
+    "NP": {
+     "C13239-01": 142,
+     "C13210": 1
+    }
+   },
+   "tissue_tiles_by_status": {
+    "P": {
+     "median": 198.0,
+     "iqr": [
+      120.5,
+      285.5
+     ],
+     "n": 35
+    },
+    "NP": {
+     "median": 1441.0,
+     "iqr": [
+      1114.5,
+      1854.5
+     ],
+     "n": 143
+    }
+   },
+   "grade_by_status": {
+    "P": {
+     "NDBE": 31,
+     "ID": 3,
+     "LGD": 1
+    },
+    "NP": {
+     "NDBE": 140,
+     "GM": 3
+    }
+   },
+   "linkage": "sheet Block -> case + block (r2_main.py ckey / vblock) = slide_matching PathCaseID + Block, slide embedded in uni2_npz_map.csv; batch = sequencing run (SLXID1; the sheet has no Batch column)"
+  },
+  "c_metadata_alone": {
+   "auroc": 0.984,
+   "ci95": [
+    0.937,
+    1.0
+   ],
+   "one_sided_95_lower": 0.948,
+   "n_samples": 178,
+   "n_patients": 68,
+   "n_progressor_patients": 9,
+   "model": "L2 logistic (C = 1) on scanner and sequencing run (one-hot), log(1 + tissue tiles) and biopsy year, training-standardised; patient-grouped folds stratified by patient status, 10 folds x 10 repeats (seeds 1-10); fold-stratified AUROC, mean over repeats; patient bootstrap 2,000 draws"
+  },
+  "gate": {
+   "not_the_rejected_batch": false,
+   "at_least_10_progressor_patients_with_slides": false,
+   "metadata_auroc_point_below_0.65": false,
+   "metadata_auroc_one_sided_lower_95_below_0.65": false,
+   "passes": false
+  },
+  "note": "audit only; no outcome-based score of the slide model was computed"
+ },
+ "prespec": "724ff97"
+}

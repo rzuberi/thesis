@@ -1,0 +1,131 @@
+{
+ "task": "r46",
+ "R46": {
+  "n_samples": 571,
+  "n_progressor_samples": 161,
+  "n_patients": 75,
+  "n_progressor_patients": 32,
+  "n_endoscopies": 288,
+  "n_progressor_endoscopies": 88,
+  "n_seeds": 100,
+  "draws": 2000,
+  "a_matched_specificity": {
+   "triage": {
+    "endoscopy_sensitivity": {
+     "mean_over_seeds": 0.909,
+     "range_2.5_97.5_over_seeds": null,
+     "ci95_bootstrap_of_seed_mean": [
+      0.865,
+      0.952
+     ]
+    },
+    "endoscopy_specificity": {
+     "mean_over_seeds": 0.549,
+     "range_2.5_97.5_over_seeds": null,
+     "ci95_bootstrap_of_seed_mean": [
+      0.46,
+      0.637
+     ]
+    }
+   },
+   "random_matched": {
+    "endoscopy_sensitivity": {
+     "mean_over_seeds": 0.934,
+     "range_2.5_97.5_over_seeds": [
+      0.915,
+      0.952
+     ],
+     "ci95_bootstrap_of_seed_mean": [
+      0.883,
+      0.971
+     ]
+    },
+    "endoscopy_specificity": {
+     "mean_over_seeds": 0.55,
+     "range_2.5_97.5_over_seeds": [
+      0.55,
+      0.55
+     ],
+     "ci95_bootstrap_of_seed_mean": [
+      0.463,
+      0.64
+     ]
+    }
+   },
+   "random_own_threshold": {
+    "endoscopy_sensitivity": {
+     "mean_over_seeds": 0.827,
+     "range_2.5_97.5_over_seeds": [
+      0.803,
+      0.852
+     ],
+     "ci95_bootstrap_of_seed_mean": [
+      0.742,
+      0.901
+     ]
+    },
+    "endoscopy_specificity": {
+     "mean_over_seeds": 0.74,
+     "range_2.5_97.5_over_seeds": [
+      0.721,
+      0.762
+     ],
+     "ci95_bootstrap_of_seed_mean": [
+      0.673,
+      0.805
+     ]
+    }
+   },
+   "d_endoscopy_sensitivity_triage_minus_random": {
+    "mean_over_seeds": -0.025,
+    "range_2.5_97.5_over_seeds": [
+     -0.043,
+     -0.006
+    ],
+    "ci95_bootstrap_of_seed_mean": [
+     -0.06,
+     0.013
+    ],
+    "one_sided_95_lower": -0.055,
+    "p_two_sided": 0.15
+   }
+  },
+  "b_per_patient": {
+   "random_own_threshold": {
+    "progressor_patients_missed": 2.227,
+    "non_progressor_patients_flagged": 25.088
+   },
+   "random_matched": {
+    "progressor_patients_missed": 0.958,
+    "non_progressor_patients_flagged": 32.214
+   },
+   "triage": {
+    "progressor_patients_missed": 0.9,
+    "non_progressor_patients_flagged": 32.0
+   },
+   "n_progressor_patients": 32,
+   "n_non_progressor_patients": 43,
+   "note": "counts averaged over seeds and repeats; patient positive if any of its endoscopies is"
+  },
+  "c_burden": {
+   "random": {
+    "share_samples_sequenced": 0.504,
+    "share_endoscopies_with_a_sequenced_sample": 1.0
+   },
+   "triage": {
+    "share_samples_sequenced": 0.458,
+    "share_endoscopies_with_a_sequenced_sample": 0.597
+   },
+   "Bstar": {
+    "share_samples_sequenced": 1.0,
+    "share_endoscopies_with_a_sequenced_sample": 1.0
+   },
+   "B": {
+    "share_samples_sequenced": 1.0,
+    "share_endoscopies_with_a_sequenced_sample": 1.0
+   }
+  },
+  "note": "seeds 0-99 with the R41 draw order; matched = one L-LATE threshold per seed x repeat over the endoscopies (pooled across folds), set so that the random rule's endoscopy specificity equals the triage's in that repeat; re-matched in each bootstrap draw; own threshold = the stored (B) call (fold threshold at 80% training sensitivity)"
+ },
+ "prespec": "724ff97"
+}

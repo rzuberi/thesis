@@ -1,0 +1,51 @@
+{
+ "task": "r57",
+ "R57": {
+  "draws": 10000,
+  "design": {
+   "progressor_patients": 15,
+   "non_progressor_patients": 67,
+   "samples_per_patient": 2
+  },
+  "a_precision": {
+   "sens": {
+    "mean": 0.864,
+    "ci_half_width": 0.155,
+    "range_2.5_97.5": [
+     0.69,
+     1.0
+    ]
+   },
+   "spec": {
+    "mean": 0.701,
+    "ci_half_width": 0.101,
+    "range_2.5_97.5": [
+     0.597,
+     0.799
+    ]
+   }
+  },
+  "b_pass_rule_ge_12_of_15": {
+   "simulated_probability": 0.982,
+   "mean_detection_rate_in_simulation": 0.946,
+   "cohort_per_patient_detection_rate_all_samples": 0.972,
+   "binomial_probability": {
+    "0.95": 0.993,
+    "0.97": 0.999,
+    "0.70": 0.297,
+    "0.80": 0.648,
+    "0.90": 0.944
+   }
+  },
+  "c_slide_model_patient_auroc": {
+   "mean": 0.87,
+   "ci_half_width": 0.101,
+   "range_2.5_97.5": [
+    0.755,
+    0.958
+   ]
+  },
+  "note": "each draw: one repeat at random, 15 progressor and 67 non-progressor patients drawn with replacement from the 32 / 43 pre-event patients, 2 pre-event samples per patient without replacement (all if fewer); per-sample calls = that repeat's stored triage calls; patient detected if any drawn sample is flagged; patient L-IMG score = maximum over its drawn samples; CI half-width = half the 2.5-97.5% range over draws"
+ },
+ "prespec": "724ff97"
+}

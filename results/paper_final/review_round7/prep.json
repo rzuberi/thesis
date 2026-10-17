@@ -1,0 +1,98 @@
+{
+ "task": "prep",
+ "sets": {
+  "r43c_patients_removed": 1,
+  "r52a": {
+   "added_samples": 17,
+   "added_pre_event_samples": 6,
+   "added_patients": 4,
+   "added_pre_event_patients": 2,
+   "fallback_endpoint_patients": 0,
+   "added_grade_pre_event": {
+    "NDBE": 4,
+    "LGD": 2
+   },
+   "samples": 693,
+   "patients": 84,
+   "progressor_patients": 41,
+   "pre_event_samples": 577,
+   "pre_event_progressor_samples": 167,
+   "pre_event_patients": 77,
+   "pre_event_progressor_patients": 34
+  },
+  "r52b": {
+   "added_samples": 24,
+   "added_pre_event_samples": 11,
+   "added_patients": 6,
+   "added_pre_event_patients": 4,
+   "fallback_endpoint_patients": 0,
+   "added_grade_pre_event": {
+    "NDBE": 7,
+    "LGD": 3,
+    "ID": 1
+   },
+   "samples": 700,
+   "patients": 86,
+   "progressor_patients": 43,
+   "pre_event_samples": 582,
+   "pre_event_progressor_samples": 172,
+   "pre_event_patients": 79,
+   "pre_event_progressor_patients": 36
+  },
+  "their_features_vs_cnv_their_C_max_abs_diff": 4.440892098500626e-16,
+  "img_mean_reproduction_max_abs_diff_5_samples": 4.828948974022751e-08,
+  "r54": {
+   "non_progressor_patients": 43,
+   "linked": 43,
+   "relabelled_later_HGDplus": 1,
+   "excluded_later_LGD": 3,
+   "relabelled_also_in_stored_check": 1,
+   "excluded_samples": 45,
+   "relabelled_samples": 7,
+   "samples": 631,
+   "patients": 77,
+   "progressor_patients": 38,
+   "pre_event_samples": 526,
+   "pre_event_progressor_samples": 168,
+   "pre_event_patients": 72,
+   "pre_event_progressor_patients": 33
+  },
+  "base": {
+   "samples": 676,
+   "patients": 80,
+   "progressor_patients": 37,
+   "pre_event_samples": 571,
+   "pre_event_progressor_samples": 161,
+   "pre_event_patients": 75,
+   "pre_event_progressor_patients": 32
+  },
+  "r43a": {
+   "samples": 583,
+   "patients": 80,
+   "progressor_patients": 37,
+   "pre_event_samples": 478,
+   "pre_event_progressor_samples": 161,
+   "pre_event_patients": 75,
+   "pre_event_progressor_patients": 32
+  },
+  "r43b": {
+   "samples": 561,
+   "patients": 80,
+   "progressor_patients": 37,
+   "pre_event_samples": 456,
+   "pre_event_progressor_samples": 161,
+   "pre_event_patients": 75,
+   "pre_event_progressor_patients": 32
+  },
+  "r43c": {
+   "samples": 669,
+   "patients": 79,
+   "progressor_patients": 37,
+   "pre_event_samples": 564,
+   "pre_event_progressor_samples": 161,
+   "pre_event_patients": 74,
+   "pre_event_progressor_patients": 32
+  }
+ },
+ "prespec": "724ff97"
+}

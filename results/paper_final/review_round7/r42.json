@@ -1,0 +1,137 @@
+{
+ "task": "r42",
+ "R42": {
+  "n_samples": 571,
+  "n_progressor_samples": 161,
+  "n_patients": 75,
+  "n_progressor_patients": 32,
+  "n_splits": 126,
+  "n_single_pairs": 45,
+  "two_5_model_votes_agree": {
+   "all": {
+    "n_samples": 571,
+    "mean": 0.92,
+    "range_2.5_97.5": [
+     0.905,
+     0.935
+    ],
+    "min": 0.902,
+    "max": 0.942
+   },
+   "modal_low": {
+    "n_samples": 178,
+    "mean": 0.968,
+    "range_2.5_97.5": [
+     0.955,
+     0.983
+    ],
+    "min": 0.949,
+    "max": 0.989
+   },
+   "modal_middle": {
+    "n_samples": 269,
+    "mean": 0.852,
+    "range_2.5_97.5": [
+     0.822,
+     0.881
+    ],
+    "min": 0.807,
+    "max": 0.9
+   },
+   "modal_high": {
+    "n_samples": 124,
+    "mean": 1.0,
+    "range_2.5_97.5": [
+     1.0,
+     1.0
+    ],
+    "min": 1.0,
+    "max": 1.0
+   },
+   "progressor": {
+    "n_samples": 161,
+    "mean": 0.936,
+    "range_2.5_97.5": [
+     0.914,
+     0.956
+    ],
+    "min": 0.913,
+    "max": 0.963
+   },
+   "non_progressor": {
+    "n_samples": 410,
+    "mean": 0.914,
+    "range_2.5_97.5": [
+     0.893,
+     0.934
+    ],
+    "min": 0.888,
+    "max": 0.941
+   }
+  },
+  "two_single_repeats_agree": {
+   "all": {
+    "n_samples": 571,
+    "mean": 0.856,
+    "range_2.5_97.5": [
+     0.835,
+     0.875
+    ],
+    "min": 0.816,
+    "max": 0.877
+   },
+   "modal_low": {
+    "n_samples": 178,
+    "mean": 0.923,
+    "range_2.5_97.5": [
+     0.867,
+     0.971
+    ],
+    "min": 0.848,
+    "max": 0.978
+   },
+   "modal_middle": {
+    "n_samples": 269,
+    "mean": 0.753,
+    "range_2.5_97.5": [
+     0.717,
+     0.809
+    ],
+    "min": 0.717,
+    "max": 0.814
+   },
+   "modal_high": {
+    "n_samples": 124,
+    "mean": 0.982,
+    "range_2.5_97.5": [
+     0.96,
+     1.0
+    ],
+    "min": 0.952,
+    "max": 1.0
+   },
+   "progressor": {
+    "n_samples": 161,
+    "mean": 0.893,
+    "range_2.5_97.5": [
+     0.852,
+     0.919
+    ],
+    "min": 0.839,
+    "max": 0.925
+   },
+   "non_progressor": {
+    "n_samples": 410,
+    "mean": 0.841,
+    "range_2.5_97.5": [
+     0.808,
+     0.87
+    ],
+    "min": 0.785,
+    "max": 0.878
+   }
+  },
+  "note": "each of the 126 splits of the 10 repeats into two sets of 5 (repeat 1 in the first set); 5-model vote = >= 3 of 5 per-repeat triage calls; agreement = share of pre-event samples with equal calls; range over splits (pairs); modal band = most frequent band over the 10 repeats"
+ },
+ "prespec": "724ff97"
+}
