@@ -1,0 +1,209 @@
+{
+ "sources": {
+  "co20": {
+   "description": "CONCH v1.5, TRIDENT 20x, 448 px tiles",
+   "dim": 768,
+   "samples_with_tiles": 675,
+   "samples": 676,
+   "slides_missing": 1,
+   "tiles_per_sample": {
+    "median": 302.0,
+    "min": 18,
+    "max": 5028
+   },
+   "pools_built": [
+    "mean",
+    "max",
+    "meansd",
+    "q3",
+    "top8n",
+    "top16n",
+    "top32n"
+   ]
+  },
+  "ct20": {
+   "description": "CTransPath, TRIDENT 20x all tissue tiles",
+   "dim": 768,
+   "samples_with_tiles": 675,
+   "samples": 676,
+   "slides_missing": 1,
+   "tiles_per_sample": {
+    "median": 1039.0,
+    "min": 50,
+    "max": 17475
+   },
+   "pools_built": [
+    "mean"
+   ]
+  },
+  "gpl1": {
+   "description": "Prov-GigaPath, level 1 (~0.44 um/px), 256 tiles",
+   "dim": 1536,
+   "samples_with_tiles": 676,
+   "samples": 676,
+   "slides_missing": 0,
+   "tiles_per_sample": {
+    "median": 256.0,
+    "min": 256,
+    "max": 768
+   },
+   "pools_built": [
+    "mean"
+   ]
+  },
+  "gpl2": {
+   "description": "Prov-GigaPath, level 2 (~0.88 um/px), 256 tiles (same tiles as UNI2-h level 2)",
+   "dim": 1536,
+   "samples_with_tiles": 676,
+   "samples": 676,
+   "slides_missing": 0,
+   "tiles_per_sample": {
+    "median": 256.0,
+    "min": 256,
+    "max": 768
+   },
+   "pools_built": [
+    "mean",
+    "max",
+    "meansd",
+    "q3",
+    "top8n",
+    "top16n",
+    "top32n"
+   ]
+  },
+  "gpl3": {
+   "description": "Prov-GigaPath, level 3 (~1.77 um/px), 256 tiles",
+   "dim": 1536,
+   "samples_with_tiles": 676,
+   "samples": 676,
+   "slides_missing": 0,
+   "tiles_per_sample": {
+    "median": 256.0,
+    "min": 256,
+    "max": 768
+   },
+   "pools_built": [
+    "mean"
+   ]
+  },
+  "ho20": {
+   "description": "H-optimus-0, TRIDENT 20x (0.5 um/px) all tissue tiles, 224 px",
+   "dim": 1536,
+   "samples_with_tiles": 675,
+   "samples": 676,
+   "slides_missing": 1,
+   "tiles_per_sample": {
+    "median": 1039.0,
+    "min": 50,
+    "max": 17475
+   },
+   "pools_built": [
+    "mean",
+    "max",
+    "meansd",
+    "q3",
+    "top8n",
+    "top16n",
+    "top32n"
+   ]
+  },
+  "mu20": {
+   "description": "MUSK, TRIDENT 20x, 384 px tiles",
+   "dim": 1024,
+   "samples_with_tiles": 675,
+   "samples": 676,
+   "slides_missing": 1,
+   "tiles_per_sample": {
+    "median": 394.0,
+    "min": 21,
+    "max": 6567
+   },
+   "pools_built": [
+    "mean"
+   ]
+  },
+  "u2l1": {
+   "description": "UNI2-h, level 1 (~0.44 um/px), 256 tiles/slide",
+   "dim": 1536,
+   "samples_with_tiles": 676,
+   "samples": 676,
+   "slides_missing": 0,
+   "tiles_per_sample": {
+    "median": 256.0,
+    "min": 256,
+    "max": 768
+   },
+   "pools_built": [
+    "mean"
+   ]
+  },
+  "u2l2": {
+   "description": "UNI2-h, level 2 (~0.88 um/px), 256 sampled tiles/slide (current L-IMG)",
+   "dim": 1536,
+   "samples_with_tiles": 676,
+   "samples": 676,
+   "slides_missing": 0,
+   "tiles_per_sample": {
+    "median": 256.0,
+    "min": 256,
+    "max": 768
+   },
+   "pools_built": [
+    "mean",
+    "max",
+    "meansd",
+    "q3",
+    "top8n",
+    "top16n",
+    "top32n"
+   ]
+  },
+  "v220": {
+   "description": "Virchow2, TRIDENT 20x all tissue tiles",
+   "dim": 2560,
+   "samples_with_tiles": 675,
+   "samples": 676,
+   "slides_missing": 1,
+   "tiles_per_sample": {
+    "median": 1039.0,
+    "min": 50,
+    "max": 17475
+   },
+   "pools_built": [
+    "mean",
+    "max",
+    "meansd",
+    "q3",
+    "top8n",
+    "top16n",
+    "top32n"
+   ]
+  },
+  "v2l2": {
+   "description": "Virchow2, level 2, 256 tiles (other tile draw)",
+   "dim": 2560,
+   "samples_with_tiles": 676,
+   "samples": 676,
+   "slides_missing": 0,
+   "tiles_per_sample": {
+    "median": 256.0,
+    "min": 64,
+    "max": 768
+   },
+   "pools_built": [
+    "mean"
+   ]
+  }
+ },
+ "slides": 683,
+ "img_mean_rebuild_max_abs_diff": 5.8532714897197025e-08,
+ "endoscopies_pre_event": 288,
+ "endoscopies_with_pre_and_post_event_samples": "<5",
+ "not_used": {
+  "UNI2-h level 3": "available for 58% of the slides only",
+  "SWGCohort/features_uni2h_05um (UNI2-h, 0.5 um/px, all tiles)": "465 of 683 slides only",
+  "CONCH zero-shot runs (conch_swg)": "slide-level zero-shot outputs, not embeddings"
+ },
+ "note": "tile coordinates in the stored npz are tile centres; not used (pooling only). The one slide missing from the TRIDENT sources leaves one sample without tiles; its features are imputed with training-row means inside each fit."
+}

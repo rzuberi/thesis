@@ -1,0 +1,678 @@
+{
+ "variant": "stored",
+ "info": {},
+ "methods": [
+  {
+   "family": "A1:img:none",
+   "name": "A1 | H&E alone (max L-IMG) | threshold only",
+   "values": {
+    "caught": 31.5,
+    "np_flagged": 36.0,
+    "flags_py": 0.338,
+    "endo_spec": 0.523,
+    "seq": 0.0,
+    "endo_sens": 0.898
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": 4.2,
+     "ci95": [
+      1.791,
+      6.8
+     ],
+     "p_two_sided": 0.0,
+     "ci99_bonferroni": [
+      0.915,
+      7.761
+     ]
+    },
+    "caught": {
+     "delta": 0.4,
+     "ci95": [
+      -0.723,
+      1.778
+     ],
+     "p_two_sided": 0.588
+    },
+    "flags_py": {
+     "delta": 0.026,
+     "ci95": [
+      -0.015,
+      0.065
+     ],
+     "p_two_sided": 0.202
+    },
+    "endo_spec": {
+     "delta": -0.037,
+     "ci95": [
+      -0.09,
+      0.02
+     ],
+     "p_two_sided": 0.202
+    },
+    "seq": {
+     "delta": -1.94,
+     "ci95": [
+      -2.268,
+      -1.611
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_P1_90": {
+    "np_flagged": {
+     "delta": 0.0,
+     "ci95": [
+      -1.028,
+      1.126
+     ],
+     "p_two_sided": 1.0,
+     "ci99_bonferroni": [
+      -1.395,
+      1.597
+     ]
+    },
+    "caught": {
+     "delta": 0.4,
+     "ci95": [
+      -0.206,
+      1.343
+     ],
+     "p_two_sided": 0.499
+    },
+    "flags_py": {
+     "delta": 0.001,
+     "ci95": [
+      -0.013,
+      0.015
+     ],
+     "p_two_sided": 0.864
+    },
+    "endo_spec": {
+     "delta": -0.001,
+     "ci95": [
+      -0.021,
+      0.018
+     ],
+     "p_two_sided": 0.865
+    },
+    "seq": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    }
+   },
+   "vs_stored_same_rule": {
+    "np_flagged": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0,
+     "ci99_bonferroni": [
+      0.0,
+      0.0
+     ]
+    },
+    "caught": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "flags_py": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "seq": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    }
+   },
+   "stored_same_rule": {
+    "caught": 31.5,
+    "np_flagged": 36.0,
+    "flags_py": 0.338,
+    "endo_spec": 0.523,
+    "seq": 0.0,
+    "endo_sens": 0.898
+   },
+   "selected_candidate_counts_over_100_folds": {
+    "none": 100
+   },
+   "infeasible_folds": 0
+  },
+  {
+   "family": "A1:img:ew",
+   "name": "A1 | H&E alone (max L-IMG) | exponentially weighted mean",
+   "values": {
+    "caught": 31.2,
+    "np_flagged": 32.1,
+    "flags_py": 0.371,
+    "endo_spec": 0.475,
+    "seq": 0.0,
+    "endo_sens": 0.917
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": 0.3,
+     "ci95": [
+      -2.717,
+      3.441
+     ],
+     "p_two_sided": 0.88,
+     "ci99_bonferroni": [
+      -3.631,
+      4.48
+     ]
+    },
+    "caught": {
+     "delta": 0.1,
+     "ci95": [
+      -1.185,
+      1.652
+     ],
+     "p_two_sided": 0.974
+    },
+    "flags_py": {
+     "delta": 0.06,
+     "ci95": [
+      0.013,
+      0.104
+     ],
+     "p_two_sided": 0.012
+    },
+    "endo_spec": {
+     "delta": -0.085,
+     "ci95": [
+      -0.144,
+      -0.019
+     ],
+     "p_two_sided": 0.012
+    },
+    "seq": {
+     "delta": -1.94,
+     "ci95": [
+      -2.268,
+      -1.611
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_P1_90": {
+    "np_flagged": {
+     "delta": -3.9,
+     "ci95": [
+      -6.392,
+      -1.697
+     ],
+     "p_two_sided": 0.0,
+     "ci99_bonferroni": [
+      -7.277,
+      -0.935
+     ]
+    },
+    "caught": {
+     "delta": 0.1,
+     "ci95": [
+      -0.9,
+      1.186
+     ],
+     "p_two_sided": 0.971
+    },
+    "flags_py": {
+     "delta": 0.035,
+     "ci95": [
+      0.004,
+      0.069
+     ],
+     "p_two_sided": 0.028
+    },
+    "endo_spec": {
+     "delta": -0.049,
+     "ci95": [
+      -0.093,
+      -0.006
+     ],
+     "p_two_sided": 0.028
+    },
+    "seq": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    }
+   },
+   "vs_stored_same_rule": {
+    "np_flagged": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0,
+     "ci99_bonferroni": [
+      0.0,
+      0.0
+     ]
+    },
+    "caught": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "flags_py": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "seq": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    }
+   },
+   "stored_same_rule": {
+    "caught": 31.2,
+    "np_flagged": 32.1,
+    "flags_py": 0.371,
+    "endo_spec": 0.475,
+    "seq": 0.0,
+    "endo_sens": 0.917
+   },
+   "selected_candidate_counts_over_100_folds": {
+    "ew h=1y": 31,
+    "ew h=2y": 22,
+    "ew h=4y": 47
+   },
+   "infeasible_folds": 0
+  },
+  {
+   "family": "A1:gate_al:none",
+   "name": "A1 | gate score, R49-aligned | threshold only",
+   "values": {
+    "caught": 30.7,
+    "np_flagged": 29.4,
+    "flags_py": 0.249,
+    "endo_spec": 0.649,
+    "seq": 1.94,
+    "endo_sens": 0.849
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": -2.4,
+     "ci95": [
+      -3.686,
+      -1.27
+     ],
+     "p_two_sided": 0.0,
+     "ci99_bonferroni": [
+      -4.117,
+      -0.967
+     ]
+    },
+    "caught": {
+     "delta": -0.4,
+     "ci95": [
+      -1.2,
+      0.0
+     ],
+     "p_two_sided": 0.229
+    },
+    "flags_py": {
+     "delta": -0.063,
+     "ci95": [
+      -0.078,
+      -0.048
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.089,
+     "ci95": [
+      0.069,
+      0.107
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    }
+   },
+   "vs_P1_90": {
+    "np_flagged": {
+     "delta": -6.6,
+     "ci95": [
+      -10.261,
+      -3.282
+     ],
+     "p_two_sided": 0.0,
+     "ci99_bonferroni": [
+      -11.437,
+      -2.199
+     ]
+    },
+    "caught": {
+     "delta": -0.4,
+     "ci95": [
+      -2.231,
+      1.536
+     ],
+     "p_two_sided": 0.642
+    },
+    "flags_py": {
+     "delta": -0.088,
+     "ci95": [
+      -0.123,
+      -0.05
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.124,
+     "ci95": [
+      0.072,
+      0.174
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq": {
+     "delta": 1.94,
+     "ci95": [
+      1.611,
+      2.268
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_stored_same_rule": {
+    "np_flagged": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0,
+     "ci99_bonferroni": [
+      0.0,
+      0.0
+     ]
+    },
+    "caught": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "flags_py": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "seq": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    }
+   },
+   "stored_same_rule": {
+    "caught": 30.7,
+    "np_flagged": 29.4,
+    "flags_py": 0.249,
+    "endo_spec": 0.649,
+    "seq": 1.94,
+    "endo_sens": 0.849
+   },
+   "selected_candidate_counts_over_100_folds": {
+    "none": 100
+   },
+   "infeasible_folds": 0
+  },
+  {
+   "family": "A1:gate_al:ew",
+   "name": "A1 | gate score, R49-aligned | exponentially weighted mean",
+   "values": {
+    "caught": 30.7,
+    "np_flagged": 23.6,
+    "flags_py": 0.244,
+    "endo_spec": 0.656,
+    "seq": 1.94,
+    "endo_sens": 0.905
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": -8.2,
+     "ci95": [
+      -11.401,
+      -5.136
+     ],
+     "p_two_sided": 0.0,
+     "ci99_bonferroni": [
+      -12.8,
+      -4.3
+     ]
+    },
+    "caught": {
+     "delta": -0.4,
+     "ci95": [
+      -1.28,
+      0.356
+     ],
+     "p_two_sided": 0.378
+    },
+    "flags_py": {
+     "delta": -0.068,
+     "ci95": [
+      -0.093,
+      -0.042
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.096,
+     "ci95": [
+      0.058,
+      0.133
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    }
+   },
+   "vs_P1_90": {
+    "np_flagged": {
+     "delta": -12.4,
+     "ci95": [
+      -16.869,
+      -7.881
+     ],
+     "p_two_sided": 0.0,
+     "ci99_bonferroni": [
+      -18.373,
+      -6.615
+     ]
+    },
+    "caught": {
+     "delta": -0.4,
+     "ci95": [
+      -1.867,
+      1.435
+     ],
+     "p_two_sided": 0.617
+    },
+    "flags_py": {
+     "delta": -0.093,
+     "ci95": [
+      -0.136,
+      -0.051
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.131,
+     "ci95": [
+      0.07,
+      0.194
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq": {
+     "delta": 1.94,
+     "ci95": [
+      1.611,
+      2.268
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_stored_same_rule": {
+    "np_flagged": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0,
+     "ci99_bonferroni": [
+      0.0,
+      0.0
+     ]
+    },
+    "caught": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "flags_py": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "seq": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    }
+   },
+   "stored_same_rule": {
+    "caught": 30.7,
+    "np_flagged": 23.6,
+    "flags_py": 0.244,
+    "endo_spec": 0.656,
+    "seq": 1.94,
+    "endo_sens": 0.905
+   },
+   "selected_candidate_counts_over_100_folds": {
+    "ew h=1y": 41,
+    "ew h=2y": 17,
+    "ew h=4y": 42
+   },
+   "infeasible_folds": 0
+  }
+ ],
+ "references": {
+  "R49": {
+   "caught": 31.1,
+   "np_flagged": 31.8,
+   "flags_py": 0.311,
+   "endo_spec": 0.56,
+   "seq": 1.94,
+   "endo_sens": 0.907
+  },
+  "P1 90%": {
+   "caught": 31.1,
+   "np_flagged": 36.0,
+   "flags_py": 0.337,
+   "endo_spec": 0.524,
+   "seq": 0.0,
+   "endo_sens": 0.898
+  }
+ },
+ "draws": 2000,
+ "note": "round-9 nested engine (rv9_falseflags.py run_families, 'np' selection) with the variant's L-IMG; deltas paired against the stored R49 and P1 90% on the same draws; round-9 reference for the stored model: A1 gate score, R49-aligned, exponentially weighted = 30.7 caught / 23.6 non-progressor patients flagged"
+}
