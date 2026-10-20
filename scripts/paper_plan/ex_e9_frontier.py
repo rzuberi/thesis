@@ -137,9 +137,9 @@ def x_at(x, y, c):
     if i == 0: return xs[0]
     return xs[i - 1] + (xs[i] - xs[i - 1]) * (c - ye[i - 1]) / max(ye[i] - ye[i - 1], 1e-12)
 def y_at(x, y, x0):
-    xs, ye = env(x, y)
-    if x0 < xs[0] - 1e-9 or x0 > xs[-1] + 1e-9: return np.nan
-    return float(np.interp(x0, xs, ye))
+    """caught at x0 non-progressors flagged on the monotone envelope (x0 scalar or array; NaN outside the swept range)"""
+    xs, ye = env(x, y); x0a = np.atleast_1d(np.asarray(x0, float)); v = np.interp(x0a, xs, ye); v[(x0a < xs[0] - 1e-9) | (x0a > xs[-1] + 1e-9)] = np.nan
+    return v if np.ndim(x0) else float(v[0])
 XG = np.round(np.arange(0, 43.01, 0.25), 2)
 if ETASK == "merge":
     S, ST, INFO = state("st"); D = pdraws(S, NB9); MB = np.vstack([np.ones((1, S["P_"])), D]); nP = int((S["plab"] == 1).sum()); nN = int((S["plab"] == 0).sum()); E = S["E"]
@@ -208,7 +208,7 @@ if ETASK == "merge":
     CUR = {}; MATCH = {}
     for nm in SW:
         pts = np.array([[nN * r["fpr"][0], nP * r["sens"][0]] for r in RT[nm]]); XB = np.stack([nN * r["fpr"][1:] for r in RT[nm]], 1); YB = np.stack([nP * r["sens"][1:] for r in RT[nm]], 1)
-        yo = np.array([y_at(pts[:, 0], pts[:, 1], x0) for x0 in XG]); YG = np.array([[y_at(XB[b], YB[b], x0) for x0 in XG] for b in range(len(D))])
+        yo = y_at(pts[:, 0], pts[:, 1], XG); YG = np.array([y_at(XB[b], YB[b], XG) for b in range(len(D))])
         ok = np.isfinite(YG).mean(0) >= 0.9; lo = np.where(ok, np.nanpercentile(np.where(np.isfinite(YG), YG, np.nan), 2.5, 0), np.nan); hi = np.where(ok, np.nanpercentile(np.where(np.isfinite(YG), YG, np.nan), 97.5, 0), np.nan)
         CUR[nm] = {"label": SW[nm][0], "points": [{"target": TNAMES[t], "np_flagged": r3(pts[t, 0]), "caught": r3(pts[t, 1]), "seq_per_patient": r3(opv(RT[nm][t])["seq_per_patient"][0])} for t in range(len(pts))],
                    "band_x": XG.tolist(), "band_obs": [r3(v) for v in yo], "band_lo": [r3(v) for v in lo], "band_hi": [r3(v) for v in hi]}
@@ -235,7 +235,7 @@ if ETASK == "merge":
         key = fam.replace(":", "_"); U = Z[grp][key + "__U"]; q = int(np.bincount(Z[grp][key + "__chosen"][0]).argmax()); cur = []
         for j in range(10):
             Pm = np.where(INC > 0, U[q][:, j][None, :], -np.inf).max(1); th = np.unique(Pm)[::-1]; xs = np.array([nN * (Pm[~isPp] >= t).mean() for t in th]); ys = np.array([nP * (Pm[isPp] >= t).mean() for t in th])
-            cur.append([y_at(xs, ys, x0) for x0 in XG])
+            cur.append(y_at(xs, ys, XG))
         app[nm] = {"candidate": META[grp]["meta"][fam]["labels"][q], "y": [r3(v) for v in np.nanmean(np.array(cur, float), 0)]}
     out["apparent_curves_OPTIMISTIC"] = {"x": XG.tolist(), "curves": app, "note": "threshold swept on the evaluated (held-out) patients, per repeat, modal training-selected candidate; optimistic"}
     # ---- prevalence reweighting and break-even (target D operating points)
