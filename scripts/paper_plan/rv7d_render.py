@@ -104,7 +104,7 @@ A(f"{pn['patients']} patients ({pn['progressor']} progressor, {pn['non_progresso
 A(f"| Rule | Progressor patients detected per repeat: median (range) of {pn['progressor']} [exact 95% CI, median repeat] | Non-progressor patients ever flagged (of {pn['non_progressor']}) | Per-patient share of endoscopies flagged, equal weights: progressor / non-progressor | Last 2 endoscopies: progressor detected share / non-progressor patients flagged (of {pn['non_progressor']}) | Flagged non-progressor endoscopies per patient-year |\n|---|---|---|---|---|---|")
 for nm in ("V0", "V0ovr", "H", "SLATE", "R49", "GP53"):
     o = PL[nm]; dp = o["progressor_patients_detected_per_repeat"]
-    A(f"| {TLB[nm]} | {dp['median']:.1f} ({dp['min']}–{dp['max']}) {cip(o['exact_ci95_median_repeat'])} | {o['non_progressor_patients_ever_flagged_mean']:.1f} | {o['per_patient_share_of_endoscopies_flagged_equal_weight']['progressor']:.3f} / {o['per_patient_share_of_endoscopies_flagged_equal_weight']['non_progressor']:.3f} | "
+    A(f"| {TLB[nm]} | {dp['median']:.1f} ({c5(dp['min'])}–{c5(dp['max'])}) {cip(o['exact_ci95_median_repeat'])} | {o['non_progressor_patients_ever_flagged_mean']:.1f} | {o['per_patient_share_of_endoscopies_flagged_equal_weight']['progressor']:.3f} / {o['per_patient_share_of_endoscopies_flagged_equal_weight']['non_progressor']:.3f} | "
       f"{o['ever_flagged_last2_endoscopies']['progressor_share']:.3f} / {o['ever_flagged_last2_endoscopies']['non_progressor_mean_count']:.1f} | {o['flagged_non_progressor_endoscopies_per_patient_year']:.3f} |")
 o = PL["V0"]
 A(f"\nV0 progressor-patient detection averaged over repeats {o['detected_proportion']:.3f}, patient bootstrap 95% CI {cip(o['detected_proportion_ci95_rederived'])} (re-derived), {cip(o['detected_proportion_ci95_fixed'])} (fixed). With {pn['progressor']} progressors, detecting all still has an exact lower limit of about 0.89.")
@@ -115,7 +115,7 @@ TM = PR["timing"]; tv = TM["V0"]
 A("| Rule | Endo sens, < 2 y | 2–5 y | > 5 y | Years first flag → event: median of repeat medians (pooled IQR) | Progressor patients first flagged only at last pre-event endoscopy (of whom ≥ 2 endoscopies) | Missed progressor patients (range over repeats) |\n|---|---|---|---|---|---|---|")
 for nm in ("V0", "V0ovr", "H", "SLATE", "R49", "GP53"):
     t = TM[nm]; b = t["endoscopy_sensitivity_by_years_to_event"]; y_ = t["years_first_flag_to_event"]
-    A(f"| {TLB[nm]} | {f3_(b['<2']['sensitivity'])} | {f3_(b['2-5']['sensitivity'])} | {f3_(b['>5']['sensitivity'])} | {y_['median_of_per_repeat_medians']:.2f} ({y_['pooled_iqr'][0]:.2f}–{y_['pooled_iqr'][1]:.2f}) | {t['progressor_patients_first_flagged_only_at_last_pre_event_endoscopy_mean']:.1f} ({t['of_which_patients_with_ge2_endoscopies_mean']:.1f}) | {t['missed_progressor_patients_mean']:.1f} ({t['missed_progressor_patients_per_repeat_range'][0]}–{t['missed_progressor_patients_per_repeat_range'][1]}) |")
+    A(f"| {TLB[nm]} | {f3_(b['<2']['sensitivity'])} | {f3_(b['2-5']['sensitivity'])} | {f3_(b['>5']['sensitivity'])} | {y_['median_of_per_repeat_medians']:.2f} ({y_['pooled_iqr'][0]:.2f}–{y_['pooled_iqr'][1]:.2f}) | {t['progressor_patients_first_flagged_only_at_last_pre_event_endoscopy_mean']:.1f} ({t['of_which_patients_with_ge2_endoscopies_mean']:.1f}) | {t['missed_progressor_patients_mean']:.1f} ({c5(t['missed_progressor_patients_per_repeat_range'][0])}–{c5(t['missed_progressor_patients_per_repeat_range'][1])}) |")
 b = tv["endoscopy_sensitivity_by_years_to_event"]
 A(f"\nProgressor endoscopies per band: < 2 y {c5(b['<2']['n_endoscopies'])}, 2–5 y {c5(b['2-5']['n_endoscopies'])}, > 5 y {c5(b['>5']['n_endoscopies'])}. Counts per patient are means over the 10 repeats.")
 cn = tv["progressor_endoscopies_cleared_by_copy_number"]
@@ -185,6 +185,8 @@ c = CK["H_at_R49_sensitivity_vs_Cstar_endo"]
 A(f"- (H) at R49's sensitivity ({c['R49_sensitivity']:.3f}): specificity {c['H_specificity_evaluation_matched']:.3f} (evaluation-matched); C\\*-endo (training-matched, round 7c) {fl(c['Cstar_endo_sens_spec_training_matched'])}; (H) at C\\*-endo's own sensitivity: specificity {c['H_specificity_at_Cstar_endo_sensitivity']:.3f} (evaluation matching favours (H)).")
 c = CK["SLATE_at_Bstar_endo_sensitivity"]
 A(f"- (S-LATE) at B\\*-endo's sensitivity: specificity {c['SLATE_specificity_evaluation_matched']:.3f}; B\\*-endo {fl(c['Bstar_endo_sens_spec'])} (expected 0.923 / 0.530, reproduced: {yn(c['Bstar_endo_reproduced'])}); difference in specificity {c['SLATE_minus_Bstar_endo_spec']:+.3f} (evaluation matching favours the comparator).")
+c = (F3.get("checks") or {}).get("r49_mean_sens_spec_vs_round7c_f3")
+if c: A(f"- Refit bootstrap: R49 re-scored on the 200 stored F3 draws, mean sens / spec {fl(c['got'])} (round 7c: {fl(c['expected'])}); reproduced: {yn(c['reproduced'])}.")
 lab = PR["same_block"]["pre_event_sample_labels"]
 A(f"- Same-block labels of the {PR['n_samples']} pre-event samples (round-7 lookup Q1: same / different / unknown = 556 / 6 / 9): " + ", ".join(f"{k} {c5(v)}" for k, v in sorted(lab.items())) + ".")
 
