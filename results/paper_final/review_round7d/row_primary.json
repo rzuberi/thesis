@@ -1,0 +1,2969 @@
+{
+ "task": "row_primary",
+ "R7D": {
+  "row": "primary",
+  "label": "all pre-event endoscopies",
+  "n_samples": 571,
+  "n_progressor_samples": 161,
+  "n_patients": 75,
+  "n_progressor_patients": 32,
+  "n_endoscopies": 288,
+  "n_progressor_endoscopies": 88,
+  "draws_fixed": 2000,
+  "draws_rederived": 2000,
+  "rules": {
+   "V0": {
+    "endoscopy_sensitivity": 0.949,
+    "sens_ci95_rederived": [
+     0.907,
+     0.961
+    ],
+    "sens_ci95_fixed": [
+     0.923,
+     0.973
+    ],
+    "endoscopy_specificity": 0.358,
+    "spec_ci95_rederived": [
+     0.282,
+     0.496
+    ],
+    "spec_ci95_fixed": [
+     0.282,
+     0.44
+    ],
+    "share_endoscopies_sequenced": 0.809,
+    "share_samples_sequenced": 0.408,
+    "share_samples_ci95_rederived": [
+     0.34,
+     0.463
+    ],
+    "patient_detection": 0.997,
+    "patient_detection_ci95_rederived": [
+     0.965,
+     1.0
+    ],
+    "patient_detection_ci95_fixed": [
+     0.989,
+     1.0
+    ],
+    "non_progressor_patients_flagged_share": 0.909
+   },
+   "V1": {
+    "endoscopy_sensitivity": 0.942,
+    "sens_ci95_rederived": [
+     0.904,
+     0.954
+    ],
+    "sens_ci95_fixed": [
+     0.913,
+     0.971
+    ],
+    "endoscopy_specificity": 0.469,
+    "spec_ci95_rederived": [
+     0.358,
+     0.588
+    ],
+    "spec_ci95_fixed": [
+     0.388,
+     0.558
+    ],
+    "share_endoscopies_sequenced": 0.809,
+    "share_samples_sequenced": 0.408,
+    "share_samples_ci95_rederived": [
+     0.34,
+     0.463
+    ],
+    "patient_detection": 0.981,
+    "patient_detection_ci95_rederived": [
+     0.948,
+     1.0
+    ],
+    "patient_detection_ci95_fixed": [
+     0.95,
+     1.0
+    ],
+    "non_progressor_patients_flagged_share": 0.816
+   },
+   "V2": {
+    "endoscopy_sensitivity": 0.948,
+    "sens_ci95_rederived": [
+     0.903,
+     0.959
+    ],
+    "sens_ci95_fixed": [
+     0.918,
+     0.975
+    ],
+    "endoscopy_specificity": 0.37,
+    "spec_ci95_rederived": [
+     0.286,
+     0.503
+    ],
+    "spec_ci95_fixed": [
+     0.289,
+     0.456
+    ],
+    "share_endoscopies_sequenced": 0.809,
+    "share_samples_sequenced": 0.84,
+    "share_samples_ci95_rederived": [
+     0.74,
+     0.885
+    ],
+    "patient_detection": 0.994,
+    "patient_detection_ci95_rederived": [
+     0.962,
+     1.0
+    ],
+    "patient_detection_ci95_fixed": [
+     0.979,
+     1.0
+    ],
+    "non_progressor_patients_flagged_share": 0.898
+   },
+   "V4": {
+    "endoscopy_sensitivity": 0.947,
+    "sens_ci95_rederived": [
+     0.906,
+     0.96
+    ],
+    "sens_ci95_fixed": [
+     0.916,
+     0.975
+    ],
+    "endoscopy_specificity": 0.41,
+    "spec_ci95_rederived": [
+     0.319,
+     0.562
+    ],
+    "spec_ci95_fixed": [
+     0.329,
+     0.497
+    ],
+    "share_endoscopies_sequenced": 0.561,
+    "share_samples_sequenced": 0.283,
+    "share_samples_ci95_rederived": [
+     0.218,
+     0.332
+    ],
+    "patient_detection": 0.991,
+    "patient_detection_ci95_rederived": [
+     0.964,
+     1.0
+    ],
+    "patient_detection_ci95_fixed": [
+     0.975,
+     1.0
+    ],
+    "non_progressor_patients_flagged_share": 0.865
+   },
+   "V0ovr": {
+    "endoscopy_sensitivity": 0.963,
+    "sens_ci95_rederived": [
+     0.926,
+     0.973
+    ],
+    "sens_ci95_fixed": [
+     0.941,
+     0.983
+    ],
+    "endoscopy_specificity": 0.288,
+    "spec_ci95_rederived": [
+     0.22,
+     0.404
+    ],
+    "spec_ci95_fixed": [
+     0.219,
+     0.363
+    ],
+    "share_endoscopies_sequenced": 0.542,
+    "share_samples_sequenced": 0.273,
+    "share_samples_ci95_rederived": [
+     0.217,
+     0.32
+    ],
+    "patient_detection": 0.997,
+    "patient_detection_ci95_rederived": [
+     0.966,
+     1.0
+    ],
+    "patient_detection_ci95_fixed": [
+     0.989,
+     1.0
+    ],
+    "non_progressor_patients_flagged_share": 0.942
+   },
+   "R49": {
+    "endoscopy_sensitivity": 0.907,
+    "sens_ci95_rederived": [
+     0.863,
+     0.94
+    ],
+    "sens_ci95_fixed": [
+     0.861,
+     0.951
+    ],
+    "endoscopy_specificity": 0.56,
+    "spec_ci95_rederived": [
+     0.424,
+     0.671
+    ],
+    "spec_ci95_fixed": [
+     0.475,
+     0.645
+    ],
+    "share_endoscopies_sequenced": 0.505,
+    "share_samples_sequenced": 0.255,
+    "share_samples_ci95_rederived": [
+     0.193,
+     0.306
+    ],
+    "patient_detection": 0.972,
+    "patient_detection_ci95_rederived": [
+     0.928,
+     1.0
+    ],
+    "patient_detection_ci95_fixed": [
+     0.928,
+     1.0
+    ],
+    "non_progressor_patients_flagged_share": 0.74
+   },
+   "Vp53": {
+    "endoscopy_sensitivity": 0.148,
+    "sens_ci95_rederived": [
+     0.07,
+     0.229
+    ],
+    "sens_ci95_fixed": [
+     0.07,
+     0.229
+    ],
+    "endoscopy_specificity": 1.0,
+    "spec_ci95_rederived": [
+     1.0,
+     1.0
+    ],
+    "spec_ci95_fixed": [
+     1.0,
+     1.0
+    ],
+    "share_endoscopies_sequenced": 0.799
+   },
+   "V0p53": {
+    "endoscopy_sensitivity": 0.944,
+    "sens_ci95_rederived": [
+     0.883,
+     0.961
+    ],
+    "sens_ci95_fixed": [
+     0.908,
+     0.972
+    ],
+    "endoscopy_specificity": 0.365,
+    "spec_ci95_rederived": [
+     0.286,
+     0.506
+    ],
+    "spec_ci95_fixed": [
+     0.288,
+     0.449
+    ],
+    "share_endoscopies_sequenced": 0.799
+   }
+  },
+  "n_p53_subset": {
+   "endoscopies": 220,
+   "progressor_endoscopies": 62,
+   "samples": 450
+  },
+  "comparators": {
+   "V0": {
+    "H": {
+     "specificity": 0.374,
+     "spec_ci95_rederived": [
+      0.281,
+      0.574
+     ],
+     "spec_ci95_fixed": [
+      0.286,
+      0.516
+     ]
+    },
+    "SLATE": {
+     "specificity": 0.479,
+     "spec_ci95_rederived": [
+      0.388,
+      0.681
+     ],
+     "spec_ci95_fixed": [
+      0.364,
+      0.636
+     ]
+    },
+    "SCNV": {
+     "specificity": 0.336,
+     "spec_ci95_rederived": [
+      0.231,
+      0.529
+     ],
+     "spec_ci95_fixed": [
+      0.215,
+      0.486
+     ]
+    },
+    "R1": {
+     "specificity": 0.532,
+     "spec_ci95_rederived": [
+      0.373,
+      0.693
+     ],
+     "spec_ci95_fixed": [
+      0.331,
+      0.663
+     ]
+    }
+   },
+   "V1": {
+    "H": {
+     "specificity": 0.384,
+     "spec_ci95_rederived": [
+      0.297,
+      0.569
+     ],
+     "spec_ci95_fixed": [
+      0.302,
+      0.517
+     ]
+    },
+    "SLATE": {
+     "specificity": 0.501,
+     "spec_ci95_rederived": [
+      0.399,
+      0.692
+     ],
+     "spec_ci95_fixed": [
+      0.4,
+      0.647
+     ]
+    }
+   },
+   "V2": {
+    "H": {
+     "specificity": 0.379,
+     "spec_ci95_rederived": [
+      0.288,
+      0.572
+     ],
+     "spec_ci95_fixed": [
+      0.288,
+      0.522
+     ]
+    },
+    "SLATE": {
+     "specificity": 0.469,
+     "spec_ci95_rederived": [
+      0.392,
+      0.679
+     ],
+     "spec_ci95_fixed": [
+      0.363,
+      0.64
+     ]
+    }
+   },
+   "V4": {
+    "H": {
+     "specificity": 0.385,
+     "spec_ci95_rederived": [
+      0.282,
+      0.568
+     ],
+     "spec_ci95_fixed": [
+      0.291,
+      0.51
+     ]
+    },
+    "SLATE": {
+     "specificity": 0.474,
+     "spec_ci95_rederived": [
+      0.39,
+      0.681
+     ],
+     "spec_ci95_fixed": [
+      0.37,
+      0.632
+     ]
+    }
+   },
+   "V0ovr": {
+    "H": {
+     "specificity": 0.323,
+     "spec_ci95_rederived": [
+      0.245,
+      0.523
+     ],
+     "spec_ci95_fixed": [
+      0.241,
+      0.446
+     ]
+    },
+    "SLATE": {
+     "specificity": 0.459,
+     "spec_ci95_rederived": [
+      0.36,
+      0.644
+     ],
+     "spec_ci95_fixed": [
+      0.336,
+      0.601
+     ]
+    }
+   },
+   "R49": {
+    "H": {
+     "specificity": 0.493,
+     "spec_ci95_rederived": [
+      0.382,
+      0.621
+     ],
+     "spec_ci95_fixed": [
+      0.382,
+      0.61
+     ]
+    },
+    "SLATE": {
+     "specificity": 0.591,
+     "spec_ci95_rederived": [
+      0.454,
+      0.733
+     ],
+     "spec_ci95_fixed": [
+      0.473,
+      0.705
+     ]
+    }
+   }
+  },
+  "contrasts": {
+   "V0_minus_H": {
+    "delta": -0.016,
+    "per_repeat": [
+     0.07,
+     0.04,
+     -0.08,
+     0.04,
+     -0.055,
+     -0.075,
+     -0.205,
+     0.01,
+     0.025,
+     0.075
+    ],
+    "rederived": {
+     "delta": -0.016,
+     "ci95": [
+      -0.133,
+      0.061
+     ],
+     "p_two_sided": 0.399
+    },
+    "fixed": {
+     "delta": -0.016,
+     "ci95": [
+      -0.14,
+      0.054
+     ],
+     "p_two_sided": 0.538
+    },
+    "comparator_specificity": 0.374,
+    "comparator_spec_ci95_rederived": [
+     0.281,
+     0.574
+    ]
+   },
+   "V0_minus_SLATE": {
+    "delta": -0.121,
+    "per_repeat": [
+     -0.2,
+     -0.165,
+     -0.2,
+     0.005,
+     -0.06,
+     -0.045,
+     -0.25,
+     -0.01,
+     -0.135,
+     -0.15
+    ],
+    "rederived": {
+     "delta": -0.121,
+     "ci95": [
+      -0.28,
+      -0.018
+     ],
+     "p_two_sided": 0.027,
+     "one_sided_95_lower": -0.254,
+     "non_inferior_at_-0.05": false
+    },
+    "fixed": {
+     "delta": -0.121,
+     "ci95": [
+      -0.251,
+      -0.03
+     ],
+     "p_two_sided": 0.008,
+     "one_sided_95_lower": -0.229,
+     "non_inferior_at_-0.05": false
+    },
+    "comparator_specificity": 0.479,
+    "comparator_spec_ci95_rederived": [
+     0.388,
+     0.681
+    ]
+   },
+   "V0_minus_SCNV": {
+    "delta": 0.023,
+    "per_repeat": [
+     -0.04,
+     0.025,
+     0.005,
+     0.14,
+     0.015,
+     0.065,
+     0.0,
+     0.0,
+     -0.11,
+     0.13
+    ],
+    "rederived": {
+     "delta": 0.023,
+     "ci95": [
+      -0.117,
+      0.148
+     ],
+     "p_two_sided": 0.836
+    },
+    "fixed": {
+     "delta": 0.023,
+     "ci95": [
+      -0.106,
+      0.119
+     ],
+     "p_two_sided": 0.718
+    },
+    "comparator_specificity": 0.336,
+    "comparator_spec_ci95_rederived": [
+     0.231,
+     0.529
+    ]
+   },
+   "V0_minus_R1": {
+    "delta": -0.173,
+    "per_repeat": [
+     -0.214,
+     -0.165,
+     -0.218,
+     -0.056,
+     -0.175,
+     -0.108,
+     -0.308,
+     -0.078,
+     -0.198,
+     -0.211
+    ],
+    "rederived": {
+     "delta": -0.173,
+     "ci95": [
+      -0.303,
+      0.017
+     ],
+     "p_two_sided": 0.075
+    },
+    "fixed": {
+     "delta": -0.173,
+     "ci95": [
+      -0.294,
+      0.019
+     ],
+     "p_two_sided": 0.078
+    },
+    "comparator_specificity": 0.532,
+    "comparator_spec_ci95_rederived": [
+     0.373,
+     0.693
+    ]
+   },
+   "V1_minus_H": {
+    "delta": 0.085,
+    "per_repeat": [
+     0.225,
+     0.2,
+     0.09,
+     0.06,
+     -0.015,
+     0.02,
+     -0.02,
+     0.085,
+     0.04,
+     0.165
+    ],
+    "rederived": {
+     "delta": 0.085,
+     "ci95": [
+      -0.057,
+      0.154
+     ],
+     "p_two_sided": 0.471
+    },
+    "fixed": {
+     "delta": 0.085,
+     "ci95": [
+      -0.025,
+      0.15
+     ],
+     "p_two_sided": 0.151
+    },
+    "comparator_specificity": 0.384,
+    "comparator_spec_ci95_rederived": [
+     0.297,
+     0.569
+    ]
+   },
+   "V1_minus_SLATE": {
+    "delta": -0.032,
+    "per_repeat": [
+     -0.045,
+     -0.035,
+     0.04,
+     -0.035,
+     -0.045,
+     0.085,
+     -0.065,
+     -0.035,
+     -0.125,
+     -0.06
+    ],
+    "rederived": {
+     "delta": -0.032,
+     "ci95": [
+      -0.18,
+      0.033
+     ],
+     "p_two_sided": 0.211,
+     "one_sided_95_lower": -0.157,
+     "non_inferior_at_-0.05": false
+    },
+    "fixed": {
+     "delta": -0.032,
+     "ci95": [
+      -0.15,
+      0.03
+     ],
+     "p_two_sided": 0.299,
+     "one_sided_95_lower": -0.128,
+     "non_inferior_at_-0.05": false
+    },
+    "comparator_specificity": 0.501,
+    "comparator_spec_ci95_rederived": [
+     0.399,
+     0.692
+    ]
+   },
+   "V2_minus_H": {
+    "delta": -0.008,
+    "per_repeat": [
+     0.1,
+     0.09,
+     -0.065,
+     0.03,
+     -0.03,
+     -0.055,
+     -0.235,
+     0.015,
+     0.025,
+     0.045
+    ],
+    "rederived": {
+     "delta": -0.008,
+     "ci95": [
+      -0.14,
+      0.072
+     ],
+     "p_two_sided": 0.457
+    },
+    "fixed": {
+     "delta": -0.008,
+     "ci95": [
+      -0.128,
+      0.065
+     ],
+     "p_two_sided": 0.734
+    },
+    "comparator_specificity": 0.379,
+    "comparator_spec_ci95_rederived": [
+     0.288,
+     0.572
+    ]
+   },
+   "V2_minus_SLATE": {
+    "delta": -0.098,
+    "per_repeat": [
+     -0.135,
+     -0.145,
+     -0.105,
+     -0.005,
+     -0.035,
+     -0.025,
+     -0.235,
+     -0.005,
+     -0.135,
+     -0.16
+    ],
+    "rederived": {
+     "delta": -0.098,
+     "ci95": [
+      -0.266,
+      -0.015
+     ],
+     "p_two_sided": 0.022,
+     "one_sided_95_lower": -0.245,
+     "non_inferior_at_-0.05": false
+    },
+    "fixed": {
+     "delta": -0.098,
+     "ci95": [
+      -0.248,
+      -0.025
+     ],
+     "p_two_sided": 0.016,
+     "one_sided_95_lower": -0.224,
+     "non_inferior_at_-0.05": false
+    },
+    "comparator_specificity": 0.469,
+    "comparator_spec_ci95_rederived": [
+     0.392,
+     0.679
+    ]
+   },
+   "V4_minus_H": {
+    "delta": 0.025,
+    "per_repeat": [
+     0.06,
+     0.155,
+     -0.03,
+     0.06,
+     -0.07,
+     -0.015,
+     -0.135,
+     0.055,
+     0.055,
+     0.115
+    ],
+    "rederived": {
+     "delta": 0.025,
+     "ci95": [
+      -0.097,
+      0.138
+     ],
+     "p_two_sided": 0.892
+    },
+    "fixed": {
+     "delta": 0.025,
+     "ci95": [
+      -0.079,
+      0.101
+     ],
+     "p_two_sided": 0.741
+    },
+    "comparator_specificity": 0.385,
+    "comparator_spec_ci95_rederived": [
+     0.282,
+     0.568
+    ]
+   },
+   "V4_minus_SLATE": {
+    "delta": -0.064,
+    "per_repeat": [
+     -0.175,
+     -0.115,
+     -0.07,
+     0.025,
+     -0.02,
+     0.015,
+     -0.135,
+     0.025,
+     -0.105,
+     -0.09
+    ],
+    "rederived": {
+     "delta": -0.064,
+     "ci95": [
+      -0.208,
+      0.024
+     ],
+     "p_two_sided": 0.12,
+     "one_sided_95_lower": -0.19,
+     "non_inferior_at_-0.05": false
+    },
+    "fixed": {
+     "delta": -0.064,
+     "ci95": [
+      -0.201,
+      0.012
+     ],
+     "p_two_sided": 0.091,
+     "one_sided_95_lower": -0.177,
+     "non_inferior_at_-0.05": false
+    },
+    "comparator_specificity": 0.474,
+    "comparator_spec_ci95_rederived": [
+     0.39,
+     0.681
+    ]
+   },
+   "V0ovr_minus_H": {
+    "delta": -0.035,
+    "per_repeat": [
+     0.02,
+     0.045,
+     -0.135,
+     0.0,
+     -0.02,
+     -0.095,
+     -0.21,
+     0.0,
+     0.03,
+     0.015
+    ],
+    "rederived": {
+     "delta": -0.035,
+     "ci95": [
+      -0.161,
+      0.022
+     ],
+     "p_two_sided": 0.161
+    },
+    "fixed": {
+     "delta": -0.035,
+     "ci95": [
+      -0.146,
+      0.029
+     ],
+     "p_two_sided": 0.288
+    },
+    "comparator_specificity": 0.323,
+    "comparator_spec_ci95_rederived": [
+     0.245,
+     0.523
+    ]
+   },
+   "V0ovr_minus_SLATE": {
+    "delta": -0.171,
+    "per_repeat": [
+     -0.25,
+     -0.225,
+     -0.175,
+     -0.08,
+     -0.12,
+     -0.12,
+     -0.275,
+     -0.045,
+     -0.175,
+     -0.25
+    ],
+    "rederived": {
+     "delta": -0.171,
+     "ci95": [
+      -0.331,
+      -0.062
+     ],
+     "p_two_sided": 0.001,
+     "one_sided_95_lower": -0.294,
+     "non_inferior_at_-0.05": false
+    },
+    "fixed": {
+     "delta": -0.171,
+     "ci95": [
+      -0.299,
+      -0.069
+     ],
+     "p_two_sided": 0.0,
+     "one_sided_95_lower": -0.269,
+     "non_inferior_at_-0.05": false
+    },
+    "comparator_specificity": 0.459,
+    "comparator_spec_ci95_rederived": [
+     0.36,
+     0.644
+    ]
+   },
+   "R49_minus_H": {
+    "delta": 0.067,
+    "per_repeat": [
+     0.315,
+     -0.01,
+     0.075,
+     0.035,
+     -0.04,
+     0.065,
+     -0.005,
+     0.115,
+     0.055,
+     0.07
+    ],
+    "rederived": {
+     "delta": 0.067,
+     "ci95": [
+      -0.06,
+      0.18
+     ],
+     "p_two_sided": 0.301
+    },
+    "fixed": {
+     "delta": 0.067,
+     "ci95": [
+      -0.038,
+      0.165
+     ],
+     "p_two_sided": 0.2
+    },
+    "comparator_specificity": 0.493,
+    "comparator_spec_ci95_rederived": [
+     0.382,
+     0.621
+    ]
+   },
+   "R49_minus_SLATE": {
+    "delta": -0.03,
+    "per_repeat": [
+     0.08,
+     -0.005,
+     -0.045,
+     0.03,
+     -0.075,
+     0.0,
+     -0.015,
+     -0.16,
+     -0.115,
+     0.0
+    ],
+    "rederived": {
+     "delta": -0.03,
+     "ci95": [
+      -0.115,
+      0.041
+     ],
+     "p_two_sided": 0.433,
+     "one_sided_95_lower": -0.101,
+     "non_inferior_at_-0.05": false
+    },
+    "fixed": {
+     "delta": -0.03,
+     "ci95": [
+      -0.118,
+      0.046
+     ],
+     "p_two_sided": 0.55,
+     "one_sided_95_lower": -0.104,
+     "non_inferior_at_-0.05": false
+    },
+    "comparator_specificity": 0.591,
+    "comparator_spec_ci95_rederived": [
+     0.454,
+     0.733
+    ]
+   },
+   "Vp53_minus_V0p53_matched": {
+    "delta": 0.0,
+    "per_repeat": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rederived": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.004
+     ],
+     "p_two_sided": 1.0
+    },
+    "fixed": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.004
+     ],
+     "p_two_sided": 1.0
+    },
+    "comparator_specificity": 1.0,
+    "comparator_spec_ci95_rederived": [
+     0.996,
+     1.0
+    ]
+   }
+  },
+  "primary_contrast": {
+   "delta": -0.016,
+   "ci95_rederived": [
+    -0.133,
+    0.061
+   ],
+   "ci95_fixed": [
+    -0.14,
+    0.054
+   ],
+   "v0_endoscopy_sensitivity": 0.949,
+   "lower_limit_above_0": false,
+   "sensitivity_condition_met": true,
+   "success": false,
+   "clinically_relevant_delta_ge_0.05": false
+  },
+  "key_secondary": {
+   "delta": -0.121,
+   "one_sided_95_lower_rederived": -0.254,
+   "one_sided_95_lower_fixed": -0.229,
+   "ci95_rederived": [
+    -0.28,
+    -0.018
+   ],
+   "ci95_fixed": [
+    -0.251,
+    -0.03
+   ],
+   "non_inferior_at_-0.05_rederived": false,
+   "status": "not tested (primary failed)"
+  },
+  "between_repeat": {
+   "delta_repeat_mean": -0.016,
+   "V_boot": 0.002457,
+   "V_rep": 0.00768,
+   "variance_inflated_ci95": [
+    -0.213,
+    0.182
+   ],
+   "per_repeat_delta": [
+    0.07,
+    0.04,
+    -0.08,
+    0.04,
+    -0.055,
+    -0.075,
+    -0.205,
+    0.01,
+    0.025,
+    0.075
+   ]
+  },
+  "checks": {
+   "r49_vs_round7": {
+    "got": [
+     0.907,
+     0.56,
+     0.255,
+     0.505,
+     [
+      0.861,
+      0.951
+     ]
+    ],
+    "expected": [
+     0.907,
+     0.56,
+     0.255,
+     0.505,
+     [
+      0.861,
+      0.951
+     ]
+    ],
+    "reproduced": true
+   },
+   "H_at_R49_sensitivity_vs_Cstar_endo": {
+    "R49_sensitivity": 0.907,
+    "H_specificity_evaluation_matched": 0.493,
+    "Cstar_endo_sens_spec_training_matched": [
+     0.89,
+     0.541
+    ],
+    "H_specificity_at_Cstar_endo_sensitivity": 0.55,
+    "H_minus_Cstar_endo_spec": -0.048
+   },
+   "SLATE_at_Bstar_endo_sensitivity": {
+    "Bstar_endo_sens_spec": [
+     0.923,
+     0.53
+    ],
+    "SLATE_specificity_evaluation_matched": 0.534,
+    "expected_Bstar_endo": [
+     0.923,
+     0.53
+    ],
+    "Bstar_endo_reproduced": true,
+    "SLATE_minus_Bstar_endo_spec": 0.005
+   }
+  },
+  "sample_unit": {
+   "V0": {
+    "sensitivity": 0.957,
+    "specificity": 0.319
+   },
+   "V0ovr": {
+    "sensitivity": 0.971,
+    "specificity": 0.26
+   },
+   "H": {
+    "sensitivity": 0.965,
+    "specificity": 0.316
+   },
+   "SLATE": {
+    "sensitivity": 0.963,
+    "specificity": 0.42
+   },
+   "R49": {
+    "sensitivity": 0.933,
+    "specificity": 0.514
+   },
+   "GP53": {
+    "sensitivity": 0.509,
+    "specificity": 0.727
+   },
+   "note": "each sample takes its endoscopy's call; (H) and S-LATE at the binary threshold reaching V0's per-repeat endoscopy sensitivity"
+  },
+  "patient_level": {
+   "V0": {
+    "progressor_patients_detected_per_repeat": {
+     "median": 32.0,
+     "min": 31,
+     "max": 32,
+     "of": 32
+    },
+    "exact_ci95_median_repeat": [
+     0.891,
+     1.0
+    ],
+    "progressor_patients_detected_mean": 31.9,
+    "non_progressor_patients_ever_flagged_mean": 39.1,
+    "of_non_progressor": 43,
+    "per_patient_share_of_endoscopies_flagged_equal_weight": {
+     "progressor": 0.961,
+     "non_progressor": 0.635
+    },
+    "ever_flagged_last2_endoscopies": {
+     "progressor_share": 0.991,
+     "non_progressor_share": 0.83,
+     "non_progressor_mean_count": 35.7
+    },
+    "flagged_non_progressor_endoscopies_per_patient_year": 0.449,
+    "detected_proportion_ci95_rederived": [
+     0.965,
+     1.0
+    ],
+    "detected_proportion_ci95_fixed": [
+     0.989,
+     1.0
+    ],
+    "detected_proportion": 0.997
+   },
+   "V0ovr": {
+    "progressor_patients_detected_per_repeat": {
+     "median": 32.0,
+     "min": 31,
+     "max": 32,
+     "of": 32
+    },
+    "exact_ci95_median_repeat": [
+     0.891,
+     1.0
+    ],
+    "progressor_patients_detected_mean": 31.9,
+    "non_progressor_patients_ever_flagged_mean": 40.5,
+    "of_non_progressor": 43,
+    "per_patient_share_of_endoscopies_flagged_equal_weight": {
+     "progressor": 0.971,
+     "non_progressor": 0.7
+    },
+    "ever_flagged_last2_endoscopies": {
+     "progressor_share": 0.997,
+     "non_progressor_share": 0.835,
+     "non_progressor_mean_count": 35.9
+    },
+    "flagged_non_progressor_endoscopies_per_patient_year": 0.499
+   },
+   "H": {
+    "progressor_patients_detected_per_repeat": {
+     "median": 32.0,
+     "min": 31,
+     "max": 32,
+     "of": 32
+    },
+    "exact_ci95_median_repeat": [
+     0.891,
+     1.0
+    ],
+    "progressor_patients_detected_mean": 31.9,
+    "non_progressor_patients_ever_flagged_mean": 39.8,
+    "of_non_progressor": 43,
+    "per_patient_share_of_endoscopies_flagged_equal_weight": {
+     "progressor": 0.962,
+     "non_progressor": 0.622
+    },
+    "ever_flagged_last2_endoscopies": {
+     "progressor_share": 0.997,
+     "non_progressor_share": 0.833,
+     "non_progressor_mean_count": 35.8
+    },
+    "flagged_non_progressor_endoscopies_per_patient_year": 0.439
+   },
+   "SLATE": {
+    "progressor_patients_detected_per_repeat": {
+     "median": 31.5,
+     "min": 30,
+     "max": 32,
+     "of": 32
+    },
+    "exact_ci95_median_repeat": [
+     0.838,
+     0.999
+    ],
+    "progressor_patients_detected_mean": 31.4,
+    "non_progressor_patients_ever_flagged_mean": 33.4,
+    "of_non_progressor": 43,
+    "per_patient_share_of_endoscopies_flagged_equal_weight": {
+     "progressor": 0.948,
+     "non_progressor": 0.51
+    },
+    "ever_flagged_last2_endoscopies": {
+     "progressor_share": 0.981,
+     "non_progressor_share": 0.66,
+     "non_progressor_mean_count": 28.4
+    },
+    "flagged_non_progressor_endoscopies_per_patient_year": 0.365
+   },
+   "R49": {
+    "progressor_patients_detected_per_repeat": {
+     "median": 31.0,
+     "min": 29,
+     "max": 32,
+     "of": 32
+    },
+    "exact_ci95_median_repeat": [
+     0.838,
+     0.999
+    ],
+    "progressor_patients_detected_mean": 31.1,
+    "non_progressor_patients_ever_flagged_mean": 31.8,
+    "of_non_progressor": 43,
+    "per_patient_share_of_endoscopies_flagged_equal_weight": {
+     "progressor": 0.917,
+     "non_progressor": 0.424
+    },
+    "ever_flagged_last2_endoscopies": {
+     "progressor_share": 0.972,
+     "non_progressor_share": 0.602,
+     "non_progressor_mean_count": 25.9
+    },
+    "flagged_non_progressor_endoscopies_per_patient_year": 0.308
+   },
+   "GP53": {
+    "progressor_patients_detected_per_repeat": {
+     "median": 21.0,
+     "min": 21,
+     "max": 21,
+     "of": 32
+    },
+    "exact_ci95_median_repeat": [
+     0.468,
+     0.814
+    ],
+    "progressor_patients_detected_mean": 21.0,
+    "non_progressor_patients_ever_flagged_mean": 25.0,
+    "of_non_progressor": 43,
+    "per_patient_share_of_endoscopies_flagged_equal_weight": {
+     "progressor": 0.439,
+     "non_progressor": 0.228
+    },
+    "ever_flagged_last2_endoscopies": {
+     "progressor_share": 0.656,
+     "non_progressor_share": 0.116,
+     "non_progressor_mean_count": 5.0
+    },
+    "flagged_non_progressor_endoscopies_per_patient_year": 0.172
+   },
+   "n": {
+    "patients": 75,
+    "progressor": 32,
+    "non_progressor": 43,
+    "non_progressor_patient_years": 285.5,
+    "endoscopies_per_patient_mean": {
+     "progressor": 2.75,
+     "non_progressor": 4.651
+    }
+   }
+  },
+  "timing": {
+   "V0": {
+    "endoscopy_sensitivity_by_years_to_event": {
+     "<2": {
+      "n_endoscopies": 18,
+      "sensitivity": 0.928
+     },
+     "2-5": {
+      "n_endoscopies": 42,
+      "sensitivity": 0.955
+     },
+     ">5": {
+      "n_endoscopies": 28,
+      "sensitivity": 0.954
+     }
+    },
+    "years_first_flag_to_event": {
+     "median_of_per_repeat_medians": 5.0,
+     "pooled_median": 5.0,
+     "pooled_iqr": [
+      2.5,
+      7.0
+     ],
+     "pooled_range": [
+      0.5,
+      15.0
+     ]
+    },
+    "progressor_patients_first_flagged_only_at_last_pre_event_endoscopy_mean": 10.5,
+    "of_which_patients_with_ge2_endoscopies_mean": 0.6,
+    "missed_progressor_patients_mean": 0.1,
+    "missed_progressor_patients_per_repeat_range": [
+     0,
+     1
+    ],
+    "progressor_endoscopies_cleared_by_copy_number": {
+     "mean_per_repeat": 2.0,
+     "later_endoscopy_flagged_mean": 0.8,
+     "later_endoscopy_not_flagged_mean": 0.2,
+     "no_later_pre_event_endoscopy_mean": 1.0
+    }
+   },
+   "V0ovr": {
+    "endoscopy_sensitivity_by_years_to_event": {
+     "<2": {
+      "n_endoscopies": 18,
+      "sensitivity": 0.944
+     },
+     "2-5": {
+      "n_endoscopies": 42,
+      "sensitivity": 0.974
+     },
+     ">5": {
+      "n_endoscopies": 28,
+      "sensitivity": 0.957
+     }
+    },
+    "years_first_flag_to_event": {
+     "median_of_per_repeat_medians": 5.0,
+     "pooled_median": 5.0,
+     "pooled_iqr": [
+      2.5,
+      7.0
+     ],
+     "pooled_range": [
+      0.5,
+      15.0
+     ]
+    },
+    "progressor_patients_first_flagged_only_at_last_pre_event_endoscopy_mean": 10.4,
+    "of_which_patients_with_ge2_endoscopies_mean": 0.5,
+    "missed_progressor_patients_mean": 0.1,
+    "missed_progressor_patients_per_repeat_range": [
+     0,
+     1
+    ],
+    "progressor_endoscopies_cleared_by_copy_number": {
+     "mean_per_repeat": 0.9,
+     "later_endoscopy_flagged_mean": 0.7,
+     "later_endoscopy_not_flagged_mean": 0.0,
+     "no_later_pre_event_endoscopy_mean": 0.2
+    }
+   },
+   "H": {
+    "endoscopy_sensitivity_by_years_to_event": {
+     "<2": {
+      "n_endoscopies": 18,
+      "sensitivity": 0.933
+     },
+     "2-5": {
+      "n_endoscopies": 42,
+      "sensitivity": 0.969
+     },
+     ">5": {
+      "n_endoscopies": 28,
+      "sensitivity": 0.929
+     }
+    },
+    "years_first_flag_to_event": {
+     "median_of_per_repeat_medians": 5.0,
+     "pooled_median": 5.0,
+     "pooled_iqr": [
+      2.5,
+      7.5
+     ],
+     "pooled_range": [
+      0.5,
+      15.0
+     ]
+    },
+    "progressor_patients_first_flagged_only_at_last_pre_event_endoscopy_mean": 10.8,
+    "of_which_patients_with_ge2_endoscopies_mean": 0.9,
+    "missed_progressor_patients_mean": 0.1,
+    "missed_progressor_patients_per_repeat_range": [
+     0,
+     1
+    ]
+   },
+   "SLATE": {
+    "endoscopy_sensitivity_by_years_to_event": {
+     "<2": {
+      "n_endoscopies": 18,
+      "sensitivity": 1.0
+     },
+     "2-5": {
+      "n_endoscopies": 42,
+      "sensitivity": 0.952
+     },
+     ">5": {
+      "n_endoscopies": 28,
+      "sensitivity": 0.911
+     }
+    },
+    "years_first_flag_to_event": {
+     "median_of_per_repeat_medians": 4.95,
+     "pooled_median": 5.0,
+     "pooled_iqr": [
+      2.5,
+      7.0
+     ],
+     "pooled_range": [
+      0.5,
+      15.0
+     ]
+    },
+    "progressor_patients_first_flagged_only_at_last_pre_event_endoscopy_mean": 10.0,
+    "of_which_patients_with_ge2_endoscopies_mean": 0.5,
+    "missed_progressor_patients_mean": 0.6,
+    "missed_progressor_patients_per_repeat_range": [
+     0,
+     2
+    ]
+   },
+   "R49": {
+    "endoscopy_sensitivity_by_years_to_event": {
+     "<2": {
+      "n_endoscopies": 18,
+      "sensitivity": 0.944
+     },
+     "2-5": {
+      "n_endoscopies": 42,
+      "sensitivity": 0.924
+     },
+     ">5": {
+      "n_endoscopies": 28,
+      "sensitivity": 0.857
+     }
+    },
+    "years_first_flag_to_event": {
+     "median_of_per_repeat_medians": 4.95,
+     "pooled_median": 5.0,
+     "pooled_iqr": [
+      2.5,
+      7.0
+     ],
+     "pooled_range": [
+      0.5,
+      15.0
+     ]
+    },
+    "progressor_patients_first_flagged_only_at_last_pre_event_endoscopy_mean": 10.0,
+    "of_which_patients_with_ge2_endoscopies_mean": 0.6,
+    "missed_progressor_patients_mean": 0.9,
+    "missed_progressor_patients_per_repeat_range": [
+     0,
+     3
+    ]
+   },
+   "GP53": {
+    "endoscopy_sensitivity_by_years_to_event": {
+     "<2": {
+      "n_endoscopies": 18,
+      "sensitivity": 0.722
+     },
+     "2-5": {
+      "n_endoscopies": 42,
+      "sensitivity": 0.381
+     },
+     ">5": {
+      "n_endoscopies": 28,
+      "sensitivity": 0.286
+     }
+    },
+    "years_first_flag_to_event": {
+     "median_of_per_repeat_medians": 3.0,
+     "pooled_median": 3.0,
+     "pooled_iqr": [
+      1.5,
+      5.0
+     ],
+     "pooled_range": [
+      0.5,
+      9.5
+     ]
+    },
+    "progressor_patients_first_flagged_only_at_last_pre_event_endoscopy_mean": 12.0,
+    "of_which_patients_with_ge2_endoscopies_mean": 6.0,
+    "missed_progressor_patients_mean": 11.0,
+    "missed_progressor_patients_per_repeat_range": [
+     11,
+     11
+    ]
+   }
+  },
+  "clinical_per_1000_ndbe": {
+   "rules": {
+    "V0": {
+     "endoscopies_with_sequencing": 716.1,
+     "samples_sequenced": 716.1,
+     "endoscopies_flagged": 628.0,
+     "endoscopies_flagged_without_failures": 625.3,
+     "progressor_endoscopies_missed": 1.38,
+     "slides_scanned": 1991.4,
+     "progressor_endoscopy_sensitivity": 0.931,
+     "non_progressor_endoscopy_specificity": 0.378,
+     "progressor_patient_detection_ndbe_unit": 0.996,
+     "_sens_raw": 0.931161,
+     "progressor_patients_detected_per_1000": 8.893,
+     "cost_gbp_seq_85": 406821,
+     "cost_gbp_seq_150": 453368,
+     "cost_gbp_seq_250": 524978,
+     "cost_components_gbp_seq_85": {
+      "sequencing": 60869,
+      "flags": 335995,
+      "slides": 9957
+     },
+     "extra_cost_per_additional_progressor_patient_detected_vs_grade_p53_seq_85": 56622,
+     "extra_cost_per_additional_progressor_endoscopy_detected_vs_grade_p53_seq_85": 23900,
+     "extra_cost_per_additional_progressor_patient_detected_vs_grade_p53_seq_150": 63172,
+     "extra_cost_per_additional_progressor_endoscopy_detected_vs_grade_p53_seq_150": 26664,
+     "extra_cost_per_additional_progressor_patient_detected_vs_grade_p53_seq_250": 73248,
+     "extra_cost_per_additional_progressor_endoscopy_detected_vs_grade_p53_seq_250": 30917
+    },
+    "V0ovr": {
+     "endoscopies_with_sequencing": 709.8,
+     "samples_sequenced": 709.8,
+     "endoscopies_flagged": 630.2,
+     "endoscopies_flagged_without_failures": 627.5,
+     "progressor_endoscopies_missed": 1.17,
+     "slides_scanned": 1991.4,
+     "progressor_endoscopy_sensitivity": 0.942,
+     "non_progressor_endoscopy_specificity": 0.376,
+     "progressor_patient_detection_ndbe_unit": 0.996,
+     "_sens_raw": 0.941554,
+     "progressor_patients_detected_per_1000": 8.893,
+     "cost_gbp_seq_85": 407432,
+     "cost_gbp_seq_150": 453569,
+     "cost_gbp_seq_250": 524550,
+     "cost_components_gbp_seq_85": {
+      "sequencing": 60333,
+      "flags": 337141,
+      "slides": 9957
+     },
+     "extra_cost_per_additional_progressor_patient_detected_vs_grade_p53_seq_85": 56708,
+     "extra_cost_per_additional_progressor_endoscopy_detected_vs_grade_p53_seq_85": 23644,
+     "extra_cost_per_additional_progressor_patient_detected_vs_grade_p53_seq_150": 63200,
+     "extra_cost_per_additional_progressor_endoscopy_detected_vs_grade_p53_seq_150": 26351,
+     "extra_cost_per_additional_progressor_patient_detected_vs_grade_p53_seq_250": 73188,
+     "extra_cost_per_additional_progressor_endoscopy_detected_vs_grade_p53_seq_250": 30515
+    },
+    "H": {
+     "endoscopies_with_sequencing": 0.0,
+     "samples_sequenced": 0.0,
+     "endoscopies_flagged": 598.9,
+     "endoscopies_flagged_without_failures": 598.9,
+     "progressor_endoscopies_missed": 1.39,
+     "slides_scanned": 1991.4,
+     "progressor_endoscopy_sensitivity": 0.93,
+     "non_progressor_endoscopy_specificity": 0.408,
+     "progressor_patient_detection_ndbe_unit": 0.996,
+     "_sens_raw": 0.930357,
+     "progressor_patients_detected_per_1000": 8.893,
+     "cost_gbp_seq_85": 330353,
+     "cost_gbp_seq_150": 330353,
+     "cost_gbp_seq_250": 330353,
+     "cost_components_gbp_seq_85": {
+      "sequencing": 0,
+      "flags": 320396,
+      "slides": 9957
+     },
+     "extra_cost_per_additional_progressor_patient_detected_vs_grade_p53_seq_85": 45863,
+     "extra_cost_per_additional_progressor_endoscopy_detected_vs_grade_p53_seq_85": 19377,
+     "extra_cost_per_additional_progressor_patient_detected_vs_grade_p53_seq_150": 45863,
+     "extra_cost_per_additional_progressor_endoscopy_detected_vs_grade_p53_seq_150": 19377,
+     "extra_cost_per_additional_progressor_patient_detected_vs_grade_p53_seq_250": 45863,
+     "extra_cost_per_additional_progressor_endoscopy_detected_vs_grade_p53_seq_250": 19377
+    },
+    "SLATE": {
+     "endoscopies_with_sequencing": 1000.0,
+     "samples_sequenced": 1985.0,
+     "endoscopies_flagged": 504.6,
+     "endoscopies_flagged_without_failures": 475.7,
+     "progressor_endoscopies_missed": 1.34,
+     "slides_scanned": 1991.4,
+     "progressor_endoscopy_sensitivity": 0.933,
+     "non_progressor_endoscopy_specificity": 0.504,
+     "progressor_patient_detection_ndbe_unit": 0.98,
+     "_sens_raw": 0.933018,
+     "progressor_patients_detected_per_1000": 8.75,
+     "cost_gbp_seq_85": 448661,
+     "cost_gbp_seq_150": 577684,
+     "cost_gbp_seq_250": 776183,
+     "cost_components_gbp_seq_85": {
+      "sequencing": 168723,
+      "flags": 269980,
+      "slides": 9957
+     },
+     "extra_cost_per_additional_progressor_patient_detected_vs_grade_p53_seq_85": 63793,
+     "extra_cost_per_additional_progressor_endoscopy_detected_vs_grade_p53_seq_85": 26327,
+     "extra_cost_per_additional_progressor_patient_detected_vs_grade_p53_seq_150": 82320,
+     "extra_cost_per_additional_progressor_endoscopy_detected_vs_grade_p53_seq_150": 33973,
+     "extra_cost_per_additional_progressor_patient_detected_vs_grade_p53_seq_250": 110824,
+     "extra_cost_per_additional_progressor_endoscopy_detected_vs_grade_p53_seq_250": 45736
+    },
+    "R49": {
+     "endoscopies_with_sequencing": 572.5,
+     "samples_sequenced": 572.5,
+     "endoscopies_flagged": 431.5,
+     "endoscopies_flagged_without_failures": 421.9,
+     "progressor_endoscopies_missed": 2.28,
+     "slides_scanned": 1991.4,
+     "progressor_endoscopy_sensitivity": 0.886,
+     "non_progressor_endoscopy_specificity": 0.578,
+     "progressor_patient_detection_ndbe_unit": 0.964,
+     "_sens_raw": 0.886071,
+     "progressor_patients_detected_per_1000": 8.607,
+     "cost_gbp_seq_85": 289466,
+     "cost_gbp_seq_150": 326679,
+     "cost_gbp_seq_250": 383929,
+     "cost_components_gbp_seq_85": {
+      "sequencing": 48663,
+      "flags": 230846,
+      "slides": 9957
+     },
+     "extra_cost_per_additional_progressor_patient_detected_vs_grade_p53_seq_85": 41792,
+     "extra_cost_per_additional_progressor_endoscopy_detected_vs_grade_p53_seq_85": 17888,
+     "extra_cost_per_additional_progressor_patient_detected_vs_grade_p53_seq_150": 47247,
+     "extra_cost_per_additional_progressor_endoscopy_detected_vs_grade_p53_seq_150": 20223,
+     "extra_cost_per_additional_progressor_patient_detected_vs_grade_p53_seq_250": 55641,
+     "extra_cost_per_additional_progressor_endoscopy_detected_vs_grade_p53_seq_250": 23816
+    },
+    "GP53": {
+     "endoscopies_with_sequencing": 0.0,
+     "samples_sequenced": 0.0,
+     "endoscopies_flagged": 8.2,
+     "endoscopies_flagged_without_failures": 8.2,
+     "progressor_endoscopies_missed": 18.21,
+     "slides_scanned": 0.0,
+     "progressor_endoscopy_sensitivity": 0.089,
+     "non_progressor_endoscopy_specificity": 0.993,
+     "progressor_patient_detection_ndbe_unit": 0.2,
+     "_sens_raw": 0.089286,
+     "progressor_patients_detected_per_1000": 1.786,
+     "cost_gbp_seq_85": 4405,
+     "cost_gbp_seq_150": 4405,
+     "cost_gbp_seq_250": 4405,
+     "cost_components_gbp_seq_85": {
+      "sequencing": 0,
+      "flags": 4405,
+      "slides": 0
+     }
+    }
+   },
+   "costs": {
+    "sequencing_per_sample_gbp": 85.0,
+    "sequencing_sensitivity_gbp": [
+     150.0,
+     250.0
+    ],
+    "sequencing_failure_rate": 0.03,
+    "flag_gbp": 535.0,
+    "flag_items_gbp": {
+     "repeat_endoscopy": 471.0,
+     "expert_pathology_review": 44.0,
+     "p53": 20.0
+    },
+    "slide_scanning_and_ai_per_slide_gbp": 5.0,
+    "progressor_endoscopy_prevalence": 0.02
+   },
+   "ndbe_unit": {
+    "endoscopies": 208,
+    "progressor_endoscopies": 56,
+    "progressor_patients": 25,
+    "progressor_endoscopies_per_progressor_patient": 2.24,
+    "samples_per_endoscopy_mean": 1.88,
+    "slides_per_endoscopy_mean": 1.885
+   },
+   "V0_ndbe_sensitivity_used_for_matching": 0.93
+  },
+  "same_block": {
+   "pre_event_sample_labels": {
+    "same case, same block": 556,
+    "same case, block not recorded on one side": 9,
+    "same case, different block": 6
+   },
+   "v0_sequenced_samples_per_repeat_mean": 232.9,
+   "v0_sequenced_not_same_block_per_repeat_mean": 11.0,
+   "v0_sequenced_in_any_repeat": 342,
+   "v0_sequenced_in_any_repeat_not_same_block": 13,
+   "note": "labels from the round-7 lookup Q1 (case number + block on the sheet's Path ID vs the slide's PathCaseID + Block; clinical_lookup/q6_q1fix.py logic); 'not same block' = different block, block not recorded on one side, or case unparseable"
+  },
+  "threshold_stability": {
+   "folds": 100,
+   "t_low": {
+    "median": 0.042,
+    "iqr": [
+     0.033,
+     0.06
+    ],
+    "range": [
+     0.007,
+     0.164
+    ]
+   },
+   "t_cnv": {
+    "median": 0.016,
+    "iqr": [
+     0.008,
+     0.035
+    ],
+    "range": [
+     0.0,
+     0.162
+    ]
+   },
+   "folds_t_cnv_infeasible": 0,
+   "train_progressor_endoscopies_per_fold": {
+    "median": 80.0,
+    "iqr": [
+     77.0,
+     82.0
+    ],
+    "range": [
+     68.0,
+     87.0
+    ]
+   },
+   "folds_by_train_progressor_endoscopies_below_t_low": {
+    "0": 0,
+    "1-4": 100,
+    ">=5": 0
+   },
+   "folds_by_train_progressor_patients_below_t_low": {
+    "0": 0,
+    "1-4": 100,
+    ">=5": 0
+   },
+   "train_step1_sensitivity": {
+    "median": 0.976,
+    "iqr": [
+     0.975,
+     0.987
+    ],
+    "range": [
+     0.971,
+     0.988
+    ]
+   },
+   "train_two_stage_sensitivity": {
+    "median": 0.954,
+    "iqr": [
+     0.951,
+     0.961
+    ],
+    "range": [
+     0.95,
+     0.962
+    ]
+   },
+   "target_two_stage": 0.95,
+   "target_step1": 0.98,
+   "outer_two_stage_sensitivity_per_fold": {
+    "median": 1.0,
+    "iqr": [
+     0.909,
+     1.0
+    ],
+    "range": [
+     0.571,
+     1.0
+    ]
+   },
+   "outer_step1_sensitivity_per_fold": {
+    "median": 1.0,
+    "iqr": [
+     1.0,
+     1.0
+    ],
+    "range": [
+     0.8,
+     1.0
+    ]
+   },
+   "outer_two_stage_sensitivity_per_repeat": [
+    0.966,
+    0.966,
+    0.932,
+    0.932,
+    0.966,
+    0.966,
+    0.943,
+    0.955,
+    0.943,
+    0.92
+   ],
+   "folds_without_outer_progressor_endoscopies": 0,
+   "per_fold": [
+    {
+     "rep": 1,
+     "fold": 1,
+     "t_low": 0.058,
+     "t_cnv": 0.054,
+     "train_two_stage_sensitivity": 0.961,
+     "train_step1_sensitivity": 0.987,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.833,
+     "outer_step1_sensitivity": 0.917
+    },
+    {
+     "rep": 1,
+     "fold": 2,
+     "t_low": 0.033,
+     "t_cnv": 0.006,
+     "train_two_stage_sensitivity": 0.958,
+     "train_step1_sensitivity": 0.986,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.938,
+     "outer_step1_sensitivity": 0.938
+    },
+    {
+     "rep": 1,
+     "fold": 3,
+     "t_low": 0.044,
+     "t_cnv": 0.008,
+     "train_two_stage_sensitivity": 0.95,
+     "train_step1_sensitivity": 0.975,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 1,
+     "fold": 4,
+     "t_low": 0.043,
+     "t_cnv": 0.012,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.988,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 1,
+     "fold": 5,
+     "t_low": 0.068,
+     "t_cnv": 0.004,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.988,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 1,
+     "fold": 6,
+     "t_low": 0.034,
+     "t_cnv": 0.026,
+     "train_two_stage_sensitivity": 0.95,
+     "train_step1_sensitivity": 0.975,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 1,
+     "fold": 7,
+     "t_low": 0.047,
+     "t_cnv": 0.01,
+     "train_two_stage_sensitivity": 0.962,
+     "train_step1_sensitivity": 0.974,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 1,
+     "fold": 8,
+     "t_low": 0.008,
+     "t_cnv": 0.005,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.975,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 1,
+     "fold": 9,
+     "t_low": 0.011,
+     "t_cnv": 0.009,
+     "train_two_stage_sensitivity": 0.959,
+     "train_step1_sensitivity": 0.973,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 1,
+     "fold": 10,
+     "t_low": 0.164,
+     "t_cnv": 0.01,
+     "train_two_stage_sensitivity": 0.954,
+     "train_step1_sensitivity": 0.977,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 2,
+     "fold": 1,
+     "t_low": 0.041,
+     "t_cnv": 0.162,
+     "train_two_stage_sensitivity": 0.961,
+     "train_step1_sensitivity": 0.974,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 2,
+     "fold": 2,
+     "t_low": 0.037,
+     "t_cnv": 0.019,
+     "train_two_stage_sensitivity": 0.962,
+     "train_step1_sensitivity": 0.975,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 2,
+     "fold": 3,
+     "t_low": 0.024,
+     "t_cnv": 0.023,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.976,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 2,
+     "fold": 4,
+     "t_low": 0.075,
+     "t_cnv": 0.003,
+     "train_two_stage_sensitivity": 0.96,
+     "train_step1_sensitivity": 0.973,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 2,
+     "fold": 5,
+     "t_low": 0.038,
+     "t_cnv": 0.054,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.988,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 2,
+     "fold": 6,
+     "t_low": 0.039,
+     "t_cnv": 0.103,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.988,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 2,
+     "fold": 7,
+     "t_low": 0.038,
+     "t_cnv": 0.008,
+     "train_two_stage_sensitivity": 0.958,
+     "train_step1_sensitivity": 0.986,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 2,
+     "fold": 8,
+     "t_low": 0.134,
+     "t_cnv": 0.059,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.988,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.667,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 2,
+     "fold": 9,
+     "t_low": 0.02,
+     "t_cnv": 0.016,
+     "train_two_stage_sensitivity": 0.952,
+     "train_step1_sensitivity": 0.976,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 2,
+     "fold": 10,
+     "t_low": 0.029,
+     "t_cnv": 0.012,
+     "train_two_stage_sensitivity": 0.961,
+     "train_step1_sensitivity": 0.987,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.909,
+     "outer_step1_sensitivity": 0.909
+    },
+    {
+     "rep": 3,
+     "fold": 1,
+     "t_low": 0.043,
+     "t_cnv": 0.011,
+     "train_two_stage_sensitivity": 0.959,
+     "train_step1_sensitivity": 0.973,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 3,
+     "fold": 2,
+     "t_low": 0.013,
+     "t_cnv": 0.032,
+     "train_two_stage_sensitivity": 0.961,
+     "train_step1_sensitivity": 0.974,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.909,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 3,
+     "fold": 3,
+     "t_low": 0.102,
+     "t_cnv": 0.015,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.988,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 3,
+     "fold": 4,
+     "t_low": 0.032,
+     "t_cnv": 0.006,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.975,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 3,
+     "fold": 5,
+     "t_low": 0.042,
+     "t_cnv": 0.008,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.976,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 3,
+     "fold": 6,
+     "t_low": 0.04,
+     "t_cnv": 0.054,
+     "train_two_stage_sensitivity": 0.957,
+     "train_step1_sensitivity": 0.971,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.842,
+     "outer_step1_sensitivity": 0.895
+    },
+    {
+     "rep": 3,
+     "fold": 7,
+     "t_low": 0.044,
+     "t_cnv": 0.007,
+     "train_two_stage_sensitivity": 0.961,
+     "train_step1_sensitivity": 0.974,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.909,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 3,
+     "fold": 8,
+     "t_low": 0.1,
+     "t_cnv": 0.111,
+     "train_two_stage_sensitivity": 0.952,
+     "train_step1_sensitivity": 0.976,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.75,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 3,
+     "fold": 9,
+     "t_low": 0.083,
+     "t_cnv": 0.013,
+     "train_two_stage_sensitivity": 0.953,
+     "train_step1_sensitivity": 0.988,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 3,
+     "fold": 10,
+     "t_low": 0.032,
+     "t_cnv": 0.035,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.988,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 4,
+     "fold": 1,
+     "t_low": 0.075,
+     "t_cnv": 0.014,
+     "train_two_stage_sensitivity": 0.962,
+     "train_step1_sensitivity": 0.974,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.9,
+     "outer_step1_sensitivity": 0.9
+    },
+    {
+     "rep": 4,
+     "fold": 2,
+     "t_low": 0.016,
+     "t_cnv": 0.007,
+     "train_two_stage_sensitivity": 0.962,
+     "train_step1_sensitivity": 0.974,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 4,
+     "fold": 3,
+     "t_low": 0.027,
+     "t_cnv": 0.016,
+     "train_two_stage_sensitivity": 0.95,
+     "train_step1_sensitivity": 0.975,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 4,
+     "fold": 4,
+     "t_low": 0.048,
+     "t_cnv": 0.034,
+     "train_two_stage_sensitivity": 0.952,
+     "train_step1_sensitivity": 0.976,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 4,
+     "fold": 5,
+     "t_low": 0.052,
+     "t_cnv": 0.063,
+     "train_two_stage_sensitivity": 0.961,
+     "train_step1_sensitivity": 0.987,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.909,
+     "outer_step1_sensitivity": 0.909
+    },
+    {
+     "rep": 4,
+     "fold": 6,
+     "t_low": 0.038,
+     "t_cnv": 0.0,
+     "train_two_stage_sensitivity": 0.961,
+     "train_step1_sensitivity": 0.974,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.909,
+     "outer_step1_sensitivity": 0.909
+    },
+    {
+     "rep": 4,
+     "fold": 7,
+     "t_low": 0.007,
+     "t_cnv": 0.048,
+     "train_two_stage_sensitivity": 0.959,
+     "train_step1_sensitivity": 0.973,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.857,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 4,
+     "fold": 8,
+     "t_low": 0.032,
+     "t_cnv": 0.038,
+     "train_two_stage_sensitivity": 0.952,
+     "train_step1_sensitivity": 0.988,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.8,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 4,
+     "fold": 9,
+     "t_low": 0.083,
+     "t_cnv": 0.036,
+     "train_two_stage_sensitivity": 0.952,
+     "train_step1_sensitivity": 0.976,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 4,
+     "fold": 10,
+     "t_low": 0.051,
+     "t_cnv": 0.04,
+     "train_two_stage_sensitivity": 0.962,
+     "train_step1_sensitivity": 0.987,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 5,
+     "fold": 1,
+     "t_low": 0.043,
+     "t_cnv": 0.01,
+     "train_two_stage_sensitivity": 0.962,
+     "train_step1_sensitivity": 0.975,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 5,
+     "fold": 2,
+     "t_low": 0.034,
+     "t_cnv": 0.002,
+     "train_two_stage_sensitivity": 0.962,
+     "train_step1_sensitivity": 0.974,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 5,
+     "fold": 3,
+     "t_low": 0.054,
+     "t_cnv": 0.006,
+     "train_two_stage_sensitivity": 0.95,
+     "train_step1_sensitivity": 0.975,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 5,
+     "fold": 4,
+     "t_low": 0.009,
+     "t_cnv": 0.026,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.975,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 5,
+     "fold": 5,
+     "t_low": 0.036,
+     "t_cnv": 0.054,
+     "train_two_stage_sensitivity": 0.962,
+     "train_step1_sensitivity": 0.975,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.889,
+     "outer_step1_sensitivity": 0.889
+    },
+    {
+     "rep": 5,
+     "fold": 6,
+     "t_low": 0.043,
+     "t_cnv": 0.014,
+     "train_two_stage_sensitivity": 0.958,
+     "train_step1_sensitivity": 0.986,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 5,
+     "fold": 7,
+     "t_low": 0.085,
+     "t_cnv": 0.01,
+     "train_two_stage_sensitivity": 0.952,
+     "train_step1_sensitivity": 0.976,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 5,
+     "fold": 8,
+     "t_low": 0.055,
+     "t_cnv": 0.015,
+     "train_two_stage_sensitivity": 0.96,
+     "train_step1_sensitivity": 0.987,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.923,
+     "outer_step1_sensitivity": 0.923
+    },
+    {
+     "rep": 5,
+     "fold": 9,
+     "t_low": 0.048,
+     "t_cnv": 0.027,
+     "train_two_stage_sensitivity": 0.952,
+     "train_step1_sensitivity": 0.976,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 5,
+     "fold": 10,
+     "t_low": 0.087,
+     "t_cnv": 0.011,
+     "train_two_stage_sensitivity": 0.952,
+     "train_step1_sensitivity": 0.976,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.8,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 6,
+     "fold": 1,
+     "t_low": 0.045,
+     "t_cnv": 0.004,
+     "train_two_stage_sensitivity": 0.959,
+     "train_step1_sensitivity": 0.973,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 6,
+     "fold": 2,
+     "t_low": 0.03,
+     "t_cnv": 0.025,
+     "train_two_stage_sensitivity": 0.953,
+     "train_step1_sensitivity": 0.977,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 6,
+     "fold": 3,
+     "t_low": 0.039,
+     "t_cnv": 0.005,
+     "train_two_stage_sensitivity": 0.962,
+     "train_step1_sensitivity": 0.974,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 6,
+     "fold": 4,
+     "t_low": 0.074,
+     "t_cnv": 0.073,
+     "train_two_stage_sensitivity": 0.95,
+     "train_step1_sensitivity": 0.988,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 6,
+     "fold": 5,
+     "t_low": 0.024,
+     "t_cnv": 0.009,
+     "train_two_stage_sensitivity": 0.962,
+     "train_step1_sensitivity": 0.987,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 6,
+     "fold": 6,
+     "t_low": 0.019,
+     "t_cnv": 0.046,
+     "train_two_stage_sensitivity": 0.961,
+     "train_step1_sensitivity": 0.987,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.833,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 6,
+     "fold": 7,
+     "t_low": 0.067,
+     "t_cnv": 0.045,
+     "train_two_stage_sensitivity": 0.961,
+     "train_step1_sensitivity": 0.987,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.909,
+     "outer_step1_sensitivity": 0.909
+    },
+    {
+     "rep": 6,
+     "fold": 8,
+     "t_low": 0.059,
+     "t_cnv": 0.004,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.988,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 6,
+     "fold": 9,
+     "t_low": 0.024,
+     "t_cnv": 0.006,
+     "train_two_stage_sensitivity": 0.962,
+     "train_step1_sensitivity": 0.987,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 6,
+     "fold": 10,
+     "t_low": 0.057,
+     "t_cnv": 0.017,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.976,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 7,
+     "fold": 1,
+     "t_low": 0.042,
+     "t_cnv": 0.015,
+     "train_two_stage_sensitivity": 0.961,
+     "train_step1_sensitivity": 0.974,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.909,
+     "outer_step1_sensitivity": 0.909
+    },
+    {
+     "rep": 7,
+     "fold": 2,
+     "t_low": 0.072,
+     "t_cnv": 0.035,
+     "train_two_stage_sensitivity": 0.962,
+     "train_step1_sensitivity": 0.987,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.8,
+     "outer_step1_sensitivity": 0.8
+    },
+    {
+     "rep": 7,
+     "fold": 3,
+     "t_low": 0.035,
+     "t_cnv": 0.076,
+     "train_two_stage_sensitivity": 0.96,
+     "train_step1_sensitivity": 0.973,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.923,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 7,
+     "fold": 4,
+     "t_low": 0.034,
+     "t_cnv": 0.001,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.975,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 7,
+     "fold": 5,
+     "t_low": 0.014,
+     "t_cnv": 0.022,
+     "train_two_stage_sensitivity": 0.961,
+     "train_step1_sensitivity": 0.987,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 7,
+     "fold": 6,
+     "t_low": 0.067,
+     "t_cnv": 0.009,
+     "train_two_stage_sensitivity": 0.962,
+     "train_step1_sensitivity": 0.987,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 7,
+     "fold": 7,
+     "t_low": 0.038,
+     "t_cnv": 0.007,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.976,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 7,
+     "fold": 8,
+     "t_low": 0.029,
+     "t_cnv": 0.051,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.975,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.857,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 7,
+     "fold": 9,
+     "t_low": 0.039,
+     "t_cnv": 0.022,
+     "train_two_stage_sensitivity": 0.95,
+     "train_step1_sensitivity": 0.988,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 7,
+     "fold": 10,
+     "t_low": 0.01,
+     "t_cnv": 0.009,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.976,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 8,
+     "fold": 1,
+     "t_low": 0.057,
+     "t_cnv": 0.034,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.975,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 8,
+     "fold": 2,
+     "t_low": 0.088,
+     "t_cnv": 0.034,
+     "train_two_stage_sensitivity": 0.961,
+     "train_step1_sensitivity": 0.974,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.909,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 8,
+     "fold": 3,
+     "t_low": 0.023,
+     "t_cnv": 0.002,
+     "train_two_stage_sensitivity": 0.962,
+     "train_step1_sensitivity": 0.974,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 8,
+     "fold": 4,
+     "t_low": 0.09,
+     "t_cnv": 0.03,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.988,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 8,
+     "fold": 5,
+     "t_low": 0.031,
+     "t_cnv": 0.024,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.975,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 8,
+     "fold": 6,
+     "t_low": 0.046,
+     "t_cnv": 0.006,
+     "train_two_stage_sensitivity": 0.952,
+     "train_step1_sensitivity": 0.988,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 8,
+     "fold": 7,
+     "t_low": 0.033,
+     "t_cnv": 0.024,
+     "train_two_stage_sensitivity": 0.96,
+     "train_step1_sensitivity": 0.973,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.846,
+     "outer_step1_sensitivity": 0.923
+    },
+    {
+     "rep": 8,
+     "fold": 8,
+     "t_low": 0.037,
+     "t_cnv": 0.042,
+     "train_two_stage_sensitivity": 0.96,
+     "train_step1_sensitivity": 0.987,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.923,
+     "outer_step1_sensitivity": 0.923
+    },
+    {
+     "rep": 8,
+     "fold": 9,
+     "t_low": 0.037,
+     "t_cnv": 0.015,
+     "train_two_stage_sensitivity": 0.962,
+     "train_step1_sensitivity": 0.987,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 8,
+     "fold": 10,
+     "t_low": 0.08,
+     "t_cnv": 0.013,
+     "train_two_stage_sensitivity": 0.952,
+     "train_step1_sensitivity": 0.988,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 9,
+     "fold": 1,
+     "t_low": 0.04,
+     "t_cnv": 0.003,
+     "train_two_stage_sensitivity": 0.952,
+     "train_step1_sensitivity": 0.976,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 9,
+     "fold": 2,
+     "t_low": 0.033,
+     "t_cnv": 0.021,
+     "train_two_stage_sensitivity": 0.962,
+     "train_step1_sensitivity": 0.974,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 9,
+     "fold": 3,
+     "t_low": 0.064,
+     "t_cnv": 0.009,
+     "train_two_stage_sensitivity": 0.956,
+     "train_step1_sensitivity": 0.985,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.85,
+     "outer_step1_sensitivity": 0.85
+    },
+    {
+     "rep": 9,
+     "fold": 4,
+     "t_low": 0.054,
+     "t_cnv": 0.006,
+     "train_two_stage_sensitivity": 0.961,
+     "train_step1_sensitivity": 0.974,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.917,
+     "outer_step1_sensitivity": 0.917
+    },
+    {
+     "rep": 9,
+     "fold": 5,
+     "t_low": 0.051,
+     "t_cnv": 0.028,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.976,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 9,
+     "fold": 6,
+     "t_low": 0.071,
+     "t_cnv": 0.021,
+     "train_two_stage_sensitivity": 0.962,
+     "train_step1_sensitivity": 0.975,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 9,
+     "fold": 7,
+     "t_low": 0.026,
+     "t_cnv": 0.008,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.988,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.833,
+     "outer_step1_sensitivity": 0.833
+    },
+    {
+     "rep": 9,
+     "fold": 8,
+     "t_low": 0.067,
+     "t_cnv": 0.03,
+     "train_two_stage_sensitivity": 0.954,
+     "train_step1_sensitivity": 0.977,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 9,
+     "fold": 9,
+     "t_low": 0.034,
+     "t_cnv": 0.014,
+     "train_two_stage_sensitivity": 0.95,
+     "train_step1_sensitivity": 0.975,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 9,
+     "fold": 10,
+     "t_low": 0.035,
+     "t_cnv": 0.0,
+     "train_two_stage_sensitivity": 0.961,
+     "train_step1_sensitivity": 0.987,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 10,
+     "fold": 1,
+     "t_low": 0.087,
+     "t_cnv": 0.003,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.988,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 10,
+     "fold": 2,
+     "t_low": 0.018,
+     "t_cnv": 0.07,
+     "train_two_stage_sensitivity": 0.957,
+     "train_step1_sensitivity": 0.971,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.895,
+     "outer_step1_sensitivity": 0.895
+    },
+    {
+     "rep": 10,
+     "fold": 3,
+     "t_low": 0.034,
+     "t_cnv": 0.049,
+     "train_two_stage_sensitivity": 0.961,
+     "train_step1_sensitivity": 0.987,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 10,
+     "fold": 4,
+     "t_low": 0.059,
+     "t_cnv": 0.082,
+     "train_two_stage_sensitivity": 0.95,
+     "train_step1_sensitivity": 0.975,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 10,
+     "fold": 5,
+     "t_low": 0.082,
+     "t_cnv": 0.051,
+     "train_two_stage_sensitivity": 0.95,
+     "train_step1_sensitivity": 0.975,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.875,
+     "outer_step1_sensitivity": 0.875
+    },
+    {
+     "rep": 10,
+     "fold": 6,
+     "t_low": 0.052,
+     "t_cnv": 0.103,
+     "train_two_stage_sensitivity": 0.952,
+     "train_step1_sensitivity": 0.976,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 10,
+     "fold": 7,
+     "t_low": 0.025,
+     "t_cnv": 0.029,
+     "train_two_stage_sensitivity": 0.962,
+     "train_step1_sensitivity": 0.974,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.9,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 10,
+     "fold": 8,
+     "t_low": 0.089,
+     "t_cnv": 0.026,
+     "train_two_stage_sensitivity": 0.952,
+     "train_step1_sensitivity": 0.976,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 10,
+     "fold": 9,
+     "t_low": 0.074,
+     "t_cnv": 0.0,
+     "train_two_stage_sensitivity": 0.962,
+     "train_step1_sensitivity": 0.974,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 1.0,
+     "outer_step1_sensitivity": 1.0
+    },
+    {
+     "rep": 10,
+     "fold": 10,
+     "t_low": 0.044,
+     "t_cnv": 0.063,
+     "train_two_stage_sensitivity": 0.951,
+     "train_step1_sensitivity": 0.975,
+     "infeasible_flag_all_uncleared": false,
+     "outer_two_stage_sensitivity": 0.571,
+     "outer_step1_sensitivity": 0.857
+    }
+   ]
+  },
+  "current_care": {
+   "grade_ID_LGD_all": {
+    "endoscopy_sensitivity": 0.364,
+    "endoscopy_specificity": 0.76,
+    "sens_cp95": [
+     0.264,
+     0.473
+    ],
+    "spec_cp95": [
+     0.695,
+     0.817
+    ]
+   },
+   "grade_or_p53_on_p53_subset": {
+    "endoscopy_sensitivity": 0.419,
+    "endoscopy_specificity": 0.728,
+    "endoscopies": 220,
+    "progressor_endoscopies": 62
+   },
+   "grade_or_p53_missing_as_wild_type_all": {
+    "endoscopy_sensitivity": 0.42,
+    "endoscopy_specificity": 0.755
+   },
+   "override_endoscopies": 86,
+   "override_progressor_endoscopies": 37
+  },
+  "note": "endoscopy = (patient, endoscopy number) over the pre-event samples; V0 thresholds per (repeat, fold) from the training endoscopies' inner out-of-fold L-IMG (score, top sample, cleared) and L-CNV / L-LATE (confirmation); single model (per-repeat values averaged over the 10 repeats); comparators evaluation-matched: specificity read at the rule's per-repeat endoscopy sensitivity on the pooled (across folds) empirical ROC with linear interpolation; patient bootstrap 2,000 draws (RandomState(0)); rederived = every threshold re-derived from the resampled training patients' inner predictions in each draw (primary interval); fixed = thresholds and calls fixed (rounds 4-7)"
+ },
+ "prespec": "832d184"
+}

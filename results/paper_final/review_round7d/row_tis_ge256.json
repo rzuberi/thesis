@@ -1,0 +1,1068 @@
+{
+ "task": "row_tis_ge256",
+ "R7D": {
+  "row": "tis_ge256",
+  "label": "\u2265 256 tissue tiles (by top sample)",
+  "n_samples": 262,
+  "n_progressor_samples": 88,
+  "n_patients": 63,
+  "n_progressor_patients": 25,
+  "n_endoscopies": 146,
+  "n_progressor_endoscopies": 49,
+  "draws_fixed": 2000,
+  "draws_rederived": 2000,
+  "rules": {
+   "V0": {
+    "endoscopy_sensitivity": 0.941,
+    "sens_ci95_rederived": [
+     0.87,
+     0.972
+    ],
+    "sens_ci95_fixed": [
+     0.895,
+     0.984
+    ],
+    "endoscopy_specificity": 0.369,
+    "spec_ci95_rederived": [
+     0.285,
+     0.516
+    ],
+    "spec_ci95_fixed": [
+     0.281,
+     0.463
+    ],
+    "share_endoscopies_sequenced": 0.809,
+    "share_samples_sequenced": 0.451,
+    "share_samples_ci95_rederived": [
+     0.371,
+     0.522
+    ],
+    "patient_detection": 0.984,
+    "patient_detection_ci95_rederived": [
+     0.939,
+     1.0
+    ],
+    "patient_detection_ci95_fixed": [
+     0.963,
+     1.0
+    ],
+    "non_progressor_patients_flagged_share": 0.826
+   },
+   "V1": {
+    "endoscopy_sensitivity": 0.935,
+    "sens_ci95_rederived": [
+     0.873,
+     0.967
+    ],
+    "sens_ci95_fixed": [
+     0.893,
+     0.979
+    ],
+    "endoscopy_specificity": 0.487,
+    "spec_ci95_rederived": [
+     0.359,
+     0.614
+    ],
+    "spec_ci95_fixed": [
+     0.39,
+     0.591
+    ],
+    "share_endoscopies_sequenced": 0.809,
+    "share_samples_sequenced": 0.451,
+    "share_samples_ci95_rederived": [
+     0.371,
+     0.522
+    ],
+    "patient_detection": 0.98,
+    "patient_detection_ci95_rederived": [
+     0.933,
+     1.0
+    ],
+    "patient_detection_ci95_fixed": [
+     0.948,
+     1.0
+    ],
+    "non_progressor_patients_flagged_share": 0.724
+   },
+   "V2": {
+    "endoscopy_sensitivity": 0.941,
+    "sens_ci95_rederived": [
+     0.867,
+     0.974
+    ],
+    "sens_ci95_fixed": [
+     0.887,
+     0.99
+    ],
+    "endoscopy_specificity": 0.399,
+    "spec_ci95_rederived": [
+     0.303,
+     0.538
+    ],
+    "spec_ci95_fixed": [
+     0.305,
+     0.498
+    ],
+    "share_endoscopies_sequenced": 0.809,
+    "share_samples_sequenced": 0.853,
+    "share_samples_ci95_rederived": [
+     0.754,
+     0.896
+    ],
+    "patient_detection": 0.984,
+    "patient_detection_ci95_rederived": [
+     0.942,
+     0.996
+    ],
+    "patient_detection_ci95_fixed": [
+     0.963,
+     1.0
+    ],
+    "non_progressor_patients_flagged_share": 0.811
+   },
+   "V4": {
+    "endoscopy_sensitivity": 0.939,
+    "sens_ci95_rederived": [
+     0.868,
+     0.974
+    ],
+    "sens_ci95_fixed": [
+     0.889,
+     0.986
+    ],
+    "endoscopy_specificity": 0.426,
+    "spec_ci95_rederived": [
+     0.325,
+     0.581
+    ],
+    "spec_ci95_fixed": [
+     0.334,
+     0.524
+    ],
+    "share_endoscopies_sequenced": 0.555,
+    "share_samples_sequenced": 0.31,
+    "share_samples_ci95_rederived": [
+     0.226,
+     0.378
+    ],
+    "patient_detection": 0.988,
+    "patient_detection_ci95_rederived": [
+     0.95,
+     1.0
+    ],
+    "patient_detection_ci95_fixed": [
+     0.968,
+     1.0
+    ],
+    "non_progressor_patients_flagged_share": 0.774
+   },
+   "V0ovr": {
+    "endoscopy_sensitivity": 0.961,
+    "sens_ci95_rederived": [
+     0.9,
+     0.987
+    ],
+    "sens_ci95_fixed": [
+     0.922,
+     0.995
+    ],
+    "endoscopy_specificity": 0.287,
+    "spec_ci95_rederived": [
+     0.215,
+     0.41
+    ],
+    "spec_ci95_fixed": [
+     0.211,
+     0.371
+    ],
+    "share_endoscopies_sequenced": 0.534,
+    "share_samples_sequenced": 0.297,
+    "share_samples_ci95_rederived": [
+     0.223,
+     0.359
+    ],
+    "patient_detection": 0.988,
+    "patient_detection_ci95_rederived": [
+     0.944,
+     1.0
+    ],
+    "patient_detection_ci95_fixed": [
+     0.968,
+     1.0
+    ],
+    "non_progressor_patients_flagged_share": 0.897
+   },
+   "R49": {
+    "endoscopy_sensitivity": 0.892,
+    "sens_ci95_rederived": [
+     0.827,
+     0.944
+    ],
+    "sens_ci95_fixed": [
+     0.829,
+     0.958
+    ],
+    "endoscopy_specificity": 0.577,
+    "spec_ci95_rederived": [
+     0.429,
+     0.699
+    ],
+    "spec_ci95_fixed": [
+     0.477,
+     0.676
+    ],
+    "share_endoscopies_sequenced": 0.503,
+    "share_samples_sequenced": 0.28,
+    "share_samples_ci95_rederived": [
+     0.21,
+     0.341
+    ],
+    "patient_detection": 0.968,
+    "patient_detection_ci95_rederived": [
+     0.9,
+     1.0
+    ],
+    "patient_detection_ci95_fixed": [
+     0.91,
+     1.0
+    ],
+    "non_progressor_patients_flagged_share": 0.661
+   },
+   "Vp53": {
+    "endoscopy_sensitivity": 0.23,
+    "sens_ci95_rederived": [
+     0.096,
+     0.375
+    ],
+    "sens_ci95_fixed": [
+     0.096,
+     0.375
+    ],
+    "endoscopy_specificity": 1.0,
+    "spec_ci95_rederived": [
+     1.0,
+     1.0
+    ],
+    "spec_ci95_fixed": [
+     1.0,
+     1.0
+    ],
+    "share_endoscopies_sequenced": 0.803
+   },
+   "V0p53": {
+    "endoscopy_sensitivity": 0.941,
+    "sens_ci95_rederived": [
+     0.836,
+     0.976
+    ],
+    "sens_ci95_fixed": [
+     0.87,
+     0.99
+    ],
+    "endoscopy_specificity": 0.364,
+    "spec_ci95_rederived": [
+     0.273,
+     0.516
+    ],
+    "spec_ci95_fixed": [
+     0.263,
+     0.463
+    ],
+    "share_endoscopies_sequenced": 0.803
+   }
+  },
+  "n_p53_subset": {
+   "endoscopies": 94,
+   "progressor_endoscopies": 27,
+   "samples": 183
+  },
+  "comparators": {
+   "V0": {
+    "H": {
+     "specificity": 0.361,
+     "spec_ci95_rederived": [
+      0.289,
+      0.625
+     ],
+     "spec_ci95_fixed": [
+      0.277,
+      0.56
+     ]
+    },
+    "SLATE": {
+     "specificity": 0.522,
+     "spec_ci95_rederived": [
+      0.404,
+      0.73
+     ],
+     "spec_ci95_fixed": [
+      0.376,
+      0.702
+     ]
+    },
+    "SCNV": {
+     "specificity": 0.374,
+     "spec_ci95_rederived": [
+      0.252,
+      0.613
+     ],
+     "spec_ci95_fixed": [
+      0.23,
+      0.567
+     ]
+    },
+    "R1": {
+     "specificity": 0.558,
+     "spec_ci95_rederived": [
+      0.36,
+      0.748
+     ],
+     "spec_ci95_fixed": [
+      0.316,
+      0.713
+     ]
+    }
+   },
+   "V1": {
+    "H": {
+     "specificity": 0.399,
+     "spec_ci95_rederived": [
+      0.306,
+      0.616
+     ],
+     "spec_ci95_fixed": [
+      0.306,
+      0.551
+     ]
+    },
+    "SLATE": {
+     "specificity": 0.54,
+     "spec_ci95_rederived": [
+      0.42,
+      0.745
+     ],
+     "spec_ci95_fixed": [
+      0.409,
+      0.713
+     ]
+    }
+   },
+   "V2": {
+    "H": {
+     "specificity": 0.378,
+     "spec_ci95_rederived": [
+      0.289,
+      0.62
+     ],
+     "spec_ci95_fixed": [
+      0.27,
+      0.562
+     ]
+    },
+    "SLATE": {
+     "specificity": 0.516,
+     "spec_ci95_rederived": [
+      0.409,
+      0.729
+     ],
+     "spec_ci95_fixed": [
+      0.385,
+      0.702
+     ]
+    }
+   },
+   "V4": {
+    "H": {
+     "specificity": 0.408,
+     "spec_ci95_rederived": [
+      0.291,
+      0.613
+     ],
+     "spec_ci95_fixed": [
+      0.281,
+      0.548
+     ]
+    },
+    "SLATE": {
+     "specificity": 0.53,
+     "spec_ci95_rederived": [
+      0.408,
+      0.728
+     ],
+     "spec_ci95_fixed": [
+      0.39,
+      0.698
+     ]
+    }
+   },
+   "V0ovr": {
+    "H": {
+     "specificity": 0.285,
+     "spec_ci95_rederived": [
+      0.239,
+      0.553
+     ],
+     "spec_ci95_fixed": [
+      0.221,
+      0.473
+     ]
+    },
+    "SLATE": {
+     "specificity": 0.492,
+     "spec_ci95_rederived": [
+      0.368,
+      0.698
+     ],
+     "spec_ci95_fixed": [
+      0.338,
+      0.663
+     ]
+    }
+   },
+   "R49": {
+    "H": {
+     "specificity": 0.501,
+     "spec_ci95_rederived": [
+      0.389,
+      0.657
+     ],
+     "spec_ci95_fixed": [
+      0.381,
+      0.65
+     ]
+    },
+    "SLATE": {
+     "specificity": 0.629,
+     "spec_ci95_rederived": [
+      0.478,
+      0.779
+     ],
+     "spec_ci95_fixed": [
+      0.483,
+      0.761
+     ]
+    }
+   }
+  },
+  "contrasts": {
+   "V0_minus_H": {
+    "delta": 0.008,
+    "per_repeat": [
+     0.041,
+     0.021,
+     -0.072,
+     0.062,
+     -0.021,
+     0.093,
+     -0.206,
+     0.072,
+     0.021,
+     0.072
+    ],
+    "rederived": {
+     "delta": 0.008,
+     "ci95": [
+      -0.187,
+      0.07
+     ],
+     "p_two_sided": 0.39
+    },
+    "fixed": {
+     "delta": 0.008,
+     "ci95": [
+      -0.18,
+      0.068
+     ],
+     "p_two_sided": 0.67
+    },
+    "comparator_specificity": 0.361,
+    "comparator_spec_ci95_rederived": [
+     0.289,
+     0.625
+    ]
+   },
+   "V0_minus_SLATE": {
+    "delta": -0.153,
+    "per_repeat": [
+     -0.196,
+     -0.196,
+     -0.247,
+     -0.041,
+     -0.082,
+     -0.052,
+     -0.268,
+     -0.01,
+     -0.289,
+     -0.144
+    ],
+    "rederived": {
+     "delta": -0.153,
+     "ci95": [
+      -0.328,
+      -0.037
+     ],
+     "p_two_sided": 0.008,
+     "one_sided_95_lower": -0.306,
+     "non_inferior_at_-0.05": false
+    },
+    "fixed": {
+     "delta": -0.153,
+     "ci95": [
+      -0.317,
+      -0.046
+     ],
+     "p_two_sided": 0.007,
+     "one_sided_95_lower": -0.295,
+     "non_inferior_at_-0.05": false
+    },
+    "comparator_specificity": 0.522,
+    "comparator_spec_ci95_rederived": [
+     0.404,
+     0.73
+    ]
+   },
+   "V0_minus_SCNV": {
+    "delta": -0.005,
+    "per_repeat": [
+     -0.113,
+     -0.062,
+     -0.021,
+     0.134,
+     -0.01,
+     0.299,
+     -0.165,
+     -0.01,
+     -0.155,
+     0.052
+    ],
+    "rederived": {
+     "delta": -0.005,
+     "ci95": [
+      -0.209,
+      0.122
+     ],
+     "p_two_sided": 0.715
+    },
+    "fixed": {
+     "delta": -0.005,
+     "ci95": [
+      -0.191,
+      0.098
+     ],
+     "p_two_sided": 0.87
+    },
+    "comparator_specificity": 0.374,
+    "comparator_spec_ci95_rederived": [
+     0.252,
+     0.613
+    ]
+   },
+   "V0_minus_R1": {
+    "delta": -0.189,
+    "per_repeat": [
+     -0.315,
+     -0.238,
+     -0.315,
+     -0.05,
+     -0.191,
+     0.047,
+     -0.328,
+     -0.083,
+     -0.259,
+     -0.162
+    ],
+    "rederived": {
+     "delta": -0.189,
+     "ci95": [
+      -0.354,
+      0.022
+     ],
+     "p_two_sided": 0.09
+    },
+    "fixed": {
+     "delta": -0.189,
+     "ci95": [
+      -0.339,
+      0.03
+     ],
+     "p_two_sided": 0.117
+    },
+    "comparator_specificity": 0.558,
+    "comparator_spec_ci95_rederived": [
+     0.36,
+     0.748
+    ]
+   },
+   "V1_minus_H": {
+    "delta": 0.088,
+    "per_repeat": [
+     0.247,
+     0.258,
+     0.113,
+     0.124,
+     0.01,
+     0.052,
+     -0.093,
+     0.082,
+     -0.01,
+     0.093
+    ],
+    "rederived": {
+     "delta": 0.088,
+     "ci95": [
+      -0.093,
+      0.158
+     ],
+     "p_two_sided": 0.636
+    },
+    "fixed": {
+     "delta": 0.088,
+     "ci95": [
+      -0.046,
+      0.168
+     ],
+     "p_two_sided": 0.193
+    },
+    "comparator_specificity": 0.399,
+    "comparator_spec_ci95_rederived": [
+     0.306,
+     0.616
+    ]
+   },
+   "V1_minus_SLATE": {
+    "delta": -0.054,
+    "per_repeat": [
+     -0.021,
+     -0.062,
+     0.021,
+     0.01,
+     -0.052,
+     0.072,
+     -0.072,
+     -0.021,
+     -0.289,
+     -0.124
+    ],
+    "rederived": {
+     "delta": -0.054,
+     "ci95": [
+      -0.219,
+      0.018
+     ],
+     "p_two_sided": 0.105,
+     "one_sided_95_lower": -0.2,
+     "non_inferior_at_-0.05": false
+    },
+    "fixed": {
+     "delta": -0.054,
+     "ci95": [
+      -0.204,
+      0.027
+     ],
+     "p_two_sided": 0.2,
+     "one_sided_95_lower": -0.184,
+     "non_inferior_at_-0.05": false
+    },
+    "comparator_specificity": 0.54,
+    "comparator_spec_ci95_rederived": [
+     0.42,
+     0.745
+    ]
+   },
+   "V2_minus_H": {
+    "delta": 0.021,
+    "per_repeat": [
+     0.134,
+     0.052,
+     -0.041,
+     0.072,
+     0.031,
+     -0.072,
+     -0.186,
+     0.093,
+     0.041,
+     0.082
+    ],
+    "rederived": {
+     "delta": 0.021,
+     "ci95": [
+      -0.174,
+      0.098
+     ],
+     "p_two_sided": 0.622
+    },
+    "fixed": {
+     "delta": 0.021,
+     "ci95": [
+      -0.148,
+      0.107
+     ],
+     "p_two_sided": 0.981
+    },
+    "comparator_specificity": 0.378,
+    "comparator_spec_ci95_rederived": [
+     0.289,
+     0.62
+    ]
+   },
+   "V2_minus_SLATE": {
+    "delta": -0.118,
+    "per_repeat": [
+     -0.103,
+     -0.165,
+     -0.216,
+     0.031,
+     -0.031,
+     -0.052,
+     -0.247,
+     0.01,
+     -0.268,
+     -0.134
+    ],
+    "rederived": {
+     "delta": -0.118,
+     "ci95": [
+      -0.3,
+      -0.026
+     ],
+     "p_two_sided": 0.018,
+     "one_sided_95_lower": -0.277,
+     "non_inferior_at_-0.05": false
+    },
+    "fixed": {
+     "delta": -0.118,
+     "ci95": [
+      -0.286,
+      -0.028
+     ],
+     "p_two_sided": 0.01,
+     "one_sided_95_lower": -0.261,
+     "non_inferior_at_-0.05": false
+    },
+    "comparator_specificity": 0.516,
+    "comparator_spec_ci95_rederived": [
+     0.409,
+     0.729
+    ]
+   },
+   "V4_minus_H": {
+    "delta": 0.018,
+    "per_repeat": [
+     -0.103,
+     0.165,
+     0.021,
+     0.103,
+     -0.165,
+     -0.041,
+     -0.062,
+     0.196,
+     0.072,
+     -0.01
+    ],
+    "rederived": {
+     "delta": 0.018,
+     "ci95": [
+      -0.137,
+      0.144
+     ],
+     "p_two_sided": 0.916
+    },
+    "fixed": {
+     "delta": 0.018,
+     "ci95": [
+      -0.099,
+      0.124
+     ],
+     "p_two_sided": 0.845
+    },
+    "comparator_specificity": 0.408,
+    "comparator_spec_ci95_rederived": [
+     0.291,
+     0.613
+    ]
+   },
+   "V4_minus_SLATE": {
+    "delta": -0.104,
+    "per_repeat": [
+     -0.196,
+     -0.155,
+     -0.134,
+     0.062,
+     -0.186,
+     -0.021,
+     -0.124,
+     0.052,
+     -0.237,
+     -0.103
+    ],
+    "rederived": {
+     "delta": -0.104,
+     "ci95": [
+      -0.248,
+      0.004
+     ],
+     "p_two_sided": 0.058,
+     "one_sided_95_lower": -0.23,
+     "non_inferior_at_-0.05": false
+    },
+    "fixed": {
+     "delta": -0.104,
+     "ci95": [
+      -0.254,
+      -0.002
+     ],
+     "p_two_sided": 0.047,
+     "one_sided_95_lower": -0.233,
+     "non_inferior_at_-0.05": false
+    },
+    "comparator_specificity": 0.53,
+    "comparator_spec_ci95_rederived": [
+     0.408,
+     0.728
+    ]
+   },
+   "V0ovr_minus_H": {
+    "delta": 0.002,
+    "per_repeat": [
+     0.031,
+     0.052,
+     -0.103,
+     0.093,
+     -0.021,
+     -0.021,
+     -0.041,
+     0.072,
+     -0.021,
+     -0.021
+    ],
+    "rederived": {
+     "delta": 0.002,
+     "ci95": [
+      -0.206,
+      0.035
+     ],
+     "p_two_sided": 0.199
+    },
+    "fixed": {
+     "delta": 0.002,
+     "ci95": [
+      -0.176,
+      0.05
+     ],
+     "p_two_sided": 0.545
+    },
+    "comparator_specificity": 0.285,
+    "comparator_spec_ci95_rederived": [
+     0.239,
+     0.553
+    ]
+   },
+   "V0ovr_minus_SLATE": {
+    "delta": -0.205,
+    "per_repeat": [
+     -0.237,
+     -0.268,
+     -0.258,
+     -0.01,
+     -0.144,
+     -0.165,
+     -0.33,
+     -0.072,
+     -0.299,
+     -0.268
+    ],
+    "rederived": {
+     "delta": -0.205,
+     "ci95": [
+      -0.395,
+      -0.07
+     ],
+     "p_two_sided": 0.001,
+     "one_sided_95_lower": -0.361,
+     "non_inferior_at_-0.05": false
+    },
+    "fixed": {
+     "delta": -0.205,
+     "ci95": [
+      -0.375,
+      -0.077
+     ],
+     "p_two_sided": 0.001,
+     "one_sided_95_lower": -0.344,
+     "non_inferior_at_-0.05": false
+    },
+    "comparator_specificity": 0.492,
+    "comparator_spec_ci95_rederived": [
+     0.368,
+     0.698
+    ]
+   },
+   "R49_minus_H": {
+    "delta": 0.076,
+    "per_repeat": [
+     0.32,
+     0.01,
+     0.134,
+     0.124,
+     -0.113,
+     0.041,
+     -0.052,
+     0.155,
+     0.052,
+     0.093
+    ],
+    "rederived": {
+     "delta": 0.076,
+     "ci95": [
+      -0.087,
+      0.195
+     ],
+     "p_two_sided": 0.414
+    },
+    "fixed": {
+     "delta": 0.076,
+     "ci95": [
+      -0.06,
+      0.18
+     ],
+     "p_two_sided": 0.263
+    },
+    "comparator_specificity": 0.501,
+    "comparator_spec_ci95_rederived": [
+     0.389,
+     0.657
+    ]
+   },
+   "R49_minus_SLATE": {
+    "delta": -0.052,
+    "per_repeat": [
+     0.082,
+     0.0,
+     -0.072,
+     0.052,
+     -0.175,
+     0.0,
+     0.0,
+     -0.175,
+     -0.227,
+     0.0
+    ],
+    "rederived": {
+     "delta": -0.052,
+     "ci95": [
+      -0.155,
+      0.029
+     ],
+     "p_two_sided": 0.218,
+     "one_sided_95_lower": -0.139,
+     "non_inferior_at_-0.05": false
+    },
+    "fixed": {
+     "delta": -0.052,
+     "ci95": [
+      -0.157,
+      0.041
+     ],
+     "p_two_sided": 0.356,
+     "one_sided_95_lower": -0.144,
+     "non_inferior_at_-0.05": false
+    },
+    "comparator_specificity": 0.629,
+    "comparator_spec_ci95_rederived": [
+     0.478,
+     0.779
+    ]
+   },
+   "Vp53_minus_V0p53_matched": {
+    "delta": 0.001,
+    "per_repeat": [
+     0.0,
+     0.0,
+     0.015,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rederived": {
+     "delta": 0.001,
+     "ci95": [
+      0.0,
+      0.018
+     ],
+     "p_two_sided": 0.686
+    },
+    "fixed": {
+     "delta": 0.001,
+     "ci95": [
+      0.0,
+      0.018
+     ],
+     "p_two_sided": 0.688
+    },
+    "comparator_specificity": 0.999,
+    "comparator_spec_ci95_rederived": [
+     0.982,
+     1.0
+    ]
+   }
+  },
+  "primary_contrast": {
+   "delta": 0.008,
+   "ci95_rederived": [
+    -0.187,
+    0.07
+   ],
+   "ci95_fixed": [
+    -0.18,
+    0.068
+   ],
+   "v0_endoscopy_sensitivity": 0.941,
+   "lower_limit_above_0": false,
+   "sensitivity_condition_met": true,
+   "success": false,
+   "clinically_relevant_delta_ge_0.05": false
+  },
+  "key_secondary": {
+   "delta": -0.153,
+   "one_sided_95_lower_rederived": -0.306,
+   "one_sided_95_lower_fixed": -0.295,
+   "ci95_rederived": [
+    -0.328,
+    -0.037
+   ],
+   "ci95_fixed": [
+    -0.317,
+    -0.046
+   ],
+   "non_inferior_at_-0.05_rederived": false,
+   "status": "not tested (primary failed)"
+  },
+  "between_repeat": {
+   "delta_repeat_mean": 0.008,
+   "V_boot": 0.004473,
+   "V_rep": 0.008096,
+   "variance_inflated_ci95": [
+    -0.211,
+    0.228
+   ],
+   "per_repeat_delta": [
+    0.041,
+    0.021,
+    -0.072,
+    0.062,
+    -0.021,
+    0.093,
+    -0.206,
+    0.072,
+    0.021,
+    0.072
+   ]
+  },
+  "note": "endoscopy = (patient, endoscopy number) over the pre-event samples; V0 thresholds per (repeat, fold) from the training endoscopies' inner out-of-fold L-IMG (score, top sample, cleared) and L-CNV / L-LATE (confirmation); single model (per-repeat values averaged over the 10 repeats); comparators evaluation-matched: specificity read at the rule's per-repeat endoscopy sensitivity on the pooled (across folds) empirical ROC with linear interpolation; patient bootstrap 2,000 draws (RandomState(0)); rederived = every threshold re-derived from the resampled training patients' inner predictions in each draw (primary interval); fixed = thresholds and calls fixed (rounds 4-7)"
+ },
+ "prespec": "832d184"
+}

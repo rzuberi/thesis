@@ -1,0 +1,178 @@
+{
+ "task": "curve",
+ "curve": {
+  "grid": [
+   {
+    "t_low_training_step1_sensitivity": 0.9,
+    "two_stage_training_target": 0.9,
+    "endoscopy_sensitivity": 0.893,
+    "endoscopy_specificity": 0.534,
+    "share_samples_sequenced": 0.308,
+    "share_endoscopies_sequenced": 0.61,
+    "folds_target_unreachable_all_uncleared_flagged": 40,
+    "H_specificity_at_same_sensitivity": 0.528,
+    "SLATE_specificity_at_same_sensitivity": 0.636
+   },
+   {
+    "t_low_training_step1_sensitivity": 0.9,
+    "two_stage_training_target": 0.95,
+    "endoscopy_sensitivity": 0.9,
+    "endoscopy_specificity": 0.518,
+    "share_samples_sequenced": 0.308,
+    "share_endoscopies_sequenced": 0.61,
+    "folds_target_unreachable_all_uncleared_flagged": 100,
+    "H_specificity_at_same_sensitivity": 0.521,
+    "SLATE_specificity_at_same_sensitivity": 0.626
+   },
+   {
+    "t_low_training_step1_sensitivity": 0.9,
+    "two_stage_training_target": 0.98,
+    "endoscopy_sensitivity": 0.9,
+    "endoscopy_specificity": 0.518,
+    "share_samples_sequenced": 0.308,
+    "share_endoscopies_sequenced": 0.61,
+    "folds_target_unreachable_all_uncleared_flagged": 100,
+    "H_specificity_at_same_sensitivity": 0.521,
+    "SLATE_specificity_at_same_sensitivity": 0.626
+   },
+   {
+    "t_low_training_step1_sensitivity": 0.95,
+    "two_stage_training_target": 0.9,
+    "endoscopy_sensitivity": 0.902,
+    "endoscopy_specificity": 0.491,
+    "share_samples_sequenced": 0.364,
+    "share_endoscopies_sequenced": 0.723,
+    "folds_target_unreachable_all_uncleared_flagged": 0,
+    "H_specificity_at_same_sensitivity": 0.506,
+    "SLATE_specificity_at_same_sensitivity": 0.605
+   },
+   {
+    "t_low_training_step1_sensitivity": 0.95,
+    "two_stage_training_target": 0.95,
+    "endoscopy_sensitivity": 0.94,
+    "endoscopy_specificity": 0.384,
+    "share_samples_sequenced": 0.364,
+    "share_endoscopies_sequenced": 0.723,
+    "folds_target_unreachable_all_uncleared_flagged": 51,
+    "H_specificity_at_same_sensitivity": 0.396,
+    "SLATE_specificity_at_same_sensitivity": 0.516
+   },
+   {
+    "t_low_training_step1_sensitivity": 0.95,
+    "two_stage_training_target": 0.98,
+    "endoscopy_sensitivity": 0.941,
+    "endoscopy_specificity": 0.373,
+    "share_samples_sequenced": 0.364,
+    "share_endoscopies_sequenced": 0.723,
+    "folds_target_unreachable_all_uncleared_flagged": 100,
+    "H_specificity_at_same_sensitivity": 0.395,
+    "SLATE_specificity_at_same_sensitivity": 0.515
+   },
+   {
+    "t_low_training_step1_sensitivity": 0.98,
+    "two_stage_training_target": 0.9,
+    "endoscopy_sensitivity": 0.9,
+    "endoscopy_specificity": 0.478,
+    "share_samples_sequenced": 0.408,
+    "share_endoscopies_sequenced": 0.809,
+    "folds_target_unreachable_all_uncleared_flagged": 0,
+    "H_specificity_at_same_sensitivity": 0.514,
+    "SLATE_specificity_at_same_sensitivity": 0.577
+   },
+   {
+    "t_low_training_step1_sensitivity": 0.98,
+    "two_stage_training_target": 0.95,
+    "endoscopy_sensitivity": 0.949,
+    "endoscopy_specificity": 0.358,
+    "share_samples_sequenced": 0.408,
+    "share_endoscopies_sequenced": 0.809,
+    "folds_target_unreachable_all_uncleared_flagged": 0,
+    "H_specificity_at_same_sensitivity": 0.374,
+    "SLATE_specificity_at_same_sensitivity": 0.479
+   },
+   {
+    "t_low_training_step1_sensitivity": 0.98,
+    "two_stage_training_target": 0.98,
+    "endoscopy_sensitivity": 0.97,
+    "endoscopy_specificity": 0.27,
+    "share_samples_sequenced": 0.408,
+    "share_endoscopies_sequenced": 0.809,
+    "folds_target_unreachable_all_uncleared_flagged": 63,
+    "H_specificity_at_same_sensitivity": 0.271,
+    "SLATE_specificity_at_same_sensitivity": 0.446
+   }
+  ],
+  "grid_p53_subset": [
+   {
+    "t_low_training_step1_sensitivity": 0.9,
+    "two_stage_training_target": 0.9,
+    "endoscopy_sensitivity": 0.869,
+    "endoscopy_specificity": 0.539
+   },
+   {
+    "t_low_training_step1_sensitivity": 0.9,
+    "two_stage_training_target": 0.95,
+    "endoscopy_sensitivity": 0.876,
+    "endoscopy_specificity": 0.525
+   },
+   {
+    "t_low_training_step1_sensitivity": 0.9,
+    "two_stage_training_target": 0.98,
+    "endoscopy_sensitivity": 0.876,
+    "endoscopy_specificity": 0.525
+   },
+   {
+    "t_low_training_step1_sensitivity": 0.95,
+    "two_stage_training_target": 0.9,
+    "endoscopy_sensitivity": 0.889,
+    "endoscopy_specificity": 0.504
+   },
+   {
+    "t_low_training_step1_sensitivity": 0.95,
+    "two_stage_training_target": 0.95,
+    "endoscopy_sensitivity": 0.935,
+    "endoscopy_specificity": 0.395
+   },
+   {
+    "t_low_training_step1_sensitivity": 0.95,
+    "two_stage_training_target": 0.98,
+    "endoscopy_sensitivity": 0.937,
+    "endoscopy_specificity": 0.387
+   },
+   {
+    "t_low_training_step1_sensitivity": 0.98,
+    "two_stage_training_target": 0.9,
+    "endoscopy_sensitivity": 0.881,
+    "endoscopy_specificity": 0.483
+   },
+   {
+    "t_low_training_step1_sensitivity": 0.98,
+    "two_stage_training_target": 0.95,
+    "endoscopy_sensitivity": 0.944,
+    "endoscopy_specificity": 0.365
+   },
+   {
+    "t_low_training_step1_sensitivity": 0.98,
+    "two_stage_training_target": 0.98,
+    "endoscopy_sensitivity": 0.971,
+    "endoscopy_specificity": 0.278
+   }
+  ],
+  "current_care": {
+   "grade_ID_LGD": {
+    "endoscopy_sensitivity": 0.364,
+    "endoscopy_specificity": 0.76,
+    "V0_family_sensitivity_at_this_specificity": null,
+    "V0_family_specificity_at_this_sensitivity": null
+   },
+   "grade_or_p53_on_p53_subset": {
+    "endoscopy_sensitivity": 0.419,
+    "endoscopy_specificity": 0.728,
+    "V0_family_sensitivity_at_this_specificity": null,
+    "V0_family_specificity_at_this_sensitivity": null
+   }
+  },
+  "note": "descriptive, no intervals; V0 thresholds re-derived at each grid point (t_low = Harrell-Davis quantile 1 - step-1 sensitivity; t_cnv at the two-stage target); (H) and S-LATE evaluation-matched to the point's per-repeat sensitivity; family values interpolated linearly along the non-dominated grid points (None = outside the family's range); the p53-subset family evaluates V0 on the endoscopies' p53 samples"
+ },
+ "prespec": "832d184"
+}

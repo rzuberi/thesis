@@ -1,0 +1,291 @@
+{
+ "task": "merge",
+ "R7D": {
+  "table": [
+   {
+    "row": "primary",
+    "label": "all pre-event endoscopies",
+    "status": "done",
+    "n": {
+     "n_endoscopies": 288,
+     "n_progressor_endoscopies": 88,
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_progressor_patients": 32
+    },
+    "v0_sens_spec": [
+     0.949,
+     0.358
+    ],
+    "H_spec": 0.374,
+    "d_spec": -0.016,
+    "ci95_rederived": [
+     -0.133,
+     0.061
+    ],
+    "ci95_fixed": [
+     -0.14,
+     0.054
+    ],
+    "lower_above_0_rederived": false,
+    "share_samples_sequenced": 0.408,
+    "share_endoscopies_sequenced": 0.809,
+    "d_spec_vs_SLATE": -0.121,
+    "d_spec_vs_SLATE_lower_rederived": -0.254
+   },
+   {
+    "row": "ndbe",
+    "label": "NDBE endoscopies (all samples graded NDBE)",
+    "status": "done",
+    "n": {
+     "n_endoscopies": 208,
+     "n_progressor_endoscopies": 56,
+     "n_samples": 391,
+     "n_patients": 68,
+     "n_progressor_patients": 25
+    },
+    "v0_sens_spec": [
+     0.93,
+     0.381
+    ],
+    "H_spec": 0.408,
+    "d_spec": -0.027,
+    "ci95_rederived": [
+     -0.152,
+     0.052
+    ],
+    "ci95_fixed": [
+     -0.147,
+     0.042
+    ],
+    "lower_above_0_rederived": false,
+    "share_samples_sequenced": 0.414,
+    "share_endoscopies_sequenced": 0.777,
+    "d_spec_vs_SLATE": -0.153,
+    "d_spec_vs_SLATE_lower_rederived": -0.276
+   },
+   {
+    "row": "earliest",
+    "label": "earliest pre-event endoscopy per patient",
+    "status": "done",
+    "n": {
+     "n_endoscopies": 75,
+     "n_progressor_endoscopies": 32,
+     "n_samples": 140,
+     "n_patients": 75,
+     "n_progressor_patients": 32
+    },
+    "v0_sens_spec": [
+     0.956,
+     0.407
+    ],
+    "H_spec": 0.374,
+    "d_spec": 0.033,
+    "ci95_rederived": [
+     -0.145,
+     0.097
+    ],
+    "ci95_fixed": [
+     -0.128,
+     0.082
+    ],
+    "lower_above_0_rederived": false,
+    "share_samples_sequenced": 0.437,
+    "share_endoscopies_sequenced": 0.816,
+    "d_spec_vs_SLATE": -0.081,
+    "d_spec_vs_SLATE_lower_rederived": -0.252
+   },
+   {
+    "row": "ge2",
+    "label": "endoscopies with \u2265 2 samples",
+    "status": "done",
+    "n": {
+     "n_endoscopies": 146,
+     "n_progressor_endoscopies": 40,
+     "n_samples": 429,
+     "n_patients": 64,
+     "n_progressor_patients": 25
+    },
+    "v0_sens_spec": [
+     0.962,
+     0.31
+    ],
+    "H_spec": 0.371,
+    "d_spec": -0.06,
+    "ci95_rederived": [
+     -0.303,
+     0.008
+    ],
+    "ci95_fixed": [
+     -0.304,
+     -0.006
+    ],
+    "lower_above_0_rederived": false,
+    "share_samples_sequenced": 0.29,
+    "share_endoscopies_sequenced": 0.851,
+    "d_spec_vs_SLATE": -0.22,
+    "d_spec_vs_SLATE_lower_rederived": -0.429
+   },
+   {
+    "row": "tis_lt256",
+    "label": "< 256 tissue tiles (by top sample)",
+    "status": "done",
+    "n": {
+     "n_endoscopies": 142,
+     "n_progressor_endoscopies": 39,
+     "n_samples": 309,
+     "n_patients": 67,
+     "n_progressor_patients": 25
+    },
+    "v0_sens_spec": [
+     0.959,
+     0.349
+    ],
+    "H_spec": 0.45,
+    "d_spec": -0.102,
+    "ci95_rederived": [
+     -0.21,
+     0.001
+    ],
+    "ci95_fixed": [
+     -0.237,
+     -0.012
+    ],
+    "lower_above_0_rederived": false,
+    "share_samples_sequenced": 0.372,
+    "share_endoscopies_sequenced": 0.808,
+    "d_spec_vs_SLATE": -0.109,
+    "d_spec_vs_SLATE_lower_rederived": -0.265
+   },
+   {
+    "row": "tis_ge256",
+    "label": "\u2265 256 tissue tiles (by top sample)",
+    "status": "done",
+    "n": {
+     "n_endoscopies": 146,
+     "n_progressor_endoscopies": 49,
+     "n_samples": 262,
+     "n_patients": 63,
+     "n_progressor_patients": 25
+    },
+    "v0_sens_spec": [
+     0.941,
+     0.369
+    ],
+    "H_spec": 0.361,
+    "d_spec": 0.008,
+    "ci95_rederived": [
+     -0.187,
+     0.07
+    ],
+    "ci95_fixed": [
+     -0.18,
+     0.068
+    ],
+    "lower_above_0_rederived": false,
+    "share_samples_sequenced": 0.451,
+    "share_endoscopies_sequenced": 0.809,
+    "d_spec_vs_SLATE": -0.153,
+    "d_spec_vs_SLATE_lower_rederived": -0.306
+   },
+   {
+    "row": "r52a",
+    "label": "R52(a) cohort (refit predictions)",
+    "status": "done",
+    "n": {
+     "n_endoscopies": 290,
+     "n_progressor_endoscopies": 90,
+     "n_samples": 577,
+     "n_patients": 77,
+     "n_progressor_patients": 34
+    },
+    "v0_sens_spec": [
+     0.938,
+     0.367
+    ],
+    "H_spec": 0.435,
+    "d_spec": -0.068,
+    "ci95_rederived": [
+     -0.183,
+     0.04
+    ],
+    "ci95_fixed": [
+     -0.2,
+     0.028
+    ],
+    "lower_above_0_rederived": false,
+    "share_samples_sequenced": 0.411,
+    "share_endoscopies_sequenced": 0.818,
+    "d_spec_vs_SLATE": -0.153,
+    "d_spec_vs_SLATE_lower_rederived": -0.255
+   },
+   {
+    "row": "pkg",
+    "label": "package copy-number features",
+    "status": "done",
+    "n": {
+     "n_endoscopies": 288,
+     "n_progressor_endoscopies": 88,
+     "n_samples": 571,
+     "n_patients": 75,
+     "n_progressor_patients": 32
+    },
+    "v0_sens_spec": [
+     0.948,
+     0.486
+    ],
+    "H_spec": 0.36,
+    "d_spec": 0.126,
+    "ci95_rederived": [
+     -0.069,
+     0.208
+    ],
+    "ci95_fixed": [
+     -0.042,
+     0.225
+    ],
+    "lower_above_0_rederived": false,
+    "share_samples_sequenced": 0.408,
+    "share_endoscopies_sequenced": 0.809,
+    "d_spec_vs_SLATE": -0.107,
+    "d_spec_vs_SLATE_lower_rederived": -0.225
+   },
+   {
+    "row": "between_repeat",
+    "label": "between-repeat variance added (as R33)",
+    "status": "done",
+    "d_spec": -0.016,
+    "ci95_rederived": [
+     -0.213,
+     0.182
+    ],
+    "lower_above_0_rederived": false
+   },
+   {
+    "row": "f3",
+    "label": "refit bootstrap (F3, 200 draws)",
+    "status": "done",
+    "v0_sens_spec": [
+     0.907,
+     0.266
+    ],
+    "H_spec": 0.353,
+    "d_spec": -0.087,
+    "ci95_rederived": [
+     -0.369,
+     0.163
+    ],
+    "lower_above_0_rederived": false,
+    "share_samples_sequenced": 0.44,
+    "d_spec_vs_SLATE": -0.159
+   }
+  ],
+  "summary": {
+   "rows": 9,
+   "lower_limit_above_0": 0,
+   "not_above_0": 9,
+   "not_available": []
+  }
+ },
+ "prespec": "832d184"
+}

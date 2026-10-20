@@ -1,0 +1,129 @@
+{
+ "task": "f3",
+ "R7D": {
+  "row": "f3",
+  "label": "refit bootstrap (F3, 200 draws)",
+  "status": "done",
+  "draws_scored": 200,
+  "checks": {
+   "r49_mean_sens_spec_vs_round7c_f3": {
+    "got": [
+     0.874,
+     0.478
+    ],
+    "expected": [
+     0.874,
+     0.478
+    ],
+    "reproduced": true
+   }
+  },
+  "r49_sens": {
+   "mean": 0.874,
+   "median": 0.879,
+   "ci95_percentile": [
+    0.757,
+    0.962
+   ],
+   "one_sided_5th_percentile": 0.787,
+   "share_of_draws_above_0": 1.0
+  },
+  "r49_spec": {
+   "mean": 0.478,
+   "median": 0.491,
+   "ci95_percentile": [
+    0.261,
+    0.65
+   ],
+   "one_sided_5th_percentile": 0.302,
+   "share_of_draws_above_0": 1.0
+  },
+  "v0_sens": {
+   "mean": 0.907,
+   "median": 0.915,
+   "ci95_percentile": [
+    0.79,
+    0.978
+   ],
+   "one_sided_5th_percentile": 0.807,
+   "share_of_draws_above_0": 1.0
+  },
+  "v0_spec": {
+   "mean": 0.266,
+   "median": 0.253,
+   "ci95_percentile": [
+    0.096,
+    0.477
+   ],
+   "one_sided_5th_percentile": 0.115,
+   "share_of_draws_above_0": 1.0
+  },
+  "H_spec": {
+   "mean": 0.353,
+   "median": 0.33,
+   "ci95_percentile": [
+    0.076,
+    0.663
+   ],
+   "one_sided_5th_percentile": 0.106,
+   "share_of_draws_above_0": 1.0
+  },
+  "SLATE_spec": {
+   "mean": 0.425,
+   "median": 0.421,
+   "ci95_percentile": [
+    0.084,
+    0.717
+   ],
+   "one_sided_5th_percentile": 0.125,
+   "share_of_draws_above_0": 1.0
+  },
+  "d_spec_vs_H": {
+   "mean": -0.087,
+   "median": -0.079,
+   "ci95_percentile": [
+    -0.369,
+    0.163
+   ],
+   "one_sided_5th_percentile": -0.325,
+   "share_of_draws_above_0": 0.25
+  },
+  "d_spec_vs_SLATE": {
+   "mean": -0.159,
+   "median": -0.167,
+   "ci95_percentile": [
+    -0.44,
+    0.099
+   ],
+   "one_sided_5th_percentile": -0.422,
+   "share_of_draws_above_0": 0.13
+  },
+  "share_samples_v0": {
+   "mean": 0.44,
+   "median": 0.44,
+   "ci95_percentile": [
+    0.357,
+    0.518
+   ],
+   "one_sided_5th_percentile": 0.374,
+   "share_of_draws_above_0": 1.0
+  },
+  "share_endoscopies_v0": {
+   "mean": 0.867,
+   "median": 0.873,
+   "ci95_percentile": [
+    0.732,
+    0.966
+   ],
+   "one_sided_5th_percentile": 0.773,
+   "share_of_draws_above_0": 1.0
+  },
+  "n_endoscopies_per_draw": {
+   "median": 286.0,
+   "min": 244,
+   "max": 330
+  },
+  "definition": "stored F3 refit-bootstrap draws (one stratified 10-fold CV per patient-bootstrap draw with lambda refitted); per draw and fold V0's t_low and t_cnv re-derived from the draw's stored inner predictions (training endoscopies = resampled copy x endoscopy); V0, (H) and S-LATE on the draw's held-out pre-event endoscopies, comparators evaluation-matched to V0's sensitivity in the draw"
+ },
+ "prespec": "832d184"
+}
