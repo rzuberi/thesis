@@ -243,6 +243,19 @@ if ETASK == "merge":
             gm = MATCH["gate"]; go = y_at(gm["pts"][:, 0], gm["pts"][:, 1], x0); gb = np.array([y_at(gm["XB"][b], gm["YB"][b], x0) for b in range(len(D))]); o[f"caught_at_np_{x0}"]["vs_gate"] = {"delta": r3(ob - go), "ci95": ci(bd - gb)}
         mt[nm] = o
     out["matched"] = mt
+    # ---- does memory help each base? paired difference memory - single-endoscopy on the same base, at matched points
+    mg = {}
+    for a, b in (("memory", "gate"), ("ml_mem", "hne_mean"), ("hne_max_mem", "hne_max"), ("grade_ew", "grade_none"), ("grade_mean", "grade_none"), ("g53_ew", "g53_none"), ("g53_mean", "g53_none"), ("ml_gatemem", "ml_gate")):
+        if a not in MATCH or b not in MATCH: continue
+        A_, B_ = MATCH[a], MATCH[b]; o = {}
+        for x0 in (10.0, 16.0, 17.2, 23.6, 25.0, 31.8):
+            ao = y_at(A_["pts"][:, 0], A_["pts"][:, 1], x0); bo = y_at(B_["pts"][:, 0], B_["pts"][:, 1], x0); ab = np.array([y_at(A_["XB"][q], A_["YB"][q], x0) for q in range(len(D))]); bb = np.array([y_at(B_["XB"][q], B_["YB"][q], x0) for q in range(len(D))])
+            o[f"d_caught_at_np_{x0}"] = {"memory": r3(ao), "single": r3(bo), "delta": r3(ao - bo), "ci95": ci(ab - bb)}
+        for c in (14.0, 17.0, 21.0, 30.5, 31.1):
+            ao = x_at(A_["pts"][:, 0], A_["pts"][:, 1], c); bo = x_at(B_["pts"][:, 0], B_["pts"][:, 1], c); ab = np.array([x_at(A_["XB"][q], A_["YB"][q], c) for q in range(len(D))]); bb = np.array([x_at(B_["XB"][q], B_["YB"][q], c) for q in range(len(D))])
+            o[f"d_np_at_caught_{c}"] = {"memory": r3(ao), "single": r3(bo), "delta": r3(ao - bo), "ci95": ci(ab - bb)}
+        mg[f"{a} - {b}"] = o
+    out["memory_gain_by_base"] = mg
     # ---- apparent (OPTIMISTIC) curves: per repeat, the held-out patient maximum of the modal candidate's score swept on the evaluated patients
     app = {}; isPp = S["plab"] == 1; INC = S["INC"]
     for nm, grp, fam in (("hne_max", "st_core", "img:none"), ("gate", "st_core", "gate_al:none"), ("memory", "st_core", "gate_al:ew"), ("memcert", "st_A12", "A12"), ("ml_mem", "ml_core", "img:ew"), ("hne_mean", "ml_core", "img:none"), ("grade_ew", "st_path", "grade:ew"), ("g53_ew", "st_path", "g53:ew")):
