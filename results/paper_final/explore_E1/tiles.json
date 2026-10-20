@@ -1,0 +1,4074 @@
+{
+ "task": "tiles",
+ "E1_2": {
+  "rules": {
+   "R49": {
+    "mean": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.782,
+       "ci95": [
+        0.469,
+        1.101
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 1.675
+      },
+      "TN-NP": {
+       "mean": -2.329,
+       "ci95": [
+        -2.667,
+        -2.021
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 1.696
+      },
+      "TP-P": {
+       "mean": 3.309,
+       "ci95": [
+        2.516,
+        4.252
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 3.44
+      },
+      "FN-P": {
+       "mean": -1.591,
+       "ci95": [
+        -2.202,
+        -1.027
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 1.631
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 3.111,
+       "ci95": [
+        2.699,
+        3.564
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.846
+      },
+      "FP-NP - TP-P": {
+       "delta": -2.527,
+       "ci95": [
+        -3.543,
+        -1.675
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.934
+      },
+      "TP-P - FN-P": {
+       "delta": 4.899,
+       "ci95": [
+        4.1,
+        5.93
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.82
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.74
+    },
+    "median": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.755,
+       "ci95": [
+        0.467,
+        1.057
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 1.701
+      },
+      "TN-NP": {
+       "mean": -2.209,
+       "ci95": [
+        -2.535,
+        -1.896
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 1.75
+      },
+      "TP-P": {
+       "mean": 3.205,
+       "ci95": [
+        2.405,
+        4.197
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 3.492
+      },
+      "FN-P": {
+       "mean": -1.771,
+       "ci95": [
+        -2.576,
+        -1.061
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 1.871
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 2.964,
+       "ci95": [
+        2.56,
+        3.409
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.718
+      },
+      "FP-NP - TP-P": {
+       "delta": -2.45,
+       "ci95": [
+        -3.491,
+        -1.572
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.892
+      },
+      "TP-P - FN-P": {
+       "delta": 4.976,
+       "ci95": [
+        4.102,
+        6.15
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.776
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.727
+    },
+    "trim10": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.775,
+       "ci95": [
+        0.472,
+        1.085
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 1.662
+      },
+      "TN-NP": {
+       "mean": -2.269,
+       "ci95": [
+        -2.59,
+        -1.968
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 1.677
+      },
+      "TP-P": {
+       "mean": 3.27,
+       "ci95": [
+        2.476,
+        4.243
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 3.455
+      },
+      "FN-P": {
+       "mean": -1.62,
+       "ci95": [
+        -2.306,
+        -1.012
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 1.692
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 3.044,
+       "ci95": [
+        2.651,
+        3.479
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.823
+      },
+      "FP-NP - TP-P": {
+       "delta": -2.495,
+       "ci95": [
+        -3.529,
+        -1.638
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.92
+      },
+      "TP-P - FN-P": {
+       "delta": 4.89,
+       "ci95": [
+        4.077,
+        5.961
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.797
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.735
+    },
+    "nonbg_mean": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.787,
+       "ci95": [
+        0.476,
+        1.112
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 1.698
+      },
+      "TN-NP": {
+       "mean": -2.328,
+       "ci95": [
+        -2.66,
+        -2.01
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 1.732
+      },
+      "TP-P": {
+       "mean": 3.357,
+       "ci95": [
+        2.561,
+        4.337
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 3.423
+      },
+      "FN-P": {
+       "mean": -1.571,
+       "ci95": [
+        -2.188,
+        -1.019
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 1.628
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 3.115,
+       "ci95": [
+        2.703,
+        3.574
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.816
+      },
+      "FP-NP - TP-P": {
+       "delta": -2.57,
+       "ci95": [
+        -3.612,
+        -1.715
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.951
+      },
+      "TP-P - FN-P": {
+       "delta": 4.928,
+       "ci95": [
+        4.12,
+        6.0
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.839
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.746
+    },
+    "core_mean": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.581,
+       "ci95": [
+        0.21,
+        0.976
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 2.155
+      },
+      "TN-NP": {
+       "mean": -2.514,
+       "ci95": [
+        -2.91,
+        -2.136
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 2.082
+      },
+      "TP-P": {
+       "mean": 3.054,
+       "ci95": [
+        2.1,
+        4.142
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 3.834
+      },
+      "FN-P": {
+       "mean": -2.243,
+       "ci95": [
+        -2.955,
+        -1.579
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 1.766
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 3.095,
+       "ci95": [
+        2.593,
+        3.638
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.461
+      },
+      "FP-NP - TP-P": {
+       "delta": -2.473,
+       "ci95": [
+        -3.663,
+        -1.447
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.795
+      },
+      "TP-P - FN-P": {
+       "delta": 5.298,
+       "ci95": [
+        4.27,
+        6.526
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.775
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.696
+    },
+    "noink_mean": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.782,
+       "ci95": [
+        0.469,
+        1.101
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 1.675
+      },
+      "TN-NP": {
+       "mean": -2.329,
+       "ci95": [
+        -2.667,
+        -2.021
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 1.696
+      },
+      "TP-P": {
+       "mean": 3.309,
+       "ci95": [
+        2.517,
+        4.252
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 3.44
+      },
+      "FN-P": {
+       "mean": -1.591,
+       "ci95": [
+        -2.202,
+        -1.027
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 1.631
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 3.111,
+       "ci95": [
+        2.699,
+        3.564
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.846
+      },
+      "FP-NP - TP-P": {
+       "delta": -2.527,
+       "ci95": [
+        -3.543,
+        -1.676
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.934
+      },
+      "TP-P - FN-P": {
+       "delta": 4.9,
+       "ci95": [
+        4.1,
+        5.931
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.82
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.74
+    },
+    "sd": {
+     "groups": {
+      "FP-NP": {
+       "mean": 8.947,
+       "ci95": [
+        8.647,
+        9.289
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 2.114
+      },
+      "TN-NP": {
+       "mean": 9.261,
+       "ci95": [
+        9.045,
+        9.488
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 2.015
+      },
+      "TP-P": {
+       "mean": 9.296,
+       "ci95": [
+        8.883,
+        9.678
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 2.228
+      },
+      "FN-P": {
+       "mean": 9.637,
+       "ci95": [
+        9.063,
+        10.313
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 2.203
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": -0.315,
+       "ci95": [
+        -0.593,
+        -0.008
+       ],
+       "p_two_sided": 0.046,
+       "standardised": -0.152
+      },
+      "FP-NP - TP-P": {
+       "delta": -0.35,
+       "ci95": [
+        -0.83,
+        0.161
+       ],
+       "p_two_sided": 0.18,
+       "standardised": -0.161
+      },
+      "TP-P - FN-P": {
+       "delta": -0.34,
+       "ci95": [
+        -1.116,
+        0.348
+       ],
+       "p_two_sided": 0.368,
+       "standardised": -0.154
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.556
+    },
+    "p90": {
+     "groups": {
+      "FP-NP": {
+       "mean": 12.111,
+       "ci95": [
+        11.565,
+        12.688
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 3.607
+      },
+      "TN-NP": {
+       "mean": 9.278,
+       "ci95": [
+        8.895,
+        9.655
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 2.755
+      },
+      "TP-P": {
+       "mean": 15.202,
+       "ci95": [
+        14.342,
+        16.181
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 4.882
+      },
+      "FN-P": {
+       "mean": 10.891,
+       "ci95": [
+        9.734,
+        12.232
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 3.542
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 2.833,
+       "ci95": [
+        2.267,
+        3.432
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 0.883
+      },
+      "FP-NP - TP-P": {
+       "delta": -3.091,
+       "ci95": [
+        -4.186,
+        -2.09
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.72
+      },
+      "TP-P - FN-P": {
+       "delta": 4.312,
+       "ci95": [
+        2.988,
+        5.789
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.011
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.708
+    },
+    "max": {
+     "groups": {
+      "FP-NP": {
+       "mean": 26.38,
+       "ci95": [
+        25.368,
+        27.4
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 7.53
+      },
+      "TN-NP": {
+       "mean": 23.622,
+       "ci95": [
+        22.866,
+        24.404
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 6.836
+      },
+      "TP-P": {
+       "mean": 29.904,
+       "ci95": [
+        28.559,
+        31.222
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 8.787
+      },
+      "FN-P": {
+       "mean": 25.794,
+       "ci95": [
+        23.301,
+        28.439
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 7.522
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 2.758,
+       "ci95": [
+        1.777,
+        3.883
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 0.383
+      },
+      "FP-NP - TP-P": {
+       "delta": -3.524,
+       "ci95": [
+        -5.159,
+        -1.815
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.431
+      },
+      "TP-P - FN-P": {
+       "delta": 4.11,
+       "ci95": [
+        1.186,
+        6.817
+       ],
+       "p_two_sided": 0.014,
+       "standardised": 0.502
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.626
+    },
+    "top16_mean": {
+     "groups": {
+      "FP-NP": {
+       "mean": 18.474,
+       "ci95": [
+        17.698,
+        19.276
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 5.054
+      },
+      "TN-NP": {
+       "mean": 15.605,
+       "ci95": [
+        15.11,
+        16.117
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 4.055
+      },
+      "TP-P": {
+       "mean": 21.808,
+       "ci95": [
+        20.848,
+        22.905
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 6.252
+      },
+      "FN-P": {
+       "mean": 17.353,
+       "ci95": [
+        15.958,
+        18.886
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 4.611
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 2.869,
+       "ci95": [
+        2.108,
+        3.695
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 0.626
+      },
+      "FP-NP - TP-P": {
+       "delta": -3.334,
+       "ci95": [
+        -4.621,
+        -2.064
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.587
+      },
+      "TP-P - FN-P": {
+       "delta": 4.456,
+       "ci95": [
+        2.773,
+        6.15
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 0.811
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.674
+    },
+    "rest_mean": {
+     "groups": {
+      "FP-NP": {
+       "mean": -0.382,
+       "ci95": [
+        -0.695,
+        -0.064
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 1.639
+      },
+      "TN-NP": {
+       "mean": -3.524,
+       "ci95": [
+        -3.863,
+        -3.211
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 1.765
+      },
+      "TP-P": {
+       "mean": 2.093,
+       "ci95": [
+        1.281,
+        3.071
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 3.435
+      },
+      "FN-P": {
+       "mean": -2.854,
+       "ci95": [
+        -3.448,
+        -2.313
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 1.631
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 3.142,
+       "ci95": [
+        2.73,
+        3.591
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.845
+      },
+      "FP-NP - TP-P": {
+       "delta": -2.475,
+       "ci95": [
+        -3.535,
+        -1.596
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.92
+      },
+      "TP-P - FN-P": {
+       "delta": 4.947,
+       "ci95": [
+        4.144,
+        6.005
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.84
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.733
+    },
+    "share_pos": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.533,
+       "ci95": [
+        0.52,
+        0.546
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 0.076
+      },
+      "TN-NP": {
+       "mean": 0.404,
+       "ci95": [
+        0.391,
+        0.417
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 0.071
+      },
+      "TP-P": {
+       "mean": 0.628,
+       "ci95": [
+        0.596,
+        0.667
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 0.127
+      },
+      "FN-P": {
+       "mean": 0.426,
+       "ci95": [
+        0.391,
+        0.457
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 0.074
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 0.129,
+       "ci95": [
+        0.112,
+        0.147
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.754
+      },
+      "FP-NP - TP-P": {
+       "delta": -0.095,
+       "ci95": [
+        -0.135,
+        -0.061
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.906
+      },
+      "TP-P - FN-P": {
+       "delta": 0.202,
+       "ci95": [
+        0.167,
+        0.249
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.945
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.719
+    },
+    "gini_pos": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.411,
+       "ci95": [
+        0.407,
+        0.415
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 0.027
+      },
+      "TN-NP": {
+       "mean": 0.423,
+       "ci95": [
+        0.42,
+        0.427
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 0.03
+      },
+      "TP-P": {
+       "mean": 0.393,
+       "ci95": [
+        0.382,
+        0.403
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 0.041
+      },
+      "FN-P": {
+       "mean": 0.418,
+       "ci95": [
+        0.41,
+        0.43
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 0.029
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": -0.012,
+       "ci95": [
+        -0.017,
+        -0.008
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.423
+      },
+      "FP-NP - TP-P": {
+       "delta": 0.018,
+       "ci95": [
+        0.008,
+        0.03
+       ],
+       "p_two_sided": 0.001,
+       "standardised": 0.531
+      },
+      "TP-P - FN-P": {
+       "delta": -0.025,
+       "ci95": [
+        -0.04,
+        -0.014
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.711
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.362
+    },
+    "n_u_gt2": {
+     "groups": {
+      "FP-NP": {
+       "mean": 113.997,
+       "ci95": [
+        109.821,
+        118.445
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 23.009
+      },
+      "TN-NP": {
+       "mean": 81.711,
+       "ci95": [
+        78.57,
+        84.712
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 17.504
+      },
+      "TP-P": {
+       "mean": 143.323,
+       "ci95": [
+        132.409,
+        156.143
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 48.678
+      },
+      "FN-P": {
+       "mean": 88.416,
+       "ci95": [
+        80.285,
+        96.248
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 18.426
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 32.287,
+       "ci95": [
+        27.568,
+        37.306
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.579
+      },
+      "FP-NP - TP-P": {
+       "delta": -29.326,
+       "ci95": [
+        -42.903,
+        -18.051
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.77
+      },
+      "TP-P - FN-P": {
+       "delta": 54.907,
+       "ci95": [
+        43.948,
+        68.641
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.492
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.722
+    },
+    "n_u_gt5": {
+     "groups": {
+      "FP-NP": {
+       "mean": 79.993,
+       "ci95": [
+        76.034,
+        84.052
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 23.353
+      },
+      "TN-NP": {
+       "mean": 53.709,
+       "ci95": [
+        51.201,
+        56.309
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 16.493
+      },
+      "TP-P": {
+       "mean": 109.873,
+       "ci95": [
+        99.898,
+        121.456
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 45.181
+      },
+      "FN-P": {
+       "mean": 62.013,
+       "ci95": [
+        55.237,
+        68.428
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 17.138
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 26.284,
+       "ci95": [
+        22.27,
+        30.514
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.3
+      },
+      "FP-NP - TP-P": {
+       "delta": -29.88,
+       "ci95": [
+        -42.188,
+        -19.299
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.831
+      },
+      "TP-P - FN-P": {
+       "delta": 47.86,
+       "ci95": [
+        37.808,
+        59.881
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.401
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.731
+    },
+    "frac_u_gt2": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.439,
+       "ci95": [
+        0.425,
+        0.453
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 0.081
+      },
+      "TN-NP": {
+       "mean": 0.319,
+       "ci95": [
+        0.307,
+        0.331
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 0.068
+      },
+      "TP-P": {
+       "mean": 0.544,
+       "ci95": [
+        0.511,
+        0.585
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 0.135
+      },
+      "FN-P": {
+       "mean": 0.345,
+       "ci95": [
+        0.314,
+        0.376
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 0.072
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 0.119,
+       "ci95": [
+        0.103,
+        0.138
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.598
+      },
+      "FP-NP - TP-P": {
+       "delta": -0.105,
+       "ci95": [
+        -0.147,
+        -0.07
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.947
+      },
+      "TP-P - FN-P": {
+       "delta": 0.199,
+       "ci95": [
+        0.163,
+        0.246
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.837
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.735
+    },
+    "bg_contrib": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.045,
+       "ci95": [
+        -0.012,
+        0.11
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 0.377
+      },
+      "TN-NP": {
+       "mean": -0.097,
+       "ci95": [
+        -0.175,
+        -0.037
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 0.328
+      },
+      "TP-P": {
+       "mean": 0.109,
+       "ci95": [
+        0.04,
+        0.196
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 0.424
+      },
+      "FN-P": {
+       "mean": -0.042,
+       "ci95": [
+        -0.148,
+        0.009
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 0.234
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 0.143,
+       "ci95": [
+        0.058,
+        0.241
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 0.404
+      },
+      "FP-NP - TP-P": {
+       "delta": -0.064,
+       "ci95": [
+        -0.169,
+        0.028
+       ],
+       "p_two_sided": 0.184,
+       "standardised": -0.16
+      },
+      "TP-P - FN-P": {
+       "delta": 0.151,
+       "ci95": [
+        0.061,
+        0.276
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 0.442
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.534
+    },
+    "edge_contrib": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.386,
+       "ci95": [
+        0.224,
+        0.56
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 0.807
+      },
+      "TN-NP": {
+       "mean": -0.847,
+       "ci95": [
+        -1.035,
+        -0.681
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 0.96
+      },
+      "TP-P": {
+       "mean": 1.69,
+       "ci95": [
+        1.211,
+        2.249
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 2.102
+      },
+      "FN-P": {
+       "mean": -0.423,
+       "ci95": [
+        -0.882,
+        -0.024
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 1.507
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 1.233,
+       "ci95": [
+        1.01,
+        1.486
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.39
+      },
+      "FP-NP - TP-P": {
+       "delta": -1.304,
+       "ci95": [
+        -1.896,
+        -0.795
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.819
+      },
+      "TP-P - FN-P": {
+       "delta": 2.113,
+       "ci95": [
+        1.523,
+        2.871
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.155
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.726
+    },
+    "ink_contrib": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 0.002
+      },
+      "TN-NP": {
+       "mean": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 0.0
+      },
+      "TP-P": {
+       "mean": -0.0,
+       "ci95": [
+        -0.0,
+        0.0
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 0.002
+      },
+      "FN-P": {
+       "mean": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 0.0
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "p_two_sided": 0.73,
+       "standardised": 0.09
+      },
+      "FP-NP - TP-P": {
+       "delta": 0.0,
+       "ci95": [
+        0.0,
+        0.001
+       ],
+       "p_two_sided": 0.268,
+       "standardised": 0.143
+      },
+      "TP-P - FN-P": {
+       "delta": -0.0,
+       "ci95": [
+        -0.0,
+        0.0
+       ],
+       "p_two_sided": 0.729,
+       "standardised": -0.112
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.492
+    },
+    "blur_contrib": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.177,
+       "ci95": [
+        0.118,
+        0.244
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 0.348
+      },
+      "TN-NP": {
+       "mean": -0.054,
+       "ci95": [
+        -0.121,
+        0.007
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 0.331
+      },
+      "TP-P": {
+       "mean": 0.729,
+       "ci95": [
+        0.454,
+        1.052
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 1.27
+      },
+      "FN-P": {
+       "mean": -0.226,
+       "ci95": [
+        -0.706,
+        0.153
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 1.39
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 0.231,
+       "ci95": [
+        0.149,
+        0.319
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 0.681
+      },
+      "FP-NP - TP-P": {
+       "delta": -0.551,
+       "ci95": [
+        -0.871,
+        -0.272
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.592
+      },
+      "TP-P - FN-P": {
+       "delta": 0.955,
+       "ci95": [
+        0.521,
+        1.52
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 0.718
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.655
+    },
+    "top16_contrib": {
+     "groups": {
+      "FP-NP": {
+       "mean": 1.141,
+       "ci95": [
+        1.094,
+        1.189
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 0.304
+      },
+      "TN-NP": {
+       "mean": 0.975,
+       "ci95": [
+        0.944,
+        1.007
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 0.253
+      },
+      "TP-P": {
+       "mean": 1.344,
+       "ci95": [
+        1.287,
+        1.408
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 0.388
+      },
+      "FN-P": {
+       "mean": 1.085,
+       "ci95": [
+        0.997,
+        1.18
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 0.288
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 0.166,
+       "ci95": [
+        0.121,
+        0.216
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 0.592
+      },
+      "FP-NP - TP-P": {
+       "delta": -0.203,
+       "ci95": [
+        -0.281,
+        -0.129
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.583
+      },
+      "TP-P - FN-P": {
+       "delta": 0.26,
+       "ci95": [
+        0.154,
+        0.364
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 0.76
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.668
+    },
+    "pos_sum": {
+     "groups": {
+      "FP-NP": {
+       "mean": 4.007,
+       "ci95": [
+        3.794,
+        4.234
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 1.348
+      },
+      "TN-NP": {
+       "mean": 2.668,
+       "ci95": [
+        2.533,
+        2.806
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 0.888
+      },
+      "TP-P": {
+       "mean": 5.789,
+       "ci95": [
+        5.259,
+        6.435
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 2.65
+      },
+      "FN-P": {
+       "mean": 3.171,
+       "ci95": [
+        2.777,
+        3.608
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 1.062
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 1.339,
+       "ci95": [
+        1.126,
+        1.584
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.173
+      },
+      "FP-NP - TP-P": {
+       "delta": -1.782,
+       "ci95": [
+        -2.469,
+        -1.223
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.848
+      },
+      "TP-P - FN-P": {
+       "delta": 2.619,
+       "ci95": [
+        2.053,
+        3.313
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.297
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.736
+    },
+    "conc_top16_of_pos": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.294,
+       "ci95": [
+        0.285,
+        0.303
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 0.047
+      },
+      "TN-NP": {
+       "mean": 0.38,
+       "ci95": [
+        0.369,
+        0.393
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 0.069
+      },
+      "TP-P": {
+       "mean": 0.252,
+       "ci95": [
+        0.233,
+        0.268
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 0.061
+      },
+      "FN-P": {
+       "mean": 0.359,
+       "ci95": [
+        0.329,
+        0.393
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 0.085
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": -0.086,
+       "ci95": [
+        -0.1,
+        -0.074
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -1.462
+      },
+      "FP-NP - TP-P": {
+       "delta": 0.042,
+       "ci95": [
+        0.024,
+        0.063
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 0.779
+      },
+      "TP-P - FN-P": {
+       "delta": -0.108,
+       "ci95": [
+        -0.144,
+        -0.082
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -1.456
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.3
+    },
+    "mean_without_top16": {
+     "groups": {
+      "FP-NP": {
+       "mean": -0.382,
+       "ci95": [
+        -0.695,
+        -0.064
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 1.639
+      },
+      "TN-NP": {
+       "mean": -3.524,
+       "ci95": [
+        -3.863,
+        -3.211
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 1.765
+      },
+      "TP-P": {
+       "mean": 2.093,
+       "ci95": [
+        1.281,
+        3.071
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 3.435
+      },
+      "FN-P": {
+       "mean": -2.854,
+       "ci95": [
+        -3.448,
+        -2.313
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 1.631
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 3.142,
+       "ci95": [
+        2.73,
+        3.591
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.845
+      },
+      "FP-NP - TP-P": {
+       "delta": -2.475,
+       "ci95": [
+        -3.535,
+        -1.596
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.92
+      },
+      "TP-P - FN-P": {
+       "delta": 4.947,
+       "ci95": [
+        4.144,
+        6.005
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.84
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.733
+    },
+    "score_change_if_bg_removed (nonbg_mean - mean)": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.005,
+       "ci95": [
+        -0.054,
+        0.054
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 0.375
+      },
+      "TN-NP": {
+       "mean": 0.001,
+       "ci95": [
+        -0.037,
+        0.038
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 0.271
+      },
+      "TP-P": {
+       "mean": 0.048,
+       "ci95": [
+        -0.044,
+        0.154
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 0.417
+      },
+      "FN-P": {
+       "mean": 0.02,
+       "ci95": [
+        -0.021,
+        0.101
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 0.177
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 0.004,
+       "ci95": [
+        -0.059,
+        0.065
+       ],
+       "p_two_sided": 0.904,
+       "standardised": 0.013
+      },
+      "FP-NP - TP-P": {
+       "delta": -0.043,
+       "ci95": [
+        -0.163,
+        0.066
+       ],
+       "p_two_sided": 0.498,
+       "standardised": -0.11
+      },
+      "TP-P - FN-P": {
+       "delta": 0.029,
+       "ci95": [
+        -0.091,
+        0.137
+       ],
+       "p_two_sided": 0.669,
+       "standardised": 0.089
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.5
+    },
+    "score_change_if_edge_and_bg_removed (core_mean - mean)": {
+     "groups": {
+      "FP-NP": {
+       "mean": -0.201,
+       "ci95": [
+        -0.462,
+        0.035
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 1.37
+      },
+      "TN-NP": {
+       "mean": -0.185,
+       "ci95": [
+        -0.363,
+        -0.007
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 1.16
+      },
+      "TP-P": {
+       "mean": -0.254,
+       "ci95": [
+        -0.826,
+        0.249
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 1.888
+      },
+      "FN-P": {
+       "mean": -0.653,
+       "ci95": [
+        -1.055,
+        -0.236
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 1.125
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": -0.016,
+       "ci95": [
+        -0.295,
+        0.229
+       ],
+       "p_two_sided": 0.898,
+       "standardised": -0.012
+      },
+      "FP-NP - TP-P": {
+       "delta": 0.054,
+       "ci95": [
+        -0.508,
+        0.67
+       ],
+       "p_two_sided": 0.898,
+       "standardised": 0.033
+      },
+      "TP-P - FN-P": {
+       "delta": 0.398,
+       "ci95": [
+        -0.296,
+        1.022
+       ],
+       "p_two_sided": 0.245,
+       "standardised": 0.256
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.515
+    },
+    "score_change_trimmed10 (trim10 - mean)": {
+     "groups": {
+      "FP-NP": {
+       "mean": -0.007,
+       "ci95": [
+        -0.045,
+        0.032
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 0.243
+      },
+      "TN-NP": {
+       "mean": 0.059,
+       "ci95": [
+        0.02,
+        0.101
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 0.232
+      },
+      "TP-P": {
+       "mean": -0.039,
+       "ci95": [
+        -0.085,
+        0.008
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 0.245
+      },
+      "FN-P": {
+       "mean": -0.029,
+       "ci95": [
+        -0.115,
+        0.055
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 0.21
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": -0.066,
+       "ci95": [
+        -0.117,
+        -0.018
+       ],
+       "p_two_sided": 0.004,
+       "standardised": -0.28
+      },
+      "FP-NP - TP-P": {
+       "delta": 0.032,
+       "ci95": [
+        -0.031,
+        0.09
+       ],
+       "p_two_sided": 0.336,
+       "standardised": 0.13
+      },
+      "TP-P - FN-P": {
+       "delta": -0.01,
+       "ci95": [
+        -0.1,
+        0.078
+       ],
+       "p_two_sided": 0.835,
+       "standardised": -0.043
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.482
+    },
+    "score_change_median (median - mean)": {
+     "groups": {
+      "FP-NP": {
+       "mean": -0.027,
+       "ci95": [
+        -0.108,
+        0.056
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 0.608
+      },
+      "TN-NP": {
+       "mean": 0.12,
+       "ci95": [
+        0.048,
+        0.191
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 0.551
+      },
+      "TP-P": {
+       "mean": -0.103,
+       "ci95": [
+        -0.206,
+        0.002
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 0.634
+      },
+      "FN-P": {
+       "mean": -0.18,
+       "ci95": [
+        -0.425,
+        0.063
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 0.637
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": -0.147,
+       "ci95": [
+        -0.247,
+        -0.055
+       ],
+       "p_two_sided": 0.002,
+       "standardised": -0.253
+      },
+      "FP-NP - TP-P": {
+       "delta": 0.076,
+       "ci95": [
+        -0.058,
+        0.205
+       ],
+       "p_two_sided": 0.289,
+       "standardised": 0.123
+      },
+      "TP-P - FN-P": {
+       "delta": 0.077,
+       "ci95": [
+        -0.168,
+        0.323
+       ],
+       "p_two_sided": 0.521,
+       "standardised": 0.12
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.462
+    },
+    "score_change_drop_top16 (rest_mean - mean)": {
+     "groups": {
+      "FP-NP": {
+       "mean": -1.164,
+       "ci95": [
+        -1.209,
+        -1.121
+       ],
+       "n_endoscopies_weighted": 88.0,
+       "sd": 0.283
+      },
+      "TN-NP": {
+       "mean": -1.196,
+       "ci95": [
+        -1.222,
+        -1.17
+       ],
+       "n_endoscopies_weighted": 112.0,
+       "sd": 0.267
+      },
+      "TP-P": {
+       "mean": -1.215,
+       "ci95": [
+        -1.268,
+        -1.155
+       ],
+       "n_endoscopies_weighted": 79.8,
+       "sd": 0.325
+      },
+      "FN-P": {
+       "mean": -1.263,
+       "ci95": [
+        -1.34,
+        -1.19
+       ],
+       "n_endoscopies_weighted": 8.2,
+       "sd": 0.278
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 0.031,
+       "ci95": [
+        -0.009,
+        0.069
+       ],
+       "p_two_sided": 0.115,
+       "standardised": 0.114
+      },
+      "FP-NP - TP-P": {
+       "delta": 0.051,
+       "ci95": [
+        -0.021,
+        0.119
+       ],
+       "p_two_sided": 0.186,
+       "standardised": 0.168
+      },
+      "TP-P - FN-P": {
+       "delta": 0.047,
+       "ci95": [
+        -0.044,
+        0.157
+       ],
+       "p_two_sided": 0.346,
+       "standardised": 0.157
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.45
+    }
+   },
+   "P1 90%": {
+    "mean": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.882,
+       "ci95": [
+        0.628,
+        1.162
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 1.42
+      },
+      "TN-NP": {
+       "mean": -2.637,
+       "ci95": [
+        -2.92,
+        -2.365
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 1.501
+      },
+      "TP-P": {
+       "mean": 3.408,
+       "ci95": [
+        2.673,
+        4.303
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 3.355
+      },
+      "FN-P": {
+       "mean": -1.992,
+       "ci95": [
+        -2.38,
+        -1.513
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 1.343
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 3.52,
+       "ci95": [
+        3.183,
+        3.921
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 2.409
+      },
+      "FP-NP - TP-P": {
+       "delta": -2.525,
+       "ci95": [
+        -3.464,
+        -1.751
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.98
+      },
+      "TP-P - FN-P": {
+       "delta": 5.4,
+       "ci95": [
+        4.602,
+        6.329
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 2.113
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.759
+    },
+    "median": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.882,
+       "ci95": [
+        0.653,
+        1.147
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 1.44
+      },
+      "TN-NP": {
+       "mean": -2.527,
+       "ci95": [
+        -2.808,
+        -2.265
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 1.556
+      },
+      "TP-P": {
+       "mean": 3.289,
+       "ci95": [
+        2.54,
+        4.207
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 3.426
+      },
+      "FN-P": {
+       "mean": -2.052,
+       "ci95": [
+        -2.579,
+        -1.358
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 1.65
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 3.409,
+       "ci95": [
+        3.062,
+        3.798
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 2.274
+      },
+      "FP-NP - TP-P": {
+       "delta": -2.408,
+       "ci95": [
+        -3.356,
+        -1.615
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.916
+      },
+      "TP-P - FN-P": {
+       "delta": 5.341,
+       "ci95": [
+        4.455,
+        6.328
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.987
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.736
+    },
+    "trim10": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.88,
+       "ci95": [
+        0.644,
+        1.146
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 1.402
+      },
+      "TN-NP": {
+       "mean": -2.576,
+       "ci95": [
+        -2.847,
+        -2.317
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 1.489
+      },
+      "TP-P": {
+       "mean": 3.367,
+       "ci95": [
+        2.629,
+        4.269
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 3.373
+      },
+      "FN-P": {
+       "mean": -2.005,
+       "ci95": [
+        -2.43,
+        -1.458
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 1.433
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 3.455,
+       "ci95": [
+        3.127,
+        3.842
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 2.389
+      },
+      "FP-NP - TP-P": {
+       "delta": -2.487,
+       "ci95": [
+        -3.438,
+        -1.702
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.963
+      },
+      "TP-P - FN-P": {
+       "delta": 5.371,
+       "ci95": [
+        4.57,
+        6.296
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 2.073
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.752
+    },
+    "nonbg_mean": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.882,
+       "ci95": [
+        0.623,
+        1.173
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 1.455
+      },
+      "TN-NP": {
+       "mean": -2.632,
+       "ci95": [
+        -2.926,
+        -2.363
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 1.544
+      },
+      "TP-P": {
+       "mean": 3.446,
+       "ci95": [
+        2.698,
+        4.359
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 3.347
+      },
+      "FN-P": {
+       "mean": -1.89,
+       "ci95": [
+        -2.259,
+        -1.468
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 1.418
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 3.514,
+       "ci95": [
+        3.17,
+        3.924
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 2.343
+      },
+      "FP-NP - TP-P": {
+       "delta": -2.564,
+       "ci95": [
+        -3.542,
+        -1.771
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.994
+      },
+      "TP-P - FN-P": {
+       "delta": 5.337,
+       "ci95": [
+        4.552,
+        6.305
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 2.076
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.762
+    },
+    "core_mean": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.709,
+       "ci95": [
+        0.351,
+        1.066
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 1.953
+      },
+      "TN-NP": {
+       "mean": -2.846,
+       "ci95": [
+        -3.19,
+        -2.526
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 1.888
+      },
+      "TP-P": {
+       "mean": 3.095,
+       "ci95": [
+        2.149,
+        4.181
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 3.828
+      },
+      "FN-P": {
+       "mean": -2.122,
+       "ci95": [
+        -2.743,
+        -1.366
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 1.828
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 3.555,
+       "ci95": [
+        3.1,
+        4.04
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.851
+      },
+      "FP-NP - TP-P": {
+       "delta": -2.386,
+       "ci95": [
+        -3.538,
+        -1.403
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.785
+      },
+      "TP-P - FN-P": {
+       "delta": 5.217,
+       "ci95": [
+        4.137,
+        6.4
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.739
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.694
+    },
+    "noink_mean": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.882,
+       "ci95": [
+        0.628,
+        1.162
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 1.42
+      },
+      "TN-NP": {
+       "mean": -2.637,
+       "ci95": [
+        -2.92,
+        -2.365
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 1.501
+      },
+      "TP-P": {
+       "mean": 3.408,
+       "ci95": [
+        2.673,
+        4.303
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 3.355
+      },
+      "FN-P": {
+       "mean": -1.992,
+       "ci95": [
+        -2.38,
+        -1.513
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 1.343
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 3.52,
+       "ci95": [
+        3.183,
+        3.921
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 2.409
+      },
+      "FP-NP - TP-P": {
+       "delta": -2.526,
+       "ci95": [
+        -3.464,
+        -1.751
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.98
+      },
+      "TP-P - FN-P": {
+       "delta": 5.4,
+       "ci95": [
+        4.603,
+        6.33
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 2.113
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.759
+    },
+    "sd": {
+     "groups": {
+      "FP-NP": {
+       "mean": 8.932,
+       "ci95": [
+        8.608,
+        9.281
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 2.151
+      },
+      "TN-NP": {
+       "mean": 9.297,
+       "ci95": [
+        9.067,
+        9.514
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 1.971
+      },
+      "TP-P": {
+       "mean": 9.318,
+       "ci95": [
+        8.892,
+        9.71
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 2.287
+      },
+      "FN-P": {
+       "mean": 9.418,
+       "ci95": [
+        8.939,
+        10.105
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 1.721
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": -0.365,
+       "ci95": [
+        -0.676,
+        -0.016
+       ],
+       "p_two_sided": 0.04,
+       "standardised": -0.177
+      },
+      "FP-NP - TP-P": {
+       "delta": -0.386,
+       "ci95": [
+        -0.884,
+        0.162
+       ],
+       "p_two_sided": 0.157,
+       "standardised": -0.174
+      },
+      "TP-P - FN-P": {
+       "delta": -0.1,
+       "ci95": [
+        -0.935,
+        0.56
+       ],
+       "p_two_sided": 0.822,
+       "standardised": -0.049
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.558
+    },
+    "p90": {
+     "groups": {
+      "FP-NP": {
+       "mean": 12.175,
+       "ci95": [
+        11.644,
+        12.724
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 3.497
+      },
+      "TN-NP": {
+       "mean": 9.019,
+       "ci95": [
+        8.649,
+        9.367
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 2.637
+      },
+      "TP-P": {
+       "mean": 15.359,
+       "ci95": [
+        14.577,
+        16.26
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 4.821
+      },
+      "FN-P": {
+       "mean": 9.944,
+       "ci95": [
+        9.064,
+        11.033
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 2.789
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 3.156,
+       "ci95": [
+        2.565,
+        3.783
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.019
+      },
+      "FP-NP - TP-P": {
+       "delta": -3.184,
+       "ci95": [
+        -4.225,
+        -2.233
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.756
+      },
+      "TP-P - FN-P": {
+       "delta": 5.415,
+       "ci95": [
+        4.214,
+        6.659
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.375
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.719
+    },
+    "max": {
+     "groups": {
+      "FP-NP": {
+       "mean": 26.233,
+       "ci95": [
+        25.149,
+        27.319
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 7.465
+      },
+      "TN-NP": {
+       "mean": 23.563,
+       "ci95": [
+        22.797,
+        24.321
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 6.857
+      },
+      "TP-P": {
+       "mean": 29.977,
+       "ci95": [
+        28.629,
+        31.252
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 8.886
+      },
+      "FN-P": {
+       "mean": 25.466,
+       "ci95": [
+        23.063,
+        28.571
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 6.502
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 2.67,
+       "ci95": [
+        1.558,
+        3.907
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 0.372
+      },
+      "FP-NP - TP-P": {
+       "delta": -3.744,
+       "ci95": [
+        -5.364,
+        -1.99
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.456
+      },
+      "TP-P - FN-P": {
+       "delta": 4.511,
+       "ci95": [
+        1.175,
+        7.182
+       ],
+       "p_two_sided": 0.006,
+       "standardised": 0.579
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.631
+    },
+    "top16_mean": {
+     "groups": {
+      "FP-NP": {
+       "mean": 18.497,
+       "ci95": [
+        17.695,
+        19.314
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 5.005
+      },
+      "TN-NP": {
+       "mean": 15.379,
+       "ci95": [
+        14.897,
+        15.838
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 3.926
+      },
+      "TP-P": {
+       "mean": 21.943,
+       "ci95": [
+        21.025,
+        22.971
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 6.264
+      },
+      "FN-P": {
+       "mean": 16.593,
+       "ci95": [
+        15.455,
+        17.994
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 3.636
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 3.118,
+       "ci95": [
+        2.315,
+        3.977
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 0.693
+      },
+      "FP-NP - TP-P": {
+       "delta": -3.446,
+       "ci95": [
+        -4.701,
+        -2.182
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.608
+      },
+      "TP-P - FN-P": {
+       "delta": 5.35,
+       "ci95": [
+        3.777,
+        6.842
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.045
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.68
+    },
+    "rest_mean": {
+     "groups": {
+      "FP-NP": {
+       "mean": -0.284,
+       "ci95": [
+        -0.53,
+        -0.01
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 1.386
+      },
+      "TN-NP": {
+       "mean": -3.833,
+       "ci95": [
+        -4.112,
+        -3.562
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 1.578
+      },
+      "TP-P": {
+       "mean": 2.19,
+       "ci95": [
+        1.425,
+        3.114
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 3.352
+      },
+      "FN-P": {
+       "mean": -3.231,
+       "ci95": [
+        -3.588,
+        -2.782
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 1.335
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 3.549,
+       "ci95": [
+        3.21,
+        3.94
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 2.39
+      },
+      "FP-NP - TP-P": {
+       "delta": -2.474,
+       "ci95": [
+        -3.435,
+        -1.675
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.964
+      },
+      "TP-P - FN-P": {
+       "delta": 5.421,
+       "ci95": [
+        4.608,
+        6.376
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 2.125
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.75
+    },
+    "share_pos": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.539,
+       "ci95": [
+        0.529,
+        0.55
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 0.063
+      },
+      "TN-NP": {
+       "mean": 0.39,
+       "ci95": [
+        0.379,
+        0.401
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 0.062
+      },
+      "TP-P": {
+       "mean": 0.632,
+       "ci95": [
+        0.602,
+        0.667
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 0.123
+      },
+      "FN-P": {
+       "mean": 0.409,
+       "ci95": [
+        0.385,
+        0.44
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 0.067
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 0.149,
+       "ci95": [
+        0.135,
+        0.165
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 2.377
+      },
+      "FP-NP - TP-P": {
+       "delta": -0.093,
+       "ci95": [
+        -0.13,
+        -0.062
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.953
+      },
+      "TP-P - FN-P": {
+       "delta": 0.223,
+       "ci95": [
+        0.186,
+        0.262
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 2.253
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.729
+    },
+    "gini_pos": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.41,
+       "ci95": [
+        0.406,
+        0.414
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 0.028
+      },
+      "TN-NP": {
+       "mean": 0.425,
+       "ci95": [
+        0.422,
+        0.429
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 0.03
+      },
+      "TP-P": {
+       "mean": 0.392,
+       "ci95": [
+        0.381,
+        0.401
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 0.04
+      },
+      "FN-P": {
+       "mean": 0.423,
+       "ci95": [
+        0.414,
+        0.436
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 0.026
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": -0.015,
+       "ci95": [
+        -0.02,
+        -0.011
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.524
+      },
+      "FP-NP - TP-P": {
+       "delta": 0.018,
+       "ci95": [
+        0.009,
+        0.03
+       ],
+       "p_two_sided": 0.001,
+       "standardised": 0.529
+      },
+      "TP-P - FN-P": {
+       "delta": -0.031,
+       "ci95": [
+        -0.048,
+        -0.019
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.926
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.36
+    },
+    "n_u_gt2": {
+     "groups": {
+      "FP-NP": {
+       "mean": 114.312,
+       "ci95": [
+        111.189,
+        117.716
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 19.909
+      },
+      "TN-NP": {
+       "mean": 79.196,
+       "ci95": [
+        76.2,
+        82.278
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 17.602
+      },
+      "TP-P": {
+       "mean": 144.424,
+       "ci95": [
+        134.388,
+        156.764
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 48.137
+      },
+      "FN-P": {
+       "mean": 84.228,
+       "ci95": [
+        78.796,
+        91.607
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 16.105
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 35.116,
+       "ci95": [
+        31.244,
+        39.579
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.869
+      },
+      "FP-NP - TP-P": {
+       "delta": -30.112,
+       "ci95": [
+        -42.732,
+        -19.559
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.818
+      },
+      "TP-P - FN-P": {
+       "delta": 60.196,
+       "ci95": [
+        48.831,
+        73.393
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.677
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.743
+    },
+    "n_u_gt5": {
+     "groups": {
+      "FP-NP": {
+       "mean": 80.234,
+       "ci95": [
+        76.741,
+        83.849
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 21.803
+      },
+      "TN-NP": {
+       "mean": 51.655,
+       "ci95": [
+        49.31,
+        53.957
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 15.805
+      },
+      "TP-P": {
+       "mean": 110.893,
+       "ci95": [
+        101.607,
+        122.214
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 44.724
+      },
+      "FN-P": {
+       "mean": 57.833,
+       "ci95": [
+        53.918,
+        63.382
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 13.874
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 28.579,
+       "ci95": [
+        24.712,
+        32.902
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.501
+      },
+      "FP-NP - TP-P": {
+       "delta": -30.659,
+       "ci95": [
+        -42.289,
+        -20.821
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.871
+      },
+      "TP-P - FN-P": {
+       "delta": 53.06,
+       "ci95": [
+        43.25,
+        64.076
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.602
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.748
+    },
+    "frac_u_gt2": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.444,
+       "ci95": [
+        0.432,
+        0.456
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 0.07
+      },
+      "TN-NP": {
+       "mean": 0.307,
+       "ci95": [
+        0.296,
+        0.316
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 0.061
+      },
+      "TP-P": {
+       "mean": 0.548,
+       "ci95": [
+        0.517,
+        0.585
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 0.132
+      },
+      "FN-P": {
+       "mean": 0.329,
+       "ci95": [
+        0.308,
+        0.358
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 0.063
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 0.137,
+       "ci95": [
+        0.123,
+        0.153
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 2.086
+      },
+      "FP-NP - TP-P": {
+       "delta": -0.105,
+       "ci95": [
+        -0.143,
+        -0.071
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.991
+      },
+      "TP-P - FN-P": {
+       "delta": 0.219,
+       "ci95": [
+        0.184,
+        0.258
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 2.119
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.747
+    },
+    "bg_contrib": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.054,
+       "ci95": [
+        0.005,
+        0.111
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 0.355
+      },
+      "TN-NP": {
+       "mean": -0.115,
+       "ci95": [
+        -0.196,
+        -0.051
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 0.341
+      },
+      "TP-P": {
+       "mean": 0.126,
+       "ci95": [
+        0.057,
+        0.211
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 0.399
+      },
+      "FN-P": {
+       "mean": -0.165,
+       "ci95": [
+        -0.372,
+        -0.011
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 0.42
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 0.169,
+       "ci95": [
+        0.088,
+        0.267
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 0.484
+      },
+      "FP-NP - TP-P": {
+       "delta": -0.072,
+       "ci95": [
+        -0.169,
+        0.014
+       ],
+       "p_two_sided": 0.109,
+       "standardised": -0.19
+      },
+      "TP-P - FN-P": {
+       "delta": 0.29,
+       "ci95": [
+        0.106,
+        0.521
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 0.709
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.541
+    },
+    "edge_contrib": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.396,
+       "ci95": [
+        0.249,
+        0.561
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 0.765
+      },
+      "TN-NP": {
+       "mean": -0.944,
+       "ci95": [
+        -1.13,
+        -0.777
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 0.928
+      },
+      "TP-P": {
+       "mean": 1.75,
+       "ci95": [
+        1.294,
+        2.258
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 2.063
+      },
+      "FN-P": {
+       "mean": -0.748,
+       "ci95": [
+        -1.173,
+        -0.323
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 1.367
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 1.34,
+       "ci95": [
+        1.129,
+        1.586
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.576
+      },
+      "FP-NP - TP-P": {
+       "delta": -1.353,
+       "ci95": [
+        -1.888,
+        -0.862
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.87
+      },
+      "TP-P - FN-P": {
+       "delta": 2.498,
+       "ci95": [
+        1.885,
+        3.276
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.427
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.746
+    },
+    "ink_contrib": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 0.002
+      },
+      "TN-NP": {
+       "mean": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 0.0
+      },
+      "TP-P": {
+       "mean": -0.0,
+       "ci95": [
+        -0.0,
+        0.0
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 0.002
+      },
+      "FN-P": {
+       "mean": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 0.0
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "p_two_sided": 0.73,
+       "standardised": 0.082
+      },
+      "FP-NP - TP-P": {
+       "delta": 0.0,
+       "ci95": [
+        0.0,
+        0.001
+       ],
+       "p_two_sided": 0.268,
+       "standardised": 0.14
+      },
+      "TP-P - FN-P": {
+       "delta": -0.0,
+       "ci95": [
+        -0.0,
+        0.0
+       ],
+       "p_two_sided": 0.729,
+       "standardised": -0.115
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.492
+    },
+    "blur_contrib": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.182,
+       "ci95": [
+        0.125,
+        0.245
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 0.349
+      },
+      "TN-NP": {
+       "mean": -0.074,
+       "ci95": [
+        -0.139,
+        -0.011
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 0.32
+      },
+      "TP-P": {
+       "mean": 0.744,
+       "ci95": [
+        0.48,
+        1.056
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 1.269
+      },
+      "FN-P": {
+       "mean": -0.261,
+       "ci95": [
+        -0.666,
+        0.118
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 1.329
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 0.256,
+       "ci95": [
+        0.172,
+        0.347
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 0.763
+      },
+      "FP-NP - TP-P": {
+       "delta": -0.563,
+       "ci95": [
+        -0.874,
+        -0.286
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.605
+      },
+      "TP-P - FN-P": {
+       "delta": 1.006,
+       "ci95": [
+        0.551,
+        1.517
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 0.774
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.662
+    },
+    "top16_contrib": {
+     "groups": {
+      "FP-NP": {
+       "mean": 1.148,
+       "ci95": [
+        1.1,
+        1.196
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 0.296
+      },
+      "TN-NP": {
+       "mean": 0.957,
+       "ci95": [
+        0.927,
+        0.986
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 0.248
+      },
+      "TP-P": {
+       "mean": 1.352,
+       "ci95": [
+        1.297,
+        1.413
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 0.389
+      },
+      "FN-P": {
+       "mean": 1.037,
+       "ci95": [
+        0.966,
+        1.125
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 0.227
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 0.191,
+       "ci95": [
+        0.144,
+        0.242
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 0.701
+      },
+      "FP-NP - TP-P": {
+       "delta": -0.204,
+       "ci95": [
+        -0.28,
+        -0.133
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.59
+      },
+      "TP-P - FN-P": {
+       "delta": 0.315,
+       "ci95": [
+        0.215,
+        0.41
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 0.99
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.671
+    },
+    "pos_sum": {
+     "groups": {
+      "FP-NP": {
+       "mean": 4.041,
+       "ci95": [
+        3.84,
+        4.256
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 1.278
+      },
+      "TN-NP": {
+       "mean": 2.545,
+       "ci95": [
+        2.425,
+        2.659
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 0.812
+      },
+      "TP-P": {
+       "mean": 5.853,
+       "ci95": [
+        5.35,
+        6.438
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 2.616
+      },
+      "FN-P": {
+       "mean": 2.869,
+       "ci95": [
+        2.627,
+        3.23
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 0.812
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 1.496,
+       "ci95": [
+        1.274,
+        1.729
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.397
+      },
+      "FP-NP - TP-P": {
+       "delta": -1.812,
+       "ci95": [
+        -2.462,
+        -1.28
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.88
+      },
+      "TP-P - FN-P": {
+       "delta": 2.984,
+       "ci95": [
+        2.423,
+        3.6
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 1.541
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.748
+    },
+    "conc_top16_of_pos": {
+     "groups": {
+      "FP-NP": {
+       "mean": 0.291,
+       "ci95": [
+        0.285,
+        0.297
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 0.039
+      },
+      "TN-NP": {
+       "mean": 0.389,
+       "ci95": [
+        0.378,
+        0.402
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 0.068
+      },
+      "TP-P": {
+       "mean": 0.249,
+       "ci95": [
+        0.232,
+        0.263
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 0.057
+      },
+      "FN-P": {
+       "mean": 0.376,
+       "ci95": [
+        0.349,
+        0.398
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 0.078
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": -0.098,
+       "ci95": [
+        -0.112,
+        -0.086
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -1.769
+      },
+      "FP-NP - TP-P": {
+       "delta": 0.042,
+       "ci95": [
+        0.027,
+        0.059
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 0.868
+      },
+      "TP-P - FN-P": {
+       "delta": -0.127,
+       "ci95": [
+        -0.156,
+        -0.102
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -1.862
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.282
+    },
+    "mean_without_top16": {
+     "groups": {
+      "FP-NP": {
+       "mean": -0.284,
+       "ci95": [
+        -0.53,
+        -0.01
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 1.386
+      },
+      "TN-NP": {
+       "mean": -3.833,
+       "ci95": [
+        -4.112,
+        -3.562
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 1.578
+      },
+      "TP-P": {
+       "mean": 2.19,
+       "ci95": [
+        1.425,
+        3.114
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 3.352
+      },
+      "FN-P": {
+       "mean": -3.231,
+       "ci95": [
+        -3.588,
+        -2.782
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 1.335
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 3.549,
+       "ci95": [
+        3.21,
+        3.94
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 2.39
+      },
+      "FP-NP - TP-P": {
+       "delta": -2.474,
+       "ci95": [
+        -3.435,
+        -1.675
+       ],
+       "p_two_sided": 0.0,
+       "standardised": -0.964
+      },
+      "TP-P - FN-P": {
+       "delta": 5.421,
+       "ci95": [
+        4.608,
+        6.376
+       ],
+       "p_two_sided": 0.0,
+       "standardised": 2.125
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.75
+    },
+    "score_change_if_bg_removed (nonbg_mean - mean)": {
+     "groups": {
+      "FP-NP": {
+       "mean": -0.0,
+       "ci95": [
+        -0.055,
+        0.045
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 0.37
+      },
+      "TN-NP": {
+       "mean": 0.005,
+       "ci95": [
+        -0.032,
+        0.04
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 0.269
+      },
+      "TP-P": {
+       "mean": 0.039,
+       "ci95": [
+        -0.048,
+        0.14
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 0.395
+      },
+      "FN-P": {
+       "mean": 0.102,
+       "ci95": [
+        -0.059,
+        0.263
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 0.41
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": -0.005,
+       "ci95": [
+        -0.06,
+        0.048
+       ],
+       "p_two_sided": 0.837,
+       "standardised": -0.017
+      },
+      "FP-NP - TP-P": {
+       "delta": -0.039,
+       "ci95": [
+        -0.153,
+        0.062
+       ],
+       "p_two_sided": 0.505,
+       "standardised": -0.102
+      },
+      "TP-P - FN-P": {
+       "delta": -0.063,
+       "ci95": [
+        -0.238,
+        0.11
+       ],
+       "p_two_sided": 0.489,
+       "standardised": -0.157
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.5
+    },
+    "score_change_if_edge_and_bg_removed (core_mean - mean)": {
+     "groups": {
+      "FP-NP": {
+       "mean": -0.173,
+       "ci95": [
+        -0.45,
+        0.073
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 1.39
+      },
+      "TN-NP": {
+       "mean": -0.209,
+       "ci95": [
+        -0.378,
+        -0.038
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 1.128
+      },
+      "TP-P": {
+       "mean": -0.313,
+       "ci95": [
+        -0.881,
+        0.206
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 1.89
+      },
+      "FN-P": {
+       "mean": -0.13,
+       "ci95": [
+        -0.762,
+        0.511
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 1.285
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 0.036,
+       "ci95": [
+        -0.265,
+        0.315
+       ],
+       "p_two_sided": 0.829,
+       "standardised": 0.028
+      },
+      "FP-NP - TP-P": {
+       "delta": 0.139,
+       "ci95": [
+        -0.434,
+        0.772
+       ],
+       "p_two_sided": 0.66,
+       "standardised": 0.084
+      },
+      "TP-P - FN-P": {
+       "delta": -0.183,
+       "ci95": [
+        -1.035,
+        0.609
+       ],
+       "p_two_sided": 0.666,
+       "standardised": -0.113
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.497
+    },
+    "score_change_trimmed10 (trim10 - mean)": {
+     "groups": {
+      "FP-NP": {
+       "mean": -0.003,
+       "ci95": [
+        -0.04,
+        0.036
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 0.24
+      },
+      "TN-NP": {
+       "mean": 0.061,
+       "ci95": [
+        0.023,
+        0.101
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 0.236
+      },
+      "TP-P": {
+       "mean": -0.041,
+       "ci95": [
+        -0.086,
+        0.003
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 0.243
+      },
+      "FN-P": {
+       "mean": -0.012,
+       "ci95": [
+        -0.112,
+        0.113
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 0.233
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": -0.064,
+       "ci95": [
+        -0.112,
+        -0.018
+       ],
+       "p_two_sided": 0.009,
+       "standardised": -0.27
+      },
+      "FP-NP - TP-P": {
+       "delta": 0.038,
+       "ci95": [
+        -0.023,
+        0.097
+       ],
+       "p_two_sided": 0.237,
+       "standardised": 0.158
+      },
+      "TP-P - FN-P": {
+       "delta": -0.029,
+       "ci95": [
+        -0.148,
+        0.065
+       ],
+       "p_two_sided": 0.574,
+       "standardised": -0.121
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.477
+    },
+    "score_change_median (median - mean)": {
+     "groups": {
+      "FP-NP": {
+       "mean": -0.0,
+       "ci95": [
+        -0.091,
+        0.09
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 0.611
+      },
+      "TN-NP": {
+       "mean": 0.11,
+       "ci95": [
+        0.037,
+        0.178
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 0.549
+      },
+      "TP-P": {
+       "mean": -0.118,
+       "ci95": [
+        -0.222,
+        -0.017
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 0.637
+      },
+      "FN-P": {
+       "mean": -0.06,
+       "ci95": [
+        -0.297,
+        0.265
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 0.626
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": -0.11,
+       "ci95": [
+        -0.208,
+        -0.012
+       ],
+       "p_two_sided": 0.034,
+       "standardised": -0.19
+      },
+      "FP-NP - TP-P": {
+       "delta": 0.118,
+       "ci95": [
+        -0.02,
+        0.248
+       ],
+       "p_two_sided": 0.105,
+       "standardised": 0.189
+      },
+      "TP-P - FN-P": {
+       "delta": -0.059,
+       "ci95": [
+        -0.385,
+        0.177
+       ],
+       "p_two_sided": 0.641,
+       "standardised": -0.093
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.448
+    },
+    "score_change_drop_top16 (rest_mean - mean)": {
+     "groups": {
+      "FP-NP": {
+       "mean": -1.166,
+       "ci95": [
+        -1.211,
+        -1.123
+       ],
+       "n_endoscopies_weighted": 95.1,
+       "sd": 0.282
+      },
+      "TN-NP": {
+       "mean": -1.196,
+       "ci95": [
+        -1.223,
+        -1.167
+       ],
+       "n_endoscopies_weighted": 104.9,
+       "sd": 0.268
+      },
+      "TP-P": {
+       "mean": -1.218,
+       "ci95": [
+        -1.271,
+        -1.158
+       ],
+       "n_endoscopies_weighted": 79.0,
+       "sd": 0.333
+      },
+      "FN-P": {
+       "mean": -1.239,
+       "ci95": [
+        -1.317,
+        -1.174
+       ],
+       "n_endoscopies_weighted": 9.0,
+       "sd": 0.215
+      }
+     },
+     "contrasts": {
+      "FP-NP - TN-NP": {
+       "delta": 0.03,
+       "ci95": [
+        -0.016,
+        0.071
+       ],
+       "p_two_sided": 0.191,
+       "standardised": 0.109
+      },
+      "FP-NP - TP-P": {
+       "delta": 0.051,
+       "ci95": [
+        -0.022,
+        0.119
+       ],
+       "p_two_sided": 0.188,
+       "standardised": 0.167
+      },
+      "TP-P - FN-P": {
+       "delta": 0.021,
+       "ci95": [
+        -0.059,
+        0.123
+       ],
+       "p_two_sided": 0.656,
+       "standardised": 0.076
+      }
+     },
+     "auroc_TP-P_vs_FP-NP_per_repeat_mean": 0.452
+    }
+   }
+  },
+  "check_logit_decomposition_max_abs_diff": 0.001,
+  "note": "tile score u_t = w . z(e_t) (z-scored with the fit's training mean / sd), so the sample logit = b0 + mean_t u_t exactly; contributions = u_t / N (logit units); summaries of the endoscopy's top-H&E sample in each repeat under its outer model; bg = tile with > 50% white pixels (R55); edge = non-background tile with tissue-mask share < 0.8 in its 3 x 3-tile neighbourhood or > 25% white; ink = > 2% saturated green-blue pixels; blur = non-background tile below the 10th percentile of Laplacian variance; gini_pos = Gini of positive contributions; conc_top16_of_pos = share of positive contribution from the 16 highest tiles; check value x 1000"
+ },
+ "exploration": "E1"
+}

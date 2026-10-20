@@ -1,0 +1,977 @@
+{
+ "task": "fix_nsamp",
+ "E1_3": {
+  "base": {
+   "R49": {
+    "label": "R49",
+    "value": {
+     "progressor_patients_caught": 31.1,
+     "non_progressor_patients_flagged": 31.8,
+     "endoscopy_sensitivity": 0.907,
+     "endoscopy_specificity": 0.56,
+     "samples_sequenced_per_patient": 1.94
+    },
+    "ci95": {
+     "progressor_patients_caught": [
+      29.682,
+      32.0
+     ],
+     "non_progressor_patients_flagged": [
+      26.962,
+      36.192
+     ],
+     "endoscopy_sensitivity": [
+      0.861,
+      0.951
+     ],
+     "endoscopy_specificity": [
+      0.475,
+      0.645
+     ],
+     "samples_sequenced_per_patient": [
+      1.611,
+      2.268
+     ]
+    },
+    "delta_vs_R49": {
+     "progressor_patients_caught": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "non_progressor_patients_flagged": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endoscopy_sensitivity": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endoscopy_specificity": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "samples_sequenced_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     }
+    },
+    "delta_vs_P1 90%": {
+     "progressor_patients_caught": {
+      "delta": 0.0,
+      "ci95": [
+       -1.506,
+       1.883
+      ],
+      "p_two_sided": 0.959
+     },
+     "non_progressor_patients_flagged": {
+      "delta": -4.2,
+      "ci95": [
+       -7.358,
+       -1.2
+      ],
+      "p_two_sided": 0.009
+     },
+     "endoscopy_sensitivity": {
+      "delta": 0.009,
+      "ci95": [
+       -0.037,
+       0.051
+      ],
+      "p_two_sided": 0.688
+     },
+     "endoscopy_specificity": {
+      "delta": 0.036,
+      "ci95": [
+       -0.018,
+       0.085
+      ],
+      "p_two_sided": 0.183
+     },
+     "samples_sequenced_per_patient": {
+      "delta": 1.94,
+      "ci95": [
+       1.611,
+       2.268
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "delta_vs_P1_matched_endoscopy_sensitivity": {
+     "endoscopy_specificity": {
+      "delta": 0.068,
+      "ci95": [
+       -0.038,
+       0.165
+      ],
+      "p_two_sided": 0.2
+     },
+     "non_progressor_patients_flagged": {
+      "delta": -5.0,
+      "ci95": [
+       -8.694,
+       -1.097
+      ],
+      "p_two_sided": 0.012
+     },
+     "progressor_patients_caught": {
+      "delta": -0.1,
+      "ci95": [
+       -1.28,
+       0.823
+      ],
+      "p_two_sided": 0.745
+     },
+     "endoscopy_sensitivity": {
+      "delta": 0.0,
+      "ci95": [
+       -0.013,
+       0.0
+      ],
+      "p_two_sided": 0.092
+     }
+    },
+    "P1_matched_value": {
+     "progressor_patients_caught": 31.2,
+     "non_progressor_patients_flagged": 36.8,
+     "endoscopy_sensitivity": 0.907,
+     "endoscopy_specificity": 0.493,
+     "samples_sequenced_per_patient": 0.0
+    }
+   },
+   "P1 90%": {
+    "label": "P1 90%",
+    "value": {
+     "progressor_patients_caught": 31.1,
+     "non_progressor_patients_flagged": 36.0,
+     "endoscopy_sensitivity": 0.898,
+     "endoscopy_specificity": 0.524,
+     "samples_sequenced_per_patient": 0.0
+    },
+    "ci95": {
+     "progressor_patients_caught": [
+      29.462,
+      32.0
+     ],
+     "non_progressor_patients_flagged": [
+      31.358,
+      39.677
+     ],
+     "endoscopy_sensitivity": [
+      0.849,
+      0.944
+     ],
+     "endoscopy_specificity": [
+      0.457,
+      0.599
+     ],
+     "samples_sequenced_per_patient": [
+      0.0,
+      0.0
+     ]
+    },
+    "delta_vs_R49": {
+     "progressor_patients_caught": {
+      "delta": 0.0,
+      "ci95": [
+       -1.883,
+       1.506
+      ],
+      "p_two_sided": 0.959
+     },
+     "non_progressor_patients_flagged": {
+      "delta": 4.2,
+      "ci95": [
+       1.2,
+       7.358
+      ],
+      "p_two_sided": 0.009
+     },
+     "endoscopy_sensitivity": {
+      "delta": -0.009,
+      "ci95": [
+       -0.051,
+       0.037
+      ],
+      "p_two_sided": 0.688
+     },
+     "endoscopy_specificity": {
+      "delta": -0.036,
+      "ci95": [
+       -0.085,
+       0.018
+      ],
+      "p_two_sided": 0.183
+     },
+     "samples_sequenced_per_patient": {
+      "delta": -1.94,
+      "ci95": [
+       -2.268,
+       -1.611
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "delta_vs_P1 90%": {
+     "progressor_patients_caught": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "non_progressor_patients_flagged": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endoscopy_sensitivity": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endoscopy_specificity": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "samples_sequenced_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     }
+    }
+   }
+  },
+  "fixes": [
+   {
+    "family": "nsamp",
+    "rule": "P1 90%",
+    "eps": null,
+    "c_chosen_median": [
+     1.5,
+     1.0
+    ],
+    "nested": {
+     "label": "P1 90% on max - c1 log(samples) - c2 log(1 + position) (design-sensitive)",
+     "value": {
+      "progressor_patients_caught": 31.1,
+      "non_progressor_patients_flagged": 33.4,
+      "endoscopy_sensitivity": 0.863,
+      "endoscopy_specificity": 0.623,
+      "samples_sequenced_per_patient": 0.0
+     },
+     "ci95": {
+      "progressor_patients_caught": [
+       29.6,
+       32.0
+      ],
+      "non_progressor_patients_flagged": [
+       28.871,
+       37.488
+      ],
+      "endoscopy_sensitivity": [
+       0.798,
+       0.925
+      ],
+      "endoscopy_specificity": [
+       0.562,
+       0.685
+      ],
+      "samples_sequenced_per_patient": [
+       0.0,
+       0.0
+      ]
+     },
+     "delta_vs_R49": {
+      "progressor_patients_caught": {
+       "delta": 0.0,
+       "ci95": [
+        -1.6,
+        1.252
+       ],
+       "p_two_sided": 0.972
+      },
+      "non_progressor_patients_flagged": {
+       "delta": 1.6,
+       "ci95": [
+        -1.471,
+        4.593
+       ],
+       "p_two_sided": 0.302
+      },
+      "endoscopy_sensitivity": {
+       "delta": -0.044,
+       "ci95": [
+        -0.101,
+        0.013
+       ],
+       "p_two_sided": 0.148
+      },
+      "endoscopy_specificity": {
+       "delta": 0.063,
+       "ci95": [
+        0.004,
+        0.129
+       ],
+       "p_two_sided": 0.038
+      },
+      "samples_sequenced_per_patient": {
+       "delta": -1.94,
+       "ci95": [
+        -2.268,
+        -1.611
+       ],
+       "p_two_sided": 0.0
+      }
+     },
+     "delta_vs_P1 90%": {
+      "progressor_patients_caught": {
+       "delta": 0.0,
+       "ci95": [
+        -0.3,
+        0.282
+       ],
+       "p_two_sided": 1.0
+      },
+      "non_progressor_patients_flagged": {
+       "delta": -2.6,
+       "ci95": [
+        -5.733,
+        0.315
+       ],
+       "p_two_sided": 0.094
+      },
+      "endoscopy_sensitivity": {
+       "delta": -0.035,
+       "ci95": [
+        -0.067,
+        -0.001
+       ],
+       "p_two_sided": 0.048
+      },
+      "endoscopy_specificity": {
+       "delta": 0.099,
+       "ci95": [
+        0.057,
+        0.139
+       ],
+       "p_two_sided": 0.0
+      },
+      "samples_sequenced_per_patient": {
+       "delta": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "p_two_sided": 1.0
+      }
+     },
+     "delta_vs_P1_matched_endoscopy_sensitivity": {
+      "endoscopy_specificity": {
+       "delta": 0.042,
+       "ci95": [
+        -0.019,
+        0.097
+       ],
+       "p_two_sided": 0.182
+      },
+      "non_progressor_patients_flagged": {
+       "delta": -1.0,
+       "ci95": [
+        -3.993,
+        2.4
+       ],
+       "p_two_sided": 0.687
+      },
+      "progressor_patients_caught": {
+       "delta": 0.3,
+       "ci95": [
+        -0.246,
+        0.778
+       ],
+       "p_two_sided": 0.498
+      },
+      "endoscopy_sensitivity": {
+       "delta": 0.0,
+       "ci95": [
+        -0.013,
+        0.0
+       ],
+       "p_two_sided": 0.096
+      }
+     },
+     "P1_matched_value": {
+      "progressor_patients_caught": 30.8,
+      "non_progressor_patients_flagged": 34.4,
+      "endoscopy_sensitivity": 0.863,
+      "endoscopy_specificity": 0.581,
+      "samples_sequenced_per_patient": 0.0
+     }
+    }
+   },
+   {
+    "family": "nsamp",
+    "rule": "P1 90%",
+    "eps": null,
+    "c_chosen_median": 1.75,
+    "c_chosen_iqr": [
+     1.0,
+     2.25
+    ],
+    "nested": {
+     "label": "P1 90% on max - c log(samples)",
+     "value": {
+      "progressor_patients_caught": 30.8,
+      "non_progressor_patients_flagged": 32.6,
+      "endoscopy_sensitivity": 0.876,
+      "endoscopy_specificity": 0.587,
+      "samples_sequenced_per_patient": 0.0
+     },
+     "ci95": {
+      "progressor_patients_caught": [
+       28.8,
+       32.0
+      ],
+      "non_progressor_patients_flagged": [
+       27.999,
+       36.7
+      ],
+      "endoscopy_sensitivity": [
+       0.826,
+       0.925
+      ],
+      "endoscopy_specificity": [
+       0.514,
+       0.661
+      ],
+      "samples_sequenced_per_patient": [
+       0.0,
+       0.0
+      ]
+     },
+     "delta_vs_R49": {
+      "progressor_patients_caught": {
+       "delta": -0.3,
+       "ci95": [
+        -2.259,
+        0.993
+       ],
+       "p_two_sided": 0.893
+      },
+      "non_progressor_patients_flagged": {
+       "delta": 0.8,
+       "ci95": [
+        -1.985,
+        3.751
+       ],
+       "p_two_sided": 0.619
+      },
+      "endoscopy_sensitivity": {
+       "delta": -0.031,
+       "ci95": [
+        -0.08,
+        0.02
+       ],
+       "p_two_sided": 0.22
+      },
+      "endoscopy_specificity": {
+       "delta": 0.027,
+       "ci95": [
+        -0.037,
+        0.1
+       ],
+       "p_two_sided": 0.436
+      },
+      "samples_sequenced_per_patient": {
+       "delta": -1.94,
+       "ci95": [
+        -2.268,
+        -1.611
+       ],
+       "p_two_sided": 0.0
+      }
+     },
+     "delta_vs_P1 90%": {
+      "progressor_patients_caught": {
+       "delta": -0.3,
+       "ci95": [
+        -0.823,
+        0.0
+       ],
+       "p_two_sided": 0.266
+      },
+      "non_progressor_patients_flagged": {
+       "delta": -3.4,
+       "ci95": [
+        -6.553,
+        -0.382
+       ],
+       "p_two_sided": 0.03
+      },
+      "endoscopy_sensitivity": {
+       "delta": -0.022,
+       "ci95": [
+        -0.051,
+        0.002
+       ],
+       "p_two_sided": 0.092
+      },
+      "endoscopy_specificity": {
+       "delta": 0.063,
+       "ci95": [
+        0.011,
+        0.11
+       ],
+       "p_two_sided": 0.012
+      },
+      "samples_sequenced_per_patient": {
+       "delta": 0.0,
+       "ci95": [
+        0.0,
+        0.0
+       ],
+       "p_two_sided": 1.0
+      }
+     },
+     "delta_vs_P1_matched_endoscopy_sensitivity": {
+      "endoscopy_specificity": {
+       "delta": 0.015,
+       "ci95": [
+        -0.067,
+        0.102
+       ],
+       "p_two_sided": 0.621
+      },
+      "non_progressor_patients_flagged": {
+       "delta": -2.3,
+       "ci95": [
+        -5.702,
+        1.433
+       ],
+       "p_two_sided": 0.26
+      },
+      "progressor_patients_caught": {
+       "delta": -0.2,
+       "ci95": [
+        -0.533,
+        0.229
+       ],
+       "p_two_sided": 0.689
+      },
+      "endoscopy_sensitivity": {
+       "delta": 0.0,
+       "ci95": [
+        -0.012,
+        0.0
+       ],
+       "p_two_sided": 0.083
+      }
+     },
+     "P1_matched_value": {
+      "progressor_patients_caught": 31.0,
+      "non_progressor_patients_flagged": 34.9,
+      "endoscopy_sensitivity": 0.876,
+      "endoscopy_specificity": 0.572,
+      "samples_sequenced_per_patient": 0.0
+     }
+    }
+   },
+   {
+    "family": "nsamp",
+    "rule": "R49",
+    "eps": 0.0,
+    "c_chosen_median": 1.125,
+    "c_chosen_iqr": [
+     0.25,
+     1.75
+    ],
+    "nested": {
+     "label": "R49 on max - c log(samples) eps 0.0",
+     "value": {
+      "progressor_patients_caught": 30.8,
+      "non_progressor_patients_flagged": 31.3,
+      "endoscopy_sensitivity": 0.9,
+      "endoscopy_specificity": 0.596,
+      "samples_sequenced_per_patient": 1.827
+     },
+     "ci95": {
+      "progressor_patients_caught": [
+       29.257,
+       31.877
+      ],
+      "non_progressor_patients_flagged": [
+       26.252,
+       35.834
+      ],
+      "endoscopy_sensitivity": [
+       0.855,
+       0.944
+      ],
+      "endoscopy_specificity": [
+       0.517,
+       0.678
+      ],
+      "samples_sequenced_per_patient": [
+       1.521,
+       2.136
+      ]
+     },
+     "delta_vs_R49": {
+      "progressor_patients_caught": {
+       "delta": -0.3,
+       "ci95": [
+        -0.993,
+        0.0
+       ],
+       "p_two_sided": 0.758
+      },
+      "non_progressor_patients_flagged": {
+       "delta": -0.5,
+       "ci95": [
+        -1.215,
+        0.0
+       ],
+       "p_two_sided": 0.088
+      },
+      "endoscopy_sensitivity": {
+       "delta": -0.007,
+       "ci95": [
+        -0.017,
+        0.0
+       ],
+       "p_two_sided": 0.103
+      },
+      "endoscopy_specificity": {
+       "delta": 0.035,
+       "ci95": [
+        0.016,
+        0.058
+       ],
+       "p_two_sided": 0.0
+      },
+      "samples_sequenced_per_patient": {
+       "delta": -0.113,
+       "ci95": [
+        -0.208,
+        -0.025
+       ],
+       "p_two_sided": 0.021
+      }
+     },
+     "delta_vs_P1 90%": {
+      "progressor_patients_caught": {
+       "delta": -0.3,
+       "ci95": [
+        -1.541,
+        0.929
+       ],
+       "p_two_sided": 0.655
+      },
+      "non_progressor_patients_flagged": {
+       "delta": -4.7,
+       "ci95": [
+        -7.8,
+        -1.888
+       ],
+       "p_two_sided": 0.0
+      },
+      "endoscopy_sensitivity": {
+       "delta": 0.002,
+       "ci95": [
+        -0.044,
+        0.043
+       ],
+       "p_two_sided": 0.914
+      },
+      "endoscopy_specificity": {
+       "delta": 0.071,
+       "ci95": [
+        0.027,
+        0.11
+       ],
+       "p_two_sided": 0.002
+      },
+      "samples_sequenced_per_patient": {
+       "delta": 1.827,
+       "ci95": [
+        1.521,
+        2.136
+       ],
+       "p_two_sided": 0.0
+      }
+     },
+     "delta_vs_P1_matched_endoscopy_sensitivity": {
+      "endoscopy_specificity": {
+       "delta": 0.089,
+       "ci95": [
+        -0.012,
+        0.183
+       ],
+       "p_two_sided": 0.093
+      },
+      "non_progressor_patients_flagged": {
+       "delta": -5.0,
+       "ci95": [
+        -8.707,
+        -1.338
+       ],
+       "p_two_sided": 0.007
+      },
+      "progressor_patients_caught": {
+       "delta": -0.4,
+       "ci95": [
+        -1.371,
+        0.331
+       ],
+       "p_two_sided": 0.373
+      },
+      "endoscopy_sensitivity": {
+       "delta": 0.0,
+       "ci95": [
+        -0.014,
+        0.0
+       ],
+       "p_two_sided": 0.092
+      }
+     },
+     "P1_matched_value": {
+      "progressor_patients_caught": 31.2,
+      "non_progressor_patients_flagged": 36.3,
+      "endoscopy_sensitivity": 0.9,
+      "endoscopy_specificity": 0.507,
+      "samples_sequenced_per_patient": 0.0
+     }
+    }
+   },
+   {
+    "family": "nsamp",
+    "rule": "R49",
+    "eps": 0.02,
+    "c_chosen_median": 1.75,
+    "c_chosen_iqr": [
+     1.25,
+     2.25
+    ],
+    "nested": {
+     "label": "R49 on max - c log(samples) eps 0.02",
+     "value": {
+      "progressor_patients_caught": 30.7,
+      "non_progressor_patients_flagged": 30.8,
+      "endoscopy_sensitivity": 0.894,
+      "endoscopy_specificity": 0.614,
+      "samples_sequenced_per_patient": 1.752
+     },
+     "ci95": {
+      "progressor_patients_caught": [
+       29.109,
+       31.877
+      ],
+      "non_progressor_patients_flagged": [
+       25.902,
+       35.476
+      ],
+      "endoscopy_sensitivity": [
+       0.848,
+       0.939
+      ],
+      "endoscopy_specificity": [
+       0.537,
+       0.692
+      ],
+      "samples_sequenced_per_patient": [
+       1.46,
+       2.057
+      ]
+     },
+     "delta_vs_R49": {
+      "progressor_patients_caught": {
+       "delta": -0.4,
+       "ci95": [
+        -1.324,
+        0.0
+       ],
+       "p_two_sided": 0.758
+      },
+      "non_progressor_patients_flagged": {
+       "delta": -1.0,
+       "ci95": [
+        -1.816,
+        -0.314
+       ],
+       "p_two_sided": 0.001
+      },
+      "endoscopy_sensitivity": {
+       "delta": -0.013,
+       "ci95": [
+        -0.027,
+        -0.002
+       ],
+       "p_two_sided": 0.011
+      },
+      "endoscopy_specificity": {
+       "delta": 0.054,
+       "ci95": [
+        0.028,
+        0.086
+       ],
+       "p_two_sided": 0.0
+      },
+      "samples_sequenced_per_patient": {
+       "delta": -0.188,
+       "ci95": [
+        -0.32,
+        -0.055
+       ],
+       "p_two_sided": 0.009
+      }
+     },
+     "delta_vs_P1 90%": {
+      "progressor_patients_caught": {
+       "delta": -0.4,
+       "ci95": [
+        -1.552,
+        0.64
+       ],
+       "p_two_sided": 0.483
+      },
+      "non_progressor_patients_flagged": {
+       "delta": -5.2,
+       "ci95": [
+        -8.405,
+        -2.293
+       ],
+       "p_two_sided": 0.0
+      },
+      "endoscopy_sensitivity": {
+       "delta": -0.003,
+       "ci95": [
+        -0.049,
+        0.038
+       ],
+       "p_two_sided": 0.899
+      },
+      "endoscopy_specificity": {
+       "delta": 0.09,
+       "ci95": [
+        0.045,
+        0.129
+       ],
+       "p_two_sided": 0.0
+      },
+      "samples_sequenced_per_patient": {
+       "delta": 1.752,
+       "ci95": [
+        1.46,
+        2.057
+       ],
+       "p_two_sided": 0.0
+      }
+     },
+     "delta_vs_P1_matched_endoscopy_sensitivity": {
+      "endoscopy_specificity": {
+       "delta": 0.095,
+       "ci95": [
+        -0.012,
+        0.189
+       ],
+       "p_two_sided": 0.087
+      },
+      "non_progressor_patients_flagged": {
+       "delta": -5.3,
+       "ci95": [
+        -8.941,
+        -1.28
+       ],
+       "p_two_sided": 0.005
+      },
+      "progressor_patients_caught": {
+       "delta": -0.5,
+       "ci95": [
+        -1.423,
+        0.26
+       ],
+       "p_two_sided": 0.287
+      },
+      "endoscopy_sensitivity": {
+       "delta": 0.0,
+       "ci95": [
+        -0.014,
+        0.0
+       ],
+       "p_two_sided": 0.094
+      }
+     },
+     "P1_matched_value": {
+      "progressor_patients_caught": 31.2,
+      "non_progressor_patients_flagged": 36.1,
+      "endoscopy_sensitivity": 0.894,
+      "endoscopy_specificity": 0.52,
+      "samples_sequenced_per_patient": 0.0
+     }
+    }
+   }
+  ],
+  "endoscopy_auroc_fold_stratified": {
+   "max - c log(samples)": {
+    "auroc_max": 0.837,
+    "auroc_new": 0.85,
+    "delta": {
+     "delta": 0.013,
+     "ci95": [
+      -0.011,
+      0.036
+     ],
+     "p_two_sided": 0.268
+    }
+   },
+   "max - c1 log(samples) - c2 log(1 + position)": {
+    "auroc_max": 0.837,
+    "auroc_new": 0.855,
+    "delta": {
+     "delta": 0.018,
+     "ci95": [
+      -0.007,
+      0.046
+     ],
+     "p_two_sided": 0.148
+    }
+   }
+  },
+  "note": "nested: every threshold / model fitted on the training patients of each outer fold (R49 / P1 flags of training endoscopies from inner out-of-fold scores and the fold's own cut-offs; tile summaries of training samples under the inner models of that split), applied to the held-out fold; eps = largest share of training flagged progressor endoscopies a veto may remove; vetoed endoscopies keep their sequencing; apparent = threshold or model chosen on the evaluated endoscopies themselves (optimistic, labelled); deltas: paired patient bootstrap (rv8 pdraws, RandomState(0)), thresholds and calls fixed; P1 matched = P1 threshold re-matched per repeat and per draw to the rule's realised endoscopy sensitivity (rv8b S1 (i))"
+ },
+ "exploration": "E1"
+}

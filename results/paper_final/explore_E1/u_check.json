@@ -1,0 +1,14 @@
+{
+ "task": "u",
+ "check": {
+  "max_abs_logit_diff_vs_stored": {
+   "outer": 1.3990679645914383e-06,
+   "inner": 1.5361363026045183e-06
+  },
+  "n_checked": {
+   "outer": 6758,
+   "inner": 60825
+  }
+ },
+ "exploration": "E1"
+}
