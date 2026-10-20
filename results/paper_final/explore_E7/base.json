@@ -1,0 +1,8234 @@
+{
+ "task": "base",
+ "reproduction": {
+  "A1_flag_mismatches": 0,
+  "A1_ns_mismatches": 0,
+  "A12_flag_mismatches": 0,
+  "A12_ns_mismatches": 0
+ },
+ "check": {
+  "R49": {
+   "caught": 31.1,
+   "np_flagged": 31.8,
+   "seq_per_patient": 1.94,
+   "flags_per_np_py": 0.311,
+   "endo_spec": 0.56,
+   "endo_sens": 0.907
+  },
+  "P1": {
+   "caught": 31.1,
+   "np_flagged": 36.0,
+   "seq_per_patient": 0.0,
+   "flags_per_np_py": 0.337,
+   "endo_spec": 0.524,
+   "endo_sens": 0.898
+  },
+  "A1": {
+   "caught": 30.7,
+   "np_flagged": 23.6,
+   "seq_per_patient": 1.94,
+   "flags_per_np_py": 0.244,
+   "endo_spec": 0.656,
+   "endo_sens": 0.905
+  },
+  "A12": {
+   "caught": 30.5,
+   "np_flagged": 21.5,
+   "seq_per_patient": 1.94,
+   "flags_per_np_py": 0.189,
+   "endo_spec": 0.733,
+   "endo_sens": 0.876
+  },
+  "final": {
+   "caught": 30.5,
+   "np_flagged": 17.2,
+   "seq_per_patient": 3.816,
+   "flags_per_np_py": 0.121,
+   "endo_spec": 0.829,
+   "endo_sens": 0.793
+  },
+  "final_infold": {
+   "caught": 30.4,
+   "np_flagged": 16.4,
+   "seq_per_patient": 3.816,
+   "flags_per_np_py": 0.11,
+   "endo_spec": 0.845,
+   "endo_sens": 0.73
+  },
+  "grade": {
+   "caught": 17.0,
+   "np_flagged": 25.0,
+   "seq_per_patient": 0.0,
+   "flags_per_np_py": 0.17,
+   "endo_spec": 0.76,
+   "endo_sens": 0.364
+  }
+ },
+ "infold_bar_picks_real": {
+  "0.925": 8,
+  "0.8": 35,
+  "0.7": 8,
+  "0.75": 23,
+  "0.85": 12,
+  "0.95": 9,
+  "0.9": 3,
+  "0.975": 2
+ },
+ "all_patients": {
+  "R49": {
+   "values": {
+    "np_flagged": {
+     "value": 31.8,
+     "ci95": [
+      26.962,
+      36.192
+     ]
+    },
+    "caught": {
+     "value": 31.1,
+     "ci95": [
+      29.682,
+      32.0
+     ]
+    },
+    "flags_per_np_py": {
+     "value": 0.311,
+     "ci95": [
+      0.238,
+      0.393
+     ]
+    },
+    "seq_per_patient": {
+     "value": 1.94,
+     "ci95": [
+      1.611,
+      2.268
+     ]
+    },
+    "endo_spec": {
+     "value": 0.56,
+     "ci95": [
+      0.475,
+      0.645
+     ]
+    }
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "caught": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "flags_per_np_py": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    }
+   },
+   "vs_P1": {
+    "np_flagged": {
+     "delta": -4.2,
+     "ci95": [
+      -7.358,
+      -1.2
+     ],
+     "p_two_sided": 0.009
+    },
+    "caught": {
+     "delta": 0.0,
+     "ci95": [
+      -1.506,
+      1.883
+     ],
+     "p_two_sided": 0.959
+    },
+    "flags_per_np_py": {
+     "delta": -0.025,
+     "ci95": [
+      -0.06,
+      0.013
+     ],
+     "p_two_sided": 0.183
+    },
+    "seq_per_patient": {
+     "delta": 1.94,
+     "ci95": [
+      1.611,
+      2.268
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.036,
+     "ci95": [
+      -0.018,
+      0.085
+     ],
+     "p_two_sided": 0.183
+    }
+   }
+  },
+  "P1": {
+   "values": {
+    "np_flagged": {
+     "value": 36.0,
+     "ci95": [
+      31.358,
+      39.677
+     ]
+    },
+    "caught": {
+     "value": 31.1,
+     "ci95": [
+      29.462,
+      32.0
+     ]
+    },
+    "flags_per_np_py": {
+     "value": 0.337,
+     "ci95": [
+      0.271,
+      0.409
+     ]
+    },
+    "seq_per_patient": {
+     "value": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "endo_spec": {
+     "value": 0.524,
+     "ci95": [
+      0.457,
+      0.599
+     ]
+    }
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": 4.2,
+     "ci95": [
+      1.2,
+      7.358
+     ],
+     "p_two_sided": 0.009
+    },
+    "caught": {
+     "delta": 0.0,
+     "ci95": [
+      -1.883,
+      1.506
+     ],
+     "p_two_sided": 0.959
+    },
+    "flags_per_np_py": {
+     "delta": 0.025,
+     "ci95": [
+      -0.013,
+      0.06
+     ],
+     "p_two_sided": 0.183
+    },
+    "seq_per_patient": {
+     "delta": -1.94,
+     "ci95": [
+      -2.268,
+      -1.611
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": -0.036,
+     "ci95": [
+      -0.085,
+      0.018
+     ],
+     "p_two_sided": 0.183
+    }
+   },
+   "vs_P1": {
+    "np_flagged": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "caught": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "flags_per_np_py": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    }
+   }
+  },
+  "A1": {
+   "values": {
+    "np_flagged": {
+     "value": 23.6,
+     "ci95": [
+      18.3,
+      29.156
+     ]
+    },
+    "caught": {
+     "value": 30.7,
+     "ci95": [
+      29.527,
+      31.624
+     ]
+    },
+    "flags_per_np_py": {
+     "value": 0.244,
+     "ci95": [
+      0.171,
+      0.33
+     ]
+    },
+    "seq_per_patient": {
+     "value": 1.94,
+     "ci95": [
+      1.611,
+      2.268
+     ]
+    },
+    "endo_spec": {
+     "value": 0.656,
+     "ci95": [
+      0.56,
+      0.746
+     ]
+    }
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": -8.2,
+     "ci95": [
+      -11.401,
+      -5.136
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -0.4,
+     "ci95": [
+      -1.28,
+      0.356
+     ],
+     "p_two_sided": 0.378
+    },
+    "flags_per_np_py": {
+     "delta": -0.068,
+     "ci95": [
+      -0.093,
+      -0.042
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": 0.096,
+     "ci95": [
+      0.058,
+      0.133
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_P1": {
+    "np_flagged": {
+     "delta": -12.4,
+     "ci95": [
+      -16.869,
+      -7.881
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -0.4,
+     "ci95": [
+      -1.867,
+      1.435
+     ],
+     "p_two_sided": 0.617
+    },
+    "flags_per_np_py": {
+     "delta": -0.093,
+     "ci95": [
+      -0.136,
+      -0.051
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.94,
+     "ci95": [
+      1.611,
+      2.268
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.131,
+     "ci95": [
+      0.07,
+      0.194
+     ],
+     "p_two_sided": 0.0
+    }
+   }
+  },
+  "A12": {
+   "values": {
+    "np_flagged": {
+     "value": 21.5,
+     "ci95": [
+      16.303,
+      26.82
+     ]
+    },
+    "caught": {
+     "value": 30.5,
+     "ci95": [
+      29.312,
+      31.508
+     ]
+    },
+    "flags_per_np_py": {
+     "value": 0.189,
+     "ci95": [
+      0.129,
+      0.261
+     ]
+    },
+    "seq_per_patient": {
+     "value": 1.94,
+     "ci95": [
+      1.611,
+      2.268
+     ]
+    },
+    "endo_spec": {
+     "value": 0.733,
+     "ci95": [
+      0.649,
+      0.811
+     ]
+    }
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": -10.3,
+     "ci95": [
+      -13.9,
+      -6.899
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -0.6,
+     "ci95": [
+      -1.6,
+      0.213
+     ],
+     "p_two_sided": 0.205
+    },
+    "flags_per_np_py": {
+     "delta": -0.122,
+     "ci95": [
+      -0.157,
+      -0.09
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": 0.173,
+     "ci95": [
+      0.13,
+      0.216
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_P1": {
+    "np_flagged": {
+     "delta": -14.5,
+     "ci95": [
+      -19.001,
+      -9.646
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -0.6,
+     "ci95": [
+      -2.133,
+      1.28
+     ],
+     "p_two_sided": 0.494
+    },
+    "flags_per_np_py": {
+     "delta": -0.148,
+     "ci95": [
+      -0.197,
+      -0.099
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.94,
+     "ci95": [
+      1.611,
+      2.268
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.208,
+     "ci95": [
+      0.14,
+      0.275
+     ],
+     "p_two_sided": 0.0
+    }
+   }
+  },
+  "final": {
+   "values": {
+    "np_flagged": {
+     "value": 17.2,
+     "ci95": [
+      12.147,
+      22.742
+     ]
+    },
+    "caught": {
+     "value": 30.5,
+     "ci95": [
+      29.312,
+      31.508
+     ]
+    },
+    "flags_per_np_py": {
+     "value": 0.121,
+     "ci95": [
+      0.077,
+      0.172
+     ]
+    },
+    "seq_per_patient": {
+     "value": 3.816,
+     "ci95": [
+      3.331,
+      4.327
+     ]
+    },
+    "endo_spec": {
+     "value": 0.829,
+     "ci95": [
+      0.763,
+      0.887
+     ]
+    }
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": -14.6,
+     "ci95": [
+      -18.941,
+      -10.285
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -0.6,
+     "ci95": [
+      -1.6,
+      0.213
+     ],
+     "p_two_sided": 0.205
+    },
+    "flags_per_np_py": {
+     "delta": -0.19,
+     "ci95": [
+      -0.252,
+      -0.139
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.876,
+     "ci95": [
+      1.457,
+      2.323
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.268,
+     "ci95": [
+      0.205,
+      0.335
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_P1": {
+    "np_flagged": {
+     "delta": -18.8,
+     "ci95": [
+      -23.876,
+      -13.732
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -0.6,
+     "ci95": [
+      -2.133,
+      1.28
+     ],
+     "p_two_sided": 0.494
+    },
+    "flags_per_np_py": {
+     "delta": -0.215,
+     "ci95": [
+      -0.279,
+      -0.16
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 3.816,
+     "ci95": [
+      3.331,
+      4.327
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.304,
+     "ci95": [
+      0.232,
+      0.375
+     ],
+     "p_two_sided": 0.0
+    }
+   }
+  },
+  "final_infold": {
+   "values": {
+    "np_flagged": {
+     "value": 16.4,
+     "ci95": [
+      11.389,
+      21.8
+     ]
+    },
+    "caught": {
+     "value": 30.4,
+     "ci95": [
+      29.12,
+      31.467
+     ]
+    },
+    "flags_per_np_py": {
+     "value": 0.11,
+     "ci95": [
+      0.069,
+      0.156
+     ]
+    },
+    "seq_per_patient": {
+     "value": 3.816,
+     "ci95": [
+      3.331,
+      4.327
+     ]
+    },
+    "endo_spec": {
+     "value": 0.845,
+     "ci95": [
+      0.785,
+      0.9
+     ]
+    }
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": -15.4,
+     "ci95": [
+      -19.804,
+      -11.069
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -0.7,
+     "ci95": [
+      -1.778,
+      0.194
+     ],
+     "p_two_sided": 0.175
+    },
+    "flags_per_np_py": {
+     "delta": -0.201,
+     "ci95": [
+      -0.265,
+      -0.149
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.876,
+     "ci95": [
+      1.457,
+      2.323
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.284,
+     "ci95": [
+      0.219,
+      0.351
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_P1": {
+    "np_flagged": {
+     "delta": -19.6,
+     "ci95": [
+      -24.47,
+      -14.62
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -0.7,
+     "ci95": [
+      -2.3,
+      1.189
+     ],
+     "p_two_sided": 0.436
+    },
+    "flags_per_np_py": {
+     "delta": -0.226,
+     "ci95": [
+      -0.292,
+      -0.171
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 3.816,
+     "ci95": [
+      3.331,
+      4.327
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.32,
+     "ci95": [
+      0.249,
+      0.39
+     ],
+     "p_two_sided": 0.0
+    }
+   }
+  },
+  "grade": {
+   "values": {
+    "np_flagged": {
+     "value": 25.0,
+     "ci95": [
+      18.594,
+      30.961
+     ]
+    },
+    "caught": {
+     "value": 17.0,
+     "ci95": [
+      11.636,
+      22.857
+     ]
+    },
+    "flags_per_np_py": {
+     "value": 0.17,
+     "ci95": [
+      0.117,
+      0.234
+     ]
+    },
+    "seq_per_patient": {
+     "value": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "endo_spec": {
+     "value": 0.76,
+     "ci95": [
+      0.689,
+      0.829
+     ]
+    }
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": -6.8,
+     "ci95": [
+      -13.32,
+      -0.535
+     ],
+     "p_two_sided": 0.038
+    },
+    "caught": {
+     "delta": -14.1,
+     "ci95": [
+      -19.307,
+      -8.266
+     ],
+     "p_two_sided": 0.0
+    },
+    "flags_per_np_py": {
+     "delta": -0.142,
+     "ci95": [
+      -0.215,
+      -0.074
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": -1.94,
+     "ci95": [
+      -2.268,
+      -1.611
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.2,
+     "ci95": [
+      0.105,
+      0.3
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_P1": {
+    "np_flagged": {
+     "delta": -11.0,
+     "ci95": [
+      -17.884,
+      -4.3
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -14.1,
+     "ci95": [
+      -19.307,
+      -8.502
+     ],
+     "p_two_sided": 0.0
+    },
+    "flags_per_np_py": {
+     "delta": -0.167,
+     "ci95": [
+      -0.226,
+      -0.106
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": 0.236,
+     "ci95": [
+      0.152,
+      0.317
+     ],
+     "p_two_sided": 0.0
+    }
+   }
+  }
+ },
+ "test1_exposure_frozen": {
+  "np_matched_to_progressor_counts": {
+   "draws": 200,
+   "np_endoscopies_per_np_patient": 2.46,
+   "P1": {
+    "values": {
+     "np_flagged": {
+      "value": 29.49,
+      "ci95": [
+       24.897,
+       33.474
+      ]
+     },
+     "caught": {
+      "value": 31.1,
+      "ci95": [
+       29.462,
+       32.0
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.307,
+      "ci95": [
+       0.241,
+       0.38
+      ]
+     },
+     "seq_per_patient": {
+      "value": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "endo_spec": {
+      "value": 0.516,
+      "ci95": [
+       0.437,
+       0.602
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": 3.635,
+      "ci95": [
+       0.932,
+       6.537
+      ],
+      "p_two_sided": 0.009
+     },
+     "caught": {
+      "delta": 0.0,
+      "ci95": [
+       -1.883,
+       1.506
+      ],
+      "p_two_sided": 0.959
+     },
+     "flags_per_np_py": {
+      "delta": 0.029,
+      "ci95": [
+       -0.006,
+       0.063
+      ],
+      "p_two_sided": 0.091
+     },
+     "seq_per_patient": {
+      "delta": -1.164,
+      "ci95": [
+       -1.355,
+       -0.984
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": -0.046,
+      "ci95": [
+       -0.098,
+       0.009
+      ],
+      "p_two_sided": 0.091
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "caught": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "flags_per_np_py": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": 3.63,
+     "p2.5_p97.5": [
+      2.3,
+      4.9
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": 0.0
+    }
+   },
+   "A1": {
+    "values": {
+     "np_flagged": {
+      "value": 19.752,
+      "ci95": [
+       14.925,
+       24.732
+      ]
+     },
+     "caught": {
+      "value": 30.7,
+      "ci95": [
+       29.527,
+       31.624
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.225,
+      "ci95": [
+       0.159,
+       0.306
+      ]
+     },
+     "seq_per_patient": {
+      "value": 1.164,
+      "ci95": [
+       0.984,
+       1.355
+      ]
+     },
+     "endo_spec": {
+      "value": 0.646,
+      "ci95": [
+       0.546,
+       0.737
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -6.103,
+      "ci95": [
+       -8.319,
+       -4.013
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.4,
+      "ci95": [
+       -1.28,
+       0.356
+      ],
+      "p_two_sided": 0.378
+     },
+     "flags_per_np_py": {
+      "delta": -0.053,
+      "ci95": [
+       -0.076,
+       -0.03
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.083,
+      "ci95": [
+       0.048,
+       0.119
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -9.738,
+      "ci95": [
+       -13.053,
+       -6.404
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.4,
+      "ci95": [
+       -1.867,
+       1.435
+      ],
+      "p_two_sided": 0.617
+     },
+     "flags_per_np_py": {
+      "delta": -0.082,
+      "ci95": [
+       -0.119,
+       -0.048
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 1.164,
+      "ci95": [
+       0.984,
+       1.355
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.129,
+      "ci95": [
+       0.073,
+       0.188
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -6.1,
+     "p2.5_p97.5": [
+      -7.8,
+      -4.2
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -0.4
+    }
+   },
+   "A12": {
+    "values": {
+     "np_flagged": {
+      "value": 18.514,
+      "ci95": [
+       13.635,
+       23.559
+      ]
+     },
+     "caught": {
+      "value": 30.5,
+      "ci95": [
+       29.312,
+       31.508
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.188,
+      "ci95": [
+       0.13,
+       0.257
+      ]
+     },
+     "seq_per_patient": {
+      "value": 1.164,
+      "ci95": [
+       0.984,
+       1.355
+      ]
+     },
+     "endo_spec": {
+      "value": 0.704,
+      "ci95": [
+       0.614,
+       0.788
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -7.341,
+      "ci95": [
+       -9.961,
+       -4.943
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.6,
+      "ci95": [
+       -1.6,
+       0.213
+      ],
+      "p_two_sided": 0.205
+     },
+     "flags_per_np_py": {
+      "delta": -0.089,
+      "ci95": [
+       -0.121,
+       -0.062
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.141,
+      "ci95": [
+       0.103,
+       0.182
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -10.976,
+      "ci95": [
+       -14.547,
+       -7.491
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.6,
+      "ci95": [
+       -2.133,
+       1.28
+      ],
+      "p_two_sided": 0.494
+     },
+     "flags_per_np_py": {
+      "delta": -0.119,
+      "ci95": [
+       -0.163,
+       -0.078
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 1.164,
+      "ci95": [
+       0.984,
+       1.355
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.187,
+      "ci95": [
+       0.127,
+       0.25
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -7.34,
+     "p2.5_p97.5": [
+      -9.3,
+      -5.1
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -0.6
+    }
+   },
+   "final": {
+    "values": {
+     "np_flagged": {
+      "value": 14.556,
+      "ci95": [
+       9.919,
+       19.526
+      ]
+     },
+     "caught": {
+      "value": 30.5,
+      "ci95": [
+       29.312,
+       31.508
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.133,
+      "ci95": [
+       0.085,
+       0.186
+      ]
+     },
+     "seq_per_patient": {
+      "value": 2.74,
+      "ci95": [
+       2.347,
+       3.149
+      ]
+     },
+     "endo_spec": {
+      "value": 0.791,
+      "ci95": [
+       0.716,
+       0.862
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -11.299,
+      "ci95": [
+       -14.705,
+       -8.129
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.6,
+      "ci95": [
+       -1.6,
+       0.213
+      ],
+      "p_two_sided": 0.205
+     },
+     "flags_per_np_py": {
+      "delta": -0.145,
+      "ci95": [
+       -0.199,
+       -0.102
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 1.576,
+      "ci95": [
+       1.203,
+       1.969
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.228,
+      "ci95": [
+       0.166,
+       0.295
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -14.934,
+      "ci95": [
+       -18.803,
+       -11.093
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.6,
+      "ci95": [
+       -2.133,
+       1.28
+      ],
+      "p_two_sided": 0.494
+     },
+     "flags_per_np_py": {
+      "delta": -0.174,
+      "ci95": [
+       -0.233,
+       -0.122
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 2.74,
+      "ci95": [
+       2.347,
+       3.149
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.275,
+      "ci95": [
+       0.199,
+       0.35
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -11.3,
+     "p2.5_p97.5": [
+      -13.6,
+      -8.69
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -0.6
+    }
+   },
+   "final_infold": {
+    "values": {
+     "np_flagged": {
+      "value": 13.455,
+      "ci95": [
+       9.055,
+       18.068
+      ]
+     },
+     "caught": {
+      "value": 30.4,
+      "ci95": [
+       29.12,
+       31.467
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.119,
+      "ci95": [
+       0.075,
+       0.168
+      ]
+     },
+     "seq_per_patient": {
+      "value": 2.74,
+      "ci95": [
+       2.347,
+       3.149
+      ]
+     },
+     "endo_spec": {
+      "value": 0.812,
+      "ci95": [
+       0.744,
+       0.878
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -12.4,
+      "ci95": [
+       -15.826,
+       -9.168
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.7,
+      "ci95": [
+       -1.778,
+       0.194
+      ],
+      "p_two_sided": 0.175
+     },
+     "flags_per_np_py": {
+      "delta": -0.158,
+      "ci95": [
+       -0.214,
+       -0.112
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 1.576,
+      "ci95": [
+       1.203,
+       1.969
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.249,
+      "ci95": [
+       0.184,
+       0.318
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -16.035,
+      "ci95": [
+       -19.882,
+       -12.178
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.7,
+      "ci95": [
+       -2.3,
+       1.189
+      ],
+      "p_two_sided": 0.436
+     },
+     "flags_per_np_py": {
+      "delta": -0.188,
+      "ci95": [
+       -0.248,
+       -0.136
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 2.74,
+      "ci95": [
+       2.347,
+       3.149
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.296,
+      "ci95": [
+       0.221,
+       0.37
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -12.4,
+     "p2.5_p97.5": [
+      -14.8,
+      -9.5
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -0.7
+    }
+   },
+   "grade": {
+    "values": {
+     "np_flagged": {
+      "value": 20.65,
+      "ci95": [
+       14.785,
+       26.383
+      ]
+     },
+     "caught": {
+      "value": 17.0,
+      "ci95": [
+       11.636,
+       22.857
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.203,
+      "ci95": [
+       0.136,
+       0.28
+      ]
+     },
+     "seq_per_patient": {
+      "value": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "endo_spec": {
+      "value": 0.68,
+      "ci95": [
+       0.584,
+       0.777
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -5.205,
+      "ci95": [
+       -11.697,
+       0.867
+      ],
+      "p_two_sided": 0.108
+     },
+     "caught": {
+      "delta": -14.1,
+      "ci95": [
+       -19.307,
+       -8.266
+      ],
+      "p_two_sided": 0.0
+     },
+     "flags_per_np_py": {
+      "delta": -0.074,
+      "ci95": [
+       -0.148,
+       -0.004
+      ],
+      "p_two_sided": 0.04
+     },
+     "seq_per_patient": {
+      "delta": -1.164,
+      "ci95": [
+       -1.355,
+       -0.984
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.117,
+      "ci95": [
+       0.006,
+       0.234
+      ],
+      "p_two_sided": 0.04
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -8.84,
+      "ci95": [
+       -15.038,
+       -2.582
+      ],
+      "p_two_sided": 0.004
+     },
+     "caught": {
+      "delta": -14.1,
+      "ci95": [
+       -19.307,
+       -8.502
+      ],
+      "p_two_sided": 0.0
+     },
+     "flags_per_np_py": {
+      "delta": -0.104,
+      "ci95": [
+       -0.172,
+       -0.035
+      ],
+      "p_two_sided": 0.002
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.163,
+      "ci95": [
+       0.056,
+       0.268
+      ],
+      "p_two_sided": 0.002
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -5.21,
+     "p2.5_p97.5": [
+      -8.3,
+      -2.29
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -14.1
+    }
+   },
+   "R49": {
+    "values": {
+     "np_flagged": {
+      "value": 25.855,
+      "ci95": [
+       21.331,
+       30.28
+      ]
+     },
+     "caught": {
+      "value": 31.1,
+      "ci95": [
+       29.682,
+       32.0
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.278,
+      "ci95": [
+       0.209,
+       0.355
+      ]
+     },
+     "seq_per_patient": {
+      "value": 1.164,
+      "ci95": [
+       0.984,
+       1.355
+      ]
+     },
+     "endo_spec": {
+      "value": 0.563,
+      "ci95": [
+       0.472,
+       0.651
+      ]
+     }
+    }
+   }
+  },
+  "first_2_everyone": {
+   "draws": 1,
+   "np_endoscopies_per_np_patient": 2.0,
+   "P1": {
+    "values": {
+     "np_flagged": {
+      "value": 31.4,
+      "ci95": [
+       25.981,
+       36.16
+      ]
+     },
+     "caught": {
+      "value": 31.0,
+      "ci95": [
+       29.333,
+       32.0
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.326,
+      "ci95": [
+       0.242,
+       0.422
+      ]
+     },
+     "seq_per_patient": {
+      "value": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "endo_spec": {
+      "value": 0.476,
+      "ci95": [
+       0.373,
+       0.579
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": 3.7,
+      "ci95": [
+       0.4,
+       7.057
+      ],
+      "p_two_sided": 0.033
+     },
+     "caught": {
+      "delta": -0.1,
+      "ci95": [
+       -1.99,
+       1.434
+      ],
+      "p_two_sided": 1.0
+     },
+     "flags_per_np_py": {
+      "delta": 0.041,
+      "ci95": [
+       0.002,
+       0.083
+      ],
+      "p_two_sided": 0.039
+     },
+     "seq_per_patient": {
+      "delta": -0.863,
+      "ci95": [
+       -0.991,
+       -0.728
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": -0.066,
+      "ci95": [
+       -0.128,
+       -0.003
+      ],
+      "p_two_sided": 0.04
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "caught": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "flags_per_np_py": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": 3.7,
+     "p2.5_p97.5": [
+      3.7,
+      3.7
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -0.1
+    }
+   },
+   "A1": {
+    "values": {
+     "np_flagged": {
+      "value": 19.7,
+      "ci95": [
+       14.71,
+       24.788
+      ]
+     },
+     "caught": {
+      "value": 30.3,
+      "ci95": [
+       28.897,
+       31.435
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.228,
+      "ci95": [
+       0.152,
+       0.317
+      ]
+     },
+     "seq_per_patient": {
+      "value": 0.863,
+      "ci95": [
+       0.728,
+       0.991
+      ]
+     },
+     "endo_spec": {
+      "value": 0.634,
+      "ci95": [
+       0.526,
+       0.737
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -8.0,
+      "ci95": [
+       -11.327,
+       -4.927
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.8,
+      "ci95": [
+       -2.057,
+       0.2
+      ],
+      "p_two_sided": 0.159
+     },
+     "flags_per_np_py": {
+      "delta": -0.057,
+      "ci95": [
+       -0.087,
+       -0.03
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.092,
+      "ci95": [
+       0.05,
+       0.137
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -11.7,
+      "ci95": [
+       -16.172,
+       -7.3
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.7,
+      "ci95": [
+       -2.469,
+       1.239
+      ],
+      "p_two_sided": 0.458
+     },
+     "flags_per_np_py": {
+      "delta": -0.098,
+      "ci95": [
+       -0.146,
+       -0.054
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 0.863,
+      "ci95": [
+       0.728,
+       0.991
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.158,
+      "ci95": [
+       0.091,
+       0.231
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -8.0,
+     "p2.5_p97.5": [
+      -8.0,
+      -8.0
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -0.8
+    }
+   },
+   "A12": {
+    "values": {
+     "np_flagged": {
+      "value": 18.0,
+      "ci95": [
+       13.013,
+       23.128
+      ]
+     },
+     "caught": {
+      "value": 29.8,
+      "ci95": [
+       28.308,
+       31.158
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.201,
+      "ci95": [
+       0.133,
+       0.282
+      ]
+     },
+     "seq_per_patient": {
+      "value": 0.863,
+      "ci95": [
+       0.728,
+       0.991
+      ]
+     },
+     "endo_spec": {
+      "value": 0.677,
+      "ci95": [
+       0.574,
+       0.774
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -9.7,
+      "ci95": [
+       -13.74,
+       -6.019
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -1.3,
+      "ci95": [
+       -2.526,
+       -0.188
+      ],
+      "p_two_sided": 0.026
+     },
+     "flags_per_np_py": {
+      "delta": -0.084,
+      "ci95": [
+       -0.124,
+       -0.05
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.135,
+      "ci95": [
+       0.085,
+       0.188
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -13.4,
+      "ci95": [
+       -18.373,
+       -8.6
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -1.2,
+      "ci95": [
+       -3.09,
+       0.873
+      ],
+      "p_two_sided": 0.243
+     },
+     "flags_per_np_py": {
+      "delta": -0.125,
+      "ci95": [
+       -0.181,
+       -0.073
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 0.863,
+      "ci95": [
+       0.728,
+       0.991
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.201,
+      "ci95": [
+       0.123,
+       0.283
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -9.7,
+     "p2.5_p97.5": [
+      -9.7,
+      -9.7
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -1.3
+    }
+   },
+   "final": {
+    "values": {
+     "np_flagged": {
+      "value": 15.1,
+      "ci95": [
+       10.183,
+       20.247
+      ]
+     },
+     "caught": {
+      "value": 28.8,
+      "ci95": [
+       26.219,
+       30.844
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.15,
+      "ci95": [
+       0.094,
+       0.217
+      ]
+     },
+     "seq_per_patient": {
+      "value": 1.899,
+      "ci95": [
+       1.693,
+       2.104
+      ]
+     },
+     "endo_spec": {
+      "value": 0.758,
+      "ci95": [
+       0.672,
+       0.843
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -12.6,
+      "ci95": [
+       -17.202,
+       -8.3
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -2.3,
+      "ci95": [
+       -4.706,
+       -0.48
+      ],
+      "p_two_sided": 0.008
+     },
+     "flags_per_np_py": {
+      "delta": -0.135,
+      "ci95": [
+       -0.197,
+       -0.086
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 1.036,
+      "ci95": [
+       0.811,
+       1.276
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.216,
+      "ci95": [
+       0.145,
+       0.293
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -16.3,
+      "ci95": [
+       -21.502,
+       -11.197
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -2.2,
+      "ci95": [
+       -5.03,
+       0.441
+      ],
+      "p_two_sided": 0.1
+     },
+     "flags_per_np_py": {
+      "delta": -0.176,
+      "ci95": [
+       -0.245,
+       -0.116
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 1.899,
+      "ci95": [
+       1.693,
+       2.104
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.283,
+      "ci95": [
+       0.197,
+       0.372
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -12.6,
+     "p2.5_p97.5": [
+      -12.6,
+      -12.6
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -2.3
+    }
+   },
+   "final_infold": {
+    "values": {
+     "np_flagged": {
+      "value": 13.9,
+      "ci95": [
+       9.124,
+       18.785
+      ]
+     },
+     "caught": {
+      "value": 28.5,
+      "ci95": [
+       26.4,
+       30.277
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.133,
+      "ci95": [
+       0.082,
+       0.193
+      ]
+     },
+     "seq_per_patient": {
+      "value": 1.899,
+      "ci95": [
+       1.693,
+       2.104
+      ]
+     },
+     "endo_spec": {
+      "value": 0.786,
+      "ci95": [
+       0.706,
+       0.864
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -13.8,
+      "ci95": [
+       -18.531,
+       -9.391
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -2.6,
+      "ci95": [
+       -4.623,
+       -0.9
+      ],
+      "p_two_sided": 0.003
+     },
+     "flags_per_np_py": {
+      "delta": -0.152,
+      "ci95": [
+       -0.215,
+       -0.101
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 1.036,
+      "ci95": [
+       0.811,
+       1.276
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.244,
+      "ci95": [
+       0.171,
+       0.323
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -17.5,
+      "ci95": [
+       -22.759,
+       -12.376
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -2.5,
+      "ci95": [
+       -4.966,
+       -0.103
+      ],
+      "p_two_sided": 0.048
+     },
+     "flags_per_np_py": {
+      "delta": -0.193,
+      "ci95": [
+       -0.265,
+       -0.131
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 1.899,
+      "ci95": [
+       1.693,
+       2.104
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.31,
+      "ci95": [
+       0.225,
+       0.4
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -13.8,
+     "p2.5_p97.5": [
+      -13.8,
+      -13.8
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -2.6
+    }
+   },
+   "grade": {
+    "values": {
+     "np_flagged": {
+      "value": 21.0,
+      "ci95": [
+       14.333,
+       27.204
+      ]
+     },
+     "caught": {
+      "value": 13.0,
+      "ci95": [
+       7.758,
+       18.824
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.231,
+      "ci95": [
+       0.147,
+       0.333
+      ]
+     },
+     "seq_per_patient": {
+      "value": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "endo_spec": {
+      "value": 0.628,
+      "ci95": [
+       0.509,
+       0.75
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -6.7,
+      "ci95": [
+       -13.976,
+       0.2
+      ],
+      "p_two_sided": 0.06
+     },
+     "caught": {
+      "delta": -18.1,
+      "ci95": [
+       -23.226,
+       -12.372
+      ],
+      "p_two_sided": 0.0
+     },
+     "flags_per_np_py": {
+      "delta": -0.054,
+      "ci95": [
+       -0.144,
+       0.033
+      ],
+      "p_two_sided": 0.229
+     },
+     "seq_per_patient": {
+      "delta": -0.863,
+      "ci95": [
+       -0.991,
+       -0.728
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.086,
+      "ci95": [
+       -0.055,
+       0.225
+      ],
+      "p_two_sided": 0.23
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -10.4,
+      "ci95": [
+       -17.616,
+       -3.332
+      ],
+      "p_two_sided": 0.003
+     },
+     "caught": {
+      "delta": -18.0,
+      "ci95": [
+       -23.079,
+       -12.433
+      ],
+      "p_two_sided": 0.0
+     },
+     "flags_per_np_py": {
+      "delta": -0.095,
+      "ci95": [
+       -0.182,
+       -0.004
+      ],
+      "p_two_sided": 0.042
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.152,
+      "ci95": [
+       0.006,
+       0.286
+      ],
+      "p_two_sided": 0.043
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -6.7,
+     "p2.5_p97.5": [
+      -6.7,
+      -6.7
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -18.1
+    }
+   },
+   "R49": {
+    "values": {
+     "np_flagged": {
+      "value": 27.7,
+      "ci95": [
+       22.476,
+       32.722
+      ]
+     },
+     "caught": {
+      "value": 31.1,
+      "ci95": [
+       29.682,
+       32.0
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.285,
+      "ci95": [
+       0.206,
+       0.377
+      ]
+     },
+     "seq_per_patient": {
+      "value": 0.863,
+      "ci95": [
+       0.728,
+       0.991
+      ]
+     },
+     "endo_spec": {
+      "value": 0.542,
+      "ci95": [
+       0.438,
+       0.64
+      ]
+     }
+    }
+   }
+  },
+  "first_3_everyone": {
+   "draws": 1,
+   "np_endoscopies_per_np_patient": 2.93,
+   "P1": {
+    "values": {
+     "np_flagged": {
+      "value": 33.5,
+      "ci95": [
+       28.164,
+       38.055
+      ]
+     },
+     "caught": {
+      "value": 31.1,
+      "ci95": [
+       29.462,
+       32.0
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.3,
+      "ci95": [
+       0.232,
+       0.374
+      ]
+     },
+     "seq_per_patient": {
+      "value": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "endo_spec": {
+      "value": 0.526,
+      "ci95": [
+       0.438,
+       0.616
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": 4.1,
+      "ci95": [
+       1.097,
+       7.331
+      ],
+      "p_two_sided": 0.012
+     },
+     "caught": {
+      "delta": 0.0,
+      "ci95": [
+       -1.883,
+       1.506
+      ],
+      "p_two_sided": 0.959
+     },
+     "flags_per_np_py": {
+      "delta": 0.025,
+      "ci95": [
+       -0.01,
+       0.058
+      ],
+      "p_two_sided": 0.16
+     },
+     "seq_per_patient": {
+      "delta": -1.22,
+      "ci95": [
+       -1.403,
+       -1.024
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": -0.039,
+      "ci95": [
+       -0.091,
+       0.016
+      ],
+      "p_two_sided": 0.157
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "caught": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "flags_per_np_py": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": 4.1,
+     "p2.5_p97.5": [
+      4.1,
+      4.1
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": 0.0
+    }
+   },
+   "A1": {
+    "values": {
+     "np_flagged": {
+      "value": 21.4,
+      "ci95": [
+       16.3,
+       26.705
+      ]
+     },
+     "caught": {
+      "value": 30.7,
+      "ci95": [
+       29.527,
+       31.624
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.223,
+      "ci95": [
+       0.156,
+       0.304
+      ]
+     },
+     "seq_per_patient": {
+      "value": 1.22,
+      "ci95": [
+       1.024,
+       1.403
+      ]
+     },
+     "endo_spec": {
+      "value": 0.648,
+      "ci95": [
+       0.546,
+       0.743
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -8.0,
+      "ci95": [
+       -11.18,
+       -5.071
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.4,
+      "ci95": [
+       -1.28,
+       0.356
+      ],
+      "p_two_sided": 0.378
+     },
+     "flags_per_np_py": {
+      "delta": -0.052,
+      "ci95": [
+       -0.082,
+       -0.025
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.083,
+      "ci95": [
+       0.039,
+       0.128
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -12.1,
+      "ci95": [
+       -16.34,
+       -7.9
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.4,
+      "ci95": [
+       -1.867,
+       1.435
+      ],
+      "p_two_sided": 0.617
+     },
+     "flags_per_np_py": {
+      "delta": -0.077,
+      "ci95": [
+       -0.116,
+       -0.041
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 1.22,
+      "ci95": [
+       1.024,
+       1.403
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.121,
+      "ci95": [
+       0.062,
+       0.184
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -8.0,
+     "p2.5_p97.5": [
+      -8.0,
+      -8.0
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -0.4
+    }
+   },
+   "A12": {
+    "values": {
+     "np_flagged": {
+      "value": 19.3,
+      "ci95": [
+       14.257,
+       24.433
+      ]
+     },
+     "caught": {
+      "value": 30.5,
+      "ci95": [
+       29.312,
+       31.508
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.181,
+      "ci95": [
+       0.122,
+       0.25
+      ]
+     },
+     "seq_per_patient": {
+      "value": 1.22,
+      "ci95": [
+       1.024,
+       1.403
+      ]
+     },
+     "endo_spec": {
+      "value": 0.714,
+      "ci95": [
+       0.626,
+       0.798
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -10.1,
+      "ci95": [
+       -13.975,
+       -6.7
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.6,
+      "ci95": [
+       -1.6,
+       0.213
+      ],
+      "p_two_sided": 0.205
+     },
+     "flags_per_np_py": {
+      "delta": -0.095,
+      "ci95": [
+       -0.133,
+       -0.063
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.149,
+      "ci95": [
+       0.102,
+       0.199
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -14.2,
+      "ci95": [
+       -18.812,
+       -9.644
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.6,
+      "ci95": [
+       -2.133,
+       1.28
+      ],
+      "p_two_sided": 0.494
+     },
+     "flags_per_np_py": {
+      "delta": -0.119,
+      "ci95": [
+       -0.166,
+       -0.077
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 1.22,
+      "ci95": [
+       1.024,
+       1.403
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.188,
+      "ci95": [
+       0.123,
+       0.257
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -10.1,
+     "p2.5_p97.5": [
+      -10.1,
+      -10.1
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -0.6
+    }
+   },
+   "final": {
+    "values": {
+     "np_flagged": {
+      "value": 15.7,
+      "ci95": [
+       10.8,
+       20.886
+      ]
+     },
+     "caught": {
+      "value": 30.3,
+      "ci95": [
+       28.999,
+       31.36
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.129,
+      "ci95": [
+       0.082,
+       0.185
+      ]
+     },
+     "seq_per_patient": {
+      "value": 2.573,
+      "ci95": [
+       2.299,
+       2.867
+      ]
+     },
+     "endo_spec": {
+      "value": 0.796,
+      "ci95": [
+       0.721,
+       0.866
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -13.7,
+      "ci95": [
+       -18.327,
+       -9.649
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.8,
+      "ci95": [
+       -1.846,
+       0.091
+      ],
+      "p_two_sided": 0.103
+     },
+     "flags_per_np_py": {
+      "delta": -0.146,
+      "ci95": [
+       -0.2,
+       -0.102
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 1.353,
+      "ci95": [
+       1.067,
+       1.655
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.231,
+      "ci95": [
+       0.165,
+       0.303
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -17.8,
+      "ci95": [
+       -22.654,
+       -12.898
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.8,
+      "ci95": [
+       -2.378,
+       1.129
+      ],
+      "p_two_sided": 0.362
+     },
+     "flags_per_np_py": {
+      "delta": -0.171,
+      "ci95": [
+       -0.232,
+       -0.119
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 2.573,
+      "ci95": [
+       2.299,
+       2.867
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.27,
+      "ci95": [
+       0.19,
+       0.353
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -13.7,
+     "p2.5_p97.5": [
+      -13.7,
+      -13.7
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -0.8
+    }
+   },
+   "final_infold": {
+    "values": {
+     "np_flagged": {
+      "value": 14.6,
+      "ci95": [
+       9.878,
+       19.658
+      ]
+     },
+     "caught": {
+      "value": 30.0,
+      "ci95": [
+       28.617,
+       31.128
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.116,
+      "ci95": [
+       0.072,
+       0.166
+      ]
+     },
+     "seq_per_patient": {
+      "value": 2.573,
+      "ci95": [
+       2.299,
+       2.867
+      ]
+     },
+     "endo_spec": {
+      "value": 0.817,
+      "ci95": [
+       0.748,
+       0.882
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -14.8,
+      "ci95": [
+       -19.351,
+       -10.511
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -1.1,
+      "ci95": [
+       -2.271,
+       -0.11
+      ],
+      "p_two_sided": 0.041
+     },
+     "flags_per_np_py": {
+      "delta": -0.159,
+      "ci95": [
+       -0.217,
+       -0.112
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 1.353,
+      "ci95": [
+       1.067,
+       1.655
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.252,
+      "ci95": [
+       0.181,
+       0.325
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -18.9,
+      "ci95": [
+       -23.704,
+       -13.999
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -1.1,
+      "ci95": [
+       -2.759,
+       0.847
+      ],
+      "p_two_sided": 0.245
+     },
+     "flags_per_np_py": {
+      "delta": -0.184,
+      "ci95": [
+       -0.246,
+       -0.132
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 2.573,
+      "ci95": [
+       2.299,
+       2.867
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.29,
+      "ci95": [
+       0.212,
+       0.371
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -14.8,
+     "p2.5_p97.5": [
+      -14.8,
+      -14.8
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -1.1
+    }
+   },
+   "grade": {
+    "values": {
+     "np_flagged": {
+      "value": 22.0,
+      "ci95": [
+       15.289,
+       28.087
+      ]
+     },
+     "caught": {
+      "value": 15.0,
+      "ci95": [
+       9.778,
+       20.706
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.211,
+      "ci95": [
+       0.139,
+       0.294
+      ]
+     },
+     "seq_per_patient": {
+      "value": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "endo_spec": {
+      "value": 0.667,
+      "ci95": [
+       0.558,
+       0.774
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -7.4,
+      "ci95": [
+       -14.466,
+       -0.644
+      ],
+      "p_two_sided": 0.036
+     },
+     "caught": {
+      "delta": -16.1,
+      "ci95": [
+       -21.333,
+       -10.266
+      ],
+      "p_two_sided": 0.0
+     },
+     "flags_per_np_py": {
+      "delta": -0.064,
+      "ci95": [
+       -0.139,
+       0.007
+      ],
+      "p_two_sided": 0.086
+     },
+     "seq_per_patient": {
+      "delta": -1.22,
+      "ci95": [
+       -1.403,
+       -1.024
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.102,
+      "ci95": [
+       -0.011,
+       0.218
+      ],
+      "p_two_sided": 0.086
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -11.5,
+      "ci95": [
+       -18.921,
+       -4.405
+      ],
+      "p_two_sided": 0.003
+     },
+     "caught": {
+      "delta": -16.1,
+      "ci95": [
+       -21.237,
+       -10.453
+      ],
+      "p_two_sided": 0.0
+     },
+     "flags_per_np_py": {
+      "delta": -0.089,
+      "ci95": [
+       -0.161,
+       -0.018
+      ],
+      "p_two_sided": 0.013
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.14,
+      "ci95": [
+       0.029,
+       0.253
+      ],
+      "p_two_sided": 0.013
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -7.4,
+     "p2.5_p97.5": [
+      -7.4,
+      -7.4
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -16.1
+    }
+   },
+   "R49": {
+    "values": {
+     "np_flagged": {
+      "value": 29.4,
+      "ci95": [
+       24.256,
+       34.498
+      ]
+     },
+     "caught": {
+      "value": 31.1,
+      "ci95": [
+       29.682,
+       32.0
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.276,
+      "ci95": [
+       0.206,
+       0.353
+      ]
+     },
+     "seq_per_patient": {
+      "value": 1.22,
+      "ci95": [
+       1.024,
+       1.403
+      ]
+     },
+     "endo_spec": {
+      "value": 0.565,
+      "ci95": [
+       0.472,
+       0.656
+      ]
+     }
+    }
+   }
+  },
+  "first_2_non_progressors_only": {
+   "draws": 1,
+   "np_endoscopies_per_np_patient": 2.0,
+   "P1": {
+    "values": {
+     "np_flagged": {
+      "value": 31.4,
+      "ci95": [
+       25.981,
+       36.16
+      ]
+     },
+     "caught": {
+      "value": 31.1,
+      "ci95": [
+       29.462,
+       32.0
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.326,
+      "ci95": [
+       0.242,
+       0.422
+      ]
+     },
+     "seq_per_patient": {
+      "value": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "endo_spec": {
+      "value": 0.476,
+      "ci95": [
+       0.373,
+       0.579
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": 3.7,
+      "ci95": [
+       0.4,
+       7.057
+      ],
+      "p_two_sided": 0.033
+     },
+     "caught": {
+      "delta": 0.0,
+      "ci95": [
+       -1.883,
+       1.506
+      ],
+      "p_two_sided": 0.959
+     },
+     "flags_per_np_py": {
+      "delta": 0.041,
+      "ci95": [
+       0.002,
+       0.083
+      ],
+      "p_two_sided": 0.039
+     },
+     "seq_per_patient": {
+      "delta": -0.987,
+      "ci95": [
+       -1.184,
+       -0.819
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": -0.066,
+      "ci95": [
+       -0.128,
+       -0.003
+      ],
+      "p_two_sided": 0.04
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "caught": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "flags_per_np_py": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": 3.7,
+     "p2.5_p97.5": [
+      3.7,
+      3.7
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": 0.0
+    }
+   },
+   "A1": {
+    "values": {
+     "np_flagged": {
+      "value": 19.7,
+      "ci95": [
+       14.71,
+       24.788
+      ]
+     },
+     "caught": {
+      "value": 30.7,
+      "ci95": [
+       29.527,
+       31.624
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.228,
+      "ci95": [
+       0.152,
+       0.317
+      ]
+     },
+     "seq_per_patient": {
+      "value": 0.987,
+      "ci95": [
+       0.819,
+       1.184
+      ]
+     },
+     "endo_spec": {
+      "value": 0.634,
+      "ci95": [
+       0.526,
+       0.737
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -8.0,
+      "ci95": [
+       -11.327,
+       -4.927
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.4,
+      "ci95": [
+       -1.28,
+       0.356
+      ],
+      "p_two_sided": 0.378
+     },
+     "flags_per_np_py": {
+      "delta": -0.057,
+      "ci95": [
+       -0.087,
+       -0.03
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.092,
+      "ci95": [
+       0.05,
+       0.137
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -11.7,
+      "ci95": [
+       -16.172,
+       -7.3
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.4,
+      "ci95": [
+       -1.867,
+       1.435
+      ],
+      "p_two_sided": 0.617
+     },
+     "flags_per_np_py": {
+      "delta": -0.098,
+      "ci95": [
+       -0.146,
+       -0.054
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 0.987,
+      "ci95": [
+       0.819,
+       1.184
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.158,
+      "ci95": [
+       0.091,
+       0.231
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -8.0,
+     "p2.5_p97.5": [
+      -8.0,
+      -8.0
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -0.4
+    }
+   },
+   "A12": {
+    "values": {
+     "np_flagged": {
+      "value": 18.0,
+      "ci95": [
+       13.013,
+       23.128
+      ]
+     },
+     "caught": {
+      "value": 30.5,
+      "ci95": [
+       29.312,
+       31.508
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.201,
+      "ci95": [
+       0.133,
+       0.282
+      ]
+     },
+     "seq_per_patient": {
+      "value": 0.987,
+      "ci95": [
+       0.819,
+       1.184
+      ]
+     },
+     "endo_spec": {
+      "value": 0.677,
+      "ci95": [
+       0.574,
+       0.774
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -9.7,
+      "ci95": [
+       -13.74,
+       -6.019
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.6,
+      "ci95": [
+       -1.6,
+       0.213
+      ],
+      "p_two_sided": 0.205
+     },
+     "flags_per_np_py": {
+      "delta": -0.084,
+      "ci95": [
+       -0.124,
+       -0.05
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.135,
+      "ci95": [
+       0.085,
+       0.188
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -13.4,
+      "ci95": [
+       -18.373,
+       -8.6
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.6,
+      "ci95": [
+       -2.133,
+       1.28
+      ],
+      "p_two_sided": 0.494
+     },
+     "flags_per_np_py": {
+      "delta": -0.125,
+      "ci95": [
+       -0.181,
+       -0.073
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 0.987,
+      "ci95": [
+       0.819,
+       1.184
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.201,
+      "ci95": [
+       0.123,
+       0.283
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -9.7,
+     "p2.5_p97.5": [
+      -9.7,
+      -9.7
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -0.6
+    }
+   },
+   "final": {
+    "values": {
+     "np_flagged": {
+      "value": 15.1,
+      "ci95": [
+       10.183,
+       20.247
+      ]
+     },
+     "caught": {
+      "value": 30.5,
+      "ci95": [
+       29.312,
+       31.508
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.15,
+      "ci95": [
+       0.094,
+       0.217
+      ]
+     },
+     "seq_per_patient": {
+      "value": 2.54,
+      "ci95": [
+       2.127,
+       2.955
+      ]
+     },
+     "endo_spec": {
+      "value": 0.758,
+      "ci95": [
+       0.672,
+       0.843
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -12.6,
+      "ci95": [
+       -17.202,
+       -8.3
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.6,
+      "ci95": [
+       -1.6,
+       0.213
+      ],
+      "p_two_sided": 0.205
+     },
+     "flags_per_np_py": {
+      "delta": -0.135,
+      "ci95": [
+       -0.197,
+       -0.086
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 1.553,
+      "ci95": [
+       1.175,
+       1.947
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.216,
+      "ci95": [
+       0.145,
+       0.293
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -16.3,
+      "ci95": [
+       -21.502,
+       -11.197
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.6,
+      "ci95": [
+       -2.133,
+       1.28
+      ],
+      "p_two_sided": 0.494
+     },
+     "flags_per_np_py": {
+      "delta": -0.176,
+      "ci95": [
+       -0.245,
+       -0.116
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 2.54,
+      "ci95": [
+       2.127,
+       2.955
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.283,
+      "ci95": [
+       0.197,
+       0.372
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -12.6,
+     "p2.5_p97.5": [
+      -12.6,
+      -12.6
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -0.6
+    }
+   },
+   "final_infold": {
+    "values": {
+     "np_flagged": {
+      "value": 13.9,
+      "ci95": [
+       9.124,
+       18.785
+      ]
+     },
+     "caught": {
+      "value": 30.4,
+      "ci95": [
+       29.12,
+       31.467
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.133,
+      "ci95": [
+       0.082,
+       0.193
+      ]
+     },
+     "seq_per_patient": {
+      "value": 2.54,
+      "ci95": [
+       2.127,
+       2.955
+      ]
+     },
+     "endo_spec": {
+      "value": 0.786,
+      "ci95": [
+       0.706,
+       0.864
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -13.8,
+      "ci95": [
+       -18.531,
+       -9.391
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.7,
+      "ci95": [
+       -1.778,
+       0.194
+      ],
+      "p_two_sided": 0.175
+     },
+     "flags_per_np_py": {
+      "delta": -0.152,
+      "ci95": [
+       -0.215,
+       -0.101
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 1.553,
+      "ci95": [
+       1.175,
+       1.947
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.244,
+      "ci95": [
+       0.171,
+       0.323
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -17.5,
+      "ci95": [
+       -22.759,
+       -12.376
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.7,
+      "ci95": [
+       -2.3,
+       1.189
+      ],
+      "p_two_sided": 0.436
+     },
+     "flags_per_np_py": {
+      "delta": -0.193,
+      "ci95": [
+       -0.265,
+       -0.131
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 2.54,
+      "ci95": [
+       2.127,
+       2.955
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.31,
+      "ci95": [
+       0.225,
+       0.4
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -13.8,
+     "p2.5_p97.5": [
+      -13.8,
+      -13.8
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -0.7
+    }
+   },
+   "grade": {
+    "values": {
+     "np_flagged": {
+      "value": 21.0,
+      "ci95": [
+       14.333,
+       27.204
+      ]
+     },
+     "caught": {
+      "value": 17.0,
+      "ci95": [
+       11.636,
+       22.857
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.231,
+      "ci95": [
+       0.147,
+       0.333
+      ]
+     },
+     "seq_per_patient": {
+      "value": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "endo_spec": {
+      "value": 0.628,
+      "ci95": [
+       0.509,
+       0.75
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -6.7,
+      "ci95": [
+       -13.976,
+       0.2
+      ],
+      "p_two_sided": 0.06
+     },
+     "caught": {
+      "delta": -14.1,
+      "ci95": [
+       -19.307,
+       -8.266
+      ],
+      "p_two_sided": 0.0
+     },
+     "flags_per_np_py": {
+      "delta": -0.054,
+      "ci95": [
+       -0.144,
+       0.033
+      ],
+      "p_two_sided": 0.229
+     },
+     "seq_per_patient": {
+      "delta": -0.987,
+      "ci95": [
+       -1.184,
+       -0.819
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.086,
+      "ci95": [
+       -0.055,
+       0.225
+      ],
+      "p_two_sided": 0.23
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -10.4,
+      "ci95": [
+       -17.616,
+       -3.332
+      ],
+      "p_two_sided": 0.003
+     },
+     "caught": {
+      "delta": -14.1,
+      "ci95": [
+       -19.307,
+       -8.502
+      ],
+      "p_two_sided": 0.0
+     },
+     "flags_per_np_py": {
+      "delta": -0.095,
+      "ci95": [
+       -0.182,
+       -0.004
+      ],
+      "p_two_sided": 0.042
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.152,
+      "ci95": [
+       0.006,
+       0.286
+      ],
+      "p_two_sided": 0.043
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -6.7,
+     "p2.5_p97.5": [
+      -6.7,
+      -6.7
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -14.1
+    }
+   },
+   "R49": {
+    "values": {
+     "np_flagged": {
+      "value": 27.7,
+      "ci95": [
+       22.476,
+       32.722
+      ]
+     },
+     "caught": {
+      "value": 31.1,
+      "ci95": [
+       29.682,
+       32.0
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.285,
+      "ci95": [
+       0.206,
+       0.377
+      ]
+     },
+     "seq_per_patient": {
+      "value": 0.987,
+      "ci95": [
+       0.819,
+       1.184
+      ]
+     },
+     "endo_spec": {
+      "value": 0.542,
+      "ci95": [
+       0.438,
+       0.64
+      ]
+     }
+    }
+   }
+  },
+  "first_3_non_progressors_only": {
+   "draws": 1,
+   "np_endoscopies_per_np_patient": 2.93,
+   "P1": {
+    "values": {
+     "np_flagged": {
+      "value": 33.5,
+      "ci95": [
+       28.164,
+       38.055
+      ]
+     },
+     "caught": {
+      "value": 31.1,
+      "ci95": [
+       29.462,
+       32.0
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.3,
+      "ci95": [
+       0.232,
+       0.374
+      ]
+     },
+     "seq_per_patient": {
+      "value": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "endo_spec": {
+      "value": 0.526,
+      "ci95": [
+       0.438,
+       0.616
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": 4.1,
+      "ci95": [
+       1.097,
+       7.331
+      ],
+      "p_two_sided": 0.012
+     },
+     "caught": {
+      "delta": 0.0,
+      "ci95": [
+       -1.883,
+       1.506
+      ],
+      "p_two_sided": 0.959
+     },
+     "flags_per_np_py": {
+      "delta": 0.025,
+      "ci95": [
+       -0.01,
+       0.058
+      ],
+      "p_two_sided": 0.16
+     },
+     "seq_per_patient": {
+      "delta": -1.28,
+      "ci95": [
+       -1.484,
+       -1.083
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": -0.039,
+      "ci95": [
+       -0.091,
+       0.016
+      ],
+      "p_two_sided": 0.157
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "caught": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "flags_per_np_py": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": 4.1,
+     "p2.5_p97.5": [
+      4.1,
+      4.1
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": 0.0
+    }
+   },
+   "A1": {
+    "values": {
+     "np_flagged": {
+      "value": 21.4,
+      "ci95": [
+       16.3,
+       26.705
+      ]
+     },
+     "caught": {
+      "value": 30.7,
+      "ci95": [
+       29.527,
+       31.624
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.223,
+      "ci95": [
+       0.156,
+       0.304
+      ]
+     },
+     "seq_per_patient": {
+      "value": 1.28,
+      "ci95": [
+       1.083,
+       1.484
+      ]
+     },
+     "endo_spec": {
+      "value": 0.648,
+      "ci95": [
+       0.546,
+       0.743
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -8.0,
+      "ci95": [
+       -11.18,
+       -5.071
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.4,
+      "ci95": [
+       -1.28,
+       0.356
+      ],
+      "p_two_sided": 0.378
+     },
+     "flags_per_np_py": {
+      "delta": -0.052,
+      "ci95": [
+       -0.082,
+       -0.025
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.083,
+      "ci95": [
+       0.039,
+       0.128
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -12.1,
+      "ci95": [
+       -16.34,
+       -7.9
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.4,
+      "ci95": [
+       -1.867,
+       1.435
+      ],
+      "p_two_sided": 0.617
+     },
+     "flags_per_np_py": {
+      "delta": -0.077,
+      "ci95": [
+       -0.116,
+       -0.041
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 1.28,
+      "ci95": [
+       1.083,
+       1.484
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.121,
+      "ci95": [
+       0.062,
+       0.184
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -8.0,
+     "p2.5_p97.5": [
+      -8.0,
+      -8.0
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -0.4
+    }
+   },
+   "A12": {
+    "values": {
+     "np_flagged": {
+      "value": 19.3,
+      "ci95": [
+       14.257,
+       24.433
+      ]
+     },
+     "caught": {
+      "value": 30.5,
+      "ci95": [
+       29.312,
+       31.508
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.181,
+      "ci95": [
+       0.122,
+       0.25
+      ]
+     },
+     "seq_per_patient": {
+      "value": 1.28,
+      "ci95": [
+       1.083,
+       1.484
+      ]
+     },
+     "endo_spec": {
+      "value": 0.714,
+      "ci95": [
+       0.626,
+       0.798
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -10.1,
+      "ci95": [
+       -13.975,
+       -6.7
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.6,
+      "ci95": [
+       -1.6,
+       0.213
+      ],
+      "p_two_sided": 0.205
+     },
+     "flags_per_np_py": {
+      "delta": -0.095,
+      "ci95": [
+       -0.133,
+       -0.063
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.149,
+      "ci95": [
+       0.102,
+       0.199
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -14.2,
+      "ci95": [
+       -18.812,
+       -9.644
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.6,
+      "ci95": [
+       -2.133,
+       1.28
+      ],
+      "p_two_sided": 0.494
+     },
+     "flags_per_np_py": {
+      "delta": -0.119,
+      "ci95": [
+       -0.166,
+       -0.077
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 1.28,
+      "ci95": [
+       1.083,
+       1.484
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.188,
+      "ci95": [
+       0.123,
+       0.257
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -10.1,
+     "p2.5_p97.5": [
+      -10.1,
+      -10.1
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -0.6
+    }
+   },
+   "final": {
+    "values": {
+     "np_flagged": {
+      "value": 15.7,
+      "ci95": [
+       10.8,
+       20.886
+      ]
+     },
+     "caught": {
+      "value": 30.5,
+      "ci95": [
+       29.312,
+       31.508
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.129,
+      "ci95": [
+       0.082,
+       0.185
+      ]
+     },
+     "seq_per_patient": {
+      "value": 2.905,
+      "ci95": [
+       2.524,
+       3.315
+      ]
+     },
+     "endo_spec": {
+      "value": 0.796,
+      "ci95": [
+       0.721,
+       0.866
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -13.7,
+      "ci95": [
+       -18.327,
+       -9.649
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.6,
+      "ci95": [
+       -1.6,
+       0.213
+      ],
+      "p_two_sided": 0.205
+     },
+     "flags_per_np_py": {
+      "delta": -0.146,
+      "ci95": [
+       -0.2,
+       -0.102
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 1.625,
+      "ci95": [
+       1.248,
+       2.021
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.231,
+      "ci95": [
+       0.165,
+       0.303
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -17.8,
+      "ci95": [
+       -22.654,
+       -12.898
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.6,
+      "ci95": [
+       -2.133,
+       1.28
+      ],
+      "p_two_sided": 0.494
+     },
+     "flags_per_np_py": {
+      "delta": -0.171,
+      "ci95": [
+       -0.232,
+       -0.119
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 2.905,
+      "ci95": [
+       2.524,
+       3.315
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.27,
+      "ci95": [
+       0.19,
+       0.353
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -13.7,
+     "p2.5_p97.5": [
+      -13.7,
+      -13.7
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -0.6
+    }
+   },
+   "final_infold": {
+    "values": {
+     "np_flagged": {
+      "value": 14.6,
+      "ci95": [
+       9.878,
+       19.658
+      ]
+     },
+     "caught": {
+      "value": 30.4,
+      "ci95": [
+       29.12,
+       31.467
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.116,
+      "ci95": [
+       0.072,
+       0.166
+      ]
+     },
+     "seq_per_patient": {
+      "value": 2.905,
+      "ci95": [
+       2.524,
+       3.315
+      ]
+     },
+     "endo_spec": {
+      "value": 0.817,
+      "ci95": [
+       0.748,
+       0.882
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -14.8,
+      "ci95": [
+       -19.351,
+       -10.511
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.7,
+      "ci95": [
+       -1.778,
+       0.194
+      ],
+      "p_two_sided": 0.175
+     },
+     "flags_per_np_py": {
+      "delta": -0.159,
+      "ci95": [
+       -0.217,
+       -0.112
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 1.625,
+      "ci95": [
+       1.248,
+       2.021
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.252,
+      "ci95": [
+       0.181,
+       0.325
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -18.9,
+      "ci95": [
+       -23.704,
+       -13.999
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.7,
+      "ci95": [
+       -2.3,
+       1.189
+      ],
+      "p_two_sided": 0.436
+     },
+     "flags_per_np_py": {
+      "delta": -0.184,
+      "ci95": [
+       -0.246,
+       -0.132
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 2.905,
+      "ci95": [
+       2.524,
+       3.315
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.29,
+      "ci95": [
+       0.212,
+       0.371
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -14.8,
+     "p2.5_p97.5": [
+      -14.8,
+      -14.8
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -0.7
+    }
+   },
+   "grade": {
+    "values": {
+     "np_flagged": {
+      "value": 22.0,
+      "ci95": [
+       15.289,
+       28.087
+      ]
+     },
+     "caught": {
+      "value": 17.0,
+      "ci95": [
+       11.636,
+       22.857
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.211,
+      "ci95": [
+       0.139,
+       0.294
+      ]
+     },
+     "seq_per_patient": {
+      "value": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "endo_spec": {
+      "value": 0.667,
+      "ci95": [
+       0.558,
+       0.774
+      ]
+     }
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -7.4,
+      "ci95": [
+       -14.466,
+       -0.644
+      ],
+      "p_two_sided": 0.036
+     },
+     "caught": {
+      "delta": -14.1,
+      "ci95": [
+       -19.307,
+       -8.266
+      ],
+      "p_two_sided": 0.0
+     },
+     "flags_per_np_py": {
+      "delta": -0.064,
+      "ci95": [
+       -0.139,
+       0.007
+      ],
+      "p_two_sided": 0.086
+     },
+     "seq_per_patient": {
+      "delta": -1.28,
+      "ci95": [
+       -1.484,
+       -1.083
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.102,
+      "ci95": [
+       -0.011,
+       0.218
+      ],
+      "p_two_sided": 0.086
+     }
+    },
+    "vs_P1": {
+     "np_flagged": {
+      "delta": -11.5,
+      "ci95": [
+       -18.921,
+       -4.405
+      ],
+      "p_two_sided": 0.003
+     },
+     "caught": {
+      "delta": -14.1,
+      "ci95": [
+       -19.307,
+       -8.502
+      ],
+      "p_two_sided": 0.0
+     },
+     "flags_per_np_py": {
+      "delta": -0.089,
+      "ci95": [
+       -0.161,
+       -0.018
+      ],
+      "p_two_sided": 0.013
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.14,
+      "ci95": [
+       0.029,
+       0.253
+      ],
+      "p_two_sided": 0.013
+     }
+    },
+    "per_draw_delta_np_vs_R49": {
+     "mean": -7.4,
+     "p2.5_p97.5": [
+      -7.4,
+      -7.4
+     ]
+    },
+    "per_draw_delta_caught_vs_R49": {
+     "mean": -14.1
+    }
+   },
+   "R49": {
+    "values": {
+     "np_flagged": {
+      "value": 29.4,
+      "ci95": [
+       24.256,
+       34.498
+      ]
+     },
+     "caught": {
+      "value": 31.1,
+      "ci95": [
+       29.682,
+       32.0
+      ]
+     },
+     "flags_per_np_py": {
+      "value": 0.276,
+      "ci95": [
+       0.206,
+       0.353
+      ]
+     },
+     "seq_per_patient": {
+      "value": 1.28,
+      "ci95": [
+       1.083,
+       1.484
+      ]
+     },
+     "endo_spec": {
+      "value": 0.565,
+      "ci95": [
+       0.472,
+       0.656
+      ]
+     }
+    }
+   }
+  },
+  "note": "frozen per-fold rules (thresholds and hyper-parameters chosen on training patients with full histories) evaluated on truncated held-out histories; non-progressor follow-up for flags per patient-year = first endoscopy to the first dropped endoscopy; draws averaged as fractional patient outcomes, then the paired patient bootstrap"
+ },
+ "test3_prevalent_exclusion": {
+  "drop_within_1y_of_event_progressors_only": {
+   "progressors_with_an_evaluated_endoscopy": 30,
+   "non_progressors_with_an_evaluated_endoscopy": 43,
+   "R49": {
+    "caught_of_32": {
+     "value": 29.1,
+     "ref": 29.1,
+     "delta_vs_ref": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 17.1,
+     "ci95": [
+      11.314,
+      22.4
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "P1": {
+    "caught_of_32": {
+     "value": 29.0,
+     "ref": 29.1,
+     "delta_vs_ref": {
+      "delta": -0.1,
+      "ci95": [
+       -1.99,
+       1.434
+      ],
+      "p_two_sided": 1.0
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 17.0,
+     "ci95": [
+      11.376,
+      22.172
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "A1": {
+    "caught_of_32": {
+     "value": 28.9,
+     "ref": 29.1,
+     "delta_vs_ref": {
+      "delta": -0.2,
+      "ci95": [
+       -0.993,
+       0.474
+      ],
+      "p_two_sided": 0.72
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 16.9,
+     "ci95": [
+      11.2,
+      22.091
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "A12": {
+    "caught_of_32": {
+     "value": 28.6,
+     "ref": 29.1,
+     "delta_vs_ref": {
+      "delta": -0.5,
+      "ci95": [
+       -1.493,
+       0.274
+      ],
+      "p_two_sided": 0.353
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 16.6,
+     "ci95": [
+      10.903,
+      21.884
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "final": {
+    "caught_of_32": {
+     "value": 28.6,
+     "ref": 29.1,
+     "delta_vs_ref": {
+      "delta": -0.5,
+      "ci95": [
+       -1.493,
+       0.274
+      ],
+      "p_two_sided": 0.353
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 16.6,
+     "ci95": [
+      10.903,
+      21.884
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "final_infold": {
+    "caught_of_32": {
+     "value": 28.5,
+     "ref": 29.1,
+     "delta_vs_ref": {
+      "delta": -0.6,
+      "ci95": [
+       -1.676,
+       0.274
+      ],
+      "p_two_sided": 0.269
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 16.5,
+     "ci95": [
+      10.839,
+      21.808
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "grade": {
+    "caught_of_32": {
+     "value": 12.0,
+     "ref": 29.1,
+     "delta_vs_ref": {
+      "delta": -17.1,
+      "ci95": [
+       -22.4,
+       -11.314
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    }
+   }
+  },
+  "drop_within_1y_of_event_and_np_within_1y_of_last": {
+   "progressors_with_an_evaluated_endoscopy": 30,
+   "non_progressors_with_an_evaluated_endoscopy": 43,
+   "R49": {
+    "caught_of_32": {
+     "value": 29.1,
+     "ref": 29.1,
+     "delta_vs_ref": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 17.1,
+     "ci95": [
+      11.314,
+      22.4
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "P1": {
+    "caught_of_32": {
+     "value": 29.0,
+     "ref": 29.1,
+     "delta_vs_ref": {
+      "delta": -0.1,
+      "ci95": [
+       -1.99,
+       1.434
+      ],
+      "p_two_sided": 1.0
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 17.0,
+     "ci95": [
+      11.376,
+      22.172
+     ],
+     "p_two_sided": 0.0
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": 3.5,
+      "ci95": [
+       0.792,
+       6.157
+      ],
+      "p_two_sided": 0.007
+     },
+     "caught": {
+      "delta": -0.1,
+      "ci95": [
+       -2.0,
+       1.452
+      ],
+      "p_two_sided": 1.0
+     },
+     "flags_per_np_py": {
+      "delta": 0.015,
+      "ci95": [
+       -0.013,
+       0.041
+      ],
+      "p_two_sided": 0.295
+     },
+     "seq_per_patient": {
+      "delta": -1.544,
+      "ci95": [
+       -1.825,
+       -1.268
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": -0.028,
+      "ci95": [
+       -0.076,
+       0.024
+      ],
+      "p_two_sided": 0.295
+     }
+    }
+   },
+   "A1": {
+    "caught_of_32": {
+     "value": 28.9,
+     "ref": 29.1,
+     "delta_vs_ref": {
+      "delta": -0.2,
+      "ci95": [
+       -0.993,
+       0.474
+      ],
+      "p_two_sided": 0.72
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 16.9,
+     "ci95": [
+      11.2,
+      22.091
+     ],
+     "p_two_sided": 0.0
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -8.0,
+      "ci95": [
+       -11.467,
+       -4.709
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.2,
+      "ci95": [
+       -1.0,
+       0.48
+      ],
+      "p_two_sided": 0.704
+     },
+     "flags_per_np_py": {
+      "delta": -0.051,
+      "ci95": [
+       -0.076,
+       -0.026
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.096,
+      "ci95": [
+       0.049,
+       0.141
+      ],
+      "p_two_sided": 0.0
+     }
+    }
+   },
+   "A12": {
+    "caught_of_32": {
+     "value": 28.6,
+     "ref": 29.1,
+     "delta_vs_ref": {
+      "delta": -0.5,
+      "ci95": [
+       -1.493,
+       0.274
+      ],
+      "p_two_sided": 0.353
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 16.6,
+     "ci95": [
+      10.903,
+      21.884
+     ],
+     "p_two_sided": 0.0
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -9.7,
+      "ci95": [
+       -13.76,
+       -5.892
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.5,
+      "ci95": [
+       -1.5,
+       0.281
+      ],
+      "p_two_sided": 0.337
+     },
+     "flags_per_np_py": {
+      "delta": -0.09,
+      "ci95": [
+       -0.122,
+       -0.059
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.169,
+      "ci95": [
+       0.116,
+       0.22
+      ],
+      "p_two_sided": 0.0
+     }
+    }
+   },
+   "final": {
+    "caught_of_32": {
+     "value": 28.6,
+     "ref": 29.1,
+     "delta_vs_ref": {
+      "delta": -0.5,
+      "ci95": [
+       -1.493,
+       0.274
+      ],
+      "p_two_sided": 0.353
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 16.6,
+     "ci95": [
+      10.903,
+      21.884
+     ],
+     "p_two_sided": 0.0
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -14.3,
+      "ci95": [
+       -19.092,
+       -9.844
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.5,
+      "ci95": [
+       -1.5,
+       0.281
+      ],
+      "p_two_sided": 0.337
+     },
+     "flags_per_np_py": {
+      "delta": -0.141,
+      "ci95": [
+       -0.19,
+       -0.098
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 1.518,
+      "ci95": [
+       1.167,
+       1.896
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.264,
+      "ci95": [
+       0.193,
+       0.339
+      ],
+      "p_two_sided": 0.0
+     }
+    }
+   },
+   "final_infold": {
+    "caught_of_32": {
+     "value": 28.5,
+     "ref": 29.1,
+     "delta_vs_ref": {
+      "delta": -0.6,
+      "ci95": [
+       -1.676,
+       0.274
+      ],
+      "p_two_sided": 0.269
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 16.5,
+     "ci95": [
+      10.839,
+      21.808
+     ],
+     "p_two_sided": 0.0
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -15.4,
+      "ci95": [
+       -20.272,
+       -10.857
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.6,
+      "ci95": [
+       -1.667,
+       0.281
+      ],
+      "p_two_sided": 0.262
+     },
+     "flags_per_np_py": {
+      "delta": -0.151,
+      "ci95": [
+       -0.201,
+       -0.106
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 1.518,
+      "ci95": [
+       1.167,
+       1.896
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.283,
+      "ci95": [
+       0.208,
+       0.36
+      ],
+      "p_two_sided": 0.0
+     }
+    }
+   },
+   "grade": {
+    "caught_of_32": {
+     "value": 12.0,
+     "ref": 29.1,
+     "delta_vs_ref": {
+      "delta": -17.1,
+      "ci95": [
+       -22.4,
+       -11.314
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -6.7,
+      "ci95": [
+       -13.743,
+       0.092
+      ],
+      "p_two_sided": 0.055
+     },
+     "caught": {
+      "delta": -17.1,
+      "ci95": [
+       -22.054,
+       -11.613
+      ],
+      "p_two_sided": 0.0
+     },
+     "flags_per_np_py": {
+      "delta": -0.082,
+      "ci95": [
+       -0.148,
+       -0.018
+      ],
+      "p_two_sided": 0.012
+     },
+     "seq_per_patient": {
+      "delta": -1.544,
+      "ci95": [
+       -1.825,
+       -1.268
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.154,
+      "ci95": [
+       0.035,
+       0.276
+      ],
+      "p_two_sided": 0.012
+     }
+    }
+   }
+  },
+  "drop_within_2y_of_event_progressors_only": {
+   "progressors_with_an_evaluated_endoscopy": 25,
+   "non_progressors_with_an_evaluated_endoscopy": 43,
+   "R49": {
+    "caught_of_32": {
+     "value": 24.2,
+     "ref": 24.2,
+     "delta_vs_ref": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 14.2,
+     "ci95": [
+      8.471,
+      19.2
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "P1": {
+    "caught_of_32": {
+     "value": 24.7,
+     "ref": 24.2,
+     "delta_vs_ref": {
+      "delta": 0.5,
+      "ci95": [
+       -0.2,
+       1.536
+      ],
+      "p_two_sided": 0.335
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 14.7,
+     "ci95": [
+      9.08,
+      19.658
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "A1": {
+    "caught_of_32": {
+     "value": 24.0,
+     "ref": 24.2,
+     "delta_vs_ref": {
+      "delta": -0.2,
+      "ci95": [
+       -0.993,
+       0.474
+      ],
+      "p_two_sided": 0.72
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 14.0,
+     "ci95": [
+      8.464,
+      18.954
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "A12": {
+    "caught_of_32": {
+     "value": 23.7,
+     "ref": 24.2,
+     "delta_vs_ref": {
+      "delta": -0.5,
+      "ci95": [
+       -1.493,
+       0.274
+      ],
+      "p_two_sided": 0.353
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 13.7,
+     "ci95": [
+      8.155,
+      18.716
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "final": {
+    "caught_of_32": {
+     "value": 23.7,
+     "ref": 24.2,
+     "delta_vs_ref": {
+      "delta": -0.5,
+      "ci95": [
+       -1.493,
+       0.274
+      ],
+      "p_two_sided": 0.353
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 13.7,
+     "ci95": [
+      8.155,
+      18.716
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "final_infold": {
+    "caught_of_32": {
+     "value": 23.6,
+     "ref": 24.2,
+     "delta_vs_ref": {
+      "delta": -0.6,
+      "ci95": [
+       -1.676,
+       0.274
+      ],
+      "p_two_sided": 0.269
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 13.6,
+     "ci95": [
+      8.076,
+      18.601
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "grade": {
+    "caught_of_32": {
+     "value": 10.0,
+     "ref": 24.2,
+     "delta_vs_ref": {
+      "delta": -14.2,
+      "ci95": [
+       -19.2,
+       -8.471
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    }
+   }
+  },
+  "drop_within_2y_of_event_and_np_within_2y_of_last": {
+   "progressors_with_an_evaluated_endoscopy": 25,
+   "non_progressors_with_an_evaluated_endoscopy": 42,
+   "R49": {
+    "caught_of_32": {
+     "value": 24.2,
+     "ref": 24.2,
+     "delta_vs_ref": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 14.2,
+     "ci95": [
+      8.471,
+      19.2
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "P1": {
+    "caught_of_32": {
+     "value": 24.7,
+     "ref": 24.2,
+     "delta_vs_ref": {
+      "delta": 0.5,
+      "ci95": [
+       -0.2,
+       1.536
+      ],
+      "p_two_sided": 0.335
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 14.7,
+     "ci95": [
+      9.08,
+      19.658
+     ],
+     "p_two_sided": 0.0
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": 3.3,
+      "ci95": [
+       0.819,
+       5.919
+      ],
+      "p_two_sided": 0.01
+     },
+     "caught": {
+      "delta": 0.5,
+      "ci95": [
+       -0.192,
+       1.538
+      ],
+      "p_two_sided": 0.333
+     },
+     "flags_per_np_py": {
+      "delta": 0.013,
+      "ci95": [
+       -0.012,
+       0.037
+      ],
+      "p_two_sided": 0.338
+     },
+     "seq_per_patient": {
+      "delta": -1.442,
+      "ci95": [
+       -1.717,
+       -1.177
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": -0.028,
+      "ci95": [
+       -0.08,
+       0.026
+      ],
+      "p_two_sided": 0.34
+     }
+    }
+   },
+   "A1": {
+    "caught_of_32": {
+     "value": 24.0,
+     "ref": 24.2,
+     "delta_vs_ref": {
+      "delta": -0.2,
+      "ci95": [
+       -0.993,
+       0.474
+      ],
+      "p_two_sided": 0.72
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 14.0,
+     "ci95": [
+      8.464,
+      18.954
+     ],
+     "p_two_sided": 0.0
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -7.6,
+      "ci95": [
+       -11.3,
+       -4.2
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.2,
+      "ci95": [
+       -1.035,
+       0.476
+      ],
+      "p_two_sided": 0.704
+     },
+     "flags_per_np_py": {
+      "delta": -0.043,
+      "ci95": [
+       -0.065,
+       -0.02
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.095,
+      "ci95": [
+       0.045,
+       0.143
+      ],
+      "p_two_sided": 0.0
+     }
+    }
+   },
+   "A12": {
+    "caught_of_32": {
+     "value": 23.7,
+     "ref": 24.2,
+     "delta_vs_ref": {
+      "delta": -0.5,
+      "ci95": [
+       -1.493,
+       0.274
+      ],
+      "p_two_sided": 0.353
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 13.7,
+     "ci95": [
+      8.155,
+      18.716
+     ],
+     "p_two_sided": 0.0
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -9.5,
+      "ci95": [
+       -13.878,
+       -5.6
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.5,
+      "ci95": [
+       -1.477,
+       0.3
+      ],
+      "p_two_sided": 0.339
+     },
+     "flags_per_np_py": {
+      "delta": -0.08,
+      "ci95": [
+       -0.11,
+       -0.051
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.175,
+      "ci95": [
+       0.118,
+       0.232
+      ],
+      "p_two_sided": 0.0
+     }
+    }
+   },
+   "final": {
+    "caught_of_32": {
+     "value": 23.7,
+     "ref": 24.2,
+     "delta_vs_ref": {
+      "delta": -0.5,
+      "ci95": [
+       -1.493,
+       0.274
+      ],
+      "p_two_sided": 0.353
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 13.7,
+     "ci95": [
+      8.155,
+      18.716
+     ],
+     "p_two_sided": 0.0
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -13.9,
+      "ci95": [
+       -19.012,
+       -9.222
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.5,
+      "ci95": [
+       -1.477,
+       0.3
+      ],
+      "p_two_sided": 0.339
+     },
+     "flags_per_np_py": {
+      "delta": -0.123,
+      "ci95": [
+       -0.164,
+       -0.086
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 1.355,
+      "ci95": [
+       1.037,
+       1.71
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.27,
+      "ci95": [
+       0.196,
+       0.345
+      ],
+      "p_two_sided": 0.0
+     }
+    }
+   },
+   "final_infold": {
+    "caught_of_32": {
+     "value": 23.6,
+     "ref": 24.2,
+     "delta_vs_ref": {
+      "delta": -0.6,
+      "ci95": [
+       -1.676,
+       0.274
+      ],
+      "p_two_sided": 0.269
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 13.6,
+     "ci95": [
+      8.076,
+      18.601
+     ],
+     "p_two_sided": 0.0
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -15.2,
+      "ci95": [
+       -20.488,
+       -10.371
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.6,
+      "ci95": [
+       -1.667,
+       0.289
+      ],
+      "p_two_sided": 0.261
+     },
+     "flags_per_np_py": {
+      "delta": -0.132,
+      "ci95": [
+       -0.175,
+       -0.093
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 1.355,
+      "ci95": [
+       1.037,
+       1.71
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.29,
+      "ci95": [
+       0.213,
+       0.366
+      ],
+      "p_two_sided": 0.0
+     }
+    }
+   },
+   "grade": {
+    "caught_of_32": {
+     "value": 10.0,
+     "ref": 24.2,
+     "delta_vs_ref": {
+      "delta": -14.2,
+      "ci95": [
+       -19.2,
+       -8.471
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "caught_of_32_vs_grade": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -6.1,
+      "ci95": [
+       -13.348,
+       0.772
+      ],
+      "p_two_sided": 0.079
+     },
+     "caught": {
+      "delta": -14.2,
+      "ci95": [
+       -18.929,
+       -9.136
+      ],
+      "p_two_sided": 0.0
+     },
+     "flags_per_np_py": {
+      "delta": -0.056,
+      "ci95": [
+       -0.121,
+       0.006
+      ],
+      "p_two_sided": 0.073
+     },
+     "seq_per_patient": {
+      "delta": -1.442,
+      "ci95": [
+       -1.717,
+       -1.177
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.123,
+      "ci95": [
+       -0.013,
+       0.264
+      ],
+      "p_two_sided": 0.073
+     }
+    }
+   }
+  }
+ },
+ "test5_bar_sweep": {
+  "bar_0.7": {
+   "values": {
+    "caught": 28.1,
+    "np_flagged": 13.5,
+    "seq_per_patient": 3.816,
+    "flags_per_np_py": 0.081,
+    "endo_spec": 0.886,
+    "endo_sens": 0.607
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": -18.3,
+     "ci95": [
+      -23.097,
+      -13.554
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -3.0,
+     "ci95": [
+      -6.123,
+      -0.615
+     ],
+     "p_two_sided": 0.008
+    },
+    "flags_per_np_py": {
+     "delta": -0.231,
+     "ci95": [
+      -0.297,
+      -0.172
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.876,
+     "ci95": [
+      1.457,
+      2.323
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.326,
+     "ci95": [
+      0.253,
+      0.401
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_A12": {
+    "np_flagged": {
+     "delta": -8.0,
+     "ci95": [
+      -11.965,
+      -4.485
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -2.4,
+     "ci95": [
+      -5.284,
+      -0.213
+     ],
+     "p_two_sided": 0.032
+    },
+    "flags_per_np_py": {
+     "delta": -0.108,
+     "ci95": [
+      -0.166,
+      -0.063
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.876,
+     "ci95": [
+      1.457,
+      2.323
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.153,
+     "ci95": [
+      0.091,
+      0.226
+     ],
+     "p_two_sided": 0.0
+    }
+   }
+  },
+  "bar_0.75": {
+   "values": {
+    "caught": 29.9,
+    "np_flagged": 15.1,
+    "seq_per_patient": 3.816,
+    "flags_per_np_py": 0.098,
+    "endo_spec": 0.862,
+    "endo_sens": 0.648
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": -16.7,
+     "ci95": [
+      -21.39,
+      -11.999
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -1.2,
+     "ci95": [
+      -2.6,
+      -0.078
+     ],
+     "p_two_sided": 0.046
+    },
+    "flags_per_np_py": {
+     "delta": -0.213,
+     "ci95": [
+      -0.278,
+      -0.158
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.876,
+     "ci95": [
+      1.457,
+      2.323
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.301,
+     "ci95": [
+      0.23,
+      0.374
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_A12": {
+    "np_flagged": {
+     "delta": -6.4,
+     "ci95": [
+      -10.244,
+      -3.01
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -0.6,
+     "ci95": [
+      -1.434,
+      0.0
+     ],
+     "p_two_sided": 0.1
+    },
+    "flags_per_np_py": {
+     "delta": -0.091,
+     "ci95": [
+      -0.147,
+      -0.05
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.876,
+     "ci95": [
+      1.457,
+      2.323
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.129,
+     "ci95": [
+      0.071,
+      0.196
+     ],
+     "p_two_sided": 0.0
+    }
+   }
+  },
+  "bar_0.8": {
+   "values": {
+    "caught": 30.5,
+    "np_flagged": 16.5,
+    "seq_per_patient": 3.816,
+    "flags_per_np_py": 0.115,
+    "endo_spec": 0.837,
+    "endo_sens": 0.7
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": -15.3,
+     "ci95": [
+      -19.839,
+      -10.9
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -0.6,
+     "ci95": [
+      -1.6,
+      0.213
+     ],
+     "p_two_sided": 0.205
+    },
+    "flags_per_np_py": {
+     "delta": -0.196,
+     "ci95": [
+      -0.26,
+      -0.145
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.876,
+     "ci95": [
+      1.457,
+      2.323
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.277,
+     "ci95": [
+      0.211,
+      0.347
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_A12": {
+    "np_flagged": {
+     "delta": -5.0,
+     "ci95": [
+      -8.7,
+      -2.018
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "flags_per_np_py": {
+     "delta": -0.074,
+     "ci95": [
+      -0.125,
+      -0.036
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.876,
+     "ci95": [
+      1.457,
+      2.323
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.104,
+     "ci95": [
+      0.053,
+      0.169
+     ],
+     "p_two_sided": 0.0
+    }
+   }
+  },
+  "bar_0.85": {
+   "values": {
+    "caught": 30.5,
+    "np_flagged": 16.8,
+    "seq_per_patient": 3.816,
+    "flags_per_np_py": 0.117,
+    "endo_spec": 0.834,
+    "endo_sens": 0.747
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": -15.0,
+     "ci95": [
+      -19.458,
+      -10.647
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -0.6,
+     "ci95": [
+      -1.6,
+      0.213
+     ],
+     "p_two_sided": 0.205
+    },
+    "flags_per_np_py": {
+     "delta": -0.194,
+     "ci95": [
+      -0.258,
+      -0.142
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.876,
+     "ci95": [
+      1.457,
+      2.323
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.274,
+     "ci95": [
+      0.209,
+      0.342
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_A12": {
+    "np_flagged": {
+     "delta": -4.7,
+     "ci95": [
+      -8.32,
+      -1.857
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "flags_per_np_py": {
+     "delta": -0.071,
+     "ci95": [
+      -0.123,
+      -0.034
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.876,
+     "ci95": [
+      1.457,
+      2.323
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.101,
+     "ci95": [
+      0.05,
+      0.164
+     ],
+     "p_two_sided": 0.0
+    }
+   }
+  },
+  "bar_0.9": {
+   "values": {
+    "caught": 30.5,
+    "np_flagged": 17.2,
+    "seq_per_patient": 3.816,
+    "flags_per_np_py": 0.121,
+    "endo_spec": 0.829,
+    "endo_sens": 0.793
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": -14.6,
+     "ci95": [
+      -18.941,
+      -10.285
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -0.6,
+     "ci95": [
+      -1.6,
+      0.213
+     ],
+     "p_two_sided": 0.205
+    },
+    "flags_per_np_py": {
+     "delta": -0.19,
+     "ci95": [
+      -0.252,
+      -0.139
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.876,
+     "ci95": [
+      1.457,
+      2.323
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.268,
+     "ci95": [
+      0.205,
+      0.335
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_A12": {
+    "np_flagged": {
+     "delta": -4.3,
+     "ci95": [
+      -7.718,
+      -1.678
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "flags_per_np_py": {
+     "delta": -0.068,
+     "ci95": [
+      -0.119,
+      -0.032
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.876,
+     "ci95": [
+      1.457,
+      2.323
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.096,
+     "ci95": [
+      0.046,
+      0.16
+     ],
+     "p_two_sided": 0.0
+    }
+   }
+  },
+  "bar_0.925": {
+   "values": {
+    "caught": 30.5,
+    "np_flagged": 17.9,
+    "seq_per_patient": 3.816,
+    "flags_per_np_py": 0.127,
+    "endo_spec": 0.82,
+    "endo_sens": 0.811
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": -13.9,
+     "ci95": [
+      -18.122,
+      -9.623
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -0.6,
+     "ci95": [
+      -1.6,
+      0.213
+     ],
+     "p_two_sided": 0.205
+    },
+    "flags_per_np_py": {
+     "delta": -0.184,
+     "ci95": [
+      -0.244,
+      -0.135
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.876,
+     "ci95": [
+      1.457,
+      2.323
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.26,
+     "ci95": [
+      0.198,
+      0.326
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_A12": {
+    "np_flagged": {
+     "delta": -3.6,
+     "ci95": [
+      -6.903,
+      -1.213
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "flags_per_np_py": {
+     "delta": -0.062,
+     "ci95": [
+      -0.111,
+      -0.028
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.876,
+     "ci95": [
+      1.457,
+      2.323
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.087,
+     "ci95": [
+      0.04,
+      0.15
+     ],
+     "p_two_sided": 0.0
+    }
+   }
+  },
+  "bar_0.95": {
+   "values": {
+    "caught": 30.5,
+    "np_flagged": 19.2,
+    "seq_per_patient": 3.816,
+    "flags_per_np_py": 0.141,
+    "endo_spec": 0.801,
+    "endo_sens": 0.841
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": -12.6,
+     "ci95": [
+      -16.826,
+      -8.51
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -0.6,
+     "ci95": [
+      -1.6,
+      0.213
+     ],
+     "p_two_sided": 0.205
+    },
+    "flags_per_np_py": {
+     "delta": -0.171,
+     "ci95": [
+      -0.225,
+      -0.125
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.876,
+     "ci95": [
+      1.457,
+      2.323
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.241,
+     "ci95": [
+      0.183,
+      0.299
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_A12": {
+    "np_flagged": {
+     "delta": -2.3,
+     "ci95": [
+      -4.587,
+      -0.629
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "flags_per_np_py": {
+     "delta": -0.048,
+     "ci95": [
+      -0.09,
+      -0.02
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.876,
+     "ci95": [
+      1.457,
+      2.323
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.068,
+     "ci95": [
+      0.03,
+      0.122
+     ],
+     "p_two_sided": 0.0
+    }
+   }
+  },
+  "bar_0.975": {
+   "values": {
+    "caught": 30.5,
+    "np_flagged": 21.0,
+    "seq_per_patient": 3.816,
+    "flags_per_np_py": 0.173,
+    "endo_spec": 0.755,
+    "endo_sens": 0.852
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": -10.8,
+     "ci95": [
+      -14.429,
+      -7.3
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -0.6,
+     "ci95": [
+      -1.6,
+      0.213
+     ],
+     "p_two_sided": 0.205
+    },
+    "flags_per_np_py": {
+     "delta": -0.138,
+     "ci95": [
+      -0.177,
+      -0.103
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.876,
+     "ci95": [
+      1.457,
+      2.323
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.195,
+     "ci95": [
+      0.151,
+      0.24
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_A12": {
+    "np_flagged": {
+     "delta": -0.5,
+     "ci95": [
+      -0.956,
+      -0.123
+     ],
+     "p_two_sided": 0.007
+    },
+    "caught": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "flags_per_np_py": {
+     "delta": -0.016,
+     "ci95": [
+      -0.035,
+      -0.004
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.876,
+     "ci95": [
+      1.457,
+      2.323
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.023,
+     "ci95": [
+      0.005,
+      0.049
+     ],
+     "p_two_sided": 0.0
+    }
+   }
+  },
+  "infold_bar_slack0": {
+   "values": {
+    "caught": 30.4,
+    "np_flagged": 16.4,
+    "seq_per_patient": 3.816,
+    "flags_per_np_py": 0.11,
+    "endo_spec": 0.845,
+    "endo_sens": 0.73
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": -15.4,
+     "ci95": [
+      -19.804,
+      -11.069
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -0.7,
+     "ci95": [
+      -1.778,
+      0.194
+     ],
+     "p_two_sided": 0.175
+    },
+    "flags_per_np_py": {
+     "delta": -0.201,
+     "ci95": [
+      -0.265,
+      -0.149
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.876,
+     "ci95": [
+      1.457,
+      2.323
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.284,
+     "ci95": [
+      0.219,
+      0.351
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_A12": {
+    "np_flagged": {
+     "delta": -5.1,
+     "ci95": [
+      -8.6,
+      -2.269
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -0.1,
+     "ci95": [
+      -0.337,
+      0.0
+     ],
+     "p_two_sided": 0.735
+    },
+    "flags_per_np_py": {
+     "delta": -0.079,
+     "ci95": [
+      -0.131,
+      -0.042
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.876,
+     "ci95": [
+      1.457,
+      2.323
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.112,
+     "ci95": [
+      0.06,
+      0.175
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "picks": {
+    "0.925": 8,
+    "0.8": 35,
+    "0.7": 8,
+    "0.75": 23,
+    "0.85": 12,
+    "0.95": 9,
+    "0.9": 3,
+    "0.975": 2
+   }
+  },
+  "infold_bar_slack1": {
+   "values": {
+    "caught": 29.8,
+    "np_flagged": 15.3,
+    "seq_per_patient": 3.816,
+    "flags_per_np_py": 0.097,
+    "endo_spec": 0.863,
+    "endo_sens": 0.661
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": -16.5,
+     "ci95": [
+      -21.172,
+      -11.773
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -1.3,
+     "ci95": [
+      -2.715,
+      -0.11
+     ],
+     "p_two_sided": 0.036
+    },
+    "flags_per_np_py": {
+     "delta": -0.214,
+     "ci95": [
+      -0.279,
+      -0.159
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.876,
+     "ci95": [
+      1.457,
+      2.323
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.302,
+     "ci95": [
+      0.232,
+      0.374
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_A12": {
+    "np_flagged": {
+     "delta": -6.2,
+     "ci95": [
+      -10.069,
+      -2.895
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -0.7,
+     "ci95": [
+      -1.707,
+      0.0
+     ],
+     "p_two_sided": 0.084
+    },
+    "flags_per_np_py": {
+     "delta": -0.092,
+     "ci95": [
+      -0.148,
+      -0.05
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 1.876,
+     "ci95": [
+      1.457,
+      2.323
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.13,
+     "ci95": [
+      0.072,
+      0.197
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "picks": {
+    "0.8": 10,
+    "0.7": 25,
+    "0.75": 51,
+    "0.85": 8,
+    "0.925": 5,
+    "0.9": 1
+   }
+  }
+ },
+ "test4_one_look": {
+  "fixed_cn90": {
+   "values": {
+    "caught": 27.9,
+    "np_flagged": 14.4,
+    "seq_per_patient": 1.825,
+    "flags_per_np_py": 0.051,
+    "endo_spec": 0.928,
+    "endo_sens": 0.317
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": -17.4,
+     "ci95": [
+      -22.169,
+      -12.991
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -3.2,
+     "ci95": [
+      -6.5,
+      -0.662
+     ],
+     "p_two_sided": 0.006
+    },
+    "flags_per_np_py": {
+     "delta": -0.26,
+     "ci95": [
+      -0.331,
+      -0.195
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": -0.115,
+     "ci95": [
+      -0.379,
+      0.157
+     ],
+     "p_two_sided": 0.419
+    },
+    "endo_spec": {
+     "delta": 0.368,
+     "ci95": [
+      0.29,
+      0.445
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_A12": {
+    "np_flagged": {
+     "delta": -7.1,
+     "ci95": [
+      -11.437,
+      -3.224
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -2.6,
+     "ci95": [
+      -5.734,
+      0.0
+     ],
+     "p_two_sided": 0.091
+    },
+    "flags_per_np_py": {
+     "delta": -0.138,
+     "ci95": [
+      -0.201,
+      -0.086
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": -0.115,
+     "ci95": [
+      -0.379,
+      0.157
+     ],
+     "p_two_sided": 0.419
+    },
+    "endo_spec": {
+     "delta": 0.195,
+     "ci95": [
+      0.127,
+      0.276
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_same_bar_multi_look": {
+    "np_flagged": {
+     "delta": -2.8,
+     "ci95": [
+      -5.913,
+      -0.645
+     ],
+     "p_two_sided": 0.002
+    },
+    "caught": {
+     "delta": -2.6,
+     "ci95": [
+      -5.734,
+      0.0
+     ],
+     "p_two_sided": 0.091
+    },
+    "flags_per_np_py": {
+     "delta": -0.07,
+     "ci95": [
+      -0.106,
+      -0.04
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": -1.991,
+     "ci95": [
+      -2.494,
+      -1.517
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.099,
+     "ci95": [
+      0.058,
+      0.148
+     ],
+     "p_two_sided": 0.0
+    }
+   }
+  },
+  "infold_bar": {
+   "values": {
+    "caught": 29.6,
+    "np_flagged": 21.1,
+    "seq_per_patient": 1.825,
+    "flags_per_np_py": 0.075,
+    "endo_spec": 0.895,
+    "endo_sens": 0.336
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": -10.7,
+     "ci95": [
+      -14.244,
+      -7.276
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -1.5,
+     "ci95": [
+      -3.1,
+      -0.183
+     ],
+     "p_two_sided": 0.024
+    },
+    "flags_per_np_py": {
+     "delta": -0.237,
+     "ci95": [
+      -0.299,
+      -0.18
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": -0.115,
+     "ci95": [
+      -0.379,
+      0.157
+     ],
+     "p_two_sided": 0.419
+    },
+    "endo_spec": {
+     "delta": 0.335,
+     "ci95": [
+      0.267,
+      0.401
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_A12": {
+    "np_flagged": {
+     "delta": -0.4,
+     "ci95": [
+      -0.8,
+      -0.093
+     ],
+     "p_two_sided": 0.031
+    },
+    "caught": {
+     "delta": -0.9,
+     "ci95": [
+      -2.271,
+      0.0
+     ],
+     "p_two_sided": 0.259
+    },
+    "flags_per_np_py": {
+     "delta": -0.114,
+     "ci95": [
+      -0.17,
+      -0.07
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": -0.115,
+     "ci95": [
+      -0.379,
+      0.157
+     ],
+     "p_two_sided": 0.419
+    },
+    "endo_spec": {
+     "delta": 0.162,
+     "ci95": [
+      0.101,
+      0.228
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_same_bar_multi_look": {
+    "np_flagged": {
+     "delta": -0.1,
+     "ci95": [
+      -0.349,
+      0.0
+     ],
+     "p_two_sided": 0.742
+    },
+    "caught": {
+     "delta": -0.9,
+     "ci95": [
+      -2.271,
+      0.0
+     ],
+     "p_two_sided": 0.259
+    },
+    "flags_per_np_py": {
+     "delta": -0.105,
+     "ci95": [
+      -0.154,
+      -0.064
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": -1.991,
+     "ci95": [
+      -2.494,
+      -1.517
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.149,
+     "ci95": [
+      0.094,
+      0.208
+     ],
+     "p_two_sided": 0.0
+    }
+   }
+  },
+  "infold_bar_chosen_multi_look": {
+   "values": {
+    "caught": 26.4,
+    "np_flagged": 13.2,
+    "seq_per_patient": 1.825,
+    "flags_per_np_py": 0.047,
+    "endo_spec": 0.934,
+    "endo_sens": 0.3
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": -18.6,
+     "ci95": [
+      -23.198,
+      -14.148
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -4.7,
+     "ci95": [
+      -8.077,
+      -1.754
+     ],
+     "p_two_sided": 0.001
+    },
+    "flags_per_np_py": {
+     "delta": -0.265,
+     "ci95": [
+      -0.336,
+      -0.199
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": -0.115,
+     "ci95": [
+      -0.379,
+      0.157
+     ],
+     "p_two_sided": 0.419
+    },
+    "endo_spec": {
+     "delta": 0.374,
+     "ci95": [
+      0.295,
+      0.453
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_A12": {
+    "np_flagged": {
+     "delta": -8.3,
+     "ci95": [
+      -12.608,
+      -4.419
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -4.1,
+     "ci95": [
+      -7.3,
+      -1.434
+     ],
+     "p_two_sided": 0.0
+    },
+    "flags_per_np_py": {
+     "delta": -0.142,
+     "ci95": [
+      -0.207,
+      -0.09
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": -0.115,
+     "ci95": [
+      -0.379,
+      0.157
+     ],
+     "p_two_sided": 0.419
+    },
+    "endo_spec": {
+     "delta": 0.201,
+     "ci95": [
+      0.133,
+      0.281
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_same_bar_multi_look": {
+    "np_flagged": {
+     "delta": -3.2,
+     "ci95": [
+      -6.255,
+      -1.032
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -4.0,
+     "ci95": [
+      -7.226,
+      -1.357
+     ],
+     "p_two_sided": 0.002
+    },
+    "flags_per_np_py": {
+     "delta": -0.063,
+     "ci95": [
+      -0.097,
+      -0.035
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": -1.991,
+     "ci95": [
+      -2.494,
+      -1.517
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.09,
+     "ci95": [
+      0.051,
+      0.133
+     ],
+     "p_two_sided": 0.0
+    }
+   }
+  },
+  "first_endoscopy_only_fixed_cn90": {
+   "R49": {
+    "caught": 27.9,
+    "np_flagged": 16.7,
+    "seq_per_patient": 0.487,
+    "flags_per_np_py": 0.059,
+    "endo_spec": 0.612,
+    "endo_sens": 0.872
+   },
+   "A12": {
+    "caught": 28.1,
+    "np_flagged": 16.1,
+    "seq_per_patient": 0.487,
+    "flags_per_np_py": 0.057,
+    "endo_spec": 0.626,
+    "endo_sens": 0.878
+   },
+   "A12_plus_check": {
+    "caught": 26.0,
+    "np_flagged": 11.4,
+    "seq_per_patient": 1.061,
+    "flags_per_np_py": 0.04,
+    "endo_spec": 0.735,
+    "endo_sens": 0.812
+   },
+   "check_vs_R49": {
+    "np_flagged": {
+     "delta": -5.3,
+     "ci95": [
+      -9.174,
+      -2.211
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -1.9,
+     "ci95": [
+      -4.989,
+      0.823
+     ],
+     "p_two_sided": 0.216
+    },
+    "flags_per_np_py": {
+     "delta": -0.019,
+     "ci95": [
+      -0.033,
+      -0.008
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 0.575,
+     "ci95": [
+      0.437,
+      0.725
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.123,
+     "ci95": [
+      0.051,
+      0.213
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "check_vs_A12": {
+    "np_flagged": {
+     "delta": -4.7,
+     "ci95": [
+      -8.498,
+      -1.697
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -2.1,
+     "ci95": [
+      -4.711,
+      0.0
+     ],
+     "p_two_sided": 0.091
+    },
+    "flags_per_np_py": {
+     "delta": -0.017,
+     "ci95": [
+      -0.031,
+      -0.006
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 0.575,
+     "ci95": [
+      0.437,
+      0.725
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.109,
+     "ci95": [
+      0.039,
+      0.198
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "note": "only each patient's first pre-event endoscopy is evaluated (memory = that endoscopy alone; ACE-B-like); the certificate cannot act"
+  }
+ },
+ "test7_real": {
+  "R49": {
+   "caught": 31.1,
+   "np_flagged": 31.8,
+   "seq_per_patient": 1.94,
+   "flags_per_np_py": 0.311,
+   "endo_spec": 0.56,
+   "endo_sens": 0.907
+  },
+  "nested": {
+   "A1": {
+    "caught": 30.7,
+    "np_flagged": 23.6,
+    "seq_per_patient": 1.94,
+    "flags_per_np_py": 0.244,
+    "endo_spec": 0.656,
+    "endo_sens": 0.905
+   },
+   "A12": {
+    "caught": 30.5,
+    "np_flagged": 21.5,
+    "seq_per_patient": 1.94,
+    "flags_per_np_py": 0.189,
+    "endo_spec": 0.733,
+    "endo_sens": 0.876
+   },
+   "final": {
+    "caught": 30.5,
+    "np_flagged": 17.2,
+    "seq_per_patient": 3.816,
+    "flags_per_np_py": 0.121,
+    "endo_spec": 0.829,
+    "endo_sens": 0.793
+   },
+   "final_infold": {
+    "caught": 30.4,
+    "np_flagged": 16.4,
+    "seq_per_patient": 3.816,
+    "flags_per_np_py": 0.11,
+    "endo_spec": 0.845,
+    "endo_sens": 0.73
+   }
+  },
+  "best_of_grid_optimistic": {
+   "caught": 30.6,
+   "np_flagged": 16.8,
+   "seq_per_patient": 3.945,
+   "flags_per_np_py": 0.115,
+   "endo_spec": 0.838,
+   "endo_sens": 0.672,
+   "rule": "A12",
+   "cand": 15,
+   "bar": 0.75
+  },
+  "best_of_grid_excess_optimistic": {
+   "caught": 30.4,
+   "np_flagged": 16.1,
+   "seq_per_patient": 3.907,
+   "flags_per_np_py": 0.108,
+   "endo_spec": 0.848,
+   "endo_sens": 0.656,
+   "rule": "A12",
+   "cand": 7,
+   "bar": 0.75,
+   "excess": -0.3432
+  },
+  "grid_size": 243
+ },
+ "test8_batch": {
+  "endoscopies_with_mixed_scanner_samples": 8,
+  "non_progressor": {
+   "consecutive_pairs": 157,
+   "pairs_scanner_change": 24,
+   "pairs_batch_change": 11,
+   "d_img": {
+    "scanner_change": {
+     "coef": 0.902,
+     "ci95": [
+      0.006,
+      1.799
+     ],
+     "p": 0.0485
+    },
+    "batch_change": {
+     "coef": 0.549,
+     "ci95": [
+      -0.32,
+      1.419
+     ],
+     "p": 0.2157
+    },
+    "gap": {
+     "coef": -0.288,
+     "ci95": [
+      -0.638,
+      0.061
+     ],
+     "p": 0.106
+    }
+   },
+   "d_gate": {
+    "scanner_change": {
+     "coef": 0.297,
+     "ci95": [
+      -0.702,
+      1.296
+     ],
+     "p": 0.5604
+    },
+    "batch_change": {
+     "coef": 0.438,
+     "ci95": [
+      -0.636,
+      1.512
+     ],
+     "p": 0.4244
+    },
+    "gap": {
+     "coef": -0.177,
+     "ci95": [
+      -0.593,
+      0.24
+     ],
+     "p": 0.406
+    }
+   },
+   "flip": {
+    "scanner_change": {
+     "coef": 0.157,
+     "ci95": [
+      -0.032,
+      0.345
+     ],
+     "p": 0.1035
+    },
+    "batch_change": {
+     "coef": 0.403,
+     "ci95": [
+      0.065,
+      0.741
+     ],
+     "p": 0.0195
+    },
+    "gap": {
+     "coef": -0.066,
+     "ci95": [
+      -0.156,
+      0.024
+     ],
+     "p": 0.1504
+    }
+   },
+   "d_img_mean_by_scanner_change": {
+    "no_change": 2.15,
+    "change": 3.091
+   },
+   "d_gate_mean_by_scanner_change": {
+    "no_change": 2.013,
+    "change": 2.335
+   },
+   "flip_mean_by_scanner_change": {
+    "no_change": 0.414,
+    "change": 0.583
+   }
+  },
+  "progressor": {
+   "consecutive_pairs": 56,
+   "pairs_scanner_change": 11,
+   "pairs_batch_change": 8,
+   "d_img": {
+    "scanner_change": {
+     "coef": 0.134,
+     "ci95": [
+      -0.721,
+      0.989
+     ],
+     "p": 0.7585
+    },
+    "batch_change": {
+     "coef": -0.775,
+     "ci95": [
+      -1.234,
+      -0.316
+     ],
+     "p": 0.0009
+    },
+    "gap": {
+     "coef": -0.131,
+     "ci95": [
+      -0.409,
+      0.147
+     ],
+     "p": 0.3541
+    }
+   },
+   "d_gate": {
+    "scanner_change": {
+     "coef": -0.308,
+     "ci95": [
+      -0.962,
+      0.347
+     ],
+     "p": 0.3571
+    },
+    "batch_change": {
+     "coef": -0.599,
+     "ci95": [
+      -1.38,
+      0.183
+     ],
+     "p": 0.1335
+    },
+    "gap": {
+     "coef": -0.112,
+     "ci95": [
+      -0.371,
+      0.146
+     ],
+     "p": 0.3943
+    }
+   },
+   "flip": {
+    "scanner_change": {
+     "coef": 0.055,
+     "ci95": [
+      -0.199,
+      0.309
+     ],
+     "p": 0.6706
+    },
+    "batch_change": {
+     "coef": -0.063,
+     "ci95": [
+      -0.309,
+      0.183
+     ],
+     "p": 0.6167
+    },
+    "gap": {
+     "coef": 0.061,
+     "ci95": [
+      -0.044,
+      0.166
+     ],
+     "p": 0.2556
+    }
+   },
+   "d_img_mean_by_scanner_change": {
+    "no_change": 2.47,
+    "change": 2.67
+   },
+   "d_gate_mean_by_scanner_change": {
+    "no_change": 1.807,
+    "change": 1.558
+   },
+   "flip_mean_by_scanner_change": {
+    "no_change": 0.178,
+    "change": 0.182
+   }
+  },
+  "icc_on_repeat_mean_scores": {
+   "non_progressor": {
+    "logit max L-IMG": {
+     "icc1_unadjusted": 0.214,
+     "icc1_scanner_adjusted": 0.216,
+     "icc1_scanner_and_batch_adjusted": 0.121
+    },
+    "R49-aligned gate score": {
+     "icc1_unadjusted": 0.315,
+     "icc1_scanner_adjusted": 0.311,
+     "icc1_scanner_and_batch_adjusted": 0.204
+    }
+   },
+   "progressor": {
+    "logit max L-IMG": {
+     "icc1_unadjusted": 0.624,
+     "icc1_scanner_adjusted": 0.621,
+     "icc1_scanner_and_batch_adjusted": 0.532
+    },
+    "R49-aligned gate score": {
+     "icc1_unadjusted": 0.646,
+     "icc1_scanner_adjusted": 0.647,
+     "icc1_scanner_and_batch_adjusted": 0.588
+    }
+   }
+  },
+  "memory_gain_by_scanner_history": {
+   "all_endoscopies_one_scanner": {
+    "non_progressors": 28,
+    "progressors": 26,
+    "A1_vs_R49": {
+     "np_flagged": {
+      "delta": -4.8,
+      "ci95": [
+       -7.094,
+       -2.703
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.4,
+      "ci95": [
+       -1.3,
+       0.355
+      ],
+      "p_two_sided": 0.377
+     },
+     "flags_per_np_py": {
+      "delta": -0.051,
+      "ci95": [
+       -0.079,
+       -0.023
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.071,
+      "ci95": [
+       0.032,
+       0.109
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "final_vs_R49": {
+     "np_flagged": {
+      "delta": -7.9,
+      "ci95": [
+       -11.288,
+       -4.927
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": -0.6,
+      "ci95": [
+       -1.56,
+       0.217
+      ],
+      "p_two_sided": 0.206
+     },
+     "flags_per_np_py": {
+      "delta": -0.159,
+      "ci95": [
+       -0.226,
+       -0.103
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 1.759,
+      "ci95": [
+       1.291,
+       2.27
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.222,
+      "ci95": [
+       0.15,
+       0.297
+      ],
+      "p_two_sided": 0.0
+     }
+    }
+   },
+   "scanner_changes_within_patient": {
+    "non_progressors": 15,
+    "progressors": 6,
+    "A1_vs_R49": {
+     "np_flagged": {
+      "delta": -3.4,
+      "ci95": [
+       -6.0,
+       -1.2
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "flags_per_np_py": {
+      "delta": -0.094,
+      "ci95": [
+       -0.14,
+       -0.049
+      ],
+      "p_two_sided": 0.002
+     },
+     "seq_per_patient": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "endo_spec": {
+      "delta": 0.135,
+      "ci95": [
+       0.069,
+       0.206
+      ],
+      "p_two_sided": 0.001
+     }
+    },
+    "final_vs_R49": {
+     "np_flagged": {
+      "delta": -6.7,
+      "ci95": [
+       -9.833,
+       -3.71
+      ],
+      "p_two_sided": 0.0
+     },
+     "caught": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "flags_per_np_py": {
+      "delta": -0.238,
+      "ci95": [
+       -0.359,
+       -0.152
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq_per_patient": {
+      "delta": 2.176,
+      "ci95": [
+       1.311,
+       3.15
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.343,
+      "ci95": [
+       0.233,
+       0.457
+      ],
+      "p_two_sided": 0.0
+     }
+    }
+   }
+  },
+  "note": "consecutive pre-event endoscopies within patient; |change| of the repeat-mean logit max L-IMG and of the median R49-aligned gate score (0 = flag boundary); flip = gate flag differs; endoscopy scanner / sequencing batch = commonest over its samples; OLS with patient-clustered SEs; ICC(1) on repeat-mean scores, adjusted = residuals on scanner (and batch) fixed effects"
+ },
+ "seconds": 9
+}
