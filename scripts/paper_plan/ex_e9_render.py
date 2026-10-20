@@ -31,12 +31,12 @@ for ax in axs: ax.set_facecolor(SURF); ax.grid(True, color="#e6e5e0", lw=0.6); a
 axs[0].set_ylabel("Progressor patients caught (of 32)")
 ax = axs[0]
 for k in ("gate", "hne_max", "hne_mean", "memory", "memcert", "final", "ml_mem", "ml_final"): curve(ax, k, band=k in ("gate", "final", "ml_mem"))
-fixed(ax, ("R49", "P1", "grade", "lgd", "p53", "g53"), dx={"R49": (-9.5, 0.9), "P1": (0.3, -1.6), "grade": (0.7, -0.3), "lgd": (0.7, -0.4), "p53": (0.7, -0.4), "g53": (0.7, -0.4)})
+fixed(ax, ("R49", "P1"), text=False); fixed(ax, ("grade", "lgd", "p53", "g53"), dx={ "grade": (0.7, -0.3), "lgd": (0.7, -0.4), "p53": (0.7, -0.4), "g53": (0.7, -0.4)})
 ax.set_xlim(0, 43); ax.set_ylim(0, 32.8); ax.set_title("A  H&E rules, full range", loc="left", fontsize=11, color=INK)
 ax.legend(loc="lower right", fontsize=8.5, frameon=False)
 ax = axs[1]
 for k in ("gate", "hne_max", "hne_mean", "memory", "memcert", "final", "ml_mem", "ml_final"): curve(ax, k, band=k in ("gate", "final", "ml_mem"))
-fixed(ax, ("R49", "P1"), dx={"R49": (0.4, 0.15), "P1": (0.4, -0.4)}); ax.set_xlim(8, 43); ax.set_ylim(26, 32.3)
+fixed(ax, ("R49", "P1"), dx={"R49": (-6.2, 0.2), "P1": (0.4, -0.3)}); ax.set_xlim(8, 43); ax.set_ylim(26, 32.3)
 ax.set_title("B  Zoom on high sensitivity (bands: 95% patient bootstrap)", loc="left", fontsize=11, color=INK)
 ax = axs[2]
 for k in ("grade_none", "grade_mean", "grade_ew", "g53_none", "g53_mean", "g53_ew"): curve(ax, k, lw=1.8)
@@ -44,18 +44,18 @@ curve(ax, "ml_mem", lw=1.6); curve(ax, "final", lw=1.6)
 fixed(ax, ("grade", "lgd", "p53", "g53"), dx={"grade": (0.9, -0.2), "lgd": (-3.5, 0.8), "p53": (0.7, 0.4), "g53": (-9.0, 0.6)})
 ax.set_xlim(0, 43); ax.set_ylim(0, 32.8); ax.set_title("C  The same memory applied to pathology", loc="left", fontsize=11, color=INK); ax.legend(loc="lower right", fontsize=8.5, frameon=False)
 fig.text(0.01, 0.005, "Held-out patients; every threshold and half-life chosen on training patients (round-9 rule at a sweep of training detection targets). Large dots: each rule at the R49 gate's training detection (the reported operating points). "
-         "Curves: monotone envelope of the swept points, ending where the threshold catches every training progressor; shading: vertical 95% bands (2,000 patient-bootstrap draws). "
+         "Curves: monotone envelope of the swept points (training progressor-detection targets and training non-progressor-share targets); shading: vertical 95% bands (2,000 patient-bootstrap draws). "
          "The grey curve re-tunes the gate score's single threshold, so its dot differs from the R49 square.", fontsize=8.5, color=INK2, wrap=True)
 fig.tight_layout(rect=(0, 0.04, 1, 1)); fig.savefig(FIG + "/fig_e9_tradeoff.png", dpi=200, facecolor=SURF); plt.close(fig)
 # ---- prevalence figure: PPV and non-progressors never flagged per 1,000 at 3%
 PV = J["per_1000_patients"]["prevalences"]; rules = [r for r in ("g53", "R49", "memory", "final", "ml_mem", "ml_final") if r in PV["3%"]]
-fig, axs = plt.subplots(1, 2, figsize=(12, 4.6)); fig.patch.set_facecolor(SURF); names = {"g53": "Grade or p53", "R49": "Today's gate", "memory": "Memory", "final": "Final rule", "ml_mem": "Mean-logit + memory", "ml_final": "Mean-logit full stack"}
+fig, axs = plt.subplots(1, 3, figsize=(16, 4.8)); fig.patch.set_facecolor(SURF); names = {"g53": "Grade or p53", "R49": "Today's gate", "memory": "Memory", "final": "Final rule", "ml_mem": "Mean-logit + memory", "ml_final": "Mean-logit full stack"}
 cols = {"g53": INK, "R49": GREY, "memory": ORANGE, "final": RED, "ml_mem": AQUA, "ml_final": VIOLET}; prevs = ["1.5%", "3%", "5%", "10%"]; xs = np.array([1.5, 3, 5, 10])
-for ax, key, lab in ((axs[0], "ppv", "PPV of a patient flag"), (axs[1], "progressors_missed", "Progressors missed per 1,000")):
+for ax, key, lab in ((axs[0], "ppv", "PPV of a patient flag"), (axs[1], "non_progressors_never_flagged", "Non-progressors never flagged per 1,000"), (axs[2], "progressors_missed", "Progressors missed per 1,000")):
     ax.set_facecolor(SURF); ax.grid(True, color="#e6e5e0", lw=0.6)
     for r in rules:
         v = np.array([PV[p][r][key]["value"] for p in prevs], float); ax.plot(xs, v, "-o", color=cols[r], lw=2, ms=7, mec=SURF, mew=1.5, label=names[r])
-    ax.set_xscale("log"); ax.set_xticks(xs); ax.set_xticklabels(prevs); ax.set_xlabel("Share of patients progressing over the cohort's follow-up"); ax.set_ylabel(lab)
+    ax.set_xscale("log"); ax.set_xticks(xs); ax.set_xticklabels(prevs); ax.minorticks_off(); ax.set_xlabel("Share of patients progressing over the cohort's follow-up"); ax.set_ylabel(lab)
 axs[0].legend(fontsize=8.5, frameon=False); fig.tight_layout(); fig.savefig(FIG + "/fig_e9_prevalence.png", dpi=200, facecolor=SURF); plt.close(fig)
 # ---- tables (markdown) to stdout
 def f(v, d=1): return "–" if v is None else (f"{v:+.{d}f}" if isinstance(v, float) and False else f"{v:.{d}f}")
