@@ -1,0 +1,639 @@
+{
+ "task": "desc",
+ "desc": {
+  "check": {
+   "R49": {
+    "progressor_patients_caught": 31.1,
+    "non_progressor_patients_ever_flagged": 31.8,
+    "samples_sequenced_per_patient": 1.94,
+    "endoscopy_sensitivity": 0.907,
+    "endoscopy_specificity": 0.56,
+    "dNP_vs_R49": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "dP_vs_R49": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "dNP_vs_P1": {
+     "delta": -4.2,
+     "ci95": [
+      -7.358,
+      -1.2
+     ],
+     "p_two_sided": 0.009
+    },
+    "dP_vs_P1": {
+     "delta": 0.0,
+     "ci95": [
+      -1.506,
+      1.883
+     ],
+     "p_two_sided": 0.959
+    }
+   },
+   "P1_90": {
+    "progressor_patients_caught": 31.1,
+    "non_progressor_patients_ever_flagged": 36.0,
+    "samples_sequenced_per_patient": 0.0,
+    "endoscopy_sensitivity": 0.898,
+    "endoscopy_specificity": 0.524,
+    "dNP_vs_R49": {
+     "delta": 4.2,
+     "ci95": [
+      1.2,
+      7.358
+     ],
+     "p_two_sided": 0.009
+    },
+    "dP_vs_R49": {
+     "delta": 0.0,
+     "ci95": [
+      -1.883,
+      1.506
+     ],
+     "p_two_sided": 0.959
+    },
+    "dNP_vs_P1": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "dP_vs_P1": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    }
+   }
+  },
+  "features_top_sample_P1_flagged": {
+   "ps_fga05": {
+    "auroc_flagged_heldout": 0.6,
+    "ci95": [
+     0.511,
+     0.695
+    ],
+    "auroc_flagged_training_folds_mean": 0.592,
+    "median_progressor": 0.174,
+    "median_non_progressor": 0.128
+   },
+   "ps_fga10": {
+    "auroc_flagged_heldout": 0.612,
+    "ci95": [
+     0.527,
+     0.707
+    ],
+    "auroc_flagged_training_folds_mean": 0.609,
+    "median_progressor": 0.036,
+    "median_non_progressor": 0.026
+   },
+   "ps_fga15": {
+    "auroc_flagged_heldout": 0.639,
+    "ci95": [
+     0.561,
+     0.72
+    ],
+    "auroc_flagged_training_folds_mean": 0.63,
+    "median_progressor": 0.019,
+    "median_non_progressor": 0.017
+   },
+   "ps_narm05": {
+    "auroc_flagged_heldout": 0.593,
+    "ci95": [
+     0.493,
+     0.699
+    ],
+    "auroc_flagged_training_folds_mean": 0.595,
+    "median_progressor": 5.2,
+    "median_non_progressor": 5.0
+   },
+   "ps_narm10": {
+    "auroc_flagged_heldout": 0.564,
+    "ci95": [
+     0.477,
+     0.656
+    ],
+    "auroc_flagged_training_folds_mean": 0.564,
+    "median_progressor": 1.0,
+    "median_non_progressor": 1.0
+   },
+   "ps_armabs": {
+    "auroc_flagged_heldout": 0.626,
+    "ci95": [
+     0.525,
+     0.732
+    ],
+    "auroc_flagged_training_folds_mean": 0.629,
+    "median_progressor": 0.968,
+    "median_non_progressor": 0.859
+   },
+   "ps_oac": {
+    "auroc_flagged_heldout": 0.678,
+    "ci95": [
+     0.592,
+     0.761
+    ],
+    "auroc_flagged_training_folds_mean": 0.687,
+    "median_progressor": 0.099,
+    "median_non_progressor": 0.069
+   },
+   "ps_focal10": {
+    "auroc_flagged_heldout": 0.566,
+    "ci95": [
+     0.472,
+     0.665
+    ],
+    "auroc_flagged_training_folds_mean": 0.558,
+    "median_progressor": 26.85,
+    "median_non_progressor": 24.9
+   },
+   "ps_maxdev": {
+    "auroc_flagged_heldout": 0.486,
+    "ci95": [
+     0.385,
+     0.595
+    ],
+    "auroc_flagged_training_folds_mean": 0.493,
+    "median_progressor": 0.852,
+    "median_non_progressor": 0.852
+   },
+   "ps_sd": {
+    "auroc_flagged_heldout": 0.609,
+    "ci95": [
+     0.516,
+     0.709
+    ],
+    "auroc_flagged_training_folds_mean": 0.602,
+    "median_progressor": 0.082,
+    "median_non_progressor": 0.079
+   },
+   "ps_cx": {
+    "auroc_flagged_heldout": 0.478,
+    "ci95": [
+     0.395,
+     0.557
+    ],
+    "auroc_flagged_training_folds_mean": 0.499,
+    "median_progressor": 25.05,
+    "median_non_progressor": 25.65
+   },
+   "jt_fga05": {
+    "auroc_flagged_heldout": 0.586,
+    "ci95": [
+     0.496,
+     0.684
+    ],
+    "auroc_flagged_training_folds_mean": 0.579,
+    "median_progressor": 0.158,
+    "median_non_progressor": 0.116
+   },
+   "jt_fga10": {
+    "auroc_flagged_heldout": 0.597,
+    "ci95": [
+     0.51,
+     0.695
+    ],
+    "auroc_flagged_training_folds_mean": 0.597,
+    "median_progressor": 0.036,
+    "median_non_progressor": 0.024
+   },
+   "jt_fga15": {
+    "auroc_flagged_heldout": 0.591,
+    "ci95": [
+     0.498,
+     0.692
+    ],
+    "auroc_flagged_training_folds_mean": 0.591,
+    "median_progressor": 0.017,
+    "median_non_progressor": 0.015
+   },
+   "jt_narm05": {
+    "auroc_flagged_heldout": 0.632,
+    "ci95": [
+     0.544,
+     0.727
+    ],
+    "auroc_flagged_training_folds_mean": 0.634,
+    "median_progressor": 5.1,
+    "median_non_progressor": 5.0
+   },
+   "jt_narm10": {
+    "auroc_flagged_heldout": 0.547,
+    "ci95": [
+     0.45,
+     0.651
+    ],
+    "auroc_flagged_training_folds_mean": 0.556,
+    "median_progressor": 1.0,
+    "median_non_progressor": 1.0
+   },
+   "jt_armabs": {
+    "auroc_flagged_heldout": 0.636,
+    "ci95": [
+     0.536,
+     0.741
+    ],
+    "auroc_flagged_training_folds_mean": 0.64,
+    "median_progressor": 0.952,
+    "median_non_progressor": 0.828
+   },
+   "jt_oac": {
+    "auroc_flagged_heldout": 0.694,
+    "ci95": [
+     0.606,
+     0.777
+    ],
+    "auroc_flagged_training_folds_mean": 0.7,
+    "median_progressor": 0.101,
+    "median_non_progressor": 0.065
+   },
+   "jt_focal10": {
+    "auroc_flagged_heldout": 0.513,
+    "ci95": [
+     0.414,
+     0.619
+    ],
+    "auroc_flagged_training_folds_mean": 0.51,
+    "median_progressor": 24.4,
+    "median_non_progressor": 24.0
+   },
+   "jt_cx": {
+    "auroc_flagged_heldout": 0.483,
+    "ci95": [
+     0.374,
+     0.582
+    ],
+    "auroc_flagged_training_folds_mean": 0.502,
+    "median_progressor": 23.95,
+    "median_non_progressor": 24.2
+   },
+   "th_cx": {
+    "auroc_flagged_heldout": 0.509,
+    "ci95": [
+     0.417,
+     0.59
+    ],
+    "auroc_flagged_training_folds_mean": 0.526,
+    "median_progressor": -0.198,
+    "median_non_progressor": -0.187
+   },
+   "th_narmz2": {
+    "auroc_flagged_heldout": 0.633,
+    "ci95": [
+     0.555,
+     0.713
+    ],
+    "auroc_flagged_training_folds_mean": 0.634,
+    "median_progressor": 0.0,
+    "median_non_progressor": 0.0
+   },
+   "th_armzabs": {
+    "auroc_flagged_heldout": 0.69,
+    "ci95": [
+     0.605,
+     0.772
+    ],
+    "auroc_flagged_training_folds_mean": 0.684,
+    "median_progressor": 21.15,
+    "median_non_progressor": 15.372
+   },
+   "th_ntilez2": {
+    "auroc_flagged_heldout": 0.749,
+    "ci95": [
+     0.678,
+     0.819
+    ],
+    "auroc_flagged_training_folds_mean": 0.731,
+    "median_progressor": 5.05,
+    "median_non_progressor": 0.0
+   },
+   "th_oacz": {
+    "auroc_flagged_heldout": 0.691,
+    "ci95": [
+     0.598,
+     0.776
+    ],
+    "auroc_flagged_training_folds_mean": 0.695,
+    "median_progressor": 1.254,
+    "median_non_progressor": 0.651
+   },
+   "jt_arm_17p": {
+    "auroc_flagged_heldout": 0.323,
+    "ci95": [
+     0.234,
+     0.417
+    ],
+    "auroc_flagged_training_folds_mean": 0.32,
+    "median_progressor": -0.032,
+    "median_non_progressor": -0.025
+   },
+   "jt_arm_9p": {
+    "auroc_flagged_heldout": 0.387,
+    "ci95": [
+     0.28,
+     0.49
+    ],
+    "auroc_flagged_training_folds_mean": 0.38,
+    "median_progressor": -0.014,
+    "median_non_progressor": -0.008
+   },
+   "jt_arm_18q": {
+    "auroc_flagged_heldout": 0.492,
+    "ci95": [
+     0.384,
+     0.608
+    ],
+    "auroc_flagged_training_folds_mean": 0.497,
+    "median_progressor": -0.011,
+    "median_non_progressor": -0.011
+   },
+   "jt_arm_5q": {
+    "auroc_flagged_heldout": 0.375,
+    "ci95": [
+     0.263,
+     0.502
+    ],
+    "auroc_flagged_training_folds_mean": 0.369,
+    "median_progressor": 0.003,
+    "median_non_progressor": 0.007
+   },
+   "jt_arm_4q": {
+    "auroc_flagged_heldout": 0.421,
+    "ci95": [
+     0.323,
+     0.529
+    ],
+    "auroc_flagged_training_folds_mean": 0.418,
+    "median_progressor": -0.002,
+    "median_non_progressor": 0.001
+   },
+   "jt_arm_13q": {
+    "auroc_flagged_heldout": 0.415,
+    "ci95": [
+     0.329,
+     0.499
+    ],
+    "auroc_flagged_training_folds_mean": 0.409,
+    "median_progressor": -0.01,
+    "median_non_progressor": -0.008
+   },
+   "jt_arm_3p": {
+    "auroc_flagged_heldout": 0.541,
+    "ci95": [
+     0.439,
+     0.648
+    ],
+    "auroc_flagged_training_folds_mean": 0.531,
+    "median_progressor": 0.0,
+    "median_non_progressor": -0.001
+   },
+   "jt_arm_8q": {
+    "auroc_flagged_heldout": 0.587,
+    "ci95": [
+     0.463,
+     0.699
+    ],
+    "auroc_flagged_training_folds_mean": 0.591,
+    "median_progressor": 0.001,
+    "median_non_progressor": -0.002
+   },
+   "jt_arm_7p": {
+    "auroc_flagged_heldout": 0.681,
+    "ci95": [
+     0.579,
+     0.765
+    ],
+    "auroc_flagged_training_folds_mean": 0.679,
+    "median_progressor": -0.003,
+    "median_non_progressor": -0.007
+   },
+   "jt_arm_20q": {
+    "auroc_flagged_heldout": 0.575,
+    "ci95": [
+     0.46,
+     0.688
+    ],
+    "auroc_flagged_training_folds_mean": 0.573,
+    "median_progressor": -0.007,
+    "median_non_progressor": -0.01
+   },
+   "ps_arm_17p": {
+    "auroc_flagged_heldout": 0.343,
+    "ci95": [
+     0.253,
+     0.434
+    ],
+    "auroc_flagged_training_folds_mean": 0.337,
+    "median_progressor": -0.033,
+    "median_non_progressor": -0.026
+   },
+   "ps_arm_9p": {
+    "auroc_flagged_heldout": 0.409,
+    "ci95": [
+     0.301,
+     0.515
+    ],
+    "auroc_flagged_training_folds_mean": 0.403,
+    "median_progressor": -0.012,
+    "median_non_progressor": -0.008
+   },
+   "ps_arm_18q": {
+    "auroc_flagged_heldout": 0.501,
+    "ci95": [
+     0.384,
+     0.622
+    ],
+    "auroc_flagged_training_folds_mean": 0.51,
+    "median_progressor": -0.011,
+    "median_non_progressor": -0.011
+   },
+   "ps_arm_5q": {
+    "auroc_flagged_heldout": 0.412,
+    "ci95": [
+     0.313,
+     0.527
+    ],
+    "auroc_flagged_training_folds_mean": 0.402,
+    "median_progressor": 0.005,
+    "median_non_progressor": 0.007
+   },
+   "ps_arm_4q": {
+    "auroc_flagged_heldout": 0.459,
+    "ci95": [
+     0.367,
+     0.565
+    ],
+    "auroc_flagged_training_folds_mean": 0.453,
+    "median_progressor": -0.0,
+    "median_non_progressor": 0.0
+   },
+   "ps_arm_13q": {
+    "auroc_flagged_heldout": 0.436,
+    "ci95": [
+     0.357,
+     0.514
+    ],
+    "auroc_flagged_training_folds_mean": 0.422,
+    "median_progressor": -0.01,
+    "median_non_progressor": -0.008
+   },
+   "ps_arm_3p": {
+    "auroc_flagged_heldout": 0.555,
+    "ci95": [
+     0.448,
+     0.665
+    ],
+    "auroc_flagged_training_folds_mean": 0.541,
+    "median_progressor": 0.0,
+    "median_non_progressor": -0.001
+   },
+   "ps_arm_8q": {
+    "auroc_flagged_heldout": 0.601,
+    "ci95": [
+     0.478,
+     0.71
+    ],
+    "auroc_flagged_training_folds_mean": 0.597,
+    "median_progressor": 0.002,
+    "median_non_progressor": -0.002
+   },
+   "ps_arm_7p": {
+    "auroc_flagged_heldout": 0.728,
+    "ci95": [
+     0.64,
+     0.802
+    ],
+    "auroc_flagged_training_folds_mean": 0.724,
+    "median_progressor": -0.003,
+    "median_non_progressor": -0.007
+   },
+   "ps_arm_20q": {
+    "auroc_flagged_heldout": 0.572,
+    "ci95": [
+     0.461,
+     0.676
+    ],
+    "auroc_flagged_training_folds_mean": 0.575,
+    "median_progressor": -0.006,
+    "median_non_progressor": -0.009
+   },
+   "mapd": {
+    "auroc_flagged_heldout": 0.524,
+    "ci95": [
+     0.403,
+     0.636
+    ],
+    "auroc_flagged_training_folds_mean": 0.514,
+    "median_progressor": 0.105,
+    "median_non_progressor": 0.1
+   },
+   "reads": {
+    "auroc_flagged_heldout": 0.518,
+    "ci95": [
+     0.414,
+     0.625
+    ],
+    "auroc_flagged_training_folds_mean": 0.528,
+    "median_progressor": 21191302.3,
+    "median_non_progressor": 20618846.85
+   },
+   "cellularity": {
+    "auroc_flagged_heldout": 0.644,
+    "ci95": [
+     0.279,
+     0.901
+    ],
+    "auroc_flagged_training_folds_mean": 0.614,
+    "median_progressor": 50.0,
+    "median_non_progressor": 34.5
+   },
+   "L-CNV": {
+    "auroc_flagged_heldout": 0.769,
+    "ci95": [
+     0.684,
+     0.844
+    ],
+    "auroc_flagged_training_folds_mean": 0.717,
+    "median_progressor": 0.257,
+    "median_non_progressor": -1.436
+   },
+   "L-IMG": {
+    "auroc_flagged_heldout": 0.751,
+    "ci95": [
+     0.675,
+     0.825
+    ],
+    "auroc_flagged_training_folds_mean": 0.727,
+    "median_progressor": 1.831,
+    "median_non_progressor": -0.069
+   },
+   "L-LATE": {
+    "auroc_flagged_heldout": 0.821,
+    "ci95": [
+     0.747,
+     0.884
+    ],
+    "auroc_flagged_training_folds_mean": 0.787,
+    "median_progressor": 0.589,
+    "median_non_progressor": -0.564
+   }
+  },
+  "n_flagged_endoscopies_mean": {
+   "progressor": 79.0,
+   "non_progressor": 95.1
+  },
+  "auroc_R49_high_band_top_sample": {
+   "ps_fga10": 0.622,
+   "ps_narm05": 0.597,
+   "ps_oac": 0.696,
+   "jt_fga10": 0.611,
+   "th_cx": 0.517,
+   "L-CNV": 0.739
+  },
+  "n_R49_high_band_mean": {
+   "progressor": 55.8,
+   "non_progressor": 34.9
+  },
+  "fp_independence": {
+   "non_progressor_endoscopies": {
+    "both": 64.4,
+    "H&E only": 30.7,
+    "CN only": 56.2,
+    "neither": 48.7,
+    "expected_both_if_independent": 57.35,
+    "phi": 0.144
+   },
+   "progressor_endoscopies": {
+    "both": 71.9,
+    "H&E only": 7.1,
+    "CN only": 8.6,
+    "neither": 0.4,
+    "expected_both_if_independent": 72.27,
+    "phi": -0.049
+   }
+  },
+  "corr_max_logit_img_cnv_np_endoscopies": 0.244,
+  "fp_independence_patients": {
+   "both": 30.0,
+   "H&E only": 6.0,
+   "CN only": 5.0,
+   "neither": 2.0
+  },
+  "note": "held-out P1 (90% training endoscopy sensitivity) flagged endoscopies; feature of the top-H&E sample (outer L-IMG); AUROC progressor vs non-progressor endoscopy pooled over folds within a repeat, mean over repeats; CI from patient-bootstrap multiplicity weights (RandomState(0)); training view = mean over the 100 outer folds of the AUROC among the fold's training endoscopies H&E flags by inner out-of-fold L-IMG; predictions as logits; ps_ = per-sample segmentation (R36), jt_ = joint per-patient segmentation as stored, th_ = shipped block (cnv_their_C.csv); deviations relative to the sample's median 5-Mb tile"
+ }
+}

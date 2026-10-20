@@ -1,0 +1,13 @@
+{
+ "task": "feat",
+ "feat": {
+  "jt_qc_pass": 666,
+  "ps_qc_pass": 667,
+  "mapd_missing": 0,
+  "batch_missing": 0,
+  "reads_missing": 5,
+  "cellularity_missing": 541,
+  "n": 676,
+  "n_features": 143
+ }
+}

@@ -1,0 +1,76 @@
+{
+ "task": "decomp",
+ "decomp": {
+  "R49_np_patients_flag_source": {
+   "high band only": 6.1,
+   "middle band only": 9.0,
+   "both": 16.7
+  },
+  "R49_progressor_patients_flag_source": {
+   "high band only": 16.2,
+   "middle band only": 3.5,
+   "both": 11.4
+  },
+  "R49_flagged_np_endoscopies": {
+   "high band": 34.9,
+   "middle band called": 53.1,
+   "middle band sequenced": 115.9
+  },
+  "R49hm veto L-LATE k1 strict": {
+   "np_patients_cleared_mean": 3.6,
+   "progressor_patients_lost_mean": 0.3,
+   "np_cleared_highest_grade_NDBE": "<5",
+   "np_flagged_by_R49_highest_grade_NDBE": 10.9,
+   "np_cleared_highest_grade_ID": "<5",
+   "np_flagged_by_R49_highest_grade_ID": 7,
+   "np_cleared_highest_grade_LGD": "<5",
+   "np_flagged_by_R49_highest_grade_LGD": 13.9,
+   "vetoed_progressor_endoscopies_mean": 5.2,
+   "vetoed_progressor_endoscopy_years_to_event_median": 5.46,
+   "kept_progressor_endoscopy_years_to_event_median": 3.0,
+   "vetoed_np_endoscopies_mean": 22.1
+  },
+  "R49hm veto L-LATE k1 loss1": {
+   "np_patients_cleared_mean": 7.5,
+   "progressor_patients_lost_mean": 0.6,
+   "np_cleared_highest_grade_NDBE": "<5",
+   "np_flagged_by_R49_highest_grade_NDBE": 10.9,
+   "np_cleared_highest_grade_ID": "<5",
+   "np_flagged_by_R49_highest_grade_ID": 7,
+   "np_cleared_highest_grade_LGD": "<5",
+   "np_flagged_by_R49_highest_grade_LGD": 13.9,
+   "vetoed_progressor_endoscopies_mean": 8.9,
+   "vetoed_progressor_endoscopy_years_to_event_median": 4.75,
+   "kept_progressor_endoscopy_years_to_event_median": 3.0,
+   "vetoed_np_endoscopies_mean": 38.8
+  },
+  "R49hm veto ps_oac k2 cn90": {
+   "np_patients_cleared_mean": 5.2,
+   "progressor_patients_lost_mean": 0.0,
+   "np_cleared_highest_grade_NDBE": "<5",
+   "np_flagged_by_R49_highest_grade_NDBE": 10.9,
+   "np_cleared_highest_grade_ID": "<5",
+   "np_flagged_by_R49_highest_grade_ID": 7,
+   "np_cleared_highest_grade_LGD": "<5",
+   "np_flagged_by_R49_highest_grade_LGD": 13.9,
+   "vetoed_progressor_endoscopies_mean": 8.3,
+   "vetoed_progressor_endoscopy_years_to_event_median": 4.46,
+   "kept_progressor_endoscopy_years_to_event_median": 3.13,
+   "vetoed_np_endoscopies_mean": 29.1
+  },
+  "R49hm veto L-CNV k1 strict": {
+   "np_patients_cleared_mean": 3.6,
+   "progressor_patients_lost_mean": 0.5,
+   "np_cleared_highest_grade_NDBE": "<5",
+   "np_flagged_by_R49_highest_grade_NDBE": 10.9,
+   "np_cleared_highest_grade_ID": "<5",
+   "np_flagged_by_R49_highest_grade_ID": 7,
+   "np_cleared_highest_grade_LGD": "<5",
+   "np_flagged_by_R49_highest_grade_LGD": 13.9,
+   "vetoed_progressor_endoscopies_mean": 3.4,
+   "vetoed_progressor_endoscopy_years_to_event_median": 3.09,
+   "kept_progressor_endoscopy_years_to_event_median": 3.4,
+   "vetoed_np_endoscopies_mean": 10.8
+  }
+ }
+}
