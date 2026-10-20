@@ -33,7 +33,7 @@ def statics(S):
     ST = dict(IDX=IDX, MSK=IDX >= 0, PADI=PADI, PADS=np.where(VAL, PADI, 0), VAL=VAL, TY=TY, W=W,
               DYS=np.array([dys[s].any() for s in es]).astype(float), AGE=np.array([SM.age.values[s].mean() for s in es]), SEX=np.array([SM.sex_M.values[s].mean() for s in es]),
               P53AV=np.array([hasp[s].any() for s in es]), P53AB=np.array([ab[s].any() for s in es]), PF=np.stack([S["EF"][o[0]] for o in ORD]), EW={})
-    for h in (1, 2, 4):
+    for h in (0.5, 1, 2, 4, 8, 16):
         d = TY[:, :, None] - TY[:, None, :]; low = np.tril(np.ones((W, W), bool))[None] & VAL[:, None, :] & VAL[:, :, None]; ST["EW"][h] = np.where(low, 0.5 ** (np.maximum(d, 0) / h), 0.0)
     return ST
 def to_mat(ST, s): return np.where(ST["VAL"], s[ST["PADS"]], np.nan)
@@ -134,6 +134,8 @@ def base(c, name):
     if name == "img": return ef["zi"], z
     if name == "img_mean": return ef["zmean"], z
     if name == "img_top2": return ef["ztop2"], z
+    if name == "conf_al":   # sequence every endoscopy at or above t_low; score 0 = the gate's own flag boundary (L-LATE >= t_seq), below t_low: negative, ordered by L-IMG
+        tl, cs, ts = c.cuts; mid = ef["pi"] >= tl; return np.where(mid, ef["zl_top"] - lg(ts), -1.0 - (lg(tl) - ef["zi"])), mid.astype(int)
     if name == "late_max": return ef["zl_max"], c.nsz.copy()
     if name == "gate_lit": return gate_scores(c)[0], c.r49_ns
     if name == "gate_al": return gate_scores(c)[1], c.r49_ns
@@ -146,6 +148,8 @@ def mem_cands(c, s, ns, mf, bname):
     elif mf == "mean": L.append(sc("mean", {}, memory(c.ST, s, "mean"), ns))
     elif mf == "ew":
         for h in (1, 2, 4): L.append(sc(f"ew h={h}y", {"h": h}, memory(c.ST, s, "ew", h), ns))
+    elif mf == "ew_ext":
+        for h in (0.5, 8, 16): L.append(sc(f"ew h={h}y", {"h": h}, memory(c.ST, s, "ew", h), ns))
     elif mf == "last2": L.append(sc("mean of last 2", {}, memory(c.ST, s, "last2"), ns))
     elif mf == "pers":
         for nm, th in ths: L.append(sc(f"consecutive-2 or t_high={nm}", {"t_high": nm}, memory(c.ST, s, "pers_cons2", th), ns))
@@ -225,6 +229,21 @@ def f_B2A2(c):
             for dl in (0.5, 1.0):
                 for Y in (2, 4): L.append(sc(f"B1 + ew h={h}y, t_quiet=p{tq}, +{dl} logit, Y={Y}y", {"h": h, "t_quiet_pct": tq, "delta": dl, "Y": Y}, u - dl * cert_flags(ST, qual, Y), ns))
     return L
+def f_A12p(c):
+    """A1 + p53: EW memory of the gate-aligned score with a p53-normal certificate (score shifted down by delta for Y years after an endoscopy with a normal p53 result)"""
+    ef, ST = c.ef, c.ST; s, ns = base(c, "gate_al"); qual = ST["P53AV"] & ~ST["P53AB"]; L = []
+    for h in (1, 2, 4):
+        u = memory(ST, s, "ew", h)
+        for dl in (0.5, 1.0):
+            for Y in (2, 4): L.append(sc(f"ew h={h}y, p53-normal certificate, +{dl} logit, Y={Y}y", {"h": h, "delta": dl, "Y": Y}, u - dl * cert_flags(ST, qual, Y), ns))
+    return L
+def f_A4(c):
+    """A4: confirm the high band by sequencing (literature idea 3): no outright slide-only flag; every endoscopy at or above t_low has its top sample sequenced and is flagged if L-LATE >= t_seq"""
+    L = []
+    for ql in (0.90, 0.95, 0.98):
+        for qs in (0.70, 0.80, 0.90):
+            tl, cs, ts = cuts_sample(c, ql, 0.90, qs); fl, ns, _ = gate(c.ef["pi"], c.ef["pl_top"], (tl, np.inf, ts)); L.append(gc(f"t_low {int(ql * 100)}%, t_seq {int(qs * 100)}%", {"ql": ql, "qs": qs}, fl, ns))
+    return L
 def f_R49x(c):
     return [gc("R49 gate rebuilt on this L-IMG (nominal cut-off rules)", {}, c.r49_flag, c.r49_ns)]
 def load_refit_var(var):
@@ -243,10 +262,13 @@ for _b in ("img", "gate_lit", "gate_al", "b1_al"):
 for _b in ("img_mean", "img_top2"):
     for _m in ("none", "mean", "ew"): FAMS[f"G:{_b}:{_m}"] = f_score(_b, _m)
 for _m in ("none", "mean", "ew"): FAMS[f"G:late_max:{_m}"] = f_score("late_max", _m)
+for _m in ("none", "mean", "ew"): FAMS[f"A4:conf_al:{_m}"] = f_score("conf_al", _m)
+FAMS["A1:gate_al:ew_ext"] = f_score("gate_al", "ew_ext")
+FAMS.update({"A12p": f_A12p, "A4": f_A4})
 FAMS.update({"A2:cn": f_A2("cn"), "A2:p53": f_A2("p53"), "A3": f_A3, "B3": f_B3, "C1": f_C1, "B1:full": f_B1("full"), "B1:img": f_B1("img"), "B1:p53": f_B1("p53"), "A12": f_A12, "B2A2": f_B2A2})
 GROUPS = {"A1img": [f for f in FAMS if f.startswith("A1:img:")], "A1gl": [f for f in FAMS if f.startswith("A1:gate_lit:")], "A1ga": [f for f in FAMS if f.startswith("A1:gate_al:")],
           "B2": [f for f in FAMS if f.startswith("A1:b1_al:")], "G": [f for f in FAMS if f.startswith("G:")], "A2": ["A2:cn", "A2:p53"], "A3": ["A3"], "B3": ["B3"], "C1": ["C1"],
-          "B1": ["B1:full", "B1:img", "B1:p53"], "A12": ["A12", "B2A2"]}
+          "B1": ["B1:full", "B1:img", "B1:p53"], "A12": ["A12", "B2A2"], "X": ["A1:gate_al:ew_ext", "A12p", "A4", "A4:conf_al:none", "A4:conf_al:mean", "A4:conf_al:ew"]}
 # ================================================================== the nested engine
 def run_families(S, ST, fams, INFO, builders=None, cols=None):
     """for every outer (repeat, fold): build every family's candidates on the fold, choose the operating threshold / candidate on the training patients, apply to the held-out patients"""
@@ -314,17 +336,17 @@ elif TASK == "check_r49":   # smoke: engine R49 == r49_calls on held-out endosco
     print(json.dumps(res["check"], indent=1)); dump9(res, "check_r49" + ("_smoke" if SMOKE else ""))
 # ------------------------------------------------------------------ merge helpers
 import glob
-BN = {"img": "H&E alone (max L-IMG)", "gate_lit": "gate score, literal", "gate_al": "gate score, R49-aligned", "b1_al": "stacked B1 gate score, aligned", "img_mean": "H&E mean over samples", "img_top2": "H&E mean of top-2 samples", "late_max": "max L-LATE (sequence all samples)"}
+BN = {"conf_al": "gate with the high band also sequenced (score 0 = flag boundary)", "img": "H&E alone (max L-IMG)", "gate_lit": "gate score, literal", "gate_al": "gate score, R49-aligned", "b1_al": "stacked B1 gate score, aligned", "img_mean": "H&E mean over samples", "img_top2": "H&E mean of top-2 samples", "late_max": "max L-LATE (sequence all samples)"}
 MN = {"none": "threshold only", "mean": "running mean", "ew": "exponentially weighted mean", "last2": "mean of last 2", "pers": "consecutive-2 or t_high", "k2any": "2-of-n anywhere", "k2of3": "2-of-last-3",
       "cons2": "consecutive-2", "k2any_o": "2-of-n anywhere or t_high", "k2of3_o": "2-of-last-3 or t_high", "recal": "change from own mean"}
 PRET = {"A2:cn": "A2 copy-number certificate (gate)", "A2:p53": "A2' p53-normal certificate (gate)", "A3": "A3 agreement within endoscopy", "B3": "B3 abstention in middle band", "C1": "control: R49 with cut-offs re-tuned by the round-9 rule",
         "B1:full": "B1 stacked gate (L-IMG, grade, age, sex; + L-CNV in middle band)", "B1:img": "B1-img control: stacked gate on L-IMG only (endoscopy-level cut-offs)", "B1:p53": "B1 + p53 (aberrant, missing)",
-        "A12": "A1+A2: EW memory of gate score + copy-number certificate", "B2A2": "B1+A1+A2: stacked gate + EW memory + copy-number certificate", "R49x": "R49 rebuilt on refitted L-IMG"}
+        "A12p": "A1+A2': EW memory of gate score + p53-normal certificate", "A4": "A4 confirm the high band by sequencing (no outright slide-only flag)", "A12": "A1+A2: EW memory of gate score + copy-number certificate", "B2A2": "B1+A1+A2: stacked gate + EW memory + copy-number certificate", "R49x": "R49 rebuilt on refitted L-IMG"}
 def pretty(f):
     if f in PRET: return PRET[f]
     if f.startswith("B4"): return {"B4a": "B4(a) refit, non-progressor weight 2", "B4b": "B4(b) refit, NDBE samples only"}[f[:3]] + (", R49 rules rebuilt" if f.endswith("R49x") else ", cut-offs re-tuned by the round-9 rule")
-    p = f.split(":"); return f"{'A1' if p[0] == 'A1' else 'Sample aggregation'} | {BN[p[1]]} | {MN[p[2]]}"
-def is_control(f): return f == "C1" or f == "B1:img" or f.startswith("A1:") and f.endswith(":none") or f.startswith("G:") and f.endswith(":none") or f == "R49x"
+    p = f.split(":"); return f"{ {'A1': 'A1', 'A4': 'A4 confirm-by-sequencing'}.get(p[0], 'Sample aggregation') } | {BN[p[1]]} | {MN.get(p[2], 'exponentially weighted, longer half-lives (0.5, 8, 16 y)')}"
+def is_control(f): return f in ("C1", "B1:img", "R49x") or f.endswith(":none")
 def load_groups(names=None):
     G = {}
     for p in sorted(glob.glob(R9 + "/grp_*.json")):
@@ -480,15 +502,40 @@ if TASK == "curves":
     res["curves"] = {"best_memory_rule": best["name"], "curves": out, "delta_np_share_vs_R49_all_patients": dlt, "note": "share of patients flagged at >= 1 of their first k pre-event endoscopies (patients with fewer than k endoscopies contribute all of theirs; "
                      "'restricted' keeps only patients with >= k endoscopies, the matched first-k window); held-out predictions, 10-repeat mean; patient bootstrap CIs; groups < 5 patients '<5'"}; dump9(res)
 # ================================================================== robustness rows of the top-3 methods
+def use_set9(V):
+    """rv7_round7.py use_set (unchanged in substance): rebind the sample-level globals of tb_common and of this module to a variant set"""
+    g = {"n": len(V), "ids": V.Sample.values.astype(str), "y": V.y.values.astype(int), "pat": V.Patient.values.astype(str), "PRE": V.pre.astype(str).eq("True").values, "NDBE": V.ndbe.astype(str).eq("True").values}
+    g["ix"] = pd.Series(np.arange(g["n"]), index=g["ids"]); g["ENDO"] = (pd.Series(g["pat"]) + "|" + V.Endoscopy.astype(str).values).values
+    for k_, v_ in g.items(): setattr(TC, k_, v_); globals()[k_] = v_
+def load_r52a():
+    """rv7c_gate_rob.py load_var for the round-7 refit r52a (+ same-block samples): refit outer and inner predictions of both models"""
+    D_ = M + "/review_round7/refit/r52a"; f = lambda p_, k_: (sorted(glob.glob(f"{D_}/{p_}")), k_)
+    def need_(t): assert len(t[0]) == t[1], (len(t[0]), t[1]); return t[0]
+    oc, oi = need_(f("outer_cnv_their_rep_*.csv", 10)), need_(f("outer_img_rep_*.csv", 10)); ic, ii = need_(f("inner_cnv_their_rep_*_fold_*.csv", 100)), need_(f("inner_img_rep_*_fold_*.csv", 100)); O, I = {}, {}
+    O["L-CNV"], FO = TC._outer(oc); O["L-IMG"], F2 = TC._outer(oi); assert (FO == F2).all(); O["L-LATE"] = (O["L-CNV"] + O["L-IMG"]) / 2
+    I["L-CNV"] = TC._inner(ic); I["L-IMG"] = TC._inner(ii); I["L-LATE"] = {k_: (I["L-CNV"][k_] + I["L-IMG"][k_].reindex(I["L-CNV"][k_].index)) / 2 for k_ in I["L-CNV"]}; return O, I, FO
+def sm_variant(V):
+    """samples table of the variant set: stored rows unchanged, added rows get their patient's event, age (via months before final) and sex; p53 missing"""
+    base = SM.set_index("Sample"); assert (V.Sample.values[:len(SM)] == SM.Sample.values).all(); cols = list(SM.columns); out = []
+    for r_ in V.itertuples():
+        if r_.Sample in base.index: out.append(base.loc[r_.Sample].to_dict() | {"Sample": r_.Sample}); continue
+        pr = SM[SM.Patient == r_.Patient]; d = {c_: np.nan for c_ in cols}
+        if len(pr): afin = (pr.age + pr.mbf / 12).mean(); extra = {"study_number": pr.study_number.iloc[0], "Status": pr.Status.iloc[0], "tev": pr.tev.iloc[0], "fallback_endpoint": pr.fallback_endpoint.iloc[0], "event": pr.event.iloc[0], "age": afin - float(r_.mbf) / 12, "sex_M": pr.sex_M.iloc[0]}
+        else: extra = {"study_number": "new_" + r_.Patient, "Status": "P" if int(r_.y) else "NP", "tev": 0.0, "fallback_endpoint": False, "event": 1, "age": float(SM.age.mean()), "sex_M": float(SM.sex_M.mean())}   # patients added by R52: event endoscopy (months before final 0) as event; age / sex are cohort means (used only by stacked B1 rows, not run here)
+        d.update({"Sample": r_.Sample, "Patient": r_.Patient, "y": int(r_.y), "Pathology": r_.Pathology, "mbf": float(r_.mbf), "pre": r_.pre == "True", "ndbe": r_.ndbe == "True", "time": float(r_.time), **extra}); out.append(d)
+    return pd.DataFrame(out)[cols]
 ROWS = {"ndbe": "pre-event NDBE samples only (cut-offs and comparators re-chosen on NDBE training samples; round-7c row)", "ge2": "endoscopies with >= 2 pre-event samples (cut-offs re-chosen on them; round-7c row)",
         "tis_lt256": "< 256 tissue tiles (endoscopy by its top-L-IMG sample)", "tis_ge256": ">= 256 tissue tiles (endoscopy by its top-L-IMG sample)",
-        "tis_lt256pure": "< 256 tissue tiles (all samples of the endoscopy in the stratum)", "tis_ge256pure": ">= 256 tissue tiles (all samples of the endoscopy in the stratum)"}
+        "r52a": "R52(a): + 17 same-block samples, refit (round-7 refit predictions, all cut-offs and rules re-derived)", "tis_lt256pure": "< 256 tissue tiles (all samples of the endoscopy in the stratum)", "tis_ge256pure": ">= 256 tissue tiles (all samples of the endoscopy in the stratum)"}
 if TASK.startswith("rob_"):
     row = TASK[4:]; top = json.load(open(f"{OUT}/merge.json"))["merge"]["top3_families"]; top_extra = [x for x in os.environ.get("RV9_EXTRA", "").split(",") if x]; fams = list(dict.fromkeys(top + top_extra)); em = None; Gm = None
     if row in ("ndbe", "ge2"):
         if row == "ndbe": PRE = PRE & NDBE
         else: cnt = pd.Series(ENDO[PRE]).value_counts(); PRE = PRE & (pd.Series(ENDO).map(cnt).fillna(0).values >= 2)
         S, ST, INFO = prep_state(); R = run_families(S, ST, fams, INFO); Gm = {f: (R[f]["sel"]["np"][0], R[f]["sel"]["np"][1]) for f in fams}; RF = refs(S)
+    elif row == "r52a":
+        V = pd.read_csv(M + "/review_round7/sets/r52a.csv", dtype={"Sample": str, "Patient": str, "Endoscopy": str}); SM = sm_variant(V); use_set9(V); load = lambda src: load_r52a(); S, ST, INFO = prep_state(); R = run_families(S, ST, fams, INFO)
+        Gm = {f: (R[f]["sel"]["np"][0], R[f]["sel"]["np"][1]) for f in fams}; RF = refs(S)
     else:
         S, ST, INFO = prep_state(); RF = refs(S); G = load_groups(); Gm = {f: (G[f]["z"][G[f]["meta"]["key"] + "__sel_np_F"], G[f]["z"][G[f]["meta"]["key"] + "__sel_np_NS"]) for f in fams}
         TILES = pd.read_csv(HZ + "/slide_desc.csv", dtype={"Sample": str}).set_index("Sample").reindex(ids).tissue_tiles.values.astype(float); lt = "lt" in row; st = (TILES < 256) if lt else (TILES >= 256); mimg = S["O"]["L-IMG"].mean(1)
@@ -498,3 +545,11 @@ if TASK.startswith("rob_"):
         F, NSr = Gm[f]; A, dr, ob, po, pb = evalm(F, NSr, em); out[pretty(f)] = {"family": f, "values": {k: r3(v) for k, v in ob.items()}, "vs_R49": contrast(ob, dr, REF["R49"][2], REF["R49"][1]), "vs_P1_90": contrast(ob, dr, REF["P1 90%"][2], REF["P1 90%"][1])}
     pop = {"endoscopies": int(S["E"] if em is None else em.sum()), "progressor_patients": nPp, "non_progressor_patients": nNp}
     res["ROB"] = {"row": row, "definition": ROWS[row], "population": pop, "families": fams, "results": out, "note": "same nested procedure in the row's own population (ndbe, ge2: all training-patient choices redone; tissue rows: held-out calls of the main run, evaluation restricted); R49 and P1 90% re-derived in the row"}; dump9(res)
+# ================================================================== refit reproduction check (rv9_refit.R, weights 1, all rows, against the stored predictions)
+if TASK == "refit_check":
+    D_ = M + "/review_round9/refit/b4w1"; o = pd.read_csv(D_ + "/outer_img_rep_01.csv", dtype={"Sample": str}); so = pd.read_csv(M + "/cv/preds/cfg_02_rep_01.csv", dtype={"Sample": str}); mo = o.merge(so, on="Sample"); assert len(mo) == len(o) == len(so)
+    i = pd.read_csv(D_ + "/inner_img_rep_01_fold_01.csv", dtype={"Sample": str}); si = pd.read_csv(HZ + "/inner/img_rep_01_fold_01.csv", dtype={"Sample": str}); mi = i.merge(si, on=["Sample", "inner_fold"]); assert len(mi) == len(i) == len(si)
+    res["refit_check"] = {"outer_rep_01": {"n": int(len(mo)), "max_abs_pred_diff": float(np.abs(mo.pred_x - mo.pred_y).max()), "folds_equal": bool((mo.fold_x == mo.fold_y).all())},
+                          "inner_rep_01_fold_01": {"n": int(len(mi)), "max_abs_pred_diff": float(np.abs(mi.pred_x - mi.pred_y).max()), "max_abs_lambda_diff": float(np.abs(mi.lambda_x - mi.lambda_y).max())}}
+    res["refit_check"]["passed"] = bool(res["refit_check"]["outer_rep_01"]["max_abs_pred_diff"] <= 1e-5 and res["refit_check"]["outer_rep_01"]["folds_equal"] and res["refit_check"]["inner_rep_01_fold_01"]["max_abs_pred_diff"] <= 1e-5)
+    dump9(res)
