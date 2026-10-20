@@ -139,7 +139,9 @@ A high-band-only veto (R49h) can therefore clear at most about 6 patients. Vetoi
 | R49hm, trained models (L-CNV / L-LATE), loss ≤ 0 | 30.3 | 26.4 | 3.36 | 0.822 / 0.685 | -5.4 [-7.5, -3.4] | -0.8 [-1.6, -0.2] | -9.6 [-13.8, -5.6] | -0.8 [-2.7, +1.3] | +0.039 [-0.057, +0.154] |
 | R49hm, trained models, loss ≤ 1 | 30.2 | 22.9 | 3.36 | 0.778 / 0.753 | -8.9 [-11.7, -6.0] | -0.9 [-1.9, -0.2] | -13.1 [-17.6, -8.5] | -0.9 [-3.0, +1.2] | +0.063 [-0.028, +0.156] |
 | R49hm, quiet features, loss ≤ 0 (picks ps_oac k2 strict in 83 of 100 folds) | 29.1 | 22.9 | 4.29 | 0.688 / 0.759 | -8.9 [-12.9, -5.3] | -2.0 [-4.4, -0.5] | -13.1 [-17.9, -8.4] | -2.0 [-4.9, +0.6] | -0.014 [-0.140, +0.098] |
-| R49hm, all candidates, loss ≤ 0 | 29.2 | 22.7 | 4.08 | 0.694 / 0.767 | -9.1 [-12.5, -6.0] | -1.9 [-4.1, -0.5] | -13.3 [-17.7, -8.9] | -1.9 [-4.6, +0.6] | +0.000 [-0.110, +0.094] |
+| R49hm, all candidates (fixed, trained, gated, elastic net, double), loss ≤ 0 | 29.5 | 23.0 | 4.01 | 0.707 / 0.768 | -8.8 [-11.9, -5.8] | -1.6 [-3.6, -0.4] | -13.0 [-17.2, -8.9] | -1.6 [-4.2, +0.8] | +0.009 [-0.093, +0.102] |
+| R49hm, trained models with NDBE/ID gate, loss ≤ 0 | 30.5 | 26.6 | 2.95 | 0.809 / 0.690 | -5.2 [-7.4, -3.1] | -0.6 [-1.4, -0.1] | -9.4 [-13.5, -5.4] | -0.6 [-2.5, +1.4] | +0.033 [-0.059, +0.129] |
+| R49hm, double vetoes, loss ≤ 0 | 29.9 | 24.1 | 4.35 | 0.755 / 0.743 | -7.7 [-11.3, -4.5] | -1.2 [-3.3, +0.0] | -11.9 [-16.3, -7.6] | -1.2 [-3.9, +1.2] | +0.025 [-0.085, +0.147] |
 | R49h, trained models, loss ≤ 0 | 30.3 | 28.8 | 3.24 | 0.840 / 0.620 | -3.0 [-5.1, -1.4] | -0.8 [-2.1, +0.0] | -7.2 [-10.8, -3.4] | -0.8 [-2.9, +1.3] | +0.008 [-0.118, +0.134] |
 | P1, trained models, loss ≤ 0 | 29.9 | 28.5 | 2.57 | 0.820 / 0.690 | -3.3 [-4.9, -1.8] | -1.2 [-2.9, +0.0] | -7.5 [-10.7, -4.5] | -1.2 [-2.5, -0.3] | +0.037 [-0.027, +0.098] |
 | P1, quiet features, loss ≤ 0 | 29.7 | 25.9 | 3.56 | 0.680 / 0.762 | -5.9 [-11.3, -1.0] | -1.4 [-4.1, +0.7] | -10.1 [-14.7, -6.0] | -1.4 [-3.5, -0.1] | -0.023 [-0.142, +0.089] |
@@ -158,7 +160,19 @@ A high-band-only veto (R49h) can therefore clear at most about 6 patients. Vetoi
 
 **(c) One against two samples.** A second sample helps only the quietness scores (ps_oac R49hm: k1 cn90 −3.3 non-progressors at −1.2 caught; k2 cn90 −5.2 at 0.0). For the trained models it adds sequencing (3.15 → 4.35 samples per patient on R49hm) with no gain.
 
-**(d) Double veto** (`combo`). A flag is vetoed only if the profile is quiet AND the trained score is low. This reproduces the ps_oac k2 cn90 cell (−5.2, caught 31.1) and nothing better: the quiet gate binds, not the trained score.
+**(d) Double veto** (`combo`, 192 cells). A flag is vetoed only if both conditions hold:
+- the OAC-arm profile of the top two samples is quiet, below its copy-number-alone training threshold at 90% or 80%;
+- the top sample's L-LATE or L-CNV is below the rule's threshold.
+
+| Cell | Caught | Non-progressors flagged | Δ vs R49 | Samples per patient |
+|---|---|---|---|---|
+| quiet < 80%, L-LATE strict | 31.0 (Δ −0.1 [−0.3, 0.0]) | 24.3 | −7.5 [−11.5, −4.1] | 4.35 |
+| quiet < 80%, L-CNV strict | 31.0 | 24.6 | −7.2 | 4.35 |
+| quiet < 90% | 31.1 | 26.6 | −5.2 | 4.35 |
+
+At 90% this reproduces the ps_oac k2 cn90 cell. These are the best single cells of the exploration. **Selected per fold on training patients** (`sel_R49hm`, double-veto family, loss ≤ 0), they give 29.9 caught (Δ −1.2 [−3.3, 0.0]) and 24.1 non-progressors flagged (Δ −7.7 [−11.3, −4.5]). The no-loss single cells are therefore partly selection luck.
+
+**Why "no training loss" does not transfer.** The strict threshold is the minimum, over about 29 training progressor patients, of each patient's best veto score. A new progressor falls below that minimum with probability about 1/(n + 1) ≈ 1/30, so about 1 of 32 new progressors is expected to be lost. That is what the strict rules show (0.3–1.4 lost). No veto tuned on this cohort can be shown to lose nobody, and R49 itself misses 0.9.
 
 **(e) H&E AND copy number, every sample of an H&E-flagged endoscopy sequenced** (`and`). Max L-IMG ≥ P1 threshold AND max L-CNV ≥ P2 threshold:
 - 90% / 90%: 30.1 caught, 27.7 non-progressors flagged, 4.88 samples sequenced per patient; Δ vs R49 −4.1 [−7.3, −1.1] non-progressors, −1.0 [−2.8, +0.3] caught.
@@ -174,6 +188,11 @@ These are the same trade-off as the top-sample vetoes, at more sequencing.
 - **Rules:** the first endoscopy keeps its flag. The baseline sample counts as sequenced once if not already sequenced.
 - **Results:** R49hm change strict 30.4 caught, 27.0 flagged (Δ vs R49 −4.8 [−7.6, −2.5] non-progressors, −0.7 [−1.4, −0.1] caught), 2.92 samples sequenced per patient. "New arms" strict: 30.7 / 28.6 (−3.2 / −0.4). cur_plus_change strict: 30.0 / 24.8 (−7.0 / −1.1).
 - **Interpretation:** stable non-progressor profiles exist, but no stability rule avoids progressor losses. The loss1 versions reach 19–21 non-progressors flagged at 29.3–29.6 caught, which is the lowest false-flag region seen, at a cost of about 1.5–2 progressors.
+
+**(g) Grade gate** (`grade`, added while running). Only endoscopies whose highest sample grade is NDBE (or NDBE/ID) can be vetoed and sequenced; dysplastic endoscopies keep the base call.
+- **Single cells.** R49hm L-LATE k1 strict, NDBE/ID only: 30.9 caught (Δ −0.2 [−0.5, 0.0]), 27.7 non-progressors flagged (Δ −4.1 [−5.8, −2.5]), 2.80 samples sequenced per patient. Ungated it is 30.8 / 28.2 / 3.15. With loss1: 30.4 / 24.4 / 2.80.
+- **Selected per fold** (trained models, NDBE/ID gate, loss ≤ 0): R49hm 30.5 caught (Δ −0.6 [−1.4, −0.1]), 26.6 flagged (Δ −5.2 [−7.4, −3.1]), 2.95 per patient. Gated or not, loss ≤ 0: 30.4 / 26.1 / 3.11 (Δ −5.7 [−7.9, −3.6], caught −0.7 [−1.5, −0.1]).
+- **Interpretation.** The gate saves sequencing and a little progressor loss. It does not remove the loss.
 
 ### 3. Copy-number drift in non-progressors: not batch, partly sample noise
 

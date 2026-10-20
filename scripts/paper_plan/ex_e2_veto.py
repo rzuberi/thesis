@@ -180,6 +180,14 @@ def wauc(x, lab, w):
 FIXED = ["ps_fga05", "ps_fga10", "ps_fga15", "ps_narm05", "ps_narm10", "ps_armabs", "ps_oac", "ps_focal10", "ps_maxdev", "ps_sd", "ps_cx",
          "jt_fga05", "jt_fga10", "jt_fga15", "jt_narm05", "jt_narm10", "jt_armabs", "jt_oac", "jt_focal10", "jt_cx",
          "th_cx", "th_narmz2", "th_armzabs", "th_ntilez2", "th_oacz"]
+def double_V(S, q, Om, Im, kq, qq):
+    """double veto scores: inf (never vetoed) when the k_q-sample quietness score q reaches its copy-number-alone training threshold (share qq of training
+    progressor endoscopies), else the top sample's trained score (Om (n,10) held-out; Im(j, k) -> (n,) inner)"""
+    Vq = vs_test(S, q, kq); Vm = vs_test(S, Om, 1); V = np.full((S["E"], 10), np.nan); vtr = {}; EF = S["EF"]
+    for (j, kk), tx in S["TRX"].items():
+        vq = vs_train(S, q, tx["top"], kq); t2 = thr_sens(vq[(tx["lab"] == 1) & np.isfinite(vq)], qq); vm = vs_train(S, Im(j, kk), tx["top"], 1)
+        vtr[(j, kk)] = np.where(vq >= t2, np.inf, vm); te = EF[:, j] == kk; V[te, j] = np.where(Vq[te, j] >= t2, np.inf, Vm[te, j])
+    return V, vtr
 res = {"task": TASK}
 # ================================================================== feat: per-sample copy-number features (row-level, cluster only)
 if TASK == "feat":
@@ -423,8 +431,22 @@ elif TASK.startswith("sel_"):
         for k in (1, 2):
             for rule in RULES:
                 TRAINSTATS = {}; F, NS, TH = run_veto(S, b, k, ft, fr, rule); CAND.append({"name": f"{f} k{k} {rule}", "grp": grp, "F": F, "NS": NS, "tr": TRAINSTATS})
+    GR = SM.Pathology.map({"NDBE": 0, "ID": 1, "LGD": 2, "HGD": 3, "IMC": 4}).values.astype(float); EG = np.array([GR[s_].max() for s_ in S["es"]])
+    vt = (EG <= 1)[:, None]; vtr_m = {kk: EG[tx["idx"]] <= 1 for kk, tx in S["TRX"].items()}
+    for m in ("L-CNV", "L-LATE"):
+        for k in (1, 2):
+            V = vs_test(S, O[m], k); vtr = {kk: vs_train(S, ftr_m(m)(*kk), tx["top"], k) for kk, tx in S["TRX"].items()}
+            for rule in RULES:
+                TRAINSTATS = {}; F, NS, TH = veto_V(S, b, V, vtr, rule, k, ve_test=vt, ve_train=vtr_m); CAND.append({"name": f"{m} k{k} {rule} (NDBE/ID only)", "grp": "model_gated", "F": F, "NS": NS, "tr": TRAINSTATS})
+    for m in ("L-LATE", "L-CNV"):
+        for qf in ("ps_oac", "jt_oac", "th_ntilez2", "jt_narm05"):
+            for qq in (0.90, 0.80):
+                V, vtr = double_V(S, FT[qf].values.astype(float), O[m], ftr_m(m), 2, qq)
+                for rule in ("strict", "loss1", "endo95"):
+                    TRAINSTATS = {}; F, NS, TH = veto_V(S, b, V, vtr, rule, 2); CAND.append({"name": f"{m} low AND {qf} quiet<{int(qq * 100)} kq2 {rule}", "grp": "double", "F": F, "NS": NS, "tr": TRAINSTATS})
     cells = []; E = S["E"]; EF = S["EF"]
-    for fam, grps in (("quiet features", ("quiet",)), ("trained models (L-CNV, L-LATE)", ("model",)), ("elastic-net vetoes", ("en",)), ("all", ("quiet", "model", "en"))):
+    for fam, grps in (("double vetoes (trained score low AND quiet)", ("double",)), ("quiet features", ("quiet",)), ("trained models (L-CNV, L-LATE)", ("model",)), ("trained models, veto only at NDBE/ID endoscopies", ("model_gated",)),
+                      ("trained models, gated or not", ("model", "model_gated")), ("elastic-net vetoes", ("en",)), ("all", ("quiet", "model", "model_gated", "en", "double"))):
         cs = [c for c in CAND if c["grp"] in grps]
         if not cs: continue
         for slack in (0, 1):
@@ -486,5 +508,20 @@ elif TASK == "and":
             Tc, _ = thr_arr(S, "cnv", qc); F = Fi & (X["cnv"] >= Tc); NS = np.where(Fi, S["nsz"][:, None], 0)
             cells.append(summarize(S, F, NS, f"AND: max L-IMG >= {int(qi * 100)}% and max L-CNV (all samples) >= {int(qc * 100)}%", {"base": "AND", "q_img": qi, "q_cnv": qc}))
     res["cells"] = cells; res["note"] = "endoscopy flagged if its max L-IMG reaches the P1 threshold at q_img AND its max L-CNV over all samples reaches the P2 threshold at q_cnv (both training endoscopy-sensitivity thresholds); every sample of an H&E-flagged endoscopy is sequenced"; dump(res)
+# ================================================================== grade: veto allowed only at endoscopies of low grade (dysplastic endoscopies keep their flag)
+elif TASK == "grade":
+    S = build(); FT = load_feat(); O, I = S["O"], S["I"]; cells = []
+    GR = SM.Pathology.map({"NDBE": 0, "ID": 1, "LGD": 2, "HGD": 3, "IMC": 4}).values.astype(float); EG = np.array([GR[s].max() for s in S["es"]])
+    def inner_of(m, j, kk): x = np.full(n, np.nan); s_ = I[m][(REPS[j], kk)]; x[s_.index.values] = s_.values; return x
+    for gname, gmax in (("NDBE only", 0), ("NDBE or ID", 1)):
+        vt = (EG <= gmax)[:, None]; vtr_m = {kk: EG[tx["idx"]] <= gmax for kk, tx in S["TRX"].items()}
+        for f, k in (("L-LATE", 1), ("L-CNV", 1), ("ps_oac", 2), ("jt_oac", 2)):
+            if f.startswith("L-"): V = vs_test(S, O[f], k); vtr = {kk: vs_train(S, inner_of(f, *kk), tx["top"], k) for kk, tx in S["TRX"].items()}
+            else: x = FT[f].values.astype(float); V = vs_test(S, x, k); vtr = {kk: vs_train(S, x, tx["top"], k) for kk, tx in S["TRX"].items()}
+            for b in ("P1", "R49hm"):
+                for rule in RULES:
+                    F, NS, TH = veto_V(S, b, V, vtr, rule, k, ve_test=vt, ve_train=vtr_m)
+                    cells.append(summarize(S, F, NS, f"{b} veto {f} k{k} {rule}, vetoable only at {gname} endoscopies", {"base": b, "feature": f, "k": k, "rule": rule, "grade_gate": gname}))
+    res["cells"] = cells; res["note"] = "as the fixed / trained vetoes, but only endoscopies whose highest sample grade is NDBE (or NDBE/ID) can be vetoed and sequenced for the veto; dysplastic endoscopies keep the base call"; dump(res)
 else:
     raise SystemExit(f"unknown TASK {TASK}")

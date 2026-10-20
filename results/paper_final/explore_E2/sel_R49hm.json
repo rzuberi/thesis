@@ -3,6 +3,393 @@
  "cells": [
   {
    "family": "E2",
+   "label": "R49hm veto selected per fold from double vetoes (trained score low AND quiet), training loss <= 0",
+   "params": {
+    "base": "R49hm",
+    "family": "double vetoes (trained score low AND quiet)",
+    "slack": 0
+   },
+   "n_progressor_patients": 32,
+   "n_non_progressor_patients": 43,
+   "folds_target_not_met": 0,
+   "progressor_patients_caught": 29.9,
+   "caught_share": 0.934,
+   "caught_share_ci95": [
+    0.857,
+    0.991
+   ],
+   "progressor_patients_missed": 2.1,
+   "non_progressor_patients_ever_flagged": 24.1,
+   "np_flagged_share": 0.56,
+   "np_flagged_share_ci95": [
+    0.439,
+    0.681
+   ],
+   "flags_per_non_progressor_patient_year": 0.182,
+   "flags_per_np_py_ci95": [
+    0.128,
+    0.241
+   ],
+   "years_first_flag_to_event_median": 4.49,
+   "last2_window": {
+    "progressor_patients_caught": 29.6,
+    "non_progressor_patients_flagged": 13.1
+   },
+   "samples_sequenced_per_patient": 4.349,
+   "seq_per_patient_ci95": [
+    3.808,
+    4.908
+   ],
+   "samples_sequenced_per_100_patient_years": 71.71,
+   "share_samples_sequenced": 0.571,
+   "cost_per_patient_gbp": 1210.0,
+   "cost_ci95": [
+    1014.51,
+    1410.21
+   ],
+   "flagged_endoscopies_per_patient": 1.571,
+   "endoscopy_sensitivity": 0.755,
+   "endo_sens_ci95": [
+    0.68,
+    0.828
+   ],
+   "endoscopy_specificity": 0.743,
+   "endo_spec_ci95": [
+    0.668,
+    0.813
+   ],
+   "contrasts": {
+    "R49": {
+     "d_np_patients_flagged": {
+      "delta": -7.7,
+      "ci95": [
+       -11.276,
+       -4.539
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_progressor_patients_caught": {
+      "delta": -1.2,
+      "ci95": [
+       -3.314,
+       0.0
+      ],
+      "p_two_sided": 0.097
+     },
+     "d_endo_spec": {
+      "delta": 0.183,
+      "ci95": [
+       0.121,
+       0.253
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_endo_sens": {
+      "delta": -0.152,
+      "ci95": [
+       -0.211,
+       -0.098
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_seq_per_patient": {
+      "delta": 2.409,
+      "ci95": [
+       2.0,
+       2.831
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_flags_per_np_py": {
+      "delta": -0.13,
+      "ci95": [
+       -0.189,
+       -0.083
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_cost_per_patient": {
+      "delta": -151.873,
+      "ci95": [
+       -262.981,
+       -54.74
+      ],
+      "p_two_sided": 0.002
+     }
+    },
+    "P1": {
+     "d_np_patients_flagged": {
+      "delta": -11.9,
+      "ci95": [
+       -16.296,
+       -7.571
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_progressor_patients_caught": {
+      "delta": -1.2,
+      "ci95": [
+       -3.932,
+       1.214
+      ],
+      "p_two_sided": 0.336
+     },
+     "d_endo_spec": {
+      "delta": 0.219,
+      "ci95": [
+       0.141,
+       0.293
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_endo_sens": {
+      "delta": -0.143,
+      "ci95": [
+       -0.213,
+       -0.077
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_seq_per_patient": {
+      "delta": 4.349,
+      "ci95": [
+       3.808,
+       4.908
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_flags_per_np_py": {
+      "delta": -0.155,
+      "ci95": [
+       -0.217,
+       -0.098
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_cost_per_patient": {
+      "delta": -31.913,
+      "ci95": [
+       -145.341,
+       90.556
+      ],
+      "p_two_sided": 0.599
+     }
+    },
+    "P1_matched_sens_d_endo_spec": {
+     "delta": 0.025,
+     "ci95": [
+      -0.085,
+      0.147
+     ],
+     "p_two_sided": 0.693
+    }
+   },
+   "picks_top": {
+    "L-LATE low AND ps_oac quiet<80 kq2 strict": 49,
+    "L-LATE low AND jt_oac quiet<80 kq2 strict": 33,
+    "L-CNV low AND jt_oac quiet<80 kq2 strict": 6,
+    "L-LATE low AND th_ntilez2 quiet<80 kq2 strict": 5,
+    "L-LATE low AND ps_oac quiet<90 kq2 strict": 4,
+    "L-LATE low AND th_ntilez2 quiet<90 kq2 strict": 2,
+    "L-LATE low AND jt_narm05 quiet<80 kq2 strict": 1
+   }
+  },
+  {
+   "family": "E2",
+   "label": "R49hm veto selected per fold from double vetoes (trained score low AND quiet), training loss <= 1",
+   "params": {
+    "base": "R49hm",
+    "family": "double vetoes (trained score low AND quiet)",
+    "slack": 1
+   },
+   "n_progressor_patients": 32,
+   "n_non_progressor_patients": 43,
+   "folds_target_not_met": 0,
+   "progressor_patients_caught": 28.9,
+   "caught_share": 0.903,
+   "caught_share_ci95": [
+    0.806,
+    0.979
+   ],
+   "progressor_patients_missed": 3.1,
+   "non_progressor_patients_ever_flagged": 22.9,
+   "np_flagged_share": 0.533,
+   "np_flagged_share_ci95": [
+    0.405,
+    0.657
+   ],
+   "flags_per_non_progressor_patient_year": 0.163,
+   "flags_per_np_py_ci95": [
+    0.112,
+    0.221
+   ],
+   "years_first_flag_to_event_median": 4.36,
+   "last2_window": {
+    "progressor_patients_caught": 28.7,
+    "non_progressor_patients_flagged": 12.7
+   },
+   "samples_sequenced_per_patient": 4.349,
+   "seq_per_patient_ci95": [
+    3.808,
+    4.908
+   ],
+   "samples_sequenced_per_100_patient_years": 71.71,
+   "share_samples_sequenced": 0.571,
+   "cost_per_patient_gbp": 1150.79,
+   "cost_ci95": [
+    963.94,
+    1343.89
+   ],
+   "flagged_endoscopies_per_patient": 1.46,
+   "endoscopy_sensitivity": 0.72,
+   "endo_sens_ci95": [
+    0.626,
+    0.816
+   ],
+   "endoscopy_specificity": 0.77,
+   "endo_spec_ci95": [
+    0.697,
+    0.837
+   ],
+   "contrasts": {
+    "R49": {
+     "d_np_patients_flagged": {
+      "delta": -8.9,
+      "ci95": [
+       -12.9,
+       -5.2
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_progressor_patients_caught": {
+      "delta": -2.2,
+      "ci95": [
+       -5.103,
+       -0.183
+      ],
+      "p_two_sided": 0.015
+     },
+     "d_endo_spec": {
+      "delta": 0.21,
+      "ci95": [
+       0.141,
+       0.285
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_endo_sens": {
+      "delta": -0.186,
+      "ci95": [
+       -0.267,
+       -0.113
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_seq_per_patient": {
+      "delta": 2.409,
+      "ci95": [
+       2.0,
+       2.831
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_flags_per_np_py": {
+      "delta": -0.148,
+      "ci95": [
+       -0.212,
+       -0.098
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_cost_per_patient": {
+      "delta": -211.08,
+      "ci95": [
+       -334.564,
+       -101.065
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "P1": {
+     "d_np_patients_flagged": {
+      "delta": -13.1,
+      "ci95": [
+       -17.829,
+       -8.409
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_progressor_patients_caught": {
+      "delta": -2.2,
+      "ci95": [
+       -5.554,
+       0.7
+      ],
+      "p_two_sided": 0.149
+     },
+     "d_endo_spec": {
+      "delta": 0.245,
+      "ci95": [
+       0.167,
+       0.32
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_endo_sens": {
+      "delta": -0.177,
+      "ci95": [
+       -0.271,
+       -0.093
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_seq_per_patient": {
+      "delta": 4.349,
+      "ci95": [
+       3.808,
+       4.908
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_flags_per_np_py": {
+      "delta": -0.173,
+      "ci95": [
+       -0.237,
+       -0.116
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_cost_per_patient": {
+      "delta": -91.12,
+      "ci95": [
+       -206.549,
+       34.881
+      ],
+      "p_two_sided": 0.161
+     }
+    },
+    "P1_matched_sens_d_endo_spec": {
+     "delta": 0.021,
+     "ci95": [
+      -0.106,
+      0.155
+     ],
+     "p_two_sided": 0.748
+    }
+   },
+   "picks_top": {
+    "L-LATE low AND jt_oac quiet<80 kq2 loss1": 66,
+    "L-LATE low AND jt_oac quiet<80 kq2 strict": 16,
+    "L-LATE low AND ps_oac quiet<80 kq2 strict": 11,
+    "L-CNV low AND jt_oac quiet<80 kq2 loss1": 2,
+    "L-LATE low AND th_ntilez2 quiet<80 kq2 loss1": 2,
+    "L-LATE low AND th_ntilez2 quiet<90 kq2 loss1": 1,
+    "L-CNV low AND th_ntilez2 quiet<80 kq2 loss1": 1,
+    "L-LATE low AND ps_oac quiet<80 kq2 loss1": 1
+   }
+  },
+  {
+   "family": "E2",
    "label": "R49hm veto selected per fold from quiet features, training loss <= 0",
    "params": {
     "base": "R49hm",
@@ -773,6 +1160,774 @@
   },
   {
    "family": "E2",
+   "label": "R49hm veto selected per fold from trained models, veto only at NDBE/ID endoscopies, training loss <= 0",
+   "params": {
+    "base": "R49hm",
+    "family": "trained models, veto only at NDBE/ID endoscopies",
+    "slack": 0
+   },
+   "n_progressor_patients": 32,
+   "n_non_progressor_patients": 43,
+   "folds_target_not_met": 0,
+   "progressor_patients_caught": 30.5,
+   "caught_share": 0.953,
+   "caught_share_ci95": [
+    0.897,
+    0.992
+   ],
+   "progressor_patients_missed": 1.5,
+   "non_progressor_patients_ever_flagged": 26.6,
+   "np_flagged_share": 0.619,
+   "np_flagged_share_ci95": [
+    0.493,
+    0.736
+   ],
+   "flags_per_non_progressor_patient_year": 0.22,
+   "flags_per_np_py_ci95": [
+    0.159,
+    0.288
+   ],
+   "years_first_flag_to_event_median": 4.18,
+   "last2_window": {
+    "progressor_patients_caught": 30.4,
+    "non_progressor_patients_flagged": 18.4
+   },
+   "samples_sequenced_per_patient": 2.947,
+   "seq_per_patient_ci95": [
+    2.541,
+    3.355
+   ],
+   "samples_sequenced_per_100_patient_years": 48.58,
+   "share_samples_sequenced": 0.387,
+   "cost_per_patient_gbp": 1201.34,
+   "cost_ci95": [
+    1009.57,
+    1400.88
+   ],
+   "flagged_endoscopies_per_patient": 1.777,
+   "endoscopy_sensitivity": 0.809,
+   "endo_sens_ci95": [
+    0.738,
+    0.878
+   ],
+   "endoscopy_specificity": 0.69,
+   "endo_spec_ci95": [
+    0.613,
+    0.764
+   ],
+   "contrasts": {
+    "R49": {
+     "d_np_patients_flagged": {
+      "delta": -5.2,
+      "ci95": [
+       -7.406,
+       -3.057
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_progressor_patients_caught": {
+      "delta": -0.6,
+      "ci95": [
+       -1.358,
+       -0.097
+      ],
+      "p_two_sided": 0.021
+     },
+     "d_endo_spec": {
+      "delta": 0.129,
+      "ci95": [
+       0.101,
+       0.159
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_endo_sens": {
+      "delta": -0.098,
+      "ci95": [
+       -0.135,
+       -0.066
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_seq_per_patient": {
+      "delta": 1.007,
+      "ci95": [
+       0.787,
+       1.269
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_flags_per_np_py": {
+      "delta": -0.092,
+      "ci95": [
+       -0.116,
+       -0.07
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_cost_per_patient": {
+      "delta": -160.533,
+      "ci95": [
+       -213.541,
+       -108.094
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "P1": {
+     "d_np_patients_flagged": {
+      "delta": -9.4,
+      "ci95": [
+       -13.546,
+       -5.399
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_progressor_patients_caught": {
+      "delta": -0.6,
+      "ci95": [
+       -2.533,
+       1.358
+      ],
+      "p_two_sided": 0.526
+     },
+     "d_endo_spec": {
+      "delta": 0.165,
+      "ci95": [
+       0.101,
+       0.223
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_endo_sens": {
+      "delta": -0.089,
+      "ci95": [
+       -0.151,
+       -0.037
+      ],
+      "p_two_sided": 0.002
+     },
+     "d_seq_per_patient": {
+      "delta": 2.947,
+      "ci95": [
+       2.541,
+       3.355
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_flags_per_np_py": {
+      "delta": -0.117,
+      "ci95": [
+       -0.162,
+       -0.071
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_cost_per_patient": {
+      "delta": -40.573,
+      "ci95": [
+       -132.334,
+       56.452
+      ],
+      "p_two_sided": 0.412
+     }
+    },
+    "P1_matched_sens_d_endo_spec": {
+     "delta": 0.033,
+     "ci95": [
+      -0.059,
+      0.129
+     ],
+     "p_two_sided": 0.455
+    }
+   },
+   "picks_top": {
+    "L-LATE k1 strict (NDBE/ID only)": 65,
+    "L-CNV k1 strict (NDBE/ID only)": 18,
+    "L-CNV k2 strict (NDBE/ID only)": 16,
+    "L-LATE k2 strict (NDBE/ID only)": 1
+   }
+  },
+  {
+   "family": "E2",
+   "label": "R49hm veto selected per fold from trained models, veto only at NDBE/ID endoscopies, training loss <= 1",
+   "params": {
+    "base": "R49hm",
+    "family": "trained models, veto only at NDBE/ID endoscopies",
+    "slack": 1
+   },
+   "n_progressor_patients": 32,
+   "n_non_progressor_patients": 43,
+   "folds_target_not_met": 0,
+   "progressor_patients_caught": 30.4,
+   "caught_share": 0.95,
+   "caught_share_ci95": [
+    0.89,
+    0.99
+   ],
+   "progressor_patients_missed": 1.6,
+   "non_progressor_patients_ever_flagged": 24.0,
+   "np_flagged_share": 0.558,
+   "np_flagged_share_ci95": [
+    0.428,
+    0.686
+   ],
+   "flags_per_non_progressor_patient_year": 0.178,
+   "flags_per_np_py_ci95": [
+    0.124,
+    0.242
+   ],
+   "years_first_flag_to_event_median": 4.0,
+   "last2_window": {
+    "progressor_patients_caught": 30.3,
+    "non_progressor_patients_flagged": 14.6
+   },
+   "samples_sequenced_per_patient": 2.897,
+   "seq_per_patient_ci95": [
+    2.501,
+    3.299
+   ],
+   "samples_sequenced_per_100_patient_years": 47.77,
+   "share_samples_sequenced": 0.381,
+   "cost_per_patient_gbp": 1101.56,
+   "cost_ci95": [
+    918.96,
+    1300.2
+   ],
+   "flagged_endoscopies_per_patient": 1.599,
+   "endoscopy_sensitivity": 0.79,
+   "endo_sens_ci95": [
+    0.71,
+    0.866
+   ],
+   "endoscopy_specificity": 0.748,
+   "endo_spec_ci95": [
+    0.677,
+    0.818
+   ],
+   "contrasts": {
+    "R49": {
+     "d_np_patients_flagged": {
+      "delta": -7.8,
+      "ci95": [
+       -10.848,
+       -4.837
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_progressor_patients_caught": {
+      "delta": -0.7,
+      "ci95": [
+       -1.384,
+       -0.152
+      ],
+      "p_two_sided": 0.005
+     },
+     "d_endo_spec": {
+      "delta": 0.188,
+      "ci95": [
+       0.152,
+       0.228
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_endo_sens": {
+      "delta": -0.117,
+      "ci95": [
+       -0.161,
+       -0.079
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_seq_per_patient": {
+      "delta": 0.957,
+      "ci95": [
+       0.745,
+       1.215
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_flags_per_np_py": {
+      "delta": -0.133,
+      "ci95": [
+       -0.163,
+       -0.105
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_cost_per_patient": {
+      "delta": -260.313,
+      "ci95": [
+       -333.317,
+       -190.051
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "P1": {
+     "d_np_patients_flagged": {
+      "delta": -12.0,
+      "ci95": [
+       -16.4,
+       -7.576
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_progressor_patients_caught": {
+      "delta": -0.7,
+      "ci95": [
+       -2.667,
+       1.318
+      ],
+      "p_two_sided": 0.472
+     },
+     "d_endo_spec": {
+      "delta": 0.224,
+      "ci95": [
+       0.164,
+       0.282
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_endo_sens": {
+      "delta": -0.108,
+      "ci95": [
+       -0.176,
+       -0.051
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_seq_per_patient": {
+      "delta": 2.897,
+      "ci95": [
+       2.501,
+       3.299
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_flags_per_np_py": {
+      "delta": -0.158,
+      "ci95": [
+       -0.204,
+       -0.114
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_cost_per_patient": {
+      "delta": -140.353,
+      "ci95": [
+       -235.968,
+       -47.359
+      ],
+      "p_two_sided": 0.002
+     }
+    },
+    "P1_matched_sens_d_endo_spec": {
+     "delta": 0.058,
+     "ci95": [
+      -0.019,
+      0.158
+     ],
+     "p_two_sided": 0.133
+    }
+   },
+   "picks_top": {
+    "L-LATE k1 loss1 (NDBE/ID only)": 62,
+    "L-LATE k1 strict (NDBE/ID only)": 14,
+    "L-CNV k1 loss1 (NDBE/ID only)": 12,
+    "L-CNV k2 loss1 (NDBE/ID only)": 8,
+    "L-LATE k2 loss1 (NDBE/ID only)": 4
+   }
+  },
+  {
+   "family": "E2",
+   "label": "R49hm veto selected per fold from trained models, gated or not, training loss <= 0",
+   "params": {
+    "base": "R49hm",
+    "family": "trained models, gated or not",
+    "slack": 0
+   },
+   "n_progressor_patients": 32,
+   "n_non_progressor_patients": 43,
+   "folds_target_not_met": 0,
+   "progressor_patients_caught": 30.4,
+   "caught_share": 0.95,
+   "caught_share_ci95": [
+    0.893,
+    0.989
+   ],
+   "progressor_patients_missed": 1.6,
+   "non_progressor_patients_ever_flagged": 26.1,
+   "np_flagged_share": 0.607,
+   "np_flagged_share_ci95": [
+    0.483,
+    0.721
+   ],
+   "flags_per_non_progressor_patient_year": 0.214,
+   "flags_per_np_py_ci95": [
+    0.155,
+    0.28
+   ],
+   "years_first_flag_to_event_median": 4.21,
+   "last2_window": {
+    "progressor_patients_caught": 30.3,
+    "non_progressor_patients_flagged": 18.4
+   },
+   "samples_sequenced_per_patient": 3.108,
+   "seq_per_patient_ci95": [
+    2.709,
+    3.513
+   ],
+   "samples_sequenced_per_100_patient_years": 51.24,
+   "share_samples_sequenced": 0.408,
+   "cost_per_patient_gbp": 1205.07,
+   "cost_ci95": [
+    1012.9,
+    1406.56
+   ],
+   "flagged_endoscopies_per_patient": 1.759,
+   "endoscopy_sensitivity": 0.81,
+   "endo_sens_ci95": [
+    0.739,
+    0.878
+   ],
+   "endoscopy_specificity": 0.697,
+   "endo_spec_ci95": [
+    0.621,
+    0.77
+   ],
+   "contrasts": {
+    "R49": {
+     "d_np_patients_flagged": {
+      "delta": -5.7,
+      "ci95": [
+       -7.938,
+       -3.565
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_progressor_patients_caught": {
+      "delta": -0.7,
+      "ci95": [
+       -1.463,
+       -0.133
+      ],
+      "p_two_sided": 0.006
+     },
+     "d_endo_spec": {
+      "delta": 0.137,
+      "ci95": [
+       0.11,
+       0.165
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_endo_sens": {
+      "delta": -0.097,
+      "ci95": [
+       -0.134,
+       -0.064
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_seq_per_patient": {
+      "delta": 1.168,
+      "ci95": [
+       0.943,
+       1.425
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_flags_per_np_py": {
+      "delta": -0.097,
+      "ci95": [
+       -0.122,
+       -0.075
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_cost_per_patient": {
+      "delta": -156.807,
+      "ci95": [
+       -211.193,
+       -104.389
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "P1": {
+     "d_np_patients_flagged": {
+      "delta": -9.9,
+      "ci95": [
+       -14.003,
+       -5.873
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_progressor_patients_caught": {
+      "delta": -0.7,
+      "ci95": [
+       -2.56,
+       1.28
+      ],
+      "p_two_sided": 0.454
+     },
+     "d_endo_spec": {
+      "delta": 0.173,
+      "ci95": [
+       0.11,
+       0.23
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_endo_sens": {
+      "delta": -0.088,
+      "ci95": [
+       -0.149,
+       -0.035
+      ],
+      "p_two_sided": 0.002
+     },
+     "d_seq_per_patient": {
+      "delta": 3.108,
+      "ci95": [
+       2.709,
+       3.513
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_flags_per_np_py": {
+      "delta": -0.122,
+      "ci95": [
+       -0.168,
+       -0.076
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_cost_per_patient": {
+      "delta": -36.847,
+      "ci95": [
+       -130.671,
+       63.108
+      ],
+      "p_two_sided": 0.456
+     }
+    },
+    "P1_matched_sens_d_endo_spec": {
+     "delta": 0.042,
+     "ci95": [
+      -0.051,
+      0.136
+     ],
+     "p_two_sided": 0.356
+    }
+   },
+   "picks_top": {
+    "L-LATE k1 strict (NDBE/ID only)": 38,
+    "L-LATE k1 strict": 27,
+    "L-CNV k2 strict (NDBE/ID only)": 11,
+    "L-CNV k1 strict (NDBE/ID only)": 11,
+    "L-CNV k1 strict": 6,
+    "L-CNV k2 strict": 6,
+    "L-LATE k2 strict (NDBE/ID only)": 1
+   }
+  },
+  {
+   "family": "E2",
+   "label": "R49hm veto selected per fold from trained models, gated or not, training loss <= 1",
+   "params": {
+    "base": "R49hm",
+    "family": "trained models, gated or not",
+    "slack": 1
+   },
+   "n_progressor_patients": 32,
+   "n_non_progressor_patients": 43,
+   "folds_target_not_met": 0,
+   "progressor_patients_caught": 30.2,
+   "caught_share": 0.944,
+   "caught_share_ci95": [
+    0.881,
+    0.986
+   ],
+   "progressor_patients_missed": 1.8,
+   "non_progressor_patients_ever_flagged": 22.7,
+   "np_flagged_share": 0.528,
+   "np_flagged_share_ci95": [
+    0.402,
+    0.654
+   ],
+   "flags_per_non_progressor_patient_year": 0.169,
+   "flags_per_np_py_ci95": [
+    0.116,
+    0.23
+   ],
+   "years_first_flag_to_event_median": 3.95,
+   "last2_window": {
+    "progressor_patients_caught": 30.0,
+    "non_progressor_patients_flagged": 14.4
+   },
+   "samples_sequenced_per_patient": 3.16,
+   "seq_per_patient_ci95": [
+    2.756,
+    3.567
+   ],
+   "samples_sequenced_per_100_patient_years": 52.1,
+   "share_samples_sequenced": 0.415,
+   "cost_per_patient_gbp": 1096.78,
+   "cost_ci95": [
+    911.58,
+    1298.33
+   ],
+   "flagged_endoscopies_per_patient": 1.548,
+   "endoscopy_sensitivity": 0.777,
+   "endo_sens_ci95": [
+    0.698,
+    0.854
+   ],
+   "endoscopy_specificity": 0.762,
+   "endo_spec_ci95": [
+    0.692,
+    0.828
+   ],
+   "contrasts": {
+    "R49": {
+     "d_np_patients_flagged": {
+      "delta": -9.1,
+      "ci95": [
+       -11.988,
+       -6.234
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_progressor_patients_caught": {
+      "delta": -0.9,
+      "ci95": [
+       -1.689,
+       -0.256
+      ],
+      "p_two_sided": 0.001
+     },
+     "d_endo_spec": {
+      "delta": 0.202,
+      "ci95": [
+       0.164,
+       0.238
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_endo_sens": {
+      "delta": -0.13,
+      "ci95": [
+       -0.174,
+       -0.091
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_seq_per_patient": {
+      "delta": 1.22,
+      "ci95": [
+       0.985,
+       1.485
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_flags_per_np_py": {
+      "delta": -0.143,
+      "ci95": [
+       -0.174,
+       -0.113
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_cost_per_patient": {
+      "delta": -265.093,
+      "ci95": [
+       -341.118,
+       -191.548
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "P1": {
+     "d_np_patients_flagged": {
+      "delta": -13.3,
+      "ci95": [
+       -17.917,
+       -8.71
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_progressor_patients_caught": {
+      "delta": -0.9,
+      "ci95": [
+       -2.869,
+       1.164
+      ],
+      "p_two_sided": 0.37
+     },
+     "d_endo_spec": {
+      "delta": 0.237,
+      "ci95": [
+       0.176,
+       0.296
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_endo_sens": {
+      "delta": -0.12,
+      "ci95": [
+       -0.191,
+       -0.061
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_seq_per_patient": {
+      "delta": 3.16,
+      "ci95": [
+       2.756,
+       3.567
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_flags_per_np_py": {
+      "delta": -0.168,
+      "ci95": [
+       -0.214,
+       -0.123
+      ],
+      "p_two_sided": 0.0
+     },
+     "d_cost_per_patient": {
+      "delta": -145.133,
+      "ci95": [
+       -244.179,
+       -47.249
+      ],
+      "p_two_sided": 0.003
+     }
+    },
+    "P1_matched_sens_d_endo_spec": {
+     "delta": 0.069,
+     "ci95": [
+      -0.019,
+      0.161
+     ],
+     "p_two_sided": 0.135
+    }
+   },
+   "picks_top": {
+    "L-LATE k1 loss1": 36,
+    "L-LATE k1 loss1 (NDBE/ID only)": 27,
+    "L-CNV k2 loss1": 9,
+    "L-CNV k1 loss1": 7,
+    "L-LATE k1 strict": 5,
+    "L-CNV k1 loss1 (NDBE/ID only)": 5,
+    "L-LATE k1 strict (NDBE/ID only)": 5,
+    "L-CNV k2 loss1 (NDBE/ID only)": 3
+   }
+  },
+  {
+   "family": "E2",
    "label": "R49hm veto selected per fold from elastic-net vetoes, training loss <= 0",
    "params": {
     "base": "R49hm",
@@ -1165,187 +2320,187 @@
    "n_progressor_patients": 32,
    "n_non_progressor_patients": 43,
    "folds_target_not_met": 0,
-   "progressor_patients_caught": 29.2,
-   "caught_share": 0.912,
+   "progressor_patients_caught": 29.5,
+   "caught_share": 0.922,
    "caught_share_ci95": [
-    0.835,
-    0.971
+    0.85,
+    0.978
    ],
-   "progressor_patients_missed": 2.8,
-   "non_progressor_patients_ever_flagged": 22.7,
-   "np_flagged_share": 0.528,
+   "progressor_patients_missed": 2.5,
+   "non_progressor_patients_ever_flagged": 23.0,
+   "np_flagged_share": 0.535,
    "np_flagged_share_ci95": [
-    0.409,
-    0.646
+    0.416,
+    0.65
    ],
-   "flags_per_non_progressor_patient_year": 0.165,
+   "flags_per_non_progressor_patient_year": 0.164,
    "flags_per_np_py_ci95": [
-    0.116,
-    0.218
+    0.117,
+    0.215
    ],
-   "years_first_flag_to_event_median": 4.23,
+   "years_first_flag_to_event_median": 4.13,
    "last2_window": {
-    "progressor_patients_caught": 28.7,
-    "non_progressor_patients_flagged": 13.3
+    "progressor_patients_caught": 29.0,
+    "non_progressor_patients_flagged": 12.9
    },
-   "samples_sequenced_per_patient": 4.085,
+   "samples_sequenced_per_patient": 4.007,
    "seq_per_patient_ci95": [
-    3.589,
-    4.599
+    3.509,
+    4.519
    ],
-   "samples_sequenced_per_100_patient_years": 67.36,
-   "share_samples_sequenced": 0.537,
-   "cost_per_patient_gbp": 1115.51,
+   "samples_sequenced_per_100_patient_years": 66.06,
+   "share_samples_sequenced": 0.526,
+   "cost_per_patient_gbp": 1115.25,
    "cost_ci95": [
-    937.62,
-    1301.65
+    940.39,
+    1296.91
    ],
-   "flagged_endoscopies_per_patient": 1.436,
-   "endoscopy_sensitivity": 0.694,
+   "flagged_endoscopies_per_patient": 1.448,
+   "endoscopy_sensitivity": 0.707,
    "endo_sens_ci95": [
-    0.619,
-    0.769
+    0.632,
+    0.78
    ],
-   "endoscopy_specificity": 0.767,
+   "endoscopy_specificity": 0.768,
    "endo_spec_ci95": [
-    0.702,
-    0.831
+    0.704,
+    0.83
    ],
    "contrasts": {
     "R49": {
      "d_np_patients_flagged": {
-      "delta": -9.1,
+      "delta": -8.8,
       "ci95": [
-       -12.47,
-       -5.977
+       -11.908,
+       -5.843
       ],
       "p_two_sided": 0.0
      },
      "d_progressor_patients_caught": {
-      "delta": -1.9,
+      "delta": -1.6,
       "ci95": [
-       -4.073,
-       -0.519
+       -3.556,
+       -0.388
       ],
       "p_two_sided": 0.001
      },
      "d_endo_spec": {
-      "delta": 0.207,
+      "delta": 0.208,
       "ci95": [
-       0.148,
-       0.273
+       0.151,
+       0.271
       ],
       "p_two_sided": 0.0
      },
      "d_endo_sens": {
-      "delta": -0.212,
+      "delta": -0.2,
       "ci95": [
-       -0.273,
-       -0.154
+       -0.256,
+       -0.148
       ],
       "p_two_sided": 0.0
      },
      "d_seq_per_patient": {
-      "delta": 2.145,
+      "delta": 2.067,
       "ci95": [
-       1.781,
-       2.527
+       1.711,
+       2.435
       ],
       "p_two_sided": 0.0
      },
      "d_flags_per_np_py": {
-      "delta": -0.146,
+      "delta": -0.147,
       "ci95": [
-       -0.203,
-       -0.102
+       -0.201,
+       -0.103
       ],
       "p_two_sided": 0.0
      },
      "d_cost_per_patient": {
-      "delta": -246.36,
+      "delta": -246.627,
       "ci95": [
-       -348.678,
-       -155.91
+       -347.79,
+       -157.507
       ],
       "p_two_sided": 0.0
      }
     },
     "P1": {
      "d_np_patients_flagged": {
-      "delta": -13.3,
+      "delta": -13.0,
       "ci95": [
-       -17.658,
-       -8.948
+       -17.2,
+       -8.862
       ],
       "p_two_sided": 0.0
      },
      "d_progressor_patients_caught": {
-      "delta": -1.9,
+      "delta": -1.6,
       "ci95": [
-       -4.635,
-       0.593
+       -4.193,
+       0.801
       ],
-      "p_two_sided": 0.138
+      "p_two_sided": 0.197
      },
      "d_endo_spec": {
-      "delta": 0.243,
+      "delta": 0.244,
       "ci95": [
-       0.176,
-       0.31
+       0.178,
+       0.308
       ],
       "p_two_sided": 0.0
      },
      "d_endo_sens": {
-      "delta": -0.203,
+      "delta": -0.191,
       "ci95": [
-       -0.279,
-       -0.134
+       -0.262,
+       -0.128
       ],
       "p_two_sided": 0.0
      },
      "d_seq_per_patient": {
-      "delta": 4.085,
+      "delta": 4.007,
       "ci95": [
-       3.589,
-       4.599
+       3.509,
+       4.519
       ],
       "p_two_sided": 0.0
      },
      "d_flags_per_np_py": {
       "delta": -0.172,
       "ci95": [
-       -0.231,
-       -0.122
+       -0.229,
+       -0.123
       ],
       "p_two_sided": 0.0
      },
      "d_cost_per_patient": {
-      "delta": -126.4,
+      "delta": -126.667,
       "ci95": [
-       -229.638,
-       -20.185
+       -224.001,
+       -22.714
       ],
-      "p_two_sided": 0.021
+      "p_two_sided": 0.013
      }
     },
     "P1_matched_sens_d_endo_spec": {
-     "delta": 0.0,
+     "delta": 0.009,
      "ci95": [
-      -0.11,
-      0.094
+      -0.093,
+      0.102
      ],
-     "p_two_sided": 0.926
+     "p_two_sided": 0.888
     }
    },
    "picks_top": {
-    "ps_oac k2 strict": 64,
-    "L-LATE k1 strict": 18,
-    "jt_oac k2 strict": 7,
-    "ps_narm05 k2 strict": 2,
+    "ps_oac k2 strict": 51,
+    "L-LATE k1 strict": 14,
+    "L-LATE k1 strict (NDBE/ID only)": 8,
+    "L-LATE low AND jt_oac quiet<80 kq2 strict": 7,
+    "jt_oac k2 strict": 6,
+    "L-CNV low AND jt_oac quiet<80 kq2 strict": 3,
     "EN_compact_flag k2 strict": 2,
-    "th_ntilez2 k1 strict": 1,
-    "jt_oac k1 strict": 1,
-    "L-LATE k2 strict": 1
+    "L-LATE low AND th_ntilez2 quiet<80 kq2 strict": 2
    }
   },
   {
@@ -1359,190 +2514,190 @@
    "n_progressor_patients": 32,
    "n_non_progressor_patients": 43,
    "folds_target_not_met": 0,
-   "progressor_patients_caught": 27.3,
-   "caught_share": 0.853,
+   "progressor_patients_caught": 28.1,
+   "caught_share": 0.878,
    "caught_share_ci95": [
-    0.767,
-    0.927
+    0.794,
+    0.945
    ],
-   "progressor_patients_missed": 4.7,
-   "non_progressor_patients_ever_flagged": 21.1,
-   "np_flagged_share": 0.491,
+   "progressor_patients_missed": 3.9,
+   "non_progressor_patients_ever_flagged": 21.4,
+   "np_flagged_share": 0.498,
    "np_flagged_share_ci95": [
-    0.374,
-    0.605
+    0.376,
+    0.614
    ],
    "flags_per_non_progressor_patient_year": 0.148,
    "flags_per_np_py_ci95": [
-    0.105,
-    0.195
+    0.104,
+    0.196
    ],
-   "years_first_flag_to_event_median": 3.93,
+   "years_first_flag_to_event_median": 3.91,
    "last2_window": {
-    "progressor_patients_caught": 26.6,
-    "non_progressor_patients_flagged": 12.6
+    "progressor_patients_caught": 27.5,
+    "non_progressor_patients_flagged": 12.3
    },
-   "samples_sequenced_per_patient": 3.824,
+   "samples_sequenced_per_patient": 3.701,
    "seq_per_patient_ci95": [
-    3.365,
-    4.309
+    3.245,
+    4.171
    ],
-   "samples_sequenced_per_100_patient_years": 63.05,
-   "share_samples_sequenced": 0.502,
-   "cost_per_patient_gbp": 1039.09,
+   "samples_sequenced_per_100_patient_years": 61.03,
+   "share_samples_sequenced": 0.486,
+   "cost_per_patient_gbp": 1045.07,
    "cost_ci95": [
-    865.42,
-    1220.06
+    870.08,
+    1225.92
    ],
-   "flagged_endoscopies_per_patient": 1.335,
-   "endoscopy_sensitivity": 0.664,
+   "flagged_endoscopies_per_patient": 1.365,
+   "endoscopy_sensitivity": 0.69,
    "endo_sens_ci95": [
-    0.572,
-    0.746
+    0.604,
+    0.769
    ],
    "endoscopy_specificity": 0.791,
    "endo_spec_ci95": [
-    0.736,
+    0.734,
     0.847
    ],
    "contrasts": {
     "R49": {
      "d_np_patients_flagged": {
-      "delta": -10.7,
+      "delta": -10.4,
       "ci95": [
-       -13.856,
-       -7.629
+       -13.461,
+       -7.321
       ],
       "p_two_sided": 0.0
      },
      "d_progressor_patients_caught": {
-      "delta": -3.8,
+      "delta": -3.0,
       "ci95": [
-       -6.277,
-       -1.858
+       -5.212,
+       -1.28
       ],
       "p_two_sided": 0.0
      },
      "d_endo_spec": {
       "delta": 0.231,
       "ci95": [
-       0.178,
-       0.286
+       0.179,
+       0.285
       ],
       "p_two_sided": 0.0
      },
      "d_endo_sens": {
-      "delta": -0.243,
+      "delta": -0.217,
       "ci95": [
-       -0.31,
-       -0.183
+       -0.28,
+       -0.163
       ],
       "p_two_sided": 0.0
      },
      "d_seq_per_patient": {
-      "delta": 1.884,
+      "delta": 1.761,
       "ci95": [
-       1.561,
-       2.237
+       1.467,
+       2.085
       ],
       "p_two_sided": 0.0
      },
      "d_flags_per_np_py": {
       "delta": -0.164,
       "ci95": [
-       -0.212,
-       -0.122
+       -0.209,
+       -0.123
       ],
       "p_two_sided": 0.0
      },
      "d_cost_per_patient": {
-      "delta": -322.787,
+      "delta": -316.807,
       "ci95": [
-       -422.567,
-       -235.513
+       -413.656,
+       -229.785
       ],
       "p_two_sided": 0.0
      }
     },
     "P1": {
      "d_np_patients_flagged": {
-      "delta": -14.9,
+      "delta": -14.6,
       "ci95": [
-       -19.243,
-       -10.575
+       -18.785,
+       -10.4
       ],
       "p_two_sided": 0.0
      },
      "d_progressor_patients_caught": {
-      "delta": -3.8,
+      "delta": -3.0,
       "ci95": [
-       -6.711,
-       -1.28
+       -5.778,
+       -0.548
       ],
-      "p_two_sided": 0.003
+      "p_two_sided": 0.017
      },
      "d_endo_spec": {
       "delta": 0.267,
       "ci95": [
-       0.207,
-       0.325
+       0.21,
+       0.324
       ],
       "p_two_sided": 0.0
      },
      "d_endo_sens": {
-      "delta": -0.234,
+      "delta": -0.208,
       "ci95": [
-       -0.323,
-       -0.155
+       -0.291,
+       -0.133
       ],
       "p_two_sided": 0.0
      },
      "d_seq_per_patient": {
-      "delta": 3.824,
+      "delta": 3.701,
       "ci95": [
-       3.365,
-       4.309
+       3.245,
+       4.171
       ],
       "p_two_sided": 0.0
      },
      "d_flags_per_np_py": {
       "delta": -0.189,
       "ci95": [
-       -0.239,
-       -0.144
+       -0.238,
+       -0.145
       ],
       "p_two_sided": 0.0
      },
      "d_cost_per_patient": {
-      "delta": -202.827,
+      "delta": -196.847,
       "ci95": [
-       -299.776,
-       -103.896
+       -291.469,
+       -99.079
       ],
       "p_two_sided": 0.0
      }
     },
     "P1_matched_sens_d_endo_spec": {
-     "delta": -0.012,
+     "delta": 0.013,
      "ci95": [
-      -0.107,
-      0.103
+      -0.083,
+      0.122
      ],
-     "p_two_sided": 0.902
+     "p_two_sided": 0.75
     }
    },
    "picks_top": {
-    "L-LATE k1 loss1": 27,
-    "jt_oac k2 loss1": 27,
-    "ps_oac k2 loss1": 13,
-    "ps_oac k2 strict": 9,
-    "EN_compact_flag k1 loss1": 4,
-    "th_oacz k2 loss1": 3,
-    "ps_oac k1 loss1": 2,
+    "jt_oac k2 loss1": 24,
+    "L-LATE k1 loss1": 21,
+    "L-LATE k1 loss1 (NDBE/ID only)": 13,
+    "ps_oac k2 loss1": 10,
+    "ps_oac k2 strict": 6,
+    "L-LATE low AND jt_oac quiet<80 kq2 loss1": 5,
+    "L-LATE k1 strict (NDBE/ID only)": 2,
     "jt_oac k1 loss1": 2
    }
   }
  ],
- "n_candidates": 232,
+ "n_candidates": 296,
  "note": "per outer fold, among the candidate vetoes of the family (feature x k x threshold rule), the one with the fewest training non-progressor patients flagged (ties: less sequencing) among those whose training progressor-patient detection is >= the base's training detection minus the slack; training outcomes are resubstitution (thresholds set on the same training patients)"
 }
