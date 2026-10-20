@@ -17,7 +17,7 @@ os.environ["TASK"] = ETASK
 XD9 = M + "/explore_E9"; OUT9 = T + "/results/paper_final/explore_E9"; NB9 = 2000
 if os.environ.get("EXE9_NB"): NB9 = int(os.environ["EXE9_NB"]); OUT9 = XD9 + "/smoke_json"
 for d_ in (XD9, OUT9): os.makedirs(d_, exist_ok=True)
-KS = list(range(0, 25)); TNAMES = ["D"] + [f"k{k}" for k in KS]
+KS = list(range(0, 25)); NPS = (0.5, 0.6, 0.7, 0.8, 0.9, 1.0); TNAMES = ["D"] + [f"k{k}" for k in KS] + [f"n{int(r * 100)}" for r in NPS]   # n<r>: threshold flagging >= r of training NP patients (extends curves past 'catch every training progressor')
 def jdump9(o, name): json.dump(o, open(f"{OUT9}/{name}.json", "w"), indent=1, default=lambda x: x.item() if hasattr(x, "item") else str(x)); print("EXE9 DONE", name, flush=True)
 # ------------------------------------------------------------------ the two H&E variants (stored max-logit; E3 mean-logit)
 load_stored = load
@@ -73,7 +73,7 @@ def sweep(S, ST, INFO, fams, builders, CK=None):
     for j in range(10):
         for k in range(1, 11):
             c = make_ctx(S, ST, j, k, INFO); c.PATH = PATH; te = c.te_e; BAND[te, j] = c.r49_band[te]; nTP = int((c.trP & c.isP).sum()); DD[j, k - 1] = c.D; NTP[j, k - 1] = nTP
-            dl_ = [c.D] + [max(1, nTP - kk) for kk in KS]; fi = j * 10 + k - 1
+            dl_ = [c.D] + [max(1, nTP - kk) for kk in KS]; fi = j * 10 + k - 1; nTN = int((c.trP & ~c.isP).sum()); nl_ = [max(1, int(np.ceil(r * nTN - 1e-9))) for r in NPS]
             trPm = c.trP & c.isP; trNm = c.trP & ~c.isP; INC = S["INC"]
             for f in fams:
                 Rf = R[f]
@@ -91,12 +91,19 @@ def sweep(S, ST, INFO, fams, builders, CK=None):
                             if best is None or key < best[0]: best = (key, q, ii)
                         _, q, ii = best; FFt, F0t, det, npf, nfe, nsm = sims[q]; Rf["chosen"][ti, fi] = q; Rf["infeasible"][ti] += int(best[0][0])
                         Rf["F"][ti][:, j][te] = FFt[te, ii]; Rf["NS"][ti][:, j][te] = (F0t[:, ii] * CK["k2"])[te]; Rf["trainstats"][ti, fi] = [det[ii], npf[ii], nfe[ii], nsm[ii], d]
+                    for ui, m_ in enumerate(nl_):
+                        ti = len(dl_) + ui; best = None
+                        for q, (FFt, F0t, det, npf, nfe, nsm) in enumerate(sims):
+                            ok = np.where(npf >= m_)[0]; ii = ok[0] if len(ok) else len(npf) - 1; key = (-det[ii], npf[ii], nfe[ii], nsm[ii], q)
+                            if best is None or key < best[0]: best = (key, q, ii)
+                        _, q, ii = best; FFt, F0t, det, npf, nfe, nsm = sims[q]; Rf["chosen"][ti, fi] = q
+                        Rf["F"][ti][:, j][te] = FFt[te, ii]; Rf["NS"][ti][:, j][te] = (F0t[:, ii] * CK["k2"])[te]; Rf["trainstats"][ti, fi] = [det[ii], npf[ii], nfe[ii], nsm[ii], -m_]
                     continue
                 cands = builders[f](c); nC = len(cands)
                 if Rf["U"] is None: Rf["U"] = np.full((nC, E, 10), np.nan, np.float32); Rf["labels"] = [x["label"] for x in cands]
-                PM = []
+                PM = []; PN = []
                 for q, x in enumerate(cands):
-                    assert x["kind"] == "score"; Rf["U"][q][:, j][te] = x["u"][te]; pm = pat_scores(c, x["u"]); pp = np.sort(pm[trPm])[::-1]; PM.append(pp[pp > NEG / 2])
+                    assert x["kind"] == "score"; Rf["U"][q][:, j][te] = x["u"][te]; pm = pat_scores(c, x["u"]); pp = np.sort(pm[trPm])[::-1]; PM.append(pp[pp > NEG / 2]); pn = np.sort(pm[trNm])[::-1]; PN.append(pn[pn > NEG / 2])
                 for ti, d in enumerate(dl_):
                     ts_ = []; fl_ = []
                     for q, x in enumerate(cands):
@@ -107,6 +114,13 @@ def sweep(S, ST, INFO, fams, builders, CK=None):
                     if feas.any(): pick = sorted([q for q in range(nC) if feas[q]], key=lambda q: (ts_[q, 1], ts_[q, 2], ts_[q, 3], q))[0]
                     else: Rf["infeasible"][ti] += 1; pick = sorted(range(nC), key=lambda q: (-ts_[q, 0], ts_[q, 1], ts_[q, 2], q))[0]
                     Rf["chosen"][ti, fi] = pick; Rf["F"][ti][:, j][te] = fl_[pick][te]; Rf["NS"][ti][:, j][te] = cands[pick]["ns"][te]; Rf["trainstats"][ti, fi] = list(ts_[pick]) + [d]
+                for ui, m_ in enumerate(nl_):   # NP-share targets: highest threshold flagging >= m_ training NP patients; candidate with the most training progressor patients caught
+                    ti = len(dl_) + ui; ts_ = []; fl_ = []
+                    for q, x in enumerate(cands):
+                        pn = PN[q]; t = pn[min(m_, len(pn)) - 1] if len(pn) else -np.inf; flag = x["u"] >= t
+                        det = c.patient_det(flag); inc = INC @ flag.astype(float) > 0; ts_.append((det, int((inc & trNm).sum()), int((flag & c.tr_e & (c.elab == 0)).sum()), float(x["ns"][c.tr_e].mean()))); fl_.append(flag)
+                    ts_ = np.array(ts_); pick = sorted(range(nC), key=lambda q: (-ts_[q, 0], ts_[q, 1], ts_[q, 2], ts_[q, 3], q))[0]
+                    Rf["chosen"][ti, fi] = pick; Rf["F"][ti][:, j][te] = fl_[pick][te]; Rf["NS"][ti][:, j][te] = cands[pick]["ns"][te]; Rf["trainstats"][ti, fi] = list(ts_[pick]) + [-m_]
     return R, BAND, DD, NTP
 # ================================================================== run_<variant>_<group>
 if ETASK.startswith("run_"):
@@ -186,7 +200,7 @@ if ETASK == "merge":
                     f"{NB9} draws (rv8 pdraws, RandomState(0)), paired; counts = share x 32 / x 43; bands = vertical percentile bands of the monotone envelope on a common x grid; "
                     "costs: GBP 85 per sample sequenced, GBP 535 per flagged endoscopy (round 8)"), "targets": TNAMES, "n_draws": int(len(D))}
     # ---- operating points (target D) and reproduction
-    def ci(a): a = np.asarray(a, float); a = a[np.isfinite(a)]; return [r3(np.percentile(a, 2.5)), r3(np.percentile(a, 97.5))] if len(a) > 0.9 * len(D) else None
+    def ci(a): a = np.asarray(a, float); a = a[np.isfinite(a)]; return [r3(np.percentile(a, 2.5)), r3(np.percentile(a, 97.5))] if len(a) > 0.9 * len(D) else None   # undefined when > 10% of draws never reach the point
     def opv(r):
         x, y_ = xy(r); seq = r["wP"] * r["nsp"] + (1 - r["wP"]) * r["nsn"]; fl = r["wP"] * r["nfp"] + (1 - r["wP"]) * r["nfn"]
         return {"caught": y_, "np_flagged": x, "seq_per_patient": seq, "flags_per_patient": fl, "cost_per_patient": COST_SEQ * seq + COST_FLAG * fl, "flags_per_np_py": r["nfn"] / r["pyn"], "endo_spec": 1 - r["nfn"] / r["nen"], "endo_sens": r["nfp"] / r["nep"]}

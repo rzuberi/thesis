@@ -8,11 +8,11 @@ C = J["curves"]; OP = J["operating_points_target_D"]
 BLUE, ORANGE, AQUA, YELLOW, MAGENTA, GREEN, VIOLET, RED = "#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#4a3aa7", "#e34948"
 GREY = "#7a7974"; INK = "#0b0b0b"; INK2 = "#52514e"; SURF = "#fcfcfb"
 plt.rcParams.update({"font.size": 10, "axes.edgecolor": "#b9b8b2", "axes.labelcolor": INK, "xtick.color": INK2, "ytick.color": INK2, "axes.spines.top": False, "axes.spines.right": False, "font.family": "DejaVu Sans"})
-STY = {"gate": (GREY, "--", "Today's gate (swept)"), "hne_max": (BLUE, ":", "H&E max, single endoscopy"), "hne_mean": (VIOLET, ":", "H&E mean-logit, single endoscopy"),
+STY = {"gate": (GREY, "--", "Today's gate (swept)"), "hne_max": (BLUE, ":", "H&E max, single endoscopy"), "hne_mean": (MAGENTA, ":", "H&E mean-logit, single endoscopy"),
        "memory": (ORANGE, "-", "Memory"), "memcert": (YELLOW, "-", "Memory + certificate"), "final": (RED, "-", "Final rule (memory + certificate + check)"), "ml_mem": (AQUA, "-", "Mean-logit + memory (no sequencing)"),
-       "grade_none": (BLUE, ":", "Grade, single endoscopy"), "grade_mean": (BLUE, "--", "Grade, running mean"), "grade_ew": (BLUE, "-", "Grade, EW memory"),
-       "g53_none": (VIOLET, ":", "Grade + p53, single endoscopy"), "g53_mean": (VIOLET, "--", "Grade + p53, running mean"), "g53_ew": (VIOLET, "-", "Grade + p53, EW memory"),
-       "ml_final": (MAGENTA, "-", "Mean-logit full stack")}
+       "grade_none": (GREEN, ":", "Grade, single endoscopy"), "grade_mean": (GREEN, "--", "Grade, running mean"), "grade_ew": (GREEN, "-", "Grade, EW memory"),
+       "g53_none": (INK, ":", "Grade + p53, single endoscopy"), "g53_mean": (INK, "--", "Grade + p53, running mean"), "g53_ew": (INK, "-", "Grade + p53, EW memory"),
+       "ml_final": (VIOLET, "-", "Mean-logit full stack (gate + memory + certificate + check)")}
 FXP = {"R49": ("s", INK, "Today's gate (R49)"), "P1": ("^", INK, "H&E alone P1 90%"), "grade": ("D", INK2, "Grade IND/LGD"), "lgd": ("v", INK2, "LGD"), "p53": ("P", INK2, "p53 aberrant"), "g53": ("o", INK2, "Grade or p53")}
 def curve(ax, k, band=False, lw=2.0, label=True):
     if k not in C: return
@@ -30,26 +30,27 @@ fig, axs = plt.subplots(1, 3, figsize=(17, 6.2), gridspec_kw={"width_ratios": [1
 for ax in axs: ax.set_facecolor(SURF); ax.grid(True, color="#e6e5e0", lw=0.6); ax.set_xlabel("Non-progressor patients ever flagged (of 43)")
 axs[0].set_ylabel("Progressor patients caught (of 32)")
 ax = axs[0]
-for k in ("gate", "hne_max", "hne_mean", "memory", "memcert", "final", "ml_mem"): curve(ax, k, band=k in ("gate", "final", "ml_mem"))
-fixed(ax, ("R49", "P1", "grade", "lgd", "p53", "g53"), dx={"R49": (0.6, 0.5), "P1": (0.6, -1.3), "grade": (0.7, -0.3), "lgd": (0.7, -0.4), "p53": (0.7, -0.4), "g53": (0.7, -0.4)})
+for k in ("gate", "hne_max", "hne_mean", "memory", "memcert", "final", "ml_mem", "ml_final"): curve(ax, k, band=k in ("gate", "final", "ml_mem"))
+fixed(ax, ("R49", "P1", "grade", "lgd", "p53", "g53"), dx={"R49": (-9.5, 0.9), "P1": (0.3, -1.6), "grade": (0.7, -0.3), "lgd": (0.7, -0.4), "p53": (0.7, -0.4), "g53": (0.7, -0.4)})
 ax.set_xlim(0, 43); ax.set_ylim(0, 32.8); ax.set_title("A  H&E rules, full range", loc="left", fontsize=11, color=INK)
 ax.legend(loc="lower right", fontsize=8.5, frameon=False)
 ax = axs[1]
-for k in ("gate", "hne_max", "hne_mean", "memory", "memcert", "final", "ml_mem"): curve(ax, k, band=k in ("gate", "final", "ml_mem"))
+for k in ("gate", "hne_max", "hne_mean", "memory", "memcert", "final", "ml_mem", "ml_final"): curve(ax, k, band=k in ("gate", "final", "ml_mem"))
 fixed(ax, ("R49", "P1"), dx={"R49": (0.4, 0.15), "P1": (0.4, -0.4)}); ax.set_xlim(8, 43); ax.set_ylim(26, 32.3)
 ax.set_title("B  Zoom on high sensitivity (bands: 95% patient bootstrap)", loc="left", fontsize=11, color=INK)
 ax = axs[2]
 for k in ("grade_none", "grade_mean", "grade_ew", "g53_none", "g53_mean", "g53_ew"): curve(ax, k, lw=1.8)
 curve(ax, "ml_mem", lw=1.6); curve(ax, "final", lw=1.6)
-fixed(ax, ("grade", "lgd", "p53", "g53"), dx={"grade": (0.7, -1.0), "lgd": (0.7, -0.6), "p53": (0.7, 0.4), "g53": (0.7, 0.5)})
+fixed(ax, ("grade", "lgd", "p53", "g53"), dx={"grade": (0.9, -0.2), "lgd": (-3.5, 0.8), "p53": (0.7, 0.4), "g53": (-9.0, 0.6)})
 ax.set_xlim(0, 43); ax.set_ylim(0, 32.8); ax.set_title("C  The same memory applied to pathology", loc="left", fontsize=11, color=INK); ax.legend(loc="lower right", fontsize=8.5, frameon=False)
 fig.text(0.01, 0.005, "Held-out patients; every threshold and half-life chosen on training patients (round-9 rule at a sweep of training detection targets). Large dots: each rule at the R49 gate's training detection (the reported operating points). "
-         "Curves: monotone envelope of the swept points; shading: vertical 95% bands (2,000 patient-bootstrap draws).", fontsize=8.5, color=INK2, wrap=True)
+         "Curves: monotone envelope of the swept points, ending where the threshold catches every training progressor; shading: vertical 95% bands (2,000 patient-bootstrap draws). "
+         "The grey curve re-tunes the gate score's single threshold, so its dot differs from the R49 square.", fontsize=8.5, color=INK2, wrap=True)
 fig.tight_layout(rect=(0, 0.04, 1, 1)); fig.savefig(FIG + "/fig_e9_tradeoff.png", dpi=200, facecolor=SURF); plt.close(fig)
 # ---- prevalence figure: PPV and non-progressors never flagged per 1,000 at 3%
 PV = J["per_1000_patients"]["prevalences"]; rules = [r for r in ("g53", "R49", "memory", "final", "ml_mem", "ml_final") if r in PV["3%"]]
 fig, axs = plt.subplots(1, 2, figsize=(12, 4.6)); fig.patch.set_facecolor(SURF); names = {"g53": "Grade or p53", "R49": "Today's gate", "memory": "Memory", "final": "Final rule", "ml_mem": "Mean-logit + memory", "ml_final": "Mean-logit full stack"}
-cols = {"g53": INK2, "R49": GREY, "memory": ORANGE, "final": RED, "ml_mem": AQUA, "ml_final": MAGENTA}; prevs = ["1.5%", "3%", "5%", "10%"]; xs = np.array([1.5, 3, 5, 10])
+cols = {"g53": INK, "R49": GREY, "memory": ORANGE, "final": RED, "ml_mem": AQUA, "ml_final": VIOLET}; prevs = ["1.5%", "3%", "5%", "10%"]; xs = np.array([1.5, 3, 5, 10])
 for ax, key, lab in ((axs[0], "ppv", "PPV of a patient flag"), (axs[1], "progressors_missed", "Progressors missed per 1,000")):
     ax.set_facecolor(SURF); ax.grid(True, color="#e6e5e0", lw=0.6)
     for r in rules:
