@@ -1,0 +1,1160 @@
+{
+ "task": "s2",
+ "S2": {
+  "cells": [
+   {
+    "family": "P1",
+    "label": "80%",
+    "observed": {
+     "caught": 30.1,
+     "np_flagged": 31.6,
+     "seq_per_patient": 0.0,
+     "cost": 1001.52
+    },
+    "observed_on_pareto": true,
+    "observed_on_cost_frontier": true,
+    "share_draws_on_pareto": 1.0,
+    "share_draws_on_cost_frontier": 1.0
+   },
+   {
+    "family": "P1",
+    "label": "90%",
+    "observed": {
+     "caught": 31.1,
+     "np_flagged": 36.0,
+     "seq_per_patient": 0.0,
+     "cost": 1241.91
+    },
+    "observed_on_pareto": true,
+    "observed_on_cost_frontier": true,
+    "share_draws_on_pareto": 0.998,
+    "share_draws_on_cost_frontier": 0.668
+   },
+   {
+    "family": "P1",
+    "label": "95%",
+    "observed": {
+     "caught": 31.9,
+     "np_flagged": 39.3,
+     "seq_per_patient": 0.0,
+     "cost": 1489.44
+    },
+    "observed_on_pareto": true,
+    "observed_on_cost_frontier": true,
+    "share_draws_on_pareto": 0.867,
+    "share_draws_on_cost_frontier": 0.679
+   },
+   {
+    "family": "P2",
+    "label": "80%",
+    "observed": {
+     "caught": 28.8,
+     "np_flagged": 28.0,
+     "seq_per_patient": 7.613,
+     "cost": 1795.6
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.147,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P2",
+    "label": "90%",
+    "observed": {
+     "caught": 31.0,
+     "np_flagged": 35.0,
+     "seq_per_patient": 7.613,
+     "cost": 2081.65
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.092,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P2",
+    "label": "95%",
+    "observed": {
+     "caught": 31.7,
+     "np_flagged": 39.6,
+     "seq_per_patient": 7.613,
+     "cost": 2306.35
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.161,
+    "share_draws_on_cost_frontier": 0.012
+   },
+   {
+    "family": "P3",
+    "label": "80%",
+    "observed": {
+     "caught": 30.5,
+     "np_flagged": 26.4,
+     "seq_per_patient": 7.613,
+     "cost": 1579.46
+    },
+    "observed_on_pareto": true,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.86,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P3",
+    "label": "90%",
+    "observed": {
+     "caught": 31.2,
+     "np_flagged": 31.8,
+     "seq_per_patient": 7.613,
+     "cost": 1859.8
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.129,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P3",
+    "label": "95%",
+    "observed": {
+     "caught": 31.4,
+     "np_flagged": 34.7,
+     "seq_per_patient": 7.613,
+     "cost": 2055.25
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P4",
+    "label": "80%",
+    "observed": {
+     "caught": 29.82,
+     "np_flagged": 25.49,
+     "seq_per_patient": 3.84,
+     "cost": 1224.76
+    },
+    "observed_on_pareto": true,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.999,
+    "share_draws_on_cost_frontier": 0.106
+   },
+   {
+    "family": "P4",
+    "label": "90%",
+    "observed": {
+     "caught": 30.69,
+     "np_flagged": 30.75,
+     "seq_per_patient": 3.84,
+     "cost": 1478.18
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.104,
+    "share_draws_on_cost_frontier": 0.011
+   },
+   {
+    "family": "P4",
+    "label": "95%",
+    "observed": {
+     "caught": 31.18,
+     "np_flagged": 34.72,
+     "seq_per_patient": 3.84,
+     "cost": 1667.2
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.035,
+    "share_draws_on_cost_frontier": 0.002
+   },
+   {
+    "family": "P5",
+    "label": "t_low 90% / t_high 85%",
+    "observed": {
+     "caught": 31.0,
+     "np_flagged": 32.1,
+     "seq_per_patient": 2.271,
+     "cost": 1362.16
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P5",
+    "label": "t_low 90% / t_high 90%",
+    "observed": {
+     "caught": 31.0,
+     "np_flagged": 31.0,
+     "seq_per_patient": 2.607,
+     "cost": 1344.35
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P5",
+    "label": "t_low 90% / t_high 95%",
+    "observed": {
+     "caught": 30.9,
+     "np_flagged": 29.8,
+     "seq_per_patient": 3.053,
+     "cost": 1318.83
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P5",
+    "label": "t_low 95% / t_high 85%",
+    "observed": {
+     "caught": 31.1,
+     "np_flagged": 33.9,
+     "seq_per_patient": 3.155,
+     "cost": 1539.31
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P5",
+    "label": "t_low 95% / t_high 90%",
+    "observed": {
+     "caught": 31.1,
+     "np_flagged": 32.0,
+     "seq_per_patient": 3.491,
+     "cost": 1510.8
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P5",
+    "label": "t_low 95% / t_high 95%",
+    "observed": {
+     "caught": 31.1,
+     "np_flagged": 30.8,
+     "seq_per_patient": 3.937,
+     "cost": 1483.85
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P5",
+    "label": "t_low 98% / t_high 85%",
+    "observed": {
+     "caught": 31.2,
+     "np_flagged": 35.1,
+     "seq_per_patient": 4.125,
+     "cost": 1698.14
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P5",
+    "label": "t_low 98% / t_high 90%",
+    "observed": {
+     "caught": 31.1,
+     "np_flagged": 33.7,
+     "seq_per_patient": 4.461,
+     "cost": 1677.48
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P5",
+    "label": "t_low 98% / t_high 95%",
+    "observed": {
+     "caught": 31.1,
+     "np_flagged": 31.8,
+     "seq_per_patient": 4.908,
+     "cost": 1639.12
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P6",
+    "label": "t_low 90% / t_high 85%",
+    "observed": {
+     "caught": 31.0,
+     "np_flagged": 32.1,
+     "seq_per_patient": 1.329,
+     "cost": 1273.59
+    },
+    "observed_on_pareto": true,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.288,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P6",
+    "label": "t_low 90% / t_high 90%",
+    "observed": {
+     "caught": 31.0,
+     "np_flagged": 31.0,
+     "seq_per_patient": 1.592,
+     "cost": 1247.41
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.212,
+    "share_draws_on_cost_frontier": 0.288
+   },
+   {
+    "family": "P6",
+    "label": "t_low 90% / t_high 95%",
+    "observed": {
+     "caught": 30.9,
+     "np_flagged": 29.8,
+     "seq_per_patient": 1.897,
+     "cost": 1209.87
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": true,
+    "share_draws_on_pareto": 0.253,
+    "share_draws_on_cost_frontier": 0.687
+   },
+   {
+    "family": "P6",
+    "label": "t_low 95% / t_high 85%",
+    "observed": {
+     "caught": 31.1,
+     "np_flagged": 33.6,
+     "seq_per_patient": 1.677,
+     "cost": 1395.19
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.003,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P6",
+    "label": "t_low 95% / t_high 90%",
+    "observed": {
+     "caught": 31.1,
+     "np_flagged": 31.8,
+     "seq_per_patient": 1.94,
+     "cost": 1361.87
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.002,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P6",
+    "label": "t_low 95% / t_high 95%",
+    "observed": {
+     "caught": 31.1,
+     "np_flagged": 30.6,
+     "seq_per_patient": 2.245,
+     "cost": 1320.06
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.096,
+    "share_draws_on_cost_frontier": 0.288
+   },
+   {
+    "family": "P6",
+    "label": "t_low 98% / t_high 85%",
+    "observed": {
+     "caught": 31.2,
+     "np_flagged": 34.9,
+     "seq_per_patient": 2.024,
+     "cost": 1498.84
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.051
+   },
+   {
+    "family": "P6",
+    "label": "t_low 98% / t_high 90%",
+    "observed": {
+     "caught": 31.1,
+     "np_flagged": 33.5,
+     "seq_per_patient": 2.287,
+     "cost": 1469.09
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P6",
+    "label": "t_low 98% / t_high 95%",
+    "observed": {
+     "caught": 31.1,
+     "np_flagged": 31.6,
+     "seq_per_patient": 2.592,
+     "cost": 1411.59
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 top-H&E; t_b 80%, t_s 80%",
+    "observed": {
+     "caught": 30.9,
+     "np_flagged": 31.2,
+     "seq_per_patient": 1.0,
+     "cost": 1276.27
+    },
+    "observed_on_pareto": true,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.944,
+    "share_draws_on_cost_frontier": 0.175
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 top-H&E; t_b 80%, t_s 90%",
+    "observed": {
+     "caught": 31.2,
+     "np_flagged": 35.4,
+     "seq_per_patient": 1.0,
+     "cost": 1398.25
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.283,
+    "share_draws_on_cost_frontier": 0.011
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 top-H&E; t_b 80%, t_s 95%",
+    "observed": {
+     "caught": 31.2,
+     "np_flagged": 39.0,
+     "seq_per_patient": 1.0,
+     "cost": 1534.49
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 top-H&E; t_b 90%, t_s 80%",
+    "observed": {
+     "caught": 31.0,
+     "np_flagged": 32.5,
+     "seq_per_patient": 1.0,
+     "cost": 1457.45
+    },
+    "observed_on_pareto": true,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.446,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 top-H&E; t_b 90%, t_s 90%",
+    "observed": {
+     "caught": 31.3,
+     "np_flagged": 36.1,
+     "seq_per_patient": 1.0,
+     "cost": 1549.47
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.058,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 top-H&E; t_b 90%, t_s 95%",
+    "observed": {
+     "caught": 31.3,
+     "np_flagged": 39.1,
+     "seq_per_patient": 1.0,
+     "cost": 1645.77
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 top-H&E; t_b 95%, t_s 80%",
+    "observed": {
+     "caught": 31.4,
+     "np_flagged": 33.5,
+     "seq_per_patient": 1.0,
+     "cost": 1578.01
+    },
+    "observed_on_pareto": true,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.912,
+    "share_draws_on_cost_frontier": 0.013
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 top-H&E; t_b 95%, t_s 90%",
+    "observed": {
+     "caught": 31.6,
+     "np_flagged": 36.9,
+     "seq_per_patient": 1.0,
+     "cost": 1649.34
+    },
+    "observed_on_pareto": true,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.341,
+    "share_draws_on_cost_frontier": 0.091
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 top-H&E; t_b 95%, t_s 95%",
+    "observed": {
+     "caught": 31.6,
+     "np_flagged": 39.5,
+     "seq_per_patient": 1.0,
+     "cost": 1727.81
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 random; t_b 80%, t_s 80%",
+    "observed": {
+     "caught": 30.48,
+     "np_flagged": 31.45,
+     "seq_per_patient": 1.0,
+     "cost": 1310.77
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.085,
+    "share_draws_on_cost_frontier": 0.001
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 random; t_b 80%, t_s 90%",
+    "observed": {
+     "caught": 30.78,
+     "np_flagged": 35.56,
+     "seq_per_patient": 1.0,
+     "cost": 1422.16
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.002,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 random; t_b 80%, t_s 95%",
+    "observed": {
+     "caught": 30.78,
+     "np_flagged": 39.01,
+     "seq_per_patient": 1.0,
+     "cost": 1547.18
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 random; t_b 90%, t_s 80%",
+    "observed": {
+     "caught": 30.87,
+     "np_flagged": 32.62,
+     "seq_per_patient": 1.0,
+     "cost": 1468.5
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.247,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 random; t_b 90%, t_s 90%",
+    "observed": {
+     "caught": 31.07,
+     "np_flagged": 36.24,
+     "seq_per_patient": 1.0,
+     "cost": 1555.16
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.005,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 random; t_b 90%, t_s 95%",
+    "observed": {
+     "caught": 31.07,
+     "np_flagged": 39.17,
+     "seq_per_patient": 1.0,
+     "cost": 1652.51
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 random; t_b 95%, t_s 80%",
+    "observed": {
+     "caught": 31.25,
+     "np_flagged": 33.85,
+     "seq_per_patient": 1.0,
+     "cost": 1589.68
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.204,
+    "share_draws_on_cost_frontier": 0.01
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 random; t_b 95%, t_s 90%",
+    "observed": {
+     "caught": 31.4,
+     "np_flagged": 36.92,
+     "seq_per_patient": 1.0,
+     "cost": 1656.99
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.086,
+    "share_draws_on_cost_frontier": 0.014
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 random; t_b 95%, t_s 95%",
+    "observed": {
+     "caught": 31.4,
+     "np_flagged": 39.51,
+     "seq_per_patient": 1.0,
+     "cost": 1732.69
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = 2 top-H&E; t_b 80%, t_s 80%",
+    "observed": {
+     "caught": 30.9,
+     "np_flagged": 31.2,
+     "seq_per_patient": 1.387,
+     "cost": 1311.27
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = 2 top-H&E; t_b 80%, t_s 90%",
+    "observed": {
+     "caught": 31.2,
+     "np_flagged": 35.4,
+     "seq_per_patient": 1.387,
+     "cost": 1433.25
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = 2 top-H&E; t_b 80%, t_s 95%",
+    "observed": {
+     "caught": 31.2,
+     "np_flagged": 39.0,
+     "seq_per_patient": 1.387,
+     "cost": 1570.93
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = 2 top-H&E; t_b 90%, t_s 80%",
+    "observed": {
+     "caught": 31.0,
+     "np_flagged": 32.6,
+     "seq_per_patient": 1.387,
+     "cost": 1501.73
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = 2 top-H&E; t_b 90%, t_s 90%",
+    "observed": {
+     "caught": 31.3,
+     "np_flagged": 36.2,
+     "seq_per_patient": 1.387,
+     "cost": 1591.61
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = 2 top-H&E; t_b 90%, t_s 95%",
+    "observed": {
+     "caught": 31.3,
+     "np_flagged": 39.1,
+     "seq_per_patient": 1.387,
+     "cost": 1685.06
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = 2 top-H&E; t_b 95%, t_s 80%",
+    "observed": {
+     "caught": 31.3,
+     "np_flagged": 33.6,
+     "seq_per_patient": 1.387,
+     "cost": 1622.29
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = 2 top-H&E; t_b 95%, t_s 90%",
+    "observed": {
+     "caught": 31.5,
+     "np_flagged": 37.0,
+     "seq_per_patient": 1.387,
+     "cost": 1692.19
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = 2 top-H&E; t_b 95%, t_s 95%",
+    "observed": {
+     "caught": 31.5,
+     "np_flagged": 39.5,
+     "seq_per_patient": 1.387,
+     "cost": 1769.23
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = all; t_b 80%, t_s 80%",
+    "observed": {
+     "caught": 30.9,
+     "np_flagged": 31.2,
+     "seq_per_patient": 1.867,
+     "cost": 1352.79
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = all; t_b 80%, t_s 90%",
+    "observed": {
+     "caught": 31.2,
+     "np_flagged": 35.4,
+     "seq_per_patient": 1.867,
+     "cost": 1474.77
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = all; t_b 80%, t_s 95%",
+    "observed": {
+     "caught": 31.2,
+     "np_flagged": 39.0,
+     "seq_per_patient": 1.867,
+     "cost": 1612.44
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = all; t_b 90%, t_s 80%",
+    "observed": {
+     "caught": 31.0,
+     "np_flagged": 32.6,
+     "seq_per_patient": 1.867,
+     "cost": 1545.39
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = all; t_b 90%, t_s 90%",
+    "observed": {
+     "caught": 31.3,
+     "np_flagged": 36.2,
+     "seq_per_patient": 1.867,
+     "cost": 1634.55
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = all; t_b 90%, t_s 95%",
+    "observed": {
+     "caught": 31.3,
+     "np_flagged": 39.1,
+     "seq_per_patient": 1.867,
+     "cost": 1727.29
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = all; t_b 95%, t_s 80%",
+    "observed": {
+     "caught": 31.3,
+     "np_flagged": 33.6,
+     "seq_per_patient": 1.867,
+     "cost": 1663.8
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = all; t_b 95%, t_s 90%",
+    "observed": {
+     "caught": 31.5,
+     "np_flagged": 37.0,
+     "seq_per_patient": 1.867,
+     "cost": 1733.71
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P7",
+    "label": "k = all; t_b 95%, t_s 95%",
+    "observed": {
+     "caught": 31.5,
+     "np_flagged": 39.5,
+     "seq_per_patient": 1.867,
+     "cost": 1810.75
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P8",
+    "label": "t_b 80%, t_mid 80%, t_c 90%",
+    "observed": {
+     "caught": 30.9,
+     "np_flagged": 28.7,
+     "seq_per_patient": 1.703,
+     "cost": 1288.91
+    },
+    "observed_on_pareto": true,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 1.0,
+    "share_draws_on_cost_frontier": 0.017
+   },
+   {
+    "family": "P8",
+    "label": "t_b 80%, t_mid 90%, t_c 90%",
+    "observed": {
+     "caught": 31.0,
+     "np_flagged": 29.3,
+     "seq_per_patient": 1.931,
+     "cost": 1342.53
+    },
+    "observed_on_pareto": true,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.615,
+    "share_draws_on_cost_frontier": 0.05
+   },
+   {
+    "family": "P8",
+    "label": "t_b 90%, t_mid 80%, t_c 90%",
+    "observed": {
+     "caught": 31.0,
+     "np_flagged": 30.2,
+     "seq_per_patient": 1.469,
+     "cost": 1458.83
+    },
+    "observed_on_pareto": true,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.933,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P8",
+    "label": "t_b 90%, t_mid 90%, t_c 90%",
+    "observed": {
+     "caught": 31.1,
+     "np_flagged": 30.4,
+     "seq_per_patient": 1.641,
+     "cost": 1493.42
+    },
+    "observed_on_pareto": true,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.613,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P8",
+    "label": "t_b 95%, t_mid 80%, t_c 90%",
+    "observed": {
+     "caught": 31.4,
+     "np_flagged": 31.4,
+     "seq_per_patient": 1.332,
+     "cost": 1571.99
+    },
+    "observed_on_pareto": true,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.964,
+    "share_draws_on_cost_frontier": 0.056
+   },
+   {
+    "family": "P8",
+    "label": "t_b 95%, t_mid 90%, t_c 90%",
+    "observed": {
+     "caught": 31.4,
+     "np_flagged": 31.6,
+     "seq_per_patient": 1.465,
+     "cost": 1594.73
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P9",
+    "label": "N = 2 years; t, t_s 90%",
+    "observed": {
+     "caught": 31.1,
+     "np_flagged": 33.4,
+     "seq_per_patient": 2.533,
+     "cost": 1415.87
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.0,
+    "share_draws_on_cost_frontier": 0.0
+   },
+   {
+    "family": "P9",
+    "label": "N = 3 years; t, t_s 90%",
+    "observed": {
+     "caught": 31.3,
+     "np_flagged": 34.2,
+     "seq_per_patient": 2.067,
+     "cost": 1395.47
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": false,
+    "share_draws_on_pareto": 0.277,
+    "share_draws_on_cost_frontier": 0.004
+   },
+   {
+    "family": "P9",
+    "label": "N = 5 years; t, t_s 90%",
+    "observed": {
+     "caught": 31.3,
+     "np_flagged": 35.4,
+     "seq_per_patient": 1.6,
+     "cost": 1347.95
+    },
+    "observed_on_pareto": false,
+    "observed_on_cost_frontier": true,
+    "share_draws_on_pareto": 0.158,
+    "share_draws_on_cost_frontier": 0.332
+   },
+   {
+    "family": "P10",
+    "label": "grade ID/LGD (all pre-event endoscopies)",
+    "observed": {
+     "caught": 17.0,
+     "np_flagged": 25.0,
+     "seq_per_patient": 0.0,
+     "cost": 570.67
+    },
+    "observed_on_pareto": true,
+    "observed_on_cost_frontier": true,
+    "share_draws_on_pareto": 0.972,
+    "share_draws_on_cost_frontier": 1.0
+   }
+  ],
+  "missing_families": [],
+  "not_available": [],
+  "draws": 2000,
+  "n_points": 76,
+  "R49": {
+   "share_draws_dominated_pareto": 0.998,
+   "share_draws_dominated_cost": 1.0,
+   "top_dominators_pareto": [
+    {
+     "family": "P8",
+     "label": "t_b 90%, t_mid 90%, t_c 90%",
+     "share_draws_dominating": 0.979
+    },
+    {
+     "family": "P8",
+     "label": "t_b 95%, t_mid 80%, t_c 90%",
+     "share_draws_dominating": 0.782
+    },
+    {
+     "family": "P8",
+     "label": "t_b 95%, t_mid 90%, t_c 90%",
+     "share_draws_dominating": 0.701
+    }
+   ],
+   "top_dominators_cost": [
+    {
+     "family": "P6",
+     "label": "t_low 95% / t_high 95%",
+     "share_draws_dominating": 1.0
+    },
+    {
+     "family": "P9",
+     "label": "N = 5 years; t, t_s 90%",
+     "share_draws_dominating": 0.697
+    },
+    {
+     "family": "P1",
+     "label": "90%",
+     "share_draws_dominating": 0.566
+    }
+   ]
+  },
+  "P1_90": {
+   "share_draws_dominated_pareto": 0.002,
+   "share_draws_dominated_cost": 0.332,
+   "top_dominators_pareto": [
+    {
+     "family": "P1",
+     "label": "80%",
+     "share_draws_dominating": 0.003
+    }
+   ],
+   "top_dominators_cost": [
+    {
+     "family": "P6",
+     "label": "t_low 90% / t_high 95%",
+     "share_draws_dominating": 0.309
+    },
+    {
+     "family": "P6",
+     "label": "t_low 90% / t_high 90%",
+     "share_draws_dominating": 0.15
+    },
+    {
+     "family": "P7",
+     "label": "k = 1 top-H&E; t_b 80%, t_s 80%",
+     "share_draws_dominating": 0.064
+    }
+   ]
+  },
+  "frontier_size_per_draw": {
+   "pareto_median_iqr": [
+    15.0,
+    13.0,
+    17.0
+   ],
+   "cost_median_iqr": [
+    5.0,
+    4.0,
+    7.0
+   ]
+  },
+  "check_round8_frontier": {
+   "cells_compared": 76,
+   "mismatches": [],
+   "reproduced": true
+  },
+  "note": "per draw (rv8 pdraws, RandomState(0)): every round-8 cell's caught / NP flagged / samples sequenced per patient / cost per patient (GBP 85 per sample, GBP 535 per flagged endoscopy) recomputed with thresholds and calls fixed, rounded as round 8 (counts 2 dp, sequenced 3 dp, cost 2 dp); Pareto = not dominated on caught (higher), NP flagged and sequenced (lower); cost frontier on caught and cost; the p53-subset current-care cell excluded as in round 8; dominated = not on that frontier"
+ },
+ "prespec": "c39fd82"
+}
