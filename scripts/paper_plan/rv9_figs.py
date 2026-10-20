@@ -29,7 +29,8 @@ def group(m):
     return "sample aggregation"
 def short(m):
     n = m["name"].replace(" [nested]", "").replace(" [nested, pAUC selection]", " [pAUC]").replace("exponentially weighted mean", "EW mean").replace("gate score, R49-aligned", "gate (aligned)").replace("gate score, literal", "gate (literal)")
-    n = n.replace("A1 | ", "").replace("Sample aggregation | ", "").replace("stacked B1 gate score, aligned", "B1 gate (aligned)").replace("consecutive-2 or t_high", "consec-2 or t_high")
+    n = n.replace("A4 confirm-by-sequencing | gate with the high band also sequenced (score 0 = flag boundary)", "A4 confirm gate (high band sequenced)")
+    n = n.replace("A1 | ", "").replace("Sample aggregation | ", "").replace("stacked B1 gate score, aligned", "B1 gate (aligned)").replace("consecutive-2 or t_high", "consec-2 or t_high").replace("A4 confirm-by-sequencing | gate with the high band also sequenced (score 0 = flag boundary)", "A4 confirm gate (high band sequenced)")
     return n if len(n) <= 78 else n[:76] + ".."
 def fig_forest(M):
     rows = [m for m in M["methods"] if m["kind"] in ("nested", "nested_pauc")]; key = lambda m: (0 if m["vs_R49"]["caught"]["delta"] >= -0.5 else 1, m["vs_R49"]["np_flagged"]["delta"]); rows = sorted(rows, key=key)[:48]
@@ -37,12 +38,12 @@ def fig_forest(M):
     for y, m in zip(yy, rows):
         d = m["vs_R49"]["np_flagged"]; lo, hi = d["ci95"]; l99, h99 = d["ci99_bonferroni"]; ok = m["vs_R49"]["caught"]["delta"] >= -0.5; c = GC[group(m)] if ok else "#B0B0B0"
         ax.plot([l99, h99], [y, y], color=c, lw=1.0, alpha=0.6, zorder=1); ax.plot([lo, hi], [y, y], color=c, lw=3.0, zorder=2); ax.plot(d["delta"], y, "o", color=c, ms=6, zorder=3, mec="white", mew=0.6)
-    ax.axvline(0, color="k", lw=0.8); ax.set_yticks(yy); ax.set_yticklabels([short(m) for m in rows], fontsize=9); ax.set_xlabel("Change in non-progressor patients ever flagged vs R49 (of 43; negative = fewer false flags)")
+    ax.axvline(0, color="k", lw=0.8); ax.set_yticks(yy); ax.set_yticklabels([short(m) for m in rows], fontsize=9); ax.set_xlabel("Change in non-progressor patients ever flagged vs R49 (of 43; negative = fewer)")
     x1 = ax.get_xlim()[1]; xr = ax.get_xlim()[1] - ax.get_xlim()[0]; ax.set_xlim(ax.get_xlim()[0], x1 + 0.34 * xr); xt = x1 + 0.02 * xr
     for y, m in zip(yy, rows): ax.text(xt, y, f"Δ caught {m['vs_R49']['caught']['delta']:+.1f}   seq {m['values']['seq']:.2f}", va="center", fontsize=9, color="#333333")
     ax.set_ylim(-0.8, len(rows) - 0.2); h = [plt.Line2D([0], [0], color=c, lw=3) for c in GC.values()] + [plt.Line2D([0], [0], color="#B0B0B0", lw=3)]
-    ax.legend(h, list(GC) + ["Δ caught < -0.5 (ranked last)"], loc="lower left", frameon=True, framealpha=0.95, fontsize=9)
-    ax.set_title("Nested change in flagged non-progressors vs R49 (thick 95% CI, thin 99.2%)"); fig.tight_layout(); fig.savefig(f"{OUTD}/r9_forest.png", dpi=200); plt.close(fig)
+    fig.legend(h, list(GC) + ["Δ caught < -0.5 (ranked last)"], loc="lower center", ncol=4, frameon=False, fontsize=9)
+    ax.set_title("Nested change in flagged non-progressors vs R49 (thick 95% CI, thin 99.2%)"); fig.tight_layout(rect=(0, 0.07, 1, 1)); fig.savefig(f"{OUTD}/r9_forest.png", dpi=200); plt.close(fig)
 def fig_scatter(M):
     R8 = json.load(open(T + "/results/paper_final/review_round8/l1.json"))["L1"]["cells"]; ref = {}
     for c in R8:
@@ -77,7 +78,7 @@ def fig_f0(F):
                 o = F["rules"][r]
                 if tk == "any": v = o["any_later_record"]["share_flagged" if q == 0 else "share_not_flagged"]; a = o["any_later_record"]["flagged_with_record" if q == 0 else "not_flagged_with"]; b = o["any_later_record"]["flagged_without" if q == 0 else "not_flagged_without"]
                 else: t = o["tables"][tk]; v = t[kf]; a = t["flagged_later" if q == 0 else "not_flagged_later"]; b = t["flagged_not_later" if q == 0 else "not_flagged_not_later"]
-                vals.append(num(v)); labs.append("<5 later" if isinstance(v, str) else f"{a}/{(a if not isinstance(a, str) else 0) + (b if not isinstance(b, str) else 0)}")
+                vals.append(num(v)); labs.append("<5\nlater" if isinstance(v, str) else f"{a}/{(a if not isinstance(a, str) else 0) + (b if not isinstance(b, str) else 0)}")
             xs = x + (q - 0.5) * w; ax.bar(xs, np.nan_to_num(vals), w, color=col, label=lab)
             for xx, v, lb in zip(xs, vals, labs): ax.text(xx, (0 if np.isnan(v) else v) + 0.015, lb, ha="center", fontsize=9, rotation=0)
         ax.set_xticks(x); ax.set_xticklabels(rules); ax.set_ylim(0, 1.05); ax.set_title(tt); ax.set_ylabel("Share of non-progressors")
