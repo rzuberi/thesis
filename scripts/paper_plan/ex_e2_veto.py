@@ -523,5 +523,42 @@ elif TASK == "grade":
                     F, NS, TH = veto_V(S, b, V, vtr, rule, k, ve_test=vt, ve_train=vtr_m)
                     cells.append(summarize(S, F, NS, f"{b} veto {f} k{k} {rule}, vetoable only at {gname} endoscopies", {"base": b, "feature": f, "k": k, "rule": rule, "grade_gate": gname}))
     res["cells"] = cells; res["note"] = "as the fixed / trained vetoes, but only endoscopies whose highest sample grade is NDBE (or NDBE/ID) can be vetoed and sequenced for the veto; dysplastic endoscopies keep the base call"; dump(res)
+# ================================================================== mem: the best vetoes on top of the round-9 patient-memory rule (exponentially weighted R49-aligned gate score)
+elif TASK == "mem":
+    S = build(); FT = load_feat(); O, I = S["O"], S["I"]; cells = []; R9 = M + "/review_round9"
+    def inner_of(m, j, kk): x = np.full(n, np.nan); s_ = I[m][(REPS[j], kk)]; x[s_.index.values] = s_.values; return x
+    GR = SM.Pathology.map({"NDBE": 0, "ID": 1, "LGD": 2, "HGD": 3, "IMC": 4}).values.astype(float); EG = np.array([GR[s_].max() for s_ in S["es"]])
+    gate_t = (EG <= 1)[:, None]; gate_tr = {kk: EG[tx["idx"]] <= 1 for kk, tx in S["TRX"].items()}
+    VETOES = []
+    for m, k in (("L-LATE", 1), ("L-CNV", 1)):
+        V = vs_test(S, O[m], k); vtr = {kk: vs_train(S, inner_of(m, *kk), tx["top"], k) for kk, tx in S["TRX"].items()}
+        for rule in ("strict", "loss1", "endo95"):
+            VETOES.append((f"{m} k{k} {rule}", V, vtr, rule, k, None)); VETOES.append((f"{m} k{k} {rule}, NDBE/ID only", V, vtr, rule, k, "gate"))
+    q = FT.ps_oac.values.astype(float); V = vs_test(S, q, 2); vtr = {kk: vs_train(S, q, tx["top"], 2) for kk, tx in S["TRX"].items()}; VETOES.append(("ps_oac k2 cn90", V, vtr, "cn90", 2, None))
+    for qq in (0.80, 0.90):
+        V, vtr = double_V(S, q, O["L-LATE"], lambda j, kk: inner_of("L-LATE", j, kk), 2, qq)
+        for rule in ("strict", "endo95"): VETOES.append((f"L-LATE low AND ps_oac quiet<{int(qq * 100)} kq2 {rule}", V, vtr, rule, 2, None))
+    out = {}
+    for grp, key in (("X", "A1_gate_al_ew_ext"), ("A1ga", "A1_gate_al_ew"), ("A12", "A12")):
+        f = f"{R9}/grp_{grp}.npz"
+        if not os.path.exists(f): out[key] = "missing"; continue
+        Z = np.load(f)
+        if f"{key}__sel_np_F" not in Z.files: out[key] = "key missing"; continue
+        FM = Z[f"{key}__sel_np_F"].astype(bool); NM = Z[f"{key}__sel_np_NS"].astype(int); assert FM.shape == (S["E"], 10)
+        c0 = summarize(S, FM, NM, f"round-9 memory {key} (selected per fold, as stored)", {"base": f"mem:{key}"}); cells.append(c0); out[key] = short(c0)
+        for nm, V, vtr, rule, k, g in VETOES:
+            _, _, TH = veto_V(S, "R49hm", V, vtr, rule, k, ve_test=gate_t if g else None, ve_train=gate_tr if g else None)
+            ve = FM & (gate_t if g else True); veto = ve & (V < TH); F = FM & ~veto
+            k2 = np.minimum(k, S["nsz"])[:, None]; NS = NM + np.where(ve, np.where(S["GB"] == 1, k2 - 1, k2), 0)
+            c = summarize(S, F, NS, f"memory {key} + veto {nm}", {"base": f"mem:{key}", "feature": nm, "k": k, "rule": rule})
+            A = patient_arrays(S, F, NS); Am = patient_arrays(S, FM, NM); one = np.ones((1, S["P_"])); D = S["D"]; a0, r0, ab, rb = lstats(S, A, one), lstats(S, Am, one), lstats(S, A, D), lstats(S, Am, D)
+            nP = int((S["plab"] == 1).sum()); nN = int((S["plab"] == 0).sum()); dd = lambda kk_, mult=1.0: dstat(mult * float(a0[kk_][0] - r0[kk_][0]), mult * (ab[kk_] - rb[kk_]))
+            c["contrasts"]["memory_rule"] = {"d_np_patients_flagged": dd("np_flagged_share", nN), "d_progressor_patients_caught": dd("caught_share", nP), "d_seq_per_patient": dd("seq_per_patient"), "d_endo_spec": dd("endo_spec"), "d_cost_per_patient": dd("cost_per_patient")}
+            cells.append(c)
+    res["cells"] = cells; res["memory_alone"] = out
+    res["note"] = ("round-9 memory rule flags/sequencing as stored (killcoyne_mm/review_round9/grp_*.npz, per-fold selected 'np' criterion); the veto is applied to every memory flag "
+                   "(or only NDBE/ID endoscopies), with the veto threshold set on training patients against the R49hm base (the memory rule's own training flags are not stored), so this is a cheap approximation; "
+                   "sequencing = stored memory-rule sequencing + k top samples at every vetoable memory flag (k - 1 in R49's middle band)")
+    dump(res)
 else:
     raise SystemExit(f"unknown TASK {TASK}")

@@ -42,10 +42,12 @@ if __name__ == "__main__":
     for b, col in cols.items():
         cc = [c for c in C if c["params"].get("base") == b]
         ax.scatter([c["non_progressor_patients_ever_flagged"] for c in cc], [c["progressor_patients_caught"] for c in cc], s=[10 + 12 * c["samples_sequenced_per_patient"] for c in cc], alpha=0.45, color=col, label=f"veto on {b}")
+    cc = [c for c in C if str(c["params"].get("base", "")).startswith("mem:")]
+    ax.scatter([c["non_progressor_patients_ever_flagged"] for c in cc], [c["progressor_patients_caught"] for c in cc], s=[10 + 12 * c["samples_sequenced_per_patient"] for c in cc], alpha=0.6, color="#9467bd", label="round-9 memory rules ± veto")
     l8 = os.path.join(RD, "../review_round8/l1.json")
     if os.path.exists(l8):
         fr = [c for c in json.load(open(l8))["L1"]["cells"] if c["pareto_caught_falseflags_sequencing"] and c["family"] != "P10"]
         ax.scatter([c["non_progressor_patients_ever_flagged"] for c in fr], [c["progressor_patients_caught"] for c in fr], marker="D", s=40, facecolors="none", edgecolors="k", label="round-8 frontier (P1, P3, P4, P6-P8)", zorder=4)
     ax.scatter([31.8], [31.1], marker="*", s=220, color="k", label="R49", zorder=5); ax.scatter([36.0], [31.1], marker="X", s=140, color="grey", label="P1 90%", zorder=5)
-    ax.set_xlabel("Non-progressor patients ever flagged (of 43)"); ax.set_ylabel("Progressor patients caught (of 32)"); ax.set_ylim(24, 32.3); ax.legend(fontsize=9, loc="lower right"); ax.grid(alpha=0.3)
+    ax.set_xlim(14, 41); ax.set_xlabel("Non-progressor patients ever flagged (of 43)"); ax.set_ylabel("Progressor patients caught (of 32)"); ax.set_ylim(24, 32.3); ax.legend(fontsize=9, loc="lower right"); ax.grid(alpha=0.3)
     ax.set_title("Copy-number vetoes, nested (marker size = samples sequenced per patient)", fontsize=10); fig.tight_layout(); fig.savefig(os.path.join(FD, "e2_veto_scatter.png"), dpi=200); print("figure", os.path.join(FD, "e2_veto_scatter.png"))

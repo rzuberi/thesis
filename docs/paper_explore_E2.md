@@ -1,6 +1,6 @@
 # Exploration E2: copy number as a veto on H&E flags
 
-Status: EXPLORATORY (20–21 October 2026), rules in `paper/reviews_round7/decisions/EXPLORE_RULES.md`. Nothing here is confirmatory; every rule tried is recorded.
+Status: EXPLORATORY, COMPLETE (20 October 2026; memory-rule stacking added the same evening). Rules in `paper/reviews_round7/decisions/EXPLORE_RULES.md`. Nothing here is confirmatory; every rule tried is recorded.
 
 ## Plan
 
@@ -139,13 +139,13 @@ A high-band-only veto (R49h) can therefore clear at most about 6 patients. Vetoi
 | R49hm, trained models (L-CNV / L-LATE), loss ≤ 0 | 30.3 | 26.4 | 3.36 | 0.822 / 0.685 | -5.4 [-7.5, -3.4] | -0.8 [-1.6, -0.2] | -9.6 [-13.8, -5.6] | -0.8 [-2.7, +1.3] | +0.039 [-0.057, +0.154] |
 | R49hm, trained models, loss ≤ 1 | 30.2 | 22.9 | 3.36 | 0.778 / 0.753 | -8.9 [-11.7, -6.0] | -0.9 [-1.9, -0.2] | -13.1 [-17.6, -8.5] | -0.9 [-3.0, +1.2] | +0.063 [-0.028, +0.156] |
 | R49hm, quiet features, loss ≤ 0 (picks ps_oac k2 strict in 83 of 100 folds) | 29.1 | 22.9 | 4.29 | 0.688 / 0.759 | -8.9 [-12.9, -5.3] | -2.0 [-4.4, -0.5] | -13.1 [-17.9, -8.4] | -2.0 [-4.9, +0.6] | -0.014 [-0.140, +0.098] |
-| R49hm, all candidates (fixed, trained, gated, elastic net, double), loss ≤ 0 | 29.5 | 23.0 | 4.01 | 0.707 / 0.768 | -8.8 [-11.9, -5.8] | -1.6 [-3.6, -0.4] | -13.0 [-17.2, -8.9] | -1.6 [-4.2, +0.8] | +0.009 [-0.093, +0.102] |
+| R49hm, all candidates (fixed, trained, gated, elastic net, double), loss ≤ 0 | 29.0 | 22.7 | 3.99 | 0.711 / 0.771 | -9.1 [-12.2, -6.1] | -2.1 [-4.3, -0.6] | -13.3 [-17.4, -9.1] | -2.1 [-4.9, +0.4] | +0.013 [-0.089, +0.111] |
 | R49hm, trained models with NDBE/ID gate, loss ≤ 0 | 30.5 | 26.6 | 2.95 | 0.809 / 0.690 | -5.2 [-7.4, -3.1] | -0.6 [-1.4, -0.1] | -9.4 [-13.5, -5.4] | -0.6 [-2.5, +1.4] | +0.033 [-0.059, +0.129] |
 | R49hm, double vetoes, loss ≤ 0 | 29.9 | 24.1 | 4.35 | 0.755 / 0.743 | -7.7 [-11.3, -4.5] | -1.2 [-3.3, +0.0] | -11.9 [-16.3, -7.6] | -1.2 [-3.9, +1.2] | +0.025 [-0.085, +0.147] |
 | R49h, trained models, loss ≤ 0 | 30.3 | 28.8 | 3.24 | 0.840 / 0.620 | -3.0 [-5.1, -1.4] | -0.8 [-2.1, +0.0] | -7.2 [-10.8, -3.4] | -0.8 [-2.9, +1.3] | +0.008 [-0.118, +0.134] |
 | P1, trained models, loss ≤ 0 | 29.9 | 28.5 | 2.57 | 0.820 / 0.690 | -3.3 [-4.9, -1.8] | -1.2 [-2.9, +0.0] | -7.5 [-10.7, -4.5] | -1.2 [-2.5, -0.3] | +0.037 [-0.027, +0.098] |
 | P1, quiet features, loss ≤ 0 | 29.7 | 25.9 | 3.56 | 0.680 / 0.762 | -5.9 [-11.3, -1.0] | -1.4 [-4.1, +0.7] | -10.1 [-14.7, -6.0] | -1.4 [-3.5, -0.1] | -0.023 [-0.142, +0.089] |
-| R49hm, elastic-net vetoes (compact block), loss ≤ 0 | 29.7 | 29.6 | 3.65 | 0.811 / 0.650 | -2.2 [-3.5, -1.1] | -1.4 [-2.7, -0.4] | -6.4 [-9.9, -2.9] | -1.4 [-3.5, +0.6] | +0.002 [-0.100, +0.123] |
+| R49hm, elastic-net vetoes (compact and full block), loss ≤ 0 | 29.0 | 25.5 | 3.63 | 0.808 / 0.673 | -6.3 [-8.8, -3.9] | -2.1 [-4.5, -0.5] | -10.5 [-14.5, -6.6] | -2.1 [-5.0, +0.5] | +0.000 [-0.110, +0.152] |
 
 **When the rule is chosen on training patients, every copy-number veto loses progressor patients.**
 - **Trained-model vetoes:** the loss is about 0.8 (CI excludes 0). They clear 5.4 non-progressors (loss ≤ 0) or 8.9 (loss ≤ 1) relative to R49.
@@ -156,7 +156,10 @@ A high-band-only veto (R49h) can therefore clear at most about 6 patients. Vetoi
 - **Specification:** α 0.9, C by patient-grouped inner CV, nested inner out-of-fold scores for the threshold. Populations: P1-90% flagged, the wider 95% flagged, and all training samples.
 - **Compact block** (44 per-sample arm deviations + 11 summary features): held-out AUROC of the top sample among P1-flagged endoscopies 0.719 (flagged population), 0.718 (wide) and 0.723 (all). Training on the flagged population does not help, and the compact model is below L-CNV (0.769).
 - **As a veto:** no cell reduces non-progressors flagged by more than about 1.5 without losing progressors. The best no-loss cell is R49h EN[compact, all] k1 cn90: −0.7 [−1.4, −0.2], caught 31.1.
-- **Full shipped block (633 features):** STILL RUNNING at the time of writing; see the status line at the end.
+- **Full shipped block (633 features).**
+  - **Discrimination:** top-sample AUROC among P1-flagged held-out endoscopies 0.77 when trained on the flagged population (median 114 non-zero coefficients) or the wider 95% population, against 0.81 when trained on all samples (as L-CNV is). **Restricting training to the population where the veto acts makes the model worse**, because it halves the training data and does not find a different signal.
+  - **Best cells:** R49hm EN[their, wide] k2 endo95 gives 30.6 caught, 27.2 flagged, Δ vs R49 −4.6 [−6.9, −2.5] non-progressors and −0.5 [−1.3, 0.0] caught. R49h EN[their, all] k1 endo95 gives −0.9 / −0.2.
+  - **Selected per fold** (elastic-net family, loss ≤ 0), R49hm: 29.0 / 25.5 (−6.3 / −2.1). Not better than the stored L-CNV / L-LATE vetoes.
 
 **(c) One against two samples.** A second sample helps only the quietness scores (ps_oac R49hm: k1 cn90 −3.3 non-progressors at −1.2 caught; k2 cn90 −5.2 at 0.0). For the trained models it adds sequencing (3.15 → 4.35 samples per patient on R49hm) with no gain.
 
@@ -220,6 +223,58 @@ Joint frontier on caught, non-progressors flagged and samples sequenced, over th
 **Lead time.** Vetoes remove the earliest flags. R49hm L-LATE strict moves the median first flag → event from 4.7 to 4.4 years (loss1: 4.2). Vetoed progressor endoscopies lie a median 4.8–5.5 years before the event, against 3.0 for kept ones.
 
 Figure (local): `paper/figures_explore_E2/e2_veto_scatter.png`.
+
+### 5. Vetoes on top of the round-9 patient-memory rule (`mem`, added 20 October evening)
+
+**Bases.** The round-9 memory rules are taken exactly as stored: flags and sequencing from `killcoyne_mm/review_round9/grp_*.npz`, the per-fold selected "np" choice.
+- **A1 ew:** exponentially weighted R49-aligned gate score.
+- **A1 ew_ext:** the same with longer half-lives.
+- **A12:** A1 ew plus a copy-number certificate.
+
+**How the veto is applied.** On every memory flag (or only NDBE/ID endoscopies), the veto threshold is the one set on training patients for the R49hm base. The memory rule's own training flags are not stored, so this is a cheap approximation, still nested: no held-out patient sets anything.
+
+**Sequencing.** Stored sequencing, plus k top samples at every memory flag (k − 1 in R49's middle band).
+
+**Cells.** The vetoes were fixed before these runs: L-LATE / L-CNV × 3 rules × gate, ps_oac k2 cn90, and the double vetoes. Each column gives Δ against the memory rule itself, with paired patient-bootstrap CIs; Δ cost is in £ per patient.
+
+| Base + veto | Caught | NP flagged | Seq / patient | Δ NP flagged vs memory | Δ caught vs memory | Δ seq | Δ cost | Δ NP vs R49 | Δ caught vs R49 |
+|---|---|---|---|---|---|---|---|---|---|
+| A12 alone (round 9) | 30.5 | 21.5 | 1.94 | | | | | −10.3 [−13.9, −6.9] | −0.6 [−1.6, +0.2] |
+| A12 + ps_oac k2 cn90 | 30.5 | 17.2 | 3.82 | **−4.3 [−7.7, −1.7]** | **+0.0 [+0.0, +0.0]** | +1.88 | −29 [−111, +43] | −14.6 [−18.9, −10.3] | −0.6 [−1.6, +0.2] |
+| A12 + double veto (L-LATE low AND ps_oac quiet < 80%, strict) | 30.5 | 16.9 | 3.82 | −4.6 [−7.9, −1.9] | +0.0 [+0.0, +0.0] | +1.88 | −70 [−151, −1] | −14.9 [−19.2, −10.7] | −0.6 [−1.6, +0.2] |
+| A12 + L-LATE k1 strict, NDBE/ID only | 30.2 | 18.4 | 2.62 | −3.1 [−4.6, −1.9] | −0.3 [−1.0, +0.0] | +0.68 | −96 [−139, −56] | −13.4 [−17.1, −9.6] | −0.9 [−1.8, −0.2] |
+| A1 ew alone (round 9) | 30.7 | 23.6 | 1.94 | | | | | −8.2 [−11.4, −5.1] | −0.4 [−1.3, +0.4] |
+| A1 ew + ps_oac k2 cn90 | 30.7 | 20.4 | 4.05 | −3.2 [−6.5, −0.9] | +0.0 [+0.0, +0.0] | +2.11 | −51 [−153, +35] | −11.4 [−15.6, −7.4] | −0.4 [−1.3, +0.4] |
+| A1 ew + L-LATE k1 strict, NDBE/ID only | 30.4 | 21.3 | 2.69 | −2.3 [−3.6, −1.1] | −0.3 [−1.0, +0.0] | +0.75 | −127 [−180, −77] | −10.5 [−13.7, −7.2] | −0.7 [−1.5, −0.1] |
+| A1 ew_ext alone (round 9) | 30.4 | 23.6 | 1.94 | | | | | −8.2 [−11.1, −5.4] | −0.7 [−1.5, −0.1] |
+| A1 ew_ext + ps_oac k2 cn90 | 30.4 | 20.1 | 4.01 | −3.5 [−6.9, −1.0] | +0.0 [+0.0, +0.0] | +2.07 | −42 [−138, +41] | −11.7 [−15.7, −7.8] | −0.7 [−1.5, −0.1] |
+
+**The quiet-OAC veto loses no progressor patient on any of the three memory bases.**
+- **The rule:** the per-sample segmentation arm profile of the top two H&E samples is below the copy-number-alone 90% threshold on the 17p, 9p, 18q, 5q, 4q, 13q, 3p losses and 8q, 7p, 20q gains.
+- **The result:** Δ caught +0.0 in every repeat and bootstrap draw, while it clears another 3.2–4.3 non-progressors.
+- **Same pattern on R49hm:** 26.6 flagged, 0.0 lost.
+- **Cost:** about 2 extra samples sequenced per patient, cost-neutral (about −£30 to −£50 per patient, CIs span 0).
+
+**The caveat.** The cell was picked after seeing about 650 nested cells on R49 bases. Its memory-base results are new evaluations of a fixed rule, but on the same patients.
+
+**The per-fold-selected version of the same family** (strict thresholds, chosen on training patients) loses about 1–2 progressors. The safe behaviour comes from the cn90 threshold, a copy-number-alone sensitivity target, not from fitting to H&E-flagged patients.
+
+### Ranked summary (Δ against R49 and P1; nested unless marked)
+
+| Rank | Rule | Caught | NP flagged | Seq / patient | Δ NP vs R49 [CI] | Δ caught vs R49 [CI] | Δ NP vs P1 | Δ caught vs P1 |
+|---|---|---|---|---|---|---|---|---|
+| 1 | Round-9 memory A12 + quiet-OAC veto (ps_oac k2 cn90) — post-hoc cell | 30.5 | 17.2 | 3.82 | −14.6 [−18.9, −10.3] | −0.6 [−1.6, +0.2] | −18.8 | −0.6 |
+| 2 | R49hm + quiet-OAC veto (ps_oac k2 cn90) — post-hoc cell | 31.1 | 26.6 | 4.35 | −5.2 [−9.1, −2.1] | +0.0 [+0.0, +0.0] | −9.4 | +0.0 |
+| 3 | R49hm + L-LATE k1 strict veto, NDBE/ID only | 30.9 | 27.7 | 2.80 | −4.1 [−5.8, −2.5] | −0.2 [−0.5, +0.0] | −8.3 | −0.2 |
+| 4 | R49h + L-LATE k1 endo95 veto (high band only) | 31.1 | 29.9 | 3.15 | −1.9 [−3.7, −0.6] | +0.0 [+0.0, +0.0] | −6.1 | +0.0 |
+| 5 | R49hm + trained-model veto, NDBE/ID gate, chosen per fold (honest selection) | 30.5 | 26.6 | 2.95 | −5.2 [−7.4, −3.1] | −0.6 [−1.4, −0.1] | −9.4 | −0.6 |
+| 6 | R49hm + L-LATE k1 loss1 (trade: 0.6 progressors for 7.5 NPs) | 30.5 | 24.3 | 3.15 | −7.5 [−9.7, −5.3] | −0.6 [−1.5, +0.0] | −11.7 | −0.6 |
+| 7 | Stability veto (R49hm, change, strict) | 30.4 | 27.0 | 2.92 | −4.8 [−7.6, −2.5] | −0.7 [−1.4, −0.1] | −9.0 | −0.7 |
+| 8 | H&E AND copy number (90% / 90%, all samples sequenced) | 30.1 | 27.7 | 4.88 | −4.1 [−7.3, −1.1] | −1.0 [−2.8, +0.3] | −8.3 | −1.0 |
+| 9 | Simple quietness (cx, fraction altered, arm counts), any base | ≈ 30 | 31–36 | 2.3–4.4 | ≈ 0 to −2 | −1 | | |
+| 10 | Elastic net trained on H&E-flagged samples | 29.0–30.6 | 25–30 | 3.2–4.4 | −1 to −6 | −0.5 to −2 | | |
+
+R49 reference: 31.1 / 31.8 / 1.94. P1: 31.1 / 36.0 / 0.
 
 ### Implementation notes
 
