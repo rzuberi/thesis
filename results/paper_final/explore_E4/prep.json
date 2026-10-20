@@ -1,0 +1,54 @@
+{
+ "task": "prep",
+ "samples": 676,
+ "pre_event_samples": 571,
+ "progressor_samples_not_pre_event_set_to_eps": 105,
+ "progressor_pre_event_years_to_event": {
+  "median": 2.475,
+  "q1": 1.484,
+  "q3": 4.999,
+  "min": 0.01,
+  "max": 14.407
+ },
+ "progressor_pre_event_gt8y": 16,
+ "np_years_study_followup": {
+  "median": 2.396,
+  "q1": 0.655,
+  "q3": 5.025,
+  "min": 0.01,
+  "max": 13.139
+ },
+ "np_years_extended_followup": {
+  "median": 10.565,
+  "q1": 6.7,
+  "q3": 14.99,
+  "min": 0.01,
+  "max": 29.982
+ },
+ "np_patients": 43,
+ "np_linked": 43,
+ "np_extended": 36,
+ "np_later_hgdplus_stopped": "<5",
+ "np_years_added_per_patient": {
+  "median": 6.973,
+  "q1": 2.253,
+  "q3": 11.206,
+  "min": 0.0,
+  "max": 19.581
+ },
+ "np_samples_ext_ge3": 352,
+ "np_samples_ext_ge5": 326,
+ "np_samples_study_ge3": 186,
+ "np_samples_study_ge5": 104,
+ "abs_diff_exact_vs_sheet_time_progressor_pre_event_years_median": 0.357,
+ "progressor_samples_le3y": 198,
+ "progressor_samples_le5y": 228,
+ "dates_info_rv8": {
+  "reference_date_source_patients": {
+   "progressor_exact_event_endoscopy": 27,
+   "progressor_implied": 5,
+   "non_progressor_sheet_exact": 43,
+   "non_progressor_implied": 0
+  }
+ }
+}
