@@ -1,0 +1,261 @@
+{
+ "task": "f0",
+ "F0": {
+  "n_non_progressor_patients": 43,
+  "group_sizes": {
+   "later HGD or worse": "<5",
+   "later IND": "<5",
+   "later LGD": "<5",
+   "later NDBE only": 24,
+   "no later database record": 7,
+   "records after, none with a confirmed grade": 5
+  },
+  "rules": {
+   "R49": {
+    "ever_flagged_in_ge5_of_10_repeats": 31,
+    "tables": {
+     "all_43:later_IND_or_worse": {
+      "flagged_later": 5,
+      "flagged_not_later": 26,
+      "not_flagged_later": "<5",
+      "not_flagged_not_later": 10,
+      "fisher_p_two_sided": 1.0,
+      "odds_ratio": "<5 cell",
+      "share_later_among_flagged": 0.161,
+      "share_later_among_not_flagged": "<5"
+     },
+     "all_43:later_LGD_or_worse": {
+      "flagged_later": "<5",
+      "flagged_not_later": 28,
+      "not_flagged_later": "<5",
+      "not_flagged_not_later": 11,
+      "fisher_p_two_sided": 1.0,
+      "odds_ratio": "<5 cell",
+      "share_later_among_flagged": "<5",
+      "share_later_among_not_flagged": "<5"
+     },
+     "with_any_later_record:later_IND_or_worse": {
+      "flagged_later": 5,
+      "flagged_not_later": 20,
+      "not_flagged_later": "<5",
+      "not_flagged_not_later": 9,
+      "fisher_p_two_sided": 1.0,
+      "odds_ratio": "<5 cell",
+      "share_later_among_flagged": 0.2,
+      "share_later_among_not_flagged": "<5"
+     },
+     "with_any_later_record:later_LGD_or_worse": {
+      "flagged_later": "<5",
+      "flagged_not_later": 22,
+      "not_flagged_later": "<5",
+      "not_flagged_not_later": 10,
+      "fisher_p_two_sided": 1.0,
+      "odds_ratio": "<5 cell",
+      "share_later_among_flagged": "<5",
+      "share_later_among_not_flagged": "<5"
+     }
+    },
+    "any_later_record": {
+     "flagged_with_record": 25,
+     "flagged_without": 6,
+     "not_flagged_with": 11,
+     "not_flagged_without": "<5",
+     "fisher_p_two_sided": 0.652,
+     "share_flagged": 0.806,
+     "share_not_flagged": 0.917
+    },
+    "flags_per_patient_year_by_later_group": {
+     "no later database record": {
+      "patients": 7,
+      "flagged_endoscopies_per_patient_year": 0.506,
+      "patients_flagged_in_ge5_repeats": 6
+     },
+     "records after, none with a confirmed grade": {
+      "patients": 5,
+      "flagged_endoscopies_per_patient_year": 0.273,
+      "patients_flagged_in_ge5_repeats": "<5"
+     },
+     "later NDBE only": {
+      "patients": 24,
+      "flagged_endoscopies_per_patient_year": 0.284,
+      "patients_flagged_in_ge5_repeats": 16
+     },
+     "later IND or worse": {
+      "patients": 7,
+      "flagged_endoscopies_per_patient_year": 0.291,
+      "patients_flagged_in_ge5_repeats": 5
+     },
+     "later LGD or worse": {
+      "patients": "<5",
+      "flagged_endoscopies_per_patient_year": "<5",
+      "patients_flagged_in_ge5_repeats": "<5"
+     }
+    }
+   },
+   "P1 90%": {
+    "ever_flagged_in_ge5_of_10_repeats": 36,
+    "tables": {
+     "all_43:later_IND_or_worse": {
+      "flagged_later": 6,
+      "flagged_not_later": 30,
+      "not_flagged_later": "<5",
+      "not_flagged_not_later": 6,
+      "fisher_p_two_sided": 1.0,
+      "odds_ratio": "<5 cell",
+      "share_later_among_flagged": 0.167,
+      "share_later_among_not_flagged": "<5"
+     },
+     "all_43:later_LGD_or_worse": {
+      "flagged_later": "<5",
+      "flagged_not_later": 32,
+      "not_flagged_later": 0,
+      "not_flagged_not_later": 7,
+      "fisher_p_two_sided": 1.0,
+      "odds_ratio": "<5 cell",
+      "share_later_among_flagged": "<5",
+      "share_later_among_not_flagged": 0.0
+     },
+     "with_any_later_record:later_IND_or_worse": {
+      "flagged_later": 6,
+      "flagged_not_later": 23,
+      "not_flagged_later": "<5",
+      "not_flagged_not_later": 6,
+      "fisher_p_two_sided": 1.0,
+      "odds_ratio": "<5 cell",
+      "share_later_among_flagged": 0.207,
+      "share_later_among_not_flagged": "<5"
+     },
+     "with_any_later_record:later_LGD_or_worse": {
+      "flagged_later": "<5",
+      "flagged_not_later": 25,
+      "not_flagged_later": 0,
+      "not_flagged_not_later": 7,
+      "fisher_p_two_sided": 0.566,
+      "odds_ratio": "<5 cell",
+      "share_later_among_flagged": "<5",
+      "share_later_among_not_flagged": 0.0
+     }
+    },
+    "any_later_record": {
+     "flagged_with_record": 29,
+     "flagged_without": 7,
+     "not_flagged_with": 7,
+     "not_flagged_without": 0,
+     "fisher_p_two_sided": 0.577,
+     "share_flagged": 0.806,
+     "share_not_flagged": 1.0
+    },
+    "flags_per_patient_year_by_later_group": {
+     "no later database record": {
+      "patients": 7,
+      "flagged_endoscopies_per_patient_year": 0.501,
+      "patients_flagged_in_ge5_repeats": 7
+     },
+     "records after, none with a confirmed grade": {
+      "patients": 5,
+      "flagged_endoscopies_per_patient_year": 0.305,
+      "patients_flagged_in_ge5_repeats": "<5"
+     },
+     "later NDBE only": {
+      "patients": 24,
+      "flagged_endoscopies_per_patient_year": 0.302,
+      "patients_flagged_in_ge5_repeats": 20
+     },
+     "later IND or worse": {
+      "patients": 7,
+      "flagged_endoscopies_per_patient_year": 0.369,
+      "patients_flagged_in_ge5_repeats": 6
+     },
+     "later LGD or worse": {
+      "patients": "<5",
+      "flagged_endoscopies_per_patient_year": "<5",
+      "patients_flagged_in_ge5_repeats": "<5"
+     }
+    }
+   },
+   "P3 90%": {
+    "ever_flagged_in_ge5_of_10_repeats": 31,
+    "tables": {
+     "all_43:later_IND_or_worse": {
+      "flagged_later": 6,
+      "flagged_not_later": 25,
+      "not_flagged_later": "<5",
+      "not_flagged_not_later": 11,
+      "fisher_p_two_sided": 0.652,
+      "odds_ratio": "<5 cell",
+      "share_later_among_flagged": 0.194,
+      "share_later_among_not_flagged": "<5"
+     },
+     "all_43:later_LGD_or_worse": {
+      "flagged_later": "<5",
+      "flagged_not_later": 28,
+      "not_flagged_later": "<5",
+      "not_flagged_not_later": 11,
+      "fisher_p_two_sided": 1.0,
+      "odds_ratio": "<5 cell",
+      "share_later_among_flagged": "<5",
+      "share_later_among_not_flagged": "<5"
+     },
+     "with_any_later_record:later_IND_or_worse": {
+      "flagged_later": 6,
+      "flagged_not_later": 19,
+      "not_flagged_later": "<5",
+      "not_flagged_not_later": 10,
+      "fisher_p_two_sided": 0.4,
+      "odds_ratio": "<5 cell",
+      "share_later_among_flagged": 0.24,
+      "share_later_among_not_flagged": "<5"
+     },
+     "with_any_later_record:later_LGD_or_worse": {
+      "flagged_later": "<5",
+      "flagged_not_later": 22,
+      "not_flagged_later": "<5",
+      "not_flagged_not_later": 10,
+      "fisher_p_two_sided": 1.0,
+      "odds_ratio": "<5 cell",
+      "share_later_among_flagged": "<5",
+      "share_later_among_not_flagged": "<5"
+     }
+    },
+    "any_later_record": {
+     "flagged_with_record": 25,
+     "flagged_without": 6,
+     "not_flagged_with": 11,
+     "not_flagged_without": "<5",
+     "fisher_p_two_sided": 0.652,
+     "share_flagged": 0.806,
+     "share_not_flagged": 0.917
+    },
+    "flags_per_patient_year_by_later_group": {
+     "no later database record": {
+      "patients": 7,
+      "flagged_endoscopies_per_patient_year": 0.565,
+      "patients_flagged_in_ge5_repeats": 6
+     },
+     "records after, none with a confirmed grade": {
+      "patients": 5,
+      "flagged_endoscopies_per_patient_year": 0.234,
+      "patients_flagged_in_ge5_repeats": "<5"
+     },
+     "later NDBE only": {
+      "patients": 24,
+      "flagged_endoscopies_per_patient_year": 0.284,
+      "patients_flagged_in_ge5_repeats": 15
+     },
+     "later IND or worse": {
+      "patients": 7,
+      "flagged_endoscopies_per_patient_year": 0.315,
+      "patients_flagged_in_ge5_repeats": 6
+     },
+     "later LGD or worse": {
+      "patients": "<5",
+      "flagged_endoscopies_per_patient_year": "<5",
+      "patients_flagged_in_ge5_repeats": "<5"
+     }
+    }
+   }
+  },
+  "definition": "later disease = highest Barrett's database confirmed grade after the last sequenced endoscopy (round-7 lookup B2: records > 14 days after the latest exact sample date); IND, LGD, HGD+. 'ever flagged' = flagged at >= 1 pre-event endoscopy in >= 5 of 10 repeats (stored held-out predictions); rates = flagged non-progressor endoscopies (mean over repeats) per patient-year (first sequenced endoscopy to last sequenced endoscopy); groups < 5 patients shown as '<5'"
+ },
+ "prespec": "7db8e14"
+}

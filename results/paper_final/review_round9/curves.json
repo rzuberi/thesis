@@ -1,0 +1,784 @@
+{
+ "task": "curves",
+ "curves": {
+  "best_memory_rule": "A1 | gate score, R49-aligned | exponentially weighted mean [nested]",
+  "curves": {
+   "R49": {
+    "k=1": {
+     "all_patients_first_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.388,
+       "ci95": [
+        0.271,
+        0.51
+       ]
+      },
+      "prog": {
+       "patients": 32,
+       "share": 0.872,
+       "ci95": [
+        0.788,
+        0.947
+       ]
+      }
+     },
+     "restricted_to_patients_with_ge_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.388,
+       "ci95": [
+        0.271,
+        0.51
+       ]
+      },
+      "prog": {
+       "patients": 32,
+       "share": 0.872,
+       "ci95": [
+        0.788,
+        0.947
+       ]
+      }
+     }
+    },
+    "k=2": {
+     "all_patients_first_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.644,
+       "ci95": [
+        0.523,
+        0.761
+       ]
+      },
+      "prog": {
+       "patients": 32,
+       "share": 0.972,
+       "ci95": [
+        0.928,
+        1.0
+       ]
+      }
+     },
+     "restricted_to_patients_with_ge_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.644,
+       "ci95": [
+        0.523,
+        0.761
+       ]
+      },
+      "prog": {
+       "patients": 22,
+       "share": 0.986,
+       "ci95": [
+        0.963,
+        1.0
+       ]
+      }
+     }
+    },
+    "k=3": {
+     "all_patients_first_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.684,
+       "ci95": [
+        0.564,
+        0.802
+       ]
+      },
+      "prog": {
+       "patients": 32,
+       "share": 0.972,
+       "ci95": [
+        0.928,
+        1.0
+       ]
+      }
+     },
+     "restricted_to_patients_with_ge_k_endoscopies": {
+      "np": {
+       "patients": 40,
+       "share": 0.695,
+       "ci95": [
+        0.569,
+        0.818
+       ]
+      },
+      "prog": {
+       "patients": 16,
+       "share": 0.988,
+       "ci95": [
+        0.957,
+        1.0
+       ]
+      }
+     }
+    },
+    "k=4": {
+     "all_patients_first_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.728,
+       "ci95": [
+        0.615,
+        0.831
+       ]
+      },
+      "prog": {
+       "patients": 32,
+       "share": 0.972,
+       "ci95": [
+        0.928,
+        1.0
+       ]
+      }
+     },
+     "restricted_to_patients_with_ge_k_endoscopies": {
+      "np": {
+       "patients": 32,
+       "share": 0.819,
+       "ci95": [
+        0.7,
+        0.924
+       ]
+      },
+      "prog": {
+       "patients": 9,
+       "share": 1.0,
+       "ci95": [
+        1.0,
+        1.0
+       ]
+      }
+     }
+    },
+    "k=5": {
+     "all_patients_first_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.735,
+       "ci95": [
+        0.62,
+        0.838
+       ]
+      },
+      "prog": {
+       "patients": 32,
+       "share": 0.972,
+       "ci95": [
+        0.928,
+        1.0
+       ]
+      }
+     },
+     "restricted_to_patients_with_ge_k_endoscopies": {
+      "np": {
+       "patients": 23,
+       "share": 0.822,
+       "ci95": [
+        0.67,
+        0.947
+       ]
+      },
+      "prog": {
+       "patients": "<5",
+       "share": "<5",
+       "ci95": "<5"
+      }
+     }
+    },
+    "k=6": {
+     "all_patients_first_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.74,
+       "ci95": [
+        0.627,
+        0.842
+       ]
+      },
+      "prog": {
+       "patients": 32,
+       "share": 0.972,
+       "ci95": [
+        0.928,
+        1.0
+       ]
+      }
+     },
+     "restricted_to_patients_with_ge_k_endoscopies": {
+      "np": {
+       "patients": 13,
+       "share": 0.846,
+       "ci95": [
+        0.64,
+        0.992
+       ]
+      },
+      "prog": {
+       "patients": "<5",
+       "share": "<5",
+       "ci95": "<5"
+      }
+     }
+    }
+   },
+   "P1 90%": {
+    "k=1": {
+     "all_patients_first_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.447,
+       "ci95": [
+        0.323,
+        0.571
+       ]
+      },
+      "prog": {
+       "patients": 32,
+       "share": 0.853,
+       "ci95": [
+        0.75,
+        0.941
+       ]
+      }
+     },
+     "restricted_to_patients_with_ge_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.447,
+       "ci95": [
+        0.323,
+        0.571
+       ]
+      },
+      "prog": {
+       "patients": 32,
+       "share": 0.853,
+       "ci95": [
+        0.75,
+        0.941
+       ]
+      }
+     }
+    },
+    "k=2": {
+     "all_patients_first_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.73,
+       "ci95": [
+        0.604,
+        0.841
+       ]
+      },
+      "prog": {
+       "patients": 32,
+       "share": 0.969,
+       "ci95": [
+        0.917,
+        1.0
+       ]
+      }
+     },
+     "restricted_to_patients_with_ge_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.73,
+       "ci95": [
+        0.604,
+        0.841
+       ]
+      },
+      "prog": {
+       "patients": 22,
+       "share": 0.995,
+       "ci95": [
+        0.984,
+        1.0
+       ]
+      }
+     }
+    },
+    "k=3": {
+     "all_patients_first_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.779,
+       "ci95": [
+        0.655,
+        0.885
+       ]
+      },
+      "prog": {
+       "patients": 32,
+       "share": 0.972,
+       "ci95": [
+        0.921,
+        1.0
+       ]
+      }
+     },
+     "restricted_to_patients_with_ge_k_endoscopies": {
+      "np": {
+       "patients": 40,
+       "share": 0.762,
+       "ci95": [
+        0.636,
+        0.873
+       ]
+      },
+      "prog": {
+       "patients": 16,
+       "share": 1.0,
+       "ci95": [
+        1.0,
+        1.0
+       ]
+      }
+     }
+    },
+    "k=4": {
+     "all_patients_first_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.833,
+       "ci95": [
+        0.725,
+        0.921
+       ]
+      },
+      "prog": {
+       "patients": 32,
+       "share": 0.972,
+       "ci95": [
+        0.921,
+        1.0
+       ]
+      }
+     },
+     "restricted_to_patients_with_ge_k_endoscopies": {
+      "np": {
+       "patients": 32,
+       "share": 0.916,
+       "ci95": [
+        0.837,
+        0.979
+       ]
+      },
+      "prog": {
+       "patients": 9,
+       "share": 1.0,
+       "ci95": [
+        1.0,
+        1.0
+       ]
+      }
+     }
+    },
+    "k=5": {
+     "all_patients_first_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.833,
+       "ci95": [
+        0.725,
+        0.921
+       ]
+      },
+      "prog": {
+       "patients": 32,
+       "share": 0.972,
+       "ci95": [
+        0.921,
+        1.0
+       ]
+      }
+     },
+     "restricted_to_patients_with_ge_k_endoscopies": {
+      "np": {
+       "patients": 23,
+       "share": 0.904,
+       "ci95": [
+        0.79,
+        0.986
+       ]
+      },
+      "prog": {
+       "patients": "<5",
+       "share": "<5",
+       "ci95": "<5"
+      }
+     }
+    },
+    "k=6": {
+     "all_patients_first_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.837,
+       "ci95": [
+        0.729,
+        0.923
+       ]
+      },
+      "prog": {
+       "patients": 32,
+       "share": 0.972,
+       "ci95": [
+        0.921,
+        1.0
+       ]
+      }
+     },
+     "restricted_to_patients_with_ge_k_endoscopies": {
+      "np": {
+       "patients": 13,
+       "share": 0.938,
+       "ci95": [
+        0.831,
+        1.0
+       ]
+      },
+      "prog": {
+       "patients": "<5",
+       "share": "<5",
+       "ci95": "<5"
+      }
+     }
+    }
+   },
+   "A1 | gate score, R49-aligned | exponentially weighted mean [nested]": {
+    "k=1": {
+     "all_patients_first_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.363,
+       "ci95": [
+        0.256,
+        0.475
+       ]
+      },
+      "prog": {
+       "patients": 32,
+       "share": 0.869,
+       "ci95": [
+        0.8,
+        0.93
+       ]
+      }
+     },
+     "restricted_to_patients_with_ge_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.363,
+       "ci95": [
+        0.256,
+        0.475
+       ]
+      },
+      "prog": {
+       "patients": 32,
+       "share": 0.869,
+       "ci95": [
+        0.8,
+        0.93
+       ]
+      }
+     }
+    },
+    "k=2": {
+     "all_patients_first_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.458,
+       "ci95": [
+        0.342,
+        0.576
+       ]
+      },
+      "prog": {
+       "patients": 32,
+       "share": 0.947,
+       "ci95": [
+        0.903,
+        0.982
+       ]
+      }
+     },
+     "restricted_to_patients_with_ge_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.458,
+       "ci95": [
+        0.342,
+        0.576
+       ]
+      },
+      "prog": {
+       "patients": 22,
+       "share": 0.95,
+       "ci95": [
+        0.903,
+        0.991
+       ]
+      }
+     }
+    },
+    "k=3": {
+     "all_patients_first_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.498,
+       "ci95": [
+        0.379,
+        0.621
+       ]
+      },
+      "prog": {
+       "patients": 32,
+       "share": 0.959,
+       "ci95": [
+        0.923,
+        0.988
+       ]
+      }
+     },
+     "restricted_to_patients_with_ge_k_endoscopies": {
+      "np": {
+       "patients": 40,
+       "share": 0.508,
+       "ci95": [
+        0.385,
+        0.639
+       ]
+      },
+      "prog": {
+       "patients": 16,
+       "share": 0.988,
+       "ci95": [
+        0.957,
+        1.0
+       ]
+      }
+     }
+    },
+    "k=4": {
+     "all_patients_first_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.523,
+       "ci95": [
+        0.406,
+        0.648
+       ]
+      },
+      "prog": {
+       "patients": 32,
+       "share": 0.959,
+       "ci95": [
+        0.923,
+        0.988
+       ]
+      }
+     },
+     "restricted_to_patients_with_ge_k_endoscopies": {
+      "np": {
+       "patients": 32,
+       "share": 0.591,
+       "ci95": [
+        0.451,
+        0.733
+       ]
+      },
+      "prog": {
+       "patients": 9,
+       "share": 1.0,
+       "ci95": [
+        1.0,
+        1.0
+       ]
+      }
+     }
+    },
+    "k=5": {
+     "all_patients_first_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.535,
+       "ci95": [
+        0.415,
+        0.66
+       ]
+      },
+      "prog": {
+       "patients": 32,
+       "share": 0.959,
+       "ci95": [
+        0.923,
+        0.988
+       ]
+      }
+     },
+     "restricted_to_patients_with_ge_k_endoscopies": {
+      "np": {
+       "patients": 23,
+       "share": 0.604,
+       "ci95": [
+        0.435,
+        0.767
+       ]
+      },
+      "prog": {
+       "patients": "<5",
+       "share": "<5",
+       "ci95": "<5"
+      }
+     }
+    },
+    "k=6": {
+     "all_patients_first_k_endoscopies": {
+      "np": {
+       "patients": 43,
+       "share": 0.547,
+       "ci95": [
+        0.425,
+        0.676
+       ]
+      },
+      "prog": {
+       "patients": 32,
+       "share": 0.959,
+       "ci95": [
+        0.923,
+        0.988
+       ]
+      }
+     },
+     "restricted_to_patients_with_ge_k_endoscopies": {
+      "np": {
+       "patients": 13,
+       "share": 0.677,
+       "ci95": [
+        0.461,
+        0.875
+       ]
+      },
+      "prog": {
+       "patients": "<5",
+       "share": "<5",
+       "ci95": "<5"
+      }
+     }
+    }
+   }
+  },
+  "delta_np_share_vs_R49_all_patients": {
+   "P1 90%": {
+    "k=1": {
+     "delta": 0.058,
+     "ci95": [
+      -0.008,
+      0.124
+     ],
+     "p_two_sided": 0.09
+    },
+    "k=2": {
+     "delta": 0.086,
+     "ci95": [
+      0.009,
+      0.164
+     ],
+     "p_two_sided": 0.033
+    },
+    "k=3": {
+     "delta": 0.095,
+     "ci95": [
+      0.026,
+      0.17
+     ],
+     "p_two_sided": 0.012
+    },
+    "k=4": {
+     "delta": 0.105,
+     "ci95": [
+      0.031,
+      0.179
+     ],
+     "p_two_sided": 0.004
+    },
+    "k=5": {
+     "delta": 0.098,
+     "ci95": [
+      0.025,
+      0.172
+     ],
+     "p_two_sided": 0.01
+    },
+    "k=6": {
+     "delta": 0.098,
+     "ci95": [
+      0.028,
+      0.171
+     ],
+     "p_two_sided": 0.009
+    }
+   },
+   "A1 | gate score, R49-aligned | exponentially weighted mean [nested]": {
+    "k=1": {
+     "delta": -0.026,
+     "ci95": [
+      -0.053,
+      0.002
+     ],
+     "p_two_sided": 0.072
+    },
+    "k=2": {
+     "delta": -0.186,
+     "ci95": [
+      -0.263,
+      -0.115
+     ],
+     "p_two_sided": 0.0
+    },
+    "k=3": {
+     "delta": -0.186,
+     "ci95": [
+      -0.26,
+      -0.118
+     ],
+     "p_two_sided": 0.0
+    },
+    "k=4": {
+     "delta": -0.205,
+     "ci95": [
+      -0.281,
+      -0.131
+     ],
+     "p_two_sided": 0.0
+    },
+    "k=5": {
+     "delta": -0.2,
+     "ci95": [
+      -0.274,
+      -0.126
+     ],
+     "p_two_sided": 0.0
+    },
+    "k=6": {
+     "delta": -0.193,
+     "ci95": [
+      -0.267,
+      -0.122
+     ],
+     "p_two_sided": 0.0
+    }
+   }
+  },
+  "note": "share of patients flagged at >= 1 of their first k pre-event endoscopies (patients with fewer than k endoscopies contribute all of theirs; 'restricted' keeps only patients with >= k endoscopies, the matched first-k window); held-out predictions, 10-repeat mean; patient bootstrap CIs; groups < 5 patients '<5'"
+ },
+ "prespec": "7db8e14"
+}

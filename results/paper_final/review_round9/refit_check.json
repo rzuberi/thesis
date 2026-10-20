@@ -1,0 +1,17 @@
+{
+ "task": "refit_check",
+ "refit_check": {
+  "outer_rep_01": {
+   "n": 676,
+   "max_abs_pred_diff": 0.0,
+   "folds_equal": true
+  },
+  "inner_rep_01_fold_01": {
+   "n": 618,
+   "max_abs_pred_diff": 0.0,
+   "max_abs_lambda_diff": 0.0
+  },
+  "passed": true
+ },
+ "prespec": "7db8e14"
+}

@@ -1,0 +1,124 @@
+{
+ "task": "icc",
+ "ICC": {
+  "scores": {
+   "logit max L-IMG": {
+    "non_progressor": {
+     "icc1_mean_over_repeats": 0.219,
+     "ci95": [
+      0.164,
+      0.255
+     ],
+     "icc1_range_over_repeats": [
+      0.195,
+      0.27
+     ],
+     "between_patient_mean_square": 9.571,
+     "within_patient_mean_square": 4.158,
+     "patients": 43,
+     "endoscopies": 200
+    },
+    "progressor": {
+     "icc1_mean_over_repeats": 0.595,
+     "ci95": [
+      0.522,
+      0.637
+     ],
+     "icc1_range_over_repeats": [
+      0.501,
+      0.672
+     ],
+     "between_patient_mean_square": 25.754,
+     "within_patient_mean_square": 5.171,
+     "patients": 32,
+     "endoscopies": 88
+    }
+   },
+   "gate score, literal": {
+    "non_progressor": {
+     "icc1_mean_over_repeats": 0.275,
+     "ci95": [
+      0.219,
+      0.308
+     ],
+     "icc1_range_over_repeats": [
+      0.241,
+      0.347
+     ],
+     "between_patient_mean_square": 10.427,
+     "within_patient_mean_square": 3.779,
+     "patients": 43,
+     "endoscopies": 200
+    },
+    "progressor": {
+     "icc1_mean_over_repeats": 0.598,
+     "ci95": [
+      0.524,
+      0.641
+     ],
+     "icc1_range_over_repeats": [
+      0.508,
+      0.687
+     ],
+     "between_patient_mean_square": 23.842,
+     "within_patient_mean_square": 4.698,
+     "patients": 32,
+     "endoscopies": 88
+    }
+   },
+   "gate score, R49-aligned (0 = R49 flag boundary)": {
+    "non_progressor": {
+     "icc1_mean_over_repeats": 0.288,
+     "ci95": [
+      0.227,
+      0.324
+     ],
+     "icc1_range_over_repeats": [
+      0.249,
+      0.385
+     ],
+     "between_patient_mean_square": 12.788,
+     "within_patient_mean_square": 4.448,
+     "patients": 43,
+     "endoscopies": 200
+    },
+    "progressor": {
+     "icc1_mean_over_repeats": 0.604,
+     "ci95": [
+      0.52,
+      0.653
+     ],
+     "icc1_range_over_repeats": [
+      0.519,
+      0.691
+     ],
+     "between_patient_mean_square": 19.005,
+     "within_patient_mean_square": 3.69,
+     "patients": 32,
+     "endoscopies": 88
+    }
+   }
+  },
+  "persistence_ceiling_np_patients": {
+   "R49": {
+    "np_patients_ever_flagged": 31.8,
+    "np_flagged_once_only": 6.8,
+    "np_flagged_twice": 8.8,
+    "np_flagged_3_or_more": 16.2,
+    "np_flagged_at_least_twice": 25.0,
+    "share_of_flagged_np_with_only_one_flagged_endoscopy": 0.213
+   },
+   "P1 90%": {
+    "np_patients_ever_flagged": 36.0,
+    "np_flagged_once_only": 7.1,
+    "np_flagged_twice": 11.2,
+    "np_flagged_3_or_more": 17.7,
+    "np_flagged_at_least_twice": 28.9,
+    "share_of_flagged_np_with_only_one_flagged_endoscopy": 0.197
+   }
+  },
+  "estimator": "one-way random-effects ICC(1) for unequal group sizes (ANOVA), per repeat on the held-out endoscopy scores, averaged over the 10 repeats; patient bootstrap of the repeat-mean ICC (2,000 draws, RandomState(0), resampled patients as separate clusters)",
+  "reading": "ICC near 1: a patient's score is nearly fixed, so averaging or persistence rules cannot separate non-progressors; near 0: independent errors, so they can"
+ },
+ "prespec": "7db8e14"
+}

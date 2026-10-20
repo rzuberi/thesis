@@ -1,0 +1,346 @@
+{
+ "task": "rob_tis_ge256",
+ "ROB": {
+  "row": "tis_ge256",
+  "definition": ">= 256 tissue tiles (endoscopy by its top-L-IMG sample)",
+  "population": {
+   "endoscopies": 146,
+   "progressor_patients": 32,
+   "non_progressor_patients": 43
+  },
+  "families": [
+   "A4:conf_al:ew",
+   "A1:gate_al:ew",
+   "A4:conf_al:mean"
+  ],
+  "results": {
+   "R49": {
+    "caught": 30.976,
+    "np_flagged": 28.403,
+    "flags_py": 0.165,
+    "endo_spec": 0.577,
+    "seq": 1.165,
+    "endo_sens": 0.892
+   },
+   "P1 90%": {
+    "caught": 30.208,
+    "np_flagged": 32.25,
+    "flags_py": 0.182,
+    "endo_spec": 0.534,
+    "seq": 0.0,
+    "endo_sens": 0.873
+   },
+   "A4 confirm-by-sequencing | gate with the high band also sequenced (score 0 = flag boundary) | exponentially weighted mean": {
+    "family": "A4:conf_al:ew",
+    "values": {
+     "caught": 30.72,
+     "np_flagged": 20.368,
+     "flags_py": 0.126,
+     "endo_spec": 0.677,
+     "seq": 1.906,
+     "endo_sens": 0.882
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -8.034,
+      "ci95": [
+       -11.026,
+       -5.318
+      ],
+      "p_two_sided": 0.0,
+      "ci99_bonferroni": [
+       -12.064,
+       -4.3
+      ]
+     },
+     "caught": {
+      "delta": -0.256,
+      "ci95": [
+       -0.835,
+       0.0
+      ],
+      "p_two_sided": 0.735
+     },
+     "flags_py": {
+      "delta": -0.039,
+      "ci95": [
+       -0.057,
+       -0.022
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.1,
+      "ci95": [
+       0.057,
+       0.145
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq": {
+      "delta": 0.741,
+      "ci95": [
+       0.57,
+       0.925
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "vs_P1_90": {
+     "np_flagged": {
+      "delta": -11.882,
+      "ci95": [
+       -16.296,
+       -7.371
+      ],
+      "p_two_sided": 0.0,
+      "ci99_bonferroni": [
+       -18.634,
+       -5.944
+      ]
+     },
+     "caught": {
+      "delta": 0.512,
+      "ci95": [
+       -1.333,
+       2.708
+      ],
+      "p_two_sided": 0.738
+     },
+     "flags_py": {
+      "delta": -0.056,
+      "ci95": [
+       -0.087,
+       -0.024
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.143,
+      "ci95": [
+       0.062,
+       0.225
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq": {
+      "delta": 1.906,
+      "ci95": [
+       1.666,
+       2.162
+      ],
+      "p_two_sided": 0.0
+     }
+    }
+   },
+   "A1 | gate score, R49-aligned | exponentially weighted mean": {
+    "family": "A1:gate_al:ew",
+    "values": {
+     "caught": 30.336,
+     "np_flagged": 20.368,
+     "flags_py": 0.128,
+     "endo_spec": 0.671,
+     "seq": 1.165,
+     "endo_sens": 0.892
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -8.034,
+      "ci95": [
+       -11.347,
+       -5.114
+      ],
+      "p_two_sided": 0.0,
+      "ci99_bonferroni": [
+       -12.286,
+       -4.3
+      ]
+     },
+     "caught": {
+      "delta": -0.64,
+      "ci95": [
+       -2.215,
+       0.739
+      ],
+      "p_two_sided": 0.415
+     },
+     "flags_py": {
+      "delta": -0.037,
+      "ci95": [
+       -0.058,
+       -0.014
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.094,
+      "ci95": [
+       0.035,
+       0.149
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     }
+    },
+    "vs_P1_90": {
+     "np_flagged": {
+      "delta": -11.882,
+      "ci95": [
+       -16.408,
+       -7.371
+      ],
+      "p_two_sided": 0.0,
+      "ci99_bonferroni": [
+       -18.122,
+       -5.972
+      ]
+     },
+     "caught": {
+      "delta": 0.128,
+      "ci95": [
+       -1.809,
+       2.4
+      ],
+      "p_two_sided": 1.0
+     },
+     "flags_py": {
+      "delta": -0.054,
+      "ci95": [
+       -0.083,
+       -0.024
+      ],
+      "p_two_sided": 0.0
+     },
+     "endo_spec": {
+      "delta": 0.137,
+      "ci95": [
+       0.059,
+       0.216
+      ],
+      "p_two_sided": 0.0
+     },
+     "seq": {
+      "delta": 1.165,
+      "ci95": [
+       0.935,
+       1.409
+      ],
+      "p_two_sided": 0.0
+     }
+    }
+   },
+   "A4 confirm-by-sequencing | gate with the high band also sequenced (score 0 = flag boundary) | running mean": {
+    "family": "A4:conf_al:mean",
+    "values": {
+     "caught": 31.488,
+     "np_flagged": 22.518,
+     "flags_py": 0.168,
+     "endo_spec": 0.569,
+     "seq": 1.906,
+     "endo_sens": 0.957
+    },
+    "vs_R49": {
+     "np_flagged": {
+      "delta": -5.884,
+      "ci95": [
+       -9.294,
+       -2.756
+      ],
+      "p_two_sided": 0.0,
+      "ci99_bonferroni": [
+       -10.425,
+       -2.15
+      ]
+     },
+     "caught": {
+      "delta": 0.512,
+      "ci95": [
+       -0.557,
+       2.365
+      ],
+      "p_two_sided": 0.74
+     },
+     "flags_py": {
+      "delta": 0.003,
+      "ci95": [
+       -0.025,
+       0.036
+      ],
+      "p_two_sided": 0.847
+     },
+     "endo_spec": {
+      "delta": -0.008,
+      "ci95": [
+       -0.089,
+       0.067
+      ],
+      "p_two_sided": 0.847
+     },
+     "seq": {
+      "delta": 0.741,
+      "ci95": [
+       0.57,
+       0.925
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "vs_P1_90": {
+     "np_flagged": {
+      "delta": -9.732,
+      "ci95": [
+       -14.224,
+       -5.472
+      ],
+      "p_two_sided": 0.0,
+      "ci99_bonferroni": [
+       -16.038,
+       -4.19
+      ]
+     },
+     "caught": {
+      "delta": 1.28,
+      "ci95": [
+       -0.139,
+       3.323
+      ],
+      "p_two_sided": 0.149
+     },
+     "flags_py": {
+      "delta": -0.014,
+      "ci95": [
+       -0.049,
+       0.026
+      ],
+      "p_two_sided": 0.479
+     },
+     "endo_spec": {
+      "delta": 0.035,
+      "ci95": [
+       -0.064,
+       0.131
+      ],
+      "p_two_sided": 0.481
+     },
+     "seq": {
+      "delta": 1.906,
+      "ci95": [
+       1.666,
+       2.162
+      ],
+      "p_two_sided": 0.0
+     }
+    }
+   }
+  },
+  "note": "same nested procedure in the row's own population (ndbe, ge2: all training-patient choices redone; tissue rows: held-out calls of the main run, evaluation restricted); R49 and P1 90% re-derived in the row"
+ },
+ "prespec": "7db8e14"
+}
