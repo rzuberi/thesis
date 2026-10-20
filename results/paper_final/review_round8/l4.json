@@ -1,0 +1,181 @@
+{
+ "task": "l4",
+ "L4": {
+  "endoscopy": {
+   "n_units": 146,
+   "n_progressor_units": 40,
+   "L-IMG": {
+    "auroc": {
+     "max": {
+      "value": 0.882,
+      "ci95": [
+       0.813,
+       0.938
+      ]
+     },
+     "sd": {
+      "value": 0.575,
+      "ci95": [
+       0.482,
+       0.669
+      ]
+     },
+     "max_plus_sd": {
+      "value": 0.757,
+      "ci95": [
+       0.676,
+       0.829
+      ]
+     }
+    },
+    "max_plus_sd_minus_max": {
+     "delta": -0.125,
+     "ci95": [
+      -0.171,
+      -0.084
+     ],
+     "p_two_sided": 0.0
+    },
+    "sd_minus_max": {
+     "delta": -0.307,
+     "ci95": [
+      -0.39,
+      -0.217
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "L-CNV": {
+    "auroc": {
+     "max": {
+      "value": 0.846,
+      "ci95": [
+       0.752,
+       0.927
+      ]
+     },
+     "sd": {
+      "value": 0.635,
+      "ci95": [
+       0.526,
+       0.734
+      ]
+     },
+     "max_plus_sd": {
+      "value": 0.764,
+      "ci95": [
+       0.671,
+       0.843
+      ]
+     }
+    },
+    "max_plus_sd_minus_max": {
+     "delta": -0.082,
+     "ci95": [
+      -0.146,
+      -0.021
+     ],
+     "p_two_sided": 0.01
+    },
+    "sd_minus_max": {
+     "delta": -0.211,
+     "ci95": [
+      -0.335,
+      -0.091
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "draws": 2000
+  },
+  "patient": {
+   "n_units": 73,
+   "n_progressor_units": 30,
+   "L-IMG": {
+    "auroc": {
+     "max": {
+      "value": 0.841,
+      "ci95": [
+       0.735,
+       0.928
+      ]
+     },
+     "sd": {
+      "value": 0.558,
+      "ci95": [
+       0.432,
+       0.685
+      ]
+     },
+     "max_plus_sd": {
+      "value": 0.733,
+      "ci95": [
+       0.612,
+       0.847
+      ]
+     }
+    },
+    "max_plus_sd_minus_max": {
+     "delta": -0.107,
+     "ci95": [
+      -0.164,
+      -0.055
+     ],
+     "p_two_sided": 0.0
+    },
+    "sd_minus_max": {
+     "delta": -0.283,
+     "ci95": [
+      -0.392,
+      -0.176
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "L-CNV": {
+    "auroc": {
+     "max": {
+      "value": 0.827,
+      "ci95": [
+       0.722,
+       0.917
+      ]
+     },
+     "sd": {
+      "value": 0.668,
+      "ci95": [
+       0.537,
+       0.794
+      ]
+     },
+     "max_plus_sd": {
+      "value": 0.767,
+      "ci95": [
+       0.64,
+       0.877
+      ]
+     }
+    },
+    "max_plus_sd_minus_max": {
+     "delta": -0.06,
+     "ci95": [
+      -0.137,
+      0.014
+     ],
+     "p_two_sided": 0.121
+    },
+    "sd_minus_max": {
+     "delta": -0.159,
+     "ci95": [
+      -0.286,
+      -0.027
+     ],
+     "p_two_sided": 0.021
+    }
+   },
+   "draws": 2000
+  },
+  "note": "endoscopies with >= 2 pre-event samples (patients with >= 2 pre-event samples for the patient level); SD = within-unit standard deviation (ddof 1) of the logit outer prediction, per repeat; max = maximum logit; max + SD = rank of the max plus rank of the SD among the units in that repeat (fixed equal weights); fold-stratified AUROC (unit fold = its patient's outer fold), single model; patient bootstrap 2,000 draws (RandomState(0)) with ranks fixed"
+ },
+ "prespec": "b396cdc"
+}

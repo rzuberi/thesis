@@ -1,0 +1,296 @@
+{
+ "task": "l2_heq",
+ "L2": {
+  "family": "heq",
+  "strata": [
+   {
+    "stratum": "H&E score quintile 1",
+    "n_samples": 114,
+    "n_progressor_samples": 3,
+    "n_patients": 35,
+    "n_progressor_patients": 2,
+    "auroc": {
+     "L-CNV": {
+      "value": 0.665,
+      "ci95": [
+       0.441,
+       0.95
+      ]
+     },
+     "L-IMG": {
+      "value": 0.582,
+      "ci95": [
+       0.433,
+       0.665
+      ]
+     },
+     "L-LATE": {
+      "value": 0.676,
+      "ci95": [
+       0.447,
+       0.95
+      ]
+     }
+    },
+    "LATE_minus_IMG": {
+     "delta": 0.094,
+     "ci95": [
+      -0.109,
+      0.366
+     ],
+     "p_two_sided": 0.272
+    },
+    "CNV_minus_IMG": {
+     "delta": 0.083,
+     "ci95": [
+      -0.117,
+      0.366
+     ],
+     "p_two_sided": 0.304
+    },
+    "call_change_P1_vs_P3_at_90": {
+     "n_endoscopies": 28,
+     "n_progressor_endoscopies": 0,
+     "share_changed": 0.132,
+     "share_changed_progressor": null,
+     "share_changed_non_progressor": 0.132,
+     "progressor_gained_flag_share": null,
+     "progressor_lost_flag_share": null,
+     "non_progressor_gained_flag_share": 0.132,
+     "non_progressor_lost_flag_share": 0.0
+    }
+   },
+   {
+    "stratum": "H&E score quintile 2",
+    "n_samples": 114,
+    "n_progressor_samples": 13,
+    "n_patients": 51,
+    "n_progressor_patients": 10,
+    "auroc": {
+     "L-CNV": {
+      "value": 0.824,
+      "ci95": [
+       0.661,
+       0.947
+      ]
+     },
+     "L-IMG": {
+      "value": 0.635,
+      "ci95": [
+       0.544,
+       0.737
+      ]
+     },
+     "L-LATE": {
+      "value": 0.831,
+      "ci95": [
+       0.648,
+       0.957
+      ]
+     }
+    },
+    "LATE_minus_IMG": {
+     "delta": 0.196,
+     "ci95": [
+      -0.019,
+      0.361
+     ],
+     "p_two_sided": 0.075
+    },
+    "CNV_minus_IMG": {
+     "delta": 0.189,
+     "ci95": [
+      -0.028,
+      0.352
+     ],
+     "p_two_sided": 0.081
+    },
+    "call_change_P1_vs_P3_at_90": {
+     "n_endoscopies": 44,
+     "n_progressor_endoscopies": 4,
+     "share_changed": 0.286,
+     "share_changed_progressor": 0.675,
+     "share_changed_non_progressor": 0.247,
+     "progressor_gained_flag_share": 0.65,
+     "progressor_lost_flag_share": 0.025,
+     "non_progressor_gained_flag_share": 0.225,
+     "non_progressor_lost_flag_share": 0.022
+    }
+   },
+   {
+    "stratum": "H&E score quintile 3",
+    "n_samples": 114,
+    "n_progressor_samples": 18,
+    "n_patients": 51,
+    "n_progressor_patients": 12,
+    "auroc": {
+     "L-CNV": {
+      "value": 0.826,
+      "ci95": [
+       0.698,
+       0.929
+      ]
+     },
+     "L-IMG": {
+      "value": 0.592,
+      "ci95": [
+       0.507,
+       0.684
+      ]
+     },
+     "L-LATE": {
+      "value": 0.816,
+      "ci95": [
+       0.69,
+       0.925
+      ]
+     }
+    },
+    "LATE_minus_IMG": {
+     "delta": 0.224,
+     "ci95": [
+      0.104,
+      0.329
+     ],
+     "p_two_sided": 0.0
+    },
+    "CNV_minus_IMG": {
+     "delta": 0.234,
+     "ci95": [
+      0.095,
+      0.354
+     ],
+     "p_two_sided": 0.002
+    },
+    "call_change_P1_vs_P3_at_90": {
+     "n_endoscopies": 52,
+     "n_progressor_endoscopies": 6,
+     "share_changed": 0.344,
+     "share_changed_progressor": 0.4,
+     "share_changed_non_progressor": 0.337,
+     "progressor_gained_flag_share": 0.333,
+     "progressor_lost_flag_share": 0.067,
+     "non_progressor_gained_flag_share": 0.135,
+     "non_progressor_lost_flag_share": 0.202
+    }
+   },
+   {
+    "stratum": "H&E score quintile 4",
+    "n_samples": 114,
+    "n_progressor_samples": 41,
+    "n_patients": 54,
+    "n_progressor_patients": 22,
+    "auroc": {
+     "L-CNV": {
+      "value": 0.774,
+      "ci95": [
+       0.642,
+       0.885
+      ]
+     },
+     "L-IMG": {
+      "value": 0.571,
+      "ci95": [
+       0.489,
+       0.656
+      ]
+     },
+     "L-LATE": {
+      "value": 0.743,
+      "ci95": [
+       0.615,
+       0.848
+      ]
+     }
+    },
+    "LATE_minus_IMG": {
+     "delta": 0.172,
+     "ci95": [
+      0.069,
+      0.274
+     ],
+     "p_two_sided": 0.0
+    },
+    "CNV_minus_IMG": {
+     "delta": 0.203,
+     "ci95": [
+      0.07,
+      0.324
+     ],
+     "p_two_sided": 0.004
+    },
+    "call_change_P1_vs_P3_at_90": {
+     "n_endoscopies": 88,
+     "n_progressor_endoscopies": 28,
+     "share_changed": 0.253,
+     "share_changed_progressor": 0.146,
+     "share_changed_non_progressor": 0.303,
+     "progressor_gained_flag_share": 0.029,
+     "progressor_lost_flag_share": 0.118,
+     "non_progressor_gained_flag_share": 0.037,
+     "non_progressor_lost_flag_share": 0.267
+    }
+   },
+   {
+    "stratum": "H&E score quintile 5",
+    "n_samples": 115,
+    "n_progressor_samples": 86,
+    "n_patients": 43,
+    "n_progressor_patients": 26,
+    "auroc": {
+     "L-CNV": {
+      "value": 0.712,
+      "ci95": [
+       0.588,
+       0.841
+      ]
+     },
+     "L-IMG": {
+      "value": 0.752,
+      "ci95": [
+       0.66,
+       0.834
+      ]
+     },
+     "L-LATE": {
+      "value": 0.756,
+      "ci95": [
+       0.647,
+       0.862
+      ]
+     }
+    },
+    "LATE_minus_IMG": {
+     "delta": 0.004,
+     "ci95": [
+      -0.137,
+      0.153
+     ],
+     "p_two_sided": 0.879
+    },
+    "CNV_minus_IMG": {
+     "delta": -0.04,
+     "ci95": [
+      -0.205,
+      0.136
+     ],
+     "p_two_sided": 0.713
+    },
+    "call_change_P1_vs_P3_at_90": {
+     "n_endoscopies": 76,
+     "n_progressor_endoscopies": 50,
+     "share_changed": 0.008,
+     "share_changed_progressor": 0.006,
+     "share_changed_non_progressor": 0.012,
+     "progressor_gained_flag_share": 0.0,
+     "progressor_lost_flag_share": 0.006,
+     "non_progressor_gained_flag_share": 0.0,
+     "non_progressor_lost_flag_share": 0.012
+    }
+   }
+  ],
+  "draws": 2000,
+  "note": "fold-stratified AUROC on pre-event samples within the stratum (folds lacking a class skipped), single model; patient bootstrap (tb_common boots_for, RandomState(0)), thresholds not involved; call change = share of endoscopy x repeat cells whose P1 (max L-IMG) and P3 (max L-LATE) calls at 90% training endoscopy sensitivity differ; endoscopy strata: H&E quintile of the endoscopy's maximum repeat-mean L-IMG (sample quintile edges), highest grade, tissue tertile of the top-H&E sample, progressor endoscopy time to event (all non-progressor endoscopies in every time stratum)"
+ },
+ "prespec": "b396cdc"
+}

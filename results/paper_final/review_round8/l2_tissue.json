@@ -1,0 +1,182 @@
+{
+ "task": "l2_tissue",
+ "L2": {
+  "family": "tissue",
+  "strata": [
+   {
+    "stratum": "tissue tertile 1",
+    "n_samples": 192,
+    "n_progressor_samples": 49,
+    "n_patients": 62,
+    "n_progressor_patients": 23,
+    "auroc": {
+     "L-CNV": {
+      "value": 0.76,
+      "ci95": [
+       0.64,
+       0.864
+      ]
+     },
+     "L-IMG": {
+      "value": 0.91,
+      "ci95": [
+       0.848,
+       0.954
+      ]
+     },
+     "L-LATE": {
+      "value": 0.925,
+      "ci95": [
+       0.874,
+       0.962
+      ]
+     }
+    },
+    "LATE_minus_IMG": {
+     "delta": 0.016,
+     "ci95": [
+      -0.031,
+      0.062
+     ],
+     "p_two_sided": 0.475
+    },
+    "CNV_minus_IMG": {
+     "delta": -0.149,
+     "ci95": [
+      -0.283,
+      -0.022
+     ],
+     "p_two_sided": 0.023
+    },
+    "call_change_P1_vs_P3_at_90": {
+     "n_endoscopies": 96,
+     "n_progressor_endoscopies": 28,
+     "share_changed": 0.184,
+     "share_changed_progressor": 0.071,
+     "share_changed_non_progressor": 0.231,
+     "progressor_gained_flag_share": 0.018,
+     "progressor_lost_flag_share": 0.054,
+     "non_progressor_gained_flag_share": 0.103,
+     "non_progressor_lost_flag_share": 0.128
+    }
+   },
+   {
+    "stratum": "tissue tertile 2",
+    "n_samples": 192,
+    "n_progressor_samples": 40,
+    "n_patients": 59,
+    "n_progressor_patients": 19,
+    "auroc": {
+     "L-CNV": {
+      "value": 0.864,
+      "ci95": [
+       0.784,
+       0.926
+      ]
+     },
+     "L-IMG": {
+      "value": 0.894,
+      "ci95": [
+       0.824,
+       0.948
+      ]
+     },
+     "L-LATE": {
+      "value": 0.936,
+      "ci95": [
+       0.888,
+       0.97
+      ]
+     }
+    },
+    "LATE_minus_IMG": {
+     "delta": 0.042,
+     "ci95": [
+      0.01,
+      0.081
+     ],
+     "p_two_sided": 0.006
+    },
+    "CNV_minus_IMG": {
+     "delta": -0.031,
+     "ci95": [
+      -0.12,
+      0.054
+     ],
+     "p_two_sided": 0.522
+    },
+    "call_change_P1_vs_P3_at_90": {
+     "n_endoscopies": 85,
+     "n_progressor_endoscopies": 24,
+     "share_changed": 0.218,
+     "share_changed_progressor": 0.125,
+     "share_changed_non_progressor": 0.254,
+     "progressor_gained_flag_share": 0.092,
+     "progressor_lost_flag_share": 0.033,
+     "non_progressor_gained_flag_share": 0.095,
+     "non_progressor_lost_flag_share": 0.159
+    }
+   },
+   {
+    "stratum": "tissue tertile 3",
+    "n_samples": 187,
+    "n_progressor_samples": 72,
+    "n_patients": 61,
+    "n_progressor_patients": 23,
+    "auroc": {
+     "L-CNV": {
+      "value": 0.802,
+      "ci95": [
+       0.662,
+       0.905
+      ]
+     },
+     "L-IMG": {
+      "value": 0.746,
+      "ci95": [
+       0.664,
+       0.826
+      ]
+     },
+     "L-LATE": {
+      "value": 0.837,
+      "ci95": [
+       0.722,
+       0.918
+      ]
+     }
+    },
+    "LATE_minus_IMG": {
+     "delta": 0.091,
+     "ci95": [
+      0.019,
+      0.154
+     ],
+     "p_two_sided": 0.011
+    },
+    "CNV_minus_IMG": {
+     "delta": 0.056,
+     "ci95": [
+      -0.08,
+      0.162
+     ],
+     "p_two_sided": 0.394
+    },
+    "call_change_P1_vs_P3_at_90": {
+     "n_endoscopies": 107,
+     "n_progressor_endoscopies": 36,
+     "share_changed": 0.195,
+     "share_changed_progressor": 0.125,
+     "share_changed_non_progressor": 0.231,
+     "progressor_gained_flag_share": 0.075,
+     "progressor_lost_flag_share": 0.05,
+     "non_progressor_gained_flag_share": 0.117,
+     "non_progressor_lost_flag_share": 0.114
+    }
+   }
+  ],
+  "draws": 2000,
+  "note": "fold-stratified AUROC on pre-event samples within the stratum (folds lacking a class skipped), single model; patient bootstrap (tb_common boots_for, RandomState(0)), thresholds not involved; call change = share of endoscopy x repeat cells whose P1 (max L-IMG) and P3 (max L-LATE) calls at 90% training endoscopy sensitivity differ; endoscopy strata: H&E quintile of the endoscopy's maximum repeat-mean L-IMG (sample quintile edges), highest grade, tissue tertile of the top-H&E sample, progressor endoscopy time to event (all non-progressor endoscopies in every time stratum)"
+ },
+ "prespec": "b396cdc"
+}

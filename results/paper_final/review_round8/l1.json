@@ -1,0 +1,4844 @@
+{
+ "task": "l1",
+ "L1": {
+  "cells": [
+   {
+    "family": "P1",
+    "label": "80%",
+    "params": {
+     "q": 0.8
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 30.1,
+    "caught_share": 0.941,
+    "caught_share_ci95": [
+     0.865,
+     0.994
+    ],
+    "progressor_patients_missed": 1.9,
+    "non_progressor_patients_ever_flagged": 31.6,
+    "np_flagged_share": 0.735,
+    "np_flagged_share_ci95": [
+     0.621,
+     0.838
+    ],
+    "flags_per_non_progressor_patient_year": 0.241,
+    "flags_per_np_py_ci95": [
+     0.188,
+     0.304
+    ],
+    "years_first_flag_to_event_median": 4.37,
+    "last2_window": {
+     "progressor_patients_caught": 30.0,
+     "non_progressor_patients_flagged": 22.2
+    },
+    "samples_sequenced_per_patient": 0.0,
+    "seq_per_patient_ci95": [
+     0.0,
+     0.0
+    ],
+    "samples_sequenced_per_100_patient_years": 0.0,
+    "share_samples_sequenced": 0.0,
+    "cost_per_patient_gbp": 1001.52,
+    "cost_ci95": [
+     845.98,
+     1169.9
+    ],
+    "flagged_endoscopies_per_patient": 1.872,
+    "endoscopy_sensitivity": 0.82,
+    "endo_sens_ci95": [
+     0.744,
+     0.894
+    ],
+    "endoscopy_specificity": 0.659,
+    "endo_spec_ci95": [
+     0.594,
+     0.724
+    ],
+    "pareto_caught_falseflags_sequencing": true,
+    "pareto_caught_cost": true
+   },
+   {
+    "family": "P1",
+    "label": "90%",
+    "params": {
+     "q": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.1,
+    "caught_share": 0.972,
+    "caught_share_ci95": [
+     0.921,
+     1.0
+    ],
+    "progressor_patients_missed": 0.9,
+    "non_progressor_patients_ever_flagged": 36.0,
+    "np_flagged_share": 0.837,
+    "np_flagged_share_ci95": [
+     0.729,
+     0.923
+    ],
+    "flags_per_non_progressor_patient_year": 0.337,
+    "flags_per_np_py_ci95": [
+     0.271,
+     0.409
+    ],
+    "years_first_flag_to_event_median": 4.7,
+    "last2_window": {
+     "progressor_patients_caught": 31.1,
+     "non_progressor_patients_flagged": 29.9
+    },
+    "samples_sequenced_per_patient": 0.0,
+    "seq_per_patient_ci95": [
+     0.0,
+     0.0
+    ],
+    "samples_sequenced_per_100_patient_years": 0.0,
+    "share_samples_sequenced": 0.0,
+    "cost_per_patient_gbp": 1241.91,
+    "cost_ci95": [
+     1074.99,
+     1412.4
+    ],
+    "flagged_endoscopies_per_patient": 2.321,
+    "endoscopy_sensitivity": 0.898,
+    "endo_sens_ci95": [
+     0.849,
+     0.944
+    ],
+    "endoscopy_specificity": 0.524,
+    "endo_spec_ci95": [
+     0.457,
+     0.599
+    ],
+    "pareto_caught_falseflags_sequencing": true,
+    "pareto_caught_cost": true
+   },
+   {
+    "family": "P1",
+    "label": "95%",
+    "params": {
+     "q": 0.95
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.9,
+    "caught_share": 0.997,
+    "caught_share_ci95": [
+     0.99,
+     1.0
+    ],
+    "progressor_patients_missed": 0.1,
+    "non_progressor_patients_ever_flagged": 39.3,
+    "np_flagged_share": 0.914,
+    "np_flagged_share_ci95": [
+     0.837,
+     0.97
+    ],
+    "flags_per_non_progressor_patient_year": 0.446,
+    "flags_per_np_py_ci95": [
+     0.373,
+     0.53
+    ],
+    "years_first_flag_to_event_median": 4.76,
+    "last2_window": {
+     "progressor_patients_caught": 31.9,
+     "non_progressor_patients_flagged": 35.6
+    },
+    "samples_sequenced_per_patient": 0.0,
+    "seq_per_patient_ci95": [
+     0.0,
+     0.0
+    ],
+    "samples_sequenced_per_100_patient_years": 0.0,
+    "share_samples_sequenced": 0.0,
+    "cost_per_patient_gbp": 1489.44,
+    "cost_ci95": [
+     1305.4,
+     1677.8
+    ],
+    "flagged_endoscopies_per_patient": 2.784,
+    "endoscopy_sensitivity": 0.942,
+    "endo_sens_ci95": [
+     0.906,
+     0.975
+    ],
+    "endoscopy_specificity": 0.37,
+    "endo_spec_ci95": [
+     0.301,
+     0.447
+    ],
+    "pareto_caught_falseflags_sequencing": true,
+    "pareto_caught_cost": true
+   },
+   {
+    "family": "P2",
+    "label": "80%",
+    "params": {
+     "q": 0.8
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 28.8,
+    "caught_share": 0.9,
+    "caught_share_ci95": [
+     0.803,
+     0.976
+    ],
+    "progressor_patients_missed": 3.2,
+    "non_progressor_patients_ever_flagged": 28.0,
+    "np_flagged_share": 0.651,
+    "np_flagged_share_ci95": [
+     0.532,
+     0.767
+    ],
+    "flags_per_non_progressor_patient_year": 0.316,
+    "flags_per_np_py_ci95": [
+     0.229,
+     0.419
+    ],
+    "years_first_flag_to_event_median": 4.16,
+    "last2_window": {
+     "progressor_patients_caught": 28.5,
+     "non_progressor_patients_flagged": 23.7
+    },
+    "samples_sequenced_per_patient": 7.613,
+    "seq_per_patient_ci95": [
+     6.587,
+     8.707
+    ],
+    "samples_sequenced_per_100_patient_years": 125.52,
+    "share_samples_sequenced": 1.0,
+    "cost_per_patient_gbp": 1795.6,
+    "cost_ci95": [
+     1523.9,
+     2079.71
+    ],
+    "flagged_endoscopies_per_patient": 2.147,
+    "endoscopy_sensitivity": 0.814,
+    "endo_sens_ci95": [
+     0.726,
+     0.889
+    ],
+    "endoscopy_specificity": 0.553,
+    "endo_spec_ci95": [
+     0.43,
+     0.669
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P2",
+    "label": "90%",
+    "params": {
+     "q": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.0,
+    "caught_share": 0.969,
+    "caught_share_ci95": [
+     0.933,
+     0.997
+    ],
+    "progressor_patients_missed": 1.0,
+    "non_progressor_patients_ever_flagged": 35.0,
+    "np_flagged_share": 0.814,
+    "np_flagged_share_ci95": [
+     0.724,
+     0.893
+    ],
+    "flags_per_non_progressor_patient_year": 0.427,
+    "flags_per_np_py_ci95": [
+     0.336,
+     0.526
+    ],
+    "years_first_flag_to_event_median": 4.63,
+    "last2_window": {
+     "progressor_patients_caught": 30.8,
+     "non_progressor_patients_flagged": 32.2
+    },
+    "samples_sequenced_per_patient": 7.613,
+    "seq_per_patient_ci95": [
+     6.587,
+     8.707
+    ],
+    "samples_sequenced_per_100_patient_years": 125.52,
+    "share_samples_sequenced": 1.0,
+    "cost_per_patient_gbp": 2081.65,
+    "cost_ci95": [
+     1808.24,
+     2366.48
+    ],
+    "flagged_endoscopies_per_patient": 2.681,
+    "endoscopy_sensitivity": 0.915,
+    "endo_sens_ci95": [
+     0.868,
+     0.953
+    ],
+    "endoscopy_specificity": 0.397,
+    "endo_spec_ci95": [
+     0.29,
+     0.506
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P2",
+    "label": "95%",
+    "params": {
+     "q": 0.95
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.7,
+    "caught_share": 0.991,
+    "caught_share_ci95": [
+     0.974,
+     1.0
+    ],
+    "progressor_patients_missed": 0.3,
+    "non_progressor_patients_ever_flagged": 39.6,
+    "np_flagged_share": 0.921,
+    "np_flagged_share_ci95": [
+     0.867,
+     0.965
+    ],
+    "flags_per_non_progressor_patient_year": 0.524,
+    "flags_per_np_py_ci95": [
+     0.444,
+     0.614
+    ],
+    "years_first_flag_to_event_median": 4.76,
+    "last2_window": {
+     "progressor_patients_caught": 31.5,
+     "non_progressor_patients_flagged": 37.2
+    },
+    "samples_sequenced_per_patient": 7.613,
+    "seq_per_patient_ci95": [
+     6.587,
+     8.707
+    ],
+    "samples_sequenced_per_100_patient_years": 125.52,
+    "share_samples_sequenced": 1.0,
+    "cost_per_patient_gbp": 2306.35,
+    "cost_ci95": [
+     2044.01,
+     2589.09
+    ],
+    "flagged_endoscopies_per_patient": 3.101,
+    "endoscopy_sensitivity": 0.96,
+    "endo_sens_ci95": [
+     0.933,
+     0.982
+    ],
+    "endoscopy_specificity": 0.259,
+    "endo_spec_ci95": [
+     0.174,
+     0.348
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P3",
+    "label": "80%",
+    "params": {
+     "q": 0.8
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 30.5,
+    "caught_share": 0.953,
+    "caught_share_ci95": [
+     0.888,
+     1.0
+    ],
+    "progressor_patients_missed": 1.5,
+    "non_progressor_patients_ever_flagged": 26.4,
+    "np_flagged_share": 0.614,
+    "np_flagged_share_ci95": [
+     0.485,
+     0.734
+    ],
+    "flags_per_non_progressor_patient_year": 0.2,
+    "flags_per_np_py_ci95": [
+     0.144,
+     0.262
+    ],
+    "years_first_flag_to_event_median": 4.17,
+    "last2_window": {
+     "progressor_patients_caught": 30.4,
+     "non_progressor_patients_flagged": 17.4
+    },
+    "samples_sequenced_per_patient": 7.613,
+    "seq_per_patient_ci95": [
+     6.587,
+     8.707
+    ],
+    "samples_sequenced_per_100_patient_years": 125.52,
+    "share_samples_sequenced": 1.0,
+    "cost_per_patient_gbp": 1579.46,
+    "cost_ci95": [
+     1358.52,
+     1812.17
+    ],
+    "flagged_endoscopies_per_patient": 1.743,
+    "endoscopy_sensitivity": 0.843,
+    "endo_sens_ci95": [
+     0.764,
+     0.908
+    ],
+    "endoscopy_specificity": 0.718,
+    "endo_spec_ci95": [
+     0.648,
+     0.789
+    ],
+    "pareto_caught_falseflags_sequencing": true,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P3",
+    "label": "90%",
+    "params": {
+     "q": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.2,
+    "caught_share": 0.975,
+    "caught_share_ci95": [
+     0.929,
+     1.0
+    ],
+    "progressor_patients_missed": 0.8,
+    "non_progressor_patients_ever_flagged": 31.8,
+    "np_flagged_share": 0.74,
+    "np_flagged_share_ci95": [
+     0.626,
+     0.846
+    ],
+    "flags_per_non_progressor_patient_year": 0.317,
+    "flags_per_np_py_ci95": [
+     0.239,
+     0.404
+    ],
+    "years_first_flag_to_event_median": 4.61,
+    "last2_window": {
+     "progressor_patients_caught": 31.2,
+     "non_progressor_patients_flagged": 25.3
+    },
+    "samples_sequenced_per_patient": 7.613,
+    "seq_per_patient_ci95": [
+     6.587,
+     8.707
+    ],
+    "samples_sequenced_per_100_patient_years": 125.52,
+    "share_samples_sequenced": 1.0,
+    "cost_per_patient_gbp": 1859.8,
+    "cost_ci95": [
+     1605.55,
+     2127.46
+    ],
+    "flagged_endoscopies_per_patient": 2.267,
+    "endoscopy_sensitivity": 0.912,
+    "endo_sens_ci95": [
+     0.863,
+     0.953
+    ],
+    "endoscopy_specificity": 0.551,
+    "endo_spec_ci95": [
+     0.456,
+     0.648
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P3",
+    "label": "95%",
+    "params": {
+     "q": 0.95
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.4,
+    "caught_share": 0.981,
+    "caught_share_ci95": [
+     0.95,
+     1.0
+    ],
+    "progressor_patients_missed": 0.6,
+    "non_progressor_patients_ever_flagged": 34.7,
+    "np_flagged_share": 0.807,
+    "np_flagged_share_ci95": [
+     0.708,
+     0.895
+    ],
+    "flags_per_non_progressor_patient_year": 0.399,
+    "flags_per_np_py_ci95": [
+     0.312,
+     0.491
+    ],
+    "years_first_flag_to_event_median": 4.74,
+    "last2_window": {
+     "progressor_patients_caught": 31.4,
+     "non_progressor_patients_flagged": 30.7
+    },
+    "samples_sequenced_per_patient": 7.613,
+    "seq_per_patient_ci95": [
+     6.587,
+     8.707
+    ],
+    "samples_sequenced_per_100_patient_years": 125.52,
+    "share_samples_sequenced": 1.0,
+    "cost_per_patient_gbp": 2055.25,
+    "cost_ci95": [
+     1786.14,
+     2338.38
+    ],
+    "flagged_endoscopies_per_patient": 2.632,
+    "endoscopy_sensitivity": 0.961,
+    "endo_sens_ci95": [
+     0.931,
+     0.983
+    ],
+    "endoscopy_specificity": 0.436,
+    "endo_spec_ci95": [
+     0.341,
+     0.538
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P4",
+    "label": "80%",
+    "params": {
+     "q": 0.8,
+     "seeds": 100
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 29.82,
+    "caught_share": 0.932,
+    "caught_share_ci95": [
+     0.867,
+     0.983
+    ],
+    "progressor_patients_missed": 2.18,
+    "non_progressor_patients_ever_flagged": 25.49,
+    "np_flagged_share": 0.593,
+    "np_flagged_share_ci95": [
+     0.465,
+     0.71
+    ],
+    "flags_per_non_progressor_patient_year": 0.188,
+    "flags_per_np_py_ci95": [
+     0.137,
+     0.245
+    ],
+    "years_first_flag_to_event_median": 4.35,
+    "last2_window": {
+     "progressor_patients_caught": 29.38,
+     "non_progressor_patients_flagged": 16.02
+    },
+    "samples_sequenced_per_patient": 3.84,
+    "seq_per_patient_ci95": [
+     3.44,
+     4.267
+    ],
+    "samples_sequenced_per_100_patient_years": 63.31,
+    "share_samples_sequenced": 0.504,
+    "cost_per_patient_gbp": 1224.76,
+    "cost_ci95": [
+     1031.82,
+     1433.41
+    ],
+    "flagged_endoscopies_per_patient": 1.679,
+    "endoscopy_sensitivity": 0.827,
+    "endo_sens_ci95": [
+     0.742,
+     0.9
+    ],
+    "endoscopy_specificity": 0.734,
+    "endo_spec_ci95": [
+     0.666,
+     0.8
+    ],
+    "pareto_caught_falseflags_sequencing": true,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P4",
+    "label": "90%",
+    "params": {
+     "q": 0.9,
+     "seeds": 100
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 30.69,
+    "caught_share": 0.959,
+    "caught_share_ci95": [
+     0.909,
+     0.993
+    ],
+    "progressor_patients_missed": 1.31,
+    "non_progressor_patients_ever_flagged": 30.75,
+    "np_flagged_share": 0.715,
+    "np_flagged_share_ci95": [
+     0.605,
+     0.821
+    ],
+    "flags_per_non_progressor_patient_year": 0.288,
+    "flags_per_np_py_ci95": [
+     0.218,
+     0.362
+    ],
+    "years_first_flag_to_event_median": 4.66,
+    "last2_window": {
+     "progressor_patients_caught": 30.51,
+     "non_progressor_patients_flagged": 22.92
+    },
+    "samples_sequenced_per_patient": 3.84,
+    "seq_per_patient_ci95": [
+     3.44,
+     4.267
+    ],
+    "samples_sequenced_per_100_patient_years": 63.31,
+    "share_samples_sequenced": 0.504,
+    "cost_per_patient_gbp": 1478.18,
+    "cost_ci95": [
+     1261.96,
+     1707.83
+    ],
+    "flagged_endoscopies_per_patient": 2.153,
+    "endoscopy_sensitivity": 0.911,
+    "endo_sens_ci95": [
+     0.85,
+     0.957
+    ],
+    "endoscopy_specificity": 0.594,
+    "endo_spec_ci95": [
+     0.507,
+     0.678
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P4",
+    "label": "95%",
+    "params": {
+     "q": 0.95,
+     "seeds": 100
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.18,
+    "caught_share": 0.974,
+    "caught_share_ci95": [
+     0.938,
+     0.997
+    ],
+    "progressor_patients_missed": 0.82,
+    "non_progressor_patients_ever_flagged": 34.72,
+    "np_flagged_share": 0.808,
+    "np_flagged_share_ci95": [
+     0.716,
+     0.889
+    ],
+    "flags_per_non_progressor_patient_year": 0.368,
+    "flags_per_np_py_ci95": [
+     0.29,
+     0.452
+    ],
+    "years_first_flag_to_event_median": 4.73,
+    "last2_window": {
+     "progressor_patients_caught": 30.99,
+     "non_progressor_patients_flagged": 28.31
+    },
+    "samples_sequenced_per_patient": 3.84,
+    "seq_per_patient_ci95": [
+     3.44,
+     4.267
+    ],
+    "samples_sequenced_per_100_patient_years": 63.31,
+    "share_samples_sequenced": 0.504,
+    "cost_per_patient_gbp": 1667.2,
+    "cost_ci95": [
+     1442.13,
+     1906.7
+    ],
+    "flagged_endoscopies_per_patient": 2.506,
+    "endoscopy_sensitivity": 0.955,
+    "endo_sens_ci95": [
+     0.919,
+     0.981
+    ],
+    "endoscopy_specificity": 0.48,
+    "endo_spec_ci95": [
+     0.393,
+     0.572
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P5",
+    "label": "t_low 90% / t_high 85%",
+    "params": {
+     "ql": 0.9,
+     "qh": 0.85
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.0,
+    "caught_share": 0.969,
+    "caught_share_ci95": [
+     0.924,
+     0.997
+    ],
+    "progressor_patients_missed": 1.0,
+    "non_progressor_patients_ever_flagged": 32.1,
+    "np_flagged_share": 0.747,
+    "np_flagged_share_ci95": [
+     0.633,
+     0.846
+    ],
+    "flags_per_non_progressor_patient_year": 0.301,
+    "flags_per_np_py_ci95": [
+     0.232,
+     0.376
+    ],
+    "years_first_flag_to_event_median": 4.67,
+    "last2_window": {
+     "progressor_patients_caught": 31.0,
+     "non_progressor_patients_flagged": 25.6
+    },
+    "samples_sequenced_per_patient": 2.271,
+    "seq_per_patient_ci95": [
+     1.835,
+     2.697
+    ],
+    "samples_sequenced_per_100_patient_years": 37.44,
+    "share_samples_sequenced": 0.298,
+    "cost_per_patient_gbp": 1362.16,
+    "cost_ci95": [
+     1164.74,
+     1571.04
+    ],
+    "flagged_endoscopies_per_patient": 2.185,
+    "endoscopy_sensitivity": 0.894,
+    "endo_sens_ci95": [
+     0.846,
+     0.943
+    ],
+    "endoscopy_specificity": 0.574,
+    "endo_spec_ci95": [
+     0.495,
+     0.656
+    ],
+    "folds_no_middle_band": 0,
+    "t_seq_fallback": 0,
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P5",
+    "label": "t_low 90% / t_high 90%",
+    "params": {
+     "ql": 0.9,
+     "qh": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.0,
+    "caught_share": 0.969,
+    "caught_share_ci95": [
+     0.924,
+     0.997
+    ],
+    "progressor_patients_missed": 1.0,
+    "non_progressor_patients_ever_flagged": 31.0,
+    "np_flagged_share": 0.721,
+    "np_flagged_share_ci95": [
+     0.602,
+     0.828
+    ],
+    "flags_per_non_progressor_patient_year": 0.281,
+    "flags_per_np_py_ci95": [
+     0.214,
+     0.354
+    ],
+    "years_first_flag_to_event_median": 4.66,
+    "last2_window": {
+     "progressor_patients_caught": 31.0,
+     "non_progressor_patients_flagged": 23.9
+    },
+    "samples_sequenced_per_patient": 2.607,
+    "seq_per_patient_ci95": [
+     2.14,
+     3.068
+    ],
+    "samples_sequenced_per_100_patient_years": 42.98,
+    "share_samples_sequenced": 0.342,
+    "cost_per_patient_gbp": 1344.35,
+    "cost_ci95": [
+     1142.73,
+     1556.14
+    ],
+    "flagged_endoscopies_per_patient": 2.099,
+    "endoscopy_sensitivity": 0.887,
+    "endo_sens_ci95": [
+     0.839,
+     0.938
+    ],
+    "endoscopy_specificity": 0.604,
+    "endo_spec_ci95": [
+     0.524,
+     0.683
+    ],
+    "folds_no_middle_band": 0,
+    "t_seq_fallback": 0,
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P5",
+    "label": "t_low 90% / t_high 95%",
+    "params": {
+     "ql": 0.9,
+     "qh": 0.95
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 30.9,
+    "caught_share": 0.966,
+    "caught_share_ci95": [
+     0.915,
+     0.997
+    ],
+    "progressor_patients_missed": 1.1,
+    "non_progressor_patients_ever_flagged": 29.8,
+    "np_flagged_share": 0.693,
+    "np_flagged_share_ci95": [
+     0.567,
+     0.804
+    ],
+    "flags_per_non_progressor_patient_year": 0.256,
+    "flags_per_np_py_ci95": [
+     0.193,
+     0.328
+    ],
+    "years_first_flag_to_event_median": 4.51,
+    "last2_window": {
+     "progressor_patients_caught": 30.9,
+     "non_progressor_patients_flagged": 21.8
+    },
+    "samples_sequenced_per_patient": 3.053,
+    "seq_per_patient_ci95": [
+     2.528,
+     3.573
+    ],
+    "samples_sequenced_per_100_patient_years": 50.34,
+    "share_samples_sequenced": 0.401,
+    "cost_per_patient_gbp": 1318.83,
+    "cost_ci95": [
+     1114.06,
+     1535.46
+    ],
+    "flagged_endoscopies_per_patient": 1.98,
+    "endoscopy_sensitivity": 0.865,
+    "endo_sens_ci95": [
+     0.807,
+     0.92
+    ],
+    "endoscopy_specificity": 0.638,
+    "endo_spec_ci95": [
+     0.561,
+     0.716
+    ],
+    "folds_no_middle_band": 0,
+    "t_seq_fallback": 0,
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P5",
+    "label": "t_low 95% / t_high 85%",
+    "params": {
+     "ql": 0.95,
+     "qh": 0.85
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.1,
+    "caught_share": 0.972,
+    "caught_share_ci95": [
+     0.928,
+     1.0
+    ],
+    "progressor_patients_missed": 0.9,
+    "non_progressor_patients_ever_flagged": 33.9,
+    "np_flagged_share": 0.788,
+    "np_flagged_share_ci95": [
+     0.685,
+     0.876
+    ],
+    "flags_per_non_progressor_patient_year": 0.344,
+    "flags_per_np_py_ci95": [
+     0.268,
+     0.427
+    ],
+    "years_first_flag_to_event_median": 4.74,
+    "last2_window": {
+     "progressor_patients_caught": 31.1,
+     "non_progressor_patients_flagged": 28.8
+    },
+    "samples_sequenced_per_patient": 3.155,
+    "seq_per_patient_ci95": [
+     2.553,
+     3.743
+    ],
+    "samples_sequenced_per_100_patient_years": 52.01,
+    "share_samples_sequenced": 0.414,
+    "cost_per_patient_gbp": 1539.31,
+    "cost_ci95": [
+     1324.75,
+     1767.73
+    ],
+    "flagged_endoscopies_per_patient": 2.376,
+    "endoscopy_sensitivity": 0.919,
+    "endo_sens_ci95": [
+     0.881,
+     0.958
+    ],
+    "endoscopy_specificity": 0.514,
+    "endo_spec_ci95": [
+     0.428,
+     0.603
+    ],
+    "folds_no_middle_band": 0,
+    "t_seq_fallback": 0,
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P5",
+    "label": "t_low 95% / t_high 90%",
+    "params": {
+     "ql": 0.95,
+     "qh": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.1,
+    "caught_share": 0.972,
+    "caught_share_ci95": [
+     0.928,
+     1.0
+    ],
+    "progressor_patients_missed": 0.9,
+    "non_progressor_patients_ever_flagged": 32.0,
+    "np_flagged_share": 0.744,
+    "np_flagged_share_ci95": [
+     0.632,
+     0.844
+    ],
+    "flags_per_non_progressor_patient_year": 0.319,
+    "flags_per_np_py_ci95": [
+     0.244,
+     0.402
+    ],
+    "years_first_flag_to_event_median": 4.7,
+    "last2_window": {
+     "progressor_patients_caught": 31.1,
+     "non_progressor_patients_flagged": 26.4
+    },
+    "samples_sequenced_per_patient": 3.491,
+    "seq_per_patient_ci95": [
+     2.861,
+     4.12
+    ],
+    "samples_sequenced_per_100_patient_years": 57.55,
+    "share_samples_sequenced": 0.458,
+    "cost_per_patient_gbp": 1510.8,
+    "cost_ci95": [
+     1292.57,
+     1743.82
+    ],
+    "flagged_endoscopies_per_patient": 2.269,
+    "endoscopy_sensitivity": 0.909,
+    "endo_sens_ci95": [
+     0.865,
+     0.952
+    ],
+    "endoscopy_specificity": 0.549,
+    "endo_spec_ci95": [
+     0.46,
+     0.637
+    ],
+    "folds_no_middle_band": 0,
+    "t_seq_fallback": 0,
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P5",
+    "label": "t_low 95% / t_high 95%",
+    "params": {
+     "ql": 0.95,
+     "qh": 0.95
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.1,
+    "caught_share": 0.972,
+    "caught_share_ci95": [
+     0.928,
+     1.0
+    ],
+    "progressor_patients_missed": 0.9,
+    "non_progressor_patients_ever_flagged": 30.8,
+    "np_flagged_share": 0.716,
+    "np_flagged_share_ci95": [
+     0.597,
+     0.823
+    ],
+    "flags_per_non_progressor_patient_year": 0.291,
+    "flags_per_np_py_ci95": [
+     0.219,
+     0.371
+    ],
+    "years_first_flag_to_event_median": 4.67,
+    "last2_window": {
+     "progressor_patients_caught": 31.1,
+     "non_progressor_patients_flagged": 24.0
+    },
+    "samples_sequenced_per_patient": 3.937,
+    "seq_per_patient_ci95": [
+     3.252,
+     4.607
+    ],
+    "samples_sequenced_per_100_patient_years": 64.92,
+    "share_samples_sequenced": 0.517,
+    "cost_per_patient_gbp": 1483.85,
+    "cost_ci95": [
+     1263.09,
+     1719.99
+    ],
+    "flagged_endoscopies_per_patient": 2.148,
+    "endoscopy_sensitivity": 0.897,
+    "endo_sens_ci95": [
+     0.847,
+     0.943
+    ],
+    "endoscopy_specificity": 0.589,
+    "endo_spec_ci95": [
+     0.502,
+     0.675
+    ],
+    "folds_no_middle_band": 0,
+    "t_seq_fallback": 0,
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P5",
+    "label": "t_low 98% / t_high 85%",
+    "params": {
+     "ql": 0.98,
+     "qh": 0.85
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.2,
+    "caught_share": 0.975,
+    "caught_share_ci95": [
+     0.938,
+     1.0
+    ],
+    "progressor_patients_missed": 0.8,
+    "non_progressor_patients_ever_flagged": 35.1,
+    "np_flagged_share": 0.816,
+    "np_flagged_share_ci95": [
+     0.721,
+     0.898
+    ],
+    "flags_per_non_progressor_patient_year": 0.375,
+    "flags_per_np_py_ci95": [
+     0.293,
+     0.463
+    ],
+    "years_first_flag_to_event_median": 4.74,
+    "last2_window": {
+     "progressor_patients_caught": 31.2,
+     "non_progressor_patients_flagged": 30.5
+    },
+    "samples_sequenced_per_patient": 4.125,
+    "seq_per_patient_ci95": [
+     3.355,
+     4.925
+    ],
+    "samples_sequenced_per_100_patient_years": 68.02,
+    "share_samples_sequenced": 0.542,
+    "cost_per_patient_gbp": 1698.14,
+    "cost_ci95": [
+     1461.55,
+     1946.21
+    ],
+    "flagged_endoscopies_per_patient": 2.519,
+    "endoscopy_sensitivity": 0.941,
+    "endo_sens_ci95": [
+     0.909,
+     0.969
+    ],
+    "endoscopy_specificity": 0.47,
+    "endo_spec_ci95": [
+     0.379,
+     0.564
+    ],
+    "folds_no_middle_band": 0,
+    "t_seq_fallback": 0,
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P5",
+    "label": "t_low 98% / t_high 90%",
+    "params": {
+     "ql": 0.98,
+     "qh": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.1,
+    "caught_share": 0.972,
+    "caught_share_ci95": [
+     0.928,
+     1.0
+    ],
+    "progressor_patients_missed": 0.9,
+    "non_progressor_patients_ever_flagged": 33.7,
+    "np_flagged_share": 0.784,
+    "np_flagged_share_ci95": [
+     0.68,
+     0.876
+    ],
+    "flags_per_non_progressor_patient_year": 0.354,
+    "flags_per_np_py_ci95": [
+     0.273,
+     0.441
+    ],
+    "years_first_flag_to_event_median": 4.7,
+    "last2_window": {
+     "progressor_patients_caught": 31.1,
+     "non_progressor_patients_flagged": 28.6
+    },
+    "samples_sequenced_per_patient": 4.461,
+    "seq_per_patient_ci95": [
+     3.656,
+     5.26
+    ],
+    "samples_sequenced_per_100_patient_years": 73.56,
+    "share_samples_sequenced": 0.586,
+    "cost_per_patient_gbp": 1677.48,
+    "cost_ci95": [
+     1440.53,
+     1931.32
+    ],
+    "flagged_endoscopies_per_patient": 2.427,
+    "endoscopy_sensitivity": 0.931,
+    "endo_sens_ci95": [
+     0.891,
+     0.964
+    ],
+    "endoscopy_specificity": 0.5,
+    "endo_spec_ci95": [
+     0.405,
+     0.594
+    ],
+    "folds_no_middle_band": 0,
+    "t_seq_fallback": 0,
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P5",
+    "label": "t_low 98% / t_high 95%",
+    "params": {
+     "ql": 0.98,
+     "qh": 0.95
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.1,
+    "caught_share": 0.972,
+    "caught_share_ci95": [
+     0.928,
+     1.0
+    ],
+    "progressor_patients_missed": 0.9,
+    "non_progressor_patients_ever_flagged": 31.8,
+    "np_flagged_share": 0.74,
+    "np_flagged_share_ci95": [
+     0.627,
+     0.844
+    ],
+    "flags_per_non_progressor_patient_year": 0.321,
+    "flags_per_np_py_ci95": [
+     0.242,
+     0.405
+    ],
+    "years_first_flag_to_event_median": 4.67,
+    "last2_window": {
+     "progressor_patients_caught": 31.1,
+     "non_progressor_patients_flagged": 25.4
+    },
+    "samples_sequenced_per_patient": 4.908,
+    "seq_per_patient_ci95": [
+     4.055,
+     5.745
+    ],
+    "samples_sequenced_per_100_patient_years": 80.92,
+    "share_samples_sequenced": 0.645,
+    "cost_per_patient_gbp": 1639.12,
+    "cost_ci95": [
+     1402.7,
+     1893.29
+    ],
+    "flagged_endoscopies_per_patient": 2.284,
+    "endoscopy_sensitivity": 0.917,
+    "endo_sens_ci95": [
+     0.868,
+     0.958
+    ],
+    "endoscopy_specificity": 0.547,
+    "endo_spec_ci95": [
+     0.453,
+     0.638
+    ],
+    "folds_no_middle_band": 0,
+    "t_seq_fallback": 0,
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P6",
+    "label": "t_low 90% / t_high 85%",
+    "params": {
+     "ql": 0.9,
+     "qh": 0.85
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.0,
+    "caught_share": 0.969,
+    "caught_share_ci95": [
+     0.924,
+     0.997
+    ],
+    "progressor_patients_missed": 1.0,
+    "non_progressor_patients_ever_flagged": 32.1,
+    "np_flagged_share": 0.747,
+    "np_flagged_share_ci95": [
+     0.633,
+     0.846
+    ],
+    "flags_per_non_progressor_patient_year": 0.297,
+    "flags_per_np_py_ci95": [
+     0.229,
+     0.371
+    ],
+    "years_first_flag_to_event_median": 4.67,
+    "last2_window": {
+     "progressor_patients_caught": 31.0,
+     "non_progressor_patients_flagged": 25.3
+    },
+    "samples_sequenced_per_patient": 1.329,
+    "seq_per_patient_ci95": [
+     1.084,
+     1.569
+    ],
+    "samples_sequenced_per_100_patient_years": 21.92,
+    "share_samples_sequenced": 0.175,
+    "cost_per_patient_gbp": 1273.59,
+    "cost_ci95": [
+     1088.47,
+     1470.5
+    ],
+    "flagged_endoscopies_per_patient": 2.169,
+    "endoscopy_sensitivity": 0.894,
+    "endo_sens_ci95": [
+     0.846,
+     0.943
+    ],
+    "endoscopy_specificity": 0.58,
+    "endo_spec_ci95": [
+     0.502,
+     0.66
+    ],
+    "folds_no_middle_band": 0,
+    "t_seq_fallback": 0,
+    "pareto_caught_falseflags_sequencing": true,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P6",
+    "label": "t_low 90% / t_high 90%",
+    "params": {
+     "ql": 0.9,
+     "qh": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.0,
+    "caught_share": 0.969,
+    "caught_share_ci95": [
+     0.924,
+     0.997
+    ],
+    "progressor_patients_missed": 1.0,
+    "non_progressor_patients_ever_flagged": 31.0,
+    "np_flagged_share": 0.721,
+    "np_flagged_share_ci95": [
+     0.602,
+     0.828
+    ],
+    "flags_per_non_progressor_patient_year": 0.275,
+    "flags_per_np_py_ci95": [
+     0.21,
+     0.348
+    ],
+    "years_first_flag_to_event_median": 4.66,
+    "last2_window": {
+     "progressor_patients_caught": 31.0,
+     "non_progressor_patients_flagged": 23.7
+    },
+    "samples_sequenced_per_patient": 1.592,
+    "seq_per_patient_ci95": [
+     1.313,
+     1.88
+    ],
+    "samples_sequenced_per_100_patient_years": 26.25,
+    "share_samples_sequenced": 0.209,
+    "cost_per_patient_gbp": 1247.41,
+    "cost_ci95": [
+     1058.48,
+     1443.15
+    ],
+    "flagged_endoscopies_per_patient": 2.079,
+    "endoscopy_sensitivity": 0.887,
+    "endo_sens_ci95": [
+     0.839,
+     0.938
+    ],
+    "endoscopy_specificity": 0.611,
+    "endo_spec_ci95": [
+     0.534,
+     0.689
+    ],
+    "folds_no_middle_band": 0,
+    "t_seq_fallback": 0,
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P6",
+    "label": "t_low 90% / t_high 95%",
+    "params": {
+     "ql": 0.9,
+     "qh": 0.95
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 30.9,
+    "caught_share": 0.966,
+    "caught_share_ci95": [
+     0.915,
+     0.997
+    ],
+    "progressor_patients_missed": 1.1,
+    "non_progressor_patients_ever_flagged": 29.8,
+    "np_flagged_share": 0.693,
+    "np_flagged_share_ci95": [
+     0.567,
+     0.804
+    ],
+    "flags_per_non_progressor_patient_year": 0.251,
+    "flags_per_np_py_ci95": [
+     0.188,
+     0.319
+    ],
+    "years_first_flag_to_event_median": 4.51,
+    "last2_window": {
+     "progressor_patients_caught": 30.9,
+     "non_progressor_patients_flagged": 21.5
+    },
+    "samples_sequenced_per_patient": 1.897,
+    "seq_per_patient_ci95": [
+     1.584,
+     2.217
+    ],
+    "samples_sequenced_per_100_patient_years": 31.28,
+    "share_samples_sequenced": 0.249,
+    "cost_per_patient_gbp": 1209.87,
+    "cost_ci95": [
+     1022.44,
+     1404.36
+    ],
+    "flagged_endoscopies_per_patient": 1.96,
+    "endoscopy_sensitivity": 0.865,
+    "endo_sens_ci95": [
+     0.807,
+     0.92
+    ],
+    "endoscopy_specificity": 0.645,
+    "endo_spec_ci95": [
+     0.571,
+     0.72
+    ],
+    "folds_no_middle_band": 0,
+    "t_seq_fallback": 0,
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": true
+   },
+   {
+    "family": "P6",
+    "label": "t_low 95% / t_high 85%",
+    "params": {
+     "ql": 0.95,
+     "qh": 0.85
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.1,
+    "caught_share": 0.972,
+    "caught_share_ci95": [
+     0.928,
+     1.0
+    ],
+    "progressor_patients_missed": 0.9,
+    "non_progressor_patients_ever_flagged": 33.6,
+    "np_flagged_share": 0.781,
+    "np_flagged_share_ci95": [
+     0.676,
+     0.87
+    ],
+    "flags_per_non_progressor_patient_year": 0.336,
+    "flags_per_np_py_ci95": [
+     0.261,
+     0.418
+    ],
+    "years_first_flag_to_event_median": 4.74,
+    "last2_window": {
+     "progressor_patients_caught": 31.1,
+     "non_progressor_patients_flagged": 28.1
+    },
+    "samples_sequenced_per_patient": 1.677,
+    "seq_per_patient_ci95": [
+     1.38,
+     1.969
+    ],
+    "samples_sequenced_per_100_patient_years": 27.65,
+    "share_samples_sequenced": 0.22,
+    "cost_per_patient_gbp": 1395.19,
+    "cost_ci95": [
+     1202.62,
+     1605.21
+    ],
+    "flagged_endoscopies_per_patient": 2.341,
+    "endoscopy_sensitivity": 0.917,
+    "endo_sens_ci95": [
+     0.878,
+     0.957
+    ],
+    "endoscopy_specificity": 0.525,
+    "endo_spec_ci95": [
+     0.443,
+     0.61
+    ],
+    "folds_no_middle_band": 0,
+    "t_seq_fallback": 0,
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P6",
+    "label": "t_low 95% / t_high 90%",
+    "params": {
+     "ql": 0.95,
+     "qh": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.1,
+    "caught_share": 0.972,
+    "caught_share_ci95": [
+     0.928,
+     1.0
+    ],
+    "progressor_patients_missed": 0.9,
+    "non_progressor_patients_ever_flagged": 31.8,
+    "np_flagged_share": 0.74,
+    "np_flagged_share_ci95": [
+     0.627,
+     0.842
+    ],
+    "flags_per_non_progressor_patient_year": 0.311,
+    "flags_per_np_py_ci95": [
+     0.238,
+     0.393
+    ],
+    "years_first_flag_to_event_median": 4.7,
+    "last2_window": {
+     "progressor_patients_caught": 31.1,
+     "non_progressor_patients_flagged": 25.9
+    },
+    "samples_sequenced_per_patient": 1.94,
+    "seq_per_patient_ci95": [
+     1.611,
+     2.268
+    ],
+    "samples_sequenced_per_100_patient_years": 31.99,
+    "share_samples_sequenced": 0.255,
+    "cost_per_patient_gbp": 1361.87,
+    "cost_ci95": [
+     1166.59,
+     1572.99
+    ],
+    "flagged_endoscopies_per_patient": 2.237,
+    "endoscopy_sensitivity": 0.907,
+    "endo_sens_ci95": [
+     0.861,
+     0.951
+    ],
+    "endoscopy_specificity": 0.56,
+    "endo_spec_ci95": [
+     0.475,
+     0.645
+    ],
+    "folds_no_middle_band": 0,
+    "t_seq_fallback": 0,
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P6",
+    "label": "t_low 95% / t_high 95%",
+    "params": {
+     "ql": 0.95,
+     "qh": 0.95
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.1,
+    "caught_share": 0.972,
+    "caught_share_ci95": [
+     0.928,
+     1.0
+    ],
+    "progressor_patients_missed": 0.9,
+    "non_progressor_patients_ever_flagged": 30.6,
+    "np_flagged_share": 0.712,
+    "np_flagged_share_ci95": [
+     0.591,
+     0.819
+    ],
+    "flags_per_non_progressor_patient_year": 0.281,
+    "flags_per_np_py_ci95": [
+     0.212,
+     0.359
+    ],
+    "years_first_flag_to_event_median": 4.67,
+    "last2_window": {
+     "progressor_patients_caught": 31.1,
+     "non_progressor_patients_flagged": 23.5
+    },
+    "samples_sequenced_per_patient": 2.245,
+    "seq_per_patient_ci95": [
+     1.877,
+     2.613
+    ],
+    "samples_sequenced_per_100_patient_years": 37.02,
+    "share_samples_sequenced": 0.295,
+    "cost_per_patient_gbp": 1320.06,
+    "cost_ci95": [
+     1123.37,
+     1530.44
+    ],
+    "flagged_endoscopies_per_patient": 2.111,
+    "endoscopy_sensitivity": 0.895,
+    "endo_sens_ci95": [
+     0.846,
+     0.942
+    ],
+    "endoscopy_specificity": 0.603,
+    "endo_spec_ci95": [
+     0.518,
+     0.684
+    ],
+    "folds_no_middle_band": 0,
+    "t_seq_fallback": 0,
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P6",
+    "label": "t_low 98% / t_high 85%",
+    "params": {
+     "ql": 0.98,
+     "qh": 0.85
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.2,
+    "caught_share": 0.975,
+    "caught_share_ci95": [
+     0.938,
+     1.0
+    ],
+    "progressor_patients_missed": 0.8,
+    "non_progressor_patients_ever_flagged": 34.9,
+    "np_flagged_share": 0.812,
+    "np_flagged_share_ci95": [
+     0.714,
+     0.895
+    ],
+    "flags_per_non_progressor_patient_year": 0.367,
+    "flags_per_np_py_ci95": [
+     0.288,
+     0.452
+    ],
+    "years_first_flag_to_event_median": 4.74,
+    "last2_window": {
+     "progressor_patients_caught": 31.2,
+     "non_progressor_patients_flagged": 29.9
+    },
+    "samples_sequenced_per_patient": 2.024,
+    "seq_per_patient_ci95": [
+     1.688,
+     2.349
+    ],
+    "samples_sequenced_per_100_patient_years": 33.37,
+    "share_samples_sequenced": 0.266,
+    "cost_per_patient_gbp": 1498.84,
+    "cost_ci95": [
+     1294.42,
+     1718.89
+    ],
+    "flagged_endoscopies_per_patient": 2.48,
+    "endoscopy_sensitivity": 0.936,
+    "endo_sens_ci95": [
+     0.904,
+     0.967
+    ],
+    "endoscopy_specificity": 0.482,
+    "endo_spec_ci95": [
+     0.393,
+     0.573
+    ],
+    "folds_no_middle_band": 0,
+    "t_seq_fallback": 0,
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P6",
+    "label": "t_low 98% / t_high 90%",
+    "params": {
+     "ql": 0.98,
+     "qh": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.1,
+    "caught_share": 0.972,
+    "caught_share_ci95": [
+     0.928,
+     1.0
+    ],
+    "progressor_patients_missed": 0.9,
+    "non_progressor_patients_ever_flagged": 33.5,
+    "np_flagged_share": 0.779,
+    "np_flagged_share_ci95": [
+     0.674,
+     0.873
+    ],
+    "flags_per_non_progressor_patient_year": 0.344,
+    "flags_per_np_py_ci95": [
+     0.266,
+     0.428
+    ],
+    "years_first_flag_to_event_median": 4.7,
+    "last2_window": {
+     "progressor_patients_caught": 31.1,
+     "non_progressor_patients_flagged": 27.9
+    },
+    "samples_sequenced_per_patient": 2.287,
+    "seq_per_patient_ci95": [
+     1.913,
+     2.643
+    ],
+    "samples_sequenced_per_100_patient_years": 37.7,
+    "share_samples_sequenced": 0.3,
+    "cost_per_patient_gbp": 1469.09,
+    "cost_ci95": [
+     1264.84,
+     1690.7
+    ],
+    "flagged_endoscopies_per_patient": 2.383,
+    "endoscopy_sensitivity": 0.927,
+    "endo_sens_ci95": [
+     0.887,
+     0.963
+    ],
+    "endoscopy_specificity": 0.514,
+    "endo_spec_ci95": [
+     0.424,
+     0.605
+    ],
+    "folds_no_middle_band": 0,
+    "t_seq_fallback": 0,
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P6",
+    "label": "t_low 98% / t_high 95%",
+    "params": {
+     "ql": 0.98,
+     "qh": 0.95
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.1,
+    "caught_share": 0.972,
+    "caught_share_ci95": [
+     0.928,
+     1.0
+    ],
+    "progressor_patients_missed": 0.9,
+    "non_progressor_patients_ever_flagged": 31.6,
+    "np_flagged_share": 0.735,
+    "np_flagged_share_ci95": [
+     0.619,
+     0.84
+    ],
+    "flags_per_non_progressor_patient_year": 0.306,
+    "flags_per_np_py_ci95": [
+     0.232,
+     0.387
+    ],
+    "years_first_flag_to_event_median": 4.67,
+    "last2_window": {
+     "progressor_patients_caught": 31.1,
+     "non_progressor_patients_flagged": 24.7
+    },
+    "samples_sequenced_per_patient": 2.592,
+    "seq_per_patient_ci95": [
+     2.18,
+     2.997
+    ],
+    "samples_sequenced_per_100_patient_years": 42.74,
+    "share_samples_sequenced": 0.34,
+    "cost_per_patient_gbp": 1411.59,
+    "cost_ci95": [
+     1209.99,
+     1628.13
+    ],
+    "flagged_endoscopies_per_patient": 2.227,
+    "endoscopy_sensitivity": 0.914,
+    "endo_sens_ci95": [
+     0.864,
+     0.957
+    ],
+    "endoscopy_specificity": 0.567,
+    "endo_spec_ci95": [
+     0.479,
+     0.653
+    ],
+    "folds_no_middle_band": 0,
+    "t_seq_fallback": 0,
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 top-H&E; t_b 80%, t_s 80%",
+    "params": {
+     "k": "1 top-H&E",
+     "qb": 0.8,
+     "qs": 0.8
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 30.9,
+    "caught_share": 0.966,
+    "caught_share_ci95": [
+     0.914,
+     0.997
+    ],
+    "progressor_patients_missed": 1.1,
+    "non_progressor_patients_ever_flagged": 31.2,
+    "np_flagged_share": 0.726,
+    "np_flagged_share_ci95": [
+     0.608,
+     0.83
+    ],
+    "flags_per_non_progressor_patient_year": 0.312,
+    "flags_per_np_py_ci95": [
+     0.242,
+     0.388
+    ],
+    "years_first_flag_to_event_median": 4.3,
+    "last2_window": {
+     "progressor_patients_caught": 30.9,
+     "non_progressor_patients_flagged": 25.9
+    },
+    "samples_sequenced_per_patient": 1.0,
+    "seq_per_patient_ci95": [
+     1.0,
+     1.0
+    ],
+    "samples_sequenced_per_100_patient_years": 16.49,
+    "share_samples_sequenced": 0.131,
+    "cost_per_patient_gbp": 1276.27,
+    "cost_ci95": [
+     1092.21,
+     1474.59
+    ],
+    "flagged_endoscopies_per_patient": 2.227,
+    "endoscopy_sensitivity": 0.897,
+    "endo_sens_ci95": [
+     0.84,
+     0.95
+    ],
+    "endoscopy_specificity": 0.56,
+    "endo_spec_ci95": [
+     0.473,
+     0.648
+    ],
+    "pareto_caught_falseflags_sequencing": true,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 top-H&E; t_b 80%, t_s 90%",
+    "params": {
+     "k": "1 top-H&E",
+     "qb": 0.8,
+     "qs": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.2,
+    "caught_share": 0.975,
+    "caught_share_ci95": [
+     0.922,
+     1.0
+    ],
+    "progressor_patients_missed": 0.8,
+    "non_progressor_patients_ever_flagged": 35.4,
+    "np_flagged_share": 0.823,
+    "np_flagged_share_ci95": [
+     0.713,
+     0.909
+    ],
+    "flags_per_non_progressor_patient_year": 0.367,
+    "flags_per_np_py_ci95": [
+     0.294,
+     0.445
+    ],
+    "years_first_flag_to_event_median": 4.3,
+    "last2_window": {
+     "progressor_patients_caught": 31.2,
+     "non_progressor_patients_flagged": 31.6
+    },
+    "samples_sequenced_per_patient": 1.0,
+    "seq_per_patient_ci95": [
+     1.0,
+     1.0
+    ],
+    "samples_sequenced_per_100_patient_years": 16.49,
+    "share_samples_sequenced": 0.131,
+    "cost_per_patient_gbp": 1398.25,
+    "cost_ci95": [
+     1209.21,
+     1593.79
+    ],
+    "flagged_endoscopies_per_patient": 2.455,
+    "endoscopy_sensitivity": 0.915,
+    "endo_sens_ci95": [
+     0.864,
+     0.957
+    ],
+    "endoscopy_specificity": 0.482,
+    "endo_spec_ci95": [
+     0.402,
+     0.569
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 top-H&E; t_b 80%, t_s 95%",
+    "params": {
+     "k": "1 top-H&E",
+     "qb": 0.8,
+     "qs": 0.95
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.2,
+    "caught_share": 0.975,
+    "caught_share_ci95": [
+     0.922,
+     1.0
+    ],
+    "progressor_patients_missed": 0.8,
+    "non_progressor_patients_ever_flagged": 39.0,
+    "np_flagged_share": 0.907,
+    "np_flagged_share_ci95": [
+     0.829,
+     0.965
+    ],
+    "flags_per_non_progressor_patient_year": 0.433,
+    "flags_per_np_py_ci95": [
+     0.36,
+     0.513
+    ],
+    "years_first_flag_to_event_median": 4.32,
+    "last2_window": {
+     "progressor_patients_caught": 31.2,
+     "non_progressor_patients_flagged": 36.5
+    },
+    "samples_sequenced_per_patient": 1.0,
+    "seq_per_patient_ci95": [
+     1.0,
+     1.0
+    ],
+    "samples_sequenced_per_100_patient_years": 16.49,
+    "share_samples_sequenced": 0.131,
+    "cost_per_patient_gbp": 1534.49,
+    "cost_ci95": [
+     1339.68,
+     1739.99
+    ],
+    "flagged_endoscopies_per_patient": 2.709,
+    "endoscopy_sensitivity": 0.918,
+    "endo_sens_ci95": [
+     0.867,
+     0.959
+    ],
+    "endoscopy_specificity": 0.388,
+    "endo_spec_ci95": [
+     0.314,
+     0.471
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 top-H&E; t_b 90%, t_s 80%",
+    "params": {
+     "k": "1 top-H&E",
+     "qb": 0.9,
+     "qs": 0.8
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.0,
+    "caught_share": 0.969,
+    "caught_share_ci95": [
+     0.924,
+     0.997
+    ],
+    "progressor_patients_missed": 1.0,
+    "non_progressor_patients_ever_flagged": 32.5,
+    "np_flagged_share": 0.756,
+    "np_flagged_share_ci95": [
+     0.641,
+     0.854
+    ],
+    "flags_per_non_progressor_patient_year": 0.388,
+    "flags_per_np_py_ci95": [
+     0.301,
+     0.485
+    ],
+    "years_first_flag_to_event_median": 4.68,
+    "last2_window": {
+     "progressor_patients_caught": 31.0,
+     "non_progressor_patients_flagged": 28.0
+    },
+    "samples_sequenced_per_patient": 1.0,
+    "seq_per_patient_ci95": [
+     1.0,
+     1.0
+    ],
+    "samples_sequenced_per_100_patient_years": 16.49,
+    "share_samples_sequenced": 0.131,
+    "cost_per_patient_gbp": 1457.45,
+    "cost_ci95": [
+     1248.39,
+     1680.03
+    ],
+    "flagged_endoscopies_per_patient": 2.565,
+    "endoscopy_sensitivity": 0.941,
+    "endo_sens_ci95": [
+     0.899,
+     0.975
+    ],
+    "endoscopy_specificity": 0.452,
+    "endo_spec_ci95": [
+     0.348,
+     0.559
+    ],
+    "pareto_caught_falseflags_sequencing": true,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 top-H&E; t_b 90%, t_s 90%",
+    "params": {
+     "k": "1 top-H&E",
+     "qb": 0.9,
+     "qs": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.3,
+    "caught_share": 0.978,
+    "caught_share_ci95": [
+     0.933,
+     1.0
+    ],
+    "progressor_patients_missed": 0.7,
+    "non_progressor_patients_ever_flagged": 36.1,
+    "np_flagged_share": 0.84,
+    "np_flagged_share_ci95": [
+     0.737,
+     0.922
+    ],
+    "flags_per_non_progressor_patient_year": 0.43,
+    "flags_per_np_py_ci95": [
+     0.344,
+     0.524
+    ],
+    "years_first_flag_to_event_median": 4.67,
+    "last2_window": {
+     "progressor_patients_caught": 31.3,
+     "non_progressor_patients_flagged": 32.7
+    },
+    "samples_sequenced_per_patient": 1.0,
+    "seq_per_patient_ci95": [
+     1.0,
+     1.0
+    ],
+    "samples_sequenced_per_100_patient_years": 16.49,
+    "share_samples_sequenced": 0.131,
+    "cost_per_patient_gbp": 1549.47,
+    "cost_ci95": [
+     1343.3,
+     1771.36
+    ],
+    "flagged_endoscopies_per_patient": 2.737,
+    "endoscopy_sensitivity": 0.952,
+    "endo_sens_ci95": [
+     0.918,
+     0.979
+    ],
+    "endoscopy_specificity": 0.393,
+    "endo_spec_ci95": [
+     0.299,
+     0.49
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 top-H&E; t_b 90%, t_s 95%",
+    "params": {
+     "k": "1 top-H&E",
+     "qb": 0.9,
+     "qs": 0.95
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.3,
+    "caught_share": 0.978,
+    "caught_share_ci95": [
+     0.933,
+     1.0
+    ],
+    "progressor_patients_missed": 0.7,
+    "non_progressor_patients_ever_flagged": 39.1,
+    "np_flagged_share": 0.909,
+    "np_flagged_share_ci95": [
+     0.832,
+     0.967
+    ],
+    "flags_per_non_progressor_patient_year": 0.477,
+    "flags_per_np_py_ci95": [
+     0.395,
+     0.565
+    ],
+    "years_first_flag_to_event_median": 4.67,
+    "last2_window": {
+     "progressor_patients_caught": 31.3,
+     "non_progressor_patients_flagged": 36.8
+    },
+    "samples_sequenced_per_patient": 1.0,
+    "seq_per_patient_ci95": [
+     1.0,
+     1.0
+    ],
+    "samples_sequenced_per_100_patient_years": 16.49,
+    "share_samples_sequenced": 0.131,
+    "cost_per_patient_gbp": 1645.77,
+    "cost_ci95": [
+     1433.89,
+     1871.9
+    ],
+    "flagged_endoscopies_per_patient": 2.917,
+    "endoscopy_sensitivity": 0.955,
+    "endo_sens_ci95": [
+     0.921,
+     0.98
+    ],
+    "endoscopy_specificity": 0.326,
+    "endo_spec_ci95": [
+     0.241,
+     0.415
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 top-H&E; t_b 95%, t_s 80%",
+    "params": {
+     "k": "1 top-H&E",
+     "qb": 0.95,
+     "qs": 0.8
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.4,
+    "caught_share": 0.981,
+    "caught_share_ci95": [
+     0.95,
+     1.0
+    ],
+    "progressor_patients_missed": 0.6,
+    "non_progressor_patients_ever_flagged": 33.5,
+    "np_flagged_share": 0.779,
+    "np_flagged_share_ci95": [
+     0.671,
+     0.871
+    ],
+    "flags_per_non_progressor_patient_year": 0.439,
+    "flags_per_np_py_ci95": [
+     0.342,
+     0.545
+    ],
+    "years_first_flag_to_event_median": 4.74,
+    "last2_window": {
+     "progressor_patients_caught": 31.4,
+     "non_progressor_patients_flagged": 30.2
+    },
+    "samples_sequenced_per_patient": 1.0,
+    "seq_per_patient_ci95": [
+     1.0,
+     1.0
+    ],
+    "samples_sequenced_per_100_patient_years": 16.49,
+    "share_samples_sequenced": 0.131,
+    "cost_per_patient_gbp": 1578.01,
+    "cost_ci95": [
+     1352.58,
+     1816.97
+    ],
+    "flagged_endoscopies_per_patient": 2.791,
+    "endoscopy_sensitivity": 0.967,
+    "endo_sens_ci95": [
+     0.939,
+     0.989
+    ],
+    "endoscopy_specificity": 0.379,
+    "endo_spec_ci95": [
+     0.268,
+     0.494
+    ],
+    "pareto_caught_falseflags_sequencing": true,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 top-H&E; t_b 95%, t_s 90%",
+    "params": {
+     "k": "1 top-H&E",
+     "qb": 0.95,
+     "qs": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.6,
+    "caught_share": 0.988,
+    "caught_share_ci95": [
+     0.957,
+     1.0
+    ],
+    "progressor_patients_missed": 0.4,
+    "non_progressor_patients_ever_flagged": 36.9,
+    "np_flagged_share": 0.858,
+    "np_flagged_share_ci95": [
+     0.76,
+     0.933
+    ],
+    "flags_per_non_progressor_patient_year": 0.472,
+    "flags_per_np_py_ci95": [
+     0.378,
+     0.575
+    ],
+    "years_first_flag_to_event_median": 4.77,
+    "last2_window": {
+     "progressor_patients_caught": 31.6,
+     "non_progressor_patients_flagged": 33.9
+    },
+    "samples_sequenced_per_patient": 1.0,
+    "seq_per_patient_ci95": [
+     1.0,
+     1.0
+    ],
+    "samples_sequenced_per_100_patient_years": 16.49,
+    "share_samples_sequenced": 0.131,
+    "cost_per_patient_gbp": 1649.34,
+    "cost_ci95": [
+     1427.49,
+     1881.89
+    ],
+    "flagged_endoscopies_per_patient": 2.924,
+    "endoscopy_sensitivity": 0.975,
+    "endo_sens_ci95": [
+     0.956,
+     0.99
+    ],
+    "endoscopy_specificity": 0.332,
+    "endo_spec_ci95": [
+     0.23,
+     0.44
+    ],
+    "pareto_caught_falseflags_sequencing": true,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 top-H&E; t_b 95%, t_s 95%",
+    "params": {
+     "k": "1 top-H&E",
+     "qb": 0.95,
+     "qs": 0.95
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.6,
+    "caught_share": 0.988,
+    "caught_share_ci95": [
+     0.957,
+     1.0
+    ],
+    "progressor_patients_missed": 0.4,
+    "non_progressor_patients_ever_flagged": 39.5,
+    "np_flagged_share": 0.919,
+    "np_flagged_share_ci95": [
+     0.843,
+     0.973
+    ],
+    "flags_per_non_progressor_patient_year": 0.511,
+    "flags_per_np_py_ci95": [
+     0.422,
+     0.606
+    ],
+    "years_first_flag_to_event_median": 4.77,
+    "last2_window": {
+     "progressor_patients_caught": 31.6,
+     "non_progressor_patients_flagged": 37.6
+    },
+    "samples_sequenced_per_patient": 1.0,
+    "seq_per_patient_ci95": [
+     1.0,
+     1.0
+    ],
+    "samples_sequenced_per_100_patient_years": 16.49,
+    "share_samples_sequenced": 0.131,
+    "cost_per_patient_gbp": 1727.81,
+    "cost_ci95": [
+     1513.75,
+     1958.93
+    ],
+    "flagged_endoscopies_per_patient": 3.071,
+    "endoscopy_sensitivity": 0.977,
+    "endo_sens_ci95": [
+     0.959,
+     0.992
+    ],
+    "endoscopy_specificity": 0.279,
+    "endo_spec_ci95": [
+     0.19,
+     0.374
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 random; t_b 80%, t_s 80%",
+    "params": {
+     "k": "1 random",
+     "qb": 0.8,
+     "qs": 0.8
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 30.48,
+    "caught_share": 0.953,
+    "caught_share_ci95": [
+     0.896,
+     0.989
+    ],
+    "progressor_patients_missed": 1.52,
+    "non_progressor_patients_ever_flagged": 31.45,
+    "np_flagged_share": 0.731,
+    "np_flagged_share_ci95": [
+     0.616,
+     0.834
+    ],
+    "flags_per_non_progressor_patient_year": 0.324,
+    "flags_per_np_py_ci95": [
+     0.25,
+     0.405
+    ],
+    "years_first_flag_to_event_median": 4.51,
+    "last2_window": {
+     "progressor_patients_caught": 30.48,
+     "non_progressor_patients_flagged": 26.1
+    },
+    "samples_sequenced_per_patient": 1.0,
+    "seq_per_patient_ci95": [
+     1.0,
+     1.0
+    ],
+    "samples_sequenced_per_100_patient_years": 16.49,
+    "share_samples_sequenced": 0.131,
+    "cost_per_patient_gbp": 1310.77,
+    "cost_ci95": [
+     1113.6,
+     1512.33
+    ],
+    "flagged_endoscopies_per_patient": 2.291,
+    "endoscopy_sensitivity": 0.911,
+    "endo_sens_ci95": [
+     0.855,
+     0.956
+    ],
+    "endoscopy_specificity": 0.542,
+    "endo_spec_ci95": [
+     0.453,
+     0.635
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 random; t_b 80%, t_s 90%",
+    "params": {
+     "k": "1 random",
+     "qb": 0.8,
+     "qs": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 30.78,
+    "caught_share": 0.962,
+    "caught_share_ci95": [
+     0.905,
+     0.996
+    ],
+    "progressor_patients_missed": 1.22,
+    "non_progressor_patients_ever_flagged": 35.56,
+    "np_flagged_share": 0.827,
+    "np_flagged_share_ci95": [
+     0.718,
+     0.911
+    ],
+    "flags_per_non_progressor_patient_year": 0.375,
+    "flags_per_np_py_ci95": [
+     0.299,
+     0.457
+    ],
+    "years_first_flag_to_event_median": 4.52,
+    "last2_window": {
+     "progressor_patients_caught": 30.78,
+     "non_progressor_patients_flagged": 31.73
+    },
+    "samples_sequenced_per_patient": 1.0,
+    "seq_per_patient_ci95": [
+     1.0,
+     1.0
+    ],
+    "samples_sequenced_per_100_patient_years": 16.49,
+    "share_samples_sequenced": 0.131,
+    "cost_per_patient_gbp": 1422.16,
+    "cost_ci95": [
+     1224.12,
+     1623.36
+    ],
+    "flagged_endoscopies_per_patient": 2.499,
+    "endoscopy_sensitivity": 0.925,
+    "endo_sens_ci95": [
+     0.876,
+     0.962
+    ],
+    "endoscopy_specificity": 0.47,
+    "endo_spec_ci95": [
+     0.385,
+     0.56
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 random; t_b 80%, t_s 95%",
+    "params": {
+     "k": "1 random",
+     "qb": 0.8,
+     "qs": 0.95
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 30.78,
+    "caught_share": 0.962,
+    "caught_share_ci95": [
+     0.905,
+     0.996
+    ],
+    "progressor_patients_missed": 1.22,
+    "non_progressor_patients_ever_flagged": 39.01,
+    "np_flagged_share": 0.907,
+    "np_flagged_share_ci95": [
+     0.829,
+     0.965
+    ],
+    "flags_per_non_progressor_patient_year": 0.436,
+    "flags_per_np_py_ci95": [
+     0.361,
+     0.517
+    ],
+    "years_first_flag_to_event_median": 4.53,
+    "last2_window": {
+     "progressor_patients_caught": 30.78,
+     "non_progressor_patients_flagged": 36.42
+    },
+    "samples_sequenced_per_patient": 1.0,
+    "seq_per_patient_ci95": [
+     1.0,
+     1.0
+    ],
+    "samples_sequenced_per_100_patient_years": 16.49,
+    "share_samples_sequenced": 0.131,
+    "cost_per_patient_gbp": 1547.18,
+    "cost_ci95": [
+     1349.6,
+     1755.39
+    ],
+    "flagged_endoscopies_per_patient": 2.733,
+    "endoscopy_sensitivity": 0.928,
+    "endo_sens_ci95": [
+     0.882,
+     0.964
+    ],
+    "endoscopy_specificity": 0.384,
+    "endo_spec_ci95": [
+     0.305,
+     0.465
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 random; t_b 90%, t_s 80%",
+    "params": {
+     "k": "1 random",
+     "qb": 0.9,
+     "qs": 0.8
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 30.87,
+    "caught_share": 0.965,
+    "caught_share_ci95": [
+     0.915,
+     0.995
+    ],
+    "progressor_patients_missed": 1.13,
+    "non_progressor_patients_ever_flagged": 32.62,
+    "np_flagged_share": 0.759,
+    "np_flagged_share_ci95": [
+     0.647,
+     0.855
+    ],
+    "flags_per_non_progressor_patient_year": 0.39,
+    "flags_per_np_py_ci95": [
+     0.303,
+     0.486
+    ],
+    "years_first_flag_to_event_median": 4.73,
+    "last2_window": {
+     "progressor_patients_caught": 30.87,
+     "non_progressor_patients_flagged": 28.43
+    },
+    "samples_sequenced_per_patient": 1.0,
+    "seq_per_patient_ci95": [
+     1.0,
+     1.0
+    ],
+    "samples_sequenced_per_100_patient_years": 16.49,
+    "share_samples_sequenced": 0.131,
+    "cost_per_patient_gbp": 1468.5,
+    "cost_ci95": [
+     1248.97,
+     1695.54
+    ],
+    "flagged_endoscopies_per_patient": 2.586,
+    "endoscopy_sensitivity": 0.951,
+    "endo_sens_ci95": [
+     0.913,
+     0.98
+    ],
+    "endoscopy_specificity": 0.449,
+    "endo_spec_ci95": [
+     0.344,
+     0.555
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 random; t_b 90%, t_s 90%",
+    "params": {
+     "k": "1 random",
+     "qb": 0.9,
+     "qs": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.07,
+    "caught_share": 0.971,
+    "caught_share_ci95": [
+     0.922,
+     0.999
+    ],
+    "progressor_patients_missed": 0.93,
+    "non_progressor_patients_ever_flagged": 36.24,
+    "np_flagged_share": 0.843,
+    "np_flagged_share_ci95": [
+     0.743,
+     0.924
+    ],
+    "flags_per_non_progressor_patient_year": 0.43,
+    "flags_per_np_py_ci95": [
+     0.345,
+     0.526
+    ],
+    "years_first_flag_to_event_median": 4.75,
+    "last2_window": {
+     "progressor_patients_caught": 31.07,
+     "non_progressor_patients_flagged": 33.0
+    },
+    "samples_sequenced_per_patient": 1.0,
+    "seq_per_patient_ci95": [
+     1.0,
+     1.0
+    ],
+    "samples_sequenced_per_100_patient_years": 16.49,
+    "share_samples_sequenced": 0.131,
+    "cost_per_patient_gbp": 1555.16,
+    "cost_ci95": [
+     1341.18,
+     1777.66
+    ],
+    "flagged_endoscopies_per_patient": 2.748,
+    "endoscopy_sensitivity": 0.96,
+    "endo_sens_ci95": [
+     0.931,
+     0.983
+    ],
+    "endoscopy_specificity": 0.392,
+    "endo_spec_ci95": [
+     0.296,
+     0.49
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 random; t_b 90%, t_s 95%",
+    "params": {
+     "k": "1 random",
+     "qb": 0.9,
+     "qs": 0.95
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.07,
+    "caught_share": 0.971,
+    "caught_share_ci95": [
+     0.922,
+     0.999
+    ],
+    "progressor_patients_missed": 0.93,
+    "non_progressor_patients_ever_flagged": 39.17,
+    "np_flagged_share": 0.911,
+    "np_flagged_share_ci95": [
+     0.834,
+     0.968
+    ],
+    "flags_per_non_progressor_patient_year": 0.478,
+    "flags_per_np_py_ci95": [
+     0.394,
+     0.569
+    ],
+    "years_first_flag_to_event_median": 4.75,
+    "last2_window": {
+     "progressor_patients_caught": 31.07,
+     "non_progressor_patients_flagged": 37.16
+    },
+    "samples_sequenced_per_patient": 1.0,
+    "seq_per_patient_ci95": [
+     1.0,
+     1.0
+    ],
+    "samples_sequenced_per_100_patient_years": 16.49,
+    "share_samples_sequenced": 0.131,
+    "cost_per_patient_gbp": 1652.51,
+    "cost_ci95": [
+     1441.3,
+     1875.42
+    ],
+    "flagged_endoscopies_per_patient": 2.93,
+    "endoscopy_sensitivity": 0.962,
+    "endo_sens_ci95": [
+     0.933,
+     0.985
+    ],
+    "endoscopy_specificity": 0.325,
+    "endo_spec_ci95": [
+     0.24,
+     0.412
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 random; t_b 95%, t_s 80%",
+    "params": {
+     "k": "1 random",
+     "qb": 0.95,
+     "qs": 0.8
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.25,
+    "caught_share": 0.977,
+    "caught_share_ci95": [
+     0.939,
+     1.0
+    ],
+    "progressor_patients_missed": 0.75,
+    "non_progressor_patients_ever_flagged": 33.85,
+    "np_flagged_share": 0.787,
+    "np_flagged_share_ci95": [
+     0.681,
+     0.875
+    ],
+    "flags_per_non_progressor_patient_year": 0.442,
+    "flags_per_np_py_ci95": [
+     0.347,
+     0.548
+    ],
+    "years_first_flag_to_event_median": 4.75,
+    "last2_window": {
+     "progressor_patients_caught": 31.25,
+     "non_progressor_patients_flagged": 30.54
+    },
+    "samples_sequenced_per_patient": 1.0,
+    "seq_per_patient_ci95": [
+     1.0,
+     1.0
+    ],
+    "samples_sequenced_per_100_patient_years": 16.49,
+    "share_samples_sequenced": 0.131,
+    "cost_per_patient_gbp": 1589.68,
+    "cost_ci95": [
+     1366.53,
+     1825.96
+    ],
+    "flagged_endoscopies_per_patient": 2.812,
+    "endoscopy_sensitivity": 0.977,
+    "endo_sens_ci95": [
+     0.958,
+     0.992
+    ],
+    "endoscopy_specificity": 0.375,
+    "endo_spec_ci95": [
+     0.27,
+     0.486
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 random; t_b 95%, t_s 90%",
+    "params": {
+     "k": "1 random",
+     "qb": 0.95,
+     "qs": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.4,
+    "caught_share": 0.981,
+    "caught_share_ci95": [
+     0.945,
+     1.0
+    ],
+    "progressor_patients_missed": 0.6,
+    "non_progressor_patients_ever_flagged": 36.92,
+    "np_flagged_share": 0.859,
+    "np_flagged_share_ci95": [
+     0.765,
+     0.932
+    ],
+    "flags_per_non_progressor_patient_year": 0.474,
+    "flags_per_np_py_ci95": [
+     0.382,
+     0.576
+    ],
+    "years_first_flag_to_event_median": 4.78,
+    "last2_window": {
+     "progressor_patients_caught": 31.4,
+     "non_progressor_patients_flagged": 34.13
+    },
+    "samples_sequenced_per_patient": 1.0,
+    "seq_per_patient_ci95": [
+     1.0,
+     1.0
+    ],
+    "samples_sequenced_per_100_patient_years": 16.49,
+    "share_samples_sequenced": 0.131,
+    "cost_per_patient_gbp": 1656.99,
+    "cost_ci95": [
+     1440.11,
+     1889.25
+    ],
+    "flagged_endoscopies_per_patient": 2.938,
+    "endoscopy_sensitivity": 0.982,
+    "endo_sens_ci95": [
+     0.966,
+     0.994
+    ],
+    "endoscopy_specificity": 0.33,
+    "endo_spec_ci95": [
+     0.236,
+     0.433
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 random; t_b 95%, t_s 95%",
+    "params": {
+     "k": "1 random",
+     "qb": 0.95,
+     "qs": 0.95
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.4,
+    "caught_share": 0.981,
+    "caught_share_ci95": [
+     0.945,
+     1.0
+    ],
+    "progressor_patients_missed": 0.6,
+    "non_progressor_patients_ever_flagged": 39.51,
+    "np_flagged_share": 0.919,
+    "np_flagged_share_ci95": [
+     0.843,
+     0.973
+    ],
+    "flags_per_non_progressor_patient_year": 0.511,
+    "flags_per_np_py_ci95": [
+     0.424,
+     0.606
+    ],
+    "years_first_flag_to_event_median": 4.78,
+    "last2_window": {
+     "progressor_patients_caught": 31.4,
+     "non_progressor_patients_flagged": 37.8
+    },
+    "samples_sequenced_per_patient": 1.0,
+    "seq_per_patient_ci95": [
+     1.0,
+     1.0
+    ],
+    "samples_sequenced_per_100_patient_years": 16.49,
+    "share_samples_sequenced": 0.131,
+    "cost_per_patient_gbp": 1732.69,
+    "cost_ci95": [
+     1520.89,
+     1962.61
+    ],
+    "flagged_endoscopies_per_patient": 3.08,
+    "endoscopy_sensitivity": 0.984,
+    "endo_sens_ci95": [
+     0.967,
+     0.995
+    ],
+    "endoscopy_specificity": 0.278,
+    "endo_spec_ci95": [
+     0.194,
+     0.368
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 2 top-H&E; t_b 80%, t_s 80%",
+    "params": {
+     "k": "2 top-H&E",
+     "qb": 0.8,
+     "qs": 0.8
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 30.9,
+    "caught_share": 0.966,
+    "caught_share_ci95": [
+     0.914,
+     0.997
+    ],
+    "progressor_patients_missed": 1.1,
+    "non_progressor_patients_ever_flagged": 31.2,
+    "np_flagged_share": 0.726,
+    "np_flagged_share_ci95": [
+     0.608,
+     0.83
+    ],
+    "flags_per_non_progressor_patient_year": 0.312,
+    "flags_per_np_py_ci95": [
+     0.24,
+     0.389
+    ],
+    "years_first_flag_to_event_median": 4.3,
+    "last2_window": {
+     "progressor_patients_caught": 30.9,
+     "non_progressor_patients_flagged": 26.0
+    },
+    "samples_sequenced_per_patient": 1.387,
+    "seq_per_patient_ci95": [
+     1.28,
+     1.507
+    ],
+    "samples_sequenced_per_100_patient_years": 22.86,
+    "share_samples_sequenced": 0.182,
+    "cost_per_patient_gbp": 1311.27,
+    "cost_ci95": [
+     1125.16,
+     1511.07
+    ],
+    "flagged_endoscopies_per_patient": 2.231,
+    "endoscopy_sensitivity": 0.899,
+    "endo_sens_ci95": [
+     0.842,
+     0.95
+    ],
+    "endoscopy_specificity": 0.559,
+    "endo_spec_ci95": [
+     0.47,
+     0.648
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 2 top-H&E; t_b 80%, t_s 90%",
+    "params": {
+     "k": "2 top-H&E",
+     "qb": 0.8,
+     "qs": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.2,
+    "caught_share": 0.975,
+    "caught_share_ci95": [
+     0.922,
+     1.0
+    ],
+    "progressor_patients_missed": 0.8,
+    "non_progressor_patients_ever_flagged": 35.4,
+    "np_flagged_share": 0.823,
+    "np_flagged_share_ci95": [
+     0.713,
+     0.909
+    ],
+    "flags_per_non_progressor_patient_year": 0.367,
+    "flags_per_np_py_ci95": [
+     0.295,
+     0.445
+    ],
+    "years_first_flag_to_event_median": 4.3,
+    "last2_window": {
+     "progressor_patients_caught": 31.2,
+     "non_progressor_patients_flagged": 31.6
+    },
+    "samples_sequenced_per_patient": 1.387,
+    "seq_per_patient_ci95": [
+     1.28,
+     1.507
+    ],
+    "samples_sequenced_per_100_patient_years": 22.86,
+    "share_samples_sequenced": 0.182,
+    "cost_per_patient_gbp": 1433.25,
+    "cost_ci95": [
+     1244.21,
+     1632.33
+    ],
+    "flagged_endoscopies_per_patient": 2.459,
+    "endoscopy_sensitivity": 0.917,
+    "endo_sens_ci95": [
+     0.866,
+     0.959
+    ],
+    "endoscopy_specificity": 0.482,
+    "endo_spec_ci95": [
+     0.398,
+     0.567
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 2 top-H&E; t_b 80%, t_s 95%",
+    "params": {
+     "k": "2 top-H&E",
+     "qb": 0.8,
+     "qs": 0.95
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.2,
+    "caught_share": 0.975,
+    "caught_share_ci95": [
+     0.922,
+     1.0
+    ],
+    "progressor_patients_missed": 0.8,
+    "non_progressor_patients_ever_flagged": 39.0,
+    "np_flagged_share": 0.907,
+    "np_flagged_share_ci95": [
+     0.829,
+     0.965
+    ],
+    "flags_per_non_progressor_patient_year": 0.434,
+    "flags_per_np_py_ci95": [
+     0.361,
+     0.513
+    ],
+    "years_first_flag_to_event_median": 4.32,
+    "last2_window": {
+     "progressor_patients_caught": 31.2,
+     "non_progressor_patients_flagged": 36.5
+    },
+    "samples_sequenced_per_patient": 1.387,
+    "seq_per_patient_ci95": [
+     1.28,
+     1.507
+    ],
+    "samples_sequenced_per_100_patient_years": 22.86,
+    "share_samples_sequenced": 0.182,
+    "cost_per_patient_gbp": 1570.93,
+    "cost_ci95": [
+     1374.99,
+     1774.83
+    ],
+    "flagged_endoscopies_per_patient": 2.716,
+    "endoscopy_sensitivity": 0.92,
+    "endo_sens_ci95": [
+     0.872,
+     0.961
+    ],
+    "endoscopy_specificity": 0.387,
+    "endo_spec_ci95": [
+     0.312,
+     0.469
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 2 top-H&E; t_b 90%, t_s 80%",
+    "params": {
+     "k": "2 top-H&E",
+     "qb": 0.9,
+     "qs": 0.8
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.0,
+    "caught_share": 0.969,
+    "caught_share_ci95": [
+     0.924,
+     0.997
+    ],
+    "progressor_patients_missed": 1.0,
+    "non_progressor_patients_ever_flagged": 32.6,
+    "np_flagged_share": 0.758,
+    "np_flagged_share_ci95": [
+     0.643,
+     0.856
+    ],
+    "flags_per_non_progressor_patient_year": 0.393,
+    "flags_per_np_py_ci95": [
+     0.303,
+     0.491
+    ],
+    "years_first_flag_to_event_median": 4.67,
+    "last2_window": {
+     "progressor_patients_caught": 31.0,
+     "non_progressor_patients_flagged": 28.2
+    },
+    "samples_sequenced_per_patient": 1.387,
+    "seq_per_patient_ci95": [
+     1.28,
+     1.507
+    ],
+    "samples_sequenced_per_100_patient_years": 22.86,
+    "share_samples_sequenced": 0.182,
+    "cost_per_patient_gbp": 1501.73,
+    "cost_ci95": [
+     1291.31,
+     1729.29
+    ],
+    "flagged_endoscopies_per_patient": 2.587,
+    "endoscopy_sensitivity": 0.941,
+    "endo_sens_ci95": [
+     0.899,
+     0.975
+    ],
+    "endoscopy_specificity": 0.444,
+    "endo_spec_ci95": [
+     0.339,
+     0.554
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 2 top-H&E; t_b 90%, t_s 90%",
+    "params": {
+     "k": "2 top-H&E",
+     "qb": 0.9,
+     "qs": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.3,
+    "caught_share": 0.978,
+    "caught_share_ci95": [
+     0.933,
+     1.0
+    ],
+    "progressor_patients_missed": 0.7,
+    "non_progressor_patients_ever_flagged": 36.2,
+    "np_flagged_share": 0.842,
+    "np_flagged_share_ci95": [
+     0.74,
+     0.923
+    ],
+    "flags_per_non_progressor_patient_year": 0.435,
+    "flags_per_np_py_ci95": [
+     0.347,
+     0.528
+    ],
+    "years_first_flag_to_event_median": 4.66,
+    "last2_window": {
+     "progressor_patients_caught": 31.3,
+     "non_progressor_patients_flagged": 32.8
+    },
+    "samples_sequenced_per_patient": 1.387,
+    "seq_per_patient_ci95": [
+     1.28,
+     1.507
+    ],
+    "samples_sequenced_per_100_patient_years": 22.86,
+    "share_samples_sequenced": 0.182,
+    "cost_per_patient_gbp": 1591.61,
+    "cost_ci95": [
+     1378.06,
+     1819.67
+    ],
+    "flagged_endoscopies_per_patient": 2.755,
+    "endoscopy_sensitivity": 0.952,
+    "endo_sens_ci95": [
+     0.919,
+     0.979
+    ],
+    "endoscopy_specificity": 0.386,
+    "endo_spec_ci95": [
+     0.29,
+     0.487
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 2 top-H&E; t_b 90%, t_s 95%",
+    "params": {
+     "k": "2 top-H&E",
+     "qb": 0.9,
+     "qs": 0.95
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.3,
+    "caught_share": 0.978,
+    "caught_share_ci95": [
+     0.933,
+     1.0
+    ],
+    "progressor_patients_missed": 0.7,
+    "non_progressor_patients_ever_flagged": 39.1,
+    "np_flagged_share": 0.909,
+    "np_flagged_share_ci95": [
+     0.832,
+     0.967
+    ],
+    "flags_per_non_progressor_patient_year": 0.48,
+    "flags_per_np_py_ci95": [
+     0.397,
+     0.569
+    ],
+    "years_first_flag_to_event_median": 4.66,
+    "last2_window": {
+     "progressor_patients_caught": 31.3,
+     "non_progressor_patients_flagged": 36.8
+    },
+    "samples_sequenced_per_patient": 1.387,
+    "seq_per_patient_ci95": [
+     1.28,
+     1.507
+    ],
+    "samples_sequenced_per_100_patient_years": 22.86,
+    "share_samples_sequenced": 0.182,
+    "cost_per_patient_gbp": 1685.06,
+    "cost_ci95": [
+     1476.08,
+     1909.38
+    ],
+    "flagged_endoscopies_per_patient": 2.929,
+    "endoscopy_sensitivity": 0.955,
+    "endo_sens_ci95": [
+     0.921,
+     0.98
+    ],
+    "endoscopy_specificity": 0.322,
+    "endo_spec_ci95": [
+     0.237,
+     0.413
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 2 top-H&E; t_b 95%, t_s 80%",
+    "params": {
+     "k": "2 top-H&E",
+     "qb": 0.95,
+     "qs": 0.8
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.3,
+    "caught_share": 0.978,
+    "caught_share_ci95": [
+     0.948,
+     1.0
+    ],
+    "progressor_patients_missed": 0.7,
+    "non_progressor_patients_ever_flagged": 33.6,
+    "np_flagged_share": 0.781,
+    "np_flagged_share_ci95": [
+     0.673,
+     0.873
+    ],
+    "flags_per_non_progressor_patient_year": 0.445,
+    "flags_per_np_py_ci95": [
+     0.346,
+     0.555
+    ],
+    "years_first_flag_to_event_median": 4.75,
+    "last2_window": {
+     "progressor_patients_caught": 31.3,
+     "non_progressor_patients_flagged": 30.3
+    },
+    "samples_sequenced_per_patient": 1.387,
+    "seq_per_patient_ci95": [
+     1.28,
+     1.507
+    ],
+    "samples_sequenced_per_100_patient_years": 22.86,
+    "share_samples_sequenced": 0.182,
+    "cost_per_patient_gbp": 1622.29,
+    "cost_ci95": [
+     1395.05,
+     1862.52
+    ],
+    "flagged_endoscopies_per_patient": 2.812,
+    "endoscopy_sensitivity": 0.967,
+    "endo_sens_ci95": [
+     0.94,
+     0.988
+    ],
+    "endoscopy_specificity": 0.371,
+    "endo_spec_ci95": [
+     0.259,
+     0.487
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 2 top-H&E; t_b 95%, t_s 90%",
+    "params": {
+     "k": "2 top-H&E",
+     "qb": 0.95,
+     "qs": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.5,
+    "caught_share": 0.984,
+    "caught_share_ci95": [
+     0.955,
+     1.0
+    ],
+    "progressor_patients_missed": 0.5,
+    "non_progressor_patients_ever_flagged": 37.0,
+    "np_flagged_share": 0.86,
+    "np_flagged_share_ci95": [
+     0.763,
+     0.936
+    ],
+    "flags_per_non_progressor_patient_year": 0.477,
+    "flags_per_np_py_ci95": [
+     0.382,
+     0.58
+    ],
+    "years_first_flag_to_event_median": 4.78,
+    "last2_window": {
+     "progressor_patients_caught": 31.5,
+     "non_progressor_patients_flagged": 34.0
+    },
+    "samples_sequenced_per_patient": 1.387,
+    "seq_per_patient_ci95": [
+     1.28,
+     1.507
+    ],
+    "samples_sequenced_per_100_patient_years": 22.86,
+    "share_samples_sequenced": 0.182,
+    "cost_per_patient_gbp": 1692.19,
+    "cost_ci95": [
+     1466.88,
+     1927.23
+    ],
+    "flagged_endoscopies_per_patient": 2.943,
+    "endoscopy_sensitivity": 0.975,
+    "endo_sens_ci95": [
+     0.955,
+     0.99
+    ],
+    "endoscopy_specificity": 0.326,
+    "endo_spec_ci95": [
+     0.224,
+     0.434
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = 2 top-H&E; t_b 95%, t_s 95%",
+    "params": {
+     "k": "2 top-H&E",
+     "qb": 0.95,
+     "qs": 0.95
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.5,
+    "caught_share": 0.984,
+    "caught_share_ci95": [
+     0.955,
+     1.0
+    ],
+    "progressor_patients_missed": 0.5,
+    "non_progressor_patients_ever_flagged": 39.5,
+    "np_flagged_share": 0.919,
+    "np_flagged_share_ci95": [
+     0.843,
+     0.973
+    ],
+    "flags_per_non_progressor_patient_year": 0.515,
+    "flags_per_np_py_ci95": [
+     0.426,
+     0.611
+    ],
+    "years_first_flag_to_event_median": 4.78,
+    "last2_window": {
+     "progressor_patients_caught": 31.5,
+     "non_progressor_patients_flagged": 37.6
+    },
+    "samples_sequenced_per_patient": 1.387,
+    "seq_per_patient_ci95": [
+     1.28,
+     1.507
+    ],
+    "samples_sequenced_per_100_patient_years": 22.86,
+    "share_samples_sequenced": 0.182,
+    "cost_per_patient_gbp": 1769.23,
+    "cost_ci95": [
+     1553.97,
+     2000.32
+    ],
+    "flagged_endoscopies_per_patient": 3.087,
+    "endoscopy_sensitivity": 0.977,
+    "endo_sens_ci95": [
+     0.959,
+     0.991
+    ],
+    "endoscopy_specificity": 0.273,
+    "endo_spec_ci95": [
+     0.184,
+     0.369
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = all; t_b 80%, t_s 80%",
+    "params": {
+     "k": "all",
+     "qb": 0.8,
+     "qs": 0.8
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 30.9,
+    "caught_share": 0.966,
+    "caught_share_ci95": [
+     0.914,
+     0.997
+    ],
+    "progressor_patients_missed": 1.1,
+    "non_progressor_patients_ever_flagged": 31.2,
+    "np_flagged_share": 0.726,
+    "np_flagged_share_ci95": [
+     0.608,
+     0.83
+    ],
+    "flags_per_non_progressor_patient_year": 0.312,
+    "flags_per_np_py_ci95": [
+     0.24,
+     0.389
+    ],
+    "years_first_flag_to_event_median": 4.3,
+    "last2_window": {
+     "progressor_patients_caught": 30.9,
+     "non_progressor_patients_flagged": 26.0
+    },
+    "samples_sequenced_per_patient": 1.867,
+    "seq_per_patient_ci95": [
+     1.587,
+     2.173
+    ],
+    "samples_sequenced_per_100_patient_years": 30.78,
+    "share_samples_sequenced": 0.245,
+    "cost_per_patient_gbp": 1352.79,
+    "cost_ci95": [
+     1166.28,
+     1553.03
+    ],
+    "flagged_endoscopies_per_patient": 2.232,
+    "endoscopy_sensitivity": 0.899,
+    "endo_sens_ci95": [
+     0.842,
+     0.95
+    ],
+    "endoscopy_specificity": 0.558,
+    "endo_spec_ci95": [
+     0.469,
+     0.648
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = all; t_b 80%, t_s 90%",
+    "params": {
+     "k": "all",
+     "qb": 0.8,
+     "qs": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.2,
+    "caught_share": 0.975,
+    "caught_share_ci95": [
+     0.922,
+     1.0
+    ],
+    "progressor_patients_missed": 0.8,
+    "non_progressor_patients_ever_flagged": 35.4,
+    "np_flagged_share": 0.823,
+    "np_flagged_share_ci95": [
+     0.713,
+     0.909
+    ],
+    "flags_per_non_progressor_patient_year": 0.367,
+    "flags_per_np_py_ci95": [
+     0.295,
+     0.445
+    ],
+    "years_first_flag_to_event_median": 4.3,
+    "last2_window": {
+     "progressor_patients_caught": 31.2,
+     "non_progressor_patients_flagged": 31.6
+    },
+    "samples_sequenced_per_patient": 1.867,
+    "seq_per_patient_ci95": [
+     1.587,
+     2.173
+    ],
+    "samples_sequenced_per_100_patient_years": 30.78,
+    "share_samples_sequenced": 0.245,
+    "cost_per_patient_gbp": 1474.77,
+    "cost_ci95": [
+     1281.35,
+     1678.67
+    ],
+    "flagged_endoscopies_per_patient": 2.46,
+    "endoscopy_sensitivity": 0.917,
+    "endo_sens_ci95": [
+     0.866,
+     0.959
+    ],
+    "endoscopy_specificity": 0.481,
+    "endo_spec_ci95": [
+     0.398,
+     0.566
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = all; t_b 80%, t_s 95%",
+    "params": {
+     "k": "all",
+     "qb": 0.8,
+     "qs": 0.95
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.2,
+    "caught_share": 0.975,
+    "caught_share_ci95": [
+     0.922,
+     1.0
+    ],
+    "progressor_patients_missed": 0.8,
+    "non_progressor_patients_ever_flagged": 39.0,
+    "np_flagged_share": 0.907,
+    "np_flagged_share_ci95": [
+     0.829,
+     0.965
+    ],
+    "flags_per_non_progressor_patient_year": 0.435,
+    "flags_per_np_py_ci95": [
+     0.362,
+     0.513
+    ],
+    "years_first_flag_to_event_median": 4.32,
+    "last2_window": {
+     "progressor_patients_caught": 31.2,
+     "non_progressor_patients_flagged": 36.5
+    },
+    "samples_sequenced_per_patient": 1.867,
+    "seq_per_patient_ci95": [
+     1.587,
+     2.173
+    ],
+    "samples_sequenced_per_100_patient_years": 30.78,
+    "share_samples_sequenced": 0.245,
+    "cost_per_patient_gbp": 1612.44,
+    "cost_ci95": [
+     1417.61,
+     1818.25
+    ],
+    "flagged_endoscopies_per_patient": 2.717,
+    "endoscopy_sensitivity": 0.92,
+    "endo_sens_ci95": [
+     0.872,
+     0.961
+    ],
+    "endoscopy_specificity": 0.386,
+    "endo_spec_ci95": [
+     0.311,
+     0.468
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = all; t_b 90%, t_s 80%",
+    "params": {
+     "k": "all",
+     "qb": 0.9,
+     "qs": 0.8
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.0,
+    "caught_share": 0.969,
+    "caught_share_ci95": [
+     0.924,
+     0.997
+    ],
+    "progressor_patients_missed": 1.0,
+    "non_progressor_patients_ever_flagged": 32.6,
+    "np_flagged_share": 0.758,
+    "np_flagged_share_ci95": [
+     0.643,
+     0.856
+    ],
+    "flags_per_non_progressor_patient_year": 0.395,
+    "flags_per_np_py_ci95": [
+     0.305,
+     0.493
+    ],
+    "years_first_flag_to_event_median": 4.67,
+    "last2_window": {
+     "progressor_patients_caught": 31.0,
+     "non_progressor_patients_flagged": 28.3
+    },
+    "samples_sequenced_per_patient": 1.867,
+    "seq_per_patient_ci95": [
+     1.587,
+     2.173
+    ],
+    "samples_sequenced_per_100_patient_years": 30.78,
+    "share_samples_sequenced": 0.245,
+    "cost_per_patient_gbp": 1545.39,
+    "cost_ci95": [
+     1330.64,
+     1777.29
+    ],
+    "flagged_endoscopies_per_patient": 2.592,
+    "endoscopy_sensitivity": 0.94,
+    "endo_sens_ci95": [
+     0.896,
+     0.974
+    ],
+    "endoscopy_specificity": 0.442,
+    "endo_spec_ci95": [
+     0.334,
+     0.553
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = all; t_b 90%, t_s 90%",
+    "params": {
+     "k": "all",
+     "qb": 0.9,
+     "qs": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.3,
+    "caught_share": 0.978,
+    "caught_share_ci95": [
+     0.933,
+     1.0
+    ],
+    "progressor_patients_missed": 0.7,
+    "non_progressor_patients_ever_flagged": 36.2,
+    "np_flagged_share": 0.842,
+    "np_flagged_share_ci95": [
+     0.74,
+     0.923
+    ],
+    "flags_per_non_progressor_patient_year": 0.436,
+    "flags_per_np_py_ci95": [
+     0.348,
+     0.531
+    ],
+    "years_first_flag_to_event_median": 4.66,
+    "last2_window": {
+     "progressor_patients_caught": 31.3,
+     "non_progressor_patients_flagged": 32.8
+    },
+    "samples_sequenced_per_patient": 1.867,
+    "seq_per_patient_ci95": [
+     1.587,
+     2.173
+    ],
+    "samples_sequenced_per_100_patient_years": 30.78,
+    "share_samples_sequenced": 0.245,
+    "cost_per_patient_gbp": 1634.55,
+    "cost_ci95": [
+     1419.28,
+     1860.47
+    ],
+    "flagged_endoscopies_per_patient": 2.759,
+    "endoscopy_sensitivity": 0.951,
+    "endo_sens_ci95": [
+     0.916,
+     0.978
+    ],
+    "endoscopy_specificity": 0.384,
+    "endo_spec_ci95": [
+     0.287,
+     0.486
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = all; t_b 90%, t_s 95%",
+    "params": {
+     "k": "all",
+     "qb": 0.9,
+     "qs": 0.95
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.3,
+    "caught_share": 0.978,
+    "caught_share_ci95": [
+     0.933,
+     1.0
+    ],
+    "progressor_patients_missed": 0.7,
+    "non_progressor_patients_ever_flagged": 39.1,
+    "np_flagged_share": 0.909,
+    "np_flagged_share_ci95": [
+     0.832,
+     0.967
+    ],
+    "flags_per_non_progressor_patient_year": 0.481,
+    "flags_per_np_py_ci95": [
+     0.397,
+     0.57
+    ],
+    "years_first_flag_to_event_median": 4.66,
+    "last2_window": {
+     "progressor_patients_caught": 31.3,
+     "non_progressor_patients_flagged": 36.8
+    },
+    "samples_sequenced_per_patient": 1.867,
+    "seq_per_patient_ci95": [
+     1.587,
+     2.173
+    ],
+    "samples_sequenced_per_100_patient_years": 30.78,
+    "share_samples_sequenced": 0.245,
+    "cost_per_patient_gbp": 1727.29,
+    "cost_ci95": [
+     1513.86,
+     1951.36
+    ],
+    "flagged_endoscopies_per_patient": 2.932,
+    "endoscopy_sensitivity": 0.953,
+    "endo_sens_ci95": [
+     0.919,
+     0.979
+    ],
+    "endoscopy_specificity": 0.32,
+    "endo_spec_ci95": [
+     0.235,
+     0.412
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = all; t_b 95%, t_s 80%",
+    "params": {
+     "k": "all",
+     "qb": 0.95,
+     "qs": 0.8
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.3,
+    "caught_share": 0.978,
+    "caught_share_ci95": [
+     0.948,
+     1.0
+    ],
+    "progressor_patients_missed": 0.7,
+    "non_progressor_patients_ever_flagged": 33.6,
+    "np_flagged_share": 0.781,
+    "np_flagged_share_ci95": [
+     0.673,
+     0.873
+    ],
+    "flags_per_non_progressor_patient_year": 0.446,
+    "flags_per_np_py_ci95": [
+     0.346,
+     0.555
+    ],
+    "years_first_flag_to_event_median": 4.75,
+    "last2_window": {
+     "progressor_patients_caught": 31.3,
+     "non_progressor_patients_flagged": 30.3
+    },
+    "samples_sequenced_per_patient": 1.867,
+    "seq_per_patient_ci95": [
+     1.587,
+     2.173
+    ],
+    "samples_sequenced_per_100_patient_years": 30.78,
+    "share_samples_sequenced": 0.245,
+    "cost_per_patient_gbp": 1663.8,
+    "cost_ci95": [
+     1433.04,
+     1908.66
+    ],
+    "flagged_endoscopies_per_patient": 2.813,
+    "endoscopy_sensitivity": 0.967,
+    "endo_sens_ci95": [
+     0.94,
+     0.988
+    ],
+    "endoscopy_specificity": 0.37,
+    "endo_spec_ci95": [
+     0.259,
+     0.487
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = all; t_b 95%, t_s 90%",
+    "params": {
+     "k": "all",
+     "qb": 0.95,
+     "qs": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.5,
+    "caught_share": 0.984,
+    "caught_share_ci95": [
+     0.955,
+     1.0
+    ],
+    "progressor_patients_missed": 0.5,
+    "non_progressor_patients_ever_flagged": 37.0,
+    "np_flagged_share": 0.86,
+    "np_flagged_share_ci95": [
+     0.763,
+     0.936
+    ],
+    "flags_per_non_progressor_patient_year": 0.478,
+    "flags_per_np_py_ci95": [
+     0.383,
+     0.581
+    ],
+    "years_first_flag_to_event_median": 4.78,
+    "last2_window": {
+     "progressor_patients_caught": 31.5,
+     "non_progressor_patients_flagged": 34.0
+    },
+    "samples_sequenced_per_patient": 1.867,
+    "seq_per_patient_ci95": [
+     1.587,
+     2.173
+    ],
+    "samples_sequenced_per_100_patient_years": 30.78,
+    "share_samples_sequenced": 0.245,
+    "cost_per_patient_gbp": 1733.71,
+    "cost_ci95": [
+     1508.82,
+     1972.77
+    ],
+    "flagged_endoscopies_per_patient": 2.944,
+    "endoscopy_sensitivity": 0.975,
+    "endo_sens_ci95": [
+     0.955,
+     0.99
+    ],
+    "endoscopy_specificity": 0.325,
+    "endo_spec_ci95": [
+     0.223,
+     0.433
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P7",
+    "label": "k = all; t_b 95%, t_s 95%",
+    "params": {
+     "k": "all",
+     "qb": 0.95,
+     "qs": 0.95
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.5,
+    "caught_share": 0.984,
+    "caught_share_ci95": [
+     0.955,
+     1.0
+    ],
+    "progressor_patients_missed": 0.5,
+    "non_progressor_patients_ever_flagged": 39.5,
+    "np_flagged_share": 0.919,
+    "np_flagged_share_ci95": [
+     0.843,
+     0.973
+    ],
+    "flags_per_non_progressor_patient_year": 0.515,
+    "flags_per_np_py_ci95": [
+     0.427,
+     0.612
+    ],
+    "years_first_flag_to_event_median": 4.78,
+    "last2_window": {
+     "progressor_patients_caught": 31.5,
+     "non_progressor_patients_flagged": 37.6
+    },
+    "samples_sequenced_per_patient": 1.867,
+    "seq_per_patient_ci95": [
+     1.587,
+     2.173
+    ],
+    "samples_sequenced_per_100_patient_years": 30.78,
+    "share_samples_sequenced": 0.245,
+    "cost_per_patient_gbp": 1810.75,
+    "cost_ci95": [
+     1590.6,
+     2042.66
+    ],
+    "flagged_endoscopies_per_patient": 3.088,
+    "endoscopy_sensitivity": 0.977,
+    "endo_sens_ci95": [
+     0.959,
+     0.991
+    ],
+    "endoscopy_specificity": 0.272,
+    "endo_spec_ci95": [
+     0.183,
+     0.369
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P8",
+    "label": "t_b 80%, t_mid 80%, t_c 90%",
+    "params": {
+     "k": "1 top-H&E",
+     "qb": 0.8,
+     "qmid": 0.8,
+     "qc": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 30.9,
+    "caught_share": 0.966,
+    "caught_share_ci95": [
+     0.914,
+     0.997
+    ],
+    "progressor_patients_missed": 1.1,
+    "non_progressor_patients_ever_flagged": 28.7,
+    "np_flagged_share": 0.667,
+    "np_flagged_share_ci95": [
+     0.538,
+     0.786
+    ],
+    "flags_per_non_progressor_patient_year": 0.289,
+    "flags_per_np_py_ci95": [
+     0.217,
+     0.362
+    ],
+    "years_first_flag_to_event_median": 4.3,
+    "last2_window": {
+     "progressor_patients_caught": 30.9,
+     "non_progressor_patients_flagged": 23.0
+    },
+    "samples_sequenced_per_patient": 1.703,
+    "seq_per_patient_ci95": [
+     1.511,
+     1.904
+    ],
+    "samples_sequenced_per_100_patient_years": 28.07,
+    "share_samples_sequenced": 0.224,
+    "cost_per_patient_gbp": 1288.91,
+    "cost_ci95": [
+     1096.35,
+     1494.68
+    ],
+    "flagged_endoscopies_per_patient": 2.139,
+    "endoscopy_sensitivity": 0.895,
+    "endo_sens_ci95": [
+     0.837,
+     0.949
+    ],
+    "endoscopy_specificity": 0.592,
+    "endo_spec_ci95": [
+     0.503,
+     0.68
+    ],
+    "pareto_caught_falseflags_sequencing": true,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P8",
+    "label": "t_b 80%, t_mid 90%, t_c 90%",
+    "params": {
+     "k": "1 top-H&E",
+     "qb": 0.8,
+     "qmid": 0.9,
+     "qc": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.0,
+    "caught_share": 0.969,
+    "caught_share_ci95": [
+     0.917,
+     1.0
+    ],
+    "progressor_patients_missed": 1.0,
+    "non_progressor_patients_ever_flagged": 29.3,
+    "np_flagged_share": 0.681,
+    "np_flagged_share_ci95": [
+     0.553,
+     0.797
+    ],
+    "flags_per_non_progressor_patient_year": 0.302,
+    "flags_per_np_py_ci95": [
+     0.228,
+     0.38
+    ],
+    "years_first_flag_to_event_median": 4.29,
+    "last2_window": {
+     "progressor_patients_caught": 31.0,
+     "non_progressor_patients_flagged": 24.5
+    },
+    "samples_sequenced_per_patient": 1.931,
+    "seq_per_patient_ci95": [
+     1.695,
+     2.164
+    ],
+    "samples_sequenced_per_100_patient_years": 31.83,
+    "share_samples_sequenced": 0.254,
+    "cost_per_patient_gbp": 1342.53,
+    "cost_ci95": [
+     1140.21,
+     1555.94
+    ],
+    "flagged_endoscopies_per_patient": 2.203,
+    "endoscopy_sensitivity": 0.907,
+    "endo_sens_ci95": [
+     0.852,
+     0.954
+    ],
+    "endoscopy_specificity": 0.573,
+    "endo_spec_ci95": [
+     0.483,
+     0.665
+    ],
+    "pareto_caught_falseflags_sequencing": true,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P8",
+    "label": "t_b 90%, t_mid 80%, t_c 90%",
+    "params": {
+     "k": "1 top-H&E",
+     "qb": 0.9,
+     "qmid": 0.8,
+     "qc": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.0,
+    "caught_share": 0.969,
+    "caught_share_ci95": [
+     0.924,
+     0.997
+    ],
+    "progressor_patients_missed": 1.0,
+    "non_progressor_patients_ever_flagged": 30.2,
+    "np_flagged_share": 0.702,
+    "np_flagged_share_ci95": [
+     0.578,
+     0.813
+    ],
+    "flags_per_non_progressor_patient_year": 0.369,
+    "flags_per_np_py_ci95": [
+     0.282,
+     0.467
+    ],
+    "years_first_flag_to_event_median": 4.68,
+    "last2_window": {
+     "progressor_patients_caught": 31.0,
+     "non_progressor_patients_flagged": 25.4
+    },
+    "samples_sequenced_per_patient": 1.469,
+    "seq_per_patient_ci95": [
+     1.319,
+     1.625
+    ],
+    "samples_sequenced_per_100_patient_years": 24.23,
+    "share_samples_sequenced": 0.193,
+    "cost_per_patient_gbp": 1458.83,
+    "cost_ci95": [
+     1242.74,
+     1685.24
+    ],
+    "flagged_endoscopies_per_patient": 2.493,
+    "endoscopy_sensitivity": 0.94,
+    "endo_sens_ci95": [
+     0.895,
+     0.975
+    ],
+    "endoscopy_specificity": 0.479,
+    "endo_spec_ci95": [
+     0.369,
+     0.589
+    ],
+    "pareto_caught_falseflags_sequencing": true,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P8",
+    "label": "t_b 90%, t_mid 90%, t_c 90%",
+    "params": {
+     "k": "1 top-H&E",
+     "qb": 0.9,
+     "qmid": 0.9,
+     "qc": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.1,
+    "caught_share": 0.972,
+    "caught_share_ci95": [
+     0.928,
+     1.0
+    ],
+    "progressor_patients_missed": 0.9,
+    "non_progressor_patients_ever_flagged": 30.4,
+    "np_flagged_share": 0.707,
+    "np_flagged_share_ci95": [
+     0.584,
+     0.816
+    ],
+    "flags_per_non_progressor_patient_year": 0.378,
+    "flags_per_np_py_ci95": [
+     0.288,
+     0.475
+    ],
+    "years_first_flag_to_event_median": 4.65,
+    "last2_window": {
+     "progressor_patients_caught": 31.1,
+     "non_progressor_patients_flagged": 26.3
+    },
+    "samples_sequenced_per_patient": 1.641,
+    "seq_per_patient_ci95": [
+     1.452,
+     1.836
+    ],
+    "samples_sequenced_per_100_patient_years": 27.06,
+    "share_samples_sequenced": 0.216,
+    "cost_per_patient_gbp": 1493.42,
+    "cost_ci95": [
+     1274.01,
+     1727.34
+    ],
+    "flagged_endoscopies_per_patient": 2.531,
+    "endoscopy_sensitivity": 0.944,
+    "endo_sens_ci95": [
+     0.903,
+     0.977
+    ],
+    "endoscopy_specificity": 0.466,
+    "endo_spec_ci95": [
+     0.358,
+     0.577
+    ],
+    "pareto_caught_falseflags_sequencing": true,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P8",
+    "label": "t_b 95%, t_mid 80%, t_c 90%",
+    "params": {
+     "k": "1 top-H&E",
+     "qb": 0.95,
+     "qmid": 0.8,
+     "qc": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.4,
+    "caught_share": 0.981,
+    "caught_share_ci95": [
+     0.95,
+     1.0
+    ],
+    "progressor_patients_missed": 0.6,
+    "non_progressor_patients_ever_flagged": 31.4,
+    "np_flagged_share": 0.73,
+    "np_flagged_share_ci95": [
+     0.611,
+     0.836
+    ],
+    "flags_per_non_progressor_patient_year": 0.423,
+    "flags_per_np_py_ci95": [
+     0.325,
+     0.53
+    ],
+    "years_first_flag_to_event_median": 4.74,
+    "last2_window": {
+     "progressor_patients_caught": 31.4,
+     "non_progressor_patients_flagged": 27.7
+    },
+    "samples_sequenced_per_patient": 1.332,
+    "seq_per_patient_ci95": [
+     1.209,
+     1.472
+    ],
+    "samples_sequenced_per_100_patient_years": 21.96,
+    "share_samples_sequenced": 0.175,
+    "cost_per_patient_gbp": 1571.99,
+    "cost_ci95": [
+     1344.64,
+     1812.92
+    ],
+    "flagged_endoscopies_per_patient": 2.727,
+    "endoscopy_sensitivity": 0.966,
+    "endo_sens_ci95": [
+     0.936,
+     0.989
+    ],
+    "endoscopy_specificity": 0.402,
+    "endo_spec_ci95": [
+     0.288,
+     0.521
+    ],
+    "pareto_caught_falseflags_sequencing": true,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P8",
+    "label": "t_b 95%, t_mid 90%, t_c 90%",
+    "params": {
+     "k": "1 top-H&E",
+     "qb": 0.95,
+     "qmid": 0.9,
+     "qc": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.4,
+    "caught_share": 0.981,
+    "caught_share_ci95": [
+     0.95,
+     1.0
+    ],
+    "progressor_patients_missed": 0.6,
+    "non_progressor_patients_ever_flagged": 31.6,
+    "np_flagged_share": 0.735,
+    "np_flagged_share_ci95": [
+     0.62,
+     0.84
+    ],
+    "flags_per_non_progressor_patient_year": 0.428,
+    "flags_per_np_py_ci95": [
+     0.33,
+     0.535
+    ],
+    "years_first_flag_to_event_median": 4.74,
+    "last2_window": {
+     "progressor_patients_caught": 31.4,
+     "non_progressor_patients_flagged": 28.2
+    },
+    "samples_sequenced_per_patient": 1.465,
+    "seq_per_patient_ci95": [
+     1.308,
+     1.643
+    ],
+    "samples_sequenced_per_100_patient_years": 24.16,
+    "share_samples_sequenced": 0.192,
+    "cost_per_patient_gbp": 1594.73,
+    "cost_ci95": [
+     1368.75,
+     1839.6
+    ],
+    "flagged_endoscopies_per_patient": 2.748,
+    "endoscopy_sensitivity": 0.967,
+    "endo_sens_ci95": [
+     0.937,
+     0.989
+    ],
+    "endoscopy_specificity": 0.395,
+    "endo_spec_ci95": [
+     0.284,
+     0.511
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P9",
+    "label": "N = 2 years; t, t_s 90%",
+    "params": {
+     "N": 2,
+     "q": 0.9,
+     "qs": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.1,
+    "caught_share": 0.972,
+    "caught_share_ci95": [
+     0.928,
+     1.0
+    ],
+    "progressor_patients_missed": 0.9,
+    "non_progressor_patients_ever_flagged": 33.4,
+    "np_flagged_share": 0.777,
+    "np_flagged_share_ci95": [
+     0.663,
+     0.874
+    ],
+    "flags_per_non_progressor_patient_year": 0.312,
+    "flags_per_np_py_ci95": [
+     0.245,
+     0.385
+    ],
+    "years_first_flag_to_event_median": 4.65,
+    "last2_window": {
+     "progressor_patients_caught": 31.1,
+     "non_progressor_patients_flagged": 26.7
+    },
+    "samples_sequenced_per_patient": 2.533,
+    "seq_per_patient_ci95": [
+     2.293,
+     2.787
+    ],
+    "samples_sequenced_per_100_patient_years": 41.77,
+    "share_samples_sequenced": 0.333,
+    "cost_per_patient_gbp": 1415.87,
+    "cost_ci95": [
+     1215.16,
+     1625.4
+    ],
+    "flagged_endoscopies_per_patient": 2.244,
+    "endoscopy_sensitivity": 0.909,
+    "endo_sens_ci95": [
+     0.858,
+     0.951
+    ],
+    "endoscopy_specificity": 0.558,
+    "endo_spec_ci95": [
+     0.482,
+     0.639
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P9",
+    "label": "N = 3 years; t, t_s 90%",
+    "params": {
+     "N": 3,
+     "q": 0.9,
+     "qs": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.3,
+    "caught_share": 0.978,
+    "caught_share_ci95": [
+     0.933,
+     1.0
+    ],
+    "progressor_patients_missed": 0.7,
+    "non_progressor_patients_ever_flagged": 34.2,
+    "np_flagged_share": 0.795,
+    "np_flagged_share_ci95": [
+     0.684,
+     0.888
+    ],
+    "flags_per_non_progressor_patient_year": 0.32,
+    "flags_per_np_py_ci95": [
+     0.254,
+     0.395
+    ],
+    "years_first_flag_to_event_median": 4.67,
+    "last2_window": {
+     "progressor_patients_caught": 31.3,
+     "non_progressor_patients_flagged": 27.6
+    },
+    "samples_sequenced_per_patient": 2.067,
+    "seq_per_patient_ci95": [
+     1.867,
+     2.267
+    ],
+    "samples_sequenced_per_100_patient_years": 34.07,
+    "share_samples_sequenced": 0.271,
+    "cost_per_patient_gbp": 1395.47,
+    "cost_ci95": [
+     1202.43,
+     1599.93
+    ],
+    "flagged_endoscopies_per_patient": 2.28,
+    "endoscopy_sensitivity": 0.915,
+    "endo_sens_ci95": [
+     0.865,
+     0.955
+    ],
+    "endoscopy_specificity": 0.548,
+    "endo_spec_ci95": [
+     0.47,
+     0.624
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   },
+   {
+    "family": "P9",
+    "label": "N = 5 years; t, t_s 90%",
+    "params": {
+     "N": 5,
+     "q": 0.9,
+     "qs": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.3,
+    "caught_share": 0.978,
+    "caught_share_ci95": [
+     0.933,
+     1.0
+    ],
+    "progressor_patients_missed": 0.7,
+    "non_progressor_patients_ever_flagged": 35.4,
+    "np_flagged_share": 0.823,
+    "np_flagged_share_ci95": [
+     0.713,
+     0.912
+    ],
+    "flags_per_non_progressor_patient_year": 0.317,
+    "flags_per_np_py_ci95": [
+     0.252,
+     0.389
+    ],
+    "years_first_flag_to_event_median": 4.67,
+    "last2_window": {
+     "progressor_patients_caught": 31.3,
+     "non_progressor_patients_flagged": 29.3
+    },
+    "samples_sequenced_per_patient": 1.6,
+    "seq_per_patient_ci95": [
+     1.453,
+     1.747
+    ],
+    "samples_sequenced_per_100_patient_years": 26.38,
+    "share_samples_sequenced": 0.21,
+    "cost_per_patient_gbp": 1347.95,
+    "cost_ci95": [
+     1161.8,
+     1539.18
+    ],
+    "flagged_endoscopies_per_patient": 2.265,
+    "endoscopy_sensitivity": 0.912,
+    "endo_sens_ci95": [
+     0.867,
+     0.95
+    ],
+    "endoscopy_specificity": 0.552,
+    "endo_spec_ci95": [
+     0.483,
+     0.626
+    ],
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": true
+   },
+   {
+    "family": "P10",
+    "label": "grade ID/LGD (all pre-event endoscopies)",
+    "params": {
+     "rule": "grade"
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 17.0,
+    "caught_share": 0.531,
+    "caught_share_ci95": [
+     0.364,
+     0.714
+    ],
+    "progressor_patients_missed": 15.0,
+    "non_progressor_patients_ever_flagged": 25.0,
+    "np_flagged_share": 0.581,
+    "np_flagged_share_ci95": [
+     0.432,
+     0.72
+    ],
+    "flags_per_non_progressor_patient_year": 0.17,
+    "flags_per_np_py_ci95": [
+     0.117,
+     0.234
+    ],
+    "years_first_flag_to_event_median": 3.28,
+    "last2_window": {
+     "progressor_patients_caught": 17.0,
+     "non_progressor_patients_flagged": 4.0
+    },
+    "samples_sequenced_per_patient": 0.0,
+    "seq_per_patient_ci95": [
+     0.0,
+     0.0
+    ],
+    "samples_sequenced_per_100_patient_years": 0.0,
+    "share_samples_sequenced": 0.0,
+    "cost_per_patient_gbp": 570.67,
+    "cost_ci95": [
+     428.0,
+     727.6
+    ],
+    "flagged_endoscopies_per_patient": 1.067,
+    "endoscopy_sensitivity": 0.364,
+    "endo_sens_ci95": [
+     0.234,
+     0.49
+    ],
+    "endoscopy_specificity": 0.76,
+    "endo_spec_ci95": [
+     0.689,
+     0.829
+    ],
+    "pareto_caught_falseflags_sequencing": true,
+    "pareto_caught_cost": true
+   },
+   {
+    "family": "P10",
+    "label": "grade ID/LGD or p53 aberrant (samples with p53)",
+    "params": {
+     "rule": "grade_or_p53",
+     "subset": "samples with a p53 result"
+    },
+    "n_progressor_patients": 31,
+    "n_non_progressor_patients": 40,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 19.0,
+    "caught_share": 0.613,
+    "caught_share_ci95": [
+     0.437,
+     0.788
+    ],
+    "progressor_patients_missed": 12.0,
+    "non_progressor_patients_ever_flagged": 22.0,
+    "np_flagged_share": 0.55,
+    "np_flagged_share_ci95": [
+     0.4,
+     0.692
+    ],
+    "flags_per_non_progressor_patient_year": 0.161,
+    "flags_per_np_py_ci95": [
+     0.105,
+     0.228
+    ],
+    "years_first_flag_to_event_median": 2.2,
+    "last2_window": {
+     "progressor_patients_caught": 19.0,
+     "non_progressor_patients_flagged": 4.0
+    },
+    "samples_sequenced_per_patient": 0.0,
+    "seq_per_patient_ci95": [
+     0.0,
+     0.0
+    ],
+    "samples_sequenced_per_100_patient_years": 0.0,
+    "share_samples_sequenced": 0.0,
+    "cost_per_patient_gbp": 519.93,
+    "cost_ci95": [
+     391.27,
+     653.93
+    ],
+    "flagged_endoscopies_per_patient": 0.972,
+    "endoscopy_sensitivity": 0.419,
+    "endo_sens_ci95": [
+     0.297,
+     0.556
+    ],
+    "endoscopy_specificity": 0.728,
+    "endo_spec_ci95": [
+     0.653,
+     0.804
+    ],
+    "subset_samples": 450,
+    "subset_endoscopies": 220,
+    "pareto_caught_falseflags_sequencing": false,
+    "pareto_caught_cost": false
+   }
+  ],
+  "missing_families": [],
+  "checks": {
+   "check_Bstar": {
+    "cell": {
+     "family": "P3",
+     "label": "B* operating point (round-7 B* sample threshold, any sample)",
+     "params": {
+      "q": "B*"
+     },
+     "n_progressor_patients": 32,
+     "n_non_progressor_patients": 43,
+     "folds_target_not_met": 0,
+     "progressor_patients_caught": 31.2,
+     "caught_share": 0.975,
+     "caught_share_ci95": [
+      0.929,
+      1.0
+     ],
+     "progressor_patients_missed": 0.8,
+     "non_progressor_patients_ever_flagged": 31.7,
+     "np_flagged_share": 0.737,
+     "np_flagged_share_ci95": [
+      0.619,
+      0.848
+     ],
+     "flags_per_non_progressor_patient_year": 0.333,
+     "flags_per_np_py_ci95": [
+      0.25,
+      0.421
+     ],
+     "years_first_flag_to_event_median": 4.65,
+     "last2_window": {
+      "progressor_patients_caught": 31.2,
+      "non_progressor_patients_flagged": 25.8
+     },
+     "samples_sequenced_per_patient": 7.613,
+     "seq_per_patient_ci95": [
+      6.587,
+      8.707
+     ],
+     "samples_sequenced_per_100_patient_years": 125.52,
+     "share_samples_sequenced": 1.0,
+     "cost_per_patient_gbp": 1897.61,
+     "cost_ci95": [
+      1635.39,
+      2174.25
+     ],
+     "flagged_endoscopies_per_patient": 2.337,
+     "endoscopy_sensitivity": 0.923,
+     "endo_sens_ci95": [
+      0.873,
+      0.962
+     ],
+     "endoscopy_specificity": 0.53,
+     "endo_spec_ci95": [
+      0.431,
+      0.629
+     ]
+    },
+    "expected_Bstar_endo": [
+     0.923,
+     0.53
+    ],
+    "got": [
+     0.923,
+     0.53
+    ],
+    "reproduced": true,
+    "nearest_grid_cell": "90%",
+    "nearest_grid_cell_sens_spec": [
+     0.912,
+     0.551
+    ]
+   },
+   "check_triage_R49": {
+    "got": [
+     0.909,
+     0.549,
+     0.458,
+     0.9,
+     32.0
+    ],
+    "expected": [
+     0.909,
+     0.549,
+     0.458,
+     0.9,
+     32.0
+    ],
+    "reproduced": true
+   },
+   "check_R49": {
+    "got": [
+     0.907,
+     0.56,
+     0.255,
+     0.9,
+     31.8
+    ],
+    "expected": [
+     0.907,
+     0.56,
+     0.255,
+     0.9,
+     31.8
+    ],
+    "reproduced": true
+   },
+   "check_Table1_D_patient": {
+    "got_missed_flagged": [
+     15.0,
+     25.0
+    ],
+    "expected_missed_flagged": [
+     15,
+     25
+    ],
+    "reproduced": true
+   }
+  },
+  "n_cells": 77,
+  "frontier": [
+   {
+    "family": "P1",
+    "label": "80%"
+   },
+   {
+    "family": "P1",
+    "label": "90%"
+   },
+   {
+    "family": "P1",
+    "label": "95%"
+   },
+   {
+    "family": "P3",
+    "label": "80%"
+   },
+   {
+    "family": "P4",
+    "label": "80%"
+   },
+   {
+    "family": "P6",
+    "label": "t_low 90% / t_high 85%"
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 top-H&E; t_b 80%, t_s 80%"
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 top-H&E; t_b 90%, t_s 80%"
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 top-H&E; t_b 95%, t_s 80%"
+   },
+   {
+    "family": "P7",
+    "label": "k = 1 top-H&E; t_b 95%, t_s 90%"
+   },
+   {
+    "family": "P8",
+    "label": "t_b 80%, t_mid 80%, t_c 90%"
+   },
+   {
+    "family": "P8",
+    "label": "t_b 80%, t_mid 90%, t_c 90%"
+   },
+   {
+    "family": "P8",
+    "label": "t_b 90%, t_mid 80%, t_c 90%"
+   },
+   {
+    "family": "P8",
+    "label": "t_b 90%, t_mid 90%, t_c 90%"
+   },
+   {
+    "family": "P8",
+    "label": "t_b 95%, t_mid 80%, t_c 90%"
+   },
+   {
+    "family": "P10",
+    "label": "grade ID/LGD (all pre-event endoscopies)"
+   }
+  ],
+  "frontier_cost": [
+   {
+    "family": "P1",
+    "label": "80%"
+   },
+   {
+    "family": "P1",
+    "label": "90%"
+   },
+   {
+    "family": "P1",
+    "label": "95%"
+   },
+   {
+    "family": "P6",
+    "label": "t_low 90% / t_high 95%"
+   },
+   {
+    "family": "P9",
+    "label": "N = 5 years; t, t_s 90%"
+   },
+   {
+    "family": "P10",
+    "label": "grade ID/LGD (all pre-event endoscopies)"
+   }
+  ],
+  "note": "Pareto: not dominated on progressor patients caught (higher better), non-progressor patients ever flagged and samples sequenced per patient (lower better); cost frontier on caught and cost per patient; observed single-model means; the p53-subset current-care point (different patients) is excluded from both frontiers"
+ },
+ "prespec": "b396cdc"
+}

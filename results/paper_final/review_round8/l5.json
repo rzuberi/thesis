@@ -1,0 +1,131 @@
+{
+ "task": "l5",
+ "L5": {
+  "target_non_progressor_patients_flagged_mean": 35.5,
+  "realised_non_progressor_flagged_mean": {
+   "H&E": 35.5,
+   "copy number": 35.5
+  },
+  "grid_position_mean_0_80_1_90_2_95": {
+   "H&E": 0.986,
+   "copy number": 1.135
+  },
+  "repeats_clamped_to_grid_end": {
+   "H&E": 0,
+   "copy number": 0
+  },
+  "progressor_patients_caught_mean": {
+   "H&E": 30.98,
+   "copy number": 31.09
+  },
+  "n_progressor_patients": 32,
+  "n_non_progressor_patients": 43,
+  "cross_tab_progressor_patients_mean_over_repeats": {
+   "both": 30.2,
+   "H&E only": "<5",
+   "copy number only": "<5",
+   "neither": "<5"
+  },
+  "cross_tab_non_progressor_patients_mean_over_repeats": {
+   "both": 30.1,
+   "H&E only": 5.4,
+   "copy number only": 5.4,
+   "neither": "<5"
+  },
+  "progressor_patients_by_modal_category": {
+   "both": {
+    "n_patients": 31,
+    "highest_pre_event_grade": {
+     "LGD": 14,
+     "NDBE": 14,
+     "ID": "<5"
+    },
+    "pre_event_endoscopies": {
+     "median": 3.0,
+     "iqr": [
+      1.0,
+      4.0
+     ]
+    },
+    "years_first_sample_to_event": {
+     "median": 4.89,
+     "iqr": [
+      2.88,
+      7.32
+     ]
+    },
+    "tissue_tertile": {
+     "1": 9,
+     "2": 12,
+     "3": 10
+    },
+    "batch_type": {
+     "all samples in mixed batches": 16,
+     "any sample in a single-class batch": 15
+    },
+    "scanner": {
+     "C13239-01": 22,
+     "both scanners": 8,
+     "C13210": "<5"
+    }
+   },
+   "H&E only": {
+    "n_patients": 0
+   },
+   "copy number only": {
+    "n_patients": "<5",
+    "note": "fewer than 5 patients: not described"
+   },
+   "neither": {
+    "n_patients": 0
+   },
+   "discordant in at least one repeat (H&E only or copy number only)": {
+    "n_patients": 6,
+    "of_which_modal_both": 5,
+    "highest_pre_event_grade": {
+     "NDBE": 5,
+     "LGD": "<5"
+    },
+    "pre_event_endoscopies": {
+     "median": 1.5,
+     "iqr": [
+      1.0,
+      2.75
+     ]
+    },
+    "years_first_sample_to_event": {
+     "median": 5.5,
+     "iqr": [
+      2.75,
+      8.75
+     ]
+    },
+    "tissue_tertile": {
+     "1": "<5",
+     "2": "<5",
+     "3": "<5"
+    },
+    "batch_type": {
+     "any sample in a single-class batch": "<5",
+     "all samples in mixed batches": "<5"
+    },
+    "scanner": {
+     "C13239-01": 5,
+     "both scanners": "<5"
+    },
+    "direction_mean_repeats": {
+     "H&E only": 0.78,
+     "copy number only": 0.9
+    }
+   }
+  },
+  "mean_probability_by_category_progressors": {
+   "both": 0.944,
+   "H&E only": 0.024,
+   "copy number only": 0.028,
+   "neither": 0.004
+  },
+  "note": "P1 (max L-IMG) and P2 (max L-CNV) at 80/90/95% training endoscopy sensitivity; per repeat the common target is the mean of the two policies' non-progressor ever-flagged counts at 90%, and each policy is interpolated linearly in that count between adjacent grid cells (a patient's catch probability = the weighted mix of its two cells; clamped at the grid ends); cross-tab cells are expected counts (the two mixes taken as independent), mean over repeats; a patient's category = the one with the highest mean probability over repeats; 'discordant in at least one repeat' = any repeat with a non-zero H&E-only or copy-number-only probability; groups of fewer than 5 patients are not described; tissue tertile = tertile (pre-event sample edges) of the patient's median tissue tiles; batch type from the sheet Batch (single-class batch = all its samples one class, as R55)"
+ },
+ "prespec": "b396cdc"
+}

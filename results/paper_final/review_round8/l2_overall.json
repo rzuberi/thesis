@@ -1,0 +1,68 @@
+{
+ "task": "l2_overall",
+ "L2": {
+  "family": "overall",
+  "strata": [
+   {
+    "stratum": "all pre-event samples",
+    "n_samples": 571,
+    "n_progressor_samples": 161,
+    "n_patients": 75,
+    "n_progressor_patients": 32,
+    "auroc": {
+     "L-CNV": {
+      "value": 0.801,
+      "ci95": [
+       0.71,
+       0.875
+      ]
+     },
+     "L-IMG": {
+      "value": 0.847,
+      "ci95": [
+       0.798,
+       0.894
+      ]
+     },
+     "L-LATE": {
+      "value": 0.889,
+      "ci95": [
+       0.83,
+       0.934
+      ]
+     }
+    },
+    "LATE_minus_IMG": {
+     "delta": 0.042,
+     "ci95": [
+      0.002,
+      0.078
+     ],
+     "p_two_sided": 0.048
+    },
+    "CNV_minus_IMG": {
+     "delta": -0.045,
+     "ci95": [
+      -0.136,
+      0.036
+     ],
+     "p_two_sided": 0.295
+    },
+    "call_change_P1_vs_P3_at_90": {
+     "n_endoscopies": 288,
+     "n_progressor_endoscopies": 88,
+     "share_changed": 0.198,
+     "share_changed_progressor": 0.108,
+     "share_changed_non_progressor": 0.238,
+     "progressor_gained_flag_share": 0.061,
+     "progressor_lost_flag_share": 0.047,
+     "non_progressor_gained_flag_share": 0.105,
+     "non_progressor_lost_flag_share": 0.133
+    }
+   }
+  ],
+  "draws": 2000,
+  "note": "fold-stratified AUROC on pre-event samples within the stratum (folds lacking a class skipped), single model; patient bootstrap (tb_common boots_for, RandomState(0)), thresholds not involved; call change = share of endoscopy x repeat cells whose P1 (max L-IMG) and P3 (max L-LATE) calls at 90% training endoscopy sensitivity differ; endoscopy strata: H&E quintile of the endoscopy's maximum repeat-mean L-IMG (sample quintile edges), highest grade, tissue tertile of the top-H&E sample, progressor endoscopy time to event (all non-progressor endoscopies in every time stratum)"
+ },
+ "prespec": "b396cdc"
+}

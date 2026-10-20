@@ -1,0 +1,180 @@
+{
+ "task": "pol_P1",
+ "L1": {
+  "family": "P1",
+  "cells": [
+   {
+    "family": "P1",
+    "label": "80%",
+    "params": {
+     "q": 0.8
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 30.1,
+    "caught_share": 0.941,
+    "caught_share_ci95": [
+     0.865,
+     0.994
+    ],
+    "progressor_patients_missed": 1.9,
+    "non_progressor_patients_ever_flagged": 31.6,
+    "np_flagged_share": 0.735,
+    "np_flagged_share_ci95": [
+     0.621,
+     0.838
+    ],
+    "flags_per_non_progressor_patient_year": 0.241,
+    "flags_per_np_py_ci95": [
+     0.188,
+     0.304
+    ],
+    "years_first_flag_to_event_median": 4.37,
+    "last2_window": {
+     "progressor_patients_caught": 30.0,
+     "non_progressor_patients_flagged": 22.2
+    },
+    "samples_sequenced_per_patient": 0.0,
+    "seq_per_patient_ci95": [
+     0.0,
+     0.0
+    ],
+    "samples_sequenced_per_100_patient_years": 0.0,
+    "share_samples_sequenced": 0.0,
+    "cost_per_patient_gbp": 1001.52,
+    "cost_ci95": [
+     845.98,
+     1169.9
+    ],
+    "flagged_endoscopies_per_patient": 1.872,
+    "endoscopy_sensitivity": 0.82,
+    "endo_sens_ci95": [
+     0.744,
+     0.894
+    ],
+    "endoscopy_specificity": 0.659,
+    "endo_spec_ci95": [
+     0.594,
+     0.724
+    ]
+   },
+   {
+    "family": "P1",
+    "label": "90%",
+    "params": {
+     "q": 0.9
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.1,
+    "caught_share": 0.972,
+    "caught_share_ci95": [
+     0.921,
+     1.0
+    ],
+    "progressor_patients_missed": 0.9,
+    "non_progressor_patients_ever_flagged": 36.0,
+    "np_flagged_share": 0.837,
+    "np_flagged_share_ci95": [
+     0.729,
+     0.923
+    ],
+    "flags_per_non_progressor_patient_year": 0.337,
+    "flags_per_np_py_ci95": [
+     0.271,
+     0.409
+    ],
+    "years_first_flag_to_event_median": 4.7,
+    "last2_window": {
+     "progressor_patients_caught": 31.1,
+     "non_progressor_patients_flagged": 29.9
+    },
+    "samples_sequenced_per_patient": 0.0,
+    "seq_per_patient_ci95": [
+     0.0,
+     0.0
+    ],
+    "samples_sequenced_per_100_patient_years": 0.0,
+    "share_samples_sequenced": 0.0,
+    "cost_per_patient_gbp": 1241.91,
+    "cost_ci95": [
+     1074.99,
+     1412.4
+    ],
+    "flagged_endoscopies_per_patient": 2.321,
+    "endoscopy_sensitivity": 0.898,
+    "endo_sens_ci95": [
+     0.849,
+     0.944
+    ],
+    "endoscopy_specificity": 0.524,
+    "endo_spec_ci95": [
+     0.457,
+     0.599
+    ]
+   },
+   {
+    "family": "P1",
+    "label": "95%",
+    "params": {
+     "q": 0.95
+    },
+    "n_progressor_patients": 32,
+    "n_non_progressor_patients": 43,
+    "folds_target_not_met": 0,
+    "progressor_patients_caught": 31.9,
+    "caught_share": 0.997,
+    "caught_share_ci95": [
+     0.99,
+     1.0
+    ],
+    "progressor_patients_missed": 0.1,
+    "non_progressor_patients_ever_flagged": 39.3,
+    "np_flagged_share": 0.914,
+    "np_flagged_share_ci95": [
+     0.837,
+     0.97
+    ],
+    "flags_per_non_progressor_patient_year": 0.446,
+    "flags_per_np_py_ci95": [
+     0.373,
+     0.53
+    ],
+    "years_first_flag_to_event_median": 4.76,
+    "last2_window": {
+     "progressor_patients_caught": 31.9,
+     "non_progressor_patients_flagged": 35.6
+    },
+    "samples_sequenced_per_patient": 0.0,
+    "seq_per_patient_ci95": [
+     0.0,
+     0.0
+    ],
+    "samples_sequenced_per_100_patient_years": 0.0,
+    "share_samples_sequenced": 0.0,
+    "cost_per_patient_gbp": 1489.44,
+    "cost_ci95": [
+     1305.4,
+     1677.8
+    ],
+    "flagged_endoscopies_per_patient": 2.784,
+    "endoscopy_sensitivity": 0.942,
+    "endo_sens_ci95": [
+     0.906,
+     0.975
+    ],
+    "endoscopy_specificity": 0.37,
+    "endo_spec_ci95": [
+     0.301,
+     0.447
+    ]
+   }
+  ],
+  "draws": 2000,
+  "n_endoscopies": 288,
+  "n_patients": 75
+ },
+ "prespec": "b396cdc"
+}

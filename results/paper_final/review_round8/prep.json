@@ -1,0 +1,113 @@
+{
+ "task": "prep",
+ "prep": {
+  "n_samples": 571,
+  "n_progressor_samples": 161,
+  "n_patients": 75,
+  "n_progressor_patients": 32,
+  "n_endoscopies": 288,
+  "n_progressor_endoscopies": 88,
+  "n_non_progressor_patients": 43,
+  "dates": {
+   "analysed_samples_with_exact_date": 676,
+   "analysed_samples": 676,
+   "reference_date_source_patients": {
+    "progressor_exact_event_endoscopy": 27,
+    "progressor_implied": 5,
+    "non_progressor_sheet_exact": 43,
+    "non_progressor_implied": 0
+   },
+   "progressor_event_months_before_final_equal_to_sheet_rule": 28,
+   "abs_days_exact_vs_implied_reference": {
+    "progressor": {
+     "n": 27,
+     "median": 91.188,
+     "p90": 162.738,
+     "max": 207.812,
+     "n_over_90_days": 15
+    },
+    "non_progressor": {
+     "n": 43,
+     "median": 56.125,
+     "p90": 146.825,
+     "max": 1458.25,
+     "n_over_90_days": 13
+    }
+   },
+   "non_progressor_last_sequenced_endoscopy_after_last_analysed_sample": 0,
+   "endoscopies_with_more_than_one_sample_date": 19,
+   "max_within_endoscopy_date_spread_days": 333.0,
+   "endoscopies_after_reference_date": 0,
+   "progressor_endoscopies_dated_on_the_event_date": 3,
+   "endoscopy_date_spread_days_when_more_than_one_date": {
+    "median": 197.0,
+    "max": 333.0,
+    "units_with_all_dates_in_one_calendar_year": 19
+   },
+   "patients_with_date_order_equal_to_months_before_final_order": 75,
+   "patient_years": {
+    "progressor": 172.297,
+    "non_progressor": 282.598,
+    "all": 454.895
+   },
+   "non_progressor_patient_years_months_before_final_span_as_round7": 285.5
+  },
+  "available": {
+   "outer_repeats_finite": true,
+   "inner_repeat_folds": {
+    "L-CNV": 100,
+    "L-IMG": 100,
+    "L-LATE": 100
+   },
+   "training_endoscopies_equal_inner_training_samples": true,
+   "time_dependent_auroc_stored": {
+    "1": true,
+    "3": true,
+    "5": true
+   }
+  },
+  "endoscopies_per_patient": {
+   "progressor": {
+    "mean": 2.75,
+    "ge2": 22
+   },
+   "non_progressor": {
+    "mean": 4.651,
+    "ge2": 43
+   }
+  },
+  "years_first_endoscopy_to_reference": {
+   "progressor": {
+    "median": 4.817,
+    "iqr": [
+     2.578,
+     6.986
+    ]
+   },
+   "non_progressor": {
+    "median": 6.198,
+    "iqr": [
+     4.137,
+     8.118
+    ]
+   }
+  },
+  "years_endoscopy_to_reference": {
+   "progressor": {
+    "median": 3.525,
+    "min": 0.0,
+    "max": 14.407
+   },
+   "non_progressor": {
+    "median": 3.199,
+    "min": 0.0,
+    "max": 13.139
+   }
+  },
+  "exact_vs_months_before_final_time_to_event_progressor_samples": {
+   "median_abs_diff_years": 0.265,
+   "max_abs_diff_years": 1.139
+  }
+ },
+ "prespec": "b396cdc"
+}

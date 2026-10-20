@@ -1,0 +1,125 @@
+{
+ "task": "l2_nsamp",
+ "L2": {
+  "family": "nsamp",
+  "strata": [
+   {
+    "stratum": "endoscopies with 1 sample",
+    "n_samples": 142,
+    "n_progressor_samples": 48,
+    "n_patients": 52,
+    "n_progressor_patients": 21,
+    "auroc": {
+     "L-CNV": {
+      "value": 0.81,
+      "ci95": [
+       0.684,
+       0.896
+      ]
+     },
+     "L-IMG": {
+      "value": 0.808,
+      "ci95": [
+       0.739,
+       0.881
+      ]
+     },
+     "L-LATE": {
+      "value": 0.869,
+      "ci95": [
+       0.802,
+       0.922
+      ]
+     }
+    },
+    "LATE_minus_IMG": {
+     "delta": 0.061,
+     "ci95": [
+      -0.016,
+      0.13
+     ],
+     "p_two_sided": 0.135
+    },
+    "CNV_minus_IMG": {
+     "delta": 0.002,
+     "ci95": [
+      -0.152,
+      0.119
+     ],
+     "p_two_sided": 0.981
+    },
+    "call_change_P1_vs_P3_at_90": {
+     "n_endoscopies": 142,
+     "n_progressor_endoscopies": 48,
+     "share_changed": 0.188,
+     "share_changed_progressor": 0.146,
+     "share_changed_non_progressor": 0.21,
+     "progressor_gained_flag_share": 0.077,
+     "progressor_lost_flag_share": 0.069,
+     "non_progressor_gained_flag_share": 0.093,
+     "non_progressor_lost_flag_share": 0.117
+    }
+   },
+   {
+    "stratum": "endoscopies with >= 2 samples",
+    "n_samples": 429,
+    "n_progressor_samples": 113,
+    "n_patients": 64,
+    "n_progressor_patients": 25,
+    "auroc": {
+     "L-CNV": {
+      "value": 0.799,
+      "ci95": [
+       0.694,
+       0.889
+      ]
+     },
+     "L-IMG": {
+      "value": 0.854,
+      "ci95": [
+       0.796,
+       0.908
+      ]
+     },
+     "L-LATE": {
+      "value": 0.891,
+      "ci95": [
+       0.82,
+       0.947
+      ]
+     }
+    },
+    "LATE_minus_IMG": {
+     "delta": 0.038,
+     "ci95": [
+      -0.006,
+      0.081
+     ],
+     "p_two_sided": 0.082
+    },
+    "CNV_minus_IMG": {
+     "delta": -0.055,
+     "ci95": [
+      -0.159,
+      0.046
+     ],
+     "p_two_sided": 0.318
+    },
+    "call_change_P1_vs_P3_at_90": {
+     "n_endoscopies": 146,
+     "n_progressor_endoscopies": 40,
+     "share_changed": 0.208,
+     "share_changed_progressor": 0.062,
+     "share_changed_non_progressor": 0.263,
+     "progressor_gained_flag_share": 0.043,
+     "progressor_lost_flag_share": 0.02,
+     "non_progressor_gained_flag_share": 0.117,
+     "non_progressor_lost_flag_share": 0.146
+    }
+   }
+  ],
+  "draws": 2000,
+  "note": "fold-stratified AUROC on pre-event samples within the stratum (folds lacking a class skipped), single model; patient bootstrap (tb_common boots_for, RandomState(0)), thresholds not involved; call change = share of endoscopy x repeat cells whose P1 (max L-IMG) and P3 (max L-LATE) calls at 90% training endoscopy sensitivity differ; endoscopy strata: H&E quintile of the endoscopy's maximum repeat-mean L-IMG (sample quintile edges), highest grade, tissue tertile of the top-H&E sample, progressor endoscopy time to event (all non-progressor endoscopies in every time stratum)"
+ },
+ "prespec": "b396cdc"
+}

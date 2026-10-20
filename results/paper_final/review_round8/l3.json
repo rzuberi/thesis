@@ -1,0 +1,564 @@
+{
+ "task": "l3",
+ "L3": {
+  "n": {
+   "patients_ge2_endoscopies": 65,
+   "progressor": 22,
+   "non_progressor": 43,
+   "endoscopies": 278
+  },
+  "L-IMG": {
+   "slope_per_year_vs_time_to_event": {
+    "progressor_mean": -0.807,
+    "progressor_median": -0.214,
+    "non_progressor_mean": -0.018,
+    "non_progressor_median": -0.0,
+    "n_progressor": 22,
+    "n_non_progressor": 43
+   },
+   "difference_progressor_minus_non_progressor": {
+    "delta": -0.79,
+    "ci95": [
+     -1.868,
+     -0.113
+    ],
+    "p_two_sided": 0.014
+   },
+   "mixed_model": {
+    "Intercept": {
+     "estimate": -1.724,
+     "se": 0.283,
+     "ci95": [
+      -2.279,
+      -1.169
+     ],
+     "p": 0.0
+    },
+    "tte": {
+     "estimate": 0.01,
+     "se": 0.046,
+     "ci95": [
+      -0.08,
+      0.1
+     ],
+     "p": 0.8337
+    },
+    "cls": {
+     "estimate": 4.387,
+     "se": 0.559,
+     "ci95": [
+      3.292,
+      5.482
+     ],
+     "p": 0.0
+    },
+    "tte:cls": {
+     "estimate": -0.234,
+     "se": 0.09,
+     "ci95": [
+      -0.41,
+      -0.058
+     ],
+     "p": 0.0091
+    },
+    "random_intercept_variance": 1.403,
+    "residual_variance": 3.781,
+    "converged": true,
+    "n_endoscopies": 278,
+    "n_patients": 65
+   },
+   "last_minus_first_progressor": {
+    "n_patients": 22,
+    "mean": 1.702,
+    "ci95": [
+     0.809,
+     2.667
+    ],
+    "median": 1.208,
+    "share_increased": 0.773
+   },
+   "last_minus_first_non_progressor": {
+    "n_patients": 43,
+    "mean": 0.012,
+    "ci95": [
+     -0.684,
+     0.68
+    ],
+    "median": 0.104,
+    "share_increased": 0.558
+   },
+   "trajectory": [
+    {
+     "class": "progressor",
+     "bin_years": [
+      0,
+      1
+     ],
+     "n_endoscopies": 8,
+     "n_patients": 8,
+     "mean": 2.48,
+     "se": 1.195
+    },
+    {
+     "class": "progressor",
+     "bin_years": [
+      1,
+      2
+     ],
+     "n_endoscopies": 6,
+     "n_patients": 5,
+     "mean": 3.076,
+     "se": 0.955
+    },
+    {
+     "class": "progressor",
+     "bin_years": [
+      2,
+      3
+     ],
+     "n_endoscopies": 16,
+     "n_patients": 15,
+     "mean": 2.723,
+     "se": 0.693
+    },
+    {
+     "class": "progressor",
+     "bin_years": [
+      3,
+      4
+     ],
+     "n_endoscopies": 9,
+     "n_patients": 9,
+     "mean": 1.952,
+     "se": 0.741
+    },
+    {
+     "class": "progressor",
+     "bin_years": [
+      4,
+      6
+     ],
+     "n_endoscopies": 15,
+     "n_patients": 13,
+     "mean": 0.11,
+     "se": 0.544
+    },
+    {
+     "class": "progressor",
+     "bin_years": [
+      6,
+      8
+     ],
+     "n_endoscopies": 11,
+     "n_patients": 10,
+     "mean": 1.726,
+     "se": 0.723
+    },
+    {
+     "class": "progressor",
+     "bin_years": [
+      8,
+      99
+     ],
+     "n_endoscopies": 13,
+     "n_patients": 8,
+     "mean": 0.051,
+     "se": 0.613
+    },
+    {
+     "class": "non_progressor",
+     "bin_years": [
+      0,
+      1
+     ],
+     "n_endoscopies": 49,
+     "n_patients": 43,
+     "mean": -1.564,
+     "se": 0.325
+    },
+    {
+     "class": "non_progressor",
+     "bin_years": [
+      1,
+      2
+     ],
+     "n_endoscopies": 23,
+     "n_patients": 22,
+     "mean": -2.096,
+     "se": 0.386
+    },
+    {
+     "class": "non_progressor",
+     "bin_years": [
+      2,
+      3
+     ],
+     "n_endoscopies": 23,
+     "n_patients": 20,
+     "mean": -1.416,
+     "se": 0.398
+    },
+    {
+     "class": "non_progressor",
+     "bin_years": [
+      3,
+      4
+     ],
+     "n_endoscopies": 19,
+     "n_patients": 19,
+     "mean": -1.83,
+     "se": 0.532
+    },
+    {
+     "class": "non_progressor",
+     "bin_years": [
+      4,
+      6
+     ],
+     "n_endoscopies": 37,
+     "n_patients": 28,
+     "mean": -1.652,
+     "se": 0.355
+    },
+    {
+     "class": "non_progressor",
+     "bin_years": [
+      6,
+      8
+     ],
+     "n_endoscopies": 24,
+     "n_patients": 21,
+     "mean": -1.538,
+     "se": 0.396
+    },
+    {
+     "class": "non_progressor",
+     "bin_years": [
+      8,
+      99
+     ],
+     "n_endoscopies": 25,
+     "n_patients": 12,
+     "mean": -1.747,
+     "se": 0.474
+    }
+   ]
+  },
+  "L-CNV": {
+   "slope_per_year_vs_time_to_event": {
+    "progressor_mean": -0.646,
+    "progressor_median": -0.007,
+    "non_progressor_mean": -0.109,
+    "non_progressor_median": -0.05,
+    "n_progressor": 22,
+    "n_non_progressor": 43
+   },
+   "difference_progressor_minus_non_progressor": {
+    "delta": -0.537,
+    "ci95": [
+     -1.453,
+     0.082
+    ],
+    "p_two_sided": 0.127
+   },
+   "mixed_model": {
+    "Intercept": {
+     "estimate": -1.358,
+     "se": 0.282,
+     "ci95": [
+      -1.911,
+      -0.805
+     ],
+     "p": 0.0
+    },
+    "tte": {
+     "estimate": -0.079,
+     "se": 0.037,
+     "ci95": [
+      -0.151,
+      -0.007
+     ],
+     "p": 0.0321
+    },
+    "cls": {
+     "estimate": 3.336,
+     "se": 0.533,
+     "ci95": [
+      2.29,
+      4.382
+     ],
+     "p": 0.0
+    },
+    "tte:cls": {
+     "estimate": -0.161,
+     "se": 0.073,
+     "ci95": [
+      -0.303,
+      -0.019
+     ],
+     "p": 0.0267
+    },
+    "random_intercept_variance": 2.156,
+    "residual_variance": 2.314,
+    "converged": true,
+    "n_endoscopies": 278,
+    "n_patients": 65
+   },
+   "last_minus_first_progressor": {
+    "n_patients": 22,
+    "mean": 1.294,
+    "ci95": [
+     -0.096,
+     2.981
+    ],
+    "median": -0.073,
+    "share_increased": 0.455
+   },
+   "last_minus_first_non_progressor": {
+    "n_patients": 43,
+    "mean": 0.625,
+    "ci95": [
+     0.16,
+     1.085
+    ],
+    "median": 0.565,
+    "share_increased": 0.605
+   },
+   "trajectory": [
+    {
+     "class": "progressor",
+     "bin_years": [
+      0,
+      1
+     ],
+     "n_endoscopies": 8,
+     "n_patients": 8,
+     "mean": 4.026,
+     "se": 1.505
+    },
+    {
+     "class": "progressor",
+     "bin_years": [
+      1,
+      2
+     ],
+     "n_endoscopies": 6,
+     "n_patients": 5,
+     "mean": 1.206,
+     "se": 0.941
+    },
+    {
+     "class": "progressor",
+     "bin_years": [
+      2,
+      3
+     ],
+     "n_endoscopies": 16,
+     "n_patients": 15,
+     "mean": 1.51,
+     "se": 0.696
+    },
+    {
+     "class": "progressor",
+     "bin_years": [
+      3,
+      4
+     ],
+     "n_endoscopies": 9,
+     "n_patients": 9,
+     "mean": 0.504,
+     "se": 1.026
+    },
+    {
+     "class": "progressor",
+     "bin_years": [
+      4,
+      6
+     ],
+     "n_endoscopies": 15,
+     "n_patients": 13,
+     "mean": 0.297,
+     "se": 0.409
+    },
+    {
+     "class": "progressor",
+     "bin_years": [
+      6,
+      8
+     ],
+     "n_endoscopies": 11,
+     "n_patients": 10,
+     "mean": 0.196,
+     "se": 0.536
+    },
+    {
+     "class": "progressor",
+     "bin_years": [
+      8,
+      99
+     ],
+     "n_endoscopies": 13,
+     "n_patients": 8,
+     "mean": -0.172,
+     "se": 0.507
+    },
+    {
+     "class": "non_progressor",
+     "bin_years": [
+      0,
+      1
+     ],
+     "n_endoscopies": 49,
+     "n_patients": 43,
+     "mean": -1.404,
+     "se": 0.236
+    },
+    {
+     "class": "non_progressor",
+     "bin_years": [
+      1,
+      2
+     ],
+     "n_endoscopies": 23,
+     "n_patients": 22,
+     "mean": -1.266,
+     "se": 0.36
+    },
+    {
+     "class": "non_progressor",
+     "bin_years": [
+      2,
+      3
+     ],
+     "n_endoscopies": 23,
+     "n_patients": 20,
+     "mean": -1.438,
+     "se": 0.432
+    },
+    {
+     "class": "non_progressor",
+     "bin_years": [
+      3,
+      4
+     ],
+     "n_endoscopies": 19,
+     "n_patients": 19,
+     "mean": -1.578,
+     "se": 0.38
+    },
+    {
+     "class": "non_progressor",
+     "bin_years": [
+      4,
+      6
+     ],
+     "n_endoscopies": 37,
+     "n_patients": 28,
+     "mean": -1.728,
+     "se": 0.274
+    },
+    {
+     "class": "non_progressor",
+     "bin_years": [
+      6,
+      8
+     ],
+     "n_endoscopies": 24,
+     "n_patients": 21,
+     "mean": -2.432,
+     "se": 0.44
+    },
+    {
+     "class": "non_progressor",
+     "bin_years": [
+      8,
+      99
+     ],
+     "n_endoscopies": 25,
+     "n_patients": 12,
+     "mean": -1.871,
+     "se": 0.54
+    }
+   ]
+  },
+  "time_dependent_auroc_stored": {
+   "1": {
+    "n_cases": 29,
+    "n_controls": 449,
+    "L-CNV": {
+     "ipcw": 0.811,
+     "ci95": [
+      0.656,
+      0.923
+     ]
+    },
+    "L-IMG": {
+     "ipcw": 0.771,
+     "ci95": [
+      0.631,
+      0.846
+     ]
+    },
+    "L-LATE": {
+     "ipcw": 0.854,
+     "ci95": [
+      0.747,
+      0.907
+     ]
+    }
+   },
+   "3": {
+    "n_cases": 99,
+    "n_controls": 277,
+    "L-CNV": {
+     "ipcw": 0.767,
+     "ci95": [
+      0.655,
+      0.841
+     ]
+    },
+    "L-IMG": {
+     "ipcw": 0.788,
+     "ci95": [
+      0.659,
+      0.866
+     ]
+    },
+    "L-LATE": {
+     "ipcw": 0.831,
+     "ci95": [
+      0.705,
+      0.898
+     ]
+    }
+   },
+   "5": {
+    "n_cases": 126,
+    "n_controls": 168,
+    "L-CNV": {
+     "ipcw": 0.779,
+     "ci95": [
+      0.669,
+      0.841
+     ]
+    },
+    "L-IMG": {
+     "ipcw": 0.76,
+     "ci95": [
+      0.661,
+      0.819
+     ]
+    },
+    "L-LATE": {
+     "ipcw": 0.821,
+     "ci95": [
+      0.716,
+      0.873
+     ]
+    }
+   }
+  },
+  "note": "endoscopy score = mean over the 10 repeats of the maximum logit outer prediction over the endoscopy's pre-event samples; time = years from the endoscopy (exact date) to the event (progressors) or to the last sequenced endoscopy (non-progressors); slopes = per-patient least squares; patient bootstrap of the patients with >= 2 pre-event endoscopies (RandomState(0)); mixed model = statsmodels MixedLM, REML, random patient intercept; a negative slope against time to event = the score rises towards the event; time-dependent AUROC re-tabulated from results/paper_final/horizon_foldstrat (IPCW, fold-stratified)"
+ },
+ "prespec": "b396cdc"
+}
