@@ -1,0 +1,15 @@
+{
+ "pre_event_samples": 571,
+ "pre_event_slide_rows": 578,
+ "samples_with_a_slide_row": 571,
+ "slides_with_shared_05um_features": 460,
+ "slides_to_extract": 118,
+ "slides_to_extract_on_disk": 118,
+ "samples_fully_covered_after_extraction": 571,
+ "exclude_list_file": 55,
+ "exclude_accession_bridge": 13,
+ "exclude_db_bridge": 70,
+ "exclude_pairs_file": 55,
+ "exclude_union": 70,
+ "union_minus_file": 15
+}

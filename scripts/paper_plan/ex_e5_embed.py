@@ -10,12 +10,8 @@ m = timm.create_model("vit_giant_patch14_224", pretrained=False, img_size=224, p
 m.load_state_dict(torch.load("/mnt/scratche/slow/fmlab/zuberi01/phd/UNI2-h/pytorch_model.bin", map_location="cpu"), strict=True); m.eval().to(dev)
 MEAN = torch.tensor([0.485, 0.456, 0.406], device=dev).view(1, 3, 1, 1); STD = torch.tensor([0.229, 0.224, 0.225], device=dev).view(1, 3, 1, 1)
 ENV = f"torch{torch.__version__}|timm{timm.__version__}|{torch.cuda.get_device_name(0)}"; JOB = f"{os.environ.get('SLURM_JOB_ID', '?')}@{os.environ.get('SLURM_JOB_PARTITION', '?')}"
-for q, path in enumerate(paths):
-    if q % ns != sh: continue
-    stem = os.path.splitext(os.path.basename(path))[0]; out = f"{OD}/{stem}.h5"
-    if os.path.exists(out): continue
-    assert os.path.exists(f"{TD}/{stem}.json"), f"tiles missing for shard item {q}"
-    A = np.load(f"{TD}/{stem}.npy", mmap_mode="r"); C = np.load(f"{TD}/{stem}.coords.npy"); meta = json.load(open(f"{TD}/{stem}.json")); t0 = time.time(); F = []
+def embed(stem):
+    out = f"{OD}/{stem}.h5"; A = np.load(f"{TD}/{stem}.npy", mmap_mode="r"); C = np.load(f"{TD}/{stem}.coords.npy"); meta = json.load(open(f"{TD}/{stem}.json")); t0 = time.time(); F = []
     with torch.inference_mode():
         for i in range(0, len(A), BATCH):
             x = torch.from_numpy(np.ascontiguousarray(A[i:i + BATCH])).to(dev).permute(0, 3, 1, 2).float() / 255.0
@@ -25,5 +21,13 @@ for q, path in enumerate(paths):
         h.create_dataset("features", data=F); h.create_dataset("coords", data=C)
         for k, v in meta.items(): h.attrs[k] = v
         h.attrs["env"] = ENV; h.attrs["job"] = JOB
-    os.replace(out + ".part", out); print("embedded", q, F.shape, f"{time.time() - t0:.0f}s", flush=True)
+    os.replace(out + ".part", out); print("embedded", stem[:0], F.shape, f"{time.time() - t0:.0f}s", flush=True)
+todo = [os.path.splitext(os.path.basename(p))[0] for q, p in enumerate(paths) if q % ns == sh]; T0 = time.time()
+while True:   # phase-1 tiles may still be arriving: embed whatever is ready, wait for the rest (<= 2 h)
+    left = [st for st in todo if not os.path.exists(f"{OD}/{st}.h5")]
+    if not left: break
+    ready = [st for st in left if os.path.exists(f"{TD}/{st}.json")]
+    for st in ready: embed(st)
+    if not ready:
+        assert time.time() - T0 < 7200, f"{len(left)} tile sets never arrived"; time.sleep(30)
 print("E5 EMBED DONE", sh, flush=True)

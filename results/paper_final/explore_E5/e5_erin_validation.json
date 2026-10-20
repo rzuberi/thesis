@@ -1,0 +1,58 @@
+{
+ "lgd": {
+  "T1_heldout_fold_votefrac_ge_0.75": {
+   "n": 5399,
+   "pos": 1737,
+   "auroc": 0.9493
+  },
+  "T3_heldout_fold_all": {
+   "n": 5773,
+   "pos": 1810,
+   "auroc": 0.9472
+  },
+  "T2_human_holdout": {
+   "n": 806,
+   "pos": 417,
+   "auroc": 0.8939
+  }
+ },
+ "hgd": {
+  "T1_heldout_fold_votefrac_ge_0.75": {
+   "n": 5399,
+   "pos": 1568,
+   "auroc": 0.9609
+  },
+  "T3_heldout_fold_all": {
+   "n": 5773,
+   "pos": 1625,
+   "auroc": 0.959
+  },
+  "T2_human_holdout": {
+   "n": 806,
+   "pos": 291,
+   "auroc": 0.9389
+  }
+ },
+ "swg_slides_scored": 578,
+ "swg_slides": 578,
+ "swg_mpp_used": {
+  "count": 578.0,
+  "mean": 0.442,
+  "std": 0.0,
+  "min": 0.441,
+  "25%": 0.442,
+  "50%": 0.442,
+  "75%": 0.442,
+  "max": 0.442
+ },
+ "swg_tiles_per_slide": {
+  "count": 578.0,
+  "mean": 1830.5,
+  "std": 1991.7,
+  "min": 176.0,
+  "25%": 738.5,
+  "50%": 1058.5,
+  "75%": 1482.8,
+  "max": 7609.0
+ }
+}

@@ -8,6 +8,7 @@ from sklearn.metrics import roc_auc_score
 T = "/mnt/scratche/slow/fmlab/zuberi01/phd/thesis"; A = "/mnt/scratche/slow/fmlab/zuberi01/analysis/isbi_rerun"; E5 = T + "/feasibility/paper_plan/killcoyne_mm/explore_E5"
 sys.path.insert(0, T + "/scripts"); from abmil_clf import ABMIL as ABMIL_CLF
 dev = "cuda" if torch.cuda.is_available() else "cpu"
+PARTIAL = bool(os.environ.get("E5_PARTIAL")); SFX = "_partial" if PARTIAL else ""; torch.set_num_threads(int(os.environ.get("SLURM_CPUS_PER_TASK", "4")))
 class ABMIL(nn.Module):   # train_fold.py
     def __init__(self, d_in=1536, d=384, d_attn=128, p_drop=0.25, n_out=1):
         super().__init__()
@@ -27,16 +28,23 @@ P32 = []
 for k in range(5):
     m = ABMIL_CLF(d_in=1536); m.load_state_dict(torch.load(f"{T}/feasibility/runs/p32_head_noov/output/model_grade_LGDplus_f{k}.pt", map_location="cpu")); P32.append(m.to(dev).eval())
 ss = pd.read_csv(E5 + "/sample_slides.csv", dtype=str); rows = []
+PREV = E5 + "/erin_scores_slides_partial.csv"   # slides already scored by the partial run (same models, deterministic): reused
+if not PARTIAL and os.path.exists(PREV): rows = pd.read_csv(PREV).to_dict("records")
+done_h5 = set(r["h5"] for r in rows)
 with torch.inference_mode():
     for h5 in sorted(set(ss.h5)):
+        if PARTIAL and not os.path.exists(h5): continue
+        if h5 in done_h5: continue
         with h5py.File(h5) as h: Xn = np.asarray(h["features"], np.float32); mpp = float(h.attrs.get("mpp_used", np.nan))
         X = torch.from_numpy(Xn).to(dev)[None]; mk = torch.ones(X.shape[:2], dtype=torch.bool, device=dev); r = {"h5": h5, "n_tiles": int(Xn.shape[0]), "mpp": mpp}
         if Xn.shape[0] == 0: rows.append(r); continue
         for task in ("lgd", "hgd"): r[f"logit_{task}"] = float(np.mean([m(X, mk).item() for m in MODELS[task]]))
+        tl = torch.stack([m.head(m.emb(X[0])).squeeze(-1) for m in MODELS["lgd"]]).mean(0).cpu().numpy()   # per-tile LGD+ logit (instance head), mean over models
+        r["tile_frac_lgd"] = float((tl > 0).mean()); r["tile_top16_lgd"] = float(np.sort(tl)[::-1][:16].mean())
         p6 = np.mean([torch.softmax(m(X, mk), 1)[0].cpu().numpy() for m in MODELS["six"]], 0)
         for i, c in enumerate(["NORMAL_OTHER", "NDBE", "IND", "LGD", "HGD", "CANCER"]): r[f"p6_{c}"] = float(p6[i])
         r["logit_p32"] = float(np.mean([m(X[0])[0].item() for m in P32])); rows.append(r)
-S = pd.DataFrame(rows); S.to_csv(E5 + "/erin_scores_slides.csv", index=False)
+S = pd.DataFrame(rows); S.to_csv(E5 + f"/erin_scores_slides{SFX}.csv", index=False)
 # ---------------- ERIN validation of the fold models (overlap patients already excluded from test)
 s = pd.read_csv(A + "/slides.csv", dtype={"idx": int}).fillna(""); s["vote_frac"] = pd.to_numeric(s.vote_frac, errors="coerce"); s = s.set_index("idx")
 V = {}
@@ -54,4 +62,4 @@ for task in ("lgd", "hgd"):
     V[task] = {"T1_heldout_fold_votefrac_ge_0.75": ev(te, "worst_grade", lambda d: (d.vote_frac >= 0.75).values), "T3_heldout_fold_all": ev(te, "worst_grade"),
                "T2_human_holdout": ev(ho, "human_grade")}
 V["swg_slides_scored"] = int(S.logit_lgd.notna().sum()); V["swg_slides"] = int(len(S)); V["swg_mpp_used"] = S.mpp.describe().round(3).to_dict(); V["swg_tiles_per_slide"] = S.n_tiles.describe().round(1).to_dict()
-json.dump(V, open(E5 + "/erin_validation.json", "w"), indent=1); print(json.dumps(V, indent=1)); print("E5 SCORE DONE")
+json.dump(V, open(E5 + f"/erin_validation{SFX}.json", "w"), indent=1); print(json.dumps(V, indent=1)); print("E5 SCORE DONE")
