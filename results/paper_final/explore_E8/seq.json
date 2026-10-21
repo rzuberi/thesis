@@ -1,0 +1,113 @@
+{
+ "task": "seq",
+ "baseline": {
+  "A12": {
+   "caught": 30.5,
+   "np_flagged": 21.5,
+   "seq": 1.94
+  },
+  "final": {
+   "caught": 30.5,
+   "np_flagged": 17.2,
+   "seq": 3.82
+  }
+ },
+ "seq": {
+  "decisions_identical_to_final": true,
+  "sequential": {
+   "progressor_patients_caught": 30.5,
+   "non_progressor_patients_ever_flagged": 17.2,
+   "samples_sequenced_per_patient": 3.229,
+   "endoscopy_sensitivity": 0.793,
+   "endoscopy_specificity": 0.829,
+   "dNP_vs_R49": {
+    "delta": -14.6,
+    "ci95": [
+     -18.941,
+     -10.285
+    ],
+    "p_two_sided": 0.0
+   },
+   "dP_vs_R49": {
+    "delta": -0.6,
+    "ci95": [
+     -1.6,
+     0.213
+    ],
+    "p_two_sided": 0.205
+   },
+   "dNP_vs_P1": {
+    "delta": -18.8,
+    "ci95": [
+     -23.876,
+     -13.732
+    ],
+    "p_two_sided": 0.0
+   },
+   "dP_vs_P1": {
+    "delta": -0.6,
+    "ci95": [
+     -2.133,
+     1.28
+    ],
+    "p_two_sided": 0.494
+   },
+   "label": "A12 + sequential quiet-genome check (second sample only if the first is quiet)",
+   "params": {},
+   "dNP_vs_A12": {
+    "delta": -4.3,
+    "ci95": [
+     -7.718,
+     -1.678
+    ],
+    "p_two_sided": 0.0
+   },
+   "dP_vs_A12": {
+    "delta": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_two_sided": 1.0
+   },
+   "dNP_vs_final": {
+    "delta": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_two_sided": 1.0
+   },
+   "dP_vs_final": {
+    "delta": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_two_sided": 1.0
+   },
+   "dseq_vs_final": {
+    "delta": -0.587,
+    "ci95": [
+     -0.76,
+     -0.428
+    ],
+    "p_two_sided": 0.0
+   },
+   "dspec_matched_vs_P1": {
+    "delta": 0.162,
+    "ci95": [
+     0.049,
+     0.291
+    ],
+    "p_two_sided": 0.009
+   },
+   "cost_per_patient_gbp": 1017.07
+  },
+  "second_sample_needed_share_of_checked_endoscopies": {
+   "non_progressor": 0.482,
+   "progressor": 0.232
+  },
+  "note": "decisions identical by construction (cancel iff both quiet); extra samples: 1 at every A12 flag (0 in R49's middle band, whose top sample is already sequenced) + 1 more only if the first is quiet"
+ }
+}

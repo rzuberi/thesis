@@ -1,0 +1,204 @@
+{
+ "task": "base",
+ "baseline": {
+  "A12": {
+   "caught": 30.5,
+   "np_flagged": 21.5,
+   "seq": 1.94
+  },
+  "final": {
+   "caught": 30.5,
+   "np_flagged": 17.2,
+   "seq": 3.82
+  }
+ },
+ "A12_full": {
+  "progressor_patients_caught": 30.5,
+  "non_progressor_patients_ever_flagged": 21.5,
+  "samples_sequenced_per_patient": 1.94,
+  "endoscopy_sensitivity": 0.876,
+  "endoscopy_specificity": 0.733,
+  "dNP_vs_R49": {
+   "delta": -10.3,
+   "ci95": [
+    -13.9,
+    -6.899
+   ],
+   "p_two_sided": 0.0
+  },
+  "dP_vs_R49": {
+   "delta": -0.6,
+   "ci95": [
+    -1.6,
+    0.213
+   ],
+   "p_two_sided": 0.205
+  },
+  "dNP_vs_P1": {
+   "delta": -14.5,
+   "ci95": [
+    -19.001,
+    -9.646
+   ],
+   "p_two_sided": 0.0
+  },
+  "dP_vs_P1": {
+   "delta": -0.6,
+   "ci95": [
+    -2.133,
+    1.28
+   ],
+   "p_two_sided": 0.494
+  },
+  "label": "A12 (stored round-9 memory + certificate)",
+  "params": {},
+  "dNP_vs_A12": {
+   "delta": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "p_two_sided": 1.0
+  },
+  "dP_vs_A12": {
+   "delta": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "p_two_sided": 1.0
+  },
+  "dNP_vs_final": {
+   "delta": 4.3,
+   "ci95": [
+    1.678,
+    7.718
+   ],
+   "p_two_sided": 0.0
+  },
+  "dP_vs_final": {
+   "delta": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "p_two_sided": 1.0
+  },
+  "dseq_vs_final": {
+   "delta": -1.876,
+   "ci95": [
+    -2.323,
+    -1.457
+   ],
+   "p_two_sided": 0.0
+  },
+  "dspec_matched_vs_P1": {
+   "delta": 0.194,
+   "ci95": [
+    0.087,
+    0.304
+   ],
+   "p_two_sided": 0.0
+  },
+  "cost_per_patient_gbp": 1095.8
+ },
+ "final_full": {
+  "progressor_patients_caught": 30.5,
+  "non_progressor_patients_ever_flagged": 17.2,
+  "samples_sequenced_per_patient": 3.816,
+  "endoscopy_sensitivity": 0.793,
+  "endoscopy_specificity": 0.829,
+  "dNP_vs_R49": {
+   "delta": -14.6,
+   "ci95": [
+    -18.941,
+    -10.285
+   ],
+   "p_two_sided": 0.0
+  },
+  "dP_vs_R49": {
+   "delta": -0.6,
+   "ci95": [
+    -1.6,
+    0.213
+   ],
+   "p_two_sided": 0.205
+  },
+  "dNP_vs_P1": {
+   "delta": -18.8,
+   "ci95": [
+    -23.876,
+    -13.732
+   ],
+   "p_two_sided": 0.0
+  },
+  "dP_vs_P1": {
+   "delta": -0.6,
+   "ci95": [
+    -2.133,
+    1.28
+   ],
+   "p_two_sided": 0.494
+  },
+  "label": "final rule: A12 + quiet-genome check (ps_oac k2 cn90)",
+  "params": {},
+  "dNP_vs_A12": {
+   "delta": -4.3,
+   "ci95": [
+    -7.718,
+    -1.678
+   ],
+   "p_two_sided": 0.0
+  },
+  "dP_vs_A12": {
+   "delta": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "p_two_sided": 1.0
+  },
+  "dNP_vs_final": {
+   "delta": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "p_two_sided": 1.0
+  },
+  "dP_vs_final": {
+   "delta": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "p_two_sided": 1.0
+  },
+  "dseq_vs_final": {
+   "delta": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "p_two_sided": 1.0
+  },
+  "dspec_matched_vs_P1": {
+   "delta": 0.162,
+   "ci95": [
+    0.049,
+    0.291
+   ],
+   "p_two_sided": 0.009
+  },
+  "cost_per_patient_gbp": 1066.94
+ },
+ "reproduced": true,
+ "A12_flagged_endoscopies_per_repeat": {
+  "non_progressor": 53.4,
+  "progressor": 77.1
+ },
+ "quiet_among_A12_flagged_per_repeat": {
+  "non_progressor": 19.1,
+  "progressor": 7.3
+ }
+}

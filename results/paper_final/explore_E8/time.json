@@ -1,0 +1,120 @@
+{
+ "task": "time",
+ "baseline": {
+  "A12": {
+   "caught": 30.5,
+   "np_flagged": 21.5,
+   "seq": 1.94
+  },
+  "final": {
+   "caught": 30.5,
+   "np_flagged": 17.2,
+   "seq": 3.82
+  }
+ },
+ "time": {
+  "progressor_quiet_by_time_to_event": {
+   "all progressor endoscopies": {
+    "bands": {
+     "<1 y before event": {
+      "endoscopies_per_repeat": 10.0,
+      "quiet_share": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "1-3 y": {
+      "endoscopies_per_repeat": 28.0,
+      "quiet_share": 0.1,
+      "ci95": [
+       0.0,
+       0.2
+      ]
+     },
+     ">=3 y": {
+      "endoscopies_per_repeat": 50.0,
+      "quiet_share": 0.136,
+      "ci95": [
+       0.034,
+       0.243
+      ]
+     }
+    },
+    "median_years_to_event_quiet": 4.55,
+    "median_years_to_event_not_quiet": 3.34,
+    "quiet_endoscopies_per_repeat": 9.6,
+    "median_difference_quiet_minus_not": {
+     "delta": 1.21,
+     "ci95": [
+      -1.046,
+      3.904
+     ]
+    }
+   },
+   "A12-flagged progressor endoscopies": {
+    "bands": {
+     "<1 y before event": {
+      "endoscopies_per_repeat": 9.0,
+      "quiet_share": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "1-3 y": {
+      "endoscopies_per_repeat": 25.9,
+      "quiet_share": 0.097,
+      "ci95": [
+       0.0,
+       0.195
+      ]
+     },
+     ">=3 y": {
+      "endoscopies_per_repeat": 42.2,
+      "quiet_share": 0.114,
+      "ci95": [
+       0.03,
+       0.197
+      ]
+     }
+    },
+    "median_years_to_event_quiet": 4.46,
+    "median_years_to_event_not_quiet": 3.13,
+    "quiet_endoscopies_per_repeat": 7.3,
+    "median_difference_quiet_minus_not": {
+     "delta": 1.33,
+     "ci95": [
+      -0.893,
+      3.997
+     ]
+    }
+   }
+  },
+  "spearman_years_to_event_vs_top2_oac_progressor_endoscopies": -0.306,
+  "progressors_ge2_endoscopies": {
+   "patients": 22,
+   "quiet_share_first_endoscopy": 0.127,
+   "quiet_share_last_endoscopy": 0.045
+  },
+  "non_progressor_consecutive_pairs": {
+   "quiet_then_quiet": 34.5,
+   "quiet_then_not": 15.9,
+   "not_then_quiet": 23.7,
+   "not_then_not": 82.9
+  },
+  "non_progressor_P_quiet_next": {
+   "given_quiet": 0.685,
+   "given_not_quiet": 0.222
+  },
+  "np_quiet_share_all_endoscopies": 0.352,
+  "progressor_quiet_share_all_endoscopies": 0.109,
+  "single_look_first_flag_only": {
+   "progressors_whose_first_A12_flag_is_quiet": "<5",
+   "of_which_with_one_pre_event_endoscopy": 0,
+   "non_progressors_whose_first_A12_flag_is_quiet": 7.1,
+   "note": "ACE-B-like projection: a single look with no later endoscopy to rescue; mean over repeats"
+  },
+  "note": "quiet = max OAC score of the two top-H&E samples below the fold's cn90 bar (defined for every endoscopy, as if sequenced); TTE = years before the reference date (event for progressors)"
+ }
+}
