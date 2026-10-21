@@ -80,7 +80,7 @@ def prep_clin(S):
     info["patients_linked_to_demographics"] = int(sum(stud.get(p) in dmi for p in up)); info["smoking_known_patients"] = int(np.isfinite(smk).sum()); info["prague_M_demographics_patients"] = int(np.isfinite(demM).sum())
     # Barrett's database endoscopies (Prague per endoscopy) and last record date
     en = pd.concat([pd.read_parquet(DBX + f"/{f}", columns=["participant_id", "endoscopydate", "barretts_circumference", "barretts_maximum"]) for f in ("endoscopy.parquet", "mat_endoscopy_full.parquet")])
-    en["pid"] = en.participant_id.astype(str).str.replace(r"\.0$", "", regex=True); en["d"] = pd.to_datetime(en.endoscopydate, errors="coerce"); en["Mx"] = pd.to_numeric(en.barretts_maximum, errors="coerce"); en["Cx"] = pd.to_numeric(en.barretts_circumference, errors="coerce")
+    en["pid"] = en.participant_id.astype(str).str.replace(r"\.0$", "", regex=True); en["d"] = pd.to_datetime(en.endoscopydate, dayfirst=True, errors="coerce"); en["Mx"] = pd.to_numeric(en.barretts_maximum, errors="coerce"); en["Cx"] = pd.to_numeric(en.barretts_circumference, errors="coerce")
     en = en.dropna(subset=["d"]); en.loc[(en.Mx < 0) | (en.Mx > 25), "Mx"] = np.nan; en.loc[(en.Cx < 0) | (en.Cx > 25), "Cx"] = np.nan
     pt = L["pt"]; link = L["link"]; Me = np.full(E, np.nan); Ce = np.full(E, np.nan); msrc = np.zeros(E, int); last = np.full(len(up), np.nan)   # msrc 1 = DB at the endoscopy (+-60 d), 2 = demographics, 3 = DB patient median, 0 = missing
     for i, p in enumerate(up):
@@ -106,9 +106,10 @@ def prep_clin(S):
     for i, p in enumerate(up):
         if S["plab"][i] != 1: continue
         if fb.get(p, False): ev[i] = "none"; continue
-        rows = A[(A.Patient == p) & ((A.mbf - float(tev[p])).abs() < 1e-9)]
-        imc = (rows.Pathology == "IMC").any() or rows.ogd.isin(["IMC"]).any(); hgd = (rows.Pathology == "HGD").any() or rows.ogd.isin(["HGD", "HGD/IMC"]).any()
-        ev[i] = "IMC" if imc else ("HGD" if hgd else "none"); focal[i] = bool(rows.note.str.contains("focal").any() and rows.note.str.contains("hgd").any())
+        rows = A[(A.Patient == p) & ((A.mbf - float(tev[p])).abs() < 1e-9)]; fr = fd[(fd.Patient.astype(str).str.replace(r"\.0$", "", regex=True) == p) & ((pd.to_numeric(fd["Months before final"], errors="coerce") - float(tev[p])).abs() < 1e-9)]
+        grades = pd.concat([rows.Pathology.astype(str), rows.ogd.astype(str), fr.Pathology.astype(str), fr.Path_class_per_OGD.astype(str)]).str.upper()
+        notes = pd.concat([rows.note, (fr["notes on label review"].fillna("").astype(str) + " | " + fr["Pathology notes"].fillna("").astype(str)).str.lower()])
+        ev[i] = "IMC" if grades.str.contains("IMC").any() else ("HGD" if grades.str.contains("HGD").any() else "none"); focal[i] = bool(notes.str.contains("focal").any())   # HGD/IMC OGD class counted as IMC (conservative)
     info["event_type_pre_event_progressors"] = {k: int((ev == k).sum()) for k in ("HGD", "IMC", "none")}; info["focal_hgd_noted"] = int((focal & (ev == "HGD")).sum()); info["expected_data_md_Q8"] = {"HGD": 21, "IMC": 7, "none": 4, "focal_of_HGD": 7}
     GRv = SM.Pathology.map({"NDBE": 0, "ID": 1, "LGD": 2, "HGD": 3, "IMC": 4}).values.astype(float); lgd = np.array([(GRv[s] == 2).any() for s in es])
     age_first = np.array([SM.age.values[S["es"][S["ORD"][i][0]]].mean() for i in range(len(up))]); sexM = np.array([SM.sex_M.values[S["es"][S["ORD"][i][0]]].mean() for i in range(len(up))])
@@ -324,8 +325,9 @@ elif TASK == "design":
     TWO = {}
     for k in RULES:
         F = R[k][0]; low = ~F; low_prev = np.where(prev[:, None] >= 0, low[np.maximum(prev, 0)], False); deesc1 = low; deesc2 = low & low_prev
-        lastE = np.array([o[-1] for o in S["ORD"]]); blk = {}
-        for nm, DE in (("single_look", deesc1), ("two_consecutive_lows", deesc2)):
+        lastE = np.array([o[-1] for o in S["ORD"]]); blk = {}; nfd = np.zeros_like(F)
+        for o in S["ORD"]: nfd[o] = ~np.maximum.accumulate(F[o], axis=0)   # never flagged up to and including this endoscopy
+        for nm, DE in (("single_look", deesc1), ("two_consecutive_lows", deesc2), ("never_flagged_to_date_single_look", deesc1 & nfd), ("never_flagged_to_date_two_consecutive_lows", deesc2 & nfd)):
             ever = (S["INC"] @ DE.astype(float)) > 0; atlast = DE[lastE]; neverfl = A[k]["FL"] == 0; Mb = np.vstack([one, D])
             share_np_endo = (S["INC"][~isP] @ DE.astype(float)).sum(0) / S["NE"][~isP].sum()
             def cnt(X, cls):
@@ -337,7 +339,9 @@ elif TASK == "design":
         dd = {}
         for key in ("np_ever_deescalated", "np_deescalated_at_last_endoscopy", "np_never_flagged_and_deescalated", "progressors_deescalated_at_last_pre_event_endoscopy", "progressors_ever_deescalated_before_event"):
             dd[key] = r2(blk["two_consecutive_lows"][key]["value"] - blk["single_look"][key]["value"])
-        blk["two_lows_minus_single_look"] = dd; TWO[k] = blk
+        blk["two_lows_minus_single_look"] = dd; dd2 = {}
+        for key in dd: dd2[key] = r2(blk["never_flagged_to_date_two_consecutive_lows"][key]["value"] - blk["never_flagged_to_date_single_look"][key]["value"])
+        blk["two_lows_minus_single_look_never_flagged_to_date"] = dd2; TWO[k] = blk
     out["two_lows"] = TWO
     # ---- item 4: safety block (missed = never flagged; 'cleared progressor' = not flagged at the last pre-event endoscopy)
     lastE = np.array([o[-1] for o in S["ORD"]]); ev = CL["ev"]; foc = CL["focal"]; Mlast = CL["Me"][lastE]; tlast = TTE[lastE]; ne1 = S["NE"] == 1
@@ -408,6 +412,20 @@ elif TASK == "comp":
     for a, s_ in (("prague_mem", "prague_single"), ("parasa_mem", "parasa_single"), ("prague_M_ge3_ew2", "prague_M_ge3"), ("parasa_gt10_ew2", "parasa_gt10"), ("parasa_gt20_ew2", "parasa_gt20")):
         if a in A and s_ in A: out[f"{a} - {s_} (memory gain)"] = G7["delta"](S, A[a], A[s_], D)
     for k in MAIN: out[k] = {"name": NAMES[k], **tier_block(S, A[k], D)}
+    # evaluation-matched clinical scores (OPTIMISTIC for the comparator: its threshold is set on the evaluated patients, per repeat)
+    def env(MGk, tc, tn):
+        a, b = [], []
+        for j in range(10):
+            pm = np.array([MGk[S["pidx"] == i, j].max() for i in range(S["P_"])]); th = np.unique(pm); cau = np.array([(isP & (pm >= t)).sum() for t in th]); npf = np.array([(~isP & (pm >= t)).sum() for t in th])
+            ok = cau >= np.floor(tc + 1e-9); a.append(npf[ok].min() if ok.any() else np.nan); ok2 = npf <= tn + 1e-9; b.append(cau[ok2].max() if ok2.any() else 0)
+        return r2(np.nanmean(a)), r2(np.mean(b))
+    mt = {}
+    for k in ("prague_single", "prague_mem", "parasa_single", "parasa_mem"):
+        if k in MG:
+            for t in MAIN:
+                tc = out[t]["caught"]["value"]; tn = out[t]["np_flagged"]["value"]; npf, cau = env(MG[k], tc, tn)
+                mt[f"{k} at {t}"] = {"tier_caught": tc, "tier_np_flagged": tn, "comparator_np_flagged_at_caught_ge_floor_of_tier": npf, "comparator_caught_at_np_flagged_le_tier": cau}
+    out["evaluation_matched_optimistic"] = mt
     # matched: NP flagged by each tier minus the clinical score at the tier's own caught count (evaluation-matched, optimistic for the comparator) via the margin dial
     out["note"] = ("Parasa-style score per endoscopy = 9 x male + 5 x smoker + Prague M (cm) + 11 x LGD at the endoscopy (Parasa et al., Gastroenterology 2018); missing Prague M = training-endoscopy median, missing smoking = training share of smokers x 5 "
                    "(training-chosen rows) or 0 (fixed cut-off rows); 'training threshold' rows use the round-9 rule (highest threshold reaching the R49 gate's own training progressor-patient detection; half-life 1/2/4 y by fewest training NP flagged)")
