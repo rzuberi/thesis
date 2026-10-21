@@ -1,0 +1,42 @@
+{
+ "ERIN": {
+  "P": 36,
+  "P_with_ge3": 14,
+  "NP_pool": 62,
+  "NP_sampled": 62,
+  "NP_sampling_fraction": 1.0,
+  "endoscopies": 313,
+  "endoscopies_P": 97,
+  "endoscopies_NP": 216,
+  "already_scanned": 8,
+  "to_scan": 305,
+  "to_scan_before_2011": 0,
+  "to_scan_2011_2015": 62,
+  "to_scan_2016_on": 243,
+  "slides_est_all_oes_blocks": 1063,
+  "slides_cap2": 565,
+  "slides_cap2_slides_before_2016": 110,
+  "match_abs_year_diff_median": 0.5,
+  "match_within_3y_share": 0.871
+ },
+ "DB": {
+  "P": 74,
+  "P_with_ge3": 48,
+  "NP_pool": 309,
+  "NP_sampled": 148,
+  "NP_sampling_fraction": 0.479,
+  "endoscopies": 982,
+  "endoscopies_P": 313,
+  "endoscopies_NP": 669,
+  "already_scanned": 5,
+  "to_scan": 977,
+  "to_scan_before_2011": 395,
+  "to_scan_2011_2015": 333,
+  "to_scan_2016_on": 249,
+  "slides_est_all_oes_blocks": 1954,
+  "slides_cap2": 1954,
+  "slides_cap2_slides_before_2016": 1456,
+  "match_abs_year_diff_median": 0.0,
+  "match_within_3y_share": 0.845
+ }
+}

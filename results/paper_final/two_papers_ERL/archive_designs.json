@@ -1,0 +1,607 @@
+{
+ "erin_scanned_slides_per_oes_section_median": 1.0,
+ "erin_oes_sections_per_endoscopy_median": 2.0,
+ "db_dates_unparsed": 0,
+ "db_swg_excluded_participants": 162,
+ "db_participants": {
+  "with_pathology": 3581,
+  "barretts_pre_event": 1609,
+  "eligible_nonoverlap": 1476,
+  "eligible_progressors_any": 145,
+  "pathology_year_min": 1995,
+  "pathology_year_max": 2026
+ },
+ "db_k3_h5_prague_M_available": 356,
+ "scanner": {
+  "fic_checked": 1500,
+  "fic_missing": 0,
+  "manufacturer": {
+   "PHILIPS": 1487,
+   "Objective Imaging": 13
+  },
+  "model": {
+   "UFS B300": 1487,
+   "?": 13
+  },
+  "distinct_devices": 6,
+  "scan_year_minus_case_year (3 = 3+)": {
+   "0": 1465,
+   "1": 21,
+   "2": 1
+  },
+  "level0_um_per_px (first 300)": {
+   "0.2483": 125,
+   "0.2481": 31,
+   "0.2477": 24,
+   "0.2476": 29,
+   "0.2484": 17,
+   "0.248": 30,
+   "0.2482": 38,
+   "0.2626": 3,
+   "0.2478": 2,
+   "0.2627": 1
+  }
+ },
+ "designs": {
+  "ERIN_k2_h3": {
+   "progressors": 36,
+   "non_progressors": 313,
+   "endoscopies_P": 97,
+   "endoscopies_NP": 852,
+   "endoscopies_already_scanned": 8,
+   "endoscopies_to_scan": 941,
+   "endoscopies_to_scan_by_era": {
+    "before_2016": 145,
+    "2016_2021": 789,
+    "2022_on": 7
+   },
+   "slides_all_oes_blocks": 2511,
+   "slides_cap2_per_endoscopy": 1690,
+   "np_person_years_after_kth_all_eligible_NP": 1773.0,
+   "np_all_with_k": 798,
+   "p_person_years_kth_to_event": 89.0,
+   "crude_incidence_after_kth_per_100py": 1.93,
+   "p_years_kth_to_event_median": 2.19,
+   "np_followup_after_kth_median_y": 5.02
+  },
+  "ERIN_k2_h5": {
+   "progressors": 36,
+   "non_progressors": 159,
+   "endoscopies_P": 97,
+   "endoscopies_NP": 410,
+   "endoscopies_already_scanned": 8,
+   "endoscopies_to_scan": 499,
+   "endoscopies_to_scan_by_era": {
+    "before_2016": 103,
+    "2016_2021": 393,
+    "2022_on": "<5"
+   },
+   "slides_all_oes_blocks": 1421,
+   "slides_cap2_per_endoscopy": 912,
+   "np_person_years_after_kth_all_eligible_NP": 1773.0,
+   "np_all_with_k": 798,
+   "p_person_years_kth_to_event": 89.0,
+   "crude_incidence_after_kth_per_100py": 1.93,
+   "p_years_kth_to_event_median": 2.19,
+   "np_followup_after_kth_median_y": 6.15
+  },
+  "ERIN_k3_h3": {
+   "progressors": 14,
+   "non_progressors": 141,
+   "endoscopies_P": 53,
+   "endoscopies_NP": 508,
+   "endoscopies_already_scanned": "<5",
+   "endoscopies_to_scan": 559,
+   "endoscopies_to_scan_by_era": {
+    "before_2016": 79,
+    "2016_2021": 476,
+    "2022_on": "<5"
+   },
+   "slides_all_oes_blocks": 1665,
+   "slides_cap2_per_endoscopy": 1036,
+   "np_person_years_after_kth_all_eligible_NP": 828.0,
+   "np_all_with_k": 403,
+   "p_person_years_kth_to_event": 36.0,
+   "crude_incidence_after_kth_per_100py": 1.62,
+   "p_years_kth_to_event_median": 2.55,
+   "np_followup_after_kth_median_y": 4.72
+  },
+  "ERIN_k3_h5": {
+   "progressors": 14,
+   "non_progressors": 62,
+   "endoscopies_P": 53,
+   "endoscopies_NP": 216,
+   "endoscopies_already_scanned": "<5",
+   "endoscopies_to_scan": 267,
+   "endoscopies_to_scan_by_era": {
+    "before_2016": 56,
+    "2016_2021": 208,
+    "2022_on": "<5"
+   },
+   "slides_all_oes_blocks": 824,
+   "slides_cap2_per_endoscopy": 493,
+   "np_person_years_after_kth_all_eligible_NP": 828.0,
+   "np_all_with_k": 403,
+   "p_person_years_kth_to_event": 36.0,
+   "crude_incidence_after_kth_per_100py": 1.62,
+   "p_years_kth_to_event_median": 2.55,
+   "np_followup_after_kth_median_y": 5.99
+  },
+  "DB_k2_h3": {
+   "progressors": 74,
+   "non_progressors": 541,
+   "endoscopies_P": 313,
+   "endoscopies_NP": 2449,
+   "endoscopies_already_scanned": 10,
+   "endoscopies_to_scan": 2752,
+   "endoscopies_to_scan_by_era": {
+    "before_2016": 2176,
+    "2016_2021": 552,
+    "2022_on": 24
+   },
+   "slides_all_oes_blocks": 5504,
+   "slides_cap2_per_endoscopy": 5504,
+   "np_person_years_after_kth_all_eligible_NP": 5261.0,
+   "np_all_with_k": 881,
+   "p_person_years_kth_to_event": 308.0,
+   "crude_incidence_after_kth_per_100py": 1.33,
+   "p_years_kth_to_event_median": 3.06,
+   "np_followup_after_kth_median_y": 8.06,
+   "endoscopies_with_accession_in_erin_reports": 590,
+   "endoscopies_without_accession": 50
+  },
+  "DB_k2_h5": {
+   "progressors": 74,
+   "non_progressors": 434,
+   "endoscopies_P": 313,
+   "endoscopies_NP": 1894,
+   "endoscopies_already_scanned": 5,
+   "endoscopies_to_scan": 2202,
+   "endoscopies_to_scan_by_era": {
+    "before_2016": 1844,
+    "2016_2021": 354,
+    "2022_on": "<5"
+   },
+   "slides_all_oes_blocks": 4404,
+   "slides_cap2_per_endoscopy": 4404,
+   "np_person_years_after_kth_all_eligible_NP": 5261.0,
+   "np_all_with_k": 881,
+   "p_person_years_kth_to_event": 308.0,
+   "crude_incidence_after_kth_per_100py": 1.33,
+   "p_years_kth_to_event_median": 3.06,
+   "np_followup_after_kth_median_y": 9.26,
+   "endoscopies_with_accession_in_erin_reports": 398,
+   "endoscopies_without_accession": 33
+  },
+  "DB_k3_h3": {
+   "progressors": 48,
+   "non_progressors": 403,
+   "endoscopies_P": 261,
+   "endoscopies_NP": 2173,
+   "endoscopies_already_scanned": "<5",
+   "endoscopies_to_scan": 2430,
+   "endoscopies_to_scan_by_era": {
+    "before_2016": 1961,
+    "2016_2021": 454,
+    "2022_on": 15
+   },
+   "slides_all_oes_blocks": 4860,
+   "slides_cap2_per_endoscopy": 4860,
+   "np_person_years_after_kth_all_eligible_NP": 3759.0,
+   "np_all_with_k": 611,
+   "p_person_years_kth_to_event": 220.0,
+   "crude_incidence_after_kth_per_100py": 1.21,
+   "p_years_kth_to_event_median": 3.01,
+   "np_followup_after_kth_median_y": 7.79,
+   "endoscopies_with_accession_in_erin_reports": 486,
+   "endoscopies_without_accession": 40
+  },
+  "DB_k3_h5": {
+   "progressors": 48,
+   "non_progressors": 309,
+   "endoscopies_P": 261,
+   "endoscopies_NP": 1644,
+   "endoscopies_already_scanned": 0,
+   "endoscopies_to_scan": 1905,
+   "endoscopies_to_scan_by_era": {
+    "before_2016": 1625,
+    "2016_2021": 280,
+    "2022_on": 0
+   },
+   "slides_all_oes_blocks": 3810,
+   "slides_cap2_per_endoscopy": 3810,
+   "np_person_years_after_kth_all_eligible_NP": 3759.0,
+   "np_all_with_k": 611,
+   "p_person_years_kth_to_event": 220.0,
+   "crude_incidence_after_kth_per_100py": 1.21,
+   "p_years_kth_to_event_median": 3.01,
+   "np_followup_after_kth_median_y": 9.11,
+   "endoscopies_with_accession_in_erin_reports": 321,
+   "endoscopies_without_accession": 25
+  }
+ },
+ "power": {
+  "assumptions": {
+   "np_cleared_fraction": 0.381,
+   "progressor_miss_fraction": 0.031,
+   "safety_bar_per_year": 0.002,
+   "py_needed_for_upper95_le_bar": {
+    "x=0": 1844,
+    "x=1": 2786,
+    "x=2": 3612,
+    "x=3": 4384
+   }
+  },
+  "scanned_only_step1": {
+   "note": "progressors with >= 2 scanned pre-event endoscopies <5, with >= 3: 0; non-progressors with >= 1 y follow-up after the last scanned endoscopy: 0 -> no CI is meaningful"
+  },
+  "ERIN_k2_h3": {
+   "nP": 36,
+   "nNP": 313,
+   "np_cleared_ci": [
+    0.326,
+    0.436
+   ],
+   "np_cleared_ci_width": 0.11,
+   "missed_expected": 1.12,
+   "missed_ci_if_0": [
+    0.0,
+    0.097
+   ],
+   "missed_ci_if_1": [
+    0.001,
+    0.145
+   ],
+   "deescalated_py_cohort": 676.0,
+   "upper95_rate_if_0_missed_per_100py": 0.546,
+   "upper95_rate_if_expected_missed_per_100py": 0.824,
+   "safety_bar_assessable_if_0_missed": false,
+   "safety_bar_assessable_at_expected_misses": false
+  },
+  "ERIN_k2_h3_NP_2per_P": {
+   "nP": 36,
+   "nNP": 72,
+   "np_cleared_ci": [
+    0.264,
+    0.497
+   ],
+   "np_cleared_ci_width": 0.233,
+   "missed_expected": 1.12,
+   "missed_ci_if_0": [
+    0.0,
+    0.097
+   ],
+   "missed_ci_if_1": [
+    0.001,
+    0.145
+   ],
+   "deescalated_py_cohort": 676.0,
+   "upper95_rate_if_0_missed_per_100py": 0.546,
+   "upper95_rate_if_expected_missed_per_100py": 0.824,
+   "safety_bar_assessable_if_0_missed": false,
+   "safety_bar_assessable_at_expected_misses": false
+  },
+  "ERIN_k2_h5": {
+   "nP": 36,
+   "nNP": 159,
+   "np_cleared_ci": [
+    0.308,
+    0.464
+   ],
+   "np_cleared_ci_width": 0.156,
+   "missed_expected": 1.12,
+   "missed_ci_if_0": [
+    0.0,
+    0.097
+   ],
+   "missed_ci_if_1": [
+    0.001,
+    0.145
+   ],
+   "deescalated_py_cohort": 676.0,
+   "upper95_rate_if_0_missed_per_100py": 0.546,
+   "upper95_rate_if_expected_missed_per_100py": 0.824,
+   "safety_bar_assessable_if_0_missed": false,
+   "safety_bar_assessable_at_expected_misses": false
+  },
+  "ERIN_k2_h5_NP_2per_P": {
+   "nP": 36,
+   "nNP": 72,
+   "np_cleared_ci": [
+    0.264,
+    0.497
+   ],
+   "np_cleared_ci_width": 0.233,
+   "missed_expected": 1.12,
+   "missed_ci_if_0": [
+    0.0,
+    0.097
+   ],
+   "missed_ci_if_1": [
+    0.001,
+    0.145
+   ],
+   "deescalated_py_cohort": 676.0,
+   "upper95_rate_if_0_missed_per_100py": 0.546,
+   "upper95_rate_if_expected_missed_per_100py": 0.824,
+   "safety_bar_assessable_if_0_missed": false,
+   "safety_bar_assessable_at_expected_misses": false
+  },
+  "ERIN_k3_h3": {
+   "nP": 14,
+   "nNP": 141,
+   "np_cleared_ci": [
+    0.302,
+    0.469
+   ],
+   "np_cleared_ci_width": 0.167,
+   "missed_expected": 0.44,
+   "missed_ci_if_0": [
+    0.0,
+    0.232
+   ],
+   "missed_ci_if_1": [
+    0.002,
+    0.339
+   ],
+   "deescalated_py_cohort": 316.0,
+   "upper95_rate_if_0_missed_per_100py": 1.168,
+   "upper95_rate_if_expected_missed_per_100py": 1.168,
+   "safety_bar_assessable_if_0_missed": false,
+   "safety_bar_assessable_at_expected_misses": false
+  },
+  "ERIN_k3_h3_NP_2per_P": {
+   "nP": 14,
+   "nNP": 28,
+   "np_cleared_ci": [
+    0.215,
+    0.594
+   ],
+   "np_cleared_ci_width": 0.379,
+   "missed_expected": 0.44,
+   "missed_ci_if_0": [
+    0.0,
+    0.232
+   ],
+   "missed_ci_if_1": [
+    0.002,
+    0.339
+   ],
+   "deescalated_py_cohort": 316.0,
+   "upper95_rate_if_0_missed_per_100py": 1.168,
+   "upper95_rate_if_expected_missed_per_100py": 1.168,
+   "safety_bar_assessable_if_0_missed": false,
+   "safety_bar_assessable_at_expected_misses": false
+  },
+  "ERIN_k3_h5": {
+   "nP": 14,
+   "nNP": 62,
+   "np_cleared_ci": [
+    0.266,
+    0.519
+   ],
+   "np_cleared_ci_width": 0.253,
+   "missed_expected": 0.44,
+   "missed_ci_if_0": [
+    0.0,
+    0.232
+   ],
+   "missed_ci_if_1": [
+    0.002,
+    0.339
+   ],
+   "deescalated_py_cohort": 316.0,
+   "upper95_rate_if_0_missed_per_100py": 1.168,
+   "upper95_rate_if_expected_missed_per_100py": 1.168,
+   "safety_bar_assessable_if_0_missed": false,
+   "safety_bar_assessable_at_expected_misses": false
+  },
+  "ERIN_k3_h5_NP_2per_P": {
+   "nP": 14,
+   "nNP": 28,
+   "np_cleared_ci": [
+    0.215,
+    0.594
+   ],
+   "np_cleared_ci_width": 0.379,
+   "missed_expected": 0.44,
+   "missed_ci_if_0": [
+    0.0,
+    0.232
+   ],
+   "missed_ci_if_1": [
+    0.002,
+    0.339
+   ],
+   "deescalated_py_cohort": 316.0,
+   "upper95_rate_if_0_missed_per_100py": 1.168,
+   "upper95_rate_if_expected_missed_per_100py": 1.168,
+   "safety_bar_assessable_if_0_missed": false,
+   "safety_bar_assessable_at_expected_misses": false
+  },
+  "DB_k2_h3": {
+   "nP": 74,
+   "nNP": 541,
+   "np_cleared_ci": [
+    0.34,
+    0.423
+   ],
+   "np_cleared_ci_width": 0.083,
+   "missed_expected": 2.31,
+   "missed_ci_if_0": [
+    0.0,
+    0.049
+   ],
+   "missed_ci_if_1": [
+    0.0,
+    0.073
+   ],
+   "deescalated_py_cohort": 2007.0,
+   "upper95_rate_if_0_missed_per_100py": 0.184,
+   "upper95_rate_if_expected_missed_per_100py": 0.36,
+   "safety_bar_assessable_if_0_missed": true,
+   "safety_bar_assessable_at_expected_misses": false
+  },
+  "DB_k2_h3_NP_2per_P": {
+   "nP": 74,
+   "nNP": 148,
+   "np_cleared_ci": [
+    0.3,
+    0.462
+   ],
+   "np_cleared_ci_width": 0.162,
+   "missed_expected": 2.31,
+   "missed_ci_if_0": [
+    0.0,
+    0.049
+   ],
+   "missed_ci_if_1": [
+    0.0,
+    0.073
+   ],
+   "deescalated_py_cohort": 2007.0,
+   "upper95_rate_if_0_missed_per_100py": 0.184,
+   "upper95_rate_if_expected_missed_per_100py": 0.36,
+   "safety_bar_assessable_if_0_missed": true,
+   "safety_bar_assessable_at_expected_misses": false
+  },
+  "DB_k2_h5": {
+   "nP": 74,
+   "nNP": 434,
+   "np_cleared_ci": [
+    0.337,
+    0.43
+   ],
+   "np_cleared_ci_width": 0.093,
+   "missed_expected": 2.31,
+   "missed_ci_if_0": [
+    0.0,
+    0.049
+   ],
+   "missed_ci_if_1": [
+    0.0,
+    0.073
+   ],
+   "deescalated_py_cohort": 2007.0,
+   "upper95_rate_if_0_missed_per_100py": 0.184,
+   "upper95_rate_if_expected_missed_per_100py": 0.36,
+   "safety_bar_assessable_if_0_missed": true,
+   "safety_bar_assessable_at_expected_misses": false
+  },
+  "DB_k2_h5_NP_2per_P": {
+   "nP": 74,
+   "nNP": 148,
+   "np_cleared_ci": [
+    0.3,
+    0.462
+   ],
+   "np_cleared_ci_width": 0.162,
+   "missed_expected": 2.31,
+   "missed_ci_if_0": [
+    0.0,
+    0.049
+   ],
+   "missed_ci_if_1": [
+    0.0,
+    0.073
+   ],
+   "deescalated_py_cohort": 2007.0,
+   "upper95_rate_if_0_missed_per_100py": 0.184,
+   "upper95_rate_if_expected_missed_per_100py": 0.36,
+   "safety_bar_assessable_if_0_missed": true,
+   "safety_bar_assessable_at_expected_misses": false
+  },
+  "DB_k3_h3": {
+   "nP": 48,
+   "nNP": 403,
+   "np_cleared_ci": [
+    0.334,
+    0.432
+   ],
+   "np_cleared_ci_width": 0.098,
+   "missed_expected": 1.5,
+   "missed_ci_if_0": [
+    0.0,
+    0.074
+   ],
+   "missed_ci_if_1": [
+    0.001,
+    0.111
+   ],
+   "deescalated_py_cohort": 1434.0,
+   "upper95_rate_if_0_missed_per_100py": 0.257,
+   "upper95_rate_if_expected_missed_per_100py": 0.504,
+   "safety_bar_assessable_if_0_missed": false,
+   "safety_bar_assessable_at_expected_misses": false
+  },
+  "DB_k3_h3_NP_2per_P": {
+   "nP": 48,
+   "nNP": 96,
+   "np_cleared_ci": [
+    0.288,
+    0.49
+   ],
+   "np_cleared_ci_width": 0.202,
+   "missed_expected": 1.5,
+   "missed_ci_if_0": [
+    0.0,
+    0.074
+   ],
+   "missed_ci_if_1": [
+    0.001,
+    0.111
+   ],
+   "deescalated_py_cohort": 1434.0,
+   "upper95_rate_if_0_missed_per_100py": 0.257,
+   "upper95_rate_if_expected_missed_per_100py": 0.504,
+   "safety_bar_assessable_if_0_missed": false,
+   "safety_bar_assessable_at_expected_misses": false
+  },
+  "DB_k3_h5": {
+   "nP": 48,
+   "nNP": 309,
+   "np_cleared_ci": [
+    0.327,
+    0.439
+   ],
+   "np_cleared_ci_width": 0.112,
+   "missed_expected": 1.5,
+   "missed_ci_if_0": [
+    0.0,
+    0.074
+   ],
+   "missed_ci_if_1": [
+    0.001,
+    0.111
+   ],
+   "deescalated_py_cohort": 1434.0,
+   "upper95_rate_if_0_missed_per_100py": 0.257,
+   "upper95_rate_if_expected_missed_per_100py": 0.504,
+   "safety_bar_assessable_if_0_missed": false,
+   "safety_bar_assessable_at_expected_misses": false
+  },
+  "DB_k3_h5_NP_2per_P": {
+   "nP": 48,
+   "nNP": 96,
+   "np_cleared_ci": [
+    0.288,
+    0.49
+   ],
+   "np_cleared_ci_width": 0.202,
+   "missed_expected": 1.5,
+   "missed_ci_if_0": [
+    0.0,
+    0.074
+   ],
+   "missed_ci_if_1": [
+    0.001,
+    0.111
+   ],
+   "deescalated_py_cohort": 1434.0,
+   "upper95_rate_if_0_missed_per_100py": 0.257,
+   "upper95_rate_if_expected_missed_per_100py": 0.504,
+   "safety_bar_assessable_if_0_missed": false,
+   "safety_bar_assessable_at_expected_misses": false
+  }
+ }
+}

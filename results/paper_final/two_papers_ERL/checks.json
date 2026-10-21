@@ -1,0 +1,76 @@
+{
+ "smoke_digest_funnel": {
+  "index_patients": 2092,
+  "y3_defined": 836,
+  "y3_pos": 115,
+  "y3_defined_2014_2021": 799,
+  "y3_pos_2014_2021": 79,
+  "expected": {
+   "index_patients": 2092,
+   "y3_defined": 836,
+   "y3_pos": 115,
+   "y3_defined_2014_2021": 818,
+   "y3_pos_2014_2021": 97
+  }
+ },
+ "DB_from2005_k2_h3": {
+  "progressors": 68,
+  "non_progressors": 453,
+  "endoscopies": 2099,
+  "slides_est_2_per_endoscopy": 4198,
+  "np_py_cohort": 4138,
+  "upper95_if_0_missed_per_100py": 0.234,
+  "upper95_at_expected_missed_per_100py": 0.458,
+  "crude_incidence_per_100py": 1.54
+ },
+ "DB_from2005_k3_h5": {
+  "progressors": 43,
+  "non_progressors": 242,
+  "endoscopies": 1360,
+  "slides_est_2_per_endoscopy": 2720,
+  "np_py_cohort": 2820,
+  "upper95_if_0_missed_per_100py": 0.343,
+  "upper95_at_expected_missed_per_100py": 0.518,
+  "crude_incidence_per_100py": 1.43
+ },
+ "DB_from2010_k2_h3": {
+  "progressors": 59,
+  "non_progressors": 329,
+  "endoscopies": 1357,
+  "slides_est_2_per_endoscopy": 2714,
+  "np_py_cohort": 2734,
+  "upper95_if_0_missed_per_100py": 0.354,
+  "upper95_at_expected_missed_per_100py": 0.693,
+  "crude_incidence_per_100py": 2.03
+ },
+ "DB_from2010_k3_h5": {
+  "progressors": 34,
+  "non_progressors": 160,
+  "endoscopies": 793,
+  "slides_est_2_per_endoscopy": 1586,
+  "np_py_cohort": 1695,
+  "upper95_if_0_missed_per_100py": 0.571,
+  "upper95_at_expected_missed_per_100py": 0.862,
+  "crude_incidence_per_100py": 1.89
+ },
+ "DB_from2014_k2_h3": {
+  "progressors": 39,
+  "non_progressors": 219,
+  "endoscopies": 762,
+  "slides_est_2_per_endoscopy": 1524,
+  "np_py_cohort": 1521,
+  "upper95_if_0_missed_per_100py": 0.636,
+  "upper95_at_expected_missed_per_100py": 0.96,
+  "crude_incidence_per_100py": 2.43
+ },
+ "DB_from2014_k3_h5": {
+  "progressors": 14,
+  "non_progressors": 74,
+  "endoscopies": 319,
+  "slides_est_2_per_endoscopy": 638,
+  "np_py_cohort": 796,
+  "upper95_if_0_missed_per_100py": 1.215,
+  "upper95_at_expected_missed_per_100py": 1.215,
+  "crude_incidence_per_100py": 1.7
+ }
+}

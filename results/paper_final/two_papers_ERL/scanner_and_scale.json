@@ -1,0 +1,83 @@
+{
+ "n_sampled": 200,
+ "open_failed": 0,
+ "openslide_vendor": {
+  "generic-tiff": 200
+ },
+ "tiff_make": {
+  "": 200
+ },
+ "tiff_model": {
+  "": 200
+ },
+ "tiff_software": {
+  "": 200
+ },
+ "image_description_scanner_tokens": {},
+ "image_description_fields": {},
+ "level_count": {
+  "10": 161,
+  "9": 36,
+  "8": 2,
+  "2": 1
+ },
+ "level_downsamples": {
+  "(1.0, 2.0, 4.0, 8.0, 16.0, 32.0, 64.0, 128.0, 256.0, 512.0)": 161,
+  "(1.0, 2.0, 4.0, 8.0, 16.0, 32.0, 64.0, 128.0, 256.0)": 36,
+  "(1.0, 2.0, 4.0, 8.0, 16.0, 32.0, 64.0, 128.0)": 2,
+  "(1.0, 2.0)": 1
+ },
+ "openslide_mpp_x": {
+  "none": 200
+ },
+ "property_keys_top": [
+  "openslide.level-count",
+  "openslide.level[0].downsample",
+  "openslide.level[0].height",
+  "openslide.level[0].tile-height",
+  "openslide.level[0].tile-width",
+  "openslide.level[0].width",
+  "openslide.level[1].downsample",
+  "openslide.level[1].height",
+  "openslide.level[1].tile-height",
+  "openslide.level[1].tile-width",
+  "openslide.level[1].width",
+  "openslide.vendor",
+  "tiff.ResolutionUnit",
+  "openslide.level[2].downsample",
+  "openslide.level[2].height",
+  "openslide.level[2].tile-height",
+  "openslide.level[2].tile-width",
+  "openslide.level[2].width",
+  "openslide.level[3].downsample",
+  "openslide.level[3].height",
+  "openslide.level[3].tile-height",
+  "openslide.level[3].tile-width",
+  "openslide.level[3].width",
+  "openslide.level[4].downsample",
+  "openslide.level[4].height",
+  "openslide.level[4].tile-height",
+  "openslide.level[4].tile-width",
+  "openslide.level[4].width",
+  "openslide.level[5].downsample",
+  "openslide.level[5].height",
+  "openslide.level[5].tile-height",
+  "openslide.level[5].tile-width",
+  "openslide.level[5].width",
+  "openslide.level[6].downsample",
+  "openslide.level[6].height",
+  "openslide.level[6].tile-height",
+  "openslide.level[6].tile-width",
+  "openslide.level[6].width",
+  "openslide.level[7].downsample",
+  "openslide.level[7].height"
+ ],
+ "level0_width_median": 172032,
+ "level0_height_median": 85504,
+ "stored_feature_attrs": {
+  "level=1": 60,
+  "mpp_used=0.5": 60
+ },
+ "stored_feature_tiles_per_slide_median": 2319.0,
+ "n_feature_files_checked": 60
+}

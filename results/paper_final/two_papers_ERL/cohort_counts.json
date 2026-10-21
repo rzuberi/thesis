@@ -1,0 +1,336 @@
+{
+ "sources": {
+  "reports": 7149,
+  "report_cases": 7101,
+  "report_patients": 2537,
+  "labelled_cases": 7101,
+  "v3_sections": 23254,
+  "v3_cases": 7049,
+  "slides": 12347,
+  "isbi_oes_slides": 7924,
+  "exclude_pairs_file": 55,
+  "exclude_e5_union": 70,
+  "exclude_union": 70,
+  "report_date_min_year": 2014,
+  "report_date_max": "2025-03",
+  "report_date_missing": 0
+ },
+ "specimen_protocol_top": {
+  "OESOPHAGUS": 6654,
+  "OESOPHAGUS, PART/TOT RESECTION": 490,
+  "POLYP, STOMACH/SMALL INTESTINE": 1,
+  "ADIPOSE TISSUE": 1,
+  "DIVERTICULUM-OESOPHAGUS/SM INT": 1,
+  "STOMACH, BIOPSY": 1,
+  "LYMPH NODES, REGIONAL RESECT": 1
+ },
+ "slides_he": 11680,
+ "slides_oes_he_nonemr": 6840,
+ "slides_isbi_and_oes": 6840,
+ "endoscopies_all": 7099,
+ "patients_all": 2537,
+ "step1_scanned_primary": {
+  "patients_barretts_nonoverlap": 1665,
+  "overlap_excluded_with_any_pre": 14,
+  "ge1": {
+   "progressors": 15,
+   "non_progressors": 944,
+   "np_fu_ge_1y": 5,
+   "np_fu_ge_2y": 0,
+   "np_fu_ge_3y": 0,
+   "np_fu_ge_5y": 0,
+   "prog_years_last_to_event_median": 0.35,
+   "endoscopies": 1086,
+   "prog_endoscopies": 18
+  },
+  "ge2": {
+   "progressors": "<5",
+   "non_progressors": 108,
+   "np_fu_ge_1y": 0,
+   "np_fu_ge_2y": 0,
+   "np_fu_ge_3y": 0,
+   "np_fu_ge_5y": 0,
+   "prog_years_last_to_event_median": "<5 patients",
+   "endoscopies": 238,
+   "prog_endoscopies": 6
+  },
+  "ge3": {
+   "progressors": 0,
+   "non_progressors": 16,
+   "np_fu_ge_1y": 0,
+   "np_fu_ge_2y": 0,
+   "np_fu_ge_3y": 0,
+   "np_fu_ge_5y": 0,
+   "endoscopies": 48,
+   "prog_endoscopies": 0
+  }
+ },
+ "step1_scanned_unsure_as_event": {
+  "patients_barretts_nonoverlap": 1606,
+  "overlap_excluded_with_any_pre": 11,
+  "ge1": {
+   "progressors": 20,
+   "non_progressors": 896,
+   "np_fu_ge_1y": 5,
+   "np_fu_ge_2y": 0,
+   "np_fu_ge_3y": 0,
+   "np_fu_ge_5y": 0,
+   "prog_years_last_to_event_median": 0.45,
+   "endoscopies": 1022,
+   "prog_endoscopies": 22
+  },
+  "ge2": {
+   "progressors": "<5",
+   "non_progressors": 91,
+   "np_fu_ge_1y": 0,
+   "np_fu_ge_2y": 0,
+   "np_fu_ge_3y": 0,
+   "np_fu_ge_5y": 0,
+   "prog_years_last_to_event_median": "<5 patients",
+   "endoscopies": 199,
+   "prog_endoscopies": "<5"
+  },
+  "ge3": {
+   "progressors": 0,
+   "non_progressors": 13,
+   "np_fu_ge_1y": 0,
+   "np_fu_ge_2y": 0,
+   "np_fu_ge_3y": 0,
+   "np_fu_ge_5y": 0,
+   "endoscopies": 39,
+   "prog_endoscopies": 0
+  }
+ },
+ "step1_scanned_report_event": {
+  "patients_barretts_nonoverlap": 1660,
+  "overlap_excluded_with_any_pre": 14,
+  "ge1": {
+   "progressors": 16,
+   "non_progressors": 940,
+   "np_fu_ge_1y": 5,
+   "np_fu_ge_2y": 0,
+   "np_fu_ge_3y": 0,
+   "np_fu_ge_5y": 0,
+   "prog_years_last_to_event_median": 0.35,
+   "endoscopies": 1081,
+   "prog_endoscopies": 19
+  },
+  "ge2": {
+   "progressors": "<5",
+   "non_progressors": 106,
+   "np_fu_ge_1y": 0,
+   "np_fu_ge_2y": 0,
+   "np_fu_ge_3y": 0,
+   "np_fu_ge_5y": 0,
+   "prog_years_last_to_event_median": "<5 patients",
+   "endoscopies": 234,
+   "prog_endoscopies": 6
+  },
+  "ge3": {
+   "progressors": 0,
+   "non_progressors": 16,
+   "np_fu_ge_1y": 0,
+   "np_fu_ge_2y": 0,
+   "np_fu_ge_3y": 0,
+   "np_fu_ge_5y": 0,
+   "endoscopies": 48,
+   "prog_endoscopies": 0
+  }
+ },
+ "step1_scanned_v3_event": {
+  "patients_barretts_nonoverlap": 1645,
+  "overlap_excluded_with_any_pre": 14,
+  "ge1": {
+   "progressors": 12,
+   "non_progressors": 941,
+   "np_fu_ge_1y": 5,
+   "np_fu_ge_2y": 0,
+   "np_fu_ge_3y": 0,
+   "np_fu_ge_5y": 0,
+   "prog_years_last_to_event_median": 0.35,
+   "endoscopies": 1080,
+   "prog_endoscopies": 15
+  },
+  "ge2": {
+   "progressors": "<5",
+   "non_progressors": 108,
+   "np_fu_ge_1y": 0,
+   "np_fu_ge_2y": 0,
+   "np_fu_ge_3y": 0,
+   "np_fu_ge_5y": 0,
+   "prog_years_last_to_event_median": "<5 patients",
+   "endoscopies": 238,
+   "prog_endoscopies": 6
+  },
+  "ge3": {
+   "progressors": 0,
+   "non_progressors": 16,
+   "np_fu_ge_1y": 0,
+   "np_fu_ge_2y": 0,
+   "np_fu_ge_3y": 0,
+   "np_fu_ge_5y": 0,
+   "endoscopies": 48,
+   "prog_endoscopies": 0
+  }
+ },
+ "step1_scanned_nd_only": {
+  "patients_barretts_nonoverlap": 1628,
+  "overlap_excluded_with_any_pre": 14,
+  "ge1": {
+   "progressors": 10,
+   "non_progressors": 925,
+   "np_fu_ge_1y": 5,
+   "np_fu_ge_2y": 0,
+   "np_fu_ge_3y": 0,
+   "np_fu_ge_5y": 0,
+   "prog_years_last_to_event_median": 0.33,
+   "endoscopies": 1049,
+   "prog_endoscopies": 13
+  },
+  "ge2": {
+   "progressors": "<5",
+   "non_progressors": 97,
+   "np_fu_ge_1y": 0,
+   "np_fu_ge_2y": 0,
+   "np_fu_ge_3y": 0,
+   "np_fu_ge_5y": 0,
+   "prog_years_last_to_event_median": "<5 patients",
+   "endoscopies": 214,
+   "prog_endoscopies": 6
+  },
+  "ge3": {
+   "progressors": 0,
+   "non_progressors": 14,
+   "np_fu_ge_1y": 0,
+   "np_fu_ge_2y": 0,
+   "np_fu_ge_3y": 0,
+   "np_fu_ge_5y": 0,
+   "endoscopies": 42,
+   "prog_endoscopies": 0
+  }
+ },
+ "step1_scanned_prior_event_text_excluded": {
+  "patients_barretts_nonoverlap": 1652,
+  "overlap_excluded_with_any_pre": 14,
+  "ge1": {
+   "progressors": 15,
+   "non_progressors": 938,
+   "np_fu_ge_1y": 5,
+   "np_fu_ge_2y": 0,
+   "np_fu_ge_3y": 0,
+   "np_fu_ge_5y": 0,
+   "prog_years_last_to_event_median": 0.41,
+   "endoscopies": 1077,
+   "prog_endoscopies": 17
+  },
+  "ge2": {
+   "progressors": "<5",
+   "non_progressors": 106,
+   "np_fu_ge_1y": 0,
+   "np_fu_ge_2y": 0,
+   "np_fu_ge_3y": 0,
+   "np_fu_ge_5y": 0,
+   "prog_years_last_to_event_median": "<5 patients",
+   "endoscopies": 232,
+   "prog_endoscopies": "<5"
+  },
+  "ge3": {
+   "progressors": 0,
+   "non_progressors": 16,
+   "np_fu_ge_1y": 0,
+   "np_fu_ge_2y": 0,
+   "np_fu_ge_3y": 0,
+   "np_fu_ge_5y": 0,
+   "endoscopies": 48,
+   "prog_endoscopies": 0
+  }
+ },
+ "scanned_pre_event_endoscopy_years": {
+  "2022": 5,
+  "2023": 437,
+  "2024": 551,
+  "2025": 93
+ },
+ "first_scanned_year_of_progressors_ge2": {
+  "2023": "<5",
+  "2024": "<5"
+ },
+ "event_year_of_progressors_ge2": {
+  "2024": "<5",
+  "2025": "<5"
+ },
+ "step3_report_history_primary": {
+  "patients_barretts_nonoverlap": 1665,
+  "overlap_excluded_with_any_pre": 50,
+  "ge1": {
+   "progressors": 111,
+   "non_progressors": 1554,
+   "np_fu_ge_1y": 203,
+   "np_fu_ge_2y": 186,
+   "np_fu_ge_3y": 141,
+   "np_fu_ge_5y": 62,
+   "prog_years_last_to_event_median": 2.55,
+   "endoscopies": 3288,
+   "prog_endoscopies": 172
+  },
+  "ge2": {
+   "progressors": 36,
+   "non_progressors": 798,
+   "np_fu_ge_1y": 203,
+   "np_fu_ge_2y": 186,
+   "np_fu_ge_3y": 141,
+   "np_fu_ge_5y": 62,
+   "prog_years_last_to_event_median": 2.55,
+   "endoscopies": 2457,
+   "prog_endoscopies": 97
+  },
+  "ge3": {
+   "progressors": 14,
+   "non_progressors": 403,
+   "np_fu_ge_1y": 203,
+   "np_fu_ge_2y": 186,
+   "np_fu_ge_3y": 141,
+   "np_fu_ge_5y": 62,
+   "prog_years_last_to_event_median": 2.55,
+   "endoscopies": 1623,
+   "prog_endoscopies": 53
+  }
+ },
+ "step3_report_history_nd_only": {
+  "patients_barretts_nonoverlap": 1628,
+  "overlap_excluded_with_any_pre": 46,
+  "ge1": {
+   "progressors": 97,
+   "non_progressors": 1531,
+   "np_fu_ge_1y": 194,
+   "np_fu_ge_2y": 180,
+   "np_fu_ge_3y": 131,
+   "np_fu_ge_5y": 55,
+   "prog_years_last_to_event_median": 2.6,
+   "endoscopies": 3171,
+   "prog_endoscopies": 149
+  },
+  "ge2": {
+   "progressors": 34,
+   "non_progressors": 778,
+   "np_fu_ge_1y": 194,
+   "np_fu_ge_2y": 180,
+   "np_fu_ge_3y": 131,
+   "np_fu_ge_5y": 55,
+   "prog_years_last_to_event_median": 2.6,
+   "endoscopies": 2355,
+   "prog_endoscopies": 86
+  },
+  "ge3": {
+   "progressors": 11,
+   "non_progressors": 390,
+   "np_fu_ge_1y": 194,
+   "np_fu_ge_2y": 180,
+   "np_fu_ge_3y": 131,
+   "np_fu_ge_5y": 55,
+   "prog_years_last_to_event_median": 2.6,
+   "endoscopies": 1533,
+   "prog_endoscopies": 40
+  }
+ }
+}
