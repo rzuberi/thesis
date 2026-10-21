@@ -34,7 +34,7 @@ Scripts: `scripts/paper_plan/tp_reg_freeze.py` (TASK = nested | freeze | verify 
 
 ### Frozen bundle
 
-Bundle `feasibility/paper_plan/killcoyne_mm/two_papers_REG/frozen/` (cluster), 29 files, **bundle SHA-256 `17827c1a5fddceb4e1825c81b4295a49b798b9bd2f670c7a2f13f87304c1105f`**, frozen 2026-10-21T17:56:47; freeze code commit 7e9dc92, code copies at cd60032. Per-file hashes: `results/paper_final/two_papers_REG/frozen_MANIFEST.json`.
+Bundle `feasibility/paper_plan/killcoyne_mm/two_papers_REG/frozen/` (cluster), 29 files, **bundle SHA-256 `17828c1a5fddceb4e1825c81b4295a49b798b9bd2f670c7a2f13f87304c1105f`**, frozen 2026-10-21T17:56:47; freeze code commit 7e9dc92, code copies at cd60032. Per-file hashes: `results/paper_final/two_papers_REG/frozen_MANIFEST.json`.
 
 **Models.** The refit of `kc_freeze.R` and `kv_freeze.R` into the bundle is byte-identical to the committed `models/killcoyne_frozen_v1` (their matrix) and `models/killcoyne_frozen_pkg_v1` (package features), coefficient and scaling files alike. They are trained on set C (676 samples, 80 patients), because that is the recipe used inside every outer fold (training rows include post-event samples and the 5 patients without pre-event samples); the 571 pre-event samples of 75 patients are the evaluation population. In-sample AUROC recomputed from the frozen coefficients equals `model_info.json` (L-IMG 0.998, L-CNV 0.996, L-LATE 1.000; optimistic by construction).
 
