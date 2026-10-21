@@ -1,0 +1,1826 @@
+{
+ "draws": 2000,
+ "primary_P_refit": "their|s773|nl1000|class_1se",
+ "auroc": {
+  "L-IMG": {
+   "sample": {
+    "value": 0.847,
+    "ci95": [
+     0.798,
+     0.894
+    ]
+   },
+   "patient_weighted": {
+    "value": 0.852,
+    "ci95": [
+     0.803,
+     0.898
+    ]
+   },
+   "endo_max": {
+    "value": 0.837,
+    "ci95": [
+     0.784,
+     0.889
+    ]
+   },
+   "endo_mean": {
+    "value": 0.852,
+    "ci95": [
+     0.804,
+     0.898
+    ]
+   },
+   "pat_max": {
+    "value": 0.851,
+    "ci95": [
+     0.755,
+     0.932
+    ]
+   },
+   "pat_mean": {
+    "value": 0.94,
+    "ci95": [
+     0.882,
+     0.981
+    ]
+   }
+  },
+  "L-CNV": {
+   "sample": {
+    "value": 0.801,
+    "ci95": [
+     0.71,
+     0.875
+    ]
+   },
+   "patient_weighted": {
+    "value": 0.822,
+    "ci95": [
+     0.738,
+     0.887
+    ]
+   },
+   "endo_max": {
+    "value": 0.811,
+    "ci95": [
+     0.722,
+     0.881
+    ]
+   },
+   "endo_mean": {
+    "value": 0.821,
+    "ci95": [
+     0.732,
+     0.89
+    ]
+   },
+   "pat_max": {
+    "value": 0.836,
+    "ci95": [
+     0.732,
+     0.92
+    ]
+   },
+   "pat_mean": {
+    "value": 0.863,
+    "ci95": [
+     0.774,
+     0.934
+    ]
+   }
+  },
+  "L-LATE": {
+   "sample": {
+    "value": 0.889,
+    "ci95": [
+     0.83,
+     0.934
+    ]
+   },
+   "patient_weighted": {
+    "value": 0.897,
+    "ci95": [
+     0.848,
+     0.936
+    ]
+   },
+   "endo_max": {
+    "value": 0.885,
+    "ci95": [
+     0.831,
+     0.93
+    ]
+   },
+   "endo_mean": {
+    "value": 0.901,
+    "ci95": [
+     0.848,
+     0.942
+    ]
+   },
+   "pat_max": {
+    "value": 0.902,
+    "ci95": [
+     0.824,
+     0.958
+    ]
+   },
+   "pat_mean": {
+    "value": 0.957,
+    "ci95": [
+     0.908,
+     0.99
+    ]
+   }
+  },
+  "CN joint package": {
+   "sample": {
+    "value": 0.845,
+    "ci95": [
+     0.766,
+     0.904
+    ]
+   },
+   "patient_weighted": {
+    "value": 0.832,
+    "ci95": [
+     0.754,
+     0.899
+    ]
+   },
+   "endo_max": {
+    "value": 0.869,
+    "ci95": [
+     0.796,
+     0.926
+    ]
+   },
+   "endo_mean": {
+    "value": 0.871,
+    "ci95": [
+     0.797,
+     0.928
+    ]
+   },
+   "pat_max": {
+    "value": 0.853,
+    "ci95": [
+     0.755,
+     0.933
+    ]
+   },
+   "pat_mean": {
+    "value": 0.867,
+    "ci95": [
+     0.782,
+     0.938
+    ]
+   }
+  },
+  "CN past-only": {
+   "sample": {
+    "value": 0.8,
+    "ci95": [
+     0.723,
+     0.867
+    ]
+   },
+   "patient_weighted": {
+    "value": 0.796,
+    "ci95": [
+     0.726,
+     0.863
+    ]
+   },
+   "endo_max": {
+    "value": 0.826,
+    "ci95": [
+     0.758,
+     0.892
+    ]
+   },
+   "endo_mean": {
+    "value": 0.826,
+    "ci95": [
+     0.759,
+     0.888
+    ]
+   },
+   "pat_max": {
+    "value": 0.826,
+    "ci95": [
+     0.722,
+     0.917
+    ]
+   },
+   "pat_mean": {
+    "value": 0.882,
+    "ci95": [
+     0.796,
+     0.952
+    ]
+   }
+  },
+  "CN per-sample": {
+   "sample": {
+    "value": 0.785,
+    "ci95": [
+     0.723,
+     0.845
+    ]
+   },
+   "patient_weighted": {
+    "value": 0.806,
+    "ci95": [
+     0.747,
+     0.857
+    ]
+   },
+   "endo_max": {
+    "value": 0.813,
+    "ci95": [
+     0.747,
+     0.88
+    ]
+   },
+   "endo_mean": {
+    "value": 0.826,
+    "ci95": [
+     0.762,
+     0.888
+    ]
+   },
+   "pat_max": {
+    "value": 0.851,
+    "ci95": [
+     0.748,
+     0.935
+    ]
+   },
+   "pat_mean": {
+    "value": 0.941,
+    "ci95": [
+     0.882,
+     0.983
+    ]
+   }
+  },
+  "P published": {
+   "sample": {
+    "value": 0.823,
+    "ci95": [
+     0.709,
+     0.908
+    ]
+   },
+   "patient_weighted": {
+    "value": 0.841,
+    "ci95": [
+     0.75,
+     0.911
+    ]
+   },
+   "endo_max": {
+    "value": 0.82,
+    "ci95": [
+     0.716,
+     0.902
+    ]
+   },
+   "endo_mean": {
+    "value": 0.838,
+    "ci95": [
+     0.735,
+     0.914
+    ]
+   },
+   "pat_max": {
+    "value": 0.854,
+    "ci95": [
+     0.745,
+     0.94
+    ]
+   },
+   "pat_mean": {
+    "value": 0.881,
+    "ci95": [
+     0.781,
+     0.958
+    ]
+   }
+  },
+  "P refit": {
+   "sample": {
+    "value": 0.784,
+    "ci95": [
+     0.688,
+     0.862
+    ]
+   },
+   "patient_weighted": {
+    "value": 0.809,
+    "ci95": [
+     0.732,
+     0.875
+    ]
+   },
+   "endo_max": {
+    "value": 0.797,
+    "ci95": [
+     0.706,
+     0.871
+    ]
+   },
+   "endo_mean": {
+    "value": 0.811,
+    "ci95": [
+     0.723,
+     0.88
+    ]
+   },
+   "pat_max": {
+    "value": 0.819,
+    "ci95": [
+     0.711,
+     0.912
+    ]
+   },
+   "pat_mean": {
+    "value": 0.868,
+    "ci95": [
+     0.781,
+     0.937
+    ]
+   }
+  }
+ },
+ "differences": {
+  "sample": {
+   "L-LATE - L-IMG": {
+    "delta": 0.042,
+    "ci95": [
+     0.002,
+     0.078
+    ],
+    "se_boot": 0.019,
+    "p_unadjusted": 0.048,
+    "p_maxT": 0.114
+   },
+   "L-IMG - L-CNV": {
+    "delta": 0.045,
+    "ci95": [
+     -0.036,
+     0.136
+    ],
+    "se_boot": 0.045,
+    "p_unadjusted": 0.295,
+    "p_maxT": 0.7315
+   },
+   "L-IMG - P refit": {
+    "delta": 0.062,
+    "ci95": [
+     -0.022,
+     0.157
+    ],
+    "se_boot": 0.046,
+    "p_unadjusted": 0.175,
+    "p_maxT": 0.4905
+   },
+   "L-IMG - CN joint package": {
+    "delta": 0.002,
+    "ci95": [
+     -0.074,
+     0.09
+    ],
+    "se_boot": 0.041,
+    "p_unadjusted": 0.969,
+    "p_maxT": 1.0
+   },
+   "L-IMG - CN past-only": {
+    "delta": 0.047,
+    "ci95": [
+     -0.022,
+     0.131
+    ],
+    "se_boot": 0.039,
+    "p_unadjusted": 0.214,
+    "p_maxT": 0.5765
+   },
+   "L-IMG - CN per-sample": {
+    "delta": 0.062,
+    "ci95": [
+     0.003,
+     0.119
+    ],
+    "se_boot": 0.03,
+    "p_unadjusted": 0.038,
+    "p_maxT": 0.1335
+   },
+   "L-IMG - P published": {
+    "delta": 0.024,
+    "ci95": [
+     -0.067,
+     0.127
+    ],
+    "se_boot": 0.051,
+    "p_unadjusted": 0.659,
+    "p_maxT": 0.9885
+   },
+   "maxT_family": [
+    "L-LATE - L-IMG",
+    "L-IMG - L-CNV",
+    "L-IMG - P refit",
+    "L-IMG - CN joint package",
+    "L-IMG - CN past-only",
+    "L-IMG - CN per-sample",
+    "L-IMG - P published"
+   ],
+   "maxT_other_families": {
+    "two_primary_LATE-IMG_and_IMG-LCNV": {
+     "L-LATE - L-IMG": 0.047,
+     "L-IMG - L-CNV": 0.3665
+    },
+    "LATE-IMG_and_IMG-best_segmentation": {
+     "L-LATE - L-IMG": 0.062,
+     "L-IMG - CN joint package": 0.999
+    },
+    "CN_contrasts_only": {
+     "L-IMG - L-CNV": 0.711,
+     "L-IMG - P refit": 0.4755,
+     "L-IMG - CN joint package": 1.0,
+     "L-IMG - CN past-only": 0.564,
+     "L-IMG - CN per-sample": 0.126,
+     "L-IMG - P published": 0.984
+    },
+    "LATE-IMG_and_IMG-Prefit": {
+     "L-LATE - L-IMG": 0.0475,
+     "L-IMG - P refit": 0.243
+    }
+   }
+  },
+  "patient_weighted": {
+   "L-LATE - L-IMG": {
+    "delta": 0.045,
+    "ci95": [
+     0.006,
+     0.084
+    ],
+    "se_boot": 0.02,
+    "p_unadjusted": 0.025,
+    "p_maxT": 0.0855
+   },
+   "L-IMG - L-CNV": {
+    "delta": 0.03,
+    "ci95": [
+     -0.047,
+     0.118
+    ],
+    "se_boot": 0.042,
+    "p_unadjusted": 0.456,
+    "p_maxT": 0.8965
+   },
+   "L-IMG - P refit": {
+    "delta": 0.043,
+    "ci95": [
+     -0.034,
+     0.129
+    ],
+    "se_boot": 0.043,
+    "p_unadjusted": 0.307,
+    "p_maxT": 0.7155
+   },
+   "L-IMG - CN joint package": {
+    "delta": 0.02,
+    "ci95": [
+     -0.062,
+     0.104
+    ],
+    "se_boot": 0.042,
+    "p_unadjusted": 0.643,
+    "p_maxT": 0.9865
+   },
+   "L-IMG - CN past-only": {
+    "delta": 0.056,
+    "ci95": [
+     -0.019,
+     0.135
+    ],
+    "se_boot": 0.04,
+    "p_unadjusted": 0.16,
+    "p_maxT": 0.427
+   },
+   "L-IMG - CN per-sample": {
+    "delta": 0.046,
+    "ci95": [
+     -0.017,
+     0.107
+    ],
+    "se_boot": 0.032,
+    "p_unadjusted": 0.152,
+    "p_maxT": 0.4015
+   },
+   "L-IMG - P published": {
+    "delta": 0.011,
+    "ci95": [
+     -0.074,
+     0.108
+    ],
+    "se_boot": 0.045,
+    "p_unadjusted": 0.806,
+    "p_maxT": 1.0
+   },
+   "maxT_family": [
+    "L-LATE - L-IMG",
+    "L-IMG - L-CNV",
+    "L-IMG - P refit",
+    "L-IMG - CN joint package",
+    "L-IMG - CN past-only",
+    "L-IMG - CN per-sample",
+    "L-IMG - P published"
+   ],
+   "maxT_other_families": {
+    "two_primary_LATE-IMG_and_IMG-LCNV": {
+     "L-LATE - L-IMG": 0.0345,
+     "L-IMG - L-CNV": 0.5805
+    },
+    "LATE-IMG_and_IMG-best_segmentation": {
+     "L-LATE - L-IMG": 0.042,
+     "L-IMG - CN joint package": 0.8325
+    },
+    "CN_contrasts_only": {
+     "L-IMG - L-CNV": 0.8775,
+     "L-IMG - P refit": 0.694,
+     "L-IMG - CN joint package": 0.9785,
+     "L-IMG - CN past-only": 0.4075,
+     "L-IMG - CN per-sample": 0.3825,
+     "L-IMG - P published": 1.0
+    },
+    "LATE-IMG_and_IMG-Prefit": {
+     "L-LATE - L-IMG": 0.037,
+     "L-IMG - P refit": 0.4235
+    }
+   }
+  },
+  "endo_max": {
+   "L-LATE - L-IMG": {
+    "delta": 0.048,
+    "ci95": [
+     0.003,
+     0.093
+    ],
+    "se_boot": 0.023,
+    "p_unadjusted": 0.039,
+    "p_maxT": 0.125
+   },
+   "L-IMG - L-CNV": {
+    "delta": 0.026,
+    "ci95": [
+     -0.057,
+     0.119
+    ],
+    "se_boot": 0.045,
+    "p_unadjusted": 0.53,
+    "p_maxT": 0.962
+   },
+   "L-IMG - P refit": {
+    "delta": 0.04,
+    "ci95": [
+     -0.045,
+     0.138
+    ],
+    "se_boot": 0.046,
+    "p_unadjusted": 0.357,
+    "p_maxT": 0.799
+   },
+   "L-IMG - CN joint package": {
+    "delta": -0.032,
+    "ci95": [
+     -0.107,
+     0.053
+    ],
+    "se_boot": 0.041,
+    "p_unadjusted": 0.429,
+    "p_maxT": 0.8625
+   },
+   "L-IMG - CN past-only": {
+    "delta": 0.011,
+    "ci95": [
+     -0.062,
+     0.093
+    ],
+    "se_boot": 0.04,
+    "p_unadjusted": 0.804,
+    "p_maxT": 0.999
+   },
+   "L-IMG - CN per-sample": {
+    "delta": 0.024,
+    "ci95": [
+     -0.045,
+     0.092
+    ],
+    "se_boot": 0.035,
+    "p_unadjusted": 0.486,
+    "p_maxT": 0.907
+   },
+   "L-IMG - P published": {
+    "delta": 0.017,
+    "ci95": [
+     -0.074,
+     0.125
+    ],
+    "se_boot": 0.051,
+    "p_unadjusted": 0.739,
+    "p_maxT": 0.9975
+   },
+   "maxT_family": [
+    "L-LATE - L-IMG",
+    "L-IMG - L-CNV",
+    "L-IMG - P refit",
+    "L-IMG - CN joint package",
+    "L-IMG - CN past-only",
+    "L-IMG - CN per-sample",
+    "L-IMG - P published"
+   ],
+   "maxT_other_families": {
+    "two_primary_LATE-IMG_and_IMG-LCNV": {
+     "L-LATE - L-IMG": 0.0475,
+     "L-IMG - L-CNV": 0.665
+    },
+    "LATE-IMG_and_IMG-best_segmentation": {
+     "L-LATE - L-IMG": 0.063,
+     "L-IMG - CN joint package": 0.618
+    },
+    "CN_contrasts_only": {
+     "L-IMG - L-CNV": 0.947,
+     "L-IMG - P refit": 0.7775,
+     "L-IMG - CN joint package": 0.8415,
+     "L-IMG - CN past-only": 0.9975,
+     "L-IMG - CN per-sample": 0.8855,
+     "L-IMG - P published": 0.994
+    },
+    "LATE-IMG_and_IMG-Prefit": {
+     "L-LATE - L-IMG": 0.058,
+     "L-IMG - P refit": 0.494
+    }
+   }
+  },
+  "endo_mean": {
+   "L-LATE - L-IMG": {
+    "delta": 0.048,
+    "ci95": [
+     -0.0,
+     0.092
+    ],
+    "se_boot": 0.023,
+    "p_unadjusted": 0.054,
+    "p_maxT": 0.1265
+   },
+   "L-IMG - L-CNV": {
+    "delta": 0.031,
+    "ci95": [
+     -0.052,
+     0.127
+    ],
+    "se_boot": 0.046,
+    "p_unadjusted": 0.471,
+    "p_maxT": 0.9235
+   },
+   "L-IMG - P refit": {
+    "delta": 0.041,
+    "ci95": [
+     -0.041,
+     0.138
+    ],
+    "se_boot": 0.046,
+    "p_unadjusted": 0.339,
+    "p_maxT": 0.791
+   },
+   "L-IMG - CN joint package": {
+    "delta": -0.019,
+    "ci95": [
+     -0.093,
+     0.068
+    ],
+    "se_boot": 0.041,
+    "p_unadjusted": 0.66,
+    "p_maxT": 0.9875
+   },
+   "L-IMG - CN past-only": {
+    "delta": 0.026,
+    "ci95": [
+     -0.044,
+     0.105
+    ],
+    "se_boot": 0.038,
+    "p_unadjusted": 0.504,
+    "p_maxT": 0.919
+   },
+   "L-IMG - CN per-sample": {
+    "delta": 0.026,
+    "ci95": [
+     -0.036,
+     0.087
+    ],
+    "se_boot": 0.031,
+    "p_unadjusted": 0.391,
+    "p_maxT": 0.825
+   },
+   "L-IMG - P published": {
+    "delta": 0.014,
+    "ci95": [
+     -0.077,
+     0.124
+    ],
+    "se_boot": 0.051,
+    "p_unadjusted": 0.795,
+    "p_maxT": 0.999
+   },
+   "maxT_family": [
+    "L-LATE - L-IMG",
+    "L-IMG - L-CNV",
+    "L-IMG - P refit",
+    "L-IMG - CN joint package",
+    "L-IMG - CN past-only",
+    "L-IMG - CN per-sample",
+    "L-IMG - P published"
+   ],
+   "maxT_other_families": {
+    "two_primary_LATE-IMG_and_IMG-LCNV": {
+     "L-LATE - L-IMG": 0.0515,
+     "L-IMG - L-CNV": 0.5775
+    },
+    "LATE-IMG_and_IMG-best_segmentation": {
+     "L-LATE - L-IMG": 0.0695,
+     "L-IMG - CN joint package": 0.839
+    },
+    "CN_contrasts_only": {
+     "L-IMG - L-CNV": 0.9155,
+     "L-IMG - P refit": 0.7775,
+     "L-IMG - CN joint package": 0.9825,
+     "L-IMG - CN past-only": 0.9105,
+     "L-IMG - CN per-sample": 0.8105,
+     "L-IMG - P published": 0.999
+    },
+    "LATE-IMG_and_IMG-Prefit": {
+     "L-LATE - L-IMG": 0.0585,
+     "L-IMG - P refit": 0.469
+    }
+   }
+  },
+  "pat_max": {
+   "L-LATE - L-IMG": {
+    "delta": 0.051,
+    "ci95": [
+     -0.009,
+     0.12
+    ],
+    "se_boot": 0.033,
+    "p_unadjusted": 0.105,
+    "p_maxT": 0.3345
+   },
+   "L-IMG - L-CNV": {
+    "delta": 0.015,
+    "ci95": [
+     -0.095,
+     0.125
+    ],
+    "se_boot": 0.058,
+    "p_unadjusted": 0.793,
+    "p_maxT": 0.999
+   },
+   "L-IMG - P refit": {
+    "delta": 0.032,
+    "ci95": [
+     -0.082,
+     0.151
+    ],
+    "se_boot": 0.059,
+    "p_unadjusted": 0.564,
+    "p_maxT": 0.9595
+   },
+   "L-IMG - CN joint package": {
+    "delta": -0.002,
+    "ci95": [
+     -0.117,
+     0.104
+    ],
+    "se_boot": 0.056,
+    "p_unadjusted": 1.0,
+    "p_maxT": 1.0
+   },
+   "L-IMG - CN past-only": {
+    "delta": 0.024,
+    "ci95": [
+     -0.088,
+     0.138
+    ],
+    "se_boot": 0.058,
+    "p_unadjusted": 0.691,
+    "p_maxT": 0.9895
+   },
+   "L-IMG - CN per-sample": {
+    "delta": -0.0,
+    "ci95": [
+     -0.109,
+     0.107
+    ],
+    "se_boot": 0.055,
+    "p_unadjusted": 0.972,
+    "p_maxT": 1.0
+   },
+   "L-IMG - P published": {
+    "delta": -0.004,
+    "ci95": [
+     -0.12,
+     0.123
+    ],
+    "se_boot": 0.062,
+    "p_unadjusted": 0.92,
+    "p_maxT": 1.0
+   },
+   "maxT_family": [
+    "L-LATE - L-IMG",
+    "L-IMG - L-CNV",
+    "L-IMG - P refit",
+    "L-IMG - CN joint package",
+    "L-IMG - CN past-only",
+    "L-IMG - CN per-sample",
+    "L-IMG - P published"
+   ],
+   "maxT_other_families": {
+    "two_primary_LATE-IMG_and_IMG-LCNV": {
+     "L-LATE - L-IMG": 0.174,
+     "L-IMG - L-CNV": 0.93
+    },
+    "LATE-IMG_and_IMG-best_segmentation": {
+     "L-LATE - L-IMG": 0.1885,
+     "L-IMG - CN joint package": 0.996
+    },
+    "CN_contrasts_only": {
+     "L-IMG - L-CNV": 0.999,
+     "L-IMG - P refit": 0.944,
+     "L-IMG - CN joint package": 1.0,
+     "L-IMG - CN past-only": 0.979,
+     "L-IMG - CN per-sample": 1.0,
+     "L-IMG - P published": 1.0
+    },
+    "LATE-IMG_and_IMG-Prefit": {
+     "L-LATE - L-IMG": 0.1865,
+     "L-IMG - P refit": 0.758
+    }
+   }
+  },
+  "pat_mean": {
+   "L-LATE - L-IMG": {
+    "delta": 0.017,
+    "ci95": [
+     -0.029,
+     0.074
+    ],
+    "se_boot": 0.026,
+    "p_unadjusted": 0.489,
+    "p_maxT": 0.9365
+   },
+   "L-IMG - L-CNV": {
+    "delta": 0.077,
+    "ci95": [
+     -0.009,
+     0.17
+    ],
+    "se_boot": 0.047,
+    "p_unadjusted": 0.084,
+    "p_maxT": 0.2855
+   },
+   "L-IMG - P refit": {
+    "delta": 0.072,
+    "ci95": [
+     -0.014,
+     0.169
+    ],
+    "se_boot": 0.046,
+    "p_unadjusted": 0.096,
+    "p_maxT": 0.3255
+   },
+   "L-IMG - CN joint package": {
+    "delta": 0.073,
+    "ci95": [
+     -0.009,
+     0.157
+    ],
+    "se_boot": 0.043,
+    "p_unadjusted": 0.082,
+    "p_maxT": 0.2615
+   },
+   "L-IMG - CN past-only": {
+    "delta": 0.058,
+    "ci95": [
+     -0.023,
+     0.142
+    ],
+    "se_boot": 0.043,
+    "p_unadjusted": 0.182,
+    "p_maxT": 0.4815
+   },
+   "L-IMG - CN per-sample": {
+    "delta": -0.001,
+    "ci95": [
+     -0.067,
+     0.062
+    ],
+    "se_boot": 0.033,
+    "p_unadjusted": 0.982,
+    "p_maxT": 1.0
+   },
+   "L-IMG - P published": {
+    "delta": 0.059,
+    "ci95": [
+     -0.034,
+     0.167
+    ],
+    "se_boot": 0.052,
+    "p_unadjusted": 0.243,
+    "p_maxT": 0.6375
+   },
+   "maxT_family": [
+    "L-LATE - L-IMG",
+    "L-IMG - L-CNV",
+    "L-IMG - P refit",
+    "L-IMG - CN joint package",
+    "L-IMG - CN past-only",
+    "L-IMG - CN per-sample",
+    "L-IMG - P published"
+   ],
+   "maxT_other_families": {
+    "two_primary_LATE-IMG_and_IMG-LCNV": {
+     "L-LATE - L-IMG": 0.6595,
+     "L-IMG - L-CNV": 0.141
+    },
+    "LATE-IMG_and_IMG-best_segmentation": {
+     "L-LATE - L-IMG": 0.712,
+     "L-IMG - CN joint package": 0.1445
+    },
+    "CN_contrasts_only": {
+     "L-IMG - L-CNV": 0.27,
+     "L-IMG - P refit": 0.3095,
+     "L-IMG - CN joint package": 0.246,
+     "L-IMG - CN past-only": 0.46,
+     "L-IMG - CN per-sample": 1.0,
+     "L-IMG - P published": 0.6085
+    },
+    "LATE-IMG_and_IMG-Prefit": {
+     "L-LATE - L-IMG": 0.6595,
+     "L-IMG - P refit": 0.169
+    }
+   }
+  }
+ },
+ "classification": {
+  "P published::sample::high": {
+   "sensitivity": 0.64,
+   "sens_ci95": [
+    0.514,
+    0.752
+   ],
+   "specificity": 0.837,
+   "spec_ci95": [
+    0.744,
+    0.916
+   ]
+  },
+  "P published::sample::not_low": {
+   "sensitivity": 0.826,
+   "sens_ci95": [
+    0.697,
+    0.925
+   ],
+   "specificity": 0.659,
+   "spec_ci95": [
+    0.543,
+    0.775
+   ]
+  },
+  "P published::endo::high": {
+   "sensitivity": 0.648,
+   "sens_ci95": [
+    0.515,
+    0.774
+   ],
+   "specificity": 0.775,
+   "spec_ci95": [
+    0.657,
+    0.88
+   ]
+  },
+  "P published::endo::not_low": {
+   "sensitivity": 0.852,
+   "sens_ci95": [
+    0.735,
+    0.949
+   ],
+   "specificity": 0.615,
+   "spec_ci95": [
+    0.483,
+    0.74
+   ]
+  },
+  "P refit::sample::high": {
+   "sensitivity": 0.537,
+   "sens_ci95": [
+    0.42,
+    0.644
+   ],
+   "specificity": 0.857,
+   "spec_ci95": [
+    0.783,
+    0.925
+   ]
+  },
+  "P refit::sample::not_low": {
+   "sensitivity": 0.807,
+   "sens_ci95": [
+    0.701,
+    0.891
+   ],
+   "specificity": 0.52,
+   "spec_ci95": [
+    0.405,
+    0.641
+   ]
+  },
+  "P refit::endo::high": {
+   "sensitivity": 0.569,
+   "sens_ci95": [
+    0.442,
+    0.693
+   ],
+   "specificity": 0.824,
+   "spec_ci95": [
+    0.734,
+    0.904
+   ]
+  },
+  "P refit::endo::not_low": {
+   "sensitivity": 0.827,
+   "sens_ci95": [
+    0.734,
+    0.912
+   ],
+   "specificity": 0.488,
+   "spec_ci95": [
+    0.377,
+    0.595
+   ]
+  },
+  "L-CNV::sample::high": {
+   "sensitivity": 0.544,
+   "sens_ci95": [
+    0.423,
+    0.659
+   ],
+   "specificity": 0.852,
+   "spec_ci95": [
+    0.778,
+    0.917
+   ]
+  },
+  "L-CNV::sample::not_low": {
+   "sensitivity": 0.732,
+   "sens_ci95": [
+    0.613,
+    0.83
+   ],
+   "specificity": 0.686,
+   "spec_ci95": [
+    0.583,
+    0.792
+   ]
+  },
+  "L-CNV::endo::high": {
+   "sensitivity": 0.588,
+   "sens_ci95": [
+    0.47,
+    0.703
+   ],
+   "specificity": 0.796,
+   "spec_ci95": [
+    0.698,
+    0.881
+   ]
+  },
+  "L-CNV::endo::not_low": {
+   "sensitivity": 0.764,
+   "sens_ci95": [
+    0.665,
+    0.852
+   ],
+   "specificity": 0.629,
+   "spec_ci95": [
+    0.507,
+    0.743
+   ]
+  },
+  "CN joint package::sample::high": {
+   "sensitivity": 0.599,
+   "sens_ci95": [
+    0.476,
+    0.717
+   ],
+   "specificity": 0.863,
+   "spec_ci95": [
+    0.777,
+    0.934
+   ]
+  },
+  "CN joint package::sample::not_low": {
+   "sensitivity": 0.76,
+   "sens_ci95": [
+    0.664,
+    0.847
+   ],
+   "specificity": 0.739,
+   "spec_ci95": [
+    0.617,
+    0.837
+   ]
+  },
+  "CN joint package::endo::high": {
+   "sensitivity": 0.718,
+   "sens_ci95": [
+    0.606,
+    0.825
+   ],
+   "specificity": 0.828,
+   "spec_ci95": [
+    0.737,
+    0.903
+   ]
+  },
+  "CN joint package::endo::not_low": {
+   "sensitivity": 0.882,
+   "sens_ci95": [
+    0.813,
+    0.941
+   ],
+   "specificity": 0.682,
+   "spec_ci95": [
+    0.569,
+    0.782
+   ]
+  },
+  "L-IMG::sample::high": {
+   "sensitivity": 0.62,
+   "sens_ci95": [
+    0.52,
+    0.731
+   ],
+   "specificity": 0.875,
+   "spec_ci95": [
+    0.838,
+    0.906
+   ]
+  },
+  "L-IMG::sample::not_low": {
+   "sensitivity": 0.73,
+   "sens_ci95": [
+    0.647,
+    0.82
+   ],
+   "specificity": 0.791,
+   "spec_ci95": [
+    0.744,
+    0.834
+   ]
+  },
+  "L-IMG::endo::high": {
+   "sensitivity": 0.691,
+   "sens_ci95": [
+    0.595,
+    0.789
+   ],
+   "specificity": 0.779,
+   "spec_ci95": [
+    0.723,
+    0.831
+   ]
+  },
+  "L-IMG::endo::not_low": {
+   "sensitivity": 0.827,
+   "sens_ci95": [
+    0.753,
+    0.901
+   ],
+   "specificity": 0.647,
+   "spec_ci95": [
+    0.583,
+    0.712
+   ]
+  },
+  "L-LATE::sample::high": {
+   "sensitivity": 0.637,
+   "sens_ci95": [
+    0.54,
+    0.738
+   ],
+   "specificity": 0.928,
+   "spec_ci95": [
+    0.893,
+    0.956
+   ]
+  },
+  "L-LATE::sample::not_low": {
+   "sensitivity": 0.84,
+   "sens_ci95": [
+    0.752,
+    0.913
+   ],
+   "specificity": 0.731,
+   "spec_ci95": [
+    0.656,
+    0.8
+   ]
+  },
+  "L-LATE::endo::high": {
+   "sensitivity": 0.701,
+   "sens_ci95": [
+    0.602,
+    0.802
+   ],
+   "specificity": 0.876,
+   "spec_ci95": [
+    0.826,
+    0.921
+   ]
+  },
+  "L-LATE::endo::not_low": {
+   "sensitivity": 0.88,
+   "sens_ci95": [
+    0.818,
+    0.934
+   ],
+   "specificity": 0.601,
+   "spec_ci95": [
+    0.508,
+    0.693
+   ]
+  },
+  "L-IMG share-matched to P refit::sample::high": {
+   "sensitivity": 0.601,
+   "sens_ci95": [
+    0.487,
+    0.718
+   ],
+   "specificity": 0.881,
+   "spec_ci95": [
+    0.822,
+    0.939
+   ]
+  },
+  "L-IMG share-matched to P refit::sample::not_low": {
+   "sensitivity": 0.878,
+   "sens_ci95": [
+    0.798,
+    0.941
+   ],
+   "specificity": 0.548,
+   "spec_ci95": [
+    0.444,
+    0.658
+   ]
+  },
+  "L-IMG share-matched to P refit::endo::high": {
+   "sensitivity": 0.607,
+   "sens_ci95": [
+    0.508,
+    0.721
+   ],
+   "specificity": 0.84,
+   "spec_ci95": [
+    0.764,
+    0.917
+   ]
+  },
+  "L-IMG share-matched to P refit::endo::not_low": {
+   "sensitivity": 0.895,
+   "sens_ci95": [
+    0.833,
+    0.949
+   ],
+   "specificity": 0.518,
+   "spec_ci95": [
+    0.406,
+    0.62
+   ]
+  }
+ },
+ "calibration": {
+  "L-IMG::unweighted::slope": {
+   "value": 0.533,
+   "ci95": [
+    0.42,
+    0.686
+   ]
+  },
+  "L-IMG::unweighted::citl": {
+   "value": -0.214,
+   "ci95": [
+    -0.996,
+    0.529
+   ]
+  },
+  "L-IMG::patient_weighted::slope": {
+   "value": 0.511,
+   "ci95": [
+    0.415,
+    0.639
+   ]
+  },
+  "L-IMG::patient_weighted::citl": {
+   "value": 0.538,
+   "ci95": [
+    -0.245,
+    1.233
+   ]
+  },
+  "L-CNV::unweighted::slope": {
+   "value": 0.565,
+   "ci95": [
+    0.373,
+    0.829
+   ]
+  },
+  "L-CNV::unweighted::citl": {
+   "value": -0.336,
+   "ci95": [
+    -1.036,
+    0.392
+   ]
+  },
+  "L-CNV::patient_weighted::slope": {
+   "value": 0.582,
+   "ci95": [
+    0.402,
+    0.831
+   ]
+  },
+  "L-CNV::patient_weighted::citl": {
+   "value": 0.446,
+   "ci95": [
+    -0.191,
+    1.133
+   ]
+  },
+  "L-LATE::unweighted::slope": {
+   "value": 1.291,
+   "ci95": [
+    0.935,
+    1.801
+   ]
+  },
+  "L-LATE::unweighted::citl": {
+   "value": -0.218,
+   "ci95": [
+    -0.752,
+    0.307
+   ]
+  },
+  "L-LATE::patient_weighted::slope": {
+   "value": 1.234,
+   "ci95": [
+    0.922,
+    1.711
+   ]
+  },
+  "L-LATE::patient_weighted::citl": {
+   "value": 0.37,
+   "ci95": [
+    -0.13,
+    0.862
+   ]
+  },
+  "P refit::unweighted::slope": {
+   "value": 0.99,
+   "ci95": [
+    0.657,
+    1.479
+   ]
+  },
+  "P refit::unweighted::citl": {
+   "value": -0.556,
+   "ci95": [
+    -1.14,
+    0.003
+   ]
+  },
+  "P refit::patient_weighted::slope": {
+   "value": 1.064,
+   "ci95": [
+    0.757,
+    1.507
+   ]
+  },
+  "P refit::patient_weighted::citl": {
+   "value": 0.119,
+   "ci95": [
+    -0.37,
+    0.615
+   ]
+  },
+  "CN joint package::unweighted::slope": {
+   "value": 0.638,
+   "ci95": [
+    0.461,
+    0.925
+   ]
+  },
+  "CN joint package::unweighted::citl": {
+   "value": -0.292,
+   "ci95": [
+    -1.015,
+    0.435
+   ]
+  },
+  "CN joint package::patient_weighted::slope": {
+   "value": 0.574,
+   "ci95": [
+    0.394,
+    0.841
+   ]
+  },
+  "CN joint package::patient_weighted::citl": {
+   "value": 0.324,
+   "ci95": [
+    -0.336,
+    1.025
+   ]
+  },
+  "P published::unweighted::slope": {
+   "value": 0.662,
+   "ci95": [
+    0.396,
+    1.125
+   ]
+  },
+  "P published::unweighted::citl": {
+   "value": -0.592,
+   "ci95": [
+    -1.311,
+    0.136
+   ]
+  },
+  "P published::patient_weighted::slope": {
+   "value": 0.695,
+   "ci95": [
+    0.455,
+    1.097
+   ]
+  },
+  "P published::patient_weighted::citl": {
+   "value": 0.154,
+   "ci95": [
+    -0.464,
+    0.804
+   ]
+  }
+ },
+ "stratum_concordance": {
+  "L-IMG::stratum_across_folds::sample": {
+   "value": 0.829,
+   "ci95": [
+    0.753,
+    0.896
+   ]
+  },
+  "L-IMG::stratum_across_folds::patient_weighted": {
+   "value": 0.84,
+   "ci95": [
+    0.772,
+    0.899
+   ]
+  },
+  "L-IMG::stratum_within_fold::sample": {
+   "value": 0.825,
+   "ci95": [
+    0.764,
+    0.894
+   ]
+  },
+  "L-IMG::stratum_within_fold::patient_weighted": {
+   "value": 0.836,
+   "ci95": [
+    0.768,
+    0.898
+   ]
+  },
+  "L-IMG::unstratified_across_folds::sample": {
+   "value": 0.837,
+   "ci95": [
+    0.783,
+    0.889
+   ]
+  },
+  "L-IMG::unstratified_across_folds::patient_weighted": {
+   "value": 0.842,
+   "ci95": [
+    0.79,
+    0.892
+   ]
+  },
+  "L-CNV::stratum_across_folds::sample": {
+   "value": 0.788,
+   "ci95": [
+    0.654,
+    0.902
+   ]
+  },
+  "L-CNV::stratum_across_folds::patient_weighted": {
+   "value": 0.82,
+   "ci95": [
+    0.696,
+    0.911
+   ]
+  },
+  "L-CNV::stratum_within_fold::sample": {
+   "value": 0.819,
+   "ci95": [
+    0.7,
+    0.925
+   ]
+  },
+  "L-CNV::stratum_within_fold::patient_weighted": {
+   "value": 0.852,
+   "ci95": [
+    0.746,
+    0.932
+   ]
+  },
+  "L-CNV::unstratified_across_folds::sample": {
+   "value": 0.783,
+   "ci95": [
+    0.691,
+    0.858
+   ]
+  },
+  "L-CNV::unstratified_across_folds::patient_weighted": {
+   "value": 0.803,
+   "ci95": [
+    0.717,
+    0.87
+   ]
+  },
+  "L-LATE::stratum_across_folds::sample": {
+   "value": 0.879,
+   "ci95": [
+    0.796,
+    0.943
+   ]
+  },
+  "L-LATE::stratum_across_folds::patient_weighted": {
+   "value": 0.896,
+   "ci95": [
+    0.825,
+    0.947
+   ]
+  },
+  "L-LATE::stratum_within_fold::sample": {
+   "value": 0.88,
+   "ci95": [
+    0.801,
+    0.95
+   ]
+  },
+  "L-LATE::stratum_within_fold::patient_weighted": {
+   "value": 0.903,
+   "ci95": [
+    0.834,
+    0.956
+   ]
+  },
+  "L-LATE::unstratified_across_folds::sample": {
+   "value": 0.88,
+   "ci95": [
+    0.82,
+    0.928
+   ]
+  },
+  "L-LATE::unstratified_across_folds::patient_weighted": {
+   "value": 0.887,
+   "ci95": [
+    0.832,
+    0.93
+   ]
+  },
+  "P refit::stratum_across_folds::sample": {
+   "value": 0.784,
+   "ci95": [
+    0.646,
+    0.896
+   ]
+  },
+  "P refit::stratum_across_folds::patient_weighted": {
+   "value": 0.819,
+   "ci95": [
+    0.705,
+    0.906
+   ]
+  },
+  "P refit::stratum_within_fold::sample": {
+   "value": 0.799,
+   "ci95": [
+    0.674,
+    0.912
+   ]
+  },
+  "P refit::stratum_within_fold::patient_weighted": {
+   "value": 0.82,
+   "ci95": [
+    0.715,
+    0.913
+   ]
+  },
+  "P refit::unstratified_across_folds::sample": {
+   "value": 0.775,
+   "ci95": [
+    0.681,
+    0.854
+   ]
+  },
+  "P refit::unstratified_across_folds::patient_weighted": {
+   "value": 0.798,
+   "ci95": [
+    0.713,
+    0.869
+   ]
+  },
+  "CN joint package::stratum_across_folds::sample": {
+   "value": 0.857,
+   "ci95": [
+    0.762,
+    0.927
+   ]
+  },
+  "CN joint package::stratum_across_folds::patient_weighted": {
+   "value": 0.85,
+   "ci95": [
+    0.761,
+    0.92
+   ]
+  },
+  "CN joint package::stratum_within_fold::sample": {
+   "value": 0.858,
+   "ci95": [
+    0.758,
+    0.931
+   ]
+  },
+  "CN joint package::stratum_within_fold::patient_weighted": {
+   "value": 0.835,
+   "ci95": [
+    0.717,
+    0.928
+   ]
+  },
+  "CN joint package::unstratified_across_folds::sample": {
+   "value": 0.838,
+   "ci95": [
+    0.758,
+    0.898
+   ]
+  },
+  "CN joint package::unstratified_across_folds::patient_weighted": {
+   "value": 0.825,
+   "ci95": [
+    0.743,
+    0.892
+   ]
+  },
+  "L-IMG - L-CNV::stratum_across_folds::sample": {
+   "delta": 0.041,
+   "ci95": [
+    -0.082,
+    0.198
+   ],
+   "p_unadjusted": 0.572
+  },
+  "L-IMG - L-CNV::stratum_across_folds::patient_weighted": {
+   "delta": 0.021,
+   "ci95": [
+    -0.082,
+    0.143
+   ],
+   "p_unadjusted": 0.706
+  },
+  "L-IMG - L-CNV::stratum_within_fold::sample": {
+   "delta": 0.006,
+   "ci95": [
+    -0.103,
+    0.125
+   ],
+   "p_unadjusted": 0.918
+  },
+  "L-IMG - L-CNV::stratum_within_fold::patient_weighted": {
+   "delta": -0.017,
+   "ci95": [
+    -0.109,
+    0.096
+   ],
+   "p_unadjusted": 0.784
+  },
+  "L-LATE - L-IMG::stratum_across_folds::sample": {
+   "delta": 0.051,
+   "ci95": [
+    -0.006,
+    0.106
+   ],
+   "p_unadjusted": 0.078
+  },
+  "L-LATE - L-IMG::stratum_across_folds::patient_weighted": {
+   "delta": 0.056,
+   "ci95": [
+    0.004,
+    0.111
+   ],
+   "p_unadjusted": 0.035
+  },
+  "L-LATE - L-IMG::stratum_within_fold::sample": {
+   "delta": 0.055,
+   "ci95": [
+    -0.008,
+    0.117
+   ],
+   "p_unadjusted": 0.089
+  },
+  "L-LATE - L-IMG::stratum_within_fold::patient_weighted": {
+   "delta": 0.067,
+   "ci95": [
+    0.008,
+    0.126
+   ],
+   "p_unadjusted": 0.026
+  },
+  "L-IMG - P refit::stratum_across_folds::sample": {
+   "delta": 0.045,
+   "ci95": [
+    -0.076,
+    0.197
+   ],
+   "p_unadjusted": 0.56
+  },
+  "L-IMG - P refit::stratum_across_folds::patient_weighted": {
+   "delta": 0.021,
+   "ci95": [
+    -0.083,
+    0.139
+   ],
+   "p_unadjusted": 0.694
+  },
+  "L-IMG - P refit::stratum_within_fold::sample": {
+   "delta": 0.026,
+   "ci95": [
+    -0.092,
+    0.151
+   ],
+   "p_unadjusted": 0.648
+  },
+  "L-IMG - P refit::stratum_within_fold::patient_weighted": {
+   "delta": 0.016,
+   "ci95": [
+    -0.091,
+    0.129
+   ],
+   "p_unadjusted": 0.729
+  },
+  "L-IMG - CN joint package::stratum_across_folds::sample": {
+   "delta": -0.028,
+   "ci95": [
+    -0.127,
+    0.078
+   ],
+   "p_unadjusted": 0.621
+  },
+  "L-IMG - CN joint package::stratum_across_folds::patient_weighted": {
+   "delta": -0.01,
+   "ci95": [
+    -0.098,
+    0.085
+   ],
+   "p_unadjusted": 0.81
+  },
+  "L-IMG - CN joint package::stratum_within_fold::sample": {
+   "delta": -0.033,
+   "ci95": [
+    -0.126,
+    0.097
+   ],
+   "p_unadjusted": 0.659
+  },
+  "L-IMG - CN joint package::stratum_within_fold::patient_weighted": {
+   "delta": 0.0,
+   "ci95": [
+    -0.11,
+    0.125
+   ],
+   "p_unadjusted": 0.995
+  }
+ }
+}

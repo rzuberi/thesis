@@ -1,0 +1,48 @@
+{
+ "sample_level": {
+  "L-IMG": 0.847,
+  "L-CNV": 0.801,
+  "L-LATE": 0.889,
+  "CN joint package": 0.845,
+  "CN past-only": 0.8,
+  "CN per-sample": 0.785,
+  "P published": 0.823
+ },
+ "expected": {
+  "L-IMG": 0.847,
+  "L-CNV": 0.801,
+  "L-LATE": 0.889,
+  "CN joint package": 0.845,
+  "CN past-only": 0.8,
+  "CN per-sample": 0.785,
+  "P published (fold-strat)": 0.823
+ },
+ "units": {
+  "samples": 571,
+  "endoscopies": 288,
+  "patients": 75,
+  "progressor_patients": 32
+ },
+ "old_family_late_minus_img": {
+  "delta": 0.042,
+  "ci95": [
+   0.002,
+   0.078
+  ],
+  "p_unadjusted": 0.048,
+  "p_maxT_family_EARLY_INTER_LATE": 0.066,
+  "expected": "+0.042 [+0.002, +0.078], max-T 0.066"
+ },
+ "anchor_their_C_nl100_class_min_vs_stored_cfg0": {
+  "n": 58,
+  "max_abs_diff": 5.551115123125783e-16,
+  "lambda_refit": 0.0063822760756135,
+  "lambda_stored": 0.0063822760756135
+ },
+ "anchor_pkg_C_nl100_class_min_vs_stored_cfg1": {
+  "n": 58,
+  "max_abs_diff": 0.0,
+  "lambda_refit": 0.0080843948011677,
+  "lambda_stored": 0.0080843948011677
+ }
+}

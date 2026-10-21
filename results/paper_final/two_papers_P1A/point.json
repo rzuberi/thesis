@@ -1,0 +1,633 @@
+{
+ "models": [
+  "L-IMG",
+  "L-CNV",
+  "L-LATE",
+  "CN joint package",
+  "CN past-only",
+  "CN per-sample",
+  "P published",
+  "P refit"
+ ],
+ "primary_P_refit": "their|s773|nl1000|class_1se",
+ "contrasts": [
+  "L-LATE - L-IMG",
+  "L-IMG - L-CNV",
+  "L-IMG - P refit",
+  "L-IMG - CN joint package",
+  "L-IMG - CN past-only",
+  "L-IMG - CN per-sample",
+  "L-IMG - P published"
+ ],
+ "units": {
+  "samples": 571,
+  "progressor_samples": 161,
+  "endoscopies": 288,
+  "progressor_endoscopies": 88,
+  "patients": 75,
+  "progressor_patients": 32
+ },
+ "auroc": {
+  "L-IMG": {
+   "sample": 0.847,
+   "patient_weighted": 0.852,
+   "endo_max": 0.837,
+   "endo_mean": 0.852,
+   "pat_max": 0.851,
+   "pat_mean": 0.94
+  },
+  "L-CNV": {
+   "sample": 0.801,
+   "patient_weighted": 0.822,
+   "endo_max": 0.811,
+   "endo_mean": 0.821,
+   "pat_max": 0.836,
+   "pat_mean": 0.863
+  },
+  "L-LATE": {
+   "sample": 0.889,
+   "patient_weighted": 0.897,
+   "endo_max": 0.885,
+   "endo_mean": 0.901,
+   "pat_max": 0.902,
+   "pat_mean": 0.957
+  },
+  "CN joint package": {
+   "sample": 0.845,
+   "patient_weighted": 0.832,
+   "endo_max": 0.869,
+   "endo_mean": 0.871,
+   "pat_max": 0.853,
+   "pat_mean": 0.867
+  },
+  "CN past-only": {
+   "sample": 0.8,
+   "patient_weighted": 0.796,
+   "endo_max": 0.826,
+   "endo_mean": 0.826,
+   "pat_max": 0.826,
+   "pat_mean": 0.882
+  },
+  "CN per-sample": {
+   "sample": 0.785,
+   "patient_weighted": 0.806,
+   "endo_max": 0.813,
+   "endo_mean": 0.826,
+   "pat_max": 0.851,
+   "pat_mean": 0.941
+  },
+  "P published": {
+   "sample": 0.823,
+   "patient_weighted": 0.841,
+   "endo_max": 0.82,
+   "endo_mean": 0.838,
+   "pat_max": 0.854,
+   "pat_mean": 0.881
+  },
+  "P refit": {
+   "sample": 0.784,
+   "patient_weighted": 0.809,
+   "endo_max": 0.797,
+   "endo_mean": 0.811,
+   "pat_max": 0.819,
+   "pat_mean": 0.868
+  }
+ },
+ "P_refit_variants": {
+  "their|s773|nl1000|class_1se": {
+   "sample": 0.784,
+   "patient_weighted": 0.809,
+   "endo_max": 0.797,
+   "endo_mean": 0.811,
+   "pat_max": 0.819,
+   "pat_mean": 0.868,
+   "lambda_median": 0.021,
+   "nnz_median": 46.0,
+   "nnz_zero_folds": 0,
+   "n_train_mean": 700.3
+  },
+  "their|s773|nl1000|class_min": {
+   "sample": 0.826,
+   "patient_weighted": 0.838,
+   "endo_max": 0.835,
+   "endo_mean": 0.846,
+   "pat_max": 0.856,
+   "pat_mean": 0.884,
+   "lambda_median": 0.003,
+   "nnz_median": 106.0,
+   "nnz_zero_folds": 0,
+   "n_train_mean": 700.3
+  },
+  "their|s773|nl1000|dev_min": {
+   "sample": 0.82,
+   "patient_weighted": 0.838,
+   "endo_max": 0.829,
+   "endo_mean": 0.845,
+   "pat_max": 0.86,
+   "pat_mean": 0.889,
+   "lambda_median": 0.01,
+   "nnz_median": 65.5,
+   "nnz_zero_folds": 0,
+   "n_train_mean": 700.3
+  },
+  "their|s773|nl1000|dev_1se": {
+   "sample": 0.736,
+   "patient_weighted": 0.763,
+   "endo_max": 0.754,
+   "endo_mean": 0.765,
+   "pat_max": 0.783,
+   "pat_mean": 0.83,
+   "lambda_median": 0.037,
+   "nnz_median": 31.5,
+   "nnz_zero_folds": 0,
+   "n_train_mean": 700.3
+  },
+  "their|s773|nl1000|published": {
+   "sample": 0.827,
+   "patient_weighted": 0.843,
+   "endo_max": 0.835,
+   "endo_mean": 0.85,
+   "pat_max": 0.867,
+   "pat_mean": 0.894,
+   "lambda_median": 0.007,
+   "nnz_median": 79.0,
+   "nnz_zero_folds": 0,
+   "n_train_mean": 700.3
+  },
+  "their|C|nl1000|class_1se": {
+   "sample": 0.727,
+   "patient_weighted": 0.754,
+   "endo_max": 0.737,
+   "endo_mean": 0.746,
+   "pat_max": 0.767,
+   "pat_mean": 0.808,
+   "lambda_median": 0.039,
+   "nnz_median": 27.0,
+   "nnz_zero_folds": 0,
+   "n_train_mean": 608.4
+  },
+  "their|C|nl1000|class_min": {
+   "sample": 0.801,
+   "patient_weighted": 0.821,
+   "endo_max": 0.81,
+   "endo_mean": 0.82,
+   "pat_max": 0.835,
+   "pat_mean": 0.863,
+   "lambda_median": 0.008,
+   "nnz_median": 72.5,
+   "nnz_zero_folds": 0,
+   "n_train_mean": 608.4
+  },
+  "their|C|nl1000|dev_min": {
+   "sample": 0.809,
+   "patient_weighted": 0.831,
+   "endo_max": 0.818,
+   "endo_mean": 0.83,
+   "pat_max": 0.846,
+   "pat_mean": 0.878,
+   "lambda_median": 0.015,
+   "nnz_median": 54.5,
+   "nnz_zero_folds": 0,
+   "n_train_mean": 608.4
+  },
+  "their|C|nl1000|dev_1se": {
+   "sample": 0.686,
+   "patient_weighted": 0.71,
+   "endo_max": 0.699,
+   "endo_mean": 0.7,
+   "pat_max": 0.719,
+   "pat_mean": 0.753,
+   "lambda_median": 0.058,
+   "nnz_median": 18.0,
+   "nnz_zero_folds": 0,
+   "n_train_mean": 608.4
+  },
+  "their|C|nl1000|published": {
+   "sample": 0.806,
+   "patient_weighted": 0.826,
+   "endo_max": 0.816,
+   "endo_mean": 0.825,
+   "pat_max": 0.843,
+   "pat_mean": 0.866,
+   "lambda_median": 0.007,
+   "nnz_median": 79.0,
+   "nnz_zero_folds": 0,
+   "n_train_mean": 608.4
+  },
+  "pkg|s773|nl1000|class_1se": {
+   "sample": 0.77,
+   "patient_weighted": 0.753,
+   "endo_max": 0.79,
+   "endo_mean": 0.785,
+   "pat_max": 0.815,
+   "pat_mean": 0.789,
+   "lambda_median": 0.049,
+   "nnz_median": 24.0,
+   "nnz_zero_folds": 0,
+   "n_train_mean": 700.3
+  },
+  "pkg|s773|nl1000|class_min": {
+   "sample": 0.803,
+   "patient_weighted": 0.778,
+   "endo_max": 0.827,
+   "endo_mean": 0.819,
+   "pat_max": 0.821,
+   "pat_mean": 0.809,
+   "lambda_median": 0.004,
+   "nnz_median": 93.5,
+   "nnz_zero_folds": 0,
+   "n_train_mean": 700.3
+  },
+  "pkg|s773|nl1000|dev_min": {
+   "sample": 0.815,
+   "patient_weighted": 0.787,
+   "endo_max": 0.832,
+   "endo_mean": 0.829,
+   "pat_max": 0.823,
+   "pat_mean": 0.824,
+   "lambda_median": 0.019,
+   "nnz_median": 50.0,
+   "nnz_zero_folds": 0,
+   "n_train_mean": 700.3
+  },
+  "pkg|s773|nl1000|dev_1se": {
+   "sample": 0.77,
+   "patient_weighted": 0.755,
+   "endo_max": 0.794,
+   "endo_mean": 0.786,
+   "pat_max": 0.815,
+   "pat_mean": 0.793,
+   "lambda_median": 0.051,
+   "nnz_median": 23.0,
+   "nnz_zero_folds": 0,
+   "n_train_mean": 700.3
+  },
+  "pkg|s773|nl1000|published": {
+   "sample": 0.822,
+   "patient_weighted": 0.799,
+   "endo_max": 0.845,
+   "endo_mean": 0.842,
+   "pat_max": 0.846,
+   "pat_mean": 0.829,
+   "lambda_median": 0.007,
+   "nnz_median": 77.0,
+   "nnz_zero_folds": 0,
+   "n_train_mean": 700.3
+  },
+  "pkg|C|nl1000|class_1se": {
+   "sample": 0.788,
+   "patient_weighted": 0.786,
+   "endo_max": 0.826,
+   "endo_mean": 0.818,
+   "pat_max": 0.844,
+   "pat_mean": 0.827,
+   "lambda_median": 0.049,
+   "nnz_median": 23.0,
+   "nnz_zero_folds": 0,
+   "n_train_mean": 608.4
+  },
+  "pkg|C|nl1000|class_min": {
+   "sample": 0.845,
+   "patient_weighted": 0.832,
+   "endo_max": 0.869,
+   "endo_mean": 0.871,
+   "pat_max": 0.849,
+   "pat_mean": 0.867,
+   "lambda_median": 0.009,
+   "nnz_median": 63.5,
+   "nnz_zero_folds": 0,
+   "n_train_mean": 608.4
+  },
+  "pkg|C|nl1000|dev_min": {
+   "sample": 0.85,
+   "patient_weighted": 0.84,
+   "endo_max": 0.879,
+   "endo_mean": 0.878,
+   "pat_max": 0.864,
+   "pat_mean": 0.87,
+   "lambda_median": 0.016,
+   "nnz_median": 48.0,
+   "nnz_zero_folds": 0,
+   "n_train_mean": 608.4
+  },
+  "pkg|C|nl1000|dev_1se": {
+   "sample": 0.798,
+   "patient_weighted": 0.797,
+   "endo_max": 0.838,
+   "endo_mean": 0.83,
+   "pat_max": 0.85,
+   "pat_mean": 0.844,
+   "lambda_median": 0.047,
+   "nnz_median": 25.0,
+   "nnz_zero_folds": 0,
+   "n_train_mean": 608.4
+  },
+  "pkg|C|nl1000|published": {
+   "sample": 0.85,
+   "patient_weighted": 0.837,
+   "endo_max": 0.876,
+   "endo_mean": 0.876,
+   "pat_max": 0.857,
+   "pat_mean": 0.869,
+   "lambda_median": 0.007,
+   "nnz_median": 70.5,
+   "nnz_zero_folds": 0,
+   "n_train_mean": 608.4
+  }
+ },
+ "classification": {
+  "P published::sample::high": [
+   0.64,
+   0.837
+  ],
+  "P published::sample::not_low": [
+   0.826,
+   0.659
+  ],
+  "P published::endo::high": [
+   0.648,
+   0.775
+  ],
+  "P published::endo::not_low": [
+   0.852,
+   0.615
+  ],
+  "P refit::sample::high": [
+   0.537,
+   0.857
+  ],
+  "P refit::sample::not_low": [
+   0.807,
+   0.52
+  ],
+  "P refit::endo::high": [
+   0.569,
+   0.824
+  ],
+  "P refit::endo::not_low": [
+   0.827,
+   0.488
+  ],
+  "L-CNV::sample::high": [
+   0.544,
+   0.852
+  ],
+  "L-CNV::sample::not_low": [
+   0.732,
+   0.686
+  ],
+  "L-CNV::endo::high": [
+   0.588,
+   0.796
+  ],
+  "L-CNV::endo::not_low": [
+   0.764,
+   0.629
+  ],
+  "CN joint package::sample::high": [
+   0.599,
+   0.863
+  ],
+  "CN joint package::sample::not_low": [
+   0.76,
+   0.739
+  ],
+  "CN joint package::endo::high": [
+   0.718,
+   0.828
+  ],
+  "CN joint package::endo::not_low": [
+   0.882,
+   0.682
+  ],
+  "L-IMG::sample::high": [
+   0.62,
+   0.875
+  ],
+  "L-IMG::sample::not_low": [
+   0.73,
+   0.791
+  ],
+  "L-IMG::endo::high": [
+   0.691,
+   0.779
+  ],
+  "L-IMG::endo::not_low": [
+   0.827,
+   0.647
+  ],
+  "L-LATE::sample::high": [
+   0.637,
+   0.928
+  ],
+  "L-LATE::sample::not_low": [
+   0.84,
+   0.731
+  ],
+  "L-LATE::endo::high": [
+   0.701,
+   0.876
+  ],
+  "L-LATE::endo::not_low": [
+   0.88,
+   0.601
+  ],
+  "L-IMG share-matched to P refit::sample::high": [
+   0.601,
+   0.881
+  ],
+  "L-IMG share-matched to P refit::sample::not_low": [
+   0.878,
+   0.548
+  ],
+  "L-IMG share-matched to P refit::endo::high": [
+   0.607,
+   0.84
+  ],
+  "L-IMG share-matched to P refit::endo::not_low": [
+   0.895,
+   0.518
+  ]
+ },
+ "calibration": {
+  "L-IMG::unweighted::slope": 0.533,
+  "L-IMG::unweighted::citl": -0.214,
+  "L-IMG::patient_weighted::slope": 0.511,
+  "L-IMG::patient_weighted::citl": 0.538,
+  "L-CNV::unweighted::slope": 0.565,
+  "L-CNV::unweighted::citl": -0.336,
+  "L-CNV::patient_weighted::slope": 0.582,
+  "L-CNV::patient_weighted::citl": 0.446,
+  "L-LATE::unweighted::slope": 1.291,
+  "L-LATE::unweighted::citl": -0.218,
+  "L-LATE::patient_weighted::slope": 1.234,
+  "L-LATE::patient_weighted::citl": 0.37,
+  "P refit::unweighted::slope": 0.99,
+  "P refit::unweighted::citl": -0.556,
+  "P refit::patient_weighted::slope": 1.064,
+  "P refit::patient_weighted::citl": 0.119,
+  "CN joint package::unweighted::slope": 0.638,
+  "CN joint package::unweighted::citl": -0.292,
+  "CN joint package::patient_weighted::slope": 0.574,
+  "CN joint package::patient_weighted::citl": 0.324,
+  "P published::unweighted::slope": 0.662,
+  "P published::unweighted::citl": -0.592,
+  "P published::patient_weighted::slope": 0.695,
+  "P published::patient_weighted::citl": 0.154
+ },
+ "matching": {
+  "age_dx_median_75": 61.0,
+  "strata": [
+   {
+    "stratum": "F|gt_median|gt4",
+    "patients": 6,
+    "progressors": "<5"
+   },
+   {
+    "stratum": "F|gt_median|le4",
+    "patients": 6,
+    "progressors": "<5"
+   },
+   {
+    "stratum": "F|le_median|gt4",
+    "patients": "<5",
+    "progressors": "<5"
+   },
+   {
+    "stratum": "F|le_median|le4",
+    "patients": "<5",
+    "progressors": "<5"
+   },
+   {
+    "stratum": "M|gt_median|gt4",
+    "patients": 11,
+    "progressors": "<5"
+   },
+   {
+    "stratum": "M|gt_median|le4",
+    "patients": 8,
+    "progressors": "<5"
+   },
+   {
+    "stratum": "M|gt_median|missing",
+    "patients": 6,
+    "progressors": "<5"
+   },
+   {
+    "stratum": "M|le_median|gt4",
+    "patients": 11,
+    "progressors": "<5"
+   },
+   {
+    "stratum": "M|le_median|le4",
+    "patients": 16,
+    "progressors": 7
+   },
+   {
+    "stratum": "M|le_median|missing",
+    "patients": 5,
+    "progressors": "<5"
+   }
+  ],
+  "missing": {
+   "age_dx": 0,
+   "sex": 0,
+   "prague_m": 11
+  }
+ },
+ "stratum_concordance": {
+  "L-IMG::stratum_across_folds::sample": 0.829,
+  "L-IMG::stratum_across_folds::patient_weighted": 0.84,
+  "L-IMG::stratum_within_fold::sample": 0.825,
+  "L-IMG::stratum_within_fold::patient_weighted": 0.836,
+  "L-IMG::unstratified_across_folds::sample": 0.837,
+  "L-IMG::unstratified_across_folds::patient_weighted": 0.842,
+  "L-CNV::stratum_across_folds::sample": 0.788,
+  "L-CNV::stratum_across_folds::patient_weighted": 0.82,
+  "L-CNV::stratum_within_fold::sample": 0.819,
+  "L-CNV::stratum_within_fold::patient_weighted": 0.852,
+  "L-CNV::unstratified_across_folds::sample": 0.783,
+  "L-CNV::unstratified_across_folds::patient_weighted": 0.803,
+  "L-LATE::stratum_across_folds::sample": 0.879,
+  "L-LATE::stratum_across_folds::patient_weighted": 0.896,
+  "L-LATE::stratum_within_fold::sample": 0.88,
+  "L-LATE::stratum_within_fold::patient_weighted": 0.903,
+  "L-LATE::unstratified_across_folds::sample": 0.88,
+  "L-LATE::unstratified_across_folds::patient_weighted": 0.887,
+  "P refit::stratum_across_folds::sample": 0.784,
+  "P refit::stratum_across_folds::patient_weighted": 0.819,
+  "P refit::stratum_within_fold::sample": 0.799,
+  "P refit::stratum_within_fold::patient_weighted": 0.82,
+  "P refit::unstratified_across_folds::sample": 0.775,
+  "P refit::unstratified_across_folds::patient_weighted": 0.798,
+  "CN joint package::stratum_across_folds::sample": 0.857,
+  "CN joint package::stratum_across_folds::patient_weighted": 0.85,
+  "CN joint package::stratum_within_fold::sample": 0.858,
+  "CN joint package::stratum_within_fold::patient_weighted": 0.835,
+  "CN joint package::unstratified_across_folds::sample": 0.838,
+  "CN joint package::unstratified_across_folds::patient_weighted": 0.825
+ },
+ "stratum_pairs_share_of_all_pairs": 0.118,
+ "conditional_logistic_patient_mean_logit": {
+  "L-IMG": {
+   "conditional_OR_per_SD": 611.795,
+   "conditional_ci95": [
+    7.87,
+    47559.993
+   ],
+   "unconditional_OR_per_SD": 745.926,
+   "unconditional_ci95": [
+    19.94,
+    27903.735
+   ]
+  },
+  "L-CNV": {
+   "conditional_OR_per_SD": 9.379,
+   "conditional_ci95": [
+    3.041,
+    28.925
+   ],
+   "unconditional_OR_per_SD": 11.456,
+   "unconditional_ci95": [
+    3.72,
+    35.281
+   ]
+  },
+  "L-LATE": {
+   "conditional_OR_per_SD": 112.485,
+   "conditional_ci95": [
+    7.914,
+    1598.755
+   ],
+   "unconditional_OR_per_SD": 186.291,
+   "unconditional_ci95": [
+    15.684,
+    2212.724
+   ]
+  },
+  "P refit": {
+   "conditional_OR_per_SD": 15.183,
+   "conditional_ci95": [
+    3.676,
+    62.704
+   ],
+   "unconditional_OR_per_SD": 15.868,
+   "unconditional_ci95": [
+    4.282,
+    58.795
+   ]
+  },
+  "CN joint package": {
+   "conditional_OR_per_SD": 10.923,
+   "conditional_ci95": [
+    3.196,
+    37.339
+   ],
+   "unconditional_OR_per_SD": 10.416,
+   "unconditional_ci95": [
+    3.43,
+    31.627
+   ]
+  }
+ }
+}
