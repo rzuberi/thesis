@@ -8,18 +8,19 @@ plt.rcParams.update({"font.size": 10, "axes.spines.top": False, "axes.spines.rig
 BLUE, INK, MUTED = "#2a78d6", "#0b0b0b", "#8a8984"
 PAN = [("a_free", "(a) Full refit of L-IMG and L-CNV\n+ whole rule search"), ("b_free", "(b) Stored predictions\n+ whole rule search"), ("b_strat", "(b') As (b), labels permuted within\nendoscopy-count strata")]
 PAN = [(k, t) for k, t in PAN if k in R]
-fig, axes = plt.subplots(1, len(PAN), figsize=(3.6 * len(PAN), 3.4), sharey=False)
-axes = np.atleast_1d(axes); lo = min(min(R[k]["tol1.0"]["null_dNP_values"]) for k, _ in PAN); real = R[PAN[0][0]]["tol1.0"]["dNP"]["real"]; lo = min(lo, real) - 1.5
-for ax, (k, t) in zip(axes, PAN):
-    o = R[k]["tol1.0"]; v = np.array(o["null_dNP_values"], float); bins = np.arange(np.floor(lo), 0.75, 0.5)
-    ax.hist(v, bins=bins, color=BLUE, edgecolor="white", linewidth=0.8)
-    ax.axvline(o["dNP"]["real"], color=INK, lw=2); ymax = ax.get_ylim()[1]
-    ax.text(o["dNP"]["real"] + 0.3, ymax * 0.93, f"real search\n{o['dNP']['real']:+.1f}", color=INK, fontsize=9, va="top")
-    p = o["dNP"]["p"]; B = R[k]["B"]; ptxt = f"p < {1 / (B + 1) + 1e-9:.4f}" if o["dNP"]["n_null_at_or_below_real"] == 0 else f"p = {p:.4f}"
-    ax.text(0.98, 0.62, f"B = {B}\nnull median {np.median(v):+.1f}\nnull min {v.min():+.1f}\n{ptxt}", transform=ax.transAxes, ha="right", va="top", fontsize=9, color="#52514e")
-    ax.set_title(t, fontsize=10, loc="left"); ax.set_xlabel("Best cell: Δ NP patients flagged vs R49\n(of 43; caught ≥ R49 − 1)")
-axes[0].set_ylabel("Label permutations")
-fig.tight_layout(); fig.savefig(OD + "/fig_p2n_null.png", dpi=200); plt.close(fig)
+def hist_fig(key, fname, xlab):
+    fig, axes = plt.subplots(1, len(PAN), figsize=(3.6 * len(PAN), 3.4)); axes = np.atleast_1d(axes)
+    lo = min(min(min(R[k][key]["null_dNP_values"]) for k, _ in PAN), min(R[k][key]["dNP"]["real"] for k, _ in PAN)) - 1.0
+    hi = max(max(R[k][key]["null_dNP_values"]) for k, _ in PAN) + 1.0
+    for ax, (k, t) in zip(axes, PAN):
+        o = R[k][key]; v = np.array(o["null_dNP_values"], float); bins = np.arange(np.floor(lo), np.ceil(hi) + 0.5, 0.5); rv = o["dNP"]["real"]
+        ax.hist(v, bins=bins, color=BLUE, edgecolor="white", linewidth=0.8); ax.axvline(rv, color=INK, lw=2); ymax = ax.get_ylim()[1]; ax.set_ylim(0, ymax * 1.7)
+        B = R[k]["B"]; n_le = o["dNP"]["n_null_at_or_below_real"]; ptxt = f"p < {1 / (B + 1) + 1e-9:.3f}" if n_le == 0 else f"p = {o['dNP']['p']:.3f}"
+        ax.text(0.98, 0.97, f"real search {rv:+.1f} (black line)\n{n_le} of {B} null searches\nat or below it; {ptxt}", transform=ax.transAxes, ha="right", va="top", fontsize=9, color=INK)
+        ax.set_title(t, fontsize=10, loc="left"); ax.set_xlabel(xlab); ax.set_xlim(np.floor(lo), np.ceil(hi))
+    axes[0].set_ylabel("Label permutations"); fig.tight_layout(); fig.savefig(OD + "/" + fname, dpi=200); plt.close(fig)
+hist_fig("tol1.0", "fig_p2n_null.png", "Best cell: Δ NP patients flagged vs R49\n(of 43; caught ≥ R49 − 1)")
+hist_fig("tier0_tol1.0", "fig_p2n_null_tier0.png", "Best no-sequencing cell: Δ NP flagged vs R49\n(of 43; caught ≥ R49 − 1)")
 fig, axes = plt.subplots(1, len(PAN), figsize=(3.6 * len(PAN), 3.4), sharex=True, sharey=True); axes = np.atleast_1d(axes)
 for ax, (k, t) in zip(axes, PAN):
     o = R[k]["tol1.0"]; x = np.array(o["null_dC_values"], float); y = np.array(o["null_dNP_values"], float); rng = np.random.RandomState(0)

@@ -1,0 +1,746 @@
+{
+ "b": {
+  "observed": {
+   "R49 gate": [
+    31.1,
+    31.8,
+    1.94
+   ],
+   "P1 90%": [
+    31.1,
+    36.0,
+    0.0
+   ],
+   "memory (A1 EW gate score)": [
+    30.7,
+    23.6,
+    1.94
+   ],
+   "memory + certificate (A12)": [
+    30.5,
+    21.5,
+    1.94
+   ],
+   "final rule (A12 + check, cn90)": [
+    30.5,
+    17.2,
+    3.82
+   ],
+   "final rule, in-fold bar": [
+    30.4,
+    16.4,
+    3.82
+   ],
+   "mean-logit + memory (no sequencing)": [
+    31.0,
+    26.6,
+    0.0
+   ],
+   "mean-logit gate + memory": [
+    30.5,
+    22.6,
+    1.43
+   ],
+   "mean-logit full stack": [
+    30.3,
+    16.2,
+    3.11
+   ],
+   "R49 + check (E2 cell)": [
+    31.1,
+    26.6,
+    4.35
+   ],
+   "memory + check": [
+    30.7,
+    20.4,
+    4.05
+   ],
+   "R49 re-tuned (C1)": [
+    30.6,
+    29.4,
+    1.87
+   ],
+   "mean-logit R49 rebuilt": [
+    30.9,
+    30.8,
+    1.43
+   ],
+   "mean-logit P1 90%": [
+    31.2,
+    32.2,
+    0.0
+   ],
+   "17p-only check": [
+    30.5,
+    19.7,
+    3.82
+   ]
+  },
+  "expected": {
+   "R49 gate": [
+    31.1,
+    31.8,
+    1.94
+   ],
+   "P1 90%": [
+    31.1,
+    36.0,
+    0.0
+   ],
+   "memory (A1 EW gate score)": [
+    30.7,
+    23.6,
+    1.94
+   ],
+   "memory + certificate (A12)": [
+    30.5,
+    21.5,
+    1.94
+   ],
+   "final rule (A12 + check, cn90)": [
+    30.5,
+    17.2,
+    3.82
+   ],
+   "final rule, in-fold bar": [
+    30.4,
+    16.4,
+    3.82
+   ],
+   "mean-logit + memory (no sequencing)": [
+    31.0,
+    26.6,
+    0.0
+   ],
+   "mean-logit gate + memory": [
+    30.5,
+    22.6,
+    1.43
+   ],
+   "mean-logit full stack": [
+    30.3,
+    16.2,
+    3.12
+   ],
+   "R49 + check (E2 cell)": [
+    31.1,
+    26.6,
+    4.35
+   ],
+   "memory + check": [
+    30.7,
+    20.4,
+    4.05
+   ],
+   "R49 re-tuned (C1)": [
+    30.6,
+    29.4,
+    1.87
+   ],
+   "mean-logit R49 rebuilt": [
+    30.9,
+    31.2,
+    1.43
+   ],
+   "mean-logit P1 90%": [
+    31.2,
+    32.2,
+    0.0
+   ],
+   "17p-only check": [
+    30.5,
+    19.7,
+    3.82
+   ]
+  },
+  "mismatches": {
+   "mean-logit full stack": [
+    [
+     30.3,
+     16.2,
+     3.11
+    ],
+    [
+     30.3,
+     16.2,
+     3.12
+    ]
+   ],
+   "mean-logit R49 rebuilt": [
+    [
+     30.9,
+     30.8,
+     1.43
+    ],
+    [
+     30.9,
+     31.2,
+     1.43
+    ]
+   ]
+  },
+  "reproduced": false,
+  "n_cells": 2096,
+  "cells_by_source": {
+   "st|E2fixed": 648,
+   "st|r9": 444,
+   "st|E2combo": 192,
+   "st|E2grade": 64,
+   "st|E2drift": 60,
+   "st|mem": 51,
+   "ml|r9": 42,
+   "st|E2sel": 36,
+   "st|E8arms": 19,
+   "st|E2stab": 18,
+   "e3x:mlogit--ens--base__ho20_mean__v220_mean__gpl2_mean|r9": 16,
+   "e3x:mlogit--cat_u2gp2_mean|r9": 16,
+   "e3x:mlogit--cat_u2l12_mean|r9": 16,
+   "e3x:mlogit--ens--base__gpl2_mean|r9": 16,
+   "e3x:alt--base|r9": 16,
+   "e3x:top2logit--base|r9": 16,
+   "e3x:medlogit--base|r9": 16,
+   "e3x:mlogit--ens--base__u2l1_mean__gpl2_mean__v2l2_mean__co20_mean__mu20_mean|r9": 16,
+   "e3x:mlogit--ens--base__u2l1_mean|r9": 16,
+   "e3x:mprob--base|r9": 16,
+   "e3x:mlogit--base|r9": 16,
+   "e3x:mlogit--sel--base__u2l1_mean__gpl1_mean__gpl2_mean__gpl3_mean__v2l2_mean__co20_mean__mu20_mean__cat_u2l12_mean__cat_gp123_mean__cat_u2gp2_mean|r9": 16,
+   "mprob|r9": 16,
+   "med|r9": 16,
+   "top2|r9": 16,
+   "e3x:ens--base__u2l1_mean|r9": 16,
+   "st|E7bar": 10,
+   "st|E2and": 9,
+   "mprob|ref": 4,
+   "e3x:mlogit--v220_mean|ref": 4,
+   "e3x:mlogit--v2l2_mean|ref": 4,
+   "e3x:mprob--base|ref": 4,
+   "e3x:mu20_mean|ref": 4,
+   "st|ref": 4,
+   "e3x:sel--base__u2l1_mean__gpl1_mean__gpl2_mean__gpl3_mean__v2l2_mean__co20_mean__mu20_mean__cat_u2l12_mean__cat_gp123_mean__cat_u2gp2_mean|ref": 4,
+   "e3x:sel--base__u2l1_mean__gpl2_mean__v2l2_mean__ho20_mean__v220_mean__co20_mean__ct20_mean__mu20_mean|ref": 4,
+   "e3x:v2l2_mean|ref": 4,
+   "e3x:top2logit--base|ref": 4,
+   "e3x:v220_mean|ref": 4,
+   "e3x:u2l1_mean|ref": 4,
+   "e3x:u2l2_max|ref": 4,
+   "e3x:u2l2_meansd|ref": 4,
+   "ml|ref": 4,
+   "e3x:u2l2_q3|ref": 4,
+   "e3x:u2l2_top16n|ref": 4,
+   "med|ref": 4,
+   "e3x:u2l2_top32n|ref": 4,
+   "e3x:mlogit--u2l1_mean|ref": 4,
+   "e3x:u2l2_top8n|ref": 4,
+   "e3x:mlogit--gpl2_mean|ref": 4,
+   "e3x:mlogit--sel--base__u2l1_mean__gpl1_mean__gpl2_mean__gpl3_mean__v2l2_mean__co20_mean__mu20_mean__cat_u2l12_mean__cat_gp123_mean__cat_u2gp2_mean|ref": 4,
+   "e3x:cat_gp123_mean|ref": 4,
+   "e3x:ens--base__ho20_mean|ref": 4,
+   "e3x:ens--base__ho20_mean__v220_mean__gpl2_mean|ref": 4,
+   "e3x:ens--base__gpl2_mean|ref": 4,
+   "e3x:ct20_mean|ref": 4,
+   "e3x:co20_mean|ref": 4,
+   "e3x:cat_u2l12_mean|ref": 4,
+   "e3x:cat_u2gp2_mean|ref": 4,
+   "e3x:base|ref": 4,
+   "e3x:mlogit--mu20_mean|ref": 4,
+   "e3x:base_tptop8|ref": 4,
+   "e3x:base_tptop32|ref": 4,
+   "e3x:base_tptop16|ref": 4,
+   "e3x:base_tpmax|ref": 4,
+   "e3x:base_tpall|ref": 4,
+   "e3x:alt--v2l2_mean|ref": 4,
+   "e3x:alt--u2l1_mean|ref": 4,
+   "e3x:ens--base__u2l1_mean__gpl2_mean__v2l2_mean__co20_mean__mu20_mean|ref": 4,
+   "e3x:ens--base__u2l1_mean|ref": 4,
+   "e3x:gpl1_mean|ref": 4,
+   "e3x:mlogit--ens--base__gpl2_mean|ref": 4,
+   "e3x:mlogit--ho20_mean|ref": 4,
+   "e3x:alt--base|ref": 4,
+   "e3x:mlogit--gpl1_mean|ref": 4,
+   "e3x:mlogit--ens--base__u2l1_mean|ref": 4,
+   "e3x:mlogit--ens--base__u2l1_mean__gpl2_mean__v2l2_mean__co20_mean__mu20_mean|ref": 4,
+   "e3x:mlogit--ens--base__ho20_mean|ref": 4,
+   "e3x:mlogit--ens--base__ho20_mean__v220_mean__gpl2_mean|ref": 4,
+   "e3x:mlogit--ct20_mean|ref": 4,
+   "e3x:mlogit--co20_mean|ref": 4,
+   "e3x:mlogit--cat_u2l12_mean|ref": 4,
+   "e3x:mlogit--cat_u2gp2_mean|ref": 4,
+   "e3x:mlogit--base|ref": 4,
+   "e3x:medlogit--base|ref": 4,
+   "e3x:ho20_mean|ref": 4,
+   "e3x:gpl3_mean|ref": 4,
+   "e3x:gpl2_mean|ref": 4,
+   "top2|ref": 4,
+   "ml|mem": 3
+  },
+  "n_families": 210,
+  "seconds": {
+   "build st": 2.7,
+   "rv9 st": 77.3,
+   "E2 st": 92.8,
+   "mem/E7/E8 st": 93.8,
+   "ml": 102.0,
+   "med": 108.7,
+   "mprob": 115.1,
+   "top2": 121.0,
+   "E3 extended": 450.7
+  },
+  "real_selection": {
+   "R49": [
+    31.1,
+    31.8
+   ],
+   "tol0.0": {
+    "dNP": -8.2,
+    "dC": 0.29999999999999716,
+    "cell": "st|r9|A4:conf_al:ew|ew h=4y",
+    "seq": 3.149333357810974
+   },
+   "tol0.5": {
+    "dNP": -11.7,
+    "dC": -0.5,
+    "cell": "e3x:mlogit--cat_u2gp2_mean|r9|A1:gate_al:ew|ew h=4y",
+    "seq": 1.4080000162124633
+   },
+   "tol1.0": {
+    "dNP": -15.600000000000001,
+    "dC": -0.8000000000000007,
+    "cell": "ml|mem|A12 + ps_oac k2 cn90",
+    "seq": 3.1146666526794435
+   },
+   "tol2.0": {
+    "dNP": -16.700000000000003,
+    "dC": -1.2000000000000028,
+    "cell": "st|E7bar|A12 + check bar 0.75",
+    "seq": 3.8160000085830688
+   },
+   "excess": {
+    "value": -0.3508720930232558,
+    "dNP": -16.700000000000003,
+    "dC": -1.2000000000000028,
+    "cell": "st|E7bar|A12 + check bar 0.75"
+   },
+   "named": {
+    "R49 gate": {
+     "dNP": 0.0,
+     "dC": 0.0,
+     "excess": 0.0
+    },
+    "P1 90%": {
+     "dNP": 4.199999999999999,
+     "dC": 0.0,
+     "excess": 0.09767441860465115
+    },
+    "memory (A1 EW gate score)": {
+     "dNP": -8.2,
+     "dC": -0.40000000000000213,
+     "excess": -0.17819767441860457
+    },
+    "memory + certificate (A12)": {
+     "dNP": -10.3,
+     "dC": -0.6000000000000014,
+     "excess": -0.2207848837209302
+    },
+    "final rule (A12 + check, cn90)": {
+     "dNP": -14.600000000000001,
+     "dC": -0.6000000000000014,
+     "excess": -0.3207848837209302
+    },
+    "final rule, in-fold bar": {
+     "dNP": -15.400000000000002,
+     "dC": -0.7000000000000028,
+     "excess": -0.3362645348837209
+    },
+    "mean-logit + memory (no sequencing)": {
+     "dNP": -5.199999999999999,
+     "dC": -0.10000000000000142,
+     "excess": -0.11780523255813947
+    },
+    "mean-logit gate + memory": {
+     "dNP": -9.2,
+     "dC": -0.6000000000000014,
+     "excess": -0.19520348837209298
+    },
+    "mean-logit full stack": {
+     "dNP": -15.600000000000001,
+     "dC": -0.8000000000000007,
+     "excess": -0.3377906976744186
+    },
+    "R49 + check (E2 cell)": {
+     "dNP": -5.199999999999999,
+     "dC": 0.0,
+     "excess": -0.12093023255813952
+    },
+    "memory + check": {
+     "dNP": -11.400000000000002,
+     "dC": -0.40000000000000213,
+     "excess": -0.2526162790697674
+    },
+    "R49 re-tuned (C1)": {
+     "dNP": -2.400000000000002,
+     "dC": -0.5,
+     "excess": -0.04018895348837214
+    },
+    "mean-logit R49 rebuilt": {
+     "dNP": -1.0,
+     "dC": -0.20000000000000284,
+     "excess": -0.017005813953488283
+    },
+    "mean-logit P1 90%": {
+     "dNP": 0.40000000000000213,
+     "dC": 0.09999999999999787,
+     "excess": 0.006177325581395466
+    },
+    "17p-only check": {
+     "dNP": -12.100000000000001,
+     "dC": -0.6000000000000014,
+     "excess": -0.2626453488372093
+    }
+   }
+  }
+ },
+ "a": {
+  "observed": {
+   "R49 gate": [
+    31.1,
+    31.8,
+    1.94
+   ],
+   "P1 90%": [
+    31.1,
+    36.0,
+    0.0
+   ],
+   "memory (A1 EW gate score)": [
+    30.7,
+    23.6,
+    1.94
+   ],
+   "memory + certificate (A12)": [
+    30.5,
+    21.5,
+    1.94
+   ],
+   "final rule (A12 + check, cn90)": [
+    30.5,
+    17.2,
+    3.82
+   ],
+   "final rule, in-fold bar": [
+    30.4,
+    16.4,
+    3.82
+   ],
+   "mean-logit + memory (no sequencing)": [
+    31.0,
+    26.6,
+    0.0
+   ],
+   "mean-logit gate + memory": [
+    30.5,
+    22.6,
+    1.43
+   ],
+   "mean-logit full stack": [
+    30.3,
+    16.2,
+    3.11
+   ],
+   "R49 + check (E2 cell)": [
+    31.1,
+    26.6,
+    4.35
+   ],
+   "memory + check": [
+    30.7,
+    20.4,
+    4.05
+   ],
+   "R49 re-tuned (C1)": [
+    30.6,
+    29.4,
+    1.87
+   ],
+   "mean-logit R49 rebuilt": [
+    30.9,
+    30.8,
+    1.43
+   ],
+   "mean-logit P1 90%": [
+    31.2,
+    32.2,
+    0.0
+   ],
+   "17p-only check": [
+    30.5,
+    19.7,
+    3.82
+   ]
+  },
+  "expected": {
+   "R49 gate": [
+    31.1,
+    31.8,
+    1.94
+   ],
+   "P1 90%": [
+    31.1,
+    36.0,
+    0.0
+   ],
+   "memory (A1 EW gate score)": [
+    30.7,
+    23.6,
+    1.94
+   ],
+   "memory + certificate (A12)": [
+    30.5,
+    21.5,
+    1.94
+   ],
+   "final rule (A12 + check, cn90)": [
+    30.5,
+    17.2,
+    3.82
+   ],
+   "final rule, in-fold bar": [
+    30.4,
+    16.4,
+    3.82
+   ],
+   "mean-logit + memory (no sequencing)": [
+    31.0,
+    26.6,
+    0.0
+   ],
+   "mean-logit gate + memory": [
+    30.5,
+    22.6,
+    1.43
+   ],
+   "mean-logit full stack": [
+    30.3,
+    16.2,
+    3.12
+   ],
+   "R49 + check (E2 cell)": [
+    31.1,
+    26.6,
+    4.35
+   ],
+   "memory + check": [
+    30.7,
+    20.4,
+    4.05
+   ],
+   "R49 re-tuned (C1)": [
+    30.6,
+    29.4,
+    1.87
+   ],
+   "mean-logit R49 rebuilt": [
+    30.9,
+    31.2,
+    1.43
+   ],
+   "mean-logit P1 90%": [
+    31.2,
+    32.2,
+    0.0
+   ],
+   "17p-only check": [
+    30.5,
+    19.7,
+    3.82
+   ]
+  },
+  "mismatches": {
+   "mean-logit full stack": [
+    [
+     30.3,
+     16.2,
+     3.11
+    ],
+    [
+     30.3,
+     16.2,
+     3.12
+    ]
+   ],
+   "mean-logit R49 rebuilt": [
+    [
+     30.9,
+     30.8,
+     1.43
+    ],
+    [
+     30.9,
+     31.2,
+     1.43
+    ]
+   ]
+  },
+  "reproduced": false,
+  "n_cells": 1664,
+  "cells_by_source": {
+   "st|E2fixed": 648,
+   "st|r9": 444,
+   "st|E2combo": 192,
+   "st|E2grade": 64,
+   "st|E2drift": 60,
+   "st|mem": 51,
+   "ml|r9": 42,
+   "st|E2sel": 36,
+   "st|E8arms": 19,
+   "st|E2stab": 18,
+   "top2|r9": 16,
+   "med|r9": 16,
+   "mprob|r9": 16,
+   "st|E7bar": 10,
+   "st|E2and": 9,
+   "med|ref": 4,
+   "mprob|ref": 4,
+   "ml|ref": 4,
+   "st|ref": 4,
+   "top2|ref": 4,
+   "ml|mem": 3
+  },
+  "n_families": 102,
+  "seconds": {
+   "build st": 2.7,
+   "rv9 st": 96.5,
+   "E2 st": 111.1,
+   "mem/E7/E8 st": 112.1,
+   "ml": 120.0,
+   "med": 126.3,
+   "mprob": 132.5,
+   "top2": 138.2
+  },
+  "real_selection": {
+   "R49": [
+    31.1,
+    31.8
+   ],
+   "tol0.0": {
+    "dNP": -8.2,
+    "dC": 0.29999999999999716,
+    "cell": "st|r9|A4:conf_al:ew|ew h=4y",
+    "seq": 3.149333357810974
+   },
+   "tol0.5": {
+    "dNP": -11.400000000000002,
+    "dC": -0.40000000000000213,
+    "cell": "st|mem|A1 ew + L-LATE low AND ps_oac quiet<90 kq2 strict",
+    "seq": 4.050666666030883
+   },
+   "tol1.0": {
+    "dNP": -15.600000000000001,
+    "dC": -0.8000000000000007,
+    "cell": "ml|mem|A12 + ps_oac k2 cn90",
+    "seq": 3.1146666526794435
+   },
+   "tol2.0": {
+    "dNP": -16.700000000000003,
+    "dC": -1.2000000000000028,
+    "cell": "st|E7bar|A12 + check bar 0.75",
+    "seq": 3.8160000085830688
+   },
+   "excess": {
+    "value": -0.3508720930232558,
+    "dNP": -16.700000000000003,
+    "dC": -1.2000000000000028,
+    "cell": "st|E7bar|A12 + check bar 0.75"
+   },
+   "named": {
+    "R49 gate": {
+     "dNP": 0.0,
+     "dC": 0.0,
+     "excess": 0.0
+    },
+    "P1 90%": {
+     "dNP": 4.199999999999999,
+     "dC": 0.0,
+     "excess": 0.09767441860465115
+    },
+    "memory (A1 EW gate score)": {
+     "dNP": -8.2,
+     "dC": -0.40000000000000213,
+     "excess": -0.17819767441860457
+    },
+    "memory + certificate (A12)": {
+     "dNP": -10.3,
+     "dC": -0.6000000000000014,
+     "excess": -0.2207848837209302
+    },
+    "final rule (A12 + check, cn90)": {
+     "dNP": -14.600000000000001,
+     "dC": -0.6000000000000014,
+     "excess": -0.3207848837209302
+    },
+    "final rule, in-fold bar": {
+     "dNP": -15.400000000000002,
+     "dC": -0.7000000000000028,
+     "excess": -0.3362645348837209
+    },
+    "mean-logit + memory (no sequencing)": {
+     "dNP": -5.199999999999999,
+     "dC": -0.10000000000000142,
+     "excess": -0.11780523255813947
+    },
+    "mean-logit gate + memory": {
+     "dNP": -9.2,
+     "dC": -0.6000000000000014,
+     "excess": -0.19520348837209298
+    },
+    "mean-logit full stack": {
+     "dNP": -15.600000000000001,
+     "dC": -0.8000000000000007,
+     "excess": -0.3377906976744186
+    },
+    "R49 + check (E2 cell)": {
+     "dNP": -5.199999999999999,
+     "dC": 0.0,
+     "excess": -0.12093023255813952
+    },
+    "memory + check": {
+     "dNP": -11.400000000000002,
+     "dC": -0.40000000000000213,
+     "excess": -0.2526162790697674
+    },
+    "R49 re-tuned (C1)": {
+     "dNP": -2.400000000000002,
+     "dC": -0.5,
+     "excess": -0.04018895348837214
+    },
+    "mean-logit R49 rebuilt": {
+     "dNP": -1.0,
+     "dC": -0.20000000000000284,
+     "excess": -0.017005813953488283
+    },
+    "mean-logit P1 90%": {
+     "dNP": 0.40000000000000213,
+     "dC": 0.09999999999999787,
+     "excess": 0.006177325581395466
+    },
+    "17p-only check": {
+     "dNP": -12.100000000000001,
+     "dC": -0.6000000000000014,
+     "excess": -0.2626453488372093
+    }
+   }
+  }
+ },
+ "refit_s0000_vs_stored": {
+  "L-CNV": {
+   "outer_max_abs_diff": 0.0,
+   "inner_max_abs_diff": 0.0,
+   "folds_equal": true
+  },
+  "L-IMG": {
+   "outer_max_abs_diff": 0.0,
+   "inner_max_abs_diff": 0.0,
+   "folds_equal": true
+  }
+ }
+}

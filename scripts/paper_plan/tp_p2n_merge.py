@@ -24,12 +24,16 @@ EXPECT = {"R49 gate": (31.1, 31.8, 1.94), "P1 90%": (31.1, 36.0, 0.0), "memory (
 TOLS = (0.0, 0.5, 1.0, 2.0); PRIMARY = 1.0
 def family_of(nm):
     p = nm.split("|"); return p[0] + "|" + p[1] + ("|" + p[2] if p[1] == "r9" else "")
-def stats(names, v):
-    """selection statistics for one label set"""
+def stats(names, v, core=False):
+    """selection statistics for one label set (core: the E3 extractor-variant cells 'e3x:' left out, i.e. the same family set as the full-refit null)"""
+    if core: keep = [i for i, x in enumerate(names) if not x.startswith("e3x:")]; names = [names[i] for i in keep]; v = v[keep]
     i0 = names.index(REF); c0, n0 = v[i0, 0], v[i0, 1]; dC = v[:, 0] - c0; dN = v[:, 1] - n0; o = {"R49": [r3(c0), r3(n0)]}
     for tol in TOLS:
         ok = np.where(dC >= -tol - 1e-9)[0]; b = ok[np.lexsort((-dC[ok], dN[ok]))[0]]   # fewest NP flagged; ties: more caught
         o[f"tol{tol}"] = {"dNP": float(dN[b]), "dC": float(dC[b]), "cell": names[b], "seq": float(v[b, 2])}
+    z = np.where(v[:, 2] < 1e-9)[0]   # no-sequencing tier: cells that sequence nothing (selection restricted to them)
+    for tol in (0.5, 1.0):
+        ok = z[dC[z] >= -tol - 1e-9]; b = ok[np.lexsort((-dC[ok], dN[ok]))[0]]; o[f"tier0_tol{tol}"] = {"dNP": float(dN[b]), "dC": float(dC[b]), "cell": names[b], "seq": 0.0}
     ex = dN / 43 - dC / 32; b = int(np.argmin(ex)); o["excess"] = {"value": float(ex[b]), "dNP": float(dN[b]), "dC": float(dC[b]), "cell": names[b]}
     o["named"] = {k: {"dNP": float(dN[names.index(c)]), "dC": float(dC[names.index(c)]), "excess": float(ex[names.index(c)])} for k, c in NAMED.items() if c in names}
     return o
@@ -62,26 +66,28 @@ elif TASK == "merge":
     real = {}
     for mode in ("b", "a"):
         f = f"{SD_}/{mode}_free_s0000.npz"
-        if os.path.exists(f): names0, v0, _ = load(f); real[mode] = stats(names0, v0); res.setdefault("n_cells", {})[mode] = len(names0)
+        if os.path.exists(f):
+            names0, v0, _ = load(f); real[mode] = stats(names0, v0); res.setdefault("n_cells", {})[mode] = len(names0)
+            if mode == "b": real["bcore"] = stats(names0, v0, True); res["n_cells"]["bcore"] = sum(not x.startswith("e3x:") for x in names0)
     res["real"] = real
-    for mode, kind in (("a", "free"), ("b", "free"), ("b", "strat")):
+    for mode, kind, core in (("a", "free", False), ("b", "free", False), ("b", "strat", False), ("b", "free", True), ("b", "strat", True)):
         fs = sorted(f for f in glob.glob(f"{SD_}/{mode}_{kind}_s*.npz") if not f.endswith("s0000.npz"))
         if not fs or mode not in real: continue
         recs = []; ncell = set()
         for f in fs:
-            names, v, _ = load(f); ncell.add(len(names)); recs.append(stats(names, v))
-        B = len(recs); rv = real[mode]; o = {"B": B, "cells_per_label_set": sorted(ncell)}
+            names, v, _ = load(f); ncell.add(len(names)); recs.append(stats(names, v, core))
+        B = len(recs); rv = real["bcore" if core else mode]; o = {"B": B, "cells_per_label_set": sorted(ncell), "core_family_set_only": core}
         def summ(null, obs):
             null = np.asarray(null, float); p = (1 + int((null <= obs + 1e-9).sum())) / (B + 1)
             return {"real": r3(obs), "null_mean": r3(null.mean()), "null_p2.5_p97.5": [r3(np.percentile(null, 2.5)), r3(np.percentile(null, 97.5))], "null_min": r3(null.min()), "null_p1": r3(np.percentile(null, 1)),
                     "n_null_at_or_below_real": int((null <= obs + 1e-9).sum()), "p": r4(p), "p_floor": r4(1 / (B + 1))}
-        for tol in TOLS:
-            k = f"tol{tol}"; dn = [r[k]["dNP"] for r in recs]; dc = [r[k]["dC"] for r in recs]
+        for k in [f"tol{t}" for t in TOLS] + ["tier0_tol0.5", "tier0_tol1.0"]:
+            dn = [r[k]["dNP"] for r in recs]; dc = [r[k]["dC"] for r in recs]
             o[k] = {"dNP": summ(dn, rv[k]["dNP"]), "real_dC": r3(rv[k]["dC"]), "real_cell": rv[k]["cell"], "null_dC_mean": r3(np.mean(dc)), "null_dC_p2.5_p97.5": [r3(np.percentile(dc, 2.5)), r3(np.percentile(dc, 97.5))],
                     "null_selected_source_counts": pd.Series([r[k]["cell"].split("|")[0] + "|" + r[k]["cell"].split("|")[1] for r in recs]).value_counts().head(10).to_dict(),
                     "null_dNP_values": [r3(x) for x in dn], "null_dC_values": [r3(x) for x in dc]}
         o["excess"] = {"value": summ([r["excess"]["value"] for r in recs], rv["excess"]["value"]), "real_cell": rv["excess"]["cell"], "null_values": [r4(r["excess"]["value"]) for r in recs]}
         o["named_rules"] = {nm: {"dNP": summ([r["named"][nm]["dNP"] for r in recs], rv["named"][nm]["dNP"]), "dC_null_mean": r3(np.mean([r["named"][nm]["dC"] for r in recs])), "real_dC": r3(rv["named"][nm]["dC"]),
                                  "excess": summ([r["named"][nm]["excess"] for r in recs], rv["named"][nm]["excess"])} for nm in NAMED if nm in rv["named"] and nm != "R49 gate"}
-        res[f"{mode}_{kind}"] = o
+        res[f"{mode}{'core' if core else ''}_{kind}"] = o
     jd(res, "merge")
