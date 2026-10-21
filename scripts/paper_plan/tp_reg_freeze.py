@@ -143,7 +143,7 @@ if RTASK == "verify":
     Op, _, _ = TC.load("pkg"); FT = pd.read_csv(M + "/explore_E2/features.csv", dtype={"Sample": str}).set_index("Sample").reindex(ids); q = FT.ps_oac.values.astype(float)
     # (a) standalone scorer == engine construction, flag for flag, every repeat (their matrix: R49, tiers; package: R49_pkg)
     epos = np.full(n, -1); eord = np.zeros(n, int); ety = np.zeros(n)
-    for i, o in enumerate(ST["ORD"]):
+    for i, o in enumerate(S["ORD"]):
         for w, e in enumerate(o): epos[S["es"][e]] = e; eord[S["es"][e]] = w; ety[S["es"][e]] = ST["TY"][i, w]
     rows = S["rows"]; mm = collections.Counter(); keymap = {"R49": "R49_flag", "R49_pkg": "R49_pkg_flag", "tier0": "tier0_flag", "light": "light_flag", "confirm": "confirm_flag"}; seqmap = {"light": "light_seq", "confirm": "confirm_seq", "R49": "R49_seq"}
     for j in range(10):
