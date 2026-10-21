@@ -35,18 +35,18 @@ if P2TASK == "p2c_draws":
         F, NS = FN; veto = F & (V < THc); kk = k2 if band is None else np.where(band == 1, k2 - 1, k2)
         return F & ~veto, NS + np.where(F, kk, 0)
     Bst = Z["st_core"]["BAND"]; Bml = Z["ml_core"]["BAND"]; PS = path_scores(S); rep = lambda b_: np.repeat(b_[:, None], 10, 1); Zi = np.zeros((E, 10), int); RF = refs(S)
-    G = rep(PS["g53"] >= 1)
+    G = rep(PS["g53"] >= 1); L = rep(PS["g53"] >= 2)   # L: LGD, or p53 aberrant (E9's g53 score >= 2) - the override in Paper 2's eligibility statement
     AI = {"ml_mem": arr("ml_core", "img:ew"), "ml_gatemem": arr("ml_core", "gate_al:ew"), "ml_memcert": arr("ml_A12", "A12"), "memcert": arr("st_A12", "A12"),
           "R49": RF["R49"], "seq_all": arr("st_late", "late_max:none"), "seq_all_mem": arr("st_late", "late_max:ew")}
     AI["ml_final"] = with_check(AI["ml_memcert"], Bml); AI["final"] = with_check(AI["memcert"], Bst)
-    RULES = {"g53": (G, Zi), "grade": (rep(PS["grade"] >= 1), Zi)}
-    for nm, (F, NS) in AI.items(): RULES[nm] = (F, NS); RULES[nm + "_or_g53"] = (F | G, NS); RULES[nm + "_not_g53"] = (F & ~G, NS)
+    RULES = {"g53": (G, Zi), "grade": (rep(PS["grade"] >= 1), Zi), "l53": (L, Zi)}
+    for nm, (F, NS) in AI.items(): RULES[nm] = (F, NS); RULES[nm + "_or_g53"] = (F | G, NS); RULES[nm + "_not_g53"] = (F & ~G, NS); RULES[nm + "_or_l53"] = (F | L, NS)
     out = {"note": ("P2C: class-specific per-patient rates at operating target D (held-out patients; thresholds and hyper-parameters chosen on training patients), "
                     f"row 0 = observed, rows 1.. = {NBP} paired patient-bootstrap draws (rv8 pdraws, RandomState(0)); repeat-averaged as ex_e9_frontier.rates. "
                     "sens / fpr = share of progressor / non-progressor patients ever flagged; nsp, nsn = samples sequenced per progressor / non-progressor patient; "
                     "nfp, nfn = flagged endoscopies per patient; nep, nen = pre-event endoscopies per patient; pyn = non-progressor person-years per patient. "
                     "<rule>_or_g53 = rule OR pathologist grade IND/LGD or p53 aberrant (union flags; never-flagged = de-escalation eligible); <rule>_not_g53 = endoscopies flagged "
-                    "by the rule but not by grade/p53 (incremental work-ups); ml_final / final = check applied to ml_memcert / memcert (E9 construction); seq_all = max L-LATE of every sample, "
+                    "by the rule but not by grade/p53 (incremental work-ups); l53 = LGD or p53 aberrant (g53 score >= 2); <rule>_or_l53 = rule OR l53; ml_final / final = check applied to ml_memcert / memcert (E9 construction); seq_all = max L-LATE of every sample, "
                     "threshold only; seq_all_mem = same with EW memory"),
            "n_progressor_patients": int((S["plab"] == 1).sum()), "n_non_progressor_patients": int((S["plab"] == 0).sum()), "n_draws": NBP, "rules": {}}
     KEYS = ("sens", "fpr", "nsp", "nsn", "nfp", "nfn", "nep", "nen", "pyn")
