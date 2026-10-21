@@ -1,0 +1,29 @@
+{
+ "task": "feats",
+ "feats": {
+  "check_all_tiles_mean_vs_img_mean_csv_max_abs": 1.815237999913677e-07,
+  "lap_thr": 132.5443,
+  "flag": {
+   "tis_min": 0.15,
+   "line_d": 0.5,
+   "ink": 0.02,
+   "blur_q": 0.05
+  },
+  "min_clean": 32,
+  "samples_lt32_clean": {
+   "set_C": 6,
+   "pre_event": 5,
+   "pre_event_progressor": "<5",
+   "pre_event_np": "<5"
+  },
+  "slides_lt32_clean": {
+   "set_C": 6,
+   "pre_event_samples_slides": 5,
+   "n_slides_set_C": 683
+  },
+  "samples_with_0_clean": "<5",
+  "clean_share_median": 0.969,
+  "rule": "sample mean over its clean tiles (all its slides); a sample with < 32 clean tiles is topped up to 32 with its flagged tiles of highest tissue share (then highest lapvar_t); control 'rand' = random tiles, same number as used"
+ },
+ "agent": "ART"
+}

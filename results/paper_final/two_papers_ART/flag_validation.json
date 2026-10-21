@@ -1,0 +1,47 @@
+{
+ "agent": "ART",
+ "task": "flag_validation",
+ "p1b_panel_candidates": {
+  "top40": {
+   "n": 40,
+   "flagged_art": 13,
+   "bg": 9,
+   "edge": 0,
+   "pen": 0,
+   "blur": 4
+  },
+  "bottom40": {
+   "n": 40,
+   "flagged_art": 1,
+   "bg": 0,
+   "edge": 0,
+   "pen": 0,
+   "blur": 1
+  },
+  "top120": {
+   "n": 120,
+   "flagged_art": 21
+  },
+  "bottom120": {
+   "n": 120,
+   "flagged_art": 6
+  }
+ },
+ "blind_check": {
+  "tiles": 80,
+  "flagged_by_rule": 40,
+  "called_artefact_by_eye": 35,
+  "both": 32,
+  "eye_only": 3,
+  "rule_only": 8,
+  "agreement": 0.8625,
+  "note": "40 flagged + 40 unflagged pre-event tiles, shuffled, numbers only; called by eye (agent ART) before reading the key; rule-only tiles were mostly blur-flagged tiles that looked acceptable; eye-only = 2 sparse tissue-edge tiles (tissue share > 0.15) and 1 pale soft tile"
+ },
+ "random_unflagged_96": "no clear artefact seen by eye",
+ "flag": {
+  "glass_background": "stained-tissue share < 0.15",
+  "edge": "straight band (3-line mean) with >= 50% dark unstained pixels",
+  "pen": "> 2% blue/green pixels",
+  "blur": "tissue-pixel Laplacian variance below the 5th percentile of non-background tiles (132.5)"
+ }
+}

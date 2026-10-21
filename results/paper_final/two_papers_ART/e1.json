@@ -1,0 +1,306 @@
+{
+ "task": "e1",
+ "e1": {
+  "tile_flag_shares_all_tiles": {
+   "bg": {
+    "E1_old_positions": 0.0566,
+    "E1_definition_corrected_positions": 0.0434
+   },
+   "edge": {
+    "E1_old_positions": 0.3907,
+    "E1_definition_corrected_positions": 0.404
+   },
+   "ink": {
+    "E1_old_positions": 0.0018,
+    "E1_definition_corrected_positions": 0.0018
+   },
+   "blur": {
+    "E1_old_positions": 0.0943,
+    "E1_definition_corrected_positions": 0.0957
+   },
+   "artefact_flag_ART": {
+    "bg": 0.0571,
+    "edge": 0.0002,
+    "pen": 0.0018,
+    "blur": 0.0471,
+    "art": 0.1061
+   }
+  },
+  "agreement_old_vs_corrected_bg": {
+   "both": 4655,
+   "old_only": 5249,
+   "new_only": 2934
+  },
+  "ART_art_among_E1_old_bg": 0.2152,
+  "E1_old_bg_among_ART_art": 0.1149,
+  "check_decomposition_max_abs_logit": 1.3708231927367365e-06,
+  "check_cells": 5700,
+  "contributions": {
+   "E1 bg (old positions)": {
+    "tile_share_pre_event": 0.0556,
+    "contribution_logit_progressor": 0.103,
+    "contribution_logit_np": -0.119,
+    "contribution_P_minus_NP": {
+     "delta": 0.222,
+     "ci95": [
+      0.119,
+      0.343
+     ],
+     "p_two_sided": 0.0
+    },
+    "score_change_if_removed_progressor": 0.024,
+    "score_change_if_removed_np": 0.009,
+    "score_change_P_minus_NP": {
+     "delta": 0.015,
+     "ci95": [
+      -0.079,
+      0.137
+     ],
+     "p_two_sided": 0.858
+    },
+    "abs_score_change_median": 0.0,
+    "abs_score_change_p90": 0.45
+   },
+   "E1 bg (corrected)": {
+    "tile_share_pre_event": 0.0423,
+    "contribution_logit_progressor": 0.183,
+    "contribution_logit_np": -0.011,
+    "contribution_P_minus_NP": {
+     "delta": 0.194,
+     "ci95": [
+      0.099,
+      0.301
+     ],
+     "p_two_sided": 0.0
+    },
+    "score_change_if_removed_progressor": -0.086,
+    "score_change_if_removed_np": -0.09,
+    "score_change_P_minus_NP": {
+     "delta": 0.004,
+     "ci95": [
+      -0.106,
+      0.116
+     ],
+     "p_two_sided": 0.989
+    },
+    "abs_score_change_median": 0.0,
+    "abs_score_change_p90": 0.504
+   },
+   "E1 bg+edge (old)": {
+    "tile_share_pre_event": 0.452,
+    "contribution_logit_progressor": 1.291,
+    "contribution_logit_np": -0.88,
+    "contribution_P_minus_NP": {
+     "delta": 2.17,
+     "ci95": [
+      1.642,
+      2.779
+     ],
+     "p_two_sided": 0.0
+    },
+    "score_change_if_removed_progressor": -0.329,
+    "score_change_if_removed_np": -0.085,
+    "score_change_P_minus_NP": {
+     "delta": -0.244,
+     "ci95": [
+      -0.708,
+      0.184
+     ],
+     "p_two_sided": 0.296
+    },
+    "abs_score_change_median": 0.686,
+    "abs_score_change_p90": 1.765
+   },
+   "E1 bg+edge (corrected)": {
+    "tile_share_pre_event": 0.4518,
+    "contribution_logit_progressor": 1.262,
+    "contribution_logit_np": -0.901,
+    "contribution_P_minus_NP": {
+     "delta": 2.163,
+     "ci95": [
+      1.632,
+      2.779
+     ],
+     "p_two_sided": 0.0
+    },
+    "score_change_if_removed_progressor": -0.258,
+    "score_change_if_removed_np": -0.042,
+    "score_change_P_minus_NP": {
+     "delta": -0.216,
+     "ci95": [
+      -0.701,
+      0.268
+     ],
+     "p_two_sided": 0.397
+    },
+    "abs_score_change_median": 0.751,
+    "abs_score_change_p90": 2.116
+   },
+   "ART artefact": {
+    "tile_share_pre_event": 0.1049,
+    "contribution_logit_progressor": 0.589,
+    "contribution_logit_np": 0.0,
+    "contribution_P_minus_NP": {
+     "delta": 0.588,
+     "ci95": [
+      0.321,
+      0.881
+     ],
+     "p_two_sided": 0.0
+    },
+    "score_change_if_removed_progressor": -0.34,
+    "score_change_if_removed_np": -0.166,
+    "score_change_P_minus_NP": {
+     "delta": -0.174,
+     "ci95": [
+      -0.491,
+      0.094
+     ],
+     "p_two_sided": 0.266
+    },
+    "abs_score_change_median": 0.143,
+    "abs_score_change_p90": 0.92
+   },
+   "ART glass/background": {
+    "tile_share_pre_event": 0.0569,
+    "contribution_logit_progressor": 0.476,
+    "contribution_logit_np": 0.087,
+    "contribution_P_minus_NP": {
+     "delta": 0.389,
+     "ci95": [
+      0.14,
+      0.693
+     ],
+     "p_two_sided": 0.0
+    },
+    "score_change_if_removed_progressor": -0.344,
+    "score_change_if_removed_np": -0.186,
+    "score_change_P_minus_NP": {
+     "delta": -0.158,
+     "ci95": [
+      -0.467,
+      0.096
+     ],
+     "p_two_sided": 0.28
+    },
+    "abs_score_change_median": 0.117,
+    "abs_score_change_p90": 0.635
+   },
+   "auroc_no_refit": {
+    "full mean (stored)": {
+     "auroc": 0.847,
+     "ci95": [
+      0.798,
+      0.894
+     ],
+     "delta_vs_full": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     }
+    },
+    "mean without E1 bg (old positions)": {
+     "auroc": 0.846,
+     "ci95": [
+      0.798,
+      0.894
+     ],
+     "delta_vs_full": {
+      "delta": -0.0,
+      "ci95": [
+       -0.005,
+       0.005
+      ],
+      "p_two_sided": 0.883
+     }
+    },
+    "mean without E1 bg (corrected)": {
+     "auroc": 0.847,
+     "ci95": [
+      0.798,
+      0.894
+     ],
+     "delta_vs_full": {
+      "delta": -0.0,
+      "ci95": [
+       -0.007,
+       0.006
+      ],
+      "p_two_sided": 0.971
+     }
+    },
+    "mean without E1 bg+edge (old)": {
+     "auroc": 0.804,
+     "ci95": [
+      0.747,
+      0.863
+     ],
+     "delta_vs_full": {
+      "delta": -0.043,
+      "ci95": [
+       -0.071,
+       -0.015
+      ],
+      "p_two_sided": 0.001
+     }
+    },
+    "mean without E1 bg+edge (corrected)": {
+     "auroc": 0.798,
+     "ci95": [
+      0.739,
+      0.856
+     ],
+     "delta_vs_full": {
+      "delta": -0.049,
+      "ci95": [
+       -0.082,
+       -0.018
+      ],
+      "p_two_sided": 0.001
+     }
+    },
+    "mean without ART artefact": {
+     "auroc": 0.831,
+     "ci95": [
+      0.779,
+      0.882
+     ],
+     "delta_vs_full": {
+      "delta": -0.016,
+      "ci95": [
+       -0.031,
+       -0.001
+      ],
+      "p_two_sided": 0.026
+     }
+    },
+    "mean without ART glass/background": {
+     "auroc": 0.835,
+     "ci95": [
+      0.784,
+      0.886
+     ],
+     "delta_vs_full": {
+      "delta": -0.012,
+      "ci95": [
+       -0.028,
+       0.002
+      ],
+      "p_two_sided": 0.131
+     }
+    }
+   },
+   "mean_tile_score_u (repeat-mean held-out model)": {
+    "art_P": 5.33,
+    "art_NP": 3.307,
+    "clean_P": 1.779,
+    "clean_NP": -2.203
+   }
+  },
+  "note": "pre-event samples; u_t from E1 (held-out fit of each sample); contribution = sum of u_t over flagged tiles / N (logit); score change = b0 + mean over unflagged tiles - b0 - mean over all tiles (same fitted model, no refit); E1 definitions: bg white > 0.5, edge mask_nb < 0.8 or white > 0.25, blur < p10 lapvar of non-bg"
+ },
+ "agent": "ART"
+}

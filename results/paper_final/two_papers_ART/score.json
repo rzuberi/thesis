@@ -1,0 +1,1240 @@
+{
+ "task": "score",
+ "check_base_refit_vs_stored_max_abs": 0.0,
+ "score": {
+  "overall": {
+   "n_samples": 571,
+   "n_progressor_samples": 161,
+   "n_patients": 75,
+   "n_progressor_patients": 32,
+   "pairs_per_repeat": 6495.4,
+   "auroc": {
+    "L-CNV": {
+     "value": 0.801,
+     "ci95": [
+      0.71,
+      0.875
+     ]
+    },
+    "L-IMG": {
+     "value": 0.811,
+     "ci95": [
+      0.753,
+      0.872
+     ]
+    },
+    "L-LATE": {
+     "value": 0.875,
+     "ci95": [
+      0.812,
+      0.925
+     ]
+    },
+    "L-IMG stored": {
+     "value": 0.847,
+     "ci95": [
+      0.798,
+      0.894
+     ]
+    },
+    "L-LATE stored": {
+     "value": 0.889,
+     "ci95": [
+      0.83,
+      0.934
+     ]
+    },
+    "L-IMG random-subset control": {
+     "value": 0.843,
+     "ci95": [
+      0.793,
+      0.893
+     ]
+    },
+    "L-LATE random-subset control": {
+     "value": 0.889,
+     "ci95": [
+      0.827,
+      0.935
+     ]
+    },
+    "L-IMG clean, blur kept": {
+     "value": 0.829,
+     "ci95": [
+      0.776,
+      0.882
+     ]
+    },
+    "L-LATE clean, blur kept": {
+     "value": 0.881,
+     "ci95": [
+      0.821,
+      0.928
+     ]
+    }
+   },
+   "IMG_minus_CNV": {
+    "delta": 0.01,
+    "ci95": [
+     -0.086,
+     0.114
+    ],
+    "p_two_sided": 0.835
+   },
+   "LATE_minus_IMG": {
+    "delta": 0.063,
+    "ci95": [
+     0.013,
+     0.111
+    ],
+    "p_two_sided": 0.015
+   },
+   "LATE_minus_CNV": {
+    "delta": 0.073,
+    "ci95": [
+     0.021,
+     0.133
+    ],
+    "p_two_sided": 0.006
+   },
+   "clean_minus_stored_IMG": {
+    "delta": -0.036,
+    "ci95": [
+     -0.062,
+     -0.011
+    ],
+    "p_two_sided": 0.002
+   },
+   "clean_minus_stored_LATE": {
+    "delta": -0.014,
+    "ci95": [
+     -0.024,
+     -0.003
+    ],
+    "p_two_sided": 0.005
+   },
+   "clean_minus_random_IMG": {
+    "delta": -0.032,
+    "ci95": [
+     -0.057,
+     -0.007
+    ],
+    "p_two_sided": 0.007
+   },
+   "stored_IMG_minus_CNV": {
+    "delta": 0.045,
+    "ci95": [
+     -0.036,
+     0.136
+    ],
+    "p_two_sided": 0.295
+   },
+   "stored_LATE_minus_IMG": {
+    "delta": 0.042,
+    "ci95": [
+     0.002,
+     0.078
+    ],
+    "p_two_sided": 0.048
+   },
+   "random_IMG_minus_CNV": {
+    "delta": 0.042,
+    "ci95": [
+     -0.042,
+     0.134
+    ],
+    "p_two_sided": 0.338
+   },
+   "random_minus_stored_IMG": {
+    "delta": -0.004,
+    "ci95": [
+     -0.012,
+     0.004
+    ],
+    "p_two_sided": 0.371
+   },
+   "noblur_minus_stored_IMG": {
+    "delta": -0.018,
+    "ci95": [
+     -0.038,
+     -0.0
+    ],
+    "p_two_sided": 0.042
+   },
+   "noblur_IMG_minus_CNV": {
+    "delta": 0.027,
+    "ci95": [
+     -0.062,
+     0.124
+    ],
+    "p_two_sided": 0.567
+   },
+   "noblur_LATE_minus_IMG": {
+    "delta": 0.052,
+    "ci95": [
+     0.007,
+     0.094
+    ],
+    "p_two_sided": 0.028
+   }
+  },
+  "patient_weighted": {
+   "n_samples": 571,
+   "n_progressor_samples": 161,
+   "n_patients": 75,
+   "n_progressor_patients": 32,
+   "pairs_per_repeat": 6495.4,
+   "auroc": {
+    "L-CNV": {
+     "value": 0.822,
+     "ci95": [
+      0.738,
+      0.887
+     ]
+    },
+    "L-IMG": {
+     "value": 0.832,
+     "ci95": [
+      0.775,
+      0.884
+     ]
+    },
+    "L-LATE": {
+     "value": 0.891,
+     "ci95": [
+      0.839,
+      0.934
+     ]
+    },
+    "L-IMG stored": {
+     "value": 0.852,
+     "ci95": [
+      0.803,
+      0.898
+     ]
+    },
+    "L-LATE stored": {
+     "value": 0.897,
+     "ci95": [
+      0.848,
+      0.936
+     ]
+    },
+    "L-IMG random-subset control": {
+     "value": 0.848,
+     "ci95": [
+      0.798,
+      0.895
+     ]
+    },
+    "L-LATE random-subset control": {
+     "value": 0.897,
+     "ci95": [
+      0.846,
+      0.937
+     ]
+    },
+    "L-IMG clean, blur kept": {
+     "value": 0.843,
+     "ci95": [
+      0.789,
+      0.891
+     ]
+    },
+    "L-LATE clean, blur kept": {
+     "value": 0.894,
+     "ci95": [
+      0.843,
+      0.934
+     ]
+    }
+   },
+   "IMG_minus_CNV": {
+    "delta": 0.01,
+    "ci95": [
+     -0.072,
+     0.102
+    ],
+    "p_two_sided": 0.819
+   },
+   "LATE_minus_IMG": {
+    "delta": 0.059,
+    "ci95": [
+     0.016,
+     0.102
+    ],
+    "p_two_sided": 0.006
+   },
+   "LATE_minus_CNV": {
+    "delta": 0.069,
+    "ci95": [
+     0.021,
+     0.126
+    ],
+    "p_two_sided": 0.003
+   },
+   "clean_minus_stored_IMG": {
+    "delta": -0.02,
+    "ci95": [
+     -0.042,
+     0.001
+    ],
+    "p_two_sided": 0.059
+   },
+   "clean_minus_stored_LATE": {
+    "delta": -0.006,
+    "ci95": [
+     -0.017,
+     0.004
+    ],
+    "p_two_sided": 0.216
+   },
+   "clean_minus_random_IMG": {
+    "delta": -0.016,
+    "ci95": [
+     -0.038,
+     0.005
+    ],
+    "p_two_sided": 0.126
+   },
+   "stored_IMG_minus_CNV": {
+    "delta": 0.03,
+    "ci95": [
+     -0.047,
+     0.118
+    ],
+    "p_two_sided": 0.456
+   },
+   "stored_LATE_minus_IMG": {
+    "delta": 0.045,
+    "ci95": [
+     0.006,
+     0.084
+    ],
+    "p_two_sided": 0.025
+   },
+   "random_IMG_minus_CNV": {
+    "delta": 0.026,
+    "ci95": [
+     -0.052,
+     0.115
+    ],
+    "p_two_sided": 0.53
+   },
+   "random_minus_stored_IMG": {
+    "delta": -0.004,
+    "ci95": [
+     -0.013,
+     0.004
+    ],
+    "p_two_sided": 0.349
+   },
+   "noblur_minus_stored_IMG": {
+    "delta": -0.009,
+    "ci95": [
+     -0.025,
+     0.009
+    ],
+    "p_two_sided": 0.304
+   },
+   "noblur_IMG_minus_CNV": {
+    "delta": 0.021,
+    "ci95": [
+     -0.057,
+     0.11
+    ],
+    "p_two_sided": 0.624
+   },
+   "noblur_LATE_minus_IMG": {
+    "delta": 0.05,
+    "ci95": [
+     0.01,
+     0.091
+    ],
+    "p_two_sided": 0.013
+   }
+  },
+  "within_batch": {
+   "n_samples": 571,
+   "n_progressor_samples": 161,
+   "n_patients": 75,
+   "n_progressor_patients": 32,
+   "pairs_per_repeat": 411.6,
+   "auroc": {
+    "L-CNV": {
+     "value": 0.79,
+     "ci95": [
+      0.675,
+      0.916
+     ]
+    },
+    "L-IMG": {
+     "value": 0.813,
+     "ci95": [
+      0.706,
+      0.915
+     ]
+    },
+    "L-LATE": {
+     "value": 0.879,
+     "ci95": [
+      0.757,
+      0.969
+     ]
+    },
+    "L-IMG stored": {
+     "value": 0.841,
+     "ci95": [
+      0.755,
+      0.925
+     ]
+    },
+    "L-LATE stored": {
+     "value": 0.893,
+     "ci95": [
+      0.796,
+      0.967
+     ]
+    },
+    "L-IMG random-subset control": {
+     "value": 0.834,
+     "ci95": [
+      0.739,
+      0.921
+     ]
+    },
+    "L-LATE random-subset control": {
+     "value": 0.889,
+     "ci95": [
+      0.783,
+      0.964
+     ]
+    },
+    "L-IMG clean, blur kept": {
+     "value": 0.835,
+     "ci95": [
+      0.741,
+      0.916
+     ]
+    },
+    "L-LATE clean, blur kept": {
+     "value": 0.886,
+     "ci95": [
+      0.768,
+      0.969
+     ]
+    }
+   },
+   "IMG_minus_CNV": {
+    "delta": 0.023,
+    "ci95": [
+     -0.1,
+     0.16
+    ],
+    "p_two_sided": 0.846
+   },
+   "LATE_minus_IMG": {
+    "delta": 0.066,
+    "ci95": [
+     0.004,
+     0.119
+    ],
+    "p_two_sided": 0.038
+   },
+   "LATE_minus_CNV": {
+    "delta": 0.089,
+    "ci95": [
+     -0.003,
+     0.196
+    ],
+    "p_two_sided": 0.063
+   },
+   "clean_minus_stored_IMG": {
+    "delta": -0.028,
+    "ci95": [
+     -0.071,
+     0.009
+    ],
+    "p_two_sided": 0.196
+   },
+   "clean_minus_stored_LATE": {
+    "delta": -0.014,
+    "ci95": [
+     -0.041,
+     0.008
+    ],
+    "p_two_sided": 0.305
+   },
+   "clean_minus_random_IMG": {
+    "delta": -0.021,
+    "ci95": [
+     -0.059,
+     0.014
+    ],
+    "p_two_sided": 0.334
+   },
+   "stored_IMG_minus_CNV": {
+    "delta": 0.051,
+    "ci95": [
+     -0.071,
+     0.184
+    ],
+    "p_two_sided": 0.526
+   },
+   "stored_LATE_minus_IMG": {
+    "delta": 0.052,
+    "ci95": [
+     -0.006,
+     0.109
+    ],
+    "p_two_sided": 0.082
+   },
+   "random_IMG_minus_CNV": {
+    "delta": 0.044,
+    "ci95": [
+     -0.082,
+     0.181
+    ],
+    "p_two_sided": 0.622
+   },
+   "random_minus_stored_IMG": {
+    "delta": -0.007,
+    "ci95": [
+     -0.025,
+     0.005
+    ],
+    "p_two_sided": 0.256
+   },
+   "noblur_minus_stored_IMG": {
+    "delta": -0.006,
+    "ci95": [
+     -0.037,
+     0.022
+    ],
+    "p_two_sided": 0.611
+   },
+   "noblur_IMG_minus_CNV": {
+    "delta": 0.045,
+    "ci95": [
+     -0.075,
+     0.173
+    ],
+    "p_two_sided": 0.597
+   },
+   "noblur_LATE_minus_IMG": {
+    "delta": 0.051,
+    "ci95": [
+     -0.01,
+     0.108
+    ],
+    "p_two_sided": 0.085
+   }
+  },
+  "within_batch_patient_weighted": {
+   "n_samples": 571,
+   "n_progressor_samples": 161,
+   "n_patients": 75,
+   "n_progressor_patients": 32,
+   "pairs_per_repeat": 411.6,
+   "auroc": {
+    "L-CNV": {
+     "value": 0.814,
+     "ci95": [
+      0.689,
+      0.929
+     ]
+    },
+    "L-IMG": {
+     "value": 0.825,
+     "ci95": [
+      0.721,
+      0.915
+     ]
+    },
+    "L-LATE": {
+     "value": 0.886,
+     "ci95": [
+      0.766,
+      0.971
+     ]
+    },
+    "L-IMG stored": {
+     "value": 0.85,
+     "ci95": [
+      0.764,
+      0.926
+     ]
+    },
+    "L-LATE stored": {
+     "value": 0.898,
+     "ci95": [
+      0.803,
+      0.969
+     ]
+    },
+    "L-IMG random-subset control": {
+     "value": 0.84,
+     "ci95": [
+      0.745,
+      0.921
+     ]
+    },
+    "L-LATE random-subset control": {
+     "value": 0.89,
+     "ci95": [
+      0.788,
+      0.963
+     ]
+    },
+    "L-IMG clean, blur kept": {
+     "value": 0.841,
+     "ci95": [
+      0.75,
+      0.918
+     ]
+    },
+    "L-LATE clean, blur kept": {
+     "value": 0.892,
+     "ci95": [
+      0.781,
+      0.971
+     ]
+    }
+   },
+   "IMG_minus_CNV": {
+    "delta": 0.01,
+    "ci95": [
+     -0.109,
+     0.147
+    ],
+    "p_two_sided": 0.921
+   },
+   "LATE_minus_IMG": {
+    "delta": 0.062,
+    "ci95": [
+     0.001,
+     0.122
+    ],
+    "p_two_sided": 0.046
+   },
+   "LATE_minus_CNV": {
+    "delta": 0.072,
+    "ci95": [
+     -0.007,
+     0.175
+    ],
+    "p_two_sided": 0.086
+   },
+   "clean_minus_stored_IMG": {
+    "delta": -0.025,
+    "ci95": [
+     -0.066,
+     0.011
+    ],
+    "p_two_sided": 0.214
+   },
+   "clean_minus_stored_LATE": {
+    "delta": -0.012,
+    "ci95": [
+     -0.038,
+     0.009
+    ],
+    "p_two_sided": 0.37
+   },
+   "clean_minus_random_IMG": {
+    "delta": -0.015,
+    "ci95": [
+     -0.051,
+     0.016
+    ],
+    "p_two_sided": 0.426
+   },
+   "stored_IMG_minus_CNV": {
+    "delta": 0.035,
+    "ci95": [
+     -0.081,
+     0.165
+    ],
+    "p_two_sided": 0.603
+   },
+   "stored_LATE_minus_IMG": {
+    "delta": 0.049,
+    "ci95": [
+     -0.007,
+     0.11
+    ],
+    "p_two_sided": 0.09
+   },
+   "random_IMG_minus_CNV": {
+    "delta": 0.025,
+    "ci95": [
+     -0.094,
+     0.16
+    ],
+    "p_two_sided": 0.735
+   },
+   "random_minus_stored_IMG": {
+    "delta": -0.01,
+    "ci95": [
+     -0.027,
+     0.003
+    ],
+    "p_two_sided": 0.173
+   },
+   "noblur_minus_stored_IMG": {
+    "delta": -0.008,
+    "ci95": [
+     -0.035,
+     0.021
+    ],
+    "p_two_sided": 0.565
+   },
+   "noblur_IMG_minus_CNV": {
+    "delta": 0.027,
+    "ci95": [
+     -0.083,
+     0.157
+    ],
+    "p_two_sided": 0.696
+   },
+   "noblur_LATE_minus_IMG": {
+    "delta": 0.051,
+    "ci95": [
+     -0.013,
+     0.11
+    ],
+    "p_two_sided": 0.099
+   }
+  },
+  "within_scanner": {
+   "n_samples": 571,
+   "n_progressor_samples": 161,
+   "n_patients": 75,
+   "n_progressor_patients": 32,
+   "pairs_per_repeat": 4070.5,
+   "auroc": {
+    "L-CNV": {
+     "value": 0.799,
+     "ci95": [
+      0.701,
+      0.874
+     ]
+    },
+    "L-IMG": {
+     "value": 0.821,
+     "ci95": [
+      0.76,
+      0.881
+     ]
+    },
+    "L-LATE": {
+     "value": 0.877,
+     "ci95": [
+      0.808,
+      0.93
+     ]
+    },
+    "L-IMG stored": {
+     "value": 0.856,
+     "ci95": [
+      0.806,
+      0.902
+     ]
+    },
+    "L-LATE stored": {
+     "value": 0.891,
+     "ci95": [
+      0.828,
+      0.939
+     ]
+    },
+    "L-IMG random-subset control": {
+     "value": 0.851,
+     "ci95": [
+      0.799,
+      0.899
+     ]
+    },
+    "L-LATE random-subset control": {
+     "value": 0.89,
+     "ci95": [
+      0.826,
+      0.938
+     ]
+    },
+    "L-IMG clean, blur kept": {
+     "value": 0.838,
+     "ci95": [
+      0.782,
+      0.891
+     ]
+    },
+    "L-LATE clean, blur kept": {
+     "value": 0.883,
+     "ci95": [
+      0.819,
+      0.932
+     ]
+    }
+   },
+   "IMG_minus_CNV": {
+    "delta": 0.022,
+    "ci95": [
+     -0.072,
+     0.13
+    ],
+    "p_two_sided": 0.64
+   },
+   "LATE_minus_IMG": {
+    "delta": 0.056,
+    "ci95": [
+     0.004,
+     0.104
+    ],
+    "p_two_sided": 0.037
+   },
+   "LATE_minus_CNV": {
+    "delta": 0.078,
+    "ci95": [
+     0.028,
+     0.14
+    ],
+    "p_two_sided": 0.001
+   },
+   "clean_minus_stored_IMG": {
+    "delta": -0.036,
+    "ci95": [
+     -0.065,
+     -0.007
+    ],
+    "p_two_sided": 0.008
+   },
+   "clean_minus_stored_LATE": {
+    "delta": -0.015,
+    "ci95": [
+     -0.026,
+     -0.002
+    ],
+    "p_two_sided": 0.015
+   },
+   "clean_minus_random_IMG": {
+    "delta": -0.03,
+    "ci95": [
+     -0.058,
+     -0.003
+    ],
+    "p_two_sided": 0.023
+   },
+   "stored_IMG_minus_CNV": {
+    "delta": 0.058,
+    "ci95": [
+     -0.021,
+     0.149
+    ],
+    "p_two_sided": 0.171
+   },
+   "stored_LATE_minus_IMG": {
+    "delta": 0.035,
+    "ci95": [
+     -0.005,
+     0.072
+    ],
+    "p_two_sided": 0.084
+   },
+   "random_IMG_minus_CNV": {
+    "delta": 0.053,
+    "ci95": [
+     -0.026,
+     0.146
+    ],
+    "p_two_sided": 0.214
+   },
+   "random_minus_stored_IMG": {
+    "delta": -0.005,
+    "ci95": [
+     -0.014,
+     0.003
+    ],
+    "p_two_sided": 0.251
+   },
+   "noblur_minus_stored_IMG": {
+    "delta": -0.018,
+    "ci95": [
+     -0.039,
+     0.002
+    ],
+    "p_two_sided": 0.089
+   },
+   "noblur_IMG_minus_CNV": {
+    "delta": 0.039,
+    "ci95": [
+     -0.048,
+     0.14
+    ],
+    "p_two_sided": 0.389
+   },
+   "noblur_LATE_minus_IMG": {
+    "delta": 0.045,
+    "ci95": [
+     -0.001,
+     0.089
+    ],
+    "p_two_sided": 0.053
+   }
+  },
+  "excluding_samples_lt32_clean": {
+   "n_samples": 566,
+   "n_progressor_samples": 157,
+   "n_patients": 75,
+   "n_progressor_patients": 32,
+   "pairs_per_repeat": 6334.5,
+   "auroc": {
+    "L-CNV": {
+     "value": 0.799,
+     "ci95": [
+      0.707,
+      0.873
+     ]
+    },
+    "L-IMG": {
+     "value": 0.812,
+     "ci95": [
+      0.753,
+      0.87
+     ]
+    },
+    "L-LATE": {
+     "value": 0.874,
+     "ci95": [
+      0.809,
+      0.924
+     ]
+    },
+    "L-IMG stored": {
+     "value": 0.845,
+     "ci95": [
+      0.796,
+      0.894
+     ]
+    },
+    "L-LATE stored": {
+     "value": 0.887,
+     "ci95": [
+      0.827,
+      0.933
+     ]
+    },
+    "L-IMG random-subset control": {
+     "value": 0.842,
+     "ci95": [
+      0.791,
+      0.893
+     ]
+    },
+    "L-LATE random-subset control": {
+     "value": 0.887,
+     "ci95": [
+      0.825,
+      0.934
+     ]
+    },
+    "L-IMG clean, blur kept": {
+     "value": 0.826,
+     "ci95": [
+      0.772,
+      0.881
+     ]
+    },
+    "L-LATE clean, blur kept": {
+     "value": 0.879,
+     "ci95": [
+      0.817,
+      0.927
+     ]
+    }
+   },
+   "IMG_minus_CNV": {
+    "delta": 0.013,
+    "ci95": [
+     -0.083,
+     0.117
+    ],
+    "p_two_sided": 0.78
+   },
+   "LATE_minus_IMG": {
+    "delta": 0.062,
+    "ci95": [
+     0.011,
+     0.111
+    ],
+    "p_two_sided": 0.02
+   },
+   "LATE_minus_CNV": {
+    "delta": 0.075,
+    "ci95": [
+     0.023,
+     0.136
+    ],
+    "p_two_sided": 0.006
+   },
+   "clean_minus_stored_IMG": {
+    "delta": -0.034,
+    "ci95": [
+     -0.06,
+     -0.01
+    ],
+    "p_two_sided": 0.0
+   },
+   "clean_minus_stored_LATE": {
+    "delta": -0.013,
+    "ci95": [
+     -0.023,
+     -0.002
+    ],
+    "p_two_sided": 0.018
+   },
+   "clean_minus_random_IMG": {
+    "delta": -0.031,
+    "ci95": [
+     -0.055,
+     -0.007
+    ],
+    "p_two_sided": 0.007
+   },
+   "stored_IMG_minus_CNV": {
+    "delta": 0.047,
+    "ci95": [
+     -0.037,
+     0.139
+    ],
+    "p_two_sided": 0.288
+   },
+   "stored_LATE_minus_IMG": {
+    "delta": 0.041,
+    "ci95": [
+     0.0,
+     0.079
+    ],
+    "p_two_sided": 0.05
+   },
+   "random_IMG_minus_CNV": {
+    "delta": 0.044,
+    "ci95": [
+     -0.041,
+     0.137
+    ],
+    "p_two_sided": 0.322
+   },
+   "random_minus_stored_IMG": {
+    "delta": -0.003,
+    "ci95": [
+     -0.011,
+     0.005
+    ],
+    "p_two_sided": 0.456
+   },
+   "noblur_minus_stored_IMG": {
+    "delta": -0.02,
+    "ci95": [
+     -0.039,
+     -0.001
+    ],
+    "p_two_sided": 0.033
+   },
+   "noblur_IMG_minus_CNV": {
+    "delta": 0.027,
+    "ci95": [
+     -0.064,
+     0.125
+    ],
+    "p_two_sided": 0.571
+   },
+   "noblur_LATE_minus_IMG": {
+    "delta": 0.053,
+    "ci95": [
+     0.007,
+     0.096
+    ],
+    "p_two_sided": 0.029
+   }
+  },
+  "ndbe": {
+   "n_samples": 438,
+   "n_progressor_samples": 104,
+   "n_patients": 71,
+   "n_progressor_patients": 28,
+   "pairs_per_repeat": 3448.2,
+   "auroc": {
+    "L-CNV": {
+     "value": 0.78,
+     "ci95": [
+      0.673,
+      0.869
+     ]
+    },
+    "L-IMG": {
+     "value": 0.802,
+     "ci95": [
+      0.739,
+      0.866
+     ]
+    },
+    "L-LATE": {
+     "value": 0.856,
+     "ci95": [
+      0.774,
+      0.926
+     ]
+    },
+    "L-IMG stored": {
+     "value": 0.827,
+     "ci95": [
+      0.771,
+      0.885
+     ]
+    },
+    "L-LATE stored": {
+     "value": 0.867,
+     "ci95": [
+      0.79,
+      0.928
+     ]
+    },
+    "L-IMG random-subset control": {
+     "value": 0.821,
+     "ci95": [
+      0.762,
+      0.882
+     ]
+    },
+    "L-LATE random-subset control": {
+     "value": 0.866,
+     "ci95": [
+      0.788,
+      0.93
+     ]
+    },
+    "L-IMG clean, blur kept": {
+     "value": 0.819,
+     "ci95": [
+      0.761,
+      0.881
+     ]
+    },
+    "L-LATE clean, blur kept": {
+     "value": 0.863,
+     "ci95": [
+      0.785,
+      0.929
+     ]
+    }
+   },
+   "IMG_minus_CNV": {
+    "delta": 0.022,
+    "ci95": [
+     -0.07,
+     0.127
+    ],
+    "p_two_sided": 0.714
+   },
+   "LATE_minus_IMG": {
+    "delta": 0.054,
+    "ci95": [
+     -0.0,
+     0.1
+    ],
+    "p_two_sided": 0.051
+   },
+   "LATE_minus_CNV": {
+    "delta": 0.076,
+    "ci95": [
+     0.023,
+     0.143
+    ],
+    "p_two_sided": 0.001
+   },
+   "clean_minus_stored_IMG": {
+    "delta": -0.025,
+    "ci95": [
+     -0.048,
+     -0.003
+    ],
+    "p_two_sided": 0.031
+   },
+   "clean_minus_stored_LATE": {
+    "delta": -0.011,
+    "ci95": [
+     -0.022,
+     0.002
+    ],
+    "p_two_sided": 0.099
+   },
+   "clean_minus_random_IMG": {
+    "delta": -0.019,
+    "ci95": [
+     -0.044,
+     0.004
+    ],
+    "p_two_sided": 0.116
+   },
+   "stored_IMG_minus_CNV": {
+    "delta": 0.047,
+    "ci95": [
+     -0.041,
+     0.147
+    ],
+    "p_two_sided": 0.329
+   },
+   "stored_LATE_minus_IMG": {
+    "delta": 0.04,
+    "ci95": [
+     -0.005,
+     0.081
+    ],
+    "p_two_sided": 0.08
+   },
+   "random_IMG_minus_CNV": {
+    "delta": 0.041,
+    "ci95": [
+     -0.046,
+     0.141
+    ],
+    "p_two_sided": 0.397
+   },
+   "random_minus_stored_IMG": {
+    "delta": -0.006,
+    "ci95": [
+     -0.015,
+     0.003
+    ],
+    "p_two_sided": 0.224
+   },
+   "noblur_minus_stored_IMG": {
+    "delta": -0.008,
+    "ci95": [
+     -0.024,
+     0.009
+    ],
+    "p_two_sided": 0.399
+   },
+   "noblur_IMG_minus_CNV": {
+    "delta": 0.039,
+    "ci95": [
+     -0.05,
+     0.143
+    ],
+    "p_two_sided": 0.452
+   },
+   "noblur_LATE_minus_IMG": {
+    "delta": 0.043,
+    "ci95": [
+     -0.004,
+     0.086
+    ],
+    "p_two_sided": 0.064
+   }
+  },
+  "note": "L-IMG = clean-tile refit (same recipe, folds, nested lambda); L-LATE = (stored L-CNV + clean L-IMG) / 2; 'stored' = the published L-IMG; random-subset control = same number of tiles drawn at random per sample. fsa AUROC, 2,000-draw patient bootstrap, paired deltas on the same draws."
+ },
+ "agent": "ART"
+}

@@ -1,0 +1,601 @@
+{
+ "task": "gate",
+ "agent": "ART",
+ "gate": {
+  "R49": {
+   "stored": {
+    "caught": {
+     "value": 31.1,
+     "ci95": [
+      29.68,
+      32.0
+     ]
+    },
+    "np_flagged": {
+     "value": 31.8,
+     "ci95": [
+      26.96,
+      36.19
+     ]
+    },
+    "seq_per_patient": {
+     "value": 1.94,
+     "ci95": [
+      1.61,
+      2.27
+     ]
+    }
+   },
+   "clean": {
+    "caught": {
+     "value": 31.3,
+     "ci95": [
+      30.08,
+      32.0
+     ]
+    },
+    "np_flagged": {
+     "value": 32.8,
+     "ci95": [
+      28.34,
+      37.1
+     ]
+    },
+    "seq_per_patient": {
+     "value": 2.16,
+     "ci95": [
+      1.82,
+      2.49
+     ]
+    }
+   },
+   "rand": {
+    "caught": {
+     "value": 31.3,
+     "ci95": [
+      29.87,
+      32.0
+     ]
+    },
+    "np_flagged": {
+     "value": 33.3,
+     "ci95": [
+      28.73,
+      37.27
+     ]
+    },
+    "seq_per_patient": {
+     "value": 2.011,
+     "ci95": [
+      1.68,
+      2.34
+     ]
+    }
+   },
+   "clean_minus_stored": {
+    "caught": {
+     "delta": 0.2,
+     "ci95": [
+      0.0,
+      0.53
+     ]
+    },
+    "np_flagged": {
+     "delta": 1.0,
+     "ci95": [
+      -0.81,
+      3.07
+     ]
+    },
+    "seq_per_patient": {
+     "delta": 0.22,
+     "ci95": [
+      0.1,
+      0.35
+     ]
+    }
+   },
+   "rand_minus_stored": {
+    "caught": {
+     "delta": 0.2,
+     "ci95": [
+      0.0,
+      0.52
+     ]
+    },
+    "np_flagged": {
+     "delta": 1.5,
+     "ci95": [
+      0.29,
+      2.99
+     ]
+    },
+    "seq_per_patient": {
+     "delta": 0.07,
+     "ci95": [
+      0.0,
+      0.14
+     ]
+    }
+   }
+  },
+  "memory (gate score, EW)": {
+   "stored": {
+    "caught": {
+     "value": 30.7,
+     "ci95": [
+      29.53,
+      31.62
+     ]
+    },
+    "np_flagged": {
+     "value": 23.6,
+     "ci95": [
+      18.3,
+      29.16
+     ]
+    },
+    "seq_per_patient": {
+     "value": 1.94,
+     "ci95": [
+      1.61,
+      2.27
+     ]
+    }
+   },
+   "clean": {
+    "caught": {
+     "value": 30.7,
+     "ci95": [
+      29.23,
+      31.72
+     ]
+    },
+    "np_flagged": {
+     "value": 25.1,
+     "ci95": [
+      19.74,
+      30.23
+     ]
+    },
+    "seq_per_patient": {
+     "value": 2.16,
+     "ci95": [
+      1.82,
+      2.49
+     ]
+    }
+   },
+   "rand": {
+    "caught": {
+     "value": 30.8,
+     "ci95": [
+      29.66,
+      31.77
+     ]
+    },
+    "np_flagged": {
+     "value": 25.2,
+     "ci95": [
+      20.23,
+      30.1
+     ]
+    },
+    "seq_per_patient": {
+     "value": 2.011,
+     "ci95": [
+      1.68,
+      2.34
+     ]
+    }
+   },
+   "clean_minus_stored": {
+    "caught": {
+     "delta": 0.0,
+     "ci95": [
+      -0.78,
+      0.93
+     ]
+    },
+    "np_flagged": {
+     "delta": 1.5,
+     "ci95": [
+      -0.72,
+      3.94
+     ]
+    },
+    "seq_per_patient": {
+     "delta": 0.22,
+     "ci95": [
+      0.1,
+      0.35
+     ]
+    }
+   },
+   "rand_minus_stored": {
+    "caught": {
+     "delta": 0.1,
+     "ci95": [
+      -0.55,
+      0.78
+     ]
+    },
+    "np_flagged": {
+     "delta": 1.6,
+     "ci95": [
+      0.1,
+      3.07
+     ]
+    },
+    "seq_per_patient": {
+     "delta": 0.07,
+     "ci95": [
+      0.0,
+      0.14
+     ]
+    }
+   }
+  },
+  "light tier (A12)": {
+   "stored": {
+    "caught": {
+     "value": 30.5,
+     "ci95": [
+      29.31,
+      31.51
+     ]
+    },
+    "np_flagged": {
+     "value": 21.5,
+     "ci95": [
+      16.3,
+      26.82
+     ]
+    },
+    "seq_per_patient": {
+     "value": 1.94,
+     "ci95": [
+      1.61,
+      2.27
+     ]
+    }
+   },
+   "clean": {
+    "caught": {
+     "value": 30.5,
+     "ci95": [
+      29.13,
+      31.64
+     ]
+    },
+    "np_flagged": {
+     "value": 23.5,
+     "ci95": [
+      18.14,
+      28.84
+     ]
+    },
+    "seq_per_patient": {
+     "value": 2.16,
+     "ci95": [
+      1.82,
+      2.49
+     ]
+    }
+   },
+   "rand": {
+    "caught": {
+     "value": 30.3,
+     "ci95": [
+      28.9,
+      31.51
+     ]
+    },
+    "np_flagged": {
+     "value": 22.6,
+     "ci95": [
+      17.69,
+      27.61
+     ]
+    },
+    "seq_per_patient": {
+     "value": 2.011,
+     "ci95": [
+      1.68,
+      2.34
+     ]
+    }
+   },
+   "clean_minus_stored": {
+    "caught": {
+     "delta": 0.0,
+     "ci95": [
+      -0.66,
+      0.84
+     ]
+    },
+    "np_flagged": {
+     "delta": 2.0,
+     "ci95": [
+      -0.25,
+      4.3
+     ]
+    },
+    "seq_per_patient": {
+     "delta": 0.22,
+     "ci95": [
+      0.1,
+      0.35
+     ]
+    }
+   },
+   "rand_minus_stored": {
+    "caught": {
+     "delta": -0.2,
+     "ci95": [
+      -0.94,
+      0.44
+     ]
+    },
+    "np_flagged": {
+     "delta": 1.1,
+     "ci95": [
+      -0.43,
+      2.56
+     ]
+    },
+    "seq_per_patient": {
+     "delta": 0.07,
+     "ci95": [
+      0.0,
+      0.14
+     ]
+    }
+   }
+  },
+  "R49 (mean-logit gate)": {
+   "stored": {
+    "caught": {
+     "value": 30.9,
+     "ci95": [
+      29.44,
+      31.88
+     ]
+    },
+    "np_flagged": {
+     "value": 30.8,
+     "ci95": [
+      25.6,
+      35.48
+     ]
+    },
+    "seq_per_patient": {
+     "value": 1.433,
+     "ci95": [
+      1.16,
+      1.71
+     ]
+    }
+   },
+   "clean": {
+    "caught": {
+     "value": 31.1,
+     "ci95": [
+      29.9,
+      31.91
+     ]
+    },
+    "np_flagged": {
+     "value": 32.3,
+     "ci95": [
+      27.85,
+      36.71
+     ]
+    },
+    "seq_per_patient": {
+     "value": 1.701,
+     "ci95": [
+      1.4,
+      2.01
+     ]
+    }
+   },
+   "rand": {
+    "caught": {
+     "value": 31.3,
+     "ci95": [
+      29.87,
+      32.0
+     ]
+    },
+    "np_flagged": {
+     "value": 31.9,
+     "ci95": [
+      26.97,
+      36.22
+     ]
+    },
+    "seq_per_patient": {
+     "value": 1.479,
+     "ci95": [
+      1.2,
+      1.76
+     ]
+    }
+   },
+   "clean_minus_stored": {
+    "caught": {
+     "delta": 0.2,
+     "ci95": [
+      -0.19,
+      0.64
+     ]
+    },
+    "np_flagged": {
+     "delta": 1.5,
+     "ci95": [
+      -0.41,
+      3.79
+     ]
+    },
+    "seq_per_patient": {
+     "delta": 0.27,
+     "ci95": [
+      0.14,
+      0.41
+     ]
+    }
+   },
+   "rand_minus_stored": {
+    "caught": {
+     "delta": 0.4,
+     "ci95": [
+      0.0,
+      0.91
+     ]
+    },
+    "np_flagged": {
+     "delta": 1.1,
+     "ci95": [
+      -0.3,
+      2.69
+     ]
+    },
+    "seq_per_patient": {
+     "delta": 0.05,
+     "ci95": [
+      -0.02,
+      0.12
+     ]
+    }
+   }
+  },
+  "tier 0: mean-logit + EW memory": {
+   "stored": {
+    "caught": {
+     "value": 31.0,
+     "ci95": [
+      29.75,
+      31.9
+     ]
+    },
+    "np_flagged": {
+     "value": 26.6,
+     "ci95": [
+      21.29,
+      31.69
+     ]
+    },
+    "seq_per_patient": {
+     "value": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "clean": {
+    "caught": {
+     "value": 31.1,
+     "ci95": [
+      30.17,
+      31.79
+     ]
+    },
+    "np_flagged": {
+     "value": 29.7,
+     "ci95": [
+      25.49,
+      34.0
+     ]
+    },
+    "seq_per_patient": {
+     "value": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "rand": {
+    "caught": {
+     "value": 30.8,
+     "ci95": [
+      29.3,
+      31.81
+     ]
+    },
+    "np_flagged": {
+     "value": 26.9,
+     "ci95": [
+      22.07,
+      31.62
+     ]
+    },
+    "seq_per_patient": {
+     "value": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "clean_minus_stored": {
+    "caught": {
+     "delta": 0.1,
+     "ci95": [
+      -0.68,
+      1.01
+     ]
+    },
+    "np_flagged": {
+     "delta": 3.1,
+     "ci95": [
+      0.43,
+      6.0
+     ]
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   },
+   "rand_minus_stored": {
+    "caught": {
+     "delta": -0.2,
+     "ci95": [
+      -1.3,
+      0.74
+     ]
+    },
+    "np_flagged": {
+     "delta": 0.3,
+     "ci95": [
+      -1.37,
+      2.03
+     ]
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ]
+    }
+   }
+  },
+  "smoke_stored_reproduces_E9": {
+   "R49": true,
+   "light tier (A12)": true,
+   "memory (gate score, EW)": true,
+   "tier 0: mean-logit + EW memory": true
+  },
+  "n_progressor_patients": 32,
+  "n_np_patients": 43,
+  "draws": 2000,
+  "note": "nested: every threshold / hyper-parameter chosen on training patients (inner OOF of each refit); held-out, repeat mean; 'clean' = clean-tile L-IMG refit, 'rand' = random-subset control (same number of tiles); stored = the published L-IMG; paired patient bootstrap on the same draws"
+ }
+}
