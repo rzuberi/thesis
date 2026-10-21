@@ -1,0 +1,2149 @@
+{
+ "task": "comp",
+ "smoke_draws": null,
+ "comp": {
+  "missingness": {
+   "patients_linked_to_demographics": 75,
+   "smoking_known_patients": 42,
+   "prague_M_demographics_patients": 64,
+   "prague_M_source_endoscopies": {
+    "db_at_endoscopy_60d": 4,
+    "demographics": 256,
+    "db_patient_median": 13,
+    "missing": 15,
+    "of": 288
+   },
+   "prague_M_missing_patients": 7,
+   "db_last_record_after_reference_years": {
+    "non_progressor_median": 6.69,
+    "non_progressor_linked": 43
+   },
+   "event_type_pre_event_progressors": {
+    "HGD": 21,
+    "IMC": 7,
+    "none": 4
+   },
+   "focal_hgd_noted": 7,
+   "expected_data_md_Q8": {
+    "HGD": 21,
+    "IMC": 7,
+    "none": 4,
+    "focal_of_HGD": 7
+   }
+  },
+  "smoking_known": {
+   "progressors": 20,
+   "non_progressors": 22,
+   "of": [
+    32,
+    43
+   ]
+  },
+  "prague_single": {
+   "name": "Prague M, single endoscopy (training threshold)",
+   "caught": {
+    "value": 31.0,
+    "ci95": [
+     28.8,
+     32.0
+    ],
+    "of": 32
+   },
+   "np_flagged": {
+    "value": 41.8,
+    "ci95": [
+     40.3,
+     43.0
+    ],
+    "of": 43
+   },
+   "missed": {
+    "value": 1.0,
+    "ci95": [
+     0.0,
+     3.2
+    ]
+   },
+   "np_never_flagged": {
+    "value": 1.2,
+    "ci95": [
+     0.0,
+     2.7
+    ]
+   },
+   "seq_per_patient": 0.0,
+   "flags_per_np_py": {
+    "value": 0.69,
+    "ci95": [
+     0.629,
+     0.764
+    ]
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": 10.0,
+     "ci95": [
+      5.402,
+      14.812
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -0.1,
+     "ci95": [
+      -2.56,
+      1.963
+     ],
+     "p_two_sided": 1.0
+    },
+    "flags_per_np_py": {
+     "delta": 0.378,
+     "ci95": [
+      0.32,
+      0.436
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": -1.94,
+     "ci95": [
+      -2.268,
+      -1.611
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": -0.534,
+     "ci95": [
+      -0.621,
+      -0.449
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_g53": {
+    "np_flagged": {
+     "delta": 16.8,
+     "ci95": [
+      10.652,
+      23.331
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": 10.0,
+     "ci95": [
+      4.0,
+      15.59
+     ],
+     "p_two_sided": 0.003
+    },
+    "flags_per_np_py": {
+     "delta": 0.516,
+     "ci95": [
+      0.46,
+      0.577
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": -0.73,
+     "ci95": [
+      -0.811,
+      -0.648
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_no_sequencing_tier": {
+    "np_flagged": {
+     "delta": 15.2,
+     "ci95": [
+      10.122,
+      20.533
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": 0.0,
+     "ci95": [
+      -2.432,
+      1.9
+     ],
+     "p_two_sided": 0.944
+    },
+    "flags_per_np_py": {
+     "delta": 0.397,
+     "ci95": [
+      0.332,
+      0.465
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": -0.561,
+     "ci95": [
+      -0.661,
+      -0.459
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "selection": {
+    "chosen": {
+     "none": 100
+    }
+   }
+  },
+  "prague_mem": {
+   "name": "Prague M + memory (training threshold)",
+   "caught": {
+    "value": 31.0,
+    "ci95": [
+     28.8,
+     32.0
+    ],
+    "of": 32
+   },
+   "np_flagged": {
+    "value": 41.8,
+    "ci95": [
+     40.3,
+     43.0
+    ],
+    "of": 43
+   },
+   "missed": {
+    "value": 1.0,
+    "ci95": [
+     0.0,
+     3.2
+    ]
+   },
+   "np_never_flagged": {
+    "value": 1.2,
+    "ci95": [
+     0.0,
+     2.7
+    ]
+   },
+   "seq_per_patient": 0.0,
+   "flags_per_np_py": {
+    "value": 0.69,
+    "ci95": [
+     0.629,
+     0.764
+    ]
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": 10.0,
+     "ci95": [
+      5.402,
+      14.812
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -0.1,
+     "ci95": [
+      -2.56,
+      1.963
+     ],
+     "p_two_sided": 1.0
+    },
+    "flags_per_np_py": {
+     "delta": 0.378,
+     "ci95": [
+      0.32,
+      0.436
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": -1.94,
+     "ci95": [
+      -2.268,
+      -1.611
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": -0.534,
+     "ci95": [
+      -0.621,
+      -0.449
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_g53": {
+    "np_flagged": {
+     "delta": 16.8,
+     "ci95": [
+      10.652,
+      23.331
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": 10.0,
+     "ci95": [
+      4.0,
+      15.59
+     ],
+     "p_two_sided": 0.003
+    },
+    "flags_per_np_py": {
+     "delta": 0.516,
+     "ci95": [
+      0.46,
+      0.577
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": -0.73,
+     "ci95": [
+      -0.811,
+      -0.648
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_no_sequencing_tier": {
+    "np_flagged": {
+     "delta": 15.2,
+     "ci95": [
+      10.122,
+      20.533
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": 0.0,
+     "ci95": [
+      -2.432,
+      1.9
+     ],
+     "p_two_sided": 0.944
+    },
+    "flags_per_np_py": {
+     "delta": 0.397,
+     "ci95": [
+      0.332,
+      0.465
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": -0.561,
+     "ci95": [
+      -0.661,
+      -0.459
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "selection": {
+    "chosen": {
+     "ew h=1y": 100
+    }
+   }
+  },
+  "parasa_single": {
+   "name": "Parasa-style score, single endoscopy (training threshold)",
+   "caught": {
+    "value": 30.2,
+    "ci95": [
+     27.538,
+     32.0
+    ],
+    "of": 32
+   },
+   "np_flagged": {
+    "value": 41.9,
+    "ci95": [
+     40.195,
+     42.907
+    ],
+    "of": 43
+   },
+   "missed": {
+    "value": 1.8,
+    "ci95": [
+     0.0,
+     4.462
+    ]
+   },
+   "np_never_flagged": {
+    "value": 1.1,
+    "ci95": [
+     0.093,
+     2.805
+    ]
+   },
+   "seq_per_patient": 0.0,
+   "flags_per_np_py": {
+    "value": 0.686,
+    "ci95": [
+     0.623,
+     0.759
+    ]
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": 10.1,
+     "ci95": [
+      5.299,
+      15.099
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -0.9,
+     "ci95": [
+      -3.911,
+      1.486
+     ],
+     "p_two_sided": 0.552
+    },
+    "flags_per_np_py": {
+     "delta": 0.375,
+     "ci95": [
+      0.311,
+      0.437
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": -1.94,
+     "ci95": [
+      -2.268,
+      -1.611
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": -0.53,
+     "ci95": [
+      -0.623,
+      -0.437
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_g53": {
+    "np_flagged": {
+     "delta": 16.9,
+     "ci95": [
+      11.03,
+      23.244
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": 9.2,
+     "ci95": [
+      3.085,
+      15.315
+     ],
+     "p_two_sided": 0.002
+    },
+    "flags_per_np_py": {
+     "delta": 0.513,
+     "ci95": [
+      0.462,
+      0.569
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": -0.725,
+     "ci95": [
+      -0.798,
+      -0.646
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_no_sequencing_tier": {
+    "np_flagged": {
+     "delta": 15.3,
+     "ci95": [
+      9.703,
+      20.568
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -0.8,
+     "ci95": [
+      -3.701,
+      1.477
+     ],
+     "p_two_sided": 0.594
+    },
+    "flags_per_np_py": {
+     "delta": 0.394,
+     "ci95": [
+      0.319,
+      0.464
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": -0.557,
+     "ci95": [
+      -0.665,
+      -0.442
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "selection": {
+    "chosen": {
+     "none": 100
+    }
+   }
+  },
+  "parasa_mem": {
+   "name": "Parasa-style score + memory (training threshold)",
+   "caught": {
+    "value": 30.2,
+    "ci95": [
+     27.538,
+     32.0
+    ],
+    "of": 32
+   },
+   "np_flagged": {
+    "value": 41.7,
+    "ci95": [
+     39.894,
+     42.907
+    ],
+    "of": 43
+   },
+   "missed": {
+    "value": 1.8,
+    "ci95": [
+     0.0,
+     4.462
+    ]
+   },
+   "np_never_flagged": {
+    "value": 1.3,
+    "ci95": [
+     0.093,
+     3.106
+    ]
+   },
+   "seq_per_patient": 0.0,
+   "flags_per_np_py": {
+    "value": 0.666,
+    "ci95": [
+     0.601,
+     0.745
+    ]
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": 9.9,
+     "ci95": [
+      4.961,
+      14.907
+     ],
+     "p_two_sided": 0.001
+    },
+    "caught": {
+     "delta": -0.9,
+     "ci95": [
+      -3.911,
+      1.486
+     ],
+     "p_two_sided": 0.552
+    },
+    "flags_per_np_py": {
+     "delta": 0.355,
+     "ci95": [
+      0.293,
+      0.415
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": -1.94,
+     "ci95": [
+      -2.268,
+      -1.611
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": -0.502,
+     "ci95": [
+      -0.592,
+      -0.41
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_g53": {
+    "np_flagged": {
+     "delta": 16.7,
+     "ci95": [
+      10.852,
+      23.183
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": 9.2,
+     "ci95": [
+      3.085,
+      15.315
+     ],
+     "p_two_sided": 0.002
+    },
+    "flags_per_np_py": {
+     "delta": 0.493,
+     "ci95": [
+      0.44,
+      0.551
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": -0.697,
+     "ci95": [
+      -0.779,
+      -0.619
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_no_sequencing_tier": {
+    "np_flagged": {
+     "delta": 15.1,
+     "ci95": [
+      9.479,
+      20.508
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -0.8,
+     "ci95": [
+      -3.701,
+      1.477
+     ],
+     "p_two_sided": 0.594
+    },
+    "flags_per_np_py": {
+     "delta": 0.374,
+     "ci95": [
+      0.303,
+      0.443
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": -0.528,
+     "ci95": [
+      -0.634,
+      -0.419
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "selection": {
+    "chosen": {
+     "ew h=1y": 42,
+     "ew h=2y": 2,
+     "ew h=4y": 56
+    }
+   }
+  },
+  "prague_M_ge3": {
+   "name": "Prague M >= 3 cm (ever)",
+   "caught": {
+    "value": 19.0,
+    "ci95": [
+     13.535,
+     24.471
+    ],
+    "of": 32
+   },
+   "np_flagged": {
+    "value": 35.0,
+    "ci95": [
+     29.689,
+     39.775
+    ],
+    "of": 43
+   },
+   "missed": {
+    "value": 13.0,
+    "ci95": [
+     7.529,
+     18.465
+    ]
+   },
+   "np_never_flagged": {
+    "value": 8.0,
+    "ci95": [
+     3.225,
+     13.311
+    ]
+   },
+   "seq_per_patient": 0.0,
+   "flags_per_np_py": {
+    "value": 0.577,
+    "ci95": [
+     0.466,
+     0.69
+    ]
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": 3.2,
+     "ci95": [
+      -3.011,
+      8.915
+     ],
+     "p_two_sided": 0.322
+    },
+    "caught": {
+     "delta": -12.1,
+     "ci95": [
+      -17.402,
+      -6.899
+     ],
+     "p_two_sided": 0.0
+    },
+    "flags_per_np_py": {
+     "delta": 0.265,
+     "ci95": [
+      0.164,
+      0.358
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": -1.94,
+     "ci95": [
+      -2.268,
+      -1.611
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": -0.375,
+     "ci95": [
+      -0.501,
+      -0.234
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_g53": {
+    "np_flagged": {
+     "delta": 10.0,
+     "ci95": [
+      2.867,
+      17.761
+     ],
+     "p_two_sided": 0.012
+    },
+    "caught": {
+     "delta": -2.0,
+     "ci95": [
+      -8.229,
+      4.267
+     ],
+     "p_two_sided": 0.643
+    },
+    "flags_per_np_py": {
+     "delta": 0.403,
+     "ci95": [
+      0.299,
+      0.5
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": -0.57,
+     "ci95": [
+      -0.695,
+      -0.435
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_no_sequencing_tier": {
+    "np_flagged": {
+     "delta": 8.4,
+     "ci95": [
+      1.314,
+      14.931
+     ],
+     "p_two_sided": 0.02
+    },
+    "caught": {
+     "delta": -12.0,
+     "ci95": [
+      -17.65,
+      -6.504
+     ],
+     "p_two_sided": 0.0
+    },
+    "flags_per_np_py": {
+     "delta": 0.285,
+     "ci95": [
+      0.168,
+      0.395
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": -0.402,
+     "ci95": [
+      -0.554,
+      -0.238
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "selection": null
+  },
+  "prague_M_ge3_ew2": {
+   "name": "EW-mean Prague M >= 3 cm",
+   "caught": {
+    "value": 19.0,
+    "ci95": [
+     13.535,
+     24.471
+    ],
+    "of": 32
+   },
+   "np_flagged": {
+    "value": 35.0,
+    "ci95": [
+     29.689,
+     39.775
+    ],
+    "of": 43
+   },
+   "missed": {
+    "value": 13.0,
+    "ci95": [
+     7.529,
+     18.465
+    ]
+   },
+   "np_never_flagged": {
+    "value": 8.0,
+    "ci95": [
+     3.225,
+     13.311
+    ]
+   },
+   "seq_per_patient": 0.0,
+   "flags_per_np_py": {
+    "value": 0.559,
+    "ci95": [
+     0.449,
+     0.671
+    ]
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": 3.2,
+     "ci95": [
+      -3.011,
+      8.915
+     ],
+     "p_two_sided": 0.322
+    },
+    "caught": {
+     "delta": -12.1,
+     "ci95": [
+      -17.402,
+      -6.899
+     ],
+     "p_two_sided": 0.0
+    },
+    "flags_per_np_py": {
+     "delta": 0.248,
+     "ci95": [
+      0.15,
+      0.338
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": -1.94,
+     "ci95": [
+      -2.268,
+      -1.611
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": -0.35,
+     "ci95": [
+      -0.474,
+      -0.214
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_g53": {
+    "np_flagged": {
+     "delta": 10.0,
+     "ci95": [
+      2.867,
+      17.761
+     ],
+     "p_two_sided": 0.012
+    },
+    "caught": {
+     "delta": -2.0,
+     "ci95": [
+      -8.229,
+      4.267
+     ],
+     "p_two_sided": 0.643
+    },
+    "flags_per_np_py": {
+     "delta": 0.386,
+     "ci95": [
+      0.284,
+      0.482
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": -0.545,
+     "ci95": [
+      -0.671,
+      -0.41
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_no_sequencing_tier": {
+    "np_flagged": {
+     "delta": 8.4,
+     "ci95": [
+      1.314,
+      14.931
+     ],
+     "p_two_sided": 0.02
+    },
+    "caught": {
+     "delta": -12.0,
+     "ci95": [
+      -17.65,
+      -6.504
+     ],
+     "p_two_sided": 0.0
+    },
+    "flags_per_np_py": {
+     "delta": 0.267,
+     "ci95": [
+      0.149,
+      0.374
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": -0.377,
+     "ci95": [
+      -0.522,
+      -0.211
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "selection": null
+  },
+  "parasa_gt10": {
+   "name": "Parasa > 10 (intermediate/high, ever)",
+   "caught": {
+    "value": 25.0,
+    "ci95": [
+     20.267,
+     29.406
+    ],
+    "of": 32
+   },
+   "np_flagged": {
+    "value": 34.0,
+    "ci95": [
+     28.667,
+     39.091
+    ],
+    "of": 43
+   },
+   "missed": {
+    "value": 7.0,
+    "ci95": [
+     2.594,
+     11.733
+    ]
+   },
+   "np_never_flagged": {
+    "value": 9.0,
+    "ci95": [
+     3.909,
+     14.333
+    ]
+   },
+   "seq_per_patient": 0.0,
+   "flags_per_np_py": {
+    "value": 0.488,
+    "ci95": [
+     0.379,
+     0.603
+    ]
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": 2.2,
+     "ci95": [
+      -4.528,
+      8.992
+     ],
+     "p_two_sided": 0.533
+    },
+    "caught": {
+     "delta": -6.1,
+     "ci95": [
+      -10.845,
+      -1.92
+     ],
+     "p_two_sided": 0.004
+    },
+    "flags_per_np_py": {
+     "delta": 0.177,
+     "ci95": [
+      0.07,
+      0.282
+     ],
+     "p_two_sided": 0.003
+    },
+    "seq_per_patient": {
+     "delta": -1.94,
+     "ci95": [
+      -2.268,
+      -1.611
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": -0.25,
+     "ci95": [
+      -0.402,
+      -0.097
+     ],
+     "p_two_sided": 0.003
+    }
+   },
+   "vs_g53": {
+    "np_flagged": {
+     "delta": 9.0,
+     "ci95": [
+      2.15,
+      16.125
+     ],
+     "p_two_sided": 0.013
+    },
+    "caught": {
+     "delta": 4.0,
+     "ci95": [
+      -2.909,
+      10.971
+     ],
+     "p_two_sided": 0.327
+    },
+    "flags_per_np_py": {
+     "delta": 0.315,
+     "ci95": [
+      0.222,
+      0.41
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": -0.445,
+     "ci95": [
+      -0.587,
+      -0.308
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_no_sequencing_tier": {
+    "np_flagged": {
+     "delta": 7.4,
+     "ci95": [
+      0.0,
+      14.444
+     ],
+     "p_two_sided": 0.05
+    },
+    "caught": {
+     "delta": -6.0,
+     "ci95": [
+      -10.743,
+      -1.6
+     ],
+     "p_two_sided": 0.004
+    },
+    "flags_per_np_py": {
+     "delta": 0.196,
+     "ci95": [
+      0.091,
+      0.298
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": -0.277,
+     "ci95": [
+      -0.428,
+      -0.128
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "selection": null
+  },
+  "parasa_gt20": {
+   "name": "Parasa > 20 (high, ever)",
+   "caught": {
+    "value": 12.0,
+    "ci95": [
+     6.621,
+     17.922
+    ],
+    "of": 32
+   },
+   "np_flagged": {
+    "value": 17.0,
+    "ci95": [
+     11.0,
+     23.075
+    ],
+    "of": 43
+   },
+   "missed": {
+    "value": 20.0,
+    "ci95": [
+     14.078,
+     25.379
+    ]
+   },
+   "np_never_flagged": {
+    "value": 26.0,
+    "ci95": [
+     19.925,
+     32.0
+    ]
+   },
+   "seq_per_patient": 0.0,
+   "flags_per_np_py": {
+    "value": 0.131,
+    "ci95": [
+     0.07,
+     0.204
+    ]
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": -14.8,
+     "ci95": [
+      -21.413,
+      -8.409
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -19.1,
+     "ci95": [
+      -24.429,
+      -13.462
+     ],
+     "p_two_sided": 0.0
+    },
+    "flags_per_np_py": {
+     "delta": -0.18,
+     "ci95": [
+      -0.273,
+      -0.094
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": -1.94,
+     "ci95": [
+      -2.268,
+      -1.611
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.255,
+     "ci95": [
+      0.137,
+      0.377
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_g53": {
+    "np_flagged": {
+     "delta": -8.0,
+     "ci95": [
+      -14.333,
+      -1.953
+     ],
+     "p_two_sided": 0.02
+    },
+    "caught": {
+     "delta": -9.0,
+     "ci95": [
+      -15.112,
+      -2.741
+     ],
+     "p_two_sided": 0.01
+    },
+    "flags_per_np_py": {
+     "delta": -0.042,
+     "ci95": [
+      -0.099,
+      0.018
+     ],
+     "p_two_sided": 0.19
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": 0.06,
+     "ci95": [
+      -0.025,
+      0.133
+     ],
+     "p_two_sided": 0.19
+    }
+   },
+   "vs_no_sequencing_tier": {
+    "np_flagged": {
+     "delta": -9.6,
+     "ci95": [
+      -16.852,
+      -2.551
+     ],
+     "p_two_sided": 0.013
+    },
+    "caught": {
+     "delta": -19.0,
+     "ci95": [
+      -24.259,
+      -13.356
+     ],
+     "p_two_sided": 0.0
+    },
+    "flags_per_np_py": {
+     "delta": -0.161,
+     "ci95": [
+      -0.259,
+      -0.065
+     ],
+     "p_two_sided": 0.001
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": 0.228,
+     "ci95": [
+      0.094,
+      0.359
+     ],
+     "p_two_sided": 0.001
+    }
+   },
+   "selection": null
+  },
+  "parasa_gt10_ew2": {
+   "name": "EW-mean Parasa > 10",
+   "caught": {
+    "value": 25.0,
+    "ci95": [
+     20.267,
+     29.406
+    ],
+    "of": 32
+   },
+   "np_flagged": {
+    "value": 34.0,
+    "ci95": [
+     28.667,
+     39.091
+    ],
+    "of": 43
+   },
+   "missed": {
+    "value": 7.0,
+    "ci95": [
+     2.594,
+     11.733
+    ]
+   },
+   "np_never_flagged": {
+    "value": 9.0,
+    "ci95": [
+     3.909,
+     14.333
+    ]
+   },
+   "seq_per_patient": 0.0,
+   "flags_per_np_py": {
+    "value": 0.517,
+    "ci95": [
+     0.409,
+     0.632
+    ]
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": 2.2,
+     "ci95": [
+      -4.528,
+      8.992
+     ],
+     "p_two_sided": 0.533
+    },
+    "caught": {
+     "delta": -6.1,
+     "ci95": [
+      -10.845,
+      -1.92
+     ],
+     "p_two_sided": 0.004
+    },
+    "flags_per_np_py": {
+     "delta": 0.205,
+     "ci95": [
+      0.095,
+      0.313
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": -1.94,
+     "ci95": [
+      -2.268,
+      -1.611
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": -0.29,
+     "ci95": [
+      -0.448,
+      -0.132
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_g53": {
+    "np_flagged": {
+     "delta": 9.0,
+     "ci95": [
+      2.15,
+      16.125
+     ],
+     "p_two_sided": 0.013
+    },
+    "caught": {
+     "delta": 4.0,
+     "ci95": [
+      -2.909,
+      10.971
+     ],
+     "p_two_sided": 0.327
+    },
+    "flags_per_np_py": {
+     "delta": 0.343,
+     "ci95": [
+      0.253,
+      0.437
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": -0.485,
+     "ci95": [
+      -0.617,
+      -0.351
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_no_sequencing_tier": {
+    "np_flagged": {
+     "delta": 7.4,
+     "ci95": [
+      0.0,
+      14.444
+     ],
+     "p_two_sided": 0.05
+    },
+    "caught": {
+     "delta": -6.0,
+     "ci95": [
+      -10.743,
+      -1.6
+     ],
+     "p_two_sided": 0.004
+    },
+    "flags_per_np_py": {
+     "delta": 0.224,
+     "ci95": [
+      0.113,
+      0.334
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": -0.317,
+     "ci95": [
+      -0.476,
+      -0.159
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "selection": null
+  },
+  "parasa_gt20_ew2": {
+   "name": "EW-mean Parasa > 20",
+   "caught": {
+    "value": 11.0,
+    "ci95": [
+     5.517,
+     16.641
+    ],
+    "of": 32
+   },
+   "np_flagged": {
+    "value": 15.0,
+    "ci95": [
+     9.347,
+     21.061
+    ],
+    "of": 43
+   },
+   "missed": {
+    "value": 21.0,
+    "ci95": [
+     15.359,
+     26.483
+    ]
+   },
+   "np_never_flagged": {
+    "value": 28.0,
+    "ci95": [
+     21.939,
+     33.653
+    ]
+   },
+   "seq_per_patient": 0.0,
+   "flags_per_np_py": {
+    "value": 0.145,
+    "ci95": [
+     0.075,
+     0.23
+    ]
+   },
+   "vs_R49": {
+    "np_flagged": {
+     "delta": -16.8,
+     "ci95": [
+      -23.37,
+      -9.931
+     ],
+     "p_two_sided": 0.0
+    },
+    "caught": {
+     "delta": -20.1,
+     "ci95": [
+      -25.38,
+      -14.613
+     ],
+     "p_two_sided": 0.0
+    },
+    "flags_per_np_py": {
+     "delta": -0.166,
+     "ci95": [
+      -0.266,
+      -0.072
+     ],
+     "p_two_sided": 0.0
+    },
+    "seq_per_patient": {
+     "delta": -1.94,
+     "ci95": [
+      -2.268,
+      -1.611
+     ],
+     "p_two_sided": 0.0
+    },
+    "endo_spec": {
+     "delta": 0.235,
+     "ci95": [
+      0.104,
+      0.366
+     ],
+     "p_two_sided": 0.0
+    }
+   },
+   "vs_g53": {
+    "np_flagged": {
+     "delta": -10.0,
+     "ci95": [
+      -16.675,
+      -3.51
+     ],
+     "p_two_sided": 0.007
+    },
+    "caught": {
+     "delta": -10.0,
+     "ci95": [
+      -16.696,
+      -3.28
+     ],
+     "p_two_sided": 0.004
+    },
+    "flags_per_np_py": {
+     "delta": -0.028,
+     "ci95": [
+      -0.092,
+      0.04
+     ],
+     "p_two_sided": 0.447
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": 0.04,
+     "ci95": [
+      -0.057,
+      0.124
+     ],
+     "p_two_sided": 0.447
+    }
+   },
+   "vs_no_sequencing_tier": {
+    "np_flagged": {
+     "delta": -11.6,
+     "ci95": [
+      -18.941,
+      -3.969
+     ],
+     "p_two_sided": 0.005
+    },
+    "caught": {
+     "delta": -20.0,
+     "ci95": [
+      -25.259,
+      -14.442
+     ],
+     "p_two_sided": 0.0
+    },
+    "flags_per_np_py": {
+     "delta": -0.147,
+     "ci95": [
+      -0.248,
+      -0.045
+     ],
+     "p_two_sided": 0.006
+    },
+    "seq_per_patient": {
+     "delta": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "p_two_sided": 1.0
+    },
+    "endo_spec": {
+     "delta": 0.208,
+     "ci95": [
+      0.066,
+      0.343
+     ],
+     "p_two_sided": 0.006
+    }
+   },
+   "selection": null
+  },
+  "prague_mem - prague_single (memory gain)": {
+   "np_flagged": {
+    "delta": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_two_sided": 1.0
+   },
+   "caught": {
+    "delta": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_two_sided": 1.0
+   },
+   "flags_per_np_py": {
+    "delta": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_two_sided": 1.0
+   },
+   "seq_per_patient": {
+    "delta": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_two_sided": 1.0
+   },
+   "endo_spec": {
+    "delta": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_two_sided": 1.0
+   }
+  },
+  "parasa_mem - parasa_single (memory gain)": {
+   "np_flagged": {
+    "delta": -0.2,
+    "ci95": [
+     -0.679,
+     0.0
+    ],
+    "p_two_sided": 0.766
+   },
+   "caught": {
+    "delta": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_two_sided": 1.0
+   },
+   "flags_per_np_py": {
+    "delta": -0.02,
+    "ci95": [
+     -0.047,
+     0.001
+    ],
+    "p_two_sided": 0.095
+   },
+   "seq_per_patient": {
+    "delta": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_two_sided": 1.0
+   },
+   "endo_spec": {
+    "delta": 0.028,
+    "ci95": [
+     -0.001,
+     0.067
+    ],
+    "p_two_sided": 0.095
+   }
+  },
+  "prague_M_ge3_ew2 - prague_M_ge3 (memory gain)": {
+   "np_flagged": {
+    "delta": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_two_sided": 1.0
+   },
+   "caught": {
+    "delta": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_two_sided": 1.0
+   },
+   "flags_per_np_py": {
+    "delta": -0.018,
+    "ci95": [
+     -0.04,
+     -0.003
+    ],
+    "p_two_sided": 0.032
+   },
+   "seq_per_patient": {
+    "delta": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_two_sided": 1.0
+   },
+   "endo_spec": {
+    "delta": 0.025,
+    "ci95": [
+     0.005,
+     0.055
+    ],
+    "p_two_sided": 0.032
+   }
+  },
+  "parasa_gt10_ew2 - parasa_gt10 (memory gain)": {
+   "np_flagged": {
+    "delta": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_two_sided": 1.0
+   },
+   "caught": {
+    "delta": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_two_sided": 1.0
+   },
+   "flags_per_np_py": {
+    "delta": 0.028,
+    "ci95": [
+     0.0,
+     0.066
+    ],
+    "p_two_sided": 0.09
+   },
+   "seq_per_patient": {
+    "delta": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_two_sided": 1.0
+   },
+   "endo_spec": {
+    "delta": -0.04,
+    "ci95": [
+     -0.091,
+     0.0
+    ],
+    "p_two_sided": 0.09
+   }
+  },
+  "parasa_gt20_ew2 - parasa_gt20 (memory gain)": {
+   "np_flagged": {
+    "delta": -2.0,
+    "ci95": [
+     -5.119,
+     0.0
+    ],
+    "p_two_sided": 0.257
+   },
+   "caught": {
+    "delta": -1.0,
+    "ci95": [
+     -3.31,
+     0.0
+    ],
+    "p_two_sided": 0.72
+   },
+   "flags_per_np_py": {
+    "delta": 0.014,
+    "ci95": [
+     -0.007,
+     0.04
+    ],
+    "p_two_sided": 0.274
+   },
+   "seq_per_patient": {
+    "delta": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "p_two_sided": 1.0
+   },
+   "endo_spec": {
+    "delta": -0.02,
+    "ci95": [
+     -0.056,
+     0.01
+    ],
+    "p_two_sided": 0.274
+   }
+  },
+  "ml_mem": {
+   "name": "No sequencing: mean-logit + memory",
+   "caught": {
+    "value": 31.0,
+    "ci95": [
+     29.751,
+     31.897
+    ],
+    "of": 32
+   },
+   "np_flagged": {
+    "value": 26.6,
+    "ci95": [
+     21.293,
+     31.685
+    ],
+    "of": 43
+   },
+   "missed": {
+    "value": 1.0,
+    "ci95": [
+     0.103,
+     2.249
+    ]
+   },
+   "np_never_flagged": {
+    "value": 16.4,
+    "ci95": [
+     11.315,
+     21.707
+    ]
+   },
+   "seq_per_patient": 0.0,
+   "flags_per_np_py": {
+    "value": 0.292,
+    "ci95": [
+     0.211,
+     0.383
+    ]
+   }
+  },
+  "final": {
+   "name": "Confirmatory: final rule (cn90 bar)",
+   "caught": {
+    "value": 30.5,
+    "ci95": [
+     29.312,
+     31.508
+    ],
+    "of": 32
+   },
+   "np_flagged": {
+    "value": 17.2,
+    "ci95": [
+     12.147,
+     22.742
+    ],
+    "of": 43
+   },
+   "missed": {
+    "value": 1.5,
+    "ci95": [
+     0.492,
+     2.688
+    ]
+   },
+   "np_never_flagged": {
+    "value": 25.8,
+    "ci95": [
+     20.258,
+     30.853
+    ]
+   },
+   "seq_per_patient": 3.816,
+   "flags_per_np_py": {
+    "value": 0.121,
+    "ci95": [
+     0.077,
+     0.172
+    ]
+   }
+  },
+  "final_infold": {
+   "name": "Confirmatory: final rule, fold-internal bar",
+   "caught": {
+    "value": 30.4,
+    "ci95": [
+     29.12,
+     31.467
+    ],
+    "of": 32
+   },
+   "np_flagged": {
+    "value": 16.4,
+    "ci95": [
+     11.389,
+     21.8
+    ],
+    "of": 43
+   },
+   "missed": {
+    "value": 1.6,
+    "ci95": [
+     0.533,
+     2.88
+    ]
+   },
+   "np_never_flagged": {
+    "value": 26.6,
+    "ci95": [
+     21.2,
+     31.611
+    ]
+   },
+   "seq_per_patient": 3.816,
+   "flags_per_np_py": {
+    "value": 0.11,
+    "ci95": [
+     0.069,
+     0.156
+    ]
+   }
+  },
+  "evaluation_matched_optimistic": {
+   "prague_single at ml_mem": {
+    "tier_caught": 31.0,
+    "tier_np_flagged": 26.6,
+    "comparator_np_flagged_at_caught_ge_floor_of_tier": 41.4,
+    "comparator_caught_at_np_flagged_le_tier": 13.1
+   },
+   "prague_single at final": {
+    "tier_caught": 30.5,
+    "tier_np_flagged": 17.2,
+    "comparator_np_flagged_at_caught_ge_floor_of_tier": 40.1,
+    "comparator_caught_at_np_flagged_le_tier": 8.7
+   },
+   "prague_single at final_infold": {
+    "tier_caught": 30.4,
+    "tier_np_flagged": 16.4,
+    "comparator_np_flagged_at_caught_ge_floor_of_tier": 40.1,
+    "comparator_caught_at_np_flagged_le_tier": 8.3
+   },
+   "prague_mem at ml_mem": {
+    "tier_caught": 31.0,
+    "tier_np_flagged": 26.6,
+    "comparator_np_flagged_at_caught_ge_floor_of_tier": 41.4,
+    "comparator_caught_at_np_flagged_le_tier": 13.7
+   },
+   "prague_mem at final": {
+    "tier_caught": 30.5,
+    "tier_np_flagged": 17.2,
+    "comparator_np_flagged_at_caught_ge_floor_of_tier": 40.1,
+    "comparator_caught_at_np_flagged_le_tier": 9.0
+   },
+   "prague_mem at final_infold": {
+    "tier_caught": 30.4,
+    "tier_np_flagged": 16.4,
+    "comparator_np_flagged_at_caught_ge_floor_of_tier": 40.1,
+    "comparator_caught_at_np_flagged_le_tier": 8.7
+   },
+   "parasa_single at ml_mem": {
+    "tier_caught": 31.0,
+    "tier_np_flagged": 26.6,
+    "comparator_np_flagged_at_caught_ge_floor_of_tier": 41.2,
+    "comparator_caught_at_np_flagged_le_tier": 20.1
+   },
+   "parasa_single at final": {
+    "tier_caught": 30.5,
+    "tier_np_flagged": 17.2,
+    "comparator_np_flagged_at_caught_ge_floor_of_tier": 39.2,
+    "comparator_caught_at_np_flagged_le_tier": 12.9
+   },
+   "parasa_single at final_infold": {
+    "tier_caught": 30.4,
+    "tier_np_flagged": 16.4,
+    "comparator_np_flagged_at_caught_ge_floor_of_tier": 39.2,
+    "comparator_caught_at_np_flagged_le_tier": 12.0
+   },
+   "parasa_mem at ml_mem": {
+    "tier_caught": 31.0,
+    "tier_np_flagged": 26.6,
+    "comparator_np_flagged_at_caught_ge_floor_of_tier": 41.1,
+    "comparator_caught_at_np_flagged_le_tier": 21.6
+   },
+   "parasa_mem at final": {
+    "tier_caught": 30.5,
+    "tier_np_flagged": 17.2,
+    "comparator_np_flagged_at_caught_ge_floor_of_tier": 39.2,
+    "comparator_caught_at_np_flagged_le_tier": 12.2
+   },
+   "parasa_mem at final_infold": {
+    "tier_caught": 30.4,
+    "tier_np_flagged": 16.4,
+    "comparator_np_flagged_at_caught_ge_floor_of_tier": 39.2,
+    "comparator_caught_at_np_flagged_le_tier": 11.6
+   }
+  },
+  "note": "Parasa-style score per endoscopy = 9 x male + 5 x smoker + Prague M (cm) + 11 x LGD at the endoscopy (Parasa et al., Gastroenterology 2018); missing Prague M = training-endoscopy median, missing smoking = training share of smokers x 5 (training-chosen rows) or 0 (fixed cut-off rows); 'training threshold' rows use the round-9 rule (highest threshold reaching the R49 gate's own training progressor-patient detection; half-life 1/2/4 y by fewest training NP flagged)"
+ }
+}

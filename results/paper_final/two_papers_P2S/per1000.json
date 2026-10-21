@@ -1,0 +1,1477 @@
+{
+ "task": "per1000",
+ "smoke_draws": null,
+ "per1000": {
+  "ml_mem": {
+   "name": "No sequencing: mean-logit + memory",
+   "incidence_0.30pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.246,
+     "ci95": [
+      0.025,
+      0.618
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 0.939,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 1.276,
+    "misses_used_rounded_up": 1,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 4.69,
+     "ci95": [
+      3.902,
+      5.85
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 380.34,
+     "ci95": [
+      262.484,
+      503.384
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.082,
+     "ci95": [
+      0.008,
+      0.206
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   },
+   "incidence_0.45pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.37,
+     "ci95": [
+      0.037,
+      0.928
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 1.41,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 1.916,
+    "misses_used_rounded_up": 1,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 7.03,
+     "ci95": [
+      5.851,
+      8.763
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 379.82,
+     "ci95": [
+      262.159,
+      502.672
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.082,
+     "ci95": [
+      0.008,
+      0.206
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   },
+   "incidence_0.60pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.494,
+     "ci95": [
+      0.049,
+      1.239
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 1.883,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 2.557,
+    "misses_used_rounded_up": 1,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 9.36,
+     "ci95": [
+      7.797,
+      11.667
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 379.29,
+     "ci95": [
+      261.834,
+      501.959
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.082,
+     "ci95": [
+      0.008,
+      0.207
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   }
+  },
+  "final": {
+   "name": "Confirmatory: final rule (cn90 bar)",
+   "incidence_0.30pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.235,
+     "ci95": [
+      0.079,
+      0.442
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 0.587,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 1.042,
+    "misses_used_rounded_up": 2,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 7.12,
+     "ci95": [
+      5.408,
+      10.184
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 598.34,
+     "ci95": [
+      469.836,
+      715.543
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.078,
+     "ci95": [
+      0.026,
+      0.147
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   },
+   "incidence_0.45pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.353,
+     "ci95": [
+      0.118,
+      0.663
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 0.882,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 1.565,
+    "misses_used_rounded_up": 2,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 10.66,
+     "ci95": [
+      8.102,
+      15.221
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 597.51,
+     "ci95": [
+      469.199,
+      714.555
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.078,
+     "ci95": [
+      0.026,
+      0.147
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   },
+   "incidence_0.60pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.471,
+     "ci95": [
+      0.158,
+      0.885
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 1.177,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 2.088,
+    "misses_used_rounded_up": 2,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 14.18,
+     "ci95": [
+      10.789,
+      20.222
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 596.68,
+     "ci95": [
+      468.559,
+      713.568
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.079,
+     "ci95": [
+      0.026,
+      0.148
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   }
+  },
+  "final_infold": {
+   "name": "Confirmatory: final rule, fold-internal bar",
+   "incidence_0.30pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.243,
+     "ci95": [
+      0.08,
+      0.462
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 0.522,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 1.011,
+    "misses_used_rounded_up": 2,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 7.44,
+     "ci95": [
+      5.581,
+      10.744
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 616.9,
+     "ci95": [
+      491.733,
+      733.073
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.081,
+     "ci95": [
+      0.027,
+      0.154
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   },
+   "incidence_0.45pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.365,
+     "ci95": [
+      0.12,
+      0.694
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 0.784,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 1.518,
+    "misses_used_rounded_up": 2,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 11.13,
+     "ci95": [
+      8.361,
+      16.054
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 616.05,
+     "ci95": [
+      491.092,
+      732.042
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.081,
+     "ci95": [
+      0.027,
+      0.154
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   },
+   "incidence_0.60pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.488,
+     "ci95": [
+      0.16,
+      0.926
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 1.047,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 2.026,
+    "misses_used_rounded_up": 2,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 14.81,
+     "ci95": [
+      11.133,
+      21.323
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 615.19,
+     "ci95": [
+      490.451,
+      731.011
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.081,
+     "ci95": [
+      0.027,
+      0.154
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   }
+  },
+  "A1": {
+   "name": "Memory (gate score)",
+   "incidence_0.30pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.271,
+     "ci95": [
+      0.077,
+      0.573
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 0.742,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 1.385,
+    "misses_used_rounded_up": 2,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 5.23,
+     "ci95": [
+      4.231,
+      6.772
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 449.93,
+     "ci95": [
+      321.047,
+      572.783
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.09,
+     "ci95": [
+      0.026,
+      0.191
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   },
+   "incidence_0.45pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.407,
+     "ci95": [
+      0.116,
+      0.86
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 1.114,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 2.08,
+    "misses_used_rounded_up": 2,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 7.84,
+     "ci95": [
+      6.343,
+      10.138
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 449.32,
+     "ci95": [
+      320.594,
+      571.966
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.09,
+     "ci95": [
+      0.026,
+      0.191
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   },
+   "incidence_0.60pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.543,
+     "ci95": [
+      0.155,
+      1.149
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 1.487,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 2.775,
+    "misses_used_rounded_up": 2,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 10.44,
+     "ci95": [
+      8.452,
+      13.492
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 448.7,
+     "ci95": [
+      320.142,
+      571.148
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.091,
+     "ci95": [
+      0.026,
+      0.191
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   }
+  },
+  "A12": {
+   "name": "Memory + certificate (gate)",
+   "incidence_0.30pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.282,
+     "ci95": [
+      0.093,
+      0.54
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 0.705,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 1.25,
+    "misses_used_rounded_up": 2,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 5.7,
+     "ci95": [
+      4.561,
+      7.505
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 498.64,
+     "ci95": [
+      375.357,
+      619.117
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.094,
+     "ci95": [
+      0.031,
+      0.18
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   },
+   "incidence_0.45pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.424,
+     "ci95": [
+      0.139,
+      0.811
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 1.058,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 1.877,
+    "misses_used_rounded_up": 2,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 8.54,
+     "ci95": [
+      6.837,
+      11.233
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 497.96,
+     "ci95": [
+      374.821,
+      618.248
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.094,
+     "ci95": [
+      0.031,
+      0.18
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   },
+   "incidence_0.60pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.566,
+     "ci95": [
+      0.186,
+      1.083
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 1.413,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 2.505,
+    "misses_used_rounded_up": 2,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 11.38,
+     "ci95": [
+      9.109,
+      14.943
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 497.28,
+     "ci95": [
+      374.283,
+      617.378
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.094,
+     "ci95": [
+      0.031,
+      0.18
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   }
+  },
+  "ml_single": {
+   "name": "Mean-logit, single endoscopy",
+   "incidence_0.30pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.371,
+     "ci95": [
+      0.0,
+      0.993
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 1.174,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 2.238,
+    "misses_used_rounded_up": 2,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 4.01,
+     "ci95": [
+      3.488,
+      4.835
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 278.34,
+     "ci95": [
+      170.628,
+      396.754
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.124,
+     "ci95": [
+      0.0,
+      0.331
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   },
+   "incidence_0.45pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.556,
+     "ci95": [
+      0.0,
+      1.491
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 1.762,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 3.358,
+    "misses_used_rounded_up": 2,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 6.02,
+     "ci95": [
+      5.23,
+      7.246
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 277.97,
+     "ci95": [
+      170.416,
+      396.168
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.124,
+     "ci95": [
+      0.0,
+      0.331
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   },
+   "incidence_0.60pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.743,
+     "ci95": [
+      0.0,
+      1.989
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 2.352,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 4.479,
+    "misses_used_rounded_up": 2,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 8.02,
+     "ci95": [
+      6.972,
+      9.652
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 277.6,
+     "ci95": [
+      170.203,
+      395.582
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.124,
+     "ci95": [
+      0.0,
+      0.332
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   }
+  },
+  "R49": {
+   "name": "Per-endoscopy gate R49 (this study)",
+   "incidence_0.30pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.325,
+     "ci95": [
+      0.0,
+      0.964
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 1.744,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 1.868,
+    "misses_used_rounded_up": 1,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 3.94,
+     "ci95": [
+      3.431,
+      4.661
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 259.77,
+     "ci95": [
+      158.195,
+      371.938
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.108,
+     "ci95": [
+      0.0,
+      0.321
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   },
+   "incidence_0.45pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.488,
+     "ci95": [
+      0.0,
+      1.448
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 2.617,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 2.804,
+    "misses_used_rounded_up": 1,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 5.91,
+     "ci95": [
+      5.145,
+      6.985
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 259.42,
+     "ci95": [
+      158.125,
+      371.414
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.108,
+     "ci95": [
+      0.0,
+      0.322
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   },
+   "incidence_0.60pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.651,
+     "ci95": [
+      0.0,
+      1.933
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 3.492,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 3.74,
+    "misses_used_rounded_up": 1,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 7.87,
+     "ci95": [
+      6.859,
+      9.306
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 259.07,
+     "ci95": [
+      158.056,
+      370.891
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.109,
+     "ci95": [
+      0.0,
+      0.322
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   }
+  },
+  "P1": {
+   "name": "H&E alone (P1 90%)",
+   "incidence_0.30pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.52,
+     "ci95": [
+      0.0,
+      1.843
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 2.985,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 2.985,
+    "misses_used_rounded_up": 1,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 3.48,
+     "ci95": [
+      3.126,
+      4.017
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 162.39,
+     "ci95": [
+      77.278,
+      269.976
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.173,
+     "ci95": [
+      0.0,
+      0.614
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   },
+   "incidence_0.45pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.78,
+     "ci95": [
+      0.0,
+      2.766
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 4.478,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 4.478,
+    "misses_used_rounded_up": 1,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 5.22,
+     "ci95": [
+      4.688,
+      6.023
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 162.18,
+     "ci95": [
+      77.261,
+      269.59
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.173,
+     "ci95": [
+      0.0,
+      0.615
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": false
+   },
+   "incidence_0.60pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 1.042,
+     "ci95": [
+      0.0,
+      3.69
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 5.971,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 5.971,
+    "misses_used_rounded_up": 1,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 6.96,
+     "ci95": [
+      6.251,
+      8.026
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 161.98,
+     "ci95": [
+      77.183,
+      269.203
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.174,
+     "ci95": [
+      0.0,
+      0.615
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": false
+   }
+  },
+  "P3": {
+   "name": "Sequence everything (max L-LATE, 90%)",
+   "incidence_0.30pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.289,
+     "ci95": [
+      0.0,
+      0.935
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 1.744,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 1.868,
+    "misses_used_rounded_up": 1,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 3.95,
+     "ci95": [
+      3.443,
+      4.686
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 259.76,
+     "ci95": [
+      153.82,
+      373.549
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.096,
+     "ci95": [
+      0.0,
+      0.312
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   },
+   "incidence_0.45pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.434,
+     "ci95": [
+      0.0,
+      1.404
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 2.617,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 2.804,
+    "misses_used_rounded_up": 1,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 5.92,
+     "ci95": [
+      5.164,
+      7.022
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 259.41,
+     "ci95": [
+      153.589,
+      373.107
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.096,
+     "ci95": [
+      0.0,
+      0.312
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   },
+   "incidence_0.60pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 0.579,
+     "ci95": [
+      0.0,
+      1.874
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 3.492,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 3.74,
+    "misses_used_rounded_up": 1,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 7.9,
+     "ci95": [
+      6.884,
+      9.355
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 259.05,
+     "ci95": [
+      153.358,
+      372.665
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.097,
+     "ci95": [
+      0.0,
+      0.312
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": true
+   }
+  },
+  "grade": {
+   "name": "Grade IND/LGD",
+   "incidence_0.30pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 3.358,
+     "ci95": [
+      1.872,
+      5.599
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 4.672,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 4.672,
+    "misses_used_rounded_up": 15,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 2.74,
+     "ci95": [
+      1.773,
+      4.161
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 418.76,
+     "ci95": [
+      281.046,
+      567.066
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 1.119,
+     "ci95": [
+      0.624,
+      1.866
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": false
+   },
+   "incidence_0.45pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 5.036,
+     "ci95": [
+      2.81,
+      8.388
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 7.002,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 7.002,
+    "misses_used_rounded_up": 15,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 4.11,
+     "ci95": [
+      2.661,
+      6.237
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 418.83,
+     "ci95": [
+      281.581,
+      566.808
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 1.119,
+     "ci95": [
+      0.624,
+      1.864
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": false
+   },
+   "incidence_0.60pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 6.714,
+     "ci95": [
+      3.748,
+      11.169
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 9.328,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 9.328,
+    "misses_used_rounded_up": 15,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 5.49,
+     "ci95": [
+      3.55,
+      8.312
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 418.91,
+     "ci95": [
+      282.116,
+      566.55
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 1.119,
+     "ci95": [
+      0.625,
+      1.862
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": false
+   }
+  },
+  "g53": {
+   "name": "Grade IND/LGD or p53 aberrant",
+   "incidence_0.30pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 2.465,
+     "ci95": [
+      1.192,
+      4.291
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 3.81,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 3.81,
+    "misses_used_rounded_up": 11,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 3.38,
+     "ci95": [
+      2.341,
+      4.918
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 418.38,
+     "ci95": [
+      280.567,
+      566.52
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.822,
+     "ci95": [
+      0.397,
+      1.43
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": false
+   },
+   "incidence_0.45pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 3.698,
+     "ci95": [
+      1.789,
+      6.432
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 5.712,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 5.712,
+    "misses_used_rounded_up": 11,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 5.08,
+     "ci95": [
+      3.513,
+      7.369
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 418.27,
+     "ci95": [
+      280.862,
+      565.989
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.822,
+     "ci95": [
+      0.398,
+      1.429
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": false
+   },
+   "incidence_0.60pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 4.932,
+     "ci95": [
+      2.388,
+      8.571
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 7.613,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 7.613,
+    "misses_used_rounded_up": 11,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 6.77,
+     "ci95": [
+      4.686,
+      9.816
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 418.16,
+     "ci95": [
+      281.156,
+      565.457
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 0.822,
+     "ci95": [
+      0.398,
+      1.428
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": false
+   }
+  },
+  "prague_mem": {
+   "name": "Prague M + memory (training threshold)",
+   "incidence_0.30pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 3.358,
+     "ci95": [
+      0.0,
+      1000.0
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 1000.0,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 17.168,
+    "misses_used_rounded_up": 1,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 2.99,
+     "ci95": [
+      2.764,
+      3.174
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 27.92,
+     "ci95": [
+      0.094,
+      62.7
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 1.119,
+     "ci95": [
+      0.0,
+      333.333
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": false
+   },
+   "incidence_0.45pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 5.036,
+     "ci95": [
+      0.0,
+      1000.0
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 1000.0,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 25.57,
+    "misses_used_rounded_up": 1,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 4.48,
+     "ci95": [
+      4.146,
+      4.761
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 27.92,
+     "ci95": [
+      0.141,
+      62.652
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 1.119,
+     "ci95": [
+      0.0,
+      222.222
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": false
+   },
+   "incidence_0.60pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 6.714,
+     "ci95": [
+      0.0,
+      1000.0
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 1000.0,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 33.854,
+    "misses_used_rounded_up": 1,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 5.98,
+     "ci95": [
+      5.529,
+      6.347
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 27.93,
+     "ci95": [
+      0.188,
+      62.603
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 1.119,
+     "ci95": [
+      0.0,
+      166.667
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": false
+   }
+  },
+  "parasa_mem": {
+   "name": "Parasa-style score + memory (training threshold)",
+   "incidence_0.30pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 5.567,
+     "ci95": [
+      0.0,
+      93.661
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 20.531,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 20.282,
+    "misses_used_rounded_up": 2,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 2.92,
+     "ci95": [
+      2.653,
+      3.156
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 30.31,
+     "ci95": [
+      2.314,
+      72.094
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 1.856,
+     "ci95": [
+      0.0,
+      31.22
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": false
+   },
+   "incidence_0.45pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 8.34,
+     "ci95": [
+      0.0,
+      134.381
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 30.527,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 30.162,
+    "misses_used_rounded_up": 2,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 4.38,
+     "ci95": [
+      3.98,
+      4.734
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 30.35,
+     "ci95": [
+      2.36,
+      72.093
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 1.853,
+     "ci95": [
+      0.0,
+      29.862
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": false
+   },
+   "incidence_0.60pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 11.106,
+     "ci95": [
+      0.0,
+      171.707
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 40.352,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 39.873,
+    "misses_used_rounded_up": 2,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 5.84,
+     "ci95": [
+      5.308,
+      6.312
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 30.39,
+     "ci95": [
+      2.405,
+      72.092
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 1.851,
+     "ci95": [
+      0.0,
+      28.618
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": false
+   }
+  },
+  "parasa_gt10": {
+   "name": "Parasa > 10 (intermediate/high, ever)",
+   "incidence_0.30pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 3.135,
+     "ci95": [
+      1.066,
+      8.101
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 5.718,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 5.718,
+    "misses_used_rounded_up": 7,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 2.96,
+     "ci95": [
+      2.32,
+      3.812
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 209.33,
+     "ci95": [
+      91.275,
+      333.152
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 1.045,
+     "ci95": [
+      0.355,
+      2.7
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": false
+   },
+   "incidence_0.45pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 4.702,
+     "ci95": [
+      1.601,
+      12.121
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 8.565,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 8.565,
+    "misses_used_rounded_up": 7,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 4.45,
+     "ci95": [
+      3.481,
+      5.716
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 209.34,
+     "ci95": [
+      91.458,
+      333.061
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 1.045,
+     "ci95": [
+      0.356,
+      2.694
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": false
+   },
+   "incidence_0.60pct_per_year": {
+    "progressions_per_1000_py_in_deescalated": {
+     "value": 6.269,
+     "ci95": [
+      2.136,
+      16.12
+     ]
+    },
+    "upper_95_from_exact_binomial_on_majority_vote_misses": 11.404,
+    "upper_95_from_exact_binomial_on_mean_misses_rounded_up": 11.404,
+    "misses_used_rounded_up": 7,
+    "progressions_per_1000_py_in_flagged": {
+     "value": 5.93,
+     "ci95": [
+      4.643,
+      7.618
+     ]
+    },
+    "share_deescalated_per_1000_patients": {
+     "value": 209.36,
+     "ci95": [
+      91.641,
+      332.97
+     ]
+    },
+    "relative_rate_vs_no_triage": {
+     "value": 1.045,
+     "ci95": [
+      0.356,
+      2.687
+     ]
+    },
+    "meets_0.2pct_per_year_bar_upper95": false
+   }
+  },
+  "model": "MODEL-BASED (case-control cohort; no absolute risk is estimated directly): annual progression incidence lambda among NDBE patients; the rule's patient-level sensitivity (progressors caught at >= 1 pre-event endoscopy) and specificity (non-progressors never flagged) are assumed to transport. Progressions per 1,000 patient-years in the de-escalated group = 1000 x lambda (1 - sens) / (lambda (1 - sens) + (1 - lambda) spec). CIs: patient bootstrap (2,000 draws, RandomState(0)) of sens and spec; the bootstrap cannot exceed the cohort's observed misses, so the exact Clopper-Pearson upper limit on the majority-vote miss count is given alongside. Guideline bar (gastro review): <= 2 per 1,000 patient-years (short-segment NDBE, about 0.2%/yr)."
+ }
+}

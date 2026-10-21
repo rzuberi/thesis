@@ -1,0 +1,33 @@
+{
+ "task": "prep",
+ "smoke_draws": null,
+ "prep": {
+  "patients_linked_to_demographics": 75,
+  "smoking_known_patients": 42,
+  "prague_M_demographics_patients": 64,
+  "prague_M_source_endoscopies": {
+   "db_at_endoscopy_60d": 4,
+   "demographics": 256,
+   "db_patient_median": 13,
+   "missing": 15,
+   "of": 288
+  },
+  "prague_M_missing_patients": 7,
+  "db_last_record_after_reference_years": {
+   "non_progressor_median": 6.69,
+   "non_progressor_linked": 43
+  },
+  "event_type_pre_event_progressors": {
+   "HGD": 21,
+   "IMC": 7,
+   "none": 4
+  },
+  "focal_hgd_noted": 7,
+  "expected_data_md_Q8": {
+   "HGD": 21,
+   "IMC": 7,
+   "none": 4,
+   "focal_of_HGD": 7
+  }
+ }
+}

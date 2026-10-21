@@ -1,0 +1,45 @@
+{
+ "task": "audit",
+ "smoke_draws": null,
+ "audit": {
+  "time_order": {
+   "patients_with_order_not_by_date": 0,
+   "consecutive_endoscopy_pairs_on_the_same_date": 0,
+   "endoscopies_with_samples_on_more_than_one_date": 19
+  },
+  "unit_test_mismatches_at_or_before_cut": {
+   "mean": 0,
+   "ew h=0.5": 0,
+   "ew h=1": 0,
+   "ew h=2": 0,
+   "ew h=4": 0,
+   "ew h=16": 0,
+   "last2": 0,
+   "cons2": 0,
+   "k2any": 0,
+   "k2of3": 0,
+   "certificate Y=2": 0,
+   "certificate Y=4": 0,
+   "current_endoscopy_enters_own_memory_ew2": true
+  },
+  "end_to_end_flag_mismatches_at_or_before_cut": {
+   "A1": 0,
+   "A12": 0,
+   "final": 0,
+   "final_infold": 0,
+   "final_flags_changed_after_cut_(sanity, expected > 0)": 210,
+   "ml_mem": 0,
+   "ml_mem_flags_changed_after_cut_(sanity, expected > 0)": 416
+  },
+  "other_patients_test_final_flag_mismatches_in_untouched_half": 0,
+  "code_audit": [
+   "rv9 memory(): EW weights ST['EW'][h] are lower-triangular in the patient's time order (np.tril, column <= row) and masked to valid slots; 'mean' is a cumulative sum; so the score at slot k uses slots <= k",
+   "time order ORD (rv8 setup): exact endoscopy date (pre_event_cohort.Date), ties broken by months-before-final; weights use max(dt, 0) only for the diagonal",
+   "rv9 cert_flags(): strictly earlier endoscopies (np.tril(..., -1)) within Y years",
+   "quiet-genome check (ex_e2 vs_test / ex_e7 apply_check): the current endoscopy's own top-2 samples only; a cancelled flag is not fed back into the memory",
+   "thresholds, half-life, certificate and check bar: training patients' inner out-of-fold predictions only (make_ctx / thr_for / infold_bar); held-out patients' outer predictions enter only their own memory",
+   "patient-level outcomes use the maximum over a patient's endoscopies (ever flagged); this is an evaluation summary, not an input to any score"
+  ],
+  "verdict": "pass"
+ }
+}

@@ -352,13 +352,16 @@ elif TASK == "design":
             per = X.sum(0); pr = X.mean(1); anyp = X.any(1); o = {"per_repeat_integer_counts": [int(x) for x in per], "mean": r2(per.mean()), "patients_ever_in_any_repeat": m5(int(anyp.sum())), "patients_in_ge5_of_10_repeats": m5(int((pr >= 0.5).sum())),
                                                                    "progressor_repeats_total": int(X.sum())}
             W = pr; tot = W.sum()
+            def ec(m):   # expected count (mean over repeats) in a category; suppressed when fewer than 5 distinct patients contribute
+                k_ = int(((W > 0) & m).sum()); return 0 if k_ == 0 else (r2((W * m).sum()) if k_ >= 5 else "<5 patients")
             if tot > 0:
-                o["expected_count_by_event"] = {e_: r2((W * (ev == e_)).sum()) for e_ in ("HGD", "IMC", "none")}
-                o["expected_count_focal_hgd"] = r2((W * (foc & (ev == "HGD"))).sum())
-                o["expected_count_by_years_last_cleared_to_event"] = {"<1": r2((W * (tlast < 1)).sum()), "1-3": r2((W * ((tlast >= 1) & (tlast < 3))).sum()), "3-5": r2((W * ((tlast >= 3) & (tlast < 5))).sum()), ">=5": r2((W * (tlast >= 5)).sum())}
-                o["expected_count_5y_interval_postpones_detection_past_event"] = r2((W * (tlast < 5)).sum()); o["expected_count_3y_interval_postpones_past_event"] = r2((W * (tlast < 3)).sum())
-                o["expected_count_by_prague_M"] = {"<3 cm": r2((W * (np.nan_to_num(Mlast, nan=-1) >= 0) * (Mlast < 3)).sum()), ">=3 cm": r2((W * (Mlast >= 3)).sum()), "unknown": r2((W * ~np.isfinite(Mlast)).sum())}
-                o["expected_count_single_pre_event_endoscopy"] = r2((W * ne1).sum())
+                o["expected_count_by_event"] = {e_: ec(ev == e_) for e_ in ("HGD", "IMC", "none")}
+                o["expected_count_focal_hgd"] = ec(foc & (ev == "HGD"))
+                o["expected_count_by_years_last_cleared_to_event"] = {"<1": ec(tlast < 1), "1-3": ec((tlast >= 1) & (tlast < 3)), "3-5": ec((tlast >= 3) & (tlast < 5)), ">=5": ec(tlast >= 5)}
+                o["expected_count_5y_interval_postpones_detection_past_event"] = ec(tlast < 5); o["expected_count_3y_interval_postpones_past_event"] = ec(tlast < 3)
+                o["expected_count_by_prague_M"] = {"<3 cm": ec((np.nan_to_num(Mlast, nan=-1) >= 0) & (Mlast < 3)), ">=3 cm": ec(Mlast >= 3), "unknown": ec(~np.isfinite(Mlast))}
+                o["expected_count_single_pre_event_endoscopy"] = ec(ne1)
+                o["most_expected_misses_have_one_pre_event_endoscopy"] = bool((W * ne1).sum() / tot >= 0.5); o["most_expected_misses_postponed_past_event_by_5y_interval"] = bool((W * (tlast < 5)).sum() / tot >= 0.5)
                 o["any_IMC"] = bool(((W > 0) & (ev == "IMC")).any()); o["all_postponed_past_event_by_5y_interval"] = bool(np.all(tlast[W > 0] < 5))
                 o["years_last_cleared_to_event_weighted_median"] = r2(float(np.median(np.repeat(tlast[W > 0], np.round(W[W > 0] * 10).astype(int))))) if (W > 0).sum() >= 5 else "<5 patients"
             return o
@@ -439,8 +442,8 @@ elif TASK == "per1000":
         mvP = int((Ak["FL"][isP].sum(1) >= 5).sum()); miss_cp = cp(32 - mvP, 32); spec_mv = 1 - (Ak["FL"][~isP].sum(1) >= 5).mean(); o = {"name": NAMES[k]}
         for lam in (0.003, 0.0045, 0.006):
             rate = 1000 * lam * (1 - sens) / (lam * (1 - sens) + (1 - lam) * spec); flagged_rate = 1000 * lam * sens / (lam * sens + (1 - lam) * (1 - spec)); cleared = lam * (1 - sens) + (1 - lam) * spec
-            ub = 1000 * lam * miss_cp[1] / (lam * miss_cp[1] + (1 - lam) * spec_mv)
-            o[f"incidence_{lam * 100:.2f}pct_per_year"] = {"progressions_per_1000_py_in_deescalated": {"value": r3(rate[0]), "ci95": pct(rate[1:])}, "upper_95_from_exact_binomial_on_majority_vote_misses": r3(ub),
+            ub = 1000 * lam * miss_cp[1] / (lam * miss_cp[1] + (1 - lam) * spec_mv); kr = int(np.ceil(32 * (1 - sens[0]) - 1e-9)); cr = cp(kr, 32)[1]; ub2 = 1000 * lam * cr / (lam * cr + (1 - lam) * spec[0])
+            o[f"incidence_{lam * 100:.2f}pct_per_year"] = {"progressions_per_1000_py_in_deescalated": {"value": r3(rate[0]), "ci95": pct(rate[1:])}, "upper_95_from_exact_binomial_on_majority_vote_misses": r3(ub), "upper_95_from_exact_binomial_on_mean_misses_rounded_up": r3(ub2), "misses_used_rounded_up": kr,
                                                          "progressions_per_1000_py_in_flagged": {"value": r2(flagged_rate[0]), "ci95": pct(flagged_rate[1:])}, "share_deescalated_per_1000_patients": {"value": r2(1000 * cleared[0]), "ci95": pct(1000 * cleared[1:])},
                                                          "relative_rate_vs_no_triage": {"value": r3(rate[0] / (1000 * lam)), "ci95": pct(rate[1:] / (1000 * lam))}, "meets_0.2pct_per_year_bar_upper95": bool(np.nanpercentile(rate[1:], 97.5) <= 2.0)}
         out[k] = o
