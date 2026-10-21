@@ -1,0 +1,86 @@
+{
+ "development_patient_auroc_registered_aggregation_nested": {
+  "L_CNV_pkg": 0.852,
+  "L_CNV_their": 0.826,
+  "L_IMG": 0.828,
+  "L_LATE_pkg": 0.914,
+  "L_LATE_their": 0.887
+ },
+ "insample_auroc_recomputed_vs_model_info": {
+  "L_CNV": [
+   0.996,
+   0.996
+  ],
+  "L_IMG": [
+   1.0,
+   1.0
+  ],
+  "L_IMG_pre_event_571": 1.0,
+  "L_LATE": [
+   1.0,
+   1.0
+  ]
+ },
+ "model": "clean",
+ "note_refit_files_identical_to_committed_bundles": "v2 models are refitted on the clean-tile features: L-CNV coefficients and copy-number scaling must equal v1 (True); image-dependent files (L-IMG, L-EARLY, image_scaling) differ by design",
+ "pipeline_verify": {
+  "embedding_vs_ART_clean_max_abs": 4.9999999918171056e-08,
+  "embedding_vs_ART_clean_max_rel": 4.989337152996062e-08,
+  "flag_share_all_tiles": 0.10607499084919472,
+  "image_scaling_mean_vs_pipeline_embedding_mean_max_abs": 5.431897154295484e-10,
+  "models_pkg_insample_auroc_L_IMG": [
+   0.999578,
+   0.999578
+  ],
+  "models_their_insample_auroc_L_IMG": [
+   0.999578,
+   0.999578
+  ],
+  "pass": true,
+  "samples": 676,
+  "samples_topped_up": 6
+ },
+ "refit_files_identical_to_committed_bundles": {
+  "models_pkg/arm_tile_incidence.csv": true,
+  "models_pkg/cnv_scaling_setC.csv": true,
+  "models_pkg/coef_L_CNV.csv": true,
+  "models_pkg/coef_L_EARLY.csv": false,
+  "models_pkg/coef_L_IMG.csv": false,
+  "models_pkg/image_scaling.csv": false,
+  "models_their/cnv_scaling_packaged_model.csv": true,
+  "models_their/coef_L_CNV.csv": true,
+  "models_their/coef_L_EARLY.csv": false,
+  "models_their/coef_L_IMG.csv": false,
+  "models_their/image_scaling.csv": false
+ },
+ "scanner_reset_monotone": true,
+ "scanner_reset_selfmap_maxabs": 0.051,
+ "scorer_reproduces_engine": true,
+ "scorer_vs_engine_mismatches": {
+  "flag_R49": 0,
+  "flag_R49_pkg": 0,
+  "flag_confirm": 0,
+  "flag_light": 0,
+  "flag_tier0": 0,
+  "score_light_maxabs_x1e9": 0,
+  "score_tier0_maxabs_x1e9": 0,
+  "seq_R49": 0,
+  "seq_confirm": 0,
+  "seq_light": 0
+ },
+ "smoke_tp_cln_freeze_R_on_v1_input_byte_identical_to_v1": {
+  "models_pkg/arm_tile_incidence.csv": true,
+  "models_pkg/cnv_scaling_setC.csv": true,
+  "models_pkg/coef_L_CNV.csv": true,
+  "models_pkg/coef_L_EARLY.csv": true,
+  "models_pkg/coef_L_IMG.csv": true,
+  "models_pkg/image_scaling.csv": true,
+  "models_pkg/model_info.json": true,
+  "models_their/cnv_scaling_packaged_model.csv": true,
+  "models_their/coef_L_CNV.csv": true,
+  "models_their/coef_L_EARLY.csv": true,
+  "models_their/coef_L_IMG.csv": true,
+  "models_their/image_scaling.csv": true,
+  "models_their/model_info.json": true
+ }
+}

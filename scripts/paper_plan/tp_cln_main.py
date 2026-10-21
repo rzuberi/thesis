@@ -115,6 +115,9 @@ if CTASK == "compare":
     ee["check_stored_equals_P2S"] = {"ml_mem_vs_R49_np": ee["ml_mem"]["stored_vs_R49_same_model"]["np_flagged"]["delta"], "expected_P2S": -3.6,
                                      "final_vs_R49_np": ee["final"]["stored_vs_R49_same_model"]["np_flagged"]["delta"], "expected_P2S_final": -11.3}
     out["equal_exposure"] = ee
+    # within-model: mean-logit stack minus R49-gate stack (choice of the light / confirmatory tier for bundle v2), raw and at equal exposure
+    out["mean_logit_minus_gate_stack"] = {f"{a} - {b}": {m: {"raw": G7["delta"](S, A[m][a], A[m][b], D), "equal_exposure": G7["delta"](Se, AE[m][a], AE[m][b], D)} for m in MODELS_}
+                                          for a, b in (("ml_A12", "A12"), ("ml_final", "final"), ("ml_final_infold", "final_infold"), ("ml_final", "final_infold"))}
     out["note"] = ("held-out; every threshold / hyper-parameter / bar chosen on training patients of each outer fold (inner out-of-fold predictions of the model in question); "
                    "paired patient bootstrap on the same draws for all three models (rv8 pdraws, RandomState(0)); stored = published L-IMG; clean = ART clean-tile L-IMG; "
                    "rand = ART random-tile-removal control (same number of tiles per sample); L-LATE = (stored L-CNV + L-IMG) / 2 in every model")

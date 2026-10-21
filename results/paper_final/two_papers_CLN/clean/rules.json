@@ -1,0 +1,309 @@
+{
+ "task": "rules",
+ "smoke_draws": null,
+ "reproduction": {
+  "R49_flag_mismatches_vs_E7_base": 335,
+  "P1_flag_mismatches_vs_E7_base": 387,
+  "A1_flag_mismatches_vs_E7_base": 445,
+  "A12_flag_mismatches_vs_E7_base": 429,
+  "final_flag_mismatches_vs_E7_base": 307,
+  "final_infold_flag_mismatches_vs_E7_base": 340,
+  "grade_flag_mismatches_vs_E7_base": 0,
+  "ml_mem_flag_mismatches_vs_E9_sweep_target_D": 493,
+  "E9_key": "img_ew__F",
+  "observed": {
+   "gate_single": [
+    30.9,
+    28.6,
+    2.16
+   ],
+   "A1": [
+    30.7,
+    25.1,
+    2.16
+   ],
+   "A12": [
+    30.5,
+    23.5,
+    2.16
+   ],
+   "final": [
+    30.3,
+    19.8,
+    4.057
+   ],
+   "final_infold": [
+    30.2,
+    18.6,
+    4.057
+   ],
+   "R49": [
+    31.3,
+    32.8,
+    2.16
+   ],
+   "P1": [
+    31.3,
+    37.8,
+    0.0
+   ],
+   "grade": [
+    17.0,
+    25.0,
+    0.0
+   ],
+   "g53": [
+    21.0,
+    25.0,
+    0.0
+   ],
+   "P3": [
+    31.3,
+    32.2,
+    7.613
+   ],
+   "ml_single": [
+    30.9,
+    32.9,
+    0.0
+   ],
+   "ml_mem": [
+    31.1,
+    29.7,
+    0.0
+   ],
+   "prague_single": [
+    31.0,
+    41.8,
+    0.0
+   ],
+   "prague_mem": [
+    31.0,
+    41.8,
+    0.0
+   ],
+   "parasa_single": [
+    30.7,
+    41.9,
+    0.0
+   ],
+   "parasa_mem": [
+    30.7,
+    41.6,
+    0.0
+   ],
+   "prague_M_ge3": [
+    19.0,
+    35.0,
+    0.0
+   ],
+   "parasa_gt10": [
+    25.0,
+    34.0,
+    0.0
+   ],
+   "parasa_gt20": [
+    12.0,
+    17.0,
+    0.0
+   ],
+   "prague_M_ge3_ew2": [
+    19.0,
+    35.0,
+    0.0
+   ],
+   "parasa_gt10_ew2": [
+    25.0,
+    34.0,
+    0.0
+   ],
+   "parasa_gt20_ew2": [
+    11.0,
+    15.0,
+    0.0
+   ],
+   "ml_A12": [
+    30.3,
+    21.9,
+    1.701
+   ],
+   "ml_final": [
+    30.2,
+    17.9,
+    3.411
+   ],
+   "ml_final_infold": [
+    30.0,
+    16.4,
+    3.411
+   ]
+  },
+  "expected": {
+   "R49": [
+    31.1,
+    31.8
+   ],
+   "P1": [
+    31.1,
+    36.0
+   ],
+   "grade": [
+    17.0,
+    25.0
+   ],
+   "A1": [
+    30.7,
+    23.6
+   ],
+   "A12": [
+    30.5,
+    21.5
+   ],
+   "final": [
+    30.5,
+    17.2
+   ],
+   "final_infold": [
+    30.4,
+    16.4
+   ],
+   "ml_mem": [
+    31.0,
+    26.6
+   ]
+  },
+  "reproduced": false,
+  "seconds": 10,
+  "selection": {
+   "gate_single": {
+    "chosen": {
+     "none": 100
+    }
+   },
+   "A1": {
+    "chosen": {
+     "ew h=1y": 43,
+     "ew h=2y": 26,
+     "ew h=4y": 31
+    }
+   },
+   "A12": {
+    "chosen": {
+     "ew h=1y, t_quiet=p50, +1.0 logit, Y=4y": 3,
+     "ew h=1y, t_quiet=p75, +0.5 logit, Y=2y": 2,
+     "ew h=1y, t_quiet=p75, +0.5 logit, Y=4y": 4,
+     "ew h=1y, t_quiet=p75, +1.0 logit, Y=2y": 17,
+     "ew h=1y, t_quiet=p75, +1.0 logit, Y=4y": 23,
+     "ew h=2y, t_quiet=p50, +1.0 logit, Y=4y": 1,
+     "ew h=2y, t_quiet=p75, +0.5 logit, Y=4y": 2,
+     "ew h=2y, t_quiet=p75, +1.0 logit, Y=2y": 9,
+     "ew h=2y, t_quiet=p75, +1.0 logit, Y=4y": 12,
+     "ew h=4y, t_quiet=p50, +1.0 logit, Y=4y": 5,
+     "ew h=4y, t_quiet=p75, +0.5 logit, Y=4y": 4,
+     "ew h=4y, t_quiet=p75, +1.0 logit, Y=2y": 8,
+     "ew h=4y, t_quiet=p75, +1.0 logit, Y=4y": 10
+    }
+   },
+   "infold_bar_picks": {
+    "0.925": 12,
+    "0.8": 37,
+    "0.7": 3,
+    "0.75": 15,
+    "0.9": 6,
+    "0.85": 14,
+    "0.975": 9,
+    "0.95": 4
+   },
+   "ml_single": {
+    "chosen": {
+     "none": 100
+    }
+   },
+   "ml_mem": {
+    "chosen": {
+     "ew h=1y": 28,
+     "ew h=2y": 26,
+     "ew h=4y": 46
+    }
+   },
+   "prague_single": {
+    "chosen": {
+     "none": 100
+    }
+   },
+   "prague_mem": {
+    "chosen": {
+     "ew h=1y": 100
+    }
+   },
+   "parasa_single": {
+    "chosen": {
+     "none": 100
+    }
+   },
+   "parasa_mem": {
+    "chosen": {
+     "ew h=1y": 39,
+     "ew h=2y": 5,
+     "ew h=4y": 56
+    }
+   },
+   "ml_A12": {
+    "chosen": {
+     "ew h=1y, t_quiet=p50, +1.0 logit, Y=4y": 7,
+     "ew h=1y, t_quiet=p75, +0.5 logit, Y=2y": 1,
+     "ew h=1y, t_quiet=p75, +0.5 logit, Y=4y": 4,
+     "ew h=1y, t_quiet=p75, +1.0 logit, Y=2y": 16,
+     "ew h=1y, t_quiet=p75, +1.0 logit, Y=4y": 30,
+     "ew h=2y, t_quiet=p75, +1.0 logit, Y=2y": 7,
+     "ew h=2y, t_quiet=p75, +1.0 logit, Y=4y": 14,
+     "ew h=4y, t_quiet=p50, +1.0 logit, Y=4y": 3,
+     "ew h=4y, t_quiet=p75, +0.5 logit, Y=4y": 3,
+     "ew h=4y, t_quiet=p75, +1.0 logit, Y=2y": 7,
+     "ew h=4y, t_quiet=p75, +1.0 logit, Y=4y": 8
+    }
+   },
+   "ml_infold_bar_picks": {
+    "0.925": 9,
+    "0.8": 36,
+    "0.85": 13,
+    "0.7": 3,
+    "0.95": 5,
+    "0.975": 11,
+    "0.9": 7,
+    "0.75": 15,
+    "none": 1
+   }
+  }
+ },
+ "model": "clean",
+ "smoke_expected": {
+  "R49": [
+   31.3,
+   32.8
+  ],
+  "A1": [
+   30.7,
+   25.1
+  ],
+  "A12": [
+   30.5,
+   23.5
+  ],
+  "ml_mem": [
+   31.1,
+   29.7
+  ]
+ },
+ "smoke_reproduced": {
+  "R49": true,
+  "A1": true,
+  "A12": true,
+  "ml_mem": true
+ },
+ "gate_band_shares": {
+  "st_middle": 0.562,
+  "ml_middle": 0.443
+ },
+ "seconds_total": 17
+}

@@ -1,0 +1,346 @@
+{
+ "task": "rules",
+ "smoke_draws": null,
+ "reproduction": {
+  "R49_flag_mismatches_vs_E7_base": 0,
+  "P1_flag_mismatches_vs_E7_base": 0,
+  "A1_flag_mismatches_vs_E7_base": 0,
+  "A12_flag_mismatches_vs_E7_base": 0,
+  "final_flag_mismatches_vs_E7_base": 0,
+  "final_infold_flag_mismatches_vs_E7_base": 0,
+  "grade_flag_mismatches_vs_E7_base": 0,
+  "ml_mem_flag_mismatches_vs_E9_sweep_target_D": 0,
+  "E9_key": "img_ew__F",
+  "observed": {
+   "gate_single": [
+    30.7,
+    29.4,
+    1.94
+   ],
+   "A1": [
+    30.7,
+    23.6,
+    1.94
+   ],
+   "A12": [
+    30.5,
+    21.5,
+    1.94
+   ],
+   "final": [
+    30.5,
+    17.2,
+    3.816
+   ],
+   "final_infold": [
+    30.4,
+    16.4,
+    3.816
+   ],
+   "R49": [
+    31.1,
+    31.8,
+    1.94
+   ],
+   "P1": [
+    31.1,
+    36.0,
+    0.0
+   ],
+   "grade": [
+    17.0,
+    25.0,
+    0.0
+   ],
+   "g53": [
+    21.0,
+    25.0,
+    0.0
+   ],
+   "P3": [
+    31.2,
+    31.8,
+    7.613
+   ],
+   "ml_single": [
+    30.9,
+    31.0,
+    0.0
+   ],
+   "ml_mem": [
+    31.0,
+    26.6,
+    0.0
+   ],
+   "prague_single": [
+    31.0,
+    41.8,
+    0.0
+   ],
+   "prague_mem": [
+    31.0,
+    41.8,
+    0.0
+   ],
+   "parasa_single": [
+    30.2,
+    41.9,
+    0.0
+   ],
+   "parasa_mem": [
+    30.2,
+    41.7,
+    0.0
+   ],
+   "prague_M_ge3": [
+    19.0,
+    35.0,
+    0.0
+   ],
+   "parasa_gt10": [
+    25.0,
+    34.0,
+    0.0
+   ],
+   "parasa_gt20": [
+    12.0,
+    17.0,
+    0.0
+   ],
+   "prague_M_ge3_ew2": [
+    19.0,
+    35.0,
+    0.0
+   ],
+   "parasa_gt10_ew2": [
+    25.0,
+    34.0,
+    0.0
+   ],
+   "parasa_gt20_ew2": [
+    11.0,
+    15.0,
+    0.0
+   ],
+   "ml_A12": [
+    30.3,
+    20.1,
+    1.433
+   ],
+   "ml_final": [
+    30.3,
+    16.2,
+    3.115
+   ],
+   "ml_final_infold": [
+    29.7,
+    14.8,
+    3.115
+   ]
+  },
+  "expected": {
+   "R49": [
+    31.1,
+    31.8
+   ],
+   "P1": [
+    31.1,
+    36.0
+   ],
+   "grade": [
+    17.0,
+    25.0
+   ],
+   "A1": [
+    30.7,
+    23.6
+   ],
+   "A12": [
+    30.5,
+    21.5
+   ],
+   "final": [
+    30.5,
+    17.2
+   ],
+   "final_infold": [
+    30.4,
+    16.4
+   ],
+   "ml_mem": [
+    31.0,
+    26.6
+   ]
+  },
+  "reproduced": true,
+  "seconds": 9,
+  "selection": {
+   "gate_single": {
+    "chosen": {
+     "none": 100
+    }
+   },
+   "A1": {
+    "chosen": {
+     "ew h=1y": 41,
+     "ew h=2y": 17,
+     "ew h=4y": 42
+    }
+   },
+   "A12": {
+    "chosen": {
+     "ew h=1y, t_quiet=p50, +0.5 logit, Y=4y": 1,
+     "ew h=1y, t_quiet=p50, +1.0 logit, Y=4y": 1,
+     "ew h=1y, t_quiet=p75, +0.5 logit, Y=2y": 3,
+     "ew h=1y, t_quiet=p75, +0.5 logit, Y=4y": 3,
+     "ew h=1y, t_quiet=p75, +1.0 logit, Y=2y": 14,
+     "ew h=1y, t_quiet=p75, +1.0 logit, Y=4y": 24,
+     "ew h=2y, t_quiet=p50, +0.5 logit, Y=4y": 1,
+     "ew h=2y, t_quiet=p50, +1.0 logit, Y=2y": 1,
+     "ew h=2y, t_quiet=p50, +1.0 logit, Y=4y": 1,
+     "ew h=2y, t_quiet=p75, +0.5 logit, Y=4y": 2,
+     "ew h=2y, t_quiet=p75, +1.0 logit, Y=2y": 6,
+     "ew h=2y, t_quiet=p75, +1.0 logit, Y=4y": 8,
+     "ew h=4y, t_quiet=p50, +1.0 logit, Y=4y": 6,
+     "ew h=4y, t_quiet=p75, +0.5 logit, Y=4y": 3,
+     "ew h=4y, t_quiet=p75, +1.0 logit, Y=2y": 11,
+     "ew h=4y, t_quiet=p75, +1.0 logit, Y=4y": 15
+    }
+   },
+   "infold_bar_picks": {
+    "0.925": 8,
+    "0.8": 35,
+    "0.7": 8,
+    "0.75": 23,
+    "0.85": 12,
+    "0.95": 9,
+    "0.9": 3,
+    "0.975": 2
+   },
+   "ml_single": {
+    "chosen": {
+     "none": 100
+    }
+   },
+   "ml_mem": {
+    "chosen": {
+     "ew h=1y": 18,
+     "ew h=2y": 25,
+     "ew h=4y": 57
+    }
+   },
+   "prague_single": {
+    "chosen": {
+     "none": 100
+    }
+   },
+   "prague_mem": {
+    "chosen": {
+     "ew h=1y": 100
+    }
+   },
+   "parasa_single": {
+    "chosen": {
+     "none": 100
+    }
+   },
+   "parasa_mem": {
+    "chosen": {
+     "ew h=1y": 42,
+     "ew h=2y": 2,
+     "ew h=4y": 56
+    }
+   },
+   "ml_A12": {
+    "chosen": {
+     "ew h=1y, t_quiet=p50, +0.5 logit, Y=2y": 2,
+     "ew h=1y, t_quiet=p50, +0.5 logit, Y=4y": 1,
+     "ew h=1y, t_quiet=p50, +1.0 logit, Y=4y": 5,
+     "ew h=1y, t_quiet=p75, +0.5 logit, Y=4y": 3,
+     "ew h=1y, t_quiet=p75, +1.0 logit, Y=2y": 11,
+     "ew h=1y, t_quiet=p75, +1.0 logit, Y=4y": 35,
+     "ew h=2y, t_quiet=p50, +1.0 logit, Y=4y": 1,
+     "ew h=2y, t_quiet=p75, +0.5 logit, Y=4y": 2,
+     "ew h=2y, t_quiet=p75, +1.0 logit, Y=2y": 4,
+     "ew h=2y, t_quiet=p75, +1.0 logit, Y=4y": 12,
+     "ew h=4y, t_quiet=p50, +1.0 logit, Y=2y": 1,
+     "ew h=4y, t_quiet=p50, +1.0 logit, Y=4y": 3,
+     "ew h=4y, t_quiet=p75, +0.5 logit, Y=2y": 2,
+     "ew h=4y, t_quiet=p75, +0.5 logit, Y=4y": 1,
+     "ew h=4y, t_quiet=p75, +1.0 logit, Y=2y": 4,
+     "ew h=4y, t_quiet=p75, +1.0 logit, Y=4y": 13
+    }
+   },
+   "ml_infold_bar_picks": {
+    "0.925": 9,
+    "0.95": 9,
+    "0.8": 32,
+    "0.85": 14,
+    "0.75": 20,
+    "0.9": 4,
+    "0.975": 6,
+    "0.7": 6
+   }
+  }
+ },
+ "model": "stored",
+ "smoke_expected": {
+  "R49": [
+   31.1,
+   31.8
+  ],
+  "P1": [
+   31.1,
+   36.0
+  ],
+  "grade": [
+   17.0,
+   25.0
+  ],
+  "A1": [
+   30.7,
+   23.6
+  ],
+  "A12": [
+   30.5,
+   21.5
+  ],
+  "final": [
+   30.5,
+   17.2
+  ],
+  "final_infold": [
+   30.4,
+   16.4
+  ],
+  "ml_mem": [
+   31.0,
+   26.6
+  ],
+  "ml_A12": [
+   30.3,
+   20.1
+  ],
+  "ml_final": [
+   30.3,
+   16.2
+  ]
+ },
+ "smoke_reproduced": {
+  "R49": true,
+  "P1": true,
+  "grade": true,
+  "A1": true,
+  "A12": true,
+  "final": true,
+  "final_infold": true,
+  "ml_mem": true,
+  "ml_A12": true,
+  "ml_final": true
+ },
+ "gate_band_shares": {
+  "st_middle": 0.505,
+  "ml_middle": 0.373
+ },
+ "seconds_total": 17
+}
