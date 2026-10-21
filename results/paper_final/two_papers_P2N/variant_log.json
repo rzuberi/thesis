@@ -1,0 +1,499 @@
+{
+ "rows": [
+  {
+   "stage": "0 Round 8 strategy map (descriptive)",
+   "family": "Policies P1-P10 (H&E alone, CN alone, sequence all, gates, first-look, interval sequencing, grade/p53)",
+   "varied": "policy x thresholds",
+   "nested_cells": 77,
+   "optimistic_cells_not_ranked": 0,
+   "best_within_1_progressor": {
+    "label": "P3 80%",
+    "caught": 30.5,
+    "np_flagged": 26.4,
+    "seq_per_patient": 7.613
+   },
+   "note": "R49 (round 7, pre-specified) fixed as the main rule before the map was read; round 7b's 36 gate designs (apparent, not nested) are not counted"
+  },
+  {
+   "stage": "1 Round 9 (false-flag methods)",
+   "family": "Memory + copy-number certificate (A1+A2)",
+   "varied": "memory function / half-life / certificate / cut-off cells",
+   "nested_cells": 26,
+   "optimistic_cells_not_ranked": 24,
+   "best_within_1_progressor": {
+    "label": "A1+A2: EW memory of gate score + copy-number certificate [nested]",
+    "caught": 30.5,
+    "np_flagged": 21.5,
+    "seq_per_patient": 1.94
+   },
+   "note": ""
+  },
+  {
+   "stage": "1 Round 9 (false-flag methods)",
+   "family": "Memory + p53 certificate",
+   "varied": "memory function / half-life / certificate / cut-off cells",
+   "nested_cells": 14,
+   "optimistic_cells_not_ranked": 12,
+   "best_within_1_progressor": {
+    "label": "A1+A2': EW memory of gate score + p53-normal certificate [nested]",
+    "caught": 30.5,
+    "np_flagged": 22.2,
+    "seq_per_patient": 1.94
+   },
+   "note": ""
+  },
+  {
+   "stage": "1 Round 9 (false-flag methods)",
+   "family": "Stacked B1 gate score: memory functions",
+   "varied": "memory function / half-life / certificate / cut-off cells",
+   "nested_cells": 30,
+   "optimistic_cells_not_ranked": 20,
+   "best_within_1_progressor": {
+    "label": "A1 | stacked B1 gate score, aligned | exponentially weighted mean | ew h=4y",
+    "caught": 31.3,
+    "np_flagged": 31.9,
+    "seq_per_patient": 2.268
+   },
+   "note": ""
+  },
+  {
+   "stage": "1 Round 9 (false-flag methods)",
+   "family": "Gate score (R49-aligned): memory functions incl. longer half-lives",
+   "varied": "memory function / half-life / certificate / cut-off cells",
+   "nested_cells": 35,
+   "optimistic_cells_not_ranked": 23,
+   "best_within_1_progressor": {
+    "label": "A1 | gate score, R49-aligned | exponentially weighted mean [nested]",
+    "caught": 30.7,
+    "np_flagged": 23.6,
+    "seq_per_patient": 1.94
+   },
+   "note": ""
+  },
+  {
+   "stage": "1 Round 9 (false-flag methods)",
+   "family": "Gate score (literal): memory functions",
+   "varied": "memory function / half-life / certificate / cut-off cells",
+   "nested_cells": 30,
+   "optimistic_cells_not_ranked": 20,
+   "best_within_1_progressor": {
+    "label": "A1 | gate score, literal | exponentially weighted mean | ew h=4y",
+    "caught": 31.3,
+    "np_flagged": 24.6,
+    "seq_per_patient": 1.94
+   },
+   "note": ""
+  },
+  {
+   "stage": "1 Round 9 (false-flag methods)",
+   "family": "H&E alone (max L-IMG): memory functions",
+   "varied": "memory function / half-life / certificate / cut-off cells",
+   "nested_cells": 30,
+   "optimistic_cells_not_ranked": 20,
+   "best_within_1_progressor": {
+    "label": "A1 | H&E alone (max L-IMG) | running mean [nested]",
+    "caught": 31.5,
+    "np_flagged": 31.2,
+    "seq_per_patient": 0.0
+   },
+   "note": ""
+  },
+  {
+   "stage": "1 Round 9 (false-flag methods)",
+   "family": "Certificates (copy-number A2, p53 A2')",
+   "varied": "memory function / half-life / certificate / cut-off cells",
+   "nested_cells": 16,
+   "optimistic_cells_not_ranked": 0,
+   "best_within_1_progressor": {
+    "label": "A2 copy-number certificate (gate) | t_quiet=p75, raise to 95%-spec, Y=4y",
+    "caught": 30.8,
+    "np_flagged": 26.9,
+    "seq_per_patient": 1.237
+   },
+   "note": ""
+  },
+  {
+   "stage": "1 Round 9 (false-flag methods)",
+   "family": "Agreement within endoscopy",
+   "varied": "memory function / half-life / certificate / cut-off cells",
+   "nested_cells": 10,
+   "optimistic_cells_not_ranked": 0,
+   "best_within_1_progressor": {
+    "label": "A3 agreement within endoscopy [nested]",
+    "caught": 30.6,
+    "np_flagged": 29.8,
+    "seq_per_patient": 1.512
+   },
+   "note": ""
+  },
+  {
+   "stage": "1 Round 9 (false-flag methods)",
+   "family": "Confirm-by-sequencing (high band also sequenced) +- memory",
+   "varied": "memory function / half-life / certificate / cut-off cells",
+   "nested_cells": 17,
+   "optimistic_cells_not_ranked": 5,
+   "best_within_1_progressor": {
+    "label": "A4 confirm-by-sequencing | gate with the high band also sequenced (score 0 = flag boundary) | exponentially weighted mean [nested]",
+    "caught": 30.8,
+    "np_flagged": 23.1,
+    "seq_per_patient": 3.149
+   },
+   "note": ""
+  },
+  {
+   "stage": "1 Round 9 (false-flag methods)",
+   "family": "Stacked gate (grade, age, sex, p53)",
+   "varied": "memory function / half-life / certificate / cut-off cells",
+   "nested_cells": 84,
+   "optimistic_cells_not_ranked": 0,
+   "best_within_1_progressor": {
+    "label": "B1-img control: stacked gate on L-IMG only (endoscopy-level cut-offs) | cut-offs 90/95/70",
+    "caught": 30.1,
+    "np_flagged": 23.1,
+    "seq_per_patient": 1.732
+   },
+   "note": ""
+  },
+  {
+   "stage": "1 Round 9 (false-flag methods)",
+   "family": "Stacked gate + memory + certificate",
+   "varied": "memory function / half-life / certificate / cut-off cells",
+   "nested_cells": 26,
+   "optimistic_cells_not_ranked": 24,
+   "best_within_1_progressor": {
+    "label": "B1+A1+A2: stacked gate + EW memory + copy-number certificate [nested]",
+    "caught": 31.0,
+    "np_flagged": 29.8,
+    "seq_per_patient": 2.268
+   },
+   "note": ""
+  },
+  {
+   "stage": "1 Round 9 (false-flag methods)",
+   "family": "Abstention in the middle band",
+   "varied": "memory function / half-life / certificate / cut-off cells",
+   "nested_cells": 4,
+   "optimistic_cells_not_ranked": 0,
+   "best_within_1_progressor": {
+    "label": "B3 abstention in middle band | indeterminate share 20%",
+    "caught": 31.1,
+    "np_flagged": 30.1,
+    "seq_per_patient": 1.94
+   },
+   "note": ""
+  },
+  {
+   "stage": "1 Round 9 (false-flag methods)",
+   "family": "Refit: non-progressor weight 2",
+   "varied": "memory function / half-life / certificate / cut-off cells",
+   "nested_cells": 29,
+   "optimistic_cells_not_ranked": 0,
+   "best_within_1_progressor": {
+    "label": "B4(a) refit, non-progressor weight 2, cut-offs re-tuned by the round-9 rule | cut-offs 90/95/70",
+    "caught": 30.8,
+    "np_flagged": 26.9,
+    "seq_per_patient": 1.963
+   },
+   "note": ""
+  },
+  {
+   "stage": "1 Round 9 (false-flag methods)",
+   "family": "Refit: NDBE samples only",
+   "varied": "memory function / half-life / certificate / cut-off cells",
+   "nested_cells": 29,
+   "optimistic_cells_not_ranked": 0,
+   "best_within_1_progressor": {
+    "label": "B4(b) refit, NDBE samples only, cut-offs re-tuned by the round-9 rule | cut-offs 90/95/70",
+    "caught": 30.5,
+    "np_flagged": 28.5,
+    "seq_per_patient": 2.411
+   },
+   "note": ""
+  },
+  {
+   "stage": "1 Round 9 (false-flag methods)",
+   "family": "Control: R49 cut-offs re-tuned",
+   "varied": "memory function / half-life / certificate / cut-off cells",
+   "nested_cells": 28,
+   "optimistic_cells_not_ranked": 0,
+   "best_within_1_progressor": {
+    "label": "control: R49 with cut-offs re-tuned by the round-9 rule | cut-offs 90/95/70",
+    "caught": 30.6,
+    "np_flagged": 26.9,
+    "seq_per_patient": 1.897
+   },
+   "note": ""
+  },
+  {
+   "stage": "1 Round 9 (false-flag methods)",
+   "family": "Sample aggregation (mean, top-2, max L-LATE) x memory",
+   "varied": "memory function / half-life / certificate / cut-off cells",
+   "nested_cells": 21,
+   "optimistic_cells_not_ranked": 15,
+   "best_within_1_progressor": {
+    "label": "Sample aggregation | max L-LATE (sequence all samples) | exponentially weighted mean | ew h=4y",
+    "caught": 31.2,
+    "np_flagged": 24.5,
+    "seq_per_patient": 7.613
+   },
+   "note": ""
+  },
+  {
+   "stage": "2 E1 (error analysis)",
+   "family": "Tile-score substitutions, single-feature vetoes, second-stage filters, sample-count penalty (incl. non-deployable batch/metadata controls)",
+   "varied": "feature x eps x base (R49, P1)",
+   "nested_cells": 220,
+   "optimistic_cells_not_ranked": 204,
+   "best_within_1_progressor": {
+    "label": "veto R49 auto eps 0.05  R49 veto auto eps 0.05",
+    "caught": 30.8,
+    "np_flagged": 30.8,
+    "seq_per_patient": 1.94
+   },
+   "note": ""
+  },
+  {
+   "stage": "3 E2 (copy-number veto)",
+   "family": "Fixed copy-number / trained-score vetoes on P1, R49 high band, R49 all flags",
+   "varied": "25 quietness features + L-CNV + L-LATE x k 1/2 x 4 threshold rules x 3 bases",
+   "nested_cells": 648,
+   "optimistic_cells_not_ranked": 162,
+   "best_within_1_progressor": {
+    "label": "R49hm veto L-LATE k2 loss1",
+    "caught": 30.5,
+    "np_flagged": 24.2,
+    "seq_per_patient": 4.349
+   },
+   "note": ""
+  },
+  {
+   "stage": "3 E2 (copy-number veto)",
+   "family": "Elastic-net vetoes trained on H&E-flagged samples",
+   "varied": "block x population x k x rule x base",
+   "nested_cells": 144,
+   "optimistic_cells_not_ranked": 0,
+   "best_within_1_progressor": {
+    "label": "R49hm veto EN[their,wide] k2 strict",
+    "caught": 30.3,
+    "np_flagged": 27.0,
+    "seq_per_patient": 4.349
+   },
+   "note": ""
+  },
+  {
+   "stage": "3 E2 (copy-number veto)",
+   "family": "Double vetoes (trained score low AND quiet)",
+   "varied": "score x quietness feature x k x bar x rule x base",
+   "nested_cells": 192,
+   "optimistic_cells_not_ranked": 0,
+   "best_within_1_progressor": {
+    "label": "R49hm double veto L-LATE low AND ps_oac quiet (< 80% CN-alone) kq2 loss1",
+    "caught": 31.0,
+    "np_flagged": 23.9,
+    "seq_per_patient": 4.349
+   },
+   "note": ""
+  },
+  {
+   "stage": "3 E2 (copy-number veto)",
+   "family": "Vetoes allowed only at NDBE / NDBE-ID endoscopies",
+   "varied": "gate x feature x rule x base",
+   "nested_cells": 64,
+   "optimistic_cells_not_ranked": 0,
+   "best_within_1_progressor": {
+    "label": "R49hm veto L-LATE k1 loss1, vetoable only at NDBE or ID endoscopies",
+    "caught": 30.4,
+    "np_flagged": 24.4,
+    "seq_per_patient": 2.804
+   },
+   "note": ""
+  },
+  {
+   "stage": "3 E2 (copy-number veto)",
+   "family": "H&E AND copy number (all samples sequenced)",
+   "varied": "H&E x CN thresholds",
+   "nested_cells": 9,
+   "optimistic_cells_not_ranked": 0,
+   "best_within_1_progressor": {
+    "label": "AND: max L-IMG >= 90% and max L-CNV (all samples) >= 90%",
+    "caught": 30.1,
+    "np_flagged": 27.7,
+    "seq_per_patient": 4.883
+   },
+   "note": ""
+  },
+  {
+   "stage": "3 E2 (copy-number veto)",
+   "family": "Batch- and noise-adjusted vetoes",
+   "varied": "feature x adjustment x rule x base",
+   "nested_cells": 60,
+   "optimistic_cells_not_ranked": 0,
+   "best_within_1_progressor": {
+    "label": "R49hm veto L-CNV batch-adjusted k1 strict",
+    "caught": 30.4,
+    "np_flagged": 28.0,
+    "seq_per_patient": 3.149
+   },
+   "note": ""
+  },
+  {
+   "stage": "3 E2 (copy-number veto)",
+   "family": "Within-patient stability vetoes",
+   "varied": "score x rule x base",
+   "nested_cells": 18,
+   "optimistic_cells_not_ranked": 0,
+   "best_within_1_progressor": {
+    "label": "P1 stability veto cur_plus_change strict",
+    "caught": 30.1,
+    "np_flagged": 25.8,
+    "seq_per_patient": 1.976
+   },
+   "note": ""
+  },
+  {
+   "stage": "3 E2 (copy-number veto)",
+   "family": "Veto chosen per outer fold on training patients",
+   "varied": "candidate family x slack x base",
+   "nested_cells": 42,
+   "optimistic_cells_not_ranked": 0,
+   "best_within_1_progressor": {
+    "label": "R49hm veto selected per fold from trained models, gated or not, training loss <= 1",
+    "caught": 30.2,
+    "np_flagged": 22.7,
+    "seq_per_patient": 3.16
+   },
+   "note": ""
+  },
+  {
+   "stage": "3 E2 (copy-number veto)",
+   "family": "Vetoes on round-9 memory bases (A1, A1 longer half-lives, A12): the final rule's origin",
+   "varied": "17 vetoes x 3 memory bases (+ the bases)",
+   "nested_cells": 54,
+   "optimistic_cells_not_ranked": 0,
+   "best_within_1_progressor": {
+    "label": "memory A12 + veto L-LATE low AND ps_oac quiet<80 kq2 strict",
+    "caught": 30.5,
+    "np_flagged": 16.9,
+    "seq_per_patient": 3.816
+   },
+   "note": "the quiet-genome check (ps_oac, top-2 samples, cn90 bar) was picked here after seeing the R49-base cells"
+  },
+  {
+   "stage": "4 E3 (H&E model / aggregation)",
+   "family": "Extractors, scales, poolings, ensembles, endoscopy aggregations under P1 80/90/95% and R49 rebuilt",
+   "varied": "57 score variants x 4 rules",
+   "nested_cells": 228,
+   "optimistic_cells_not_ranked": 57,
+   "best_within_1_progressor": {
+    "label": "mlogit:ens:base+ho20_mean+v220_mean+gpl2_mean P1 80%",
+    "caught": 30.2,
+    "np_flagged": 28.1,
+    "seq_per_patient": 0.0
+   },
+   "note": ""
+  },
+  {
+   "stage": "4 E3 (H&E model / aggregation)",
+   "family": "Score variants inside the round-9 memory engine (mean-logit + memory found here)",
+   "varied": "14 score variants x 4 families",
+   "nested_cells": 56,
+   "optimistic_cells_not_ranked": 0,
+   "best_within_1_progressor": {
+    "label": "mlogit:cat_u2gp2_mean A1:gate_al:ew",
+    "caught": 30.3,
+    "np_flagged": 19.8,
+    "seq_per_patient": 1.408
+   },
+   "note": ""
+  },
+  {
+   "stage": "5 E4 (time-aware models)",
+   "family": "Cox / horizon / certainty-weighted refits under P1, P3 and four R49 cells",
+   "varied": "20 score schemes x 8 rules",
+   "nested_cells": 160,
+   "optimistic_cells_not_ranked": 0,
+   "best_within_1_progressor": {
+    "label": "stored+ensh3late R49-new t_low 90/t_high 95",
+    "caught": 30.7,
+    "np_flagged": 28.7,
+    "seq_per_patient": 1.897
+   },
+   "note": ""
+  },
+  {
+   "stage": "5 E4 (time-aware models)",
+   "family": "Time-aware scores inside the memory engine",
+   "varied": "6 schemes x 3 families",
+   "nested_cells": 18,
+   "optimistic_cells_not_ranked": 0,
+   "best_within_1_progressor": {
+    "label": "ens_h3 A1:gate_al:ew",
+    "caught": 30.2,
+    "np_flagged": 21.7,
+    "seq_per_patient": 2.0
+   },
+   "note": ""
+  },
+  {
+   "stage": "6 E5 (ERIN dysplasia model)",
+   "family": "ERIN score alone, stacked with L-IMG, as veto / rescue inside R49, inside memory",
+   "varied": "score x use x quantile",
+   "nested_cells": 105,
+   "optimistic_cells_not_ranked": 15,
+   "best_within_1_progressor": {
+    "label": "EW memory + erin_p32 veto q95",
+    "caught": 30.6,
+    "np_flagged": 22.9,
+    "seq_per_patient": 1.94
+   },
+   "note": ""
+  },
+  {
+   "stage": "7 E7 (artefact tests)",
+   "family": "Quiet-genome check bar sweep 70-97.5% and in-fold bar on A12",
+   "varied": "bar",
+   "nested_cells": 10,
+   "optimistic_cells_not_ranked": 0,
+   "best_within_1_progressor": {
+    "label": "infold_bar_slack0",
+    "caught": 30.4,
+    "np_flagged": 16.4,
+    "seq_per_patient": 3.816
+   },
+   "note": "the other E7 tests (exposure, order, prevalent disease, one look, missing records, batch, permutation) are robustness checks, not candidates"
+  },
+  {
+   "stage": "8 E8 (check biology and variants)",
+   "family": "Check variants on A12: arm subsets, QC gates, noise scaling, two-sample agreement, flattening, soft veto (incl. GC-rich / fragile-site controls)",
+   "varied": "score / bar / step",
+   "nested_cells": 90,
+   "optimistic_cells_not_ranked": 45,
+   "best_within_1_progressor": {
+    "label": "A12 + QC-gated check (tile QC flag)",
+    "caught": 30.5,
+    "np_flagged": 17.2,
+    "seq_per_patient": 3.816
+   },
+   "note": "1,000 random arm sets and random sample pairs (controls, not candidates) are not counted"
+  },
+  {
+   "stage": "9 E9 (curves and tiers)",
+   "family": "Mean-logit full stack, check-in-the-loop, tier combinations",
+   "varied": "combination",
+   "nested_cells": 10,
+   "optimistic_cells_not_ranked": 0,
+   "best_within_1_progressor": {
+    "label": "Mean-logit full stack (gate + memory + certificate + check)",
+    "caught": 30.3,
+    "np_flagged": 16.2,
+    "seq_per_patient": 3.115
+   },
+   "note": "operating curves sweep the training detection target of existing families; the swept points are not counted as variants"
+  }
+ ],
+ "total_nested_cells": 2634,
+ "total_nested_cells_from_round9_on": 2557,
+ "total_optimistic_cells_not_ranked": 646,
+ "criterion": "best = fewest NP patients flagged among cells with caught >= 31.1 - 1.0; R49 reference 31.1 / 31.8",
+ "note": "counts are held-out (nested) rule cells as stored in the committed aggregates; a 'family' row may contain per-fold selected rows and fixed grid points of the same candidates"
+}
