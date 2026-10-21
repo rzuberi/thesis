@@ -1,0 +1,1149 @@
+{
+ "task": "depth",
+ "depth": {
+  "depth_distribution": {
+   "bam_based_pre_event": {
+    "n": 571,
+    "median": 0.287,
+    "iqr": [
+     0.229,
+     0.348
+    ],
+    "p10_p90": [
+     0.154,
+     0.404
+    ],
+    "min": 0.043,
+    "max": 1.715,
+    "n_above_1x": "<5",
+    "n_below_0.1x": 33
+   },
+   "sheet_reads_x50bp_pre_event": {
+    "n": 567,
+    "median": 0.344,
+    "iqr": [
+     0.289,
+     0.417
+    ],
+    "p10_p90": [
+     0.248,
+     0.469
+    ],
+    "min": 0.063,
+    "max": 3.563,
+    "n_above_1x": 5,
+    "n_below_0.1x": "<5"
+   },
+   "bam_based_all_676": {
+    "n": 676,
+    "median": 0.292,
+    "iqr": [
+     0.232,
+     0.355
+    ],
+    "p10_p90": [
+     0.16,
+     0.405
+    ],
+    "min": 0.038,
+    "max": 1.715,
+    "n_above_1x": "<5",
+    "n_below_0.1x": 35
+   },
+   "by_class_pre_event": {
+    "progressor": {
+     "n": 161,
+     "median": 0.298,
+     "iqr": [
+      0.232,
+      0.371
+     ],
+     "p10_p90": [
+      0.186,
+      0.417
+     ],
+     "min": 0.043,
+     "max": 1.715,
+     "n_above_1x": "<5",
+     "n_below_0.1x": "<5"
+    },
+    "non_progressor": {
+     "n": 410,
+     "median": 0.284,
+     "iqr": [
+      0.228,
+      0.343
+     ],
+     "p10_p90": [
+      0.142,
+      0.394
+     ],
+     "min": 0.058,
+     "max": 1.111,
+     "n_above_1x": "<5",
+     "n_below_0.1x": 30
+    }
+   },
+   "by_batch_pre_event_median": {
+    "Batch 1": 0.287,
+    "Batch 16S": 0.417,
+    "Batch 2": 0.315,
+    "Batch 3": 0.306,
+    "Batch 4": 0.264,
+    "Batch 5": 0.296,
+    "Batch 6": 0.359,
+    "Batch 8": 0.312,
+    "Batch 9": 0.085,
+    "Exome Subcohort": 0.157,
+    "NP Pilot Study": 0.25,
+    "Progressor Pilot Study": 0.225
+   },
+   "spearman_bam_vs_sheet": 0.617,
+   "definition": "total reads (50-kb readCountSummary) x modal read length / genome length chr1-22, X, Y (dd_describe.py); sheet: Number of reads x 50 bp / 3,088,269,832"
+  },
+  "depth_progressor_minus_nonprogressor_median": {
+   "delta": 0.015,
+   "ci95": [
+    -0.023,
+    0.053
+   ],
+   "p_two_sided": 0.442
+  },
+  "depth_tertiles": {
+   "0": {
+    "n_samples": 190,
+    "n_progressor_samples": 51,
+    "n_patients": 52,
+    "n_progressor_patients": 20,
+    "pairs_per_repeat": 711.6,
+    "auroc": {
+     "L-CNV": {
+      "value": 0.71,
+      "ci95": [
+       0.545,
+       0.862
+      ]
+     },
+     "L-IMG": {
+      "value": 0.797,
+      "ci95": [
+       0.709,
+       0.873
+      ]
+     },
+     "L-LATE": {
+      "value": 0.805,
+      "ci95": [
+       0.675,
+       0.914
+      ]
+     }
+    },
+    "IMG_minus_CNV": {
+     "delta": 0.088,
+     "ci95": [
+      -0.063,
+      0.233
+     ],
+     "p_two_sided": 0.339
+    },
+    "LATE_minus_IMG": {
+     "delta": 0.007,
+     "ci95": [
+      -0.081,
+      0.088
+     ],
+     "p_two_sided": 0.729
+    },
+    "LATE_minus_CNV": {
+     "delta": 0.095,
+     "ci95": [
+      0.011,
+      0.169
+     ],
+     "p_two_sided": 0.026
+    }
+   },
+   "1": {
+    "n_samples": 190,
+    "n_progressor_samples": 48,
+    "n_patients": 65,
+    "n_progressor_patients": 26,
+    "pairs_per_repeat": 677.3,
+    "auroc": {
+     "L-CNV": {
+      "value": 0.871,
+      "ci95": [
+       0.775,
+       0.936
+      ]
+     },
+     "L-IMG": {
+      "value": 0.838,
+      "ci95": [
+       0.772,
+       0.907
+      ]
+     },
+     "L-LATE": {
+      "value": 0.91,
+      "ci95": [
+       0.854,
+       0.958
+      ]
+     }
+    },
+    "IMG_minus_CNV": {
+     "delta": -0.034,
+     "ci95": [
+      -0.122,
+      0.082
+     ],
+     "p_two_sided": 0.544
+    },
+    "LATE_minus_IMG": {
+     "delta": 0.073,
+     "ci95": [
+      0.016,
+      0.124
+     ],
+     "p_two_sided": 0.011
+    },
+    "LATE_minus_CNV": {
+     "delta": 0.039,
+     "ci95": [
+      -0.009,
+      0.109
+     ],
+     "p_two_sided": 0.139
+    }
+   },
+   "2": {
+    "n_samples": 191,
+    "n_progressor_samples": 62,
+    "n_patients": 51,
+    "n_progressor_patients": 20,
+    "pairs_per_repeat": 763.8,
+    "auroc": {
+     "L-CNV": {
+      "value": 0.831,
+      "ci95": [
+       0.739,
+       0.909
+      ]
+     },
+     "L-IMG": {
+      "value": 0.887,
+      "ci95": [
+       0.825,
+       0.942
+      ]
+     },
+     "L-LATE": {
+      "value": 0.936,
+      "ci95": [
+       0.889,
+       0.974
+      ]
+     }
+    },
+    "IMG_minus_CNV": {
+     "delta": 0.056,
+     "ci95": [
+      -0.053,
+      0.172
+     ],
+     "p_two_sided": 0.309
+    },
+    "LATE_minus_IMG": {
+     "delta": 0.05,
+     "ci95": [
+      0.005,
+      0.099
+     ],
+     "p_two_sided": 0.029
+    },
+    "LATE_minus_CNV": {
+     "delta": 0.105,
+     "ci95": [
+      0.036,
+      0.185
+     ],
+     "p_two_sided": 0.002
+    }
+   },
+   "cuts_x": [
+    0.254,
+    0.324
+   ],
+   "low_minus_high_tertile": {
+    "L-CNV": {
+     "delta": -0.121,
+     "ci95": [
+      -0.286,
+      0.048
+     ],
+     "p_two_sided": 0.207
+    },
+    "L-IMG": {
+     "delta": -0.089,
+     "ci95": [
+      -0.193,
+      0.004
+     ],
+     "p_two_sided": 0.061
+    },
+    "IMG_minus_CNV": {
+     "delta": 0.032,
+     "ci95": [
+      -0.156,
+      0.198
+     ],
+     "p_two_sided": 0.875
+    },
+    "LATE_minus_IMG": {
+     "delta": -0.042,
+     "ci95": [
+      -0.137,
+      0.052
+     ],
+     "p_two_sided": 0.473
+    }
+   },
+   "within_depth_tertile_pairs": {
+    "n_samples": 571,
+    "n_progressor_samples": 161,
+    "n_patients": 75,
+    "n_progressor_patients": 32,
+    "pairs_per_repeat": 2152.7,
+    "auroc": {
+     "L-CNV": {
+      "value": 0.803,
+      "ci95": [
+       0.702,
+       0.88
+      ]
+     },
+     "L-IMG": {
+      "value": 0.842,
+      "ci95": [
+       0.793,
+       0.893
+      ]
+     },
+     "L-LATE": {
+      "value": 0.884,
+      "ci95": [
+       0.816,
+       0.937
+      ]
+     }
+    },
+    "IMG_minus_CNV": {
+     "delta": 0.039,
+     "ci95": [
+      -0.046,
+      0.134
+     ],
+     "p_two_sided": 0.408
+    },
+    "LATE_minus_IMG": {
+     "delta": 0.043,
+     "ci95": [
+      -0.007,
+      0.086
+     ],
+     "p_two_sided": 0.09
+    },
+    "LATE_minus_CNV": {
+     "delta": 0.082,
+     "ci95": [
+      0.033,
+      0.135
+     ],
+     "p_two_sided": 0.001
+    }
+   }
+  },
+  "sWGS_QC_pass": {
+   "counts_pre_event": {
+    "fail": {
+     "non_progressor": 6,
+     "progressor": "<5"
+    },
+    "pass": {
+     "non_progressor": 404,
+     "progressor": 159
+    }
+   },
+   "strata": {
+    "1.0": {
+     "n_samples": 563,
+     "n_progressor_samples": 159,
+     "n_patients": 75,
+     "n_progressor_patients": 32,
+     "pairs_per_repeat": 6323.9,
+     "auroc": {
+      "L-CNV": {
+       "value": 0.805,
+       "ci95": [
+        0.712,
+        0.877
+       ]
+      },
+      "L-IMG": {
+       "value": 0.844,
+       "ci95": [
+        0.795,
+        0.892
+       ]
+      },
+      "L-LATE": {
+       "value": 0.889,
+       "ci95": [
+        0.831,
+        0.935
+       ]
+      }
+     },
+     "IMG_minus_CNV": {
+      "delta": 0.039,
+      "ci95": [
+       -0.044,
+       0.133
+      ],
+      "p_two_sided": 0.372
+     },
+     "LATE_minus_IMG": {
+      "delta": 0.045,
+      "ci95": [
+       0.005,
+       0.082
+      ],
+      "p_two_sided": 0.031
+     },
+     "LATE_minus_CNV": {
+      "delta": 0.085,
+      "ci95": [
+       0.034,
+       0.143
+      ],
+      "p_two_sided": 0.002
+     }
+    },
+    "0.0": {
+     "n_samples": 8,
+     "status": "not reported: fewer than 5 samples or patients in a class"
+    }
+   }
+  },
+  "sWGS_noise_varMAD_tertiles": {
+   "0": {
+    "n_samples": 67,
+    "n_progressor_samples": 17,
+    "n_patients": 32,
+    "n_progressor_patients": 10,
+    "pairs_per_repeat": 85.3,
+    "auroc": {
+     "L-CNV": {
+      "value": 0.789,
+      "ci95": [
+       0.577,
+       0.957
+      ]
+     },
+     "L-IMG": {
+      "value": 0.908,
+      "ci95": [
+       0.786,
+       0.982
+      ]
+     },
+     "L-LATE": {
+      "value": 0.951,
+      "ci95": [
+       0.894,
+       0.993
+      ]
+     }
+    },
+    "IMG_minus_CNV": {
+     "delta": 0.119,
+     "ci95": [
+      -0.118,
+      0.369
+     ],
+     "p_two_sided": 0.366
+    },
+    "LATE_minus_IMG": {
+     "delta": 0.043,
+     "ci95": [
+      -0.046,
+      0.175
+     ],
+     "p_two_sided": 0.359
+    },
+    "LATE_minus_CNV": {
+     "delta": 0.161,
+     "ci95": [
+      0.015,
+      0.337
+     ],
+     "p_two_sided": 0.022
+    }
+   },
+   "1": {
+    "n_samples": 303,
+    "n_progressor_samples": 86,
+    "n_patients": 71,
+    "n_progressor_patients": 28,
+    "pairs_per_repeat": 1821.7,
+    "auroc": {
+     "L-CNV": {
+      "value": 0.828,
+      "ci95": [
+       0.734,
+       0.897
+      ]
+     },
+     "L-IMG": {
+      "value": 0.821,
+      "ci95": [
+       0.757,
+       0.889
+      ]
+     },
+     "L-LATE": {
+      "value": 0.876,
+      "ci95": [
+       0.801,
+       0.933
+      ]
+     }
+    },
+    "IMG_minus_CNV": {
+     "delta": -0.006,
+     "ci95": [
+      -0.091,
+      0.084
+     ],
+     "p_two_sided": 0.905
+    },
+    "LATE_minus_IMG": {
+     "delta": 0.055,
+     "ci95": [
+      0.013,
+      0.097
+     ],
+     "p_two_sided": 0.01
+    },
+    "LATE_minus_CNV": {
+     "delta": 0.049,
+     "ci95": [
+      0.002,
+      0.106
+     ],
+     "p_two_sided": 0.045
+    }
+   },
+   "2": {
+    "n_samples": 201,
+    "n_progressor_samples": 58,
+    "n_patients": 59,
+    "n_progressor_patients": 23,
+    "pairs_per_repeat": 805.7,
+    "auroc": {
+     "L-CNV": {
+      "value": 0.758,
+      "ci95": [
+       0.63,
+       0.877
+      ]
+     },
+     "L-IMG": {
+      "value": 0.868,
+      "ci95": [
+       0.792,
+       0.928
+      ]
+     },
+     "L-LATE": {
+      "value": 0.89,
+      "ci95": [
+       0.818,
+       0.944
+      ]
+     }
+    },
+    "IMG_minus_CNV": {
+     "delta": 0.11,
+     "ci95": [
+      -0.044,
+      0.264
+     ],
+     "p_two_sided": 0.177
+    },
+    "LATE_minus_IMG": {
+     "delta": 0.022,
+     "ci95": [
+      -0.049,
+      0.094
+     ],
+     "p_two_sided": 0.517
+    },
+    "LATE_minus_CNV": {
+     "delta": 0.132,
+     "ci95": [
+      0.039,
+      0.235
+     ],
+     "p_two_sided": 0.005
+    }
+   },
+   "cuts": [
+    0.002,
+    0.004
+   ],
+   "low_noise_minus_high_noise": {
+    "L-CNV": {
+     "delta": 0.031,
+     "ci95": [
+      -0.206,
+      0.242
+     ],
+     "p_two_sided": 0.738
+    },
+    "IMG_minus_CNV": {
+     "delta": 0.009,
+     "ci95": [
+      -0.259,
+      0.294
+     ],
+     "p_two_sided": 0.977
+    }
+   }
+  },
+  "biopsy_size": {
+   "1": {
+    "n_samples": 293,
+    "n_progressor_samples": 71,
+    "n_patients": 72,
+    "n_progressor_patients": 29,
+    "pairs_per_repeat": 1533.2,
+    "auroc": {
+     "L-CNV": {
+      "value": 0.792,
+      "ci95": [
+       0.689,
+       0.876
+      ]
+     },
+     "L-IMG": {
+      "value": 0.905,
+      "ci95": [
+       0.846,
+       0.946
+      ]
+     },
+     "L-LATE": {
+      "value": 0.926,
+      "ci95": [
+       0.881,
+       0.959
+      ]
+     }
+    },
+    "IMG_minus_CNV": {
+     "delta": 0.113,
+     "ci95": [
+      0.002,
+      0.223
+     ],
+     "p_two_sided": 0.046
+    },
+    "LATE_minus_IMG": {
+     "delta": 0.021,
+     "ci95": [
+      -0.017,
+      0.058
+     ],
+     "p_two_sided": 0.258
+    },
+    "LATE_minus_CNV": {
+     "delta": 0.134,
+     "ci95": [
+      0.056,
+      0.214
+     ],
+     "p_two_sided": 0.001
+    }
+   },
+   "0": {
+    "n_samples": 278,
+    "n_progressor_samples": 90,
+    "n_patients": 67,
+    "n_progressor_patients": 26,
+    "pairs_per_repeat": 1709.5,
+    "auroc": {
+     "L-CNV": {
+      "value": 0.814,
+      "ci95": [
+       0.695,
+       0.903
+      ]
+     },
+     "L-IMG": {
+      "value": 0.799,
+      "ci95": [
+       0.733,
+       0.861
+      ]
+     },
+     "L-LATE": {
+      "value": 0.865,
+      "ci95": [
+       0.773,
+       0.93
+      ]
+     }
+    },
+    "IMG_minus_CNV": {
+     "delta": -0.015,
+     "ci95": [
+      -0.104,
+      0.097
+     ],
+     "p_two_sided": 0.769
+    },
+    "LATE_minus_IMG": {
+     "delta": 0.067,
+     "ci95": [
+      0.006,
+      0.116
+     ],
+     "p_two_sided": 0.031
+    },
+    "LATE_minus_CNV": {
+     "delta": 0.051,
+     "ci95": [
+      0.004,
+      0.114
+     ],
+     "p_two_sided": 0.032
+    }
+   },
+   "small_minus_large": {
+    "L-CNV": {
+     "delta": -0.022,
+     "ci95": [
+      -0.135,
+      0.095
+     ],
+     "p_two_sided": 0.76
+    },
+    "L-IMG": {
+     "delta": 0.106,
+     "ci95": [
+      0.03,
+      0.18
+     ],
+     "p_two_sided": 0.004
+    },
+    "L-LATE": {
+     "delta": 0.061,
+     "ci95": [
+      -0.008,
+      0.151
+     ],
+     "p_two_sided": 0.095
+    },
+    "IMG_minus_CNV": {
+     "delta": 0.129,
+     "ci95": [
+      -0.004,
+      0.246
+     ],
+     "p_two_sided": 0.062
+    },
+    "LATE_minus_IMG": {
+     "delta": -0.045,
+     "ci95": [
+      -0.101,
+      0.019
+     ],
+     "p_two_sided": 0.151
+    }
+   },
+   "depth_matched_pairs": {
+    "small": {
+     "n_samples": 293,
+     "n_progressor_samples": 71,
+     "n_patients": 72,
+     "n_progressor_patients": 29,
+     "pairs_per_repeat": 511.2,
+     "auroc": {
+      "L-CNV": {
+       "value": 0.802,
+       "ci95": [
+        0.705,
+        0.887
+       ]
+      },
+      "L-IMG": {
+       "value": 0.921,
+       "ci95": [
+        0.869,
+        0.958
+       ]
+      },
+      "L-LATE": {
+       "value": 0.935,
+       "ci95": [
+        0.887,
+        0.968
+       ]
+      }
+     },
+     "IMG_minus_CNV": {
+      "delta": 0.119,
+      "ci95": [
+       0.012,
+       0.225
+      ],
+      "p_two_sided": 0.025
+     },
+     "LATE_minus_IMG": {
+      "delta": 0.014,
+      "ci95": [
+       -0.022,
+       0.047
+      ],
+      "p_two_sided": 0.414
+     },
+     "LATE_minus_CNV": {
+      "delta": 0.133,
+      "ci95": [
+       0.054,
+       0.21
+      ],
+      "p_two_sided": 0.001
+     }
+    },
+    "large": {
+     "n_samples": 278,
+     "n_progressor_samples": 90,
+     "n_patients": 67,
+     "n_progressor_patients": 26,
+     "pairs_per_repeat": 568.9,
+     "auroc": {
+      "L-CNV": {
+       "value": 0.811,
+       "ci95": [
+        0.672,
+        0.911
+       ]
+      },
+      "L-IMG": {
+       "value": 0.784,
+       "ci95": [
+        0.712,
+        0.861
+       ]
+      },
+      "L-LATE": {
+       "value": 0.855,
+       "ci95": [
+        0.741,
+        0.932
+       ]
+      }
+     },
+     "IMG_minus_CNV": {
+      "delta": -0.027,
+      "ci95": [
+       -0.13,
+       0.104
+      ],
+      "p_two_sided": 0.609
+     },
+     "LATE_minus_IMG": {
+      "delta": 0.071,
+      "ci95": [
+       -0.011,
+       0.138
+      ],
+      "p_two_sided": 0.078
+     },
+     "LATE_minus_CNV": {
+      "delta": 0.045,
+      "ci95": [
+       -0.007,
+       0.119
+      ],
+      "p_two_sided": 0.096
+     }
+    },
+    "small_minus_large": {
+     "L-CNV": {
+      "delta": -0.008,
+      "ci95": [
+       -0.13,
+       0.126
+      ],
+      "p_two_sided": 0.889
+     },
+     "IMG_minus_CNV": {
+      "delta": 0.146,
+      "ci95": [
+       -0.01,
+       0.279
+      ],
+      "p_two_sided": 0.068
+     }
+    }
+   },
+   "tissue_tertiles_200_302": {
+    "0": {
+     "n_samples": 189,
+     "n_progressor_samples": 48,
+     "n_patients": 62,
+     "n_progressor_patients": 23,
+     "pairs_per_repeat": 662.3,
+     "auroc": {
+      "L-CNV": {
+       "value": 0.77,
+       "ci95": [
+        0.653,
+        0.866
+       ]
+      },
+      "L-IMG": {
+       "value": 0.909,
+       "ci95": [
+        0.847,
+        0.955
+       ]
+      },
+      "L-LATE": {
+       "value": 0.927,
+       "ci95": [
+        0.876,
+        0.962
+       ]
+      }
+     },
+     "IMG_minus_CNV": {
+      "delta": 0.139,
+      "ci95": [
+       0.021,
+       0.269
+      ],
+      "p_two_sided": 0.022
+     },
+     "LATE_minus_IMG": {
+      "delta": 0.018,
+      "ci95": [
+       -0.029,
+       0.065
+      ],
+      "p_two_sided": 0.414
+     },
+     "LATE_minus_CNV": {
+      "delta": 0.157,
+      "ci95": [
+       0.076,
+       0.245
+      ],
+      "p_two_sided": 0.001
+     }
+    },
+    "1": {
+     "n_samples": 195,
+     "n_progressor_samples": 41,
+     "n_patients": 59,
+     "n_progressor_patients": 19,
+     "pairs_per_repeat": 621.8,
+     "auroc": {
+      "L-CNV": {
+       "value": 0.85,
+       "ci95": [
+        0.776,
+        0.912
+       ]
+      },
+      "L-IMG": {
+       "value": 0.897,
+       "ci95": [
+        0.825,
+        0.949
+       ]
+      },
+      "L-LATE": {
+       "value": 0.937,
+       "ci95": [
+        0.889,
+        0.969
+       ]
+      }
+     },
+     "IMG_minus_CNV": {
+      "delta": 0.048,
+      "ci95": [
+       -0.047,
+       0.136
+      ],
+      "p_two_sided": 0.333
+     },
+     "LATE_minus_IMG": {
+      "delta": 0.04,
+      "ci95": [
+       0.008,
+       0.081
+      ],
+      "p_two_sided": 0.008
+     },
+     "LATE_minus_CNV": {
+      "delta": 0.087,
+      "ci95": [
+       0.022,
+       0.152
+      ],
+      "p_two_sided": 0.009
+     }
+    },
+    "2": {
+     "n_samples": 187,
+     "n_progressor_samples": 72,
+     "n_patients": 61,
+     "n_progressor_patients": 23,
+     "pairs_per_repeat": 843.8,
+     "auroc": {
+      "L-CNV": {
+       "value": 0.802,
+       "ci95": [
+        0.662,
+        0.905
+       ]
+      },
+      "L-IMG": {
+       "value": 0.746,
+       "ci95": [
+        0.664,
+        0.826
+       ]
+      },
+      "L-LATE": {
+       "value": 0.837,
+       "ci95": [
+        0.722,
+        0.918
+       ]
+      }
+     },
+     "IMG_minus_CNV": {
+      "delta": -0.056,
+      "ci95": [
+       -0.162,
+       0.08
+      ],
+      "p_two_sided": 0.394
+     },
+     "LATE_minus_IMG": {
+      "delta": 0.091,
+      "ci95": [
+       0.019,
+       0.154
+      ],
+      "p_two_sided": 0.011
+     },
+     "LATE_minus_CNV": {
+      "delta": 0.035,
+      "ci95": [
+       -0.018,
+       0.112
+      ],
+      "p_two_sided": 0.25
+     }
+    },
+    "low_minus_high": {
+     "L-CNV": {
+      "delta": -0.032,
+      "ci95": [
+       -0.168,
+       0.105
+      ],
+      "p_two_sided": 0.675
+     },
+     "IMG_minus_CNV": {
+      "delta": 0.195,
+      "ci95": [
+       0.022,
+       0.351
+      ],
+      "p_two_sided": 0.027
+     }
+    }
+   }
+  },
+  "size_vs_depth": {
+   "spearman_tissue_tiles_vs_depth": {
+    "value": -0.132,
+    "ci95": [
+     -0.227,
+     -0.036
+    ]
+   },
+   "median_depth_small_minus_large": {
+    "delta": 0.024,
+    "ci95": [
+     0.003,
+     0.039
+    ],
+    "p_two_sided": 0.023
+   },
+   "median_depth_small": 0.298,
+   "median_depth_large": 0.274,
+   "tissue_tertile_by_depth_tertile": {
+    "0": {
+     "0": 46,
+     "1": 73,
+     "2": 70
+    },
+    "1": {
+     "0": 66,
+     "1": 62,
+     "2": 67
+    },
+    "2": {
+     "0": 78,
+     "1": 55,
+     "2": 54
+    }
+   },
+   "small_by_depth_tertile": {
+    "0": {
+     "0": 110,
+     "1": 86,
+     "2": 82
+    },
+    "1": {
+     "0": 80,
+     "1": 104,
+     "2": 109
+    }
+   },
+   "spearman_tissue_tiles_vs_varMAD": 0.126,
+   "qc_fail_small_vs_large": {
+    "0": {
+     "0.0": 7,
+     "1.0": 271
+    },
+    "1": {
+     "0.0": "<5",
+     "1.0": 292
+    }
+   }
+  }
+ },
+ "agent": "P1B"
+}

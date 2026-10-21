@@ -1,0 +1,150 @@
+{
+ "task": "select_poolings_11",
+ "select": {
+  "candidates": [
+   "base",
+   "u2l2_max",
+   "u2l2_meansd",
+   "u2l2_q3",
+   "u2l2_top8n",
+   "u2l2_top16n",
+   "u2l2_top32n",
+   "base_tpmax",
+   "base_tptop8",
+   "base_tptop16",
+   "base_tptop32"
+  ],
+  "n_candidates": 11,
+  "base_reproduces_stored_L_IMG_max_abs_diff": 0.0,
+  "times_chosen_of_100_folds": {
+   "base": 37,
+   "u2l2_max": 0,
+   "u2l2_meansd": 2,
+   "u2l2_q3": 29,
+   "u2l2_top8n": 0,
+   "u2l2_top16n": 0,
+   "u2l2_top32n": 0,
+   "base_tpmax": 0,
+   "base_tptop8": 0,
+   "base_tptop16": 0,
+   "base_tptop32": 32
+  },
+  "auroc": {
+   "L-CNV": {
+    "value": 0.801,
+    "ci95": [
+     0.71,
+     0.875
+    ]
+   },
+   "L-IMG": {
+    "value": 0.847,
+    "ci95": [
+     0.798,
+     0.894
+    ]
+   },
+   "L-LATE": {
+    "value": 0.889,
+    "ci95": [
+     0.83,
+     0.934
+    ]
+   },
+   "IMG-nested": {
+    "value": 0.825,
+    "ci95": [
+     0.775,
+     0.873
+    ]
+   },
+   "LATE-nested": {
+    "value": 0.875,
+    "ci95": [
+     0.813,
+     0.921
+    ]
+   }
+  },
+  "nested_minus_L_IMG": {
+   "delta": -0.021,
+   "ci95": [
+    -0.034,
+    -0.011
+   ],
+   "p_two_sided": 0.0
+  },
+  "nested_IMG_minus_L_CNV": {
+   "delta": 0.024,
+   "ci95": [
+    -0.058,
+    0.11
+   ],
+   "p_two_sided": 0.594
+  },
+  "L_IMG_minus_L_CNV": {
+   "delta": 0.045,
+   "ci95": [
+    -0.036,
+    0.136
+   ],
+   "p_two_sided": 0.295
+  },
+  "nested_LATE_minus_L_CNV": {
+   "delta": 0.073,
+   "ci95": [
+    0.026,
+    0.128
+   ],
+   "p_two_sided": 0.002
+  },
+  "nested_LATE_minus_nested_IMG": {
+   "delta": 0.049,
+   "ci95": [
+    0.008,
+    0.087
+   ],
+   "p_two_sided": 0.022
+  },
+  "apparent_best_candidate": {
+   "name": "base",
+   "auroc": 0.847,
+   "max_over_candidates_in_draws_ci95": [
+    0.804,
+    0.896
+   ]
+  },
+  "optimism_apparent_best_minus_nested": {
+   "delta": 0.021,
+   "ci95": [
+    0.014,
+    0.041
+   ],
+   "p_two_sided": 0.0
+  },
+  "optimism_L_IMG_minus_nested": {
+   "delta": 0.021,
+   "ci95": [
+    0.011,
+    0.034
+   ],
+   "p_two_sided": 0.0
+  },
+  "candidate_auroc": {
+   "base": 0.847,
+   "u2l2_max": 0.678,
+   "u2l2_meansd": 0.784,
+   "u2l2_q3": 0.837,
+   "u2l2_top8n": 0.664,
+   "u2l2_top16n": 0.642,
+   "u2l2_top32n": 0.721,
+   "base_tpmax": 0.742,
+   "base_tptop8": 0.804,
+   "base_tptop16": 0.822,
+   "base_tptop32": 0.835
+  },
+  "rank_of_L_IMG_among_candidates": 1,
+  "note": "nested = per (repeat, outer fold) the candidate with the best fold-stratified inner out-of-fold AUROC on the fold's pre-event training samples (ex_e3_score.py sel:); its held-out predictions are used for that fold; ensembles average probabilities (outer and inner alike); apparent best = the candidate with the highest held-out AUROC, chosen after seeing it (optimistic); in each draw the max over candidates is taken"
+ },
+ "agent": "P1B"
+}

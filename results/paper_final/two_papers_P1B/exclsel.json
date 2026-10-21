@@ -1,0 +1,437 @@
+{
+ "task": "exclsel",
+ "exclsel": {
+  "counts": {
+   "published_samples": 773,
+   "with_slide": 676,
+   "without_slide": 97,
+   "patients_without_any_slide": 8,
+   "without_slide_by_class": {
+    "progressor": 83,
+    "non_progressor": 14
+   },
+   "without_slide_pre_event_by_class": {
+    "progressor": 55,
+    "non_progressor": 14
+   },
+   "without_slide_from_patients_with_other_slides": 51
+  },
+  "within_class_comparison": {
+   "progressor_all": {
+    "k": {
+     "n_without_slide": 83,
+     "n_with_slide": 266,
+     "mean_without": 0.725,
+     "mean_with": 0.695,
+     "std_mean_difference_without_minus_with": {
+      "delta": 0.097,
+      "ci95": [
+       -0.376,
+       0.594
+      ],
+      "p_two_sided": 0.696
+     }
+    },
+    "cn_abs": {
+     "n_without_slide": 83,
+     "n_with_slide": 266,
+     "mean_without": 0.674,
+     "mean_with": 0.556,
+     "std_mean_difference_without_minus_with": {
+      "delta": 0.379,
+      "ci95": [
+       0.02,
+       0.732
+      ],
+      "p_two_sided": 0.038
+     }
+    },
+    "reads": {
+     "n_without_slide": 82,
+     "n_with_slide": 261,
+     "mean_without": 24744920.012,
+     "mean_with": 23685354.778,
+     "std_mean_difference_without_minus_with": {
+      "delta": 0.083,
+      "ci95": [
+       -0.153,
+       0.534
+      ],
+      "p_two_sided": 0.562
+     }
+    },
+    "grade": {
+     "n_without_slide": 83,
+     "n_with_slide": 266,
+     "mean_without": 1.072,
+     "mean_with": 1.195,
+     "std_mean_difference_without_minus_with": {
+      "delta": -0.094,
+      "ci95": [
+       -0.391,
+       0.235
+      ],
+      "p_two_sided": 0.511
+     }
+    },
+    "p53": {
+     "n_without_slide": 62,
+     "n_with_slide": 178,
+     "mean_without": 0.258,
+     "mean_with": 0.242,
+     "std_mean_difference_without_minus_with": {
+      "delta": 0.038,
+      "ci95": [
+       -0.244,
+       0.336
+      ],
+      "p_two_sided": 0.786
+     }
+    },
+    "year": {
+     "n_without_slide": 83,
+     "n_with_slide": 266,
+     "mean_without": 2010.434,
+     "mean_with": 2008.004,
+     "std_mean_difference_without_minus_with": {
+      "delta": 0.548,
+      "ci95": [
+       0.056,
+       1.157
+      ],
+      "p_two_sided": 0.017
+     }
+    }
+   },
+   "progressor_pre_event": {
+    "k": {
+     "n_without_slide": 55,
+     "n_with_slide": 161,
+     "mean_without": 0.724,
+     "mean_with": 0.633,
+     "std_mean_difference_without_minus_with": {
+      "delta": 0.3,
+      "ci95": [
+       -0.271,
+       0.903
+      ],
+      "p_two_sided": 0.333
+     }
+    },
+    "cn_abs": {
+     "n_without_slide": 55,
+     "n_with_slide": 161,
+     "mean_without": 0.661,
+     "mean_with": 0.537,
+     "std_mean_difference_without_minus_with": {
+      "delta": 0.432,
+      "ci95": [
+       -0.003,
+       0.806
+      ],
+      "p_two_sided": 0.053
+     }
+    },
+    "reads": {
+     "n_without_slide": 54,
+     "n_with_slide": 157,
+     "mean_without": 24355316.611,
+     "mean_with": 23886179.045,
+     "std_mean_difference_without_minus_with": {
+      "delta": 0.032,
+      "ci95": [
+       -0.215,
+       0.595
+      ],
+      "p_two_sided": 0.855
+     }
+    },
+    "grade": {
+     "n_without_slide": 55,
+     "n_with_slide": 161,
+     "mean_without": 0.709,
+     "mean_with": 0.615,
+     "std_mean_difference_without_minus_with": {
+      "delta": 0.107,
+      "ci95": [
+       -0.389,
+       0.587
+      ],
+      "p_two_sided": 0.752
+     }
+    },
+    "p53": {
+     "n_without_slide": 38,
+     "n_with_slide": 111,
+     "mean_without": 0.211,
+     "mean_with": 0.153,
+     "std_mean_difference_without_minus_with": {
+      "delta": 0.149,
+      "ci95": [
+       -0.163,
+       0.539
+      ],
+      "p_two_sided": 0.355
+     }
+    },
+    "year": {
+     "n_without_slide": 55,
+     "n_with_slide": 161,
+     "mean_without": 2009.218,
+     "mean_with": 2006.863,
+     "std_mean_difference_without_minus_with": {
+      "delta": 0.513,
+      "ci95": [
+       -0.047,
+       1.214
+      ],
+      "p_two_sided": 0.077
+     }
+    }
+   },
+   "non_progressor_all": {
+    "k": {
+     "n_without_slide": 14,
+     "n_with_slide": 410,
+     "mean_without": 0.455,
+     "mean_with": 0.247,
+     "std_mean_difference_without_minus_with": {
+      "delta": 0.74,
+      "ci95": [
+       -0.998,
+       1.725
+      ],
+      "p_two_sided": 0.451
+     }
+    },
+    "cn_abs": {
+     "n_without_slide": 14,
+     "n_with_slide": 410,
+     "mean_without": 0.464,
+     "mean_with": 0.404,
+     "std_mean_difference_without_minus_with": {
+      "delta": 0.276,
+      "ci95": [
+       -0.271,
+       1.13
+      ],
+      "p_two_sided": 0.359
+     }
+    },
+    "reads": {
+     "n_without_slide": 14,
+     "n_with_slide": 410,
+     "mean_without": 22621076.929,
+     "mean_with": 22244686.185,
+     "std_mean_difference_without_minus_with": {
+      "delta": 0.057,
+      "ci95": [
+       -0.935,
+       0.631
+      ],
+      "p_two_sided": 0.828
+     }
+    },
+    "grade": {
+     "n_without_slide": 14,
+     "n_with_slide": 410,
+     "mean_without": 0.214,
+     "mean_with": 0.246,
+     "std_mean_difference_without_minus_with": {
+      "delta": -0.058,
+      "ci95": [
+       -0.657,
+       0.642
+      ],
+      "p_two_sided": 0.798
+     }
+    },
+    "p53": {
+     "n_without_slide": 8,
+     "n_with_slide": 339,
+     "mean_without": 0.0,
+     "mean_with": 0.003,
+     "std_mean_difference_without_minus_with": {
+      "delta": -0.077,
+      "ci95": [
+       -0.137,
+       -0.069
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "year": {
+     "n_without_slide": 14,
+     "n_with_slide": 410,
+     "mean_without": 2002.429,
+     "mean_with": 2006.117,
+     "std_mean_difference_without_minus_with": {
+      "delta": -1.118,
+      "ci95": [
+       -2.383,
+       -0.745
+      ],
+      "p_two_sided": 0.0
+     }
+    }
+   },
+   "non_progressor_pre_event": {
+    "k": {
+     "n_without_slide": 14,
+     "n_with_slide": 410,
+     "mean_without": 0.455,
+     "mean_with": 0.247,
+     "std_mean_difference_without_minus_with": {
+      "delta": 0.74,
+      "ci95": [
+       -0.998,
+       1.725
+      ],
+      "p_two_sided": 0.451
+     }
+    },
+    "cn_abs": {
+     "n_without_slide": 14,
+     "n_with_slide": 410,
+     "mean_without": 0.464,
+     "mean_with": 0.404,
+     "std_mean_difference_without_minus_with": {
+      "delta": 0.276,
+      "ci95": [
+       -0.271,
+       1.13
+      ],
+      "p_two_sided": 0.359
+     }
+    },
+    "reads": {
+     "n_without_slide": 14,
+     "n_with_slide": 410,
+     "mean_without": 22621076.929,
+     "mean_with": 22244686.185,
+     "std_mean_difference_without_minus_with": {
+      "delta": 0.057,
+      "ci95": [
+       -0.935,
+       0.631
+      ],
+      "p_two_sided": 0.828
+     }
+    },
+    "grade": {
+     "n_without_slide": 14,
+     "n_with_slide": 410,
+     "mean_without": 0.214,
+     "mean_with": 0.246,
+     "std_mean_difference_without_minus_with": {
+      "delta": -0.058,
+      "ci95": [
+       -0.657,
+       0.642
+      ],
+      "p_two_sided": 0.798
+     }
+    },
+    "p53": {
+     "n_without_slide": 8,
+     "n_with_slide": 339,
+     "mean_without": 0.0,
+     "mean_with": 0.003,
+     "std_mean_difference_without_minus_with": {
+      "delta": -0.077,
+      "ci95": [
+       -0.137,
+       -0.069
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "year": {
+     "n_without_slide": 14,
+     "n_with_slide": 410,
+     "mean_without": 2002.429,
+     "mean_with": 2006.117,
+     "std_mean_difference_without_minus_with": {
+      "delta": -1.118,
+      "ci95": [
+       -2.383,
+       -0.745
+      ],
+      "p_two_sided": 0.0
+     }
+    }
+   }
+  },
+  "batch_without_slide_pre_event": {
+   "Batch 4": 18,
+   "Progressor Pilot Study": 11,
+   "Batch 1": 10,
+   "Exome Subcohort": 9,
+   "Batch 3": 7,
+   "NP Pilot Study": 6,
+   "Batch 5": "<5",
+   "Batch 8": "<5",
+   "Batch 2": "<5",
+   "Batch 6": "<5",
+   "Batch 16S": "<5"
+  },
+  "published_model_P_auroc": {
+   "all_773": {
+    "n_samples": 773,
+    "n_progressor": 349,
+    "auroc_published_P_probability": 0.865,
+    "ci95": [
+     0.796,
+     0.923
+    ]
+   },
+   "with_slide": {
+    "n_samples": 676,
+    "n_progressor": 266,
+    "auroc_published_P_probability": 0.868,
+    "ci95": [
+     0.794,
+     0.928
+    ]
+   },
+   "without_slide": {
+    "n_samples": 97,
+    "n_progressor": 83,
+    "auroc_published_P_probability": 0.752,
+    "ci95": [
+     0.552,
+     0.98
+    ]
+   },
+   "pre_event_all": {
+    "n_samples": 640,
+    "n_progressor": 216,
+    "auroc_published_P_probability": 0.836,
+    "ci95": [
+     0.747,
+     0.906
+    ]
+   },
+   "pre_event_with_slide": {
+    "n_samples": 571,
+    "n_progressor": 161,
+    "auroc_published_P_probability": 0.828,
+    "ci95": [
+     0.729,
+     0.907
+    ]
+   },
+   "pre_event_without_slide": {
+    "n_samples": 69,
+    "n_progressor": 55,
+    "auroc_published_P_probability": 0.749,
+    "ci95": [
+     0.503,
+     0.988
+    ]
+   }
+  },
+  "note": "published samples (Killcoyne Fig 2a, 773) with and without a linked H&E slide; pre-event by the hz_prep.py rule; k = published model P probability (their LOPO), cn_abs = mean |value| of the shipped standardised copy-number matrix; standardised mean differences (pooled SD) with a 2,000-draw patient bootstrap over the 88 patients"
+ },
+ "agent": "P1B"
+}
