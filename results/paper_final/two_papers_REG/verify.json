@@ -1,0 +1,52 @@
+{
+ "development_patient_auroc_registered_aggregation_nested": {
+  "L_CNV_pkg": 0.852,
+  "L_CNV_their": 0.826,
+  "L_IMG": 0.854,
+  "L_LATE_pkg": 0.914,
+  "L_LATE_their": 0.893
+ },
+ "insample_auroc_recomputed_vs_model_info": {
+  "L_CNV": [
+   0.996,
+   0.996
+  ],
+  "L_IMG": [
+   0.998,
+   0.998
+  ],
+  "L_IMG_pre_event_571": 0.998,
+  "L_LATE": [
+   1.0,
+   1.0
+  ]
+ },
+ "refit_files_identical_to_committed_bundles": {
+  "models_pkg/arm_tile_incidence.csv": true,
+  "models_pkg/cnv_scaling_setC.csv": true,
+  "models_pkg/coef_L_CNV.csv": true,
+  "models_pkg/coef_L_EARLY.csv": true,
+  "models_pkg/coef_L_IMG.csv": true,
+  "models_pkg/image_scaling.csv": true,
+  "models_their/cnv_scaling_packaged_model.csv": true,
+  "models_their/coef_L_CNV.csv": true,
+  "models_their/coef_L_EARLY.csv": true,
+  "models_their/coef_L_IMG.csv": true,
+  "models_their/image_scaling.csv": true
+ },
+ "scanner_reset_monotone": true,
+ "scanner_reset_selfmap_maxabs": 0.049,
+ "scorer_reproduces_engine": true,
+ "scorer_vs_engine_mismatches": {
+  "flag_R49": 0,
+  "flag_R49_pkg": 0,
+  "flag_confirm": 0,
+  "flag_light": 0,
+  "flag_tier0": 0,
+  "score_light_maxabs_x1e9": 0,
+  "score_tier0_maxabs_x1e9": 0,
+  "seq_R49": 0,
+  "seq_confirm": 0,
+  "seq_light": 0
+ }
+}

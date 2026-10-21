@@ -1,0 +1,86 @@
+{
+ "expected_E9": {
+  "ml": {
+   "A12": [
+    30.3,
+    20.1,
+    1.43
+   ],
+   "mem": [
+    31.0,
+    26.6,
+    0.0
+   ]
+  },
+  "st": {
+   "A12": [
+    30.5,
+    21.5,
+    1.94
+   ],
+   "R49": [
+    31.1,
+    31.8,
+    1.94
+   ],
+   "final": [
+    30.5,
+    17.2,
+    3.82
+   ],
+   "mem": [
+    30.7,
+    23.6,
+    1.94
+   ]
+  }
+ },
+ "ml": {
+  "A12": {
+   "caught": 30.3,
+   "np_flagged": 20.1,
+   "seq_per_patient": 1.433
+  },
+  "R49": {
+   "caught": 30.9,
+   "np_flagged": 30.8,
+   "seq_per_patient": 1.433
+  },
+  "chosen_equal_to_E9": {
+   "A12": true,
+   "mem": true
+  },
+  "mem": {
+   "caught": 31.0,
+   "np_flagged": 26.6,
+   "seq_per_patient": 0.0
+  }
+ },
+ "reproduced": true,
+ "st": {
+  "A12": {
+   "caught": 30.5,
+   "np_flagged": 21.5,
+   "seq_per_patient": 1.94
+  },
+  "R49": {
+   "caught": 31.1,
+   "np_flagged": 31.8,
+   "seq_per_patient": 1.94
+  },
+  "chosen_equal_to_E9": {
+   "A12": true,
+   "mem": true
+  },
+  "final": {
+   "caught": 30.5,
+   "np_flagged": 17.2,
+   "seq_per_patient": 3.816
+  },
+  "mem": {
+   "caught": 30.7,
+   "np_flagged": 23.6,
+   "seq_per_patient": 1.94
+  }
+ }
+}

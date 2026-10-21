@@ -1,0 +1,432 @@
+{
+ "apparent_OPTIMISTIC_frozen_rules_on_oof": {
+  "R49": {
+   "caught": 31.2,
+   "np_flagged": 31.5,
+   "seq_per_patient": 1.989
+  },
+  "R49_pkg": {
+   "caught": 31.1,
+   "np_flagged": 33.0,
+   "seq_per_patient": 1.989
+  },
+  "confirm": {
+   "caught": 30.9,
+   "np_flagged": 19.1,
+   "seq_per_patient": 3.939
+  },
+  "light": {
+   "caught": 30.9,
+   "np_flagged": 22.9,
+   "seq_per_patient": 1.989
+  },
+  "tier0": {
+   "caught": 30.6,
+   "np_flagged": 24.5,
+   "seq_per_patient": 0.0
+  }
+ },
+ "code_commit": "7e9dc9227dcfd10218b4ac1dcf0f2af4ec566784",
+ "cuts_per_repeat": {
+  "ml_cuts": [
+   [
+    0.06532025387179807,
+    0.32268458262125793,
+    0.2232802102293437
+   ],
+   [
+    0.04384901709449674,
+    0.35286632345618835,
+    0.22749603394046264
+   ],
+   [
+    0.09230802352321796,
+    0.425468735650518,
+    0.20999952427816995
+   ],
+   [
+    0.06469729475578694,
+    0.4184797540698683,
+    0.17910087465522914
+   ],
+   [
+    0.057822065215884545,
+    0.44865461316504635,
+    0.24476376825483354
+   ],
+   [
+    0.11883211857122836,
+    0.4089428573029074,
+    0.17742637763006716
+   ],
+   [
+    0.0392778325543029,
+    0.5203352142002255,
+    0.23158964878731042
+   ],
+   [
+    0.05898696454670681,
+    0.4239922785871932,
+    0.2374325049223786
+   ],
+   [
+    0.023730549459813816,
+    0.4538744156124447,
+    0.23776973939259577
+   ],
+   [
+    0.051974669585897186,
+    0.4038706253949711,
+    0.18556036713694654
+   ]
+  ],
+  "pkg_cuts": [
+   [
+    0.0298426183755711,
+    0.5432774655519343,
+    0.20090619541262184
+   ],
+   [
+    0.0345547813316671,
+    0.5274784521280937,
+    0.24019559361281395
+   ],
+   [
+    0.0584748678854397,
+    0.5527288188148851,
+    0.22895698139482606
+   ],
+   [
+    0.0322157333658401,
+    0.5724476151873384,
+    0.24342296342753175
+   ],
+   [
+    0.0320978845702734,
+    0.647332464639737,
+    0.27204842848571864
+   ],
+   [
+    0.0375473768757534,
+    0.6260899609277953,
+    0.2697380197660423
+   ],
+   [
+    0.0369090368501122,
+    0.6436112262210022,
+    0.2998918928101718
+   ],
+   [
+    0.0304862906191531,
+    0.5613308584426694,
+    0.16124910379123575
+   ],
+   [
+    0.0189557208893215,
+    0.5999006107039351,
+    0.19488325446499324
+   ],
+   [
+    0.0158096209204118,
+    0.5824559623296357,
+    0.1712473046671094
+   ]
+  ],
+  "st_cuts": [
+   [
+    0.0298426183755711,
+    0.5432774655519343,
+    0.22282929283247277
+   ],
+   [
+    0.0345547813316671,
+    0.5274784521280937,
+    0.2300958820766804
+   ],
+   [
+    0.0584748678854397,
+    0.5527288188148851,
+    0.21281525019319386
+   ],
+   [
+    0.0322157333658401,
+    0.5724476151873384,
+    0.19301981802974905
+   ],
+   [
+    0.0320978845702734,
+    0.647332464639737,
+    0.26891785094109977
+   ],
+   [
+    0.0375473768757534,
+    0.6260899609277953,
+    0.23597729064478573
+   ],
+   [
+    0.0369090368501122,
+    0.6436112262210022,
+    0.23794392617435822
+   ],
+   [
+    0.0304862906191531,
+    0.5613308584426694,
+    0.2374325049223786
+   ],
+   [
+    0.0189557208893215,
+    0.5999006107039351,
+    0.2553495311217364
+   ],
+   [
+    0.0158096209204118,
+    0.5824559623296357,
+    0.20662807613049286
+   ]
+  ]
+ },
+ "frozen": {
+  "R49": {
+   "cuts": {
+    "c_star": 0.5774517887584871,
+    "t_low": 0.03215680896805675,
+    "t_seq": 0.23303658636073307
+   },
+   "definition": "endoscopy score = max sample L-IMG; low if < t_low, high (flag) if > c_star, middle: the top-L-IMG sample is sequenced and the endoscopy is flagged if its L-LATE (their matrix) >= t_seq"
+  },
+  "R49_pkg": {
+   "cuts": {
+    "c_star": 0.5774517887584871,
+    "t_low": 0.03215680896805675,
+    "t_seq": 0.23457628750382
+   },
+   "definition": "as R49 with L-LATE from package-feature L-CNV (models_pkg); t_low and c_star identical; used where copy number comes from reads (ACE-B, 4x)"
+  },
+  "tier0_no_sequencing": {
+   "definition": "endoscopy score z = mean of the sample L-IMG logits (probabilities clipped to [1e-6, 1-1e-6]; 1e-6 x top-sample logit tie-break); patient memory at endoscopy k = sum_{i<=k} w_i z_i / sum w_i, w_i = 0.5 ** ((t_k - t_i) / h); flag if memory >= threshold. No sequencing.",
+   "half_life_years": 4,
+   "mean_logit_gate_cuts_for_D": {
+    "c_star": 0.42123601632853075,
+    "t_low": 0.05840451488129568,
+    "t_seq": 0.22538812208490316
+   },
+   "threshold": -1.7374422541130925
+  },
+  "tier_confirmatory": {
+   "base": "tier_light",
+   "check_bar_ps_oac": 0.0599072243267939,
+   "check_samples": 2,
+   "definition": "tier_light flags; at every flag the two top-L-IMG samples are sequenced (one already sequenced in the middle band) and the flag is cancelled if max ps_oac of the two < check bar (cn90: 90% of progressor endoscopies exceed it). ps_oac = sum over 17p 9p 18q 5q 4q 13q 3p of max(0, -arm deviation) + over 8q 7p 20q of max(0, arm deviation); arm deviation = arm copy number / the sample's median 5-Mb tile - 1 (per-sample package segmentation, ex_e2_veto.py tile_feats)"
+  },
+  "tier_light": {
+   "definition": "gate-aligned score g = logit(max L-IMG), or in the R49 middle band logit(c_star) + logit(L-LATE of the sequenced top sample) - logit(t_seq); EW memory of g with half-life h; minus delta while certified (an earlier middle-band endoscopy <= Y years before whose sequenced top sample had logit L-CNV < quiet cut); flag if >= threshold. Sequences the R49 middle band's top sample.",
+   "delta_logit": 1.0,
+   "half_life_years": 4,
+   "quiet_cut_logit_cnv": -0.560618091116533,
+   "quiet_percentile": 75,
+   "threshold": -0.018094387996934858,
+   "years": 4
+  }
+ },
+ "nested_reference_E9": {
+  "R49": [
+   31.1,
+   31.8,
+   1.94
+  ],
+  "R49_pkg": null,
+  "confirm": [
+   30.5,
+   17.2,
+   3.82
+  ],
+  "light": [
+   30.5,
+   21.5,
+   1.94
+  ],
+  "tier0": [
+   31.0,
+   26.6,
+   0.0
+  ]
+ },
+ "patient_aggregation": {
+  "late": "L-LATE sample probability = (L-CNV + L-IMG) / 2, then the same aggregation",
+  "paper1_patient_score": "per model, sample probability -> logit (clip 1e-6) -> mean over the endoscopy's samples -> max over the patient's included endoscopies (equal to the endoscopy mean logit when a patient has one endoscopy)",
+  "sensitivity_aggregation": "max over all the patient's sample probabilities"
+ },
+ "selection": {
+  "caveat": "chosen on fold-model (out-of-fold) predictions; applying them to the frozen models fitted on all of set C assumes similar score distributions on new data (tb_frozen.py caveat)",
+  "freezing": "per repeat; continuous values = median over the 10 repeats, discrete = mode (ties: first in candidate order); sequential: gate cut-offs -> hyper-parameters -> quiet cut -> thresholds; check bar = 90%-sensitivity bar of max ps_oac over the two top-H&E samples of progressor endoscopies",
+  "population": "571 pre-event samples, 288 endoscopies, 75 patients (32 progressors) of the 676 samples from 80 patients with a matched H&E slide",
+  "rule": "rv9 operating rule: threshold = the D-th highest progressor-patient maximum score, D = progressor patients the R49 gate detects; candidate with the fewest non-progressor patients flagged among those detecting >= D",
+  "training_predictions": "outer out-of-fold predictions of the stored 10 x 10 patient-grouped CV (killcoyne_mm/cv/preds, cfg 00 / 01 / 02), one repeat at a time, in the role of inner out-of-fold predictions"
+ },
+ "trace": {
+  "D_per_repeat": {
+   "ml": [
+    32,
+    31,
+    32,
+    29,
+    31,
+    31,
+    32,
+    30,
+    32,
+    31
+   ],
+   "st": [
+    32,
+    32,
+    32,
+    29,
+    31,
+    31,
+    32,
+    30,
+    32,
+    31
+   ]
+  },
+  "a12_choice_counts": {
+   "(1, 75, 1.0, 2)": 2,
+   "(1, 75, 1.0, 4)": 1,
+   "(4, 50, 1.0, 4)": 1,
+   "(4, 75, 0.5, 4)": 2,
+   "(4, 75, 1.0, 4)": 4
+  },
+  "a12_choice_per_repeat": [
+   [
+    4,
+    75,
+    0.5,
+    4
+   ],
+   [
+    4,
+    50,
+    1.0,
+    4
+   ],
+   [
+    4,
+    75,
+    0.5,
+    4
+   ],
+   [
+    4,
+    75,
+    1.0,
+    4
+   ],
+   [
+    4,
+    75,
+    1.0,
+    4
+   ],
+   [
+    1,
+    75,
+    1.0,
+    2
+   ],
+   [
+    1,
+    75,
+    1.0,
+    4
+   ],
+   [
+    4,
+    75,
+    1.0,
+    4
+   ],
+   [
+    1,
+    75,
+    1.0,
+    2
+   ],
+   [
+    4,
+    75,
+    1.0,
+    4
+   ]
+  ],
+  "a12_threshold_per_repeat": [
+   0.4870579208914838,
+   -0.1755527181944676,
+   -0.09487564395919268,
+   0.5082905231865051,
+   -0.00508006319483556,
+   0.13615323010373342,
+   -1.103838169337899,
+   0.5373482313090815,
+   -0.7405822295426134,
+   -0.031108712799034155
+  ],
+  "check_bar_per_repeat": [
+   0.0609372162565017,
+   0.0599072243267939,
+   0.0599072243267939,
+   0.0599072243267939,
+   0.0599072243267939,
+   0.0599072243267939,
+   0.0599072243267939,
+   0.0609372162565017,
+   0.0599072243267939,
+   0.0599072243267939
+  ],
+  "ml_h_counts": {
+   "4": 10
+  },
+  "ml_h_per_repeat": [
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4
+  ],
+  "ml_threshold_per_repeat": [
+   -1.9183226897465278,
+   -2.542108455591034,
+   -1.4163770046719406,
+   -1.3704029117619227,
+   -1.9556558134219661,
+   -1.8723786031943461,
+   -1.8959840445814098,
+   -1.6025059050318387,
+   -1.5020052050595647,
+   -1.4477922457297219
+  ],
+  "quiet_cut_per_repeat": [
+   -0.5073127775965321,
+   -0.4618039982752161,
+   -0.6139234046365338,
+   -0.7672394495974584,
+   -0.48121047783231397,
+   -0.8077849500872982,
+   -0.8496146566310813,
+   -0.48068186086817705,
+   -0.5041148065979784,
+   -0.8282809219424037
+  ],
+  "tb_frozen_reference": {
+   "t_B": 0.3142820722822518,
+   "t_high": 0.5889331683320793,
+   "t_low": 0.041709136400387495,
+   "t_seq": 0.23336062165507165
+  }
+ }
+}
