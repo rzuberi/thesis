@@ -194,6 +194,6 @@ if RTASK == "manifest":
     for s_ in json.load(open(FZ + "/rules.json"))["code"]["scripts"]: shutil.copy2(f"{T}/{s_}", f"{FZ}/code/{os.path.basename(s_)}")
     files = sorted(f for f in (os.path.relpath(p, FZ) for p in glob.glob(FZ + "/**/*", recursive=True) if os.path.isfile(p)) if f != "MANIFEST.json")
     man = {"bundle": "killcoyne_mm/two_papers_REG/frozen", "spec": "docs/two_papers_REG.md; paper/two_papers/REGISTRATION_draft.md", "frozen_on": json.load(open(FZ + "/rules.json"))["frozen_on"],
-           "code_commit": json.load(open(FZ + "/rules.json"))["code"]["commit"], "files": {f: hashlib.sha256(open(f"{FZ}/{f}", "rb").read()).hexdigest() for f in files}}
+           "code_commit": json.load(open(FZ + "/rules.json"))["code"]["commit"], "code_copy_commit": subprocess.run(["git", "-C", T, "log", "-1", "--format=%H", "--", "scripts/paper_plan/tp_reg_freeze.py", "scripts/paper_plan/tp_reg_score.py"], capture_output=True, text=True).stdout.strip(), "files": {f: hashlib.sha256(open(f"{FZ}/{f}", "rb").read()).hexdigest() for f in files}}
     man["bundle_sha256"] = hashlib.sha256("".join(f"{k}:{v}\n" for k, v in sorted(man["files"].items())).encode()).hexdigest()
     jd(man, FZ + "/MANIFEST.json"); jd(man, OUTR + "/frozen_MANIFEST.json"); print(json.dumps(man, indent=1)); print("TPREG DONE manifest", flush=True)
