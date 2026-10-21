@@ -80,3 +80,14 @@ The frozen single thresholds give apparent numbers close to the nested ones, wit
 
 - `paper/two_papers/REGISTRATION_draft.md` (local, not committed; `paper/` is never committed).
 - `paper/two_papers/EMAIL_killcoyne_draft.md` (not sent).
+
+### Update: registration moved to bundle v2 (clean-tile)
+
+At the coordinator's request, `paper/two_papers/REGISTRATION_draft.md` now registers agent CLN's bundle v2 (`killcoyne_mm/two_papers_REG/frozen_v2_clean/`, SHA-256 `c186e7895d295d561bc714cc9371eacd453428dbc7c4dc41358e8fd7c22055be`, `docs/two_papers_CLN.md`):
+- tile QC is the first pipeline step;
+- the clean-tile L-IMG is the primary image model (discovery 0.811), with the published-tile L-IMG as secondary;
+- the light and confirmatory tiers sit on the mean-logit gate, with the R49-gate stack recorded as the alternative not chosen;
+- the confirmatory tier is the Paper 2 headline, and tier 0 is the archive test with grade ± p53 as its primary comparator;
+- the exploration is disclosed as about 2,600 cells in 34 families, with P2N's null.
+
+Bundle v1 (above) is kept, superseded before any external data because of the artefact-tile finding (`docs/two_papers_ART.md`).
