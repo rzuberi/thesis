@@ -136,3 +136,53 @@ Figures (local): `paper/two_papers/figs_P2N/fig_p2n_null.png` (primary null, thr
 - **Not rerun**: E1 (220 cells: tile contributions need the refitted coefficients), E2 elastic-net vetoes (144), E4 (178), E5 (105), round-9 B4 refits (58), E8 QC/noise/agreement/flattening/soft-veto rows and random-arm controls, E9 check-in-the-loop (4); in (a) also the E3 extractor variants. Together about 780 of 2,557 logged cells (about 30%) in (b) and about 1,030 (about 40%) in (a). Their best real cells are at least 3 NP patients worse than the selected rule (16.2), except E8 check variants that make the final rule's decisions (17.2, i.e. not better than it).
 - **Compute**: campaigns `tpp2n0`–`tpp2n5`, `tpp2na` (1,000 tasks, 4 CPUs, ~6 min each: refit ~4 min, search ~2 min) and `tpp2nb` (1,000 tasks of two permutations, ~7.5 min per permutation with the E3 extension), 18:08–21:07 on epyc, cuda and rocm. Row-level outputs (`refit/sXXXX/`, `search/*.npz`, permutations) stay in `killcoyne_mm/two_papers_P2N/`; committed JSON holds only cell-level counts and null summaries.
 - **Not done**: a null for the variant families not rerun; a bootstrap of the selected cell's own CI (the paired-bootstrap CIs elsewhere remain conditional on the selection).
+
+---
+
+## Clean-tile L-IMG (22 October 2026, coordinator request)
+
+**Why.** Agent ART showed that L-IMG partly reads artefact tiles; the clean-tile L-IMG (ART's refit on the clean-tile mean embedding, same recipe, folds and λ rules; sample AUROC 0.811) is the likely primary image model, and agent CLN re-established the Paper 2 tiers on it (bundle v2 freezes the mean-logit stacks). This section reruns the same selection-aware null with the clean-tile L-IMG.
+
+**What changed, and nothing else.** L-IMG = ART's clean-tile model; L-CNV as before; L-LATE = their mean (CLN's swap in `tp_cln_main.py`). (a) Full refit: L-IMG refitted per permutation on ART's clean-tile features (`killcoyne_mm/two_papers_ART/feats/clean.csv.gz`) with the same pipeline; the L-CNV refits of the same 1,000 permutations were reused (same `perms.csv`). (b) Stored predictions (ART's clean refit), 1,000 free and 1,000 endoscopy-count-stratified permutations. Same 1,664 cells per label set, same tolerance-1 criterion, same p formula. The E3 extractor variants (`e3x`) are left out of the clean (b) run because they were built on all tiles, so (b) and (a) search the same family set. Code: `LIMG=clean` in `tp_p2n_search.py` / `tp_p2n_merge.py`, `IMGFEAT=clean` in `tp_p2n_refit.R`, wrapper modes `ac` / `bc` in `tp_p2n_task.sh`. Aggregates `results/paper_final/two_papers_P2N/check0_clean.json`, `merge_clean.json`; figures `paper/two_papers/figs_P2N/fig_p2n_clean_null.png`, `fig_p2n_clean_null_tier0.png`, `fig_p2n_clean_null_scatter.png` (local). Campaigns `tpp2nc0`–`tpp2nc2`, `tpp2nca` (1,000 tasks), `tpp2ncb` (500 tasks × 4 permutations), 16:10–19:35.
+
+**Smoke (SHUF 0, both modes) reproduces CLN exactly**: R49 31.3 / 32.8 / 2.16; P1 31.3 / 37.8; memory 30.7 / 25.1; memory + certificate 30.5 / 23.5; final rule 30.3 / 19.8 / 4.06; in-fold bar 30.2 / 18.6; tier 0 (mean-logit + memory) 31.1 / 29.7 / 0; mean-logit light 30.3 / 21.9 / 1.70; mean-logit full stack 30.2 / 17.9 / 3.41. The SHUF 0 clean-tile refit reproduces ART's clean refit exactly (outer and inner max |difference| 0.0, folds identical); L-CNV likewise.
+
+### Best of the whole search (B = 1,000 each; null mean [2.5–97.5%]; n at or below real; p = (1 + n) / 1,001)
+
+| Tolerance | Real best cell (clean) | Real Δ NP / Δ caught | (a) full refit | (b) stored | (b′) strata |
+|---|---|---|---|---|---|
+| 0 | R49hm double veto (L-CNV low and OAC quiet < 90%, loss1) | −5.3 / 0.0 | −3.6 [−8.1, −1.1]; n 159; p 0.160 | p 0.198 | p 0.097 |
+| 0.5 | mean-logit light grid point (h = 2 y, t_quiet p75, +0.5, Y = 4 y) | −9.8 / −0.4 | −4.6 [−9.2, −2.0]; n 17; p 0.018 | p 0.029 | p 0.021 |
+| **1.0 (primary)** | **A12 + check at the 80% bar** | **−14.6 / −1.0** | **−5.5 [−10.1, −2.6]; n 1; p 0.002** | −6.1 [−11.1, −2.8]; n 5; p 0.006 | −5.5 [−10.9, −2.4]; n 4; p 0.005 |
+| 2.0 | A12 + check at the 75% bar | −16.3 / −1.7 | n 1; p 0.002 | p 0.005 | p 0.004 |
+| excess | A12 + check at the 75% bar | −0.326 | null −0.135; n 1; p 0.002 | p 0.009 | p 0.005 |
+
+The mean-logit full stack (−14.9 at −1.1 caught) is just outside the tolerance-1 window on the clean model, so the search picks a check-bar variant of the final rule; the gain is of the same size.
+
+### Best no-sequencing cell (selection among cells that sequence nothing)
+
+| Tolerance | Real best cell | Real Δ NP / Δ caught | (a) | (b) | (b′) |
+|---|---|---|---|---|---|
+| 0.5 | H&E sample-mean score, running mean (round-9 G family) | −5.1 / −0.1 | null −1.0 [−5.9, +3.2]; n 35; p 0.036 | p 0.068 | p 0.029 |
+| 1.0 | same | −5.1 / −0.1 | null −1.8 [−6.9, +2.8]; n 81; **p 0.082** | n 124; p 0.125 | n 47; p 0.048 |
+
+### Named rules with structure fixed (every label-using step rerun; Δ NP vs R49 on the clean model)
+
+| Rule | Real Δ NP / Δ caught | (a) null mean [2.5–97.5%]; p | (b) p | (b′) p |
+|---|---|---|---|---|
+| **Mean-logit full stack** | **−14.9 / −1.1** | −3.0 [−6.5, −0.6]; **p 0.001** (n 0) | 0.001 | 0.001 |
+| **Mean-logit light (gate + memory + certificate)** | **−10.9 / −1.0** | −1.5 [−5.4, +0.2]; **p 0.001** | 0.001 | 0.001 |
+| Final rule (A12 + check, cn90) | −13.0 / −1.0 | −2.8 [−5.8, −0.6]; p 0.001 | 0.001 | 0.005 |
+| Final rule, in-fold bar | −14.2 / −1.1 | p 0.001 | 0.001 | 0.002 |
+| Memory (A1) | −7.7 / −0.6 | p 0.001 | 0.001 | 0.002 |
+| Memory + certificate (A12) | −9.3 / −0.8 | p 0.001 | 0.001 | 0.002 |
+| Mean-logit gate + memory | −8.8 / −0.9 | p 0.001 | 0.001 | 0.002 |
+| **Tier 0: mean-logit + memory (no sequencing)** | **−3.1 / −0.2** | −0.2 [−4.8, +5.9]; **p 0.110** (n 109); excess p 0.034 | 0.187 (excess 0.056) | 0.115 (excess 0.054) |
+| R49 re-tuned (control) | −3.3 / −0.3 | p 0.001 | 0.002 | 0.003 |
+
+### What it means (clean-tile L-IMG)
+
+- **The sequencing tiers still survive their own search.** Best-of-search −14.6 against a null of −5.5 [−10.1, −2.6], p = 0.002 with full refit (0.005–0.006 in the fixed-score nulls); the mean-logit full stack and the mean-logit light tier with structure fixed are both at the p floor (0.001) in all three nulls. Removing artefact tiles does not weaken the evidence for the copy-number tiers.
+- **The no-sequencing tier does not survive on the clean model.** With structure fixed, mean-logit + memory saves 3.1 NP patients and p = 0.11–0.19; the best no-sequencing cell of the whole search (−5.1) gives p = 0.05–0.13 at tolerance 1. On the published model the same statistics were p 0.02–0.06 and 0.06–0.07. This matches CLN's finding that artefact tiles were helping mainly tier 0: on clean tiles its internal evidence is not distinguishable from what the search produces under permuted labels.
+- **With no allowance for lost progressors (tolerance 0) nothing in the clean search beats the null** (p 0.10–0.20): every clean-model gain over R49 is bought with 0.4–1.1 progressor patients.
+- **For Paper 2**: lead the internal evidence with the copy-number tiers (light and confirmatory, mean-logit versions as frozen in bundle v2), each with its selection-aware p; describe tier 0 as a hypothesis for the ERIN-archive test, not as an internally validated recommendation.

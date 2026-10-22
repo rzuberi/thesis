@@ -1,0 +1,611 @@
+{
+ "b": {
+  "observed": {
+   "R49 gate": [
+    31.3,
+    32.8,
+    2.16
+   ],
+   "P1 90%": [
+    31.3,
+    37.8,
+    0.0
+   ],
+   "memory (A1 EW gate score)": [
+    30.7,
+    25.1,
+    2.16
+   ],
+   "memory + certificate (A12)": [
+    30.5,
+    23.5,
+    2.16
+   ],
+   "final rule (A12 + check, cn90)": [
+    30.3,
+    19.8,
+    4.06
+   ],
+   "final rule, in-fold bar": [
+    30.2,
+    18.6,
+    4.06
+   ],
+   "mean-logit + memory (no sequencing)": [
+    31.1,
+    29.7,
+    0.0
+   ],
+   "mean-logit gate + memory": [
+    30.4,
+    24.0,
+    1.7
+   ],
+   "mean-logit full stack": [
+    30.2,
+    17.9,
+    3.41
+   ],
+   "R49 + check (E2 cell)": [
+    31.3,
+    27.5,
+    4.56
+   ],
+   "memory + check": [
+    30.7,
+    21.6,
+    4.31
+   ],
+   "R49 re-tuned (C1)": [
+    31.0,
+    29.5,
+    2.15
+   ],
+   "mean-logit R49 rebuilt": [
+    31.1,
+    32.3,
+    1.7
+   ],
+   "mean-logit P1 90%": [
+    31.6,
+    34.2,
+    0.0
+   ],
+   "17p-only check": [
+    30.5,
+    22.1,
+    4.06
+   ],
+   "mean-logit light (gate + memory + certificate)": [
+    30.3,
+    21.9,
+    1.7
+   ]
+  },
+  "expected": {
+   "R49 gate": [
+    31.3,
+    32.8,
+    2.16
+   ],
+   "P1 90%": [
+    31.3,
+    37.8,
+    0.0
+   ],
+   "memory (A1 EW gate score)": [
+    30.7,
+    25.1,
+    2.16
+   ],
+   "memory + certificate (A12)": [
+    30.5,
+    23.5,
+    2.16
+   ],
+   "final rule (A12 + check, cn90)": [
+    30.3,
+    19.8,
+    4.06
+   ],
+   "final rule, in-fold bar": [
+    30.2,
+    18.6,
+    4.06
+   ],
+   "mean-logit + memory (no sequencing)": [
+    31.1,
+    29.7,
+    0.0
+   ],
+   "mean-logit light (gate + memory + certificate)": [
+    30.3,
+    21.9,
+    1.7
+   ],
+   "mean-logit full stack": [
+    30.2,
+    17.9,
+    3.41
+   ]
+  },
+  "mismatches": {},
+  "reproduced": true,
+  "n_cells": 1664,
+  "cells_by_source": {
+   "st|E2fixed": 648,
+   "st|r9": 444,
+   "st|E2combo": 192,
+   "st|E2grade": 64,
+   "st|E2drift": 60,
+   "st|mem": 51,
+   "ml|r9": 42,
+   "st|E2sel": 36,
+   "st|E8arms": 19,
+   "st|E2stab": 18,
+   "top2|r9": 16,
+   "mprob|r9": 16,
+   "med|r9": 16,
+   "st|E7bar": 10,
+   "st|E2and": 9,
+   "med|ref": 4,
+   "ml|ref": 4,
+   "st|ref": 4,
+   "mprob|ref": 4,
+   "top2|ref": 4,
+   "ml|mem": 3
+  },
+  "n_families": 102,
+  "seconds": {
+   "build st": 2.7,
+   "rv9 st": 52.6,
+   "E2 st": 67.2,
+   "mem/E7/E8 st": 68.1,
+   "ml": 76.0,
+   "med": 82.3,
+   "mprob": 88.5,
+   "top2": 94.0
+  },
+  "real_selection": {
+   "R49": [
+    31.3,
+    32.8
+   ],
+   "tol0.0": {
+    "dNP": -5.299999999999997,
+    "dC": 0.0,
+    "cell": "st|E2combo|R49hm double L-CNV low AND ps_oac quiet<90 kq2 loss1",
+    "seq": 4.563999986648559
+   },
+   "tol0.5": {
+    "dNP": -9.799999999999997,
+    "dC": -0.40000000000000213,
+    "cell": "ml|r9|A12|ew h=2y, t_quiet=p75, +0.5 logit, Y=4y",
+    "seq": 1.7013333439826965
+   },
+   "tol1.0": {
+    "dNP": -14.599999999999998,
+    "dC": -1.0,
+    "cell": "st|E7bar|A12 + check bar 0.8",
+    "seq": 4.05733335018158
+   },
+   "tol2.0": {
+    "dNP": -16.299999999999997,
+    "dC": -1.6999999999999993,
+    "cell": "st|E7bar|A12 + check bar 0.75",
+    "seq": 4.05733335018158
+   },
+   "tier0_tol0.5": {
+    "dNP": -5.099999999999998,
+    "dC": -0.10000000000000142,
+    "cell": "st|r9|G:img_mean:mean|mean",
+    "seq": 0.0
+   },
+   "tier0_tol1.0": {
+    "dNP": -5.099999999999998,
+    "dC": -0.10000000000000142,
+    "cell": "st|r9|G:img_mean:mean|mean",
+    "seq": 0.0
+   },
+   "excess": {
+    "value": -0.3259447674418604,
+    "dNP": -16.299999999999997,
+    "dC": -1.6999999999999993,
+    "cell": "st|E7bar|A12 + check bar 0.75"
+   },
+   "named": {
+    "R49 gate": {
+     "dNP": 0.0,
+     "dC": 0.0,
+     "excess": 0.0
+    },
+    "P1 90%": {
+     "dNP": 5.0,
+     "dC": 0.0,
+     "excess": 0.11627906976744186
+    },
+    "memory (A1 EW gate score)": {
+     "dNP": -7.699999999999996,
+     "dC": -0.6000000000000014,
+     "excess": -0.16031976744186033
+    },
+    "memory + certificate (A12)": {
+     "dNP": -9.299999999999997,
+     "dC": -0.8000000000000007,
+     "excess": -0.19127906976744177
+    },
+    "final rule (A12 + check, cn90)": {
+     "dNP": -12.999999999999996,
+     "dC": -1.0,
+     "excess": -0.27107558139534876
+    },
+    "final rule, in-fold bar": {
+     "dNP": -14.199999999999996,
+     "dC": -1.1000000000000014,
+     "excess": -0.29585755813953474
+    },
+    "mean-logit + memory (no sequencing)": {
+     "dNP": -3.099999999999998,
+     "dC": -0.1999999999999993,
+     "excess": -0.06584302325581393
+    },
+    "mean-logit gate + memory": {
+     "dNP": -8.799999999999997,
+     "dC": -0.9000000000000021,
+     "excess": -0.17652616279069755
+    },
+    "mean-logit full stack": {
+     "dNP": -14.899999999999999,
+     "dC": -1.1000000000000014,
+     "excess": -0.31213662790697666
+    },
+    "R49 + check (E2 cell)": {
+     "dNP": -5.299999999999997,
+     "dC": 0.0,
+     "excess": -0.12325581395348831
+    },
+    "memory + check": {
+     "dNP": -11.199999999999996,
+     "dC": -0.6000000000000014,
+     "excess": -0.2417151162790696
+    },
+    "R49 re-tuned (C1)": {
+     "dNP": -3.299999999999997,
+     "dC": -0.3000000000000007,
+     "excess": -0.06736918604651154
+    },
+    "mean-logit R49 rebuilt": {
+     "dNP": -0.5,
+     "dC": -0.1999999999999993,
+     "excess": -0.005377906976744208
+    },
+    "mean-logit P1 90%": {
+     "dNP": 1.4000000000000057,
+     "dC": 0.3000000000000007,
+     "excess": 0.02318313953488383
+    },
+    "17p-only check": {
+     "dNP": -10.699999999999996,
+     "dC": -0.8000000000000007,
+     "excess": -0.22383720930232545
+    },
+    "mean-logit light (gate + memory + certificate)": {
+     "dNP": -10.899999999999999,
+     "dC": -1.0,
+     "excess": -0.22223837209302322
+    }
+   }
+  }
+ },
+ "a": {
+  "observed": {
+   "R49 gate": [
+    31.3,
+    32.8,
+    2.16
+   ],
+   "P1 90%": [
+    31.3,
+    37.8,
+    0.0
+   ],
+   "memory (A1 EW gate score)": [
+    30.7,
+    25.1,
+    2.16
+   ],
+   "memory + certificate (A12)": [
+    30.5,
+    23.5,
+    2.16
+   ],
+   "final rule (A12 + check, cn90)": [
+    30.3,
+    19.8,
+    4.06
+   ],
+   "final rule, in-fold bar": [
+    30.2,
+    18.6,
+    4.06
+   ],
+   "mean-logit + memory (no sequencing)": [
+    31.1,
+    29.7,
+    0.0
+   ],
+   "mean-logit gate + memory": [
+    30.4,
+    24.0,
+    1.7
+   ],
+   "mean-logit full stack": [
+    30.2,
+    17.9,
+    3.41
+   ],
+   "R49 + check (E2 cell)": [
+    31.3,
+    27.5,
+    4.56
+   ],
+   "memory + check": [
+    30.7,
+    21.6,
+    4.31
+   ],
+   "R49 re-tuned (C1)": [
+    31.0,
+    29.5,
+    2.15
+   ],
+   "mean-logit R49 rebuilt": [
+    31.1,
+    32.3,
+    1.7
+   ],
+   "mean-logit P1 90%": [
+    31.6,
+    34.2,
+    0.0
+   ],
+   "17p-only check": [
+    30.5,
+    22.1,
+    4.06
+   ],
+   "mean-logit light (gate + memory + certificate)": [
+    30.3,
+    21.9,
+    1.7
+   ]
+  },
+  "expected": {
+   "R49 gate": [
+    31.3,
+    32.8,
+    2.16
+   ],
+   "P1 90%": [
+    31.3,
+    37.8,
+    0.0
+   ],
+   "memory (A1 EW gate score)": [
+    30.7,
+    25.1,
+    2.16
+   ],
+   "memory + certificate (A12)": [
+    30.5,
+    23.5,
+    2.16
+   ],
+   "final rule (A12 + check, cn90)": [
+    30.3,
+    19.8,
+    4.06
+   ],
+   "final rule, in-fold bar": [
+    30.2,
+    18.6,
+    4.06
+   ],
+   "mean-logit + memory (no sequencing)": [
+    31.1,
+    29.7,
+    0.0
+   ],
+   "mean-logit light (gate + memory + certificate)": [
+    30.3,
+    21.9,
+    1.7
+   ],
+   "mean-logit full stack": [
+    30.2,
+    17.9,
+    3.41
+   ]
+  },
+  "mismatches": {},
+  "reproduced": true,
+  "n_cells": 1664,
+  "cells_by_source": {
+   "st|E2fixed": 648,
+   "st|r9": 444,
+   "st|E2combo": 192,
+   "st|E2grade": 64,
+   "st|E2drift": 60,
+   "st|mem": 51,
+   "ml|r9": 42,
+   "st|E2sel": 36,
+   "st|E8arms": 19,
+   "st|E2stab": 18,
+   "top2|r9": 16,
+   "mprob|r9": 16,
+   "med|r9": 16,
+   "st|E7bar": 10,
+   "st|E2and": 9,
+   "med|ref": 4,
+   "ml|ref": 4,
+   "st|ref": 4,
+   "mprob|ref": 4,
+   "top2|ref": 4,
+   "ml|mem": 3
+  },
+  "n_families": 102,
+  "seconds": {
+   "build st": 2.7,
+   "rv9 st": 59.2,
+   "E2 st": 73.7,
+   "mem/E7/E8 st": 74.6,
+   "ml": 82.4,
+   "med": 88.6,
+   "mprob": 94.6,
+   "top2": 100.2
+  },
+  "real_selection": {
+   "R49": [
+    31.3,
+    32.8
+   ],
+   "tol0.0": {
+    "dNP": -5.299999999999997,
+    "dC": 0.0,
+    "cell": "st|E2combo|R49hm double L-CNV low AND ps_oac quiet<90 kq2 loss1",
+    "seq": 4.563999986648559
+   },
+   "tol0.5": {
+    "dNP": -9.799999999999997,
+    "dC": -0.40000000000000213,
+    "cell": "ml|r9|A12|ew h=2y, t_quiet=p75, +0.5 logit, Y=4y",
+    "seq": 1.7013333439826965
+   },
+   "tol1.0": {
+    "dNP": -14.599999999999998,
+    "dC": -1.0,
+    "cell": "st|E7bar|A12 + check bar 0.8",
+    "seq": 4.05733335018158
+   },
+   "tol2.0": {
+    "dNP": -16.299999999999997,
+    "dC": -1.6999999999999993,
+    "cell": "st|E7bar|A12 + check bar 0.75",
+    "seq": 4.05733335018158
+   },
+   "tier0_tol0.5": {
+    "dNP": -5.099999999999998,
+    "dC": -0.10000000000000142,
+    "cell": "st|r9|G:img_mean:mean|mean",
+    "seq": 0.0
+   },
+   "tier0_tol1.0": {
+    "dNP": -5.099999999999998,
+    "dC": -0.10000000000000142,
+    "cell": "st|r9|G:img_mean:mean|mean",
+    "seq": 0.0
+   },
+   "excess": {
+    "value": -0.3259447674418604,
+    "dNP": -16.299999999999997,
+    "dC": -1.6999999999999993,
+    "cell": "st|E7bar|A12 + check bar 0.75"
+   },
+   "named": {
+    "R49 gate": {
+     "dNP": 0.0,
+     "dC": 0.0,
+     "excess": 0.0
+    },
+    "P1 90%": {
+     "dNP": 5.0,
+     "dC": 0.0,
+     "excess": 0.11627906976744186
+    },
+    "memory (A1 EW gate score)": {
+     "dNP": -7.699999999999996,
+     "dC": -0.6000000000000014,
+     "excess": -0.16031976744186033
+    },
+    "memory + certificate (A12)": {
+     "dNP": -9.299999999999997,
+     "dC": -0.8000000000000007,
+     "excess": -0.19127906976744177
+    },
+    "final rule (A12 + check, cn90)": {
+     "dNP": -12.999999999999996,
+     "dC": -1.0,
+     "excess": -0.27107558139534876
+    },
+    "final rule, in-fold bar": {
+     "dNP": -14.199999999999996,
+     "dC": -1.1000000000000014,
+     "excess": -0.29585755813953474
+    },
+    "mean-logit + memory (no sequencing)": {
+     "dNP": -3.099999999999998,
+     "dC": -0.1999999999999993,
+     "excess": -0.06584302325581393
+    },
+    "mean-logit gate + memory": {
+     "dNP": -8.799999999999997,
+     "dC": -0.9000000000000021,
+     "excess": -0.17652616279069755
+    },
+    "mean-logit full stack": {
+     "dNP": -14.899999999999999,
+     "dC": -1.1000000000000014,
+     "excess": -0.31213662790697666
+    },
+    "R49 + check (E2 cell)": {
+     "dNP": -5.299999999999997,
+     "dC": 0.0,
+     "excess": -0.12325581395348831
+    },
+    "memory + check": {
+     "dNP": -11.199999999999996,
+     "dC": -0.6000000000000014,
+     "excess": -0.2417151162790696
+    },
+    "R49 re-tuned (C1)": {
+     "dNP": -3.299999999999997,
+     "dC": -0.3000000000000007,
+     "excess": -0.06736918604651154
+    },
+    "mean-logit R49 rebuilt": {
+     "dNP": -0.5,
+     "dC": -0.1999999999999993,
+     "excess": -0.005377906976744208
+    },
+    "mean-logit P1 90%": {
+     "dNP": 1.4000000000000057,
+     "dC": 0.3000000000000007,
+     "excess": 0.02318313953488383
+    },
+    "17p-only check": {
+     "dNP": -10.699999999999996,
+     "dC": -0.8000000000000007,
+     "excess": -0.22383720930232545
+    },
+    "mean-logit light (gate + memory + certificate)": {
+     "dNP": -10.899999999999999,
+     "dC": -1.0,
+     "excess": -0.22223837209302322
+    }
+   }
+  }
+ },
+ "refit_s0000_vs_stored": {
+  "L-CNV": {
+   "outer_max_abs_diff": 0.0,
+   "inner_max_abs_diff": 0.0,
+   "folds_equal": true
+  },
+  "L-IMG": {
+   "outer_max_abs_diff": 0.0,
+   "inner_max_abs_diff": 0.0,
+   "folds_equal": true
+  }
+ },
+ "limg": "clean"
+}
