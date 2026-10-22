@@ -4,7 +4,8 @@
 # of shuffle SHUF (killcoyne_mm/two_papers_P2N/perms.csv; SHUF = 0 is the true labels and must reproduce the stored predictions exactly). Because the outer and inner fold
 # assignments are stratified by progressor status (strat_folds), they are re-derived from the permuted labels, exactly as the original pipeline would have done.
 # MODEL = img (cfg_02 / horizons inner img_*) | cnv (cfg_00, shipped block cnv_their_C.csv / horizons inner cnv_their_*); REPS = "a-b" (repeat seeds).
-# Row-level outputs (cluster only): killcoyne_mm/two_papers_P2N/refit/sXXXX/<MODEL>_{outer,inner}_rep_XX.csv.gz
+# IMGFEAT=clean (22 Oct): L-IMG on agent ART's clean-tile features instead of img_mean.csv (files imgclean_*).
+# Row-level outputs (cluster only): killcoyne_mm/two_papers_P2N/refit/sXXXX/<MODEL><IMGFEAT>_{outer,inner}_rep_XX.csv.gz
 source("/mnt/scratche/slow/fmlab/zuberi01/phd/thesis/scripts/paper_plan/kv_common.R")
 SHUF <- as.integer(Sys.getenv("SHUF")); MODEL <- Sys.getenv("MODEL"); RR <- as.integer(strsplit(Sys.getenv("REPS", "1-10"), "-")[[1]]); REPSV <- RR[1]:RR[length(RR)]
 stopifnot(MODEL %in% c("img", "cnv"))
@@ -21,9 +22,12 @@ cvcurves1 <- function(X, yy, pp) {   # verbatim hz_fit.R
     fe[k, ] <- colMeans((pr > 0.5) != yy[te]); w[k] <- sum(te) }
   cm <- colSums(fe * w) / sum(w); list(fit = fit, class_min = max(lam[cm <= min(cm)])) }
 strat_folds <- function(pp, yy, seed, nf) { pl <- tapply(yy, pp, max); Pp <- names(pl)[pl == 1]; Np <- names(pl)[pl == 0]; set.seed(seed); ord <- c(sample(Pp), sample(Np)); setNames(rep(1:nf, length.out = length(ord)), ord) }
-if (MODEL == "img") { IMraw <- load_img(); feat <- function(tr) zs(IMraw, tr) } else { CN <- readblock("cnv_their_C.csv"); feat <- function(tr) CN }   # kv_common make_features("img"/"cnv","their")
+IMGFEAT <- Sys.getenv("IMGFEAT", "")   # "" = stored img_mean.csv; "clean" = agent ART's clean-tile mean embedding (killcoyne_mm/two_papers_ART/feats/clean.csv.gz, as tp_art_refit.R reads it)
+rdart <- function(f) { R <- read_csv(f, col_types = cols(Sample = "c", .default = "d"), progress = FALSE); X <- as.matrix(R[, -1]); rownames(X) <- R$Sample; stopifnot(all(ids %in% rownames(X))); X <- X[ids, , drop = FALSE]; stopifnot(!anyNA(X)); X }
+if (MODEL == "img") { IMraw <- if (nzchar(IMGFEAT)) rdart(file.path(M, "two_papers_ART", "feats", paste0(IMGFEAT, ".csv.gz"))) else load_img(); feat <- function(tr) zs(IMraw, tr) } else { CN <- readblock("cnv_their_C.csv"); feat <- function(tr) CN }   # kv_common make_features("img"/"cnv","their"); with no missing values zs equals tp_art_refit.R scale_tr
+MTAG <- paste0(MODEL, IMGFEAT)
 for (REP in REPSV) {
-  fo_ <- file.path(OD, sprintf("%s_outer_rep_%02d.csv.gz", MODEL, REP)); fi_ <- file.path(OD, sprintf("%s_inner_rep_%02d.csv.gz", MODEL, REP))
+  fo_ <- file.path(OD, sprintf("%s_outer_rep_%02d.csv.gz", MTAG, REP)); fi_ <- file.path(OD, sprintf("%s_inner_rep_%02d.csv.gz", MTAG, REP))
   if (file.exists(fo_) && file.exists(fi_)) next
   fold_of <- strat_folds(pat, y, REP, 10); outO <- list(); outI <- list()
   for (k in 1:10) {
@@ -38,4 +42,4 @@ for (REP in REPSV) {
   write_csv(bind_rows(outI), paste0(fi_, ".tmp.gz")); write_csv(bind_rows(outO), paste0(fo_, ".tmp.gz"))
   file.rename(paste0(fi_, ".tmp.gz"), fi_); file.rename(paste0(fo_, ".tmp.gz"), fo_)
 }
-message("TPP2N REFIT DONE s", SHUF, " ", MODEL, " reps ", paste(range(REPSV), collapse = "-"))
+message("TPP2N REFIT DONE s", SHUF, " ", MTAG, " reps ", paste(range(REPSV), collapse = "-"))

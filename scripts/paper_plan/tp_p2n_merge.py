@@ -4,7 +4,7 @@ Aggregates only (no identifiers, no dates). Selection statistic per label set: a
 subject to progressor patients caught >= the R49 gate's minus a tolerance (primary 1.0; also 0, 0.5, 2.0); statistic = its NP flagged minus R49's (same labels).
 p = (1 + #{null statistic <= real statistic}) / (B + 1)."""
 import os, sys, json, glob, numpy as np, pandas as pd
-T = "/mnt/scratche/slow/fmlab/zuberi01/phd/thesis"; M = T + "/feasibility/paper_plan/killcoyne_mm"; XD = M + "/two_papers_P2N"; SD_ = XD + "/search"
+T = "/mnt/scratche/slow/fmlab/zuberi01/phd/thesis"; M = T + "/feasibility/paper_plan/killcoyne_mm"; XD = M + "/two_papers_P2N"; LIMG = os.environ.get("LIMG", "stored"); SD_ = XD + ("/search" if LIMG == "stored" else "/search_clean"); SFX = "" if LIMG == "stored" else "_clean"   # clean: ART's clean-tile L-IMG (22 Oct)
 OUT = T + "/results/paper_final/two_papers_P2N"; os.makedirs(OUT, exist_ok=True); TASK = os.environ["TASK"]
 r2 = lambda x: None if x is None or not np.isfinite(x) else round(float(x), 2); r3 = lambda x: None if x is None or not np.isfinite(x) else round(float(x), 3); r4 = lambda x: round(float(x), 4)
 def jd(o, name): json.dump(o, open(f"{OUT}/{name}.json", "w"), indent=1, default=lambda x: x.item() if hasattr(x, "item") else str(x)); print("TPP2N DONE", name, flush=True)
@@ -16,11 +16,17 @@ NAMED = {"R49 gate": REF, "P1 90%": "st|ref|P1_90", "memory (A1 EW gate score)":
          "final rule (A12 + check, cn90)": "st|mem|A12 + ps_oac k2 cn90", "final rule, in-fold bar": "st|E7bar|A12 + check in-fold bar slack 0",
          "mean-logit + memory (no sequencing)": "ml|r9|A1:img:ew|sel_np", "mean-logit gate + memory": "ml|r9|A1:gate_al:ew|sel_np", "mean-logit full stack": "ml|mem|A12 + ps_oac k2 cn90",
          "R49 + check (E2 cell)": "st|E2fixed|R49hm veto ps_oac k2 cn90", "memory + check": "st|mem|A1 ew + ps_oac k2 cn90", "R49 re-tuned (C1)": "st|r9|C1|sel_np",
-         "mean-logit R49 rebuilt": "ml|ref|R49 rebuilt", "mean-logit P1 90%": "ml|ref|P1_90", "17p-only check": "st|E8arms|A12 + check 17p k2 cn90"}
+         "mean-logit R49 rebuilt": "ml|ref|R49 rebuilt", "mean-logit P1 90%": "ml|ref|P1_90", "17p-only check": "st|E8arms|A12 + check 17p k2 cn90",
+         "mean-logit light (gate + memory + certificate)": "ml|r9|A12|sel_np"}
 EXPECT = {"R49 gate": (31.1, 31.8, 1.94), "P1 90%": (31.1, 36.0, 0.0), "memory (A1 EW gate score)": (30.7, 23.6, 1.94), "memory + certificate (A12)": (30.5, 21.5, 1.94),
           "final rule (A12 + check, cn90)": (30.5, 17.2, 3.82), "final rule, in-fold bar": (30.4, 16.4, 3.82), "mean-logit + memory (no sequencing)": (31.0, 26.6, 0.0),
           "mean-logit gate + memory": (30.5, 22.6, 1.43), "mean-logit full stack": (30.3, 16.2, 3.12), "R49 + check (E2 cell)": (31.1, 26.6, 4.35), "memory + check": (30.7, 20.4, 4.05),
           "R49 re-tuned (C1)": (30.6, 29.4, 1.87), "mean-logit R49 rebuilt": (30.9, 31.2, 1.43), "mean-logit P1 90%": (31.2, 32.2, 0.0), "17p-only check": (30.5, 19.7, 3.82)}
+if LIMG == "clean":   # agent CLN's clean-tile numbers (docs/two_papers_CLN.md, smoke and table 1)
+    EXPECT = {"R49 gate": (31.3, 32.8, 2.16), "P1 90%": (31.3, 37.8, 0.0), "memory (A1 EW gate score)": (30.7, 25.1, 2.16), "memory + certificate (A12)": (30.5, 23.5, 2.16),
+              "final rule (A12 + check, cn90)": (30.3, 19.8, 4.06), "final rule, in-fold bar": (30.2, 18.6, 4.06), "mean-logit + memory (no sequencing)": (31.1, 29.7, 0.0),
+              "mean-logit light (gate + memory + certificate)": (30.3, 21.9, 1.70), "mean-logit full stack": (30.2, 17.9, 3.41)}
+else: EXPECT["mean-logit light (gate + memory + certificate)"] = (30.3, 20.1, 1.43)
 TOLS = (0.0, 0.5, 1.0, 2.0); PRIMARY = 1.0
 def family_of(nm):
     p = nm.split("|"); return p[0] + "|" + p[1] + ("|" + p[2] if p[1] == "r9" else "")
@@ -52,7 +58,11 @@ if TASK == "check0":
     if os.path.isdir(d):
         sys.path.insert(0, T + "/scripts/paper_plan"); import tb_common as TC
         O, I, FO = TC.load("their")
-        for mdl, key in (("cnv", "L-CNV"), ("img", "L-IMG")):
+        if LIMG == "clean":   # reference = ART's clean refit (refit/clean/{outer,inner}_rep_XX.csv)
+            ad = M + "/two_papers_ART/refit/clean"; Da = pd.concat([pd.read_csv(f, dtype={"Sample": str}) for f in sorted(glob.glob(ad + "/outer_rep_*.csv"))])
+            O["L-IMG"] = Da.pivot_table(index="Sample", columns="rep", values="pred").reindex(TC.ids)[TC.REPS].values
+            Dia = pd.concat([pd.read_csv(f, dtype={"Sample": str}) for f in sorted(glob.glob(ad + "/inner_rep_*.csv"))]); I["L-IMG"] = {(r, k): pd.Series(dd.pred.values, index=TC.ix[dd.Sample].values) for (r, k), dd in Dia.groupby(["rep", "fold"])}
+        for mdl, key in (("cnv", "L-CNV"), ("img" if LIMG == "stored" else "imgclean", "L-IMG")):
             fo = sorted(glob.glob(f"{d}/{mdl}_outer_rep_*.csv.gz")); fi = sorted(glob.glob(f"{d}/{mdl}_inner_rep_*.csv.gz"))
             if len(fo) < 10 or len(fi) < 10: chk[key] = f"incomplete ({len(fo)}, {len(fi)})"; continue
             D = pd.concat([pd.read_csv(f, dtype={"Sample": str}) for f in fo]); Oo = D.pivot_table(index="Sample", columns="rep", values="pred").reindex(TC.ids)[TC.REPS].values
@@ -60,7 +70,7 @@ if TASK == "check0":
             Di = pd.concat([pd.read_csv(f, dtype={"Sample": str}) for f in fi]); mx = 0.0
             for (r, k), dd in Di.groupby(["rep", "fold"]): s = pd.Series(dd.pred.values, index=TC.ix[dd.Sample].values); mx = max(mx, float(np.abs(s - I[key][(r, k)].reindex(s.index)).max()))
             chk[key] = {"outer_max_abs_diff": float(np.nanmax(np.abs(Oo - O[key]))), "inner_max_abs_diff": mx, "folds_equal": bool((Fo == FO).all())}
-    res["refit_s0000_vs_stored"] = chk; jd(res, "check0")
+    res["refit_s0000_vs_stored"] = chk; res["limg"] = LIMG; jd(res, "check0" + SFX)
 elif TASK == "merge":
     res = {"selection_criterion": "fewest held-out NP patients flagged among cells with progressor patients caught >= R49's - tol (same labels); primary tol 1.0", "tolerances": TOLS}
     real = {}
@@ -90,4 +100,4 @@ elif TASK == "merge":
         o["named_rules"] = {nm: {"dNP": summ([r["named"][nm]["dNP"] for r in recs], rv["named"][nm]["dNP"]), "dC_null_mean": r3(np.mean([r["named"][nm]["dC"] for r in recs])), "real_dC": r3(rv["named"][nm]["dC"]),
                                  "excess": summ([r["named"][nm]["excess"] for r in recs], rv["named"][nm]["excess"])} for nm in NAMED if nm in rv["named"] and nm != "R49 gate"}
         res[f"{mode}{'core' if core else ''}_{kind}"] = o
-    jd(res, "merge")
+    res["limg"] = LIMG; jd(res, "merge" + SFX)

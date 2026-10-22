@@ -21,7 +21,8 @@ _s = open(P + "/rv9_falseflags.py").read(); exec(compile(_s[:_s.index('\nres = {
 os.environ["TASK"] = ETASK
 g8 = G2["g8"]; TC = G2["TC"]; M = G2["M"]; T = G2["T"]; SM = G2["SM"]; ids = G2["ids"]; n = G2["n"]; REPS = G2["REPS"]; lg = G2["lg"]; thr_sens = G2["thr_sens"]
 patient_arrays = G2["patient_arrays"]; lstats = G2["lstats"]; vs_test = G2["vs_test"]; vs_train = G2["vs_train"]; veto_V = G2["veto_V"]; double_V = G2["double_V"]; base_of = G2["base_of"]
-XD = M + "/two_papers_P2N"; SD_ = XD + "/search"
+LIMG = os.environ.get("LIMG", "stored"); assert LIMG in ("stored", "clean")   # clean (22 Oct): agent ART's clean-tile L-IMG (CLN's swap: L-IMG replaced, L-CNV stored, L-LATE their mean)
+XD = M + "/two_papers_P2N"; SD_ = XD + ("/search" if LIMG == "stored" else "/search_clean")
 for d_ in (XD, SD_): os.makedirs(d_, exist_ok=True)
 y0 = TC.y.copy(); pat = TC.pat; PRE = TC.PRE; ix = TC.ix
 DATES = g8["dates"](); g8["dates"] = lambda: DATES   # true-label dates (lead time / patient-years only)
@@ -54,7 +55,7 @@ else: ys = y0.copy()
 set_labels(ys)
 def load_refit(s):
     d = f"{XD}/refit/s{s:04d}"; O, I, FOs = {}, {}, []
-    for mdl, key in (("cnv", "L-CNV"), ("img", "L-IMG")):
+    for mdl, key in (("cnv", "L-CNV"), ("img" if LIMG == "stored" else "imgclean", "L-IMG")):
         fo = sorted(glob.glob(f"{d}/{mdl}_outer_rep_*.csv.gz")); fi = sorted(glob.glob(f"{d}/{mdl}_inner_rep_*.csv.gz")); assert len(fo) == 10 and len(fi) == 10, (s, mdl, len(fo), len(fi))
         D = pd.concat([pd.read_csv(f, dtype={"Sample": str}) for f in fo]); O[key] = D.pivot_table(index="Sample", columns="rep", values="pred").reindex(ids)[REPS].values
         FOs.append(D.pivot_table(index="Sample", columns="rep", values="fold").reindex(ids)[REPS].values.astype(int))
@@ -63,7 +64,14 @@ def load_refit(s):
     assert (FOs[0] == FOs[1]).all() and np.isfinite(O["L-IMG"]).all(); FO = FOs[0]
     O["L-LATE"] = (O["L-CNV"] + O["L-IMG"]) / 2; I["L-LATE"] = {k: (I["L-CNV"][k] + I["L-IMG"][k].reindex(I["L-CNV"][k].index)) / 2 for k in I["L-CNV"]}
     return O, I, FO
-O0, I0, FO0 = TC.load("their") if MODE == "b" else load_refit(SHUF)
+def load_art_clean():
+    """stored L-CNV with agent ART's clean-tile L-IMG refit (outer and inner, stored folds); L-LATE = mean (tp_cln_main.py swap)"""
+    O, I, FO = TC.load("their"); d = M + "/two_papers_ART/refit/clean"; fo = sorted(glob.glob(d + "/outer_rep_*.csv")); fi = sorted(glob.glob(d + "/inner_rep_*.csv")); assert len(fo) == 10 and len(fi) == 10
+    D = pd.concat([pd.read_csv(f, dtype={"Sample": str}) for f in fo]); Oi = D.pivot_table(index="Sample", columns="rep", values="pred").reindex(ids)[REPS].values
+    assert (D.pivot_table(index="Sample", columns="rep", values="fold").reindex(ids)[REPS].values.astype(int) == FO).all()
+    Di = pd.concat([pd.read_csv(f, dtype={"Sample": str}) for f in fi]); Ii = {(r, k): pd.Series(dd.pred.values, index=ix[dd.Sample].values) for (r, k), dd in Di.groupby(["rep", "fold"])}
+    O["L-IMG"] = Oi; O["L-LATE"] = (O["L-CNV"] + Oi) / 2; I["L-IMG"] = Ii; I["L-LATE"] = {k: (I["L-CNV"][k] + Ii[k].reindex(I["L-CNV"][k].index)) / 2 for k in I["L-CNV"]}; return O, I, FO
+O0, I0, FO0 = (TC.load("their") if LIMG == "stored" else load_art_clean()) if MODE == "b" else load_refit(SHUF)
 # endoscopy aggregations of the sample H&E logit (E3 AGG; E3/E9 construction: every sample carries its endoscopy's score + 1e-6 x its own logit; L-LATE keeps the sample model)
 lg_ = lambda p: np.log(np.clip(p, 1e-6, 1 - 1e-6) / (1 - np.clip(p, 1e-6, 1 - 1e-6))); sg = lambda z: 1 / (1 + np.exp(-z))
 ENDOPP = np.array([f"{e}|{int(p)}" for e, p in zip(TC.ENDO, PRE)]); _EG = pd.Series(np.arange(n)).groupby(ENDOPP).indices
@@ -280,7 +288,7 @@ for how in ("ml", "med", "mprob", "top2"):
         mem_cells(S, "ml", {"A12": (*SELm["A12"], True), "gate ew": (*SELm["A1:gate_al:ew"], True), "img ew (no gate)": (*SELm["A1:img:ew"], False)}, VL, EG, only={"ps_oac k2 cn90"})
     tick(f"{how}"); del S, ST
 # ---- E3 extractor / pooling / ensemble variants (MODE b only: their stored refits; a full-refit null would need every block refitted per label set). Cells tagged e3x:
-if MODE == "b" and os.environ.get("EXT", "1") == "1":
+if MODE == "b" and LIMG == "stored" and os.environ.get("EXT", "1") == "1":   # not with the clean-tile L-IMG: the E3 variants were built on all tiles
     _e = open(P + "/ex_e3_score.py").read(); exec(compile(_e[_e.index('E3 = M + "/explore_E3"'):_e.index('\n# ------------------------------------------------------------------ one variant')], P + "/ex_e3_score.py", "exec"), G9)
     VV = [os.path.basename(f)[2:-5] for f in sorted(glob.glob(T + "/results/paper_final/explore_E3/v_*.json"))]; VM = [os.path.basename(f)[4:-5] for f in sorted(glob.glob(T + "/results/paper_final/explore_E3/mem_*.json"))]
     unf = lambda v: v.replace("--", ":").replace("__", "+")
@@ -296,5 +304,5 @@ if MODE == "b" and os.environ.get("EXT", "1") == "1":
         del S, ST
     tick("E3 extended")
 names = sorted(CELLS); arr = np.stack([CELLS[k] for k in names]).astype(np.float32)
-np.savez_compressed(OUTF + ".tmp.npz", vals=arr, names=np.array(names), times=json.dumps(TIMES), shuf=SHUF, mode=MODE, kind=KIND); os.replace(OUTF + ".tmp.npz", OUTF)
+np.savez_compressed(OUTF + ".tmp.npz", vals=arr, names=np.array(names), times=json.dumps(TIMES), shuf=SHUF, mode=MODE, kind=KIND, limg=LIMG); os.replace(OUTF + ".tmp.npz", OUTF)
 print("TPP2N DONE search", MODE, KIND, SHUF, len(names), "cells", round(time.time() - t0, 1), "s", flush=True)
