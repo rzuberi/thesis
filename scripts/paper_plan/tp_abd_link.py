@@ -28,7 +28,7 @@ def pid(v):
     if v is None or (isinstance(v, float) and np.isnan(v)): return None
     s = re.sub(r"\.0$", "", str(v).strip()); return s if s and s.lower() not in ("nan", "none") else None
 def acc_key(s):
-    """Accession -> (prefix, yy, int number). PS10.2807 / PS10-02807 / PS10-02807A / 'PS10-02807 x' all -> ('PS','10',2807)."""
+    """Accession -> (prefix, yy, int number). AB12.345 / AB12-00345 / AB12-00345C / 'AB12-00345 x' all -> ('AB','12',345) (synthetic example)."""
     m = re.match(r"\s*([A-Za-z]{1,3})\s?(\d{2})[.\-/ ]?(\d{1,6})", str(s))
     return (m.group(1).upper(), m.group(2), int(m.group(3))) if m else None
 def acc_key_alt(s):
