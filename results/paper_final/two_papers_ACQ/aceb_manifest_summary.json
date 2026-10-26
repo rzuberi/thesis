@@ -1,0 +1,404 @@
+{
+ "generated": "2026-10-26T12:05:52",
+ "oh_threshold": 0.03,
+ "min_informative_sites": 200,
+ "bams": {
+  "Batch1|markdup": {
+   "n": 96,
+   "TB": 2.235,
+   "indexed": 96,
+   "idxstats_ok": 96,
+   "quickcheck_ok": 96
+  },
+  "Batch2|markdup": {
+   "n": 96,
+   "TB": 1.828,
+   "indexed": 96,
+   "idxstats_ok": 96,
+   "quickcheck_ok": 96
+  },
+  "Batch2|markdup.dedup": {
+   "n": 96,
+   "TB": 0.835,
+   "indexed": 96,
+   "idxstats_ok": 95,
+   "quickcheck_ok": 40
+  },
+  "Batch3|markdup": {
+   "n": 42,
+   "TB": 0.324,
+   "indexed": 42,
+   "idxstats_ok": 42,
+   "quickcheck_ok": 42
+  },
+  "Batch4|markdup": {
+   "n": 60,
+   "TB": 1.006,
+   "indexed": 60,
+   "idxstats_ok": 60,
+   "quickcheck_ok": 60
+  },
+  "Pilot|pilot_srt": {
+   "n": 16,
+   "TB": 0.253,
+   "indexed": 16,
+   "idxstats_ok": 16,
+   "quickcheck_ok": 16
+  }
+ },
+ "per_batch": {
+  "Batch1": {
+   "n": 96,
+   "name_format": {
+    "PS": 96
+   },
+   "in_sheet": 96,
+   "abd_linked_patient": 94,
+   "read_groups_median": 7.0,
+   "read_len_mode": {
+    "100": 96
+   },
+   "read_len_mean_median": 85.6,
+   "primary_reads_median_M": 472.6,
+   "pct_dup_median": 18.8,
+   "mean_coverage_median": 10.02,
+   "mean_coverage_range": [
+    5.63,
+    19.16
+   ],
+   "nominal_depth_median": 15.3,
+   "nominal_depth_range": [
+    8.48,
+    30.63
+   ],
+   "coverage_source": {
+    "depth.txt": 62,
+    "mosdepth": 34
+   },
+   "idx_vs_md_match": 95,
+   "fingerprint_vcf": 34,
+   "fp_profile": 96
+  },
+  "Batch2": {
+   "n": 96,
+   "name_format": {
+    "PS": 96
+   },
+   "in_sheet": 96,
+   "abd_linked_patient": 95,
+   "read_groups_median": 5.0,
+   "read_len_mode": {
+    "100": 96
+   },
+   "read_len_mean_median": 89.6,
+   "primary_reads_median_M": 330.1,
+   "pct_dup_median": 19.3,
+   "mean_coverage_median": 7.04,
+   "mean_coverage_range": [
+    0.63,
+    23.89
+   ],
+   "nominal_depth_median": 10.69,
+   "nominal_depth_range": [
+    0.98,
+    34.83
+   ],
+   "coverage_source": {
+    "mosdepth": 96
+   },
+   "idx_vs_md_match": 95,
+   "fingerprint_vcf": 96,
+   "fp_profile": 96
+  },
+  "Batch3": {
+   "n": 42,
+   "name_format": {
+    "99A999999A9": 41,
+    "PS": 1
+   },
+   "in_sheet": 42,
+   "abd_linked_patient": "<5",
+   "read_groups_median": 2.0,
+   "read_len_mode": {
+    "100": 42
+   },
+   "read_len_mean_median": 82.8,
+   "primary_reads_median_M": 152.7,
+   "pct_dup_median": 12.9,
+   "mean_coverage_median": 3.35,
+   "mean_coverage_range": [
+    1.91,
+    4.91
+   ],
+   "nominal_depth_median": 4.94,
+   "nominal_depth_range": [
+    3.0,
+    7.38
+   ],
+   "coverage_source": {
+    "mosdepth": 42
+   },
+   "idx_vs_md_match": 42,
+   "fingerprint_vcf": 42,
+   "fp_profile": 42
+  },
+  "Batch4": {
+   "n": 60,
+   "name_format": {
+    "PS": 60
+   },
+   "in_sheet": 0,
+   "abd_linked_patient": 0,
+   "read_groups_median": 4.0,
+   "read_len_mode": {
+    "100": 60
+   },
+   "read_len_mean_median": 88.2,
+   "primary_reads_median_M": 348.2,
+   "pct_dup_median": 11.9,
+   "mean_coverage_median": 8.0,
+   "mean_coverage_range": [
+    4.51,
+    16.46
+   ],
+   "nominal_depth_median": 11.28,
+   "nominal_depth_range": [
+    6.1,
+    21.3
+   ],
+   "coverage_source": {
+    "mosdepth": 60
+   },
+   "idx_vs_md_match": 60,
+   "fingerprint_vcf": 60,
+   "fp_profile": 60
+  },
+  "Pilot": {
+   "n": 16,
+   "name_format": {
+    "SLX_barcode": 16
+   },
+   "in_sheet": 16,
+   "abd_linked_patient": 16,
+   "read_groups_median": 7.0,
+   "read_len_mode": {
+    "100": 16
+   },
+   "read_len_mean_median": null,
+   "primary_reads_median_M": 340.9,
+   "pct_dup_median": 17.2,
+   "mean_coverage_median": 7.72,
+   "mean_coverage_range": [
+    4.81,
+    13.44
+   ],
+   "nominal_depth_median": 11.04,
+   "nominal_depth_range": [
+    7.94,
+    21.63
+   ],
+   "coverage_source": {
+    "samtools_coverage": 16
+   },
+   "idx_vs_md_match": 16,
+   "fingerprint_vcf": 0,
+   "fp_profile": 16
+  }
+ },
+ "sheet": {
+  "rows": 234,
+  "names_unique": 233,
+  "patients": 117,
+  "rows_with_bam": 233,
+  "sheet_names_without_bam": 0
+ },
+ "redundant_dedup": {
+  "n": 96,
+  "TB": 0.835,
+  "truncated": 56,
+  "truncated_TB": 0.311,
+  "bai_TB": 0.0005
+ },
+ "same_name_across_batches": {
+  "samples": "<5",
+  "bams": "<5",
+  "batch_pairs": {
+   "Batch2+Batch3": 1
+  }
+ },
+ "pilot": {
+  "n": 16,
+  "matched_to_sheet_sampleid": 16,
+  "match_by": {
+   "sampleid": 15,
+   "sampleid_suffix": 1
+  }
+ },
+ "batch4": {
+  "n": 60,
+  "name_matches_sheet_name": 0,
+  "name_matches_other_batch_bam": 0
+ },
+ "fingerprint": {
+  "profiles": 310,
+  "flagged_profiles": {
+   "clean": 303,
+   "intermediate_oh": "<5",
+   "low_coverage": "<5",
+   "high_het": "<5"
+  },
+  "flagged_min_oh": [
+   0.0,
+   0.0,
+   0.003,
+   0.006,
+   0.006,
+   0.007,
+   0.009
+  ],
+  "pairs_used_clean": 45753,
+  "pairs_all": 47715,
+  "oh_hist_all_0_0.5_by_0.01": [
+   238,
+   46,
+   0,
+   0,
+   0,
+   1,
+   4,
+   5,
+   20,
+   25,
+   31,
+   45,
+   34,
+   32,
+   24,
+   32,
+   72,
+   117,
+   186,
+   270,
+   526,
+   1187,
+   3079,
+   6122,
+   8302,
+   8416,
+   7537,
+   6133,
+   3457,
+   1323,
+   346,
+   88,
+   14,
+   3,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "pairs_below_threshold": 273,
+  "oh_hist_0_0.5_by_0.01": [
+   231,
+   42,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   6,
+   20,
+   74,
+   297,
+   955,
+   2847,
+   5966,
+   8195,
+   8327,
+   7480,
+   6091,
+   3450,
+   1321,
+   346,
+   88,
+   14,
+   3,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "oh_gap": {
+   "max_below": 0.018298713,
+   "min_above": 0.17287233
+  },
+  "vcf_vs_pileup_same_bam_oh": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "clusters": 130,
+  "cluster_size_counts": {
+   "1": 9,
+   "2": 90,
+   "3": 12,
+   "4": 15,
+   "5": 1,
+   "6": 2,
+   "8": 1
+  }
+ },
+ "genotype_vs_sheet": {
+  "bams_compared": 250,
+  "patients_compared": 117,
+  "patients_with_>1_bam": 84,
+  "patients_split_across_genotypes": 0,
+  "genotypes_spanning_>1_sheet_patient": 0,
+  "bams_in_conflict": 0
+ },
+ "unlabelled_genotype": {
+  "Batch4": {
+   "n": 60,
+   "share_genotype_with_sheet_patient": 31,
+   "distinct_new_individuals": 13
+  }
+ },
+ "individuals_total": 130
+}

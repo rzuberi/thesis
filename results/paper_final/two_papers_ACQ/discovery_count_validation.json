@@ -1,0 +1,15 @@
+{
+ "what": "Re-count of discovery BAMs (SWGCohort/dna_seq_bam) into the 61,775 hg38 50 kb bins from a discovery 50.QDNAseq.RData, compared bin by bin with the stored 50.raw_read_counts.txt (made 2025-03-12 with QDNAseq 1.38, minMapq 37, pairedEnds FALSE)",
+ "samples": 5,
+ "name_formats": ["SLX-NNNNN.DNNN_DNNN", "SLX-NNNNN_SLX-NNNNN.DNNN_DNNN", "SLX-NNNNN.NNNN_SNNN", "SLX-NNNN.DNNN_DNNN", "SLX-NNNNN.DNNNtp_DNNNtp"],
+ "bins_compared": 308875,
+ "qdnaseq_1.42_exact_match_rate": 1.0,
+ "samtools_awk_exact_match_rate": 1.0,
+ "max_abs_bin_difference": 0,
+ "counted_reads_range": [13797543, 20996306],
+ "nominal_depth_range": [0.4296, 0.7062],
+ "read_len_mode": 50,
+ "counting_rule": "records with flag & 0x604 == 0 (mapped, not QC-fail, not duplicate), MAPQ >= 37, secondary/supplementary not filtered, binned by leftmost POS; chr prefix stripped",
+ "qdnaseq_secs_per_sample_range": [39.3, 47.6],
+ "awk_native_secs_range": [28, 46]
+}
