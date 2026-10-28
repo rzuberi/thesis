@@ -1,0 +1,19 @@
+{
+ "counts_equal_all": "TRUE",
+ "ace_fitted": "676",
+ "ichor_fitted": "667",
+ "cbs_cols_dropped": "21",
+ "cbs_vs_pkg_arm_spearman_median": "0.844079085518038",
+ "cbs_vs_pkg_tile_spearman_median": "0.533695173813491",
+ "ace_cols_dropped": "21",
+ "ichor_cols_dropped": "25",
+ "cin_drews_samples": "676",
+ "cin_mac_samples": "676",
+ "tessera_segments_per_sample_median": "113.5",
+ "cbs_segments_median": "151",
+ "cbs_segments_ge10bins_median": "113.5",
+ "ace_cellularity_quantiles": "0.05 0.11 0.725 1 1",
+ "ichor_tf_quantiles": "0 0.0107 0.0452 0.12 0.699",
+ "agent": "CNC",
+ "note": "aggregate checks from tp_cnc_feats.R (no identifiers)"
+}

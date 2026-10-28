@@ -1,0 +1,68 @@
+{
+ "task": "smoke_refit",
+ "refit_vs_stored_L_CNV": {
+  "1": {
+   "outer_max_abs_pred": 0.0,
+   "outer_lambda_equal": true,
+   "inner_max_abs_pred": 0.0,
+   "inner_lambda_equal": true
+  },
+  "2": {
+   "outer_max_abs_pred": 0.0,
+   "outer_lambda_equal": true,
+   "inner_max_abs_pred": 0.0,
+   "inner_lambda_equal": true
+  },
+  "3": {
+   "outer_max_abs_pred": 0.0,
+   "outer_lambda_equal": true,
+   "inner_max_abs_pred": 0.0,
+   "inner_lambda_equal": true
+  },
+  "4": {
+   "outer_max_abs_pred": 0.0,
+   "outer_lambda_equal": true,
+   "inner_max_abs_pred": 0.0,
+   "inner_lambda_equal": true
+  },
+  "5": {
+   "outer_max_abs_pred": 0.0,
+   "outer_lambda_equal": true,
+   "inner_max_abs_pred": 0.0,
+   "inner_lambda_equal": true
+  },
+  "6": {
+   "outer_max_abs_pred": 0.0,
+   "outer_lambda_equal": true,
+   "inner_max_abs_pred": 0.0,
+   "inner_lambda_equal": true
+  },
+  "7": {
+   "outer_max_abs_pred": 0.0,
+   "outer_lambda_equal": true,
+   "inner_max_abs_pred": 0.0,
+   "inner_lambda_equal": true
+  },
+  "8": {
+   "outer_max_abs_pred": 0.0,
+   "outer_lambda_equal": true,
+   "inner_max_abs_pred": 0.0,
+   "inner_lambda_equal": true
+  },
+  "9": {
+   "outer_max_abs_pred": 0.0,
+   "outer_lambda_equal": true,
+   "inner_max_abs_pred": 0.0,
+   "inner_lambda_equal": true
+  },
+  "10": {
+   "outer_max_abs_pred": 0.0,
+   "outer_lambda_equal": true,
+   "inner_max_abs_pred": 0.0,
+   "inner_lambda_equal": true
+  }
+ },
+ "fsa_refit_their": 0.801,
+ "fsa_stored_L_CNV": 0.801,
+ "agent": "CNC"
+}

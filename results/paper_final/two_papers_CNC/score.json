@@ -1,0 +1,1378 @@
+{
+ "task": "score",
+ "checks": {
+  "stored_L_CNV": 0.801,
+  "clean_L_IMG": 0.811,
+  "clean_L_LATE": 0.875,
+  "stored_L_IMG": 0.847
+ },
+ "score": {
+  "sample": {
+   "reference": {
+    "L-CNV": {
+     "value": 0.801,
+     "ci95": [
+      0.71,
+      0.875
+     ]
+    },
+    "L-IMG": {
+     "value": 0.811,
+     "ci95": [
+      0.753,
+      0.872
+     ]
+    },
+    "L-LATE": {
+     "value": 0.875,
+     "ci95": [
+      0.812,
+      0.925
+     ]
+    },
+    "L-IMG stored": {
+     "value": 0.847,
+     "ci95": [
+      0.798,
+      0.894
+     ]
+    }
+   },
+   "n": {
+    "n_samples": 571,
+    "n_progressor_samples": 161,
+    "n_patients": 75,
+    "n_progressor_patients": 32
+   },
+   "representations": {
+    "their": {
+     "label": "L-CNV (shipped matrix)",
+     "auroc": {
+      "value": 0.801,
+      "ci95": [
+       0.71,
+       0.875
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": -0.01,
+      "ci95": [
+       -0.114,
+       0.086
+      ],
+      "p_two_sided": 0.835
+     },
+     "late_auroc": {
+      "value": 0.875,
+      "ci95": [
+       0.812,
+       0.925
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": 0.063,
+      "ci95": [
+       0.013,
+       0.111
+      ],
+      "p_two_sided": 0.015
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     }
+    },
+    "pkg": {
+     "label": "joint package rebuild",
+     "auroc": {
+      "value": 0.845,
+      "ci95": [
+       0.766,
+       0.904
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": 0.044,
+      "ci95": [
+       -0.031,
+       0.115
+      ],
+      "p_two_sided": 0.265
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": 0.034,
+      "ci95": [
+       -0.062,
+       0.119
+      ],
+      "p_two_sided": 0.489
+     },
+     "late_auroc": {
+      "value": 0.89,
+      "ci95": [
+       0.836,
+       0.937
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": 0.079,
+      "ci95": [
+       0.031,
+       0.129
+      ],
+      "p_two_sided": 0.002
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": 0.015,
+      "ci95": [
+       -0.021,
+       0.053
+      ],
+      "p_two_sided": 0.426
+     }
+    },
+    "pkgps": {
+     "label": "per-sample package segmentation",
+     "auroc": {
+      "value": 0.785,
+      "ci95": [
+       0.723,
+       0.845
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": -0.017,
+      "ci95": [
+       -0.088,
+       0.064
+      ],
+      "p_two_sided": 0.671
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": -0.027,
+      "ci95": [
+       -0.095,
+       0.047
+      ],
+      "p_two_sided": 0.451
+     },
+     "late_auroc": {
+      "value": 0.863,
+      "ci95": [
+       0.804,
+       0.916
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": 0.052,
+      "ci95": [
+       0.016,
+       0.088
+      ],
+      "p_two_sided": 0.002
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": -0.011,
+      "ci95": [
+       -0.048,
+       0.025
+      ],
+      "p_two_sided": 0.537
+     }
+    },
+    "pkgpast": {
+     "label": "past-only package segmentation",
+     "auroc": {
+      "value": 0.8,
+      "ci95": [
+       0.723,
+       0.867
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": -0.002,
+      "ci95": [
+       -0.074,
+       0.065
+      ],
+      "p_two_sided": 0.96
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": -0.012,
+      "ci95": [
+       -0.106,
+       0.07
+      ],
+      "p_two_sided": 0.789
+     },
+     "late_auroc": {
+      "value": 0.868,
+      "ci95": [
+       0.812,
+       0.919
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": 0.057,
+      "ci95": [
+       0.013,
+       0.101
+      ],
+      "p_two_sided": 0.008
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": -0.006,
+      "ci95": [
+       -0.04,
+       0.025
+      ],
+      "p_two_sided": 0.741
+     }
+    },
+    "cbs": {
+     "label": "QDNAseq CBS segments",
+     "auroc": {
+      "value": 0.777,
+      "ci95": [
+       0.707,
+       0.839
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": -0.025,
+      "ci95": [
+       -0.102,
+       0.054
+      ],
+      "p_two_sided": 0.503
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": -0.035,
+      "ci95": [
+       -0.118,
+       0.041
+      ],
+      "p_two_sided": 0.35
+     },
+     "late_auroc": {
+      "value": 0.863,
+      "ci95": [
+       0.807,
+       0.913
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": 0.052,
+      "ci95": [
+       0.012,
+       0.093
+      ],
+      "p_two_sided": 0.005
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": -0.012,
+      "ci95": [
+       -0.046,
+       0.022
+      ],
+      "p_two_sided": 0.475
+     }
+    },
+    "ace": {
+     "label": "ACE absolute copy number",
+     "auroc": {
+      "value": 0.731,
+      "ci95": [
+       0.661,
+       0.794
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": -0.071,
+      "ci95": [
+       -0.159,
+       0.016
+      ],
+      "p_two_sided": 0.115
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": -0.081,
+      "ci95": [
+       -0.172,
+       0.0
+      ],
+      "p_two_sided": 0.053
+     },
+     "late_auroc": {
+      "value": 0.84,
+      "ci95": [
+       0.784,
+       0.886
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": 0.028,
+      "ci95": [
+       -0.015,
+       0.069
+      ],
+      "p_two_sided": 0.227
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": -0.035,
+      "ci95": [
+       -0.077,
+       0.007
+      ],
+      "p_two_sided": 0.095
+     }
+    },
+    "ichor": {
+     "label": "ichorCNA (1 Mb HMM)",
+     "auroc": {
+      "value": 0.755,
+      "ci95": [
+       0.686,
+       0.816
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": -0.046,
+      "ci95": [
+       -0.118,
+       0.029
+      ],
+      "p_two_sided": 0.231
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": -0.056,
+      "ci95": [
+       -0.136,
+       0.026
+      ],
+      "p_two_sided": 0.17
+     },
+     "late_auroc": {
+      "value": 0.867,
+      "ci95": [
+       0.807,
+       0.918
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": 0.055,
+      "ci95": [
+       0.015,
+       0.095
+      ],
+      "p_two_sided": 0.006
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": -0.008,
+      "ci95": [
+       -0.04,
+       0.025
+      ],
+      "p_two_sided": 0.585
+     }
+    },
+    "gis": {
+     "label": "genome-instability scores",
+     "auroc": {
+      "value": 0.639,
+      "ci95": [
+       0.558,
+       0.713
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": -0.162,
+      "ci95": [
+       -0.259,
+       -0.063
+      ],
+      "p_two_sided": 0.001
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": -0.172,
+      "ci95": [
+       -0.271,
+       -0.088
+      ],
+      "p_two_sided": 0.0
+     },
+     "late_auroc": {
+      "value": 0.813,
+      "ci95": [
+       0.755,
+       0.869
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": 0.002,
+      "ci95": [
+       -0.024,
+       0.026
+      ],
+      "p_two_sided": 0.958
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": -0.061,
+      "ci95": [
+       -0.101,
+       -0.019
+      ],
+      "p_two_sided": 0.01
+     }
+    },
+    "cin_drews": {
+     "label": "CIN signatures (Drews 2022)",
+     "auroc": {
+      "value": 0.652,
+      "ci95": [
+       0.573,
+       0.719
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": -0.15,
+      "ci95": [
+       -0.242,
+       -0.056
+      ],
+      "p_two_sided": 0.002
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": -0.16,
+      "ci95": [
+       -0.25,
+       -0.078
+      ],
+      "p_two_sided": 0.001
+     },
+     "late_auroc": {
+      "value": 0.81,
+      "ci95": [
+       0.751,
+       0.866
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": -0.001,
+      "ci95": [
+       -0.03,
+       0.026
+      ],
+      "p_two_sided": 0.862
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": -0.064,
+      "ci95": [
+       -0.106,
+       -0.019
+      ],
+      "p_two_sided": 0.007
+     }
+    },
+    "cin_mac": {
+     "label": "CN signatures (Macintyre 2018)",
+     "auroc": {
+      "value": 0.594,
+      "ci95": [
+       0.503,
+       0.67
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": -0.207,
+      "ci95": [
+       -0.31,
+       -0.105
+      ],
+      "p_two_sided": 0.0
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": -0.217,
+      "ci95": [
+       -0.327,
+       -0.12
+      ],
+      "p_two_sided": 0.0
+     },
+     "late_auroc": {
+      "value": 0.805,
+      "ci95": [
+       0.746,
+       0.861
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": -0.007,
+      "ci95": [
+       -0.031,
+       0.014
+      ],
+      "p_two_sided": 0.527
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": -0.07,
+      "ci95": [
+       -0.111,
+       -0.027
+      ],
+      "p_two_sided": 0.004
+     }
+    },
+    "pkg_gis": {
+     "label": "joint package + instability scores",
+     "auroc": {
+      "value": 0.848,
+      "ci95": [
+       0.772,
+       0.908
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": 0.046,
+      "ci95": [
+       -0.033,
+       0.124
+      ],
+      "p_two_sided": 0.238
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": 0.036,
+      "ci95": [
+       -0.056,
+       0.124
+      ],
+      "p_two_sided": 0.45
+     },
+     "late_auroc": {
+      "value": 0.893,
+      "ci95": [
+       0.838,
+       0.941
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": 0.082,
+      "ci95": [
+       0.033,
+       0.132
+      ],
+      "p_two_sided": 0.001
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": 0.019,
+      "ci95": [
+       -0.022,
+       0.058
+      ],
+      "p_two_sided": 0.355
+     }
+    },
+    "tessera_qn": {
+     "label": "TESSERA embeddings (TCGA rank-mapped)",
+     "auroc": {
+      "value": 0.769,
+      "ci95": [
+       0.694,
+       0.828
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": -0.033,
+      "ci95": [
+       -0.099,
+       0.031
+      ],
+      "p_two_sided": 0.29
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": -0.043,
+      "ci95": [
+       -0.128,
+       0.037
+      ],
+      "p_two_sided": 0.281
+     },
+     "late_auroc": {
+      "value": 0.858,
+      "ci95": [
+       0.797,
+       0.91
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": 0.046,
+      "ci95": [
+       0.007,
+       0.085
+      ],
+      "p_two_sided": 0.027
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": -0.017,
+      "ci95": [
+       -0.052,
+       0.017
+      ],
+      "p_two_sided": 0.304
+     }
+    },
+    "tessera_raw": {
+     "label": "TESSERA embeddings (raw log2)",
+     "auroc": {
+      "value": 0.682,
+      "ci95": [
+       0.606,
+       0.749
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": -0.12,
+      "ci95": [
+       -0.204,
+       -0.038
+      ],
+      "p_two_sided": 0.005
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": -0.13,
+      "ci95": [
+       -0.226,
+       -0.043
+      ],
+      "p_two_sided": 0.003
+     },
+     "late_auroc": {
+      "value": 0.821,
+      "ci95": [
+       0.758,
+       0.876
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": 0.009,
+      "ci95": [
+       -0.029,
+       0.048
+      ],
+      "p_two_sided": 0.692
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": -0.054,
+      "ci95": [
+       -0.098,
+       -0.009
+      ],
+      "p_two_sided": 0.018
+     }
+    }
+   }
+  },
+  "patient_weighted": {
+   "reference": {
+    "L-CNV": {
+     "value": 0.822,
+     "ci95": [
+      0.738,
+      0.887
+     ]
+    },
+    "L-IMG": {
+     "value": 0.832,
+     "ci95": [
+      0.775,
+      0.884
+     ]
+    },
+    "L-LATE": {
+     "value": 0.891,
+     "ci95": [
+      0.839,
+      0.934
+     ]
+    },
+    "L-IMG stored": {
+     "value": 0.852,
+     "ci95": [
+      0.803,
+      0.898
+     ]
+    }
+   },
+   "n": {
+    "n_samples": 571,
+    "n_progressor_samples": 161,
+    "n_patients": 75,
+    "n_progressor_patients": 32
+   },
+   "representations": {
+    "their": {
+     "label": "L-CNV (shipped matrix)",
+     "auroc": {
+      "value": 0.822,
+      "ci95": [
+       0.738,
+       0.887
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": -0.01,
+      "ci95": [
+       -0.102,
+       0.072
+      ],
+      "p_two_sided": 0.819
+     },
+     "late_auroc": {
+      "value": 0.891,
+      "ci95": [
+       0.839,
+       0.934
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": 0.059,
+      "ci95": [
+       0.016,
+       0.102
+      ],
+      "p_two_sided": 0.006
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": 0.0,
+      "ci95": [
+       0.0,
+       0.0
+      ],
+      "p_two_sided": 1.0
+     }
+    },
+    "pkg": {
+     "label": "joint package rebuild",
+     "auroc": {
+      "value": 0.832,
+      "ci95": [
+       0.754,
+       0.899
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": 0.01,
+      "ci95": [
+       -0.061,
+       0.084
+      ],
+      "p_two_sided": 0.761
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": 0.0,
+      "ci95": [
+       -0.092,
+       0.09
+      ],
+      "p_two_sided": 0.987
+     },
+     "late_auroc": {
+      "value": 0.893,
+      "ci95": [
+       0.841,
+       0.938
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": 0.061,
+      "ci95": [
+       0.014,
+       0.111
+      ],
+      "p_two_sided": 0.011
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": 0.002,
+      "ci95": [
+       -0.03,
+       0.035
+      ],
+      "p_two_sided": 0.887
+     }
+    },
+    "pkgps": {
+     "label": "per-sample package segmentation",
+     "auroc": {
+      "value": 0.806,
+      "ci95": [
+       0.747,
+       0.857
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": -0.016,
+      "ci95": [
+       -0.075,
+       0.057
+      ],
+      "p_two_sided": 0.64
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": -0.026,
+      "ci95": [
+       -0.092,
+       0.044
+      ],
+      "p_two_sided": 0.435
+     },
+     "late_auroc": {
+      "value": 0.881,
+      "ci95": [
+       0.83,
+       0.924
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": 0.049,
+      "ci95": [
+       0.018,
+       0.084
+      ],
+      "p_two_sided": 0.001
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": -0.01,
+      "ci95": [
+       -0.037,
+       0.02
+      ],
+      "p_two_sided": 0.493
+     }
+    },
+    "pkgpast": {
+     "label": "past-only package segmentation",
+     "auroc": {
+      "value": 0.796,
+      "ci95": [
+       0.726,
+       0.863
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": -0.026,
+      "ci95": [
+       -0.092,
+       0.046
+      ],
+      "p_two_sided": 0.471
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": -0.036,
+      "ci95": [
+       -0.124,
+       0.048
+      ],
+      "p_two_sided": 0.406
+     },
+     "late_auroc": {
+      "value": 0.877,
+      "ci95": [
+       0.826,
+       0.922
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": 0.045,
+      "ci95": [
+       0.006,
+       0.087
+      ],
+      "p_two_sided": 0.022
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": -0.014,
+      "ci95": [
+       -0.045,
+       0.016
+      ],
+      "p_two_sided": 0.421
+     }
+    },
+    "cbs": {
+     "label": "QDNAseq CBS segments",
+     "auroc": {
+      "value": 0.765,
+      "ci95": [
+       0.697,
+       0.832
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": -0.057,
+      "ci95": [
+       -0.133,
+       0.022
+      ],
+      "p_two_sided": 0.154
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": -0.067,
+      "ci95": [
+       -0.149,
+       0.014
+      ],
+      "p_two_sided": 0.108
+     },
+     "late_auroc": {
+      "value": 0.868,
+      "ci95": [
+       0.818,
+       0.913
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": 0.036,
+      "ci95": [
+       0.002,
+       0.072
+      ],
+      "p_two_sided": 0.041
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": -0.023,
+      "ci95": [
+       -0.056,
+       0.009
+      ],
+      "p_two_sided": 0.144
+     }
+    },
+    "ace": {
+     "label": "ACE absolute copy number",
+     "auroc": {
+      "value": 0.711,
+      "ci95": [
+       0.635,
+       0.783
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": -0.111,
+      "ci95": [
+       -0.202,
+       -0.017
+      ],
+      "p_two_sided": 0.023
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": -0.121,
+      "ci95": [
+       -0.211,
+       -0.036
+      ],
+      "p_two_sided": 0.003
+     },
+     "late_auroc": {
+      "value": 0.839,
+      "ci95": [
+       0.784,
+       0.887
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": 0.007,
+      "ci95": [
+       -0.03,
+       0.047
+      ],
+      "p_two_sided": 0.766
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": -0.052,
+      "ci95": [
+       -0.095,
+       -0.014
+      ],
+      "p_two_sided": 0.014
+     }
+    },
+    "ichor": {
+     "label": "ichorCNA (1 Mb HMM)",
+     "auroc": {
+      "value": 0.773,
+      "ci95": [
+       0.704,
+       0.837
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": -0.049,
+      "ci95": [
+       -0.122,
+       0.035
+      ],
+      "p_two_sided": 0.221
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": -0.059,
+      "ci95": [
+       -0.141,
+       0.022
+      ],
+      "p_two_sided": 0.158
+     },
+     "late_auroc": {
+      "value": 0.884,
+      "ci95": [
+       0.835,
+       0.925
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": 0.052,
+      "ci95": [
+       0.017,
+       0.09
+      ],
+      "p_two_sided": 0.001
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": -0.007,
+      "ci95": [
+       -0.038,
+       0.029
+      ],
+      "p_two_sided": 0.657
+     }
+    },
+    "gis": {
+     "label": "genome-instability scores",
+     "auroc": {
+      "value": 0.631,
+      "ci95": [
+       0.541,
+       0.716
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": -0.191,
+      "ci95": [
+       -0.293,
+       -0.094
+      ],
+      "p_two_sided": 0.0
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": -0.201,
+      "ci95": [
+       -0.303,
+       -0.103
+      ],
+      "p_two_sided": 0.0
+     },
+     "late_auroc": {
+      "value": 0.824,
+      "ci95": [
+       0.765,
+       0.878
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": -0.008,
+      "ci95": [
+       -0.037,
+       0.019
+      ],
+      "p_two_sided": 0.552
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": -0.067,
+      "ci95": [
+       -0.103,
+       -0.032
+      ],
+      "p_two_sided": 0.0
+     }
+    },
+    "cin_drews": {
+     "label": "CIN signatures (Drews 2022)",
+     "auroc": {
+      "value": 0.636,
+      "ci95": [
+       0.554,
+       0.713
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": -0.186,
+      "ci95": [
+       -0.286,
+       -0.084
+      ],
+      "p_two_sided": 0.0
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": -0.196,
+      "ci95": [
+       -0.295,
+       -0.101
+      ],
+      "p_two_sided": 0.0
+     },
+     "late_auroc": {
+      "value": 0.823,
+      "ci95": [
+       0.769,
+       0.874
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": -0.009,
+      "ci95": [
+       -0.037,
+       0.02
+      ],
+      "p_two_sided": 0.495
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": -0.068,
+      "ci95": [
+       -0.107,
+       -0.026
+      ],
+      "p_two_sided": 0.001
+     }
+    },
+    "cin_mac": {
+     "label": "CN signatures (Macintyre 2018)",
+     "auroc": {
+      "value": 0.557,
+      "ci95": [
+       0.47,
+       0.642
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": -0.265,
+      "ci95": [
+       -0.365,
+       -0.151
+      ],
+      "p_two_sided": 0.0
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": -0.275,
+      "ci95": [
+       -0.382,
+       -0.168
+      ],
+      "p_two_sided": 0.0
+     },
+     "late_auroc": {
+      "value": 0.815,
+      "ci95": [
+       0.759,
+       0.869
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": -0.017,
+      "ci95": [
+       -0.041,
+       0.005
+      ],
+      "p_two_sided": 0.133
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": -0.076,
+      "ci95": [
+       -0.113,
+       -0.037
+      ],
+      "p_two_sided": 0.001
+     }
+    },
+    "pkg_gis": {
+     "label": "joint package + instability scores",
+     "auroc": {
+      "value": 0.839,
+      "ci95": [
+       0.762,
+       0.901
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": 0.017,
+      "ci95": [
+       -0.062,
+       0.094
+      ],
+      "p_two_sided": 0.644
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": 0.007,
+      "ci95": [
+       -0.08,
+       0.09
+      ],
+      "p_two_sided": 0.873
+     },
+     "late_auroc": {
+      "value": 0.895,
+      "ci95": [
+       0.843,
+       0.94
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": 0.063,
+      "ci95": [
+       0.016,
+       0.111
+      ],
+      "p_two_sided": 0.009
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": 0.004,
+      "ci95": [
+       -0.034,
+       0.041
+      ],
+      "p_two_sided": 0.815
+     }
+    },
+    "tessera_qn": {
+     "label": "TESSERA embeddings (TCGA rank-mapped)",
+     "auroc": {
+      "value": 0.751,
+      "ci95": [
+       0.668,
+       0.823
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": -0.072,
+      "ci95": [
+       -0.163,
+       0.018
+      ],
+      "p_two_sided": 0.123
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": -0.082,
+      "ci95": [
+       -0.166,
+       -0.001
+      ],
+      "p_two_sided": 0.047
+     },
+     "late_auroc": {
+      "value": 0.854,
+      "ci95": [
+       0.785,
+       0.911
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": 0.022,
+      "ci95": [
+       -0.022,
+       0.066
+      ],
+      "p_two_sided": 0.33
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": -0.037,
+      "ci95": [
+       -0.091,
+       0.005
+      ],
+      "p_two_sided": 0.098
+     }
+    },
+    "tessera_raw": {
+     "label": "TESSERA embeddings (raw log2)",
+     "auroc": {
+      "value": 0.652,
+      "ci95": [
+       0.561,
+       0.737
+      ]
+     },
+     "delta_vs_L_CNV": {
+      "delta": -0.17,
+      "ci95": [
+       -0.273,
+       -0.074
+      ],
+      "p_two_sided": 0.001
+     },
+     "delta_vs_clean_L_IMG": {
+      "delta": -0.181,
+      "ci95": [
+       -0.278,
+       -0.086
+      ],
+      "p_two_sided": 0.0
+     },
+     "late_auroc": {
+      "value": 0.819,
+      "ci95": [
+       0.75,
+       0.879
+      ]
+     },
+     "late_minus_clean_L_IMG": {
+      "delta": -0.013,
+      "ci95": [
+       -0.057,
+       0.029
+      ],
+      "p_two_sided": 0.549
+     },
+     "late_minus_clean_L_LATE": {
+      "delta": -0.072,
+      "ci95": [
+       -0.127,
+       -0.027
+      ],
+      "p_two_sided": 0.004
+     }
+    }
+   }
+  }
+ },
+ "new_representations": [
+  "cbs",
+  "ace",
+  "ichor",
+  "gis",
+  "cin_drews",
+  "cin_mac",
+  "pkg_gis",
+  "tessera_qn",
+  "tessera_raw"
+ ],
+ "note": "fold-stratified AUROC over the 571 pre-event samples (fsa), patient-weighted = pair weight 1/(n_i n_j); 2,000-draw patient bootstrap, predictions fixed, paired deltas on the same draws. L-IMG = ART clean-tile refit; L-LATE (reference) = (L-CNV + clean L-IMG) / 2; LATE:<rep> = (CN representation + clean L-IMG) / 2. Same outer folds, recipe and nested lambda for every representation.",
+ "agent": "CNC"
+}
