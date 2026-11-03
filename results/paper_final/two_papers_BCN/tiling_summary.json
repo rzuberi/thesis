@@ -1,0 +1,76 @@
+{
+ "slides_done": 683,
+ "slides_in_key": 683,
+ "products": {
+  "C13239-01": 509,
+  "C13210": 174
+ },
+ "mpp0": {
+  "0.22089": 509,
+  "0.2204": 174
+ },
+ "seg_level": {
+  "7": 683
+ },
+ "tissue_mm2": {
+  "min": 0.18483492162556278,
+  "median": 9.72065782348517,
+  "max": 203.6743231985052,
+  "total": 13245.315388879855
+ },
+ "tiles_A": {
+  "min": 26.0,
+  "median": 1032.0,
+  "max": 21070.0,
+  "total": 1383239.0
+ },
+ "tiles_B": {
+  "min": 7.0,
+  "median": 278.0,
+  "max": 5609.0,
+  "total": 369990.0
+ },
+ "tiles_segformer": {
+  "min": 0.0,
+  "median": 52.0,
+  "max": 1028.0,
+  "total": 68944.0
+ },
+ "tiles_cellvit": {
+  "min": 7.0,
+  "median": 261.0,
+  "max": 5212.0,
+  "total": 345867.0
+ },
+ "out_mpp_A": {
+  "min": 0.4536074016105824,
+  "median": 0.4536074016105824,
+  "max": 0.45457550912457023,
+  "total": 309.98230600746166
+ },
+ "out_mpp_B": {
+  "min": 0.9072148032211648,
+  "median": 0.9072148032211648,
+  "max": 0.9091510182491405,
+  "total": 619.9646120149233
+ },
+ "slides_with_0_tiles_A": 0,
+ "storage_GB": {
+  "A": 208.216287616,
+  "B": 55.693942144,
+  "segformer_raw_1024_if_extracted": 216.879071232,
+  "cellvit_raw_1024_if_extracted": 1088.003506176
+ },
+ "sec_per_slide": {
+  "min": 5.2,
+  "median": 99.2,
+  "max": 1672.8,
+  "total": 125993.79999999999
+ },
+ "arrays_mismatched": 0,
+ "tmp_files_left": 0,
+ "tiles_kept_tis_ge_0.15": {
+  "A": 1097246,
+  "B": 298665
+ }
+}
