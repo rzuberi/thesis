@@ -1,0 +1,71 @@
+{
+ "L-CNV": 0.801,
+ "L-IMG stored": 0.847,
+ "L-IMG clean": 0.811,
+ "L-LATE clean": 0.875,
+ "L-LATE stored": 0.889,
+ "P published": 0.823,
+ "match": {
+  "L-CNV": true,
+  "L-IMG stored": true,
+  "L-IMG clean": true,
+  "L-LATE clean": true,
+  "L-LATE stored": true,
+  "P published": true
+ },
+ "inner_covers_all_training_rows": true,
+ "n": {
+  "setC_samples": 676,
+  "setC_patients": 80,
+  "pre_samples": 571,
+  "pre_patients": 75,
+  "pre_P_patients": 32,
+  "pre_endoscopies": 308,
+  "setC_endoscopies": 347
+ },
+ "loc_missing": 0,
+ "loc_range": [
+  1.0,
+  9.0
+ ],
+ "endo_units_mixed_months": 0,
+ "mean_altered_windows": 24.438,
+ "mean_altered_arms": 1.664,
+ "windows": 589,
+ "arms": 44,
+ "cnv_col_sd_median": 0.634,
+ "cnv_col_mean_abs_median": 0.013,
+ "cut_lo_median": {
+  "CN": 0.177,
+  "HE": 0.153,
+  "COMB": 0.292
+ },
+ "cut_hi_median": {
+  "CN": 0.432,
+  "HE": 0.434,
+  "COMB": 0.397
+ },
+ "fig3b_bins": {
+  ">96": 12,
+  "72-96": 8,
+  "48-72": 18,
+  "24-48": 25,
+  "12-24": 17,
+  "1-12": 15,
+  "Endpoint": 28
+ },
+ "fig4b_patients": {
+  "CN": 68,
+  "GRADE": 68
+ },
+ "pathology_counts": {
+  "NDBE": 463,
+  "LGD": 91,
+  "ID": 75,
+  "HGD": 26,
+  "IMC": 21
+ },
+ "p53_known": 517,
+ "lc_smoke_cnv_max_abs_diff": 0.0,
+ "lc_smoke_clean_max_abs_diff": 0.0
+}

@@ -1,0 +1,298 @@
+{
+ "20": {
+  "n_train_patients_mean": 20.0,
+  "cnv": {
+   "auc_mean": 0.601,
+   "auc_sem": 0.022,
+   "auc_per_rep": [
+    0.626,
+    0.663,
+    0.689,
+    0.619,
+    0.539,
+    0.572,
+    0.584,
+    0.6,
+    0.456,
+    0.663
+   ],
+   "nonzero_mean": 25.01,
+   "nonzero_sem": 1.757
+  },
+  "clean": {
+   "auc_mean": 0.665,
+   "auc_sem": 0.012,
+   "auc_per_rep": [
+    0.624,
+    0.747,
+    0.647,
+    0.623,
+    0.694,
+    0.683,
+    0.661,
+    0.681,
+    0.63,
+    0.661
+   ],
+   "nonzero_mean": 46.38,
+   "nonzero_sem": 2.376
+  },
+  "comb": {
+   "auc_mean": 0.692,
+   "auc_sem": 0.017,
+   "auc_per_rep": [
+    0.692,
+    0.777,
+    0.736,
+    0.673,
+    0.662,
+    0.712,
+    0.679,
+    0.696,
+    0.578,
+    0.714
+   ]
+  }
+ },
+ "30": {
+  "n_train_patients_mean": 30.0,
+  "cnv": {
+   "auc_mean": 0.701,
+   "auc_sem": 0.015,
+   "auc_per_rep": [
+    0.732,
+    0.73,
+    0.666,
+    0.756,
+    0.634,
+    0.72,
+    0.765,
+    0.635,
+    0.66,
+    0.71
+   ],
+   "nonzero_mean": 41.77,
+   "nonzero_sem": 1.143
+  },
+  "clean": {
+   "auc_mean": 0.722,
+   "auc_sem": 0.011,
+   "auc_per_rep": [
+    0.746,
+    0.728,
+    0.722,
+    0.735,
+    0.699,
+    0.708,
+    0.788,
+    0.652,
+    0.718,
+    0.721
+   ],
+   "nonzero_mean": 65.43,
+   "nonzero_sem": 1.933
+  },
+  "comb": {
+   "auc_mean": 0.776,
+   "auc_sem": 0.014,
+   "auc_per_rep": [
+    0.8,
+    0.8,
+    0.767,
+    0.795,
+    0.735,
+    0.788,
+    0.87,
+    0.718,
+    0.732,
+    0.755
+   ]
+  }
+ },
+ "40": {
+  "n_train_patients_mean": 40.0,
+  "cnv": {
+   "auc_mean": 0.711,
+   "auc_sem": 0.02,
+   "auc_per_rep": [
+    0.743,
+    0.753,
+    0.695,
+    0.668,
+    0.637,
+    0.625,
+    0.652,
+    0.777,
+    0.782,
+    0.773
+   ],
+   "nonzero_mean": 50.74,
+   "nonzero_sem": 3.061
+  },
+  "clean": {
+   "auc_mean": 0.756,
+   "auc_sem": 0.01,
+   "auc_per_rep": [
+    0.766,
+    0.776,
+    0.803,
+    0.797,
+    0.73,
+    0.7,
+    0.766,
+    0.725,
+    0.736,
+    0.764
+   ],
+   "nonzero_mean": 74.16,
+   "nonzero_sem": 2.974
+  },
+  "comb": {
+   "auc_mean": 0.797,
+   "auc_sem": 0.013,
+   "auc_per_rep": [
+    0.793,
+    0.833,
+    0.833,
+    0.8,
+    0.742,
+    0.718,
+    0.784,
+    0.819,
+    0.817,
+    0.835
+   ]
+  }
+ },
+ "50": {
+  "n_train_patients_mean": 50.0,
+  "cnv": {
+   "auc_mean": 0.722,
+   "auc_sem": 0.014,
+   "auc_per_rep": [
+    0.732,
+    0.73,
+    0.724,
+    0.708,
+    0.704,
+    0.699,
+    0.757,
+    0.689,
+    0.819,
+    0.659
+   ],
+   "nonzero_mean": 61.1,
+   "nonzero_sem": 1.844
+  },
+  "clean": {
+   "auc_mean": 0.77,
+   "auc_sem": 0.009,
+   "auc_per_rep": [
+    0.789,
+    0.777,
+    0.727,
+    0.796,
+    0.742,
+    0.8,
+    0.808,
+    0.733,
+    0.75,
+    0.779
+   ],
+   "nonzero_mean": 89.0,
+   "nonzero_sem": 2.303
+  },
+  "comb": {
+   "auc_mean": 0.82,
+   "auc_sem": 0.009,
+   "auc_per_rep": [
+    0.84,
+    0.815,
+    0.81,
+    0.832,
+    0.796,
+    0.818,
+    0.869,
+    0.777,
+    0.849,
+    0.794
+   ]
+  }
+ },
+ "60": {
+  "n_train_patients_mean": 60.0,
+  "cnv": {
+   "auc_mean": 0.755,
+   "auc_sem": 0.012,
+   "auc_per_rep": [
+    0.681,
+    0.766,
+    0.784,
+    0.746,
+    0.766,
+    0.714,
+    0.749,
+    0.752,
+    0.812,
+    0.779
+   ],
+   "nonzero_mean": 70.64,
+   "nonzero_sem": 1.349
+  },
+  "clean": {
+   "auc_mean": 0.796,
+   "auc_sem": 0.009,
+   "auc_per_rep": [
+    0.774,
+    0.791,
+    0.765,
+    0.853,
+    0.776,
+    0.818,
+    0.819,
+    0.791,
+    0.775,
+    0.801
+   ],
+   "nonzero_mean": 103.04,
+   "nonzero_sem": 3.032
+  },
+  "comb": {
+   "auc_mean": 0.847,
+   "auc_sem": 0.006,
+   "auc_per_rep": [
+    0.825,
+    0.847,
+    0.83,
+    0.866,
+    0.837,
+    0.818,
+    0.856,
+    0.85,
+    0.873,
+    0.866
+   ]
+  }
+ },
+ "999": {
+  "incomplete": {
+   "cnv": 1,
+   "clean": 1
+  }
+ },
+ "full_stored": {
+  "cnv": {
+   "auc_mean": 0.801,
+   "auc_sem": 0.01
+  },
+  "clean": {
+   "auc_mean": 0.811,
+   "auc_sem": 0.006
+  },
+  "comb": {
+   "auc_mean": 0.875,
+   "auc_sem": 0.007
+  }
+ },
+ "note": "held-out = full outer test fold; training patients of each outer fold subsampled to K (status-stratified); 10 repeats; sem over repeats (as Killcoyne ED6)."
+}
