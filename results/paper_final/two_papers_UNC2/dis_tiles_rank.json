@@ -1,0 +1,612 @@
+{
+ "task": "dis",
+ "agent": "UNC2",
+ "set": "tiles",
+ "scale": "rank",
+ "members": [
+  "tile subset 1 (32 clean tiles)",
+  "tile subset 2 (32 clean tiles)",
+  "tile subset 3 (32 clean tiles)",
+  "tile subset 4 (32 clean tiles)",
+  "tile subset 5 (32 clean tiles)",
+  "tile subset 6 (32 clean tiles)",
+  "tile subset 7 (32 clean tiles)",
+  "tile subset 8 (32 clean tiles)",
+  "tile subset 9 (32 clean tiles)",
+  "tile subset 10 (32 clean tiles)"
+ ],
+ "n_members": 10,
+ "draws": 2000,
+ "smoke_R49_mean_logit_gate_clean": {
+  "caught": 31.1,
+  "np_flagged": 32.3,
+  "seq_per_patient": 1.701,
+  "reproduces_ART_gate_json": true
+ },
+ "smoke_clean_member_vs_state_max_abs": null,
+ "extra": {
+  "spearman_D_vs_UNC_repeat_SD_endoscopy": -0.122,
+  "spearman_D_vs_UNC_repeat_SD_sample": -0.165,
+  "D_endoscopy_median": 0.135,
+  "D_endoscopy_iqr": [
+   0.091,
+   0.18
+  ],
+  "mean_pairwise_spearman_between_members_endoscopy": 0.728
+ },
+ "endoscopy_steps1to3": {
+  "spearman_D_M": {
+   "value": -0.394,
+   "ci95": [
+    -0.492,
+    -0.299
+   ]
+  },
+  "spearman_D_entropy": {
+   "value": 0.279,
+   "ci95": [
+    0.172,
+    0.378
+   ]
+  },
+  "spearman_D_abs_ensemble_mean": {
+   "value": -0.549,
+   "ci95": [
+    -0.627,
+    -0.465
+   ]
+  },
+  "error_rate": {
+   "value": 0.36,
+   "ci95": [
+    0.289,
+    0.431
+   ]
+  },
+  "auroc_D_for_error": {
+   "value": 0.623,
+   "ci95": [
+    0.56,
+    0.682
+   ]
+  },
+  "auroc_negM_for_error": {
+   "value": 0.634,
+   "ci95": [
+    0.576,
+    0.692
+   ]
+  },
+  "auroc_entropy_for_error": {
+   "value": 0.788,
+   "ci95": [
+    0.696,
+    0.864
+   ]
+  },
+  "apparent_auroc_gain_over_M": {
+   "value": 0.015,
+   "ci95": [
+    -0.001,
+    0.056
+   ]
+  },
+  "beta_D_per_sd_given_M": {
+   "value": 0.257,
+   "ci95": [
+    0.031,
+    0.478
+   ]
+  },
+  "beta_D_given_M_cluster_wald_p": {
+   "value": 0.025
+  },
+  "cv_auroc_M": {
+   "value": 0.613,
+   "ci95": [
+    0.555,
+    0.681
+   ]
+  },
+  "cv_auroc_M_plus_D": {
+   "value": 0.62,
+   "ci95": [
+    0.567,
+    0.696
+   ]
+  },
+  "cv_auroc_gain_over_M": {
+   "value": 0.007,
+   "ci95": [
+    -0.011,
+    0.057
+   ]
+  },
+  "cv_auroc_flex": {
+   "value": 0.824,
+   "ci95": [
+    0.754,
+    0.901
+   ]
+  },
+  "cv_auroc_flex_plus_D": {
+   "value": 0.821,
+   "ci95": [
+    0.754,
+    0.9
+   ]
+  },
+  "cv_auroc_gain_over_flex": {
+   "value": -0.004,
+   "ci95": [
+    -0.008,
+    0.01
+   ]
+  },
+  "beta_D_per_sd_given_flex": {
+   "value": 0.162,
+   "ci95": [
+    -0.1,
+    0.459
+   ]
+  },
+  "apparent_auroc_gain_over_flex": {
+   "value": -0.001,
+   "ci95": [
+    -0.004,
+    0.009
+   ]
+  },
+  "beta_D_given_flex_cluster_wald_p": {
+   "value": 0.244
+  },
+  "cv_auroc_flex_plus_ensemble_mean": {
+   "value": 0.825,
+   "ci95": [
+    0.76,
+    0.902
+   ]
+  },
+  "cv_auroc_flex_plus_ensemble_mean_plus_D": {
+   "value": 0.821,
+   "ci95": [
+    0.759,
+    0.901
+   ]
+  },
+  "cv_auroc_gain_over_flex_plus_ensemble_mean": {
+   "value": -0.004,
+   "ci95": [
+    -0.006,
+    0.006
+   ]
+  },
+  "beta_D_per_sd_given_flex_plus_ensemble_mean": {
+   "value": 0.066,
+   "ci95": [
+    -0.193,
+    0.346
+   ]
+  },
+  "apparent_auroc_gain_over_flex_plus_ensemble_mean": {
+   "value": -0.001,
+   "ci95": [
+    -0.003,
+    0.005
+   ]
+  },
+  "beta_D_given_flex_plus_ensemble_mean_cluster_wald_p": {
+   "value": 0.625
+  }
+ },
+ "sample_steps1to3": {
+  "spearman_D_M": {
+   "value": -0.452,
+   "ci95": [
+    -0.534,
+    -0.371
+   ]
+  },
+  "spearman_D_entropy": {
+   "value": 0.254,
+   "ci95": [
+    0.162,
+    0.346
+   ]
+  },
+  "spearman_D_abs_ensemble_mean": {
+   "value": -0.606,
+   "ci95": [
+    -0.666,
+    -0.543
+   ]
+  },
+  "error_rate": {
+   "value": 0.439,
+   "ci95": [
+    0.369,
+    0.501
+   ]
+  },
+  "auroc_D_for_error": {
+   "value": 0.623,
+   "ci95": [
+    0.578,
+    0.669
+   ]
+  },
+  "auroc_negM_for_error": {
+   "value": 0.621,
+   "ci95": [
+    0.569,
+    0.673
+   ]
+  },
+  "auroc_entropy_for_error": {
+   "value": 0.777,
+   "ci95": [
+    0.698,
+    0.846
+   ]
+  },
+  "apparent_auroc_gain_over_M": {
+   "value": 0.017,
+   "ci95": [
+    0.001,
+    0.041
+   ]
+  },
+  "beta_D_per_sd_given_M": {
+   "value": 0.265,
+   "ci95": [
+    0.104,
+    0.424
+   ]
+  },
+  "beta_D_given_M_cluster_wald_p": {
+   "value": 0.001
+  },
+  "cv_auroc_M": {
+   "value": 0.609,
+   "ci95": [
+    0.555,
+    0.664
+   ]
+  },
+  "cv_auroc_M_plus_D": {
+   "value": 0.623,
+   "ci95": [
+    0.571,
+    0.679
+   ]
+  },
+  "cv_auroc_gain_over_M": {
+   "value": 0.014,
+   "ci95": [
+    -0.001,
+    0.041
+   ]
+  },
+  "cv_auroc_flex": {
+   "value": 0.838,
+   "ci95": [
+    0.762,
+    0.904
+   ]
+  },
+  "cv_auroc_flex_plus_D": {
+   "value": 0.837,
+   "ci95": [
+    0.763,
+    0.904
+   ]
+  },
+  "cv_auroc_gain_over_flex": {
+   "value": -0.001,
+   "ci95": [
+    -0.003,
+    0.007
+   ]
+  },
+  "beta_D_per_sd_given_flex": {
+   "value": 0.204,
+   "ci95": [
+    -0.023,
+    0.433
+   ]
+  },
+  "apparent_auroc_gain_over_flex": {
+   "value": -0.0,
+   "ci95": [
+    -0.002,
+    0.006
+   ]
+  },
+  "beta_D_given_flex_cluster_wald_p": {
+   "value": 0.075
+  },
+  "cv_auroc_flex_plus_ensemble_mean": {
+   "value": 0.839,
+   "ci95": [
+    0.764,
+    0.904
+   ]
+  },
+  "cv_auroc_flex_plus_ensemble_mean_plus_D": {
+   "value": 0.837,
+   "ci95": [
+    0.764,
+    0.904
+   ]
+  },
+  "cv_auroc_gain_over_flex_plus_ensemble_mean": {
+   "value": -0.001,
+   "ci95": [
+    -0.003,
+    0.004
+   ]
+  },
+  "beta_D_per_sd_given_flex_plus_ensemble_mean": {
+   "value": 0.116,
+   "ci95": [
+    -0.117,
+    0.359
+   ]
+  },
+  "apparent_auroc_gain_over_flex_plus_ensemble_mean": {
+   "value": -0.0,
+   "ci95": [
+    -0.002,
+    0.003
+   ]
+  },
+  "beta_D_given_flex_plus_ensemble_mean_cluster_wald_p": {
+   "value": 0.337
+  }
+ },
+ "endoscopy_steps4to5": {
+  "confident_topD.n": {
+   "value": 29.1,
+   "ci95": [
+    21.297,
+    37.6
+   ]
+  },
+  "confident_topD.wrong": {
+   "value": 8.7,
+   "ci95": [
+    4.9,
+    12.7
+   ]
+  },
+  "confident_topD.wrong_rate": {
+   "value": 0.299,
+   "ci95": [
+    0.19,
+    0.411
+   ]
+  },
+  "confident_topD.cnv_fixes": {
+   "value": "<5"
+  },
+  "confident_topD.late_fixes": {
+   "value": "<5"
+  },
+  "confident_topD.cnv_breaks_correct": {
+   "value": 8.5,
+   "ci95": [
+    4.5,
+    13.3
+   ]
+  },
+  "confident_topD.late_breaks_correct": {
+   "value": "<5"
+  },
+  "confident_topD.cnv_net_per_100": {
+   "value": -15.808,
+   "ci95": [
+    -33.63,
+    0.956
+   ]
+  },
+  "confident_topD.late_net_per_100": {
+   "value": -7.56,
+   "ci95": [
+    -19.568,
+    3.416
+   ]
+  },
+  "confident_restD.n": {
+   "value": 131.3,
+   "ci95": [
+    111.898,
+    150.9
+   ]
+  },
+  "confident_restD.wrong": {
+   "value": 23.1,
+   "ci95": [
+    14.3,
+    33.5
+   ]
+  },
+  "confident_restD.wrong_rate": {
+   "value": 0.176,
+   "ci95": [
+    0.113,
+    0.252
+   ]
+  },
+  "confident_restD.cnv_fixes": {
+   "value": 10.3,
+   "ci95": [
+    5.4,
+    16.802
+   ]
+  },
+  "confident_restD.late_fixes": {
+   "value": "<5"
+  },
+  "confident_restD.cnv_breaks_correct": {
+   "value": 34.3,
+   "ci95": [
+    24.197,
+    45.402
+   ]
+  },
+  "confident_restD.late_breaks_correct": {
+   "value": 7.9,
+   "ci95": [
+    2.4,
+    15.702
+   ]
+  },
+  "confident_restD.cnv_net_per_100": {
+   "value": -18.279,
+   "ci95": [
+    -28.013,
+    -8.662
+   ]
+  },
+  "confident_restD.late_net_per_100": {
+   "value": -4.417,
+   "ci95": [
+    -10.592,
+    -0.14
+   ]
+  },
+  "wrong_rate_topD_minus_rest": {
+   "value": 0.123,
+   "ci95": [
+    0.014,
+    0.227
+   ]
+  },
+  "budget_band.sequenced": {
+   "value": 127.6,
+   "ci95": [
+    105.3,
+    150.702
+   ]
+  },
+  "budget_band.np_corrected": {
+   "value": 23.6,
+   "ci95": [
+    15.2,
+    32.402
+   ]
+  },
+  "budget_band.progressor_lost": {
+   "value": "<5"
+  },
+  "budget_band.progressor_rescued": {
+   "value": "<5"
+  },
+  "budget_band.np_newly_flagged": {
+   "value": 12.9,
+   "ci95": [
+    8.1,
+    18.6
+   ]
+  },
+  "budget_band.np_flagged_final": {
+   "value": 84.8,
+   "ci95": [
+    60.7,
+    110.8
+   ]
+  },
+  "budget_band.progressor_flagged_final": {
+   "value": 79.7,
+   "ci95": [
+    53.795,
+    108.702
+   ]
+  },
+  "budget_band.overlap_with_band": {
+   "value": 127.6,
+   "ci95": [
+    105.3,
+    150.702
+   ]
+  },
+  "budget_D.sequenced": {
+   "value": 127.6,
+   "ci95": [
+    105.3,
+    150.702
+   ]
+  },
+  "budget_D.np_corrected": {
+   "value": 15.6,
+   "ci95": [
+    9.197,
+    22.8
+   ]
+  },
+  "budget_D.progressor_lost": {
+   "value": "<5"
+  },
+  "budget_D.progressor_rescued": {
+   "value": "<5"
+  },
+  "budget_D.np_newly_flagged": {
+   "value": 13.9,
+   "ci95": [
+    7.795,
+    22.0
+   ]
+  },
+  "budget_D.np_flagged_final": {
+   "value": 93.8,
+   "ci95": [
+    67.8,
+    122.202
+   ]
+  },
+  "budget_D.progressor_flagged_final": {
+   "value": 81.4,
+   "ci95": [
+    55.3,
+    112.102
+   ]
+  },
+  "budget_D.overlap_with_band": {
+   "value": 75.1,
+   "ci95": [
+    59.5,
+    92.602
+   ]
+  },
+  "budget_D_minus_band_np_flagged": {
+   "value": 9.0,
+   "ci95": [
+    4.8,
+    14.102
+   ]
+  },
+  "budget_D_minus_band_progressor_flagged": {
+   "value": 1.7,
+   "ci95": [
+    -0.1,
+    4.4
+   ]
+  },
+  "budget_D_minus_band_np_corrected": {
+   "value": -8.0,
+   "ci95": [
+    -11.5,
+    -4.7
+   ]
+  },
+  "budget_D_minus_band_progressor_lost": {
+   "value": -0.4,
+   "ci95": [
+    -1.4,
+    0.1
+   ]
+  }
+ },
+ "runtime_s": 515,
+ "note": "D = SD across the set's members of the held-out score in the same repeat, after putting each member on a common scale within each (repeat, held-out fold): z = z-score of log-odds (endoscopy: mean sample logit), rank = within-fold percentile rank, prob = raw probability. Errors, M, cut-offs, band, CNV/LATE fixes, budget rule exactly as UNC (clean L-IMG, fold training 90%-sensitivity cut-off, R49 mean-logit gate). Flexible control = UNC's piecewise quadratic in (log-odds - cut-off) + cell entropy of the clean L-IMG probability; stricter control adds the ensemble mean (z scale) and its square. Repeat-mean counts; patient bootstrap RandomState(0); cluster Wald p with patient clusters; CV AUROC = 5-fold patient-grouped held-out"
+}
